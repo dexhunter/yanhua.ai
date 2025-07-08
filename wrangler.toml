@@ -7,7 +7,7 @@ compatibility_date = "2023-12-01"
 # You must create a KV namespace in the Cloudflare dashboard and get its ID.
 [[kv_namespaces]]
 binding = "CITATIONS_KV" # The name of the binding in your worker code (env.CITATIONS_KV)
-id = "YOUR_KV_NAMESPACE_ID" # <-- Replace with your actual KV namespace ID
+id = "be32ba6bf43a4643be065abca98ba906" # <-- Replace with your actual KV namespace ID
 
 # This binding is for serving your static index.html file.
 # It tells wrangler to upload the root directory as static assets.
