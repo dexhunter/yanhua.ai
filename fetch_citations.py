@@ -57,11 +57,53 @@ class CitationTracker:
         self.serpapi_base_url = "https://serpapi.com/search"
         self.arxiv_api_url = "http://export.arxiv.org/api/query"
         self.target_arxiv_id = self._extract_arxiv_id(target_paper_url)
+        self.cache_file = "serpapi_cache.json"
+        self.cache_expiry_days = 7
         logger.info(f"Tracking citations for paper: aideml (arXiv ID: {self.target_arxiv_id})")
 
     def _extract_arxiv_id(self, url: str) -> str:
         match = re.search(r'arxiv\.org/(?:abs|html)/([0-9]+\.[0-9]+)', url)
         return match.group(1) if match else "2502.13138"
+
+    # --- Caching Methods ---
+    def _load_cache(self) -> Optional[List[Paper]]:
+        """Loads papers from the cache if it exists and is not expired."""
+        if not os.path.exists(self.cache_file):
+            logger.info("Cache file not found. Fetching from source.")
+            return None
+        
+        try:
+            with open(self.cache_file, 'r', encoding='utf-8') as f:
+                cache_data = json.load(f)
+            
+            timestamp_str = cache_data.get("timestamp")
+            if not timestamp_str:
+                logger.warning("Cache is missing timestamp. Ignoring.")
+                return None
+
+            timestamp = datetime.fromisoformat(timestamp_str)
+            if datetime.now() - timestamp > timedelta(days=self.cache_expiry_days):
+                logger.info("Cache is expired. Fetching from source.")
+                return None
+
+            logger.info("Loading SerpAPI results from cache.")
+            return [Paper(**p) for p in cache_data.get("papers", [])]
+        except (json.JSONDecodeError, TypeError) as e:
+            logger.error(f"Error reading cache file: {e}. Ignoring cache.")
+            return None
+
+    def _save_cache(self, papers: List[Paper]):
+        """Saves the fetched papers to the cache file."""
+        cache_data = {
+            "timestamp": datetime.now().isoformat(),
+            "papers": [p.__dict__ for p in papers]
+        }
+        try:
+            with open(self.cache_file, 'w', encoding='utf-8') as f:
+                json.dump(cache_data, f, indent=2, ensure_ascii=False)
+            logger.info(f"Saved {len(papers)} papers to SerpAPI cache.")
+        except Exception as e:
+            logger.error(f"Failed to save cache: {e}")
 
     # --- SerpAPI Methods (Corrected Two-Step Process) ---
     def _get_serpapi_cites_id(self) -> str:
@@ -89,6 +131,12 @@ class CitationTracker:
         return ""
 
     def _fetch_from_serpapi(self, max_results: int) -> List[Paper]:
+        # Try to load from cache first
+        cached_papers = self._load_cache()
+        if cached_papers is not None:
+            return cached_papers
+
+        # If cache is invalid or missing, fetch from SerpAPI
         cites_id = self._get_serpapi_cites_id()
         if not cites_id:
             return []
@@ -108,11 +156,14 @@ class CitationTracker:
             organic_results = data.get('organic_results', [])
             if organic_results:
                 papers.extend([self._parse_serpapi_paper(res) for res in organic_results])
+            
             logger.info(f"SerpAPI: Fetched {len(papers)} papers.")
+            # Save the fresh results to the cache
+            self._save_cache(papers)
             return papers
         except requests.exceptions.RequestException as e:
             logger.error(f"SerpAPI request for citing papers failed: {e}")
-        return []
+            return []
 
     def _parse_serpapi_paper(self, result: Dict) -> Paper:
         title = result.get('title', 'Untitled')
@@ -122,17 +173,39 @@ class CitationTracker:
         citations = result.get('inline_links', {}).get('cited_by', {}).get('total', 0)
         
         # --- Improved Date Parsing ---
+        publication_info_summary = result.get('publication_info', {}).get('summary', '')
+        logger.info(f"Attempting to parse date from: {publication_info_summary}")
+
         published_date = "Unknown"
         published_date_sort = "1900-01-01"
         
-        # Try to find a full date (e.g., "2 days ago" is not handled, but "2024" is)
-        year_match = re.search(r'\b(19|20)\d{2}\b', authors_info)
-        if year_match:
-            year = int(year_match.group(0))
-            # For now, we only get the year from SerpAPI, so we'll use it for display
-            # and create a sortable date from it.
-            published_date = str(year)
-            published_date_sort = f"{year}-01-01"
+        # Attempt to parse a full date like "Mon, 01 Jan 2024" or "2024"
+        try:
+            # First, try to find a full date string and parse it
+            date_match = re.search(r'\b\w{3}, \d{2} \w{3} \d{4}\b', publication_info_summary) # Simplified, adjust as needed
+            if not date_match: # Fallback for formats like "Jan 1, 2024"
+                date_match = re.search(r'\b\w{3} \d{1,2}, \d{4}\b', publication_info_summary)
+
+            if date_match:
+                date_str = date_match.group(0)
+                # Try parsing different common formats
+                for fmt in ("%b %d, %Y", "%a, %d %b %Y"):
+                    try:
+                        dt_obj = datetime.strptime(date_str, fmt)
+                        published_date = dt_obj.strftime('%B %d, %Y')
+                        published_date_sort = dt_obj.strftime('%Y-%m-%d')
+                        break
+                    except ValueError:
+                        continue
+            else:
+                # If no full date, fall back to year extraction
+                year_match = re.search(r'\b(19|20)\d{2}\b', publication_info_summary)
+                if year_match:
+                    year = int(year_match.group(0))
+                    published_date = str(year)
+                    published_date_sort = f"{year}-01-01"
+        except Exception as e:
+            logger.warning(f"Could not parse date from '{publication_info_summary}': {e}")
 
         return Paper(
             title=title, authors=authors_info, journal="Google Scholar Result",
@@ -140,13 +213,48 @@ class CitationTracker:
             published_date_sort=published_date_sort, citations=citations
         )
 
-    # --- arXiv HTML Search Methods (Refined to cs.AI) ---
-    def _fetch_latest_arxiv_papers(self) -> List[Paper]:
-        search_query = "cat:cs.AI OR cat:cs.LG OR cat:cs.CL OR cat:cs.CV"
+    def _find_citations_in_latest_arxiv_via_api(self) -> List[Paper]:
+        """
+        Uses the arXiv API to directly find papers that cite the target paper.
+        This is more reliable and efficient than searching HTML.
+        """
+        search_query = f'all:"{self.target_arxiv_id}"'
+        logger.info(f"arXiv API Search: Finding papers citing {self.target_arxiv_id}")
+        
+        params = {
+            'search_query': search_query,
+            'max_results': 100, # Max reasonable number of citations to expect
+            'sortBy': 'submittedDate',
+            'sortOrder': 'descending'
+        }
+        
+        try:
+            response = requests.get(self.arxiv_api_url, params=params, timeout=30)
+            response.raise_for_status()
+            root = ET.fromstring(response.content)
+            atom_namespace = {'atom': 'http://www.w3.org/2005/Atom'}
+            
+            papers = []
+            for entry in root.findall('atom:entry', atom_namespace):
+                paper = self._parse_arxiv_xml_entry(entry, atom_namespace)
+                # Ensure the found paper is not the target paper itself
+                if paper and self._extract_arxiv_id(paper.link) != self.target_arxiv_id:
+                    papers.append(paper)
+            
+            logger.info(f"arXiv API Search: Found {len(papers)} citing papers.")
+            return papers
+        except Exception as e:
+            logger.error(f"arXiv API search for citing papers failed: {e}")
+            return []
+
+    # --- arXiv HTML Search Methods for very recent papers ---
+    def _fetch_latest_arxiv_papers_for_scraping(self) -> List[Paper]:
+        """Fetches the most recent papers from relevant CS categories to scan their HTML."""
+        search_query = "cat:cs.AI OR cat:cs.LG"
         logger.info(f"arXiv HTML Search: Fetching recent papers from categories: {search_query}")
         params = {
             'search_query': search_query,
-            'max_results': 200,
+            'max_results': 100, # Check the latest 100 papers in these specific categories
             'sortBy': 'submittedDate',
             'sortOrder': 'descending'
         }
@@ -157,41 +265,50 @@ class CitationTracker:
             atom_namespace = {'atom': 'http://www.w3.org/2005/Atom'}
             
             papers = []
-            one_week_ago = datetime.now() - timedelta(days=7)
+            # Limit scraping to papers submitted in the last day to keep it fast
+            one_day_ago = datetime.now() - timedelta(days=1)
             
             for entry in root.findall('atom:entry', atom_namespace):
                 paper = self._parse_arxiv_xml_entry(entry, atom_namespace)
                 if paper:
                     paper_date = datetime.strptime(paper.published_date_sort, '%Y-%m-%d')
-                    if paper_date >= one_week_ago:
+                    if paper_date >= one_day_ago:
                         papers.append(paper)
 
-            logger.info(f"arXiv HTML Search: Found {len(papers)} recent papers from the last 7 days to check.")
+            logger.info(f"arXiv HTML Search: Found {len(papers)} recent papers from the last day to check.")
             return papers
         except Exception as e:
-            logger.error(f"arXiv HTML Search: Could not fetch recent papers: {e}")
-        return []
+            logger.error(f"arXiv HTML Search: Could not fetch recent papers for scraping: {e}")
+            return []
 
     def _search_html_for_citation(self, paper: Paper) -> bool:
+        """Checks the HTML version of a paper for a citation to the target paper."""
         paper_id = self._extract_arxiv_id(paper.link)
-        html_url = f"https://arxiv.org/html/{paper_id}"
+        # Check both v1, v2, etc.
+        html_url = f"https://arxiv.org/html/{paper_id}" 
         
         logger.debug(f"Checking HTML: {html_url}")
         try:
-            response = requests.get(html_url, timeout=20)
+            # A short timeout is crucial here to avoid getting stuck.
+            response = requests.get(html_url, timeout=15)
             if response.status_code == 200:
-                # Use a regex to find the citation, allowing for version numbers (e.g., v1)
-                pattern = re.compile(re.escape(self.target_arxiv_id) + r'(v\d+)?')
-                if pattern.search(response.text):
+                # Simple string search is much faster than regex for this.
+                # We check for both the plain ID and the project name "aideml".
+                text_to_search = response.text.lower()
+                if self.target_arxiv_id in text_to_search or "aideml" in text_to_search:
                     logger.info(f"  -> Found citation in {paper.title}")
                     return True
         except requests.exceptions.RequestException:
+            # This is expected to happen sometimes (e.g., timeouts, 404s for withdrawn papers)
             pass
         return False
 
-    def _find_citations_in_latest_arxiv(self) -> List[Paper]:
-        recent_papers = self._fetch_latest_arxiv_papers()
+    def _find_citations_in_latest_arxiv_via_html(self) -> List[Paper]:
+        """Orchestrates the process of fetching and scraping recent papers."""
+        recent_papers = self._fetch_latest_arxiv_papers_for_scraping()
+        # We check papers concurrently in a real implementation, but sequentially is fine for this script
         citing_papers = [paper for paper in recent_papers if self._search_html_for_citation(paper)]
+        logger.info(f"arXiv HTML Search: Found {len(citing_papers)} new citing papers.")
         return citing_papers
 
     def _parse_arxiv_xml_entry(self, entry: ET.Element, namespace: Dict) -> Optional[Paper]:
@@ -282,14 +399,24 @@ class CitationTracker:
 
     # --- Main Orchestration ---
     def fetch_citations(self, max_results: int = 200) -> List[Paper]:
-        logger.info("Starting citation search with corrected logic...")
+        logger.info("Starting hybrid citation search...")
+        
+        # 1. Get broad results from Google Scholar
         serpapi_papers = self._fetch_from_serpapi(max_results)
-        latest_citing_papers = self._find_citations_in_latest_arxiv()
+        
+        # 2. Get reliable, indexed citations directly from the arXiv API
+        arxiv_api_papers = self._find_citations_in_latest_arxiv_via_api()
+        
+        # 3. Scrape the very latest papers for unindexed citations
+        arxiv_html_papers = self._find_citations_in_latest_arxiv_via_html()
 
-        merged_papers = list(set(serpapi_papers + latest_citing_papers))
+        # Merge all sources and remove duplicates
+        merged_papers = list(set(serpapi_papers + arxiv_api_papers + arxiv_html_papers))
+        
+        # Sort by the reliable date field, newest first
         merged_papers.sort(key=lambda p: p.published_date_sort, reverse=True)
         
-        logger.info(f"Fetched a total of {len(merged_papers)} unique citing papers.")
+        logger.info(f"Fetched a total of {len(merged_papers)} unique citing papers from all sources.")
         return merged_papers
 
     def save_data(self, papers: List[Paper], filename: str = 'citations_data.json'):

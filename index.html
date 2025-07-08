@@ -480,10 +480,11 @@
           return;
         }
 
-        // Group papers by publication month
+        // Group papers by publication month using the reliable sort date
         const papersByMonth = {};
         papers.forEach((paper) => {
-          const monthKey = extractMonthYear(paper.published_date);
+          // Use published_date_sort for grouping
+          const monthKey = extractMonthYear(paper.published_date_sort);
           if (!papersByMonth[monthKey]) {
             papersByMonth[monthKey] = [];
           }
@@ -501,6 +502,9 @@
         container.innerHTML = sortedMonths
           .map((month) => {
             const monthPapers = papersByMonth[month];
+            // Sort papers within the month by date, newest first
+            monthPapers.sort((a, b) => new Date(b.published_date_sort) - new Date(a.published_date_sort));
+            
             return `
                     <div class="month-section">
                         <div class="month-header">
@@ -528,6 +532,7 @@
                                 )}</div>
                                 <div class="paper-meta">
                                     <span>Published: ${
+                                      // Display the user-friendly date, but use sort date for logic
                                       paper.published_date || "Unknown"
                                     }</span>
                                     <a href="${
@@ -545,9 +550,9 @@
       }
 
               function extractMonthYear(dateString) {
-            if (!dateString || dateString === "Unknown" || dateString === "1900-01-01") return "Unknown";
+            if (!dateString || dateString === "Unknown" || dateString.startsWith("1900")) return "Unknown";
 
-            // Handle "YYYY-MM-DD" format 
+            // Handle "YYYY-MM-DD" format, which is the reliable format
             const isoDateMatch = dateString.match(/^(\d{4})-(\d{2})-(\d{2})$/);
             if (isoDateMatch) {
                 const year = isoDateMatch[1];
@@ -557,22 +562,25 @@
                     '05': 'May', '06': 'June', '07': 'July', '08': 'August',
                     '09': 'September', '10': 'October', '11': 'November', '12': 'December'
                 };
+                // Return a "Month Year" string for grouping
                 return `${monthNames[month]} ${year}`;
             }
 
-            // Handle "Month Year" format (legacy support)
+            // Fallback for "Month Year" format
             const monthYearMatch = dateString.match(/([A-Za-z]+)\s+(\d{4})/);
             if (monthYearMatch) {
                 return `${monthYearMatch[1]} ${monthYearMatch[2]}`;
             }
 
-            // Handle just year (e.g., "2025")
+            // Fallback for just year (e.g., "2025")
             const yearMatch = dateString.match(/(\d{4})/);
             if (yearMatch) {
-                return yearMatch[1];
+                // To avoid grouping all year-only papers into one "2025" bucket,
+                // we can treat them as "Unknown" so they are handled separately.
+                return yearMatch[1]; 
             }
 
-            return dateString;
+            return "Unknown"; // Default case
         }
 
       function parseMonthYear(monthYearString) {
