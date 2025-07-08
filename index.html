@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>aideml - Citation Tracker</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            color: #333;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        header h1 {
+            color: #2c3e50;
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+
+        .paper-info {
+            background: rgba(52, 152, 219, 0.1);
+            padding: 20px;
+            border-radius: 15px;
+            margin-bottom: 20px;
+            border: 2px solid rgba(52, 152, 219, 0.2);
+        }
+
+        .paper-info h2 {
+            color: #2980b9;
+            margin-bottom: 10px;
+            font-size: 1.3em;
+        }
+
+        .paper-info p {
+            line-height: 1.6;
+            color: #555;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .stat-card {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 25px;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+        }
+
+        .stat-number {
+            font-size: 2.5em;
+            font-weight: bold;
+            color: #3498db;
+            margin-bottom: 10px;
+        }
+
+        .stat-label {
+            font-size: 1.1em;
+            color: #7f8c8d;
+        }
+
+        .papers-section {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+        }
+
+        .papers-section h2 {
+            color: #2c3e50;
+            margin-bottom: 25px;
+            font-size: 1.8em;
+            border-bottom: 3px solid #3498db;
+            padding-bottom: 10px;
+        }
+
+        .paper-card {
+            background: #f8f9fa;
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-left: 4px solid #3498db;
+            transition: all 0.3s ease;
+        }
+
+        .paper-card:hover {
+            transform: translateX(5px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .paper-title {
+            font-size: 1.2em;
+            font-weight: 600;
+            color: #2c3e50;
+            margin-bottom: 10px;
+            line-height: 1.4;
+        }
+
+        .paper-authors {
+            color: #7f8c8d;
+            margin-bottom: 8px;
+            font-style: italic;
+        }
+
+        .paper-journal {
+            color: #27ae60;
+            font-weight: 500;
+            margin-bottom: 10px;
+        }
+
+        .paper-snippet {
+            color: #555;
+            line-height: 1.6;
+            margin-bottom: 10px;
+        }
+
+        .paper-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.9em;
+            color: #7f8c8d;
+        }
+
+        .paper-link {
+            color: #3498db;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .paper-link:hover {
+            text-decoration: underline;
+        }
+
+        .update-info {
+            background: rgba(46, 204, 113, 0.1);
+            border: 2px solid rgba(46, 204, 113, 0.2);
+            border-radius: 10px;
+            padding: 15px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .update-info p {
+            color: #27ae60;
+            font-weight: 500;
+        }
+
+        .loading {
+            text-align: center;
+            padding: 40px;
+            color: #7f8c8d;
+        }
+
+        .loading:before {
+            content: "🔄 ";
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .chart-container {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 15px;
+            padding: 25px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        .chart-container h3 {
+            color: #2c3e50;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 20px;
+            color: rgba(255, 255, 255, 0.8);
+            background: rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 10px;
+            }
+            
+            header h1 {
+                font-size: 2em;
+            }
+            
+            .stats-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>📚 aideml - Citation Tracker</h1>
+            <div class="paper-info">
+                <h2>Research Impact Tracking</h2>
+                <p>This page automatically tracks and displays all papers citing our research. The data is updated regularly using automated GitHub Actions.</p>
+            </div>
+        </header>
+
+        <div class="update-info">
+            <p>⚡ Last updated: <span id="lastUpdated">Loading...</span></p>
+        </div>
+
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-number" id="totalCitations">-</div>
+                <div class="stat-label">Total Citations</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number" id="recentCitations">-</div>
+                <div class="stat-label">Recent Citations (30 days)</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number" id="avgCitationsPerMonth">-</div>
+                <div class="stat-label">Avg. Citations/Month</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number" id="hIndex">-</div>
+                <div class="stat-label">H-Index Impact</div>
+            </div>
+        </div>
+
+        <div class="chart-container">
+            <h3>📈 Citations Over Time</h3>
+            <canvas id="citationsChart"></canvas>
+        </div>
+
+        <div class="papers-section">
+            <h2>📄 Citing Papers</h2>
+            <div id="papersContainer">
+                <div class="loading">Loading citing papers...</div>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p>🤖 Automated citation tracking powered by SerpAPI and GitHub Actions</p>
+            <p>Updated every 6 hours • Data source: Google Scholar</p>
+        </div>
+    </div>
+
+    <script>
+        // Initialize chart
+        const ctx = document.getElementById('citationsChart').getContext('2d');
+        let citationsChart;
+
+        // Load data from JSON file
+        async function loadData() {
+            try {
+                const response = await fetch('citations_data.json');
+                const data = await response.json();
+                
+                if (data.error) {
+                    document.getElementById('papersContainer').innerHTML = 
+                        `<div class="loading">⚠️ ${data.error}</div>`;
+                    return;
+                }
+
+                // Update statistics
+                document.getElementById('totalCitations').textContent = data.total_citations || 0;
+                document.getElementById('recentCitations').textContent = data.recent_citations || 0;
+                document.getElementById('avgCitationsPerMonth').textContent = data.avg_citations_per_month || 0;
+                document.getElementById('hIndex').textContent = data.h_index || 0;
+                document.getElementById('lastUpdated').textContent = data.last_updated || 'Never';
+
+                // Render papers
+                renderPapers(data.papers || []);
+                
+                // Update chart
+                updateChart(data.timeline || []);
+                
+            } catch (error) {
+                console.error('Error loading data:', error);
+                document.getElementById('papersContainer').innerHTML = 
+                    '<div class="loading">⚠️ Error loading citation data</div>';
+            }
+        }
+
+        function renderPapers(papers) {
+            const container = document.getElementById('papersContainer');
+            
+            if (papers.length === 0) {
+                container.innerHTML = '<div class="loading">📭 No citing papers found yet</div>';
+                return;
+            }
+
+            container.innerHTML = papers.map(paper => `
+                <div class="paper-card">
+                    <div class="paper-title">${escapeHtml(paper.title || 'Untitled')}</div>
+                    <div class="paper-authors">${escapeHtml(paper.authors || 'Unknown authors')}</div>
+                    <div class="paper-journal">${escapeHtml(paper.journal || 'Unknown journal')}</div>
+                    <div class="paper-snippet">${escapeHtml(paper.snippet || 'No snippet available')}</div>
+                    <div class="paper-meta">
+                        <span>Published: ${paper.published_date || 'Unknown'}</span>
+                        <a href="${paper.link}" target="_blank" class="paper-link">View Paper →</a>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        function updateChart(timeline) {
+            if (citationsChart) {
+                citationsChart.destroy();
+            }
+
+            const labels = timeline.map(item => item.date);
+            const data = timeline.map(item => item.citations);
+
+            citationsChart = new Chart(ctx, {
+                type: 'line',
+                data: {
+                    labels: labels,
+                    datasets: [{
+                        label: 'Citations',
+                        data: data,
+                        borderColor: '#3498db',
+                        backgroundColor: 'rgba(52, 152, 219, 0.1)',
+                        borderWidth: 3,
+                        fill: true,
+                        tension: 0.4
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    plugins: {
+                        legend: {
+                            display: false
+                        }
+                    },
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            ticks: {
+                                precision: 0
+                            }
+                        }
+                    }
+                }
+            });
+        }
+
+        function escapeHtml(text) {
+            const div = document.createElement('div');
+            div.textContent = text;
+            return div.innerHTML;
+        }
+
+        // Load data when page loads
+        document.addEventListener('DOMContentLoaded', loadData);
+        
+        // Refresh data every 30 seconds
+        setInterval(loadData, 30000);
+    </script>
+</body>
+</html> 
