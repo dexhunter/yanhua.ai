@@ -133,8 +133,8 @@ class CitationTracker:
 
     # --- arXiv HTML Search Methods (Refined to cs.AI) ---
     def _fetch_latest_arxiv_papers(self) -> List[Paper]:
-        logger.info("arXiv HTML Search: Fetching recent papers from cs.AI...")
-        search_query = "cat:cs.AI"
+        search_query = "cat:cs.AI OR cat:cs.LG OR cat:cs.CL OR cat:cs.CV"
+        logger.info(f"arXiv HTML Search: Fetching recent papers from categories: {search_query}")
         params = {
             'search_query': search_query,
             'max_results': 200,
@@ -157,7 +157,7 @@ class CitationTracker:
                     if paper_date >= one_week_ago:
                         papers.append(paper)
 
-            logger.info(f"arXiv HTML Search: Found {len(papers)} recent papers from the last 7 days in cs.AI to check.")
+            logger.info(f"arXiv HTML Search: Found {len(papers)} recent papers from the last 7 days to check.")
             return papers
         except Exception as e:
             logger.error(f"arXiv HTML Search: Could not fetch recent papers: {e}")
@@ -170,9 +170,12 @@ class CitationTracker:
         logger.debug(f"Checking HTML: {html_url}")
         try:
             response = requests.get(html_url, timeout=20)
-            if response.status_code == 200 and self.target_arxiv_id in response.text:
-                logger.info(f"  -> Found citation in {paper.title}")
-                return True
+            if response.status_code == 200:
+                # Use a regex to find the citation, allowing for version numbers (e.g., v1)
+                pattern = re.compile(re.escape(self.target_arxiv_id) + r'(v\d+)?')
+                if pattern.search(response.text):
+                    logger.info(f"  -> Found citation in {paper.title}")
+                    return True
         except requests.exceptions.RequestException:
             pass
         return False
