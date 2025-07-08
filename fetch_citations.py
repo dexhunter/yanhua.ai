@@ -121,14 +121,23 @@ class CitationTracker:
         snippet = result.get('snippet', '')
         citations = result.get('inline_links', {}).get('cited_by', {}).get('total', 0)
         
-        # Extract year from summary, default to unknown
+        # --- Improved Date Parsing ---
+        published_date = "Unknown"
+        published_date_sort = "1900-01-01"
+        
+        # Try to find a full date (e.g., "2 days ago" is not handled, but "2024" is)
         year_match = re.search(r'\b(19|20)\d{2}\b', authors_info)
-        year = year_match.group(0) if year_match else "Unknown"
+        if year_match:
+            year = int(year_match.group(0))
+            # For now, we only get the year from SerpAPI, so we'll use it for display
+            # and create a sortable date from it.
+            published_date = str(year)
+            published_date_sort = f"{year}-01-01"
 
         return Paper(
             title=title, authors=authors_info, journal="Google Scholar Result",
-            snippet=snippet, link=link, published_date=year,
-            published_date_sort=f"{year}-01-01", citations=citations
+            snippet=snippet, link=link, published_date=published_date,
+            published_date_sort=published_date_sort, citations=citations
         )
 
     # --- arXiv HTML Search Methods (Refined to cs.AI) ---
@@ -224,9 +233,8 @@ class CitationTracker:
         recent_citations = 0
         for paper in papers:
             try:
-                # Handles both 'YYYY-MM-DD' and just 'YYYY'
-                date_str = paper.published_date.split(' ')[0]
-                paper_date = datetime.strptime(date_str, '%Y-%m-%d')
+                # Use the reliable sort date for comparison
+                paper_date = datetime.strptime(paper.published_date_sort, '%Y-%m-%d')
                 if paper_date >= thirty_days_ago:
                     recent_citations += 1
             except (ValueError, IndexError):

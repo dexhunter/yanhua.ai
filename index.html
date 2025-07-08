@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>aideml - Citation Tracker</title>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-date-fns/dist/chartjs-adapter-date-fns.bundle.min.js"></script>
     <style>
       * {
         margin: 0;
@@ -607,118 +608,108 @@
                 citationsChart.destroy();
             }
 
-            // Format dates for display (YYYY-MM-DD -> "Mon DD, YYYY")
-            const labels = timeline.map((item) => {
-                const date = item.date;
-                // If it's already formatted date, return as is
-                if (date.includes('-') && date.length === 10) {
-                    try {
-                        const dateObj = new Date(date + 'T00:00:00');
-                        return dateObj.toLocaleDateString('en-US', { 
-                            month: 'short', 
-                            day: 'numeric', 
-                            year: 'numeric' 
-                        });
-                    } catch (e) {
-                        return date;
-                    }
-                }
-                return date;
-            });
-            const data = timeline.map((item) => item.citations);
+            // The data is now in a format Chart.js can use directly with the time adapter
+            const chartData = timeline.map(item => ({
+                x: item.date,
+                y: item.citations
+            }));
 
-                 citationsChart = new Chart(ctx, {
-           type: "line",
-           data: {
-             labels: labels,
-             datasets: [
-               {
-                 label: "Cumulative Citations",
-                 data: data,
-                 borderColor: "#3498db",
-                 backgroundColor: "rgba(52, 152, 219, 0.2)",
-                 borderWidth: 3,
-                 fill: true,
-                 tension: 0.2,
-                 pointBackgroundColor: "#3498db",
-                 pointBorderColor: "#ffffff",
-                 pointBorderWidth: 2,
-                 pointRadius: 5,
-                 pointHoverRadius: 7,
-               },
-             ],
-           },
-           options: {
-             responsive: true,
-             plugins: {
-               legend: {
-                 display: true,
-                 position: "top",
-                 labels: {
-                   color: "#2c3e50",
-                   font: {
-                     size: 14,
-                     weight: "500",
-                   },
-                 },
-               },
-               tooltip: {
-                 backgroundColor: "rgba(44, 62, 80, 0.9)",
-                 titleColor: "#ffffff",
-                 bodyColor: "#ffffff",
-                 borderColor: "#3498db",
-                 borderWidth: 1,
-                 callbacks: {
-                   label: function(context) {
-                     return `Total Citations: ${context.raw}`;
-                   },
-                   title: function(context) {
-                     return `Publication Date: ${context[0].label}`;
-                   }
-                 }
-               },
-             },
-             scales: {
-               y: {
-                 beginAtZero: true,
-                 ticks: {
-                   precision: 0,
-                   color: "#7f8c8d",
-                 },
-                 grid: {
-                   color: "rgba(127, 140, 141, 0.1)",
-                 },
-                 title: {
-                   display: true,
-                   text: "Cumulative Citations",
-                   color: "#2c3e50",
-                   font: {
-                     size: 12,
-                     weight: "500",
-                   },
-                 },
-               },
-               x: {
-                 ticks: {
-                   color: "#7f8c8d",
-                 },
-                 grid: {
-                   color: "rgba(127, 140, 141, 0.1)",
-                 },
-                 title: {
-                   display: true,
-                   text: "Publication Date",
-                   color: "#2c3e50",
-                   font: {
-                     size: 12,
-                     weight: "500",
-                   },
-                 },
-               },
-             },
-           },
-         });
-      }
+            citationsChart = new Chart(ctx, {
+                type: "line",
+                data: {
+                    datasets: [
+                        {
+                            label: "Cumulative Citations",
+                            data: chartData,
+                            borderColor: "#3498db",
+                            backgroundColor: "rgba(52, 152, 219, 0.2)",
+                            borderWidth: 3,
+                            fill: true,
+                            tension: 0.2,
+                            pointBackgroundColor: "#3498db",
+                            pointBorderColor: "#ffffff",
+                            pointBorderWidth: 2,
+                            pointRadius: 5,
+                            pointHoverRadius: 7,
+                        },
+                    ],
+                },
+                options: {
+                    responsive: true,
+                    plugins: {
+                        legend: {
+                            display: true,
+                            position: "top",
+                            labels: {
+                                color: "#2c3e50",
+                                font: {
+                                    size: 14,
+                                    weight: "500",
+                                },
+                            },
+                        },
+                        tooltip: {
+                            backgroundColor: "rgba(44, 62, 80, 0.9)",
+                            titleColor: "#ffffff",
+                            bodyColor: "#ffffff",
+                            borderColor: "#3498db",
+                            borderWidth: 1,
+                            callbacks: {
+                                label: function(context) {
+                                    return `Total Citations: ${context.raw.y}`;
+                                },
+                            }
+                        }
+                    },
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            ticks: {
+                                precision: 0,
+                                color: "#7f8c8d",
+                            },
+                            grid: {
+                                color: "rgba(127, 140, 141, 0.1)",
+                            },
+                            title: {
+                                display: true,
+                                text: "Cumulative Citations",
+                                color: "#2c3e50",
+                                font: {
+                                    size: 12,
+                                    weight: "500",
+                                },
+                            },
+                        },
+                        x: {
+                            type: 'time',
+                            time: {
+                                unit: 'month',
+                                tooltipFormat: 'MMM dd, yyyy',
+                                displayFormats: {
+                                    month: 'MMM yyyy'
+                                }
+                            },
+                            ticks: {
+                                color: "#7f8c8d",
+                            },
+                            grid: {
+                                color: "rgba(127, 140, 141, 0.1)",
+                            },
+                            title: {
+                                display: true,
+                                text: "Publication Date",
+                                color: "#2c3e50",
+                                font: {
+                                    size: 12,
+                                    weight: "500",
+                                },
+                            },
+                        },
+                    },
+                },
+            });
+        }
 
       function escapeHtml(text) {
         const div = document.createElement("div");
