@@ -27,35 +27,16 @@ jobs:
           SERPAPI_KEY: ${{ secrets.SERPAPI_KEY }}
         run: python fetch_citations.py
 
-      - name: Set up Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: '20'
-          cache: 'npm'
-
-      - name: Install Node.js dependencies
-        run: npm install
-
-      - name: Install Wrangler CLI
-        run: npm install -g wrangler
-
-      - name: Publish to Cloudflare KV
-        env:
-          CF_API_TOKEN: ${{ secrets.CF_API_TOKEN }}
-          CF_ACCOUNT_ID: ${{ secrets.CF_ACCOUNT_ID }}
-          # The binding name from wrangler.toml
-          KV_NAMESPACE_BINDING: "CITATIONS_KV"
+      - name: Commit and push if there are changes
         run: |
-          # We need to get the KV namespace ID from the wrangler.toml file
-          KV_ID=$(node get-kv-namespace-id.js "$KV_NAMESPACE_BINDING")
-
-          if [ -z "$KV_ID" ]; then
-            echo "Error: Could not find KV namespace ID for binding '$KV_NAMESPACE_BINDING' in wrangler.toml"
-            exit 1
+          git config --global user.name 'github-actions[bot]'
+          git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+          git add citations_data.json
+          # Commit only if there are changes
+          if ! git diff --staged --quiet; then
+            git commit -m "docs: update citation data"
+            git push
+          else
+            echo "No changes to commit."
           fi
-
-          echo "Uploading data to Cloudflare KV namespace: $KV_ID"
-          
-          # Use wrangler to put the file content into the KV store
-          wrangler kv:key put --namespace-id="$KV_ID" "citations_data" --path="citations_data.json"
 
