@@ -1,36 +1,12 @@
 {
-  "last_updated": "2025-07-08 14:29:38 UTC",
-  "target_paper": "aideml research paper",
+  "last_updated": "2025-07-08 06:41:11 UTC",
+  "target_paper": "https://arxiv.org/abs/2502.13138",
   "arxiv_id": "2502.13138",
   "total_citations": 0,
   "recent_citations": 0,
-  "avg_citations_per_month": 0.0,
+  "avg_citations_per_month": 0,
   "h_index": 0,
-  "timeline": [
-    {
-      "date": "2025-06",
-      "citations": 0
-    },
-    {
-      "date": "2025-07",
-      "citations": 0
-    },
-    {
-      "date": "2025-08",
-      "citations": 0
-    },
-    {
-      "date": "2025-09",
-      "citations": 0
-    },
-    {
-      "date": "2025-10",
-      "citations": 0
-    },
-    {
-      "date": "2025-11",
-      "citations": 0
-    }
-  ],
-  "papers": []
+  "timeline": [],
+  "papers": [],
+  "error": "Unable to fetch citation data. Please check API key and try again."
 }
