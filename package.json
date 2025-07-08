@@ -11,5 +11,8 @@
   "license": "ISC",
   "dependencies": {
     "hono": "^4.8.4"
+  },
+  "devDependencies": {
+    "toml": "^3.0.0"
   }
 }
