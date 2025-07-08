@@ -1,9 +1,10 @@
 {
   "name": "yanhua.ai",
   "version": "1.0.0",
-  "description": "An automated citation tracking website that monitors and displays papers citing our research. The site automatically updates using GitHub Actions and provides a beautiful, modern interface for viewing citation data.",
-  "main": "worker.js",
+  "private": true,
+  "description": "An automated citation tracking website that monitors and displays papers citing our research.",
   "scripts": {
+    "build": "echo 'Build step to trigger dependency installation.'",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
