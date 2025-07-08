@@ -1,79 +1,34 @@
-/**
- * Cloudflare Worker for the Citation Tracker (Read-Only)
- *
- * - Handles GET requests to serve citation data from KV.
- * - Serves the index.html file for all other paths.
- *
- * Data is now written directly by the GitHub Action using wrangler.
- */
+import { Hono } from "hono";
+import { serveStatic } from "hono/cloudflare-workers";
 
-export default {
-  async fetch(request, env, ctx) {
-    const url = new URL(request.url);
+const app = new Hono();
 
-    // API route for fetching data
-    if (url.pathname === '/api/citations') {
-      if (request.method === 'GET') {
-        return this.handleGet(env);
-      }
-      // Handle CORS pre-flight requests for the GET endpoint
-      if (request.method === 'OPTIONS') {
-        return this.handleOptions();
-      }
-      return new Response('Method Not Allowed', { status: 405 });
-    }
+// --- API Route ---
+// This route handles GET requests to /api/citations and fetches data from the KV namespace.
+app.get("/api/citations", async (c) => {
+  const data = await c.env.CITATIONS_KV.get("citations_data", { type: "text" });
 
-    // For any other path, serve the static index.html file from assets
-    try {
-      return await env.ASSETS.fetch(request);
-    } catch (e) {
-      // If the asset is not found, serve index.html as a fallback for SPA routing
-      // This ensures that refreshing on a path like /some/page still loads the app
-      const notFoundResponse = await env.ASSETS.fetch(new Request(new URL('/index.html', request.url)));
-      return new Response(notFoundResponse.body, {
-          ...notFoundResponse,
-          status: 200,
-      });
-    }
-  },
+  if (data === null) {
+    return c.json(
+      { error: "No citation data found. Run the update action." },
+      404
+    );
+  }
 
-  /**
-   * Handles GET requests to retrieve the citation data.
-   */
-  async handleGet(env) {
-    // Retrieve the data string from the KV namespace.
-    const data = await env.CITATIONS_KV.get('citations_data', { type: 'text' });
+  return c.body(data, 200, {
+    "Content-Type": "application/json",
+    "Access-Control-Allow-Origin": "*",
+  });
+});
 
-    if (data === null) {
-      return new Response(JSON.stringify({ error: 'No citation data found. Run the update action.' }), {
-        status: 404,
-        headers: {
-          'Content-Type': 'application/json',
-          'Access-Control-Allow-Origin': '*',
-        },
-      });
-    }
+// --- Static Asset Serving ---
+// Serve static files from the root directory.
+app.get("/*", serveStatic({ root: "./" }));
 
-    // Return the stored data with the correct content type.
-    return new Response(data, {
-      status: 200,
-      headers: {
-        'Content-Type': 'application/json',
-        'Access-Control-Allow-Origin': '*', // Allow cross-origin requests
-      },
-    });
-  },
+// --- SPA Fallback ---
+// If a requested file is not found, serve index.html. This is crucial for single-page applications.
+app.notFound((c) => {
+  return serveStatic({ path: "./index.html" })(c);
+});
 
-  /**
-   * Handles CORS pre-flight OPTIONS requests.
-   */
-  handleOptions() {
-    return new Response(null, {
-      headers: {
-        'Access-Control-Allow-Origin': '*',
-        'Access-Control-Allow-Methods': 'GET, OPTIONS',
-        'Access-Control-Allow-Headers': 'Content-Type',
-      },
-    });
-  },
-};
+export default app;
