@@ -188,6 +188,16 @@
         margin-bottom: 10px;
       }
 
+      .paper-institutions {
+        color: #8e44ad;
+        font-weight: 500;
+        margin-bottom: 10px;
+        background: rgba(142, 68, 173, 0.1);
+        padding: 5px 10px;
+        border-radius: 5px;
+        border-left: 3px solid #8e44ad;
+      }
+
       .paper-snippet {
         color: #555;
         line-height: 1.6;
@@ -392,13 +402,13 @@
         </div>
       </div>
 
-      <div class="chart-container">
-        <h2>📈 Citation Trends</h2>
-        <p style="color: #7f8c8d; margin-bottom: 20px; text-align: center">
-          Monthly citation growth pattern for aideml research
-        </p>
-        <canvas id="citationsChart"></canvas>
-      </div>
+              <div class="chart-container">
+            <h2>📈 Citation Growth Timeline</h2>
+            <p style="color: #7f8c8d; margin-bottom: 20px; text-align: center">
+                Cumulative citations over time based on exact publication dates (YYYY-MM-DD format)
+            </p>
+            <canvas id="citationsChart"></canvas>
+        </div>
 
       <div class="footer">
         <p>
@@ -508,6 +518,7 @@
                                 <div class="paper-journal">${escapeHtml(
                                   paper.journal || "Unknown journal"
                                 )}</div>
+                                ${paper.institutions && paper.institutions !== "Unknown" ? `<div class="paper-institutions">🏛️ ${escapeHtml(paper.institutions)}</div>` : ''}
                                 <div class="paper-snippet">${escapeHtml(
                                   paper.snippet || "No snippet available"
                                 )}</div>
@@ -529,23 +540,36 @@
           .join("");
       }
 
-      function extractMonthYear(dateString) {
-        if (!dateString || dateString === "Unknown") return "Unknown";
+              function extractMonthYear(dateString) {
+            if (!dateString || dateString === "Unknown" || dateString === "1900-01-01") return "Unknown";
 
-        // Handle "Month Year" format (e.g., "June 2025")
-        const monthYearMatch = dateString.match(/([A-Za-z]+)\s+(\d{4})/);
-        if (monthYearMatch) {
-          return `${monthYearMatch[1]} ${monthYearMatch[2]}`;
+            // Handle "YYYY-MM-DD" format 
+            const isoDateMatch = dateString.match(/^(\d{4})-(\d{2})-(\d{2})$/);
+            if (isoDateMatch) {
+                const year = isoDateMatch[1];
+                const month = isoDateMatch[2];
+                const monthNames = {
+                    '01': 'January', '02': 'February', '03': 'March', '04': 'April',
+                    '05': 'May', '06': 'June', '07': 'July', '08': 'August',
+                    '09': 'September', '10': 'October', '11': 'November', '12': 'December'
+                };
+                return `${monthNames[month]} ${year}`;
+            }
+
+            // Handle "Month Year" format (legacy support)
+            const monthYearMatch = dateString.match(/([A-Za-z]+)\s+(\d{4})/);
+            if (monthYearMatch) {
+                return `${monthYearMatch[1]} ${monthYearMatch[2]}`;
+            }
+
+            // Handle just year (e.g., "2025")
+            const yearMatch = dateString.match(/(\d{4})/);
+            if (yearMatch) {
+                return yearMatch[1];
+            }
+
+            return dateString;
         }
-
-        // Handle just year (e.g., "2025")
-        const yearMatch = dateString.match(/(\d{4})/);
-        if (yearMatch) {
-          return yearMatch[1];
-        }
-
-        return dateString;
-      }
 
       function parseMonthYear(monthYearString) {
         if (monthYearString === "Unknown") return new Date(1900, 0);
@@ -578,47 +602,122 @@
         return new Date(year, 0);
       }
 
-      function updateChart(timeline) {
-        if (citationsChart) {
-          citationsChart.destroy();
-        }
+              function updateChart(timeline) {
+            if (citationsChart) {
+                citationsChart.destroy();
+            }
 
-        const labels = timeline.map((item) => item.date);
-        const data = timeline.map((item) => item.citations);
+            // Format dates for display (YYYY-MM-DD -> "Mon DD, YYYY")
+            const labels = timeline.map((item) => {
+                const date = item.date;
+                // If it's already formatted date, return as is
+                if (date.includes('-') && date.length === 10) {
+                    try {
+                        const dateObj = new Date(date + 'T00:00:00');
+                        return dateObj.toLocaleDateString('en-US', { 
+                            month: 'short', 
+                            day: 'numeric', 
+                            year: 'numeric' 
+                        });
+                    } catch (e) {
+                        return date;
+                    }
+                }
+                return date;
+            });
+            const data = timeline.map((item) => item.citations);
 
-        citationsChart = new Chart(ctx, {
-          type: "line",
-          data: {
-            labels: labels,
-            datasets: [
-              {
-                label: "Citations",
-                data: data,
-                borderColor: "#3498db",
-                backgroundColor: "rgba(52, 152, 219, 0.1)",
-                borderWidth: 3,
-                fill: true,
-                tension: 0.4,
-              },
-            ],
-          },
-          options: {
-            responsive: true,
-            plugins: {
-              legend: {
-                display: false,
-              },
-            },
-            scales: {
-              y: {
-                beginAtZero: true,
-                ticks: {
-                  precision: 0,
-                },
-              },
-            },
-          },
-        });
+                 citationsChart = new Chart(ctx, {
+           type: "line",
+           data: {
+             labels: labels,
+             datasets: [
+               {
+                 label: "Cumulative Citations",
+                 data: data,
+                 borderColor: "#3498db",
+                 backgroundColor: "rgba(52, 152, 219, 0.2)",
+                 borderWidth: 3,
+                 fill: true,
+                 tension: 0.2,
+                 pointBackgroundColor: "#3498db",
+                 pointBorderColor: "#ffffff",
+                 pointBorderWidth: 2,
+                 pointRadius: 5,
+                 pointHoverRadius: 7,
+               },
+             ],
+           },
+           options: {
+             responsive: true,
+             plugins: {
+               legend: {
+                 display: true,
+                 position: "top",
+                 labels: {
+                   color: "#2c3e50",
+                   font: {
+                     size: 14,
+                     weight: "500",
+                   },
+                 },
+               },
+               tooltip: {
+                 backgroundColor: "rgba(44, 62, 80, 0.9)",
+                 titleColor: "#ffffff",
+                 bodyColor: "#ffffff",
+                 borderColor: "#3498db",
+                 borderWidth: 1,
+                 callbacks: {
+                   label: function(context) {
+                     return `Total Citations: ${context.raw}`;
+                   },
+                   title: function(context) {
+                     return `Publication Date: ${context[0].label}`;
+                   }
+                 }
+               },
+             },
+             scales: {
+               y: {
+                 beginAtZero: true,
+                 ticks: {
+                   precision: 0,
+                   color: "#7f8c8d",
+                 },
+                 grid: {
+                   color: "rgba(127, 140, 141, 0.1)",
+                 },
+                 title: {
+                   display: true,
+                   text: "Cumulative Citations",
+                   color: "#2c3e50",
+                   font: {
+                     size: 12,
+                     weight: "500",
+                   },
+                 },
+               },
+               x: {
+                 ticks: {
+                   color: "#7f8c8d",
+                 },
+                 grid: {
+                   color: "rgba(127, 140, 141, 0.1)",
+                 },
+                 title: {
+                   display: true,
+                   text: "Publication Date",
+                   color: "#2c3e50",
+                   font: {
+                     size: 12,
+                     weight: "500",
+                   },
+                 },
+               },
+             },
+           },
+         });
       }
 
       function escapeHtml(text) {
