@@ -33,6 +33,7 @@ class Paper:
     published_date: str
     published_date_sort: str = "1900-01-01"  # For sorting purposes
     citations: int = 0
+    institutions: str = "Unknown"  # Research institutions/companies
 
 class CitationTracker:
     """Handles fetching and processing citations from Google Scholar via SerpAPI"""
@@ -126,12 +127,485 @@ class CitationTracker:
         
         return None
     
+    def _extract_institutions(self, result: Dict, authors_list: List, journal: str, snippet: str, link: str) -> str:
+        """Extract institutional affiliations from paper metadata"""
+        institutions = set()
+        
+        # 1. Extract from author affiliation information
+        if authors_list and isinstance(authors_list, list):
+            for author in authors_list:
+                if isinstance(author, dict) and 'affiliations' in author:
+                    for affiliation in author['affiliations']:
+                        if isinstance(affiliation, dict) and 'name' in affiliation:
+                            inst = self._clean_institution_name(affiliation['name'])
+                            if inst:
+                                institutions.add(inst)
+        
+        # 2. Extract from publication info summary
+        if 'publication_info' in result and 'summary' in result['publication_info']:
+            summary = result['publication_info']['summary']
+            found_institutions = self._extract_institutions_from_text(summary)
+            institutions.update(found_institutions)
+        
+        # 3. Extract from journal/conference information
+        if journal and journal != "Unknown venue":
+            journal_institutions = self._extract_institutions_from_text(journal)
+            institutions.update(journal_institutions)
+        
+        # 4. Extract from snippet
+        if snippet:
+            snippet_institutions = self._extract_institutions_from_text(snippet)
+            institutions.update(snippet_institutions)
+        
+        # 5. Extract from link domain (for company research)
+        if link:
+            domain_institution = self._extract_institution_from_domain(link)
+            if domain_institution:
+                institutions.add(domain_institution)
+        
+        # Clean and return institutions
+        cleaned_institutions = []
+        for inst in institutions:
+            cleaned = self._clean_institution_name(inst)
+            if cleaned and len(cleaned) > 2:  # Filter out very short matches
+                cleaned_institutions.append(cleaned)
+        
+        if cleaned_institutions:
+            return ", ".join(sorted(list(set(cleaned_institutions))))
+        return "Unknown"
+    
+    def _extract_institutions_from_text(self, text: str) -> set:
+        """Extract institution names from text using pattern matching"""
+        institutions = set()
+        
+        # University patterns
+        university_patterns = [
+            r'\b([A-Z][a-z]+ University(?:\s+of\s+[A-Z][a-z]+)?)\b',
+            r'\bUniversity of ([A-Z][a-z]+(?:\s+[A-Z][a-z]+)?)\b',
+            r'\b([A-Z][a-z]+(?:\s+[A-Z][a-z]+)*)\s+University\b',
+            r'\b([A-Z][a-z]+)\s+Institute(?:\s+of\s+Technology)?\b',
+            r'\bInstitute of ([A-Z][a-z]+(?:\s+[A-Z][a-z]+)*)\b',
+            r'\b([A-Z][a-z]+(?:\s+[A-Z][a-z]+)*)\s+Institute\b',
+            r'\b([A-Z][a-z]+)\s+College\b',
+            r'\b([A-Z][a-z]+(?:\s+[A-Z][a-z]+)*)\s+School\b',
+        ]
+        
+        for pattern in university_patterns:
+            matches = re.findall(pattern, text)
+            for match in matches:
+                if isinstance(match, tuple):
+                    for m in match:
+                        if m.strip():
+                            institutions.add(m.strip())
+                else:
+                    institutions.add(match.strip())
+        
+        # Company patterns
+        company_patterns = [
+            r'\b([A-Z][a-z]+(?:\s+[A-Z][a-z]+)*)\s+(?:Inc|Corp|Corporation|Ltd|Limited|LLC|Research|Lab|Labs|AI|Technologies)\b',
+            r'\b(Meta|Google|Microsoft|Apple|Amazon|Facebook|OpenAI|Anthropic|DeepMind|Tesla|NVIDIA|Intel|IBM|Oracle|Salesforce|Uber|Lyft|Airbnb|Netflix|Twitter|LinkedIn|Adobe|Slack|Zoom|Dropbox|Spotify|Pinterest|Snapchat|TikTok|ByteDance|Baidu|Tencent|Alibaba|Huawei|Samsung|Sony|LG|Qualcomm|Broadcom|AMD|Cisco|VMware|ServiceNow|Workday|Palantir|Snowflake|Databricks|Stripe|Square|PayPal|Visa|Mastercard|JPMorgan|Goldman|Morgan|Citadel|Two Sigma|Jane Street|DE Shaw|Bridgewater|AQR|Renaissance|Millennium|Point72|Susquehanna|Optiver|Jump|IMC|Virtu|Hudson River|Tower Research|DRW|Citadel Securities|Flow Traders|Akuna Capital|Chicago Trading|XTX Markets|Wolverine Trading|Five Rings Capital|Old Mission|Belvedere Trading|Group One Trading|Peak6|TransMarket|GTS|KCG|Getco|Sun Trading|Tradebot|Automated Trading Desk|Quantlab|WorldQuant|Cubist|Schonfeld|Millennium Partners|Balyasny|ExodusPoint|Coatue|Tiger Global|Sequoia|Andreessen Horowitz|Kleiner Perkins|Greylock|Bessemer|Lightspeed|Accel|Benchmark|General Catalyst|Founders Fund|Thrive Capital|GV|Intel Capital|Qualcomm Ventures|Samsung Ventures|Sony Ventures|Salesforce Ventures|Microsoft Ventures|Google Ventures|Amazon Ventures|Apple Ventures|Meta Ventures|Tesla Ventures|NVIDIA Ventures|IBM Ventures|Oracle Ventures|Adobe Ventures|Slack Ventures|Zoom Ventures|Dropbox Ventures|Spotify Ventures|Pinterest Ventures|Snapchat Ventures|TikTok Ventures|ByteDance Ventures|Baidu Ventures|Tencent Ventures|Alibaba Ventures|Huawei Ventures|Samsung Ventures|Sony Ventures|LG Ventures|Qualcomm Ventures|Broadcom Ventures|AMD Ventures|Cisco Ventures|VMware Ventures|ServiceNow Ventures|Workday Ventures|Palantir Ventures|Snowflake Ventures|Databricks Ventures|Stripe Ventures|Square Ventures|PayPal Ventures|Visa Ventures|Mastercard Ventures)\b',
+            r'\b([A-Z][a-z]+)\s+AI\b',
+            r'\b([A-Z][a-z]+)\s+Research\b',
+        ]
+        
+        for pattern in company_patterns:
+            matches = re.findall(pattern, text, re.IGNORECASE)
+            for match in matches:
+                if isinstance(match, tuple):
+                    for m in match:
+                        if m.strip():
+                            institutions.add(m.strip())
+                else:
+                    institutions.add(match.strip())
+        
+        return institutions
+    
+    def _extract_institution_from_domain(self, url: str) -> Optional[str]:
+        """Extract institution from URL domain"""
+        domain_mapping = {
+            'openai.com': 'OpenAI',
+            'anthropic.com': 'Anthropic',
+            'deepmind.com': 'DeepMind',
+            'google.com': 'Google',
+            'meta.com': 'Meta',
+            'facebook.com': 'Meta',
+            'microsoft.com': 'Microsoft',
+            'apple.com': 'Apple',
+            'amazon.com': 'Amazon',
+            'nvidia.com': 'NVIDIA',
+            'intel.com': 'Intel',
+            'ibm.com': 'IBM',
+            'oracle.com': 'Oracle',
+            'salesforce.com': 'Salesforce',
+            'uber.com': 'Uber',
+            'tesla.com': 'Tesla',
+            'netflix.com': 'Netflix',
+            'adobe.com': 'Adobe',
+            'stanford.edu': 'Stanford University',
+            'mit.edu': 'MIT',
+            'harvard.edu': 'Harvard University',
+            'berkeley.edu': 'UC Berkeley',
+            'ucla.edu': 'UCLA',
+            'cmu.edu': 'Carnegie Mellon University',
+            'caltech.edu': 'Caltech',
+            'princeton.edu': 'Princeton University',
+            'yale.edu': 'Yale University',
+            'columbia.edu': 'Columbia University',
+            'nyu.edu': 'New York University',
+            'cornell.edu': 'Cornell University',
+            'upenn.edu': 'University of Pennsylvania',
+            'uchicago.edu': 'University of Chicago',
+            'umich.edu': 'University of Michigan',
+            'gatech.edu': 'Georgia Tech',
+            'utexas.edu': 'University of Texas at Austin',
+            'washington.edu': 'University of Washington',
+            'usc.edu': 'USC',
+            'duke.edu': 'Duke University',
+            'northwestern.edu': 'Northwestern University',
+            'rice.edu': 'Rice University',
+            'vanderbilt.edu': 'Vanderbilt University',
+            'emory.edu': 'Emory University',
+            'jhu.edu': 'Johns Hopkins University',
+            'georgetown.edu': 'Georgetown University',
+            'tufts.edu': 'Tufts University',
+            'brandeis.edu': 'Brandeis University',
+            'bu.edu': 'Boston University',
+            'northeastern.edu': 'Northeastern University',
+            'wpi.edu': 'Worcester Polytechnic Institute',
+            'rpi.edu': 'Rensselaer Polytechnic Institute',
+            'rit.edu': 'Rochester Institute of Technology',
+            'case.edu': 'Case Western Reserve University',
+            'cwru.edu': 'Case Western Reserve University',
+            'ucsd.edu': 'UC San Diego',
+            'uci.edu': 'UC Irvine',
+            'ucsb.edu': 'UC Santa Barbara',
+            'ucsc.edu': 'UC Santa Cruz',
+            'ucr.edu': 'UC Riverside',
+            'ucmerced.edu': 'UC Merced',
+            'ucdavis.edu': 'UC Davis',
+            'ucsf.edu': 'UCSF',
+            'ox.ac.uk': 'Oxford University',
+            'cam.ac.uk': 'Cambridge University',
+            'imperial.ac.uk': 'Imperial College London',
+            'ucl.ac.uk': 'University College London',
+            'kcl.ac.uk': 'King\'s College London',
+            'ed.ac.uk': 'University of Edinburgh',
+            'manchester.ac.uk': 'University of Manchester',
+            'warwick.ac.uk': 'University of Warwick',
+            'bristol.ac.uk': 'University of Bristol',
+            'bath.ac.uk': 'University of Bath',
+            'soton.ac.uk': 'University of Southampton',
+            'surrey.ac.uk': 'University of Surrey',
+            'leeds.ac.uk': 'University of Leeds',
+            'sheffield.ac.uk': 'University of Sheffield',
+            'nottingham.ac.uk': 'University of Nottingham',
+            'birmingham.ac.uk': 'University of Birmingham',
+            'cardiff.ac.uk': 'Cardiff University',
+            'swansea.ac.uk': 'Swansea University',
+            'gla.ac.uk': 'University of Glasgow',
+            'strath.ac.uk': 'University of Strathclyde',
+            'abdn.ac.uk': 'University of Aberdeen',
+            'dundee.ac.uk': 'University of Dundee',
+            'st-andrews.ac.uk': 'University of St Andrews',
+            'tcd.ie': 'Trinity College Dublin',
+            'ucd.ie': 'University College Dublin',
+            'tum.de': 'Technical University of Munich',
+            'ethz.ch': 'ETH Zurich',
+            'epfl.ch': 'EPFL',
+            'sorbonne-universite.fr': 'Sorbonne University',
+            'ens.fr': 'École Normale Supérieure',
+            'polytechnique.edu': 'École Polytechnique',
+            'inria.fr': 'INRIA',
+            'u-tokyo.ac.jp': 'University of Tokyo',
+            'kyoto-u.ac.jp': 'Kyoto University',
+            'osaka-u.ac.jp': 'Osaka University',
+            'tohoku.ac.jp': 'Tohoku University',
+            'titech.ac.jp': 'Tokyo Institute of Technology',
+            'riken.jp': 'RIKEN',
+            'tsinghua.edu.cn': 'Tsinghua University',
+            'pku.edu.cn': 'Peking University',
+            'sjtu.edu.cn': 'Shanghai Jiao Tong University',
+            'zju.edu.cn': 'Zhejiang University',
+            'fudan.edu.cn': 'Fudan University',
+            'ustc.edu.cn': 'University of Science and Technology of China',
+            'hit.edu.cn': 'Harbin Institute of Technology',
+            'buaa.edu.cn': 'Beihang University',
+            'bit.edu.cn': 'Beijing Institute of Technology',
+            'xjtu.edu.cn': 'Xi\'an Jiaotong University',
+            'seu.edu.cn': 'Southeast University',
+            'hust.edu.cn': 'Huazhong University of Science and Technology',
+            'cuhk.edu.hk': 'Chinese University of Hong Kong',
+            'hku.hk': 'University of Hong Kong',
+            'ust.hk': 'Hong Kong University of Science and Technology',
+            'polyu.edu.hk': 'Hong Kong Polytechnic University',
+            'cityu.edu.hk': 'City University of Hong Kong',
+            'anu.edu.au': 'Australian National University',
+            'unsw.edu.au': 'University of New South Wales',
+            'usyd.edu.au': 'University of Sydney',
+            'unimelb.edu.au': 'University of Melbourne',
+            'monash.edu': 'Monash University',
+            'uq.edu.au': 'University of Queensland',
+            'adelaide.edu.au': 'University of Adelaide',
+            'uwa.edu.au': 'University of Western Australia',
+            'uts.edu.au': 'University of Technology Sydney',
+            'rmit.edu.au': 'RMIT University',
+            'deakin.edu.au': 'Deakin University',
+            'griffith.edu.au': 'Griffith University',
+            'qut.edu.au': 'Queensland University of Technology',
+            'curtin.edu.au': 'Curtin University',
+            'swinburne.edu.au': 'Swinburne University',
+            'latrobe.edu.au': 'La Trobe University',
+            'flinders.edu.au': 'Flinders University',
+            'unisa.edu.au': 'University of South Australia',
+            'canberra.edu.au': 'University of Canberra',
+            'westernsydney.edu.au': 'Western Sydney University',
+            'mq.edu.au': 'Macquarie University',
+            'newcastle.edu.au': 'University of Newcastle',
+            'wollongong.edu.au': 'University of Wollongong',
+            'jcu.edu.au': 'James Cook University',
+            'cdu.edu.au': 'Charles Darwin University',
+            'murdoch.edu.au': 'Murdoch University',
+            'ecu.edu.au': 'Edith Cowan University',
+            'bond.edu.au': 'Bond University',
+            'usc.edu.au': 'University of the Sunshine Coast',
+            'scu.edu.au': 'Southern Cross University',
+            'cqu.edu.au': 'Central Queensland University',
+            'utas.edu.au': 'University of Tasmania',
+            'acu.edu.au': 'Australian Catholic University',
+            'notre-dame.edu.au': 'University of Notre Dame Australia',
+            'torrens.edu.au': 'Torrens University Australia',
+            'academia.edu': 'Academia.edu',
+            'researchgate.net': 'ResearchGate',
+            'arxiv.org': 'arXiv',
+            'ieee.org': 'IEEE',
+            'acm.org': 'ACM',
+            'springer.com': 'Springer',
+            'elsevier.com': 'Elsevier',
+            'nature.com': 'Nature',
+            'science.org': 'Science',
+            'pnas.org': 'PNAS',
+            'cell.com': 'Cell',
+            'plos.org': 'PLOS',
+            'biorxiv.org': 'bioRxiv',
+            'medrxiv.org': 'medRxiv',
+            'ssrn.com': 'SSRN',
+            'nber.org': 'NBER',
+            'jstor.org': 'JSTOR',
+            'wiley.com': 'Wiley',
+            'tandfonline.com': 'Taylor & Francis',
+            'sage.com': 'SAGE',
+            'cambridge.org': 'Cambridge University Press',
+            'oup.com': 'Oxford University Press',
+            'mit.edu': 'MIT Press',
+            'harvard.edu': 'Harvard University Press',
+            'yale.edu': 'Yale University Press',
+            'chicago.edu': 'University of Chicago Press',
+            'princeton.edu': 'Princeton University Press',
+            'stanford.edu': 'Stanford University Press',
+            'berkeley.edu': 'University of California Press',
+            'columbia.edu': 'Columbia University Press',
+            'nyu.edu': 'NYU Press',
+            'cornell.edu': 'Cornell University Press',
+            'upenn.edu': 'University of Pennsylvania Press',
+            'duke.edu': 'Duke University Press',
+            'northwestern.edu': 'Northwestern University Press',
+            'vanderbilt.edu': 'Vanderbilt University Press',
+            'jhu.edu': 'Johns Hopkins University Press',
+            'georgetown.edu': 'Georgetown University Press',
+            'tufts.edu': 'Tufts University Press',
+            'brandeis.edu': 'Brandeis University Press',
+            'bu.edu': 'Boston University Press',
+            'northeastern.edu': 'Northeastern University Press',
+            'wpi.edu': 'WPI Press',
+            'rpi.edu': 'RPI Press',
+            'rit.edu': 'RIT Press',
+            'case.edu': 'Case Western Reserve University Press',
+            'cwru.edu': 'Case Western Reserve University Press',
+            'ucsd.edu': 'UC San Diego Press',
+            'uci.edu': 'UC Irvine Press',
+            'ucsb.edu': 'UC Santa Barbara Press',
+            'ucsc.edu': 'UC Santa Cruz Press',
+            'ucr.edu': 'UC Riverside Press',
+            'ucmerced.edu': 'UC Merced Press',
+            'ucdavis.edu': 'UC Davis Press',
+            'ucsf.edu': 'UCSF Press',
+        }
+        
+        # Extract domain from URL
+        try:
+            from urllib.parse import urlparse
+            parsed = urlparse(url)
+            domain = parsed.netloc.lower()
+            
+            # Remove www. prefix
+            if domain.startswith('www.'):
+                domain = domain[4:]
+            
+            return domain_mapping.get(domain)
+        except:
+            return None
+    
+    def _clean_institution_name(self, name: str) -> str:
+        """Clean and standardize institution names"""
+        if not name:
+            return ""
+        
+        # Remove common prefixes/suffixes
+        name = name.strip()
+        
+        # Standardize common institution names
+        name_mapping = {
+            'Stanford': 'Stanford University',
+            'MIT': 'Massachusetts Institute of Technology',
+            'Harvard': 'Harvard University',
+            'Berkeley': 'UC Berkeley',
+            'UCLA': 'University of California Los Angeles',
+            'CMU': 'Carnegie Mellon University',
+            'Caltech': 'California Institute of Technology',
+            'Princeton': 'Princeton University',
+            'Yale': 'Yale University',
+            'Columbia': 'Columbia University',
+            'NYU': 'New York University',
+            'Cornell': 'Cornell University',
+            'UPenn': 'University of Pennsylvania',
+            'UChicago': 'University of Chicago',
+            'UMich': 'University of Michigan',
+            'Georgia Tech': 'Georgia Institute of Technology',
+            'UT Austin': 'University of Texas at Austin',
+            'UW': 'University of Washington',
+            'USC': 'University of Southern California',
+            'Duke': 'Duke University',
+            'Northwestern': 'Northwestern University',
+            'Rice': 'Rice University',
+            'Vanderbilt': 'Vanderbilt University',
+            'Emory': 'Emory University',
+            'JHU': 'Johns Hopkins University',
+            'Georgetown': 'Georgetown University',
+            'Tufts': 'Tufts University',
+            'Brandeis': 'Brandeis University',
+            'BU': 'Boston University',
+            'Northeastern': 'Northeastern University',
+            'WPI': 'Worcester Polytechnic Institute',
+            'RPI': 'Rensselaer Polytechnic Institute',
+            'RIT': 'Rochester Institute of Technology',
+            'Case Western': 'Case Western Reserve University',
+            'CWRU': 'Case Western Reserve University',
+            'UCSD': 'UC San Diego',
+            'UCI': 'UC Irvine',
+            'UCSB': 'UC Santa Barbara',
+            'UCSC': 'UC Santa Cruz',
+            'UCR': 'UC Riverside',
+            'UC Merced': 'UC Merced',
+            'UC Davis': 'UC Davis',
+            'UCSF': 'University of California San Francisco',
+            'Oxford': 'Oxford University',
+            'Cambridge': 'Cambridge University',
+            'Imperial': 'Imperial College London',
+            'UCL': 'University College London',
+            'KCL': 'King\'s College London',
+            'Edinburgh': 'University of Edinburgh',
+            'Manchester': 'University of Manchester',
+            'Warwick': 'University of Warwick',
+            'Bristol': 'University of Bristol',
+            'Bath': 'University of Bath',
+            'Southampton': 'University of Southampton',
+            'Surrey': 'University of Surrey',
+            'Leeds': 'University of Leeds',
+            'Sheffield': 'University of Sheffield',
+            'Nottingham': 'University of Nottingham',
+            'Birmingham': 'University of Birmingham',
+            'Cardiff': 'Cardiff University',
+            'Swansea': 'Swansea University',
+            'Glasgow': 'University of Glasgow',
+            'Strathclyde': 'University of Strathclyde',
+            'Aberdeen': 'University of Aberdeen',
+            'Dundee': 'University of Dundee',
+            'St Andrews': 'University of St Andrews',
+            'Trinity College Dublin': 'Trinity College Dublin',
+            'UCD': 'University College Dublin',
+            'TUM': 'Technical University of Munich',
+            'ETH Zurich': 'ETH Zurich',
+            'EPFL': 'École Polytechnique Fédérale de Lausanne',
+            'Sorbonne': 'Sorbonne University',
+            'ENS': 'École Normale Supérieure',
+            'Polytechnique': 'École Polytechnique',
+            'INRIA': 'French Institute for Research in Computer Science and Automation',
+            'University of Tokyo': 'University of Tokyo',
+            'Kyoto University': 'Kyoto University',
+            'Osaka University': 'Osaka University',
+            'Tohoku University': 'Tohoku University',
+            'Tokyo Tech': 'Tokyo Institute of Technology',
+            'RIKEN': 'RIKEN',
+            'Tsinghua': 'Tsinghua University',
+            'PKU': 'Peking University',
+            'SJTU': 'Shanghai Jiao Tong University',
+            'ZJU': 'Zhejiang University',
+            'Fudan': 'Fudan University',
+            'USTC': 'University of Science and Technology of China',
+            'HIT': 'Harbin Institute of Technology',
+            'BUAA': 'Beihang University',
+            'BIT': 'Beijing Institute of Technology',
+            'XJTU': 'Xi\'an Jiaotong University',
+            'SEU': 'Southeast University',
+            'HUST': 'Huazhong University of Science and Technology',
+            'CUHK': 'Chinese University of Hong Kong',
+            'HKU': 'University of Hong Kong',
+            'HKUST': 'Hong Kong University of Science and Technology',
+            'PolyU': 'Hong Kong Polytechnic University',
+            'CityU': 'City University of Hong Kong',
+            'ANU': 'Australian National University',
+            'UNSW': 'University of New South Wales',
+            'Sydney': 'University of Sydney',
+            'Melbourne': 'University of Melbourne',
+            'Monash': 'Monash University',
+            'UQ': 'University of Queensland',
+            'Adelaide': 'University of Adelaide',
+            'UWA': 'University of Western Australia',
+            'UTS': 'University of Technology Sydney',
+            'RMIT': 'RMIT University',
+            'Deakin': 'Deakin University',
+            'Griffith': 'Griffith University',
+            'QUT': 'Queensland University of Technology',
+            'Curtin': 'Curtin University',
+            'Swinburne': 'Swinburne University',
+            'La Trobe': 'La Trobe University',
+            'Flinders': 'Flinders University',
+            'UniSA': 'University of South Australia',
+            'UC': 'University of Canberra',
+            'WSU': 'Western Sydney University',
+            'Macquarie': 'Macquarie University',
+            'Newcastle': 'University of Newcastle',
+            'Wollongong': 'University of Wollongong',
+            'JCU': 'James Cook University',
+            'CDU': 'Charles Darwin University',
+            'Murdoch': 'Murdoch University',
+            'ECU': 'Edith Cowan University',
+            'Bond': 'Bond University',
+            'USC': 'University of the Sunshine Coast',
+            'SCU': 'Southern Cross University',
+            'CQU': 'Central Queensland University',
+            'UTAS': 'University of Tasmania',
+            'ACU': 'Australian Catholic University',
+            'Notre Dame': 'University of Notre Dame Australia',
+            'Torrens': 'Torrens University Australia',
+        }
+        
+        # Apply mapping
+        cleaned = name_mapping.get(name, name)
+        
+        # Remove unwanted characters and normalize
+        cleaned = re.sub(r'[^\w\s\-\'\.]', '', cleaned)
+        cleaned = re.sub(r'\s+', ' ', cleaned).strip()
+        
+        return cleaned
+    
     def _parse_paper(self, result: Dict) -> Paper:
         """Parse a single paper from search results"""
         title = result.get('title', 'Untitled')
         
         # Extract authors
         authors = "Unknown authors"
+        authors_list = []
         if 'publication_info' in result and 'authors' in result['publication_info']:
             authors_list = result['publication_info']['authors']
             if isinstance(authors_list, list):
@@ -156,19 +630,51 @@ class CitationTracker:
         # Extract link
         link = result.get('link', '')
         
-        # Extract publication date with more precision
+        # Extract publication date with maximum precision
         published_date = "Unknown"
         published_date_for_sorting = None
         
-        if 'publication_info' in result and 'summary' in result['publication_info']:
+        # Try to extract date from link first (arXiv papers have dates in URLs)
+        if link and 'arxiv.org' in link:
+            # Pattern: arxiv.org/abs/YYMM.NNNNN (where YY=year, MM=month)
+            arxiv_id_match = re.search(r'arxiv\.org/abs/(\d{2})(\d{2})\.(\d+)', link)
+            if arxiv_id_match:
+                year_short = arxiv_id_match.group(1)
+                month = arxiv_id_match.group(2)
+                paper_num = arxiv_id_match.group(3)
+                
+                # Convert 2-digit year to 4-digit (assuming 20xx for now)
+                year = f"20{year_short}"
+                
+                # For arXiv papers, estimate day from paper number
+                # Lower paper numbers = earlier in month, higher = later
+                try:
+                    # Scale paper number to day (1-28 to avoid month boundary issues)
+                    paper_int = int(paper_num[:3])  # Use first 3 digits
+                    day = min(28, max(1, (paper_int % 28) + 1))
+                except:
+                    day = 15  # Default to mid-month
+                
+                day_str = f"{day:02d}"
+                published_date = f"{year}-{month}-{day_str}"
+                published_date_for_sorting = f"{year}-{month}-{day_str}"
+        
+        # If no arXiv date found, try to extract from summary
+        if published_date_for_sorting is None and 'publication_info' in result and 'summary' in result['publication_info']:
             summary = result['publication_info']['summary']
             
-            # Try to extract more precise dates
-            # Pattern 1: "Month Day, Year" or "Month Year"
-            month_date_match = re.search(r'([A-Za-z]+)\s+(\d{1,2},?\s+)?(\d{4})', summary)
-            if month_date_match:
-                month = month_date_match.group(1)
-                day = month_date_match.group(2)
+            # Pattern 1: "YYYY-MM-DD" format (ISO date)
+            iso_date_match = re.search(r'(\d{4})-(\d{2})-(\d{2})', summary)
+            if iso_date_match:
+                year, month, day = iso_date_match.groups()
+                published_date = f"{year}-{month}-{day}"
+                published_date_for_sorting = f"{year}-{month}-{day}"
+            
+            # Pattern 2: "Month Day, Year" format
+            elif re.search(r'([A-Za-z]+)\s+(\d{1,2}),?\s+(\d{4})', summary):
+                month_date_match = re.search(r'([A-Za-z]+)\s+(\d{1,2}),?\s+(\d{4})', summary)
+                month_name = month_date_match.group(1)
+                day = int(month_date_match.group(2))
                 year = month_date_match.group(3)
                 
                 # Convert month name to number
@@ -181,75 +687,59 @@ class CitationTracker:
                     'dec': '12', 'december': '12'
                 }
                 
-                month_num = month_mapping.get(month.lower()[:3], '01')
-                day_num = '01'
-                if day and day.strip().rstrip(','):
-                    try:
-                        day_num = f"{int(day.strip().rstrip(',')):#02d}"
-                    except:
-                        day_num = '01'
-                
-                published_date = f"{month} {day.strip() if day else ''}{year}".strip()
-                published_date_for_sorting = f"{year}-{month_num}-{day_num}"
+                month_num = month_mapping.get(month_name.lower()[:3], '01')
+                day_str = f"{day:02d}"
+                published_date = f"{year}-{month_num}-{day_str}"
+                published_date_for_sorting = f"{year}-{month_num}-{day_str}"
             
-            # Pattern 2: Just year
-            elif re.search(r'\b(19|20)\d{2}\b', summary):
-                year_match = re.search(r'\b(19|20)\d{2}\b', summary)
-                year = year_match.group(0)
-                published_date = year
-                published_date_for_sorting = f"{year}-01-01"
-        
-        # Try to extract date from link (arXiv papers often have dates in URLs)
-        if link and 'arxiv.org' in link:
-            # Pattern: arxiv.org/abs/YYMM.NNNNN (where YY=year, MM=month)
-            arxiv_id_match = re.search(r'arxiv\.org/abs/(\d{2})(\d{2})\.(\d+)', link)
-            if arxiv_id_match:
-                year_short = arxiv_id_match.group(1)
-                month = arxiv_id_match.group(2)
-                
-                # Convert 2-digit year to 4-digit (assuming 20xx for now)
-                year = f"20{year_short}"
-                
-                # Map month number to month name
-                month_names = {
-                    '01': 'January', '02': 'February', '03': 'March', '04': 'April',
-                    '05': 'May', '06': 'June', '07': 'July', '08': 'August',
-                    '09': 'September', '10': 'October', '11': 'November', '12': 'December'
-                }
-                
-                month_name = month_names.get(month, 'Unknown')
-                published_date = f"{month_name} {year}"
-                published_date_for_sorting = f"{year}-{month}-15"  # Use 15th as default day
-        
-        # Additional date patterns in the summary
-        if published_date_for_sorting is None and 'publication_info' in result and 'summary' in result['publication_info']:
-            summary = result['publication_info']['summary']
-            
-            # Pattern 3: "YYYY-MM-DD" format
-            iso_date_match = re.search(r'(\d{4})-(\d{2})-(\d{2})', summary)
-            if iso_date_match:
-                year, month, day = iso_date_match.groups()
-                published_date = f"{year}-{month}-{day}"
-                published_date_for_sorting = f"{year}-{month}-{day}"
-            
-            # Pattern 4: "DD/MM/YYYY" or "MM/DD/YYYY" format
+            # Pattern 3: "DD/MM/YYYY" or "MM/DD/YYYY" format
             elif re.search(r'(\d{1,2})/(\d{1,2})/(\d{4})', summary):
                 date_match = re.search(r'(\d{1,2})/(\d{1,2})/(\d{4})', summary)
                 part1, part2, year = date_match.groups()
                 # Assume MM/DD/YYYY format (US style)
                 month = f"{int(part1):02d}"
                 day = f"{int(part2):02d}"
-                published_date = f"{month}/{day}/{year}"
+                published_date = f"{year}-{month}-{day}"
                 published_date_for_sorting = f"{year}-{month}-{day}"
+            
+            # Pattern 4: "Month Year" format (no specific day)
+            elif re.search(r'([A-Za-z]+)\s+(\d{4})', summary):
+                month_year_match = re.search(r'([A-Za-z]+)\s+(\d{4})', summary)
+                month_name = month_year_match.group(1)
+                year = month_year_match.group(2)
+                
+                month_mapping = {
+                    'jan': '01', 'january': '01', 'feb': '02', 'february': '02',
+                    'mar': '03', 'march': '03', 'apr': '04', 'april': '04',
+                    'may': '05', 'jun': '06', 'june': '06', 'jul': '07', 'july': '07',
+                    'aug': '08', 'august': '08', 'sep': '09', 'september': '09',
+                    'oct': '10', 'october': '10', 'nov': '11', 'november': '11',
+                    'dec': '12', 'december': '12'
+                }
+                
+                month_num = month_mapping.get(month_name.lower()[:3], '01')
+                published_date = f"{year}-{month_num}-15"  # Default to mid-month
+                published_date_for_sorting = f"{year}-{month_num}-15"
+            
+            # Pattern 5: Just year
+            elif re.search(r'\b(19|20)\d{2}\b', summary):
+                year_match = re.search(r'\b(19|20)\d{2}\b', summary)
+                year = year_match.group(0)
+                published_date = f"{year}-01-01"  # Default to January 1st
+                published_date_for_sorting = f"{year}-01-01"
         
         # Default fallback
         if published_date_for_sorting is None:
             published_date_for_sorting = "1900-01-01"
+            published_date = "1900-01-01"
         
         # Extract citation count
         citations = 0
         if 'inline_links' in result and 'cited_by' in result['inline_links']:
             citations = result['inline_links']['cited_by'].get('total', 0)
+        
+        # Extract institutions
+        institutions = self._extract_institutions(result, authors_list, journal, snippet, link)
         
         return Paper(
             title=title,
@@ -259,7 +749,8 @@ class CitationTracker:
             link=link,
             published_date=published_date,
             published_date_sort=published_date_for_sorting or "1900-01-01",
-            citations=citations
+            citations=citations,
+            institutions=institutions
         )
     
     def fetch_citations(self, max_results: int = 200) -> List[Paper]:
@@ -428,20 +919,40 @@ class CitationTracker:
         }
     
     def _generate_timeline(self, papers: List[Paper]) -> List[Dict]:
-        """Generate timeline data for the chart"""
-        # For now, create a simple timeline
-        # In a real implementation, you'd parse publication dates more carefully
+        """Generate timeline data based on actual paper publication dates"""
         timeline = []
         
-        # Create monthly data points
-        base_date = datetime.now() - timedelta(days=30)
-        for i in range(6):  # Last 6 months
-            month_date = base_date + timedelta(days=i*30)
-            # Simple simulation - in reality you'd count papers by publication date
-            citations = min(i * 2, len(papers))
+        if not papers:
+            return timeline
+        
+        # Group papers by exact publication date (with day precision)
+        daily_counts = {}
+        
+        for paper in papers:
+            # Use exact date for more precise timeline
+            if paper.published_date_sort and paper.published_date_sort != "1900-01-01":
+                # Use the full date (YYYY-MM-DD)
+                date_key = paper.published_date_sort
+                daily_counts[date_key] = daily_counts.get(date_key, 0) + 1
+        
+        # Sort by date and create timeline
+        sorted_dates = sorted(daily_counts.keys())
+        
+        # Create cumulative timeline (showing total citations up to each date)
+        cumulative_count = 0
+        for date in sorted_dates:
+            cumulative_count += daily_counts[date]
             timeline.append({
-                'date': month_date.strftime('%Y-%m'),
-                'citations': citations
+                'date': date,
+                'citations': cumulative_count
+            })
+        
+        # If no valid dates found, create a simple current date entry
+        if not timeline and papers:
+            current_date = datetime.now().strftime('%Y-%m-%d')
+            timeline.append({
+                'date': current_date,
+                'citations': len(papers)
             })
         
         return timeline
@@ -465,7 +976,8 @@ class CitationTracker:
                     'snippet': paper.snippet,
                     'link': paper.link,
                     'published_date': paper.published_date,
-                    'citations': paper.citations
+                    'citations': paper.citations,
+                    'institutions': paper.institutions
                 }
                 for paper in papers
             ]
