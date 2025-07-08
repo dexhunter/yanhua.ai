@@ -10,9 +10,9 @@ binding = "CITATIONS_KV" # The name of the binding in your worker code (env.CITA
 id = "YOUR_KV_NAMESPACE_ID" # <-- Replace with your actual KV namespace ID
 
 # This binding is for serving your static index.html file.
-# It tells wrangler to upload the 'public' directory as static assets.
-[site]
-bucket = "./" # Serve files from the root directory
+# It tells wrangler to upload the root directory as static assets.
+[build]
+upload.dir = "./"
 
 # You need to set the ACTION_SECRET in the Cloudflare dashboard (or with `wrangler secret put`).
 # [vars]
