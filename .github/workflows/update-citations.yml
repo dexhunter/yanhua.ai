@@ -78,7 +78,8 @@ jobs:
     - name: Check for changes
       id: git-check
       run: |
-        git diff --exit-code citations_data.json || echo "changed=true" >> $GITHUB_OUTPUT
+        # No need to check for changes since citations_data.json is now ignored
+        echo "changed=false" >> $GITHUB_OUTPUT
     
     - name: Show current stats
       run: |
@@ -87,15 +88,10 @@ jobs:
           python -c "import json; data=json.load(open('citations_data.json')); print(f'  Total Citations: {data.get(\"total_citations\", 0)}'); print(f'  Recent Citations: {data.get(\"recent_citations\", 0)}'); print(f'  H-Index: {data.get(\"h_index\", 0)}'); print(f'  Papers Found: {len(data.get(\"papers\", []))}'); print(f'  Last Updated: {data.get(\"last_updated\", \"Unknown\")}')"
         fi
     
-    - name: Commit and push changes
-      if: steps.git-check.outputs.changed == 'true'
+    - name: Deploy to Vercel
       run: |
-        git config --local user.email "action@github.com"
-        git config --local user.name "GitHub Action"
-        git add citations_data.json
-        git commit -m "🤖 Update aideml citations data - $(date)"
-        git push
-        echo "✅ Changes pushed - Vercel will auto-deploy the updated data"
+        echo "✅ citations_data.json generated - Vercel will auto-deploy from this file"
+        echo "ℹ️  File is now ignored by git to prevent merge conflicts"
     
     - name: Create summary
       run: |
@@ -110,12 +106,9 @@ jobs:
           echo "- **Last Updated:** $last_updated" >> $GITHUB_STEP_SUMMARY
           echo "- **Target Paper:** aideml research" >> $GITHUB_STEP_SUMMARY
           
-          if [[ "${{ steps.git-check.outputs.changed }}" == "true" ]]; then
-            echo "- **Status:** ✅ Data updated successfully" >> $GITHUB_STEP_SUMMARY
-            echo "- **Deployment:** 🚀 Vercel will auto-deploy the updated data" >> $GITHUB_STEP_SUMMARY
-          else
-            echo "- **Status:** ℹ️ No new citations found" >> $GITHUB_STEP_SUMMARY
-          fi
+          echo "- **Status:** ✅ Data updated successfully" >> $GITHUB_STEP_SUMMARY
+          echo "- **Deployment:** 🚀 Vercel will auto-deploy the updated data" >> $GITHUB_STEP_SUMMARY
+          echo "- **Git Status:** ℹ️ File ignored to prevent merge conflicts" >> $GITHUB_STEP_SUMMARY
         else
           echo "- **Status:** ❌ Failed to generate citation data" >> $GITHUB_STEP_SUMMARY
         fi
