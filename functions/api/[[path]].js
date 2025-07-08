@@ -1,6 +1,6 @@
 // functions/api/[[path]].js
 
-import jsonData from "../../citations_data.json";
+import jsonData from "../citations_data.json";
 
 export const onRequestGet = async () => {
   return new Response(JSON.stringify(jsonData), {

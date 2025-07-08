@@ -31,7 +31,7 @@ jobs:
         run: |
           git config --global user.name 'github-actions[bot]'
           git config --global user.email 'github-actions[bot]@users.noreply.github.com'
-          git add citations_data.json
+          git add functions/citations_data.json
           # Commit only if there are changes
           if ! git diff --staged --quiet; then
             git commit -m "docs: update citation data"
