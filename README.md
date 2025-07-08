@@ -8,12 +8,13 @@ An automated citation tracking website that monitors and displays papers citing 
 - **Beautiful Web Interface**: Modern, responsive design with interactive charts
 - **Real-time Statistics**: Total citations, recent citations, H-index, and trends
 - **GitHub Actions Integration**: Automatically updates daily
+- **Cloudflare Workers Deployment**: Fast, serverless deployment on the edge
 - **Mobile Responsive**: Works perfectly on all devices
 - **Error Handling**: Graceful fallback when API is unavailable
 
 ## 🚀 Live Demo
 
-The website is automatically deployed on **Vercel** and updated daily via GitHub Actions. Every time the citation data is updated, Vercel automatically redeploys the site with the latest information.
+The website is automatically deployed on **Cloudflare** and updated daily via GitHub Actions. Every time the citation data is updated, the site is automatically redeployed with the latest information.
 
 ## 📋 Setup Instructions
 
@@ -30,37 +31,42 @@ cd yanhua.ai
 2. Sign up for a free account (100 searches/month free)
 3. Get your API key from the dashboard
 
-### 3. Configure API Key
+### 3. Configure API Key and Cloudflare Credentials
 
-Choose one of these methods:
+You will need to configure secrets for both SerpAPI and Cloudflare to enable automated updates and deployment.
 
-**Option A: Local .env file (recommended for development)**
-1. Create a `.env` file in the project root:
-   ```
-   SERPAPI_KEY=your_actual_api_key_here
-   ```
-2. The script will automatically load this when running locally
-
-**Option B: GitHub Secrets (required for automation)**
-1. Go to your repository settings
+**GitHub Secrets (required for automation)**
+1. Go to your repository's **Settings** tab
 2. Navigate to **Secrets and variables** → **Actions**
-3. Add a new secret:
-   - **Name**: `SERPAPI_KEY`
-   - **Value**: Your SerpAPI key
+3. Add the following new secrets:
+   - `SERPAPI_KEY`: Your SerpAPI key.
+   - `CLOUDFLARE_API_TOKEN`: An API token with "Worker KV Storage" write permissions.
+   - `CLOUDFLARE_ACCOUNT_ID`: Your Cloudflare account ID.
+   - `CLOUDFLARE_KV_NAMESPACE_ID`: The ID of the KV namespace you created.
 
-**Option C: Environment Variable**
-```bash
-export SERPAPI_KEY='your_api_key_here'
-python fetch_citations.py
-```
+### 4. Deploy on Cloudflare
 
-### 4. Deploy on Vercel
-
-1. Go to [Vercel](https://vercel.com) and sign in with GitHub
-2. Click **New Project** and import your repository
-3. Vercel will automatically detect the static site configuration
-4. Click **Deploy** - your site will be live immediately!
-5. Every time GitHub Actions updates the citation data, Vercel will automatically redeploy
+1. **Install Wrangler CLI**:
+   ```bash
+   npm install -g wrangler
+   ```
+2. **Authenticate Wrangler**:
+   ```bash
+   wrangler login
+   ```
+3. **Create a KV Namespace**:
+   - Go to your Cloudflare dashboard.
+   - Navigate to **Workers & Pages** -> **KV**.
+   - Click **Create a namespace** and give it a name (e.g., `CITATIONS_KV`).
+   - Copy the **ID** of the newly created namespace.
+4. **Update `wrangler.toml`**:
+   - Open the `wrangler.toml` file in the project root.
+   - Replace `YOUR_KV_NAMESPACE_ID` with the actual ID you copied.
+5. **Deploy the Worker**:
+   ```bash
+   wrangler deploy
+   ```
+   Your site will be live at the URL provided by Wrangler.
 
 ### 5. Customize for Your Paper (Optional)
 
@@ -76,25 +82,27 @@ If you want to track a different arXiv paper:
 
 The system runs automatically daily using GitHub Actions:
 
-1. **Fetch Citations**: Uses SerpAPI to search Google Scholar for papers citing your research
-2. **Process Data**: Extracts paper information, calculates statistics
-3. **Update Website**: Saves data to JSON file and commits changes
-4. **Deploy**: Vercel automatically detects the changes and redeploys the site
+1. **Fetch Citations**: Uses SerpAPI to search Google Scholar for papers citing your research.
+2. **Process Data**: Extracts paper information and calculates statistics.
+3. **Update KV Store**: Saves the new data directly to the Cloudflare KV namespace using Wrangler.
+4. **Deploy**: The Cloudflare Worker automatically serves the latest data from the KV store.
 
 ### Manual Updates
 
 You can manually trigger an update:
 
-1. Go to **Actions** tab in your repository
-2. Select **Update Citations** workflow
-3. Click **Run workflow**
+1. Go to the **Actions** tab in your repository.
+2. Select the **Update Citations** workflow.
+3. Click **Run workflow**.
 
 ## 📁 Project Structure
 
 ```
 ├── index.html              # Main website file
+├── worker.js               # Cloudflare Worker script
+├── wrangler.toml           # Cloudflare configuration
 ├── fetch_citations.py      # Citation tracking script
-├── citations_data.json     # Data file (auto-generated)
+├── citations_data.json     # Local data file (auto-generated)
 ├── requirements.txt        # Python dependencies
 ├── .github/workflows/
 │   └── update-citations.yml # GitHub Actions workflow
@@ -109,6 +117,7 @@ You can manually trigger an update:
 - **requests**: For API calls
 - **python-dotenv**: For loading .env files
 - **SerpAPI**: For Google Scholar access
+- **Cloudflare Wrangler**: For deployment and KV updates
 - **Chart.js**: For data visualization
 - **GitHub Actions**: For automation
 
@@ -120,7 +129,7 @@ The script searches Google Scholar using patterns like:
 
 ### Data Structure
 
-The `citations_data.json` file contains:
+The data is stored in Cloudflare KV as a JSON string with the key `citations_data`. The structure is:
 
 ```json
 {
@@ -135,7 +144,7 @@ The `citations_data.json` file contains:
 }
 ```
 
-## �� Customization
+## 🎨 Customization
 
 ### Styling
 
@@ -174,12 +183,10 @@ schedule:
 
 ### No Data Showing
 
-1. Check if GitHub Actions are running successfully
-2. Verify your SerpAPI key is correctly configured:
-   - For local testing: Check your `.env` file contains `SERPAPI_KEY=your_key`
-   - For automation: Verify GitHub Secrets are set correctly
-3. Check the Actions logs for error messages
-4. Test locally: Run `python fetch_citations.py` to see detailed error messages
+1. Check if GitHub Actions are running successfully.
+2. Verify your `SERPAPI_KEY` and Cloudflare secrets (`CLOUDFLARE_API_TOKEN`, `CLOUDFLARE_ACCOUNT_ID`, `CLOUDFLARE_KV_NAMESPACE_ID`) are correctly configured in GitHub Secrets.
+3. Check the Actions logs for any error messages from Wrangler or the Python script.
+4. Test locally: Run `python fetch_citations.py` to see if `citations_data.json` is created correctly.
 
 ### API Limits
 
@@ -215,7 +222,7 @@ This project is open source and available under the MIT License.
 ## 🙏 Acknowledgments
 
 - **SerpAPI** for Google Scholar access
-- **Vercel** for lightning-fast deployment and hosting
+- **Cloudflare** for lightning-fast deployment and hosting
 - **Chart.js** for beautiful charts
 - **GitHub Actions** for automated updates
 - **arXiv** for open access to research papers
