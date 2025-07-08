@@ -312,7 +312,8 @@ def main():
     
     try:
         papers = tracker.fetch_citations(max_results=100)
-        tracker.save_data(papers)
+        # Write to the correct path for the Pages Function
+        tracker.save_data(papers, filename='functions/citations_data.json')
         logger.info("Citation tracking completed successfully!")
     except Exception as e:
         logger.error(f"Error in main execution: {e}", exc_info=True)
