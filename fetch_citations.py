@@ -66,8 +66,8 @@ class CitationTracker:
         return match.group(1) if match else "2502.13138"
 
     # --- Caching Methods ---
-    def _load_cache(self) -> Optional[List[Paper]]:
-        """Loads papers from the cache if it exists and is not expired."""
+    def _load_cache(self) -> Optional[List[Dict]]:
+        """Loads raw paper data from the cache if it exists and is not expired."""
         if not os.path.exists(self.cache_file):
             logger.info("Cache file not found. Fetching from source.")
             return None
@@ -86,22 +86,22 @@ class CitationTracker:
                 logger.info("Cache is expired. Fetching from source.")
                 return None
 
-            logger.info("Loading SerpAPI results from cache.")
-            return [Paper(**p) for p in cache_data.get("papers", [])]
+            logger.info("Loading raw SerpAPI results from cache.")
+            return cache_data.get("papers", [])
         except (json.JSONDecodeError, TypeError) as e:
             logger.error(f"Error reading cache file: {e}. Ignoring cache.")
             return None
 
-    def _save_cache(self, papers: List[Paper]):
-        """Saves the fetched papers to the cache file."""
+    def _save_cache(self, papers_data: List[Dict]):
+        """Saves the raw fetched paper data to the cache file."""
         cache_data = {
             "timestamp": datetime.now().isoformat(),
-            "papers": [p.__dict__ for p in papers]
+            "papers": papers_data
         }
         try:
             with open(self.cache_file, 'w', encoding='utf-8') as f:
                 json.dump(cache_data, f, indent=2, ensure_ascii=False)
-            logger.info(f"Saved {len(papers)} papers to SerpAPI cache.")
+            logger.info(f"Saved {len(papers_data)} raw paper results to SerpAPI cache.")
         except Exception as e:
             logger.error(f"Failed to save cache: {e}")
 
@@ -132,9 +132,9 @@ class CitationTracker:
 
     def _fetch_from_serpapi(self, max_results: int) -> List[Paper]:
         # Try to load from cache first
-        cached_papers = self._load_cache()
-        if cached_papers is not None:
-            return cached_papers
+        cached_papers_data = self._load_cache()
+        if cached_papers_data is not None:
+            return [self._parse_serpapi_paper(res) for res in cached_papers_data]
 
         # If cache is invalid or missing, fetch from SerpAPI
         cites_id = self._get_serpapi_cites_id()
@@ -143,6 +143,7 @@ class CitationTracker:
 
         logger.info("SerpAPI: Step 2 - Fetching citing papers using cites_id...")
         papers = []
+        raw_results = []
         params = {
             "engine": "google_scholar",
             "cites": cites_id,
@@ -153,13 +154,13 @@ class CitationTracker:
             response = requests.get(self.serpapi_base_url, params=params, timeout=30)
             response.raise_for_status()
             data = response.json()
-            organic_results = data.get('organic_results', [])
-            if organic_results:
-                papers.extend([self._parse_serpapi_paper(res) for res in organic_results])
+            raw_results = data.get('organic_results', [])
+            if raw_results:
+                papers.extend([self._parse_serpapi_paper(res) for res in raw_results])
             
             logger.info(f"SerpAPI: Fetched {len(papers)} papers.")
-            # Save the fresh results to the cache
-            self._save_cache(papers)
+            # Save the raw results to the cache
+            self._save_cache(raw_results)
             return papers
         except requests.exceptions.RequestException as e:
             logger.error(f"SerpAPI request for citing papers failed: {e}")
@@ -345,35 +346,33 @@ class CitationTracker:
             else:
                 break
 
-        # Recent Citations (last 30 days)
-        thirty_days_ago = datetime.now() - timedelta(days=30)
-        recent_citations = 0
-        for paper in papers:
-            try:
-                # Use the reliable sort date for comparison
-                paper_date = datetime.strptime(paper.published_date_sort, '%Y-%m-%d')
-                if paper_date >= thirty_days_ago:
-                    recent_citations += 1
-            except (ValueError, IndexError):
-                continue
-
-        # Average Citations per Month & Timeline
-        timeline = []
-        monthly_counts = {}
-        
-        # Filter for papers with valid, full dates
+        # Filter for papers with valid, full dates for all other stats
         valid_papers = []
         for p in papers:
             try:
+                # Ensure the sort date is a valid YYYY-MM-DD format
                 datetime.strptime(p.published_date_sort, '%Y-%m-%d')
-                valid_papers.append(p)
+                if not p.published_date_sort.startswith("1900"):
+                    valid_papers.append(p)
             except ValueError:
                 continue
         
+        # Sort valid papers by date for all calculations
+        valid_papers.sort(key=lambda p: p.published_date_sort)
+
+        # Recent Citations (last 30 days)
+        thirty_days_ago = datetime.now() - timedelta(days=30)
+        recent_citations = 0
+        for paper in valid_papers:
+            paper_date = datetime.strptime(paper.published_date_sort, '%Y-%m-%d')
+            if paper_date >= thirty_days_ago:
+                recent_citations += 1
+
+        # Average Citations per Month & Timeline
+        timeline = []
+        avg_citations_per_month = "0.00"
+        
         if valid_papers:
-            # Sort papers by date for timeline and monthly calculation
-            valid_papers.sort(key=lambda p: p.published_date_sort)
-            
             # Timeline
             cumulative_citations = 0
             for paper in valid_papers:
@@ -385,9 +384,6 @@ class CitationTracker:
             last_month = datetime.strptime(valid_papers[-1].published_date_sort, '%Y-%m-%d')
             total_months = (last_month.year - first_month.year) * 12 + last_month.month - first_month.month + 1
             avg_citations_per_month = f"{(len(valid_papers) / total_months):.2f}" if total_months > 0 else "0.00"
-        else:
-            avg_citations_per_month = "0.00"
-
 
         return {
             'total_citations': len(papers),
