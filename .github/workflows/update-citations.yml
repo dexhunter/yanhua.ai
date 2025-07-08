@@ -31,6 +31,10 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: '20'
+          cache: 'npm'
+
+      - name: Install Node.js dependencies
+        run: npm install
 
       - name: Install Wrangler CLI
         run: npm install -g wrangler
@@ -40,10 +44,10 @@ jobs:
           CF_API_TOKEN: ${{ secrets.CF_API_TOKEN }}
           CF_ACCOUNT_ID: ${{ secrets.CF_ACCOUNT_ID }}
           # The binding name from wrangler.toml
-          KV_NAMESPACE_BINDING: "CITATIONS_KV" 
+          KV_NAMESPACE_BINDING: "CITATIONS_KV"
         run: |
           # We need to get the KV namespace ID from the wrangler.toml file
-          KV_ID=$(grep -A 2 "binding = \"$KV_NAMESPACE_BINDING\"" wrangler.toml | tail -n 1 | awk -F'=' '{print $2}' | tr -d ' "')
+          KV_ID=$(node get-kv-namespace-id.js "$KV_NAMESPACE_BINDING")
 
           if [ -z "$KV_ID" ]; then
             echo "Error: Could not find KV namespace ID for binding '$KV_NAMESPACE_BINDING' in wrangler.toml"

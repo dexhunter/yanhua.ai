@@ -22,8 +22,8 @@ app.get("/api/citations", async (c) => {
 });
 
 // --- Static Asset Serving ---
-// Serve static files from the root directory.
-app.get("/*", serveStatic({ root: "./" }));
+// Serve static files from the root directory. This should be placed after specific API routes.
+app.get("*", serveStatic({ root: "./" }));
 
 // --- SPA Fallback ---
 // If a requested file is not found, serve index.html. This is crucial for single-page applications.
