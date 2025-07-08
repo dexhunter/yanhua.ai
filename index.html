@@ -423,10 +423,10 @@
       const ctx = document.getElementById("citationsChart").getContext("2d");
       let citationsChart;
 
-      // Load data from JSON file
+      // Load data from the API endpoint
       async function loadData() {
         try {
-          const response = await fetch("citations_data.json");
+          const response = await fetch("/api/citations"); // This will be routed by the Cloudflare Worker
           const data = await response.json();
 
           if (data.error) {

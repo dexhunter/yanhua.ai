@@ -1,0 +1,19 @@
+# wrangler.toml
+name = "yanhua-ai-citations" # The name of your worker
+main = "worker.js"          # The entry point for your worker code
+compatibility_date = "2023-12-01"
+
+# This binding allows your worker to access the KV namespace.
+# You must create a KV namespace in the Cloudflare dashboard and get its ID.
+[[kv_namespaces]]
+binding = "CITATIONS_KV" # The name of the binding in your worker code (env.CITATIONS_KV)
+id = "YOUR_KV_NAMESPACE_ID" # <-- Replace with your actual KV namespace ID
+
+# This binding is for serving your static index.html file.
+# It tells wrangler to upload the 'public' directory as static assets.
+[site]
+bucket = "./" # Serve files from the root directory
+
+# You need to set the ACTION_SECRET in the Cloudflare dashboard (or with `wrangler secret put`).
+# [vars]
+# ACTION_SECRET = "your_secret_token_here" # It's better to set this as a secret, not here.

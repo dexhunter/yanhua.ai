@@ -5,11 +5,9 @@ on:
     # Run daily at midnight UTC
     - cron: "0 0 * * *"
   workflow_dispatch:
-  push:
-    branches: [main]
 
 jobs:
-  build-citation-data:
+  update-citation-data:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
@@ -18,57 +16,42 @@ jobs:
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
-          python-version: "3.11"
+          python-version: "3.12"
           cache: "pip"
 
-      - name: Install dependencies
-        run: |
-          python -m pip install --upgrade pip
-          pip install -r requirements.txt
+      - name: Install Python dependencies
+        run: pip install -r requirements.txt
 
       - name: Run citation tracker
         env:
           SERPAPI_KEY: ${{ secrets.SERPAPI_KEY }}
         run: python fetch_citations.py
 
-      - name: Upload citation data as artifact
-        uses: actions/upload-artifact@v4
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
         with:
-          name: citation-data
-          path: citations_data.json
+          node-version: '20'
 
-  deploy-to-vercel:
-    runs-on: ubuntu-latest
-    needs: build-citation-data # This job runs after build-citation-data
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
+      - name: Install Wrangler CLI
+        run: npm install -g wrangler
 
-      - name: Download citation data artifact
-        uses: actions/download-artifact@v4
-        with:
-          name: citation-data
-
-      - name: Display downloaded file
+      - name: Publish to Cloudflare KV
+        env:
+          CF_API_TOKEN: ${{ secrets.CF_API_TOKEN }}
+          CF_ACCOUNT_ID: ${{ secrets.CF_ACCOUNT_ID }}
+          # The binding name from wrangler.toml
+          KV_NAMESPACE_BINDING: "CITATIONS_KV" 
         run: |
-          echo "Downloaded artifact content:"
-          cat citations_data.json
+          # We need to get the KV namespace ID from the wrangler.toml file
+          KV_ID=$(grep -A 2 "binding = \"$KV_NAMESPACE_BINDING\"" wrangler.toml | tail -n 1 | awk -F'=' '{print $2}' | tr -d ' "')
 
-      - name: Deploy to Vercel
-        run: |
-          echo "✅ citations_data.json is available and will be deployed by Vercel."
-          # Add your actual Vercel deployment command here
-          # For example: vercel --prod --token=${{ secrets.VERCEL_TOKEN }}
-
-      - name: Create summary
-        run: |
-          echo "## 📚 aideml Citation Update Summary" >> $GITHUB_STEP_SUMMARY
-          if [[ -f citations_data.json ]]; then
-            total_citations=$(python -c "import json; data=json.load(open('citations_data.json')); print(data.get('total_citations', 0))")
-            last_updated=$(python -c "import json; data=json.load(open('citations_data.json')); print(data.get('last_updated', 'Unknown'))")
-            echo "- **Total Citations Found:** $total_citations" >> $GITHUB_STEP_SUMMARY
-            echo "- **Last Updated:** $last_updated" >> $GITHUB_STEP_SUMMARY
-            echo "- **Status:** ✅ Data updated and deployed successfully" >> $GITHUB_STEP_SUMMARY
-          else
-            echo "- **Status:** ❌ Failed to generate or download citation data" >> $GITHUB_STEP_SUMMARY
+          if [ -z "$KV_ID" ]; then
+            echo "Error: Could not find KV namespace ID for binding '$KV_NAMESPACE_BINDING' in wrangler.toml"
+            exit 1
           fi
+
+          echo "Uploading data to Cloudflare KV namespace: $KV_ID"
+          
+          # Use wrangler to put the file content into the KV store
+          wrangler kv:key put --namespace-id="$KV_ID" "citations_data" --path="citations_data.json"
+
