@@ -198,6 +198,77 @@ class CitationTracker:
         except Exception:
             return None
 
+    # --- Data Analysis and Statistics ---
+    def _calculate_statistics(self, papers: List[Paper]) -> Dict:
+        """Calculates h-index, recent citations, monthly average, and timeline."""
+        if not papers:
+            return {
+                'total_citations': 0, 'h_index': 0, 'recent_citations': 0,
+                'avg_citations_per_month': "0.00", 'timeline': []
+            }
+
+        # H-Index Calculation
+        sorted_by_citations = sorted([p.citations for p in papers if p.citations > 0], reverse=True)
+        h_index = 0
+        for i, citation_count in enumerate(sorted_by_citations):
+            if i + 1 <= citation_count:
+                h_index = i + 1
+            else:
+                break
+
+        # Recent Citations (last 30 days)
+        thirty_days_ago = datetime.now() - timedelta(days=30)
+        recent_citations = 0
+        for paper in papers:
+            try:
+                # Handles both 'YYYY-MM-DD' and just 'YYYY'
+                date_str = paper.published_date.split(' ')[0]
+                paper_date = datetime.strptime(date_str, '%Y-%m-%d')
+                if paper_date >= thirty_days_ago:
+                    recent_citations += 1
+            except (ValueError, IndexError):
+                continue
+
+        # Average Citations per Month & Timeline
+        timeline = []
+        monthly_counts = {}
+        
+        # Filter for papers with valid, full dates
+        valid_papers = []
+        for p in papers:
+            try:
+                datetime.strptime(p.published_date_sort, '%Y-%m-%d')
+                valid_papers.append(p)
+            except ValueError:
+                continue
+        
+        if valid_papers:
+            # Sort papers by date for timeline and monthly calculation
+            valid_papers.sort(key=lambda p: p.published_date_sort)
+            
+            # Timeline
+            cumulative_citations = 0
+            for paper in valid_papers:
+                cumulative_citations += 1
+                timeline.append({'date': paper.published_date_sort, 'citations': cumulative_citations})
+
+            # Monthly Average
+            first_month = datetime.strptime(valid_papers[0].published_date_sort, '%Y-%m-%d')
+            last_month = datetime.strptime(valid_papers[-1].published_date_sort, '%Y-%m-%d')
+            total_months = (last_month.year - first_month.year) * 12 + last_month.month - first_month.month + 1
+            avg_citations_per_month = f"{(len(valid_papers) / total_months):.2f}" if total_months > 0 else "0.00"
+        else:
+            avg_citations_per_month = "0.00"
+
+
+        return {
+            'total_citations': len(papers),
+            'h_index': h_index,
+            'recent_citations': recent_citations,
+            'avg_citations_per_month': avg_citations_per_month,
+            'timeline': timeline
+        }
+
     # --- Main Orchestration ---
     def fetch_citations(self, max_results: int = 200) -> List[Paper]:
         logger.info("Starting citation search with corrected logic...")
@@ -211,7 +282,7 @@ class CitationTracker:
         return merged_papers
 
     def save_data(self, papers: List[Paper], filename: str = 'citations_data.json'):
-        stats = {'total_citations': len(papers)}
+        stats = self._calculate_statistics(papers)
         data = {
             'last_updated': datetime.now().strftime('%Y-%m-%d %H:%M:%S UTC'),
             'target_paper': self.target_paper_url,
