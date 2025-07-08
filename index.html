@@ -1,402 +1,637 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>aideml - Citation Tracker</title>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
 
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            min-height: 100vh;
-            color: #333;
-        }
+      body {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        min-height: 100vh;
+        color: #333;
+      }
 
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 20px;
+      }
+
+      header {
+        background: rgba(255, 255, 255, 0.95);
+        backdrop-filter: blur(10px);
+        border-radius: 20px;
+        padding: 30px;
+        margin-bottom: 30px;
+        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+        text-align: center;
+      }
+
+      .header-main {
+        text-align: center;
+        margin-bottom: 20px;
+      }
+
+      .header-main h1 {
+        color: #2c3e50;
+        font-size: 3em;
+        margin-bottom: 5px;
+        font-weight: 700;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+      }
+
+      .header-subtitle {
+        color: #7f8c8d;
+        font-size: 1.2em;
+        font-weight: 500;
+        margin: 0;
+      }
+
+      .header-stats {
+        display: flex;
+        justify-content: center;
+        gap: 30px;
+        margin-top: 20px;
+        flex-wrap: wrap;
+      }
+
+      .header-stat {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+
+      .header-stat strong {
+        color: #3498db;
+        font-size: 1.8em;
+        font-weight: 700;
+        display: block;
+      }
+
+      .header-stat small {
+        color: #7f8c8d;
+        font-size: 0.9em;
+        margin-top: 2px;
+      }
+
+      .paper-info {
+        background: rgba(52, 152, 219, 0.1);
+        padding: 20px;
+        border-radius: 15px;
+        margin-bottom: 20px;
+        border: 2px solid rgba(52, 152, 219, 0.2);
+      }
+
+      .paper-info h2 {
+        color: #2980b9;
+        margin-bottom: 10px;
+        font-size: 1.3em;
+      }
+
+      .paper-info p {
+        line-height: 1.6;
+        color: #555;
+      }
+
+      .stats-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 20px;
+        margin-bottom: 30px;
+      }
+
+      .stat-card {
+        background: rgba(255, 255, 255, 0.95);
+        padding: 25px;
+        border-radius: 15px;
+        text-align: center;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+
+      .stat-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+      }
+
+      .stat-number {
+        font-size: 2.5em;
+        font-weight: bold;
+        color: #3498db;
+        margin-bottom: 10px;
+      }
+
+      .stat-label {
+        font-size: 1.1em;
+        color: #7f8c8d;
+      }
+
+      .papers-section {
+        background: rgba(255, 255, 255, 0.95);
+        border-radius: 20px;
+        padding: 30px;
+        margin-bottom: 30px;
+        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+      }
+
+      .papers-section h2 {
+        color: #2c3e50;
+        margin-bottom: 25px;
+        font-size: 1.8em;
+        border-bottom: 3px solid #3498db;
+        padding-bottom: 10px;
+      }
+
+      .paper-card {
+        background: #f8f9fa;
+        border-radius: 12px;
+        padding: 20px;
+        margin-bottom: 20px;
+        border-left: 4px solid #3498db;
+        transition: all 0.3s ease;
+      }
+
+      .paper-card:hover {
+        transform: translateX(5px);
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      }
+
+      .paper-title {
+        font-size: 1.2em;
+        font-weight: 600;
+        color: #2c3e50;
+        margin-bottom: 10px;
+        line-height: 1.4;
+      }
+
+      .paper-authors {
+        color: #7f8c8d;
+        margin-bottom: 8px;
+        font-style: italic;
+      }
+
+      .paper-journal {
+        color: #27ae60;
+        font-weight: 500;
+        margin-bottom: 10px;
+      }
+
+      .paper-snippet {
+        color: #555;
+        line-height: 1.6;
+        margin-bottom: 10px;
+      }
+
+      .paper-meta {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-size: 0.9em;
+        color: #7f8c8d;
+      }
+
+      .month-section {
+        margin-bottom: 40px;
+      }
+
+      .month-header {
+        background: linear-gradient(135deg, #3498db 0%, #2980b9 100%);
+        color: white;
+        padding: 15px 25px;
+        border-radius: 12px;
+        margin-bottom: 20px;
+        font-size: 1.3em;
+        font-weight: 600;
+        box-shadow: 0 4px 15px rgba(52, 152, 219, 0.3);
+      }
+
+      .month-header .month-count {
+        float: right;
+        background: rgba(255, 255, 255, 0.2);
+        padding: 2px 10px;
+        border-radius: 20px;
+        font-size: 0.9em;
+      }
+
+      .paper-link {
+        color: #3498db;
+        text-decoration: none;
+        font-weight: 500;
+      }
+
+      .paper-link:hover {
+        text-decoration: underline;
+      }
+
+      .update-info {
+        background: rgba(46, 204, 113, 0.1);
+        border: 2px solid rgba(46, 204, 113, 0.2);
+        border-radius: 10px;
+        padding: 15px;
+        margin-bottom: 20px;
+        text-align: center;
+      }
+
+      .update-info p {
+        color: #27ae60;
+        font-weight: 500;
+      }
+
+      .loading {
+        text-align: center;
+        padding: 40px;
+        color: #7f8c8d;
+      }
+
+      .loading:before {
+        content: "🔄 ";
+        animation: spin 1s linear infinite;
+      }
+
+      @keyframes spin {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+
+      .chart-container {
+        background: rgba(255, 255, 255, 0.95);
+        border-radius: 15px;
+        padding: 25px;
+        margin-bottom: 30px;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+      }
+
+      .chart-container h2 {
+        color: #2c3e50;
+        margin-bottom: 10px;
+        text-align: center;
+        font-size: 1.8em;
+        border-bottom: 3px solid #3498db;
+        padding-bottom: 10px;
+      }
+
+      .footer {
+        text-align: center;
+        padding: 20px;
+        color: rgba(255, 255, 255, 0.8);
+        background: rgba(0, 0, 0, 0.1);
+        border-radius: 10px;
+      }
+
+      @media (max-width: 768px) {
         .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 20px;
+          padding: 10px;
         }
 
-        header {
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
-            border-radius: 20px;
-            padding: 30px;
-            margin-bottom: 30px;
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
-            text-align: center;
+        .header-main h1 {
+          font-size: 2.2em;
         }
 
-        header h1 {
-            color: #2c3e50;
-            font-size: 2.5em;
-            margin-bottom: 10px;
-            font-weight: 700;
+        .header-subtitle {
+          font-size: 1em;
         }
 
-        .paper-info {
-            background: rgba(52, 152, 219, 0.1);
-            padding: 20px;
-            border-radius: 15px;
-            margin-bottom: 20px;
-            border: 2px solid rgba(52, 152, 219, 0.2);
+        .header-stats {
+          gap: 20px;
         }
 
-        .paper-info h2 {
-            color: #2980b9;
-            margin-bottom: 10px;
-            font-size: 1.3em;
-        }
-
-        .paper-info p {
-            line-height: 1.6;
-            color: #555;
+        .header-stat strong {
+          font-size: 1.5em;
         }
 
         .stats-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
-            margin-bottom: 30px;
+          grid-template-columns: 1fr;
         }
 
-        .stat-card {
-            background: rgba(255, 255, 255, 0.95);
-            padding: 25px;
-            border-radius: 15px;
-            text-align: center;
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        .month-header {
+          padding: 12px 20px;
+          font-size: 1.1em;
         }
 
-        .stat-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+        .month-header .month-count {
+          float: none;
+          display: block;
+          margin-top: 5px;
         }
-
-        .stat-number {
-            font-size: 2.5em;
-            font-weight: bold;
-            color: #3498db;
-            margin-bottom: 10px;
-        }
-
-        .stat-label {
-            font-size: 1.1em;
-            color: #7f8c8d;
-        }
-
-        .papers-section {
-            background: rgba(255, 255, 255, 0.95);
-            border-radius: 20px;
-            padding: 30px;
-            margin-bottom: 30px;
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
-        }
-
-        .papers-section h2 {
-            color: #2c3e50;
-            margin-bottom: 25px;
-            font-size: 1.8em;
-            border-bottom: 3px solid #3498db;
-            padding-bottom: 10px;
-        }
-
-        .paper-card {
-            background: #f8f9fa;
-            border-radius: 12px;
-            padding: 20px;
-            margin-bottom: 20px;
-            border-left: 4px solid #3498db;
-            transition: all 0.3s ease;
-        }
-
-        .paper-card:hover {
-            transform: translateX(5px);
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-        }
-
-        .paper-title {
-            font-size: 1.2em;
-            font-weight: 600;
-            color: #2c3e50;
-            margin-bottom: 10px;
-            line-height: 1.4;
-        }
-
-        .paper-authors {
-            color: #7f8c8d;
-            margin-bottom: 8px;
-            font-style: italic;
-        }
-
-        .paper-journal {
-            color: #27ae60;
-            font-weight: 500;
-            margin-bottom: 10px;
-        }
-
-        .paper-snippet {
-            color: #555;
-            line-height: 1.6;
-            margin-bottom: 10px;
-        }
-
-        .paper-meta {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            font-size: 0.9em;
-            color: #7f8c8d;
-        }
-
-        .paper-link {
-            color: #3498db;
-            text-decoration: none;
-            font-weight: 500;
-        }
-
-        .paper-link:hover {
-            text-decoration: underline;
-        }
-
-        .update-info {
-            background: rgba(46, 204, 113, 0.1);
-            border: 2px solid rgba(46, 204, 113, 0.2);
-            border-radius: 10px;
-            padding: 15px;
-            margin-bottom: 20px;
-            text-align: center;
-        }
-
-        .update-info p {
-            color: #27ae60;
-            font-weight: 500;
-        }
-
-        .loading {
-            text-align: center;
-            padding: 40px;
-            color: #7f8c8d;
-        }
-
-        .loading:before {
-            content: "🔄 ";
-            animation: spin 1s linear infinite;
-        }
-
-        @keyframes spin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
-        }
-
-        .chart-container {
-            background: rgba(255, 255, 255, 0.95);
-            border-radius: 15px;
-            padding: 25px;
-            margin-bottom: 30px;
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-        }
-
-        .chart-container h3 {
-            color: #2c3e50;
-            margin-bottom: 20px;
-            text-align: center;
-        }
-
-        .footer {
-            text-align: center;
-            padding: 20px;
-            color: rgba(255, 255, 255, 0.8);
-            background: rgba(0, 0, 0, 0.1);
-            border-radius: 10px;
-        }
-
-        @media (max-width: 768px) {
-            .container {
-                padding: 10px;
-            }
-            
-            header h1 {
-                font-size: 2em;
-            }
-            
-            .stats-grid {
-                grid-template-columns: 1fr;
-            }
-        }
+      }
     </style>
-</head>
-<body>
+  </head>
+  <body>
     <div class="container">
-        <header>
-            <h1>📚 aideml - Citation Tracker</h1>
-            <div class="paper-info">
-                <h2>Research Impact Tracking</h2>
-                <p>This page automatically tracks and displays all papers citing our research. The data is updated regularly using automated GitHub Actions.</p>
-            </div>
-        </header>
-
-        <div class="update-info">
-            <p>⚡ Last updated: <span id="lastUpdated">Loading...</span></p>
+      <header>
+        <div class="header-main">
+          <h1>📚 aideml</h1>
+          <p class="header-subtitle">Citation Impact Tracker</p>
         </div>
-
-        <div class="stats-grid">
-            <div class="stat-card">
-                <div class="stat-number" id="totalCitations">-</div>
-                <div class="stat-label">Total Citations</div>
-            </div>
-            <div class="stat-card">
-                <div class="stat-number" id="recentCitations">-</div>
-                <div class="stat-label">Recent Citations (30 days)</div>
-            </div>
-            <div class="stat-card">
-                <div class="stat-number" id="avgCitationsPerMonth">-</div>
-                <div class="stat-label">Avg. Citations/Month</div>
-            </div>
-            <div class="stat-card">
-                <div class="stat-number" id="hIndex">-</div>
-                <div class="stat-label">H-Index Impact</div>
-            </div>
+        <div class="paper-info">
+          <h2>🔬 Research Impact Dashboard</h2>
+          <p>
+            Automated tracking of papers citing our research. Updated daily via
+            GitHub Actions and served lightning-fast on Vercel's global CDN.
+          </p>
+          <div class="header-stats">
+            <span class="header-stat">
+              <strong id="headerTotalCitations">-</strong>
+              <small>Total Citations</small>
+            </span>
+            <span class="header-stat">
+              <strong id="headerRecentCitations">-</strong>
+              <small>This Month</small>
+            </span>
+            <span class="header-stat">
+              <strong id="headerHIndex">-</strong>
+              <small>H-Index</small>
+            </span>
+          </div>
         </div>
+      </header>
 
-        <div class="chart-container">
-            <h3>📈 Citations Over Time</h3>
-            <canvas id="citationsChart"></canvas>
-        </div>
+      <div class="update-info">
+        <p>⚡ Last updated: <span id="lastUpdated">Loading...</span></p>
+      </div>
 
-        <div class="papers-section">
-            <h2>📄 Citing Papers</h2>
-            <div id="papersContainer">
-                <div class="loading">Loading citing papers...</div>
-            </div>
+      <div class="stats-grid">
+        <div class="stat-card">
+          <div class="stat-number" id="totalCitations">-</div>
+          <div class="stat-label">Total Citations</div>
         </div>
+        <div class="stat-card">
+          <div class="stat-number" id="recentCitations">-</div>
+          <div class="stat-label">Recent Citations (30 days)</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number" id="avgCitationsPerMonth">-</div>
+          <div class="stat-label">Avg. Citations/Month</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number" id="hIndex">-</div>
+          <div class="stat-label">H-Index Impact</div>
+        </div>
+      </div>
 
-        <div class="footer">
-            <p>🤖 Automated citation tracking powered by SerpAPI and GitHub Actions</p>
-            <p>Updated every 6 hours • Data source: Google Scholar</p>
+      <div class="papers-section">
+        <h2>📄 Citing Papers</h2>
+        <div id="papersContainer">
+          <div class="loading">Loading citing papers...</div>
         </div>
+      </div>
+
+      <div class="chart-container">
+        <h2>📈 Citation Trends</h2>
+        <p style="color: #7f8c8d; margin-bottom: 20px; text-align: center">
+          Monthly citation growth pattern for aideml research
+        </p>
+        <canvas id="citationsChart"></canvas>
+      </div>
+
+      <div class="footer">
+        <p>
+          🤖 Automated citation tracking powered by SerpAPI and GitHub Actions
+        </p>
+        <p>Updated daily • Data source: Google Scholar • Deployed on Vercel</p>
+      </div>
     </div>
 
     <script>
-        // Initialize chart
-        const ctx = document.getElementById('citationsChart').getContext('2d');
-        let citationsChart;
+      // Initialize chart
+      const ctx = document.getElementById("citationsChart").getContext("2d");
+      let citationsChart;
 
-        // Load data from JSON file
-        async function loadData() {
-            try {
-                const response = await fetch('citations_data.json');
-                const data = await response.json();
-                
-                if (data.error) {
-                    document.getElementById('papersContainer').innerHTML = 
-                        `<div class="loading">⚠️ ${data.error}</div>`;
-                    return;
-                }
+      // Load data from JSON file
+      async function loadData() {
+        try {
+          const response = await fetch("citations_data.json");
+          const data = await response.json();
 
-                // Update statistics
-                document.getElementById('totalCitations').textContent = data.total_citations || 0;
-                document.getElementById('recentCitations').textContent = data.recent_citations || 0;
-                document.getElementById('avgCitationsPerMonth').textContent = data.avg_citations_per_month || 0;
-                document.getElementById('hIndex').textContent = data.h_index || 0;
-                document.getElementById('lastUpdated').textContent = data.last_updated || 'Never';
+          if (data.error) {
+            document.getElementById(
+              "papersContainer"
+            ).innerHTML = `<div class="loading">⚠️ ${data.error}</div>`;
+            return;
+          }
 
-                // Render papers
-                renderPapers(data.papers || []);
-                
-                // Update chart
-                updateChart(data.timeline || []);
-                
-            } catch (error) {
-                console.error('Error loading data:', error);
-                document.getElementById('papersContainer').innerHTML = 
-                    '<div class="loading">⚠️ Error loading citation data</div>';
-            }
+          // Update statistics (both main stats and header stats)
+          document.getElementById("totalCitations").textContent =
+            data.total_citations || 0;
+          document.getElementById("recentCitations").textContent =
+            data.recent_citations || 0;
+          document.getElementById("avgCitationsPerMonth").textContent =
+            data.avg_citations_per_month || 0;
+          document.getElementById("hIndex").textContent = data.h_index || 0;
+          document.getElementById("lastUpdated").textContent =
+            data.last_updated || "Never";
+
+          // Update header stats
+          document.getElementById("headerTotalCitations").textContent =
+            data.total_citations || 0;
+          document.getElementById("headerRecentCitations").textContent =
+            data.recent_citations || 0;
+          document.getElementById("headerHIndex").textContent =
+            data.h_index || 0;
+
+          // Render papers
+          renderPapers(data.papers || []);
+
+          // Update chart
+          updateChart(data.timeline || []);
+        } catch (error) {
+          console.error("Error loading data:", error);
+          document.getElementById("papersContainer").innerHTML =
+            '<div class="loading">⚠️ Error loading citation data</div>';
+        }
+      }
+
+      function renderPapers(papers) {
+        const container = document.getElementById("papersContainer");
+
+        if (papers.length === 0) {
+          container.innerHTML =
+            '<div class="loading">📭 No citing papers found yet</div>';
+          return;
         }
 
-        function renderPapers(papers) {
-            const container = document.getElementById('papersContainer');
-            
-            if (papers.length === 0) {
-                container.innerHTML = '<div class="loading">📭 No citing papers found yet</div>';
-                return;
-            }
+        // Group papers by publication month
+        const papersByMonth = {};
+        papers.forEach((paper) => {
+          const monthKey = extractMonthYear(paper.published_date);
+          if (!papersByMonth[monthKey]) {
+            papersByMonth[monthKey] = [];
+          }
+          papersByMonth[monthKey].push(paper);
+        });
 
-            container.innerHTML = papers.map(paper => `
-                <div class="paper-card">
-                    <div class="paper-title">${escapeHtml(paper.title || 'Untitled')}</div>
-                    <div class="paper-authors">${escapeHtml(paper.authors || 'Unknown authors')}</div>
-                    <div class="paper-journal">${escapeHtml(paper.journal || 'Unknown journal')}</div>
-                    <div class="paper-snippet">${escapeHtml(paper.snippet || 'No snippet available')}</div>
-                    <div class="paper-meta">
-                        <span>Published: ${paper.published_date || 'Unknown'}</span>
-                        <a href="${paper.link}" target="_blank" class="paper-link">View Paper →</a>
+        // Sort months (newest first)
+        const sortedMonths = Object.keys(papersByMonth).sort((a, b) => {
+          const dateA = parseMonthYear(a);
+          const dateB = parseMonthYear(b);
+          return dateB - dateA;
+        });
+
+        // Render monthly sections
+        container.innerHTML = sortedMonths
+          .map((month) => {
+            const monthPapers = papersByMonth[month];
+            return `
+                    <div class="month-section">
+                        <div class="month-header">
+                            📅 ${month}
+                            <span class="month-count">${
+                              monthPapers.length
+                            } paper${monthPapers.length !== 1 ? "s" : ""}</span>
+                        </div>
+                        ${monthPapers
+                          .map(
+                            (paper) => `
+                            <div class="paper-card">
+                                <div class="paper-title">${escapeHtml(
+                                  paper.title || "Untitled"
+                                )}</div>
+                                <div class="paper-authors">${escapeHtml(
+                                  paper.authors || "Unknown authors"
+                                )}</div>
+                                <div class="paper-journal">${escapeHtml(
+                                  paper.journal || "Unknown journal"
+                                )}</div>
+                                <div class="paper-snippet">${escapeHtml(
+                                  paper.snippet || "No snippet available"
+                                )}</div>
+                                <div class="paper-meta">
+                                    <span>Published: ${
+                                      paper.published_date || "Unknown"
+                                    }</span>
+                                    <a href="${
+                                      paper.link
+                                    }" target="_blank" class="paper-link">View Paper →</a>
+                                </div>
+                            </div>
+                        `
+                          )
+                          .join("")}
                     </div>
-                </div>
-            `).join('');
+                `;
+          })
+          .join("");
+      }
+
+      function extractMonthYear(dateString) {
+        if (!dateString || dateString === "Unknown") return "Unknown";
+
+        // Handle "Month Year" format (e.g., "June 2025")
+        const monthYearMatch = dateString.match(/([A-Za-z]+)\s+(\d{4})/);
+        if (monthYearMatch) {
+          return `${monthYearMatch[1]} ${monthYearMatch[2]}`;
         }
 
-        function updateChart(timeline) {
-            if (citationsChart) {
-                citationsChart.destroy();
-            }
+        // Handle just year (e.g., "2025")
+        const yearMatch = dateString.match(/(\d{4})/);
+        if (yearMatch) {
+          return yearMatch[1];
+        }
 
-            const labels = timeline.map(item => item.date);
-            const data = timeline.map(item => item.citations);
+        return dateString;
+      }
 
-            citationsChart = new Chart(ctx, {
-                type: 'line',
-                data: {
-                    labels: labels,
-                    datasets: [{
-                        label: 'Citations',
-                        data: data,
-                        borderColor: '#3498db',
-                        backgroundColor: 'rgba(52, 152, 219, 0.1)',
-                        borderWidth: 3,
-                        fill: true,
-                        tension: 0.4
-                    }]
+      function parseMonthYear(monthYearString) {
+        if (monthYearString === "Unknown") return new Date(1900, 0);
+
+        const monthMap = {
+          january: 0,
+          february: 1,
+          march: 2,
+          april: 3,
+          may: 4,
+          june: 5,
+          july: 6,
+          august: 7,
+          september: 8,
+          october: 9,
+          november: 10,
+          december: 11,
+        };
+
+        // Handle "Month Year" format
+        const parts = monthYearString.toLowerCase().split(" ");
+        if (parts.length === 2) {
+          const month = monthMap[parts[0]] || 0;
+          const year = parseInt(parts[1]) || 2000;
+          return new Date(year, month);
+        }
+
+        // Handle just year
+        const year = parseInt(monthYearString) || 2000;
+        return new Date(year, 0);
+      }
+
+      function updateChart(timeline) {
+        if (citationsChart) {
+          citationsChart.destroy();
+        }
+
+        const labels = timeline.map((item) => item.date);
+        const data = timeline.map((item) => item.citations);
+
+        citationsChart = new Chart(ctx, {
+          type: "line",
+          data: {
+            labels: labels,
+            datasets: [
+              {
+                label: "Citations",
+                data: data,
+                borderColor: "#3498db",
+                backgroundColor: "rgba(52, 152, 219, 0.1)",
+                borderWidth: 3,
+                fill: true,
+                tension: 0.4,
+              },
+            ],
+          },
+          options: {
+            responsive: true,
+            plugins: {
+              legend: {
+                display: false,
+              },
+            },
+            scales: {
+              y: {
+                beginAtZero: true,
+                ticks: {
+                  precision: 0,
                 },
-                options: {
-                    responsive: true,
-                    plugins: {
-                        legend: {
-                            display: false
-                        }
-                    },
-                    scales: {
-                        y: {
-                            beginAtZero: true,
-                            ticks: {
-                                precision: 0
-                            }
-                        }
-                    }
-                }
-            });
-        }
+              },
+            },
+          },
+        });
+      }
 
-        function escapeHtml(text) {
-            const div = document.createElement('div');
-            div.textContent = text;
-            return div.innerHTML;
-        }
+      function escapeHtml(text) {
+        const div = document.createElement("div");
+        div.textContent = text;
+        return div.innerHTML;
+      }
 
-        // Load data when page loads
-        document.addEventListener('DOMContentLoaded', loadData);
-        
-        // Refresh data every 30 seconds
-        setInterval(loadData, 30000);
+      // Load data when page loads
+      document.addEventListener("DOMContentLoaded", loadData);
+
+      // Refresh data every 30 seconds
+      setInterval(loadData, 30000);
     </script>
-</body>
-</html> 
+  </body>
+</html>

@@ -1,5 +1,5 @@
 {
-  "last_updated": "2025-07-08 06:53:50 UTC",
+  "last_updated": "2025-07-08 15:02:20 UTC",
   "target_paper": "https://arxiv.org/abs/2502.13138",
   "arxiv_id": "2502.13138",
   "total_citations": 18,
@@ -34,66 +34,12 @@
   ],
   "papers": [
     {
-      "title": "Measuring ai ability to complete long tasks",
-      "authors": "T Kwa, J Becker",
-      "journal": "arXiv preprint arXiv …, 2025",
-      "snippet": "Despite rapid progress on AI benchmarks, the real-world meaning of benchmark performance remains unclear. To quantify the capabilities of AI systems in terms of human …",
-      "link": "https://arxiv.org/abs/2503.14499",
-      "published_date": "2025",
-      "citations": 16
-    },
-    {
-      "title": "Co-bench: Benchmarking language model agents in algorithm search for combinatorial optimization",
-      "authors": "W Sun, S Feng, S Li, Y Yang",
-      "journal": "arXiv preprint arXiv:2504.04310, 2025",
-      "snippet": "Although LLM-based agents have attracted significant attention in domains such as software engineering and machine learning research, their role in advancing combinatorial …",
-      "link": "https://arxiv.org/abs/2504.04310",
-      "published_date": "2025",
-      "citations": 5
-    },
-    {
-      "title": "Mle-dojo: Interactive environments for empowering llm agents in machine learning engineering",
-      "authors": "R Qiang, Y Zhuang, Y Li, R Zhang",
-      "journal": "arXiv preprint arXiv …, 2025",
-      "snippet": "We introduce MLE-Dojo, a Gym-style framework for systematically reinforcement learning, evaluating, and improving autonomous large language model (LLM) agents in iterative …",
-      "link": "https://arxiv.org/abs/2505.07782",
-      "published_date": "2025",
-      "citations": 1
-    },
-    {
-      "title": "CodePDE: An Inference Framework for LLM-driven PDE Solver Generation",
-      "authors": "S Li, T Marwah, J Shen, W Sun, A Risteski",
-      "journal": "arXiv preprint arXiv …, 2025",
-      "snippet": "Partial differential equations (PDEs) are fundamental to modeling physical systems, yet solving them remains a complex challenge. Traditional numerical solvers rely on expert …",
-      "link": "https://arxiv.org/abs/2505.08783",
-      "published_date": "2025",
-      "citations": 1
-    },
-    {
-      "title": "From automation to autonomy: A survey on large language models in scientific discovery",
-      "authors": "T Zheng, Z Deng, W Wang, J Bai",
-      "journal": "arXiv preprint arXiv …, 2025",
-      "snippet": "Large Language Models (LLMs) are catalyzing a paradigm shift in scientific discovery, evolving from task-specific automation tools into increasingly autonomous agents and …",
-      "link": "https://arxiv.org/abs/2505.13259",
-      "published_date": "2025",
-      "citations": 1
-    },
-    {
-      "title": "Mlzero: A multi-agent system for end-to-end machine learning automation",
-      "authors": "H Fang, B Han, N Erickson, X Zhang",
-      "journal": "arXiv preprint arXiv …, 2025",
-      "snippet": "Existing AutoML systems have advanced the automation of machine learning (ML); however, they still require substantial manual configuration and expert input, particularly …",
-      "link": "https://arxiv.org/abs/2505.13941",
-      "published_date": "2025",
-      "citations": 1
-    },
-    {
       "title": "A Comprehensive Survey of Deep Research: Systems, Methodologies, and Applications",
       "authors": "R Xu, J Peng",
       "journal": "arXiv preprint arXiv:2506.12594, 2025",
       "snippet": "This survey examines the rapidly evolving field of Deep Research systems--AI-powered applications that automate complex research workflows through the integration of large …",
       "link": "https://arxiv.org/abs/2506.12594",
-      "published_date": "2025",
+      "published_date": "June 2025",
       "citations": 0
     },
     {
@@ -102,16 +48,7 @@
       "journal": "arXiv preprint arXiv …, 2025",
       "snippet": "The emergence of Artificial Intelligence (AI) Scientist represents a paradigm shift in scientific discovery, with large language models (LLMs) taking the lead as the primary executor in the …",
       "link": "https://arxiv.org/abs/2506.01372",
-      "published_date": "2025",
-      "citations": 1
-    },
-    {
-      "title": "IDA-Bench: Evaluating LLMs on Interactive Guided Data Analysis",
-      "authors": "H Liu, T Zhu, T Guo, X Deng",
-      "journal": "arXiv preprint arXiv …, 2025",
-      "snippet": "Large Language Models (LLMs) show promise as data analysis agents, but existing benchmarks overlook the iterative nature of the field, where experts' decisions evolve with …",
-      "link": "https://arxiv.org/abs/2505.18223",
-      "published_date": "2025",
+      "published_date": "June 2025",
       "citations": 1
     },
     {
@@ -120,7 +57,7 @@
       "journal": "arXiv preprint arXiv …, 2025",
       "snippet": "Rapid advancements in large language models (LLMs) have the potential to assist in scientific progress. A critical capability toward this endeavor is the ability to reproduce …",
       "link": "https://arxiv.org/abs/2506.22419",
-      "published_date": "2025",
+      "published_date": "June 2025",
       "citations": 0
     },
     {
@@ -129,7 +66,7 @@
       "journal": "arXiv preprint arXiv:2506.20640, 2025",
       "snippet": "Large language model-based machine learning (ML) agents have shown great promise in automating ML research. However, existing agents typically operate in isolation on a given …",
       "link": "https://arxiv.org/abs/2506.20640",
-      "published_date": "2025",
+      "published_date": "June 2025",
       "citations": 0
     },
     {
@@ -138,7 +75,7 @@
       "journal": "arXiv preprint arXiv …, 2025",
       "snippet": "Agents based on large language models (LLMs) for machine learning engineering (MLE) can automatically implement ML models via code generation. However, existing approaches …",
       "link": "https://arxiv.org/abs/2506.15692",
-      "published_date": "2025",
+      "published_date": "June 2025",
       "citations": 0
     },
     {
@@ -147,7 +84,7 @@
       "journal": "arXiv preprint arXiv …, 2025",
       "snippet": "Large language model (LLM) agents have demonstrated remarkable potential in advancing scientific discovery. However, their capability in the fundamental yet crucial task of …",
       "link": "https://arxiv.org/abs/2506.17335",
-      "published_date": "2025",
+      "published_date": "June 2025",
       "citations": 0
     },
     {
@@ -156,16 +93,7 @@
       "journal": "arXiv preprint arXiv …, 2025",
       "snippet": "Large Language Model (LLM) agents have shown great potential in addressing real-world data science problems. LLM-driven data science agents promise to automate the entire …",
       "link": "https://arxiv.org/abs/2506.10974",
-      "published_date": "2025",
-      "citations": 0
-    },
-    {
-      "title": "TimeSeriesGym: A Scalable Benchmark for (Time Series) Machine Learning Engineering Agents",
-      "authors": "Y Cai, X Li, M Goswami, M Wiliński",
-      "journal": "arXiv preprint arXiv …, 2025",
-      "snippet": "We introduce TimeSeriesGym, a scalable benchmarking framework for evaluating Artificial Intelligence (AI) agents on time series machine learning engineering challenges. Existing …",
-      "link": "https://arxiv.org/abs/2505.13291",
-      "published_date": "2025",
+      "published_date": "June 2025",
       "citations": 0
     },
     {
@@ -174,7 +102,61 @@
       "journal": "arXiv preprint arXiv …, 2025",
       "snippet": "Large language models (LLMs) have advanced the automation of data science workflows. Yet it remains unclear whether they can critically leverage external domain knowledge as …",
       "link": "https://arxiv.org/abs/2506.13992",
-      "published_date": "2025",
+      "published_date": "June 2025",
+      "citations": 0
+    },
+    {
+      "title": "Mle-dojo: Interactive environments for empowering llm agents in machine learning engineering",
+      "authors": "R Qiang, Y Zhuang, Y Li, R Zhang",
+      "journal": "arXiv preprint arXiv …, 2025",
+      "snippet": "We introduce MLE-Dojo, a Gym-style framework for systematically reinforcement learning, evaluating, and improving autonomous large language model (LLM) agents in iterative …",
+      "link": "https://arxiv.org/abs/2505.07782",
+      "published_date": "May 2025",
+      "citations": 1
+    },
+    {
+      "title": "CodePDE: An Inference Framework for LLM-driven PDE Solver Generation",
+      "authors": "S Li, T Marwah, J Shen, W Sun, A Risteski",
+      "journal": "arXiv preprint arXiv …, 2025",
+      "snippet": "Partial differential equations (PDEs) are fundamental to modeling physical systems, yet solving them remains a complex challenge. Traditional numerical solvers rely on expert …",
+      "link": "https://arxiv.org/abs/2505.08783",
+      "published_date": "May 2025",
+      "citations": 1
+    },
+    {
+      "title": "From automation to autonomy: A survey on large language models in scientific discovery",
+      "authors": "T Zheng, Z Deng, W Wang, J Bai",
+      "journal": "arXiv preprint arXiv …, 2025",
+      "snippet": "Large Language Models (LLMs) are catalyzing a paradigm shift in scientific discovery, evolving from task-specific automation tools into increasingly autonomous agents and …",
+      "link": "https://arxiv.org/abs/2505.13259",
+      "published_date": "May 2025",
+      "citations": 1
+    },
+    {
+      "title": "Mlzero: A multi-agent system for end-to-end machine learning automation",
+      "authors": "H Fang, B Han, N Erickson, X Zhang",
+      "journal": "arXiv preprint arXiv …, 2025",
+      "snippet": "Existing AutoML systems have advanced the automation of machine learning (ML); however, they still require substantial manual configuration and expert input, particularly …",
+      "link": "https://arxiv.org/abs/2505.13941",
+      "published_date": "May 2025",
+      "citations": 1
+    },
+    {
+      "title": "IDA-Bench: Evaluating LLMs on Interactive Guided Data Analysis",
+      "authors": "H Liu, T Zhu, T Guo, X Deng",
+      "journal": "arXiv preprint arXiv …, 2025",
+      "snippet": "Large Language Models (LLMs) show promise as data analysis agents, but existing benchmarks overlook the iterative nature of the field, where experts' decisions evolve with …",
+      "link": "https://arxiv.org/abs/2505.18223",
+      "published_date": "May 2025",
+      "citations": 1
+    },
+    {
+      "title": "TimeSeriesGym: A Scalable Benchmark for (Time Series) Machine Learning Engineering Agents",
+      "authors": "Y Cai, X Li, M Goswami, M Wiliński",
+      "journal": "arXiv preprint arXiv …, 2025",
+      "snippet": "We introduce TimeSeriesGym, a scalable benchmarking framework for evaluating Artificial Intelligence (AI) agents on time series machine learning engineering challenges. Existing …",
+      "link": "https://arxiv.org/abs/2505.13291",
+      "published_date": "May 2025",
       "citations": 0
     },
     {
@@ -183,8 +165,26 @@
       "journal": "arXiv preprint arXiv …, 2025",
       "snippet": "The ultimate goal of code agents is to solve complex tasks autonomously. Although large language models (LLMs) have made substantial progress in code generation, real-world …",
       "link": "https://arxiv.org/abs/2505.21577",
-      "published_date": "2025",
+      "published_date": "May 2025",
       "citations": 0
+    },
+    {
+      "title": "Co-bench: Benchmarking language model agents in algorithm search for combinatorial optimization",
+      "authors": "W Sun, S Feng, S Li, Y Yang",
+      "journal": "arXiv preprint arXiv:2504.04310, 2025",
+      "snippet": "Although LLM-based agents have attracted significant attention in domains such as software engineering and machine learning research, their role in advancing combinatorial …",
+      "link": "https://arxiv.org/abs/2504.04310",
+      "published_date": "April 2025",
+      "citations": 5
+    },
+    {
+      "title": "Measuring ai ability to complete long tasks",
+      "authors": "T Kwa, J Becker",
+      "journal": "arXiv preprint arXiv …, 2025",
+      "snippet": "Despite rapid progress on AI benchmarks, the real-world meaning of benchmark performance remains unclear. To quantify the capabilities of AI systems in terms of human …",
+      "link": "https://arxiv.org/abs/2503.14499",
+      "published_date": "March 2025",
+      "citations": 16
     },
     {
       "title": "Towards Pragmatic Time Series Intelligence",

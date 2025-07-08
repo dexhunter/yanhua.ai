@@ -31,6 +31,7 @@ class Paper:
     snippet: str
     link: str
     published_date: str
+    published_date_sort: str = "1900-01-01"  # For sorting purposes
     citations: int = 0
 
 class CitationTracker:
@@ -155,14 +156,95 @@ class CitationTracker:
         # Extract link
         link = result.get('link', '')
         
-        # Extract publication date
+        # Extract publication date with more precision
         published_date = "Unknown"
+        published_date_for_sorting = None
+        
         if 'publication_info' in result and 'summary' in result['publication_info']:
             summary = result['publication_info']['summary']
-            # Look for year in summary
-            year_match = re.search(r'\b(19|20)\d{2}\b', summary)
-            if year_match:
-                published_date = year_match.group(0)
+            
+            # Try to extract more precise dates
+            # Pattern 1: "Month Day, Year" or "Month Year"
+            month_date_match = re.search(r'([A-Za-z]+)\s+(\d{1,2},?\s+)?(\d{4})', summary)
+            if month_date_match:
+                month = month_date_match.group(1)
+                day = month_date_match.group(2)
+                year = month_date_match.group(3)
+                
+                # Convert month name to number
+                month_mapping = {
+                    'jan': '01', 'january': '01', 'feb': '02', 'february': '02',
+                    'mar': '03', 'march': '03', 'apr': '04', 'april': '04',
+                    'may': '05', 'jun': '06', 'june': '06', 'jul': '07', 'july': '07',
+                    'aug': '08', 'august': '08', 'sep': '09', 'september': '09',
+                    'oct': '10', 'october': '10', 'nov': '11', 'november': '11',
+                    'dec': '12', 'december': '12'
+                }
+                
+                month_num = month_mapping.get(month.lower()[:3], '01')
+                day_num = '01'
+                if day and day.strip().rstrip(','):
+                    try:
+                        day_num = f"{int(day.strip().rstrip(',')):#02d}"
+                    except:
+                        day_num = '01'
+                
+                published_date = f"{month} {day.strip() if day else ''}{year}".strip()
+                published_date_for_sorting = f"{year}-{month_num}-{day_num}"
+            
+            # Pattern 2: Just year
+            elif re.search(r'\b(19|20)\d{2}\b', summary):
+                year_match = re.search(r'\b(19|20)\d{2}\b', summary)
+                year = year_match.group(0)
+                published_date = year
+                published_date_for_sorting = f"{year}-01-01"
+        
+        # Try to extract date from link (arXiv papers often have dates in URLs)
+        if link and 'arxiv.org' in link:
+            # Pattern: arxiv.org/abs/YYMM.NNNNN (where YY=year, MM=month)
+            arxiv_id_match = re.search(r'arxiv\.org/abs/(\d{2})(\d{2})\.(\d+)', link)
+            if arxiv_id_match:
+                year_short = arxiv_id_match.group(1)
+                month = arxiv_id_match.group(2)
+                
+                # Convert 2-digit year to 4-digit (assuming 20xx for now)
+                year = f"20{year_short}"
+                
+                # Map month number to month name
+                month_names = {
+                    '01': 'January', '02': 'February', '03': 'March', '04': 'April',
+                    '05': 'May', '06': 'June', '07': 'July', '08': 'August',
+                    '09': 'September', '10': 'October', '11': 'November', '12': 'December'
+                }
+                
+                month_name = month_names.get(month, 'Unknown')
+                published_date = f"{month_name} {year}"
+                published_date_for_sorting = f"{year}-{month}-15"  # Use 15th as default day
+        
+        # Additional date patterns in the summary
+        if published_date_for_sorting is None and 'publication_info' in result and 'summary' in result['publication_info']:
+            summary = result['publication_info']['summary']
+            
+            # Pattern 3: "YYYY-MM-DD" format
+            iso_date_match = re.search(r'(\d{4})-(\d{2})-(\d{2})', summary)
+            if iso_date_match:
+                year, month, day = iso_date_match.groups()
+                published_date = f"{year}-{month}-{day}"
+                published_date_for_sorting = f"{year}-{month}-{day}"
+            
+            # Pattern 4: "DD/MM/YYYY" or "MM/DD/YYYY" format
+            elif re.search(r'(\d{1,2})/(\d{1,2})/(\d{4})', summary):
+                date_match = re.search(r'(\d{1,2})/(\d{1,2})/(\d{4})', summary)
+                part1, part2, year = date_match.groups()
+                # Assume MM/DD/YYYY format (US style)
+                month = f"{int(part1):02d}"
+                day = f"{int(part2):02d}"
+                published_date = f"{month}/{day}/{year}"
+                published_date_for_sorting = f"{year}-{month}-{day}"
+        
+        # Default fallback
+        if published_date_for_sorting is None:
+            published_date_for_sorting = "1900-01-01"
         
         # Extract citation count
         citations = 0
@@ -176,6 +258,7 @@ class CitationTracker:
             snippet=snippet,
             link=link,
             published_date=published_date,
+            published_date_sort=published_date_for_sorting or "1900-01-01",
             citations=citations
         )
     
@@ -195,7 +278,10 @@ class CitationTracker:
             logger.info("No cites_id found. Using fallback search method...")
             papers = self._fetch_with_fallback_search(max_results)
         
-        logger.info(f"Fetched {len(papers)} citing papers")
+        # Sort papers by publication date (latest first)
+        papers.sort(key=lambda p: p.published_date_sort, reverse=True)
+        
+        logger.info(f"Fetched {len(papers)} citing papers, sorted by publication date")
         return papers
     
     def _fetch_with_cites_id(self, cites_id: str, max_results: int) -> List[Paper]:

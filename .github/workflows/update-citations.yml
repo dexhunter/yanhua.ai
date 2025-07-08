@@ -2,8 +2,8 @@ name: Update aideml Citations
 
 on:
   schedule:
-    # Run every 6 hours
-    - cron: '0 */6 * * *'
+    # Run daily at midnight UTC (reduces API usage)
+    - cron: '0 0 * * *'
   
   # Allow manual triggering
   workflow_dispatch:
@@ -129,4 +129,5 @@ jobs:
         echo "- Python 3.11 with pip caching for faster builds" >> $GITHUB_STEP_SUMMARY
         echo "- Retry mechanism with 3 attempts for reliability" >> $GITHUB_STEP_SUMMARY
         echo "- JSON validation before deployment" >> $GITHUB_STEP_SUMMARY
+        echo "- Daily updates to optimize API usage" >> $GITHUB_STEP_SUMMARY
         echo "- Vercel CDN for global fast access" >> $GITHUB_STEP_SUMMARY 
