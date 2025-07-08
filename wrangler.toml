@@ -1,6 +1,0 @@
-name = "yanhua-ai"
-compatibility_date = "2023-12-01"
-
-[[kv_namespaces]]
-binding = "CITATIONS_KV"
-id = "be32ba6bf43a4643be065abca98ba906"
