@@ -7,13 +7,13 @@ An automated citation tracking website that monitors and displays papers citing 
 - **Automated Citation Tracking**: Uses SerpAPI to search Google Scholar for citing papers
 - **Beautiful Web Interface**: Modern, responsive design with interactive charts
 - **Real-time Statistics**: Total citations, recent citations, H-index, and trends
-- **GitHub Actions Integration**: Automatically updates every 6 hours
+- **GitHub Actions Integration**: Automatically updates daily
 - **Mobile Responsive**: Works perfectly on all devices
 - **Error Handling**: Graceful fallback when API is unavailable
 
 ## 🚀 Live Demo
 
-The website is automatically deployed on **Vercel** and updated every 6 hours via GitHub Actions. Every time the citation data is updated, Vercel automatically redeploys the site with the latest information.
+The website is automatically deployed on **Vercel** and updated daily via GitHub Actions. Every time the citation data is updated, Vercel automatically redeploys the site with the latest information.
 
 ## 📋 Setup Instructions
 
@@ -74,7 +74,7 @@ If you want to track a different arXiv paper:
 
 ### Automatic Updates
 
-The system runs automatically every 6 hours using GitHub Actions:
+The system runs automatically daily using GitHub Actions:
 
 1. **Fetch Citations**: Uses SerpAPI to search Google Scholar for papers citing your research
 2. **Process Data**: Extracts paper information, calculates statistics
@@ -158,9 +158,9 @@ Change the cron schedule in `.github/workflows/update-citations.yml`:
 
 ```yaml
 schedule:
-  - cron: '0 */6 * * *'  # Every 6 hours
-  # - cron: '0 */12 * * *'  # Every 12 hours
-  # - cron: '0 0 * * *'     # Daily at midnight
+  - cron: '0 0 * * *'     # Daily at midnight (current setting)
+  # - cron: '0 */6 * * *'  # Every 6 hours
+  # - cron: '0 */12 * * *' # Every 12 hours
 ```
 
 ## 📊 Statistics Explained
@@ -185,8 +185,8 @@ schedule:
 
 - SerpAPI free tier: 100 searches/month
 - Each run uses 1-2 API calls
-- Running every 6 hours = ~120 calls/month
-- Consider upgrading for higher frequency
+- Running daily = ~30-60 calls/month (well within free limits)
+- Can increase frequency if needed
 
 ### Citations Not Found
 
