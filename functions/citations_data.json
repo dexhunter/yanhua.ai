@@ -1,5 +1,5 @@
 {
-  "last_updated": "2025-07-09 00:11:34 UTC",
+  "last_updated": "2025-07-10 00:11:29 UTC",
   "target_paper": "https://www.arxiv.org/abs/2502.13138",
   "arxiv_id": "2502.13138",
   "total_citations": 18,
@@ -82,16 +82,6 @@
   ],
   "papers": [
     {
-      "title": "TimeSeriesGym: A Scalable Benchmark for (Time Series) Machine Learning Engineering Agents",
-      "authors": "Y Cai, X Li, M Goswami, M Wiliński, G Welter… - arXiv preprint arXiv …, 2025 - arxiv.org",
-      "journal": "Google Scholar Result",
-      "snippet": "We introduce TimeSeriesGym, a scalable benchmarking framework for evaluating Artificial Intelligence (AI) agents on time series machine learning engineering challenges. Existing …",
-      "link": "https://arxiv.org/abs/2505.13291",
-      "published_date": "2025",
-      "citations": 0,
-      "institutions": "Unknown"
-    },
-    {
       "title": "AI Scientists Fail Without Strong Implementation Capability",
       "authors": "M Zhu, Q Xie, Y Weng, J Wu, Z Lin, L Yang… - arXiv preprint arXiv …, 2025 - arxiv.org",
       "journal": "Google Scholar Result",
@@ -102,21 +92,11 @@
       "institutions": "Unknown"
     },
     {
-      "title": "Measuring ai ability to complete long tasks",
-      "authors": "T Kwa, B West, J Becker, A Deng, K Garcia… - arXiv preprint arXiv …, 2025 - arxiv.org",
+      "title": "The Automated LLM Speedrunning Benchmark: Reproducing NanoGPT Improvements",
+      "authors": "B Zhao, D Magka, M Jiang, X Li, R Raileanu… - arXiv preprint arXiv …, 2025 - arxiv.org",
       "journal": "Google Scholar Result",
-      "snippet": "Despite rapid progress on AI benchmarks, the real-world meaning of benchmark performance remains unclear. To quantify the capabilities of AI systems in terms of human …",
-      "link": "https://arxiv.org/abs/2503.14499",
-      "published_date": "2025",
-      "citations": 16,
-      "institutions": "Unknown"
-    },
-    {
-      "title": "MLE-STAR: Machine Learning Engineering Agent via Search and Targeted Refinement",
-      "authors": "J Nam, J Yoon, J Chen, J Shin, SÖ Arık… - arXiv preprint arXiv …, 2025 - arxiv.org",
-      "journal": "Google Scholar Result",
-      "snippet": "Agents based on large language models (LLMs) for machine learning engineering (MLE) can automatically implement ML models via code generation. However, existing approaches …",
-      "link": "https://arxiv.org/abs/2506.15692",
+      "snippet": "Rapid advancements in large language models (LLMs) have the potential to assist in scientific progress. A critical capability toward this endeavor is the ability to reproduce …",
+      "link": "https://arxiv.org/abs/2506.22419",
       "published_date": "2025",
       "citations": 0,
       "institutions": "Unknown"
@@ -142,31 +122,31 @@
       "institutions": "Unknown"
     },
     {
+      "title": "TimeSeriesGym: A Scalable Benchmark for (Time Series) Machine Learning Engineering Agents",
+      "authors": "Y Cai, X Li, M Goswami, M Wiliński, G Welter… - arXiv preprint arXiv …, 2025 - arxiv.org",
+      "journal": "Google Scholar Result",
+      "snippet": "We introduce TimeSeriesGym, a scalable benchmarking framework for evaluating Artificial Intelligence (AI) agents on time series machine learning engineering challenges. Existing …",
+      "link": "https://arxiv.org/abs/2505.13291",
+      "published_date": "2025",
+      "citations": 0,
+      "institutions": "Unknown"
+    },
+    {
+      "title": "Towards Pragmatic Time Series Intelligence",
+      "authors": "M Goswami - 2025 - search.proquest.com",
+      "journal": "Google Scholar Result",
+      "snippet": "This thesis aims to democratize time series intelligence by making advanced modeling capabilities accessible to users without specialized machine learning knowledge. We …",
+      "link": "https://search.proquest.com/openview/24ff18df8583af7a835b667b59b216b9/1?pq-origsite=gscholar&cbl=18750&diss=y",
+      "published_date": "2025",
+      "citations": 0,
+      "institutions": "Unknown"
+    },
+    {
       "title": "Mle-dojo: Interactive environments for empowering llm agents in machine learning engineering",
       "authors": "R Qiang, Y Zhuang, Y Li, R Zhang, C Li… - arXiv preprint arXiv …, 2025 - arxiv.org",
       "journal": "Google Scholar Result",
       "snippet": "We introduce MLE-Dojo, a Gym-style framework for systematically reinforcement learning, evaluating, and improving autonomous large language model (LLM) agents in iterative …",
       "link": "https://arxiv.org/abs/2505.07782",
-      "published_date": "2025",
-      "citations": 1,
-      "institutions": "Unknown"
-    },
-    {
-      "title": "From automation to autonomy: A survey on large language models in scientific discovery",
-      "authors": "T Zheng, Z Deng, HT Tsang, W Wang, J Bai… - arXiv preprint arXiv …, 2025 - arxiv.org",
-      "journal": "Google Scholar Result",
-      "snippet": "Large Language Models (LLMs) are catalyzing a paradigm shift in scientific discovery, evolving from task-specific automation tools into increasingly autonomous agents and …",
-      "link": "https://arxiv.org/abs/2505.13259",
-      "published_date": "2025",
-      "citations": 1,
-      "institutions": "Unknown"
-    },
-    {
-      "title": "Mlzero: A multi-agent system for end-to-end machine learning automation",
-      "authors": "H Fang, B Han, N Erickson, X Zhang, S Zhou… - arXiv preprint arXiv …, 2025 - arxiv.org",
-      "journal": "Google Scholar Result",
-      "snippet": "Existing AutoML systems have advanced the automation of machine learning (ML); however, they still require substantial manual configuration and expert input, particularly …",
-      "link": "https://arxiv.org/abs/2505.13941",
       "published_date": "2025",
       "citations": 1,
       "institutions": "Unknown"
@@ -192,23 +172,13 @@
       "institutions": "Unknown"
     },
     {
-      "title": "AutoMind: Adaptive Knowledgeable Agent for Automated Data Science",
-      "authors": "Y Ou, Y Luo, J Zheng, L Wei, S Qiao, J Zhang… - arXiv preprint arXiv …, 2025 - arxiv.org",
+      "title": "Mlzero: A multi-agent system for end-to-end machine learning automation",
+      "authors": "H Fang, B Han, N Erickson, X Zhang, S Zhou… - arXiv preprint arXiv …, 2025 - arxiv.org",
       "journal": "Google Scholar Result",
-      "snippet": "Large Language Model (LLM) agents have shown great potential in addressing real-world data science problems. LLM-driven data science agents promise to automate the entire …",
-      "link": "https://arxiv.org/abs/2506.10974",
+      "snippet": "Existing AutoML systems have advanced the automation of machine learning (ML); however, they still require substantial manual configuration and expert input, particularly …",
+      "link": "https://arxiv.org/abs/2505.13941",
       "published_date": "2025",
-      "citations": 0,
-      "institutions": "Unknown"
-    },
-    {
-      "title": "LMR-BENCH: Evaluating LLM Agent's Ability on Reproducing Language Modeling Research",
-      "authors": "S Yan, R Li, Z Luo, Z Wang, D Li, L Jing, K He… - arXiv preprint arXiv …, 2025 - arxiv.org",
-      "journal": "Google Scholar Result",
-      "snippet": "Large language model (LLM) agents have demonstrated remarkable potential in advancing scientific discovery. However, their capability in the fundamental yet crucial task of …",
-      "link": "https://arxiv.org/abs/2506.17335",
-      "published_date": "2025",
-      "citations": 0,
+      "citations": 1,
       "institutions": "Unknown"
     },
     {
@@ -219,6 +189,26 @@
       "link": "https://arxiv.org/abs/2505.18223",
       "published_date": "2025",
       "citations": 1,
+      "institutions": "Unknown"
+    },
+    {
+      "title": "From automation to autonomy: A survey on large language models in scientific discovery",
+      "authors": "T Zheng, Z Deng, HT Tsang, W Wang, J Bai… - arXiv preprint arXiv …, 2025 - arxiv.org",
+      "journal": "Google Scholar Result",
+      "snippet": "Large Language Models (LLMs) are catalyzing a paradigm shift in scientific discovery, evolving from task-specific automation tools into increasingly autonomous agents and …",
+      "link": "https://arxiv.org/abs/2505.13259",
+      "published_date": "2025",
+      "citations": 1,
+      "institutions": "Unknown"
+    },
+    {
+      "title": "MLE-STAR: Machine Learning Engineering Agent via Search and Targeted Refinement",
+      "authors": "J Nam, J Yoon, J Chen, J Shin, SÖ Arık… - arXiv preprint arXiv …, 2025 - arxiv.org",
+      "journal": "Google Scholar Result",
+      "snippet": "Agents based on large language models (LLMs) for machine learning engineering (MLE) can automatically implement ML models via code generation. However, existing approaches …",
+      "link": "https://arxiv.org/abs/2506.15692",
+      "published_date": "2025",
+      "citations": 0,
       "institutions": "Unknown"
     },
     {
@@ -242,23 +232,33 @@
       "institutions": "Unknown"
     },
     {
-      "title": "The Automated LLM Speedrunning Benchmark: Reproducing NanoGPT Improvements",
-      "authors": "B Zhao, D Magka, M Jiang, X Li, R Raileanu… - arXiv preprint arXiv …, 2025 - arxiv.org",
+      "title": "AutoMind: Adaptive Knowledgeable Agent for Automated Data Science",
+      "authors": "Y Ou, Y Luo, J Zheng, L Wei, S Qiao, J Zhang… - arXiv preprint arXiv …, 2025 - arxiv.org",
       "journal": "Google Scholar Result",
-      "snippet": "Rapid advancements in large language models (LLMs) have the potential to assist in scientific progress. A critical capability toward this endeavor is the ability to reproduce …",
-      "link": "https://arxiv.org/abs/2506.22419",
+      "snippet": "Large Language Model (LLM) agents have shown great potential in addressing real-world data science problems. LLM-driven data science agents promise to automate the entire …",
+      "link": "https://arxiv.org/abs/2506.10974",
       "published_date": "2025",
       "citations": 0,
       "institutions": "Unknown"
     },
     {
-      "title": "Towards Pragmatic Time Series Intelligence",
-      "authors": "M Goswami - 2025 - search.proquest.com",
+      "title": "LMR-BENCH: Evaluating LLM Agent's Ability on Reproducing Language Modeling Research",
+      "authors": "S Yan, R Li, Z Luo, Z Wang, D Li, L Jing, K He… - arXiv preprint arXiv …, 2025 - arxiv.org",
       "journal": "Google Scholar Result",
-      "snippet": "This thesis aims to democratize time series intelligence by making advanced modeling capabilities accessible to users without specialized machine learning knowledge. We …",
-      "link": "https://search.proquest.com/openview/24ff18df8583af7a835b667b59b216b9/1?pq-origsite=gscholar&cbl=18750&diss=y",
+      "snippet": "Large language model (LLM) agents have demonstrated remarkable potential in advancing scientific discovery. However, their capability in the fundamental yet crucial task of …",
+      "link": "https://arxiv.org/abs/2506.17335",
       "published_date": "2025",
       "citations": 0,
+      "institutions": "Unknown"
+    },
+    {
+      "title": "Measuring ai ability to complete long tasks",
+      "authors": "T Kwa, B West, J Becker, A Deng, K Garcia… - arXiv preprint arXiv …, 2025 - arxiv.org",
+      "journal": "Google Scholar Result",
+      "snippet": "Despite rapid progress on AI benchmarks, the real-world meaning of benchmark performance remains unclear. To quantify the capabilities of AI systems in terms of human …",
+      "link": "https://arxiv.org/abs/2503.14499",
+      "published_date": "2025",
+      "citations": 16,
       "institutions": "Unknown"
     }
   ]
