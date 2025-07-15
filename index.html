@@ -577,7 +577,7 @@
             if (yearMatch) {
                 // To avoid grouping all year-only papers into one "2025" bucket,
                 // we can treat them as "Unknown" so they are handled separately.
-                return "Unknown";
+                return yearMatch[1];
             }
 
             return "Unknown"; // Default case
