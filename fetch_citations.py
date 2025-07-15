@@ -266,17 +266,17 @@ class CitationTracker:
             atom_namespace = {'atom': 'http://www.w3.org/2005/Atom'}
             
             papers = []
-            # Limit scraping to papers submitted in the last day to keep it fast
-            one_day_ago = datetime.now() - timedelta(days=1)
+            # Limit scraping to papers submitted in the last 3 days to keep it fast
+            three_days_ago = datetime.now() - timedelta(days=3)
             
             for entry in root.findall('atom:entry', atom_namespace):
                 paper = self._parse_arxiv_xml_entry(entry, atom_namespace)
                 if paper:
                     paper_date = datetime.strptime(paper.published_date_sort, '%Y-%m-%d')
-                    if paper_date >= one_day_ago:
+                    if paper_date >= three_days_ago:
                         papers.append(paper)
 
-            logger.info(f"arXiv HTML Search: Found {len(papers)} recent papers from the last day to check.")
+            logger.info(f"arXiv HTML Search: Found {len(papers)} recent papers from the last 3 days to check.")
             return papers
         except Exception as e:
             logger.error(f"arXiv HTML Search: Could not fetch recent papers for scraping: {e}")
