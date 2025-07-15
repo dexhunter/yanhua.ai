@@ -298,8 +298,8 @@ class CitationTracker:
         """Checks the HTML version of a paper for a citation to the target paper."""
         paper_id = self._extract_arxiv_id(paper.link)
         # Check both v1, v2, etc.
-        html_url = f"https://arxiv.org/html/{paper_id}" 
-        
+        html_url = f"https://arxiv.org/html/{paper_id}"
+
         logger.debug(f"Checking HTML: {html_url}")
         try:
             # A short timeout is crucial here to avoid getting stuck.
@@ -308,7 +308,7 @@ class CitationTracker:
                 # Simple string search is much faster than regex for this.
                 # We check for both the plain ID and the project name "aideml".
                 text_to_search = response.text.lower()
-                if self.target_arxiv_id in text_to_search or "aideml" in text_to_search:
+                if self.target_arxiv_id in text_to_search or "aide" in text_to_search:
                     logger.info(f"  -> Found citation in {paper.title}")
                     return True
         except requests.exceptions.RequestException:
@@ -375,11 +375,7 @@ class CitationTracker:
 
         # Recent Citations (last 30 days)
         thirty_days_ago = datetime.now() - timedelta(days=30)
-        recent_citations = 0
-        for paper in valid_papers:
-            paper_date = datetime.strptime(paper.published_date_sort, '%Y-%m-%d')
-            if paper_date >= thirty_days_ago:
-                recent_citations += 1
+        recent_citations = sum(1 for paper in valid_papers if datetime.strptime(paper.published_date_sort, '%Y-%m-%d') >= thirty_days_ago)
 
         # Average Citations per Month & Timeline
         timeline = []
