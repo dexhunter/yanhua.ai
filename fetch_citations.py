@@ -132,6 +132,8 @@ class CitationTracker:
 
     def _fetch_from_serpapi(self, max_results: int) -> List[Paper]:
         # Try to load from cache first
+        if os.path.exists(self.cache_file):
+            os.remove(self.cache_file)
         cached_papers_data = self._load_cache()
         if cached_papers_data is not None:
             return [self._parse_serpapi_paper(res) for res in cached_papers_data]
@@ -154,6 +156,7 @@ class CitationTracker:
             response = requests.get(self.serpapi_base_url, params=params, timeout=30)
             response.raise_for_status()
             data = response.json()
+            logger.info(f"SerpAPI raw response: {json.dumps(data, indent=2)}")
             raw_results = data.get('organic_results', [])
             if raw_results:
                 papers.extend([self._parse_serpapi_paper(res) for res in raw_results])
@@ -186,11 +189,13 @@ class CitationTracker:
             date_match = re.search(r'\b\w{3}, \d{2} \w{3} \d{4}\b', publication_info_summary) # Simplified, adjust as needed
             if not date_match: # Fallback for formats like "Jan 1, 2024"
                 date_match = re.search(r'\b\w{3} \d{1,2}, \d{4}\b', publication_info_summary)
+            if not date_match: # Fallback for formats like "YYYY-MM-DD"
+                date_match = re.search(r'\b\d{4}-\d{2}-\d{2}\b', publication_info_summary)
 
             if date_match:
                 date_str = date_match.group(0)
                 # Try parsing different common formats
-                for fmt in ("%b %d, %Y", "%a, %d %b %Y"):
+                for fmt in ("%b %d, %Y", "%a, %d %b %Y", "%Y-%m-%d"):
                     try:
                         dt_obj = datetime.strptime(date_str, fmt)
                         published_date = dt_obj.strftime('%B %d, %Y')
@@ -199,14 +204,21 @@ class CitationTracker:
                     except ValueError:
                         continue
             else:
-                # If no full date, fall back to year extraction
-                year_match = re.search(r'\b(19|20)\d{2}\b', publication_info_summary)
+                # If no full date, fall back to year extraction from the link
+                year_match = re.search(r'arxiv\.org/abs/(\d{2})(\d{2})', link)
                 if year_match:
-                    year = int(year_match.group(0))
-                    published_date = str(year)
-                    published_date_sort = f"{year}-01-01"
+                    year = int("20" + year_match.group(1))
+                    month = int(year_match.group(2))
+                    published_date = f"{datetime(year, month, 1).strftime('%B')} {year}"
+                    published_date_sort = f"{year}-{month:02d}-01"
+                else:
+                    year_match = re.search(r'\b(19|20)\d{2}\b', publication_info_summary)
+                    if year_match:
+                        year = int(year_match.group(0))
+                        published_date = str(year)
+                        published_date_sort = f"{year}-01-01"
         except Exception as e:
-            logger.warning(f"Could not parse date from '{publication_info_summary}': {e}")
+            logger.warning(f"Could not parse date from '{publication_info_summary}' or '{link}': {e}")
 
         return Paper(
             title=title, authors=authors_info, journal="Google Scholar Result",
@@ -320,11 +332,12 @@ class CitationTracker:
             summary = entry.find('atom:summary', namespace).text.strip()
             published_raw = entry.find('atom:published', namespace).text
             published_dt = datetime.fromisoformat(published_raw.replace('Z', '+00:00'))
-            published_date = published_dt.strftime('%Y-%m-%d')
+            published_date = published_dt.strftime('%B %d, %Y')
+            published_date_sort = published_dt.strftime('%Y-%m-%d')
             
             return Paper(title=title, authors=authors, journal="arXiv", snippet=summary,
                          link=paper_id_url, published_date=published_date,
-                         published_date_sort=published_date)
+                         published_date_sort=published_date_sort)
         except Exception:
             return None
 
