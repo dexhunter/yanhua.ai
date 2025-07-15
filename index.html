@@ -484,7 +484,7 @@
         const papersByMonth = {};
         papers.forEach((paper) => {
           // Use published_date_sort for grouping
-          const monthKey = extractMonthYear(paper.published_date_sort);
+          const monthKey = extractMonthYear(paper.published_date);
           if (!papersByMonth[monthKey]) {
             papersByMonth[monthKey] = [];
           }
@@ -503,7 +503,7 @@
           .map((month) => {
             const monthPapers = papersByMonth[month];
             // Sort papers within the month by date, newest first
-            monthPapers.sort((a, b) => new Date(b.published_date_sort) - new Date(a.published_date_sort));
+            monthPapers.sort((a, b) => new Date(b.published_date) - new Date(a.published_date));
             
             return `
                     <div class="month-section">
@@ -577,7 +577,7 @@
             if (yearMatch) {
                 // To avoid grouping all year-only papers into one "2025" bucket,
                 // we can treat them as "Unknown" so they are handled separately.
-                return yearMatch[1]; 
+                return "Unknown";
             }
 
             return "Unknown"; // Default case
