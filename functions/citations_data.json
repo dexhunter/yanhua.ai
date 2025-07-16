@@ -1,179 +1,78 @@
 {
-  "last_updated": "2025-07-15 13:03:32 UTC",
+  "last_updated": "2025-07-15 15:05:54 UTC",
   "target_paper": "https://www.arxiv.org/abs/2502.13138",
   "arxiv_id": "2502.13138",
-  "total_citations": 34,
-  "h_index": 2,
+  "total_citations": 14,
+  "h_index": 0,
   "recent_citations": 14,
-  "avg_citations_per_month": "4.86",
+  "avg_citations_per_month": "14.00",
   "timeline": [
     {
-      "date": "2025-01-01",
+      "date": "2025-07-14",
+      "citations": 1
+    },
+    {
+      "date": "2025-07-14",
+      "citations": 2
+    },
+    {
+      "date": "2025-07-14",
       "citations": 3
     },
     {
-      "date": "2025-03-01",
+      "date": "2025-07-14",
       "citations": 4
     },
     {
-      "date": "2025-04-01",
+      "date": "2025-07-14",
       "citations": 5
     },
     {
-      "date": "2025-01-01",
+      "date": "2025-07-14",
       "citations": 6
     },
     {
-      "date": "2025-01-01",
+      "date": "2025-07-14",
       "citations": 7
     },
     {
-      "date": "2025-01-01",
+      "date": "2025-07-14",
       "citations": 8
     },
     {
-      "date": "2025-01-01",
+      "date": "2025-07-14",
       "citations": 9
     },
     {
-      "date": "2025-01-01",
+      "date": "2025-07-14",
       "citations": 10
     },
     {
-      "date": "2025-01-01",
+      "date": "2025-07-14",
       "citations": 11
     },
     {
-      "date": "2025-01-01",
+      "date": "2025-07-14",
       "citations": 12
     },
     {
-      "date": "2025-01-01",
+      "date": "2025-07-14",
       "citations": 13
     },
     {
-      "date": "2025-01-01",
+      "date": "2025-07-14",
       "citations": 14
-    },
-    {
-      "date": "2025-01-01",
-      "citations": 15
-    },
-    {
-      "date": "2025-01-01",
-      "citations": 16
-    },
-    {
-      "date": "2025-01-01",
-      "citations": 17
-    },
-    {
-      "date": "2025-01-01",
-      "citations": 18
-    },
-    {
-      "date": "2025-01-01",
-      "citations": 19
-    },
-    {
-      "date": "2025-01-01",
-      "citations": 20
-    },
-    {
-      "date": "2025-07-14",
-      "citations": 21
-    },
-    {
-      "date": "2025-07-14",
-      "citations": 22
-    },
-    {
-      "date": "2025-07-14",
-      "citations": 23
-    },
-    {
-      "date": "2025-07-14",
-      "citations": 24
-    },
-    {
-      "date": "2025-07-14",
-      "citations": 25
-    },
-    {
-      "date": "2025-07-14",
-      "citations": 26
-    },
-    {
-      "date": "2025-07-14",
-      "citations": 27
-    },
-    {
-      "date": "2025-07-14",
-      "citations": 28
-    },
-    {
-      "date": "2025-07-14",
-      "citations": 29
-    },
-    {
-      "date": "2025-07-14",
-      "citations": 30
-    },
-    {
-      "date": "2025-07-14",
-      "citations": 31
-    },
-    {
-      "date": "2025-07-14",
-      "citations": 32
-    },
-    {
-      "date": "2025-07-14",
-      "citations": 33
-    },
-    {
-      "date": "2025-07-14",
-      "citations": 34
     }
   ],
   "papers": [
-    {
-      "title": "Play Style Identification Using Low-Level Representations of Play Traces\n  in MicroRTS",
-      "authors": "Ruizhe Yu Xia, Jeremy Gow, Simon Lucas",
-      "journal": "arXiv",
-      "snippet": "Play style identification can provide valuable game design insights and\nenable adaptive experiences, with the potential to improve game playing agents.\nPrevious work relies on domain knowledge to construct play trace\nrepresentations using handcrafted features. More recent approaches incorporate\nthe sequential structure of play traces but still require some level of domain\nabstraction. In this study, we explore the use of unsupervised CNN-LSTM\nautoencoder models to obtain latent representations directly from low-level\nplay trace data in MicroRTS. We demonstrate that this approach yields a\nmeaningful separation of different game playing agents in the latent space,\nreducing reliance on domain expertise and its associated biases. This latent\nspace is then used to guide the exploration of diverse play styles within\nstudied AI players.",
-      "link": "http://arxiv.org/abs/2507.10172v1",
-      "published_date": "2025-07-14",
-      "citations": 0,
-      "institutions": "Unknown"
-    },
-    {
-      "title": "Breaking the Myth: Can Small Models Infer Postconditions Too?",
-      "authors": "Gehao Zhang, Zhenting Wang, Juan Zhai",
-      "journal": "arXiv",
-      "snippet": "Formal specifications are essential for ensuring software correctness, yet\nmanually writing them is tedious and error-prone. Large Language Models (LLMs)\nhave shown promise in generating such specifications from natural language\nintents, but the giant model size and high computational demands raise a\nfundamental question: Do we really need large models for this task? In this\npaper, we show that a small, fine-tuned language model can achieve high-quality\npostcondition generation with much lower computational costs. We construct a\nspecialized dataset of prompts, reasoning logs, and postconditions, then\nsupervise the fine-tuning of a $7$B-parameter code model. Our approach tackles\nreal-world repository dependencies and preserves pre-state information,\nallowing for expressive and accurate specifications. We evaluate the model on a\nbenchmark of real-world Java bugs (Defects4J) and compare against both\nproprietary giants (e.g., GPT-4o) and open-source large models. Empirical\nresults demonstrate that our compact model matches or outperforms significantly\nlarger counterparts in syntax correctness, semantic correctness, and\nbug-distinguishing capability. These findings highlight that targeted\nfine-tuning on a modest dataset can enable small models to achieve results\nformerly seen only in massive, resource-heavy LLMs, offering a practical and\nefficient path for the real-world adoption of automated specification\ngeneration.",
-      "link": "http://arxiv.org/abs/2507.10182v1",
-      "published_date": "2025-07-14",
-      "citations": 0,
-      "institutions": "Unknown"
-    },
     {
       "title": "Recognizing Dementia from Neuropsychological Tests with State Space\n  Models",
       "authors": "Liming Wang, Saurabhchand Bhati, Cody Karjadi, Rhoda Au, James Glass",
       "journal": "arXiv",
       "snippet": "Early detection of dementia is critical for timely medical intervention and\nimproved patient outcomes. Neuropsychological tests are widely used for\ncognitive assessment but have traditionally relied on manual scoring. Automatic\ndementia classification (ADC) systems aim to infer cognitive decline directly\nfrom speech recordings of such tests. We propose Demenba, a novel ADC framework\nbased on state space models, which scale linearly in memory and computation\nwith sequence length. Trained on over 1,000 hours of cognitive assessments\nadministered to Framingham Heart Study participants, some of whom were\ndiagnosed with dementia through adjudicated review, our method outperforms\nprior approaches in fine-grained dementia classification by 21\\%, while using\nfewer parameters. We further analyze its scaling behavior and demonstrate that\nour model gains additional improvement when fused with large language models,\npaving the way for more transparent and scalable dementia assessment tools.\nCode: https://anonymous.4open.science/r/Demenba-0861",
       "link": "http://arxiv.org/abs/2507.10311v1",
-      "published_date": "2025-07-14",
-      "citations": 0,
-      "institutions": "Unknown"
-    },
-    {
-      "title": "Conditional Chemical Language Models are Versatile Tools in Drug\n  Discovery",
-      "authors": "Lu Zhu, Emmanuel Noutahi",
-      "journal": "arXiv",
-      "snippet": "Generative chemical language models (CLMs) have demonstrated strong\ncapabilities in molecular design, yet their impact in drug discovery remains\nlimited by the absence of reliable reward signals and the lack of\ninterpretability in their outputs. We present SAFE-T, a generalist chemical\nmodeling framework that conditions on biological context -- such as protein\ntargets or mechanisms of action -- to prioritize and design molecules without\nrelying on structural information or engineered scoring functions. SAFE-T\nmodels the conditional likelihood of fragment-based molecular sequences given a\nbiological prompt, enabling principled scoring of molecules across tasks such\nas virtual screening, drug-target interaction prediction, and activity cliff\ndetection. Moreover, it supports goal-directed generation by sampling from this\nlearned distribution, aligning molecular design with biological objectives. In\ncomprehensive zero-shot evaluations across predictive (LIT-PCBA, DAVIS, KIBA,\nACNet) and generative (DRUG, PMO) benchmarks, SAFE-T consistently achieves\nperformance comparable to or better than existing approaches while being\nsignificantly faster. Fragment-level attribution further reveals that SAFE-T\ncaptures known structure-activity relationships, supporting interpretable and\nbiologically grounded design. Together with its computational efficiency, these\nresults demonstrate that conditional generative CLMs can unify scoring and\ngeneration to accelerate early-stage drug discovery.",
-      "link": "http://arxiv.org/abs/2507.10273v1",
-      "published_date": "2025-07-14",
+      "published_date": "July 14, 2025",
+      "published_date_sort": "2025-07-14",
       "citations": 0,
       "institutions": "Unknown"
     },
@@ -183,27 +82,19 @@
       "journal": "arXiv",
       "snippet": "Motion capture (MoCap) data from wearable Inertial Measurement Units (IMUs)\nis vital for applications in sports science, but its utility is often\ncompromised by missing data. Despite numerous imputation techniques, a\nsystematic performance evaluation for IMU-derived MoCap time-series data is\nlacking. We address this gap by conducting a comprehensive comparative analysis\nof statistical, machine learning, and deep learning imputation methods. Our\nevaluation considers three distinct contexts: univariate time-series,\nmultivariate across subjects, and multivariate across kinematic angles. To\nfacilitate this benchmark, we introduce the first publicly available MoCap\ndataset designed specifically for imputation, featuring data from 53 karate\npractitioners. We simulate three controlled missingness mechanisms: missing\ncompletely at random (MCAR), block missingness, and a novel value-dependent\npattern at signal transition points. Our experiments, conducted on 39 kinematic\nvariables across all subjects, reveal that multivariate imputation frameworks\nconsistently outperform univariate approaches, particularly for complex\nmissingness. For instance, multivariate methods achieve up to a 50% mean\nabsolute error reduction (MAE from 10.8 to 5.8) compared to univariate\ntechniques for transition point missingness. Advanced models like Generative\nAdversarial Imputation Networks (GAIN) and Iterative Imputers demonstrate the\nhighest accuracy in these challenging scenarios. This work provides a critical\nbaseline for future research and offers practical recommendations for improving\nthe integrity and robustness of Mo-Cap data analysis.",
       "link": "http://arxiv.org/abs/2507.10334v1",
-      "published_date": "2025-07-14",
+      "published_date": "July 14, 2025",
+      "published_date_sort": "2025-07-14",
       "citations": 0,
       "institutions": "Unknown"
     },
     {
-      "title": "Convergence of Agnostic Federated Averaging",
-      "authors": " Herlock,  Rahimi, Dionysis Kalogerias",
+      "title": "Breaking the Myth: Can Small Models Infer Postconditions Too?",
+      "authors": "Gehao Zhang, Zhenting Wang, Juan Zhai",
       "journal": "arXiv",
-      "snippet": "Federated learning (FL) enables decentralized model training without\ncentralizing raw data. However, practical FL deployments often face a key\nrealistic challenge: Clients participate intermittently in server aggregation\nand with unknown, possibly biased participation probabilities. Most existing\nconvergence results either assume full-device participation, or rely on\nknowledge of (in fact uniform) client availability distributions -- assumptions\nthat rarely hold in practice. In this work, we characterize the optimization\nproblem that consistently adheres to the stochastic dynamics of the well-known\n\\emph{agnostic Federated Averaging (FedAvg)} algorithm under random (and\nvariably-sized) client availability, and rigorously establish its convergence\nfor convex, possibly nonsmooth losses, achieving a standard rate of order\n$\\mathcal{O}(1/\\sqrt{T})$, where $T$ denotes the aggregation horizon. Our\nanalysis provides the first convergence guarantees for agnostic FedAvg under\ngeneral, non-uniform, stochastic client participation, without knowledge of the\nparticipation distribution. We also empirically demonstrate that agnostic\nFedAvg in fact outperforms common (and suboptimal) weighted aggregation FedAvg\nvariants, even with server-side knowledge of participation weights.",
-      "link": "http://arxiv.org/abs/2507.10325v1",
-      "published_date": "2025-07-14",
-      "citations": 0,
-      "institutions": "Unknown"
-    },
-    {
-      "title": "FRSICL: LLM-Enabled In-Context Learning Flight Resource Allocation for\n  Fresh Data Collection in UAV-Assisted Wildfire Monitoring",
-      "authors": "Yousef Emami, Hao Zhou, Miguel Gutierrez Gaitan, Kai Li, Luis Almeida",
-      "journal": "arXiv",
-      "snippet": "Unmanned Aerial Vehicles (UAVs) are vital for public safety, particularly in\nwildfire monitoring, where early detection minimizes environmental impact. In\nUAV-Assisted Wildfire Monitoring (UAWM) systems, joint optimization of sensor\ntransmission scheduling and velocity is critical for minimizing Age of\nInformation (AoI) from stale sensor data. Deep Reinforcement Learning (DRL) has\nbeen used for such optimization; however, its limitations such as low sampling\nefficiency, simulation-to-reality gaps, and complex training render it\nunsuitable for time-critical applications like wildfire monitoring. This paper\nintroduces a new online Flight Resource Allocation scheme based on LLM-Enabled\nIn-Context Learning (FRSICL) to jointly optimize the UAV's flight control and\ndata collection schedule along the trajectory in real time, thereby\nasymptotically minimizing the average AoI across ground sensors. In contrast to\nDRL, FRSICL generates data collection schedules and controls velocity using\nnatural language task descriptions and feedback from the environment, enabling\ndynamic decision-making without extensive retraining. Simulation results\nconfirm the effectiveness of the proposed FRSICL compared to Proximal Policy\nOptimization (PPO) and Nearest-Neighbor baselines.",
-      "link": "http://arxiv.org/abs/2507.10134v1",
-      "published_date": "2025-07-14",
+      "snippet": "Formal specifications are essential for ensuring software correctness, yet\nmanually writing them is tedious and error-prone. Large Language Models (LLMs)\nhave shown promise in generating such specifications from natural language\nintents, but the giant model size and high computational demands raise a\nfundamental question: Do we really need large models for this task? In this\npaper, we show that a small, fine-tuned language model can achieve high-quality\npostcondition generation with much lower computational costs. We construct a\nspecialized dataset of prompts, reasoning logs, and postconditions, then\nsupervise the fine-tuning of a $7$B-parameter code model. Our approach tackles\nreal-world repository dependencies and preserves pre-state information,\nallowing for expressive and accurate specifications. We evaluate the model on a\nbenchmark of real-world Java bugs (Defects4J) and compare against both\nproprietary giants (e.g., GPT-4o) and open-source large models. Empirical\nresults demonstrate that our compact model matches or outperforms significantly\nlarger counterparts in syntax correctness, semantic correctness, and\nbug-distinguishing capability. These findings highlight that targeted\nfine-tuning on a modest dataset can enable small models to achieve results\nformerly seen only in massive, resource-heavy LLMs, offering a practical and\nefficient path for the real-world adoption of automated specification\ngeneration.",
+      "link": "http://arxiv.org/abs/2507.10182v1",
+      "published_date": "July 14, 2025",
+      "published_date_sort": "2025-07-14",
       "citations": 0,
       "institutions": "Unknown"
     },
@@ -213,57 +104,19 @@
       "journal": "arXiv",
       "snippet": "In this paper, we study a second-order approach to policy optimization in\nreinforcement learning. Existing second-order methods often suffer from\nsuboptimal sample complexity or rely on unrealistic assumptions about\nimportance sampling. To overcome these limitations, we propose VR-CR-PN, a\nvariance-reduced cubic-regularized policy Newton algorithm. To the best of our\nknowledge, this is the first algorithm that integrates Hessian-aided variance\nreduction with second-order policy optimization, effectively addressing the\ndistribution shift problem and achieving best-known sample complexity under\ngeneral nonconvex conditions but without the need for importance sampling. We\ntheoretically establish that VR-CR-PN achieves a sample complexity of\n$\\tilde{\\mathcal{O}}(\\epsilon^{-3})$ to reach an $\\epsilon$-second-order\nstationary point, significantly improving upon the previous best result of\n$\\tilde{\\mathcal{O}}(\\epsilon^{-3.5})$ under comparable assumptions. As an\nadditional contribution, we introduce a novel Hessian estimator for the\nexpected return function, which admits a uniform upper bound independent of the\nhorizon length $H$, allowing the algorithm to achieve horizon-independent\nsample complexity.",
       "link": "http://arxiv.org/abs/2507.10120v1",
-      "published_date": "2025-07-14",
+      "published_date": "July 14, 2025",
+      "published_date_sort": "2025-07-14",
       "citations": 0,
       "institutions": "Unknown"
     },
     {
-      "title": "Anticipating the Selectivity of Cyclization Reaction Pathways with\n  Neural Network Potentials",
-      "authors": "Nicholas Casetti, Dylan Anstine, Olexandr Isayev, Connor W. Coley",
+      "title": "Play Style Identification Using Low-Level Representations of Play Traces\n  in MicroRTS",
+      "authors": "Ruizhe Yu Xia, Jeremy Gow, Simon Lucas",
       "journal": "arXiv",
-      "snippet": "Reaction mechanism search tools have demonstrated the ability to provide\ninsights into likely products and rate-limiting steps of reacting systems.\nHowever, reactions involving several concerted bond changes - as can be found\nin many key steps of natural product synthesis - can complicate the search\nprocess. To mitigate these complications, we present a mechanism search\nstrategy particularly suited to help expedite exploration of an exemplary\nfamily of such complex reactions, cyclizations. We provide a cost-effective\nstrategy for identifying relevant elementary reaction steps by combining\ngraph-based enumeration schemes and machine learning techniques for\nintermediate filtering. Key to this approach is our use of a neural network\npotential (NNP), AIMNet2-rxn, for computational evaluation of each candidate\nreaction pathway. In this article, we evaluate the NNP's ability to estimate\nactivation energies, demonstrate the correct anticipation of stereoselectivity,\nand recapitulate complex enabling steps in natural product synthesis.",
-      "link": "http://arxiv.org/abs/2507.10400v1",
-      "published_date": "2025-07-14",
-      "citations": 0,
-      "institutions": "Unknown"
-    },
-    {
-      "title": "DepViT-CAD: Deployable Vision Transformer-Based Cancer Diagnosis in\n  Histopathology",
-      "authors": "Ashkan Shakarami, Lorenzo Nicole, Rocco Cappellesso, Angelo Paolo Dei Tos, Stefano Ghidoni",
-      "journal": "arXiv",
-      "snippet": "Accurate and timely cancer diagnosis from histopathological slides is vital\nfor effective clinical decision-making. This paper introduces DepViT-CAD, a\ndeployable AI system for multi-class cancer diagnosis in histopathology. At its\ncore is MAViT, a novel Multi-Attention Vision Transformer designed to capture\nfine-grained morphological patterns across diverse tumor types. MAViT was\ntrained on expert-annotated patches from 1008 whole-slide images, covering 11\ndiagnostic categories, including 10 major cancers and non-tumor tissue.\nDepViT-CAD was validated on two independent cohorts: 275 WSIs from The Cancer\nGenome Atlas and 50 routine clinical cases from pathology labs, achieving\ndiagnostic sensitivities of 94.11% and 92%, respectively. By combining\nstate-of-the-art transformer architecture with large-scale real-world\nvalidation, DepViT-CAD offers a robust and scalable approach for AI-assisted\ncancer diagnostics. To support transparency and reproducibility, software and\ncode will be made publicly available at GitHub.",
-      "link": "http://arxiv.org/abs/2507.10250v1",
-      "published_date": "2025-07-14",
-      "citations": 0,
-      "institutions": "Unknown"
-    },
-    {
-      "title": "Adaptability in Multi-Agent Reinforcement Learning: A Framework and\n  Unified Review",
-      "authors": "Siyi Hu, Mohamad A Hady, Jianglin Qiao, Jimmy Cao, Mahardhika Pratama, Ryszard Kowalczyk",
-      "journal": "arXiv",
-      "snippet": "Multi-Agent Reinforcement Learning (MARL) has shown clear effectiveness in\ncoordinating multiple agents across simulated benchmarks and constrained\nscenarios. However, its deployment in real-world multi-agent systems (MAS)\nremains limited, primarily due to the complex and dynamic nature of such\nenvironments. These challenges arise from multiple interacting sources of\nvariability, including fluctuating agent populations, evolving task goals, and\ninconsistent execution conditions. Together, these factors demand that MARL\nalgorithms remain effective under continuously changing system configurations\nand operational demands. To better capture and assess this capacity for\nadjustment, we introduce the concept of \\textit{adaptability} as a unified and\npractically grounded lens through which to evaluate the reliability of MARL\nalgorithms under shifting conditions, broadly referring to any changes in the\nenvironment dynamics that may occur during learning or execution. Centred on\nthe notion of adaptability, we propose a structured framework comprising three\nkey dimensions: learning adaptability, policy adaptability, and scenario-driven\nadaptability. By adopting this adaptability perspective, we aim to support more\nprincipled assessments of MARL performance beyond narrowly defined benchmarks.\nUltimately, this survey contributes to the development of algorithms that are\nbetter suited for deployment in dynamic, real-world multi-agent systems.",
-      "link": "http://arxiv.org/abs/2507.10142v1",
-      "published_date": "2025-07-14",
-      "citations": 0,
-      "institutions": "Unknown"
-    },
-    {
-      "title": "Privacy-Preserving Multi-Stage Fall Detection Framework with\n  Semi-supervised Federated Learning and Robotic Vision Confirmation",
-      "authors": "Seyed Alireza Rahimi Azghadi, Truong-Thanh-Hung Nguyen, Helene Fournier, Monica Wachowicz, Rene Richard, Francis Palma, Hung Cao",
-      "journal": "arXiv",
-      "snippet": "The aging population is growing rapidly, and so is the danger of falls in\nolder adults. A major cause of injury is falling, and detection in time can\ngreatly save medical expenses and recovery time. However, to provide timely\nintervention and avoid unnecessary alarms, detection systems must be effective\nand reliable while addressing privacy concerns regarding the user. In this\nwork, we propose a framework for detecting falls using several complementary\nsystems: a semi-supervised federated learning-based fall detection system\n(SF2D), an indoor localization and navigation system, and a vision-based human\nfall recognition system. A wearable device and an edge device identify a fall\nscenario in the first system. On top of that, the second system uses an indoor\nlocalization technique first to localize the fall location and then navigate a\nrobot to inspect the scenario. A vision-based detection system running on an\nedge device with a mounted camera on a robot is used to recognize fallen\npeople. Each of the systems of this proposed framework achieves different\naccuracy rates. Specifically, the SF2D has a 0.81% failure rate equivalent to\n99.19% accuracy, while the vision-based fallen people detection achieves 96.3%\naccuracy. However, when we combine the accuracy of these two systems with the\naccuracy of the navigation system (95% success rate), our proposed framework\ncreates a highly reliable performance for fall detection, with an overall\naccuracy of 99.99%. Not only is the proposed framework safe for older adults,\nbut it is also a privacy-preserving solution for detecting falls.",
-      "link": "http://arxiv.org/abs/2507.10474v1",
-      "published_date": "2025-07-14",
-      "citations": 0,
-      "institutions": "Unknown"
-    },
-    {
-      "title": "Efficient Federated Learning with Heterogeneous Data and Adaptive\n  Dropout",
-      "authors": "Ji Liu, Beichen Ma, Yang Zhou, Jingbo Zhou, Ruoming Jin, Dejing Dou, Huaiyu Dai, Haixun Wang, Patrick Valduriez",
-      "journal": "arXiv",
-      "snippet": "Federated Learning (FL) is a promising distributed machine learning approach\nthat enables collaborative training of a global model using multiple edge\ndevices. The data distributed among the edge devices is highly heterogeneous.\nThus, FL faces the challenge of data distribution and heterogeneity, where\nnon-Independent and Identically Distributed (non-IID) data across edge devices\nmay yield in significant accuracy drop. Furthermore, the limited computation\nand communication capabilities of edge devices increase the likelihood of\nstragglers, thus leading to slow model convergence. In this paper, we propose\nthe FedDHAD FL framework, which comes with two novel methods: Dynamic\nHeterogeneous model aggregation (FedDH) and Adaptive Dropout (FedAD). FedDH\ndynamically adjusts the weights of each local model within the model\naggregation process based on the non-IID degree of heterogeneous data to deal\nwith the statistical data heterogeneity. FedAD performs neuron-adaptive\noperations in response to heterogeneous devices to improve accuracy while\nachieving superb efficiency. The combination of these two methods makes FedDHAD\nsignificantly outperform state-of-the-art solutions in terms of accuracy (up to\n6.7% higher), efficiency (up to 2.02 times faster), and computation cost (up to\n15.0% smaller).",
-      "link": "http://arxiv.org/abs/2507.10430v1",
-      "published_date": "2025-07-14",
+      "snippet": "Play style identification can provide valuable game design insights and\nenable adaptive experiences, with the potential to improve game playing agents.\nPrevious work relies on domain knowledge to construct play trace\nrepresentations using handcrafted features. More recent approaches incorporate\nthe sequential structure of play traces but still require some level of domain\nabstraction. In this study, we explore the use of unsupervised CNN-LSTM\nautoencoder models to obtain latent representations directly from low-level\nplay trace data in MicroRTS. We demonstrate that this approach yields a\nmeaningful separation of different game playing agents in the latent space,\nreducing reliance on domain expertise and its associated biases. This latent\nspace is then used to guide the exploration of diverse play styles within\nstudied AI players.",
+      "link": "http://arxiv.org/abs/2507.10172v1",
+      "published_date": "July 14, 2025",
+      "published_date_sort": "2025-07-14",
       "citations": 0,
       "institutions": "Unknown"
     },
@@ -273,233 +126,96 @@
       "journal": "arXiv",
       "snippet": "Transformers are the driving force behind today's Large Language Models\n(LLMs), serving as the foundation for their performance and versatility. Yet,\ntheir compute and memory costs grow with sequence length, posing scalability\nchallenges for long-context inferencing. In response, the algorithm community\nis exploring alternative architectures, such as state space models (SSMs),\nlinear attention, and recurrent neural networks (RNNs), which we refer to as\npost-transformers. This shift presents a key challenge: building a serving\nsystem that efficiently supports both transformer and post-transformer LLMs\nwithin a unified framework. To address this challenge, we analyze the\nperformance characteristics of transformer and post-transformer LLMs. Despite\ntheir algorithmic differences, both are fundamentally limited by memory\nbandwidth under batched inference due to attention in transformers and state\nupdates in post-transformers. Further analyses suggest two additional insights:\n(1) state update operations, unlike attention, incur high hardware cost, making\nper-bank PIM acceleration inefficient, and (2) different low-precision\narithmetic methods offer varying accuracy-area tradeoffs, while we identify\nMicrosoft's MX as the Pareto-optimal choice. Building on these insights, we\ndesign Pimba as an array of State-update Processing Units (SPUs), each shared\nbetween two banks to enable interleaved access to PIM. Each SPU includes a\nState-update Processing Engine (SPE) that comprises element-wise multipliers\nand adders using MX-based quantized arithmetic, enabling efficient execution of\nstate update and attention operations. Our evaluation shows that, compared to\nLLM-optimized GPU and GPU+PIM systems, Pimba achieves up to 3.2x and 2.1x\nhigher token generation throughput, respectively.",
       "link": "http://arxiv.org/abs/2507.10178v1",
-      "published_date": "2025-07-14",
+      "published_date": "July 14, 2025",
+      "published_date_sort": "2025-07-14",
       "citations": 0,
       "institutions": "Unknown"
     },
     {
-      "title": "Measuring ai ability to complete long tasks",
-      "authors": "T Kwa, B West, J Becker, A Deng, K Garcia… - arXiv preprint arXiv …, 2025 - arxiv.org",
-      "journal": "Google Scholar Result",
-      "snippet": "Despite rapid progress on AI benchmarks, the real-world meaning of benchmark performance remains unclear. To quantify the capabilities of AI systems in terms of human …",
-      "link": "https://arxiv.org/abs/2503.14499",
-      "published_date": "2025",
-      "citations": 19,
-      "institutions": "Unknown"
-    },
-    {
-      "title": "CodePDE: An Inference Framework for LLM-driven PDE Solver Generation",
-      "authors": "S Li, T Marwah, J Shen, W Sun, A Risteski… - arXiv preprint arXiv …, 2025 - arxiv.org",
-      "journal": "Google Scholar Result",
-      "snippet": "Partial differential equations (PDEs) are fundamental to modeling physical systems, yet solving them remains a complex challenge. Traditional numerical solvers rely on expert …",
-      "link": "https://arxiv.org/abs/2505.08783",
-      "published_date": "2025",
-      "citations": 1,
-      "institutions": "Unknown"
-    },
-    {
-      "title": "MLE-STAR: Machine Learning Engineering Agent via Search and Targeted Refinement",
-      "authors": "J Nam, J Yoon, J Chen, J Shin, SÖ Arık… - arXiv preprint arXiv …, 2025 - arxiv.org",
-      "journal": "Google Scholar Result",
-      "snippet": "Agents based on large language models (LLMs) for machine learning engineering (MLE) can automatically implement ML models via code generation. However, existing approaches …",
-      "link": "https://arxiv.org/abs/2506.15692",
-      "published_date": "June 2025",
-      "published_date_sort": "2025-06-01",
+      "title": "Convergence of Agnostic Federated Averaging",
+      "authors": " Herlock,  Rahimi, Dionysis Kalogerias",
+      "journal": "arXiv",
+      "snippet": "Federated learning (FL) enables decentralized model training without\ncentralizing raw data. However, practical FL deployments often face a key\nrealistic challenge: Clients participate intermittently in server aggregation\nand with unknown, possibly biased participation probabilities. Most existing\nconvergence results either assume full-device participation, or rely on\nknowledge of (in fact uniform) client availability distributions -- assumptions\nthat rarely hold in practice. In this work, we characterize the optimization\nproblem that consistently adheres to the stochastic dynamics of the well-known\n\\emph{agnostic Federated Averaging (FedAvg)} algorithm under random (and\nvariably-sized) client availability, and rigorously establish its convergence\nfor convex, possibly nonsmooth losses, achieving a standard rate of order\n$\\mathcal{O}(1/\\sqrt{T})$, where $T$ denotes the aggregation horizon. Our\nanalysis provides the first convergence guarantees for agnostic FedAvg under\ngeneral, non-uniform, stochastic client participation, without knowledge of the\nparticipation distribution. We also empirically demonstrate that agnostic\nFedAvg in fact outperforms common (and suboptimal) weighted aggregation FedAvg\nvariants, even with server-side knowledge of participation weights.",
+      "link": "http://arxiv.org/abs/2507.10325v1",
+      "published_date": "July 14, 2025",
+      "published_date_sort": "2025-07-14",
       "citations": 0,
       "institutions": "Unknown"
     },
     {
-      "title": "AssistedDS: Benchmarking How External Domain Knowledge Assists LLMs in Automated Data Science",
-      "authors": "A Luo, X Xian, J Du, F Tian, G Wang, M Zhong… - arXiv preprint arXiv …, 2025 - arxiv.org",
-      "journal": "Google Scholar Result",
-      "snippet": "Although LLM-based agents have attracted significant attention in domains such as software engineering and machine learning research, their role in advancing combinatorial …",
-      "link": "https://arxiv.org/abs/2504.04310",
-      "published_date": "2025",
-      "citations": 6,
-      "institutions": "Unknown"
-    },
-    {
-      "title": "IDA-Bench: Evaluating LLMs on Interactive Guided Data Analysis",
-      "authors": "H Li, H Liu, T Zhu, T Guo, Z Zheng, X Deng… - arXiv preprint arXiv …, 2025 - arxiv.org",
-      "journal": "Google Scholar Result",
-      "snippet": "Large Language Models (LLMs) show promise as data analysis agents, but existing benchmarks overlook the iterative nature of the field, where experts' decisions evolve with …",
-      "link": "https://arxiv.org/abs/2505.18223",
-      "published_date": "2025",
-      "citations": 1,
-      "institutions": "Unknown"
-    },
-    {
-      "title": "RepoMaster: Autonomous Exploration and Understanding of GitHub Repositories for Complex Task Solving",
-      "authors": "H Wang, Z Ni, S Zhang, S Lu, S Hu, Z He, C Hu… - arXiv preprint arXiv …, 2025 - arxiv.org",
-      "journal": "Google Scholar Result",
-      "snippet": "The ultimate goal of code agents is to solve complex tasks autonomously. Although large language models (LLMs) have made substantial progress in code generation, real-world …",
-      "link": "https://arxiv.org/abs/2505.21577",
-      "published_date": "2025",
+      "title": "Privacy-Preserving Multi-Stage Fall Detection Framework with\n  Semi-supervised Federated Learning and Robotic Vision Confirmation",
+      "authors": "Seyed Alireza Rahimi Azghadi, Truong-Thanh-Hung Nguyen, Helene Fournier, Monica Wachowicz, Rene Richard, Francis Palma, Hung Cao",
+      "journal": "arXiv",
+      "snippet": "The aging population is growing rapidly, and so is the danger of falls in\nolder adults. A major cause of injury is falling, and detection in time can\ngreatly save medical expenses and recovery time. However, to provide timely\nintervention and avoid unnecessary alarms, detection systems must be effective\nand reliable while addressing privacy concerns regarding the user. In this\nwork, we propose a framework for detecting falls using several complementary\nsystems: a semi-supervised federated learning-based fall detection system\n(SF2D), an indoor localization and navigation system, and a vision-based human\nfall recognition system. A wearable device and an edge device identify a fall\nscenario in the first system. On top of that, the second system uses an indoor\nlocalization technique first to localize the fall location and then navigate a\nrobot to inspect the scenario. A vision-based detection system running on an\nedge device with a mounted camera on a robot is used to recognize fallen\npeople. Each of the systems of this proposed framework achieves different\naccuracy rates. Specifically, the SF2D has a 0.81% failure rate equivalent to\n99.19% accuracy, while the vision-based fallen people detection achieves 96.3%\naccuracy. However, when we combine the accuracy of these two systems with the\naccuracy of the navigation system (95% success rate), our proposed framework\ncreates a highly reliable performance for fall detection, with an overall\naccuracy of 99.99%. Not only is the proposed framework safe for older adults,\nbut it is also a privacy-preserving solution for detecting falls.",
+      "link": "http://arxiv.org/abs/2507.10474v1",
+      "published_date": "July 14, 2025",
+      "published_date_sort": "2025-07-14",
       "citations": 0,
       "institutions": "Unknown"
     },
     {
-      "title": "Towards Community-Driven Agents for Machine Learning Engineering",
-      "authors": "S Li, W Sun, S Li, A Talwalkar, Y Yang - arXiv preprint arXiv:2506.20640, 2025 - arxiv.org",
-      "journal": "Google Scholar Result",
-      "snippet": "This survey examines the rapidly evolving field of Deep Research systems--AI-powered applications that automate complex research workflows through the integration of large …",
-      "link": "https://arxiv.org/abs/2506.12594",
-      "published_date": "2025",
-      "citations": 1,
-      "institutions": "Unknown"
-    },
-    {
-      "title": "AssistedDS: Benchmarking How External Domain Knowledge Assists LLMs in Automated Data Science",
-      "authors": "A Luo, X Xian, J Du, F Tian, G Wang, M Zhong… - arXiv preprint arXiv …, 2025 - arxiv.org",
-      "journal": "Google Scholar Result",
-      "snippet": "Large language models (LLMs) have advanced the automation of data science workflows. Yet it remains unclear whether they can critically leverage external domain knowledge as …",
-      "link": "https://arxiv.org/abs/2506.13992",
-      "published_date": "2025",
+      "title": "Adaptability in Multi-Agent Reinforcement Learning: A Framework and\n  Unified Review",
+      "authors": "Siyi Hu, Mohamad A Hady, Jianglin Qiao, Jimmy Cao, Mahardhika Pratama, Ryszard Kowalczyk",
+      "journal": "arXiv",
+      "snippet": "Multi-Agent Reinforcement Learning (MARL) has shown clear effectiveness in\ncoordinating multiple agents across simulated benchmarks and constrained\nscenarios. However, its deployment in real-world multi-agent systems (MAS)\nremains limited, primarily due to the complex and dynamic nature of such\nenvironments. These challenges arise from multiple interacting sources of\nvariability, including fluctuating agent populations, evolving task goals, and\ninconsistent execution conditions. Together, these factors demand that MARL\nalgorithms remain effective under continuously changing system configurations\nand operational demands. To better capture and assess this capacity for\nadjustment, we introduce the concept of \\textit{adaptability} as a unified and\npractically grounded lens through which to evaluate the reliability of MARL\nalgorithms under shifting conditions, broadly referring to any changes in the\nenvironment dynamics that may occur during learning or execution. Centred on\nthe notion of adaptability, we propose a structured framework comprising three\nkey dimensions: learning adaptability, policy adaptability, and scenario-driven\nadaptability. By adopting this adaptability perspective, we aim to support more\nprincipled assessments of MARL performance beyond narrowly defined benchmarks.\nUltimately, this survey contributes to the development of algorithms that are\nbetter suited for deployment in dynamic, real-world multi-agent systems.",
+      "link": "http://arxiv.org/abs/2507.10142v1",
+      "published_date": "July 14, 2025",
+      "published_date_sort": "2025-07-14",
       "citations": 0,
       "institutions": "Unknown"
     },
     {
-      "title": "Mle-dojo: Interactive environments for empowering llm agents in machine learning engineering",
-      "authors": "R Qiang, Y Zhuang, Y Li, R Zhang, C Li… - arXiv preprint arXiv …, 2025 - arxiv.org",
-      "journal": "Google Scholar Result",
-      "snippet": "We introduce MLE-Dojo, a Gym-style framework for systematically reinforcement learning, evaluating, and improving autonomous large language model (LLM) agents in iterative …",
-      "link": "https://arxiv.org/abs/2505.07782",
-      "published_date": "2025",
-      "citations": 1,
-      "institutions": "Unknown"
-    },
-    {
-      "title": "AutoCluster: Un agent pour le clustering basé sur les grands modèles de langue",
-      "authors": "E Versmée, Y Remil, M Kaytoue, J Velcin - coria-taln-2025.lis-lab.fr",
-      "journal": "Google Scholar Result",
-      "snippet": "Cette recherche présente AutoCluster, un agent basé sur les grands modèles de langue pour des tâches de classification non supervisée. Nous concevons trois agents dont deux …",
-      "link": "https://coria-taln-2025.lis-lab.fr/wp-content/uploads/2025/06/CORIA-TALN_2025_paper_124.pdf",
-      "published_date": "2025",
+      "title": "Efficient Federated Learning with Heterogeneous Data and Adaptive\n  Dropout",
+      "authors": "Ji Liu, Beichen Ma, Yang Zhou, Jingbo Zhou, Ruoming Jin, Dejing Dou, Huaiyu Dai, Haixun Wang, Patrick Valduriez",
+      "journal": "arXiv",
+      "snippet": "Federated Learning (FL) is a promising distributed machine learning approach\nthat enables collaborative training of a global model using multiple edge\ndevices. The data distributed among the edge devices is highly heterogeneous.\nThus, FL faces the challenge of data distribution and heterogeneity, where\nnon-Independent and Identically Distributed (non-IID) data across edge devices\nmay yield in significant accuracy drop. Furthermore, the limited computation\nand communication capabilities of edge devices increase the likelihood of\nstragglers, thus leading to slow model convergence. In this paper, we propose\nthe FedDHAD FL framework, which comes with two novel methods: Dynamic\nHeterogeneous model aggregation (FedDH) and Adaptive Dropout (FedAD). FedDH\ndynamically adjusts the weights of each local model within the model\naggregation process based on the non-IID degree of heterogeneous data to deal\nwith the statistical data heterogeneity. FedAD performs neuron-adaptive\noperations in response to heterogeneous devices to improve accuracy while\nachieving superb efficiency. The combination of these two methods makes FedDHAD\nsignificantly outperform state-of-the-art solutions in terms of accuracy (up to\n6.7% higher), efficiency (up to 2.02 times faster), and computation cost (up to\n15.0% smaller).",
+      "link": "http://arxiv.org/abs/2507.10430v1",
+      "published_date": "July 14, 2025",
+      "published_date_sort": "2025-07-14",
       "citations": 0,
       "institutions": "Unknown"
     },
     {
-      "title": "PiML: Automated Machine Learning Workflow Optimization using LLM Agents",
-      "authors": "A Chopde, F Pettiwala, S Kirubananth, SK Botla… - AutoML 2025 Methods … - openreview.net",
-      "journal": "Google Scholar Result",
-      "snippet": "In this paper, we introduce PiML-Persistent Iterative Machine Learning agentic framework, a novel automated pipeline specifically designed for solving real-world machine learning (ML) …",
-      "link": "https://openreview.net/forum?id=Nw1qBpsjZz",
-      "published_date": "2025",
+      "title": "FRSICL: LLM-Enabled In-Context Learning Flight Resource Allocation for\n  Fresh Data Collection in UAV-Assisted Wildfire Monitoring",
+      "authors": "Yousef Emami, Hao Zhou, Miguel Gutierrez Gaitan, Kai Li, Luis Almeida",
+      "journal": "arXiv",
+      "snippet": "Unmanned Aerial Vehicles (UAVs) are vital for public safety, particularly in\nwildfire monitoring, where early detection minimizes environmental impact. In\nUAV-Assisted Wildfire Monitoring (UAWM) systems, joint optimization of sensor\ntransmission scheduling and velocity is critical for minimizing Age of\nInformation (AoI) from stale sensor data. Deep Reinforcement Learning (DRL) has\nbeen used for such optimization; however, its limitations such as low sampling\nefficiency, simulation-to-reality gaps, and complex training render it\nunsuitable for time-critical applications like wildfire monitoring. This paper\nintroduces a new online Flight Resource Allocation scheme based on LLM-Enabled\nIn-Context Learning (FRSICL) to jointly optimize the UAV's flight control and\ndata collection schedule along the trajectory in real time, thereby\nasymptotically minimizing the average AoI across ground sensors. In contrast to\nDRL, FRSICL generates data collection schedules and controls velocity using\nnatural language task descriptions and feedback from the environment, enabling\ndynamic decision-making without extensive retraining. Simulation results\nconfirm the effectiveness of the proposed FRSICL compared to Proximal Policy\nOptimization (PPO) and Nearest-Neighbor baselines.",
+      "link": "http://arxiv.org/abs/2507.10134v1",
+      "published_date": "July 14, 2025",
+      "published_date_sort": "2025-07-14",
       "citations": 0,
       "institutions": "Unknown"
     },
     {
-      "title": "AI Scientists Fail Without Strong Implementation Capability",
-      "authors": "M Zhu, Q Xie, Y Weng, J Wu, Z Lin, L Yang… - arXiv preprint arXiv …, 2025 - arxiv.org",
-      "journal": "Google Scholar Result",
-      "snippet": "The emergence of Artificial Intelligence (AI) Scientist represents a paradigm shift in scientific discovery, with large language models (LLMs) taking the lead as the primary executor in the …",
-      "link": "https://arxiv.org/abs/2506.01372",
-      "published_date": "June 2025",
-      "published_date_sort": "2025-06-01",
-      "citations": 1,
-      "institutions": "Unknown"
-    },
-    {
-      "title": "TimeSeriesGym: A Scalable Benchmark for (Time Series) Machine Learning Engineering Agents",
-      "authors": "Y Cai, X Li, M Goswami, M Wiliński, G Welter… - arXiv preprint arXiv …, 2025 - arxiv.org",
-      "journal": "Google Scholar Result",
-      "snippet": "We introduce TimeSeriesGym, a scalable benchmarking framework for evaluating Artificial Intelligence (AI) agents on time series machine learning engineering challenges. Existing …",
-      "link": "https://arxiv.org/abs/2505.13291",
-      "published_date": "May 2025",
-      "published_date_sort": "2025-05-01",
+      "title": "Anticipating the Selectivity of Cyclization Reaction Pathways with\n  Neural Network Potentials",
+      "authors": "Nicholas Casetti, Dylan Anstine, Olexandr Isayev, Connor W. Coley",
+      "journal": "arXiv",
+      "snippet": "Reaction mechanism search tools have demonstrated the ability to provide\ninsights into likely products and rate-limiting steps of reacting systems.\nHowever, reactions involving several concerted bond changes - as can be found\nin many key steps of natural product synthesis - can complicate the search\nprocess. To mitigate these complications, we present a mechanism search\nstrategy particularly suited to help expedite exploration of an exemplary\nfamily of such complex reactions, cyclizations. We provide a cost-effective\nstrategy for identifying relevant elementary reaction steps by combining\ngraph-based enumeration schemes and machine learning techniques for\nintermediate filtering. Key to this approach is our use of a neural network\npotential (NNP), AIMNet2-rxn, for computational evaluation of each candidate\nreaction pathway. In this article, we evaluate the NNP's ability to estimate\nactivation energies, demonstrate the correct anticipation of stereoselectivity,\nand recapitulate complex enabling steps in natural product synthesis.",
+      "link": "http://arxiv.org/abs/2507.10400v1",
+      "published_date": "July 14, 2025",
+      "published_date_sort": "2025-07-14",
       "citations": 0,
       "institutions": "Unknown"
     },
     {
-      "title": "IDA-Bench: Evaluating LLMs on Interactive Guided Data Analysis",
-      "authors": "H Li, H Liu, T Zhu, T Guo, Z Zheng, X Deng… - arXiv preprint arXiv …, 2025 - arxiv.org",
-      "journal": "Google Scholar Result",
-      "snippet": "Large Language Models (LLMs) show promise as data analysis agents, but existing benchmarks overlook the iterative nature of the field, where experts' decisions evolve with …",
-      "link": "https://arxiv.org/abs/2505.18223",
-      "published_date": "May 2025",
-      "published_date_sort": "2025-05-01",
-      "citations": 1,
-      "institutions": "Unknown"
-    },
-    {
-      "title": "Towards Community-Driven Agents for Machine Learning Engineering",
-      "authors": "S Li, W Sun, S Li, A Talwalkar, Y Yang - arXiv preprint arXiv:2506.20640, 2025 - arxiv.org",
-      "journal": "Google Scholar Result",
-      "snippet": "Large language model-based machine learning (ML) agents have shown great promise in automating ML research. However, existing agents typically operate in isolation on a given …",
-      "link": "https://arxiv.org/abs/2506.20640",
-      "published_date": "2025",
+      "title": "DepViT-CAD: Deployable Vision Transformer-Based Cancer Diagnosis in\n  Histopathology",
+      "authors": "Ashkan Shakarami, Lorenzo Nicole, Rocco Cappellesso, Angelo Paolo Dei Tos, Stefano Ghidoni",
+      "journal": "arXiv",
+      "snippet": "Accurate and timely cancer diagnosis from histopathological slides is vital\nfor effective clinical decision-making. This paper introduces DepViT-CAD, a\ndeployable AI system for multi-class cancer diagnosis in histopathology. At its\ncore is MAViT, a novel Multi-Attention Vision Transformer designed to capture\nfine-grained morphological patterns across diverse tumor types. MAViT was\ntrained on expert-annotated patches from 1008 whole-slide images, covering 11\ndiagnostic categories, including 10 major cancers and non-tumor tissue.\nDepViT-CAD was validated on two independent cohorts: 275 WSIs from The Cancer\nGenome Atlas and 50 routine clinical cases from pathology labs, achieving\ndiagnostic sensitivities of 94.11% and 92%, respectively. By combining\nstate-of-the-art transformer architecture with large-scale real-world\nvalidation, DepViT-CAD offers a robust and scalable approach for AI-assisted\ncancer diagnostics. To support transparency and reproducibility, software and\ncode will be made publicly available at GitHub.",
+      "link": "http://arxiv.org/abs/2507.10250v1",
+      "published_date": "July 14, 2025",
+      "published_date_sort": "2025-07-14",
       "citations": 0,
       "institutions": "Unknown"
     },
     {
-      "title": "AutoMind: Adaptive Knowledgeable Agent for Automated Data Science",
-      "authors": "Y Ou, Y Luo, J Zheng, L Wei, S Qiao, J Zhang… - arXiv preprint arXiv …, 2025 - arxiv.org",
-      "journal": "Google Scholar Result",
-      "snippet": "Large Language Model (LLM) agents have shown great potential in addressing real-world data science problems. LLM-driven data science agents promise to automate the entire …",
-      "link": "https://arxiv.org/abs/2506.10974",
-      "published_date": "2025",
-      "citations": 0,
-      "institutions": "Unknown"
-    },
-    {
-      "title": "Mle-dojo: Interactive environments for empowering llm agents in machine learning engineering",
-      "authors": "R Qiang, Y Zhuang, Y Li, R Zhang, C Li… - arXiv preprint arXiv …, 2025 - arxiv.org",
-      "journal": "Google Scholar Result",
-      "snippet": "We introduce MLE-Dojo, a Gym-style framework for systematically reinforcement learning, evaluating, and improving autonomous large language model (LLM) agents in iterative …",
-      "link": "https://arxiv.org/abs/2505.07782",
-      "published_date": "May 2025",
-      "published_date_sort": "2025-05-01",
-      "citations": 1,
-      "institutions": "Unknown"
-    },
-    {
-      "title": "TimeSeriesGym: A Scalable Benchmark for (Time Series) Machine Learning Engineering Agents",
-      "authors": "Y Cai, X Li, M Goswami, M Wiliński, G Welter… - arXiv preprint arXiv …, 2025 - arxiv.org",
-      "journal": "Google Scholar Result",
-      "snippet": "We introduce TimeSeriesGym, a scalable benchmarking framework for evaluating Artificial Intelligence (AI) agents on time series machine learning engineering challenges. Existing …",
-      "link": "https://arxiv.org/abs/2505.13291",
-      "published_date": "2025",
-      "citations": 0,
-      "institutions": "Unknown"
-    },
-    {
-      "title": "Mlzero: A multi-agent system for end-to-end machine learning automation",
-      "authors": "H Fang, B Han, N Erickson, X Zhang, S Zhou… - arXiv preprint arXiv …, 2025 - arxiv.org",
-      "journal": "Google Scholar Result",
-      "snippet": "Existing AutoML systems have advanced the automation of machine learning (ML); however, they still require substantial manual configuration and expert input, particularly …",
-      "link": "https://arxiv.org/abs/2505.13941",
-      "published_date": "May 2025",
-      "published_date_sort": "2025-05-01",
-      "citations": 1,
-      "institutions": "Unknown"
-    },
-    {
-      "title": "LMR-BENCH: Evaluating LLM Agent's Ability on Reproducing Language Modeling Research",
-      "authors": "S Yan, R Li, Z Luo, Z Wang, D Li, L Jing, K He… - arXiv preprint arXiv …, 2025 - arxiv.org",
-      "journal": "Google Scholar Result",
-      "snippet": "Large language model (LLM) agents have demonstrated remarkable potential in advancing scientific discovery. However, their capability in the fundamental yet crucial task of …",
-      "link": "https://arxiv.org/abs/2506.17335",
-      "published_date": "2025",
-      "citations": 0,
-      "institutions": "Unknown"
-    },
-    {
-      "title": "From automation to autonomy: A survey on large language models in scientific discovery",
-      "authors": "T Zheng, Z Deng, HT Tsang, W Wang, J Bai… - arXiv preprint arXiv …, 2025 - arxiv.org",
-      "journal": "Google Scholar Result",
-      "snippet": "Large Language Models (LLMs) are catalyzing a paradigm shift in scientific discovery, evolving from task-specific automation tools into increasingly autonomous agents and …",
-      "link": "https://arxiv.org/abs/2505.13259",
-      "published_date": "2025",
-      "citations": 2,
-      "institutions": "Unknown"
-    },
-    {
-      "title": "Towards Pragmatic Time Series Intelligence",
-      "authors": "M Goswami - 2025 - search.proquest.com",
-      "journal": "Google Scholar Result",
-      "snippet": "This thesis aims to democratize time series intelligence by making advanced modeling capabilities accessible to users without specialized machine learning knowledge. We …",
-      "link": "https://search.proquest.com/openview/24ff18df8583af7a835b667b59b216b9/1?pq-origsite=gscholar&cbl=18750&diss=y",
-      "published_date": "2025",
+      "title": "Conditional Chemical Language Models are Versatile Tools in Drug\n  Discovery",
+      "authors": "Lu Zhu, Emmanuel Noutahi",
+      "journal": "arXiv",
+      "snippet": "Generative chemical language models (CLMs) have demonstrated strong\ncapabilities in molecular design, yet their impact in drug discovery remains\nlimited by the absence of reliable reward signals and the lack of\ninterpretability in their outputs. We present SAFE-T, a generalist chemical\nmodeling framework that conditions on biological context -- such as protein\ntargets or mechanisms of action -- to prioritize and design molecules without\nrelying on structural information or engineered scoring functions. SAFE-T\nmodels the conditional likelihood of fragment-based molecular sequences given a\nbiological prompt, enabling principled scoring of molecules across tasks such\nas virtual screening, drug-target interaction prediction, and activity cliff\ndetection. Moreover, it supports goal-directed generation by sampling from this\nlearned distribution, aligning molecular design with biological objectives. In\ncomprehensive zero-shot evaluations across predictive (LIT-PCBA, DAVIS, KIBA,\nACNet) and generative (DRUG, PMO) benchmarks, SAFE-T consistently achieves\nperformance comparable to or better than existing approaches while being\nsignificantly faster. Fragment-level attribution further reveals that SAFE-T\ncaptures known structure-activity relationships, supporting interpretable and\nbiologically grounded design. Together with its computational efficiency, these\nresults demonstrate that conditional generative CLMs can unify scoring and\ngeneration to accelerate early-stage drug discovery.",
+      "link": "http://arxiv.org/abs/2507.10273v1",
+      "published_date": "July 14, 2025",
+      "published_date_sort": "2025-07-14",
       "citations": 0,
       "institutions": "Unknown"
     }

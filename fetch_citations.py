@@ -383,17 +383,16 @@ class CitationTracker:
         
         if valid_papers:
             # Timeline
-            citations_by_month = {}
-            for paper in valid_papers:
-                month_key = datetime.strptime(paper.published_date_sort, '%Y-%m-%d').strftime('%Y-%m')
-                citations_by_month[month_key] = citations_by_month.get(month_key, 0) + 1
-
-            sorted_months = sorted(citations_by_month.keys())
+            # Ensure papers are sorted by date before creating the timeline
+            valid_papers.sort(key=lambda p: p.published_date_sort)
 
             cumulative_citations = 0
-            for month in sorted_months:
-                cumulative_citations += citations_by_month[month]
-                timeline.append({'date': f"{month}-01", 'citations': cumulative_citations})
+            for i, paper in enumerate(valid_papers):
+                # The date for the timeline entry is the paper's publication date
+                timeline_date = paper.published_date_sort
+                # The value is the cumulative count of papers up to that point
+                cumulative_citations = i + 1
+                timeline.append({'date': timeline_date, 'citations': cumulative_citations})
 
 
             # Monthly Average
