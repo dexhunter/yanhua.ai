@@ -1,11 +1,11 @@
 {
-  "last_updated": "2025-07-19 00:11:30 UTC",
+  "last_updated": "2025-07-20 00:12:47 UTC",
   "target_paper": "https://www.arxiv.org/abs/2502.13138",
   "arxiv_id": "2502.13138",
-  "total_citations": 24,
+  "total_citations": 18,
   "h_index": 2,
-  "recent_citations": 4,
-  "avg_citations_per_month": "3.43",
+  "recent_citations": 0,
+  "avg_citations_per_month": "3.00",
   "timeline": [
     {
       "date": "2025-01-01",
@@ -25,69 +25,10 @@
     },
     {
       "date": "2025-06-01",
-      "citations": 20
-    },
-    {
-      "date": "2025-07-01",
-      "citations": 24
+      "citations": 18
     }
   ],
   "papers": [
-    {
-      "title": "Inverse Reinforcement Learning Meets Large Language Model Post-Training:\n  Basics, Advances, and Opportunities",
-      "authors": "Hao Sun, Mihaela van der Schaar",
-      "journal": "arXiv",
-      "snippet": "In the era of Large Language Models (LLMs), alignment has emerged as a\nfundamental yet challenging problem in the pursuit of more reliable,\ncontrollable, and capable machine intelligence. The recent success of reasoning\nmodels and conversational AI systems has underscored the critical role of\nreinforcement learning (RL) in enhancing these systems, driving increased\nresearch interest at the intersection of RL and LLM alignment. This paper\nprovides a comprehensive review of recent advances in LLM alignment through the\nlens of inverse reinforcement learning (IRL), emphasizing the distinctions\nbetween RL techniques employed in LLM alignment and those in conventional RL\ntasks. In particular, we highlight the necessity of constructing neural reward\nmodels from human data and discuss the formal and practical implications of\nthis paradigm shift. We begin by introducing fundamental concepts in RL to\nprovide a foundation for readers unfamiliar with the field. We then examine\nrecent advances in this research agenda, discussing key challenges and\nopportunities in conducting IRL for LLM alignment. Beyond methodological\nconsiderations, we explore practical aspects, including datasets, benchmarks,\nevaluation metrics, infrastructure, and computationally efficient training and\ninference techniques. Finally, we draw insights from the literature on\nsparse-reward RL to identify open questions and potential research directions.\nBy synthesizing findings from diverse studies, we aim to provide a structured\nand critical overview of the field, highlight unresolved challenges, and\noutline promising future directions for improving LLM alignment through RL and\nIRL techniques.",
-      "link": "http://arxiv.org/abs/2507.13158v1",
-      "published_date": "July 17, 2025",
-      "published_date_sort": "2025-07-17",
-      "citations": 0,
-      "institutions": "Unknown"
-    },
-    {
-      "title": "Learning to Reject Low-Quality Explanations via User Feedback",
-      "authors": "Luca Stradiotti, Dario Pesenti, Stefano Teso, Jesse Davis",
-      "journal": "arXiv",
-      "snippet": "Machine Learning predictors are increasingly being employed in high-stakes\napplications such as credit scoring. Explanations help users unpack the reasons\nbehind their predictions, but are not always \"high quality''. That is,\nend-users may have difficulty interpreting or believing them, which can\ncomplicate trust assessment and downstream decision-making. We argue that\nclassifiers should have the option to refuse handling inputs whose predictions\ncannot be explained properly and introduce a framework for learning to reject\nlow-quality explanations (LtX) in which predictors are equipped with a rejector\nthat evaluates the quality of explanations. In this problem setting, the key\nchallenges are how to properly define and assess explanation quality and how to\ndesign a suitable rejector. Focusing on popular attribution techniques, we\nintroduce ULER (User-centric Low-quality Explanation Rejector), which learns a\nsimple rejector from human ratings and per-feature relevance judgments to\nmirror human judgments of explanation quality. Our experiments show that ULER\noutperforms both state-of-the-art and explanation-aware learning to reject\nstrategies at LtX on eight classification and regression benchmarks and on a\nnew human-annotated dataset, which we will publicly release to support future\nresearch.",
-      "link": "http://arxiv.org/abs/2507.12900v1",
-      "published_date": "July 17, 2025",
-      "published_date_sort": "2025-07-17",
-      "citations": 0,
-      "institutions": "Unknown"
-    },
-    {
-      "title": "SE-VLN: A Self-Evolving Vision-Language Navigation Framework Based on\n  Multimodal Large Language Models",
-      "authors": "Xiangyu Dong, Haoran Zhao, Jiang Gao, Haozhou Li, Xiaoguang Ma, Yaoming Zhou, Fuhai Chen, Juan Liu",
-      "journal": "arXiv",
-      "snippet": "Recent advances in vision-language navigation (VLN) were mainly attributed to\nemerging large language models (LLMs). These methods exhibited excellent\ngeneralization capabilities in instruction understanding and task reasoning.\nHowever, they were constrained by the fixed knowledge bases and reasoning\nabilities of LLMs, preventing fully incorporating experiential knowledge and\nthus resulting in a lack of efficient evolutionary capacity. To address this,\nwe drew inspiration from the evolution capabilities of natural agents, and\nproposed a self-evolving VLN framework (SE-VLN) to endow VLN agents with the\nability to continuously evolve during testing. To the best of our knowledge, it\nwas the first time that an multimodal LLM-powered self-evolving VLN framework\nwas proposed. Specifically, SE-VLN comprised three core modules, i.e., a\nhierarchical memory module to transfer successful and failure cases into\nreusable knowledge, a retrieval-augmented thought-based reasoning module to\nretrieve experience and enable multi-step decision-making, and a reflection\nmodule to realize continual evolution. Comprehensive tests illustrated that the\nSE-VLN achieved navigation success rates of 57% and 35.2% in unseen\nenvironments, representing absolute performance improvements of 23.9% and 15.0%\nover current state-of-the-art methods on R2R and REVERSE datasets,\nrespectively. Moreover, the SE-VLN showed performance improvement with\nincreasing experience repository, elucidating its great potential as a\nself-evolving agent framework for VLN.",
-      "link": "http://arxiv.org/abs/2507.13152v1",
-      "published_date": "July 17, 2025",
-      "published_date_sort": "2025-07-17",
-      "citations": 0,
-      "institutions": "Unknown"
-    },
-    {
-      "title": "VisionThink: Smart and Efficient Vision Language Model via Reinforcement\n  Learning",
-      "authors": "Senqiao Yang, Junyi Li, Xin Lai, Bei Yu, Hengshuang Zhao, Jiaya Jia",
-      "journal": "arXiv",
-      "snippet": "Recent advancements in vision-language models (VLMs) have improved\nperformance by increasing the number of visual tokens, which are often\nsignificantly longer than text tokens. However, we observe that most real-world\nscenarios do not require such an extensive number of visual tokens. While the\nperformance drops significantly in a small subset of OCR-related tasks, models\nstill perform accurately in most other general VQA tasks with only 1/4\nresolution. Therefore, we propose to dynamically process distinct samples with\ndifferent resolutions, and present a new paradigm for visual token compression,\nnamely, VisionThink. It starts with a downsampled image and smartly decides\nwhether it is sufficient for problem solving. Otherwise, the model could output\na special token to request the higher-resolution image. Compared to existing\nEfficient VLM methods that compress tokens using fixed pruning ratios or\nthresholds, VisionThink autonomously decides whether to compress tokens case by\ncase. As a result, it demonstrates strong fine-grained visual understanding\ncapability on OCR-related tasks, and meanwhile saves substantial visual tokens\non simpler tasks. We adopt reinforcement learning and propose the LLM-as-Judge\nstrategy to successfully apply RL to general VQA tasks. Moreover, we carefully\ndesign a reward function and penalty mechanism to achieve a stable and\nreasonable image resize call ratio. Extensive experiments demonstrate the\nsuperiority, efficiency, and effectiveness of our method. Our code is available\nat https://github.com/dvlab-research/VisionThink.",
-      "link": "http://arxiv.org/abs/2507.13348v1",
-      "published_date": "July 17, 2025",
-      "published_date_sort": "2025-07-17",
-      "citations": 0,
-      "institutions": "Unknown"
-    },
-    {
-      "title": "A Comprehensive Survey of Deep Research: Systems, Methodologies, and Applications",
-      "authors": "R Xu, J Peng - arXiv preprint arXiv:2506.12594, 2025 - arxiv.org",
-      "journal": "Google Scholar Result",
-      "snippet": "This survey examines the rapidly evolving field of Deep Research systems--AI-powered applications that automate complex research workflows through the integration of large …",
-      "link": "https://arxiv.org/abs/2506.12594",
-      "published_date": "June 2025",
-      "published_date_sort": "2025-06-01",
-      "citations": 1,
-      "institutions": "Unknown"
-    },
     {
       "title": "AI Scientists Fail Without Strong Implementation Capability",
       "authors": "M Zhu, Q Xie, Y Weng, J Wu, Z Lin, L Yang… - arXiv preprint arXiv …, 2025 - arxiv.org",
@@ -100,44 +41,11 @@
       "institutions": "Unknown"
     },
     {
-      "title": "MLE-STAR: Machine Learning Engineering Agent via Search and Targeted Refinement",
-      "authors": "J Nam, J Yoon, J Chen, J Shin, SÖ Arık… - arXiv preprint arXiv …, 2025 - arxiv.org",
+      "title": "AssistedDS: Benchmarking How External Domain Knowledge Assists LLMs in Automated Data Science",
+      "authors": "A Luo, X Xian, J Du, F Tian, G Wang, M Zhong… - arXiv preprint arXiv …, 2025 - arxiv.org",
       "journal": "Google Scholar Result",
-      "snippet": "Agents based on large language models (LLMs) for machine learning engineering (MLE) can automatically implement ML models via code generation. However, existing approaches …",
-      "link": "https://arxiv.org/abs/2506.15692",
-      "published_date": "June 2025",
-      "published_date_sort": "2025-06-01",
-      "citations": 0,
-      "institutions": "Unknown"
-    },
-    {
-      "title": "AutoMind: Adaptive Knowledgeable Agent for Automated Data Science",
-      "authors": "Y Ou, Y Luo, J Zheng, L Wei, S Qiao, J Zhang… - arXiv preprint arXiv …, 2025 - arxiv.org",
-      "journal": "Google Scholar Result",
-      "snippet": "Large Language Model (LLM) agents have shown great potential in addressing real-world data science problems. LLM-driven data science agents promise to automate the entire …",
-      "link": "https://arxiv.org/abs/2506.10974",
-      "published_date": "June 2025",
-      "published_date_sort": "2025-06-01",
-      "citations": 0,
-      "institutions": "Unknown"
-    },
-    {
-      "title": "Towards Community-Driven Agents for Machine Learning Engineering",
-      "authors": "S Li, W Sun, S Li, A Talwalkar, Y Yang - arXiv preprint arXiv:2506.20640, 2025 - arxiv.org",
-      "journal": "Google Scholar Result",
-      "snippet": "Large language model-based machine learning (ML) agents have shown great promise in automating ML research. However, existing agents typically operate in isolation on a given …",
-      "link": "https://arxiv.org/abs/2506.20640",
-      "published_date": "June 2025",
-      "published_date_sort": "2025-06-01",
-      "citations": 0,
-      "institutions": "Unknown"
-    },
-    {
-      "title": "The Automated LLM Speedrunning Benchmark: Reproducing NanoGPT Improvements",
-      "authors": "B Zhao, D Magka, M Jiang, X Li, R Raileanu… - arXiv preprint arXiv …, 2025 - arxiv.org",
-      "journal": "Google Scholar Result",
-      "snippet": "Rapid advancements in large language models (LLMs) have the potential to assist in scientific progress. A critical capability toward this endeavor is the ability to reproduce …",
-      "link": "https://arxiv.org/abs/2506.22419",
+      "snippet": "Large language models (LLMs) have advanced the automation of data science workflows. Yet it remains unclear whether they can critically leverage external domain knowledge as …",
+      "link": "https://arxiv.org/abs/2506.13992",
       "published_date": "June 2025",
       "published_date_sort": "2025-06-01",
       "citations": 0,
@@ -155,69 +63,36 @@
       "institutions": "Unknown"
     },
     {
-      "title": "AssistedDS: Benchmarking How External Domain Knowledge Assists LLMs in Automated Data Science",
-      "authors": "A Luo, X Xian, J Du, F Tian, G Wang, M Zhong… - arXiv preprint arXiv …, 2025 - arxiv.org",
+      "title": "The Automated LLM Speedrunning Benchmark: Reproducing NanoGPT Improvements",
+      "authors": "B Zhao, D Magka, M Jiang, X Li, R Raileanu… - arXiv preprint arXiv …, 2025 - arxiv.org",
       "journal": "Google Scholar Result",
-      "snippet": "Large language models (LLMs) have advanced the automation of data science workflows. Yet it remains unclear whether they can critically leverage external domain knowledge as …",
-      "link": "https://arxiv.org/abs/2506.13992",
+      "snippet": "Rapid advancements in large language models (LLMs) have the potential to assist in scientific progress. A critical capability toward this endeavor is the ability to reproduce …",
+      "link": "https://arxiv.org/abs/2506.22419",
       "published_date": "June 2025",
       "published_date_sort": "2025-06-01",
       "citations": 0,
       "institutions": "Unknown"
     },
     {
-      "title": "Mle-dojo: Interactive environments for empowering llm agents in machine learning engineering",
-      "authors": "R Qiang, Y Zhuang, Y Li, R Zhang, C Li… - arXiv preprint arXiv …, 2025 - arxiv.org",
+      "title": "MLE-STAR: Machine Learning Engineering Agent via Search and Targeted Refinement",
+      "authors": "J Nam, J Yoon, J Chen, J Shin, SÖ Arık… - arXiv preprint arXiv …, 2025 - arxiv.org",
       "journal": "Google Scholar Result",
-      "snippet": "We introduce MLE-Dojo, a Gym-style framework for systematically reinforcement learning, evaluating, and improving autonomous large language model (LLM) agents in iterative …",
-      "link": "https://arxiv.org/abs/2505.07782",
-      "published_date": "May 2025",
-      "published_date_sort": "2025-05-01",
-      "citations": 1,
-      "institutions": "Unknown"
-    },
-    {
-      "title": "Mlzero: A multi-agent system for end-to-end machine learning automation",
-      "authors": "H Fang, B Han, N Erickson, X Zhang, S Zhou… - arXiv preprint arXiv …, 2025 - arxiv.org",
-      "journal": "Google Scholar Result",
-      "snippet": "Existing AutoML systems have advanced the automation of machine learning (ML); however, they still require substantial manual configuration and expert input, particularly …",
-      "link": "https://arxiv.org/abs/2505.13941",
-      "published_date": "May 2025",
-      "published_date_sort": "2025-05-01",
-      "citations": 1,
-      "institutions": "Unknown"
-    },
-    {
-      "title": "RepoMaster: Autonomous Exploration and Understanding of GitHub Repositories for Complex Task Solving",
-      "authors": "H Wang, Z Ni, S Zhang, S Lu, S Hu, Z He, C Hu… - arXiv preprint arXiv …, 2025 - arxiv.org",
-      "journal": "Google Scholar Result",
-      "snippet": "The ultimate goal of code agents is to solve complex tasks autonomously. Although large language models (LLMs) have made substantial progress in code generation, real-world …",
-      "link": "https://arxiv.org/abs/2505.21577",
-      "published_date": "May 2025",
-      "published_date_sort": "2025-05-01",
+      "snippet": "Agents based on large language models (LLMs) for machine learning engineering (MLE) can automatically implement ML models via code generation. However, existing approaches …",
+      "link": "https://arxiv.org/abs/2506.15692",
+      "published_date": "June 2025",
+      "published_date_sort": "2025-06-01",
       "citations": 0,
       "institutions": "Unknown"
     },
     {
-      "title": "CodePDE: An Inference Framework for LLM-driven PDE Solver Generation",
-      "authors": "S Li, T Marwah, J Shen, W Sun, A Risteski… - arXiv preprint arXiv …, 2025 - arxiv.org",
+      "title": "Towards Community-Driven Agents for Machine Learning Engineering",
+      "authors": "S Li, W Sun, S Li, A Talwalkar, Y Yang - arXiv preprint arXiv:2506.20640, 2025 - arxiv.org",
       "journal": "Google Scholar Result",
-      "snippet": "Partial differential equations (PDEs) are fundamental to modeling physical systems, yet solving them remains a complex challenge. Traditional numerical solvers rely on expert …",
-      "link": "https://arxiv.org/abs/2505.08783",
-      "published_date": "May 2025",
-      "published_date_sort": "2025-05-01",
-      "citations": 1,
-      "institutions": "Unknown"
-    },
-    {
-      "title": "IDA-Bench: Evaluating LLMs on Interactive Guided Data Analysis",
-      "authors": "H Li, H Liu, T Zhu, T Guo, Z Zheng, X Deng… - arXiv preprint arXiv …, 2025 - arxiv.org",
-      "journal": "Google Scholar Result",
-      "snippet": "Large Language Models (LLMs) show promise as data analysis agents, but existing benchmarks overlook the iterative nature of the field, where experts' decisions evolve with …",
-      "link": "https://arxiv.org/abs/2505.18223",
-      "published_date": "May 2025",
-      "published_date_sort": "2025-05-01",
-      "citations": 1,
+      "snippet": "Large language model-based machine learning (ML) agents have shown great promise in automating ML research. However, existing agents typically operate in isolation on a given …",
+      "link": "https://arxiv.org/abs/2506.20640",
+      "published_date": "June 2025",
+      "published_date_sort": "2025-06-01",
+      "citations": 0,
       "institutions": "Unknown"
     },
     {
@@ -243,6 +118,61 @@
       "institutions": "Unknown"
     },
     {
+      "title": "RepoMaster: Autonomous Exploration and Understanding of GitHub Repositories for Complex Task Solving",
+      "authors": "H Wang, Z Ni, S Zhang, S Lu, S Hu, Z He, C Hu… - arXiv preprint arXiv …, 2025 - arxiv.org",
+      "journal": "Google Scholar Result",
+      "snippet": "The ultimate goal of code agents is to solve complex tasks autonomously. Although large language models (LLMs) have made substantial progress in code generation, real-world …",
+      "link": "https://arxiv.org/abs/2505.21577",
+      "published_date": "May 2025",
+      "published_date_sort": "2025-05-01",
+      "citations": 0,
+      "institutions": "Unknown"
+    },
+    {
+      "title": "CodePDE: An Inference Framework for LLM-driven PDE Solver Generation",
+      "authors": "S Li, T Marwah, J Shen, W Sun, A Risteski… - arXiv preprint arXiv …, 2025 - arxiv.org",
+      "journal": "Google Scholar Result",
+      "snippet": "Partial differential equations (PDEs) are fundamental to modeling physical systems, yet solving them remains a complex challenge. Traditional numerical solvers rely on expert …",
+      "link": "https://arxiv.org/abs/2505.08783",
+      "published_date": "May 2025",
+      "published_date_sort": "2025-05-01",
+      "citations": 1,
+      "institutions": "Unknown"
+    },
+    {
+      "title": "Mlzero: A multi-agent system for end-to-end machine learning automation",
+      "authors": "H Fang, B Han, N Erickson, X Zhang, S Zhou… - arXiv preprint arXiv …, 2025 - arxiv.org",
+      "journal": "Google Scholar Result",
+      "snippet": "Existing AutoML systems have advanced the automation of machine learning (ML); however, they still require substantial manual configuration and expert input, particularly …",
+      "link": "https://arxiv.org/abs/2505.13941",
+      "published_date": "May 2025",
+      "published_date_sort": "2025-05-01",
+      "citations": 1,
+      "institutions": "Unknown"
+    },
+    {
+      "title": "IDA-Bench: Evaluating LLMs on Interactive Guided Data Analysis",
+      "authors": "H Li, H Liu, T Zhu, T Guo, Z Zheng, X Deng… - arXiv preprint arXiv …, 2025 - arxiv.org",
+      "journal": "Google Scholar Result",
+      "snippet": "Large Language Models (LLMs) show promise as data analysis agents, but existing benchmarks overlook the iterative nature of the field, where experts' decisions evolve with …",
+      "link": "https://arxiv.org/abs/2505.18223",
+      "published_date": "May 2025",
+      "published_date_sort": "2025-05-01",
+      "citations": 1,
+      "institutions": "Unknown"
+    },
+    {
+      "title": "Mle-dojo: Interactive environments for empowering llm agents in machine learning engineering",
+      "authors": "R Qiang, Y Zhuang, Y Li, R Zhang, C Li… - arXiv preprint arXiv …, 2025 - arxiv.org",
+      "journal": "Google Scholar Result",
+      "snippet": "We introduce MLE-Dojo, a Gym-style framework for systematically reinforcement learning, evaluating, and improving autonomous large language model (LLM) agents in iterative …",
+      "link": "https://arxiv.org/abs/2505.07782",
+      "published_date": "May 2025",
+      "published_date_sort": "2025-05-01",
+      "citations": 1,
+      "institutions": "Unknown"
+    },
+    {
       "title": "Co-bench: Benchmarking language model agents in algorithm search for combinatorial optimization",
       "authors": "W Sun, S Feng, S Li, Y Yang - arXiv preprint arXiv:2504.04310, 2025 - arxiv.org",
       "journal": "Google Scholar Result",
@@ -265,17 +195,6 @@
       "institutions": "Unknown"
     },
     {
-      "title": "AutoCluster: Un agent pour le clustering basé sur les grands modèles de langue",
-      "authors": "E Versmée, Y Remil, M Kaytoue, J Velcin - coria-taln-2025.lis-lab.fr",
-      "journal": "Google Scholar Result",
-      "snippet": "Cette recherche présente AutoCluster, un agent basé sur les grands modèles de langue pour des tâches de classification non supervisée. Nous concevons trois agents dont deux …",
-      "link": "https://coria-taln-2025.lis-lab.fr/wp-content/uploads/2025/06/CORIA-TALN_2025_paper_124.pdf",
-      "published_date": "2025",
-      "published_date_sort": "2025-01-01",
-      "citations": 0,
-      "institutions": "Unknown"
-    },
-    {
       "title": "PiML: Automated Machine Learning Workflow Optimization using LLM Agents",
       "authors": "A Chopde, F Pettiwala, S Kirubananth, SK Botla… - AutoML 2025 Methods … - openreview.net",
       "journal": "Google Scholar Result",
@@ -292,6 +211,17 @@
       "journal": "Google Scholar Result",
       "snippet": "This thesis aims to democratize time series intelligence by making advanced modeling capabilities accessible to users without specialized machine learning knowledge. We …",
       "link": "https://search.proquest.com/openview/24ff18df8583af7a835b667b59b216b9/1?pq-origsite=gscholar&cbl=18750&diss=y",
+      "published_date": "2025",
+      "published_date_sort": "2025-01-01",
+      "citations": 0,
+      "institutions": "Unknown"
+    },
+    {
+      "title": "AutoCluster: Un agent pour le clustering basé sur les grands modèles de langue",
+      "authors": "E Versmée, Y Remil, M Kaytoue, J Velcin - coria-taln-2025.lis-lab.fr",
+      "journal": "Google Scholar Result",
+      "snippet": "Cette recherche présente AutoCluster, un agent basé sur les grands modèles de langue pour des tâches de classification non supervisée. Nous concevons trois agents dont deux …",
+      "link": "https://coria-taln-2025.lis-lab.fr/wp-content/uploads/2025/06/CORIA-TALN_2025_paper_124.pdf",
       "published_date": "2025",
       "published_date_sort": "2025-01-01",
       "citations": 0,
