@@ -1,11 +1,11 @@
 {
-  "last_updated": "2025-07-22 00:11:58 UTC",
+  "last_updated": "2025-07-23 00:12:01 UTC",
   "target_paper": "https://www.arxiv.org/abs/2502.13138",
   "arxiv_id": "2502.13138",
-  "total_citations": 18,
+  "total_citations": 28,
   "h_index": 3,
-  "recent_citations": 0,
-  "avg_citations_per_month": "3.00",
+  "recent_citations": 10,
+  "avg_citations_per_month": "4.00",
   "timeline": [
     {
       "date": "2025-01-01",
@@ -26,9 +26,134 @@
     {
       "date": "2025-06-01",
       "citations": 18
+    },
+    {
+      "date": "2025-07-01",
+      "citations": 28
     }
   ],
   "papers": [
+    {
+      "title": "Do AI models help produce verified bug fixes?",
+      "authors": "Li Huang, Ilgiz Mustafin, Marco Piccioni, Alessandro Schena, Reto Weber, Bertrand Meyer",
+      "journal": "arXiv",
+      "snippet": "Among areas of software engineering where AI techniques -- particularly,\nLarge Language Models -- seem poised to yield dramatic improvements, an\nattractive candidate is Automatic Program Repair (APR), the production of\nsatisfactory corrections to software bugs. Does this expectation materialize in\npractice? How do we find out, making sure that proposed corrections actually\nwork? If programmers have access to LLMs, how do they actually use them to\ncomplement their own skills?\n  To answer these questions, we took advantage of the availability of a\nprogram-proving environment, which formally determines the correctness of\nproposed fixes, to conduct a study of program debugging with two randomly\nassigned groups of programmers, one with access to LLMs and the other without,\nboth validating their answers through the proof tools. The methodology relied\non a division into general research questions (Goals in the Goal-Query-Metric\napproach), specific elements admitting specific answers (Queries), and\nmeasurements supporting these answers (Metrics). While applied so far to a\nlimited sample size, the results are a first step towards delineating a proper\nrole for AI and LLMs in providing guaranteed-correct fixes to program bugs.\n  These results caused surprise as compared to what one might expect from the\nuse of AI for debugging and APR. The contributions also include: a detailed\nmethodology for experiments in the use of LLMs for debugging, which other\nprojects can reuse; a fine-grain analysis of programmer behavior, made possible\nby the use of full-session recording; a definition of patterns of use of LLMs,\nwith 7 distinct categories; and validated advice for getting the best of LLMs\nfor debugging and Automatic Program Repair.",
+      "link": "http://arxiv.org/abs/2507.15822v1",
+      "published_date": "July 21, 2025",
+      "published_date_sort": "2025-07-21",
+      "citations": 0,
+      "institutions": "Unknown"
+    },
+    {
+      "title": "HAMLET: Hyperadaptive Agent-based Modeling for Live Embodied Theatrics",
+      "authors": "Sizhou Chen, Shufan Jiang, Chi Zhang, Xiao-Lei Zhang, Xuelong Li",
+      "journal": "arXiv",
+      "snippet": "Creating an immersive and interactive theatrical experience is a long-term\ngoal in the field of interactive narrative. The emergence of large language\nmodel (LLM) is providing a new path to achieve this goal. However, existing\nLLM-based drama generation methods often result in AI agents that lack\ninitiative and cannot interact with the physical environment. Furthermore,\nthese methods typically require detailed user input to drive the drama. These\nlimitations reduce the interactivity and immersion of online real-time\nperformance. To address the above challenges, we propose HAMLET, a multi-agent\nframework focused on drama creation and online performance. Given a simple\ntopic, the framework generates a narrative blueprint, guiding the subsequent\nimprovisational performance. During the online performance, each actor is given\nan autonomous mind. This means that actors can make independent decisions based\non their own background, goals, and emotional state. In addition to\nconversations with other actors, their decisions can also change the state of\nscene props through actions such as opening a letter or picking up a weapon.\nThe change is then broadcast to other related actors, updating what they know\nand care about, which in turn influences their next action. To evaluate the\nquality of drama performance, we designed an evaluation method to assess three\nprimary aspects, including character performance, narrative quality, and\ninteraction experience. The experimental evaluation shows that HAMLET can\ncreate expressive and coherent theatrical experiences. Our code, dataset and\nmodels are available at https://github.com/HAMLET-2025/HAMLET.",
+      "link": "http://arxiv.org/abs/2507.15518v1",
+      "published_date": "July 21, 2025",
+      "published_date_sort": "2025-07-21",
+      "citations": 0,
+      "institutions": "Unknown"
+    },
+    {
+      "title": "Optimal Batch-Size Control for Low-Latency Federated Learning with\n  Device Heterogeneity",
+      "authors": "Huiling Yang, Zhanwei Wang, Kaibin Huang",
+      "journal": "arXiv",
+      "snippet": "Federated learning (FL) has emerged as a popular approach for collaborative\nmachine learning in sixth-generation (6G) networks, primarily due to its\nprivacy-preserving capabilities. The deployment of FL algorithms is expected to\nempower a wide range of Internet-of-Things (IoT) applications, e.g., autonomous\ndriving, augmented reality, and healthcare. The mission-critical and\ntime-sensitive nature of these applications necessitates the design of\nlow-latency FL frameworks that guarantee high learning performance. In\npractice, achieving low-latency FL faces two challenges: the overhead of\ncomputing and transmitting high-dimensional model updates, and the\nheterogeneity in communication-and-computation (C$^2$) capabilities across\ndevices. To address these challenges, we propose a novel C$^2$-aware framework\nfor optimal batch-size control that minimizes end-to-end (E2E) learning latency\nwhile ensuring convergence. The framework is designed to balance a fundamental\nC$^2$ tradeoff as revealed through convergence analysis. Specifically,\nincreasing batch sizes improves the accuracy of gradient estimation in FL and\nthus reduces the number of communication rounds required for convergence, but\nresults in higher per-round latency, and vice versa. The associated problem of\nlatency minimization is intractable; however, we solve it by designing an\naccurate and tractable surrogate for convergence speed, with parameters fitted\nto real data. This approach yields two batch-size control strategies tailored\nto scenarios with slow and fast fading, while also accommodating device\nheterogeneity. Extensive experiments using real datasets demonstrate that the\nproposed strategies outperform conventional batch-size adaptation schemes that\ndo not consider the C$^2$ tradeoff or device heterogeneity.",
+      "link": "http://arxiv.org/abs/2507.15601v1",
+      "published_date": "July 21, 2025",
+      "published_date_sort": "2025-07-21",
+      "citations": 0,
+      "institutions": "Unknown"
+    },
+    {
+      "title": "Multi-Modal Sensor Fusion for Proactive Blockage Prediction in mmWave\n  Vehicular Networks",
+      "authors": "Ahmad M. Nazar, Abdulkadir Celik, Mohamed Y. Selim, Asmaa Abdallah, Daji Qiao, Ahmed M. Eltawil",
+      "journal": "arXiv",
+      "snippet": "Vehicular communication systems operating in the millimeter wave (mmWave)\nband are highly susceptible to signal blockage from dynamic obstacles such as\nvehicles, pedestrians, and infrastructure. To address this challenge, we\npropose a proactive blockage prediction framework that utilizes multi-modal\nsensing, including camera, GPS, LiDAR, and radar inputs in an\ninfrastructure-to-vehicle (I2V) setting. This approach uses modality-specific\ndeep learning models to process each sensor stream independently and fuses\ntheir outputs using a softmax-weighted ensemble strategy based on validation\nperformance. Our evaluations, for up to 1.5s in advance, show that the\ncamera-only model achieves the best standalone trade-off with an F1-score of\n97.1% and an inference time of 89.8ms. A camera+radar configuration further\nimproves accuracy to 97.2% F1 at 95.7ms. Our results display the effectiveness\nand efficiency of multi-modal sensing for mmWave blockage prediction and\nprovide a pathway for proactive wireless communication in dynamic environments.",
+      "link": "http://arxiv.org/abs/2507.15769v1",
+      "published_date": "July 21, 2025",
+      "published_date_sort": "2025-07-21",
+      "citations": 0,
+      "institutions": "Unknown"
+    },
+    {
+      "title": "LAPO: Internalizing Reasoning Efficiency via Length-Adaptive Policy\n  Optimization",
+      "authors": "Xingyu Wu, Yuchen Yan, Shangke Lyu, Linjuan Wu, Yiwen Qiu, Yongliang Shen, Weiming Lu, Jian Shao, Jun Xiao, Yueting Zhuang",
+      "journal": "arXiv",
+      "snippet": "Large reasoning models have achieved remarkable performance through extended\nchain-of-thought sequences, yet this computational freedom leads to excessive\ntoken generation even for simple problems. We present Length-Adaptive Policy\nOptimization (LAPO), a novel framework that transforms reasoning length control\nfrom an external constraint into an intrinsic model capability. Unlike existing\napproaches that impose rigid limits or rely on post-hoc interventions, LAPO\nenables models to internalize an understanding of appropriate reasoning depth\nthrough a two-stage reinforcement learning process. In the first stage, models\nlearn natural reasoning patterns by discovering the statistical distribution of\nsuccessful solution lengths. The second stage leverages these patterns as\nmeta-cognitive guidance, embedding them directly within the model's reasoning\ncontext to ensure inference-time flexibility. Experiments on mathematical\nreasoning benchmarks demonstrate that LAPO reduces token usage by up to 40.9\\%\nwhile improving accuracy by 2.3\\%. Our analysis reveals that models trained\nwith LAPO develop emergent abilities to allocate computational resources based\non problem complexity, achieving efficient reasoning without sacrificing\nquality.",
+      "link": "http://arxiv.org/abs/2507.15758v1",
+      "published_date": "July 21, 2025",
+      "published_date_sort": "2025-07-21",
+      "citations": 0,
+      "institutions": "Unknown"
+    },
+    {
+      "title": "Towards physician-centered oversight of conversational diagnostic AI",
+      "authors": "Elahe Vedadi, David Barrett, Natalie Harris, Ellery Wulczyn, Shashir Reddy, Roma Ruparel, Mike Schaekermann, Tim Strother, Ryutaro Tanno, Yash Sharma, Jihyeon Lee, Cían Hughes, Dylan Slack, Anil Palepu, Jan Freyberg, Khaled Saab, Valentin Liévin, Wei-Hung Weng, Tao Tu, Yun Liu, Nenad Tomasev, Kavita Kulkarni, S. Sara Mahdavi, Kelvin Guu, Joëlle Barral, Dale R. Webster, James Manyika, Avinatan Hassidim, Katherine Chou, Yossi Matias, Pushmeet Kohli, Adam Rodman, Vivek Natarajan, Alan Karthikesalingam, David Stutz",
+      "journal": "arXiv",
+      "snippet": "Recent work has demonstrated the promise of conversational AI systems for\ndiagnostic dialogue. However, real-world assurance of patient safety means that\nproviding individual diagnoses and treatment plans is considered a regulated\nactivity by licensed professionals. Furthermore, physicians commonly oversee\nother team members in such activities, including nurse practitioners (NPs) or\nphysician assistants/associates (PAs). Inspired by this, we propose a framework\nfor effective, asynchronous oversight of the Articulate Medical Intelligence\nExplorer (AMIE) AI system. We propose guardrailed-AMIE (g-AMIE), a multi-agent\nsystem that performs history taking within guardrails, abstaining from\nindividualized medical advice. Afterwards, g-AMIE conveys assessments to an\noverseeing primary care physician (PCP) in a clinician cockpit interface. The\nPCP provides oversight and retains accountability of the clinical decision.\nThis effectively decouples oversight from intake and can thus happen\nasynchronously. In a randomized, blinded virtual Objective Structured Clinical\nExamination (OSCE) of text consultations with asynchronous oversight, we\ncompared g-AMIE to NPs/PAs or a group of PCPs under the same guardrails. Across\n60 scenarios, g-AMIE outperformed both groups in performing high-quality\nintake, summarizing cases, and proposing diagnoses and management plans for the\noverseeing PCP to review. This resulted in higher quality composite decisions.\nPCP oversight of g-AMIE was also more time-efficient than standalone PCP\nconsultations in prior work. While our study does not replicate existing\nclinical practices and likely underestimates clinicians' capabilities, our\nresults demonstrate the promise of asynchronous oversight as a feasible\nparadigm for diagnostic AI systems to operate under expert human oversight for\nenhancing real-world care.",
+      "link": "http://arxiv.org/abs/2507.15743v1",
+      "published_date": "July 21, 2025",
+      "published_date_sort": "2025-07-21",
+      "citations": 0,
+      "institutions": "Unknown"
+    },
+    {
+      "title": "Being-H0: Vision-Language-Action Pretraining from Large-Scale Human\n  Videos",
+      "authors": "Hao Luo, Yicheng Feng, Wanpeng Zhang, Sipeng Zheng, Ye Wang, Haoqi Yuan, Jiazheng Liu, Chaoyi Xu, Qin Jin, Zongqing Lu",
+      "journal": "arXiv",
+      "snippet": "We introduce Being-H0, a dexterous Vision-Language-Action model (VLA) trained\non large-scale human videos. Existing VLAs struggle with complex manipulation\ntasks requiring high dexterity and generalize poorly to novel scenarios and\ntasks, primarily due to their reliance on synthetic data with significant\nsim-to-real gaps or teleoperated demonstrations lacking scale and diversity. To\naddress this data bottleneck, we propose leveraging human hands as a foundation\nmanipulator, capitalizing on the rich dexterity and scalability present in web\ndata. Our approach centers on physical instruction tuning, a novel training\nparadigm that combines large-scale VLA pretraining from human videos, physical\nspace alignment for 3D reasoning, and post-training adaptation for robotic\ntasks. Additionally, we introduce a part-level motion tokenization method which\nachieves millimeter-level reconstruction accuracy to model precise hand\ntrajectories for action learning. To support our proposed paradigm, we further\ndevelop a comprehensive data curation pipeline that integrates heterogeneous\nsources -- including motion capture, VR, and RGB-only videos -- into a\nlarge-scale dataset with millions of motion-based instructional instances. We\nempirically show the excellence of Being-H0 in hand motion generation and\ninstruction following, and it also scales well with model and data sizes.\nImportantly, we observe the expected gains of Being-H0 in real-world robotic\nmanipulation as physical instruction tuning is applied. More details are\navailable at https://beingbeyond.github.io/Being-H0.",
+      "link": "http://arxiv.org/abs/2507.15597v1",
+      "published_date": "July 21, 2025",
+      "published_date_sort": "2025-07-21",
+      "citations": 0,
+      "institutions": "Unknown"
+    },
+    {
+      "title": "DiffuMeta: Algebraic Language Models for Inverse Design of Metamaterials\n  via Diffusion Transformers",
+      "authors": "Li Zheng, Siddhant Kumar, Dennis M. Kochmann",
+      "journal": "arXiv",
+      "snippet": "Generative machine learning models have revolutionized material discovery by\ncapturing complex structure-property relationships, yet extending these\napproaches to the inverse design of three-dimensional metamaterials remains\nlimited by computational complexity and underexplored design spaces due to the\nlack of expressive representations. Here, we present DiffuMeta, a generative\nframework integrating diffusion transformers with a novel algebraic language\nrepresentation, encoding 3D geometries as mathematical sentences. This compact,\nunified parameterization spans diverse topologies while enabling direct\napplication of transformers to structural design. DiffuMeta leverages diffusion\nmodels to generate novel shell structures with precisely targeted stress-strain\nresponses under large deformations, accounting for buckling and contact while\naddressing the inherent one-to-many mapping by producing diverse solutions.\nUniquely, our approach enables simultaneous control over multiple mechanical\nobjectives, including linear and nonlinear responses beyond training domains.\nExperimental validation of fabricated structures further confirms the efficacy\nof our approach for accelerated design of metamaterials and structures with\ntailored properties.",
+      "link": "http://arxiv.org/abs/2507.15753v1",
+      "published_date": "July 21, 2025",
+      "published_date_sort": "2025-07-21",
+      "citations": 0,
+      "institutions": "Unknown"
+    },
+    {
+      "title": "We Need to Rethink Benchmarking in Anomaly Detection",
+      "authors": "Philipp Röchner, Simon Klüttermann, Franz Rothlauf, Daniel Schlör",
+      "journal": "arXiv",
+      "snippet": "Despite the continuous proposal of new anomaly detection algorithms and\nextensive benchmarking efforts, progress seems to stagnate, with only minor\nperformance differences between established baselines and new algorithms. In\nthis position paper, we argue that this stagnation is due to limitations in how\nwe evaluate anomaly detection algorithms. Current benchmarking does not, for\nexample, sufficiently reflect the diversity of anomalies in applications\nranging from predictive maintenance to scientific discovery. Consequently, we\nneed to rethink benchmarking in anomaly detection. In our opinion, anomaly\ndetection should be studied using scenarios that capture the relevant\ncharacteristics of different applications. We identify three key areas for\nimprovement: First, we need to identify anomaly detection scenarios based on a\ncommon taxonomy. Second, anomaly detection pipelines should be analyzed\nend-to-end and by component. Third, evaluating anomaly detection algorithms\nshould be meaningful regarding the scenario's objectives.",
+      "link": "http://arxiv.org/abs/2507.15584v1",
+      "published_date": "July 21, 2025",
+      "published_date_sort": "2025-07-21",
+      "citations": 0,
+      "institutions": "Unknown"
+    },
+    {
+      "title": "The Emergence of Deep Reinforcement Learning for Path Planning",
+      "authors": "Thanh Thi Nguyen, Saeid Nahavandi, Imran Razzak, Dung Nguyen, Nhat Truong Pham, Quoc Viet Hung Nguyen",
+      "journal": "arXiv",
+      "snippet": "The increasing demand for autonomous systems in complex and dynamic\nenvironments has driven significant research into intelligent path planning\nmethodologies. For decades, graph-based search algorithms, linear programming\ntechniques, and evolutionary computation methods have served as foundational\napproaches in this domain. Recently, deep reinforcement learning (DRL) has\nemerged as a powerful method for enabling autonomous agents to learn optimal\nnavigation strategies through interaction with their environments. This survey\nprovides a comprehensive overview of traditional approaches as well as the\nrecent advancements in DRL applied to path planning tasks, focusing on\nautonomous vehicles, drones, and robotic platforms. Key algorithms across both\nconventional and learning-based paradigms are categorized, with their\ninnovations and practical implementations highlighted. This is followed by a\nthorough discussion of their respective strengths and limitations in terms of\ncomputational efficiency, scalability, adaptability, and robustness. The survey\nconcludes by identifying key open challenges and outlining promising avenues\nfor future research. Special attention is given to hybrid approaches that\nintegrate DRL with classical planning techniques to leverage the benefits of\nboth learning-based adaptability and deterministic reliability, offering\npromising directions for robust and resilient autonomous navigation.",
+      "link": "http://arxiv.org/abs/2507.15469v1",
+      "published_date": "July 21, 2025",
+      "published_date_sort": "2025-07-21",
+      "citations": 0,
+      "institutions": "Unknown"
+    },
+    {
+      "title": "AssistedDS: Benchmarking How External Domain Knowledge Assists LLMs in Automated Data Science",
+      "authors": "A Luo, X Xian, J Du, F Tian, G Wang, M Zhong… - arXiv preprint arXiv …, 2025 - arxiv.org",
+      "journal": "Google Scholar Result",
+      "snippet": "Large language models (LLMs) have advanced the automation of data science workflows. Yet it remains unclear whether they can critically leverage external domain knowledge as …",
+      "link": "https://arxiv.org/abs/2506.13992",
+      "published_date": "June 2025",
+      "published_date_sort": "2025-06-01",
+      "citations": 0,
+      "institutions": "Unknown"
+    },
     {
       "title": "LMR-BENCH: Evaluating LLM Agent's Ability on Reproducing Language Modeling Research",
       "authors": "S Yan, R Li, Z Luo, Z Wang, D Li, L Jing, K He… - arXiv preprint arXiv …, 2025 - arxiv.org",
@@ -41,11 +166,11 @@
       "institutions": "Unknown"
     },
     {
-      "title": "MLE-STAR: Machine Learning Engineering Agent via Search and Targeted Refinement",
-      "authors": "J Nam, J Yoon, J Chen, J Shin, SÖ Arık… - arXiv preprint arXiv …, 2025 - arxiv.org",
+      "title": "The Automated LLM Speedrunning Benchmark: Reproducing NanoGPT Improvements",
+      "authors": "B Zhao, D Magka, M Jiang, X Li, R Raileanu… - arXiv preprint arXiv …, 2025 - arxiv.org",
       "journal": "Google Scholar Result",
-      "snippet": "Agents based on large language models (LLMs) for machine learning engineering (MLE) can automatically implement ML models via code generation. However, existing approaches …",
-      "link": "https://arxiv.org/abs/2506.15692",
+      "snippet": "Rapid advancements in large language models (LLMs) have the potential to assist in scientific progress. A critical capability toward this endeavor is the ability to reproduce …",
+      "link": "https://arxiv.org/abs/2506.22419",
       "published_date": "June 2025",
       "published_date_sort": "2025-06-01",
       "citations": 0,
@@ -63,11 +188,11 @@
       "institutions": "Unknown"
     },
     {
-      "title": "AssistedDS: Benchmarking How External Domain Knowledge Assists LLMs in Automated Data Science",
-      "authors": "A Luo, X Xian, J Du, F Tian, G Wang, M Zhong… - arXiv preprint arXiv …, 2025 - arxiv.org",
+      "title": "MLE-STAR: Machine Learning Engineering Agent via Search and Targeted Refinement",
+      "authors": "J Nam, J Yoon, J Chen, J Shin, SÖ Arık… - arXiv preprint arXiv …, 2025 - arxiv.org",
       "journal": "Google Scholar Result",
-      "snippet": "Large language models (LLMs) have advanced the automation of data science workflows. Yet it remains unclear whether they can critically leverage external domain knowledge as …",
-      "link": "https://arxiv.org/abs/2506.13992",
+      "snippet": "Agents based on large language models (LLMs) for machine learning engineering (MLE) can automatically implement ML models via code generation. However, existing approaches …",
+      "link": "https://arxiv.org/abs/2506.15692",
       "published_date": "June 2025",
       "published_date_sort": "2025-06-01",
       "citations": 0,
@@ -85,28 +210,6 @@
       "institutions": "Unknown"
     },
     {
-      "title": "The Automated LLM Speedrunning Benchmark: Reproducing NanoGPT Improvements",
-      "authors": "B Zhao, D Magka, M Jiang, X Li, R Raileanu… - arXiv preprint arXiv …, 2025 - arxiv.org",
-      "journal": "Google Scholar Result",
-      "snippet": "Rapid advancements in large language models (LLMs) have the potential to assist in scientific progress. A critical capability toward this endeavor is the ability to reproduce …",
-      "link": "https://arxiv.org/abs/2506.22419",
-      "published_date": "June 2025",
-      "published_date_sort": "2025-06-01",
-      "citations": 0,
-      "institutions": "Unknown"
-    },
-    {
-      "title": "TimeSeriesGym: A Scalable Benchmark for (Time Series) Machine Learning Engineering Agents",
-      "authors": "Y Cai, X Li, M Goswami, M Wiliński, G Welter… - arXiv preprint arXiv …, 2025 - arxiv.org",
-      "journal": "Google Scholar Result",
-      "snippet": "We introduce TimeSeriesGym, a scalable benchmarking framework for evaluating Artificial Intelligence (AI) agents on time series machine learning engineering challenges. Existing …",
-      "link": "https://arxiv.org/abs/2505.13291",
-      "published_date": "May 2025",
-      "published_date_sort": "2025-05-01",
-      "citations": 0,
-      "institutions": "Unknown"
-    },
-    {
       "title": "RepoMaster: Autonomous Exploration and Understanding of GitHub Repositories for Complex Task Solving",
       "authors": "H Wang, Z Ni, S Zhang, S Lu, S Hu, Z He, C Hu… - arXiv preprint arXiv …, 2025 - arxiv.org",
       "journal": "Google Scholar Result",
@@ -115,17 +218,6 @@
       "published_date": "May 2025",
       "published_date_sort": "2025-05-01",
       "citations": 0,
-      "institutions": "Unknown"
-    },
-    {
-      "title": "Mlzero: A multi-agent system for end-to-end machine learning automation",
-      "authors": "H Fang, B Han, N Erickson, X Zhang, S Zhou… - arXiv preprint arXiv …, 2025 - arxiv.org",
-      "journal": "Google Scholar Result",
-      "snippet": "Existing AutoML systems have advanced the automation of machine learning (ML); however, they still require substantial manual configuration and expert input, particularly …",
-      "link": "https://arxiv.org/abs/2505.13941",
-      "published_date": "May 2025",
-      "published_date_sort": "2025-05-01",
-      "citations": 1,
       "institutions": "Unknown"
     },
     {
@@ -140,6 +232,17 @@
       "institutions": "Unknown"
     },
     {
+      "title": "From automation to autonomy: A survey on large language models in scientific discovery",
+      "authors": "T Zheng, Z Deng, HT Tsang, W Wang, J Bai… - arXiv preprint arXiv …, 2025 - arxiv.org",
+      "journal": "Google Scholar Result",
+      "snippet": "Large Language Models (LLMs) are catalyzing a paradigm shift in scientific discovery, evolving from task-specific automation tools into increasingly autonomous agents and …",
+      "link": "https://arxiv.org/abs/2505.13259",
+      "published_date": "May 2025",
+      "published_date_sort": "2025-05-01",
+      "citations": 3,
+      "institutions": "Unknown"
+    },
+    {
       "title": "IDA-Bench: Evaluating LLMs on Interactive Guided Data Analysis",
       "authors": "H Li, H Liu, T Zhu, T Guo, Z Zheng, X Deng… - arXiv preprint arXiv …, 2025 - arxiv.org",
       "journal": "Google Scholar Result",
@@ -148,6 +251,17 @@
       "published_date": "May 2025",
       "published_date_sort": "2025-05-01",
       "citations": 1,
+      "institutions": "Unknown"
+    },
+    {
+      "title": "TimeSeriesGym: A Scalable Benchmark for (Time Series) Machine Learning Engineering Agents",
+      "authors": "Y Cai, X Li, M Goswami, M Wiliński, G Welter… - arXiv preprint arXiv …, 2025 - arxiv.org",
+      "journal": "Google Scholar Result",
+      "snippet": "We introduce TimeSeriesGym, a scalable benchmarking framework for evaluating Artificial Intelligence (AI) agents on time series machine learning engineering challenges. Existing …",
+      "link": "https://arxiv.org/abs/2505.13291",
+      "published_date": "May 2025",
+      "published_date_sort": "2025-05-01",
+      "citations": 0,
       "institutions": "Unknown"
     },
     {
@@ -162,14 +276,14 @@
       "institutions": "Unknown"
     },
     {
-      "title": "From automation to autonomy: A survey on large language models in scientific discovery",
-      "authors": "T Zheng, Z Deng, HT Tsang, W Wang, J Bai… - arXiv preprint arXiv …, 2025 - arxiv.org",
+      "title": "Mlzero: A multi-agent system for end-to-end machine learning automation",
+      "authors": "H Fang, B Han, N Erickson, X Zhang, S Zhou… - arXiv preprint arXiv …, 2025 - arxiv.org",
       "journal": "Google Scholar Result",
-      "snippet": "Large Language Models (LLMs) are catalyzing a paradigm shift in scientific discovery, evolving from task-specific automation tools into increasingly autonomous agents and …",
-      "link": "https://arxiv.org/abs/2505.13259",
+      "snippet": "Existing AutoML systems have advanced the automation of machine learning (ML); however, they still require substantial manual configuration and expert input, particularly …",
+      "link": "https://arxiv.org/abs/2505.13941",
       "published_date": "May 2025",
       "published_date_sort": "2025-05-01",
-      "citations": 3,
+      "citations": 1,
       "institutions": "Unknown"
     },
     {
@@ -195,17 +309,6 @@
       "institutions": "Unknown"
     },
     {
-      "title": "Towards Pragmatic Time Series Intelligence",
-      "authors": "M Goswami - 2025 - search.proquest.com",
-      "journal": "Google Scholar Result",
-      "snippet": "This thesis aims to democratize time series intelligence by making advanced modeling capabilities accessible to users without specialized machine learning knowledge. We …",
-      "link": "https://search.proquest.com/openview/24ff18df8583af7a835b667b59b216b9/1?pq-origsite=gscholar&cbl=18750&diss=y",
-      "published_date": "2025",
-      "published_date_sort": "2025-01-01",
-      "citations": 0,
-      "institutions": "Unknown"
-    },
-    {
       "title": "PiML: Automated Machine Learning Workflow Optimization using LLM Agents",
       "authors": "A Chopde, F Pettiwala, S Kirubananth, SK Botla… - AutoML 2025 Methods … - openreview.net",
       "journal": "Google Scholar Result",
@@ -222,6 +325,17 @@
       "journal": "Google Scholar Result",
       "snippet": "Cette recherche présente AutoCluster, un agent basé sur les grands modèles de langue pour des tâches de classification non supervisée. Nous concevons trois agents dont deux …",
       "link": "https://coria-taln-2025.lis-lab.fr/wp-content/uploads/2025/06/CORIA-TALN_2025_paper_124.pdf",
+      "published_date": "2025",
+      "published_date_sort": "2025-01-01",
+      "citations": 0,
+      "institutions": "Unknown"
+    },
+    {
+      "title": "Towards Pragmatic Time Series Intelligence",
+      "authors": "M Goswami - 2025 - search.proquest.com",
+      "journal": "Google Scholar Result",
+      "snippet": "This thesis aims to democratize time series intelligence by making advanced modeling capabilities accessible to users without specialized machine learning knowledge. We …",
+      "link": "https://search.proquest.com/openview/24ff18df8583af7a835b667b59b216b9/1?pq-origsite=gscholar&cbl=18750&diss=y",
       "published_date": "2025",
       "published_date_sort": "2025-01-01",
       "citations": 0,
