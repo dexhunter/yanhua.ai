@@ -1,11 +1,11 @@
 {
-  "last_updated": "2025-07-26 00:11:32 UTC",
+  "last_updated": "2025-07-27 00:12:48 UTC",
   "target_paper": "https://www.arxiv.org/abs/2502.13138",
   "arxiv_id": "2502.13138",
-  "total_citations": 26,
+  "total_citations": 16,
   "h_index": 3,
-  "recent_citations": 12,
-  "avg_citations_per_month": "3.71",
+  "recent_citations": 2,
+  "avg_citations_per_month": "2.29",
   "timeline": [
     {
       "date": "2025-01-01",
@@ -29,120 +29,10 @@
     },
     {
       "date": "2025-07-01",
-      "citations": 26
+      "citations": 16
     }
   ],
   "papers": [
-    {
-      "title": "DRWKV: Focusing on Object Edges for Low-Light Image Enhancement",
-      "authors": "Xuecheng Bai, Yuxiang Wang, Boyu Hu, Qinyuan Jie, Chuanzhi Xu, Hongru Xiao, Kechen Li, Vera Chung",
-      "journal": "arXiv",
-      "snippet": "Low-light image enhancement remains a challenging task, particularly in\npreserving object edge continuity and fine structural details under extreme\nillumination degradation. In this paper, we propose a novel model, DRWKV\n(Detailed Receptance Weighted Key Value), which integrates our proposed Global\nEdge Retinex (GER) theory, enabling effective decoupling of illumination and\nedge structures for enhanced edge fidelity. Secondly, we introduce Evolving WKV\nAttention, a spiral-scanning mechanism that captures spatial edge continuity\nand models irregular structures more effectively. Thirdly, we design the\nBilateral Spectrum Aligner (Bi-SAB) and a tailored MS2-Loss to jointly align\nluminance and chrominance features, improving visual naturalness and mitigating\nartifacts. Extensive experiments on five LLIE benchmarks demonstrate that DRWKV\nachieves leading performance in PSNR, SSIM, and NIQE while maintaining low\ncomputational complexity. Furthermore, DRWKV enhances downstream performance in\nlow-light multi-object tracking tasks, validating its generalization\ncapabilities.",
-      "link": "http://arxiv.org/abs/2507.18594v1",
-      "published_date": "July 24, 2025",
-      "published_date_sort": "2025-07-24",
-      "citations": 0,
-      "institutions": "Unknown"
-    },
-    {
-      "title": "SafeWork-R1: Coevolving Safety and Intelligence under the\n  AI-45$^{\\circ}$ Law",
-      "authors": "Shanghai AI Lab,  :, Yicheng Bao, Guanxu Chen, Mingkang Chen, Yunhao Chen, Chiyu Chen, Lingjie Chen, Sirui Chen, Xinquan Chen, Jie Cheng, Yu Cheng, Dengke Deng, Yizhuo Ding, Dan Ding, Xiaoshan Ding, Yi Ding, Zhichen Dong, Lingxiao Du, Yuyu Fan, Xinshun Feng, Yanwei Fu, Yuxuan Gao, Ruijun Ge, Tianle Gu, Lujun Gui, Jiaxuan Guo, Qianxi He, Yuenan Hou, Xuhao Hu, Hong Huang, Kaichen Huang, Shiyang Huang, Yuxian Jiang, Shanzhe Lei, Jie Li, Lijun Li, Hao Li, Juncheng Li, Xiangtian Li, Yafu Li, Lingyu Li, Xueyan Li, Haotian Liang, Dongrui Liu, Qihua Liu, Zhixuan Liu, Bangwei Liu, Huacan Liu, Yuexiao Liu, Zongkai Liu, Chaochao Lu, Yudong Lu, Xiaoya Lu, Zhenghao Lu, Qitan Lv, Caoyuan Ma, Jiachen Ma, Xiaoya Ma, Zhongtian Ma, Lingyu Meng, Ziqi Miao, Yazhe Niu, Yuezhang Peng, Yuan Pu, Han Qi, Chen Qian, Xingge Qiao, Jingjing Qu, Jiashu Qu, Wanying Qu, Wenwen Qu, Xiaoye Qu, Qihan Ren, Qingnan Ren, Qingyu Ren, Jing Shao, Wenqi Shao, Shuai Shao, Dongxing Shi, Xin Song, Xinhao Song, Yan Teng, Xuan Tong, Yingchun Wang, Xuhong Wang, Shujie Wang, Xin Wang, Yige Wang, Yixu Wang, Yuanfu Wang, Futing Wang, Ruofan Wang, Wenjie Wang, Yajie Wang, Muhao Wei, Xiaoyu Wen, Fenghua Weng, Yuqi Wu, Yingtong Xiong, Xingcheng Xu, Chao Yang, Yue Yang, Yang Yao, Yulei Ye, Zhenyun Yin, Yi Yu, Bo Zhang, Qiaosheng Zhang, Jinxuan Zhang, Yexin Zhang, Yinqiang Zheng, Hefeng Zhou, Zhanhui Zhou, Pengyu Zhu, Qingzi Zhu, Yubo Zhu, Bowen Zhou",
-      "journal": "arXiv",
-      "snippet": "We introduce SafeWork-R1, a cutting-edge multimodal reasoning model that\ndemonstrates the coevolution of capabilities and safety. It is developed by our\nproposed SafeLadder framework, which incorporates large-scale, progressive,\nsafety-oriented reinforcement learning post-training, supported by a suite of\nmulti-principled verifiers. Unlike previous alignment methods such as RLHF that\nsimply learn human preferences, SafeLadder enables SafeWork-R1 to develop\nintrinsic safety reasoning and self-reflection abilities, giving rise to safety\n`aha' moments. Notably, SafeWork-R1 achieves an average improvement of\n$46.54\\%$ over its base model Qwen2.5-VL-72B on safety-related benchmarks\nwithout compromising general capabilities, and delivers state-of-the-art safety\nperformance compared to leading proprietary models such as GPT-4.1 and Claude\nOpus 4. To further bolster its reliability, we implement two distinct\ninference-time intervention methods and a deliberative search mechanism,\nenforcing step-level verification. Finally, we further develop\nSafeWork-R1-InternVL3-78B, SafeWork-R1-DeepSeek-70B, and\nSafeWork-R1-Qwen2.5VL-7B. All resulting models demonstrate that safety and\ncapability can co-evolve synergistically, highlighting the generalizability of\nour framework in building robust, reliable, and trustworthy general-purpose AI.",
-      "link": "http://arxiv.org/abs/2507.18576v1",
-      "published_date": "July 24, 2025",
-      "published_date_sort": "2025-07-24",
-      "citations": 0,
-      "institutions": "Unknown"
-    },
-    {
-      "title": "Multimodal Behavioral Patterns Analysis with Eye-Tracking and LLM-Based\n  Reasoning",
-      "authors": "Dongyang Guo, Yasmeen Abdrabou, Enkeleda Thaqi, Enkelejda Kasneci",
-      "journal": "arXiv",
-      "snippet": "Eye-tracking data reveals valuable insights into users' cognitive states but\nis difficult to analyze due to its structured, non-linguistic nature. While\nlarge language models (LLMs) excel at reasoning over text, they struggle with\ntemporal and numerical data. This paper presents a multimodal human-AI\ncollaborative framework designed to enhance cognitive pattern extraction from\neye-tracking signals. The framework includes: (1) a multi-stage pipeline using\nhorizontal and vertical segmentation alongside LLM reasoning to uncover latent\ngaze patterns; (2) an Expert-Model Co-Scoring Module that integrates expert\njudgment with LLM output to generate trust scores for behavioral\ninterpretations; and (3) a hybrid anomaly detection module combining LSTM-based\ntemporal modeling with LLM-driven semantic analysis. Our results across several\nLLMs and prompt strategies show improvements in consistency, interpretability,\nand performance, with up to 50% accuracy in difficulty prediction tasks. This\napproach offers a scalable, interpretable solution for cognitive modeling and\nhas broad potential in adaptive learning, human-computer interaction, and\neducational analytics.",
-      "link": "http://arxiv.org/abs/2507.18252v1",
-      "published_date": "July 24, 2025",
-      "published_date_sort": "2025-07-24",
-      "citations": 0,
-      "institutions": "Unknown"
-    },
-    {
-      "title": "AQuilt: Weaving Logic and Self-Inspection into Low-Cost, High-Relevance\n  Data Synthesis for Specialist LLMs",
-      "authors": "Xiaopeng Ke, Hexuan Deng, Xuebo Liu, Jun Rao, Zhenxi Song, Jun Yu, Min Zhang",
-      "journal": "arXiv",
-      "snippet": "Despite the impressive performance of large language models (LLMs) in general\ndomains, they often underperform in specialized domains. Existing approaches\ntypically rely on data synthesis methods and yield promising results by using\nunlabeled data to capture domain-specific features. However, these methods\neither incur high computational costs or suffer from performance limitations,\nwhile also demonstrating insufficient generalization across different tasks. To\naddress these challenges, we propose AQuilt, a framework for constructing\ninstruction-tuning data for any specialized domains from corresponding\nunlabeled data, including Answer, Question, Unlabeled data, Inspection, Logic,\nand Task type. By incorporating logic and inspection, we encourage reasoning\nprocesses and self-inspection to enhance model performance. Moreover,\ncustomizable task instructions enable high-quality data generation for any\ntask. As a result, we construct a dataset of 703k examples to train a powerful\ndata synthesis model. Experiments show that AQuilt is comparable to DeepSeek-V3\nwhile utilizing just 17% of the production cost. Further analysis demonstrates\nthat our generated data exhibits higher relevance to downstream tasks. Source\ncode, models, and scripts are available at https://github.com/Krueske/AQuilt.",
-      "link": "http://arxiv.org/abs/2507.18584v1",
-      "published_date": "July 24, 2025",
-      "published_date_sort": "2025-07-24",
-      "citations": 0,
-      "institutions": "Unknown"
-    },
-    {
-      "title": "TRPrompt: Bootstrapping Query-Aware Prompt Optimization from Textual\n  Rewards",
-      "authors": "Andreea Nica, Ivan Zakazov, Nicolas Mario Baldwin, Saibo Geng, Robert West",
-      "journal": "arXiv",
-      "snippet": "Prompt optimization improves the reasoning abilities of large language models\n(LLMs) without requiring parameter updates to the target model. Following\nheuristic-based \"Think step by step\" approaches, the field has evolved in two\nmain directions: while one group of methods uses textual feedback to elicit\nimproved prompts from general-purpose LLMs in a training-free way, a concurrent\nline of research relies on numerical rewards to train a special prompt model,\ntailored for providing optimal prompts to the target model. In this paper, we\nintroduce the Textual Reward Prompt framework (TRPrompt), which unifies these\napproaches by directly incorporating textual feedback into training of the\nprompt model. Our framework does not require prior dataset collection and is\nbeing iteratively improved with the feedback on the generated prompts. When\ncoupled with the capacity of an LLM to internalize the notion of what a \"good\"\nprompt is, the high-resolution signal provided by the textual rewards allows us\nto train a prompt model yielding state-of-the-art query-specific prompts for\nthe problems from the challenging math datasets GSMHard and MATH.",
-      "link": "http://arxiv.org/abs/2507.18618v1",
-      "published_date": "July 24, 2025",
-      "published_date_sort": "2025-07-24",
-      "citations": 0,
-      "institutions": "Unknown"
-    },
-    {
-      "title": "MoRPI-PINN: A Physics-Informed Framework for Mobile Robot Pure Inertial\n  Navigation",
-      "authors": "Arup Kumar Sahoo, Itzik Klein",
-      "journal": "arXiv",
-      "snippet": "A fundamental requirement for full autonomy in mobile robots is accurate\nnavigation even in situations where satellite navigation or cameras are\nunavailable. In such practical situations, relying only on inertial sensors\nwill result in navigation solution drift due to the sensors' inherent noise and\nerror terms. One of the emerging solutions to mitigate drift is to maneuver the\nrobot in a snake-like slithering motion to increase the inertial\nsignal-to-noise ratio, allowing the regression of the mobile robot position. In\nthis work, we propose MoRPI-PINN as a physics-informed neural network framework\nfor accurate inertial-based mobile robot navigation. By embedding physical laws\nand constraints into the training process, MoRPI-PINN is capable of providing\nan accurate and robust navigation solution. Using real-world experiments, we\nshow accuracy improvements of over 85% compared to other approaches. MoRPI-PINN\nis a lightweight approach that can be implemented even on edge devices and used\nin any typical mobile robot application.",
-      "link": "http://arxiv.org/abs/2507.18206v1",
-      "published_date": "July 24, 2025",
-      "published_date_sort": "2025-07-24",
-      "citations": 0,
-      "institutions": "Unknown"
-    },
-    {
-      "title": "GenAI for Automotive Software Development: From Requirements to Wheels",
-      "authors": "Nenad Petrovic, Fengjunjie Pan, Vahid Zolfaghari, Krzysztof Lebioda, Andre Schamschurko, Alois Knoll",
-      "journal": "arXiv",
-      "snippet": "This paper introduces a GenAI-empowered approach to automated development of\nautomotive software, with emphasis on autonomous and Advanced Driver Assistance\nSystems (ADAS) capabilities. The process starts with requirements as input,\nwhile the main generated outputs are test scenario code for simulation\nenvironment, together with implementation of desired ADAS capabilities\ntargeting hardware platform of the vehicle connected to testbench. Moreover, we\nintroduce additional steps for requirements consistency checking leveraging\nModel-Driven Engineering (MDE). In the proposed workflow, Large Language Models\n(LLMs) are used for model-based summarization of requirements (Ecore metamodel,\nXMI model instance and OCL constraint creation), test scenario generation,\nsimulation code (Python) and target platform code generation (C++).\nAdditionally, Retrieval Augmented Generation (RAG) is adopted to enhance test\nscenario generation from autonomous driving regulations-related documents. Our\napproach aims shorter compliance and re-engineering cycles, as well as reduced\ndevelopment and testing time when it comes to ADAS-related capabilities.",
-      "link": "http://arxiv.org/abs/2507.18223v1",
-      "published_date": "July 24, 2025",
-      "published_date_sort": "2025-07-24",
-      "citations": 0,
-      "institutions": "Unknown"
-    },
-    {
-      "title": "Revisiting LLM Reasoning via Information Bottleneck",
-      "authors": "Shiye Lei, Zhihao Cheng, Kai Jia, Dacheng Tao",
-      "journal": "arXiv",
-      "snippet": "Large language models (LLMs) have recently demonstrated remarkable progress\nin reasoning capabilities through reinforcement learning with verifiable\nrewards (RLVR). By leveraging simple rule-based rewards, RL effectively\nincentivizes LLMs to produce extended chain-of-thought (CoT) reasoning\ntrajectories, progressively guiding them toward correct answers. However,\nexisting approaches remain largely heuristic and intuition-driven, limiting the\ndevelopment of principled methodologies. In this paper, we present a\ntheoretical characterization of LLM reasoning grounded in information\nbottleneck (IB) principle, introducing IB-aware reasoning optimization (IBRO),\na framework that encourages reasoning trajectories to be both informative about\nthe final correct answer and generalizable across diverse prompts. We derive a\npractical token-level surrogate objective and propose an efficient\napproximation, resulting in the lightweight IB regularization method. This\ntechnique integrates seamlessly into existing RL-based post-training frameworks\nwithout additional computational overhead, requiring only a one-line code\nmodification. Empirically, we validate IB regularization across multiple\nmathematical reasoning benchmarks and RL algorithms, demonstrating consistent\nimprovements in LLM reasoning performance.",
-      "link": "http://arxiv.org/abs/2507.18391v1",
-      "published_date": "July 24, 2025",
-      "published_date_sort": "2025-07-24",
-      "citations": 0,
-      "institutions": "Unknown"
-    },
-    {
-      "title": "The AlphaPhysics Term Rewriting System for Marking Algebraic Expressions\n  in Physics Exams",
-      "authors": "Peter Baumgartner, Lachlan McGinness",
-      "journal": "arXiv",
-      "snippet": "We present our method for automatically marking Physics exams. The marking\nproblem consists in assessing typed student answers for correctness with\nrespect to a ground truth solution. This is a challenging problem that we seek\nto tackle using a combination of a computer algebra system, an SMT solver and a\nterm rewriting system. A Large Language Model is used to interpret and remove\nerrors from student responses and rewrite these in a machine readable format.\nOnce formalized and language-aligned, the next step then consists in applying\nautomated reasoning techniques for assessing student solution correctness. We\nconsider two methods of automated theorem proving: off-the-shelf SMT solving\nand term rewriting systems tailored for physics problems involving\ntrigonometric expressions. The development of the term rewrite system and\nestablishing termination and confluence properties was not trivial, and we\ndescribe it in some detail in the paper. We evaluate our system on a rich pool\nof over 1500 real-world student exam responses from the 2023 Australian Physics\nOlympiad.",
-      "link": "http://arxiv.org/abs/2507.18337v1",
-      "published_date": "July 24, 2025",
-      "published_date_sort": "2025-07-24",
-      "citations": 0,
-      "institutions": "Unknown"
-    },
-    {
-      "title": "PosterMate: Audience-driven Collaborative Persona Agents for Poster\n  Design",
-      "authors": "Donghoon Shin, Daniel Lee, Gary Hsieh, Gromit Yeuk-Yin Chan",
-      "journal": "arXiv",
-      "snippet": "Poster designing can benefit from synchronous feedback from target audiences.\nHowever, gathering audiences with diverse perspectives and reconciling them on\ndesign edits can be challenging. Recent generative AI models present\nopportunities to simulate human-like interactions, but it is unclear how they\nmay be used for feedback processes in design. We introduce PosterMate, a poster\ndesign assistant that facilitates collaboration by creating audience-driven\npersona agents constructed from marketing documents. PosterMate gathers\nfeedback from each persona agent regarding poster components, and stimulates\ndiscussion with the help of a moderator to reach a conclusion. These\nagreed-upon edits can then be directly integrated into the poster design.\nThrough our user study (N=12), we identified the potential of PosterMate to\ncapture overlooked viewpoints, while serving as an effective prototyping tool.\nAdditionally, our controlled online evaluation (N=100) revealed that the\nfeedback from an individual persona agent is appropriate given its persona\nidentity, and the discussion effectively synthesizes the different persona\nagents' perspectives.",
-      "link": "http://arxiv.org/abs/2507.18572v1",
-      "published_date": "July 24, 2025",
-      "published_date_sort": "2025-07-24",
-      "citations": 0,
-      "institutions": "Unknown"
-    },
     {
       "title": "PhysGym: Benchmarking LLMs in Interactive Physics Discovery with Controlled Priors",
       "authors": "Y Chen, P Piȩkos, M Ostaszewski, F Laakom… - arXiv preprint arXiv …, 2025 - arxiv.org",
@@ -177,14 +67,14 @@
       "institutions": "Unknown"
     },
     {
-      "title": "AI Scientists Fail Without Strong Implementation Capability",
-      "authors": "M Zhu, Q Xie, Y Weng, J Wu, Z Lin, L Yang… - arXiv preprint arXiv …, 2025 - arxiv.org",
+      "title": "The Automated LLM Speedrunning Benchmark: Reproducing NanoGPT Improvements",
+      "authors": "B Zhao, D Magka, M Jiang, X Li, R Raileanu… - arXiv preprint arXiv …, 2025 - arxiv.org",
       "journal": "Google Scholar Result",
-      "snippet": "The emergence of Artificial Intelligence (AI) Scientist represents a paradigm shift in scientific discovery, with large language models (LLMs) taking the lead as the primary executor in the …",
-      "link": "https://arxiv.org/abs/2506.01372",
+      "snippet": "Rapid advancements in large language models (LLMs) have the potential to assist in scientific progress. A critical capability toward this endeavor is the ability to reproduce …",
+      "link": "https://arxiv.org/abs/2506.22419",
       "published_date": "June 2025",
       "published_date_sort": "2025-06-01",
-      "citations": 1,
+      "citations": 0,
       "institutions": "Unknown"
     },
     {
@@ -199,6 +89,17 @@
       "institutions": "Unknown"
     },
     {
+      "title": "AI Scientists Fail Without Strong Implementation Capability",
+      "authors": "M Zhu, Q Xie, Y Weng, J Wu, Z Lin, L Yang… - arXiv preprint arXiv …, 2025 - arxiv.org",
+      "journal": "Google Scholar Result",
+      "snippet": "The emergence of Artificial Intelligence (AI) Scientist represents a paradigm shift in scientific discovery, with large language models (LLMs) taking the lead as the primary executor in the …",
+      "link": "https://arxiv.org/abs/2506.01372",
+      "published_date": "June 2025",
+      "published_date_sort": "2025-06-01",
+      "citations": 1,
+      "institutions": "Unknown"
+    },
+    {
       "title": "Towards Community-Driven Agents for Machine Learning Engineering",
       "authors": "S Li, W Sun, S Li, A Talwalkar, Y Yang - arXiv preprint arXiv:2506.20640, 2025 - arxiv.org",
       "journal": "Google Scholar Result",
@@ -210,14 +111,14 @@
       "institutions": "Unknown"
     },
     {
-      "title": "The Automated LLM Speedrunning Benchmark: Reproducing NanoGPT Improvements",
-      "authors": "B Zhao, D Magka, M Jiang, X Li, R Raileanu… - arXiv preprint arXiv …, 2025 - arxiv.org",
+      "title": "IDA-Bench: Evaluating LLMs on Interactive Guided Data Analysis",
+      "authors": "H Li, H Liu, T Zhu, T Guo, Z Zheng, X Deng… - arXiv preprint arXiv …, 2025 - arxiv.org",
       "journal": "Google Scholar Result",
-      "snippet": "Rapid advancements in large language models (LLMs) have the potential to assist in scientific progress. A critical capability toward this endeavor is the ability to reproduce …",
-      "link": "https://arxiv.org/abs/2506.22419",
-      "published_date": "June 2025",
-      "published_date_sort": "2025-06-01",
-      "citations": 0,
+      "snippet": "Large Language Models (LLMs) show promise as data analysis agents, but existing benchmarks overlook the iterative nature of the field, where experts' decisions evolve with …",
+      "link": "https://arxiv.org/abs/2505.18223",
+      "published_date": "May 2025",
+      "published_date_sort": "2025-05-01",
+      "citations": 1,
       "institutions": "Unknown"
     },
     {
@@ -226,6 +127,17 @@
       "journal": "Google Scholar Result",
       "snippet": "Partial differential equations (PDEs) are fundamental to modeling physical systems, yet solving them remains a complex challenge. Traditional numerical solvers rely on expert …",
       "link": "https://arxiv.org/abs/2505.08783",
+      "published_date": "May 2025",
+      "published_date_sort": "2025-05-01",
+      "citations": 1,
+      "institutions": "Unknown"
+    },
+    {
+      "title": "Mle-dojo: Interactive environments for empowering llm agents in machine learning engineering",
+      "authors": "R Qiang, Y Zhuang, Y Li, R Zhang, C Li… - arXiv preprint arXiv …, 2025 - arxiv.org",
+      "journal": "Google Scholar Result",
+      "snippet": "We introduce MLE-Dojo, a Gym-style framework for systematically reinforcement learning, evaluating, and improving autonomous large language model (LLM) agents in iterative …",
+      "link": "https://arxiv.org/abs/2505.07782",
       "published_date": "May 2025",
       "published_date_sort": "2025-05-01",
       "citations": 1,
@@ -243,17 +155,6 @@
       "institutions": "Unknown"
     },
     {
-      "title": "IDA-Bench: Evaluating LLMs on Interactive Guided Data Analysis",
-      "authors": "H Li, H Liu, T Zhu, T Guo, Z Zheng, X Deng… - arXiv preprint arXiv …, 2025 - arxiv.org",
-      "journal": "Google Scholar Result",
-      "snippet": "Large Language Models (LLMs) show promise as data analysis agents, but existing benchmarks overlook the iterative nature of the field, where experts' decisions evolve with …",
-      "link": "https://arxiv.org/abs/2505.18223",
-      "published_date": "May 2025",
-      "published_date_sort": "2025-05-01",
-      "citations": 1,
-      "institutions": "Unknown"
-    },
-    {
       "title": "From automation to autonomy: A survey on large language models in scientific discovery",
       "authors": "T Zheng, Z Deng, HT Tsang, W Wang, J Bai… - arXiv preprint arXiv …, 2025 - arxiv.org",
       "journal": "Google Scholar Result",
@@ -262,17 +163,6 @@
       "published_date": "May 2025",
       "published_date_sort": "2025-05-01",
       "citations": 3,
-      "institutions": "Unknown"
-    },
-    {
-      "title": "Mle-dojo: Interactive environments for empowering llm agents in machine learning engineering",
-      "authors": "R Qiang, Y Zhuang, Y Li, R Zhang, C Li… - arXiv preprint arXiv …, 2025 - arxiv.org",
-      "journal": "Google Scholar Result",
-      "snippet": "We introduce MLE-Dojo, a Gym-style framework for systematically reinforcement learning, evaluating, and improving autonomous large language model (LLM) agents in iterative …",
-      "link": "https://arxiv.org/abs/2505.07782",
-      "published_date": "May 2025",
-      "published_date_sort": "2025-05-01",
-      "citations": 1,
       "institutions": "Unknown"
     },
     {
@@ -298,22 +188,22 @@
       "institutions": "Unknown"
     },
     {
-      "title": "AutoCluster: Un agent pour le clustering basé sur les grands modèles de langue",
-      "authors": "E Versmée, Y Remil, M Kaytoue, J Velcin - coria-taln-2025.lis-lab.fr",
+      "title": "Towards Pragmatic Time Series Intelligence",
+      "authors": "M Goswami - 2025 - search.proquest.com",
       "journal": "Google Scholar Result",
-      "snippet": "Cette recherche présente AutoCluster, un agent basé sur les grands modèles de langue pour des tâches de classification non supervisée. Nous concevons trois agents dont deux …",
-      "link": "https://coria-taln-2025.lis-lab.fr/wp-content/uploads/2025/06/CORIA-TALN_2025_paper_124.pdf",
+      "snippet": "This thesis aims to democratize time series intelligence by making advanced modeling capabilities accessible to users without specialized machine learning knowledge. We …",
+      "link": "https://search.proquest.com/openview/24ff18df8583af7a835b667b59b216b9/1?pq-origsite=gscholar&cbl=18750&diss=y",
       "published_date": "2025",
       "published_date_sort": "2025-01-01",
       "citations": 0,
       "institutions": "Unknown"
     },
     {
-      "title": "Towards Pragmatic Time Series Intelligence",
-      "authors": "M Goswami - 2025 - search.proquest.com",
+      "title": "AutoCluster: Un agent pour le clustering basé sur les grands modèles de langue",
+      "authors": "E Versmée, Y Remil, M Kaytoue, J Velcin - coria-taln-2025.lis-lab.fr",
       "journal": "Google Scholar Result",
-      "snippet": "This thesis aims to democratize time series intelligence by making advanced modeling capabilities accessible to users without specialized machine learning knowledge. We …",
-      "link": "https://search.proquest.com/openview/24ff18df8583af7a835b667b59b216b9/1?pq-origsite=gscholar&cbl=18750&diss=y",
+      "snippet": "Cette recherche présente AutoCluster, un agent basé sur les grands modèles de langue pour des tâches de classification non supervisée. Nous concevons trois agents dont deux …",
+      "link": "https://coria-taln-2025.lis-lab.fr/wp-content/uploads/2025/06/CORIA-TALN_2025_paper_124.pdf",
       "published_date": "2025",
       "published_date_sort": "2025-01-01",
       "citations": 0,
