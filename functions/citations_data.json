@@ -1,11 +1,11 @@
 {
-  "last_updated": "2025-07-29 00:12:49 UTC",
+  "last_updated": "2025-07-30 00:12:20 UTC",
   "target_paper": "https://www.arxiv.org/abs/2502.13138",
   "arxiv_id": "2502.13138",
-  "total_citations": 20,
+  "total_citations": 25,
   "h_index": 3,
-  "recent_citations": 2,
-  "avg_citations_per_month": "2.86",
+  "recent_citations": 7,
+  "avg_citations_per_month": "3.57",
   "timeline": [
     {
       "date": "2025-01-01",
@@ -29,18 +29,62 @@
     },
     {
       "date": "2025-07-01",
-      "citations": 20
+      "citations": 25
     }
   ],
   "papers": [
     {
-      "title": "PhysGym: Benchmarking LLMs in Interactive Physics Discovery with Controlled Priors",
-      "authors": "Y Chen, P Piȩkos, M Ostaszewski, F Laakom… - arXiv preprint arXiv …, 2025 - arxiv.org",
-      "journal": "Google Scholar Result",
-      "snippet": "Evaluating the scientific discovery capabilities of large language model based agents, particularly how they cope with varying environmental complexity and utilize prior …",
-      "link": "https://arxiv.org/abs/2507.15550",
-      "published_date": "July 2025",
-      "published_date_sort": "2025-07-01",
+      "title": "Optimization Performance of Factorization Machine with Annealing under\n  Limited Training Data",
+      "authors": "Mayumi Nakano, Yuya Seki, Shuta Kikuchi, Shu Tanaka",
+      "journal": "arXiv",
+      "snippet": "Black-box (BB) optimization problems aim to identify an input that minimizes\nthe output of a function (the BB function) whose input-output relationship is\nunknown. Factorization machine with annealing (FMA) is a promising approach to\nthis task, employing a factorization machine (FM) as a surrogate model to\niteratively guide the solution search via an Ising machine. Although FMA has\ndemonstrated strong optimization performance across various applications, its\nperformance often stagnates as the number of optimization iterations increases.\nOne contributing factor to this stagnation is the growing number of data points\nin the dataset used to train FM. It is hypothesized that as more data points\nare accumulated, the contribution of newly added data points becomes diluted\nwithin the entire dataset, thereby reducing their impact on improving the\nprediction accuracy of FM. To address this issue, we propose a novel method for\nsequential dataset construction that retains at most a specified number of the\nmost recently added data points. This strategy is designed to enhance the\ninfluence of newly added data points on the surrogate model. Numerical\nexperiments demonstrate that the proposed FMA achieves lower-cost solutions\nwith fewer BB function evaluations compared to the conventional FMA.",
+      "link": "http://arxiv.org/abs/2507.21024v1",
+      "published_date": "July 28, 2025",
+      "published_date_sort": "2025-07-28",
+      "citations": 0,
+      "institutions": "Unknown"
+    },
+    {
+      "title": "Locally Adaptive Conformal Inference for Operator Models",
+      "authors": "Trevor Harris, Yan Liu",
+      "journal": "arXiv",
+      "snippet": "Operator models are regression algorithms for functional data and have become\na key tool for emulating large-scale dynamical systems. Recent advances in deep\nneural operators have dramatically improved the accuracy and scalability of\noperator modeling, but lack an inherent notion of predictive uncertainty. We\nintroduce Local Spectral Conformal Inference (LSCI), a new framework for\nlocally adaptive, distribution-free uncertainty quantification for neural\noperator models. LSCI uses projection-based depth scoring and localized\nconformal inference to generate function-valued prediction sets with\nstatistical guarantees. We prove approximate finite-sample marginal coverage\nunder local exchangeability, and demonstrate significant gains in adaptivity\nand coverage across synthetic and real-world operator learning tasks.",
+      "link": "http://arxiv.org/abs/2507.20975v1",
+      "published_date": "July 28, 2025",
+      "published_date_sort": "2025-07-28",
+      "citations": 0,
+      "institutions": "Unknown"
+    },
+    {
+      "title": "GenoMAS: A Multi-Agent Framework for Scientific Discovery via\n  Code-Driven Gene Expression Analysis",
+      "authors": "Haoyang Liu, Yijiang Li, Haohan Wang",
+      "journal": "arXiv",
+      "snippet": "Gene expression analysis holds the key to many biomedical discoveries, yet\nextracting insights from raw transcriptomic data remains formidable due to the\ncomplexity of multiple large, semi-structured files and the need for extensive\ndomain expertise. Current automation approaches are often limited by either\ninflexible workflows that break down in edge cases or by fully autonomous\nagents that lack the necessary precision for rigorous scientific inquiry.\nGenoMAS charts a different course by presenting a team of LLM-based scientists\nthat integrates the reliability of structured workflows with the adaptability\nof autonomous agents. GenoMAS orchestrates six specialized LLM agents through\ntyped message-passing protocols, each contributing complementary strengths to a\nshared analytic canvas. At the heart of GenoMAS lies a guided-planning\nframework: programming agents unfold high-level task guidelines into Action\nUnits and, at each juncture, elect to advance, revise, bypass, or backtrack,\nthereby maintaining logical coherence while bending gracefully to the\nidiosyncrasies of genomic data.\n  On the GenoTEX benchmark, GenoMAS reaches a Composite Similarity Correlation\nof 89.13% for data preprocessing and an F$_1$ of 60.48% for gene\nidentification, surpassing the best prior art by 10.61% and 16.85%\nrespectively. Beyond metrics, GenoMAS surfaces biologically plausible\ngene-phenotype associations corroborated by the literature, all while adjusting\nfor latent confounders. Code is available at https://github.com/Liu-Hy/GenoMAS.",
+      "link": "http://arxiv.org/abs/2507.21035v1",
+      "published_date": "July 28, 2025",
+      "published_date_sort": "2025-07-28",
+      "citations": 0,
+      "institutions": "Unknown"
+    },
+    {
+      "title": "PROVCREATOR: Synthesizing Complex Heterogenous Graphs with Node and Edge\n  Attributes",
+      "authors": "Tianhao Wang, Simon Klancher, Kunal Mukherjee, Josh Wiedemeier, Feng Chen, Murat Kantarcioglu, Kangkook Jee",
+      "journal": "arXiv",
+      "snippet": "The rise of graph-structured data has driven interest in graph learning and\nsynthetic data generation. While successful in text and image domains,\nsynthetic graph generation remains challenging -- especially for real-world\ngraphs with complex, heterogeneous schemas. Existing research has focused\nmostly on homogeneous structures with simple attributes, limiting their\nusefulness and relevance for application domains requiring semantic fidelity.\n  In this research, we introduce ProvCreator, a synthetic graph framework\ndesigned for complex heterogeneous graphs with high-dimensional node and edge\nattributes. ProvCreator formulates graph synthesis as a sequence generation\ntask, enabling the use of transformer-based large language models. It features\na versatile graph-to-sequence encoder-decoder that 1. losslessly encodes graph\nstructure and attributes, 2. efficiently compresses large graphs for contextual\nmodeling, and 3. supports end-to-end, learnable graph generation.\n  To validate our research, we evaluate ProvCreator on two challenging domains:\nsystem provenance graphs in cybersecurity and knowledge graphs from\nIntelliGraph Benchmark Dataset. In both cases, ProvCreator captures intricate\ndependencies between structure and semantics, enabling the generation of\nrealistic and privacy-aware synthetic datasets.",
+      "link": "http://arxiv.org/abs/2507.20967v1",
+      "published_date": "July 28, 2025",
+      "published_date_sort": "2025-07-28",
+      "citations": 0,
+      "institutions": "Unknown"
+    },
+    {
+      "title": "Flow Matching Policy Gradients",
+      "authors": "David McAllister, Songwei Ge, Brent Yi, Chung Min Kim, Ethan Weber, Hongsuk Choi, Haiwen Feng, Angjoo Kanazawa",
+      "journal": "arXiv",
+      "snippet": "Flow-based generative models, including diffusion models, excel at modeling\ncontinuous distributions in high-dimensional spaces. In this work, we introduce\nFlow Policy Optimization (FPO), a simple on-policy reinforcement learning\nalgorithm that brings flow matching into the policy gradient framework. FPO\ncasts policy optimization as maximizing an advantage-weighted ratio computed\nfrom the conditional flow matching loss, in a manner compatible with the\npopular PPO-clip framework. It sidesteps the need for exact likelihood\ncomputation while preserving the generative capabilities of flow-based models.\nUnlike prior approaches for diffusion-based reinforcement learning that bind\ntraining to a specific sampling method, FPO is agnostic to the choice of\ndiffusion or flow integration at both training and inference time. We show that\nFPO can train diffusion-style policies from scratch in a variety of continuous\ncontrol tasks. We find that flow-based models can capture multimodal action\ndistributions and achieve higher performance than Gaussian policies,\nparticularly in under-conditioned settings.",
+      "link": "http://arxiv.org/abs/2507.21053v1",
+      "published_date": "July 28, 2025",
+      "published_date_sort": "2025-07-28",
       "citations": 0,
       "institutions": "Unknown"
     },
@@ -56,13 +100,13 @@
       "institutions": "Unknown"
     },
     {
-      "title": "Towards Community-Driven Agents for Machine Learning Engineering",
-      "authors": "S Li, W Sun, S Li, A Talwalkar, Y Yang - arXiv preprint arXiv:2506.20640, 2025 - arxiv.org",
+      "title": "PhysGym: Benchmarking LLMs in Interactive Physics Discovery with Controlled Priors",
+      "authors": "Y Chen, P Piȩkos, M Ostaszewski, F Laakom… - arXiv preprint arXiv …, 2025 - arxiv.org",
       "journal": "Google Scholar Result",
-      "snippet": "Large language model-based machine learning (ML) agents have shown great promise in automating ML research. However, existing agents typically operate in isolation on a given …",
-      "link": "https://arxiv.org/abs/2506.20640",
-      "published_date": "June 2025",
-      "published_date_sort": "2025-06-01",
+      "snippet": "Evaluating the scientific discovery capabilities of large language model based agents, particularly how they cope with varying environmental complexity and utilize prior …",
+      "link": "https://arxiv.org/abs/2507.15550",
+      "published_date": "July 2025",
+      "published_date_sort": "2025-07-01",
       "citations": 0,
       "institutions": "Unknown"
     },
@@ -78,55 +122,11 @@
       "institutions": "Unknown"
     },
     {
-      "title": "AssistedDS: Benchmarking How External Domain Knowledge Assists LLMs in Automated Data Science",
-      "authors": "A Luo, X Xian, J Du, F Tian, G Wang, M Zhong… - arXiv preprint arXiv …, 2025 - arxiv.org",
-      "journal": "Google Scholar Result",
-      "snippet": "Large language models (LLMs) have advanced the automation of data science workflows. Yet it remains unclear whether they can critically leverage external domain knowledge as …",
-      "link": "https://arxiv.org/abs/2506.13992",
-      "published_date": "June 2025",
-      "published_date_sort": "2025-06-01",
-      "citations": 0,
-      "institutions": "Unknown"
-    },
-    {
-      "title": "MLE-STAR: Machine Learning Engineering Agent via Search and Targeted Refinement",
-      "authors": "J Nam, J Yoon, J Chen, J Shin, SÖ Arık… - arXiv preprint arXiv …, 2025 - arxiv.org",
-      "journal": "Google Scholar Result",
-      "snippet": "Agents based on large language models (LLMs) for machine learning engineering (MLE) can automatically implement ML models via code generation. However, existing approaches …",
-      "link": "https://arxiv.org/abs/2506.15692",
-      "published_date": "June 2025",
-      "published_date_sort": "2025-06-01",
-      "citations": 0,
-      "institutions": "Unknown"
-    },
-    {
       "title": "The Automated LLM Speedrunning Benchmark: Reproducing NanoGPT Improvements",
       "authors": "B Zhao, D Magka, M Jiang, X Li, R Raileanu… - arXiv preprint arXiv …, 2025 - arxiv.org",
       "journal": "Google Scholar Result",
       "snippet": "Rapid advancements in large language models (LLMs) have the potential to assist in scientific progress. A critical capability toward this endeavor is the ability to reproduce …",
       "link": "https://arxiv.org/abs/2506.22419",
-      "published_date": "June 2025",
-      "published_date_sort": "2025-06-01",
-      "citations": 0,
-      "institutions": "Unknown"
-    },
-    {
-      "title": "AutoMind: Adaptive Knowledgeable Agent for Automated Data Science",
-      "authors": "Y Ou, Y Luo, J Zheng, L Wei, S Qiao, J Zhang… - arXiv preprint arXiv …, 2025 - arxiv.org",
-      "journal": "Google Scholar Result",
-      "snippet": "Large Language Model (LLM) agents have shown great potential in addressing real-world data science problems. LLM-driven data science agents promise to automate the entire …",
-      "link": "https://arxiv.org/abs/2506.10974",
-      "published_date": "June 2025",
-      "published_date_sort": "2025-06-01",
-      "citations": 0,
-      "institutions": "Unknown"
-    },
-    {
-      "title": "LMR-BENCH: Evaluating LLM Agent's Ability on Reproducing Language Modeling Research",
-      "authors": "S Yan, R Li, Z Luo, Z Wang, D Li, L Jing, K He… - arXiv preprint arXiv …, 2025 - arxiv.org",
-      "journal": "Google Scholar Result",
-      "snippet": "Large language model (LLM) agents have demonstrated remarkable potential in advancing scientific discovery. However, their capability in the fundamental yet crucial task of …",
-      "link": "https://arxiv.org/abs/2506.17335",
       "published_date": "June 2025",
       "published_date_sort": "2025-06-01",
       "citations": 0,
@@ -144,25 +144,58 @@
       "institutions": "Unknown"
     },
     {
-      "title": "CodePDE: An Inference Framework for LLM-driven PDE Solver Generation",
-      "authors": "S Li, T Marwah, J Shen, W Sun, A Risteski… - arXiv preprint arXiv …, 2025 - arxiv.org",
+      "title": "LMR-BENCH: Evaluating LLM Agent's Ability on Reproducing Language Modeling Research",
+      "authors": "S Yan, R Li, Z Luo, Z Wang, D Li, L Jing, K He… - arXiv preprint arXiv …, 2025 - arxiv.org",
       "journal": "Google Scholar Result",
-      "snippet": "Partial differential equations (PDEs) are fundamental to modeling physical systems, yet solving them remains a complex challenge. Traditional numerical solvers rely on expert …",
-      "link": "https://arxiv.org/abs/2505.08783",
-      "published_date": "May 2025",
-      "published_date_sort": "2025-05-01",
-      "citations": 1,
+      "snippet": "Large language model (LLM) agents have demonstrated remarkable potential in advancing scientific discovery. However, their capability in the fundamental yet crucial task of …",
+      "link": "https://arxiv.org/abs/2506.17335",
+      "published_date": "June 2025",
+      "published_date_sort": "2025-06-01",
+      "citations": 0,
       "institutions": "Unknown"
     },
     {
-      "title": "IDA-Bench: Evaluating LLMs on Interactive Guided Data Analysis",
-      "authors": "H Li, H Liu, T Zhu, T Guo, Z Zheng, X Deng… - arXiv preprint arXiv …, 2025 - arxiv.org",
+      "title": "Towards Community-Driven Agents for Machine Learning Engineering",
+      "authors": "S Li, W Sun, S Li, A Talwalkar, Y Yang - arXiv preprint arXiv:2506.20640, 2025 - arxiv.org",
       "journal": "Google Scholar Result",
-      "snippet": "Large Language Models (LLMs) show promise as data analysis agents, but existing benchmarks overlook the iterative nature of the field, where experts' decisions evolve with …",
-      "link": "https://arxiv.org/abs/2505.18223",
-      "published_date": "May 2025",
-      "published_date_sort": "2025-05-01",
-      "citations": 1,
+      "snippet": "Large language model-based machine learning (ML) agents have shown great promise in automating ML research. However, existing agents typically operate in isolation on a given …",
+      "link": "https://arxiv.org/abs/2506.20640",
+      "published_date": "June 2025",
+      "published_date_sort": "2025-06-01",
+      "citations": 0,
+      "institutions": "Unknown"
+    },
+    {
+      "title": "MLE-STAR: Machine Learning Engineering Agent via Search and Targeted Refinement",
+      "authors": "J Nam, J Yoon, J Chen, J Shin, SÖ Arık… - arXiv preprint arXiv …, 2025 - arxiv.org",
+      "journal": "Google Scholar Result",
+      "snippet": "Agents based on large language models (LLMs) for machine learning engineering (MLE) can automatically implement ML models via code generation. However, existing approaches …",
+      "link": "https://arxiv.org/abs/2506.15692",
+      "published_date": "June 2025",
+      "published_date_sort": "2025-06-01",
+      "citations": 0,
+      "institutions": "Unknown"
+    },
+    {
+      "title": "AutoMind: Adaptive Knowledgeable Agent for Automated Data Science",
+      "authors": "Y Ou, Y Luo, J Zheng, L Wei, S Qiao, J Zhang… - arXiv preprint arXiv …, 2025 - arxiv.org",
+      "journal": "Google Scholar Result",
+      "snippet": "Large Language Model (LLM) agents have shown great potential in addressing real-world data science problems. LLM-driven data science agents promise to automate the entire …",
+      "link": "https://arxiv.org/abs/2506.10974",
+      "published_date": "June 2025",
+      "published_date_sort": "2025-06-01",
+      "citations": 0,
+      "institutions": "Unknown"
+    },
+    {
+      "title": "AssistedDS: Benchmarking How External Domain Knowledge Assists LLMs in Automated Data Science",
+      "authors": "A Luo, X Xian, J Du, F Tian, G Wang, M Zhong… - arXiv preprint arXiv …, 2025 - arxiv.org",
+      "journal": "Google Scholar Result",
+      "snippet": "Large language models (LLMs) have advanced the automation of data science workflows. Yet it remains unclear whether they can critically leverage external domain knowledge as …",
+      "link": "https://arxiv.org/abs/2506.13992",
+      "published_date": "June 2025",
+      "published_date_sort": "2025-06-01",
+      "citations": 0,
       "institutions": "Unknown"
     },
     {
@@ -174,6 +207,17 @@
       "published_date": "May 2025",
       "published_date_sort": "2025-05-01",
       "citations": 0,
+      "institutions": "Unknown"
+    },
+    {
+      "title": "From automation to autonomy: A survey on large language models in scientific discovery",
+      "authors": "T Zheng, Z Deng, HT Tsang, W Wang, J Bai… - arXiv preprint arXiv …, 2025 - arxiv.org",
+      "journal": "Google Scholar Result",
+      "snippet": "Large Language Models (LLMs) are catalyzing a paradigm shift in scientific discovery, evolving from task-specific automation tools into increasingly autonomous agents and …",
+      "link": "https://arxiv.org/abs/2505.13259",
+      "published_date": "May 2025",
+      "published_date_sort": "2025-05-01",
+      "citations": 3,
       "institutions": "Unknown"
     },
     {
@@ -199,14 +243,25 @@
       "institutions": "Unknown"
     },
     {
-      "title": "From automation to autonomy: A survey on large language models in scientific discovery",
-      "authors": "T Zheng, Z Deng, HT Tsang, W Wang, J Bai… - arXiv preprint arXiv …, 2025 - arxiv.org",
+      "title": "IDA-Bench: Evaluating LLMs on Interactive Guided Data Analysis",
+      "authors": "H Li, H Liu, T Zhu, T Guo, Z Zheng, X Deng… - arXiv preprint arXiv …, 2025 - arxiv.org",
       "journal": "Google Scholar Result",
-      "snippet": "Large Language Models (LLMs) are catalyzing a paradigm shift in scientific discovery, evolving from task-specific automation tools into increasingly autonomous agents and …",
-      "link": "https://arxiv.org/abs/2505.13259",
+      "snippet": "Large Language Models (LLMs) show promise as data analysis agents, but existing benchmarks overlook the iterative nature of the field, where experts' decisions evolve with …",
+      "link": "https://arxiv.org/abs/2505.18223",
       "published_date": "May 2025",
       "published_date_sort": "2025-05-01",
-      "citations": 3,
+      "citations": 1,
+      "institutions": "Unknown"
+    },
+    {
+      "title": "CodePDE: An Inference Framework for LLM-driven PDE Solver Generation",
+      "authors": "S Li, T Marwah, J Shen, W Sun, A Risteski… - arXiv preprint arXiv …, 2025 - arxiv.org",
+      "journal": "Google Scholar Result",
+      "snippet": "Partial differential equations (PDEs) are fundamental to modeling physical systems, yet solving them remains a complex challenge. Traditional numerical solvers rely on expert …",
+      "link": "https://arxiv.org/abs/2505.08783",
+      "published_date": "May 2025",
+      "published_date_sort": "2025-05-01",
+      "citations": 1,
       "institutions": "Unknown"
     },
     {
@@ -232,22 +287,22 @@
       "institutions": "Unknown"
     },
     {
-      "title": "Towards Pragmatic Time Series Intelligence",
-      "authors": "M Goswami - 2025 - search.proquest.com",
+      "title": "AutoCluster: Un agent pour le clustering basé sur les grands modèles de langue",
+      "authors": "E Versmée, Y Remil, M Kaytoue, J Velcin - coria-taln-2025.lis-lab.fr",
       "journal": "Google Scholar Result",
-      "snippet": "This thesis aims to democratize time series intelligence by making advanced modeling capabilities accessible to users without specialized machine learning knowledge. We …",
-      "link": "https://search.proquest.com/openview/24ff18df8583af7a835b667b59b216b9/1?pq-origsite=gscholar&cbl=18750&diss=y",
+      "snippet": "Cette recherche présente AutoCluster, un agent basé sur les grands modèles de langue pour des tâches de classification non supervisée. Nous concevons trois agents dont deux …",
+      "link": "https://coria-taln-2025.lis-lab.fr/wp-content/uploads/2025/06/CORIA-TALN_2025_paper_124.pdf",
       "published_date": "2025",
       "published_date_sort": "2025-01-01",
       "citations": 0,
       "institutions": "Unknown"
     },
     {
-      "title": "AutoCluster: Un agent pour le clustering basé sur les grands modèles de langue",
-      "authors": "E Versmée, Y Remil, M Kaytoue, J Velcin - coria-taln-2025.lis-lab.fr",
+      "title": "Towards Pragmatic Time Series Intelligence",
+      "authors": "M Goswami - 2025 - search.proquest.com",
       "journal": "Google Scholar Result",
-      "snippet": "Cette recherche présente AutoCluster, un agent basé sur les grands modèles de langue pour des tâches de classification non supervisée. Nous concevons trois agents dont deux …",
-      "link": "https://coria-taln-2025.lis-lab.fr/wp-content/uploads/2025/06/CORIA-TALN_2025_paper_124.pdf",
+      "snippet": "This thesis aims to democratize time series intelligence by making advanced modeling capabilities accessible to users without specialized machine learning knowledge. We …",
+      "link": "https://search.proquest.com/openview/24ff18df8583af7a835b667b59b216b9/1?pq-origsite=gscholar&cbl=18750&diss=y",
       "published_date": "2025",
       "published_date_sort": "2025-01-01",
       "citations": 0,
