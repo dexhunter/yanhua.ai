@@ -1,23 +1,23 @@
 {
-  "last_updated": "2025-08-01 00:13:25 UTC",
+  "last_updated": "2025-08-02 00:11:44 UTC",
   "target_paper": "https://www.arxiv.org/abs/2502.13138",
   "arxiv_id": "2502.13138",
-  "total_citations": 27,
+  "total_citations": 29,
   "h_index": 3,
-  "recent_citations": 7,
-  "avg_citations_per_month": "3.86",
+  "recent_citations": 9,
+  "avg_citations_per_month": "4.14",
   "timeline": [
     {
       "date": "2025-01-01",
-      "citations": 1
-    },
-    {
-      "date": "2025-03-01",
       "citations": 2
     },
     {
-      "date": "2025-04-01",
+      "date": "2025-03-01",
       "citations": 3
+    },
+    {
+      "date": "2025-04-01",
+      "citations": 4
     },
     {
       "date": "2025-05-01",
@@ -29,95 +29,106 @@
     },
     {
       "date": "2025-07-01",
-      "citations": 27
+      "citations": 29
     }
   ],
   "papers": [
     {
-      "title": "Safe Deployment of Offline Reinforcement Learning via Input Convex\n  Action Correction",
-      "authors": "Alex Durkin, Jasper Stolte, Matthew Jones, Raghuraman Pitchumani, Bei Li, Christian Michler, Mehmet Mercangöz",
+      "title": "Semantic Chain-of-Trust: Autonomous Trust Orchestration for Collaborator\n  Selection via Hypergraph-Aided Agentic AI",
+      "authors": "Botao Zhu, Xianbin Wang, Dusit Niyato",
       "journal": "arXiv",
-      "snippet": "Offline reinforcement learning (offline RL) offers a promising framework for\ndeveloping control strategies in chemical process systems using historical\ndata, without the risks or costs of online experimentation. This work\ninvestigates the application of offline RL to the safe and efficient control of\nan exothermic polymerisation continuous stirred-tank reactor. We introduce a\nGymnasium-compatible simulation environment that captures the reactor's\nnonlinear dynamics, including reaction kinetics, energy balances, and\noperational constraints. The environment supports three industrially relevant\nscenarios: startup, grade change down, and grade change up. It also includes\nreproducible offline datasets generated from proportional-integral controllers\nwith randomised tunings, providing a benchmark for evaluating offline RL\nalgorithms in realistic process control tasks.\n  We assess behaviour cloning and implicit Q-learning as baseline algorithms,\nhighlighting the challenges offline agents face, including steady-state offsets\nand degraded performance near setpoints. To address these issues, we propose a\nnovel deployment-time safety layer that performs gradient-based action\ncorrection using input convex neural networks (PICNNs) as learned cost models.\nThe PICNN enables real-time, differentiable correction of policy actions by\ndescending a convex, state-conditioned cost surface, without requiring\nretraining or environment interaction.\n  Experimental results show that offline RL, particularly when combined with\nconvex action correction, can outperform traditional control approaches and\nmaintain stability across all scenarios. These findings demonstrate the\nfeasibility of integrating offline RL with interpretable and safety-aware\ncorrections for high-stakes chemical process control, and lay the groundwork\nfor more reliable data-driven automation in industrial systems.",
-      "link": "http://arxiv.org/abs/2507.22640v1",
-      "published_date": "July 30, 2025",
-      "published_date_sort": "2025-07-30",
+      "snippet": "In collaborative systems, the effective completion of tasks hinges on\ntask-specific trust evaluations of potential devices for distributed\ncollaboration. However, the complexity of tasks, the spatiotemporal dynamism of\ndistributed device resources, and the inevitable assessment overhead\ndramatically increase the complexity and resource consumption of the trust\nevaluation process. As a result, ill-timed or overly frequent trust evaluations\ncan reduce utilization rate of constrained resources, negatively affecting\ncollaborative task execution. To address this challenge, this paper proposes an\nautonomous trust orchestration method based on a new concept of semantic\nchain-of-trust. Our technique employs agentic AI and hypergraph to establish\nand maintain trust relationships among devices. By leveraging its strengths in\nautonomous perception, task decomposition, and semantic reasoning, we propose\nagentic AI to perceive device states and autonomously perform trust evaluations\nof collaborators based on historical performance data only during device idle\nperiods, thereby enabling efficient utilization of distributed resources. In\naddition, agentic AI performs task-specific trust evaluations on collaborator\nresources by analyzing the alignment between resource capabilities and task\nrequirements. Moreover, by maintaining a trust hypergraph embedded with trust\nsemantics for each device, agentic AI enables hierarchical management of\ncollaborators and identifies collaborators requiring trust evaluation based on\ntrust semantics, thereby achieving a balance between overhead and trust\naccuracy. Furthermore, local trust hypergraphs from multiple devices can be\nchained together to support multi-hop collaboration, enabling efficient\ncoordination in large-scale systems. Experimental results demonstrate that the\nproposed method achieves resource-efficient trust evaluation.",
+      "link": "http://arxiv.org/abs/2507.23565v1",
+      "published_date": "July 31, 2025",
+      "published_date_sort": "2025-07-31",
       "citations": 0,
       "institutions": "Unknown"
     },
     {
-      "title": "Geometry of nonlinear forecast reconciliation",
-      "authors": "Lorenzo Nespoli, Anubhab Biswas, Vasco Medici",
+      "title": "Enhanced Velocity Field Modeling for Gaussian Video Reconstruction",
+      "authors": "Zhenyang Li, Xiaoyang Bai, Tongchen Zhang, Pengfei Shen, Weiwei Xu, Yifan Peng",
       "journal": "arXiv",
-      "snippet": "Forecast reconciliation, an ex-post technique applied to forecasts that must\nsatisfy constraints, has been a prominent topic in the forecasting literature\nover the past two decades. Recently, several efforts have sought to extend\nreconciliation methods to the probabilistic settings. Nevertheless, formal\ntheorems demonstrating error reduction in nonlinear contexts, analogous to\nthose presented in Panagiotelis et al.(2021), are still lacking. This paper\naddresses that gap by establishing such theorems for various classes of\nnonlinear hypersurfaces and vector-valued functions. Specifically, we derive an\nexact analog of Theorem 3.1 from Panagiotelis et al.(2021) for hypersurfaces\nwith constant-sign curvature. Additionally, we provide probabilistic guarantees\nfor the broader case of hypersurfaces with non-constant-sign curvature and for\ngeneral vector-valued functions. To support reproducibility and practical\nadoption, we release a JAX-based Python package, \\emph{to be released upon\npublication}, implementing the presented theorems and reconciliation\nprocedures.",
-      "link": "http://arxiv.org/abs/2507.22500v1",
-      "published_date": "July 30, 2025",
-      "published_date_sort": "2025-07-30",
+      "snippet": "High-fidelity 3D video reconstruction is essential for enabling real-time\nrendering of dynamic scenes with realistic motion in virtual and augmented\nreality (VR/AR). The deformation field paradigm of 3D Gaussian splatting has\nachieved near-photorealistic results in video reconstruction due to the great\nrepresentation capability of deep deformation networks. However, in videos with\ncomplex motion and significant scale variations, deformation networks often\noverfit to irregular Gaussian trajectories, leading to suboptimal visual\nquality. Moreover, the gradient-based densification strategy designed for\nstatic scene reconstruction proves inadequate to address the absence of dynamic\ncontent. In light of these challenges, we propose a flow-empowered velocity\nfield modeling scheme tailored for Gaussian video reconstruction, dubbed\nFlowGaussian-VR. It consists of two core components: a velocity field rendering\n(VFR) pipeline which enables optical flow-based optimization, and a\nflow-assisted adaptive densification (FAD) strategy that adjusts the number and\nsize of Gaussians in dynamic regions. We validate our model's effectiveness on\nmulti-view dynamic reconstruction and novel view synthesis with multiple\nreal-world datasets containing challenging motion scenarios, demonstrating not\nonly notable visual improvements (over 2.5 dB gain in PSNR) and less blurry\nartifacts in dynamic textures, but also regularized and trackable per-Gaussian\ntrajectories.",
+      "link": "http://arxiv.org/abs/2507.23704v1",
+      "published_date": "July 31, 2025",
+      "published_date_sort": "2025-07-31",
       "citations": 0,
       "institutions": "Unknown"
     },
     {
-      "title": "Bifröst: Spatial Networking with Bigraphs",
-      "authors": "Josh Millar, Ryan Gibb, Roy Ang, Anil Madhavapeddy, Hamed Haddadi",
+      "title": "TextQuests: How Good are LLMs at Text-Based Video Games?",
+      "authors": "Long Phan, Mantas Mazeika, Andy Zou, Dan Hendrycks",
       "journal": "arXiv",
-      "snippet": "Modern networked environments increasingly rely on spatial reasoning, but\nlack a coherent representation for coordinating physical space. Consequently,\ntasks such as enforcing spatial access policies remain fragile and manual. We\nfirst propose a unifying representation based on bigraphs, capturing spatial,\nsocial, and communication relationships within a single formalism, with\nuser-facing tools to generate bigraphs from physical environments. Second, we\npresent a hierarchical agent architecture for distributed spatial reasoning,\nwith runtimes for agentic processes to interact the spatial representation, and\na context-aware execution model that scopes reasoning to the smallest viable\nsubspace. Together, these enable private, reliable, and low-latency spatial\nnetworking that can safely interact with agentic workflows.",
-      "link": "http://arxiv.org/abs/2507.22687v1",
-      "published_date": "July 30, 2025",
-      "published_date_sort": "2025-07-30",
+      "snippet": "Evaluating AI agents within complex, interactive environments that mirror\nreal-world challenges is critical for understanding their practical\ncapabilities. While existing agent benchmarks effectively assess skills like\ntool use or performance on structured tasks, they often do not fully capture an\nagent's ability to operate autonomously in exploratory environments that demand\nsustained, self-directed reasoning over a long and growing context. To spur the\ndevelopment of agents capable of more robust intrinsic reasoning over long\nhorizons, we introduce TextQuests, a benchmark based on the Infocom suite of\ninteractive fiction games. These text-based adventures, which can take human\nplayers over 30 hours and require hundreds of precise actions to solve, serve\nas an effective proxy for evaluating AI agents on focused, stateful tasks. The\nbenchmark is specifically designed to assess an LLM agent's capacity for\nself-contained problem-solving by precluding the use of external tools, thereby\nfocusing on intrinsic long-context reasoning capabilities in an exploratory\nenvironment characterized by the need for trial-and-error learning and\nsustained problem-solving within a single interactive session. We release\nTextQuests at https://textquests.ai.",
+      "link": "http://arxiv.org/abs/2507.23701v1",
+      "published_date": "July 31, 2025",
+      "published_date_sort": "2025-07-31",
       "citations": 0,
       "institutions": "Unknown"
     },
     {
-      "title": "A Systematic Literature Review on Detecting Software Vulnerabilities\n  with Large Language Models",
-      "authors": "Sabrina Kaniewski, Fabian Schmidt, Markus Enzweiler, Michael Menth, Tobias Heer",
+      "title": "Efficient Masked Attention Transformer for Few-Shot Classification and\n  Segmentation",
+      "authors": "Dustin Carrión-Ojeda, Stefan Roth, Simone Schaub-Meyer",
       "journal": "arXiv",
-      "snippet": "The increasing adoption of Large Language Models (LLMs) in software\nengineering has sparked interest in their use for software vulnerability\ndetection. However, the rapid development of this field has resulted in a\nfragmented research landscape, with diverse studies that are difficult to\ncompare due to differences in, e.g., system designs and dataset usage. This\nfragmentation makes it difficult to obtain a clear overview of the\nstate-of-the-art or compare and categorize studies meaningfully. In this work,\nwe present a comprehensive systematic literature review (SLR) of LLM-based\nsoftware vulnerability detection. We analyze 227 studies published between\nJanuary 2020 and June 2025, categorizing them by task formulation, input\nrepresentation, system architecture, and adaptation techniques. Further, we\nanalyze the datasets used, including their characteristics, vulnerability\ncoverage, and diversity. We present a fine-grained taxonomy of vulnerability\ndetection approaches, identify key limitations, and outline actionable future\nresearch opportunities. By providing a structured overview of the field, this\nreview improves transparency and serves as a practical guide for researchers\nand practitioners aiming to conduct more comparable and reproducible research.\nWe publicly release all artifacts and maintain a living repository of LLM-based\nsoftware vulnerability detection studies.",
-      "link": "http://arxiv.org/abs/2507.22659v1",
-      "published_date": "July 30, 2025",
-      "published_date_sort": "2025-07-30",
+      "snippet": "Few-shot classification and segmentation (FS-CS) focuses on jointly\nperforming multi-label classification and multi-class segmentation using few\nannotated examples. Although the current state of the art (SOTA) achieves high\naccuracy in both tasks, it struggles with small objects. To overcome this, we\npropose the Efficient Masked Attention Transformer (EMAT), which improves\nclassification and segmentation accuracy, especially for small objects. EMAT\nintroduces three modifications: a novel memory-efficient masked attention\nmechanism, a learnable downscaling strategy, and parameter-efficiency\nenhancements. EMAT outperforms all FS-CS methods on the PASCAL-5$^i$ and\nCOCO-20$^i$ datasets, using at least four times fewer trainable parameters.\nMoreover, as the current FS-CS evaluation setting discards available\nannotations, despite their costly collection, we introduce two novel evaluation\nsettings that consider these annotations to better reflect practical scenarios.",
+      "link": "http://arxiv.org/abs/2507.23642v1",
+      "published_date": "July 31, 2025",
+      "published_date_sort": "2025-07-31",
       "citations": 0,
       "institutions": "Unknown"
     },
     {
-      "title": "Of Good Demons and Bad Angels: Guaranteeing Safe Control under Finite\n  Precision",
-      "authors": "Samuel Teuber, Debasmita Lohar, Bernhard Beckert",
+      "title": "On the Expressiveness of Softmax Attention: A Recurrent Neural Network\n  Perspective",
+      "authors": "Gabriel Mongaras, Eric C. Larson",
       "journal": "arXiv",
-      "snippet": "As neural networks (NNs) become increasingly prevalent in safety-critical\nneural network-controlled cyber-physical systems (NNCSs), formally guaranteeing\ntheir safety becomes crucial. For these systems, safety must be ensured\nthroughout their entire operation, necessitating infinite-time horizon\nverification. To verify the infinite-time horizon safety of NNCSs, recent\napproaches leverage Differential Dynamic Logic (dL). However, these dL-based\nguarantees rely on idealized, real-valued NN semantics and fail to account for\nroundoff errors introduced by finite-precision implementations. This paper\nbridges the gap between theoretical guarantees and real-world implementations\nby incorporating robustness under finite-precision perturbations -- in sensing,\nactuation, and computation -- into the safety verification. We model the\nproblem as a hybrid game between a good Demon, responsible for control actions,\nand a bad Angel, introducing perturbations. This formulation enables formal\nproofs of robustness w.r.t. a given (bounded) perturbation. Leveraging this\nbound, we employ state-of-the-art mixed-precision fixed-point tuners to\nsynthesize sound and efficient implementations, thus providing a complete\nend-to-end solution. We evaluate our approach on case studies from the\nautomotive and aeronautics domains, producing efficient NN implementations with\nrigorous infinite-time horizon safety guarantees.",
-      "link": "http://arxiv.org/abs/2507.22760v1",
-      "published_date": "July 30, 2025",
-      "published_date_sort": "2025-07-30",
+      "snippet": "Since its introduction, softmax attention has become the backbone of modern\ntransformer architectures due to its expressiveness and scalability across a\nwide range of tasks. However, the main drawback of softmax attention is the\nquadratic memory requirement and computational complexity with respect to the\nsequence length. By replacing the softmax nonlinearity, linear attention and\nsimilar methods have been introduced to avoid the quadratic bottleneck of\nsoftmax attention. Despite these linear forms of attention being derived from\nthe original softmax formulation, they typically lag in terms of downstream\naccuracy. While strong intuition of the softmax nonlinearity on the query and\nkey inner product suggests that it has desirable properties compared to other\nnonlinearities, the question of why this discrepancy exists still remains\nunanswered. This work demonstrates that linear attention is an approximation of\nsoftmax attention by deriving the recurrent form of softmax attention. Using\nthis form, each part of softmax attention can be described in the language of\nrecurrent neural networks (RNNs). Describing softmax attention as an RNN allows\nfor the ablation of the components of softmax attention to understand the\nimportance of each part and how they interact. In this way, our work helps\nexplain why softmax attention is more expressive than its counterparts.",
+      "link": "http://arxiv.org/abs/2507.23632v1",
+      "published_date": "July 31, 2025",
+      "published_date_sort": "2025-07-31",
       "citations": 0,
       "institutions": "Unknown"
     },
     {
-      "title": "A surrogate model for topology optimisation of elastic structures via\n  parametric autoencoders",
-      "authors": "Matteo Giacomini, Antonio Huerta",
+      "title": "Formal Bayesian Transfer Learning via the Total Risk Prior",
+      "authors": "Nathan Wycoff, Ali Arab, Lisa O. Singh",
       "journal": "arXiv",
-      "snippet": "A surrogate-based topology optimisation algorithm for linear elastic\nstructures under parametric loads and boundary conditions is proposed. Instead\nof learning the parametric solution of the state (and adjoint) problems or the\noptimisation trajectory as a function of the iterations, the proposed approach\ndevises a surrogate version of the entire optimisation pipeline. First, the\nmethod predicts a quasi-optimal topology for a given problem configuration as a\nsurrogate model of high-fidelity topologies optimised with the homogenisation\nmethod. This is achieved by means of a feed-forward net learning the mapping\nbetween the input parameters characterising the system setup and a latent space\ndetermined by encoder/decoder blocks reducing the dimensionality of the\nparametric topology optimisation problem and reconstructing a high-dimensional\nrepresentation of the topology. Then, the predicted topology is used as an\neducated initial guess for a computationally efficient algorithm penalising the\nintermediate values of the design variable, while enforcing the governing\nequations of the system. This step allows the method to correct potential\nerrors introduced by the surrogate model, eliminate artifacts, and refine the\ndesign in order to produce topologies consistent with the underlying physics.\nDifferent architectures are proposed and the approximation and generalisation\ncapabilities of the resulting models are numerically evaluated. The\nquasi-optimal topologies allow to outperform the high-fidelity optimiser by\nreducing the average number of optimisation iterations by $53\\%$ while\nachieving discrepancies below $4\\%$ in the optimal value of the objective\nfunctional, even in the challenging scenario of testing the model to\nextrapolate beyond the training and validation domain.",
-      "link": "http://arxiv.org/abs/2507.22539v1",
-      "published_date": "July 30, 2025",
-      "published_date_sort": "2025-07-30",
+      "snippet": "In analyses with severe data-limitations, augmenting the target dataset with\ninformation from ancillary datasets in the application domain, called source\ndatasets, can lead to significantly improved statistical procedures. However,\nexisting methods for this transfer learning struggle to deal with situations\nwhere the source datasets are also limited and not guaranteed to be\nwell-aligned with the target dataset. A typical strategy is to use the\nempirical loss minimizer on the source data as a prior mean for the target\nparameters, which places the estimation of source parameters outside of the\nBayesian formalism. Our key conceptual contribution is to use a risk minimizer\nconditional on source parameters instead. This allows us to construct a single\njoint prior distribution for all parameters from the source datasets as well as\nthe target dataset. As a consequence, we benefit from full Bayesian uncertainty\nquantification and can perform model averaging via Gibbs sampling over\nindicator variables governing the inclusion of each source dataset. We show how\na particular instantiation of our prior leads to a Bayesian Lasso in a\ntransformed coordinate system and discuss computational techniques to scale our\napproach to moderately sized datasets. We also demonstrate that recently\nproposed minimax-frequentist transfer learning techniques may be viewed as an\napproximate Maximum a Posteriori approach to our model. Finally, we demonstrate\nsuperior predictive performance relative to the frequentist baseline on a\ngenetics application, especially when the source data are limited.",
+      "link": "http://arxiv.org/abs/2507.23768v1",
+      "published_date": "July 31, 2025",
+      "published_date_sort": "2025-07-31",
       "citations": 0,
       "institutions": "Unknown"
     },
     {
-      "title": "G-Core: A Simple, Scalable and Balanced RLHF Trainer",
-      "authors": "Junyu Wu, Weiming Chang, Xiaotao Liu, Guanyou He, Haoqiang Hong, Boqi Liu, Hongtao Tian, Tao Yang, Yunsheng Shi, Feng Lin, Ting Yao",
+      "title": "Coflex: Enhancing HW-NAS with Sparse Gaussian Processes for Efficient\n  and Scalable DNN Accelerator Design",
+      "authors": "Yinhui Ma, Tomomasa Yamasaki, Zhehui Wang, Tao Luo, Bo Wang",
       "journal": "arXiv",
-      "snippet": "Reinforcement Learning from Human Feedback (RLHF) has become an increasingly\npopular paradigm for training large language models (LLMs) and diffusion\nmodels. While existing RLHF training systems have enabled significant progress,\nthey often face challenges in scaling to multi-modal and diffusion workflows\nand adapting to dynamic workloads. In particular, current approaches may\nencounter limitations in controller scalability, flexible resource placement,\nand efficient orchestration when handling complex RLHF pipelines, especially in\nscenarios involving dynamic sampling or generative reward modeling. In this\npaper, we present \\textbf{G-Core}, a simple, scalable, and balanced RLHF\ntraining framework designed to address these challenges. G-Core introduces a\nparallel controller programming model, enabling flexible and efficient\norchestration of complex RLHF workflows without the bottlenecks of a single\ncentralized controller. Furthermore, we propose a dynamic placement schema that\nadaptively partitions resources and schedules workloads, significantly reducing\nhardware idle time and improving utilization, even under highly variable\ntraining conditions. G-Core has successfully trained models that support WeChat\nproduct features serving a large-scale user base, demonstrating its\neffectiveness and robustness in real-world scenarios. Our results show that\nG-Core advances the state of the art in RLHF training, providing a solid\nfoundation for future research and deployment of large-scale, human-aligned\nmodels.",
-      "link": "http://arxiv.org/abs/2507.22789v2",
-      "published_date": "July 30, 2025",
-      "published_date_sort": "2025-07-30",
+      "snippet": "Hardware-Aware Neural Architecture Search (HW-NAS) is an efficient approach\nto automatically co-optimizing neural network performance and hardware energy\nefficiency, making it particularly useful for the development of Deep Neural\nNetwork accelerators on the edge. However, the extensive search space and high\ncomputational cost pose significant challenges to its practical adoption. To\naddress these limitations, we propose Coflex, a novel HW-NAS framework that\nintegrates the Sparse Gaussian Process (SGP) with multi-objective Bayesian\noptimization. By leveraging sparse inducing points, Coflex reduces the GP\nkernel complexity from cubic to near-linear with respect to the number of\ntraining samples, without compromising optimization performance. This enables\nscalable approximation of large-scale search space, substantially decreasing\ncomputational overhead while preserving high predictive accuracy. We evaluate\nthe efficacy of Coflex across various benchmarks, focusing on\naccelerator-specific architecture. Our experi- mental results show that Coflex\noutperforms state-of-the-art methods in terms of network accuracy and\nEnergy-Delay-Product, while achieving a computational speed-up ranging from\n1.9x to 9.5x.",
+      "link": "http://arxiv.org/abs/2507.23437v1",
+      "published_date": "July 31, 2025",
+      "published_date_sort": "2025-07-31",
       "citations": 0,
       "institutions": "Unknown"
     },
     {
-      "title": "LightAutoDS-Tab: Multi-AutoML Agentic System for Tabular Data",
-      "authors": "A Lapin, I Hromov, S Chumakov, M Mitrovic… - arXiv preprint arXiv …, 2025 - arxiv.org",
-      "journal": "Google Scholar Result",
-      "snippet": "AutoML has advanced in handling complex tasks using the integration of LLMs, yet its efficiency remains limited by dependence on specific underlying tools. In this paper, we …",
-      "link": "https://arxiv.org/abs/2507.13413",
-      "published_date": "July 2025",
-      "published_date_sort": "2025-07-01",
+      "title": "GraphRAG-R1: Graph Retrieval-Augmented Generation with\n  Process-Constrained Reinforcement Learning",
+      "authors": "Chuanyue Yu, Kuo Zhao, Yuhan Li, Heng Chang, Mingjian Feng, Xiangzhe Jiang, Yufei Sun, Jia Li, Yuzhi Zhang, Jianxin Li, Ziwei Zhang",
+      "journal": "arXiv",
+      "snippet": "Graph Retrieval-Augmented Generation (GraphRAG) has shown great effectiveness\nin enhancing the reasoning abilities of LLMs by leveraging graph structures for\nknowledge representation and modeling complex real-world relationships.\nHowever, existing GraphRAG methods still face significant bottlenecks when\nhandling complex problems that require multi-hop reasoning, as their query and\nretrieval phases are largely based on pre-defined heuristics and do not fully\nutilize the reasoning potentials of LLMs. To address this problem, we propose\nGraphRAG-R1, an adaptive GraphRAG framework by training LLMs with\nprocess-constrained outcome-based reinforcement learning (RL) to enhance the\nmulti-hop reasoning ability. Our method can decompose complex problems,\nautonomously invoke retrieval tools to acquire necessary information, and\nperform effective reasoning. Specifically, we utilize a modified version of\nGroup Relative Policy Optimization (GRPO) that supports rollout-with-thinking\ncapability. Next, we design two process-constrained reward functions. To handle\nthe shallow retrieval problem, we design a Progressive Retrieval Attenuation\n(PRA) reward to encourage essential retrievals. Then, to handle the\nover-thinking problem, we design Cost-Aware F1 (CAF) reward to balance the\nmodel performance with computational costs. We further design a phase-dependent\ntraining strategy, containing three training stages corresponding to cold start\nand these two rewards. Lastly, our method adopts a hybrid graph-textual\nretrieval to improve the reasoning capacity. Extensive experimental results\ndemonstrate that GraphRAG-R1 boosts LLM capabilities in solving complex\nreasoning problems compared to state-of-the-art GraphRAG methods on both\nin-domain and out-of-domain datasets. Furthermore, our framework can be\nflexibly integrated with various existing retrieval methods, consistently\ndelivering performance improvements.",
+      "link": "http://arxiv.org/abs/2507.23581v1",
+      "published_date": "July 31, 2025",
+      "published_date_sort": "2025-07-31",
+      "citations": 0,
+      "institutions": "Unknown"
+    },
+    {
+      "title": "Designing Dynamic Pricing for Bike-sharing Systems via Differentiable\n  Agent-based Simulation",
+      "authors": "Tatsuya Mitomi, Fumiyasu Makinoshima, Fumiya Makihara, Eigo Segawa",
+      "journal": "arXiv",
+      "snippet": "Bike-sharing systems are emerging in various cities as a new ecofriendly\ntransportation system. In these systems, spatiotemporally varying user demands\nlead to imbalanced inventory at bicycle stations, resulting in additional\nrelocation costs. Therefore, it is essential to manage user demand through\noptimal dynamic pricing for the system. However, optimal pricing design for\nsuch a system is challenging because the system involves users with diverse\nbackgrounds and their probabilistic choices. To address this problem, we\ndevelop a differentiable agent-based simulation to rapidly design dynamic\npricing in bike-sharing systems, achieving balanced bicycle inventory despite\nspatiotemporally heterogeneous trips and probabilistic user decisions. We first\nvalidate our approach against conventional methods through numerical\nexperiments involving 25 bicycle stations and five time slots, yielding 100\nparameters. Compared to the conventional methods, our approach obtains a more\naccurate solution with a 73% to 78% reduction in loss while achieving more than\na 100-fold increase in convergence speed. We further validate our approach on a\nlarge-scale urban bike-sharing system scenario involving 289 bicycle stations,\nresulting in a total of 1156 parameters. Through simulations using the obtained\npricing policies, we confirm that these policies can naturally induce balanced\ninventory without any manual relocation. Additionally, we find that the cost of\ndiscounts to induce the balanced inventory can be minimized by setting\nappropriate initial conditions.",
+      "link": "http://arxiv.org/abs/2507.23344v1",
+      "published_date": "July 31, 2025",
+      "published_date_sort": "2025-07-31",
       "citations": 0,
       "institutions": "Unknown"
     },
@@ -133,24 +144,13 @@
       "institutions": "Unknown"
     },
     {
-      "title": "LMR-BENCH: Evaluating LLM Agent's Ability on Reproducing Language Modeling Research",
-      "authors": "S Yan, R Li, Z Luo, Z Wang, D Li, L Jing, K He… - arXiv preprint arXiv …, 2025 - arxiv.org",
+      "title": "LightAutoDS-Tab: Multi-AutoML Agentic System for Tabular Data",
+      "authors": "A Lapin, I Hromov, S Chumakov, M Mitrovic… - arXiv preprint arXiv …, 2025 - arxiv.org",
       "journal": "Google Scholar Result",
-      "snippet": "Large language model (LLM) agents have demonstrated remarkable potential in advancing scientific discovery. However, their capability in the fundamental yet crucial task of …",
-      "link": "https://arxiv.org/abs/2506.17335",
-      "published_date": "June 2025",
-      "published_date_sort": "2025-06-01",
-      "citations": 0,
-      "institutions": "Unknown"
-    },
-    {
-      "title": "The Automated LLM Speedrunning Benchmark: Reproducing NanoGPT Improvements",
-      "authors": "B Zhao, D Magka, M Jiang, X Li, R Raileanu… - arXiv preprint arXiv …, 2025 - arxiv.org",
-      "journal": "Google Scholar Result",
-      "snippet": "Rapid advancements in large language models (LLMs) have the potential to assist in scientific progress. A critical capability toward this endeavor is the ability to reproduce …",
-      "link": "https://arxiv.org/abs/2506.22419",
-      "published_date": "June 2025",
-      "published_date_sort": "2025-06-01",
+      "snippet": "AutoML has advanced in handling complex tasks using the integration of LLMs, yet its efficiency remains limited by dependence on specific underlying tools. In this paper, we …",
+      "link": "https://arxiv.org/abs/2507.13413",
+      "published_date": "July 2025",
+      "published_date_sort": "2025-07-01",
       "citations": 0,
       "institutions": "Unknown"
     },
@@ -177,14 +177,25 @@
       "institutions": "Unknown"
     },
     {
-      "title": "A Comprehensive Survey of Deep Research: Systems, Methodologies, and Applications",
-      "authors": "R Xu, J Peng - arXiv preprint arXiv:2506.12594, 2025 - arxiv.org",
+      "title": "LMR-BENCH: Evaluating LLM Agent's Ability on Reproducing Language Modeling Research",
+      "authors": "S Yan, R Li, Z Luo, Z Wang, D Li, L Jing, K He… - arXiv preprint arXiv …, 2025 - arxiv.org",
       "journal": "Google Scholar Result",
-      "snippet": "This survey examines the rapidly evolving field of Deep Research systems--AI-powered applications that automate complex research workflows through the integration of large …",
-      "link": "https://arxiv.org/abs/2506.12594",
+      "snippet": "Large language model (LLM) agents have demonstrated remarkable potential in advancing scientific discovery. However, their capability in the fundamental yet crucial task of …",
+      "link": "https://arxiv.org/abs/2506.17335",
       "published_date": "June 2025",
       "published_date_sort": "2025-06-01",
-      "citations": 2,
+      "citations": 0,
+      "institutions": "Unknown"
+    },
+    {
+      "title": "The Automated LLM Speedrunning Benchmark: Reproducing NanoGPT Improvements",
+      "authors": "B Zhao, D Magka, M Jiang, X Li, R Raileanu… - arXiv preprint arXiv …, 2025 - arxiv.org",
+      "journal": "Google Scholar Result",
+      "snippet": "Rapid advancements in large language models (LLMs) have the potential to assist in scientific progress. A critical capability toward this endeavor is the ability to reproduce …",
+      "link": "https://arxiv.org/abs/2506.22419",
+      "published_date": "June 2025",
+      "published_date_sort": "2025-06-01",
+      "citations": 0,
       "institutions": "Unknown"
     },
     {
@@ -193,17 +204,6 @@
       "journal": "Google Scholar Result",
       "snippet": "Large Language Model (LLM) agents have shown great potential in addressing real-world data science problems. LLM-driven data science agents promise to automate the entire …",
       "link": "https://arxiv.org/abs/2506.10974",
-      "published_date": "June 2025",
-      "published_date_sort": "2025-06-01",
-      "citations": 0,
-      "institutions": "Unknown"
-    },
-    {
-      "title": "MLE-STAR: Machine Learning Engineering Agent via Search and Targeted Refinement",
-      "authors": "J Nam, J Yoon, J Chen, J Shin, SÖ Arık… - arXiv preprint arXiv …, 2025 - arxiv.org",
-      "journal": "Google Scholar Result",
-      "snippet": "Agents based on large language models (LLMs) for machine learning engineering (MLE) can automatically implement ML models via code generation. However, existing approaches …",
-      "link": "https://arxiv.org/abs/2506.15692",
       "published_date": "June 2025",
       "published_date_sort": "2025-06-01",
       "citations": 0,
@@ -221,11 +221,44 @@
       "institutions": "Unknown"
     },
     {
-      "title": "CodePDE: An Inference Framework for LLM-driven PDE Solver Generation",
-      "authors": "S Li, T Marwah, J Shen, W Sun, A Risteski… - arXiv preprint arXiv …, 2025 - arxiv.org",
+      "title": "A Comprehensive Survey of Deep Research: Systems, Methodologies, and Applications",
+      "authors": "R Xu, J Peng - arXiv preprint arXiv:2506.12594, 2025 - arxiv.org",
       "journal": "Google Scholar Result",
-      "snippet": "Partial differential equations (PDEs) are fundamental to modeling physical systems, yet solving them remains a complex challenge. Traditional numerical solvers rely on expert …",
-      "link": "https://arxiv.org/abs/2505.08783",
+      "snippet": "This survey examines the rapidly evolving field of Deep Research systems--AI-powered applications that automate complex research workflows through the integration of large …",
+      "link": "https://arxiv.org/abs/2506.12594",
+      "published_date": "June 2025",
+      "published_date_sort": "2025-06-01",
+      "citations": 2,
+      "institutions": "Unknown"
+    },
+    {
+      "title": "MLE-STAR: Machine Learning Engineering Agent via Search and Targeted Refinement",
+      "authors": "J Nam, J Yoon, J Chen, J Shin, SÖ Arık… - arXiv preprint arXiv …, 2025 - arxiv.org",
+      "journal": "Google Scholar Result",
+      "snippet": "Agents based on large language models (LLMs) for machine learning engineering (MLE) can automatically implement ML models via code generation. However, existing approaches …",
+      "link": "https://arxiv.org/abs/2506.15692",
+      "published_date": "June 2025",
+      "published_date_sort": "2025-06-01",
+      "citations": 0,
+      "institutions": "Unknown"
+    },
+    {
+      "title": "Mle-dojo: Interactive environments for empowering llm agents in machine learning engineering",
+      "authors": "R Qiang, Y Zhuang, Y Li, R Zhang, C Li… - arXiv preprint arXiv …, 2025 - arxiv.org",
+      "journal": "Google Scholar Result",
+      "snippet": "We introduce MLE-Dojo, a Gym-style framework for systematically reinforcement learning, evaluating, and improving autonomous large language model (LLM) agents in iterative …",
+      "link": "https://arxiv.org/abs/2505.07782",
+      "published_date": "May 2025",
+      "published_date_sort": "2025-05-01",
+      "citations": 1,
+      "institutions": "Unknown"
+    },
+    {
+      "title": "IDA-Bench: Evaluating LLMs on Interactive Guided Data Analysis",
+      "authors": "H Li, H Liu, T Zhu, T Guo, Z Zheng, X Deng… - arXiv preprint arXiv …, 2025 - arxiv.org",
+      "journal": "Google Scholar Result",
+      "snippet": "Large Language Models (LLMs) show promise as data analysis agents, but existing benchmarks overlook the iterative nature of the field, where experts' decisions evolve with …",
+      "link": "https://arxiv.org/abs/2505.18223",
       "published_date": "May 2025",
       "published_date_sort": "2025-05-01",
       "citations": 1,
@@ -239,15 +272,15 @@
       "link": "https://arxiv.org/abs/2505.13259",
       "published_date": "May 2025",
       "published_date_sort": "2025-05-01",
-      "citations": 3,
+      "citations": 4,
       "institutions": "Unknown"
     },
     {
-      "title": "Mle-dojo: Interactive environments for empowering llm agents in machine learning engineering",
-      "authors": "R Qiang, Y Zhuang, Y Li, R Zhang, C Li… - arXiv preprint arXiv …, 2025 - arxiv.org",
+      "title": "CodePDE: An Inference Framework for LLM-driven PDE Solver Generation",
+      "authors": "S Li, T Marwah, J Shen, W Sun, A Risteski… - arXiv preprint arXiv …, 2025 - arxiv.org",
       "journal": "Google Scholar Result",
-      "snippet": "We introduce MLE-Dojo, a Gym-style framework for systematically reinforcement learning, evaluating, and improving autonomous large language model (LLM) agents in iterative …",
-      "link": "https://arxiv.org/abs/2505.07782",
+      "snippet": "Partial differential equations (PDEs) are fundamental to modeling physical systems, yet solving them remains a complex challenge. Traditional numerical solvers rely on expert …",
+      "link": "https://arxiv.org/abs/2505.08783",
       "published_date": "May 2025",
       "published_date_sort": "2025-05-01",
       "citations": 1,
@@ -265,17 +298,6 @@
       "institutions": "Unknown"
     },
     {
-      "title": "RepoMaster: Autonomous Exploration and Understanding of GitHub Repositories for Complex Task Solving",
-      "authors": "H Wang, Z Ni, S Zhang, S Lu, S Hu, Z He, C Hu… - arXiv preprint arXiv …, 2025 - arxiv.org",
-      "journal": "Google Scholar Result",
-      "snippet": "The ultimate goal of code agents is to solve complex tasks autonomously. Although large language models (LLMs) have made substantial progress in code generation, real-world …",
-      "link": "https://arxiv.org/abs/2505.21577",
-      "published_date": "May 2025",
-      "published_date_sort": "2025-05-01",
-      "citations": 0,
-      "institutions": "Unknown"
-    },
-    {
       "title": "TimeSeriesGym: A Scalable Benchmark for (Time Series) Machine Learning Engineering Agents",
       "authors": "Y Cai, X Li, M Goswami, M Wiliński, G Welter… - arXiv preprint arXiv …, 2025 - arxiv.org",
       "journal": "Google Scholar Result",
@@ -284,17 +306,6 @@
       "published_date": "May 2025",
       "published_date_sort": "2025-05-01",
       "citations": 0,
-      "institutions": "Unknown"
-    },
-    {
-      "title": "IDA-Bench: Evaluating LLMs on Interactive Guided Data Analysis",
-      "authors": "H Li, H Liu, T Zhu, T Guo, Z Zheng, X Deng… - arXiv preprint arXiv …, 2025 - arxiv.org",
-      "journal": "Google Scholar Result",
-      "snippet": "Large Language Models (LLMs) show promise as data analysis agents, but existing benchmarks overlook the iterative nature of the field, where experts' decisions evolve with …",
-      "link": "https://arxiv.org/abs/2505.18223",
-      "published_date": "May 2025",
-      "published_date_sort": "2025-05-01",
-      "citations": 1,
       "institutions": "Unknown"
     },
     {
@@ -317,6 +328,17 @@
       "published_date": "March 2025",
       "published_date_sort": "2025-03-01",
       "citations": 22,
+      "institutions": "Unknown"
+    },
+    {
+      "title": "AutoCluster: Un agent pour le clustering basé sur les grands modèles de langue",
+      "authors": "E Versmée, Y Remil, M Kaytoue, J Velcin - coria-taln-2025.lis-lab.fr",
+      "journal": "Google Scholar Result",
+      "snippet": "Cette recherche présente AutoCluster, un agent basé sur les grands modèles de langue pour des tâches de classification non supervisée. Nous concevons trois agents dont deux …",
+      "link": "https://coria-taln-2025.lis-lab.fr/wp-content/uploads/2025/06/CORIA-TALN_2025_paper_124.pdf",
+      "published_date": "2025",
+      "published_date_sort": "2025-01-01",
+      "citations": 0,
       "institutions": "Unknown"
     },
     {
