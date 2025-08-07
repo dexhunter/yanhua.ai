@@ -1,11 +1,11 @@
 {
-  "last_updated": "2025-08-06 00:12:05 UTC",
+  "last_updated": "2025-08-07 00:12:17 UTC",
   "target_paper": "https://www.arxiv.org/abs/2502.13138",
   "arxiv_id": "2502.13138",
-  "total_citations": 26,
+  "total_citations": 24,
   "h_index": 3,
-  "recent_citations": 6,
-  "avg_citations_per_month": "4.33",
+  "recent_citations": 5,
+  "avg_citations_per_month": "4.00",
   "timeline": [
     {
       "date": "2025-03-01",
@@ -17,96 +17,74 @@
     },
     {
       "date": "2025-05-01",
-      "citations": 9
+      "citations": 8
     },
     {
       "date": "2025-06-01",
-      "citations": 17
+      "citations": 16
     },
     {
       "date": "2025-07-01",
-      "citations": 20
+      "citations": 19
     },
     {
       "date": "2025-08-01",
-      "citations": 26
+      "citations": 24
     }
   ],
   "papers": [
     {
-      "title": "AnalogCoder-Pro: Unifying Analog Circuit Generation and Optimization via\n  Multi-modal LLMs",
-      "authors": "Yao Lai, Souradip Poddar, Sungyoung Lee, Guojin Chen, Mengkang Hu, Bei Yu, Ping Luo, David Z. Pan",
+      "title": "MaLV-OS: Rethinking the Operating System Architecture for Machine\n  Learning in Virtualized Clouds",
+      "authors": "Stella Bitchebe, Oana Balmau",
       "journal": "arXiv",
-      "snippet": "Despite advances in analog design automation, analog front-end design still\nheavily depends on expert intuition and iterative simulations, underscoring\ncritical gaps in fully automated optimization for performance-critical\napplications. Recently, the rapid development of Large Language Models (LLMs)\nhas brought new promise to analog design automation. However, existing work\nremains in its early stages, and holistic joint optimization for practical\nend-to-end solutions remains largely unexplored. We propose AnalogCoder-Pro, a\nunified multimodal LLM-based framework that integrates generative capabilities\nand optimization techniques to jointly explore circuit topologies and optimize\ndevice sizing, automatically generating performance-specific, fully sized\nschematic netlists. AnalogCoder-Pro employs rejection sampling for fine-tuning\nLLMs on high-quality synthesized circuit data and introduces a multimodal\ndiagnosis and repair workflow based on functional specifications and waveform\nimages. By leveraging LLMs to interpret generated circuit netlists,\nAnalogCoder-Pro automates the extraction of critical design parameters and the\nformulation of parameter spaces, establishing an end-to-end workflow for\nsimultaneous topology generation and device sizing optimization. Extensive\nexperiments demonstrate that these orthogonal approaches significantly improve\nthe success rate of analog circuit design and enhance circuit performance.",
-      "link": "http://arxiv.org/abs/2508.02518v1",
-      "published_date": "August 04, 2025",
-      "published_date_sort": "2025-08-04",
+      "snippet": "A large body of research has employed Machine Learning (ML) models to develop\nlearned operating systems (OSes) and kernels. The latter dynamically adapts to\nthe job load and dynamically adjusts resources (CPU, IO, memory, network\nbandwidth) allocation to respond to the actual user demand. What this work has\nin common is that it utilizes ML to improve kernel decisions. To this day, and\nto the best of our knowledge, no work has taken the opposite direction, i.e.,\nusing OS to improve ML. While some work proposes applying system-level\noptimizations to ML algorithms, they do not tailor the OS to adapt to the ML\ncontext. To address this limitation, we take an orthogonal approach in this\npaper by leveraging the OS to enhance the performance of ML models and\nalgorithms. We explore the path towards an ML-specialized OS, MaLV-OS. MaLV-OS\nrethinks the OS architecture to make it specifically tailored to ML workloads,\nespecially in virtualized clouds, which are now widely used to run ML\napplications. MaLV-OS envisioned architecture includes (1) a micro-kernel,\nMicro-LAKE, which allows kernel space applications to use the GPU, and (2) an\nMLaaS (ML as a Service) subsystem that gathers ML models to help Micro-LAKE\nwith memory management and CPU scheduling. MaLV-OS architecture also offloads\nsystem-sensitive parts of the models to the OS, to lighten the model complexity\nand programming, and speed up its execution. Finally, MaLV-OS integrates an\nopen-source GPU virtualization software, merged directly into the hypervisor.\nFor more flexibility, MaLV-OS vision is to enable the virtual machine to\ndynamically select MLaaS policies that can improve the performance of the model\nthe user is running. Because MLaaS is designed as loadable kernel modules, the\nMaLV-OS architecture enables the dynamic addition of new capabilities to the\nMLaaS subsystem.",
+      "link": "http://arxiv.org/abs/2508.03676v1",
+      "published_date": "August 05, 2025",
+      "published_date_sort": "2025-08-05",
       "citations": 0,
       "institutions": "Unknown"
     },
     {
-      "title": "MArgE: Meshing Argumentative Evidence from Multiple Large Language\n  Models for Justifiable Claim Verification",
-      "authors": "Ming Pok Ng, Junqi Jiang, Gabriel Freedman, Antonio Rago, Francesca Toni",
+      "title": "More Than a Score: Probing the Impact of Prompt Specificity on LLM Code\n  Generation",
+      "authors": "Yangtian Zi, Harshitha Menon, Arjun Guha",
       "journal": "arXiv",
-      "snippet": "Leveraging outputs from multiple large language models (LLMs) is emerging as\na method for harnessing their power across a wide range of tasks while\nmitigating their capacity for making errors, e.g., hallucinations. However,\ncurrent approaches to combining insights from multiple LLMs often involve\nunstructured interactions (e.g., free debate), resulting in model generations\nthat are not faithfully justifiable. In this work, we introduce MArgE, a novel\nframework to provide formal structure to the evidence from each LLM, in the\nform of a tree of extracted arguments, for the task of claim verification. We\nuse a variant of Argumentative LLMs (ArgLLMs), i.e. LLMs driven by frameworks\nand semantics from the field of computational argumentation, to construct\nstructured argument trees for given claims. This process creates an inspectable\npathway from the initial arguments to the final claim verification decisions,\nproviding a faithful justification thereof. We show experimentally that MArgE\ncan significantly outperform single LLMs, including three open-source models\n(4B to 8B parameters), GPT-4o-mini and existing ArgLLMs, as well as prior\nmethods for unstructured multi-LLM debates. We thus demonstrate the advantages\nof incorporating formal, argumentative reasoning mechanisms when combining\nmultiple LLM outputs.",
-      "link": "http://arxiv.org/abs/2508.02584v1",
-      "published_date": "August 04, 2025",
-      "published_date_sort": "2025-08-04",
+      "snippet": "State-of-the-art Large Language Models (LLMs) achieve high pass@1 on general\nbenchmarks like HumanEval but underperform on specialized suites such as\nParEval. Is this due to LLMs missing domain knowledge or insufficient prompt\ndetail is given? To answer this, we introduce PartialOrderEval, which augments\nany code generation benchmark with a partial order of prompts from minimal to\nmaximally detailed. Applying it to HumanEval and both serial and OpenMP subsets\nof ParEval, we measure how pass@1 scales with prompt specificity. Our\nexperiments with Llama-3.x and Qwen2.5-Coder demonstrate varying degrees of\nprompt sensitivity across different tasks, and a qualitative analysis\nhighlights explicit I/O specifications, edge-case handling, and stepwise\nbreakdowns as the key drivers of prompt detail improvement.",
+      "link": "http://arxiv.org/abs/2508.03678v1",
+      "published_date": "August 05, 2025",
+      "published_date_sort": "2025-08-05",
       "citations": 0,
       "institutions": "Unknown"
     },
     {
-      "title": "mCardiacDx: Radar-Driven Contactless Monitoring and Diagnosis of\n  Arrhythmia",
-      "authors": "Arjun Kumar, Noppanat Wadlom, Jaeheon Kwak, Si-Hyuck Kang, Insik Shin",
+      "title": "Cross-Model Semantics in Representation Learning",
+      "authors": "Saleh Nikooroo, Thomas Engel",
       "journal": "arXiv",
-      "snippet": "Arrhythmia is a common cardiac condition that can precipitate severe\ncomplications without timely intervention. While continuous monitoring is\nessential for timely diagnosis, conventional approaches such as\nelectrocardiogram and wearable devices are constrained by their reliance on\nspecialized medical expertise and patient discomfort from their contact nature.\nExisting contactless monitoring, primarily designed for healthy subjects, face\nsignificant challenges when analyzing reflected signals from arrhythmia\npatients due to disrupted spatial stability and temporal consistency.\n  In this paper, we introduce mCardiacDx, a radar-driven contactless system\nthat accurately analyzes reflected signals and reconstructs heart pulse\nwaveforms for arrhythmia monitoring and diagnosis. The key contributions of our\nwork include a novel precise target localization (PTL) technique that locates\nreflected signals despite spatial disruptions, and an encoder-decoder model\nthat transforms these signals into HPWs, addressing temporal inconsistencies.\nOur evaluation on a large dataset of healthy subjects and arrhythmia patients\nshows that both mCardiacDx and PTL outperform state-of-the-art approach in\narrhythmia monitoring and diagnosis, also demonstrating improved performance in\nhealthy subjects.",
-      "link": "http://arxiv.org/abs/2508.02274v1",
-      "published_date": "August 04, 2025",
-      "published_date_sort": "2025-08-04",
+      "snippet": "The internal representations learned by deep networks are often sensitive to\narchitecture-specific choices, raising questions about the stability,\nalignment, and transferability of learned structure across models. In this\npaper, we investigate how structural constraints--such as linear shaping\noperators and corrective paths--affect the compatibility of internal\nrepresentations across different architectures. Building on the insights from\nprior studies on structured transformations and convergence, we develop a\nframework for measuring and analyzing representational alignment across\nnetworks with distinct but related architectural priors. Through a combination\nof theoretical insights, empirical probes, and controlled transfer experiments,\nwe demonstrate that structural regularities induce representational geometry\nthat is more stable under architectural variation. This suggests that certain\nforms of inductive bias not only support generalization within a model, but\nalso improve the interoperability of learned features across models. We\nconclude with a discussion on the implications of representational\ntransferability for model distillation, modular learning, and the principled\ndesign of robust learning systems.",
+      "link": "http://arxiv.org/abs/2508.03649v1",
+      "published_date": "August 05, 2025",
+      "published_date_sort": "2025-08-05",
       "citations": 0,
       "institutions": "Unknown"
     },
     {
-      "title": "VeOmni: Scaling Any Modality Model Training with Model-Centric\n  Distributed Recipe Zoo",
-      "authors": "Qianli Ma, Yaowei Zheng, Zhelun Shi, Zhongkai Zhao, Bin Jia, Ziyue Huang, Zhiqi Lin, Youjie Li, Jiacheng Yang, Yanghua Peng, Zhi Zhang, Xin Liu",
+      "title": "Probing the Gaps in ChatGPT Live Video Chat for Real-World Assistance\n  for People who are Blind or Visually Impaired",
+      "authors": "Ruei-Che Chang, Rosiana Natalie, Wenqian Xu, Jovan Zheng Feng Yap, Anhong Guo",
       "journal": "arXiv",
-      "snippet": "Recent advances in large language models (LLMs) have driven impressive\nprogress in omni-modal understanding and generation. However, training\nomni-modal LLMs remains a significant challenge due to the heterogeneous model\narchitectures required to process diverse modalities, necessitating\nsophisticated system design for efficient large-scale training. Existing\nframeworks typically entangle model definition with parallel logic, incurring\nlimited scalability and substantial engineering overhead for end-to-end\nomni-modal training. % We present \\veomni, a modular and efficient training\nframework to accelerate the development of omni-modal LLMs. \\veomni introduces\nmodel-centric distributed recipes that decouples communication from\ncomputation, enabling efficient 3D parallelism on omni-modal LLMs. \\veomni also\nfeatures a flexible configuration interface supporting seamless integration of\nnew modalities with minimal code change. % Using \\veomni, a omni-modal\nmixture-of-experts (MoE) model with 30B parameters can be trained with over\n2,800 tokens/sec/GPU throughput and scale to 160K context lengths via 3D\nparallelism on 128 GPUs, showcasing its superior efficiency and scalability for\ntraining large omni-modal LLMs.",
-      "link": "http://arxiv.org/abs/2508.02317v1",
-      "published_date": "August 04, 2025",
-      "published_date_sort": "2025-08-04",
+      "snippet": "Recent advancements in large multimodal models have provided blind or\nvisually impaired (BVI) individuals with new capabilities to interpret and\nengage with the real world through interactive systems that utilize live video\nfeeds. However, the potential benefits and challenges of such capabilities to\nsupport diverse real-world assistive tasks remain unclear. In this paper, we\npresent findings from an exploratory study with eight BVI participants.\nParticipants used ChatGPT's Advanced Voice with Video, a state-of-the-art live\nvideo AI released in late 2024, in various real-world scenarios, from locating\nobjects to recognizing visual landmarks, across unfamiliar indoor and outdoor\nenvironments. Our findings indicate that current live video AI effectively\nprovides guidance and answers for static visual scenes but falls short in\ndelivering essential live descriptions required in dynamic situations. Despite\ninaccuracies in spatial and distance information, participants leveraged the\nprovided visual information to supplement their mobility strategies. Although\nthe system was perceived as human-like due to high-quality voice interactions,\nassumptions about users' visual abilities, hallucinations, generic responses,\nand a tendency towards sycophancy led to confusion, distrust, and potential\nrisks for BVI users. Based on the results, we discuss implications for\nassistive video AI agents, including incorporating additional sensing\ncapabilities for real-world use, determining appropriate intervention timing\nbeyond turn-taking interactions, and addressing ecological and safety concerns.",
+      "link": "http://arxiv.org/abs/2508.03651v1",
+      "published_date": "August 05, 2025",
+      "published_date_sort": "2025-08-05",
       "citations": 0,
       "institutions": "Unknown"
     },
     {
-      "title": "Meta-RAG on Large Codebases Using Code Summarization",
-      "authors": "Vali Tawosia, Salwa Alamir, Xiaomo Liu, Manuela Veloso",
-      "journal": "arXiv",
-      "snippet": "Large Language Model (LLM) systems have been at the forefront of applied\nArtificial Intelligence (AI) research in a multitude of domains. One such\ndomain is software development, where researchers have pushed the automation of\na number of code tasks through LLM agents. Software development is a complex\necosystem, that stretches far beyond code implementation and well into the\nrealm of code maintenance. In this paper, we propose a multi-agent system to\nlocalize bugs in large pre-existing codebases using information retrieval and\nLLMs. Our system introduces a novel Retrieval Augmented Generation (RAG)\napproach, Meta-RAG, where we utilize summaries to condense codebases by an\naverage of 79.8\\%, into a compact, structured, natural language representation.\nWe then use an LLM agent to determine which parts of the codebase are critical\nfor bug resolution, i.e. bug localization. We demonstrate the usefulness of\nMeta-RAG through evaluation with the SWE-bench Lite dataset. Meta-RAG scores\n84.67 % and 53.0 % for file-level and function-level correct localization\nrates, respectively, achieving state-of-the-art performance.",
-      "link": "http://arxiv.org/abs/2508.02611v1",
-      "published_date": "August 04, 2025",
-      "published_date_sort": "2025-08-04",
-      "citations": 0,
-      "institutions": "Unknown"
-    },
-    {
-      "title": "NMS: Efficient Edge DNN Training via Near-Memory Sampling on Manifolds",
-      "authors": "Boran Zhao, Haiduo Huang, Qiwei Dang, Wenzhe Zhao, Tian Xia, Pengju Ren",
-      "journal": "arXiv",
-      "snippet": "Training deep neural networks (DNNs) on edge devices has attracted increasing\nattention due to its potential to address challenges related to domain\nadaptation and privacy preservation. However, DNNs typically rely on large\ndatasets for training, which results in substantial energy consumption, making\nthe training in edge devices impractical. Some dataset compression methods have\nbeen proposed to solve this challenge. For instance, the coreset selection and\ndataset distillation reduce the training cost by selecting and generating\nrepresentative samples respectively. Nevertheless, these methods have two\nsignificant defects: (1) The necessary of leveraging a DNN model to evaluate\nthe quality of representative samples, which inevitably introduces inductive\nbias of DNN, resulting in a severe generalization issue; (2) All training\nimages require multiple accesses to the DDR via long-distance PCB connections,\nleading to substantial energy overhead. To address these issues, inspired by\nthe nonlinear manifold stationary of the human brain, we firstly propose a\nDNN-free sample-selecting algorithm, called DE-SNE, to improve the\ngeneralization issue. Secondly, we innovatively utilize the near-memory\ncomputing technique to implement DE-SNE, thus only a small fraction of images\nneed to access the DDR via long-distance PCB. It significantly reduces DDR\nenergy consumption. As a result, we build a novel expedited DNN training system\nwith a more efficient in-place Near-Memory Sampling characteristic for edge\ndevices, dubbed NMS. As far as we know, our NMS is the first DNN-free\nnear-memory sampling technique that can effectively alleviate generalization\nissues and significantly reduce DDR energy caused by dataset access. The\nexperimental results show that our NMS outperforms the current state-of-the-art\n(SOTA) approaches, namely DQ, DQAS, and NeSSA, in model accuracy.",
-      "link": "http://arxiv.org/abs/2508.02313v1",
-      "published_date": "August 04, 2025",
-      "published_date_sort": "2025-08-04",
-      "citations": 0,
-      "institutions": "Unknown"
-    },
-    {
-      "title": "PhysGym: Benchmarking LLMs in Interactive Physics Discovery with Controlled Priors",
-      "authors": "Y Chen, P Piȩkos, M Ostaszewski, F Laakom… - arXiv preprint arXiv …, 2025 - arxiv.org",
+      "title": "Tuning LLM-based Code Optimization via Meta-Prompting: An Industrial Perspective",
+      "authors": "J Gong, R Giavrimis, P Brookes, V Voskanyan… - arXiv preprint arXiv …, 2025 - arxiv.org",
       "journal": "Google Scholar Result",
-      "snippet": "Evaluating the scientific discovery capabilities of large language model based agents, particularly how they cope with varying environmental complexity and utilize prior …",
-      "link": "https://arxiv.org/abs/2507.15550",
-      "published_date": "July 2025",
-      "published_date_sort": "2025-07-01",
+      "snippet": "There is a growing interest in leveraging large language models (LLMs) for automated code optimization. However, industrial platforms deploying multiple LLMs face a critical challenge …",
+      "link": "https://arxiv.org/abs/2508.01443",
+      "published_date": "August 2025",
+      "published_date_sort": "2025-08-01",
       "citations": 0,
       "institutions": "Unknown"
     },
@@ -133,22 +111,33 @@
       "institutions": "Unknown"
     },
     {
-      "title": "AutoMind: Adaptive Knowledgeable Agent for Automated Data Science",
-      "authors": "Y Ou, Y Luo, J Zheng, L Wei, S Qiao, J Zhang… - arXiv preprint arXiv …, 2025 - arxiv.org",
+      "title": "PhysGym: Benchmarking LLMs in Interactive Physics Discovery with Controlled Priors",
+      "authors": "Y Chen, P Piȩkos, M Ostaszewski, F Laakom… - arXiv preprint arXiv …, 2025 - arxiv.org",
       "journal": "Google Scholar Result",
-      "snippet": "Large Language Model (LLM) agents have shown great potential in addressing real-world data science problems. LLM-driven data science agents promise to automate the entire …",
-      "link": "https://arxiv.org/abs/2506.10974",
-      "published_date": "June 2025",
-      "published_date_sort": "2025-06-01",
+      "snippet": "Evaluating the scientific discovery capabilities of large language model based agents, particularly how they cope with varying environmental complexity and utilize prior …",
+      "link": "https://arxiv.org/abs/2507.15550",
+      "published_date": "July 2025",
+      "published_date_sort": "2025-07-01",
       "citations": 0,
       "institutions": "Unknown"
     },
     {
-      "title": "Towards Community-Driven Agents for Machine Learning Engineering",
-      "authors": "S Li, W Sun, S Li, A Talwalkar, Y Yang - arXiv preprint arXiv:2506.20640, 2025 - arxiv.org",
+      "title": "AI Scientists Fail Without Strong Implementation Capability",
+      "authors": "M Zhu, Q Xie, Y Weng, J Wu, Z Lin, L Yang… - arXiv preprint arXiv …, 2025 - arxiv.org",
       "journal": "Google Scholar Result",
-      "snippet": "Large language model-based machine learning (ML) agents have shown great promise in automating ML research. However, existing agents typically operate in isolation on a given …",
-      "link": "https://arxiv.org/abs/2506.20640",
+      "snippet": "The emergence of Artificial Intelligence (AI) Scientist represents a paradigm shift in scientific discovery, with large language models (LLMs) taking the lead as the primary executor in the …",
+      "link": "https://arxiv.org/abs/2506.01372",
+      "published_date": "June 2025",
+      "published_date_sort": "2025-06-01",
+      "citations": 2,
+      "institutions": "Unknown"
+    },
+    {
+      "title": "AssistedDS: Benchmarking How External Domain Knowledge Assists LLMs in Automated Data Science",
+      "authors": "A Luo, X Xian, J Du, F Tian, G Wang, M Zhong… - arXiv preprint arXiv …, 2025 - arxiv.org",
+      "journal": "Google Scholar Result",
+      "snippet": "Large language models (LLMs) have advanced the automation of data science workflows. Yet it remains unclear whether they can critically leverage external domain knowledge as …",
+      "link": "https://arxiv.org/abs/2506.13992",
       "published_date": "June 2025",
       "published_date_sort": "2025-06-01",
       "citations": 0,
@@ -166,22 +155,11 @@
       "institutions": "Unknown"
     },
     {
-      "title": "MLE-STAR: Machine Learning Engineering Agent via Search and Targeted Refinement",
-      "authors": "J Nam, J Yoon, J Chen, J Shin, SÖ Arık… - arXiv preprint arXiv …, 2025 - arxiv.org",
+      "title": "The Automated LLM Speedrunning Benchmark: Reproducing NanoGPT Improvements",
+      "authors": "B Zhao, D Magka, M Jiang, X Li, R Raileanu… - arXiv preprint arXiv …, 2025 - arxiv.org",
       "journal": "Google Scholar Result",
-      "snippet": "Agents based on large language models (LLMs) for machine learning engineering (MLE) can automatically implement ML models via code generation. However, existing approaches …",
-      "link": "https://arxiv.org/abs/2506.15692",
-      "published_date": "June 2025",
-      "published_date_sort": "2025-06-01",
-      "citations": 0,
-      "institutions": "Unknown"
-    },
-    {
-      "title": "AssistedDS: Benchmarking How External Domain Knowledge Assists LLMs in Automated Data Science",
-      "authors": "A Luo, X Xian, J Du, F Tian, G Wang, M Zhong… - arXiv preprint arXiv …, 2025 - arxiv.org",
-      "journal": "Google Scholar Result",
-      "snippet": "Large language models (LLMs) have advanced the automation of data science workflows. Yet it remains unclear whether they can critically leverage external domain knowledge as …",
-      "link": "https://arxiv.org/abs/2506.13992",
+      "snippet": "Rapid advancements in large language models (LLMs) have the potential to assist in scientific progress. A critical capability toward this endeavor is the ability to reproduce …",
+      "link": "https://arxiv.org/abs/2506.22419",
       "published_date": "June 2025",
       "published_date_sort": "2025-06-01",
       "citations": 0,
@@ -199,69 +177,36 @@
       "institutions": "Unknown"
     },
     {
-      "title": "The Automated LLM Speedrunning Benchmark: Reproducing NanoGPT Improvements",
-      "authors": "B Zhao, D Magka, M Jiang, X Li, R Raileanu… - arXiv preprint arXiv …, 2025 - arxiv.org",
+      "title": "AutoMind: Adaptive Knowledgeable Agent for Automated Data Science",
+      "authors": "Y Ou, Y Luo, J Zheng, L Wei, S Qiao, J Zhang… - arXiv preprint arXiv …, 2025 - arxiv.org",
       "journal": "Google Scholar Result",
-      "snippet": "Rapid advancements in large language models (LLMs) have the potential to assist in scientific progress. A critical capability toward this endeavor is the ability to reproduce …",
-      "link": "https://arxiv.org/abs/2506.22419",
+      "snippet": "Large Language Model (LLM) agents have shown great potential in addressing real-world data science problems. LLM-driven data science agents promise to automate the entire …",
+      "link": "https://arxiv.org/abs/2506.10974",
       "published_date": "June 2025",
       "published_date_sort": "2025-06-01",
       "citations": 0,
       "institutions": "Unknown"
     },
     {
-      "title": "AI Scientists Fail Without Strong Implementation Capability",
-      "authors": "M Zhu, Q Xie, Y Weng, J Wu, Z Lin, L Yang… - arXiv preprint arXiv …, 2025 - arxiv.org",
+      "title": "MLE-STAR: Machine Learning Engineering Agent via Search and Targeted Refinement",
+      "authors": "J Nam, J Yoon, J Chen, J Shin, SÖ Arık… - arXiv preprint arXiv …, 2025 - arxiv.org",
       "journal": "Google Scholar Result",
-      "snippet": "The emergence of Artificial Intelligence (AI) Scientist represents a paradigm shift in scientific discovery, with large language models (LLMs) taking the lead as the primary executor in the …",
-      "link": "https://arxiv.org/abs/2506.01372",
+      "snippet": "Agents based on large language models (LLMs) for machine learning engineering (MLE) can automatically implement ML models via code generation. However, existing approaches …",
+      "link": "https://arxiv.org/abs/2506.15692",
       "published_date": "June 2025",
       "published_date_sort": "2025-06-01",
-      "citations": 1,
-      "institutions": "Unknown"
-    },
-    {
-      "title": "From automation to autonomy: A survey on large language models in scientific discovery",
-      "authors": "T Zheng, Z Deng, HT Tsang, W Wang, J Bai… - arXiv preprint arXiv …, 2025 - arxiv.org",
-      "journal": "Google Scholar Result",
-      "snippet": "Large Language Models (LLMs) are catalyzing a paradigm shift in scientific discovery, evolving from task-specific automation tools into increasingly autonomous agents and …",
-      "link": "https://arxiv.org/abs/2505.13259",
-      "published_date": "May 2025",
-      "published_date_sort": "2025-05-01",
-      "citations": 5,
-      "institutions": "Unknown"
-    },
-    {
-      "title": "RepoMaster: Autonomous Exploration and Understanding of GitHub Repositories for Complex Task Solving",
-      "authors": "H Wang, Z Ni, S Zhang, S Lu, S Hu, Z He, C Hu… - arXiv preprint arXiv …, 2025 - arxiv.org",
-      "journal": "Google Scholar Result",
-      "snippet": "The ultimate goal of code agents is to solve complex tasks autonomously. Although large language models (LLMs) have made substantial progress in code generation, real-world …",
-      "link": "https://arxiv.org/abs/2505.21577",
-      "published_date": "May 2025",
-      "published_date_sort": "2025-05-01",
       "citations": 0,
       "institutions": "Unknown"
     },
     {
-      "title": "TimeSeriesGym: A Scalable Benchmark for (Time Series) Machine Learning Engineering Agents",
-      "authors": "Y Cai, X Li, M Goswami, M Wiliński, G Welter… - arXiv preprint arXiv …, 2025 - arxiv.org",
+      "title": "Towards Community-Driven Agents for Machine Learning Engineering",
+      "authors": "S Li, W Sun, S Li, A Talwalkar, Y Yang - arXiv preprint arXiv:2506.20640, 2025 - arxiv.org",
       "journal": "Google Scholar Result",
-      "snippet": "We introduce TimeSeriesGym, a scalable benchmarking framework for evaluating Artificial Intelligence (AI) agents on time series machine learning engineering challenges. Existing …",
-      "link": "https://arxiv.org/abs/2505.13291",
-      "published_date": "May 2025",
-      "published_date_sort": "2025-05-01",
+      "snippet": "Large language model-based machine learning (ML) agents have shown great promise in automating ML research. However, existing agents typically operate in isolation on a given …",
+      "link": "https://arxiv.org/abs/2506.20640",
+      "published_date": "June 2025",
+      "published_date_sort": "2025-06-01",
       "citations": 0,
-      "institutions": "Unknown"
-    },
-    {
-      "title": "Mlzero: A multi-agent system for end-to-end machine learning automation",
-      "authors": "H Fang, B Han, N Erickson, X Zhang, S Zhou… - arXiv preprint arXiv …, 2025 - arxiv.org",
-      "journal": "Google Scholar Result",
-      "snippet": "Existing AutoML systems have advanced the automation of machine learning (ML); however, they still require substantial manual configuration and expert input, particularly …",
-      "link": "https://arxiv.org/abs/2505.13941",
-      "published_date": "May 2025",
-      "published_date_sort": "2025-05-01",
-      "citations": 1,
       "institutions": "Unknown"
     },
     {
@@ -273,6 +218,17 @@
       "published_date": "May 2025",
       "published_date_sort": "2025-05-01",
       "citations": 1,
+      "institutions": "Unknown"
+    },
+    {
+      "title": "TimeSeriesGym: A Scalable Benchmark for (Time Series) Machine Learning Engineering Agents",
+      "authors": "Y Cai, X Li, M Goswami, M Wiliński, G Welter… - arXiv preprint arXiv …, 2025 - arxiv.org",
+      "journal": "Google Scholar Result",
+      "snippet": "We introduce TimeSeriesGym, a scalable benchmarking framework for evaluating Artificial Intelligence (AI) agents on time series machine learning engineering challenges. Existing …",
+      "link": "https://arxiv.org/abs/2505.13291",
+      "published_date": "May 2025",
+      "published_date_sort": "2025-05-01",
+      "citations": 0,
       "institutions": "Unknown"
     },
     {
@@ -295,6 +251,28 @@
       "published_date": "May 2025",
       "published_date_sort": "2025-05-01",
       "citations": 1,
+      "institutions": "Unknown"
+    },
+    {
+      "title": "Mlzero: A multi-agent system for end-to-end machine learning automation",
+      "authors": "H Fang, B Han, N Erickson, X Zhang, S Zhou… - arXiv preprint arXiv …, 2025 - arxiv.org",
+      "journal": "Google Scholar Result",
+      "snippet": "Existing AutoML systems have advanced the automation of machine learning (ML); however, they still require substantial manual configuration and expert input, particularly …",
+      "link": "https://arxiv.org/abs/2505.13941",
+      "published_date": "May 2025",
+      "published_date_sort": "2025-05-01",
+      "citations": 1,
+      "institutions": "Unknown"
+    },
+    {
+      "title": "From automation to autonomy: A survey on large language models in scientific discovery",
+      "authors": "T Zheng, Z Deng, HT Tsang, W Wang, J Bai… - arXiv preprint arXiv …, 2025 - arxiv.org",
+      "journal": "Google Scholar Result",
+      "snippet": "Large Language Models (LLMs) are catalyzing a paradigm shift in scientific discovery, evolving from task-specific automation tools into increasingly autonomous agents and …",
+      "link": "https://arxiv.org/abs/2505.13259",
+      "published_date": "May 2025",
+      "published_date_sort": "2025-05-01",
+      "citations": 5,
       "institutions": "Unknown"
     },
     {
