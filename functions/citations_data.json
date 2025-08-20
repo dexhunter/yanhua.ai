@@ -1,11 +1,11 @@
 {
-  "last_updated": "2025-08-19 00:11:01 UTC",
+  "last_updated": "2025-08-20 00:10:57 UTC",
   "target_paper": "https://www.arxiv.org/abs/2502.13138",
   "arxiv_id": "2502.13138",
-  "total_citations": 20,
+  "total_citations": 30,
   "h_index": 4,
-  "recent_citations": 2,
-  "avg_citations_per_month": "3.33",
+  "recent_citations": 12,
+  "avg_citations_per_month": "5.00",
   "timeline": [
     {
       "date": "2025-03-01",
@@ -29,18 +29,117 @@
     },
     {
       "date": "2025-08-01",
-      "citations": 20
+      "citations": 30
     }
   ],
   "papers": [
     {
-      "title": "KompeteAI: Accelerated Autonomous Multi-Agent System for End-to-End Pipeline Generation for Machine Learning Problems",
-      "authors": "S Kulibaba, A Dzhalilov, R Pakhomov… - arXiv preprint arXiv …, 2025 - arxiv.org",
-      "journal": "Google Scholar Result",
-      "snippet": "Recent Large Language Model (LLM)-based AutoML systems demonstrate impressive capabilities but face significant limitations such as constrained exploration strategies and a …",
-      "link": "https://arxiv.org/abs/2508.10177",
-      "published_date": "August 2025",
-      "published_date_sort": "2025-08-01",
+      "title": "SecFSM: Knowledge Graph-Guided Verilog Code Generation for Secure Finite\n  State Machines in Systems-on-Chip",
+      "authors": "Ziteng Hu, Yingjie Xia, Xiyuan Chen, Li Kuang",
+      "journal": "arXiv",
+      "snippet": "Finite State Machines (FSMs) play a critical role in implementing control\nlogic for Systems-on-Chip (SoC). Traditionally, FSMs are implemented by\nhardware engineers through Verilog coding, which is often tedious and\ntime-consuming. Recently, with the remarkable progress of Large Language Models\n(LLMs) in code generation, LLMs have been increasingly explored for automating\nVerilog code generation. However, LLM-generated Verilog code often suffers from\nsecurity vulnerabilities, which is particularly concerning for\nsecurity-sensitive FSM implementations. To address this issue, we propose\nSecFSM, a novel method that leverages a security-oriented knowledge graph to\nguide LLMs in generating more secure Verilog code. Specifically, we first\nconstruct a FSM Security Knowledge Graph (FSKG) as an external aid to LLMs.\nSubsequently, we analyze users' requirements to identify vulnerabilities and\nget a list of vulnerabilities in the requirements. Then, we retrieve knowledge\nfrom FSKG based on the vulnerabilities list. Finally, we construct security\nprompts based on the security knowledge for Verilog code generation. To\nevaluate SecFSM, we build a dedicated dataset collected from academic datasets,\nartificial datasets, papers, and industrial cases. Extensive experiments\ndemonstrate that SecFSM outperforms state-of-the-art baselines. In particular,\non a benchmark of 25 security test cases evaluated by DeepSeek-R1, SecFSM\nachieves an outstanding pass rate of 21/25.",
+      "link": "http://arxiv.org/abs/2508.12910v1",
+      "published_date": "August 18, 2025",
+      "published_date_sort": "2025-08-18",
+      "citations": 0,
+      "institutions": "Unknown"
+    },
+    {
+      "title": "OptimalThinkingBench: Evaluating Over and Underthinking in LLMs",
+      "authors": "Pranjal Aggarwal, Seungone Kim, Jack Lanchantin, Sean Welleck, Jason Weston, Ilia Kulikov, Swarnadeep Saha",
+      "journal": "arXiv",
+      "snippet": "Thinking LLMs solve complex tasks at the expense of increased compute and\noverthinking on simpler problems, while non-thinking LLMs are faster and\ncheaper but underthink on harder reasoning problems. This has led to the\ndevelopment of separate thinking and non-thinking LLM variants, leaving the\nonus of selecting the optimal model for each query on the end user. In this\nwork, we introduce OptimalThinkingBench, a unified benchmark that jointly\nevaluates overthinking and underthinking in LLMs and also encourages the\ndevelopment of optimally-thinking models that balance performance and\nefficiency. Our benchmark comprises two sub-benchmarks: OverthinkingBench,\nfeaturing simple queries in 72 domains, and UnderthinkingBench, containing 11\nchallenging reasoning tasks. Using novel thinking-adjusted accuracy metrics, we\nperform extensive evaluation of 33 different thinking and non-thinking models\nand show that no model is able to optimally think on our benchmark. Thinking\nmodels often overthink for hundreds of tokens on the simplest user queries\nwithout improving performance. In contrast, large non-thinking models\nunderthink, often falling short of much smaller thinking models. We further\nexplore several methods to encourage optimal thinking, but find that these\napproaches often improve on one sub-benchmark at the expense of the other,\nhighlighting the need for better unified and optimal models in the future.",
+      "link": "http://arxiv.org/abs/2508.13141v1",
+      "published_date": "August 18, 2025",
+      "published_date_sort": "2025-08-18",
+      "citations": 0,
+      "institutions": "Unknown"
+    },
+    {
+      "title": "G$^2$RPO-A: Guided Group Relative Policy Optimization with Adaptive\n  Guidance",
+      "authors": "Yongxin Guo, Wenbo Deng, Zhenglin Cheng, Xiaoying Tang",
+      "journal": "arXiv",
+      "snippet": "Reinforcement Learning with Verifiable Rewards (RLVR) has markedly enhanced\nthe reasoning abilities of large language models (LLMs). Its success, however,\nlargely depends on strong base models with rich world knowledge, yielding only\nmodest improvements for small-size language models (SLMs). To address this\nlimitation, we investigate Guided GRPO, which injects ground-truth reasoning\nsteps into roll-out trajectories to compensate for SLMs' inherent weaknesses.\nThrough a comprehensive study of various guidance configurations, we find that\nnaively adding guidance delivers limited gains. These insights motivate\nG$^2$RPO-A, an adaptive algorithm that automatically adjusts guidance strength\nin response to the model's evolving training dynamics. Experiments on\nmathematical reasoning and code-generation benchmarks confirm that G$^2$RPO-A\nsubstantially outperforms vanilla GRPO. Our code and models are available at\nhttps://github.com/T-Lab-CUHKSZ/G2RPO-A.",
+      "link": "http://arxiv.org/abs/2508.13023v1",
+      "published_date": "August 18, 2025",
+      "published_date_sort": "2025-08-18",
+      "citations": 0,
+      "institutions": "Unknown"
+    },
+    {
+      "title": "Fully Automated Segmentation of Fiber Bundles in Anatomic Tracing Data",
+      "authors": "Kyriaki-Margarita Bintsi, Yaël Balbastre, Jingjing Wu, Julia F. Lehman, Suzanne N. Haber, Anastasia Yendiki",
+      "journal": "arXiv",
+      "snippet": "Anatomic tracer studies are critical for validating and improving diffusion\nMRI (dMRI) tractography. However, large-scale analysis of data from such\nstudies is hampered by the labor-intensive process of annotating fiber bundles\nmanually on histological slides. Existing automated methods often miss sparse\nbundles or require complex post-processing across consecutive sections,\nlimiting their flexibility and generalizability. We present a streamlined,\nfully automated framework for fiber bundle segmentation in macaque tracer data,\nbased on a U-Net architecture with large patch sizes, foreground aware\nsampling, and semisupervised pre-training. Our approach eliminates common\nerrors such as mislabeling terminals as bundles, improves detection of sparse\nbundles by over 20% and reduces the False Discovery Rate (FDR) by 40% compared\nto the state-of-the-art, all while enabling analysis of standalone slices. This\nnew framework will facilitate the automated analysis of anatomic tracing data\nat a large scale, generating more ground-truth data that can be used to\nvalidate and optimize dMRI tractography methods.",
+      "link": "http://arxiv.org/abs/2508.12942v1",
+      "published_date": "August 18, 2025",
+      "published_date_sort": "2025-08-18",
+      "citations": 0,
+      "institutions": "Unknown"
+    },
+    {
+      "title": "XR-NPE: High-Throughput Mixed-precision SIMD Neural Processing Engine\n  for Extended Reality Perception Workloads",
+      "authors": "Tejas Chaudhari, Akarsh J., Tanushree Dewangan, Mukul Lokhande, Santosh Kumar Vishvakarma",
+      "journal": "arXiv",
+      "snippet": "This work proposes XR-NPE, a high-throughput Mixed-precision SIMD Neural\nProcessing Engine, designed for extended reality (XR) perception workloads like\nvisual inertial odometry (VIO), object classification, and eye gaze extraction.\nXR-NPE is first to support FP4, Posit (4,1), Posit (8,0), and Posit (16,1)\nformats, with layer adaptive hybrid-algorithmic implementation supporting\nultra-low bit precision to significantly reduce memory bandwidth requirements,\nand accompanied by quantization-aware training for minimal accuracy loss. The\nproposed Reconfigurable Mantissa Multiplication and Exponent processing\nCircuitry (RMMEC) reduces dark silicon in the SIMD MAC compute engine, assisted\nby selective power gating to reduce energy consumption, providing 2.85x\nimproved arithmetic intensity. XR-NPE achieves a maximum operating frequency of\n1.72 GHz, area 0.016 mm2 , and arithmetic intensity 14 pJ at CMOS 28nm,\nreducing 42% area, 38% power compared to the best of state-of-the-art MAC\napproaches. The proposed XR-NPE based AXI-enabled Matrix-multiplication\nco-processor consumes 1.4x fewer LUTs, 1.77x fewer FFs, and provides 1.2x\nbetter energy efficiency compared to SoTA accelerators on VCU129. The proposed\nco-processor provides 23% better energy efficiency and 4% better compute\ndensity for VIO workloads. XR-NPE establishes itself as a scalable,\nprecision-adaptive compute engine for future resource-constrained XR devices.\nThe complete set for codes for results reproducibility are released publicly,\nenabling designers and researchers to readily adopt and build upon them.\nhttps://github.com/mukullokhande99/XR-NPE.",
+      "link": "http://arxiv.org/abs/2508.13049v1",
+      "published_date": "August 18, 2025",
+      "published_date_sort": "2025-08-18",
+      "citations": 0,
+      "institutions": "Unknown"
+    },
+    {
+      "title": "FuSaR: A Fuzzification-Based Method for LRM Safety-Reasoning Balance",
+      "authors": "Jianhao Chen, Mayi Xu, Xiaohu Li, Yongqi Li, Xiangyu Zhang, Jianjie Huang, Tieyun Qian",
+      "journal": "arXiv",
+      "snippet": "Large Reasoning Models (LRMs) have demonstrated impressive performance across\nvarious tasks due to their powerful reasoning capabilities. However, their\nsafety performance remains a significant concern. In this paper, we explore the\nreasons behind the vulnerability of LRMs. Based on this, we propose a novel\nmethod to improve the safety of LLMs without sacrificing their reasoning\ncapability. Specifically, we exploit the competition between LRM's reasoning\nability and safety ability, and achieve jailbreak by improving LRM's reasoning\nperformance to reduce its safety performance. We then introduce an alignment\nstrategy based on Fuzzification to balance Safety-Reasoning (FuSaR), by\ndetoxifying the harmful reasoning process, where both the dangerous entities\nand the dangerous procedures in the reasoning steps are hidden. FuSaR\nsuccessfully mitigates safety risks while preserving core reasoning\ninformation. We validate this strategy through alignment experiments on several\nopen-source LRMs using detoxified reasoning data. The results compared with\nexisting baselines conclusively show that FuSaR is an efficient alignment\nstrategy to simultaneously enhance both the reasoning capability and safety of\nLRMs.",
+      "link": "http://arxiv.org/abs/2508.12897v1",
+      "published_date": "August 18, 2025",
+      "published_date_sort": "2025-08-18",
+      "citations": 0,
+      "institutions": "Unknown"
+    },
+    {
+      "title": "VerilogLAVD: LLM-Aided Rule Generation for Vulnerability Detection in\n  Verilog",
+      "authors": "Xiang Long, Yingjie Xia, Xiyuan Chen, Li Kuang",
+      "journal": "arXiv",
+      "snippet": "Timely detection of hardware vulnerabilities during the early design stage is\ncritical for reducing remediation costs. Existing early detection techniques\noften require specialized security expertise, limiting their usability. Recent\nefforts have explored the use of large language models (LLMs) for Verilog\nvulnerability detection. However, LLMs struggle to capture the structure in\nVerilog code, resulting in inconsistent detection results. To this end, we\npropose VerilogLAVD, the first LLM-aided graph traversal rule generation\napproach for Verilog vulnerability detection. Our approach introduces the\nVerilog Property Graph (VeriPG), a unified representation of Verilog code. It\ncombines syntactic features extracted from the abstract syntax tree (AST) with\nsemantic information derived from control flow and data dependency graphs. We\nleverage LLMs to generate VeriPG-based detection rules from Common Weakness\nEnumeration (CWE) descriptions. These rules guide the rule executor that\ntraversal VeriPG for potential vulnerabilities. To evaluate VerilogLAVD, we\nbuild a dataset collected from open-source repositories and synthesized data.\nIn our empirical evaluation on 77 Verilog designs encompassing 12 CWE types,\nVerilogLAVD achieves an F1-score of 0.54. Compared to the LLM-only and LLM with\nexternal knowledge baselines, VerilogLAVD improves F1-score by 0.31 and 0.27,\nrespectively.",
+      "link": "http://arxiv.org/abs/2508.13092v1",
+      "published_date": "August 18, 2025",
+      "published_date_sort": "2025-08-18",
+      "citations": 0,
+      "institutions": "Unknown"
+    },
+    {
+      "title": "e-boost: Boosted E-Graph Extraction with Adaptive Heuristics and Exact\n  Solving",
+      "authors": "Jiaqi Yin, Zhan Song, Chen Chen, Yaohui Cai, Zhiru Zhang, Cunxi Yu",
+      "journal": "arXiv",
+      "snippet": "E-graphs have attracted growing interest in many fields, particularly in\nlogic synthesis and formal verification. E-graph extraction is a challenging\nNP-hard combinatorial optimization problem. It requires identifying optimal\nterms from exponentially many equivalent expressions, serving as the primary\nperformance bottleneck in e-graph based optimization tasks. However,\ntraditional extraction methods face a critical trade-off: heuristic approaches\noffer speed but sacrifice optimality, while exact methods provide optimal\nsolutions but face prohibitive computational costs on practical problems. We\npresent e-boost, a novel framework that bridges this gap through three key\ninnovations: (1) parallelized heuristic extraction that leverages weak data\ndependence to compute DAG costs concurrently, enabling efficient multi-threaded\nperformance without sacrificing extraction quality; (2) adaptive search space\npruning that employs a parameterized threshold mechanism to retain only\npromising candidates, dramatically reducing the solution space while preserving\nnear-optimal solutions; and (3) initialized exact solving that formulates the\nreduced problem as an Integer Linear Program with warm-start capabilities,\nguiding solvers toward high-quality solutions faster.\n  Across the diverse benchmarks in formal verification and logic synthesis\nfields, e-boost demonstrates 558x runtime speedup over traditional exact\napproaches (ILP) and 19.04% performance improvement over the state-of-the-art\nextraction framework (SmoothE). In realistic logic synthesis tasks, e-boost\nproduces 7.6% and 8.1% area improvements compared to conventional synthesis\ntools with two different technology mapping libraries. e-boost is available at\nhttps://github.com/Yu-Maryland/e-boost.",
+      "link": "http://arxiv.org/abs/2508.13020v1",
+      "published_date": "August 18, 2025",
+      "published_date_sort": "2025-08-18",
+      "citations": 0,
+      "institutions": "Unknown"
+    },
+    {
+      "title": "Denoising diffusion models for inverse design of inflatable structures\n  with programmable deformations",
+      "authors": "Sara Karimi, Nikolaos N. Vlassis",
+      "journal": "arXiv",
+      "snippet": "Programmable structures are systems whose undeformed geometries and material\nproperty distributions are deliberately designed to achieve prescribed deformed\nconfigurations under specific loading conditions. Inflatable structures are a\nprominent example, using internal pressurization to realize large, nonlinear\ndeformations in applications ranging from soft robotics and deployable\naerospace systems to biomedical devices and adaptive architecture. We present a\ngenerative design framework based on denoising diffusion probabilistic models\n(DDPMs) for the inverse design of elastic structures undergoing large,\nnonlinear deformations under pressure-driven actuation. The method formulates\nthe inverse design as a conditional generation task, using geometric\ndescriptors of target deformed states as inputs and outputting image-based\nrepresentations of the undeformed configuration. Representing these\nconfigurations as simple images is achieved by establishing a pre- and\npostprocessing pipeline that involves a fixed image processing, simulation\nsetup, and descriptor extraction methods. Numerical experiments with scalar and\nhigher-dimensional descriptors show that the framework can quickly produce\ndiverse undeformed configurations that achieve the desired deformations when\ninflated, enabling parallel exploration of viable design candidates while\naccommodating complex constraints.",
+      "link": "http://arxiv.org/abs/2508.13097v1",
+      "published_date": "August 18, 2025",
+      "published_date_sort": "2025-08-18",
+      "citations": 0,
+      "institutions": "Unknown"
+    },
+    {
+      "title": "SparseMap: A Sparse Tensor Accelerator Framework Based on Evolution\n  Strategy",
+      "authors": "Boran Zhao, Haiming Zhai, Zihang Yuan, Hetian Liu, Tian Xia, Wenzhe Zhao, Pengju Ren",
+      "journal": "arXiv",
+      "snippet": "The growing demand for sparse tensor algebra (SpTA) in machine learning and\nbig data has driven the development of various sparse tensor accelerators.\nHowever, most existing manually designed accelerators are limited to specific\nscenarios, and it's time-consuming and challenging to adjust a large number of\ndesign factors when scenarios change. Therefore, automating the design of SpTA\naccelerators is crucial. Nevertheless, previous works focus solely on either\nmapping (i.e., tiling communication and computation in space and time) or\nsparse strategy (i.e., bypassing zero elements for efficiency), leading to\nsuboptimal designs due to the lack of comprehensive consideration of both. A\nunified framework that jointly optimizes both is urgently needed. However,\nintegrating mapping and sparse strategies leads to a combinatorial explosion in\nthe design space(e.g., as large as $O(10^{41})$ for the workload $P_{32 \\times\n64} \\times Q_{64 \\times 48} = Z_{32 \\times 48}$). This vast search space\nrenders most conventional optimization methods (e.g., particle swarm\noptimization, reinforcement learning and Monte Carlo tree search) inefficient.\nTo address this challenge, we propose an evolution strategy-based sparse tensor\naccelerator optimization framework, called SparseMap. SparseMap constructing a\nmore comprehensive design space with the consideration of both mapping and\nsparse strategy. We introduce a series of enhancements to genetic encoding and\nevolutionary operators, enabling SparseMap to efficiently explore the vast and\ndiverse design space. We quantitatively compare SparseMap with prior works and\nclassical optimization methods, demonstrating that SparseMap consistently finds\nsuperior solutions.",
+      "link": "http://arxiv.org/abs/2508.12906v1",
+      "published_date": "August 18, 2025",
+      "published_date_sort": "2025-08-18",
       "citations": 0,
       "institutions": "Unknown"
     },
@@ -50,6 +149,17 @@
       "journal": "Google Scholar Result",
       "snippet": "There is a growing interest in leveraging large language models (LLMs) for automated code optimization. However, industrial platforms deploying multiple LLMs face a critical challenge …",
       "link": "https://arxiv.org/abs/2508.01443",
+      "published_date": "August 2025",
+      "published_date_sort": "2025-08-01",
+      "citations": 0,
+      "institutions": "Unknown"
+    },
+    {
+      "title": "KompeteAI: Accelerated Autonomous Multi-Agent System for End-to-End Pipeline Generation for Machine Learning Problems",
+      "authors": "S Kulibaba, A Dzhalilov, R Pakhomov… - arXiv preprint arXiv …, 2025 - arxiv.org",
+      "journal": "Google Scholar Result",
+      "snippet": "Recent Large Language Model (LLM)-based AutoML systems demonstrate impressive capabilities but face significant limitations such as constrained exploration strategies and a …",
+      "link": "https://arxiv.org/abs/2508.10177",
       "published_date": "August 2025",
       "published_date_sort": "2025-08-01",
       "citations": 0,
@@ -78,77 +188,11 @@
       "institutions": "Unknown"
     },
     {
-      "title": "MLE-STAR: Machine Learning Engineering Agent via Search and Targeted Refinement",
-      "authors": "J Nam, J Yoon, J Chen, J Shin, SÖ Arık… - arXiv preprint arXiv …, 2025 - arxiv.org",
-      "journal": "Google Scholar Result",
-      "snippet": "Agents based on large language models (LLMs) for machine learning engineering (MLE) can automatically implement ML models via code generation. However, existing approaches …",
-      "link": "https://arxiv.org/abs/2506.15692",
-      "published_date": "June 2025",
-      "published_date_sort": "2025-06-01",
-      "citations": 0,
-      "institutions": "Unknown"
-    },
-    {
-      "title": "A Comprehensive Survey of Deep Research: Systems, Methodologies, and Applications",
-      "authors": "R Xu, J Peng - arXiv preprint arXiv:2506.12594, 2025 - arxiv.org",
-      "journal": "Google Scholar Result",
-      "snippet": "This survey examines the rapidly evolving field of Deep Research systems--AI-powered applications that automate complex research workflows through the integration of large …",
-      "link": "https://arxiv.org/abs/2506.12594",
-      "published_date": "June 2025",
-      "published_date_sort": "2025-06-01",
-      "citations": 4,
-      "institutions": "Unknown"
-    },
-    {
       "title": "The Automated LLM Speedrunning Benchmark: Reproducing NanoGPT Improvements",
       "authors": "B Zhao, D Magka, M Jiang, X Li, R Raileanu… - arXiv preprint arXiv …, 2025 - arxiv.org",
       "journal": "Google Scholar Result",
       "snippet": "Rapid advancements in large language models (LLMs) have the potential to assist in scientific progress. A critical capability toward this endeavor is the ability to reproduce …",
       "link": "https://arxiv.org/abs/2506.22419",
-      "published_date": "June 2025",
-      "published_date_sort": "2025-06-01",
-      "citations": 0,
-      "institutions": "Unknown"
-    },
-    {
-      "title": "AI Scientists Fail Without Strong Implementation Capability",
-      "authors": "M Zhu, Q Xie, Y Weng, J Wu, Z Lin, L Yang… - arXiv preprint arXiv …, 2025 - arxiv.org",
-      "journal": "Google Scholar Result",
-      "snippet": "The emergence of Artificial Intelligence (AI) Scientist represents a paradigm shift in scientific discovery, with large language models (LLMs) taking the lead as the primary executor in the …",
-      "link": "https://arxiv.org/abs/2506.01372",
-      "published_date": "June 2025",
-      "published_date_sort": "2025-06-01",
-      "citations": 2,
-      "institutions": "Unknown"
-    },
-    {
-      "title": "Towards Community-Driven Agents for Machine Learning Engineering",
-      "authors": "S Li, W Sun, S Li, A Talwalkar, Y Yang - arXiv preprint arXiv:2506.20640, 2025 - arxiv.org",
-      "journal": "Google Scholar Result",
-      "snippet": "Large language model-based machine learning (ML) agents have shown great promise in automating ML research. However, existing agents typically operate in isolation on a given …",
-      "link": "https://arxiv.org/abs/2506.20640",
-      "published_date": "June 2025",
-      "published_date_sort": "2025-06-01",
-      "citations": 0,
-      "institutions": "Unknown"
-    },
-    {
-      "title": "LMR-BENCH: Evaluating LLM Agent's Ability on Reproducing Language Modeling Research",
-      "authors": "S Yan, R Li, Z Luo, Z Wang, D Li, L Jing, K He… - arXiv preprint arXiv …, 2025 - arxiv.org",
-      "journal": "Google Scholar Result",
-      "snippet": "Large language model (LLM) agents have demonstrated remarkable potential in advancing scientific discovery. However, their capability in the fundamental yet crucial task of …",
-      "link": "https://arxiv.org/abs/2506.17335",
-      "published_date": "June 2025",
-      "published_date_sort": "2025-06-01",
-      "citations": 0,
-      "institutions": "Unknown"
-    },
-    {
-      "title": "AutoMind: Adaptive Knowledgeable Agent for Automated Data Science",
-      "authors": "Y Ou, Y Luo, J Zheng, L Wei, S Qiao, J Zhang… - arXiv preprint arXiv …, 2025 - arxiv.org",
-      "journal": "Google Scholar Result",
-      "snippet": "Large Language Model (LLM) agents have shown great potential in addressing real-world data science problems. LLM-driven data science agents promise to automate the entire …",
-      "link": "https://arxiv.org/abs/2506.10974",
       "published_date": "June 2025",
       "published_date_sort": "2025-06-01",
       "citations": 0,
@@ -166,25 +210,69 @@
       "institutions": "Unknown"
     },
     {
-      "title": "IDA-Bench: Evaluating LLMs on Interactive Guided Data Analysis",
-      "authors": "H Li, H Liu, T Zhu, T Guo, Z Zheng, X Deng… - arXiv preprint arXiv …, 2025 - arxiv.org",
+      "title": "A Comprehensive Survey of Deep Research: Systems, Methodologies, and Applications",
+      "authors": "R Xu, J Peng - arXiv preprint arXiv:2506.12594, 2025 - arxiv.org",
       "journal": "Google Scholar Result",
-      "snippet": "Large Language Models (LLMs) show promise as data analysis agents, but existing benchmarks overlook the iterative nature of the field, where experts' decisions evolve with …",
-      "link": "https://arxiv.org/abs/2505.18223",
-      "published_date": "May 2025",
-      "published_date_sort": "2025-05-01",
-      "citations": 1,
+      "snippet": "This survey examines the rapidly evolving field of Deep Research systems--AI-powered applications that automate complex research workflows through the integration of large …",
+      "link": "https://arxiv.org/abs/2506.12594",
+      "published_date": "June 2025",
+      "published_date_sort": "2025-06-01",
+      "citations": 4,
       "institutions": "Unknown"
     },
     {
-      "title": "Mlzero: A multi-agent system for end-to-end machine learning automation",
-      "authors": "H Fang, B Han, N Erickson, X Zhang, S Zhou… - arXiv preprint arXiv …, 2025 - arxiv.org",
+      "title": "Towards Community-Driven Agents for Machine Learning Engineering",
+      "authors": "S Li, W Sun, S Li, A Talwalkar, Y Yang - arXiv preprint arXiv:2506.20640, 2025 - arxiv.org",
       "journal": "Google Scholar Result",
-      "snippet": "Existing AutoML systems have advanced the automation of machine learning (ML); however, they still require substantial manual configuration and expert input, particularly …",
-      "link": "https://arxiv.org/abs/2505.13941",
-      "published_date": "May 2025",
-      "published_date_sort": "2025-05-01",
-      "citations": 1,
+      "snippet": "Large language model-based machine learning (ML) agents have shown great promise in automating ML research. However, existing agents typically operate in isolation on a given …",
+      "link": "https://arxiv.org/abs/2506.20640",
+      "published_date": "June 2025",
+      "published_date_sort": "2025-06-01",
+      "citations": 0,
+      "institutions": "Unknown"
+    },
+    {
+      "title": "AI Scientists Fail Without Strong Implementation Capability",
+      "authors": "M Zhu, Q Xie, Y Weng, J Wu, Z Lin, L Yang… - arXiv preprint arXiv …, 2025 - arxiv.org",
+      "journal": "Google Scholar Result",
+      "snippet": "The emergence of Artificial Intelligence (AI) Scientist represents a paradigm shift in scientific discovery, with large language models (LLMs) taking the lead as the primary executor in the …",
+      "link": "https://arxiv.org/abs/2506.01372",
+      "published_date": "June 2025",
+      "published_date_sort": "2025-06-01",
+      "citations": 2,
+      "institutions": "Unknown"
+    },
+    {
+      "title": "AutoMind: Adaptive Knowledgeable Agent for Automated Data Science",
+      "authors": "Y Ou, Y Luo, J Zheng, L Wei, S Qiao, J Zhang… - arXiv preprint arXiv …, 2025 - arxiv.org",
+      "journal": "Google Scholar Result",
+      "snippet": "Large Language Model (LLM) agents have shown great potential in addressing real-world data science problems. LLM-driven data science agents promise to automate the entire …",
+      "link": "https://arxiv.org/abs/2506.10974",
+      "published_date": "June 2025",
+      "published_date_sort": "2025-06-01",
+      "citations": 0,
+      "institutions": "Unknown"
+    },
+    {
+      "title": "MLE-STAR: Machine Learning Engineering Agent via Search and Targeted Refinement",
+      "authors": "J Nam, J Yoon, J Chen, J Shin, SÖ Arık… - arXiv preprint arXiv …, 2025 - arxiv.org",
+      "journal": "Google Scholar Result",
+      "snippet": "Agents based on large language models (LLMs) for machine learning engineering (MLE) can automatically implement ML models via code generation. However, existing approaches …",
+      "link": "https://arxiv.org/abs/2506.15692",
+      "published_date": "June 2025",
+      "published_date_sort": "2025-06-01",
+      "citations": 0,
+      "institutions": "Unknown"
+    },
+    {
+      "title": "LMR-BENCH: Evaluating LLM Agent's Ability on Reproducing Language Modeling Research",
+      "authors": "S Yan, R Li, Z Luo, Z Wang, D Li, L Jing, K He… - arXiv preprint arXiv …, 2025 - arxiv.org",
+      "journal": "Google Scholar Result",
+      "snippet": "Large language model (LLM) agents have demonstrated remarkable potential in advancing scientific discovery. However, their capability in the fundamental yet crucial task of …",
+      "link": "https://arxiv.org/abs/2506.17335",
+      "published_date": "June 2025",
+      "published_date_sort": "2025-06-01",
+      "citations": 0,
       "institutions": "Unknown"
     },
     {
@@ -210,14 +298,14 @@
       "institutions": "Unknown"
     },
     {
-      "title": "TimeSeriesGym: A Scalable Benchmark for (Time Series) Machine Learning Engineering Agents",
-      "authors": "Y Cai, X Li, M Goswami, M Wiliński, G Welter… - arXiv preprint arXiv …, 2025 - arxiv.org",
+      "title": "Mlzero: A multi-agent system for end-to-end machine learning automation",
+      "authors": "H Fang, B Han, N Erickson, X Zhang, S Zhou… - arXiv preprint arXiv …, 2025 - arxiv.org",
       "journal": "Google Scholar Result",
-      "snippet": "We introduce TimeSeriesGym, a scalable benchmarking framework for evaluating Artificial Intelligence (AI) agents on time series machine learning engineering challenges. Existing …",
-      "link": "https://arxiv.org/abs/2505.13291",
+      "snippet": "Existing AutoML systems have advanced the automation of machine learning (ML); however, they still require substantial manual configuration and expert input, particularly …",
+      "link": "https://arxiv.org/abs/2505.13941",
       "published_date": "May 2025",
       "published_date_sort": "2025-05-01",
-      "citations": 0,
+      "citations": 1,
       "institutions": "Unknown"
     },
     {
@@ -229,6 +317,28 @@
       "published_date": "May 2025",
       "published_date_sort": "2025-05-01",
       "citations": 7,
+      "institutions": "Unknown"
+    },
+    {
+      "title": "TimeSeriesGym: A Scalable Benchmark for (Time Series) Machine Learning Engineering Agents",
+      "authors": "Y Cai, X Li, M Goswami, M Wiliński, G Welter… - arXiv preprint arXiv …, 2025 - arxiv.org",
+      "journal": "Google Scholar Result",
+      "snippet": "We introduce TimeSeriesGym, a scalable benchmarking framework for evaluating Artificial Intelligence (AI) agents on time series machine learning engineering challenges. Existing …",
+      "link": "https://arxiv.org/abs/2505.13291",
+      "published_date": "May 2025",
+      "published_date_sort": "2025-05-01",
+      "citations": 0,
+      "institutions": "Unknown"
+    },
+    {
+      "title": "IDA-Bench: Evaluating LLMs on Interactive Guided Data Analysis",
+      "authors": "H Li, H Liu, T Zhu, T Guo, Z Zheng, X Deng… - arXiv preprint arXiv …, 2025 - arxiv.org",
+      "journal": "Google Scholar Result",
+      "snippet": "Large Language Models (LLMs) show promise as data analysis agents, but existing benchmarks overlook the iterative nature of the field, where experts' decisions evolve with …",
+      "link": "https://arxiv.org/abs/2505.18223",
+      "published_date": "May 2025",
+      "published_date_sort": "2025-05-01",
+      "citations": 1,
       "institutions": "Unknown"
     },
     {
