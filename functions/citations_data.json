@@ -1,11 +1,11 @@
 {
-  "last_updated": "2025-08-22 00:10:39 UTC",
+  "last_updated": "2025-08-23 00:10:21 UTC",
   "target_paper": "https://www.arxiv.org/abs/2502.13138",
   "arxiv_id": "2502.13138",
-  "total_citations": 28,
+  "total_citations": 20,
   "h_index": 4,
-  "recent_citations": 11,
-  "avg_citations_per_month": "4.67",
+  "recent_citations": 3,
+  "avg_citations_per_month": "3.33",
   "timeline": [
     {
       "date": "2025-03-01",
@@ -29,109 +29,10 @@
     },
     {
       "date": "2025-08-01",
-      "citations": 28
+      "citations": 20
     }
   ],
   "papers": [
-    {
-      "title": "Computing-In-Memory Dataflow for Minimal Buffer Traffic",
-      "authors": "Choongseok Song, Doo Seok Jeong",
-      "journal": "arXiv",
-      "snippet": "Computing-In-Memory (CIM) offers a potential solution to the memory wall\nissue and can achieve high energy efficiency by minimizing data movement,\nmaking it a promising architecture for edge AI devices. Lightweight models like\nMobileNet and EfficientNet, which utilize depthwise convolution for feature\nextraction, have been developed for these devices. However, CIM macros often\nface challenges in accelerating depthwise convolution, including\nunderutilization of CIM memory and heavy buffer traffic. The latter, in\nparticular, has been overlooked despite its significant impact on latency and\nenergy consumption. To address this, we introduce a novel CIM dataflow that\nsignificantly reduces buffer traffic by maximizing data reuse and improving\nmemory utilization during depthwise convolution. The proposed dataflow is\ngrounded in solid theoretical principles, fully demonstrated in this paper.\nWhen applied to MobileNet and EfficientNet models, our dataflow reduces buffer\ntraffic by 77.4-87.0%, leading to a total reduction in data traffic energy and\nlatency by 10.1-17.9% and 15.6-27.8%, respectively, compared to the baseline\n(conventional weight-stationary dataflow).",
-      "link": "http://arxiv.org/abs/2508.14375v1",
-      "published_date": "August 20, 2025",
-      "published_date_sort": "2025-08-20",
-      "citations": 0,
-      "institutions": "Unknown"
-    },
-    {
-      "title": "Data-Driven Probabilistic Evaluation of Logic Properties with\n  PAC-Confidence on Mealy Machines",
-      "authors": "Swantje Plambeck, Ali Salamati, Eyke Huellermeier, Goerschwin Fey",
-      "journal": "arXiv",
-      "snippet": "Cyber-Physical Systems (CPS) are complex systems that require powerful models\nfor tasks like verification, diagnosis, or debugging. Often, suitable models\nare not available and manual extraction is difficult. Data-driven approaches\nthen provide a solution to, e.g., diagnosis tasks and verification problems\nbased on data collected from the system. In this paper, we consider CPS with a\ndiscrete abstraction in the form of a Mealy machine. We propose a data-driven\napproach to determine the safety probability of the system on a finite horizon\nof n time steps. The approach is based on the Probably Approximately Correct\n(PAC) learning paradigm. Thus, we elaborate a connection between discrete logic\nand probabilistic reachability analysis of systems, especially providing an\nadditional confidence on the determined probability. The learning process\nfollows an active learning paradigm, where new learning data is sampled in a\nguided way after an initial learning set is collected. We validate the approach\nwith a case study on an automated lane-keeping system.",
-      "link": "http://arxiv.org/abs/2508.14710v1",
-      "published_date": "August 20, 2025",
-      "published_date_sort": "2025-08-20",
-      "citations": 0,
-      "institutions": "Unknown"
-    },
-    {
-      "title": "NVIDIA Nemotron Nano 2: An Accurate and Efficient Hybrid\n  Mamba-Transformer Reasoning Model",
-      "authors": " NVIDIA,  :, Aarti Basant, Abhijit Khairnar, Abhijit Paithankar, Abhinav Khattar, Adi Renduchintala, Adithya Renduchintala, Aditya Malte, Akhiad Bercovich, Akshay Hazare, Alejandra Rico, Aleksander Ficek, Alex Kondratenko, Alex Shaposhnikov, Ali Taghibakhshi, Amelia Barton, Ameya Sunil Mahabaleshwarkar, Amy Shen, Andrew Tao, Ann Guan, Anna Shors, Anubhav Mandarwal, Arham Mehta, Arun Venkatesan, Ashton Sharabiani, Ashwath Aithal, Ashwin Poojary, Ayush Dattagupta, Balaram Buddharaju, Banghua Zhu, Barnaby Simkin, Bilal Kartal, Bita Darvish Rouhani, Bobby Chen, Boris Ginsburg, Brandon Norick, Brian Yu, Bryan Catanzaro, Charles Wang, Charlie Truong, Chetan Mungekar, Chintan Patel, Chris Alexiuk, Christian Munley, Christopher Parisien, Dan Su, Daniel Afrimi, Daniel Korzekwa, Daniel Rohrer, Daria Gitman, David Mosallanezhad, Deepak Narayanan, Dima Rekesh, Dina Yared, Dmytro Pykhtar, Dong Ahn, Duncan Riach, Eileen Long, Elliott Ning, Eric Chung, Erick Galinkin, Evelina Bakhturina, Gargi Prasad, Gerald Shen, Haim Elisha, Harsh Sharma, Hayley Ross, Helen Ngo, Herman Sahota, Hexin Wang, Hoo Chang Shin, Hua Huang, Iain Cunningham, Igor Gitman, Ivan Moshkov, Jaehun Jung, Jan Kautz, Jane Polak Scowcroft, Jared Casper, Jimmy Zhang, Jinze Xue, Jocelyn Huang, Joey Conway, John Kamalu, Jonathan Cohen, Joseph Jennings, Julien Veron Vialard, Junkeun Yi, Jupinder Parmar, Kari Briski, Katherine Cheung, Katherine Luna, Keith Wyss, Keshav Santhanam, Kezhi Kong, Krzysztof Pawelec, Kumar Anik, Kunlun Li, Kushan Ahmadian, Lawrence McAfee, Laya Sleiman, Leon Derczynski, Luis Vega, Maer Rodrigues de Melo, Makesh Narsimhan Sreedhar, Marcin Chochowski, Mark Cai, Markus Kliegl, Marta Stepniewska-Dziubinska, Matvei Novikov, Mehrzad Samadi, Meredith Price, Meriem Boubdir, Michael Boone, Michael Evans, Michal Bien, Michal Zawalski, Miguel Martinez, Mike Chrzanowski, Mohammad Shoeybi, Mostofa Patwary, Namit Dhameja, Nave Assaf, Negar Habibi, Nidhi Bhatia, Nikki Pope, Nima Tajbakhsh, Nirmal Kumar Juluru, Oleg Rybakov, Oleksii Hrinchuk, Oleksii Kuchaiev, Oluwatobi Olabiyi, Pablo Ribalta, Padmavathy Subramanian, Parth Chadha, Pavlo Molchanov, Peter Dykas, Peter Jin, Piotr Bialecki, Piotr Januszewski, Pradeep Thalasta, Prashant Gaikwad, Prasoon Varshney, Pritam Gundecha, Przemek Tredak, Rabeeh Karimi Mahabadi, Rajen Patel, Ran El-Yaniv, Ranjit Rajan, Ria Cheruvu, Rima Shahbazyan, Ritika Borkar, Ritu Gala, Roger Waleffe, Ruoxi Zhang, Russell J. Hewett, Ryan Prenger, Sahil Jain, Samuel Kriman, Sanjeev Satheesh, Saori Kaji, Sarah Yurick, Saurav Muralidharan, Sean Narenthiran, Seonmyeong Bak, Sepehr Sameni, Seungju Han, Shanmugam Ramasamy, Shaona Ghosh, Sharath Turuvekere Sreenivas, Shelby Thomas, Shizhe Diao, Shreya Gopal, Shrimai Prabhumoye, Shubham Toshniwal, Shuoyang Ding, Siddharth Singh, Siddhartha Jain, Somshubra Majumdar, Stefania Alborghetti, Syeda Nahida Akter, Terry Kong, Tim Moon, Tomasz Hliwiak, Tomer Asida, Tony Wang, Twinkle Vashishth, Tyler Poon, Udi Karpas, Vahid Noroozi, Venkat Srinivasan, Vijay Korthikanti, Vikram Fugro, Vineeth Kalluru, Vitaly Kurin, Vitaly Lavrukhin, Wasi Uddin Ahmad, Wei Du, Wonmin Byeon, Ximing Lu, Xin Dong, Yashaswi Karnati, Yejin Choi, Yian Zhang, Ying Lin, Yonggan Fu, Yoshi Suhara, Zhen Dong, Zhiyu Li, Zhongbo Zhu, Zijia Chen",
-      "journal": "arXiv",
-      "snippet": "We introduce Nemotron-Nano-9B-v2, a hybrid Mamba-Transformer language model\ndesigned to increase throughput for reasoning workloads while achieving\nstate-of-the-art accuracy compared to similarly-sized models.\nNemotron-Nano-9B-v2 builds on the Nemotron-H architecture, in which the\nmajority of the self-attention layers in the common Transformer architecture\nare replaced with Mamba-2 layers, to achieve improved inference speed when\ngenerating the long thinking traces needed for reasoning. We create\nNemotron-Nano-9B-v2 by first pre-training a 12-billion-parameter model\n(Nemotron-Nano-12B-v2-Base) on 20 trillion tokens using an FP8 training recipe.\nAfter aligning Nemotron-Nano-12B-v2-Base, we employ the Minitron strategy to\ncompress and distill the model with the goal of enabling inference on up to\n128k tokens on a single NVIDIA A10G GPU (22GiB of memory, bfloat16 precision).\nCompared to existing similarly-sized models (e.g., Qwen3-8B), we show that\nNemotron-Nano-9B-v2 achieves on-par or better accuracy on reasoning benchmarks\nwhile achieving up to 6x higher inference throughput in reasoning settings like\n8k input and 16k output tokens. We are releasing Nemotron-Nano-9B-v2,\nNemotron-Nano12B-v2-Base, and Nemotron-Nano-9B-v2-Base checkpoints along with\nthe majority of our pre- and post-training datasets on Hugging Face.",
-      "link": "http://arxiv.org/abs/2508.14444v1",
-      "published_date": "August 20, 2025",
-      "published_date_sort": "2025-08-20",
-      "citations": 0,
-      "institutions": "Unknown"
-    },
-    {
-      "title": "LeanGeo: Formalizing Competitional Geometry problems in Lean",
-      "authors": "Chendong Song, Zihan Wang, Frederick Pu, Haiming Wang, Xiaohan Lin, Junqi Liu, Jia Li, Zhengying Liu",
-      "journal": "arXiv",
-      "snippet": "Geometry problems are a crucial testbed for AI reasoning capabilities. Most\nexisting geometry solving systems cannot express problems within a unified\nframework, thus are difficult to integrate with other mathematical fields.\nBesides, since most geometric proofs rely on intuitive diagrams, verifying\ngeometry problems is particularly challenging. To address these gaps, we\nintroduce LeanGeo, a unified formal system for formalizing and solving\ncompetition-level geometry problems within the Lean 4 theorem prover. LeanGeo\nfeatures a comprehensive library of high-level geometric theorems with Lean's\nfoundational logic, enabling rigorous proof verification and seamless\nintegration with Mathlib. We also present LeanGeo-Bench, a formal geometry\nbenchmark in LeanGeo, comprising problems from the International Mathematical\nOlympiad (IMO) and other advanced sources. Our evaluation demonstrates the\ncapabilities and limitations of state-of-the-art Large Language Models on this\nbenchmark, highlighting the need for further advancements in automated\ngeometric reasoning. We open source the theorem library and the benchmark of\nLeanGeo at https://github.com/project-numina/LeanGeo/tree/master.",
-      "link": "http://arxiv.org/abs/2508.14644v1",
-      "published_date": "August 20, 2025",
-      "published_date_sort": "2025-08-20",
-      "citations": 0,
-      "institutions": "Unknown"
-    },
-    {
-      "title": "MissionHD: Data-Driven Refinement of Reasoning Graph Structure through\n  Hyperdimensional Causal Path Encoding and Decoding",
-      "authors": "Sanggeon Yun, Raheeb Hassan, Ryozo Masukawa, Mohsen Imani",
-      "journal": "arXiv",
-      "snippet": "Reasoning graphs from Large Language Models (LLMs) are often misaligned with\ndownstream visual tasks such as video anomaly detection (VAD). Existing Graph\nStructure Refinement (GSR) methods are ill-suited for these novel, dataset-less\ngraphs. We introduce Data-driven GSR (D-GSR), a new paradigm that directly\noptimizes graph structure using downstream task data, and propose MissionHD, a\nhyperdimensional computing (HDC) framework to operationalize it. MissionHD uses\nan efficient encode-decode process to refine the graph, guided by the\ndownstream task signal. Experiments on challenging VAD and VAR benchmarks show\nsignificant performance improvements when using our refined graphs, validating\nour approach as an effective pre-processing step.",
-      "link": "http://arxiv.org/abs/2508.14746v1",
-      "published_date": "August 20, 2025",
-      "published_date_sort": "2025-08-20",
-      "citations": 0,
-      "institutions": "Unknown"
-    },
-    {
-      "title": "An Open-Source HW-SW Co-Development Framework Enabling Efficient\n  Multi-Accelerator Systems",
-      "authors": "Ryan Albert Antonio, Joren Dumoulin, Xiaoling Yi, Josse Van Delm, Yunhao Deng, Guilherme Paim, Marian Verhelst",
-      "journal": "arXiv",
-      "snippet": "Heterogeneous accelerator-centric compute clusters are emerging as efficient\nsolutions for diverse AI workloads. However, current integration strategies\noften compromise data movement efficiency and encounter compatibility issues in\nhardware and software. This prevents a unified approach that balances\nperformance and ease of use. To this end, we present SNAX, an open-source\nintegrated HW-SW framework enabling efficient multi-accelerator platforms\nthrough a novel hybrid-coupling scheme, consisting of loosely coupled\nasynchronous control and tightly coupled data access. SNAX brings reusable\nhardware modules designed to enhance compute accelerator utilization, and its\ncustomizable MLIR-based compiler to automate key system management tasks,\njointly enabling rapid development and deployment of customized\nmulti-accelerator compute clusters. Through extensive experimentation, we\ndemonstrate SNAX's efficiency and flexibility in a low-power heterogeneous SoC.\nAccelerators can easily be integrated and programmed to achieve > 10x\nimprovement in neural network performance compared to other accelerator systems\nwhile maintaining accelerator utilization of > 90% in full system operation.",
-      "link": "http://arxiv.org/abs/2508.14582v1",
-      "published_date": "August 20, 2025",
-      "published_date_sort": "2025-08-20",
-      "citations": 0,
-      "institutions": "Unknown"
-    },
-    {
-      "title": "MCP-Universe: Benchmarking Large Language Models with Real-World Model\n  Context Protocol Servers",
-      "authors": "Ziyang Luo, Zhiqi Shen, Wenzhuo Yang, Zirui Zhao, Prathyusha Jwalapuram, Amrita Saha, Doyen Sahoo, Silvio Savarese, Caiming Xiong, Junnan Li",
-      "journal": "arXiv",
-      "snippet": "The Model Context Protocol has emerged as a transformative standard for\nconnecting large language models to external data sources and tools, rapidly\ngaining adoption across major AI providers and development platforms. However,\nexisting benchmarks are overly simplistic and fail to capture real application\nchallenges such as long-horizon reasoning and large, unfamiliar tool spaces. To\naddress this critical gap, we introduce MCP-Universe, the first comprehensive\nbenchmark specifically designed to evaluate LLMs in realistic and hard tasks\nthrough interaction with real-world MCP servers. Our benchmark encompasses 6\ncore domains spanning 11 different MCP servers: Location Navigation, Repository\nManagement, Financial Analysis, 3D Design, Browser Automation, and Web\nSearching. To ensure rigorous evaluation, we implement execution-based\nevaluators, including format evaluators for agent format compliance, static\nevaluators for time-invariant content matching, and dynamic evaluators that\nautomatically retrieve real-time ground truth for temporally sensitive tasks.\nThrough extensive evaluation of leading LLMs, we find that even SOTA models\nsuch as GPT-5 (43.72%), Grok-4 (33.33%) and Claude-4.0-Sonnet (29.44%) exhibit\nsignificant performance limitations. In addition, our benchmark poses a\nsignificant long-context challenge for LLM agents, as the number of input\ntokens increases rapidly with the number of interaction steps. Moreover, it\nintroduces an unknown-tools challenge, as LLM agents often lack familiarity\nwith the precise usage of the MCP servers. Notably, enterprise-level agents\nlike Cursor cannot achieve better performance than standard ReAct frameworks.\nBeyond evaluation, we open-source our extensible evaluation framework with UI\nsupport, enabling researchers and practitioners to seamlessly integrate new\nagents and MCP servers while fostering innovation in the rapidly evolving MCP\necosystem.",
-      "link": "http://arxiv.org/abs/2508.14704v1",
-      "published_date": "August 20, 2025",
-      "published_date_sort": "2025-08-20",
-      "citations": 0,
-      "institutions": "Unknown"
-    },
-    {
-      "title": "Universal and Transferable Adversarial Attack on Large Language Models\n  Using Exponentiated Gradient Descent",
-      "authors": "Sajib Biswas, Mao Nishino, Samuel Jacob Chacko, Xiuwen Liu",
-      "journal": "arXiv",
-      "snippet": "As large language models (LLMs) are increasingly deployed in critical\napplications, ensuring their robustness and safety alignment remains a major\nchallenge. Despite the overall success of alignment techniques such as\nreinforcement learning from human feedback (RLHF) on typical prompts, LLMs\nremain vulnerable to jailbreak attacks enabled by crafted adversarial triggers\nappended to user prompts. Most existing jailbreak methods either rely on\ninefficient searches over discrete token spaces or direct optimization of\ncontinuous embeddings. While continuous embeddings can be given directly to\nselected open-source models as input, doing so is not feasible for proprietary\nmodels. On the other hand, projecting these embeddings back into valid discrete\ntokens introduces additional complexity and often reduces attack effectiveness.\nWe propose an intrinsic optimization method which directly optimizes relaxed\none-hot encodings of the adversarial suffix tokens using exponentiated gradient\ndescent coupled with Bregman projection, ensuring that the optimized one-hot\nencoding of each token always remains within the probability simplex. We\nprovide theoretical proof of convergence for our proposed method and implement\nan efficient algorithm that effectively jailbreaks several widely used LLMs.\nOur method achieves higher success rates and faster convergence compared to\nthree state-of-the-art baselines, evaluated on five open-source LLMs and four\nadversarial behavior datasets curated for evaluating jailbreak methods. In\naddition to individual prompt attacks, we also generate universal adversarial\nsuffixes effective across multiple prompts and demonstrate transferability of\noptimized suffixes to different LLMs.",
-      "link": "http://arxiv.org/abs/2508.14853v1",
-      "published_date": "August 20, 2025",
-      "published_date_sort": "2025-08-20",
-      "citations": 0,
-      "institutions": "Unknown"
-    },
-    {
-      "title": "KompeteAI: Accelerated Autonomous Multi-Agent System for End-to-End Pipeline Generation for Machine Learning Problems",
-      "authors": "S Kulibaba, A Dzhalilov, R Pakhomov… - arXiv preprint arXiv …, 2025 - arxiv.org",
-      "journal": "Google Scholar Result",
-      "snippet": "Recent Large Language Model (LLM)-based AutoML systems demonstrate impressive capabilities but face significant limitations such as constrained exploration strategies and a …",
-      "link": "https://arxiv.org/abs/2508.10177",
-      "published_date": "August 2025",
-      "published_date_sort": "2025-08-01",
-      "citations": 0,
-      "institutions": "Unknown"
-    },
     {
       "title": "Illuminating LLM Coding Agents: Visual Analytics for Deeper Understanding and Enhancement",
       "authors": "J Wang, Y Chen, M Pan, CCM Yeh, M Das - arXiv preprint arXiv …, 2025 - arxiv.org",
@@ -155,13 +56,13 @@
       "institutions": "Unknown"
     },
     {
-      "title": "How Far Are AI Scientists from Changing the World?",
-      "authors": "Q Xie, Y Weng, M Zhu, F Shen, S Huang, Z Lin… - arXiv preprint arXiv …, 2025 - arxiv.org",
+      "title": "KompeteAI: Accelerated Autonomous Multi-Agent System for End-to-End Pipeline Generation for Machine Learning Problems",
+      "authors": "S Kulibaba, A Dzhalilov, R Pakhomov… - arXiv preprint arXiv …, 2025 - arxiv.org",
       "journal": "Google Scholar Result",
-      "snippet": "The emergence of large language models (LLMs) is propelling automated scientific discovery to the next level, with LLM-based Artificial Intelligence (AI) Scientist systems now …",
-      "link": "https://arxiv.org/abs/2507.23276",
-      "published_date": "July 2025",
-      "published_date_sort": "2025-07-01",
+      "snippet": "Recent Large Language Model (LLM)-based AutoML systems demonstrate impressive capabilities but face significant limitations such as constrained exploration strategies and a …",
+      "link": "https://arxiv.org/abs/2508.10177",
+      "published_date": "August 2025",
+      "published_date_sort": "2025-08-01",
       "citations": 0,
       "institutions": "Unknown"
     },
@@ -173,6 +74,72 @@
       "link": "https://arxiv.org/abs/2507.15550",
       "published_date": "July 2025",
       "published_date_sort": "2025-07-01",
+      "citations": 0,
+      "institutions": "Unknown"
+    },
+    {
+      "title": "How Far Are AI Scientists from Changing the World?",
+      "authors": "Q Xie, Y Weng, M Zhu, F Shen, S Huang, Z Lin… - arXiv preprint arXiv …, 2025 - arxiv.org",
+      "journal": "Google Scholar Result",
+      "snippet": "The emergence of large language models (LLMs) is propelling automated scientific discovery to the next level, with LLM-based Artificial Intelligence (AI) Scientist systems now …",
+      "link": "https://arxiv.org/abs/2507.23276",
+      "published_date": "July 2025",
+      "published_date_sort": "2025-07-01",
+      "citations": 0,
+      "institutions": "Unknown"
+    },
+    {
+      "title": "AI Scientists Fail Without Strong Implementation Capability",
+      "authors": "M Zhu, Q Xie, Y Weng, J Wu, Z Lin, L Yang… - arXiv preprint arXiv …, 2025 - arxiv.org",
+      "journal": "Google Scholar Result",
+      "snippet": "The emergence of Artificial Intelligence (AI) Scientist represents a paradigm shift in scientific discovery, with large language models (LLMs) taking the lead as the primary executor in the …",
+      "link": "https://arxiv.org/abs/2506.01372",
+      "published_date": "June 2025",
+      "published_date_sort": "2025-06-01",
+      "citations": 2,
+      "institutions": "Unknown"
+    },
+    {
+      "title": "LMR-BENCH: Evaluating LLM Agent's Ability on Reproducing Language Modeling Research",
+      "authors": "S Yan, R Li, Z Luo, Z Wang, D Li, L Jing, K He… - arXiv preprint arXiv …, 2025 - arxiv.org",
+      "journal": "Google Scholar Result",
+      "snippet": "Large language model (LLM) agents have demonstrated remarkable potential in advancing scientific discovery. However, their capability in the fundamental yet crucial task of …",
+      "link": "https://arxiv.org/abs/2506.17335",
+      "published_date": "June 2025",
+      "published_date_sort": "2025-06-01",
+      "citations": 0,
+      "institutions": "Unknown"
+    },
+    {
+      "title": "The Automated LLM Speedrunning Benchmark: Reproducing NanoGPT Improvements",
+      "authors": "B Zhao, D Magka, M Jiang, X Li, R Raileanu… - arXiv preprint arXiv …, 2025 - arxiv.org",
+      "journal": "Google Scholar Result",
+      "snippet": "Rapid advancements in large language models (LLMs) have the potential to assist in scientific progress. A critical capability toward this endeavor is the ability to reproduce …",
+      "link": "https://arxiv.org/abs/2506.22419",
+      "published_date": "June 2025",
+      "published_date_sort": "2025-06-01",
+      "citations": 0,
+      "institutions": "Unknown"
+    },
+    {
+      "title": "AutoMind: Adaptive Knowledgeable Agent for Automated Data Science",
+      "authors": "Y Ou, Y Luo, J Zheng, L Wei, S Qiao, J Zhang… - arXiv preprint arXiv …, 2025 - arxiv.org",
+      "journal": "Google Scholar Result",
+      "snippet": "Large Language Model (LLM) agents have shown great potential in addressing real-world data science problems. LLM-driven data science agents promise to automate the entire …",
+      "link": "https://arxiv.org/abs/2506.10974",
+      "published_date": "June 2025",
+      "published_date_sort": "2025-06-01",
+      "citations": 0,
+      "institutions": "Unknown"
+    },
+    {
+      "title": "MLE-STAR: Machine Learning Engineering Agent via Search and Targeted Refinement",
+      "authors": "J Nam, J Yoon, J Chen, J Shin, SÖ Arık… - arXiv preprint arXiv …, 2025 - arxiv.org",
+      "journal": "Google Scholar Result",
+      "snippet": "Agents based on large language models (LLMs) for machine learning engineering (MLE) can automatically implement ML models via code generation. However, existing approaches …",
+      "link": "https://arxiv.org/abs/2506.15692",
+      "published_date": "June 2025",
+      "published_date_sort": "2025-06-01",
       "citations": 0,
       "institutions": "Unknown"
     },
@@ -199,58 +166,14 @@
       "institutions": "Unknown"
     },
     {
-      "title": "MLE-STAR: Machine Learning Engineering Agent via Search and Targeted Refinement",
-      "authors": "J Nam, J Yoon, J Chen, J Shin, SÖ Arık… - arXiv preprint arXiv …, 2025 - arxiv.org",
+      "title": "Mlzero: A multi-agent system for end-to-end machine learning automation",
+      "authors": "H Fang, B Han, N Erickson, X Zhang, S Zhou… - arXiv preprint arXiv …, 2025 - arxiv.org",
       "journal": "Google Scholar Result",
-      "snippet": "Agents based on large language models (LLMs) for machine learning engineering (MLE) can automatically implement ML models via code generation. However, existing approaches …",
-      "link": "https://arxiv.org/abs/2506.15692",
-      "published_date": "June 2025",
-      "published_date_sort": "2025-06-01",
-      "citations": 0,
-      "institutions": "Unknown"
-    },
-    {
-      "title": "The Automated LLM Speedrunning Benchmark: Reproducing NanoGPT Improvements",
-      "authors": "B Zhao, D Magka, M Jiang, X Li, R Raileanu… - arXiv preprint arXiv …, 2025 - arxiv.org",
-      "journal": "Google Scholar Result",
-      "snippet": "Rapid advancements in large language models (LLMs) have the potential to assist in scientific progress. A critical capability toward this endeavor is the ability to reproduce …",
-      "link": "https://arxiv.org/abs/2506.22419",
-      "published_date": "June 2025",
-      "published_date_sort": "2025-06-01",
-      "citations": 0,
-      "institutions": "Unknown"
-    },
-    {
-      "title": "LMR-BENCH: Evaluating LLM Agent's Ability on Reproducing Language Modeling Research",
-      "authors": "S Yan, R Li, Z Luo, Z Wang, D Li, L Jing, K He… - arXiv preprint arXiv …, 2025 - arxiv.org",
-      "journal": "Google Scholar Result",
-      "snippet": "Large language model (LLM) agents have demonstrated remarkable potential in advancing scientific discovery. However, their capability in the fundamental yet crucial task of …",
-      "link": "https://arxiv.org/abs/2506.17335",
-      "published_date": "June 2025",
-      "published_date_sort": "2025-06-01",
-      "citations": 0,
-      "institutions": "Unknown"
-    },
-    {
-      "title": "AutoMind: Adaptive Knowledgeable Agent for Automated Data Science",
-      "authors": "Y Ou, Y Luo, J Zheng, L Wei, S Qiao, J Zhang… - arXiv preprint arXiv …, 2025 - arxiv.org",
-      "journal": "Google Scholar Result",
-      "snippet": "Large Language Model (LLM) agents have shown great potential in addressing real-world data science problems. LLM-driven data science agents promise to automate the entire …",
-      "link": "https://arxiv.org/abs/2506.10974",
-      "published_date": "June 2025",
-      "published_date_sort": "2025-06-01",
-      "citations": 0,
-      "institutions": "Unknown"
-    },
-    {
-      "title": "AI Scientists Fail Without Strong Implementation Capability",
-      "authors": "M Zhu, Q Xie, Y Weng, J Wu, Z Lin, L Yang… - arXiv preprint arXiv …, 2025 - arxiv.org",
-      "journal": "Google Scholar Result",
-      "snippet": "The emergence of Artificial Intelligence (AI) Scientist represents a paradigm shift in scientific discovery, with large language models (LLMs) taking the lead as the primary executor in the …",
-      "link": "https://arxiv.org/abs/2506.01372",
-      "published_date": "June 2025",
-      "published_date_sort": "2025-06-01",
-      "citations": 2,
+      "snippet": "Existing AutoML systems have advanced the automation of machine learning (ML); however, they still require substantial manual configuration and expert input, particularly …",
+      "link": "https://arxiv.org/abs/2505.13941",
+      "published_date": "May 2025",
+      "published_date_sort": "2025-05-01",
+      "citations": 1,
       "institutions": "Unknown"
     },
     {
@@ -265,17 +188,6 @@
       "institutions": "Unknown"
     },
     {
-      "title": "CodePDE: An Inference Framework for LLM-driven PDE Solver Generation",
-      "authors": "S Li, T Marwah, J Shen, W Sun, A Risteski… - arXiv preprint arXiv …, 2025 - arxiv.org",
-      "journal": "Google Scholar Result",
-      "snippet": "Partial differential equations (PDEs) are fundamental to modeling physical systems, yet solving them remains a complex challenge. Traditional numerical solvers rely on expert …",
-      "link": "https://arxiv.org/abs/2505.08783",
-      "published_date": "May 2025",
-      "published_date_sort": "2025-05-01",
-      "citations": 1,
-      "institutions": "Unknown"
-    },
-    {
       "title": "From automation to autonomy: A survey on large language models in scientific discovery",
       "authors": "T Zheng, Z Deng, HT Tsang, W Wang, J Bai… - arXiv preprint arXiv …, 2025 - arxiv.org",
       "journal": "Google Scholar Result",
@@ -284,17 +196,6 @@
       "published_date": "May 2025",
       "published_date_sort": "2025-05-01",
       "citations": 7,
-      "institutions": "Unknown"
-    },
-    {
-      "title": "Mlzero: A multi-agent system for end-to-end machine learning automation",
-      "authors": "H Fang, B Han, N Erickson, X Zhang, S Zhou… - arXiv preprint arXiv …, 2025 - arxiv.org",
-      "journal": "Google Scholar Result",
-      "snippet": "Existing AutoML systems have advanced the automation of machine learning (ML); however, they still require substantial manual configuration and expert input, particularly …",
-      "link": "https://arxiv.org/abs/2505.13941",
-      "published_date": "May 2025",
-      "published_date_sort": "2025-05-01",
-      "citations": 1,
       "institutions": "Unknown"
     },
     {
@@ -317,6 +218,17 @@
       "published_date": "May 2025",
       "published_date_sort": "2025-05-01",
       "citations": 0,
+      "institutions": "Unknown"
+    },
+    {
+      "title": "CodePDE: An Inference Framework for LLM-driven PDE Solver Generation",
+      "authors": "S Li, T Marwah, J Shen, W Sun, A Risteski… - arXiv preprint arXiv …, 2025 - arxiv.org",
+      "journal": "Google Scholar Result",
+      "snippet": "Partial differential equations (PDEs) are fundamental to modeling physical systems, yet solving them remains a complex challenge. Traditional numerical solvers rely on expert …",
+      "link": "https://arxiv.org/abs/2505.08783",
+      "published_date": "May 2025",
+      "published_date_sort": "2025-05-01",
+      "citations": 1,
       "institutions": "Unknown"
     },
     {
