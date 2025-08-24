@@ -1,5 +1,5 @@
 {
-  "last_updated": "2025-08-23 00:10:21 UTC",
+  "last_updated": "2025-08-24 00:12:03 UTC",
   "target_paper": "https://www.arxiv.org/abs/2502.13138",
   "arxiv_id": "2502.13138",
   "total_citations": 20,
@@ -34,6 +34,17 @@
   ],
   "papers": [
     {
+      "title": "KompeteAI: Accelerated Autonomous Multi-Agent System for End-to-End Pipeline Generation for Machine Learning Problems",
+      "authors": "S Kulibaba, A Dzhalilov, R Pakhomov… - arXiv preprint arXiv …, 2025 - arxiv.org",
+      "journal": "Google Scholar Result",
+      "snippet": "Recent Large Language Model (LLM)-based AutoML systems demonstrate impressive capabilities but face significant limitations such as constrained exploration strategies and a …",
+      "link": "https://arxiv.org/abs/2508.10177",
+      "published_date": "August 2025",
+      "published_date_sort": "2025-08-01",
+      "citations": 0,
+      "institutions": "Unknown"
+    },
+    {
       "title": "Illuminating LLM Coding Agents: Visual Analytics for Deeper Understanding and Enhancement",
       "authors": "J Wang, Y Chen, M Pan, CCM Yeh, M Das - arXiv preprint arXiv …, 2025 - arxiv.org",
       "journal": "Google Scholar Result",
@@ -50,17 +61,6 @@
       "journal": "Google Scholar Result",
       "snippet": "There is a growing interest in leveraging large language models (LLMs) for automated code optimization. However, industrial platforms deploying multiple LLMs face a critical challenge …",
       "link": "https://arxiv.org/abs/2508.01443",
-      "published_date": "August 2025",
-      "published_date_sort": "2025-08-01",
-      "citations": 0,
-      "institutions": "Unknown"
-    },
-    {
-      "title": "KompeteAI: Accelerated Autonomous Multi-Agent System for End-to-End Pipeline Generation for Machine Learning Problems",
-      "authors": "S Kulibaba, A Dzhalilov, R Pakhomov… - arXiv preprint arXiv …, 2025 - arxiv.org",
-      "journal": "Google Scholar Result",
-      "snippet": "Recent Large Language Model (LLM)-based AutoML systems demonstrate impressive capabilities but face significant limitations such as constrained exploration strategies and a …",
-      "link": "https://arxiv.org/abs/2508.10177",
       "published_date": "August 2025",
       "published_date_sort": "2025-08-01",
       "citations": 0,
@@ -85,7 +85,7 @@
       "link": "https://arxiv.org/abs/2507.23276",
       "published_date": "July 2025",
       "published_date_sort": "2025-07-01",
-      "citations": 0,
+      "citations": 1,
       "institutions": "Unknown"
     },
     {
@@ -100,14 +100,25 @@
       "institutions": "Unknown"
     },
     {
-      "title": "LMR-BENCH: Evaluating LLM Agent's Ability on Reproducing Language Modeling Research",
-      "authors": "S Yan, R Li, Z Luo, Z Wang, D Li, L Jing, K He… - arXiv preprint arXiv …, 2025 - arxiv.org",
+      "title": "Towards Community-Driven Agents for Machine Learning Engineering",
+      "authors": "S Li, W Sun, S Li, A Talwalkar, Y Yang - arXiv preprint arXiv:2506.20640, 2025 - arxiv.org",
       "journal": "Google Scholar Result",
-      "snippet": "Large language model (LLM) agents have demonstrated remarkable potential in advancing scientific discovery. However, their capability in the fundamental yet crucial task of …",
-      "link": "https://arxiv.org/abs/2506.17335",
+      "snippet": "Large language model-based machine learning (ML) agents have shown great promise in automating ML research. However, existing agents typically operate in isolation on a given …",
+      "link": "https://arxiv.org/abs/2506.20640",
       "published_date": "June 2025",
       "published_date_sort": "2025-06-01",
       "citations": 0,
+      "institutions": "Unknown"
+    },
+    {
+      "title": "A Comprehensive Survey of Deep Research: Systems, Methodologies, and Applications",
+      "authors": "R Xu, J Peng - arXiv preprint arXiv:2506.12594, 2025 - arxiv.org",
+      "journal": "Google Scholar Result",
+      "snippet": "This survey examines the rapidly evolving field of Deep Research systems--AI-powered applications that automate complex research workflows through the integration of large …",
+      "link": "https://arxiv.org/abs/2506.12594",
+      "published_date": "June 2025",
+      "published_date_sort": "2025-06-01",
+      "citations": 6,
       "institutions": "Unknown"
     },
     {
@@ -144,25 +155,25 @@
       "institutions": "Unknown"
     },
     {
-      "title": "A Comprehensive Survey of Deep Research: Systems, Methodologies, and Applications",
-      "authors": "R Xu, J Peng - arXiv preprint arXiv:2506.12594, 2025 - arxiv.org",
+      "title": "LMR-BENCH: Evaluating LLM Agent's Ability on Reproducing Language Modeling Research",
+      "authors": "S Yan, R Li, Z Luo, Z Wang, D Li, L Jing, K He… - arXiv preprint arXiv …, 2025 - arxiv.org",
       "journal": "Google Scholar Result",
-      "snippet": "This survey examines the rapidly evolving field of Deep Research systems--AI-powered applications that automate complex research workflows through the integration of large …",
-      "link": "https://arxiv.org/abs/2506.12594",
-      "published_date": "June 2025",
-      "published_date_sort": "2025-06-01",
-      "citations": 5,
-      "institutions": "Unknown"
-    },
-    {
-      "title": "Towards Community-Driven Agents for Machine Learning Engineering",
-      "authors": "S Li, W Sun, S Li, A Talwalkar, Y Yang - arXiv preprint arXiv:2506.20640, 2025 - arxiv.org",
-      "journal": "Google Scholar Result",
-      "snippet": "Large language model-based machine learning (ML) agents have shown great promise in automating ML research. However, existing agents typically operate in isolation on a given …",
-      "link": "https://arxiv.org/abs/2506.20640",
+      "snippet": "Large language model (LLM) agents have demonstrated remarkable potential in advancing scientific discovery. However, their capability in the fundamental yet crucial task of …",
+      "link": "https://arxiv.org/abs/2506.17335",
       "published_date": "June 2025",
       "published_date_sort": "2025-06-01",
       "citations": 0,
+      "institutions": "Unknown"
+    },
+    {
+      "title": "Mle-dojo: Interactive environments for empowering llm agents in machine learning engineering",
+      "authors": "R Qiang, Y Zhuang, Y Li, R Zhang, C Li… - arXiv preprint arXiv …, 2025 - arxiv.org",
+      "journal": "Google Scholar Result",
+      "snippet": "We introduce MLE-Dojo, a Gym-style framework for systematically reinforcement learning, evaluating, and improving autonomous large language model (LLM) agents in iterative …",
+      "link": "https://arxiv.org/abs/2505.07782",
+      "published_date": "May 2025",
+      "published_date_sort": "2025-05-01",
+      "citations": 1,
       "institutions": "Unknown"
     },
     {
@@ -195,18 +206,7 @@
       "link": "https://arxiv.org/abs/2505.13259",
       "published_date": "May 2025",
       "published_date_sort": "2025-05-01",
-      "citations": 7,
-      "institutions": "Unknown"
-    },
-    {
-      "title": "Mle-dojo: Interactive environments for empowering llm agents in machine learning engineering",
-      "authors": "R Qiang, Y Zhuang, Y Li, R Zhang, C Li… - arXiv preprint arXiv …, 2025 - arxiv.org",
-      "journal": "Google Scholar Result",
-      "snippet": "We introduce MLE-Dojo, a Gym-style framework for systematically reinforcement learning, evaluating, and improving autonomous large language model (LLM) agents in iterative …",
-      "link": "https://arxiv.org/abs/2505.07782",
-      "published_date": "May 2025",
-      "published_date_sort": "2025-05-01",
-      "citations": 1,
+      "citations": 8,
       "institutions": "Unknown"
     },
     {
@@ -250,7 +250,7 @@
       "link": "https://arxiv.org/abs/2503.14499",
       "published_date": "March 2025",
       "published_date_sort": "2025-03-01",
-      "citations": 23,
+      "citations": 24,
       "institutions": "Unknown"
     }
   ]
