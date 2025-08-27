@@ -1,11 +1,11 @@
 {
-  "last_updated": "2025-08-26 00:10:34 UTC",
+  "last_updated": "2025-08-27 00:11:03 UTC",
   "target_paper": "https://www.arxiv.org/abs/2502.13138",
   "arxiv_id": "2502.13138",
-  "total_citations": 20,
+  "total_citations": 24,
   "h_index": 4,
-  "recent_citations": 3,
-  "avg_citations_per_month": "3.33",
+  "recent_citations": 7,
+  "avg_citations_per_month": "4.00",
   "timeline": [
     {
       "date": "2025-03-01",
@@ -29,10 +29,54 @@
     },
     {
       "date": "2025-08-01",
-      "citations": 20
+      "citations": 24
     }
   ],
   "papers": [
+    {
+      "title": "SEAM: Semantically Equivalent Across Modalities Benchmark for\n  Vision-Language Models",
+      "authors": "Zhenwei Tang, Difan Jiao, Blair Yang, Ashton Anderson",
+      "journal": "arXiv",
+      "snippet": "Evaluating whether vision-language models (VLMs) reason consistently across\nrepresentations is challenging because modality comparisons are typically\nconfounded by task differences and asymmetric information. We introduce SEAM, a\nbenchmark that pairs semantically equivalent inputs across four domains that\nhave existing standardized textual and visual notations. By employing distinct\nnotation systems across modalities, in contrast to OCR-based image-text\npairing, SEAM provides a rigorous comparative assessment of the\ntextual-symbolic and visual-spatial reasoning capabilities of VLMs. Across 21\ncontemporary models, we observe systematic modality imbalance: vision\nfrequently lags language in overall performance, despite the problems\ncontaining semantically equivalent information, and cross-modal agreement is\nrelatively low. Our error analysis reveals two main drivers: textual perception\nfailures from tokenization in domain notation and visual perception failures\nthat induce hallucinations. We also show that our results are largely robust to\nvisual transformations. SEAM establishes a controlled, semantically equivalent\nsetting for measuring and improving modality-agnostic reasoning.",
+      "link": "http://arxiv.org/abs/2508.18179v1",
+      "published_date": "August 25, 2025",
+      "published_date_sort": "2025-08-25",
+      "citations": 0,
+      "institutions": "Unknown"
+    },
+    {
+      "title": "Teaching LLMs to Think Mathematically: A Critical Study of\n  Decision-Making via Optimization",
+      "authors": "Mohammad J. Abdel-Rahman, Yasmeen Alslman, Dania Refai, Amro Saleh, Malik A. Abu Loha, Mohammad Yahya Hamed",
+      "journal": "arXiv",
+      "snippet": "This paper investigates the capabilities of large language models (LLMs) in\nformulating and solving decision-making problems using mathematical\nprogramming. We first conduct a systematic review and meta-analysis of recent\nliterature to assess how well LLMs understand, structure, and solve\noptimization problems across domains. The analysis is guided by critical review\nquestions focusing on learning approaches, dataset designs, evaluation metrics,\nand prompting strategies. Our systematic evidence is complemented by targeted\nexperiments designed to evaluate the performance of state-of-the-art LLMs in\nautomatically generating optimization models for problems in computer networks.\nUsing a newly constructed dataset, we apply three prompting strategies:\nAct-as-expert, chain-of-thought, and self-consistency, and evaluate the\nobtained outputs based on optimality gap, token-level F1 score, and compilation\naccuracy. Results show promising progress in LLMs' ability to parse natural\nlanguage and represent symbolic formulations, but also reveal key limitations\nin accuracy, scalability, and interpretability. These empirical gaps motivate\nseveral future research directions, including structured datasets,\ndomain-specific fine-tuning, hybrid neuro-symbolic approaches, modular\nmulti-agent architectures, and dynamic retrieval via chain-of-RAGs. This paper\ncontributes a structured roadmap for advancing LLM capabilities in mathematical\nprogramming.",
+      "link": "http://arxiv.org/abs/2508.18091v1",
+      "published_date": "August 25, 2025",
+      "published_date_sort": "2025-08-25",
+      "citations": 0,
+      "institutions": "Unknown"
+    },
+    {
+      "title": "BirdRecorder's AI on Sky: Safeguarding birds of prey by detection and\n  classification of tiny objects around wind turbines",
+      "authors": "Nico Klar, Nizam Gifary, Felix P. G. Ziegler, Frank Sehnke, Anton Kaifel, Eric Price, Aamir Ahmad",
+      "journal": "arXiv",
+      "snippet": "The urgent need for renewable energy expansion, particularly wind power, is\nhindered by conflicts with wildlife conservation. To address this, we developed\nBirdRecorder, an advanced AI-based anti-collision system to protect endangered\nbirds, especially the red kite (Milvus milvus). Integrating robotics,\ntelemetry, and high-performance AI algorithms, BirdRecorder aims to detect,\ntrack, and classify avian species within a range of 800 m to minimize\nbird-turbine collisions.\n  BirdRecorder integrates advanced AI methods with optimized hardware and\nsoftware architectures to enable real-time image processing. Leveraging Single\nShot Detector (SSD) for detection, combined with specialized hardware\nacceleration and tracking algorithms, our system achieves high detection\nprecision while maintaining the speed necessary for real-time decision-making.\nBy combining these components, BirdRecorder outperforms existing approaches in\nboth accuracy and efficiency.\n  In this paper, we summarize results on field tests and performance of the\nBirdRecorder system. By bridging the gap between renewable energy expansion and\nwildlife conservation, BirdRecorder contributes to a more sustainable\ncoexistence of technology and nature.",
+      "link": "http://arxiv.org/abs/2508.18136v1",
+      "published_date": "August 25, 2025",
+      "published_date_sort": "2025-08-25",
+      "citations": 0,
+      "institutions": "Unknown"
+    },
+    {
+      "title": "Multi-domain Distribution Learning for De Novo Drug Design",
+      "authors": "Arne Schneuing, Ilia Igashov, Adrian W. Dobbelstein, Thomas Castiglione, Michael Bronstein, Bruno Correia",
+      "journal": "arXiv",
+      "snippet": "We introduce DrugFlow, a generative model for structure-based drug design\nthat integrates continuous flow matching with discrete Markov bridges,\ndemonstrating state-of-the-art performance in learning chemical, geometric, and\nphysical aspects of three-dimensional protein-ligand data. We endow DrugFlow\nwith an uncertainty estimate that is able to detect out-of-distribution\nsamples. To further enhance the sampling process towards distribution regions\nwith desirable metric values, we propose a joint preference alignment scheme\napplicable to both flow matching and Markov bridge frameworks. Furthermore, we\nextend our model to also explore the conformational landscape of the protein by\njointly sampling side chain angles and molecules.",
+      "link": "http://arxiv.org/abs/2508.17815v1",
+      "published_date": "August 25, 2025",
+      "published_date_sort": "2025-08-25",
+      "citations": 0,
+      "institutions": "Unknown"
+    },
     {
       "title": "KompeteAI: Accelerated Autonomous Multi-Agent System for End-to-End Pipeline Generation for Machine Learning Problems",
       "authors": "S Kulibaba, A Dzhalilov, R Pakhomov… - arXiv preprint arXiv …, 2025 - arxiv.org",
@@ -45,22 +89,22 @@
       "institutions": "Unknown"
     },
     {
-      "title": "Tuning LLM-based Code Optimization via Meta-Prompting: An Industrial Perspective",
-      "authors": "J Gong, R Giavrimis, P Brookes, V Voskanyan… - arXiv preprint arXiv …, 2025 - arxiv.org",
+      "title": "Illuminating LLM Coding Agents: Visual Analytics for Deeper Understanding and Enhancement",
+      "authors": "J Wang, Y Chen, M Pan, CCM Yeh, M Das - arXiv preprint arXiv …, 2025 - arxiv.org",
       "journal": "Google Scholar Result",
-      "snippet": "There is a growing interest in leveraging large language models (LLMs) for automated code optimization. However, industrial platforms deploying multiple LLMs face a critical challenge …",
-      "link": "https://arxiv.org/abs/2508.01443",
+      "snippet": "Coding agents powered by large language models (LLMs) have gained traction for automating code generation through iterative problem-solving with minimal human …",
+      "link": "https://arxiv.org/abs/2508.12555",
       "published_date": "August 2025",
       "published_date_sort": "2025-08-01",
       "citations": 0,
       "institutions": "Unknown"
     },
     {
-      "title": "Illuminating LLM Coding Agents: Visual Analytics for Deeper Understanding and Enhancement",
-      "authors": "J Wang, Y Chen, M Pan, CCM Yeh, M Das - arXiv preprint arXiv …, 2025 - arxiv.org",
+      "title": "Tuning LLM-based Code Optimization via Meta-Prompting: An Industrial Perspective",
+      "authors": "J Gong, R Giavrimis, P Brookes, V Voskanyan… - arXiv preprint arXiv …, 2025 - arxiv.org",
       "journal": "Google Scholar Result",
-      "snippet": "Coding agents powered by large language models (LLMs) have gained traction for automating code generation through iterative problem-solving with minimal human …",
-      "link": "https://arxiv.org/abs/2508.12555",
+      "snippet": "There is a growing interest in leveraging large language models (LLMs) for automated code optimization. However, industrial platforms deploying multiple LLMs face a critical challenge …",
+      "link": "https://arxiv.org/abs/2508.01443",
       "published_date": "August 2025",
       "published_date_sort": "2025-08-01",
       "citations": 0,
@@ -89,25 +133,14 @@
       "institutions": "Unknown"
     },
     {
-      "title": "MLE-STAR: Machine Learning Engineering Agent via Search and Targeted Refinement",
-      "authors": "J Nam, J Yoon, J Chen, J Shin, SÖ Arık… - arXiv preprint arXiv …, 2025 - arxiv.org",
+      "title": "Towards Community-Driven Agents for Machine Learning Engineering",
+      "authors": "S Li, W Sun, S Li, A Talwalkar, Y Yang - arXiv preprint arXiv:2506.20640, 2025 - arxiv.org",
       "journal": "Google Scholar Result",
-      "snippet": "Agents based on large language models (LLMs) for machine learning engineering (MLE) can automatically implement ML models via code generation. However, existing approaches …",
-      "link": "https://arxiv.org/abs/2506.15692",
+      "snippet": "Large language model-based machine learning (ML) agents have shown great promise in automating ML research. However, existing agents typically operate in isolation on a given …",
+      "link": "https://arxiv.org/abs/2506.20640",
       "published_date": "June 2025",
       "published_date_sort": "2025-06-01",
       "citations": 0,
-      "institutions": "Unknown"
-    },
-    {
-      "title": "A Comprehensive Survey of Deep Research: Systems, Methodologies, and Applications",
-      "authors": "R Xu, J Peng - arXiv preprint arXiv:2506.12594, 2025 - arxiv.org",
-      "journal": "Google Scholar Result",
-      "snippet": "This survey examines the rapidly evolving field of Deep Research systems--AI-powered applications that automate complex research workflows through the integration of large …",
-      "link": "https://arxiv.org/abs/2506.12594",
-      "published_date": "June 2025",
-      "published_date_sort": "2025-06-01",
-      "citations": 6,
       "institutions": "Unknown"
     },
     {
@@ -133,17 +166,6 @@
       "institutions": "Unknown"
     },
     {
-      "title": "The Automated LLM Speedrunning Benchmark: Reproducing NanoGPT Improvements",
-      "authors": "B Zhao, D Magka, M Jiang, X Li, R Raileanu… - arXiv preprint arXiv …, 2025 - arxiv.org",
-      "journal": "Google Scholar Result",
-      "snippet": "Rapid advancements in large language models (LLMs) have the potential to assist in scientific progress. A critical capability toward this endeavor is the ability to reproduce …",
-      "link": "https://arxiv.org/abs/2506.22419",
-      "published_date": "June 2025",
-      "published_date_sort": "2025-06-01",
-      "citations": 0,
-      "institutions": "Unknown"
-    },
-    {
       "title": "AutoMind: Adaptive Knowledgeable Agent for Automated Data Science",
       "authors": "Y Ou, Y Luo, J Zheng, L Wei, S Qiao, J Zhang… - arXiv preprint arXiv …, 2025 - arxiv.org",
       "journal": "Google Scholar Result",
@@ -155,14 +177,47 @@
       "institutions": "Unknown"
     },
     {
-      "title": "Towards Community-Driven Agents for Machine Learning Engineering",
-      "authors": "S Li, W Sun, S Li, A Talwalkar, Y Yang - arXiv preprint arXiv:2506.20640, 2025 - arxiv.org",
+      "title": "MLE-STAR: Machine Learning Engineering Agent via Search and Targeted Refinement",
+      "authors": "J Nam, J Yoon, J Chen, J Shin, SÖ Arık… - arXiv preprint arXiv …, 2025 - arxiv.org",
       "journal": "Google Scholar Result",
-      "snippet": "Large language model-based machine learning (ML) agents have shown great promise in automating ML research. However, existing agents typically operate in isolation on a given …",
-      "link": "https://arxiv.org/abs/2506.20640",
+      "snippet": "Agents based on large language models (LLMs) for machine learning engineering (MLE) can automatically implement ML models via code generation. However, existing approaches …",
+      "link": "https://arxiv.org/abs/2506.15692",
       "published_date": "June 2025",
       "published_date_sort": "2025-06-01",
       "citations": 0,
+      "institutions": "Unknown"
+    },
+    {
+      "title": "The Automated LLM Speedrunning Benchmark: Reproducing NanoGPT Improvements",
+      "authors": "B Zhao, D Magka, M Jiang, X Li, R Raileanu… - arXiv preprint arXiv …, 2025 - arxiv.org",
+      "journal": "Google Scholar Result",
+      "snippet": "Rapid advancements in large language models (LLMs) have the potential to assist in scientific progress. A critical capability toward this endeavor is the ability to reproduce …",
+      "link": "https://arxiv.org/abs/2506.22419",
+      "published_date": "June 2025",
+      "published_date_sort": "2025-06-01",
+      "citations": 0,
+      "institutions": "Unknown"
+    },
+    {
+      "title": "A Comprehensive Survey of Deep Research: Systems, Methodologies, and Applications",
+      "authors": "R Xu, J Peng - arXiv preprint arXiv:2506.12594, 2025 - arxiv.org",
+      "journal": "Google Scholar Result",
+      "snippet": "This survey examines the rapidly evolving field of Deep Research systems--AI-powered applications that automate complex research workflows through the integration of large …",
+      "link": "https://arxiv.org/abs/2506.12594",
+      "published_date": "June 2025",
+      "published_date_sort": "2025-06-01",
+      "citations": 6,
+      "institutions": "Unknown"
+    },
+    {
+      "title": "From automation to autonomy: A survey on large language models in scientific discovery",
+      "authors": "T Zheng, Z Deng, HT Tsang, W Wang, J Bai… - arXiv preprint arXiv …, 2025 - arxiv.org",
+      "journal": "Google Scholar Result",
+      "snippet": "Large Language Models (LLMs) are catalyzing a paradigm shift in scientific discovery, evolving from task-specific automation tools into increasingly autonomous agents and …",
+      "link": "https://arxiv.org/abs/2505.13259",
+      "published_date": "May 2025",
+      "published_date_sort": "2025-05-01",
+      "citations": 8,
       "institutions": "Unknown"
     },
     {
@@ -174,17 +229,6 @@
       "published_date": "May 2025",
       "published_date_sort": "2025-05-01",
       "citations": 0,
-      "institutions": "Unknown"
-    },
-    {
-      "title": "Mlzero: A multi-agent system for end-to-end machine learning automation",
-      "authors": "H Fang, B Han, N Erickson, X Zhang, S Zhou… - arXiv preprint arXiv …, 2025 - arxiv.org",
-      "journal": "Google Scholar Result",
-      "snippet": "Existing AutoML systems have advanced the automation of machine learning (ML); however, they still require substantial manual configuration and expert input, particularly …",
-      "link": "https://arxiv.org/abs/2505.13941",
-      "published_date": "May 2025",
-      "published_date_sort": "2025-05-01",
-      "citations": 1,
       "institutions": "Unknown"
     },
     {
@@ -210,14 +254,14 @@
       "institutions": "Unknown"
     },
     {
-      "title": "From automation to autonomy: A survey on large language models in scientific discovery",
-      "authors": "T Zheng, Z Deng, HT Tsang, W Wang, J Bai… - arXiv preprint arXiv …, 2025 - arxiv.org",
+      "title": "Mlzero: A multi-agent system for end-to-end machine learning automation",
+      "authors": "H Fang, B Han, N Erickson, X Zhang, S Zhou… - arXiv preprint arXiv …, 2025 - arxiv.org",
       "journal": "Google Scholar Result",
-      "snippet": "Large Language Models (LLMs) are catalyzing a paradigm shift in scientific discovery, evolving from task-specific automation tools into increasingly autonomous agents and …",
-      "link": "https://arxiv.org/abs/2505.13259",
+      "snippet": "Existing AutoML systems have advanced the automation of machine learning (ML); however, they still require substantial manual configuration and expert input, particularly …",
+      "link": "https://arxiv.org/abs/2505.13941",
       "published_date": "May 2025",
       "published_date_sort": "2025-05-01",
-      "citations": 8,
+      "citations": 1,
       "institutions": "Unknown"
     },
     {
