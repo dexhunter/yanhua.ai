@@ -1,11 +1,11 @@
 {
-  "last_updated": "2025-08-30 00:10:00 UTC",
+  "last_updated": "2025-08-31 00:12:16 UTC",
   "target_paper": "https://www.arxiv.org/abs/2502.13138",
   "arxiv_id": "2502.13138",
-  "total_citations": 32,
+  "total_citations": 20,
   "h_index": 4,
-  "recent_citations": 15,
-  "avg_citations_per_month": "5.33",
+  "recent_citations": 0,
+  "avg_citations_per_month": "3.33",
   "timeline": [
     {
       "date": "2025-03-01",
@@ -29,153 +29,10 @@
     },
     {
       "date": "2025-08-01",
-      "citations": 32
+      "citations": 20
     }
   ],
   "papers": [
-    {
-      "title": "Amadeus: Autoregressive Model with Bidirectional Attribute Modelling for\n  Symbolic Music",
-      "authors": "Hongju Su, Ke Li, Lan Yang, Honggang Zhang, Yi-Zhe Song",
-      "journal": "arXiv",
-      "snippet": "Existing state-of-the-art symbolic music generation models predominantly\nadopt autoregressive or hierarchical autoregressive architectures, modelling\nsymbolic music as a sequence of attribute tokens with unidirectional temporal\ndependencies, under the assumption of a fixed, strict dependency structure\namong these attributes. However, we observe that using different attributes as\nthe initial token in these models leads to comparable performance. This\nsuggests that the attributes of a musical note are, in essence, a concurrent\nand unordered set, rather than a temporally dependent sequence. Based on this\ninsight, we introduce Amadeus, a novel symbolic music generation framework.\nAmadeus adopts a two-level architecture: an autoregressive model for note\nsequences and a bidirectional discrete diffusion model for attributes. To\nenhance performance, we propose Music Latent Space Discriminability Enhancement\nStrategy(MLSDES), incorporating contrastive learning constraints that amplify\ndiscriminability of intermediate music representations. The Conditional\nInformation Enhancement Module (CIEM) simultaneously strengthens note latent\nvector representation via attention mechanisms, enabling more precise note\ndecoding. We conduct extensive experiments on unconditional and\ntext-conditioned generation tasks. Amadeus significantly outperforms SOTA\nmodels across multiple metrics while achieving at least 4$\\times$ speed-up.\nFurthermore, we demonstrate training-free, fine-grained note attribute control\nfeasibility using our model. To explore the upper performance bound of the\nAmadeus architecture, we compile the largest open-source symbolic music dataset\nto date, AMD (Amadeus MIDI Dataset), supporting both pre-training and\nfine-tuning.",
-      "link": "http://arxiv.org/abs/2508.20665v1",
-      "published_date": "August 28, 2025",
-      "published_date_sort": "2025-08-28",
-      "citations": 0,
-      "institutions": "Unknown"
-    },
-    {
-      "title": "FakeParts: a New Family of AI-Generated DeepFakes",
-      "authors": "Gaetan Brison, Soobash Daiboo, Samy Aimeur, Awais Hussain Sani, Xi Wang, Gianni Franchi, Vicky Kalogeiton",
-      "journal": "arXiv",
-      "snippet": "We introduce FakeParts, a new class of deepfakes characterized by subtle,\nlocalized manipulations to specific spatial regions or temporal segments of\notherwise authentic videos. Unlike fully synthetic content, these partial\nmanipulations, ranging from altered facial expressions to object substitutions\nand background modifications, blend seamlessly with real elements, making them\nparticularly deceptive and difficult to detect. To address the critical gap in\ndetection capabilities, we present FakePartsBench, the first large-scale\nbenchmark dataset specifically designed to capture the full spectrum of partial\ndeepfakes. Comprising over 25K videos with pixel-level and frame-level\nmanipulation annotations, our dataset enables comprehensive evaluation of\ndetection methods. Our user studies demonstrate that FakeParts reduces human\ndetection accuracy by over 30% compared to traditional deepfakes, with similar\nperformance degradation observed in state-of-the-art detection models. This\nwork identifies an urgent vulnerability in current deepfake detection\napproaches and provides the necessary resources to develop more robust methods\nfor partial video manipulations.",
-      "link": "http://arxiv.org/abs/2508.21052v1",
-      "published_date": "August 28, 2025",
-      "published_date_sort": "2025-08-28",
-      "citations": 0,
-      "institutions": "Unknown"
-    },
-    {
-      "title": "Quantum Verifiable Rewards for Post-Training Qiskit Code Assistant",
-      "authors": "Nicolas Dupuis, Adarsh Tiwari, Youssef Mroueh, David Kremer, Ismael Faro, Juan Cruz-Benito",
-      "journal": "arXiv",
-      "snippet": "Qiskit is an open-source quantum computing framework that allows users to\ndesign, simulate, and run quantum circuits on real quantum hardware. We explore\npost-training techniques for LLMs to assist in writing Qiskit code. We\nintroduce quantum verification as an effective method for ensuring code quality\nand executability on quantum hardware. To support this, we developed a\nsynthetic data pipeline that generates quantum problem-unit test pairs and used\nit to create preference data for aligning LLMs with DPO. Additionally, we\ntrained models using GRPO, leveraging quantum-verifiable rewards provided by\nthe quantum hardware. Our best-performing model, combining DPO and GRPO,\nsurpasses the strongest open-source baselines on the challenging\nQiskit-HumanEval-hard benchmark.",
-      "link": "http://arxiv.org/abs/2508.20907v1",
-      "published_date": "August 28, 2025",
-      "published_date_sort": "2025-08-28",
-      "citations": 0,
-      "institutions": "Unknown"
-    },
-    {
-      "title": "Token Buncher: Shielding LLMs from Harmful Reinforcement Learning\n  Fine-Tuning",
-      "authors": "Weitao Feng, Lixu Wang, Tianyi Wei, Jie Zhang, Chongyang Gao, Sinong Zhan, Peizhuo Lv, Wei Dong",
-      "journal": "arXiv",
-      "snippet": "As large language models (LLMs) continue to grow in capability, so do the\nrisks of harmful misuse through fine-tuning. While most prior studies assume\nthat attackers rely on supervised fine-tuning (SFT) for such misuse, we\nsystematically demonstrate that reinforcement learning (RL) enables adversaries\nto more effectively break safety alignment and facilitate advanced harmful task\nassistance, under matched computational budgets. To counter this emerging\nthreat, we propose TokenBuncher, the first effective defense specifically\ntargeting RL-based harmful fine-tuning. TokenBuncher suppresses the foundation\non which RL relies: model response uncertainty. By constraining uncertainty,\nRL-based fine-tuning can no longer exploit distinct reward signals to drive the\nmodel toward harmful behaviors. We realize this defense through\nentropy-as-reward RL and a Token Noiser mechanism designed to prevent the\nescalation of expert-domain harmful capabilities. Extensive experiments across\nmultiple models and RL algorithms show that TokenBuncher robustly mitigates\nharmful RL fine-tuning while preserving benign task utility and finetunability.\nOur results highlight that RL-based harmful fine-tuning poses a greater\nsystemic risk than SFT, and that TokenBuncher provides an effective and general\ndefense.",
-      "link": "http://arxiv.org/abs/2508.20697v1",
-      "published_date": "August 28, 2025",
-      "published_date_sort": "2025-08-28",
-      "citations": 0,
-      "institutions": "Unknown"
-    },
-    {
-      "title": "ChatThero: An LLM-Supported Chatbot for Behavior Change and Therapeutic\n  Support in Addiction Recovery",
-      "authors": "Junda Wang, Zonghai Yao, Zhichao Yang, Lingxi Li, Junhui Qian, Hong Yu",
-      "journal": "arXiv",
-      "snippet": "Substance use disorders (SUDs) affect over 36 million people worldwide, yet\nfew receive effective care due to stigma, motivational barriers, and limited\npersonalized support. Although large language models (LLMs) show promise for\nmental-health assistance, most systems lack tight integration with clinically\nvalidated strategies, reducing effectiveness in addiction recovery. We present\nChatThero, a multi-agent conversational framework that couples dynamic patient\nmodeling with context-sensitive therapeutic dialogue and adaptive persuasive\nstrategies grounded in cognitive behavioral therapy (CBT) and motivational\ninterviewing (MI). We build a high-fidelity synthetic benchmark spanning Easy,\nMedium, and Hard resistance levels, and train ChatThero with a two-stage\npipeline comprising supervised fine-tuning (SFT) followed by direct preference\noptimization (DPO). In evaluation, ChatThero yields a 41.5\\% average gain in\npatient motivation, a 0.49\\% increase in treatment confidence, and resolves\nhard cases with 26\\% fewer turns than GPT-4o, and both automated and human\nclinical assessments rate it higher in empathy, responsiveness, and behavioral\nrealism. The framework supports rigorous, privacy-preserving study of\ntherapeutic conversation and provides a robust, replicable basis for research\nand clinical translation.",
-      "link": "http://arxiv.org/abs/2508.20996v1",
-      "published_date": "August 28, 2025",
-      "published_date_sort": "2025-08-28",
-      "citations": 0,
-      "institutions": "Unknown"
-    },
-    {
-      "title": "Unified Multi-task Learning for Voice-Based Detection of Diverse\n  Clinical Conditions",
-      "authors": "Ran Piao, Yuan Lu, Hareld Kemps, Tong Xia, Aaqib Saeed",
-      "journal": "arXiv",
-      "snippet": "Voice-based health assessment offers unprecedented opportunities for\nscalable, non-invasive disease screening, yet existing approaches typically\nfocus on single conditions and fail to leverage the rich, multi-faceted\ninformation embedded in speech. We present MARVEL (Multi-task Acoustic\nRepresentations for Voice-based Health Analysis), a privacy-conscious multitask\nlearning framework that simultaneously detects nine distinct neurological,\nrespiratory, and voice disorders using only derived acoustic features,\neliminating the need for raw audio transmission. Our dual-branch architecture\nemploys specialized encoders with task-specific heads sharing a common acoustic\nbackbone, enabling effective cross-condition knowledge transfer. Evaluated on\nthe large-scale Bridge2AI-Voice v2.0 dataset, MARVEL achieves an overall AUROC\nof 0.78, with exceptional performance on neurological disorders (AUROC = 0.89),\nparticularly for Alzheimer's disease/mild cognitive impairment (AUROC = 0.97).\nOur framework consistently outperforms single-modal baselines by 5-19% and\nsurpasses state-of-the-art self-supervised models on 7 of 9 tasks, while\ncorrelation analysis reveals that the learned representations exhibit\nmeaningful similarities with established acoustic features, indicating that the\nmodel's internal representations are consistent with clinically recognized\nacoustic patterns. By demonstrating that a single unified model can effectively\nscreen for diverse conditions, this work establishes a foundation for\ndeployable voice-based diagnostics in resource-constrained and remote\nhealthcare settings.",
-      "link": "http://arxiv.org/abs/2508.20717v1",
-      "published_date": "August 28, 2025",
-      "published_date_sort": "2025-08-28",
-      "citations": 0,
-      "institutions": "Unknown"
-    },
-    {
-      "title": "Task-Oriented Edge-Assisted Cross-System Design for Real-Time\n  Human-Robot Interaction in Industrial Metaverse",
-      "authors": "Kan Chen, Zhen Meng, Xiangmin Xu, Jiaming Yang, Emma Li, Philip G. Zhao",
-      "journal": "arXiv",
-      "snippet": "Real-time human-device interaction in industrial Metaverse faces challenges\nsuch as high computational load, limited bandwidth, and strict latency. This\npaper proposes a task-oriented edge-assisted cross-system framework using\ndigital twins (DTs) to enable responsive interactions. By predicting operator\nmotions, the system supports: 1) proactive Metaverse rendering for visual\nfeedback, and 2) preemptive control of remote devices. The DTs are decoupled\ninto two virtual functions-visual display and robotic control-optimizing both\nperformance and adaptability. To enhance generalizability, we introduce the\nHuman-In-The-Loop Model-Agnostic Meta-Learning (HITL-MAML) algorithm, which\ndynamically adjusts prediction horizons. Evaluation on two tasks demonstrates\nthe framework's effectiveness: in a Trajectory-Based Drawing Control task, it\nreduces weighted RMSE from 0.0712 m to 0.0101 m; in a real-time 3D scene\nrepresentation task for nuclear decommissioning, it achieves a PSNR of 22.11,\nSSIM of 0.8729, and LPIPS of 0.1298. These results show the framework's\ncapability to ensure spatial precision and visual fidelity in real-time,\nhigh-risk industrial environments.",
-      "link": "http://arxiv.org/abs/2508.20664v1",
-      "published_date": "August 28, 2025",
-      "published_date_sort": "2025-08-28",
-      "citations": 0,
-      "institutions": "Unknown"
-    },
-    {
-      "title": "Single Agent Robust Deep Reinforcement Learning for Bus Fleet Control",
-      "authors": "Yifan Zhang",
-      "journal": "arXiv",
-      "snippet": "Bus bunching remains a challenge for urban transit due to stochastic traffic\nand passenger demand. Traditional solutions rely on multi-agent reinforcement\nlearning (MARL) in loop-line settings, which overlook realistic operations\ncharacterized by heterogeneous routes, timetables, fluctuating demand, and\nvarying fleet sizes. We propose a novel single-agent reinforcement learning\n(RL) framework for bus holding control that avoids the data imbalance and\nconvergence issues of MARL under near-realistic simulation. A bidirectional\ntimetabled network with dynamic passenger demand is constructed. The key\ninnovation is reformulating the multi-agent problem into a single-agent one by\naugmenting the state space with categorical identifiers (vehicle ID, station\nID, time period) in addition to numerical features (headway, occupancy,\nvelocity). This high-dimensional encoding enables single-agent policies to\ncapture inter-agent dependencies, analogous to projecting non-separable inputs\ninto a higher-dimensional space. We further design a structured reward function\naligned with operational goals: instead of exponential penalties on headway\ndeviations, a ridge-shaped reward balances uniform headways and schedule\nadherence. Experiments show that our modified soft actor-critic (SAC) achieves\nmore stable and superior performance than benchmarks, including MADDPG (e.g.,\n-430k vs. -530k under stochastic conditions). These results demonstrate that\nsingle-agent deep RL, when enhanced with categorical structuring and\nschedule-aware rewards, can effectively manage bus holding in non-loop,\nreal-world contexts. This paradigm offers a robust, scalable alternative to\nMARL frameworks, particularly where agent-specific experiences are imbalanced.",
-      "link": "http://arxiv.org/abs/2508.20784v1",
-      "published_date": "August 28, 2025",
-      "published_date_sort": "2025-08-28",
-      "citations": 0,
-      "institutions": "Unknown"
-    },
-    {
-      "title": "CoCoL: A Communication Efficient Decentralized Collaborative Method for\n  Multi-Robot Systems",
-      "authors": "Jiaxi Huang, Yan Huang, Yixian Zhao, Wenchao Meng, Jinming Xu",
-      "journal": "arXiv",
-      "snippet": "Collaborative learning enhances the performance and adaptability of\nmulti-robot systems in complex tasks but faces significant challenges due to\nhigh communication overhead and data heterogeneity inherent in multi-robot\ntasks. To this end, we propose CoCoL, a Communication efficient decentralized\nCollaborative Learning method tailored for multi-robot systems with\nheterogeneous local datasets. Leveraging a mirror descent framework, CoCoL\nachieves remarkable communication efficiency with approximate Newton-type\nupdates by capturing the similarity between objective functions of robots, and\nreduces computational costs through inexact sub-problem solutions. Furthermore,\nthe integration of a gradient tracking scheme ensures its robustness against\ndata heterogeneity. Experimental results on three representative multi robot\ncollaborative learning tasks show the superiority of the proposed CoCoL in\nsignificantly reducing both the number of communication rounds and total\nbandwidth consumption while maintaining state-of-the-art accuracy. These\nbenefits are particularly evident in challenging scenarios involving non-IID\n(non-independent and identically distributed) data distribution, streaming\ndata, and time-varying network topologies.",
-      "link": "http://arxiv.org/abs/2508.20898v1",
-      "published_date": "August 28, 2025",
-      "published_date_sort": "2025-08-28",
-      "citations": 0,
-      "institutions": "Unknown"
-    },
-    {
-      "title": "Bridging Minds and Machines: Toward an Integration of AI and Cognitive\n  Science",
-      "authors": "Rui Mao, Qian Liu, Xiao Li, Erik Cambria, Amir Hussain",
-      "journal": "arXiv",
-      "snippet": "Cognitive Science has profoundly shaped disciplines such as Artificial\nIntelligence (AI), Philosophy, Psychology, Neuroscience, Linguistics, and\nCulture. Many breakthroughs in AI trace their roots to cognitive theories,\nwhile AI itself has become an indispensable tool for advancing cognitive\nresearch. This reciprocal relationship motivates a comprehensive review of the\nintersections between AI and Cognitive Science. By synthesizing key\ncontributions from both perspectives, we observe that AI progress has largely\nemphasized practical task performance, whereas its cognitive foundations remain\nconceptually fragmented. We argue that the future of AI within Cognitive\nScience lies not only in improving performance but also in constructing systems\nthat deepen our understanding of the human mind. Promising directions include\naligning AI behaviors with cognitive frameworks, situating AI in embodiment and\nculture, developing personalized cognitive models, and rethinking AI ethics\nthrough cognitive co-evaluation.",
-      "link": "http://arxiv.org/abs/2508.20674v1",
-      "published_date": "August 28, 2025",
-      "published_date_sort": "2025-08-28",
-      "citations": 0,
-      "institutions": "Unknown"
-    },
-    {
-      "title": "Rethinking Testing for LLM Applications: Characteristics, Challenges,\n  and a Lightweight Interaction Protocol",
-      "authors": "Wei Ma, Yixiao Yang, Qiang Hu, Shi Ying, Zhi Jin, Bo Du, Zhenchang Xing, Tianlin Li, Junjie Shi, Yang Liu, Linxiao Jiang",
-      "journal": "arXiv",
-      "snippet": "Applications of Large Language Models~(LLMs) have evolved from simple text\ngenerators into complex software systems that integrate retrieval augmentation,\ntool invocation, and multi-turn interactions. Their inherent non-determinism,\ndynamism, and context dependence pose fundamental challenges for quality\nassurance. This paper decomposes LLM applications into a three-layer\narchitecture: \\textbf{\\textit{System Shell Layer}}, \\textbf{\\textit{Prompt\nOrchestration Layer}}, and \\textbf{\\textit{LLM Inference Core}}. We then assess\nthe applicability of traditional software testing methods in each layer:\ndirectly applicable at the shell layer, requiring semantic reinterpretation at\nthe orchestration layer, and necessitating paradigm shifts at the inference\ncore. A comparative analysis of Testing AI methods from the software\nengineering community and safety analysis techniques from the AI community\nreveals structural disconnects in testing unit abstraction, evaluation metrics,\nand lifecycle management. We identify four fundamental differences that\nunderlie 6 core challenges. To address these, we propose four types of\ncollaborative strategies (\\emph{Retain}, \\emph{Translate}, \\emph{Integrate},\nand \\emph{Runtime}) and explore a closed-loop, trustworthy quality assurance\nframework that combines pre-deployment validation with runtime monitoring.\nBased on these strategies, we offer practical guidance and a protocol proposal\nto support the standardization and tooling of LLM application testing. We\npropose a protocol \\textbf{\\textit{Agent Interaction Communication Language}}\n(AICL) that is used to communicate between AI agents. AICL has the\ntest-oriented features and is easily integrated in the current agent framework.",
-      "link": "http://arxiv.org/abs/2508.20737v1",
-      "published_date": "August 28, 2025",
-      "published_date_sort": "2025-08-28",
-      "citations": 0,
-      "institutions": "Unknown"
-    },
-    {
-      "title": "Veritas: Generalizable Deepfake Detection via Pattern-Aware Reasoning",
-      "authors": "Hao Tan, Jun Lan, Zichang Tan, Ajian Liu, Chuanbiao Song, Senyuan Shi, Huijia Zhu, Weiqiang Wang, Jun Wan, Zhen Lei",
-      "journal": "arXiv",
-      "snippet": "Deepfake detection remains a formidable challenge due to the complex and\nevolving nature of fake content in real-world scenarios. However, existing\nacademic benchmarks suffer from severe discrepancies from industrial practice,\ntypically featuring homogeneous training sources and low-quality testing\nimages, which hinder the practical deployments of current detectors. To\nmitigate this gap, we introduce HydraFake, a dataset that simulates real-world\nchallenges with hierarchical generalization testing. Specifically, HydraFake\ninvolves diversified deepfake techniques and in-the-wild forgeries, along with\nrigorous training and evaluation protocol, covering unseen model architectures,\nemerging forgery techniques and novel data domains. Building on this resource,\nwe propose Veritas, a multi-modal large language model (MLLM) based deepfake\ndetector. Different from vanilla chain-of-thought (CoT), we introduce\npattern-aware reasoning that involves critical reasoning patterns such as\n\"planning\" and \"self-reflection\" to emulate human forensic process. We further\npropose a two-stage training pipeline to seamlessly internalize such deepfake\nreasoning capacities into current MLLMs. Experiments on HydraFake dataset\nreveal that although previous detectors show great generalization on\ncross-model scenarios, they fall short on unseen forgeries and data domains.\nOur Veritas achieves significant gains across different OOD scenarios, and is\ncapable of delivering transparent and faithful detection outputs.",
-      "link": "http://arxiv.org/abs/2508.21048v1",
-      "published_date": "August 28, 2025",
-      "published_date_sort": "2025-08-28",
-      "citations": 0,
-      "institutions": "Unknown"
-    },
-    {
-      "title": "Tuning LLM-based Code Optimization via Meta-Prompting: An Industrial Perspective",
-      "authors": "J Gong, R Giavrimis, P Brookes, V Voskanyan… - arXiv preprint arXiv …, 2025 - arxiv.org",
-      "journal": "Google Scholar Result",
-      "snippet": "There is a growing interest in leveraging large language models (LLMs) for automated code optimization. However, industrial platforms deploying multiple LLMs face a critical challenge …",
-      "link": "https://arxiv.org/abs/2508.01443",
-      "published_date": "August 2025",
-      "published_date_sort": "2025-08-01",
-      "citations": 0,
-      "institutions": "Unknown"
-    },
     {
       "title": "KompeteAI: Accelerated Autonomous Multi-Agent System for End-to-End Pipeline Generation for Machine Learning Problems",
       "authors": "S Kulibaba, A Dzhalilov, R Pakhomov… - arXiv preprint arXiv …, 2025 - arxiv.org",
@@ -193,6 +50,17 @@
       "journal": "Google Scholar Result",
       "snippet": "Coding agents powered by large language models (LLMs) have gained traction for automating code generation through iterative problem-solving with minimal human …",
       "link": "https://arxiv.org/abs/2508.12555",
+      "published_date": "August 2025",
+      "published_date_sort": "2025-08-01",
+      "citations": 0,
+      "institutions": "Unknown"
+    },
+    {
+      "title": "Tuning LLM-based Code Optimization via Meta-Prompting: An Industrial Perspective",
+      "authors": "J Gong, R Giavrimis, P Brookes, V Voskanyan… - arXiv preprint arXiv …, 2025 - arxiv.org",
+      "journal": "Google Scholar Result",
+      "snippet": "There is a growing interest in leveraging large language models (LLMs) for automated code optimization. However, industrial platforms deploying multiple LLMs face a critical challenge …",
+      "link": "https://arxiv.org/abs/2508.01443",
       "published_date": "August 2025",
       "published_date_sort": "2025-08-01",
       "citations": 0,
@@ -221,22 +89,33 @@
       "institutions": "Unknown"
     },
     {
-      "title": "The Automated LLM Speedrunning Benchmark: Reproducing NanoGPT Improvements",
-      "authors": "B Zhao, D Magka, M Jiang, X Li, R Raileanu… - arXiv preprint arXiv …, 2025 - arxiv.org",
+      "title": "Towards Community-Driven Agents for Machine Learning Engineering",
+      "authors": "S Li, W Sun, S Li, A Talwalkar, Y Yang - arXiv preprint arXiv:2506.20640, 2025 - arxiv.org",
       "journal": "Google Scholar Result",
-      "snippet": "Rapid advancements in large language models (LLMs) have the potential to assist in scientific progress. A critical capability toward this endeavor is the ability to reproduce …",
-      "link": "https://arxiv.org/abs/2506.22419",
+      "snippet": "Large language model-based machine learning (ML) agents have shown great promise in automating ML research. However, existing agents typically operate in isolation on a given …",
+      "link": "https://arxiv.org/abs/2506.20640",
       "published_date": "June 2025",
       "published_date_sort": "2025-06-01",
       "citations": 0,
       "institutions": "Unknown"
     },
     {
-      "title": "MLE-STAR: Machine Learning Engineering Agent via Search and Targeted Refinement",
-      "authors": "J Nam, J Yoon, J Chen, J Shin, SÖ Arık… - arXiv preprint arXiv …, 2025 - arxiv.org",
+      "title": "AutoMind: Adaptive Knowledgeable Agent for Automated Data Science",
+      "authors": "Y Ou, Y Luo, J Zheng, L Wei, S Qiao, J Zhang… - arXiv preprint arXiv …, 2025 - arxiv.org",
       "journal": "Google Scholar Result",
-      "snippet": "Agents based on large language models (LLMs) for machine learning engineering (MLE) can automatically implement ML models via code generation. However, existing approaches …",
-      "link": "https://arxiv.org/abs/2506.15692",
+      "snippet": "Large Language Model (LLM) agents have shown great potential in addressing real-world data science problems. LLM-driven data science agents promise to automate the entire …",
+      "link": "https://arxiv.org/abs/2506.10974",
+      "published_date": "June 2025",
+      "published_date_sort": "2025-06-01",
+      "citations": 0,
+      "institutions": "Unknown"
+    },
+    {
+      "title": "The Automated LLM Speedrunning Benchmark: Reproducing NanoGPT Improvements",
+      "authors": "B Zhao, D Magka, M Jiang, X Li, R Raileanu… - arXiv preprint arXiv …, 2025 - arxiv.org",
+      "journal": "Google Scholar Result",
+      "snippet": "Rapid advancements in large language models (LLMs) have the potential to assist in scientific progress. A critical capability toward this endeavor is the ability to reproduce …",
+      "link": "https://arxiv.org/abs/2506.22419",
       "published_date": "June 2025",
       "published_date_sort": "2025-06-01",
       "citations": 0,
@@ -265,6 +144,17 @@
       "institutions": "Unknown"
     },
     {
+      "title": "MLE-STAR: Machine Learning Engineering Agent via Search and Targeted Refinement",
+      "authors": "J Nam, J Yoon, J Chen, J Shin, SÖ Arık… - arXiv preprint arXiv …, 2025 - arxiv.org",
+      "journal": "Google Scholar Result",
+      "snippet": "Agents based on large language models (LLMs) for machine learning engineering (MLE) can automatically implement ML models via code generation. However, existing approaches …",
+      "link": "https://arxiv.org/abs/2506.15692",
+      "published_date": "June 2025",
+      "published_date_sort": "2025-06-01",
+      "citations": 0,
+      "institutions": "Unknown"
+    },
+    {
       "title": "LMR-BENCH: Evaluating LLM Agent's Ability on Reproducing Language Modeling Research",
       "authors": "S Yan, R Li, Z Luo, Z Wang, D Li, L Jing, K He… - arXiv preprint arXiv …, 2025 - arxiv.org",
       "journal": "Google Scholar Result",
@@ -273,39 +163,6 @@
       "published_date": "June 2025",
       "published_date_sort": "2025-06-01",
       "citations": 0,
-      "institutions": "Unknown"
-    },
-    {
-      "title": "Towards Community-Driven Agents for Machine Learning Engineering",
-      "authors": "S Li, W Sun, S Li, A Talwalkar, Y Yang - arXiv preprint arXiv:2506.20640, 2025 - arxiv.org",
-      "journal": "Google Scholar Result",
-      "snippet": "Large language model-based machine learning (ML) agents have shown great promise in automating ML research. However, existing agents typically operate in isolation on a given …",
-      "link": "https://arxiv.org/abs/2506.20640",
-      "published_date": "June 2025",
-      "published_date_sort": "2025-06-01",
-      "citations": 0,
-      "institutions": "Unknown"
-    },
-    {
-      "title": "AutoMind: Adaptive Knowledgeable Agent for Automated Data Science",
-      "authors": "Y Ou, Y Luo, J Zheng, L Wei, S Qiao, J Zhang… - arXiv preprint arXiv …, 2025 - arxiv.org",
-      "journal": "Google Scholar Result",
-      "snippet": "Large Language Model (LLM) agents have shown great potential in addressing real-world data science problems. LLM-driven data science agents promise to automate the entire …",
-      "link": "https://arxiv.org/abs/2506.10974",
-      "published_date": "June 2025",
-      "published_date_sort": "2025-06-01",
-      "citations": 0,
-      "institutions": "Unknown"
-    },
-    {
-      "title": "IDA-Bench: Evaluating LLMs on Interactive Guided Data Analysis",
-      "authors": "H Li, H Liu, T Zhu, T Guo, Z Zheng, X Deng… - arXiv preprint arXiv …, 2025 - arxiv.org",
-      "journal": "Google Scholar Result",
-      "snippet": "Large Language Models (LLMs) show promise as data analysis agents, but existing benchmarks overlook the iterative nature of the field, where experts' decisions evolve with …",
-      "link": "https://arxiv.org/abs/2505.18223",
-      "published_date": "May 2025",
-      "published_date_sort": "2025-05-01",
-      "citations": 1,
       "institutions": "Unknown"
     },
     {
@@ -320,14 +177,14 @@
       "institutions": "Unknown"
     },
     {
-      "title": "Mlzero: A multi-agent system for end-to-end machine learning automation",
-      "authors": "H Fang, B Han, N Erickson, X Zhang, S Zhou… - arXiv preprint arXiv …, 2025 - arxiv.org",
+      "title": "TimeSeriesGym: A Scalable Benchmark for (Time Series) Machine Learning Engineering Agents",
+      "authors": "Y Cai, X Li, M Goswami, M Wiliński, G Welter… - arXiv preprint arXiv …, 2025 - arxiv.org",
       "journal": "Google Scholar Result",
-      "snippet": "Existing AutoML systems have advanced the automation of machine learning (ML); however, they still require substantial manual configuration and expert input, particularly …",
-      "link": "https://arxiv.org/abs/2505.13941",
+      "snippet": "We introduce TimeSeriesGym, a scalable benchmarking framework for evaluating Artificial Intelligence (AI) agents on time series machine learning engineering challenges. Existing …",
+      "link": "https://arxiv.org/abs/2505.13291",
       "published_date": "May 2025",
       "published_date_sort": "2025-05-01",
-      "citations": 1,
+      "citations": 0,
       "institutions": "Unknown"
     },
     {
@@ -342,6 +199,17 @@
       "institutions": "Unknown"
     },
     {
+      "title": "IDA-Bench: Evaluating LLMs on Interactive Guided Data Analysis",
+      "authors": "H Li, H Liu, T Zhu, T Guo, Z Zheng, X Deng… - arXiv preprint arXiv …, 2025 - arxiv.org",
+      "journal": "Google Scholar Result",
+      "snippet": "Large Language Models (LLMs) show promise as data analysis agents, but existing benchmarks overlook the iterative nature of the field, where experts' decisions evolve with …",
+      "link": "https://arxiv.org/abs/2505.18223",
+      "published_date": "May 2025",
+      "published_date_sort": "2025-05-01",
+      "citations": 1,
+      "institutions": "Unknown"
+    },
+    {
       "title": "Mle-dojo: Interactive environments for empowering llm agents in machine learning engineering",
       "authors": "R Qiang, Y Zhuang, Y Li, R Zhang, C Li… - arXiv preprint arXiv …, 2025 - arxiv.org",
       "journal": "Google Scholar Result",
@@ -353,14 +221,14 @@
       "institutions": "Unknown"
     },
     {
-      "title": "TimeSeriesGym: A Scalable Benchmark for (Time Series) Machine Learning Engineering Agents",
-      "authors": "Y Cai, X Li, M Goswami, M Wiliński, G Welter… - arXiv preprint arXiv …, 2025 - arxiv.org",
+      "title": "Mlzero: A multi-agent system for end-to-end machine learning automation",
+      "authors": "H Fang, B Han, N Erickson, X Zhang, S Zhou… - arXiv preprint arXiv …, 2025 - arxiv.org",
       "journal": "Google Scholar Result",
-      "snippet": "We introduce TimeSeriesGym, a scalable benchmarking framework for evaluating Artificial Intelligence (AI) agents on time series machine learning engineering challenges. Existing …",
-      "link": "https://arxiv.org/abs/2505.13291",
+      "snippet": "Existing AutoML systems have advanced the automation of machine learning (ML); however, they still require substantial manual configuration and expert input, particularly …",
+      "link": "https://arxiv.org/abs/2505.13941",
       "published_date": "May 2025",
       "published_date_sort": "2025-05-01",
-      "citations": 0,
+      "citations": 1,
       "institutions": "Unknown"
     },
     {
@@ -382,7 +250,7 @@
       "link": "https://arxiv.org/abs/2503.14499",
       "published_date": "March 2025",
       "published_date_sort": "2025-03-01",
-      "citations": 25,
+      "citations": 26,
       "institutions": "Unknown"
     }
   ]
