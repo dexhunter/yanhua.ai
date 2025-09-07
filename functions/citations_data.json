@@ -1,11 +1,11 @@
 {
-  "last_updated": "2025-09-06 00:09:46 UTC",
+  "last_updated": "2025-09-07 00:11:33 UTC",
   "target_paper": "https://www.arxiv.org/abs/2502.13138",
   "arxiv_id": "2502.13138",
-  "total_citations": 35,
+  "total_citations": 20,
   "h_index": 4,
-  "recent_citations": 16,
-  "avg_citations_per_month": "5.00",
+  "recent_citations": 1,
+  "avg_citations_per_month": "2.86",
   "timeline": [
     {
       "date": "2025-03-01",
@@ -33,175 +33,10 @@
     },
     {
       "date": "2025-09-01",
-      "citations": 35
+      "citations": 20
     }
   ],
   "papers": [
-    {
-      "title": "Attention as an Adaptive Filter",
-      "authors": "Peter Racioppo",
-      "journal": "arXiv",
-      "snippet": "We introduce Adaptive Filter Attention (AFA), a novel attention mechanism\nthat incorporates a learnable dynamics model directly into the computation of\nattention weights. Rather than comparing queries and keys directly, we model\nthe input sequence as discrete observations of a linear stochastic differential\nequation (SDE). By imposing a linear dynamics model with simultaneously\ndiagonalizable state matrices and noise covariances, we can make use of a\nclosed-form solution to the differential Lyapunov equation to efficiently\npropagate pairwise uncertainties through the dynamics. Attention naturally\narises as the maximum likelihood solution for this linear SDE, with attention\nweights corresponding to robust residual-based reweightings of the propagated\npairwise precisions. Imposing an additional constraint on the state matrix's\neigenvalues leads to a simplified variant with the same computational and\nmemory complexity as standard attention. In the limit of vanishing dynamics and\nprocess noise, and using a small-angle approximation, we recover ordinary\ndot-product attention.",
-      "link": "http://arxiv.org/abs/2509.04154v1",
-      "published_date": "September 04, 2025",
-      "published_date_sort": "2025-09-04",
-      "citations": 0,
-      "institutions": "Unknown"
-    },
-    {
-      "title": "Detecting Regional Spurious Correlations in Vision Transformers via\n  Token Discarding",
-      "authors": "Solha Kang, Esla Timothy Anzaku, Wesley De Neve, Arnout Van Messem, Joris Vankerschaver, Francois Rameau, Utku Ozbulak",
-      "journal": "arXiv",
-      "snippet": "Due to their powerful feature association capabilities, neural network-based\ncomputer vision models have the ability to detect and exploit unintended\npatterns within the data, potentially leading to correct predictions based on\nincorrect or unintended but statistically relevant signals. These clues may\nvary from simple color aberrations to small texts within the image. In\nsituations where these unintended signals align with the predictive task,\nmodels can mistakenly link these features with the task and rely on them for\nmaking predictions. This phenomenon is referred to as spurious correlations,\nwhere patterns appear to be associated with the task but are actually\ncoincidental. As a result, detection and mitigation of spurious correlations\nhave become crucial tasks for building trustworthy, reliable, and generalizable\nmachine learning models. In this work, we present a novel method to detect\nspurious correlations in vision transformers, a type of neural network\narchitecture that gained significant popularity in recent years. Using both\nsupervised and self-supervised trained models, we present large-scale\nexperiments on the ImageNet dataset demonstrating the ability of the proposed\nmethod to identify spurious correlations. We also find that, even if the same\narchitecture is used, the training methodology has a significant impact on the\nmodel's reliance on spurious correlations. Furthermore, we show that certain\nclasses in the ImageNet dataset contain spurious signals that are easily\ndetected by the models and discuss the underlying reasons for those spurious\nsignals. In light of our findings, we provide an exhaustive list of the\naforementioned images and call for caution in their use in future research\nefforts. Lastly, we present a case study investigating spurious signals in\ninvasive breast mass classification, grounding our work in real-world\nscenarios.",
-      "link": "http://arxiv.org/abs/2509.04009v1",
-      "published_date": "September 04, 2025",
-      "published_date_sort": "2025-09-04",
-      "citations": 0,
-      "institutions": "Unknown"
-    },
-    {
-      "title": "Formal Verification of Local Robustness of a Classification Algorithm\n  for a Spatial Use Case",
-      "authors": "Delphine Longuet, Amira Elouazzani, Alejandro Penacho Riveiros, Nicola Bastianello",
-      "journal": "arXiv",
-      "snippet": "Failures in satellite components are costly and challenging to address, often\nrequiring significant human and material resources. Embedding a hybrid AI-based\nsystem for fault detection directly in the satellite can greatly reduce this\nburden by allowing earlier detection. However, such systems must operate with\nextremely high reliability. To ensure this level of dependability, we employ\nthe formal verification tool Marabou to verify the local robustness of the\nneural network models used in the AI-based algorithm. This tool allows us to\nquantify how much a model's input can be perturbed before its output behavior\nbecomes unstable, thereby improving trustworthiness with respect to its\nperformance under uncertainty.",
-      "link": "http://arxiv.org/abs/2509.03948v1",
-      "published_date": "September 04, 2025",
-      "published_date_sort": "2025-09-04",
-      "citations": 0,
-      "institutions": "Unknown"
-    },
-    {
-      "title": "CANDY: Benchmarking LLMs' Limitations and Assistive Potential in Chinese\n  Misinformation Fact-Checking",
-      "authors": "Ruiling Guo, Xinwei Yang, Chen Huang, Tong Zhang, Yong Hu",
-      "journal": "arXiv",
-      "snippet": "The effectiveness of large language models (LLMs) to fact-check\nmisinformation remains uncertain, despite their growing use. To this end, we\npresent CANDY, a benchmark designed to systematically evaluate the capabilities\nand limitations of LLMs in fact-checking Chinese misinformation. Specifically,\nwe curate a carefully annotated dataset of ~20k instances. Our analysis shows\nthat current LLMs exhibit limitations in generating accurate fact-checking\nconclusions, even when enhanced with chain-of-thought reasoning and few-shot\nprompting. To understand these limitations, we develop a taxonomy to categorize\nflawed LLM-generated explanations for their conclusions and identify factual\nfabrication as the most common failure mode. Although LLMs alone are unreliable\nfor fact-checking, our findings indicate their considerable potential to\naugment human performance when deployed as assistive tools in scenarios. Our\ndataset and code can be accessed at https://github.com/SCUNLP/CANDY",
-      "link": "http://arxiv.org/abs/2509.03957v1",
-      "published_date": "September 04, 2025",
-      "published_date_sort": "2025-09-04",
-      "citations": 0,
-      "institutions": "Unknown"
-    },
-    {
-      "title": "No Thoughts Just AI: Biased LLM Recommendations Limit Human Agency in\n  Resume Screening",
-      "authors": "Kyra Wilson, Mattea Sim, Anna-Maria Gueorguieva, Aylin Caliskan",
-      "journal": "arXiv",
-      "snippet": "In this study, we conduct a resume-screening experiment (N=528) where people\ncollaborate with simulated AI models exhibiting race-based preferences (bias)\nto evaluate candidates for 16 high and low status occupations. Simulated AI\nbias approximates factual and counterfactual estimates of racial bias in\nreal-world AI systems. We investigate people's preferences for White, Black,\nHispanic, and Asian candidates (represented through names and affinity groups\non quality-controlled resumes) across 1,526 scenarios and measure their\nunconscious associations between race and status using implicit association\ntests (IATs), which predict discriminatory hiring decisions but have not been\ninvestigated in human-AI collaboration. When making decisions without AI or\nwith AI that exhibits no race-based preferences, people select all candidates\nat equal rates. However, when interacting with AI favoring a particular group,\npeople also favor those candidates up to 90% of the time, indicating a\nsignificant behavioral shift. The likelihood of selecting candidates whose\nidentities do not align with common race-status stereotypes can increase by 13%\nif people complete an IAT before conducting resume screening. Finally, even if\npeople think AI recommendations are low quality or not important, their\ndecisions are still vulnerable to AI bias under certain circumstances. This\nwork has implications for people's autonomy in AI-HITL scenarios, AI and work,\ndesign and evaluation of AI hiring systems, and strategies for mitigating bias\nin collaborative decision-making tasks. In particular, organizational and\nregulatory policy should acknowledge the complex nature of AI-HITL decision\nmaking when implementing these systems, educating people who use them, and\ndetermining which are subject to oversight.",
-      "link": "http://arxiv.org/abs/2509.04404v1",
-      "published_date": "September 04, 2025",
-      "published_date_sort": "2025-09-04",
-      "citations": 0,
-      "institutions": "Unknown"
-    },
-    {
-      "title": "SAC-MIL: Spatial-Aware Correlated Multiple Instance Learning for\n  Histopathology Whole Slide Image Classification",
-      "authors": "Yu Bai, Zitong Yu, Haowen Tian, Xijing Wang, Shuo Yan, Lin Wang, Honglin Li, Xitong Ling, Bo Zhang, Zheng Zhang, Wufan Wang, Hui Gao, Xiangyang Gong, Wendong Wang",
-      "journal": "arXiv",
-      "snippet": "We propose Spatial-Aware Correlated Multiple Instance Learning (SAC-MIL) for\nperforming WSI classification. SAC-MIL consists of a positional encoding module\nto encode position information and a SAC block to perform full instance\ncorrelations. The positional encoding module utilizes the instance coordinates\nwithin the slide to encode the spatial relationships instead of the instance\nindex in the input WSI sequence. The positional encoding module can also handle\nthe length extrapolation issue where the training and testing sequences have\ndifferent lengths. The SAC block is an MLP-based method that performs full\ninstance correlation in linear time complexity with respect to the sequence\nlength. Due to the simple structure of MLP, it is easy to deploy since it does\nnot require custom CUDA kernels, compared to Transformer-based methods for WSI\nclassification. SAC-MIL has achieved state-of-the-art performance on the\nCAMELYON-16, TCGA-LUNG, and TCGA-BRAC datasets. The code will be released upon\nacceptance.",
-      "link": "http://arxiv.org/abs/2509.03973v1",
-      "published_date": "September 04, 2025",
-      "published_date_sort": "2025-09-04",
-      "citations": 0,
-      "institutions": "Unknown"
-    },
-    {
-      "title": "Sailing Towards Zero-Shot State Estimation using Foundation Models\n  Combined with a UKF",
-      "authors": "Tobin Holtmann, David Stenger, Andres Posada-Moreno, Friedrich Solowjow, Sebastian Trimpe",
-      "journal": "arXiv",
-      "snippet": "State estimation in control and systems engineering traditionally requires\nextensive manual system identification or data-collection effort. However,\ntransformer-based foundation models in other domains have reduced data\nrequirements by leveraging pre-trained generalist models. Ultimately,\ndeveloping zero-shot foundation models of system dynamics could drastically\nreduce manual deployment effort. While recent work shows that transformer-based\nend-to-end approaches can achieve zero-shot performance on unseen systems, they\nare limited to sensor models seen during training. We introduce the foundation\nmodel unscented Kalman filter (FM-UKF), which combines a transformer-based\nmodel of system dynamics with analytically known sensor models via an UKF,\nenabling generalization across varying dynamics without retraining for new\nsensor configurations. We evaluate FM-UKF on a new benchmark of container ship\nmodels with complex dynamics, demonstrating a competitive accuracy, effort, and\nrobustness trade-off compared to classical methods with approximate system\nknowledge and to an end-to-end approach. The benchmark and dataset are open\nsourced to further support future research in zero-shot state estimation via\nfoundation models.",
-      "link": "http://arxiv.org/abs/2509.04213v1",
-      "published_date": "September 04, 2025",
-      "published_date_sort": "2025-09-04",
-      "citations": 0,
-      "institutions": "Unknown"
-    },
-    {
-      "title": "Crossing the Species Divide: Transfer Learning from Speech to Animal\n  Sounds",
-      "authors": "Jules Cauzinille, Marius Miron, Olivier Pietquin, Masato Hagiwara, Ricard Marxer, Arnaud Rey, Benoit Favre",
-      "journal": "arXiv",
-      "snippet": "Self-supervised speech models have demonstrated impressive performance in\nspeech processing, but their effectiveness on non-speech data remains\nunderexplored. We study the transfer learning capabilities of such models on\nbioacoustic detection and classification tasks. We show that models such as\nHuBERT, WavLM, and XEUS can generate rich latent representations of animal\nsounds across taxa. We analyze the models properties with linear probing on\ntime-averaged representations. We then extend the approach to account for the\neffect of time-wise information with other downstream architectures. Finally,\nwe study the implication of frequency range and noise on performance. Notably,\nour results are competitive with fine-tuned bioacoustic pre-trained models and\nshow the impact of noise-robust pre-training setups. These findings highlight\nthe potential of speech-based self-supervised learning as an efficient\nframework for advancing bioacoustic research.",
-      "link": "http://arxiv.org/abs/2509.04166v1",
-      "published_date": "September 04, 2025",
-      "published_date_sort": "2025-09-04",
-      "citations": 0,
-      "institutions": "Unknown"
-    },
-    {
-      "title": "YOLO Ensemble for UAV-based Multispectral Defect Detection in Wind\n  Turbine Components",
-      "authors": "Serhii Svystun, Pavlo Radiuk, Oleksandr Melnychenko, Oleg Savenko, Anatoliy Sachenko",
-      "journal": "arXiv",
-      "snippet": "Unmanned aerial vehicles (UAVs) equipped with advanced sensors have opened up\nnew opportunities for monitoring wind power plants, including blades, towers,\nand other critical components. However, reliable defect detection requires\nhigh-resolution data and efficient methods to process multispectral imagery. In\nthis research, we aim to enhance defect detection accuracy through the\ndevelopment of an ensemble of YOLO-based deep learning models that integrate\nboth visible and thermal channels. We propose an ensemble approach that\nintegrates a general-purpose YOLOv8 model with a specialized thermal model,\nusing a sophisticated bounding box fusion algorithm to combine their\npredictions. Our experiments show this approach achieves a mean Average\nPrecision (mAP@.5) of 0.93 and an F1-score of 0.90, outperforming a standalone\nYOLOv8 model, which scored an mAP@.5 of 0.91. These findings demonstrate that\ncombining multiple YOLO architectures with fused multispectral data provides a\nmore reliable solution, improving the detection of both visual and thermal\ndefects.",
-      "link": "http://arxiv.org/abs/2509.04156v1",
-      "published_date": "September 04, 2025",
-      "published_date_sort": "2025-09-04",
-      "citations": 0,
-      "institutions": "Unknown"
-    },
-    {
-      "title": "RepoDebug: Repository-Level Multi-Task and Multi-Language Debugging\n  Evaluation of Large Language Models",
-      "authors": "Jingjing Liu, Zeming Liu, Zihao Cheng, Mengliang He, Xiaoming Shi, Yuhang Guo, Xiangrong Zhu, Yuanfang Guo, Yunhong Wang, Haifeng Wang",
-      "journal": "arXiv",
-      "snippet": "Large Language Models (LLMs) have exhibited significant proficiency in code\ndebugging, especially in automatic program repair, which may substantially\nreduce the time consumption of developers and enhance their efficiency.\nSignificant advancements in debugging datasets have been made to promote the\ndevelopment of code debugging. However, these datasets primarily focus on\nassessing the LLM's function-level code repair capabilities, neglecting the\nmore complex and realistic repository-level scenarios, which leads to an\nincomplete understanding of the LLM's challenges in repository-level debugging.\nWhile several repository-level datasets have been proposed, they often suffer\nfrom limitations such as limited diversity of tasks, languages, and error\ntypes. To mitigate this challenge, this paper introduces RepoDebug, a\nmulti-task and multi-language repository-level code debugging dataset with 22\nsubtypes of errors that supports 8 commonly used programming languages and 3\ndebugging tasks. Furthermore, we conduct evaluation experiments on 10 LLMs,\nwhere Claude 3.5 Sonnect, the best-performing model, still cannot perform well\nin repository-level debugging.",
-      "link": "http://arxiv.org/abs/2509.04078v1",
-      "published_date": "September 04, 2025",
-      "published_date_sort": "2025-09-04",
-      "citations": 0,
-      "institutions": "Unknown"
-    },
-    {
-      "title": "KubeGuard: LLM-Assisted Kubernetes Hardening via Configuration Files and\n  Runtime Logs Analysis",
-      "authors": "Omri Sgan Cohen, Ehud Malul, Yair Meidan, Dudu Mimran, Yuval Elovici, Asaf Shabtai",
-      "journal": "arXiv",
-      "snippet": "The widespread adoption of Kubernetes (K8s) for orchestrating cloud-native\napplications has introduced significant security challenges, such as\nmisconfigured resources and overly permissive configurations. Failing to\naddress these issues can result in unauthorized access, privilege escalation,\nand lateral movement within clusters. Most existing K8s security solutions\nfocus on detecting misconfigurations, typically through static analysis or\nanomaly detection. In contrast, this paper presents KubeGuard, a novel runtime\nlog-driven recommender framework aimed at mitigating risks by addressing overly\npermissive configurations. KubeGuard is designed to harden K8s environments\nthrough two complementary tasks: Resource Creation and Resource Refinement. It\nleverages large language models (LLMs) to analyze manifests and runtime logs\nreflecting actual system behavior, using modular prompt-chaining workflows.\nThis approach enables KubeGuard to create least-privilege configurations for\nnew resources and refine existing manifests to reduce the attack surface.\nKubeGuard's output manifests are presented as recommendations that users (e.g.,\ndevelopers and operators) can review and adopt to enhance cluster security. Our\nevaluation demonstrates that KubeGuard effectively generates and refines K8s\nmanifests for Roles, NetworkPolicies, and Deployments, leveraging both\nproprietary and open-source LLMs. The high precision, recall, and F1-scores\naffirm KubeGuard's practicality as a framework that translates runtime\nobservability into actionable, least-privilege configuration guidance.",
-      "link": "http://arxiv.org/abs/2509.04191v1",
-      "published_date": "September 04, 2025",
-      "published_date_sort": "2025-09-04",
-      "citations": 0,
-      "institutions": "Unknown"
-    },
-    {
-      "title": "Towards an Action-Centric Ontology for Cooking Procedures Using Temporal\n  Graphs",
-      "authors": "Aarush Kumbhakern, Saransh Kumar Gupta, Lipika Dey, Partha Pratim Das",
-      "journal": "arXiv",
-      "snippet": "Formalizing cooking procedures remains a challenging task due to their\ninherent complexity and ambiguity. We introduce an extensible domain-specific\nlanguage for representing recipes as directed action graphs, capturing\nprocesses, transfers, environments, concurrency, and compositional structure.\nOur approach enables precise, modular modeling of complex culinary workflows.\nInitial manual evaluation on a full English breakfast recipe demonstrates the\nDSL's expressiveness and suitability for future automated recipe analysis and\nexecution. This work represents initial steps towards an action-centric\nontology for cooking, using temporal graphs to enable structured machine\nunderstanding, precise interpretation, and scalable automation of culinary\nprocesses - both in home kitchens and professional culinary settings.",
-      "link": "http://arxiv.org/abs/2509.04159v1",
-      "published_date": "September 04, 2025",
-      "published_date_sort": "2025-09-04",
-      "citations": 0,
-      "institutions": "Unknown"
-    },
-    {
-      "title": "Promptception: How Sensitive Are Large Multimodal Models to Prompts?",
-      "authors": "Mohamed Insaf Ismithdeen, Muhammad Uzair Khattak, Salman Khan",
-      "journal": "arXiv",
-      "snippet": "Despite the success of Large Multimodal Models (LMMs) in recent years, prompt\ndesign for LMMs in Multiple-Choice Question Answering (MCQA) remains poorly\nunderstood. We show that even minor variations in prompt phrasing and structure\ncan lead to accuracy deviations of up to 15% for certain prompts and models.\nThis variability poses a challenge for transparent and fair LMM evaluation, as\nmodels often report their best-case performance using carefully selected\nprompts. To address this, we introduce Promptception, a systematic framework\nfor evaluating prompt sensitivity in LMMs. It consists of 61 prompt types,\nspanning 15 categories and 6 supercategories, each targeting specific aspects\nof prompt formulation, and is used to evaluate 10 LMMs ranging from lightweight\nopen-source models to GPT-4o and Gemini 1.5 Pro, across 3 MCQA benchmarks:\nMMStar, MMMU-Pro, MVBench. Our findings reveal that proprietary models exhibit\ngreater sensitivity to prompt phrasing, reflecting tighter alignment with\ninstruction semantics, while open-source models are steadier but struggle with\nnuanced and complex phrasing. Based on this analysis, we propose Prompting\nPrinciples tailored to proprietary and open-source LMMs, enabling more robust\nand fair model evaluation.",
-      "link": "http://arxiv.org/abs/2509.03986v1",
-      "published_date": "September 04, 2025",
-      "published_date_sort": "2025-09-04",
-      "citations": 0,
-      "institutions": "Unknown"
-    },
-    {
-      "title": "Towards a Unified View of Large Language Model Post-Training",
-      "authors": "Xingtai Lv, Yuxin Zuo, Youbang Sun, Hongyi Liu, Yuntian Wei, Zhekai Chen, Lixuan He, Xuekai Zhu, Kaiyan Zhang, Bingning Wang, Ning Ding, Bowen Zhou",
-      "journal": "arXiv",
-      "snippet": "Two major sources of training data exist for post-training modern language\nmodels: online (model-generated rollouts) data, and offline (human or\nother-model demonstrations) data. These two types of data are typically used by\napproaches like Reinforcement Learning (RL) and Supervised Fine-Tuning (SFT),\nrespectively. In this paper, we show that these approaches are not in\ncontradiction, but are instances of a single optimization process. We derive a\nUnified Policy Gradient Estimator, and present the calculations of a wide\nspectrum of post-training approaches as the gradient of a common objective\nunder different data distribution assumptions and various bias-variance\ntradeoffs. The gradient estimator is constructed with four interchangeable\nparts: stabilization mask, reference policy denominator, advantage estimate,\nand likelihood gradient. Motivated by our theoretical findings, we propose\nHybrid Post-Training (HPT), an algorithm that dynamically selects different\ntraining signals. HPT is designed to yield both effective exploitation of\ndemonstration and stable exploration without sacrificing learned reasoning\npatterns. We provide extensive experiments and ablation studies to verify the\neffectiveness of our unified theoretical framework and HPT. Across six\nmathematical reasoning benchmarks and two out-of-distribution suites, HPT\nconsistently surpasses strong baselines across models of varying scales and\nfamilies.",
-      "link": "http://arxiv.org/abs/2509.04419v1",
-      "published_date": "September 04, 2025",
-      "published_date_sort": "2025-09-04",
-      "citations": 0,
-      "institutions": "Unknown"
-    },
-    {
-      "title": "Reinforcement Learning for Robust Ageing-Aware Control of Li-ion Battery\n  Systems with Data-Driven Formal Verification",
-      "authors": "Rudi Coppola, Hovsep Touloujian, Pierfrancesco Ombrini, Manuel Mazo Jr",
-      "journal": "arXiv",
-      "snippet": "Rechargeable lithium-ion (Li-ion) batteries are a ubiquitous element of\nmodern technology. In the last decades, the production and design of such\nbatteries and their adjacent embedded charging and safety protocols, denoted by\nBattery Management Systems (BMS), has taken central stage. A fundamental\nchallenge to be addressed is the trade-off between the speed of charging and\nthe ageing behavior, resulting in the loss of capacity in the battery cell. We\nrely on a high-fidelity physics-based battery model and propose an approach to\ndata-driven charging and safety protocol design. Following a\nCounterexample-Guided Inductive Synthesis scheme, we combine Reinforcement\nLearning (RL) with recent developments in data-driven formal methods to obtain\na hybrid control strategy: RL is used to synthesise the individual controllers,\nand a data-driven abstraction guides their partitioning into a switched\nstructure, depending on the initial output measurements of the battery. The\nresulting discrete selection among RL-based controllers, coupled with the\ncontinuous battery dynamics, realises a hybrid system. When a design meets the\ndesired criteria, the abstraction provides probabilistic guarantees on the\nclosed-loop performance of the cell.",
-      "link": "http://arxiv.org/abs/2509.04288v1",
-      "published_date": "September 04, 2025",
-      "published_date_sort": "2025-09-04",
-      "citations": 0,
-      "institutions": "Unknown"
-    },
     {
       "title": "Reinforcement Learning for Machine Learning Engineering Agents",
       "authors": "S Yang, J He-Yueya, P Liang - arXiv preprint arXiv:2509.01684, 2025 - arxiv.org",
@@ -258,14 +93,25 @@
       "institutions": "Unknown"
     },
     {
-      "title": "AutoMind: Adaptive Knowledgeable Agent for Automated Data Science",
-      "authors": "Y Ou, Y Luo, J Zheng, L Wei, S Qiao, J Zhang… - arXiv preprint arXiv …, 2025 - arxiv.org",
+      "title": "MLE-STAR: Machine Learning Engineering Agent via Search and Targeted Refinement",
+      "authors": "J Nam, J Yoon, J Chen, J Shin, SÖ Arık… - arXiv preprint arXiv …, 2025 - arxiv.org",
       "journal": "Google Scholar Result",
-      "snippet": "Large Language Model (LLM) agents have shown great potential in addressing real-world data science problems. LLM-driven data science agents promise to automate the entire …",
-      "link": "https://arxiv.org/abs/2506.10974",
+      "snippet": "Agents based on large language models (LLMs) for machine learning engineering (MLE) can automatically implement ML models via code generation. However, existing approaches …",
+      "link": "https://arxiv.org/abs/2506.15692",
       "published_date": "June 2025",
       "published_date_sort": "2025-06-01",
       "citations": 0,
+      "institutions": "Unknown"
+    },
+    {
+      "title": "LMR-BENCH: Evaluating LLM Agent's Ability on Reproducing Language Modeling Research",
+      "authors": "S Yan, R Li, Z Luo, Z Wang, D Li, L Jing, K He… - arXiv preprint arXiv …, 2025 - arxiv.org",
+      "journal": "Google Scholar Result",
+      "snippet": "Large language model (LLM) agents have demonstrated remarkable potential in advancing scientific discovery. However, their capability in the fundamental yet crucial task of …",
+      "link": "https://arxiv.org/abs/2506.17335",
+      "published_date": "June 2025",
+      "published_date_sort": "2025-06-01",
+      "citations": 1,
       "institutions": "Unknown"
     },
     {
@@ -280,6 +126,17 @@
       "institutions": "Unknown"
     },
     {
+      "title": "AutoMind: Adaptive Knowledgeable Agent for Automated Data Science",
+      "authors": "Y Ou, Y Luo, J Zheng, L Wei, S Qiao, J Zhang… - arXiv preprint arXiv …, 2025 - arxiv.org",
+      "journal": "Google Scholar Result",
+      "snippet": "Large Language Model (LLM) agents have shown great potential in addressing real-world data science problems. LLM-driven data science agents promise to automate the entire …",
+      "link": "https://arxiv.org/abs/2506.10974",
+      "published_date": "June 2025",
+      "published_date_sort": "2025-06-01",
+      "citations": 0,
+      "institutions": "Unknown"
+    },
+    {
       "title": "A Comprehensive Survey of Deep Research: Systems, Methodologies, and Applications",
       "authors": "R Xu, J Peng - arXiv preprint arXiv:2506.12594, 2025 - arxiv.org",
       "journal": "Google Scholar Result",
@@ -288,17 +145,6 @@
       "published_date": "June 2025",
       "published_date_sort": "2025-06-01",
       "citations": 7,
-      "institutions": "Unknown"
-    },
-    {
-      "title": "MLE-STAR: Machine Learning Engineering Agent via Search and Targeted Refinement",
-      "authors": "J Nam, J Yoon, J Chen, J Shin, SÖ Arık… - arXiv preprint arXiv …, 2025 - arxiv.org",
-      "journal": "Google Scholar Result",
-      "snippet": "Agents based on large language models (LLMs) for machine learning engineering (MLE) can automatically implement ML models via code generation. However, existing approaches …",
-      "link": "https://arxiv.org/abs/2506.15692",
-      "published_date": "June 2025",
-      "published_date_sort": "2025-06-01",
-      "citations": 0,
       "institutions": "Unknown"
     },
     {
@@ -324,33 +170,11 @@
       "institutions": "Unknown"
     },
     {
-      "title": "LMR-BENCH: Evaluating LLM Agent's Ability on Reproducing Language Modeling Research",
-      "authors": "S Yan, R Li, Z Luo, Z Wang, D Li, L Jing, K He… - arXiv preprint arXiv …, 2025 - arxiv.org",
-      "journal": "Google Scholar Result",
-      "snippet": "Large language model (LLM) agents have demonstrated remarkable potential in advancing scientific discovery. However, their capability in the fundamental yet crucial task of …",
-      "link": "https://arxiv.org/abs/2506.17335",
-      "published_date": "June 2025",
-      "published_date_sort": "2025-06-01",
-      "citations": 1,
-      "institutions": "Unknown"
-    },
-    {
       "title": "Mle-dojo: Interactive environments for empowering llm agents in machine learning engineering",
       "authors": "R Qiang, Y Zhuang, Y Li, R Zhang, C Li… - arXiv preprint arXiv …, 2025 - arxiv.org",
       "journal": "Google Scholar Result",
       "snippet": "We introduce MLE-Dojo, a Gym-style framework for systematically reinforcement learning, evaluating, and improving autonomous large language model (LLM) agents in iterative …",
       "link": "https://arxiv.org/abs/2505.07782",
-      "published_date": "May 2025",
-      "published_date_sort": "2025-05-01",
-      "citations": 1,
-      "institutions": "Unknown"
-    },
-    {
-      "title": "RepoMaster: Autonomous Exploration and Understanding of GitHub Repositories for Complex Task Solving",
-      "authors": "H Wang, Z Ni, S Zhang, S Lu, S Hu, Z He, C Hu… - arXiv preprint arXiv …, 2025 - arxiv.org",
-      "journal": "Google Scholar Result",
-      "snippet": "The ultimate goal of code agents is to solve complex tasks autonomously. Although large language models (LLMs) have made substantial progress in code generation, real-world …",
-      "link": "https://arxiv.org/abs/2505.21577",
       "published_date": "May 2025",
       "published_date_sort": "2025-05-01",
       "citations": 1,
@@ -395,6 +219,17 @@
       "journal": "Google Scholar Result",
       "snippet": "Partial differential equations (PDEs) are fundamental to modeling physical systems, yet solving them remains a complex challenge. Traditional numerical solvers rely on expert …",
       "link": "https://arxiv.org/abs/2505.08783",
+      "published_date": "May 2025",
+      "published_date_sort": "2025-05-01",
+      "citations": 1,
+      "institutions": "Unknown"
+    },
+    {
+      "title": "RepoMaster: Autonomous Exploration and Understanding of GitHub Repositories for Complex Task Solving",
+      "authors": "H Wang, Z Ni, S Zhang, S Lu, S Hu, Z He, C Hu… - arXiv preprint arXiv …, 2025 - arxiv.org",
+      "journal": "Google Scholar Result",
+      "snippet": "The ultimate goal of code agents is to solve complex tasks autonomously. Although large language models (LLMs) have made substantial progress in code generation, real-world …",
+      "link": "https://arxiv.org/abs/2505.21577",
       "published_date": "May 2025",
       "published_date_sort": "2025-05-01",
       "citations": 1,
