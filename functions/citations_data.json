@@ -1,5 +1,5 @@
 {
-  "last_updated": "2025-09-08 00:10:47 UTC",
+  "last_updated": "2025-09-09 00:10:44 UTC",
   "target_paper": "https://www.arxiv.org/abs/2502.13138",
   "arxiv_id": "2502.13138",
   "total_citations": 20,
@@ -49,17 +49,6 @@
       "institutions": "Unknown"
     },
     {
-      "title": "Illuminating LLM Coding Agents: Visual Analytics for Deeper Understanding and Enhancement",
-      "authors": "J Wang, Y Chen, M Pan, CCM Yeh, M Das - arXiv preprint arXiv …, 2025 - arxiv.org",
-      "journal": "Google Scholar Result",
-      "snippet": "Coding agents powered by large language models (LLMs) have gained traction for automating code generation through iterative problem-solving with minimal human …",
-      "link": "https://arxiv.org/abs/2508.12555",
-      "published_date": "August 2025",
-      "published_date_sort": "2025-08-01",
-      "citations": 0,
-      "institutions": "Unknown"
-    },
-    {
       "title": "Tuning LLM-based Code Optimization via Meta-Prompting: An Industrial Perspective",
       "authors": "J Gong, R Giavrimis, P Brookes, V Voskanyan… - arXiv preprint arXiv …, 2025 - arxiv.org",
       "journal": "Google Scholar Result",
@@ -71,13 +60,13 @@
       "institutions": "Unknown"
     },
     {
-      "title": "PhysGym: Benchmarking LLMs in Interactive Physics Discovery with Controlled Priors",
-      "authors": "Y Chen, P Piȩkos, M Ostaszewski, F Laakom… - arXiv preprint arXiv …, 2025 - arxiv.org",
+      "title": "Illuminating LLM Coding Agents: Visual Analytics for Deeper Understanding and Enhancement",
+      "authors": "J Wang, Y Chen, M Pan, CCM Yeh, M Das - arXiv preprint arXiv …, 2025 - arxiv.org",
       "journal": "Google Scholar Result",
-      "snippet": "Evaluating the scientific discovery capabilities of large language model based agents, particularly how they cope with varying environmental complexity and utilize prior …",
-      "link": "https://arxiv.org/abs/2507.15550",
-      "published_date": "July 2025",
-      "published_date_sort": "2025-07-01",
+      "snippet": "Coding agents powered by large language models (LLMs) have gained traction for automating code generation through iterative problem-solving with minimal human …",
+      "link": "https://arxiv.org/abs/2508.12555",
+      "published_date": "August 2025",
+      "published_date_sort": "2025-08-01",
       "citations": 0,
       "institutions": "Unknown"
     },
@@ -93,14 +82,14 @@
       "institutions": "Unknown"
     },
     {
-      "title": "LMR-BENCH: Evaluating LLM Agent's Ability on Reproducing Language Modeling Research",
-      "authors": "S Yan, R Li, Z Luo, Z Wang, D Li, L Jing, K He… - arXiv preprint arXiv …, 2025 - arxiv.org",
+      "title": "PhysGym: Benchmarking LLMs in Interactive Physics Discovery with Controlled Priors",
+      "authors": "Y Chen, P Piȩkos, M Ostaszewski, F Laakom… - arXiv preprint arXiv …, 2025 - arxiv.org",
       "journal": "Google Scholar Result",
-      "snippet": "Large language model (LLM) agents have demonstrated remarkable potential in advancing scientific discovery. However, their capability in the fundamental yet crucial task of …",
-      "link": "https://arxiv.org/abs/2506.17335",
-      "published_date": "June 2025",
-      "published_date_sort": "2025-06-01",
-      "citations": 1,
+      "snippet": "Evaluating the scientific discovery capabilities of large language model based agents, particularly how they cope with varying environmental complexity and utilize prior …",
+      "link": "https://arxiv.org/abs/2507.15550",
+      "published_date": "July 2025",
+      "published_date_sort": "2025-07-01",
+      "citations": 0,
       "institutions": "Unknown"
     },
     {
@@ -112,6 +101,17 @@
       "published_date": "June 2025",
       "published_date_sort": "2025-06-01",
       "citations": 0,
+      "institutions": "Unknown"
+    },
+    {
+      "title": "LMR-BENCH: Evaluating LLM Agent's Ability on Reproducing Language Modeling Research",
+      "authors": "S Yan, R Li, Z Luo, Z Wang, D Li, L Jing, K He… - arXiv preprint arXiv …, 2025 - arxiv.org",
+      "journal": "Google Scholar Result",
+      "snippet": "Large language model (LLM) agents have demonstrated remarkable potential in advancing scientific discovery. However, their capability in the fundamental yet crucial task of …",
+      "link": "https://arxiv.org/abs/2506.17335",
+      "published_date": "June 2025",
+      "published_date_sort": "2025-06-01",
+      "citations": 1,
       "institutions": "Unknown"
     },
     {
@@ -137,17 +137,6 @@
       "institutions": "Unknown"
     },
     {
-      "title": "AI Scientists Fail Without Strong Implementation Capability",
-      "authors": "M Zhu, Q Xie, Y Weng, J Wu, Z Lin, L Yang… - arXiv preprint arXiv …, 2025 - arxiv.org",
-      "journal": "Google Scholar Result",
-      "snippet": "The emergence of Artificial Intelligence (AI) Scientist represents a paradigm shift in scientific discovery, with large language models (LLMs) taking the lead as the primary executor in the …",
-      "link": "https://arxiv.org/abs/2506.01372",
-      "published_date": "June 2025",
-      "published_date_sort": "2025-06-01",
-      "citations": 4,
-      "institutions": "Unknown"
-    },
-    {
       "title": "A Comprehensive Survey of Deep Research: Systems, Methodologies, and Applications",
       "authors": "R Xu, J Peng - arXiv preprint arXiv:2506.12594, 2025 - arxiv.org",
       "journal": "Google Scholar Result",
@@ -156,6 +145,17 @@
       "published_date": "June 2025",
       "published_date_sort": "2025-06-01",
       "citations": 7,
+      "institutions": "Unknown"
+    },
+    {
+      "title": "AI Scientists Fail Without Strong Implementation Capability",
+      "authors": "M Zhu, Q Xie, Y Weng, J Wu, Z Lin, L Yang… - arXiv preprint arXiv …, 2025 - arxiv.org",
+      "journal": "Google Scholar Result",
+      "snippet": "The emergence of Artificial Intelligence (AI) Scientist represents a paradigm shift in scientific discovery, with large language models (LLMs) taking the lead as the primary executor in the …",
+      "link": "https://arxiv.org/abs/2506.01372",
+      "published_date": "June 2025",
+      "published_date_sort": "2025-06-01",
+      "citations": 4,
       "institutions": "Unknown"
     },
     {
@@ -170,14 +170,14 @@
       "institutions": "Unknown"
     },
     {
-      "title": "From automation to autonomy: A survey on large language models in scientific discovery",
-      "authors": "T Zheng, Z Deng, HT Tsang, W Wang, J Bai… - arXiv preprint arXiv …, 2025 - arxiv.org",
+      "title": "RepoMaster: Autonomous Exploration and Understanding of GitHub Repositories for Complex Task Solving",
+      "authors": "H Wang, Z Ni, S Zhang, S Lu, S Hu, Z He, C Hu… - arXiv preprint arXiv …, 2025 - arxiv.org",
       "journal": "Google Scholar Result",
-      "snippet": "Large Language Models (LLMs) are catalyzing a paradigm shift in scientific discovery, evolving from task-specific automation tools into increasingly autonomous agents and …",
-      "link": "https://arxiv.org/abs/2505.13259",
+      "snippet": "The ultimate goal of code agents is to solve complex tasks autonomously. Although large language models (LLMs) have made substantial progress in code generation, real-world …",
+      "link": "https://arxiv.org/abs/2505.21577",
       "published_date": "May 2025",
       "published_date_sort": "2025-05-01",
-      "citations": 9,
+      "citations": 1,
       "institutions": "Unknown"
     },
     {
@@ -214,22 +214,22 @@
       "institutions": "Unknown"
     },
     {
+      "title": "From automation to autonomy: A survey on large language models in scientific discovery",
+      "authors": "T Zheng, Z Deng, HT Tsang, W Wang, J Bai… - arXiv preprint arXiv …, 2025 - arxiv.org",
+      "journal": "Google Scholar Result",
+      "snippet": "Large Language Models (LLMs) are catalyzing a paradigm shift in scientific discovery, evolving from task-specific automation tools into increasingly autonomous agents and …",
+      "link": "https://arxiv.org/abs/2505.13259",
+      "published_date": "May 2025",
+      "published_date_sort": "2025-05-01",
+      "citations": 9,
+      "institutions": "Unknown"
+    },
+    {
       "title": "IDA-Bench: Evaluating LLMs on Interactive Guided Data Analysis",
       "authors": "H Li, H Liu, T Zhu, T Guo, Z Zheng, X Deng… - arXiv preprint arXiv …, 2025 - arxiv.org",
       "journal": "Google Scholar Result",
       "snippet": "Large Language Models (LLMs) show promise as data analysis agents, but existing benchmarks overlook the iterative nature of the field, where experts' decisions evolve with …",
       "link": "https://arxiv.org/abs/2505.18223",
-      "published_date": "May 2025",
-      "published_date_sort": "2025-05-01",
-      "citations": 1,
-      "institutions": "Unknown"
-    },
-    {
-      "title": "RepoMaster: Autonomous Exploration and Understanding of GitHub Repositories for Complex Task Solving",
-      "authors": "H Wang, Z Ni, S Zhang, S Lu, S Hu, Z He, C Hu… - arXiv preprint arXiv …, 2025 - arxiv.org",
-      "journal": "Google Scholar Result",
-      "snippet": "The ultimate goal of code agents is to solve complex tasks autonomously. Although large language models (LLMs) have made substantial progress in code generation, real-world …",
-      "link": "https://arxiv.org/abs/2505.21577",
       "published_date": "May 2025",
       "published_date_sort": "2025-05-01",
       "citations": 1,
@@ -254,7 +254,7 @@
       "link": "https://arxiv.org/abs/2503.14499",
       "published_date": "March 2025",
       "published_date_sort": "2025-03-01",
-      "citations": 29,
+      "citations": 30,
       "institutions": "Unknown"
     }
   ]
