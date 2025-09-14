@@ -1,11 +1,11 @@
 {
-  "last_updated": "2025-09-13 00:09:54 UTC",
+  "last_updated": "2025-09-14 00:11:19 UTC",
   "target_paper": "https://www.arxiv.org/abs/2502.13138",
   "arxiv_id": "2502.13138",
-  "total_citations": 32,
+  "total_citations": 20,
   "h_index": 4,
-  "recent_citations": 14,
-  "avg_citations_per_month": "4.57",
+  "recent_citations": 2,
+  "avg_citations_per_month": "2.86",
   "timeline": [
     {
       "date": "2025-03-01",
@@ -33,142 +33,10 @@
     },
     {
       "date": "2025-09-01",
-      "citations": 32
+      "citations": 20
     }
   ],
   "papers": [
-    {
-      "title": "MetaLLMix : An XAI Aided LLM-Meta-learning Based Approach for\n  Hyper-parameters Optimization",
-      "authors": "Mohammed Tiouti, Mohamed Bal-Ghaoui",
-      "journal": "arXiv",
-      "snippet": "Effective model and hyperparameter selection remains a major challenge in\ndeep learning, often requiring extensive expertise and computation. While\nAutoML and large language models (LLMs) promise automation, current LLM-based\napproaches rely on trial and error and expensive APIs, which provide limited\ninterpretability and generalizability. We propose MetaLLMiX, a zero-shot\nhyperparameter optimization framework combining meta-learning, explainable AI,\nand efficient LLM reasoning. By leveraging historical experiment outcomes with\nSHAP explanations, MetaLLMiX recommends optimal hyperparameters and pretrained\nmodels without additional trials. We further employ an LLM-as-judge evaluation\nto control output format, accuracy, and completeness. Experiments on eight\nmedical imaging datasets using nine open-source lightweight LLMs show that\nMetaLLMiX achieves competitive or superior performance to traditional HPO\nmethods while drastically reducing computational cost. Our local deployment\noutperforms prior API-based approaches, achieving optimal results on 5 of 8\ntasks, response time reductions of 99.6-99.9%, and the fastest training times\non 6 datasets (2.4-15.7x faster), maintaining accuracy within 1-5% of\nbest-performing baselines.",
-      "link": "http://arxiv.org/abs/2509.09387v1",
-      "published_date": "September 11, 2025",
-      "published_date_sort": "2025-09-11",
-      "citations": 0,
-      "institutions": "Unknown"
-    },
-    {
-      "title": "On Integrating Large Language Models and Scenario-Based Programming for\n  Improving Software Reliability",
-      "authors": "Ayelet Berzack, Guy Katz",
-      "journal": "arXiv",
-      "snippet": "Large Language Models (LLMs) are fast becoming indispensable tools for\nsoftware developers, assisting or even partnering with them in crafting complex\nprograms. The advantages are evident -- LLMs can significantly reduce\ndevelopment time, generate well-organized and comprehensible code, and\noccasionally suggest innovative ideas that developers might not conceive on\ntheir own. However, despite their strengths, LLMs will often introduce\nsignificant errors and present incorrect code with persuasive confidence,\npotentially misleading developers into accepting flawed solutions.\n  In order to bring LLMs into the software development cycle in a more reliable\nmanner, we propose a methodology for combining them with ``traditional''\nsoftware engineering techniques in a structured way, with the goal of\nstreamlining the development process, reducing errors, and enabling users to\nverify crucial program properties with increased confidence. Specifically, we\nfocus on the Scenario-Based Programming (SBP) paradigm -- an event-driven,\nscenario-based approach for software engineering -- to allow human developers\nto pour their expert knowledge into the LLM, as well as to inspect and verify\nits outputs.\n  To evaluate our methodology, we conducted a significant case study, and used\nit to design and implement the Connect4 game. By combining LLMs and SBP we were\nable to create a highly-capable agent, which could defeat various strong\nexisting agents. Further, in some cases, we were able to formally verify the\ncorrectness of our agent. Finally, our experience reveals interesting insights\nregarding the ease-of-use of our proposed approach. The full code of our\ncase-study will be made publicly available with the final version of this\npaper.",
-      "link": "http://arxiv.org/abs/2509.09194v1",
-      "published_date": "September 11, 2025",
-      "published_date_sort": "2025-09-11",
-      "citations": 0,
-      "institutions": "Unknown"
-    },
-    {
-      "title": "OpenFake: An Open Dataset and Platform Toward Large-Scale Deepfake\n  Detection",
-      "authors": "Victor Livernoche, Akshatha Arodi, Andreea Musulan, Zachary Yang, Adam Salvail, Gaétan Marceau Caron, Jean-François Godbout, Reihaneh Rabbany",
-      "journal": "arXiv",
-      "snippet": "Deepfakes, synthetic media created using advanced AI techniques, have\nintensified the spread of misinformation, particularly in politically sensitive\ncontexts. Existing deepfake detection datasets are often limited, relying on\noutdated generation methods, low realism, or single-face imagery, restricting\nthe effectiveness for general synthetic image detection. By analyzing social\nmedia posts, we identify multiple modalities through which deepfakes propagate\nmisinformation. Furthermore, our human perception study demonstrates that\nrecently developed proprietary models produce synthetic images increasingly\nindistinguishable from real ones, complicating accurate identification by the\ngeneral public. Consequently, we present a comprehensive, politically-focused\ndataset specifically crafted for benchmarking detection against modern\ngenerative models. This dataset contains three million real images paired with\ndescriptive captions, which are used for generating 963k corresponding\nhigh-quality synthetic images from a mix of proprietary and open-source models.\nRecognizing the continual evolution of generative techniques, we introduce an\ninnovative crowdsourced adversarial platform, where participants are\nincentivized to generate and submit challenging synthetic images. This ongoing\ncommunity-driven initiative ensures that deepfake detection methods remain\nrobust and adaptive, proactively safeguarding public discourse from\nsophisticated misinformation threats.",
-      "link": "http://arxiv.org/abs/2509.09495v1",
-      "published_date": "September 11, 2025",
-      "published_date_sort": "2025-09-11",
-      "citations": 0,
-      "institutions": "Unknown"
-    },
-    {
-      "title": "LoCoBench: A Benchmark for Long-Context Large Language Models in Complex\n  Software Engineering",
-      "authors": "Jielin Qiu, Zuxin Liu, Zhiwei Liu, Rithesh Murthy, Jianguo Zhang, Haolin Chen, Shiyu Wang, Ming Zhu, Liangwei Yang, Juntao Tan, Zhepeng Cen, Cheng Qian, Shelby Heinecke, Weiran Yao, Silvio Savarese, Caiming Xiong, Huan Wang",
-      "journal": "arXiv",
-      "snippet": "The emergence of long-context language models with context windows extending\nto millions of tokens has created new opportunities for sophisticated code\nunderstanding and software development evaluation. We propose LoCoBench, a\ncomprehensive benchmark specifically designed to evaluate long-context LLMs in\nrealistic, complex software development scenarios. Unlike existing code\nevaluation benchmarks that focus on single-function completion or short-context\ntasks, LoCoBench addresses the critical evaluation gap for long-context\ncapabilities that require understanding entire codebases, reasoning across\nmultiple files, and maintaining architectural consistency across large-scale\nsoftware systems. Our benchmark provides 8,000 evaluation scenarios\nsystematically generated across 10 programming languages, with context lengths\nspanning 10K to 1M tokens, a 100x variation that enables precise assessment of\nlong-context performance degradation in realistic software development\nsettings. LoCoBench introduces 8 task categories that capture essential\nlong-context capabilities: architectural understanding, cross-file refactoring,\nmulti-session development, bug investigation, feature implementation, code\ncomprehension, integration testing, and security analysis. Through a 5-phase\npipeline, we create diverse, high-quality scenarios that challenge LLMs to\nreason about complex codebases at unprecedented scale. We introduce a\ncomprehensive evaluation framework with 17 metrics across 4 dimensions,\nincluding 8 new evaluation metrics, combined in a LoCoBench Score (LCBS). Our\nevaluation of state-of-the-art long-context models reveals substantial\nperformance gaps, demonstrating that long-context understanding in complex\nsoftware development represents a significant unsolved challenge that demands\nmore attention. LoCoBench is released at:\nhttps://github.com/SalesforceAIResearch/LoCoBench.",
-      "link": "http://arxiv.org/abs/2509.09614v1",
-      "published_date": "September 11, 2025",
-      "published_date_sort": "2025-09-11",
-      "citations": 0,
-      "institutions": "Unknown"
-    },
-    {
-      "title": "Steering MoE LLMs via Expert (De)Activation",
-      "authors": "Mohsen Fayyaz, Ali Modarressi, Hanieh Deilamsalehy, Franck Dernoncourt, Ryan Rossi, Trung Bui, Hinrich Schütze, Nanyun Peng",
-      "journal": "arXiv",
-      "snippet": "Mixture-of-Experts (MoE) in Large Language Models (LLMs) routes each token\nthrough a subset of specialized Feed-Forward Networks (FFN), known as experts.\nWe present SteerMoE, a framework for steering MoE models by detecting and\ncontrolling behavior-linked experts. Our detection method identifies experts\nwith distinct activation patterns across paired inputs exhibiting contrasting\nbehaviors. By selectively (de)activating such experts during inference, we\ncontrol behaviors like faithfulness and safety without retraining or modifying\nweights. Across 11 benchmarks and 6 LLMs, our steering raises safety by up to\n+20% and faithfulness by +27%. In adversarial attack mode, it drops safety by\n-41% alone, and -100% when combined with existing jailbreak methods, bypassing\nall safety guardrails and exposing a new dimension of alignment faking hidden\nwithin experts.",
-      "link": "http://arxiv.org/abs/2509.09660v1",
-      "published_date": "September 11, 2025",
-      "published_date_sort": "2025-09-11",
-      "citations": 0,
-      "institutions": "Unknown"
-    },
-    {
-      "title": "ObjectReact: Learning Object-Relative Control for Visual Navigation",
-      "authors": "Sourav Garg, Dustin Craggs, Vineeth Bhat, Lachlan Mares, Stefan Podgorski, Madhava Krishna, Feras Dayoub, Ian Reid",
-      "journal": "arXiv",
-      "snippet": "Visual navigation using only a single camera and a topological map has\nrecently become an appealing alternative to methods that require additional\nsensors and 3D maps. This is typically achieved through an \"image-relative\"\napproach to estimating control from a given pair of current observation and\nsubgoal image. However, image-level representations of the world have\nlimitations because images are strictly tied to the agent's pose and\nembodiment. In contrast, objects, being a property of the map, offer an\nembodiment- and trajectory-invariant world representation. In this work, we\npresent a new paradigm of learning \"object-relative\" control that exhibits\nseveral desirable characteristics: a) new routes can be traversed without\nstrictly requiring to imitate prior experience, b) the control prediction\nproblem can be decoupled from solving the image matching problem, and c) high\ninvariance can be achieved in cross-embodiment deployment for variations across\nboth training-testing and mapping-execution settings. We propose a topometric\nmap representation in the form of a \"relative\" 3D scene graph, which is used to\nobtain more informative object-level global path planning costs. We train a\nlocal controller, dubbed \"ObjectReact\", conditioned directly on a high-level\n\"WayObject Costmap\" representation that eliminates the need for an explicit RGB\ninput. We demonstrate the advantages of learning object-relative control over\nits image-relative counterpart across sensor height variations and multiple\nnavigation tasks that challenge the underlying spatial understanding\ncapability, e.g., navigating a map trajectory in the reverse direction. We\nfurther show that our sim-only policy is able to generalize well to real-world\nindoor environments. Code and supplementary material are accessible via project\npage: https://object-react.github.io/",
-      "link": "http://arxiv.org/abs/2509.09594v1",
-      "published_date": "September 11, 2025",
-      "published_date_sort": "2025-09-11",
-      "citations": 0,
-      "institutions": "Unknown"
-    },
-    {
-      "title": "Quantum Machine Learning, Quantitative Trading, Reinforcement Learning,\n  Deep Learning",
-      "authors": "Jun-Hao Chen, Yu-Chien Huang, Yun-Cheng Tsai, Samuel Yen-Chi Chen",
-      "journal": "arXiv",
-      "snippet": "The convergence of quantum-inspired neural networks and deep reinforcement\nlearning offers a promising avenue for financial trading. We implemented a\ntrading agent for USD/TWD by integrating Quantum Long Short-Term Memory (QLSTM)\nfor short-term trend prediction with Quantum Asynchronous Advantage\nActor-Critic (QA3C), a quantum-enhanced variant of the classical A3C. Trained\non data from 2000-01-01 to 2025-04-30 (80\\% training, 20\\% testing), the\nlong-only agent achieves 11.87\\% return over around 5 years with 0.92\\% max\ndrawdown, outperforming several currency ETFs. We detail state design (QLSTM\nfeatures and indicators), reward function for trend-following/risk control, and\nmulti-core training. Results show hybrid models yield competitive FX trading\nperformance. Implications include QLSTM's effectiveness for small-profit trades\nwith tight risk and future enhancements. Key hyperparameters: QLSTM sequence\nlength$=$4, QA3C workers$=$8. Limitations: classical quantum simulation and\nsimplified strategy. \\footnote{The views expressed in this article are those of\nthe authors and do not represent the views of Wells Fargo. This article is for\ninformational purposes only. Nothing contained in this article should be\nconstrued as investment advice. Wells Fargo makes no express or implied\nwarranties and expressly disclaims all legal, tax, and accounting implications\nrelated to this article.",
-      "link": "http://arxiv.org/abs/2509.09176v1",
-      "published_date": "September 11, 2025",
-      "published_date_sort": "2025-09-11",
-      "citations": 0,
-      "institutions": "Unknown"
-    },
-    {
-      "title": "Functional Groups are All you Need for Chemically Interpretable\n  Molecular Property Prediction",
-      "authors": "Roshan Balaji, Joe Bobby, Nirav Pravinbhai Bhatt",
-      "journal": "arXiv",
-      "snippet": "Molecular property prediction using deep learning (DL) models has accelerated\ndrug and materials discovery, but the resulting DL models often lack\ninterpretability, hindering their adoption by chemists. This work proposes\ndeveloping molecule representations using the concept of Functional Groups (FG)\nin chemistry. We introduce the Functional Group Representation (FGR) framework,\na novel approach to encoding molecules based on their fundamental chemical\nsubstructures. Our method integrates two types of functional groups: those\ncurated from established chemical knowledge (FG), and those mined from a large\nmolecular corpus using sequential pattern mining (MFG). The resulting FGR\nframework encodes molecules into a lower-dimensional latent space by leveraging\npre-training on a large dataset of unlabeled molecules. Furthermore, the\nproposed framework allows the inclusion of 2D structure-based descriptors of\nmolecules. We demonstrate that the FGR framework achieves state-of-the-art\nperformance on a diverse range of 33 benchmark datasets spanning physical\nchemistry, biophysics, quantum mechanics, biological activity, and\npharmacokinetics while enabling chemical interpretability. Crucially, the\nmodel's representations are intrinsically aligned with established chemical\nprinciples, allowing chemists to directly link predicted properties to specific\nfunctional groups and facilitating novel insights into structure-property\nrelationships. Our work presents a significant step toward developing\nhigh-performing, chemically interpretable DL models for molecular discovery.",
-      "link": "http://arxiv.org/abs/2509.09619v1",
-      "published_date": "September 11, 2025",
-      "published_date_sort": "2025-09-11",
-      "citations": 0,
-      "institutions": "Unknown"
-    },
-    {
-      "title": "Composable Score-based Graph Diffusion Model for Multi-Conditional\n  Molecular Generation",
-      "authors": "Anjie Qiao, Zhen Wang, Chuan Chen, DeFu Lian, Enhong Chen",
-      "journal": "arXiv",
-      "snippet": "Controllable molecular graph generation is essential for material and drug\ndiscovery, where generated molecules must satisfy diverse property constraints.\nWhile recent advances in graph diffusion models have improved generation\nquality, their effectiveness in multi-conditional settings remains limited due\nto reliance on joint conditioning or continuous relaxations that compromise\nfidelity. To address these limitations, we propose Composable Score-based Graph\nDiffusion model (CSGD), the first model that extends score matching to discrete\ngraphs via concrete scores, enabling flexible and principled manipulation of\nconditional guidance. Building on this foundation, we introduce two score-based\ntechniques: Composable Guidance (CoG), which allows fine-grained control over\narbitrary subsets of conditions during sampling, and Probability Calibration\n(PC), which adjusts estimated transition probabilities to mitigate train-test\nmismatches. Empirical results on four molecular datasets show that CSGD\nachieves state-of-the-art performance, with a 15.3% average improvement in\ncontrollability over prior methods, while maintaining high validity and\ndistributional fidelity. Our findings highlight the practical advantages of\nscore-based modeling for discrete graph generation and its capacity for\nflexible, multi-property molecular design.",
-      "link": "http://arxiv.org/abs/2509.09451v1",
-      "published_date": "September 11, 2025",
-      "published_date_sort": "2025-09-11",
-      "citations": 0,
-      "institutions": "Unknown"
-    },
-    {
-      "title": "Towards Adaptive ML Benchmarks: Web-Agent-Driven Construction, Domain\n  Expansion, and Metric Optimization",
-      "authors": "Hangyi Jia, Yuxi Qian, Hanwen Tong, Xinhui Wu, Lin Chen, Feng Wei",
-      "journal": "arXiv",
-      "snippet": "Recent advances in large language models (LLMs) have enabled the emergence of\ngeneral-purpose agents for automating end-to-end machine learning (ML)\nworkflows, including data analysis, feature engineering, model training, and\ncompetition solving. However, existing benchmarks remain limited in task\ncoverage, domain diversity, difficulty modeling, and evaluation rigor, failing\nto capture the full capabilities of such agents in realistic settings. We\npresent TAM Bench, a diverse, realistic, and structured benchmark for\nevaluating LLM-based agents on end-to-end ML tasks. TAM Bench features three\nkey innovations: (1) A browser automation and LLM-based task acquisition system\nthat automatically collects and structures ML challenges from platforms such as\nKaggle, AIcrowd, and Biendata, spanning multiple task types and data modalities\n(e.g., tabular, text, image, graph, audio); (2) A leaderboard-driven difficulty\nmodeling mechanism that estimates task complexity using participant counts and\nscore dispersion, enabling scalable and objective task calibration; (3) A\nmulti-dimensional evaluation framework incorporating performance, format\ncompliance, constraint adherence, and task generalization. Based on 150 curated\nAutoML tasks, we construct three benchmark subsets of different sizes -- Lite,\nMedium, and Full -- designed for varying evaluation scenarios. The Lite\nversion, with 18 tasks and balanced coverage across modalities and difficulty\nlevels, serves as a practical testbed for daily benchmarking and comparative\nstudies.",
-      "link": "http://arxiv.org/abs/2509.09321v1",
-      "published_date": "September 11, 2025",
-      "published_date_sort": "2025-09-11",
-      "citations": 0,
-      "institutions": "Unknown"
-    },
-    {
-      "title": "OCELOT 2023: Cell Detection from Cell-Tissue Interaction Challenge",
-      "authors": "JaeWoong Shin, Jeongun Ryu, Aaron Valero Puche, Jinhee Lee, Biagio Brattoli, Wonkyung Jung, Soo Ick Cho, Kyunghyun Paeng, Chan-Young Ock, Donggeun Yoo, Zhaoyang Li, Wangkai Li, Huayu Mai, Joshua Millward, Zhen He, Aiden Nibali, Lydia Anette Schoenpflug, Viktor Hendrik Koelzer, Xu Shuoyu, Ji Zheng, Hu Bin, Yu-Wen Lo, Ching-Hui Yang, Sérgio Pereira",
-      "journal": "arXiv",
-      "snippet": "Pathologists routinely alternate between different magnifications when\nexamining Whole-Slide Images, allowing them to evaluate both broad tissue\nmorphology and intricate cellular details to form comprehensive diagnoses.\nHowever, existing deep learning-based cell detection models struggle to\nreplicate these behaviors and learn the interdependent semantics between\nstructures at different magnifications. A key barrier in the field is the lack\nof datasets with multi-scale overlapping cell and tissue annotations. The\nOCELOT 2023 challenge was initiated to gather insights from the community to\nvalidate the hypothesis that understanding cell and tissue (cell-tissue)\ninteractions is crucial for achieving human-level performance, and to\naccelerate the research in this field. The challenge dataset includes\noverlapping cell detection and tissue segmentation annotations from six organs,\ncomprising 673 pairs sourced from 306 The Cancer Genome Atlas (TCGA)\nWhole-Slide Images with hematoxylin and eosin staining, divided into training,\nvalidation, and test subsets. Participants presented models that significantly\nenhanced the understanding of cell-tissue relationships. Top entries achieved\nup to a 7.99 increase in F1-score on the test set compared to the baseline\ncell-only model that did not incorporate cell-tissue relationships. This is a\nsubstantial improvement in performance over traditional cell-only detection\nmethods, demonstrating the need for incorporating multi-scale semantics into\nthe models. This paper provides a comparative analysis of the methods used by\nparticipants, highlighting innovative strategies implemented in the OCELOT 2023\nchallenge.",
-      "link": "http://arxiv.org/abs/2509.09153v1",
-      "published_date": "September 11, 2025",
-      "published_date_sort": "2025-09-11",
-      "citations": 0,
-      "institutions": "Unknown"
-    },
-    {
-      "title": "SimpleVLA-RL: Scaling VLA Training via Reinforcement Learning",
-      "authors": "Haozhan Li, Yuxin Zuo, Jiale Yu, Yuhao Zhang, Zhaohui Yang, Kaiyan Zhang, Xuekai Zhu, Yuchen Zhang, Tianxing Chen, Ganqu Cui, Dehui Wang, Dingxiang Luo, Yuchen Fan, Youbang Sun, Jia Zeng, Jiangmiao Pang, Shanghang Zhang, Yu Wang, Yao Mu, Bowen Zhou, Ning Ding",
-      "journal": "arXiv",
-      "snippet": "Vision-Language-Action (VLA) models have recently emerged as a powerful\nparadigm for robotic manipulation. Despite substantial progress enabled by\nlarge-scale pretraining and supervised fine-tuning (SFT), these models face two\nfundamental challenges: (i) the scarcity and high cost of large-scale\nhuman-operated robotic trajectories required for SFT scaling, and (ii) limited\ngeneralization to tasks involving distribution shift. Recent breakthroughs in\nLarge Reasoning Models (LRMs) demonstrate that reinforcement learning (RL) can\ndramatically enhance step-by-step reasoning capabilities, raising a natural\nquestion: Can RL similarly improve the long-horizon step-by-step action\nplanning of VLA? In this work, we introduce SimpleVLA-RL, an efficient RL\nframework tailored for VLA models. Building upon veRL, we introduce\nVLA-specific trajectory sampling, scalable parallelization, multi-environment\nrendering, and optimized loss computation. When applied to OpenVLA-OFT,\nSimpleVLA-RL achieves SoTA performance on LIBERO and even outperforms $\\pi_0$\non RoboTwin 1.0\\&2.0 with the exploration-enhancing strategies we introduce.\nSimpleVLA-RL not only reduces dependence on large-scale data and enables robust\ngeneralization, but also remarkably surpasses SFT in real-world tasks.\nMoreover, we identify a novel phenomenon ``pushcut'' during RL training,\nwherein the policy discovers previously unseen patterns beyond those seen in\nthe previous training process. Github: https://github.com/PRIME-RL/SimpleVLA-RL",
-      "link": "http://arxiv.org/abs/2509.09674v1",
-      "published_date": "September 11, 2025",
-      "published_date_sort": "2025-09-11",
-      "citations": 0,
-      "institutions": "Unknown"
-    },
     {
       "title": "An AI system to help scientists write expert-level empirical software",
       "authors": "E Aygün, A Belyaeva, G Comanici, M Coram… - arXiv preprint arXiv …, 2025 - arxiv.org",
@@ -225,17 +93,6 @@
       "institutions": "Unknown"
     },
     {
-      "title": "AutoMind: Adaptive Knowledgeable Agent for Automated Data Science",
-      "authors": "Y Ou, Y Luo, J Zheng, L Wei, S Qiao, J Zhang… - arXiv preprint arXiv …, 2025 - arxiv.org",
-      "journal": "Google Scholar Result",
-      "snippet": "Large Language Model (LLM) agents have shown great potential in addressing real-world data science problems. LLM-driven data science agents promise to automate the entire …",
-      "link": "https://arxiv.org/abs/2506.10974",
-      "published_date": "June 2025",
-      "published_date_sort": "2025-06-01",
-      "citations": 0,
-      "institutions": "Unknown"
-    },
-    {
       "title": "Towards Community-Driven Agents for Machine Learning Engineering",
       "authors": "S Li, W Sun, S Li, A Talwalkar, Y Yang - arXiv preprint arXiv:2506.20640, 2025 - arxiv.org",
       "journal": "Google Scholar Result",
@@ -244,6 +101,17 @@
       "published_date": "June 2025",
       "published_date_sort": "2025-06-01",
       "citations": 0,
+      "institutions": "Unknown"
+    },
+    {
+      "title": "The Automated LLM Speedrunning Benchmark: Reproducing NanoGPT Improvements",
+      "authors": "B Zhao, D Magka, M Jiang, X Li, R Raileanu… - arXiv preprint arXiv …, 2025 - arxiv.org",
+      "journal": "Google Scholar Result",
+      "snippet": "Rapid advancements in large language models (LLMs) have the potential to assist in scientific progress. A critical capability toward this endeavor is the ability to reproduce …",
+      "link": "https://arxiv.org/abs/2506.22419",
+      "published_date": "June 2025",
+      "published_date_sort": "2025-06-01",
+      "citations": 1,
       "institutions": "Unknown"
     },
     {
@@ -263,17 +131,6 @@
       "journal": "Google Scholar Result",
       "snippet": "Agents based on large language models (LLMs) for machine learning engineering (MLE) can automatically implement ML models via code generation. However, existing approaches …",
       "link": "https://arxiv.org/abs/2506.15692",
-      "published_date": "June 2025",
-      "published_date_sort": "2025-06-01",
-      "citations": 0,
-      "institutions": "Unknown"
-    },
-    {
-      "title": "The Automated LLM Speedrunning Benchmark: Reproducing NanoGPT Improvements",
-      "authors": "B Zhao, D Magka, M Jiang, X Li, R Raileanu… - arXiv preprint arXiv …, 2025 - arxiv.org",
-      "journal": "Google Scholar Result",
-      "snippet": "Rapid advancements in large language models (LLMs) have the potential to assist in scientific progress. A critical capability toward this endeavor is the ability to reproduce …",
-      "link": "https://arxiv.org/abs/2506.22419",
       "published_date": "June 2025",
       "published_date_sort": "2025-06-01",
       "citations": 1,
@@ -302,6 +159,17 @@
       "institutions": "Unknown"
     },
     {
+      "title": "AutoMind: Adaptive Knowledgeable Agent for Automated Data Science",
+      "authors": "Y Ou, Y Luo, J Zheng, L Wei, S Qiao, J Zhang… - arXiv preprint arXiv …, 2025 - arxiv.org",
+      "journal": "Google Scholar Result",
+      "snippet": "Large Language Model (LLM) agents have shown great potential in addressing real-world data science problems. LLM-driven data science agents promise to automate the entire …",
+      "link": "https://arxiv.org/abs/2506.10974",
+      "published_date": "June 2025",
+      "published_date_sort": "2025-06-01",
+      "citations": 0,
+      "institutions": "Unknown"
+    },
+    {
       "title": "CodePDE: An Inference Framework for LLM-driven PDE Solver Generation",
       "authors": "S Li, T Marwah, J Shen, W Sun, A Risteski… - arXiv preprint arXiv …, 2025 - arxiv.org",
       "journal": "Google Scholar Result",
@@ -310,17 +178,6 @@
       "published_date": "May 2025",
       "published_date_sort": "2025-05-01",
       "citations": 2,
-      "institutions": "Unknown"
-    },
-    {
-      "title": "Mle-dojo: Interactive environments for empowering llm agents in machine learning engineering",
-      "authors": "R Qiang, Y Zhuang, Y Li, R Zhang, C Li… - arXiv preprint arXiv …, 2025 - arxiv.org",
-      "journal": "Google Scholar Result",
-      "snippet": "We introduce MLE-Dojo, a Gym-style framework for systematically reinforcement learning, evaluating, and improving autonomous large language model (LLM) agents in iterative …",
-      "link": "https://arxiv.org/abs/2505.07782",
-      "published_date": "May 2025",
-      "published_date_sort": "2025-05-01",
-      "citations": 1,
       "institutions": "Unknown"
     },
     {
@@ -335,11 +192,11 @@
       "institutions": "Unknown"
     },
     {
-      "title": "RepoMaster: Autonomous Exploration and Understanding of GitHub Repositories for Complex Task Solving",
-      "authors": "H Wang, Z Ni, S Zhang, S Lu, S Hu, Z He, C Hu… - arXiv preprint arXiv …, 2025 - arxiv.org",
+      "title": "IDA-Bench: Evaluating LLMs on Interactive Guided Data Analysis",
+      "authors": "H Li, H Liu, T Zhu, T Guo, Z Zheng, X Deng… - arXiv preprint arXiv …, 2025 - arxiv.org",
       "journal": "Google Scholar Result",
-      "snippet": "The ultimate goal of code agents is to solve complex tasks autonomously. Although large language models (LLMs) have made substantial progress in code generation, real-world …",
-      "link": "https://arxiv.org/abs/2505.21577",
+      "snippet": "Large Language Models (LLMs) show promise as data analysis agents, but existing benchmarks overlook the iterative nature of the field, where experts' decisions evolve with …",
+      "link": "https://arxiv.org/abs/2505.18223",
       "published_date": "May 2025",
       "published_date_sort": "2025-05-01",
       "citations": 1,
@@ -357,14 +214,25 @@
       "institutions": "Unknown"
     },
     {
-      "title": "IDA-Bench: Evaluating LLMs on Interactive Guided Data Analysis",
-      "authors": "H Li, H Liu, T Zhu, T Guo, Z Zheng, X Deng… - arXiv preprint arXiv …, 2025 - arxiv.org",
+      "title": "RepoMaster: Autonomous Exploration and Understanding of GitHub Repositories for Complex Task Solving",
+      "authors": "H Wang, Z Ni, S Zhang, S Lu, S Hu, Z He, C Hu… - arXiv preprint arXiv …, 2025 - arxiv.org",
       "journal": "Google Scholar Result",
-      "snippet": "Large Language Models (LLMs) show promise as data analysis agents, but existing benchmarks overlook the iterative nature of the field, where experts' decisions evolve with …",
-      "link": "https://arxiv.org/abs/2505.18223",
+      "snippet": "The ultimate goal of code agents is to solve complex tasks autonomously. Although large language models (LLMs) have made substantial progress in code generation, real-world …",
+      "link": "https://arxiv.org/abs/2505.21577",
       "published_date": "May 2025",
       "published_date_sort": "2025-05-01",
       "citations": 1,
+      "institutions": "Unknown"
+    },
+    {
+      "title": "Mle-dojo: Interactive environments for empowering llm agents in machine learning engineering",
+      "authors": "R Qiang, Y Zhuang, Y Li, R Zhang, C Li… - arXiv preprint arXiv …, 2025 - arxiv.org",
+      "journal": "Google Scholar Result",
+      "snippet": "We introduce MLE-Dojo, a Gym-style framework for systematically reinforcement learning, evaluating, and improving autonomous large language model (LLM) agents in iterative …",
+      "link": "https://arxiv.org/abs/2505.07782",
+      "published_date": "May 2025",
+      "published_date_sort": "2025-05-01",
+      "citations": 2,
       "institutions": "Unknown"
     },
     {
@@ -386,7 +254,7 @@
       "link": "https://arxiv.org/abs/2503.14499",
       "published_date": "March 2025",
       "published_date_sort": "2025-03-01",
-      "citations": 30,
+      "citations": 31,
       "institutions": "Unknown"
     }
   ]
