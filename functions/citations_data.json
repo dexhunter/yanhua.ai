@@ -1,11 +1,11 @@
 {
-  "last_updated": "2025-09-16 00:10:09 UTC",
+  "last_updated": "2025-09-17 00:10:35 UTC",
   "target_paper": "https://www.arxiv.org/abs/2502.13138",
   "arxiv_id": "2502.13138",
-  "total_citations": 20,
+  "total_citations": 27,
   "h_index": 5,
-  "recent_citations": 2,
-  "avg_citations_per_month": "2.86",
+  "recent_citations": 9,
+  "avg_citations_per_month": "3.86",
   "timeline": [
     {
       "date": "2025-03-01",
@@ -33,18 +33,84 @@
     },
     {
       "date": "2025-09-01",
-      "citations": 20
+      "citations": 27
     }
   ],
   "papers": [
     {
-      "title": "An AI system to help scientists write expert-level empirical software",
-      "authors": "E Aygün, A Belyaeva, G Comanici, M Coram… - arXiv preprint arXiv …, 2025 - arxiv.org",
-      "journal": "Google Scholar Result",
-      "snippet": "The cycle of scientific discovery is frequently bottlenecked by the slow, manual creation of software to support computational experiments. To address this, we present an AI system …",
-      "link": "https://arxiv.org/abs/2509.06503",
-      "published_date": "September 2025",
-      "published_date_sort": "2025-09-01",
+      "title": "LEGO: Spatial Accelerator Generation and Optimization for Tensor\n  Applications",
+      "authors": "Yujun Lin, Zhekai Zhang, Song Han",
+      "journal": "arXiv",
+      "snippet": "Modern tensor applications, especially foundation models and generative AI\napplications require multiple input modalities (both vision and language),\nwhich increases the demand for flexible accelerator architecture. Existing\nframeworks suffer from the trade-off between design flexibility and\nproductivity of RTL generation: either limited to very few hand-written\ntemplates or cannot automatically generate the RTL. To address this challenge,\nwe propose the LEGO framework, which targets tensor applications and\nautomatically generates spatial architecture design and outputs synthesizable\nRTL code without handwritten RTL design templates. Leveraging the\naffine-transformation-based architecture representation, LEGO front end finds\ninterconnections between function units, synthesizes the memory system, and\nfuses different spatial dataflow designs based on data reuse analysis. LEGO\nback end then translates the hardware in a primitive-level graph to perform\nlower-level optimizations, and applies a set of linear-programming algorithms\nto optimally insert pipeline registers and reduce the overhead of unused logic\nwhen switching spatial dataflows. Our evaluation demonstrates that LEGO can\nachieve 3.2x speedup and 2.4x energy efficiency compared to previous work\nGemmini, and can generate one architecture for diverse modern foundation models\nin generative AI applications.",
+      "link": "http://arxiv.org/abs/2509.12053v1",
+      "published_date": "September 15, 2025",
+      "published_date_sort": "2025-09-15",
+      "citations": 0,
+      "institutions": "Unknown"
+    },
+    {
+      "title": "DRAG: Data Reconstruction Attack using Guided Diffusion",
+      "authors": "Wa-Kin Lei, Jun-Cheng Chen, Shang-Tse Chen",
+      "journal": "arXiv",
+      "snippet": "With the rise of large foundation models, split inference (SI) has emerged as\na popular computational paradigm for deploying models across lightweight edge\ndevices and cloud servers, addressing data privacy and computational cost\nconcerns. However, most existing data reconstruction attacks have focused on\nsmaller CNN classification models, leaving the privacy risks of foundation\nmodels in SI settings largely unexplored. To address this gap, we propose a\nnovel data reconstruction attack based on guided diffusion, which leverages the\nrich prior knowledge embedded in a latent diffusion model (LDM) pre-trained on\na large-scale dataset. Our method performs iterative reconstruction on the\nLDM's learned image prior, effectively generating high-fidelity images\nresembling the original data from their intermediate representations (IR).\nExtensive experiments demonstrate that our approach significantly outperforms\nstate-of-the-art methods, both qualitatively and quantitatively, in\nreconstructing data from deep-layer IRs of the vision foundation model. The\nresults highlight the urgent need for more robust privacy protection mechanisms\nfor large models in SI scenarios. Code is available at:\nhttps://github.com/ntuaislab/DRAG.",
+      "link": "http://arxiv.org/abs/2509.11724v1",
+      "published_date": "September 15, 2025",
+      "published_date_sort": "2025-09-15",
+      "citations": 0,
+      "institutions": "Unknown"
+    },
+    {
+      "title": "$K$-Level Policy Gradients for Multi-Agent Reinforcement Learning",
+      "authors": "Aryaman Reddi, Gabriele Tiboni, Jan Peters, Carlo D'Eramo",
+      "journal": "arXiv",
+      "snippet": "Actor-critic algorithms for deep multi-agent reinforcement learning (MARL)\ntypically employ a policy update that responds to the current strategies of\nother agents. While being straightforward, this approach does not account for\nthe updates of other agents at the same update step, resulting in\nmiscoordination. In this paper, we introduce the $K$-Level Policy Gradient\n(KPG), a method that recursively updates each agent against the updated\npolicies of other agents, speeding up the discovery of effective coordinated\npolicies. We theoretically prove that KPG with finite iterates achieves\nmonotonic convergence to a local Nash equilibrium under certain conditions. We\nprovide principled implementations of KPG by applying it to the deep MARL\nalgorithms MAPPO, MADDPG, and FACMAC. Empirically, we demonstrate superior\nperformance over existing deep MARL algorithms in StarCraft II and multi-agent\nMuJoCo.",
+      "link": "http://arxiv.org/abs/2509.12117v1",
+      "published_date": "September 15, 2025",
+      "published_date_sort": "2025-09-15",
+      "citations": 0,
+      "institutions": "Unknown"
+    },
+    {
+      "title": "EMeRALDS: Electronic Medical Record Driven Automated Lung Nodule\n  Detection and Classification in Thoracic CT Images",
+      "authors": "Hafza Eman, Furqan Shaukat, Muhammad Hamza Zafar, Syed Muhammad Anwar",
+      "journal": "arXiv",
+      "snippet": "Objective: Lung cancer is a leading cause of cancer-related mortality\nworldwide, primarily due to delayed diagnosis and poor early detection. This\nstudy aims to develop a computer-aided diagnosis (CAD) system that leverages\nlarge vision-language models (VLMs) for the accurate detection and\nclassification of pulmonary nodules in computed tomography (CT) scans.\n  Methods: We propose an end-to-end CAD pipeline consisting of two modules: (i)\na detection module (CADe) based on the Segment Anything Model 2 (SAM2), in\nwhich the standard visual prompt is replaced with a text prompt encoded by CLIP\n(Contrastive Language-Image Pretraining), and (ii) a diagnosis module (CADx)\nthat calculates similarity scores between segmented nodules and radiomic\nfeatures. To add clinical context, synthetic electronic medical records (EMRs)\nwere generated using radiomic assessments by expert radiologists and combined\nwith similarity scores for final classification. The method was tested on the\npublicly available LIDC-IDRI dataset (1,018 CT scans).\n  Results: The proposed approach demonstrated strong performance in zero-shot\nlung nodule analysis. The CADe module achieved a Dice score of 0.92 and an IoU\nof 0.85 for nodule segmentation. The CADx module attained a specificity of 0.97\nfor malignancy classification, surpassing existing fully supervised methods.\n  Conclusions: The integration of VLMs with radiomics and synthetic EMRs allows\nfor accurate and clinically relevant CAD of pulmonary nodules in CT scans. The\nproposed system shows strong potential to enhance early lung cancer detection,\nincrease diagnostic confidence, and improve patient management in routine\nclinical workflows.",
+      "link": "http://arxiv.org/abs/2509.11714v1",
+      "published_date": "September 15, 2025",
+      "published_date_sort": "2025-09-15",
+      "citations": 0,
+      "institutions": "Unknown"
+    },
+    {
+      "title": "Probabilistic Robustness Analysis in High Dimensional Space: Application\n  to Semantic Segmentation Network",
+      "authors": "Navid Hashemi, Samuel Sasaki, Diego Manzanas Lopez, Ipek Oguz, Meiyi Ma, Taylor T. Johnson",
+      "journal": "arXiv",
+      "snippet": "Semantic segmentation networks (SSNs) play a critical role in domains such as\nmedical imaging, autonomous driving, and environmental monitoring, where safety\nhinges on reliable model behavior under uncertainty. Yet, existing\nprobabilistic verification approaches struggle to scale with the complexity and\ndimensionality of modern segmentation tasks, often yielding guarantees that are\ntoo conservative to be practical. We introduce a probabilistic verification\nframework that is both architecture-agnostic and scalable to high-dimensional\noutputs. Our approach combines sampling-based reachability analysis with\nconformal inference (CI) to deliver provable guarantees while avoiding the\nexcessive conservatism of prior methods. To counteract CI's limitations in\nhigh-dimensional settings, we propose novel strategies that reduce conservatism\nwithout compromising rigor. Empirical evaluation on large-scale segmentation\nmodels across CamVid, OCTA-500, Lung Segmentation, and Cityscapes demonstrates\nthat our method provides reliable safety guarantees while substantially\ntightening bounds compared to SOTA. We also provide a toolbox implementing this\ntechnique, available on Github.",
+      "link": "http://arxiv.org/abs/2509.11838v1",
+      "published_date": "September 15, 2025",
+      "published_date_sort": "2025-09-15",
+      "citations": 0,
+      "institutions": "Unknown"
+    },
+    {
+      "title": "EgoMem: Lifelong Memory Agent for Full-duplex Omnimodal Models",
+      "authors": "Yiqun Yao, Naitong Yu, Xiang Li, Xin Jiang, Xuezhi Fang, Wenjia Ma, Xuying Meng, Jing Li, Aixin Sun, Yequan Wang",
+      "journal": "arXiv",
+      "snippet": "We introduce EgoMem, the first lifelong memory agent tailored for full-duplex\nmodels that process real-time omnimodal streams. EgoMem enables real-time\nmodels to recognize multiple users directly from raw audiovisual streams, to\nprovide personalized response, and to maintain long-term knowledge of users'\nfacts, preferences, and social relationships extracted from audiovisual\nhistory. EgoMem operates with three asynchronous processes: (i) a retrieval\nprocess that dynamically identifies user via face and voice, and gathers\nrelevant context from a long-term memory; (ii) an omnimodal dialog process that\ngenerates personalized audio responses based on the retrieved context; and\n(iii) a memory management process that automatically detects dialog boundaries\nfrom omnimodal streams, and extracts necessary information to update the\nlong-term memory. Unlike existing memory agents for LLMs, EgoMem relies\nentirely on raw audiovisual streams, making it especially suitable for\nlifelong, real-time, and embodied scenarios. Experimental results demonstrate\nthat EgoMem's retrieval and memory management modules achieve over 95% accuracy\non the test set. When integrated with a fine-tuned RoboEgo omnimodal chatbot,\nthe system achieves fact-consistency scores above 87% in real-time personalized\ndialogs, establishing a strong baseline for future research.",
+      "link": "http://arxiv.org/abs/2509.11914v1",
+      "published_date": "September 15, 2025",
+      "published_date_sort": "2025-09-15",
+      "citations": 0,
+      "institutions": "Unknown"
+    },
+    {
+      "title": "Control Analysis and Design for Autonomous Vehicles Subject to Imperfect\n  AI-Based Perception",
+      "authors": "Tao Yan, Zheyu Zhang, Jingjing Jiang, Wen-Hua Chen",
+      "journal": "arXiv",
+      "snippet": "Safety is a critical concern in autonomous vehicle (AV) systems, especially\nwhen AI-based sensing and perception modules are involved. However, due to the\nblack box nature of AI algorithms, it makes closed-loop analysis and synthesis\nparticularly challenging, for example, establishing closed-loop stability and\nensuring performance, while they are fundamental to AV safety. To approach this\ndifficulty, this paper aims to develop new modeling, analysis, and synthesis\ntools for AI-based AVs. Inspired by recent developments in perception error\nmodels (PEMs), the focus is shifted from directly modeling AI-based perception\nprocesses to characterizing the perception errors they produce. Two key classes\nof AI-induced perception errors are considered: misdetection and measurement\nnoise. These error patterns are modeled using continuous-time Markov chains and\nWiener processes, respectively. By means of that, a PEM-augmented driving model\nis proposed, with which we are able to establish the closed-loop stability for\na class of AI-driven AV systems via stochastic calculus. Furthermore, a\nperformance-guaranteed output feedback control synthesis method is presented,\nwhich ensures both stability and satisfactory performance. The method is\nformulated as a convex optimization problem, allowing for efficient numerical\nsolutions. The results are then applied to an adaptive cruise control (ACC)\nscenario, demonstrating their effectiveness and robustness despite the\ncorrupted and misleading perception.",
+      "link": "http://arxiv.org/abs/2509.12137v1",
+      "published_date": "September 15, 2025",
+      "published_date_sort": "2025-09-15",
       "citations": 0,
       "institutions": "Unknown"
     },
@@ -54,6 +120,17 @@
       "journal": "Google Scholar Result",
       "snippet": "Existing agents for solving tasks such as ML engineering rely on prompting powerful language models. As a result, these agents do not improve with more experience. In this …",
       "link": "https://arxiv.org/abs/2509.01684",
+      "published_date": "September 2025",
+      "published_date_sort": "2025-09-01",
+      "citations": 0,
+      "institutions": "Unknown"
+    },
+    {
+      "title": "An AI system to help scientists write expert-level empirical software",
+      "authors": "E Aygün, A Belyaeva, G Comanici, M Coram… - arXiv preprint arXiv …, 2025 - arxiv.org",
+      "journal": "Google Scholar Result",
+      "snippet": "The cycle of scientific discovery is frequently bottlenecked by the slow, manual creation of software to support computational experiments. To address this, we present an AI system …",
+      "link": "https://arxiv.org/abs/2509.06503",
       "published_date": "September 2025",
       "published_date_sort": "2025-09-01",
       "citations": 0,
@@ -93,25 +170,14 @@
       "institutions": "Unknown"
     },
     {
-      "title": "AutoMind: Adaptive Knowledgeable Agent for Automated Data Science",
-      "authors": "Y Ou, Y Luo, J Zheng, L Wei, S Qiao, J Zhang… - arXiv preprint arXiv …, 2025 - arxiv.org",
+      "title": "AI Scientists Fail Without Strong Implementation Capability",
+      "authors": "M Zhu, Q Xie, Y Weng, J Wu, Z Lin, L Yang… - arXiv preprint arXiv …, 2025 - arxiv.org",
       "journal": "Google Scholar Result",
-      "snippet": "Large Language Model (LLM) agents have shown great potential in addressing real-world data science problems. LLM-driven data science agents promise to automate the entire …",
-      "link": "https://arxiv.org/abs/2506.10974",
+      "snippet": "The emergence of Artificial Intelligence (AI) Scientist represents a paradigm shift in scientific discovery, with large language models (LLMs) taking the lead as the primary executor in the …",
+      "link": "https://arxiv.org/abs/2506.01372",
       "published_date": "June 2025",
       "published_date_sort": "2025-06-01",
-      "citations": 1,
-      "institutions": "Unknown"
-    },
-    {
-      "title": "LMR-BENCH: Evaluating LLM Agent's Ability on Reproducing Language Modeling Research",
-      "authors": "S Yan, R Li, Z Luo, Z Wang, D Li, L Jing, K He… - arXiv preprint arXiv …, 2025 - arxiv.org",
-      "journal": "Google Scholar Result",
-      "snippet": "Large language model (LLM) agents have demonstrated remarkable potential in advancing scientific discovery. However, their capability in the fundamental yet crucial task of …",
-      "link": "https://arxiv.org/abs/2506.17335",
-      "published_date": "June 2025",
-      "published_date_sort": "2025-06-01",
-      "citations": 1,
+      "citations": 5,
       "institutions": "Unknown"
     },
     {
@@ -137,28 +203,6 @@
       "institutions": "Unknown"
     },
     {
-      "title": "The Automated LLM Speedrunning Benchmark: Reproducing NanoGPT Improvements",
-      "authors": "B Zhao, D Magka, M Jiang, X Li, R Raileanu… - arXiv preprint arXiv …, 2025 - arxiv.org",
-      "journal": "Google Scholar Result",
-      "snippet": "Rapid advancements in large language models (LLMs) have the potential to assist in scientific progress. A critical capability toward this endeavor is the ability to reproduce …",
-      "link": "https://arxiv.org/abs/2506.22419",
-      "published_date": "June 2025",
-      "published_date_sort": "2025-06-01",
-      "citations": 1,
-      "institutions": "Unknown"
-    },
-    {
-      "title": "AI Scientists Fail Without Strong Implementation Capability",
-      "authors": "M Zhu, Q Xie, Y Weng, J Wu, Z Lin, L Yang… - arXiv preprint arXiv …, 2025 - arxiv.org",
-      "journal": "Google Scholar Result",
-      "snippet": "The emergence of Artificial Intelligence (AI) Scientist represents a paradigm shift in scientific discovery, with large language models (LLMs) taking the lead as the primary executor in the …",
-      "link": "https://arxiv.org/abs/2506.01372",
-      "published_date": "June 2025",
-      "published_date_sort": "2025-06-01",
-      "citations": 5,
-      "institutions": "Unknown"
-    },
-    {
       "title": "A Comprehensive Survey of Deep Research: Systems, Methodologies, and Applications",
       "authors": "R Xu, J Peng - arXiv preprint arXiv:2506.12594, 2025 - arxiv.org",
       "journal": "Google Scholar Result",
@@ -170,11 +214,66 @@
       "institutions": "Unknown"
     },
     {
+      "title": "The Automated LLM Speedrunning Benchmark: Reproducing NanoGPT Improvements",
+      "authors": "B Zhao, D Magka, M Jiang, X Li, R Raileanu… - arXiv preprint arXiv …, 2025 - arxiv.org",
+      "journal": "Google Scholar Result",
+      "snippet": "Rapid advancements in large language models (LLMs) have the potential to assist in scientific progress. A critical capability toward this endeavor is the ability to reproduce …",
+      "link": "https://arxiv.org/abs/2506.22419",
+      "published_date": "June 2025",
+      "published_date_sort": "2025-06-01",
+      "citations": 1,
+      "institutions": "Unknown"
+    },
+    {
+      "title": "LMR-BENCH: Evaluating LLM Agent's Ability on Reproducing Language Modeling Research",
+      "authors": "S Yan, R Li, Z Luo, Z Wang, D Li, L Jing, K He… - arXiv preprint arXiv …, 2025 - arxiv.org",
+      "journal": "Google Scholar Result",
+      "snippet": "Large language model (LLM) agents have demonstrated remarkable potential in advancing scientific discovery. However, their capability in the fundamental yet crucial task of …",
+      "link": "https://arxiv.org/abs/2506.17335",
+      "published_date": "June 2025",
+      "published_date_sort": "2025-06-01",
+      "citations": 1,
+      "institutions": "Unknown"
+    },
+    {
+      "title": "AutoMind: Adaptive Knowledgeable Agent for Automated Data Science",
+      "authors": "Y Ou, Y Luo, J Zheng, L Wei, S Qiao, J Zhang… - arXiv preprint arXiv …, 2025 - arxiv.org",
+      "journal": "Google Scholar Result",
+      "snippet": "Large Language Model (LLM) agents have shown great potential in addressing real-world data science problems. LLM-driven data science agents promise to automate the entire …",
+      "link": "https://arxiv.org/abs/2506.10974",
+      "published_date": "June 2025",
+      "published_date_sort": "2025-06-01",
+      "citations": 1,
+      "institutions": "Unknown"
+    },
+    {
       "title": "IDA-Bench: Evaluating LLMs on Interactive Guided Data Analysis",
       "authors": "H Li, H Liu, T Zhu, T Guo, Z Zheng, X Deng… - arXiv preprint arXiv …, 2025 - arxiv.org",
       "journal": "Google Scholar Result",
       "snippet": "Large Language Models (LLMs) show promise as data analysis agents, but existing benchmarks overlook the iterative nature of the field, where experts' decisions evolve with …",
       "link": "https://arxiv.org/abs/2505.18223",
+      "published_date": "May 2025",
+      "published_date_sort": "2025-05-01",
+      "citations": 1,
+      "institutions": "Unknown"
+    },
+    {
+      "title": "RepoMaster: Autonomous Exploration and Understanding of GitHub Repositories for Complex Task Solving",
+      "authors": "H Wang, Z Ni, S Zhang, S Lu, S Hu, Z He, C Hu… - arXiv preprint arXiv …, 2025 - arxiv.org",
+      "journal": "Google Scholar Result",
+      "snippet": "The ultimate goal of code agents is to solve complex tasks autonomously. Although large language models (LLMs) have made substantial progress in code generation, real-world …",
+      "link": "https://arxiv.org/abs/2505.21577",
+      "published_date": "May 2025",
+      "published_date_sort": "2025-05-01",
+      "citations": 1,
+      "institutions": "Unknown"
+    },
+    {
+      "title": "Mlzero: A multi-agent system for end-to-end machine learning automation",
+      "authors": "H Fang, B Han, N Erickson, X Zhang, S Zhou… - arXiv preprint arXiv …, 2025 - arxiv.org",
+      "journal": "Google Scholar Result",
+      "snippet": "Existing AutoML systems have advanced the automation of machine learning (ML); however, they still require substantial manual configuration and expert input, particularly …",
+      "link": "https://arxiv.org/abs/2505.13941",
       "published_date": "May 2025",
       "published_date_sort": "2025-05-01",
       "citations": 1,
@@ -211,28 +310,6 @@
       "published_date": "May 2025",
       "published_date_sort": "2025-05-01",
       "citations": 2,
-      "institutions": "Unknown"
-    },
-    {
-      "title": "RepoMaster: Autonomous Exploration and Understanding of GitHub Repositories for Complex Task Solving",
-      "authors": "H Wang, Z Ni, S Zhang, S Lu, S Hu, Z He, C Hu… - arXiv preprint arXiv …, 2025 - arxiv.org",
-      "journal": "Google Scholar Result",
-      "snippet": "The ultimate goal of code agents is to solve complex tasks autonomously. Although large language models (LLMs) have made substantial progress in code generation, real-world …",
-      "link": "https://arxiv.org/abs/2505.21577",
-      "published_date": "May 2025",
-      "published_date_sort": "2025-05-01",
-      "citations": 1,
-      "institutions": "Unknown"
-    },
-    {
-      "title": "Mlzero: A multi-agent system for end-to-end machine learning automation",
-      "authors": "H Fang, B Han, N Erickson, X Zhang, S Zhou… - arXiv preprint arXiv …, 2025 - arxiv.org",
-      "journal": "Google Scholar Result",
-      "snippet": "Existing AutoML systems have advanced the automation of machine learning (ML); however, they still require substantial manual configuration and expert input, particularly …",
-      "link": "https://arxiv.org/abs/2505.13941",
-      "published_date": "May 2025",
-      "published_date_sort": "2025-05-01",
-      "citations": 1,
       "institutions": "Unknown"
     },
     {
