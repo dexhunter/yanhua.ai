@@ -1,11 +1,11 @@
 {
-  "last_updated": "2025-09-20 00:10:19 UTC",
+  "last_updated": "2025-09-21 00:12:07 UTC",
   "target_paper": "https://www.arxiv.org/abs/2502.13138",
   "arxiv_id": "2502.13138",
-  "total_citations": 28,
+  "total_citations": 20,
   "h_index": 5,
-  "recent_citations": 10,
-  "avg_citations_per_month": "4.00",
+  "recent_citations": 2,
+  "avg_citations_per_month": "2.86",
   "timeline": [
     {
       "date": "2025-03-01",
@@ -33,98 +33,10 @@
     },
     {
       "date": "2025-09-01",
-      "citations": 28
+      "citations": 20
     }
   ],
   "papers": [
-    {
-      "title": "Generalizable Geometric Image Caption Synthesis",
-      "authors": "Yue Xin, Wenyuan Wang, Rui Pan, Ruida Wang, Howard Meng, Renjie Pi, Shizhe Diao, Tong Zhang",
-      "journal": "arXiv",
-      "snippet": "Multimodal large language models have various practical applications that\ndemand strong reasoning abilities. Despite recent advancements, these models\nstill struggle to solve complex geometric problems. A key challenge stems from\nthe lack of high-quality image-text pair datasets for understanding geometric\nimages. Furthermore, most template-based data synthesis pipelines typically\nfail to generalize to questions beyond their predefined templates. In this\npaper, we bridge this gap by introducing a complementary process of\nReinforcement Learning with Verifiable Rewards (RLVR) into the data generation\npipeline. By adopting RLVR to refine captions for geometric images synthesized\nfrom 50 basic geometric relations and using reward signals derived from\nmathematical problem-solving tasks, our pipeline successfully captures the key\nfeatures of geometry problem-solving. This enables better task generalization\nand yields non-trivial improvements. Furthermore, even in out-of-distribution\nscenarios, the generated dataset enhances the general reasoning capabilities of\nmultimodal large language models, yielding accuracy improvements of\n$2.8\\%\\text{-}4.8\\%$ in statistics, arithmetic, algebraic, and numerical tasks\nwith non-geometric input images of MathVista and MathVerse, along with\n$2.4\\%\\text{-}3.9\\%$ improvements in Art, Design, Tech, and Engineering tasks\nin MMMU.",
-      "link": "http://arxiv.org/abs/2509.15217v1",
-      "published_date": "September 18, 2025",
-      "published_date_sort": "2025-09-18",
-      "citations": 0,
-      "institutions": "Unknown"
-    },
-    {
-      "title": "Probabilistic and nonlinear compressive sensing",
-      "authors": "Lukas Silvester Barth, Paulo von Petersenn",
-      "journal": "arXiv",
-      "snippet": "We present a smooth probabilistic reformulation of $\\ell_0$ regularized\nregression that does not require Monte Carlo sampling and allows for the\ncomputation of exact gradients, facilitating rapid convergence to local optima\nof the best subset selection problem. The method drastically improves\nconvergence speed compared to similar Monte Carlo based approaches.\nFurthermore, we empirically demonstrate that it outperforms compressive sensing\nalgorithms such as IHT and (Relaxed-) Lasso across a wide range of settings and\nsignal-to-noise ratios. The implementation runs efficiently on both CPUs and\nGPUs and is freely available at\nhttps://github.com/L0-and-behold/probabilistic-nonlinear-cs.\n  We also contribute to research on nonlinear generalizations of compressive\nsensing by investigating when parameter recovery of a nonlinear teacher network\nis possible through compression of a student network. Building upon theorems of\nFefferman and Markel, we show theoretically that the global optimum in the\ninfinite-data limit enforces recovery up to certain symmetries. For empirical\nvalidation, we implement a normal-form algorithm that selects a canonical\nrepresentative within each symmetry class. However, while compression can help\nto improve test loss, we find that exact parameter recovery is not even\npossible up to symmetries. In particular, we observe a surprising rebound\neffect where teacher and student configurations initially converge but\nsubsequently diverge despite continuous decrease in test loss. These findings\nindicate fundamental differences between linear and nonlinear compressive\nsensing.",
-      "link": "http://arxiv.org/abs/2509.15060v1",
-      "published_date": "September 18, 2025",
-      "published_date_sort": "2025-09-18",
-      "citations": 0,
-      "institutions": "Unknown"
-    },
-    {
-      "title": "Evolving Language Models without Labels: Majority Drives Selection,\n  Novelty Promotes Variation",
-      "authors": "Yujun Zhou, Zhenwen Liang, Haolin Liu, Wenhao Yu, Kishan Panaganti, Linfeng Song, Dian Yu, Xiangliang Zhang, Haitao Mi, Dong Yu",
-      "journal": "arXiv",
-      "snippet": "Large language models (LLMs) are increasingly trained with reinforcement\nlearning from verifiable rewards (RLVR), yet real-world deployment demands\nmodels that can self-improve without labels or external judges. Existing\nlabel-free methods, confidence minimization, self-consistency, or majority-vote\nobjectives, stabilize learning but steadily shrink exploration, causing an\nentropy collapse: generations become shorter, less diverse, and brittle. Unlike\nprior approaches such as Test-Time Reinforcement Learning (TTRL), which\nprimarily adapt models to the immediate unlabeled dataset at hand, our goal is\nbroader: to enable general improvements without sacrificing the model's\ninherent exploration capacity and generalization ability, i.e., evolving. We\nformalize this issue and propose EVolution-Oriented and Label-free\nReinforcement Learning (EVOL-RL), a simple rule that couples stability with\nvariation under a label-free setting. EVOL-RL keeps the majority-voted answer\nas a stable anchor (selection) while adding a novelty-aware reward that favors\nresponses whose reasoning differs from what has already been produced\n(variation), measured in semantic space. Implemented with GRPO, EVOL-RL also\nuses asymmetric clipping to preserve strong signals and an entropy regularizer\nto sustain search. This majority-for-selection + novelty-for-variation design\nprevents collapse, maintains longer and more informative chains of thought, and\nimproves both pass@1 and pass@n. EVOL-RL consistently outperforms the\nmajority-only TTRL baseline; e.g., training on label-free AIME24 lifts\nQwen3-4B-Base AIME25 pass@1 from TTRL's 4.6% to 16.4%, and pass@16 from 18.5%\nto 37.9%. EVOL-RL not only prevents diversity collapse but also unlocks\nstronger generalization across domains (e.g., GPQA). Furthermore, we\ndemonstrate that EVOL-RL also boosts performance in the RLVR setting,\nhighlighting its broad applicability.",
-      "link": "http://arxiv.org/abs/2509.15194v1",
-      "published_date": "September 18, 2025",
-      "published_date_sort": "2025-09-18",
-      "citations": 0,
-      "institutions": "Unknown"
-    },
-    {
-      "title": "Out-of-Sight Trajectories: Tracking, Fusion, and Prediction",
-      "authors": "Haichao Zhang, Yi Xu, Yun Fu",
-      "journal": "arXiv",
-      "snippet": "Trajectory prediction is a critical task in computer vision and autonomous\nsystems, playing a key role in autonomous driving, robotics, surveillance, and\nvirtual reality. Existing methods often rely on complete and noise-free\nobservational data, overlooking the challenges associated with out-of-sight\nobjects and the inherent noise in sensor data caused by limited camera\ncoverage, obstructions, and the absence of ground truth for denoised\ntrajectories. These limitations pose safety risks and hinder reliable\nprediction in real-world scenarios. In this extended work, we present\nadvancements in Out-of-Sight Trajectory (OST), a novel task that predicts the\nnoise-free visual trajectories of out-of-sight objects using noisy sensor data.\nBuilding on our previous research, we broaden the scope of Out-of-Sight\nTrajectory Prediction (OOSTraj) to include pedestrians and vehicles, extending\nits applicability to autonomous driving, robotics, surveillance, and virtual\nreality. Our enhanced Vision-Positioning Denoising Module leverages camera\ncalibration to establish a vision-positioning mapping, addressing the lack of\nvisual references, while effectively denoising noisy sensor data in an\nunsupervised manner. Through extensive evaluations on the Vi-Fi and JRDB\ndatasets, our approach achieves state-of-the-art performance in both trajectory\ndenoising and prediction, significantly surpassing previous baselines.\nAdditionally, we introduce comparisons with traditional denoising methods, such\nas Kalman filtering, and adapt recent trajectory prediction models to our task,\nproviding a comprehensive benchmark. This work represents the first initiative\nto integrate vision-positioning projection for denoising noisy sensor\ntrajectories of out-of-sight agents, paving the way for future advances. The\ncode and preprocessed datasets are available at github.com/Hai-chao-Zhang/OST",
-      "link": "http://arxiv.org/abs/2509.15219v1",
-      "published_date": "September 18, 2025",
-      "published_date_sort": "2025-09-18",
-      "citations": 0,
-      "institutions": "Unknown"
-    },
-    {
-      "title": "Limitations of Public Chest Radiography Datasets for Artificial\n  Intelligence: Label Quality, Domain Shift, Bias and Evaluation Challenges",
-      "authors": "Amy Rafferty, Rishi Ramaesh, Ajitha Rajan",
-      "journal": "arXiv",
-      "snippet": "Artificial intelligence has shown significant promise in chest radiography,\nwhere deep learning models can approach radiologist-level diagnostic\nperformance. Progress has been accelerated by large public datasets such as\nMIMIC-CXR, ChestX-ray14, PadChest, and CheXpert, which provide hundreds of\nthousands of labelled images with pathology annotations. However, these\ndatasets also present important limitations. Automated label extraction from\nradiology reports introduces errors, particularly in handling uncertainty and\nnegation, and radiologist review frequently disagrees with assigned labels. In\naddition, domain shift and population bias restrict model generalisability,\nwhile evaluation practices often overlook clinically meaningful measures. We\nconduct a systematic analysis of these challenges, focusing on label quality,\ndataset bias, and domain shift. Our cross-dataset domain shift evaluation\nacross multiple model architectures revealed substantial external performance\ndegradation, with pronounced reductions in AUPRC and F1 scores relative to\ninternal testing. To assess dataset bias, we trained a source-classification\nmodel that distinguished datasets with near-perfect accuracy, and performed\nsubgroup analyses showing reduced performance for minority age and sex groups.\nFinally, expert review by two board-certified radiologists identified\nsignificant disagreement with public dataset labels. Our findings highlight\nimportant clinical weaknesses of current benchmarks and emphasise the need for\nclinician-validated datasets and fairer evaluation frameworks.",
-      "link": "http://arxiv.org/abs/2509.15107v1",
-      "published_date": "September 18, 2025",
-      "published_date_sort": "2025-09-18",
-      "citations": 0,
-      "institutions": "Unknown"
-    },
-    {
-      "title": "Stochastic Adaptive Gradient Descent Without Descent",
-      "authors": "Jean-François Aujol, Jérémie Bigot, Camille Castera",
-      "journal": "arXiv",
-      "snippet": "We introduce a new adaptive step-size strategy for convex optimization with\nstochastic gradient that exploits the local geometry of the objective function\nonly by means of a first-order stochastic oracle and without any\nhyper-parameter tuning. The method comes from a theoretically-grounded\nadaptation of the Adaptive Gradient Descent Without Descent method to the\nstochastic setting. We prove the convergence of stochastic gradient descent\nwith our step-size under various assumptions, and we show that it empirically\ncompetes against tuned baselines.",
-      "link": "http://arxiv.org/abs/2509.14969v1",
-      "published_date": "September 18, 2025",
-      "published_date_sort": "2025-09-18",
-      "citations": 0,
-      "institutions": "Unknown"
-    },
-    {
-      "title": "MaRVIn: A Cross-Layer Mixed-Precision RISC-V Framework for DNN\n  Inference, from ISA Extension to Hardware Acceleration",
-      "authors": "Giorgos Armeniakos, Alexis Maras, Sotirios Xydis, Dimitrios Soudris",
-      "journal": "arXiv",
-      "snippet": "The evolution of quantization and mixed-precision techniques has unlocked new\npossibilities for enhancing the speed and energy efficiency of NNs. Several\nrecent studies indicate that adapting precision levels across different\nparameters can maintain accuracy comparable to full-precision models while\nsignificantly reducing computational demands. However, existing embedded\nmicroprocessors lack sufficient architectural support for efficiently executing\nmixed-precision NNs, both in terms of ISA extensions and hardware design,\nresulting in inefficiencies such as excessive data packing/unpacking and\nunderutilized arithmetic units. In this work, we propose novel ISA extensions\nand a micro-architecture implementation specifically designed to optimize\nmixed-precision execution, enabling energy-efficient deep learning inference on\nRISC-V architectures. We introduce MaRVIn, a cross-layer hardware-software\nco-design framework that enhances power efficiency and performance through a\ncombination of hardware improvements, mixed-precision quantization, ISA-level\noptimizations, and cycle-accurate emulation. At the hardware level, we enhance\nthe ALU with configurable mixed-precision arithmetic (2, 4, 8 bits) for\nweights/activations and employ multi-pumping to reduce execution latency while\nimplementing soft SIMD for efficient 2-bit ops. At the software level, we\nintegrate a pruning-aware fine-tuning method to optimize model compression and\na greedy-based DSE approach to efficiently search for Pareto-optimal\nmixed-quantized models. Additionally, we incorporate voltage scaling to boost\nthe power efficiency of our system. Our experimental evaluation over widely\nused DNNs and datasets, such as CIFAR10 and ImageNet, demonstrates that our\nframework can achieve, on average, 17.6x speedup for less than 1% accuracy loss\nand outperforms the ISA-agnostic state-of-the-art RISC-V cores, delivering up\nto 1.8 TOPs/W.",
-      "link": "http://arxiv.org/abs/2509.15187v1",
-      "published_date": "September 18, 2025",
-      "published_date_sort": "2025-09-18",
-      "citations": 0,
-      "institutions": "Unknown"
-    },
-    {
-      "title": "TDRM: Smooth Reward Models with Temporal Difference for LLM RL and\n  Inference",
-      "authors": "Dan Zhang, Min Cai, Jonathan Li, Ziniu Hu, Yisong Yue, Yuxiao Dong, Jie Tang",
-      "journal": "arXiv",
-      "snippet": "Reward models are central to both reinforcement learning (RL) with language\nmodels and inference-time verification. However, existing reward models often\nlack temporal consistency, leading to ineffective policy updates and unstable\nRL training. We introduce TDRM, a method for learning smoother and more\nreliable reward models by minimizing temporal differences during training. This\ntemporal-difference (TD) regularization produces smooth rewards and improves\nalignment with long-term objectives. Incorporating TDRM into the actor-critic\nstyle online RL loop yields consistent empirical gains. It is worth noting that\nTDRM is a supplement to verifiable reward methods, and both can be used in\nseries. Experiments show that TD-trained process reward models (PRMs) improve\nperformance across Best-of-N (up to 6.6%) and tree-search (up to 23.7%)\nsettings. When combined with Reinforcement Learning with Verifiable Rewards\n(RLVR), TD-trained PRMs lead to more data-efficient RL -- achieving comparable\nperformance with just 2.5k data to what baseline methods require 50.1k data to\nattain -- and yield higher-quality language model policies on 8 model variants\n(5 series), e.g., Qwen2.5-(0.5B, 1,5B), GLM4-9B-0414, GLM-Z1-9B-0414,\nQwen2.5-Math-(1.5B, 7B), and DeepSeek-R1-Distill-Qwen-(1.5B, 7B). We release\nall code at https://github.com/THUDM/TDRM.",
-      "link": "http://arxiv.org/abs/2509.15110v1",
-      "published_date": "September 18, 2025",
-      "published_date_sort": "2025-09-18",
-      "citations": 0,
-      "institutions": "Unknown"
-    },
     {
       "title": "An AI system to help scientists write expert-level empirical software",
       "authors": "E Aygün, A Belyaeva, G Comanici, M Coram… - arXiv preprint arXiv …, 2025 - arxiv.org",
@@ -181,22 +93,33 @@
       "institutions": "Unknown"
     },
     {
-      "title": "Towards Community-Driven Agents for Machine Learning Engineering",
-      "authors": "S Li, W Sun, S Li, A Talwalkar, Y Yang - arXiv preprint arXiv:2506.20640, 2025 - arxiv.org",
-      "journal": "Google Scholar Result",
-      "snippet": "Large language model-based machine learning (ML) agents have shown great promise in automating ML research. However, existing agents typically operate in isolation on a given …",
-      "link": "https://arxiv.org/abs/2506.20640",
-      "published_date": "June 2025",
-      "published_date_sort": "2025-06-01",
-      "citations": 0,
-      "institutions": "Unknown"
-    },
-    {
       "title": "MLE-STAR: Machine Learning Engineering Agent via Search and Targeted Refinement",
       "authors": "J Nam, J Yoon, J Chen, J Shin, SÖ Arık… - arXiv preprint arXiv …, 2025 - arxiv.org",
       "journal": "Google Scholar Result",
       "snippet": "Agents based on large language models (LLMs) for machine learning engineering (MLE) can automatically implement ML models via code generation. However, existing approaches …",
       "link": "https://arxiv.org/abs/2506.15692",
+      "published_date": "June 2025",
+      "published_date_sort": "2025-06-01",
+      "citations": 1,
+      "institutions": "Unknown"
+    },
+    {
+      "title": "The Automated LLM Speedrunning Benchmark: Reproducing NanoGPT Improvements",
+      "authors": "B Zhao, D Magka, M Jiang, X Li, R Raileanu… - arXiv preprint arXiv …, 2025 - arxiv.org",
+      "journal": "Google Scholar Result",
+      "snippet": "Rapid advancements in large language models (LLMs) have the potential to assist in scientific progress. A critical capability toward this endeavor is the ability to reproduce …",
+      "link": "https://arxiv.org/abs/2506.22419",
+      "published_date": "June 2025",
+      "published_date_sort": "2025-06-01",
+      "citations": 1,
+      "institutions": "Unknown"
+    },
+    {
+      "title": "LMR-BENCH: Evaluating LLM Agent's Ability on Reproducing Language Modeling Research",
+      "authors": "S Yan, R Li, Z Luo, Z Wang, D Li, L Jing, K He… - arXiv preprint arXiv …, 2025 - arxiv.org",
+      "journal": "Google Scholar Result",
+      "snippet": "Large language model (LLM) agents have demonstrated remarkable potential in advancing scientific discovery. However, their capability in the fundamental yet crucial task of …",
+      "link": "https://arxiv.org/abs/2506.17335",
       "published_date": "June 2025",
       "published_date_sort": "2025-06-01",
       "citations": 1,
@@ -225,25 +148,14 @@
       "institutions": "Unknown"
     },
     {
-      "title": "LMR-BENCH: Evaluating LLM Agent's Ability on Reproducing Language Modeling Research",
-      "authors": "S Yan, R Li, Z Luo, Z Wang, D Li, L Jing, K He… - arXiv preprint arXiv …, 2025 - arxiv.org",
+      "title": "Towards Community-Driven Agents for Machine Learning Engineering",
+      "authors": "S Li, W Sun, S Li, A Talwalkar, Y Yang - arXiv preprint arXiv:2506.20640, 2025 - arxiv.org",
       "journal": "Google Scholar Result",
-      "snippet": "Large language model (LLM) agents have demonstrated remarkable potential in advancing scientific discovery. However, their capability in the fundamental yet crucial task of …",
-      "link": "https://arxiv.org/abs/2506.17335",
+      "snippet": "Large language model-based machine learning (ML) agents have shown great promise in automating ML research. However, existing agents typically operate in isolation on a given …",
+      "link": "https://arxiv.org/abs/2506.20640",
       "published_date": "June 2025",
       "published_date_sort": "2025-06-01",
-      "citations": 1,
-      "institutions": "Unknown"
-    },
-    {
-      "title": "The Automated LLM Speedrunning Benchmark: Reproducing NanoGPT Improvements",
-      "authors": "B Zhao, D Magka, M Jiang, X Li, R Raileanu… - arXiv preprint arXiv …, 2025 - arxiv.org",
-      "journal": "Google Scholar Result",
-      "snippet": "Rapid advancements in large language models (LLMs) have the potential to assist in scientific progress. A critical capability toward this endeavor is the ability to reproduce …",
-      "link": "https://arxiv.org/abs/2506.22419",
-      "published_date": "June 2025",
-      "published_date_sort": "2025-06-01",
-      "citations": 1,
+      "citations": 0,
       "institutions": "Unknown"
     },
     {
@@ -258,14 +170,14 @@
       "institutions": "Unknown"
     },
     {
-      "title": "CodePDE: An Inference Framework for LLM-driven PDE Solver Generation",
-      "authors": "S Li, T Marwah, J Shen, W Sun, A Risteski… - arXiv preprint arXiv …, 2025 - arxiv.org",
+      "title": "Mlzero: A multi-agent system for end-to-end machine learning automation",
+      "authors": "H Fang, B Han, N Erickson, X Zhang, S Zhou… - arXiv preprint arXiv …, 2025 - arxiv.org",
       "journal": "Google Scholar Result",
-      "snippet": "Partial differential equations (PDEs) are fundamental to modeling physical systems, yet solving them remains a complex challenge. Traditional numerical solvers rely on expert …",
-      "link": "https://arxiv.org/abs/2505.08783",
+      "snippet": "Existing AutoML systems have advanced the automation of machine learning (ML); however, they still require substantial manual configuration and expert input, particularly …",
+      "link": "https://arxiv.org/abs/2505.13941",
       "published_date": "May 2025",
       "published_date_sort": "2025-05-01",
-      "citations": 3,
+      "citations": 1,
       "institutions": "Unknown"
     },
     {
@@ -274,17 +186,6 @@
       "journal": "Google Scholar Result",
       "snippet": "The ultimate goal of code agents is to solve complex tasks autonomously. Although large language models (LLMs) have made substantial progress in code generation, real-world …",
       "link": "https://arxiv.org/abs/2505.21577",
-      "published_date": "May 2025",
-      "published_date_sort": "2025-05-01",
-      "citations": 2,
-      "institutions": "Unknown"
-    },
-    {
-      "title": "Mle-dojo: Interactive environments for empowering llm agents in machine learning engineering",
-      "authors": "R Qiang, Y Zhuang, Y Li, R Zhang, C Li… - arXiv preprint arXiv …, 2025 - arxiv.org",
-      "journal": "Google Scholar Result",
-      "snippet": "We introduce MLE-Dojo, a Gym-style framework for systematically reinforcement learning, evaluating, and improving autonomous large language model (LLM) agents in iterative …",
-      "link": "https://arxiv.org/abs/2505.07782",
       "published_date": "May 2025",
       "published_date_sort": "2025-05-01",
       "citations": 2,
@@ -302,14 +203,25 @@
       "institutions": "Unknown"
     },
     {
-      "title": "Mlzero: A multi-agent system for end-to-end machine learning automation",
-      "authors": "H Fang, B Han, N Erickson, X Zhang, S Zhou… - arXiv preprint arXiv …, 2025 - arxiv.org",
+      "title": "Mle-dojo: Interactive environments for empowering llm agents in machine learning engineering",
+      "authors": "R Qiang, Y Zhuang, Y Li, R Zhang, C Li… - arXiv preprint arXiv …, 2025 - arxiv.org",
       "journal": "Google Scholar Result",
-      "snippet": "Existing AutoML systems have advanced the automation of machine learning (ML); however, they still require substantial manual configuration and expert input, particularly …",
-      "link": "https://arxiv.org/abs/2505.13941",
+      "snippet": "We introduce MLE-Dojo, a Gym-style framework for systematically reinforcement learning, evaluating, and improving autonomous large language model (LLM) agents in iterative …",
+      "link": "https://arxiv.org/abs/2505.07782",
       "published_date": "May 2025",
       "published_date_sort": "2025-05-01",
-      "citations": 1,
+      "citations": 2,
+      "institutions": "Unknown"
+    },
+    {
+      "title": "CodePDE: An Inference Framework for LLM-driven PDE Solver Generation",
+      "authors": "S Li, T Marwah, J Shen, W Sun, A Risteski… - arXiv preprint arXiv …, 2025 - arxiv.org",
+      "journal": "Google Scholar Result",
+      "snippet": "Partial differential equations (PDEs) are fundamental to modeling physical systems, yet solving them remains a complex challenge. Traditional numerical solvers rely on expert …",
+      "link": "https://arxiv.org/abs/2505.08783",
+      "published_date": "May 2025",
+      "published_date_sort": "2025-05-01",
+      "citations": 3,
       "institutions": "Unknown"
     },
     {
