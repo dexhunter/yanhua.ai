@@ -1,11 +1,11 @@
 {
-  "last_updated": "2025-09-23 00:10:42 UTC",
+  "last_updated": "2025-09-24 00:10:31 UTC",
   "target_paper": "https://www.arxiv.org/abs/2502.13138",
   "arxiv_id": "2502.13138",
-  "total_citations": 20,
+  "total_citations": 28,
   "h_index": 5,
-  "recent_citations": 2,
-  "avg_citations_per_month": "2.86",
+  "recent_citations": 10,
+  "avg_citations_per_month": "4.00",
   "timeline": [
     {
       "date": "2025-03-01",
@@ -33,10 +33,98 @@
     },
     {
       "date": "2025-09-01",
-      "citations": 20
+      "citations": 28
     }
   ],
   "papers": [
+    {
+      "title": "Dual-View Alignment Learning with Hierarchical-Prompt for\n  Class-Imbalance Multi-Label Classification",
+      "authors": "Sheng Huang, Jiexuan Yan, Beiyan Liu, Bo Liu, Richang Hong",
+      "journal": "arXiv",
+      "snippet": "Real-world datasets often exhibit class imbalance across multiple categories,\nmanifesting as long-tailed distributions and few-shot scenarios. This is\nespecially challenging in Class-Imbalanced Multi-Label Image Classification\n(CI-MLIC) tasks, where data imbalance and multi-object recognition present\nsignificant obstacles. To address these challenges, we propose a novel method\ntermed Dual-View Alignment Learning with Hierarchical Prompt (HP-DVAL), which\nleverages multi-modal knowledge from vision-language pretrained (VLP) models to\nmitigate the class-imbalance problem in multi-label settings. Specifically,\nHP-DVAL employs dual-view alignment learning to transfer the powerful feature\nrepresentation capabilities from VLP models by extracting complementary\nfeatures for accurate image-text alignment. To better adapt VLP models for\nCI-MLIC tasks, we introduce a hierarchical prompt-tuning strategy that utilizes\nglobal and local prompts to learn task-specific and context-related prior\nknowledge. Additionally, we design a semantic consistency loss during prompt\ntuning to prevent learned prompts from deviating from general knowledge\nembedded in VLP models. The effectiveness of our approach is validated on two\nCI-MLIC benchmarks: MS-COCO and VOC2007. Extensive experimental results\ndemonstrate the superiority of our method over SOTA approaches, achieving mAP\nimprovements of 10.0\\% and 5.2\\% on the long-tailed multi-label image\nclassification task, and 6.8\\% and 2.9\\% on the multi-label few-shot image\nclassification task.",
+      "link": "http://arxiv.org/abs/2509.17747v1",
+      "published_date": "September 22, 2025",
+      "published_date_sort": "2025-09-22",
+      "citations": 0,
+      "institutions": "Unknown"
+    },
+    {
+      "title": "Mechanistic Interpretability with SAEs: Probing Religion, Violence, and\n  Geography in Large Language Models",
+      "authors": "Katharina Simbeck, Mariam Mahran",
+      "journal": "arXiv",
+      "snippet": "Despite growing research on bias in large language models (LLMs), most work\nhas focused on gender and race, with little attention to religious identity.\nThis paper explores how religion is internally represented in LLMs and how it\nintersects with concepts of violence and geography. Using mechanistic\ninterpretability and Sparse Autoencoders (SAEs) via the Neuronpedia API, we\nanalyze latent feature activations across five models. We measure overlap\nbetween religion- and violence-related prompts and probe semantic patterns in\nactivation contexts. While all five religions show comparable internal\ncohesion, Islam is more frequently linked to features associated with violent\nlanguage. In contrast, geographic associations largely reflect real-world\nreligious demographics, revealing how models embed both factual distributions\nand cultural stereotypes. These findings highlight the value of structural\nanalysis in auditing not just outputs but also internal representations that\nshape model behavior.",
+      "link": "http://arxiv.org/abs/2509.17665v1",
+      "published_date": "September 22, 2025",
+      "published_date_sort": "2025-09-22",
+      "citations": 0,
+      "institutions": "Unknown"
+    },
+    {
+      "title": "Evaluating LLM-Generated Versus Human-Authored Responses in Role-Play\n  Dialogues",
+      "authors": "Dongxu Lu, Johan Jeuring, Albert Gatt",
+      "journal": "arXiv",
+      "snippet": "Evaluating large language models (LLMs) in long-form, knowledge-grounded\nrole-play dialogues remains challenging. This study compares LLM-generated and\nhuman-authored responses in multi-turn professional training simulations\nthrough human evaluation ($N=38$) and automated LLM-as-a-judge assessment.\nHuman evaluation revealed significant degradation in LLM-generated response\nquality across turns, particularly in naturalness, context maintenance and\noverall quality, while human-authored responses progressively improved. In line\nwith this finding, participants also indicated a consistent preference for\nhuman-authored dialogue. These human judgements were validated by our automated\nLLM-as-a-judge evaluation, where Gemini 2.0 Flash achieved strong alignment\nwith human evaluators on both zero-shot pairwise preference and stochastic\n6-shot construct ratings, confirming the widening quality gap between LLM and\nhuman responses over time. Our work contributes a multi-turn benchmark exposing\nLLM degradation in knowledge-grounded role-play dialogues and provides a\nvalidated hybrid evaluation framework to guide the reliable integration of LLMs\nin training simulations.",
+      "link": "http://arxiv.org/abs/2509.17694v1",
+      "published_date": "September 22, 2025",
+      "published_date_sort": "2025-09-22",
+      "citations": 0,
+      "institutions": "Unknown"
+    },
+    {
+      "title": "Efficient & Correct Predictive Equivalence for Decision Trees",
+      "authors": "Joao Marques-Silva, Alexey Ignatiev",
+      "journal": "arXiv",
+      "snippet": "The Rashomon set of decision trees (DTs) finds importance uses. Recent work\nshowed that DTs computing the same classification function, i.e. predictive\nequivalent DTs, can represent a significant fraction of the Rashomon set. Such\nredundancy is undesirable. For example, feature importance based on the\nRashomon set becomes inaccurate due the existence of predictive equivalent DTs,\ni.e. DTs with the same prediction for every possible input. In recent work,\nMcTavish et al. proposed solutions for several computational problems related\nwith DTs, including that of deciding predictive equivalent DTs. This approach,\nwhich this paper refers to as MBDSR, consists of applying the well-known method\nof Quine-McCluskey (QM) for obtaining minimum-size DNF (disjunctive normal\nform) representations of DTs, which are then used for comparing DTs for\npredictive equivalence. Furthermore, the minimum-size DNF representation was\nalso applied to computing explanations for the predictions made by DTs, and to\nfinding predictions in the presence of missing data. However, the problem of\nformula minimization is hard for the second level of the polynomial hierarchy,\nand the QM method may exhibit worst-case exponential running time and space.\nThis paper first demonstrates that there exist decision trees that trigger the\nworst-case exponential running time and space of the QM method. Second, the\npaper shows that the MBDSR approach can produce incorrect results for the\nproblem of deciding predictive equivalence. Third, the paper shows that any of\nthe problems to which the minimum-size DNF representation has been applied to\ncan in fact be solved in polynomial time, in the size of the DT. The\nexperiments confirm that, for DTs for which the the worst-case of the QM method\nis triggered, the algorithms proposed in this paper are orders of magnitude\nfaster than the ones proposed by McTavish et al.",
+      "link": "http://arxiv.org/abs/2509.17774v1",
+      "published_date": "September 22, 2025",
+      "published_date_sort": "2025-09-22",
+      "citations": 0,
+      "institutions": "Unknown"
+    },
+    {
+      "title": "HuMam: Humanoid Motion Control via End-to-End Deep Reinforcement\n  Learning with Mamba",
+      "authors": "Yinuo Wang, Yuanyang Qi, Jinzhao Zhou, Gavin Tao",
+      "journal": "arXiv",
+      "snippet": "End-to-end reinforcement learning (RL) for humanoid locomotion is appealing\nfor its compact perception-action mapping, yet practical policies often suffer\nfrom training instability, inefficient feature fusion, and high actuation cost.\nWe present HuMam, a state-centric end-to-end RL framework that employs a\nsingle-layer Mamba encoder to fuse robot-centric states with oriented footstep\ntargets and a continuous phase clock. The policy outputs joint position targets\ntracked by a low-level PD loop and is optimized with PPO. A concise six-term\nreward balances contact quality, swing smoothness, foot placement, posture, and\nbody stability while implicitly promoting energy saving. On the JVRC-1 humanoid\nin mc-mujoco, HuMam consistently improves learning efficiency, training\nstability, and overall task performance over a strong feedforward baseline,\nwhile reducing power consumption and torque peaks. To our knowledge, this is\nthe first end-to-end humanoid RL controller that adopts Mamba as the fusion\nbackbone, demonstrating tangible gains in efficiency, stability, and control\neconomy.",
+      "link": "http://arxiv.org/abs/2509.18046v1",
+      "published_date": "September 22, 2025",
+      "published_date_sort": "2025-09-22",
+      "citations": 0,
+      "institutions": "Unknown"
+    },
+    {
+      "title": "Learning Neural Antiderivatives",
+      "authors": "Fizza Rubab, Ntumba Elie Nsampi, Martin Balint, Felix Mujkanovic, Hans-Peter Seidel, Tobias Ritschel, Thomas Leimkühler",
+      "journal": "arXiv",
+      "snippet": "Neural fields offer continuous, learnable representations that extend beyond\ntraditional discrete formats in visual computing. We study the problem of\nlearning neural representations of repeated antiderivatives directly from a\nfunction, a continuous analogue of summed-area tables. Although widely used in\ndiscrete domains, such cumulative schemes rely on grids, which prevents their\napplicability in continuous neural contexts. We introduce and analyze a range\nof neural methods for repeated integration, including both adaptations of prior\nwork and novel designs. Our evaluation spans multiple input dimensionalities\nand integration orders, assessing both reconstruction quality and performance\nin downstream tasks such as filtering and rendering. These results enable\nintegrating classical cumulative operators into modern neural systems and offer\ninsights into learning tasks involving differential and integral operators.",
+      "link": "http://arxiv.org/abs/2509.17755v1",
+      "published_date": "September 22, 2025",
+      "published_date_sort": "2025-09-22",
+      "citations": 0,
+      "institutions": "Unknown"
+    },
+    {
+      "title": "Beyond Diagnosis: Evaluating Multimodal LLMs for Pathology Localization\n  in Chest Radiographs",
+      "authors": "Advait Gosai, Arun Kavishwar, Stephanie L. McNamara, Soujanya Samineni, Renato Umeton, Alexander Chowdhury, William Lotter",
+      "journal": "arXiv",
+      "snippet": "Recent work has shown promising performance of frontier large language models\n(LLMs) and their multimodal counterparts in medical quizzes and diagnostic\ntasks, highlighting their potential for broad clinical utility given their\naccessible, general-purpose nature. However, beyond diagnosis, a fundamental\naspect of medical image interpretation is the ability to localize pathological\nfindings. Evaluating localization not only has clinical and educational\nrelevance but also provides insight into a model's spatial understanding of\nanatomy and disease. Here, we systematically assess two general-purpose MLLMs\n(GPT-4 and GPT-5) and a domain-specific model (MedGemma) in their ability to\nlocalize pathologies on chest radiographs, using a prompting pipeline that\noverlays a spatial grid and elicits coordinate-based predictions. Averaged\nacross nine pathologies in the CheXlocalize dataset, GPT-5 exhibited a\nlocalization accuracy of 49.7%, followed by GPT-4 (39.1%) and MedGemma (17.7%),\nall lower than a task-specific CNN baseline (59.9%) and a radiologist benchmark\n(80.1%). Despite modest performance, error analysis revealed that GPT-5's\npredictions were largely in anatomically plausible regions, just not always\nprecisely localized. GPT-4 performed well on pathologies with fixed anatomical\nlocations, but struggled with spatially variable findings and exhibited\nanatomically implausible predictions more frequently. MedGemma demonstrated the\nlowest performance on all pathologies, showing limited capacity to generalize\nto this novel task. Our findings highlight both the promise and limitations of\ncurrent MLLMs in medical imaging and underscore the importance of integrating\nthem with task-specific tools for reliable use.",
+      "link": "http://arxiv.org/abs/2509.18015v1",
+      "published_date": "September 22, 2025",
+      "published_date_sort": "2025-09-22",
+      "citations": 0,
+      "institutions": "Unknown"
+    },
+    {
+      "title": "\"I think this is fair'': Uncovering the Complexities of Stakeholder\n  Decision-Making in AI Fairness Assessment",
+      "authors": "Lin Luo, Yuri Nakao, Mathieu Chollet, Hiroya Inakoshi, Simone Stumpf",
+      "journal": "arXiv",
+      "snippet": "Assessing fairness in artificial intelligence (AI) typically involves AI\nexperts who select protected features, fairness metrics, and set fairness\nthresholds. However, little is known about how stakeholders, particularly those\naffected by AI outcomes but lacking AI expertise, assess fairness. To address\nthis gap, we conducted a qualitative study with 30 stakeholders without AI\nexpertise, representing potential decision subjects in a credit rating\nscenario, to examine how they assess fairness when placed in the role of\ndeciding on features with priority, metrics, and thresholds. We reveal that\nstakeholders' fairness decisions are more complex than typical AI expert\npractices: they considered features far beyond legally protected features,\ntailored metrics for specific contexts, set diverse yet stricter fairness\nthresholds, and even preferred designing customized fairness. Our results\nextend the understanding of how stakeholders can meaningfully contribute to AI\nfairness governance and mitigation, underscoring the importance of\nincorporating stakeholders' nuanced fairness judgments.",
+      "link": "http://arxiv.org/abs/2509.17956v1",
+      "published_date": "September 22, 2025",
+      "published_date_sort": "2025-09-22",
+      "citations": 0,
+      "institutions": "Unknown"
+    },
     {
       "title": "Reinforcement Learning for Machine Learning Engineering Agents",
       "authors": "S Yang, J He-Yueya, P Liang - arXiv preprint arXiv:2509.01684, 2025 - arxiv.org",
@@ -71,6 +159,17 @@
       "institutions": "Unknown"
     },
     {
+      "title": "How Far Are AI Scientists from Changing the World?",
+      "authors": "Q Xie, Y Weng, M Zhu, F Shen, S Huang, Z Lin… - arXiv preprint arXiv …, 2025 - arxiv.org",
+      "journal": "Google Scholar Result",
+      "snippet": "The emergence of large language models (LLMs) is propelling automated scientific discovery to the next level, with LLM-based Artificial Intelligence (AI) Scientist systems now …",
+      "link": "https://arxiv.org/abs/2507.23276",
+      "published_date": "July 2025",
+      "published_date_sort": "2025-07-01",
+      "citations": 1,
+      "institutions": "Unknown"
+    },
+    {
       "title": "PhysGym: Benchmarking LLMs in Interactive Physics Discovery with Controlled Priors",
       "authors": "Y Chen, P Piȩkos, M Ostaszewski, F Laakom… - arXiv preprint arXiv …, 2025 - arxiv.org",
       "journal": "Google Scholar Result",
@@ -82,13 +181,24 @@
       "institutions": "Unknown"
     },
     {
-      "title": "How Far Are AI Scientists from Changing the World?",
-      "authors": "Q Xie, Y Weng, M Zhu, F Shen, S Huang, Z Lin… - arXiv preprint arXiv …, 2025 - arxiv.org",
+      "title": "MLE-STAR: Machine Learning Engineering Agent via Search and Targeted Refinement",
+      "authors": "J Nam, J Yoon, J Chen, J Shin, SÖ Arık… - arXiv preprint arXiv …, 2025 - arxiv.org",
       "journal": "Google Scholar Result",
-      "snippet": "The emergence of large language models (LLMs) is propelling automated scientific discovery to the next level, with LLM-based Artificial Intelligence (AI) Scientist systems now …",
-      "link": "https://arxiv.org/abs/2507.23276",
-      "published_date": "July 2025",
-      "published_date_sort": "2025-07-01",
+      "snippet": "Agents based on large language models (LLMs) for machine learning engineering (MLE) can automatically implement ML models via code generation. However, existing approaches …",
+      "link": "https://arxiv.org/abs/2506.15692",
+      "published_date": "June 2025",
+      "published_date_sort": "2025-06-01",
+      "citations": 1,
+      "institutions": "Unknown"
+    },
+    {
+      "title": "The Automated LLM Speedrunning Benchmark: Reproducing NanoGPT Improvements",
+      "authors": "B Zhao, D Magka, M Jiang, X Li, R Raileanu… - arXiv preprint arXiv …, 2025 - arxiv.org",
+      "journal": "Google Scholar Result",
+      "snippet": "Rapid advancements in large language models (LLMs) have the potential to assist in scientific progress. A critical capability toward this endeavor is the ability to reproduce …",
+      "link": "https://arxiv.org/abs/2506.22419",
+      "published_date": "June 2025",
+      "published_date_sort": "2025-06-01",
       "citations": 1,
       "institutions": "Unknown"
     },
@@ -104,17 +214,6 @@
       "institutions": "Unknown"
     },
     {
-      "title": "LMR-BENCH: Evaluating LLM Agent's Ability on Reproducing Language Modeling Research",
-      "authors": "S Yan, R Li, Z Luo, Z Wang, D Li, L Jing, K He… - arXiv preprint arXiv …, 2025 - arxiv.org",
-      "journal": "Google Scholar Result",
-      "snippet": "Large language model (LLM) agents have demonstrated remarkable potential in advancing scientific discovery. However, their capability in the fundamental yet crucial task of …",
-      "link": "https://arxiv.org/abs/2506.17335",
-      "published_date": "June 2025",
-      "published_date_sort": "2025-06-01",
-      "citations": 1,
-      "institutions": "Unknown"
-    },
-    {
       "title": "A Comprehensive Survey of Deep Research: Systems, Methodologies, and Applications",
       "authors": "R Xu, J Peng - arXiv preprint arXiv:2506.12594, 2025 - arxiv.org",
       "journal": "Google Scholar Result",
@@ -123,17 +222,6 @@
       "published_date": "June 2025",
       "published_date_sort": "2025-06-01",
       "citations": 11,
-      "institutions": "Unknown"
-    },
-    {
-      "title": "MLE-STAR: Machine Learning Engineering Agent via Search and Targeted Refinement",
-      "authors": "J Nam, J Yoon, J Chen, J Shin, SÖ Arık… - arXiv preprint arXiv …, 2025 - arxiv.org",
-      "journal": "Google Scholar Result",
-      "snippet": "Agents based on large language models (LLMs) for machine learning engineering (MLE) can automatically implement ML models via code generation. However, existing approaches …",
-      "link": "https://arxiv.org/abs/2506.15692",
-      "published_date": "June 2025",
-      "published_date_sort": "2025-06-01",
-      "citations": 1,
       "institutions": "Unknown"
     },
     {
@@ -148,11 +236,11 @@
       "institutions": "Unknown"
     },
     {
-      "title": "The Automated LLM Speedrunning Benchmark: Reproducing NanoGPT Improvements",
-      "authors": "B Zhao, D Magka, M Jiang, X Li, R Raileanu… - arXiv preprint arXiv …, 2025 - arxiv.org",
+      "title": "LMR-BENCH: Evaluating LLM Agent's Ability on Reproducing Language Modeling Research",
+      "authors": "S Yan, R Li, Z Luo, Z Wang, D Li, L Jing, K He… - arXiv preprint arXiv …, 2025 - arxiv.org",
       "journal": "Google Scholar Result",
-      "snippet": "Rapid advancements in large language models (LLMs) have the potential to assist in scientific progress. A critical capability toward this endeavor is the ability to reproduce …",
-      "link": "https://arxiv.org/abs/2506.22419",
+      "snippet": "Large language model (LLM) agents have demonstrated remarkable potential in advancing scientific discovery. However, their capability in the fundamental yet crucial task of …",
+      "link": "https://arxiv.org/abs/2506.17335",
       "published_date": "June 2025",
       "published_date_sort": "2025-06-01",
       "citations": 1,
@@ -192,17 +280,6 @@
       "institutions": "Unknown"
     },
     {
-      "title": "From automation to autonomy: A survey on large language models in scientific discovery",
-      "authors": "T Zheng, Z Deng, HT Tsang, W Wang, J Bai… - arXiv preprint arXiv …, 2025 - arxiv.org",
-      "journal": "Google Scholar Result",
-      "snippet": "Large Language Models (LLMs) are catalyzing a paradigm shift in scientific discovery, evolving from task-specific automation tools into increasingly autonomous agents and …",
-      "link": "https://arxiv.org/abs/2505.13259",
-      "published_date": "May 2025",
-      "published_date_sort": "2025-05-01",
-      "citations": 9,
-      "institutions": "Unknown"
-    },
-    {
       "title": "RepoMaster: Autonomous Exploration and Understanding of GitHub Repositories for Complex Task Solving",
       "authors": "H Wang, Z Ni, S Zhang, S Lu, S Hu, Z He, C Hu… - arXiv preprint arXiv …, 2025 - arxiv.org",
       "journal": "Google Scholar Result",
@@ -222,6 +299,17 @@
       "published_date": "May 2025",
       "published_date_sort": "2025-05-01",
       "citations": 2,
+      "institutions": "Unknown"
+    },
+    {
+      "title": "From automation to autonomy: A survey on large language models in scientific discovery",
+      "authors": "T Zheng, Z Deng, HT Tsang, W Wang, J Bai… - arXiv preprint arXiv …, 2025 - arxiv.org",
+      "journal": "Google Scholar Result",
+      "snippet": "Large Language Models (LLMs) are catalyzing a paradigm shift in scientific discovery, evolving from task-specific automation tools into increasingly autonomous agents and …",
+      "link": "https://arxiv.org/abs/2505.13259",
+      "published_date": "May 2025",
+      "published_date_sort": "2025-05-01",
+      "citations": 9,
       "institutions": "Unknown"
     },
     {
