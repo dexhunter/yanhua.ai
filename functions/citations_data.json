@@ -1,11 +1,11 @@
 {
-  "last_updated": "2025-09-26 00:10:13 UTC",
+  "last_updated": "2025-09-27 00:10:28 UTC",
   "target_paper": "https://www.arxiv.org/abs/2502.13138",
   "arxiv_id": "2502.13138",
-  "total_citations": 20,
+  "total_citations": 31,
   "h_index": 5,
-  "recent_citations": 2,
-  "avg_citations_per_month": "2.86",
+  "recent_citations": 13,
+  "avg_citations_per_month": "4.43",
   "timeline": [
     {
       "date": "2025-03-01",
@@ -33,18 +33,128 @@
     },
     {
       "date": "2025-09-01",
-      "citations": 20
+      "citations": 31
     }
   ],
   "papers": [
     {
-      "title": "An AI system to help scientists write expert-level empirical software",
-      "authors": "E Aygün, A Belyaeva, G Comanici, M Coram… - arXiv preprint arXiv …, 2025 - arxiv.org",
-      "journal": "Google Scholar Result",
-      "snippet": "The cycle of scientific discovery is frequently bottlenecked by the slow, manual creation of software to support computational experiments. To address this, we present an AI system …",
-      "link": "https://arxiv.org/abs/2509.06503",
-      "published_date": "September 2025",
-      "published_date_sort": "2025-09-01",
+      "title": "Data-driven Neural Networks for Windkessel Parameter Calibration",
+      "authors": "Benedikt Hoock, Tobias Köppl",
+      "journal": "arXiv",
+      "snippet": "In this work, we propose a novel method for calibrating Windkessel (WK)\nparameters in a dimensionally reduced 1D-0D coupled blood flow model. To this\nend, we design a data-driven neural network (NN)trained on simulated blood\npressures in the left brachial artery. Once trained, the NN emulates the\npressure pulse waves across the entire simulated domain, i.e., over time, space\nand varying WK parameters, with negligible error and computational effort. To\ncalibrate the WK parameters on a measured pulse wave, the NN is extended by\ndummy neurons and retrained only on these. The main objective of this work is\nto assess the effectiveness of the method in various scenarios -- particularly,\nwhen the exact measurement location is unknown or the data are affected by\nnoise.",
+      "link": "http://arxiv.org/abs/2509.21206v1",
+      "published_date": "September 25, 2025",
+      "published_date_sort": "2025-09-25",
+      "citations": 0,
+      "institutions": "Unknown"
+    },
+    {
+      "title": "The Unwinnable Arms Race of AI Image Detection",
+      "authors": "Till Aczel, Lorenzo Vettor, Andreas Plesner, Roger Wattenhofer",
+      "journal": "arXiv",
+      "snippet": "The rapid progress of image generative AI has blurred the boundary between\nsynthetic and real images, fueling an arms race between generators and\ndiscriminators. This paper investigates the conditions under which\ndiscriminators are most disadvantaged in this competition. We analyze two key\nfactors: data dimensionality and data complexity. While increased\ndimensionality often strengthens the discriminators ability to detect subtle\ninconsistencies, complexity introduces a more nuanced effect. Using Kolmogorov\ncomplexity as a measure of intrinsic dataset structure, we show that both very\nsimple and highly complex datasets reduce the detectability of synthetic\nimages; generators can learn simple datasets almost perfectly, whereas extreme\ndiversity masks imperfections. In contrast, intermediate-complexity datasets\ncreate the most favorable conditions for detection, as generators fail to fully\ncapture the distribution and their errors remain visible.",
+      "link": "http://arxiv.org/abs/2509.21135v1",
+      "published_date": "September 25, 2025",
+      "published_date_sort": "2025-09-25",
+      "citations": 0,
+      "institutions": "Unknown"
+    },
+    {
+      "title": "Physics Informed Neural Networks for design optimisation of diamond\n  particle detectors for charged particle fast-tracking at high luminosity\n  hadron colliders",
+      "authors": "Alessandro Bombini, Alessandro Rosa, Clarissa Buti, Giovanni Passaleva, Lucio Anderlini",
+      "journal": "arXiv",
+      "snippet": "Future high-luminosity hadron colliders demand tracking detectors with\nextreme radiation tolerance, high spatial precision, and sub-nanosecond timing.\n3D diamond pixel sensors offer these capabilities due to diamond's radiation\nhardness and high carrier mobility. Conductive electrodes, produced via\nfemtosecond IR laser pulses, exhibit high resistivity that delays signal\npropagation. This effect necessitates extending the classical Ramo-Shockley\nweighting potential formalism. We model the phenomenon through a 3rd-order,\n3+1D PDE derived as a quasi-stationary approximation of Maxwell's equations.\nThe PDE is solved numerically and coupled with charge transport simulations for\nrealistic 3D sensor geometries. A Mixture-of-Experts Physics-Informed Neural\nNetwork, trained on Spectral Method data, provides a meshless solver to assess\ntiming degradation from electrode resistance.",
+      "link": "http://arxiv.org/abs/2509.21123v1",
+      "published_date": "September 25, 2025",
+      "published_date_sort": "2025-09-25",
+      "citations": 0,
+      "institutions": "Unknown"
+    },
+    {
+      "title": "CAD-Tokenizer: Towards Text-based CAD Prototyping via Modality-Specific\n  Tokenization",
+      "authors": "Ruiyu Wang, Shizhao Sun, Weijian Ma, Jiang Bian",
+      "journal": "arXiv",
+      "snippet": "Computer-Aided Design (CAD) is a foundational component of industrial\nprototyping, where models are defined not by raw coordinates but by\nconstruction sequences such as sketches and extrusions. This sequential\nstructure enables both efficient prototype initialization and subsequent\nediting. Text-guided CAD prototyping, which unifies Text-to-CAD generation and\nCAD editing, has the potential to streamline the entire design pipeline.\nHowever, prior work has not explored this setting, largely because standard\nlarge language model (LLM) tokenizers decompose CAD sequences into\nnatural-language word pieces, failing to capture primitive-level CAD semantics\nand hindering attention modules from modeling geometric structure. We\nconjecture that a multimodal tokenization strategy, aligned with CAD's\nprimitive and structural nature, can provide more effective representations. To\nthis end, we propose CAD-Tokenizer, a framework that represents CAD data with\nmodality-specific tokens using a sequence-based VQ-VAE with primitive-level\npooling and constrained decoding. This design produces compact, primitive-aware\nrepresentations that align with CAD's structural nature. Applied to unified\ntext-guided CAD prototyping, CAD-Tokenizer significantly improves instruction\nfollowing and generation quality, achieving better quantitative and qualitative\nperformance over both general-purpose LLMs and task-specific baselines.",
+      "link": "http://arxiv.org/abs/2509.21150v1",
+      "published_date": "September 25, 2025",
+      "published_date_sort": "2025-09-25",
+      "citations": 0,
+      "institutions": "Unknown"
+    },
+    {
+      "title": "From Physics to Machine Learning and Back: Part II - Learning and\n  Observational Bias in PHM",
+      "authors": "Olga Fink, Ismail Nejjar, Vinay Sharma, Keivan Faghih Niresi, Han Sun, Hao Dong, Chenghao Xu, Amaury Wei, Arthur Bizzi, Raffael Theiler, Yuan Tian, Leandro Von Krannichfeldt, Zhan Ma, Sergei Garmaev, Zepeng Zhang, Mengjie Zhao",
+      "journal": "arXiv",
+      "snippet": "Prognostics and Health Management ensures the reliability, safety, and\nefficiency of complex engineered systems by enabling fault detection,\nanticipating equipment failures, and optimizing maintenance activities\nthroughout an asset lifecycle. However, real-world PHM presents persistent\nchallenges: sensor data is often noisy or incomplete, available labels are\nlimited, and degradation behaviors and system interdependencies can be highly\ncomplex and nonlinear. Physics-informed machine learning has emerged as a\npromising approach to address these limitations by embedding physical knowledge\ninto data-driven models. This review examines how incorporating learning and\nobservational biases through physics-informed modeling and data strategies can\nguide models toward physically consistent and reliable predictions. Learning\nbiases embed physical constraints into model training through physics-informed\nloss functions and governing equations, or by incorporating properties like\nmonotonicity. Observational biases influence data selection and synthesis to\nensure models capture realistic system behavior through virtual sensing for\nestimating unmeasured states, physics-based simulation for data augmentation,\nand multi-sensor fusion strategies. The review then examines how these\napproaches enable the transition from passive prediction to active\ndecision-making through reinforcement learning, which allows agents to learn\nmaintenance policies that respect physical constraints while optimizing\noperational objectives. This closes the loop between model-based predictions,\nsimulation, and actual system operation, empowering adaptive decision-making.\nFinally, the review addresses the critical challenge of scaling PHM solutions\nfrom individual assets to fleet-wide deployment. Fast adaptation methods\nincluding meta-learning and few-shot learning are reviewed alongside domain\ngeneralization techniques ...",
+      "link": "http://arxiv.org/abs/2509.21207v1",
+      "published_date": "September 25, 2025",
+      "published_date_sort": "2025-09-25",
+      "citations": 0,
+      "institutions": "Unknown"
+    },
+    {
+      "title": "A Unified Framework for Diffusion Model Unlearning with f-Divergence",
+      "authors": "Nicola Novello, Federico Fontana, Luigi Cinque, Deniz Gunduz, Andrea M. Tonello",
+      "journal": "arXiv",
+      "snippet": "Machine unlearning aims to remove specific knowledge from a trained model.\nWhile diffusion models (DMs) have shown remarkable generative capabilities,\nexisting unlearning methods for text-to-image (T2I) models often rely on\nminimizing the mean squared error (MSE) between the output distribution of a\ntarget and an anchor concept. We show that this MSE-based approach is a special\ncase of a unified $f$-divergence-based framework, in which any $f$-divergence\ncan be utilized. We analyze the benefits of using different $f$-divergences,\nthat mainly impact the convergence properties of the algorithm and the quality\nof unlearning. The proposed unified framework offers a flexible paradigm that\nallows to select the optimal divergence for a specific application, balancing\ndifferent trade-offs between aggressive unlearning and concept preservation.",
+      "link": "http://arxiv.org/abs/2509.21167v1",
+      "published_date": "September 25, 2025",
+      "published_date_sort": "2025-09-25",
+      "citations": 0,
+      "institutions": "Unknown"
+    },
+    {
+      "title": "Differential-Integral Neural Operator for Long-Term Turbulence\n  Forecasting",
+      "authors": "Hao Wu, Yuan Gao, Fan Xu, Fan Zhang, Qingsong Wen, Kun Wang, Xiaomeng Huang, Xian Wu",
+      "journal": "arXiv",
+      "snippet": "Accurately forecasting the long-term evolution of turbulence represents a\ngrand challenge in scientific computing and is crucial for applications ranging\nfrom climate modeling to aerospace engineering. Existing deep learning methods,\nparticularly neural operators, often fail in long-term autoregressive\npredictions, suffering from catastrophic error accumulation and a loss of\nphysical fidelity. This failure stems from their inability to simultaneously\ncapture the distinct mathematical structures that govern turbulent dynamics:\nlocal, dissipative effects and global, non-local interactions. In this paper,\nwe propose the\n{\\textbf{\\underline{D}}}ifferential-{\\textbf{\\underline{I}}}ntegral\n{\\textbf{\\underline{N}}}eural {\\textbf{\\underline{O}}}perator (\\method{}), a\nnovel framework designed from a first-principles approach of operator\ndecomposition. \\method{} explicitly models the turbulent evolution through\nparallel branches that learn distinct physical operators: a local differential\noperator, realized by a constrained convolutional network that provably\nconverges to a derivative, and a global integral operator, captured by a\nTransformer architecture that learns a data-driven global kernel. This\nphysics-based decomposition endows \\method{} with exceptional stability and\nrobustness. Through extensive experiments on the challenging 2D Kolmogorov flow\nbenchmark, we demonstrate that \\method{} significantly outperforms\nstate-of-the-art models in long-term forecasting. It successfully suppresses\nerror accumulation over hundreds of timesteps, maintains high fidelity in both\nthe vorticity fields and energy spectra, and establishes a new benchmark for\nphysically consistent, long-range turbulence forecast.",
+      "link": "http://arxiv.org/abs/2509.21196v1",
+      "published_date": "September 25, 2025",
+      "published_date_sort": "2025-09-25",
+      "citations": 0,
+      "institutions": "Unknown"
+    },
+    {
+      "title": "Semantic Edge-Cloud Communication for Real-Time Urban Traffic\n  Surveillance with ViT and LLMs over Mobile Networks",
+      "authors": "Murat Arda Onsu, Poonam Lohan, Burak Kantarci, Aisha Syed, Matthew Andrews, Sean Kennedy",
+      "journal": "arXiv",
+      "snippet": "Real-time urban traffic surveillance is vital for Intelligent Transportation\nSystems (ITS) to ensure road safety, optimize traffic flow, track vehicle\ntrajectories, and prevent collisions in smart cities. Deploying edge cameras\nacross urban environments is a standard practice for monitoring road\nconditions. However, integrating these with intelligent models requires a\nrobust understanding of dynamic traffic scenarios and a responsive interface\nfor user interaction. Although multimodal Large Language Models (LLMs) can\ninterpret traffic images and generate informative responses, their deployment\non edge devices is infeasible due to high computational demands. Therefore, LLM\ninference must occur on the cloud, necessitating visual data transmission from\nedge to cloud, a process hindered by limited bandwidth, leading to potential\ndelays that compromise real-time performance. To address this challenge, we\npropose a semantic communication framework that significantly reduces\ntransmission overhead. Our method involves detecting Regions of Interest (RoIs)\nusing YOLOv11, cropping relevant image segments, and converting them into\ncompact embedding vectors using a Vision Transformer (ViT). These embeddings\nare then transmitted to the cloud, where an image decoder reconstructs the\ncropped images. The reconstructed images are processed by a multimodal LLM to\ngenerate traffic condition descriptions. This approach achieves a 99.9%\nreduction in data transmission size while maintaining an LLM response accuracy\nof 89% for reconstructed cropped images, compared to 93% accuracy with original\ncropped images. Our results demonstrate the efficiency and practicality of ViT\nand LLM-assisted edge-cloud semantic communication for real-time traffic\nsurveillance.",
+      "link": "http://arxiv.org/abs/2509.21259v1",
+      "published_date": "September 25, 2025",
+      "published_date_sort": "2025-09-25",
+      "citations": 0,
+      "institutions": "Unknown"
+    },
+    {
+      "title": "RL Squeezes, SFT Expands: A Comparative Study of Reasoning LLMs",
+      "authors": "Kohsei Matsutani, Shota Takashiro, Gouki Minegishi, Takeshi Kojima, Yusuke Iwasawa, Yutaka Matsuo",
+      "journal": "arXiv",
+      "snippet": "Large language models (LLMs) are typically trained by reinforcement learning\n(RL) with verifiable rewards (RLVR) and supervised fine-tuning (SFT) on\nreasoning traces to improve their reasoning abilities. However, how these\nmethods shape reasoning capabilities remains largely elusive. Going beyond an\naccuracy-based investigation of how these two components sculpt the reasoning\nprocess, this paper introduces a novel analysis framework that quantifies\nreasoning paths and captures their qualitative changes under each training\nprocess (with models of 1.5B, 7B, and 14B parameters on mathematical domains).\nSpecifically, we investigate the reasoning process at two levels of\ngranularity: the trajectory-level, which examines complete reasoning outputs,\nand the step-level, which analyzes reasoning graphs whose nodes correspond to\nindividual reasoning steps. Notably, clustering of unique reasoning\ntrajectories shows complementary effects: RL compresses incorrect trajectories,\nwhereas SFT expands correct ones. Step-level analysis reveals that RL steepens\n(about 2.5 times), while SFT flattens (reduced to about one-third), the decay\nrates of node visitation frequency, degree, and betweenness centrality\ndistributions in the reasoning graph. This indicates that RL concentrates\nreasoning functionality into a small subset of steps, while SFT homogenizes it\nacross many steps. Furthermore, by evaluating the reasoning graph topologies\nfrom multiple perspectives, we delineate the shared and distinct\ncharacteristics of RL and SFT. Our work presents a novel reasoning path\nperspective that explains why the current best practice of two-stage training,\nwith SFT followed by RL, is successful, and offers practical implications for\ndata construction and more efficient learning approaches.",
+      "link": "http://arxiv.org/abs/2509.21128v1",
+      "published_date": "September 25, 2025",
+      "published_date_sort": "2025-09-25",
+      "citations": 0,
+      "institutions": "Unknown"
+    },
+    {
+      "title": "SuperOffload: Unleashing the Power of Large-Scale LLM Training on\n  Superchips",
+      "authors": "Xinyu Lian, Masahiro Tanaka, Olatunji Ruwase, Minjia Zhang",
+      "journal": "arXiv",
+      "snippet": "The emergence of Superchips represents a significant advancement in\nnext-generation AI hardware. These Superchips employ a tightly coupled\nheterogeneous architecture that integrates GPU and CPU on the same package,\nwhich offers unprecedented computational power. However, there has been scant\nresearch investigating how LLM training benefits from this new architecture. In\nthis work, for the first time, we study LLM training solutions based on\noffloading for Superchips. We observe important differences between Superchips\nand traditional loosely-coupled GPU-CPU architecture, which necessitate\nrevisiting prevailing assumptions about offloading. Based on that, we present\nSuperOffload, a Superchip-centric offloading system that simultaneously uses\nHopper GPU, Grace CPU, and NVLink-C2C interconnect more efficiently.\nSuperOffload accomplishes this via a combination of techniques, such as\nadaptive weight offloading, bucketization repartitioning, Superchip-aware\ncasting, speculative execution, and a highly optimized Adam optimizer for Grace\nCPUs. Our evaluation of SuperOffload on NVIDIA GH200 demonstrates up to 2.5x\nthroughput improvement compared to state-of-the-art offloading-based systems,\nenabling training of up to 25B model on a single Superchip while achieving high\ntraining throughput. We also extend SuperOffload with ZeRO-style data\nparallelism and DeepSpeed-Ulysses sequence parallelism, enabling training of\n13B model with sequence lengths up to 1 million tokens on 8 GH200 while\nachieving 55% MFU.",
+      "link": "http://arxiv.org/abs/2509.21271v1",
+      "published_date": "September 25, 2025",
+      "published_date_sort": "2025-09-25",
+      "citations": 0,
+      "institutions": "Unknown"
+    },
+    {
+      "title": "Expanding Reasoning Potential in Foundation Model by Learning Diverse\n  Chains of Thought Patterns",
+      "authors": "Xuemiao Zhang, Can Ren, Chengying Tu, Rongxiang Weng, Shuo Wang, Hongfei Yan, Jingang Wang, Xunliang Cai",
+      "journal": "arXiv",
+      "snippet": "Recent progress in large reasoning models for challenging mathematical\nreasoning has been driven by reinforcement learning (RL). Incorporating long\nchain-of-thought (CoT) data during mid-training has also been shown to\nsubstantially improve reasoning depth. However, current approaches often\nutilize CoT data indiscriminately, leaving open the critical question of which\ndata types most effectively enhance model reasoning capabilities. In this\npaper, we define the foundation model's reasoning potential for the first time\nas the inverse of the number of independent attempts required to correctly\nanswer the question, which is strongly correlated with the final model\nperformance. We then propose utilizing diverse data enriched with high-value\nreasoning patterns to expand the reasoning potential. Specifically, we abstract\natomic reasoning patterns from CoT sequences, characterized by commonality and\ninductive capabilities, and use them to construct a core reference set enriched\nwith valuable reasoning patterns. Furthermore, we propose a dual-granularity\nalgorithm involving chains of reasoning patterns and token entropy, efficiently\nselecting high-value CoT data (CoTP) from the data pool that aligns with the\ncore set, thereby training models to master reasoning effectively. Only\n10B-token CoTP data enables the 85A6B Mixture-of-Experts (MoE) model to improve\nby 9.58% on the challenging AIME 2024 and 2025, and to raise the upper bound of\ndownstream RL performance by 7.81%.",
+      "link": "http://arxiv.org/abs/2509.21124v1",
+      "published_date": "September 25, 2025",
+      "published_date_sort": "2025-09-25",
       "citations": 0,
       "institutions": "Unknown"
     },
@@ -54,6 +164,17 @@
       "journal": "Google Scholar Result",
       "snippet": "Existing agents for solving tasks such as ML engineering rely on prompting powerful language models. As a result, these agents do not improve with more experience. In this …",
       "link": "https://arxiv.org/abs/2509.01684",
+      "published_date": "September 2025",
+      "published_date_sort": "2025-09-01",
+      "citations": 0,
+      "institutions": "Unknown"
+    },
+    {
+      "title": "An AI system to help scientists write expert-level empirical software",
+      "authors": "E Aygün, A Belyaeva, G Comanici, M Coram… - arXiv preprint arXiv …, 2025 - arxiv.org",
+      "journal": "Google Scholar Result",
+      "snippet": "The cycle of scientific discovery is frequently bottlenecked by the slow, manual creation of software to support computational experiments. To address this, we present an AI system …",
+      "link": "https://arxiv.org/abs/2509.06503",
       "published_date": "September 2025",
       "published_date_sort": "2025-09-01",
       "citations": 0,
@@ -93,28 +214,6 @@
       "institutions": "Unknown"
     },
     {
-      "title": "A Comprehensive Survey of Deep Research: Systems, Methodologies, and Applications",
-      "authors": "R Xu, J Peng - arXiv preprint arXiv:2506.12594, 2025 - arxiv.org",
-      "journal": "Google Scholar Result",
-      "snippet": "This survey examines the rapidly evolving field of Deep Research systems--AI-powered applications that automate complex research workflows through the integration of large …",
-      "link": "https://arxiv.org/abs/2506.12594",
-      "published_date": "June 2025",
-      "published_date_sort": "2025-06-01",
-      "citations": 11,
-      "institutions": "Unknown"
-    },
-    {
-      "title": "MLE-STAR: Machine Learning Engineering Agent via Search and Targeted Refinement",
-      "authors": "J Nam, J Yoon, J Chen, J Shin, SÖ Arık… - arXiv preprint arXiv …, 2025 - arxiv.org",
-      "journal": "Google Scholar Result",
-      "snippet": "Agents based on large language models (LLMs) for machine learning engineering (MLE) can automatically implement ML models via code generation. However, existing approaches …",
-      "link": "https://arxiv.org/abs/2506.15692",
-      "published_date": "June 2025",
-      "published_date_sort": "2025-06-01",
-      "citations": 1,
-      "institutions": "Unknown"
-    },
-    {
       "title": "AI Scientists Fail Without Strong Implementation Capability",
       "authors": "M Zhu, Q Xie, Y Weng, J Wu, Z Lin, L Yang… - arXiv preprint arXiv …, 2025 - arxiv.org",
       "journal": "Google Scholar Result",
@@ -126,33 +225,22 @@
       "institutions": "Unknown"
     },
     {
-      "title": "The Automated LLM Speedrunning Benchmark: Reproducing NanoGPT Improvements",
-      "authors": "B Zhao, D Magka, M Jiang, X Li, R Raileanu… - arXiv preprint arXiv …, 2025 - arxiv.org",
+      "title": "AutoMind: Adaptive Knowledgeable Agent for Automated Data Science",
+      "authors": "Y Ou, Y Luo, J Zheng, L Wei, S Qiao, J Zhang… - arXiv preprint arXiv …, 2025 - arxiv.org",
       "journal": "Google Scholar Result",
-      "snippet": "Rapid advancements in large language models (LLMs) have the potential to assist in scientific progress. A critical capability toward this endeavor is the ability to reproduce …",
-      "link": "https://arxiv.org/abs/2506.22419",
+      "snippet": "Large Language Model (LLM) agents have shown great potential in addressing real-world data science problems. LLM-driven data science agents promise to automate the entire …",
+      "link": "https://arxiv.org/abs/2506.10974",
       "published_date": "June 2025",
       "published_date_sort": "2025-06-01",
       "citations": 1,
       "institutions": "Unknown"
     },
     {
-      "title": "Towards Community-Driven Agents for Machine Learning Engineering",
-      "authors": "S Li, W Sun, S Li, A Talwalkar, Y Yang - arXiv preprint arXiv:2506.20640, 2025 - arxiv.org",
+      "title": "MLE-STAR: Machine Learning Engineering Agent via Search and Targeted Refinement",
+      "authors": "J Nam, J Yoon, J Chen, J Shin, SÖ Arık… - arXiv preprint arXiv …, 2025 - arxiv.org",
       "journal": "Google Scholar Result",
-      "snippet": "Large language model-based machine learning (ML) agents have shown great promise in automating ML research. However, existing agents typically operate in isolation on a given …",
-      "link": "https://arxiv.org/abs/2506.20640",
-      "published_date": "June 2025",
-      "published_date_sort": "2025-06-01",
-      "citations": 0,
-      "institutions": "Unknown"
-    },
-    {
-      "title": "AutoMind: Adaptive Knowledgeable Agent for Automated Data Science",
-      "authors": "Y Ou, Y Luo, J Zheng, L Wei, S Qiao, J Zhang… - arXiv preprint arXiv …, 2025 - arxiv.org",
-      "journal": "Google Scholar Result",
-      "snippet": "Large Language Model (LLM) agents have shown great potential in addressing real-world data science problems. LLM-driven data science agents promise to automate the entire …",
-      "link": "https://arxiv.org/abs/2506.10974",
+      "snippet": "Agents based on large language models (LLMs) for machine learning engineering (MLE) can automatically implement ML models via code generation. However, existing approaches …",
+      "link": "https://arxiv.org/abs/2506.15692",
       "published_date": "June 2025",
       "published_date_sort": "2025-06-01",
       "citations": 1,
@@ -170,36 +258,47 @@
       "institutions": "Unknown"
     },
     {
-      "title": "From automation to autonomy: A survey on large language models in scientific discovery",
-      "authors": "T Zheng, Z Deng, HT Tsang, W Wang, J Bai… - arXiv preprint arXiv …, 2025 - arxiv.org",
+      "title": "Towards Community-Driven Agents for Machine Learning Engineering",
+      "authors": "S Li, W Sun, S Li, A Talwalkar, Y Yang - arXiv preprint arXiv:2506.20640, 2025 - arxiv.org",
       "journal": "Google Scholar Result",
-      "snippet": "Large Language Models (LLMs) are catalyzing a paradigm shift in scientific discovery, evolving from task-specific automation tools into increasingly autonomous agents and …",
-      "link": "https://arxiv.org/abs/2505.13259",
-      "published_date": "May 2025",
-      "published_date_sort": "2025-05-01",
-      "citations": 9,
+      "snippet": "Large language model-based machine learning (ML) agents have shown great promise in automating ML research. However, existing agents typically operate in isolation on a given …",
+      "link": "https://arxiv.org/abs/2506.20640",
+      "published_date": "June 2025",
+      "published_date_sort": "2025-06-01",
+      "citations": 0,
       "institutions": "Unknown"
     },
     {
-      "title": "Mle-dojo: Interactive environments for empowering llm agents in machine learning engineering",
-      "authors": "R Qiang, Y Zhuang, Y Li, R Zhang, C Li… - arXiv preprint arXiv …, 2025 - arxiv.org",
+      "title": "The Automated LLM Speedrunning Benchmark: Reproducing NanoGPT Improvements",
+      "authors": "B Zhao, D Magka, M Jiang, X Li, R Raileanu… - arXiv preprint arXiv …, 2025 - arxiv.org",
       "journal": "Google Scholar Result",
-      "snippet": "We introduce MLE-Dojo, a Gym-style framework for systematically reinforcement learning, evaluating, and improving autonomous large language model (LLM) agents in iterative …",
-      "link": "https://arxiv.org/abs/2505.07782",
-      "published_date": "May 2025",
-      "published_date_sort": "2025-05-01",
-      "citations": 2,
+      "snippet": "Rapid advancements in large language models (LLMs) have the potential to assist in scientific progress. A critical capability toward this endeavor is the ability to reproduce …",
+      "link": "https://arxiv.org/abs/2506.22419",
+      "published_date": "June 2025",
+      "published_date_sort": "2025-06-01",
+      "citations": 1,
       "institutions": "Unknown"
     },
     {
-      "title": "RepoMaster: Autonomous Exploration and Understanding of GitHub Repositories for Complex Task Solving",
-      "authors": "H Wang, Z Ni, S Zhang, S Lu, S Hu, Z He, C Hu… - arXiv preprint arXiv …, 2025 - arxiv.org",
+      "title": "A Comprehensive Survey of Deep Research: Systems, Methodologies, and Applications",
+      "authors": "R Xu, J Peng - arXiv preprint arXiv:2506.12594, 2025 - arxiv.org",
       "journal": "Google Scholar Result",
-      "snippet": "The ultimate goal of code agents is to solve complex tasks autonomously. Although large language models (LLMs) have made substantial progress in code generation, real-world …",
-      "link": "https://arxiv.org/abs/2505.21577",
+      "snippet": "This survey examines the rapidly evolving field of Deep Research systems--AI-powered applications that automate complex research workflows through the integration of large …",
+      "link": "https://arxiv.org/abs/2506.12594",
+      "published_date": "June 2025",
+      "published_date_sort": "2025-06-01",
+      "citations": 11,
+      "institutions": "Unknown"
+    },
+    {
+      "title": "Mlzero: A multi-agent system for end-to-end machine learning automation",
+      "authors": "H Fang, B Han, N Erickson, X Zhang, S Zhou… - arXiv preprint arXiv …, 2025 - arxiv.org",
+      "journal": "Google Scholar Result",
+      "snippet": "Existing AutoML systems have advanced the automation of machine learning (ML); however, they still require substantial manual configuration and expert input, particularly …",
+      "link": "https://arxiv.org/abs/2505.13941",
       "published_date": "May 2025",
       "published_date_sort": "2025-05-01",
-      "citations": 2,
+      "citations": 1,
       "institutions": "Unknown"
     },
     {
@@ -214,14 +313,36 @@
       "institutions": "Unknown"
     },
     {
-      "title": "Mlzero: A multi-agent system for end-to-end machine learning automation",
-      "authors": "H Fang, B Han, N Erickson, X Zhang, S Zhou… - arXiv preprint arXiv …, 2025 - arxiv.org",
+      "title": "From automation to autonomy: A survey on large language models in scientific discovery",
+      "authors": "T Zheng, Z Deng, HT Tsang, W Wang, J Bai… - arXiv preprint arXiv …, 2025 - arxiv.org",
       "journal": "Google Scholar Result",
-      "snippet": "Existing AutoML systems have advanced the automation of machine learning (ML); however, they still require substantial manual configuration and expert input, particularly …",
-      "link": "https://arxiv.org/abs/2505.13941",
+      "snippet": "Large Language Models (LLMs) are catalyzing a paradigm shift in scientific discovery, evolving from task-specific automation tools into increasingly autonomous agents and …",
+      "link": "https://arxiv.org/abs/2505.13259",
       "published_date": "May 2025",
       "published_date_sort": "2025-05-01",
-      "citations": 1,
+      "citations": 9,
+      "institutions": "Unknown"
+    },
+    {
+      "title": "RepoMaster: Autonomous Exploration and Understanding of GitHub Repositories for Complex Task Solving",
+      "authors": "H Wang, Z Ni, S Zhang, S Lu, S Hu, Z He, C Hu… - arXiv preprint arXiv …, 2025 - arxiv.org",
+      "journal": "Google Scholar Result",
+      "snippet": "The ultimate goal of code agents is to solve complex tasks autonomously. Although large language models (LLMs) have made substantial progress in code generation, real-world …",
+      "link": "https://arxiv.org/abs/2505.21577",
+      "published_date": "May 2025",
+      "published_date_sort": "2025-05-01",
+      "citations": 2,
+      "institutions": "Unknown"
+    },
+    {
+      "title": "Mle-dojo: Interactive environments for empowering llm agents in machine learning engineering",
+      "authors": "R Qiang, Y Zhuang, Y Li, R Zhang, C Li… - arXiv preprint arXiv …, 2025 - arxiv.org",
+      "journal": "Google Scholar Result",
+      "snippet": "We introduce MLE-Dojo, a Gym-style framework for systematically reinforcement learning, evaluating, and improving autonomous large language model (LLM) agents in iterative …",
+      "link": "https://arxiv.org/abs/2505.07782",
+      "published_date": "May 2025",
+      "published_date_sort": "2025-05-01",
+      "citations": 2,
       "institutions": "Unknown"
     },
     {
@@ -243,7 +364,7 @@
       "link": "https://arxiv.org/abs/2504.04310",
       "published_date": "April 2025",
       "published_date_sort": "2025-04-01",
-      "citations": 10,
+      "citations": 11,
       "institutions": "Unknown"
     },
     {
@@ -254,7 +375,7 @@
       "link": "https://arxiv.org/abs/2503.14499",
       "published_date": "March 2025",
       "published_date_sort": "2025-03-01",
-      "citations": 34,
+      "citations": 35,
       "institutions": "Unknown"
     }
   ]
