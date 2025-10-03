@@ -1,11 +1,11 @@
 {
-  "last_updated": "2025-10-02 00:10:11 UTC",
+  "last_updated": "2025-10-03 00:10:06 UTC",
   "target_paper": "https://www.arxiv.org/abs/2502.13138",
   "arxiv_id": "2502.13138",
-  "total_citations": 32,
+  "total_citations": 20,
   "h_index": 5,
-  "recent_citations": 12,
-  "avg_citations_per_month": "4.57",
+  "recent_citations": 0,
+  "avg_citations_per_month": "2.86",
   "timeline": [
     {
       "date": "2025-03-01",
@@ -25,147 +25,26 @@
     },
     {
       "date": "2025-07-01",
-      "citations": 17
+      "citations": 16
     },
     {
       "date": "2025-08-01",
-      "citations": 18
+      "citations": 17
     },
     {
       "date": "2025-09-01",
-      "citations": 32
+      "citations": 20
     }
   ],
   "papers": [
     {
-      "title": "TrackCore-F: Deploying Transformer-Based Subatomic Particle Tracking on\n  FPGAs",
-      "authors": "Arjan Blankestijn, Uraz Odyurt, Amirreza Yousefzadeh",
-      "journal": "arXiv",
-      "snippet": "The Transformer Machine Learning (ML) architecture has been gaining\nconsiderable momentum in recent years. In particular, computational High-Energy\nPhysics tasks such as jet tagging and particle track reconstruction (tracking),\nhave either achieved proper solutions, or reached considerable milestones using\nTransformers. On the other hand, the use of specialised hardware accelerators,\nespecially FPGAs, is an effective method to achieve online, or pseudo-online\nlatencies. The development and integration of Transformer-based ML to FPGAs is\nstill ongoing and the support from current tools is very limited to\nnon-existent. Additionally, FPGA resources present a significant constraint.\nConsidering the model size alone, while smaller models can be deployed\ndirectly, larger models are to be partitioned in a meaningful and ideally,\nautomated way. We aim to develop methodologies and tools for monolithic, or\npartitioned Transformer synthesis, specifically targeting inference. Our\nprimary use-case involves two machine learning model designs for tracking,\nderived from the TrackFormers project. We elaborate our development approach,\npresent preliminary results, and provide comparisons.",
-      "link": "http://arxiv.org/abs/2509.26335v1",
-      "published_date": "September 30, 2025",
-      "published_date_sort": "2025-09-30",
-      "citations": 0,
-      "institutions": "Unknown"
-    },
-    {
-      "title": "Transformer Classification of Breast Lesions: The BreastDCEDL_AMBL\n  Benchmark Dataset and 0.92 AUC Baseline",
-      "authors": "Naomi Fridman, Anat Goldstein",
-      "journal": "arXiv",
-      "snippet": "The error is caused by special characters that arXiv's system doesn't\nrecognize. Here's the cleaned version with all problematic characters replaced:\nBreast magnetic resonance imaging is a critical tool for cancer detection and\ntreatment planning, but its clinical utility is hindered by poor specificity,\nleading to high false-positive rates and unnecessary biopsies. This study\nintroduces a transformer-based framework for automated classification of breast\nlesions in dynamic contrast-enhanced MRI, addressing the challenge of\ndistinguishing benign from malignant findings. We implemented a SegFormer\narchitecture that achieved an AUC of 0.92 for lesion-level classification, with\n100% sensitivity and 67% specificity at the patient level - potentially\neliminating one-third of unnecessary biopsies without missing malignancies. The\nmodel quantifies malignant pixel distribution via semantic segmentation,\nproducing interpretable spatial predictions that support clinical\ndecision-making. To establish reproducible benchmarks, we curated\nBreastDCEDL_AMBL by transforming The Cancer Imaging Archive's AMBL collection\ninto a standardized deep learning dataset with 88 patients and 133 annotated\nlesions (89 benign, 44 malignant). This resource addresses a key infrastructure\ngap, as existing public datasets lack benign lesion annotations, limiting\nbenign-malignant classification research. Training incorporated an expanded\ncohort of over 1,200 patients through integration with BreastDCEDL datasets,\nvalidating transfer learning approaches despite primary tumor-only annotations.\nPublic release of the dataset, models, and evaluation protocols provides the\nfirst standardized benchmark for DCE-MRI lesion classification, enabling\nmethodological advancement toward clinical deployment.",
-      "link": "http://arxiv.org/abs/2509.26440v1",
-      "published_date": "September 30, 2025",
-      "published_date_sort": "2025-09-30",
-      "citations": 0,
-      "institutions": "Unknown"
-    },
-    {
-      "title": "Ultra-Reliable Risk-Aggregated Sum Rate Maximization via Model-Aided\n  Deep Learning",
-      "authors": "Hassaan Hashmi, Spyridon Pougkakiotis, Dionysis Kalogerias",
-      "journal": "arXiv",
-      "snippet": "We consider the problem of maximizing weighted sum rate in a multiple-input\nsingle-output (MISO) downlink wireless network with emphasis on user rate\nreliability. We introduce a novel risk-aggregated formulation of the complex\nWSR maximization problem, which utilizes the Conditional Value-at-Risk (CVaR)\nas a functional for enforcing rate (ultra)-reliability over channel fading\nuncertainty/risk. We establish a WMMSE-like equivalence between the proposed\nprecoding problem and a weighted risk-averse MSE problem, enabling us to design\na tailored unfolded graph neural network (GNN) policy function approximation\n(PFA), named {\\alpha}-Robust Graph Neural Network ({\\alpha}RGNN), trained to\nmaximize lower-tail (CVaR) rates resulting from adverse wireless channel\nrealizations (e.g., deep fading, attenuation). We empirically demonstrate that\na trained {\\alpha}RGNN fully eliminates per user deep rate fades, and\nsubstantially and optimally reduces statistical user rate variability while\nretaining adequate ergodic performance.",
-      "link": "http://arxiv.org/abs/2509.26311v1",
-      "published_date": "September 30, 2025",
-      "published_date_sort": "2025-09-30",
-      "citations": 0,
-      "institutions": "Unknown"
-    },
-    {
-      "title": "The Unheard Alternative: Contrastive Explanations for Speech-to-Text\n  Models",
-      "authors": "Lina Conti, Dennis Fucci, Marco Gaido, Matteo Negri, Guillaume Wisniewski, Luisa Bentivogli",
-      "journal": "arXiv",
-      "snippet": "Contrastive explanations, which indicate why an AI system produced one output\n(the target) instead of another (the foil), are widely regarded in explainable\nAI as more informative and interpretable than standard explanations. However,\nobtaining such explanations for speech-to-text (S2T) generative models remains\nan open challenge. Drawing from feature attribution techniques, we propose the\nfirst method to obtain contrastive explanations in S2T by analyzing how parts\nof the input spectrogram influence the choice between alternative outputs.\nThrough a case study on gender assignment in speech translation, we show that\nour method accurately identifies the audio features that drive the selection of\none gender over another. By extending the scope of contrastive explanations to\nS2T, our work provides a foundation for better understanding S2T models.",
-      "link": "http://arxiv.org/abs/2509.26543v1",
-      "published_date": "September 30, 2025",
-      "published_date_sort": "2025-09-30",
-      "citations": 0,
-      "institutions": "Unknown"
-    },
-    {
-      "title": "Linking Process to Outcome: Conditional Reward Modeling for LLM\n  Reasoning",
-      "authors": "Zheng Zhang, Ziwei Shan, Kaitao Song, Yexin Li, Kan Ren",
-      "journal": "arXiv",
-      "snippet": "Process Reward Models (PRMs) have emerged as a promising approach to enhance\nthe reasoning capabilities of large language models (LLMs) by guiding their\nstep-by-step reasoning toward a final answer. However, existing PRMs either\ntreat each reasoning step in isolation, failing to capture inter-step\ndependencies, or struggle to align process rewards with the final outcome.\nConsequently, the reward signal fails to respect temporal causality in\nsequential reasoning and faces ambiguous credit assignment. These limitations\nmake downstream models vulnerable to reward hacking and lead to suboptimal\nperformance. In this work, we propose Conditional Reward Modeling (CRM) that\nframes LLM reasoning as a temporal process leading to a correct answer. The\nreward of each reasoning step is not only conditioned on the preceding steps\nbut also explicitly linked to the final outcome of the reasoning trajectory. By\nenforcing conditional probability rules, our design captures the causal\nrelationships among reasoning steps, with the link to the outcome allowing\nprecise attribution of each intermediate step, thereby resolving credit\nassignment ambiguity. Further, through this consistent probabilistic modeling,\nthe rewards produced by CRM enable more reliable cross-sample comparison.\nExperiments across Best-of-N sampling, beam search and reinforcement learning\ndemonstrate that CRM consistently outperforms existing reward models, offering\na principled framework for enhancing LLM reasoning. In particular, CRM is more\nrobust to reward hacking and delivers stable downstream improvements without\nrelying on verifiable rewards derived from ground truth.",
-      "link": "http://arxiv.org/abs/2509.26578v1",
-      "published_date": "September 30, 2025",
-      "published_date_sort": "2025-09-30",
-      "citations": 0,
-      "institutions": "Unknown"
-    },
-    {
-      "title": "ACE: Adapting sampling for Counterfactual Explanations",
-      "authors": "Margarita A. Guerrero, Cristian R. Rojas",
-      "journal": "arXiv",
-      "snippet": "Counterfactual Explanations (CFEs) interpret machine learning models by\nidentifying the smallest change to input features needed to change the model's\nprediction to a desired output. For classification tasks, CFEs determine how\nclose a given sample is to the decision boundary of a trained classifier.\nExisting methods are often sample-inefficient, requiring numerous evaluations\nof a black-box model -- an approach that is both costly and impractical when\naccess to the model is limited. We propose Adaptive sampling for Counterfactual\nExplanations (ACE), a sample-efficient algorithm combining Bayesian estimation\nand stochastic optimization to approximate the decision boundary with fewer\nqueries. By prioritizing informative points, ACE minimizes evaluations while\ngenerating accurate and feasible CFEs. Extensive empirical results show that\nACE achieves superior evaluation efficiency compared to state-of-the-art\nmethods, while maintaining effectiveness in identifying minimal and actionable\nchanges.",
-      "link": "http://arxiv.org/abs/2509.26322v1",
-      "published_date": "September 30, 2025",
-      "published_date_sort": "2025-09-30",
-      "citations": 0,
-      "institutions": "Unknown"
-    },
-    {
-      "title": "Are Robust LLM Fingerprints Adversarially Robust?",
-      "authors": "Anshul Nasery, Edoardo Contente, Alkin Kaz, Pramod Viswanath, Sewoong Oh",
-      "journal": "arXiv",
-      "snippet": "Model fingerprinting has emerged as a promising paradigm for claiming model\nownership. However, robustness evaluations of these schemes have mostly focused\non benign perturbations such as incremental fine-tuning, model merging, and\nprompting. Lack of systematic investigations into {\\em adversarial robustness}\nagainst a malicious model host leaves current systems vulnerable. To bridge\nthis gap, we first define a concrete, practical threat model against model\nfingerprinting. We then take a critical look at existing model fingerprinting\nschemes to identify their fundamental vulnerabilities. Based on these, we\ndevelop adaptive adversarial attacks tailored for each vulnerability, and\ndemonstrate that these can bypass model authentication completely for ten\nrecently proposed fingerprinting schemes while maintaining high utility of the\nmodel for the end users. Our work encourages fingerprint designers to adopt\nadversarial robustness by design. We end with recommendations for future\nfingerprinting methods.",
-      "link": "http://arxiv.org/abs/2509.26598v1",
-      "published_date": "September 30, 2025",
-      "published_date_sort": "2025-09-30",
-      "citations": 0,
-      "institutions": "Unknown"
-    },
-    {
-      "title": "Recursive Self-Aggregation Unlocks Deep Thinking in Large Language\n  Models",
-      "authors": "Siddarth Venkatraman, Vineet Jain, Sarthak Mittal, Vedant Shah, Johan Obando-Ceron, Yoshua Bengio, Brian R. Bartoldson, Bhavya Kailkhura, Guillaume Lajoie, Glen Berseth, Nikolay Malkin, Moksh Jain",
-      "journal": "arXiv",
-      "snippet": "Test-time scaling methods improve the capabilities of large language models\n(LLMs) by increasing the amount of compute used during inference to make a\nprediction. Inference-time compute can be scaled in parallel by choosing among\nmultiple independent solutions or sequentially through self-refinement. We\npropose Recursive Self-Aggregation (RSA), a test-time scaling method inspired\nby evolutionary methods that combines the benefits of both parallel and\nsequential scaling. Each step of RSA refines a population of candidate\nreasoning chains through aggregation of subsets to yield a population of\nimproved solutions, which are then used as the candidate pool for the next\niteration. RSA exploits the rich information embedded in the reasoning chains\n-- not just the final answers -- and enables bootstrapping from partially\ncorrect intermediate steps within different chains of thought. Empirically, RSA\ndelivers substantial performance gains with increasing compute budgets across\ndiverse tasks, model families and sizes. Notably, RSA enables\nQwen3-4B-Instruct-2507 to achieve competitive performance with larger reasoning\nmodels, including DeepSeek-R1 and o3-mini (high), while outperforming purely\nparallel and sequential scaling strategies across AIME-25, HMMT-25, Reasoning\nGym, LiveCodeBench-v6, and SuperGPQA. We further demonstrate that training the\nmodel to combine solutions via a novel aggregation-aware reinforcement learning\napproach yields significant performance gains. Code available at\nhttps://github.com/HyperPotatoNeo/RSA.",
-      "link": "http://arxiv.org/abs/2509.26626v1",
-      "published_date": "September 30, 2025",
-      "published_date_sort": "2025-09-30",
-      "citations": 0,
-      "institutions": "Unknown"
-    },
-    {
-      "title": "SeedPrints: Fingerprints Can Even Tell Which Seed Your Large Language\n  Model Was Trained From",
-      "authors": "Yao Tong, Haonan Wang, Siquan Li, Kenji Kawaguchi, Tianyang Hu",
-      "journal": "arXiv",
-      "snippet": "Fingerprinting Large Language Models (LLMs) is essential for provenance\nverification and model attribution. Existing methods typically extract post-hoc\nsignatures based on training dynamics, data exposure, or hyperparameters --\nproperties that only emerge after training begins. In contrast, we propose a\nstronger and more intrinsic notion of LLM fingerprinting: SeedPrints, a method\nthat leverages random initialization biases as persistent, seed-dependent\nidentifiers present even before training. We show that untrained models exhibit\nreproducible token selection biases conditioned solely on their parameters at\ninitialization. These biases are stable and measurable throughout training,\nenabling our statistical detection method to recover a model's lineage with\nhigh confidence. Unlike prior techniques, unreliable before convergence and\nvulnerable to distribution shifts, SeedPrints remains effective across all\ntraining stages and robust under domain shifts or parameter modifications.\nExperiments on LLaMA-style and Qwen-style models show that SeedPrints achieves\nseed-level distinguishability and can provide birth-to-lifecycle identity\nverification akin to a biometric fingerprint. Evaluations on large-scale\npretrained models and fingerprinting benchmarks further confirm its\neffectiveness under practical deployment scenarios. These results suggest that\ninitialization itself imprints a unique and persistent identity on neural\nlanguage models, forming a true ''Galtonian'' fingerprint.",
-      "link": "http://arxiv.org/abs/2509.26404v1",
-      "published_date": "September 30, 2025",
-      "published_date_sort": "2025-09-30",
-      "citations": 0,
-      "institutions": "Unknown"
-    },
-    {
-      "title": "Clarification as Supervision: Reinforcement Learning for Vision-Language\n  Interfaces",
-      "authors": "John Gkountouras, Ivan Titov",
-      "journal": "arXiv",
-      "snippet": "Recent text-only models demonstrate remarkable mathematical reasoning\ncapabilities. Extending these to visual domains requires vision-language models\nto translate images into text descriptions. However, current models, trained to\nproduce captions for human readers, often omit the precise details that\nreasoning systems require. This creates an interface mismatch: reasoners often\nfail not due to reasoning limitations but because they lack access to critical\nvisual information. We propose Adaptive-Clarification Reinforcement Learning\n(AC-RL), which teaches vision models what information reasoners need through\ninteraction. Our key insight is that clarification requests during training\nreveal information gaps; by penalizing success that requires clarification, we\ncreate pressure for comprehensive initial captions that enable the reasoner to\nsolve the problem in a single pass. AC-RL improves average accuracy by 4.4\npoints over pretrained baselines across seven visual mathematical reasoning\nbenchmarks, and analysis shows it would cut clarification requests by up to 39%\nif those were allowed. By treating clarification as a form of implicit\nsupervision, AC-RL demonstrates that vision-language interfaces can be\neffectively learned through interaction alone, without requiring explicit\nannotations.",
-      "link": "http://arxiv.org/abs/2509.26594v1",
-      "published_date": "September 30, 2025",
-      "published_date_sort": "2025-09-30",
-      "citations": 0,
-      "institutions": "Unknown"
-    },
-    {
-      "title": "MC-GNNAS-Dock: Multi-criteria GNN-based Algorithm Selection for\n  Molecular Docking",
-      "authors": "Siyuan Cao, Hongxuan Wu, Jiabao Brad Wang, Yiliang Yuan, Mustafa Misir",
-      "journal": "arXiv",
-      "snippet": "Molecular docking is a core tool in drug discovery for predicting\nligand-target interactions. Despite the availability of diverse search-based\nand machine learning approaches, no single docking algorithm consistently\ndominates, as performance varies by context. To overcome this challenge,\nalgorithm selection frameworks such as GNNAS-Dock, built on graph neural\nnetworks, have been proposed. This study introduces an enhanced system,\nMC-GNNAS-Dock, with three key advances. First, a multi-criteria evaluation\nintegrates binding-pose accuracy (RMSD) with validity checks from PoseBusters,\noffering a more rigorous assessment. Second, architectural refinements by\ninclusion of residual connections strengthen predictive robustness. Third,\nrank-aware loss functions are incorporated to sharpen rank learning. Extensive\nexperiments are performed on a curated dataset containing approximately 3200\nprotein-ligand complexes from PDBBind. MC-GNNAS-Dock demonstrates consistently\nsuperior performance, achieving up to 5.4% (3.4%) gains under composite\ncriteria of RMSD below 1\\AA{} (2\\AA{}) with PoseBuster-validity compared to the\nsingle best solver (SBS) Uni-Mol Docking V2.",
-      "link": "http://arxiv.org/abs/2509.26377v1",
-      "published_date": "September 30, 2025",
-      "published_date_sort": "2025-09-30",
-      "citations": 0,
-      "institutions": "Unknown"
-    },
-    {
-      "title": "Entropy After $\\langle \\texttt{/Think} \\rangle$ for reasoning model\n  early exiting",
-      "authors": "Xi Wang, James McInerney, Lequn Wang, Nathan Kallus",
-      "journal": "arXiv",
-      "snippet": "Large reasoning models show improved performance with longer chains of\nthought. However, recent work has highlighted (qualitatively) their tendency to\noverthink, continuing to revise answers even after reaching the correct\nsolution. We quantitatively confirm this inefficiency by tracking Pass@1 for\nanswers averaged over a large number of rollouts and find that the model often\nbegins to always produce the correct answer early in the reasoning, making\nextra reasoning a waste of tokens. To detect and prevent overthinking, we\npropose a simple and inexpensive novel signal -- Entropy After </Think> (EAT)\n-- for monitoring and deciding whether to exit reasoning early. By appending a\nstop thinking token (</think>) and monitoring the entropy of the following\ntoken as the model reasons, we obtain a trajectory that decreases and\nstabilizes when Pass@1 plateaus; thresholding its variance under an exponential\nmoving average yields a practical stopping rule. Importantly, our approach\nenables adaptively allocating compute based on the EAT trajectory, allowing us\nto spend compute in a more efficient way compared with fixing the token budget\nfor all questions. Empirically, on MATH500 and AIME2025, EAT reduces token\nusage by 13 - 21% without harming accuracy, and it remains effective in black\nbox settings where logits from the reasoning model are not accessible, and EAT\nis computed with proxy models.",
-      "link": "http://arxiv.org/abs/2509.26522v1",
-      "published_date": "September 30, 2025",
-      "published_date_sort": "2025-09-30",
+      "title": "Reinforcement Learning for Machine Learning Engineering Agents",
+      "authors": "S Yang, J He-Yueya, P Liang - arXiv preprint arXiv:2509.01684, 2025 - arxiv.org",
+      "journal": "Google Scholar Result",
+      "snippet": "Existing agents for solving tasks such as ML engineering rely on prompting powerful language models. As a result, these agents do not improve with more experience. In this …",
+      "link": "https://arxiv.org/abs/2509.01684",
+      "published_date": "September 2025",
+      "published_date_sort": "2025-09-01",
       "citations": 0,
       "institutions": "Unknown"
     },
@@ -177,15 +56,15 @@
       "link": "https://arxiv.org/abs/2509.06503",
       "published_date": "September 2025",
       "published_date_sort": "2025-09-01",
-      "citations": 0,
+      "citations": 1,
       "institutions": "Unknown"
     },
     {
-      "title": "Reinforcement Learning for Machine Learning Engineering Agents",
-      "authors": "S Yang, J He-Yueya, P Liang - arXiv preprint arXiv:2509.01684, 2025 - arxiv.org",
+      "title": "DS-STAR: Data Science Agent via Iterative Planning and Verification",
+      "authors": "J Nam, J Yoon, J Chen, J Shin, T Pfister - arXiv preprint arXiv:2509.21825, 2025 - arxiv.org",
       "journal": "Google Scholar Result",
-      "snippet": "Existing agents for solving tasks such as ML engineering rely on prompting powerful language models. As a result, these agents do not improve with more experience. In this …",
-      "link": "https://arxiv.org/abs/2509.01684",
+      "snippet": "Data science, which transforms raw data into actionable insights, is critical for data-driven decision-making. However, these tasks are often complex, involving steps for exploring …",
+      "link": "https://arxiv.org/abs/2509.21825",
       "published_date": "September 2025",
       "published_date_sort": "2025-09-01",
       "citations": 0,
@@ -199,17 +78,6 @@
       "link": "https://arxiv.org/abs/2508.12555",
       "published_date": "August 2025",
       "published_date_sort": "2025-08-01",
-      "citations": 0,
-      "institutions": "Unknown"
-    },
-    {
-      "title": "PhysGym: Benchmarking LLMs in Interactive Physics Discovery with Controlled Priors",
-      "authors": "Y Chen, P Piȩkos, M Ostaszewski, F Laakom… - arXiv preprint arXiv …, 2025 - arxiv.org",
-      "journal": "Google Scholar Result",
-      "snippet": "Evaluating the scientific discovery capabilities of large language model based agents, particularly how they cope with varying environmental complexity and utilize prior …",
-      "link": "https://arxiv.org/abs/2507.15550",
-      "published_date": "July 2025",
-      "published_date_sort": "2025-07-01",
       "citations": 0,
       "institutions": "Unknown"
     },
@@ -236,14 +104,14 @@
       "institutions": "Unknown"
     },
     {
-      "title": "A Comprehensive Survey of Deep Research: Systems, Methodologies, and Applications",
-      "authors": "R Xu, J Peng - arXiv preprint arXiv:2506.12594, 2025 - arxiv.org",
+      "title": "Towards Community-Driven Agents for Machine Learning Engineering",
+      "authors": "S Li, W Sun, S Li, A Talwalkar, Y Yang - arXiv preprint arXiv:2506.20640, 2025 - arxiv.org",
       "journal": "Google Scholar Result",
-      "snippet": "This survey examines the rapidly evolving field of Deep Research systems--AI-powered applications that automate complex research workflows through the integration of large …",
-      "link": "https://arxiv.org/abs/2506.12594",
+      "snippet": "Large language model-based machine learning (ML) agents have shown great promise in automating ML research. However, existing agents typically operate in isolation on a given …",
+      "link": "https://arxiv.org/abs/2506.20640",
       "published_date": "June 2025",
       "published_date_sort": "2025-06-01",
-      "citations": 11,
+      "citations": 0,
       "institutions": "Unknown"
     },
     {
@@ -258,17 +126,6 @@
       "institutions": "Unknown"
     },
     {
-      "title": "Towards Community-Driven Agents for Machine Learning Engineering",
-      "authors": "S Li, W Sun, S Li, A Talwalkar, Y Yang - arXiv preprint arXiv:2506.20640, 2025 - arxiv.org",
-      "journal": "Google Scholar Result",
-      "snippet": "Large language model-based machine learning (ML) agents have shown great promise in automating ML research. However, existing agents typically operate in isolation on a given …",
-      "link": "https://arxiv.org/abs/2506.20640",
-      "published_date": "June 2025",
-      "published_date_sort": "2025-06-01",
-      "citations": 0,
-      "institutions": "Unknown"
-    },
-    {
       "title": "MLE-STAR: Machine Learning Engineering Agent via Search and Targeted Refinement",
       "authors": "J Nam, J Yoon, J Chen, J Shin, SÖ Arık… - arXiv preprint arXiv …, 2025 - arxiv.org",
       "journal": "Google Scholar Result",
@@ -276,18 +133,18 @@
       "link": "https://arxiv.org/abs/2506.15692",
       "published_date": "June 2025",
       "published_date_sort": "2025-06-01",
-      "citations": 1,
+      "citations": 3,
       "institutions": "Unknown"
     },
     {
-      "title": "The Automated LLM Speedrunning Benchmark: Reproducing NanoGPT Improvements",
-      "authors": "B Zhao, D Magka, M Jiang, X Li, R Raileanu… - arXiv preprint arXiv …, 2025 - arxiv.org",
+      "title": "A Comprehensive Survey of Deep Research: Systems, Methodologies, and Applications",
+      "authors": "R Xu, J Peng - arXiv preprint arXiv:2506.12594, 2025 - arxiv.org",
       "journal": "Google Scholar Result",
-      "snippet": "Rapid advancements in large language models (LLMs) have the potential to assist in scientific progress. A critical capability toward this endeavor is the ability to reproduce …",
-      "link": "https://arxiv.org/abs/2506.22419",
+      "snippet": "This survey examines the rapidly evolving field of Deep Research systems--AI-powered applications that automate complex research workflows through the integration of large …",
+      "link": "https://arxiv.org/abs/2506.12594",
       "published_date": "June 2025",
       "published_date_sort": "2025-06-01",
-      "citations": 1,
+      "citations": 12,
       "institutions": "Unknown"
     },
     {
@@ -302,11 +159,33 @@
       "institutions": "Unknown"
     },
     {
-      "title": "Mle-dojo: Interactive environments for empowering llm agents in machine learning engineering",
-      "authors": "R Qiang, Y Zhuang, Y Li, R Zhang, C Li… - arXiv preprint arXiv …, 2025 - arxiv.org",
+      "title": "The Automated LLM Speedrunning Benchmark: Reproducing NanoGPT Improvements",
+      "authors": "B Zhao, D Magka, M Jiang, X Li, R Raileanu… - arXiv preprint arXiv …, 2025 - arxiv.org",
       "journal": "Google Scholar Result",
-      "snippet": "We introduce MLE-Dojo, a Gym-style framework for systematically reinforcement learning, evaluating, and improving autonomous large language model (LLM) agents in iterative …",
-      "link": "https://arxiv.org/abs/2505.07782",
+      "snippet": "Rapid advancements in large language models (LLMs) have the potential to assist in scientific progress. A critical capability toward this endeavor is the ability to reproduce …",
+      "link": "https://arxiv.org/abs/2506.22419",
+      "published_date": "June 2025",
+      "published_date_sort": "2025-06-01",
+      "citations": 1,
+      "institutions": "Unknown"
+    },
+    {
+      "title": "Mlzero: A multi-agent system for end-to-end machine learning automation",
+      "authors": "H Fang, B Han, N Erickson, X Zhang, S Zhou… - arXiv preprint arXiv …, 2025 - arxiv.org",
+      "journal": "Google Scholar Result",
+      "snippet": "Existing AutoML systems have advanced the automation of machine learning (ML); however, they still require substantial manual configuration and expert input, particularly …",
+      "link": "https://arxiv.org/abs/2505.13941",
+      "published_date": "May 2025",
+      "published_date_sort": "2025-05-01",
+      "citations": 1,
+      "institutions": "Unknown"
+    },
+    {
+      "title": "RepoMaster: Autonomous Exploration and Understanding of GitHub Repositories for Complex Task Solving",
+      "authors": "H Wang, Z Ni, S Zhang, S Lu, S Hu, Z He, C Hu… - arXiv preprint arXiv …, 2025 - arxiv.org",
+      "journal": "Google Scholar Result",
+      "snippet": "The ultimate goal of code agents is to solve complex tasks autonomously. Although large language models (LLMs) have made substantial progress in code generation, real-world …",
+      "link": "https://arxiv.org/abs/2505.21577",
       "published_date": "May 2025",
       "published_date_sort": "2025-05-01",
       "citations": 2,
@@ -324,17 +203,6 @@
       "institutions": "Unknown"
     },
     {
-      "title": "RepoMaster: Autonomous Exploration and Understanding of GitHub Repositories for Complex Task Solving",
-      "authors": "H Wang, Z Ni, S Zhang, S Lu, S Hu, Z He, C Hu… - arXiv preprint arXiv …, 2025 - arxiv.org",
-      "journal": "Google Scholar Result",
-      "snippet": "The ultimate goal of code agents is to solve complex tasks autonomously. Although large language models (LLMs) have made substantial progress in code generation, real-world …",
-      "link": "https://arxiv.org/abs/2505.21577",
-      "published_date": "May 2025",
-      "published_date_sort": "2025-05-01",
-      "citations": 2,
-      "institutions": "Unknown"
-    },
-    {
       "title": "From automation to autonomy: A survey on large language models in scientific discovery",
       "authors": "T Zheng, Z Deng, HT Tsang, W Wang, J Bai… - arXiv preprint arXiv …, 2025 - arxiv.org",
       "journal": "Google Scholar Result",
@@ -346,17 +214,6 @@
       "institutions": "Unknown"
     },
     {
-      "title": "Mlzero: A multi-agent system for end-to-end machine learning automation",
-      "authors": "H Fang, B Han, N Erickson, X Zhang, S Zhou… - arXiv preprint arXiv …, 2025 - arxiv.org",
-      "journal": "Google Scholar Result",
-      "snippet": "Existing AutoML systems have advanced the automation of machine learning (ML); however, they still require substantial manual configuration and expert input, particularly …",
-      "link": "https://arxiv.org/abs/2505.13941",
-      "published_date": "May 2025",
-      "published_date_sort": "2025-05-01",
-      "citations": 1,
-      "institutions": "Unknown"
-    },
-    {
       "title": "IDA-Bench: Evaluating LLMs on Interactive Guided Data Analysis",
       "authors": "H Li, H Liu, T Zhu, T Guo, Z Zheng, X Deng… - arXiv preprint arXiv …, 2025 - arxiv.org",
       "journal": "Google Scholar Result",
@@ -365,6 +222,17 @@
       "published_date": "May 2025",
       "published_date_sort": "2025-05-01",
       "citations": 1,
+      "institutions": "Unknown"
+    },
+    {
+      "title": "Mle-dojo: Interactive environments for empowering llm agents in machine learning engineering",
+      "authors": "R Qiang, Y Zhuang, Y Li, R Zhang, C Li… - arXiv preprint arXiv …, 2025 - arxiv.org",
+      "journal": "Google Scholar Result",
+      "snippet": "We introduce MLE-Dojo, a Gym-style framework for systematically reinforcement learning, evaluating, and improving autonomous large language model (LLM) agents in iterative …",
+      "link": "https://arxiv.org/abs/2505.07782",
+      "published_date": "May 2025",
+      "published_date_sort": "2025-05-01",
+      "citations": 2,
       "institutions": "Unknown"
     },
     {
@@ -386,7 +254,7 @@
       "link": "https://arxiv.org/abs/2503.14499",
       "published_date": "March 2025",
       "published_date_sort": "2025-03-01",
-      "citations": 37,
+      "citations": 38,
       "institutions": "Unknown"
     }
   ]
