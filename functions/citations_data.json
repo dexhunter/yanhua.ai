@@ -1,11 +1,11 @@
 {
-  "last_updated": "2025-10-04 00:10:24 UTC",
+  "last_updated": "2025-10-05 00:11:40 UTC",
   "target_paper": "https://www.arxiv.org/abs/2502.13138",
   "arxiv_id": "2502.13138",
-  "total_citations": 32,
+  "total_citations": 20,
   "h_index": 5,
-  "recent_citations": 12,
-  "avg_citations_per_month": "4.00",
+  "recent_citations": 0,
+  "avg_citations_per_month": "2.86",
   "timeline": [
     {
       "date": "2025-03-01",
@@ -34,145 +34,9 @@
     {
       "date": "2025-09-01",
       "citations": 20
-    },
-    {
-      "date": "2025-10-01",
-      "citations": 32
     }
   ],
   "papers": [
-    {
-      "title": "SpurBreast: A Curated Dataset for Investigating Spurious Correlations in\n  Real-world Breast MRI Classification",
-      "authors": "Jong Bum Won, Wesley De Neve, Joris Vankerschaver, Utku Ozbulak",
-      "journal": "arXiv",
-      "snippet": "Deep neural networks (DNNs) have demonstrated remarkable success in medical\nimaging, yet their real-world deployment remains challenging due to spurious\ncorrelations, where models can learn non-clinical features instead of\nmeaningful medical patterns. Existing medical imaging datasets are not designed\nto systematically study this issue, largely due to restrictive licensing and\nlimited supplementary patient data. To address this gap, we introduce\nSpurBreast, a curated breast MRI dataset that intentionally incorporates\nspurious correlations to evaluate their impact on model performance. Analyzing\nover 100 features involving patient, device, and imaging protocol, we identify\ntwo dominant spurious signals: magnetic field strength (a global feature\ninfluencing the entire image) and image orientation (a local feature affecting\nspatial alignment). Through controlled dataset splits, we demonstrate that DNNs\ncan exploit these non-clinical signals, achieving high validation accuracy\nwhile failing to generalize to unbiased test data. Alongside these two datasets\ncontaining spurious correlations, we also provide benchmark datasets without\nspurious correlations, allowing researchers to systematically investigate\nclinically relevant and irrelevant features, uncertainty estimation,\nadversarial robustness, and generalization strategies. Models and datasets are\navailable at https://github.com/utkuozbulak/spurbreast.",
-      "link": "http://arxiv.org/abs/2510.02109v1",
-      "published_date": "October 02, 2025",
-      "published_date_sort": "2025-10-02",
-      "citations": 0,
-      "institutions": "Unknown"
-    },
-    {
-      "title": "Detection of Chagas Disease from the ECG: The George B. Moody PhysioNet\n  Challenge 2025",
-      "authors": "Matthew A. Reyna, Zuzana Koscova, Jan Pavlus, Soheil Saghafi, James Weigle, Andoni Elola, Salman Seyedi, Kiersten Campbell, Qiao Li, Ali Bahrami Rad, Antônio H. Ribeiro, Antonio Luiz P. Ribeiro, Reza Sameni, Gari D. Clifford",
-      "journal": "arXiv",
-      "snippet": "Objective: Chagas disease is a parasitic infection that is endemic to South\nAmerica, Central America, and, more recently, the U.S., primarily transmitted\nby insects. Chronic Chagas disease can cause cardiovascular diseases and\ndigestive problems. Serological testing capacities for Chagas disease are\nlimited, but Chagas cardiomyopathy often manifests in ECGs, providing an\nopportunity to prioritize patients for testing and treatment. Approach: The\nGeorge B. Moody PhysioNet Challenge 2025 invites teams to develop algorithmic\napproaches for identifying Chagas disease from electrocardiograms (ECGs). Main\nresults: This Challenge provides multiple innovations. First, we leveraged\nseveral datasets with labels from patient reports and serological testing,\nprovided a large dataset with weak labels and smaller datasets with strong\nlabels. Second, we augmented the data to support model robustness and\ngeneralizability to unseen data sources. Third, we applied an evaluation metric\nthat captured the local serological testing capacity for Chagas disease to\nframe the machine learning problem as a triage task. Significance: Over 630\nparticipants from 111 teams submitted over 1300 entries during the Challenge,\nrepresenting diverse approaches from academia and industry worldwide.",
-      "link": "http://arxiv.org/abs/2510.02202v1",
-      "published_date": "October 02, 2025",
-      "published_date_sort": "2025-10-02",
-      "citations": 0,
-      "institutions": "Unknown"
-    },
-    {
-      "title": "Explore Briefly, Then Decide: Mitigating LLM Overthinking via Cumulative\n  Entropy Regulation",
-      "authors": "Tianyi Jiang, Yi Bin, Yujuan Ding, Kainian Zhu, Fei Ma, Jingkuan Song, Heng Tao Shen",
-      "journal": "arXiv",
-      "snippet": "Large Language Models (LLMs) have demonstrated remarkable reasoning abilities\non complex problems using long Chain-of-Thought (CoT) reasoning. However, they\noften suffer from overthinking, meaning generating unnecessarily lengthy\nreasoning steps for simpler problems. This issue may degrade the efficiency of\nthe models and make them difficult to adapt the reasoning depth to the\ncomplexity of problems. To address this, we introduce a novel metric Token\nEntropy Cumulative Average (TECA), which measures the extent of exploration\nthroughout the reasoning process. We further propose a novel reasoning paradigm\n-- Explore Briefly, Then Decide -- with an associated Cumulative Entropy\nRegulation (CER) mechanism. This paradigm leverages TECA to help the model\ndynamically determine the optimal point to conclude its thought process and\nprovide a final answer, thus achieving efficient reasoning. Experimental\nresults across diverse mathematical benchmarks show that our approach\nsubstantially mitigates overthinking without sacrificing problem-solving\nability. With our thinking paradigm, the average response length decreases by\nup to 71% on simpler datasets, demonstrating the effectiveness of our method in\ncreating a more efficient and adaptive reasoning process.",
-      "link": "http://arxiv.org/abs/2510.02249v1",
-      "published_date": "October 02, 2025",
-      "published_date_sort": "2025-10-02",
-      "citations": 0,
-      "institutions": "Unknown"
-    },
-    {
-      "title": "Mathematical Modeling and Convergence Analysis of Deep Neural Networks\n  with Dense Layer Connectivities in Deep Learning",
-      "authors": "Jinshu Huang, Haibin Su, Xue-Cheng Tai, Chunlin Wu",
-      "journal": "arXiv",
-      "snippet": "In deep learning, dense layer connectivity has become a key design principle\nin deep neural networks (DNNs), enabling efficient information flow and strong\nperformance across a range of applications. In this work, we model densely\nconnected DNNs mathematically and analyze their learning problems in the\ndeep-layer limit. For a broad applicability, we present our analysis in a\nframework setting of DNNs with densely connected layers and general non-local\nfeature transformations (with local feature transformations as special cases)\nwithin layers, which is called dense non-local (DNL) framework and includes\nstandard DenseNets and variants as special examples. In this formulation, the\ndensely connected networks are modeled as nonlinear integral equations, in\ncontrast to the ordinary differential equation viewpoint commonly adopted in\nprior works. We study the associated training problems from an optimal control\nperspective and prove convergence results from the network learning problem to\nits continuous-time counterpart. In particular, we show the convergence of\noptimal values and the subsequence convergence of minimizers, using a piecewise\nlinear extension and $\\Gamma$-convergence analysis. Our results provide a\nmathematical foundation for understanding densely connected DNNs and further\nsuggest that such architectures can offer stability of training deep models.",
-      "link": "http://arxiv.org/abs/2510.02049v1",
-      "published_date": "October 02, 2025",
-      "published_date_sort": "2025-10-02",
-      "citations": 0,
-      "institutions": "Unknown"
-    },
-    {
-      "title": "Variational Secret Common Randomness Extraction",
-      "authors": "Xinyang Li, Vlad C. Andrei, Peter J. Gu, Yiqi Chen, Ullrich J. Mönich, Holger Boche",
-      "journal": "arXiv",
-      "snippet": "This paper studies the problem of extracting common randomness (CR) or secret\nkeys from correlated random sources observed by two legitimate parties, Alice\nand Bob, through public discussion in the presence of an eavesdropper, Eve. We\npropose a practical two-stage CR extraction framework. In the first stage, the\nvariational probabilistic quantization (VPQ) step is introduced, where Alice\nand Bob employ probabilistic neural network (NN) encoders to map their\nobservations into discrete, nearly uniform random variables (RVs) with high\nagreement probability while minimizing information leakage to Eve. This is\nrealized through a variational learning objective combined with adversarial\ntraining. In the second stage, a secure sketch using code-offset construction\nreconciles the encoder outputs into identical secret keys, whose secrecy is\nguaranteed by the VPQ objective. As a representative application, we study\nphysical layer key (PLK) generation. Beyond the traditional methods, which rely\non the channel reciprocity principle and require two-way channel probing, thus\nsuffering from large protocol overhead and being unsuitable in high mobility\nscenarios, we propose a sensing-based PLK generation method for integrated\nsensing and communications (ISAC) systems, where paired range-angle (RA) maps\nmeasured at Alice and Bob serve as correlated sources. The idea is verified\nthrough both end-to-end simulations and real-world software-defined radio (SDR)\nmeasurements, including scenarios where Eve has partial knowledge about Bob's\nposition. The results demonstrate the feasibility and convincing performance of\nboth the proposed CR extraction framework and sensing-based PLK generation\nmethod.",
-      "link": "http://arxiv.org/abs/2510.02048v1",
-      "published_date": "October 02, 2025",
-      "published_date_sort": "2025-10-02",
-      "citations": 0,
-      "institutions": "Unknown"
-    },
-    {
-      "title": "Unlocking Symbol-Level Precoding Efficiency Through Tensor Equivariant\n  Neural Network",
-      "authors": "Jinshuo Zhang, Yafei Wang, Xinping Yi, Wenjin Wang, Shi Jin, Symeon Chatzinotas, Björn Ottersten",
-      "journal": "arXiv",
-      "snippet": "Although symbol-level precoding (SLP) based on constructive interference (CI)\nexploitation offers performance gains, its high complexity remains a\nbottleneck. This paper addresses this challenge with an end-to-end deep\nlearning (DL) framework with low inference complexity that leverages the\nstructure of the optimal SLP solution in the closed-form and its inherent\ntensor equivariance (TE), where TE denotes that a permutation of the input\ninduces the corresponding permutation of the output. Building upon the\ncomputationally efficient model-based formulations, as well as their known\nclosed-form solutions, we analyze their relationship with linear precoding (LP)\nand investigate the corresponding optimality condition. We then construct a\nmapping from the problem formulation to the solution and prove its TE, based on\nwhich the designed networks reveal a specific parameter-sharing pattern that\ndelivers low computational complexity and strong generalization. Leveraging\nthese, we propose the backbone of the framework with an attention-based TE\nmodule, achieving linear computational complexity. Furthermore, we demonstrate\nthat such a framework is also applicable to imperfect CSI scenarios, where we\ndesign a TE-based network to map the CSI, statistics, and symbols to auxiliary\nvariables. Simulation results show that the proposed framework captures\nsubstantial performance gains of optimal SLP, while achieving an approximately\n80-times speedup over conventional methods and maintaining strong\ngeneralization across user numbers and symbol block lengths.",
-      "link": "http://arxiv.org/abs/2510.02108v1",
-      "published_date": "October 02, 2025",
-      "published_date_sort": "2025-10-02",
-      "citations": 0,
-      "institutions": "Unknown"
-    },
-    {
-      "title": "Tree-based Dialogue Reinforced Policy Optimization for Red-Teaming\n  Attacks",
-      "authors": "Ruohao Guo, Afshin Oroojlooy, Roshan Sridhar, Miguel Ballesteros, Alan Ritter, Dan Roth",
-      "journal": "arXiv",
-      "snippet": "Despite recent rapid progress in AI safety, current large language models\nremain vulnerable to adversarial attacks in multi-turn interaction settings,\nwhere attackers strategically adapt their prompts across conversation turns and\npose a more critical yet realistic challenge. Existing approaches that discover\nsafety vulnerabilities either rely on manual red-teaming with human experts or\nemploy automated methods using pre-defined templates and human-curated attack\ndata, with most focusing on single-turn attacks. However, these methods did not\nexplore the vast space of possible multi-turn attacks, failing to consider\nnovel attack trajectories that emerge from complex dialogue dynamics and\nstrategic conversation planning. This gap is particularly critical given recent\nfindings that LLMs exhibit significantly higher vulnerability to multi-turn\nattacks compared to single-turn attacks. We propose DialTree-RPO, an on-policy\nreinforcement learning framework integrated with tree search that autonomously\ndiscovers diverse multi-turn attack strategies by treating the dialogue as a\nsequential decision-making problem, enabling systematic exploration without\nmanually curated data. Through extensive experiments, our approach not only\nachieves more than 25.9% higher ASR across 10 target models compared to\nprevious state-of-the-art approaches, but also effectively uncovers new attack\nstrategies by learning optimal dialogue policies that maximize attack success\nacross multiple turns.",
-      "link": "http://arxiv.org/abs/2510.02286v1",
-      "published_date": "October 02, 2025",
-      "published_date_sort": "2025-10-02",
-      "citations": 0,
-      "institutions": "Unknown"
-    },
-    {
-      "title": "KaVa: Latent Reasoning via Compressed KV-Cache Distillation",
-      "authors": "Anna Kuzina, Maciej Pioro, Paul N. Whatmough, Babak Ehteshami Bejnordi",
-      "journal": "arXiv",
-      "snippet": "Large Language Models (LLMs) excel at multi-step reasoning problems with\nexplicit chain-of-thought (CoT), but verbose traces incur significant\ncomputational costs and memory overhead, and often carry redundant, stylistic\nartifacts. Latent reasoning has emerged as an efficient alternative that\ninternalizes the thought process, but it suffers from a critical lack of\nsupervision, limiting its effectiveness on complex, natural-language reasoning\ntraces. In this work, we propose KaVa, the first framework that bridges this\ngap by distilling knowledge directly from a compressed KV-cache of the teacher\ninto a latent-reasoning student via self-distillation, leveraging the\nrepresentational flexibility of continuous latent tokens to align stepwise KV\ntrajectories. We show that the abstract, unstructured knowledge within\ncompressed KV-cache, which lacks direct token correspondence, can serve as a\nrich supervisory signal for a latent reasoning student. Empirically, the\napproach consistently outperforms strong latent baselines, exhibits markedly\nsmaller degradation from equation-only to natural-language traces, and scales\nto larger backbones while preserving efficiency. These results establish\ncompressed KV-cache distillation as a scalable supervision signal for latent\nreasoning, combining the accuracy of CoT-trained teachers with the efficiency\nand deployability of latent inference.",
-      "link": "http://arxiv.org/abs/2510.02312v1",
-      "published_date": "October 02, 2025",
-      "published_date_sort": "2025-10-02",
-      "citations": 0,
-      "institutions": "Unknown"
-    },
-    {
-      "title": "More Than One Teacher: Adaptive Multi-Guidance Policy Optimization for\n  Diverse Exploration",
-      "authors": "Xiaoyang Yuan, Yujuan Ding, Yi Bin, Wenqi Shao, Jinyu Cai, Jingkuan Song, Yang Yang, Hengtao Shen",
-      "journal": "arXiv",
-      "snippet": "Reinforcement Learning with Verifiable Rewards (RLVR) is a promising paradigm\nfor enhancing the reasoning ability in Large Language Models (LLMs). However,\nprevailing methods primarily rely on self-exploration or a single off-policy\nteacher to elicit long chain-of-thought (LongCoT) reasoning, which may\nintroduce intrinsic model biases and restrict exploration, ultimately limiting\nreasoning diversity and performance. Drawing inspiration from multi-teacher\nstrategies in knowledge distillation, we introduce Adaptive Multi-Guidance\nPolicy Optimization (AMPO), a novel framework that adaptively leverages\nguidance from multiple proficient teacher models, but only when the on-policy\nmodel fails to generate correct solutions. This \"guidance-on-demand\" approach\nexpands exploration while preserving the value of self-discovery. Moreover,\nAMPO incorporates a comprehension-based selection mechanism, prompting the\nstudent to learn from the reasoning paths that it is most likely to comprehend,\nthus balancing broad exploration with effective exploitation. Extensive\nexperiments show AMPO substantially outperforms a strong baseline (GRPO), with\na 4.3% improvement on mathematical reasoning tasks and 12.2% on\nout-of-distribution tasks, while significantly boosting Pass@k performance and\nenabling more diverse exploration. Notably, using four peer-sized teachers, our\nmethod achieves comparable results to approaches that leverage a single, more\npowerful teacher (e.g., DeepSeek-R1) with more data. These results demonstrate\na more efficient and scalable path to superior reasoning and generalizability.\nOur code is available at https://github.com/SII-Enigma/AMPO.",
-      "link": "http://arxiv.org/abs/2510.02227v1",
-      "published_date": "October 02, 2025",
-      "published_date_sort": "2025-10-02",
-      "citations": 0,
-      "institutions": "Unknown"
-    },
-    {
-      "title": "ShapeGen3DCP: A Deep Learning Framework for Layer Shape Prediction in 3D\n  Concrete Printing",
-      "authors": "Giacomo Rizzieri, Federico Lanteri, Liberato Ferrara, Massimiliano Cremonesi",
-      "journal": "arXiv",
-      "snippet": "This work introduces ShapeGen3DCP, a deep learning framework for fast and\naccurate prediction of filament cross-sectional geometry in 3D Concrete\nPrinting (3DCP). The method is based on a neural network architecture that\ntakes as input both material properties in the fluid state (density, yield\nstress, plastic viscosity) and process parameters (nozzle diameter, nozzle\nheight, printing and flow velocities) to directly predict extruded layer\nshapes. To enhance generalization, some inputs are reformulated into\ndimensionless parameters that capture underlying physical principles. Predicted\ngeometries are compactly represented using Fourier descriptors, which enforce\nsmooth, closed, and symmetric profiles while reducing the prediction task to a\nsmall set of coefficients. The training dataset was synthetically generated\nusing a well-established Particle Finite Element (PFEM) model of 3DCP,\novercoming the scarcity of experimental data. Validation against diverse\nnumerical and experimental cases shows strong agreement, confirming the\nframework's accuracy and reliability. This opens the way to practical uses\nranging from pre-calibration of print settings, minimizing or even eliminating\ntrial-and-error adjustments, to toolpath optimization for more advanced\ndesigns. Looking ahead, coupling the framework with simulations and sensor\nfeedback could enable closed-loop digital twins for 3DCP, driving real-time\nprocess optimization, defect detection, and adaptive control of printing\nparameters.",
-      "link": "http://arxiv.org/abs/2510.02009v1",
-      "published_date": "October 02, 2025",
-      "published_date_sort": "2025-10-02",
-      "citations": 0,
-      "institutions": "Unknown"
-    },
-    {
-      "title": "Parallel Scaling Law: Unveiling Reasoning Generalization through A\n  Cross-Linguistic Perspective",
-      "authors": "Wen Yang, Junhong Wu, Chong Li, Chengqing Zong, Jiajun Zhang",
-      "journal": "arXiv",
-      "snippet": "Recent advancements in Reinforcement Post-Training (RPT) have significantly\nenhanced the capabilities of Large Reasoning Models (LRMs), sparking increased\ninterest in the generalization of RL-based reasoning. While existing work has\nprimarily focused on investigating its generalization across tasks or\nmodalities, this study proposes a novel cross-linguistic perspective to\ninvestigate reasoning generalization. This raises a crucial question:\n$\\textit{Does the reasoning capability achieved from English RPT effectively\ntransfer to other languages?}$ We address this by systematically evaluating\nEnglish-centric LRMs on multilingual reasoning benchmarks and introducing a\nmetric to quantify cross-lingual transferability. Our findings reveal that\ncross-lingual transferability varies significantly across initial model, target\nlanguage, and training paradigm. Through interventional studies, we find that\nmodels with stronger initial English capabilities tend to over-rely on\nEnglish-specific patterns, leading to diminished cross-lingual generalization.\nTo address this, we conduct a thorough parallel training study. Experimental\nresults yield three key findings: $\\textbf{First-Parallel Leap}$, a substantial\nleap in performance when transitioning from monolingual to just a single\nparallel language, and a predictable $\\textbf{Parallel Scaling Law}$, revealing\nthat cross-lingual reasoning transfer follows a power-law with the number of\ntraining parallel languages. Moreover, we identify the discrepancy between\nactual monolingual performance and the power-law prediction as\n$\\textbf{Monolingual Generalization Gap}$, indicating that English-centric LRMs\nfail to fully generalize across languages. Our study challenges the assumption\nthat LRM reasoning mirrors human cognition, providing critical insights for the\ndevelopment of more language-agnostic LRMs.",
-      "link": "http://arxiv.org/abs/2510.02272v1",
-      "published_date": "October 02, 2025",
-      "published_date_sort": "2025-10-02",
-      "citations": 0,
-      "institutions": "Unknown"
-    },
-    {
-      "title": "DiFFPO: Training Diffusion LLMs to Reason Fast and Furious via\n  Reinforcement Learning",
-      "authors": "Hanyang Zhao, Dawen Liang, Wenpin Tang, David Yao, Nathan Kallus",
-      "journal": "arXiv",
-      "snippet": "We propose DiFFPO, Diffusion Fast and Furious Policy Optimization, a unified\nframework for training masked diffusion large language models (dLLMs) to reason\nnot only better (furious), but also faster via reinforcement learning (RL). We\nfirst unify the existing baseline approach such as d1 by proposing to train\nsurrogate policies via off-policy RL, whose likelihood is much more tractable\nas an approximation to the true dLLM policy. This naturally motivates a more\naccurate and informative two-stage likelihood approximation combined with\nimportance sampling correction, which leads to generalized RL algorithms with\nbetter sample efficiency and superior task performance. Second, we propose a\nnew direction of joint training efficient samplers/controllers of dLLMs policy.\nVia RL, we incentivize dLLMs' natural multi-token prediction capabilities by\nletting the model learn to adaptively allocate an inference threshold for each\nprompt. By jointly training the sampler, we yield better accuracies with lower\nnumber of function evaluations (NFEs) compared to training the model only,\nobtaining the best performance in improving the Pareto frontier of the\ninference-time compute of dLLMs. We showcase the effectiveness of our pipeline\nby training open source large diffusion language models over benchmark math and\nplanning tasks.",
-      "link": "http://arxiv.org/abs/2510.02212v1",
-      "published_date": "October 02, 2025",
-      "published_date_sort": "2025-10-02",
-      "citations": 0,
-      "institutions": "Unknown"
-    },
     {
       "title": "Reinforcement Learning for Machine Learning Engineering Agents",
       "authors": "S Yang, J He-Yueya, P Liang - arXiv preprint arXiv:2509.01684, 2025 - arxiv.org",
@@ -196,14 +60,14 @@
       "institutions": "Unknown"
     },
     {
-      "title": "DS-STAR: Data Science Agent via Iterative Planning and Verification",
-      "authors": "J Nam, J Yoon, J Chen, J Shin, T Pfister - arXiv preprint arXiv:2509.21825, 2025 - arxiv.org",
+      "title": "Bootstrapping Task Spaces for Self-Improvement",
+      "authors": "M Jiang, A Lupu, Y Bachrach - arXiv preprint arXiv:2509.04575, 2025 - arxiv.org",
       "journal": "Google Scholar Result",
-      "snippet": "Data science, which transforms raw data into actionable insights, is critical for data-driven decision-making. However, these tasks are often complex, involving steps for exploring …",
-      "link": "https://arxiv.org/abs/2509.21825",
+      "snippet": "Progress in many task domains emerges from repeated revisions to previous solution attempts. Training agents that can reliably self-improve over such sequences at inference …",
+      "link": "https://arxiv.org/abs/2509.04575",
       "published_date": "September 2025",
       "published_date_sort": "2025-09-01",
-      "citations": 0,
+      "citations": 1,
       "institutions": "Unknown"
     },
     {
@@ -229,17 +93,6 @@
       "institutions": "Unknown"
     },
     {
-      "title": "Towards Community-Driven Agents for Machine Learning Engineering",
-      "authors": "S Li, W Sun, S Li, A Talwalkar, Y Yang - arXiv preprint arXiv:2506.20640, 2025 - arxiv.org",
-      "journal": "Google Scholar Result",
-      "snippet": "Large language model-based machine learning (ML) agents have shown great promise in automating ML research. However, existing agents typically operate in isolation on a given …",
-      "link": "https://arxiv.org/abs/2506.20640",
-      "published_date": "June 2025",
-      "published_date_sort": "2025-06-01",
-      "citations": 0,
-      "institutions": "Unknown"
-    },
-    {
       "title": "MLE-STAR: Machine Learning Engineering Agent via Search and Targeted Refinement",
       "authors": "J Nam, J Yoon, J Chen, J Shin, SÖ Arık… - arXiv preprint arXiv …, 2025 - arxiv.org",
       "journal": "Google Scholar Result",
@@ -251,6 +104,28 @@
       "institutions": "Unknown"
     },
     {
+      "title": "Towards Community-Driven Agents for Machine Learning Engineering",
+      "authors": "S Li, W Sun, S Li, A Talwalkar, Y Yang - arXiv preprint arXiv:2506.20640, 2025 - arxiv.org",
+      "journal": "Google Scholar Result",
+      "snippet": "Large language model-based machine learning (ML) agents have shown great promise in automating ML research. However, existing agents typically operate in isolation on a given …",
+      "link": "https://arxiv.org/abs/2506.20640",
+      "published_date": "June 2025",
+      "published_date_sort": "2025-06-01",
+      "citations": 0,
+      "institutions": "Unknown"
+    },
+    {
+      "title": "AI Scientists Fail Without Strong Implementation Capability",
+      "authors": "M Zhu, Q Xie, Y Weng, J Wu, Z Lin, L Yang… - arXiv preprint arXiv …, 2025 - arxiv.org",
+      "journal": "Google Scholar Result",
+      "snippet": "The emergence of Artificial Intelligence (AI) Scientist represents a paradigm shift in scientific discovery, with large language models (LLMs) taking the lead as the primary executor in the …",
+      "link": "https://arxiv.org/abs/2506.01372",
+      "published_date": "June 2025",
+      "published_date_sort": "2025-06-01",
+      "citations": 6,
+      "institutions": "Unknown"
+    },
+    {
       "title": "A Comprehensive Survey of Deep Research: Systems, Methodologies, and Applications",
       "authors": "R Xu, J Peng - arXiv preprint arXiv:2506.12594, 2025 - arxiv.org",
       "journal": "Google Scholar Result",
@@ -258,18 +133,7 @@
       "link": "https://arxiv.org/abs/2506.12594",
       "published_date": "June 2025",
       "published_date_sort": "2025-06-01",
-      "citations": 12,
-      "institutions": "Unknown"
-    },
-    {
-      "title": "The Automated LLM Speedrunning Benchmark: Reproducing NanoGPT Improvements",
-      "authors": "B Zhao, D Magka, M Jiang, X Li, R Raileanu… - arXiv preprint arXiv …, 2025 - arxiv.org",
-      "journal": "Google Scholar Result",
-      "snippet": "Rapid advancements in large language models (LLMs) have the potential to assist in scientific progress. A critical capability toward this endeavor is the ability to reproduce …",
-      "link": "https://arxiv.org/abs/2506.22419",
-      "published_date": "June 2025",
-      "published_date_sort": "2025-06-01",
-      "citations": 1,
+      "citations": 13,
       "institutions": "Unknown"
     },
     {
@@ -278,6 +142,17 @@
       "journal": "Google Scholar Result",
       "snippet": "Large Language Model (LLM) agents have shown great potential in addressing real-world data science problems. LLM-driven data science agents promise to automate the entire …",
       "link": "https://arxiv.org/abs/2506.10974",
+      "published_date": "June 2025",
+      "published_date_sort": "2025-06-01",
+      "citations": 1,
+      "institutions": "Unknown"
+    },
+    {
+      "title": "The Automated LLM Speedrunning Benchmark: Reproducing NanoGPT Improvements",
+      "authors": "B Zhao, D Magka, M Jiang, X Li, R Raileanu… - arXiv preprint arXiv …, 2025 - arxiv.org",
+      "journal": "Google Scholar Result",
+      "snippet": "Rapid advancements in large language models (LLMs) have the potential to assist in scientific progress. A critical capability toward this endeavor is the ability to reproduce …",
+      "link": "https://arxiv.org/abs/2506.22419",
       "published_date": "June 2025",
       "published_date_sort": "2025-06-01",
       "citations": 1,
@@ -295,14 +170,14 @@
       "institutions": "Unknown"
     },
     {
-      "title": "AI Scientists Fail Without Strong Implementation Capability",
-      "authors": "M Zhu, Q Xie, Y Weng, J Wu, Z Lin, L Yang… - arXiv preprint arXiv …, 2025 - arxiv.org",
+      "title": "RepoMaster: Autonomous Exploration and Understanding of GitHub Repositories for Complex Task Solving",
+      "authors": "H Wang, Z Ni, S Zhang, S Lu, S Hu, Z He, C Hu… - arXiv preprint arXiv …, 2025 - arxiv.org",
       "journal": "Google Scholar Result",
-      "snippet": "The emergence of Artificial Intelligence (AI) Scientist represents a paradigm shift in scientific discovery, with large language models (LLMs) taking the lead as the primary executor in the …",
-      "link": "https://arxiv.org/abs/2506.01372",
-      "published_date": "June 2025",
-      "published_date_sort": "2025-06-01",
-      "citations": 6,
+      "snippet": "The ultimate goal of code agents is to solve complex tasks autonomously. Although large language models (LLMs) have made substantial progress in code generation, real-world …",
+      "link": "https://arxiv.org/abs/2505.21577",
+      "published_date": "May 2025",
+      "published_date_sort": "2025-05-01",
+      "citations": 2,
       "institutions": "Unknown"
     },
     {
@@ -311,28 +186,6 @@
       "journal": "Google Scholar Result",
       "snippet": "We introduce MLE-Dojo, a Gym-style framework for systematically reinforcement learning, evaluating, and improving autonomous large language model (LLM) agents in iterative …",
       "link": "https://arxiv.org/abs/2505.07782",
-      "published_date": "May 2025",
-      "published_date_sort": "2025-05-01",
-      "citations": 2,
-      "institutions": "Unknown"
-    },
-    {
-      "title": "CodePDE: An Inference Framework for LLM-driven PDE Solver Generation",
-      "authors": "S Li, T Marwah, J Shen, W Sun, A Risteski… - arXiv preprint arXiv …, 2025 - arxiv.org",
-      "journal": "Google Scholar Result",
-      "snippet": "Partial differential equations (PDEs) are fundamental to modeling physical systems, yet solving them remains a complex challenge. Traditional numerical solvers rely on expert …",
-      "link": "https://arxiv.org/abs/2505.08783",
-      "published_date": "May 2025",
-      "published_date_sort": "2025-05-01",
-      "citations": 3,
-      "institutions": "Unknown"
-    },
-    {
-      "title": "RepoMaster: Autonomous Exploration and Understanding of GitHub Repositories for Complex Task Solving",
-      "authors": "H Wang, Z Ni, S Zhang, S Lu, S Hu, Z He, C Hu… - arXiv preprint arXiv …, 2025 - arxiv.org",
-      "journal": "Google Scholar Result",
-      "snippet": "The ultimate goal of code agents is to solve complex tasks autonomously. Although large language models (LLMs) have made substantial progress in code generation, real-world …",
-      "link": "https://arxiv.org/abs/2505.21577",
       "published_date": "May 2025",
       "published_date_sort": "2025-05-01",
       "citations": 2,
@@ -350,14 +203,14 @@
       "institutions": "Unknown"
     },
     {
-      "title": "IDA-Bench: Evaluating LLMs on Interactive Guided Data Analysis",
-      "authors": "H Li, H Liu, T Zhu, T Guo, Z Zheng, X Deng… - arXiv preprint arXiv …, 2025 - arxiv.org",
+      "title": "CodePDE: An Inference Framework for LLM-driven PDE Solver Generation",
+      "authors": "S Li, T Marwah, J Shen, W Sun, A Risteski… - arXiv preprint arXiv …, 2025 - arxiv.org",
       "journal": "Google Scholar Result",
-      "snippet": "Large Language Models (LLMs) show promise as data analysis agents, but existing benchmarks overlook the iterative nature of the field, where experts' decisions evolve with …",
-      "link": "https://arxiv.org/abs/2505.18223",
+      "snippet": "Partial differential equations (PDEs) are fundamental to modeling physical systems, yet solving them remains a complex challenge. Traditional numerical solvers rely on expert …",
+      "link": "https://arxiv.org/abs/2505.08783",
       "published_date": "May 2025",
       "published_date_sort": "2025-05-01",
-      "citations": 1,
+      "citations": 3,
       "institutions": "Unknown"
     },
     {
@@ -366,6 +219,17 @@
       "journal": "Google Scholar Result",
       "snippet": "Existing AutoML systems have advanced the automation of machine learning (ML); however, they still require substantial manual configuration and expert input, particularly …",
       "link": "https://arxiv.org/abs/2505.13941",
+      "published_date": "May 2025",
+      "published_date_sort": "2025-05-01",
+      "citations": 1,
+      "institutions": "Unknown"
+    },
+    {
+      "title": "IDA-Bench: Evaluating LLMs on Interactive Guided Data Analysis",
+      "authors": "H Li, H Liu, T Zhu, T Guo, Z Zheng, X Deng… - arXiv preprint arXiv …, 2025 - arxiv.org",
+      "journal": "Google Scholar Result",
+      "snippet": "Large Language Models (LLMs) show promise as data analysis agents, but existing benchmarks overlook the iterative nature of the field, where experts' decisions evolve with …",
+      "link": "https://arxiv.org/abs/2505.18223",
       "published_date": "May 2025",
       "published_date_sort": "2025-05-01",
       "citations": 1,
