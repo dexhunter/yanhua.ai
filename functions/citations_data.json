@@ -1,11 +1,11 @@
 {
-  "last_updated": "2025-10-07 00:10:30 UTC",
+  "last_updated": "2025-10-08 00:10:34 UTC",
   "target_paper": "https://www.arxiv.org/abs/2502.13138",
   "arxiv_id": "2502.13138",
-  "total_citations": 20,
+  "total_citations": 21,
   "h_index": 5,
-  "recent_citations": 0,
-  "avg_citations_per_month": "2.86",
+  "recent_citations": 1,
+  "avg_citations_per_month": "2.62",
   "timeline": [
     {
       "date": "2025-03-01",
@@ -34,18 +34,22 @@
     {
       "date": "2025-09-01",
       "citations": 20
+    },
+    {
+      "date": "2025-10-01",
+      "citations": 21
     }
   ],
   "papers": [
     {
-      "title": "Bootstrapping Task Spaces for Self-Improvement",
-      "authors": "M Jiang, A Lupu, Y Bachrach - arXiv preprint arXiv:2509.04575, 2025 - arxiv.org",
-      "journal": "Google Scholar Result",
-      "snippet": "Progress in many task domains emerges from repeated revisions to previous solution attempts. Training agents that can reliably self-improve over such sequences at inference …",
-      "link": "https://arxiv.org/abs/2509.04575",
-      "published_date": "September 2025",
-      "published_date_sort": "2025-09-01",
-      "citations": 1,
+      "title": "From Noisy Traces to Stable Gradients: Bias-Variance Optimized\n  Preference Optimization for Aligning Large Reasoning Models",
+      "authors": "Mingkang Zhu, Xi Chen, Bei Yu, Hengshuang Zhao, Jiaya Jia",
+      "journal": "arXiv",
+      "snippet": "Large reasoning models (LRMs) generate intermediate reasoning traces before\nproducing final answers, yielding strong gains on multi-step and mathematical\ntasks. Yet aligning LRMs with human preferences, a crucial prerequisite for\nmodel deployment, remains underexplored. The statistically correct objective\nfor preference alignment requires marginalizing over reasoning traces, but this\ncomputation is intractable in practice. A common workaround optimizes a single\nsampled trajectory, which introduces substantial gradient variance from\nstochastic trace sampling. To address this challenge, we frame preference\noptimization for LRMs through the lens of the bias--variance trade-off and\npropose Bias--Variance Optimized Preference Optimization (BVPO), a simple,\ndrop-in method that mixes two gradient estimators: a high-variance trace-based\nestimator and a low-variance empty-trace estimator obtained by disabling\nreasoning trace generation. Our theory shows that BVPO strictly reduces\ntrace-induced variance for any nontrivial mixture, provides a closed-form\nchoice of the mixing weight that minimizes mean-squared error relative to the\ntrue marginal gradient, and under standard smoothness and step-size conditions,\ntightens classical convergence bounds for stochastic gradient descent.\nEmpirically, BVPO improves alignment over the best baseline by up to 7.8 points\non AlpacaEval~2 and 6.8 points on Arena-Hard. Despite being trained only on\ngeneral conversational data, BVPO also boosts reasoning performance for base\nmodels by up to 4.0 points on the average of six math reasoning benchmarks.\nThese results identify variance from trace sampling as a key bottleneck and\ndemonstrate that directly optimizing the bias--variance trade-off yields more\nstable training and stronger overall performance.",
+      "link": "http://arxiv.org/abs/2510.05095v1",
+      "published_date": "October 06, 2025",
+      "published_date_sort": "2025-10-06",
+      "citations": 0,
       "institutions": "Unknown"
     },
     {
@@ -57,6 +61,17 @@
       "published_date": "September 2025",
       "published_date_sort": "2025-09-01",
       "citations": 0,
+      "institutions": "Unknown"
+    },
+    {
+      "title": "Bootstrapping Task Spaces for Self-Improvement",
+      "authors": "M Jiang, A Lupu, Y Bachrach - arXiv preprint arXiv:2509.04575, 2025 - arxiv.org",
+      "journal": "Google Scholar Result",
+      "snippet": "Progress in many task domains emerges from repeated revisions to previous solution attempts. Training agents that can reliably self-improve over such sequences at inference …",
+      "link": "https://arxiv.org/abs/2509.04575",
+      "published_date": "September 2025",
+      "published_date_sort": "2025-09-01",
+      "citations": 1,
       "institutions": "Unknown"
     },
     {
@@ -93,28 +108,6 @@
       "institutions": "Unknown"
     },
     {
-      "title": "The Automated LLM Speedrunning Benchmark: Reproducing NanoGPT Improvements",
-      "authors": "B Zhao, D Magka, M Jiang, X Li, R Raileanu… - arXiv preprint arXiv …, 2025 - arxiv.org",
-      "journal": "Google Scholar Result",
-      "snippet": "Rapid advancements in large language models (LLMs) have the potential to assist in scientific progress. A critical capability toward this endeavor is the ability to reproduce …",
-      "link": "https://arxiv.org/abs/2506.22419",
-      "published_date": "June 2025",
-      "published_date_sort": "2025-06-01",
-      "citations": 1,
-      "institutions": "Unknown"
-    },
-    {
-      "title": "A Comprehensive Survey of Deep Research: Systems, Methodologies, and Applications",
-      "authors": "R Xu, J Peng - arXiv preprint arXiv:2506.12594, 2025 - arxiv.org",
-      "journal": "Google Scholar Result",
-      "snippet": "This survey examines the rapidly evolving field of Deep Research systems--AI-powered applications that automate complex research workflows through the integration of large …",
-      "link": "https://arxiv.org/abs/2506.12594",
-      "published_date": "June 2025",
-      "published_date_sort": "2025-06-01",
-      "citations": 14,
-      "institutions": "Unknown"
-    },
-    {
       "title": "AI Scientists Fail Without Strong Implementation Capability",
       "authors": "M Zhu, Q Xie, Y Weng, J Wu, Z Lin, L Yang… - arXiv preprint arXiv …, 2025 - arxiv.org",
       "journal": "Google Scholar Result",
@@ -126,25 +119,14 @@
       "institutions": "Unknown"
     },
     {
-      "title": "AutoMind: Adaptive Knowledgeable Agent for Automated Data Science",
-      "authors": "Y Ou, Y Luo, J Zheng, L Wei, S Qiao, J Zhang… - arXiv preprint arXiv …, 2025 - arxiv.org",
+      "title": "The Automated LLM Speedrunning Benchmark: Reproducing NanoGPT Improvements",
+      "authors": "B Zhao, D Magka, M Jiang, X Li, R Raileanu… - arXiv preprint arXiv …, 2025 - arxiv.org",
       "journal": "Google Scholar Result",
-      "snippet": "Large Language Model (LLM) agents have shown great potential in addressing real-world data science problems. LLM-driven data science agents promise to automate the entire …",
-      "link": "https://arxiv.org/abs/2506.10974",
+      "snippet": "Rapid advancements in large language models (LLMs) have the potential to assist in scientific progress. A critical capability toward this endeavor is the ability to reproduce …",
+      "link": "https://arxiv.org/abs/2506.22419",
       "published_date": "June 2025",
       "published_date_sort": "2025-06-01",
       "citations": 1,
-      "institutions": "Unknown"
-    },
-    {
-      "title": "LMR-BENCH: Evaluating LLM Agent's Ability on Reproducing Language Modeling Research",
-      "authors": "S Yan, R Li, Z Luo, Z Wang, D Li, L Jing, K He… - arXiv preprint arXiv …, 2025 - arxiv.org",
-      "journal": "Google Scholar Result",
-      "snippet": "Large language model (LLM) agents have demonstrated remarkable potential in advancing scientific discovery. However, their capability in the fundamental yet crucial task of …",
-      "link": "https://arxiv.org/abs/2506.17335",
-      "published_date": "June 2025",
-      "published_date_sort": "2025-06-01",
-      "citations": 2,
       "institutions": "Unknown"
     },
     {
@@ -170,14 +152,47 @@
       "institutions": "Unknown"
     },
     {
-      "title": "IDA-Bench: Evaluating LLMs on Interactive Guided Data Analysis",
-      "authors": "H Li, H Liu, T Zhu, T Guo, Z Zheng, X Deng… - arXiv preprint arXiv …, 2025 - arxiv.org",
+      "title": "LMR-BENCH: Evaluating LLM Agent's Ability on Reproducing Language Modeling Research",
+      "authors": "S Yan, R Li, Z Luo, Z Wang, D Li, L Jing, K He… - arXiv preprint arXiv …, 2025 - arxiv.org",
       "journal": "Google Scholar Result",
-      "snippet": "Large Language Models (LLMs) show promise as data analysis agents, but existing benchmarks overlook the iterative nature of the field, where experts' decisions evolve with …",
-      "link": "https://arxiv.org/abs/2505.18223",
+      "snippet": "Large language model (LLM) agents have demonstrated remarkable potential in advancing scientific discovery. However, their capability in the fundamental yet crucial task of …",
+      "link": "https://arxiv.org/abs/2506.17335",
+      "published_date": "June 2025",
+      "published_date_sort": "2025-06-01",
+      "citations": 2,
+      "institutions": "Unknown"
+    },
+    {
+      "title": "A Comprehensive Survey of Deep Research: Systems, Methodologies, and Applications",
+      "authors": "R Xu, J Peng - arXiv preprint arXiv:2506.12594, 2025 - arxiv.org",
+      "journal": "Google Scholar Result",
+      "snippet": "This survey examines the rapidly evolving field of Deep Research systems--AI-powered applications that automate complex research workflows through the integration of large …",
+      "link": "https://arxiv.org/abs/2506.12594",
+      "published_date": "June 2025",
+      "published_date_sort": "2025-06-01",
+      "citations": 14,
+      "institutions": "Unknown"
+    },
+    {
+      "title": "AutoMind: Adaptive Knowledgeable Agent for Automated Data Science",
+      "authors": "Y Ou, Y Luo, J Zheng, L Wei, S Qiao, J Zhang… - arXiv preprint arXiv …, 2025 - arxiv.org",
+      "journal": "Google Scholar Result",
+      "snippet": "Large Language Model (LLM) agents have shown great potential in addressing real-world data science problems. LLM-driven data science agents promise to automate the entire …",
+      "link": "https://arxiv.org/abs/2506.10974",
+      "published_date": "June 2025",
+      "published_date_sort": "2025-06-01",
+      "citations": 1,
+      "institutions": "Unknown"
+    },
+    {
+      "title": "CodePDE: An Inference Framework for LLM-driven PDE Solver Generation",
+      "authors": "S Li, T Marwah, J Shen, W Sun, A Risteski… - arXiv preprint arXiv …, 2025 - arxiv.org",
+      "journal": "Google Scholar Result",
+      "snippet": "Partial differential equations (PDEs) are fundamental to modeling physical systems, yet solving them remains a complex challenge. Traditional numerical solvers rely on expert …",
+      "link": "https://arxiv.org/abs/2505.08783",
       "published_date": "May 2025",
       "published_date_sort": "2025-05-01",
-      "citations": 1,
+      "citations": 3,
       "institutions": "Unknown"
     },
     {
@@ -203,25 +218,14 @@
       "institutions": "Unknown"
     },
     {
-      "title": "From automation to autonomy: A survey on large language models in scientific discovery",
-      "authors": "T Zheng, Z Deng, HT Tsang, W Wang, J Bai… - arXiv preprint arXiv …, 2025 - arxiv.org",
+      "title": "IDA-Bench: Evaluating LLMs on Interactive Guided Data Analysis",
+      "authors": "H Li, H Liu, T Zhu, T Guo, Z Zheng, X Deng… - arXiv preprint arXiv …, 2025 - arxiv.org",
       "journal": "Google Scholar Result",
-      "snippet": "Large Language Models (LLMs) are catalyzing a paradigm shift in scientific discovery, evolving from task-specific automation tools into increasingly autonomous agents and …",
-      "link": "https://arxiv.org/abs/2505.13259",
+      "snippet": "Large Language Models (LLMs) show promise as data analysis agents, but existing benchmarks overlook the iterative nature of the field, where experts' decisions evolve with …",
+      "link": "https://arxiv.org/abs/2505.18223",
       "published_date": "May 2025",
       "published_date_sort": "2025-05-01",
-      "citations": 10,
-      "institutions": "Unknown"
-    },
-    {
-      "title": "CodePDE: An Inference Framework for LLM-driven PDE Solver Generation",
-      "authors": "S Li, T Marwah, J Shen, W Sun, A Risteski… - arXiv preprint arXiv …, 2025 - arxiv.org",
-      "journal": "Google Scholar Result",
-      "snippet": "Partial differential equations (PDEs) are fundamental to modeling physical systems, yet solving them remains a complex challenge. Traditional numerical solvers rely on expert …",
-      "link": "https://arxiv.org/abs/2505.08783",
-      "published_date": "May 2025",
-      "published_date_sort": "2025-05-01",
-      "citations": 3,
+      "citations": 1,
       "institutions": "Unknown"
     },
     {
@@ -233,6 +237,17 @@
       "published_date": "May 2025",
       "published_date_sort": "2025-05-01",
       "citations": 2,
+      "institutions": "Unknown"
+    },
+    {
+      "title": "From automation to autonomy: A survey on large language models in scientific discovery",
+      "authors": "T Zheng, Z Deng, HT Tsang, W Wang, J Bai… - arXiv preprint arXiv …, 2025 - arxiv.org",
+      "journal": "Google Scholar Result",
+      "snippet": "Large Language Models (LLMs) are catalyzing a paradigm shift in scientific discovery, evolving from task-specific automation tools into increasingly autonomous agents and …",
+      "link": "https://arxiv.org/abs/2505.13259",
+      "published_date": "May 2025",
+      "published_date_sort": "2025-05-01",
+      "citations": 10,
       "institutions": "Unknown"
     },
     {
