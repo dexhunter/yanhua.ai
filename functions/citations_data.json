@@ -1,11 +1,11 @@
 {
-  "last_updated": "2025-10-09 00:10:11 UTC",
+  "last_updated": "2025-10-10 00:10:56 UTC",
   "target_paper": "https://www.arxiv.org/abs/2502.13138",
   "arxiv_id": "2502.13138",
-  "total_citations": 29,
+  "total_citations": 32,
   "h_index": 5,
-  "recent_citations": 9,
-  "avg_citations_per_month": "3.62",
+  "recent_citations": 12,
+  "avg_citations_per_month": "4.00",
   "timeline": [
     {
       "date": "2025-03-01",
@@ -37,118 +37,140 @@
     },
     {
       "date": "2025-10-01",
-      "citations": 29
+      "citations": 32
     }
   ],
   "papers": [
     {
-      "title": "Training-Free Time Series Classification via In-Context Reasoning with\n  LLM Agents",
-      "authors": "Songyuan Sui, Zihang Xu, Yu-Neng Chuang, Kwei-Herng Lai, Xia Hu",
+      "title": "ELMUR: External Layer Memory with Update/Rewrite for Long-Horizon RL",
+      "authors": "Egor Cherepanov, Alexey K. Kovalev, Aleksandr I. Panov",
       "journal": "arXiv",
-      "snippet": "Time series classification (TSC) spans diverse application scenarios, yet\nlabeled data are often scarce, making task-specific training costly and\ninflexible. Recent reasoning-oriented large language models (LLMs) show promise\nin understanding temporal patterns, but purely zero-shot usage remains\nsuboptimal. We propose FETA, a multi-agent framework for training-free TSC via\nexemplar-based in-context reasoning. FETA decomposes a multivariate series into\nchannel-wise subproblems, retrieves a few structurally similar labeled examples\nfor each channel, and leverages a reasoning LLM to compare the query against\nthese exemplars, producing channel-level labels with self-assessed confidences;\na confidence-weighted aggregator then fuses all channel decisions. This design\neliminates the need for pretraining or fine-tuning, improves efficiency by\npruning irrelevant channels and controlling input length, and enhances\ninterpretability through exemplar grounding and confidence estimation. On nine\nchallenging UEA datasets, FETA achieves strong accuracy under a fully\ntraining-free setting, surpassing multiple trained baselines. These results\ndemonstrate that a multi-agent in-context reasoning framework can transform\nLLMs into competitive, plug-and-play TSC solvers without any parameter\ntraining. The code is available at https://github.com/SongyuanSui/FETATSC.",
-      "link": "http://arxiv.org/abs/2510.05950v1",
-      "published_date": "October 07, 2025",
-      "published_date_sort": "2025-10-07",
+      "snippet": "Real-world robotic agents must act under partial observability and long\nhorizons, where key cues may appear long before they affect decision making.\nHowever, most modern approaches rely solely on instantaneous information,\nwithout incorporating insights from the past. Standard recurrent or transformer\nmodels struggle with retaining and leveraging long-term dependencies: context\nwindows truncate history, while naive memory extensions fail under scale and\nsparsity. We propose ELMUR (External Layer Memory with Update/Rewrite), a\ntransformer architecture with structured external memory. Each layer maintains\nmemory embeddings, interacts with them via bidirectional cross-attention, and\nupdates them through an Least Recently Used (LRU) memory module using\nreplacement or convex blending. ELMUR extends effective horizons up to 100,000\ntimes beyond the attention window and achieves a 100% success rate on a\nsynthetic T-Maze task with corridors up to one million steps. In POPGym, it\noutperforms baselines on more than half of the tasks. On MIKASA-Robo\nsparse-reward manipulation tasks with visual observations, it nearly doubles\nthe performance of strong baselines. These results demonstrate that structured,\nlayer-local external memory offers a simple and scalable approach to decision\nmaking under partial observability.",
+      "link": "http://arxiv.org/abs/2510.07151v1",
+      "published_date": "October 08, 2025",
+      "published_date_sort": "2025-10-08",
       "citations": 0,
       "institutions": "Unknown"
     },
     {
-      "title": "Paying Attention to Hybrid Attention: Untangling the Issues with\n  Conversion Methods",
-      "authors": "Martin Benfeghoul, Teresa Delgado, Adnan Oomerjee, Haitham Bou Ammar, Jun Wang, Zafeirios Fountas",
+      "title": "GyroSwin: 5D Surrogates for Gyrokinetic Plasma Turbulence Simulations",
+      "authors": "Fabian Paischer, Gianluca Galletti, William Hornsby, Paul Setinek, Lorenzo Zanisi, Naomi Carey, Stanislas Pamela, Johannes Brandstetter",
       "journal": "arXiv",
-      "snippet": "Transformers' quadratic computational complexity limits their scalability\ndespite remarkable performance. While linear attention reduces this to linear\ncomplexity, pre-training such models from scratch remains, in most cases,\nprohibitively expensive. Recent post-training linearisation methods convert\npre-trained Transformers to linear models efficiently, often using hybrid\napproaches that combine linear attention with sliding-window softmax. We\nidentify a critical flaw: existing hybrid methods inadvertently bypass the\nlinear component, relying almost entirely on SWA. Component-level diagnostics\nreveal this previously undetected behaviour stems from overlooked evaluation\npractices on common-sense benchmarks. We propose three solutions to ensure\nbalanced component usage: (i) inference-time hybridisation of linear-only\nconversions with sliding-window softmax; (ii) HedgeCATs, combining\nattention-weight transfer with targeted LoRA fine-tuning; and (iii) Scheduled\nSliding-window Dropout (SSD), which stochastically suppresses the softmax\nbranch during training to prevent component collapse. Our methods maintain\ncomputational efficiency while recovering most base model performance and\nensuring genuine linear attention adoption, restoring the validity of\nperformance attributions in hybrid conversions.",
-      "link": "http://arxiv.org/abs/2510.05901v1",
-      "published_date": "October 07, 2025",
-      "published_date_sort": "2025-10-07",
+      "snippet": "Nuclear fusion plays a pivotal role in the quest for reliable and sustainable\nenergy production. A major roadblock to viable fusion power is understanding\nplasma turbulence, which significantly impairs plasma confinement, and is vital\nfor next-generation reactor design. Plasma turbulence is governed by the\nnonlinear gyrokinetic equation, which evolves a 5D distribution function over\ntime. Due to its high computational cost, reduced-order models are often\nemployed in practice to approximate turbulent transport of energy. However,\nthey omit nonlinear effects unique to the full 5D dynamics. To tackle this, we\nintroduce GyroSwin, the first scalable 5D neural surrogate that can model 5D\nnonlinear gyrokinetic simulations, thereby capturing the physical phenomena\nneglected by reduced models, while providing accurate estimates of turbulent\nheat transport.GyroSwin (i) extends hierarchical Vision Transformers to 5D,\n(ii) introduces cross-attention and integration modules for latent\n3D$\\leftrightarrow$5D interactions between electrostatic potential fields and\nthe distribution function, and (iii) performs channelwise mode separation\ninspired by nonlinear physics. We demonstrate that GyroSwin outperforms widely\nused reduced numerics on heat flux prediction, captures the turbulent energy\ncascade, and reduces the cost of fully resolved nonlinear gyrokinetics by three\norders of magnitude while remaining physically verifiable. GyroSwin shows\npromising scaling laws, tested up to one billion parameters, paving the way for\nscalable neural surrogates for gyrokinetic simulations of plasma turbulence.",
+      "link": "http://arxiv.org/abs/2510.07314v1",
+      "published_date": "October 08, 2025",
+      "published_date_sort": "2025-10-08",
       "citations": 0,
       "institutions": "Unknown"
     },
     {
-      "title": "TaTToo: Tool-Grounded Thinking PRM for Test-Time Scaling in Tabular\n  Reasoning",
-      "authors": "Jiaru Zou, Soumya Roy, Vinay Kumar Verma, Ziyi Wang, David Wipf, Pan Lu, Sumit Negi, James Zou, Jingrui He",
+      "title": "EDUMATH: Generating Standards-aligned Educational Math Word Problems",
+      "authors": "Bryan R. Christ, Penelope Molitz, Jonathan Kropko, Thomas Hartvigsen",
       "journal": "arXiv",
-      "snippet": "Process Reward Models (PRMs) have recently emerged as a powerful framework\nfor enhancing the reasoning capabilities of large reasoning models (LRMs),\nparticularly in the context of test-time scaling (TTS). However, their\npotential for supervising LRMs on tabular reasoning domains remains\nunderexplored. Through detailed empirical analyses, we identify that existing\nPRMs, though widely adopted for supervising text-only reasoning steps, struggle\nwith table-specific operations such as sub-table retrieval and schema\ninteraction, leading to critical performance bottlenecks. To address this\nlimitation, we propose TaTToo, a novel table-grounded PRM framework that (i)\nreasons explicitly over tabular reasoning steps and (ii) integrates tool-based\nverification to provide precise reward supervision. Concretely, we first design\na scalable data curation pipeline that constructs over 60k high-quality\nstep-level annotations by integrating table verification rationales with\ntool-based executions. Building on the collected data, we train TaTToo with a\ndual-stage paradigm: cold-start supervised fine-tuning to capture tool-use\nreasoning patterns, followed by reinforcement learning with tool-grounded\nreward shaping to align our model with table-based verification. We provide a\ncomprehensive evaluation of the policy improvement induced by our newly\ndesigned PRM. Across 5 challenging tabular reasoning benchmarks covering\nnumerical reasoning, fact-checking, and data analysis, TaTToo improves\ndownstream policy LRMs by 30.9% at inference, surpasses strong PRM baselines\nsuch as Qwen-2.5-Math-PRM-72B with only 8B parameters, and demonstrates strong\ngeneralizability across diverse TTS strategies.",
-      "link": "http://arxiv.org/abs/2510.06217v1",
-      "published_date": "October 07, 2025",
-      "published_date_sort": "2025-10-07",
+      "snippet": "Math word problems (MWPs) are critical K-12 educational tools, and\ncustomizing them to students' interests and ability levels can increase\nlearning outcomes. However, teachers struggle to find time to customize MWPs\nfor each student given large class sizes and increasing burnout. We propose\nthat LLMs can support math education by generating MWPs customized to student\ninterests and math education standards. To this end, we use a joint human\nexpert-LLM judge approach to evaluate over 11,000 MWPs generated by open and\nclosed LLMs and develop the first teacher-annotated dataset for\nstandards-aligned educational MWP generation. We show the value of our data by\nusing it to train a 12B open model that matches the performance of larger and\nmore capable open models. We also use our teacher-annotated data to train a\ntext classifier that enables a 30B open LLM to outperform existing closed\nbaselines without any training. Next, we show our models' MWPs are more similar\nto human-written MWPs than those from existing models. We conclude by\nconducting the first study of customized LLM-generated MWPs with grade school\nstudents, finding they perform similarly on our models' MWPs relative to\nhuman-written MWPs but consistently prefer our customized MWPs.",
+      "link": "http://arxiv.org/abs/2510.06965v1",
+      "published_date": "October 08, 2025",
+      "published_date_sort": "2025-10-08",
       "citations": 0,
       "institutions": "Unknown"
     },
     {
-      "title": "Information-Theoretic Policy Pre-Training with Empowerment",
-      "authors": "Moritz Schneider, Robert Krug, Narunas Vaskevicius, Luigi Palmieri, Michael Volpp, Joschka Boedecker",
+      "title": "Hybrid Reinforcement: When Reward Is Sparse, It's Better to Be Dense",
+      "authors": "Leitian Tao, Ilia Kulikov, Swarnadeep Saha, Tianlu Wang, Jing Xu, Yixuan Li, Jason E Weston, Ping Yu",
       "journal": "arXiv",
-      "snippet": "Empowerment, an information-theoretic measure of an agent's potential\ninfluence on its environment, has emerged as a powerful intrinsic motivation\nand exploration framework for reinforcement learning (RL). Besides for\nunsupervised RL and skill learning algorithms, the specific use of empowerment\nas a pre-training signal has received limited attention in the literature. We\nshow that empowerment can be used as a pre-training signal for data-efficient\ndownstream task adaptation. For this we extend the traditional notion of\nempowerment by introducing discounted empowerment, which balances the agent's\ncontrol over the environment across short- and long-term horizons. Leveraging\nthis formulation, we propose a novel pre-training paradigm that initializes\npolicies to maximize discounted empowerment, enabling agents to acquire a\nrobust understanding of environmental dynamics. We analyze empowerment-based\npre-training for various existing RL algorithms and empirically demonstrate its\npotential as a general-purpose initialization strategy: empowerment-maximizing\npolicies with long horizons are data-efficient and effective, leading to\nimproved adaptability in downstream tasks. Our findings pave the way for future\nresearch to scale this framework to high-dimensional and complex tasks, further\nadvancing the field of RL.",
-      "link": "http://arxiv.org/abs/2510.05996v1",
-      "published_date": "October 07, 2025",
-      "published_date_sort": "2025-10-07",
+      "snippet": "Post-training for reasoning of large language models (LLMs) increasingly\nrelies on verifiable rewards: deterministic checkers that provide 0-1\ncorrectness signals. While reliable, such binary feedback is brittle--many\ntasks admit partially correct or alternative answers that verifiers\nunder-credit, and the resulting all-or-nothing supervision limits learning.\nReward models offer richer, continuous feedback, which can serve as a\ncomplementary supervisory signal to verifiers. We introduce HERO (Hybrid\nEnsemble Reward Optimization), a reinforcement learning framework that\nintegrates verifier signals with reward-model scores in a structured way. HERO\nemploys stratified normalization to bound reward-model scores within\nverifier-defined groups, preserving correctness while refining quality\ndistinctions, and variance-aware weighting to emphasize challenging prompts\nwhere dense signals matter most. Across diverse mathematical reasoning\nbenchmarks, HERO consistently outperforms RM-only and verifier-only baselines,\nwith strong gains on both verifiable and hard-to-verify tasks. Our results show\nthat hybrid reward design retains the stability of verifiers while leveraging\nthe nuance of reward models to advance reasoning.",
+      "link": "http://arxiv.org/abs/2510.07242v1",
+      "published_date": "October 08, 2025",
+      "published_date_sort": "2025-10-08",
       "citations": 0,
       "institutions": "Unknown"
     },
     {
-      "title": "Prompt reinforcing for long-term planning of large language models",
-      "authors": "Hsien-Chin Lin, Benjamin Matthias Ruppik, Carel van Niekerk, Chia-Hao Shen, Michael Heck, Nurul Lubis, Renato Vukovic, Shutong Feng, Milica Gašić",
+      "title": "MolGA: Molecular Graph Adaptation with Pre-trained 2D Graph Encoder",
+      "authors": "Xingtong Yu, Chang Zhou, Xinming Zhang, Yuan Fang",
       "journal": "arXiv",
-      "snippet": "Large language models (LLMs) have achieved remarkable success in a wide range\nof natural language processing tasks and can be adapted through prompting.\nHowever, they remain suboptimal in multi-turn interactions, often relying on\nincorrect early assumptions and failing to track user goals over time, which\nmakes such tasks particularly challenging. Prior works in dialogue systems have\nshown that long-term planning is essential for handling interactive tasks. In\nthis work, we propose a prompt optimisation framework inspired by reinforcement\nlearning, which enables such planning to take place by only modifying the task\ninstruction prompt of the LLM-based agent. By generating turn-by-turn feedback\nand leveraging experience replay for prompt rewriting, our proposed method\nshows significant improvement in multi-turn tasks such as text-to-SQL and\ntask-oriented dialogue. Moreover, it generalises across different LLM-based\nagents and can leverage diverse LLMs as meta-prompting agents. This warrants\nfuture research in reinforcement learning-inspired parameter-free optimisation\nmethods.",
-      "link": "http://arxiv.org/abs/2510.05921v1",
-      "published_date": "October 07, 2025",
-      "published_date_sort": "2025-10-07",
+      "snippet": "Molecular graph representation learning is widely used in chemical and\nbiomedical research. While pre-trained 2D graph encoders have demonstrated\nstrong performance, they overlook the rich molecular domain knowledge\nassociated with submolecular instances (atoms and bonds). While molecular\npre-training approaches incorporate such knowledge into their pre-training\nobjectives, they typically employ designs tailored to a specific type of\nknowledge, lacking the flexibility to integrate diverse knowledge present in\nmolecules. Hence, reusing widely available and well-validated pre-trained 2D\nencoders, while incorporating molecular domain knowledge during downstream\nadaptation, offers a more practical alternative. In this work, we propose\nMolGA, which adapts pre-trained 2D graph encoders to downstream molecular\napplications by flexibly incorporating diverse molecular domain knowledge.\nFirst, we propose a molecular alignment strategy that bridge the gap between\npre-trained topological representations with domain-knowledge representations.\nSecond, we introduce a conditional adaptation mechanism that generates\ninstance-specific tokens to enable fine-grained integration of molecular domain\nknowledge for downstream tasks. Finally, we conduct extensive experiments on\neleven public datasets, demonstrating the effectiveness of MolGA.",
+      "link": "http://arxiv.org/abs/2510.07289v1",
+      "published_date": "October 08, 2025",
+      "published_date_sort": "2025-10-08",
       "citations": 0,
       "institutions": "Unknown"
     },
     {
-      "title": "An Attention-Augmented VAE-BiLSTM Framework for Anomaly Detection in\n  12-Lead ECG Signals",
-      "authors": "Marc Garreta Basora, Mehmet Oguz Mulayim",
+      "title": "Learning Global Representation from Queries for Vectorized HD Map\n  Construction",
+      "authors": "Shoumeng Qiu, Xinrun Li, Yang Long, Xiangyang Xue, Varun Ojha, Jian Pu",
       "journal": "arXiv",
-      "snippet": "Anomaly detection in 12-lead electrocardiograms (ECGs) is critical for\nidentifying deviations associated with cardiovascular disease. This work\npresents a comparative analysis of three autoencoder-based architectures:\nconvolutional autoencoder (CAE), variational autoencoder with bidirectional\nlong short-term memory (VAE-BiLSTM), and VAE-BiLSTM with multi-head attention\n(VAE-BiLSTM-MHA), for unsupervised anomaly detection in ECGs. To the best of\nour knowledge, this study reports the first application of a VAE-BiLSTM-MHA\narchitecture to ECG anomaly detection. All models are trained on normal ECG\nsamples to reconstruct non-anomalous cardiac morphology and detect deviations\nindicative of disease. Using a unified preprocessing and evaluation pipeline on\nthe public China Physiological Signal Challenge (CPSC) dataset, the\nattention-augmented VAE achieves the best performance, with an AUPRC of 0.81\nand a recall of 0.85 on the held-out test set, outperforming the other\narchitectures. To support clinical triage, this model is further integrated\ninto an interactive dashboard that visualizes anomaly localization. In\naddition, a performance comparison with baseline models from the literature is\nprovided.",
-      "link": "http://arxiv.org/abs/2510.05919v1",
-      "published_date": "October 07, 2025",
-      "published_date_sort": "2025-10-07",
+      "snippet": "The online construction of vectorized high-definition (HD) maps is a\ncornerstone of modern autonomous driving systems. State-of-the-art approaches,\nparticularly those based on the DETR framework, formulate this as an instance\ndetection problem. However, their reliance on independent, learnable object\nqueries results in a predominantly local query perspective, neglecting the\ninherent global representation within HD maps. In this work, we propose\n\\textbf{MapGR} (\\textbf{G}lobal \\textbf{R}epresentation learning for HD\n\\textbf{Map} construction), an architecture designed to learn and utilize a\nglobal representations from queries. Our method introduces two synergistic\nmodules: a Global Representation Learning (GRL) module, which encourages the\ndistribution of all queries to better align with the global map through a\ncarefully designed holistic segmentation task, and a Global Representation\nGuidance (GRG) module, which endows each individual query with explicit,\nglobal-level contextual information to facilitate its optimization. Evaluations\non the nuScenes and Argoverse2 datasets validate the efficacy of our approach,\ndemonstrating substantial improvements in mean Average Precision (mAP) compared\nto leading baselines.",
+      "link": "http://arxiv.org/abs/2510.06969v1",
+      "published_date": "October 08, 2025",
+      "published_date_sort": "2025-10-08",
       "citations": 0,
       "institutions": "Unknown"
     },
     {
-      "title": "Pushing Test-Time Scaling Limits of Deep Search with Asymmetric\n  Verification",
-      "authors": "Weihao Zeng, Keqing He, Chuqiao Kuang, Xiaoguang Li, Junxian He",
+      "title": "Falsification-Driven Reinforcement Learning for Maritime Motion Planning",
+      "authors": "Marlon Müller, Florian Finkeldei, Hanna Krasowski, Murat Arcak, Matthias Althoff",
       "journal": "arXiv",
-      "snippet": "Test-time compute can be scaled both sequentially and in parallel. Sequential\nscaling involves lengthening the generation process, while parallel scaling\ninvolves verifying and selecting among multiple candidate outputs. Combining\nthese two strategies has led to the most powerful AI systems, such as Grok 4\nHeavy and GPT-5 Pro. In certain contexts (e.g., solving Sudoku puzzles),\nverifying responses can be substantially easier than generating them. This\nproperty, referred to as \\emph{asymmetric verification}, highlights the strong\npotential of test-time scaling (TTS). In this work, we study both sequential\nand parallel TTS of deep search agents, motivated by the intuition that\nverification in this setting is often much easier than generation. In\nexperiments, we first show that sequential scaling methods, such as budget\nforcing, can be effective initially but soon degrade performance. Leveraging\nasymmetric verification, however, we are able to achieve substantial\nimprovements by allocating only a modest amount of compute to the verifier. We\nconduct experiments with flagship open-source models and extend them to their\n``Heavy'' variants through TTS. These deep research agents achieve gains of up\nto 27 absolute points on benchmarks such as BrowseComp. Remarkably, as an\nopen-source alternative, GLM-4.5 Heavy reaches accuracy of {\\bf 54.0\\%} on\nBrowseComp and {\\bf 66.0\\%} on GAIA, placing it comparable to the best\nproprietary choices such as OpenAI Deep Research. Tongyi-DeepResearch Heavy\nfurther achieves {\\bf 69.0\\%} accuracy on BrowseComp, greatly surpassing the\nbest proprietary results.",
-      "link": "http://arxiv.org/abs/2510.06135v1",
-      "published_date": "October 07, 2025",
-      "published_date_sort": "2025-10-07",
+      "snippet": "Compliance with maritime traffic rules is essential for the safe operation of\nautonomous vessels, yet training reinforcement learning (RL) agents to adhere\nto them is challenging. The behavior of RL agents is shaped by the training\nscenarios they encounter, but creating scenarios that capture the complexity of\nmaritime navigation is non-trivial, and real-world data alone is insufficient.\nTo address this, we propose a falsification-driven RL approach that generates\nadversarial training scenarios in which the vessel under test violates maritime\ntraffic rules, which are expressed as signal temporal logic specifications. Our\nexperiments on open-sea navigation with two vessels demonstrate that the\nproposed approach provides more relevant training scenarios and achieves more\nconsistent rule compliance.",
+      "link": "http://arxiv.org/abs/2510.06970v1",
+      "published_date": "October 08, 2025",
+      "published_date_sort": "2025-10-08",
       "citations": 0,
       "institutions": "Unknown"
     },
     {
-      "title": "MixReasoning: Switching Modes to Think",
-      "authors": "Haiquan Lu, Gongfan Fang, Xinyin Ma, Qi Li, Xinchao Wang",
+      "title": "Non-Asymptotic Analysis of Efficiency in Conformalized Regression",
+      "authors": "Yunzhen Yao, Lie He, Michael Gastpar",
       "journal": "arXiv",
-      "snippet": "Reasoning models enhance performance by tackling problems in a step-by-step\nmanner, decomposing them into sub-problems and exploring long chains of thought\nbefore producing an answer. However, applying extended reasoning to every step\nintroduces substantial redundancy, as sub-problems vary widely in difficulty\nand complexity: a small number of pivotal steps are genuinely challenging and\ndecisive for the final answer, while many others only involve straightforward\nrevisions or simple computations. Therefore, a natural idea is to endow\nreasoning models with the ability to adaptively respond to this variation,\nrather than treating all steps with the same level of elaboration. To this end,\nwe propose MixReasoning, a framework that dynamically adjusts the depth of\nreasoning within a single response. The resulting chain of thought then becomes\na mixture of detailed reasoning on difficult steps and concise inference on\nsimpler ones. Experiments on GSM8K, MATH-500, and AIME show that MixReasoning\nshortens reasoning length and substantially improves efficiency without\ncompromising accuracy.",
-      "link": "http://arxiv.org/abs/2510.06052v1",
-      "published_date": "October 07, 2025",
-      "published_date_sort": "2025-10-07",
+      "snippet": "Conformal prediction provides prediction sets with coverage guarantees. The\ninformativeness of conformal prediction depends on its efficiency, typically\nquantified by the expected size of the prediction set. Prior work on the\nefficiency of conformalized regression commonly treats the miscoverage level\n$\\alpha$ as a fixed constant. In this work, we establish non-asymptotic bounds\non the deviation of the prediction set length from the oracle interval length\nfor conformalized quantile and median regression trained via SGD, under mild\nassumptions on the data distribution. Our bounds of order\n$\\mathcal{O}(1/\\sqrt{n} + 1/(\\alpha^2 n) + 1/\\sqrt{m} + \\exp(-\\alpha^2 m))$\ncapture the joint dependence of efficiency on the proper training set size $n$,\nthe calibration set size $m$, and the miscoverage level $\\alpha$. The results\nidentify phase transitions in convergence rates across different regimes of\n$\\alpha$, offering guidance for allocating data to control excess prediction\nset length. Empirical results are consistent with our theoretical findings.",
+      "link": "http://arxiv.org/abs/2510.07093v1",
+      "published_date": "October 08, 2025",
+      "published_date_sort": "2025-10-08",
       "citations": 0,
       "institutions": "Unknown"
     },
     {
-      "title": "ARISE: An Adaptive Resolution-Aware Metric for Test-Time Scaling\n  Evaluation in Large Reasoning Models",
-      "authors": "Zhangyue Yin, Qiushi Sun, Zhiyuan Zeng, Zhiyuan Yu, Qipeng Guo, Xuanjing Huang, Xipeng Qiu",
+      "title": "NewtonBench: Benchmarking Generalizable Scientific Law Discovery in LLM\n  Agents",
+      "authors": "Tianshi Zheng, Kelvin Kiu-Wai Tam, Newt Hue-Nam K. Nguyen, Baixuan Xu, Zhaowei Wang, Jiayang Cheng, Hong Ting Tsang, Weiqi Wang, Jiaxin Bai, Tianqing Fang, Yangqiu Song, Ginny Y. Wong, Simon See",
       "journal": "arXiv",
-      "snippet": "Test-time scaling has emerged as a transformative paradigm for enhancing the\nperformance of large reasoning models, enabling dynamic allocation of\ncomputational resources during inference. However, as the landscape of\nreasoning models rapidly expands, a critical question remains: how can we\nsystematically compare and evaluate the test-time scaling capabilities across\ndifferent models? In this paper, we introduce ARISE (Adaptive Resolution-aware\nScaling Evaluation), a novel metric specifically designed to assess the\ntest-time scaling effectiveness of large reasoning models. Unlike existing\nevaluation approaches, ARISE incorporates two key innovations: (1) sample-level\nawareness that effectively penalizes negative scaling behaviors where increased\ncomputation leads to performance degradation, and (2) a dynamic sampling\nmechanism that mitigates the impact of accuracy fluctuations and token count\ninstability on the final assessment. We conduct comprehensive experiments\nevaluating state-of-the-art reasoning models across diverse domains including\nmathematical reasoning, code generation, and agentic tasks. Our results\ndemonstrate that ARISE provides a reliable and fine-grained measurement of\ntest-time scaling capabilities, revealing significant variations in scaling\nefficiency across models. Notably, our evaluation identifies Claude Opus as\nexhibiting superior scaling characteristics compared to other contemporary\nreasoning models.",
-      "link": "http://arxiv.org/abs/2510.06014v1",
-      "published_date": "October 07, 2025",
-      "published_date_sort": "2025-10-07",
+      "snippet": "Large language models are emerging as powerful tools for scientific law\ndiscovery, a foundational challenge in AI-driven science. However, existing\nbenchmarks for this task suffer from a fundamental methodological trilemma,\nforcing a trade-off between scientific relevance, scalability, and resistance\nto memorization. Furthermore, they oversimplify discovery as static function\nfitting, failing to capture the authentic scientific process of uncovering\nembedded laws through the interactive exploration of complex model systems. To\naddress these critical gaps, we introduce NewtonBench, a benchmark comprising\n324 scientific law discovery tasks across 12 physics domains. Our design\nmitigates the evaluation trilemma by using metaphysical shifts - systematic\nalterations of canonical laws - to generate a vast suite of problems that are\nscalable, scientifically relevant, and memorization-resistant. Moreover, we\nelevate the evaluation from static function fitting to interactive model\ndiscovery, requiring agents to experimentally probe simulated complex systems\nto uncover hidden principles. Our extensive experiment reveals a clear but\nfragile capability for discovery in frontier LLMs: this ability degrades\nprecipitously with increasing system complexity and exhibits extreme\nsensitivity to observational noise. Notably, we uncover a paradoxical effect of\ntool assistance: providing a code interpreter can hinder more capable models by\ninducing a premature shift from exploration to exploitation, causing them to\nsatisfice on suboptimal solutions. These results demonstrate that robust,\ngeneralizable discovery in complex, interactive environments remains the core\nchallenge. By providing a scalable, robust, and scientifically authentic\ntestbed, NewtonBench offers a crucial tool for measuring true progress and\nguiding the development of next-generation AI agents capable of genuine\nscientific discovery.",
+      "link": "http://arxiv.org/abs/2510.07172v1",
+      "published_date": "October 08, 2025",
+      "published_date_sort": "2025-10-08",
       "citations": 0,
       "institutions": "Unknown"
     },
     {
-      "title": "An AI system to help scientists write expert-level empirical software",
-      "authors": "E Aygün, A Belyaeva, G Comanici, M Coram… - arXiv preprint arXiv …, 2025 - arxiv.org",
-      "journal": "Google Scholar Result",
-      "snippet": "The cycle of scientific discovery is frequently bottlenecked by the slow, manual creation of software to support computational experiments. To address this, we present an AI system …",
-      "link": "https://arxiv.org/abs/2509.06503",
-      "published_date": "September 2025",
-      "published_date_sort": "2025-09-01",
-      "citations": 1,
+      "title": "The Contingencies of Physical Embodiment Allow for Open-Endedness and\n  Care",
+      "authors": "Leonardo Christov-Moore, Arthur Juliani, Alex Kiefer, Nicco Reggente, B. Scott Rousse, Adam Safron, Nicol'as Hinrichs, Daniel Polani, Antonio Damasio",
+      "journal": "arXiv",
+      "snippet": "Physical vulnerability and mortality are often seen as obstacles to be\navoided in the development of artificial agents, which struggle to adapt to\nopen-ended environments and provide aligned care. Meanwhile, biological\norganisms survive, thrive, and care for each other in an open-ended physical\nworld with relative ease and efficiency. Understanding the role of the\nconditions of life in this disparity can aid in developing more robust,\nadaptive, and caring artificial agents. Here we define two minimal conditions\nfor physical embodiment inspired by the existentialist phenomenology of Martin\nHeidegger: being-in-the-world (the agent is a part of the environment) and\nbeing-towards-death (unless counteracted, the agent drifts toward terminal\nstates due to the second law of thermodynamics). We propose that from these\nconditions we can obtain both a homeostatic drive - aimed at maintaining\nintegrity and avoiding death by expending energy to learn and act - and an\nintrinsic drive to continue to do so in as many ways as possible. Drawing\ninspiration from Friedrich Nietzsche's existentialist concept of will-to-power,\nwe examine how intrinsic drives to maximize control over future states, e.g.,\nempowerment, allow agents to increase the probability that they will be able to\nmeet their future homeostatic needs, thereby enhancing their capacity to\nmaintain physical integrity. We formalize these concepts within a reinforcement\nlearning framework, which enables us to examine how intrinsically driven\nembodied agents learning in open-ended multi-agent environments may cultivate\nthe capacities for open-endedness and care.ov",
+      "link": "http://arxiv.org/abs/2510.07117v1",
+      "published_date": "October 08, 2025",
+      "published_date_sort": "2025-10-08",
+      "citations": 0,
+      "institutions": "Unknown"
+    },
+    {
+      "title": "Artificial Hippocampus Networks for Efficient Long-Context Modeling",
+      "authors": "Yunhao Fang, Weihao Yu, Shu Zhong, Qinghao Ye, Xuehan Xiong, Lai Wei",
+      "journal": "arXiv",
+      "snippet": "Long-sequence modeling faces a fundamental trade-off between the efficiency\nof compressive fixed-size memory in RNN-like models and the fidelity of\nlossless growing memory in attention-based Transformers. Inspired by the\nMulti-Store Model in cognitive science, we introduce a memory framework of\nartificial neural networks. Our method maintains a sliding window of the\nTransformer's KV cache as lossless short-term memory, while a learnable module\ntermed Artificial Hippocampus Network (AHN) recurrently compresses\nout-of-window information into a fixed-size compact long-term memory. To\nvalidate this framework, we instantiate AHNs using modern RNN-like\narchitectures, including Mamba2, DeltaNet, and Gated DeltaNet. Extensive\nexperiments on long-context benchmarks LV-Eval and InfiniteBench demonstrate\nthat AHN-augmented models consistently outperform sliding window baselines and\nachieve performance comparable or even superior to full-attention models, while\nsubstantially reducing computational and memory requirements. For instance,\naugmenting the Qwen2.5-3B-Instruct with AHNs reduces inference FLOPs by 40.5%\nand memory cache by 74.0%, while improving its average score on LV-Eval (128k\nsequence length) from 4.41 to 5.88. Code is available at:\nhttps://github.com/ByteDance-Seed/AHN.",
+      "link": "http://arxiv.org/abs/2510.07318v1",
+      "published_date": "October 08, 2025",
+      "published_date_sort": "2025-10-08",
+      "citations": 0,
+      "institutions": "Unknown"
+    },
+    {
+      "title": "Blind Construction of Angular Power Maps in Massive MIMO Networks",
+      "authors": "Zheng Xing, Junting Chen",
+      "journal": "arXiv",
+      "snippet": "Channel state information (CSI) acquisition is a challenging problem in\nmassive multiple-input multiple-output (MIMO) networks. Radio maps provide a\npromising solution for radio resource management by reducing online CSI\nacquisition. However, conventional approaches for radio map construction\nrequire location-labeled CSI data, which is challenging in practice. This paper\ninvestigates unsupervised angular power map construction based on large\ntimescale CSI data collected in a massive MIMO network without location labels.\nA hidden Markov model (HMM) is built to connect the hidden trajectory of a\nmobile with the CSI evolution of a massive MIMO channel. As a result, the\nmobile location can be estimated, enabling the construction of an angular power\nmap. We show that under uniform rectilinear mobility with Poisson-distributed\nbase stations (BSs), the Cramer-Rao Lower Bound (CRLB) for localization error\ncan vanish at any signal-to-noise ratios (SNRs), whereas when BSs are confined\nto a limited region, the error remains nonzero even with infinite independent\nmeasurements. Based on reference signal received power (RSRP) data collected in\na real multi-cell massive MIMO network, an average localization error of 18\nmeters can be achieved although measurements are mainly obtained from a single\nserving cell.",
+      "link": "http://arxiv.org/abs/2510.07071v1",
+      "published_date": "October 08, 2025",
+      "published_date_sort": "2025-10-08",
+      "citations": 0,
       "institutions": "Unknown"
     },
     {
@@ -163,7 +185,7 @@
       "institutions": "Unknown"
     },
     {
-      "title": "Bootstrapping Task Spaces for Self-Improvement",
+      "title": "Bootstrapping task spaces for self-improvement",
       "authors": "M Jiang, A Lupu, Y Bachrach - arXiv preprint arXiv:2509.04575, 2025 - arxiv.org",
       "journal": "Google Scholar Result",
       "snippet": "Progress in many task domains emerges from repeated revisions to previous solution attempts. Training agents that can reliably self-improve over such sequences at inference …",
@@ -174,14 +196,25 @@
       "institutions": "Unknown"
     },
     {
-      "title": "Illuminating LLM Coding Agents: Visual Analytics for Deeper Understanding and Enhancement",
-      "authors": "J Wang, Y Chen, M Pan, CCM Yeh, M Das - arXiv preprint arXiv …, 2025 - arxiv.org",
+      "title": "An AI system to help scientists write expert-level empirical software",
+      "authors": "E Aygün, A Belyaeva, G Comanici, M Coram… - arXiv preprint arXiv …, 2025 - arxiv.org",
       "journal": "Google Scholar Result",
-      "snippet": "Coding agents powered by large language models (LLMs) have gained traction for automating code generation through iterative problem-solving with minimal human …",
-      "link": "https://arxiv.org/abs/2508.12555",
+      "snippet": "The cycle of scientific discovery is frequently bottlenecked by the slow, manual creation of software to support computational experiments. To address this, we present an AI system …",
+      "link": "https://arxiv.org/abs/2509.06503",
+      "published_date": "September 2025",
+      "published_date_sort": "2025-09-01",
+      "citations": 1,
+      "institutions": "Unknown"
+    },
+    {
+      "title": "Tuning LLM-based Code Optimization via Meta-Prompting: An Industrial Perspective",
+      "authors": "J Gong, R Giavrimis, P Brookes, V Voskanyan… - arXiv preprint arXiv …, 2025 - arxiv.org",
+      "journal": "Google Scholar Result",
+      "snippet": "There is a growing interest in leveraging large language models (LLMs) for automated code optimization. However, industrial platforms deploying multiple LLMs face a critical challenge …",
+      "link": "https://arxiv.org/abs/2508.01443",
       "published_date": "August 2025",
       "published_date_sort": "2025-08-01",
-      "citations": 0,
+      "citations": 1,
       "institutions": "Unknown"
     },
     {
@@ -196,14 +229,14 @@
       "institutions": "Unknown"
     },
     {
-      "title": "AutoMind: Adaptive Knowledgeable Agent for Automated Data Science",
-      "authors": "Y Ou, Y Luo, J Zheng, L Wei, S Qiao, J Zhang… - arXiv preprint arXiv …, 2025 - arxiv.org",
+      "title": "A Comprehensive Survey of Deep Research: Systems, Methodologies, and Applications",
+      "authors": "R Xu, J Peng - arXiv preprint arXiv:2506.12594, 2025 - arxiv.org",
       "journal": "Google Scholar Result",
-      "snippet": "Large Language Model (LLM) agents have shown great potential in addressing real-world data science problems. LLM-driven data science agents promise to automate the entire …",
-      "link": "https://arxiv.org/abs/2506.10974",
+      "snippet": "This survey examines the rapidly evolving field of Deep Research systems--AI-powered applications that automate complex research workflows through the integration of large …",
+      "link": "https://arxiv.org/abs/2506.12594",
       "published_date": "June 2025",
       "published_date_sort": "2025-06-01",
-      "citations": 1,
+      "citations": 15,
       "institutions": "Unknown"
     },
     {
@@ -229,17 +262,6 @@
       "institutions": "Unknown"
     },
     {
-      "title": "LMR-BENCH: Evaluating LLM Agent's Ability on Reproducing Language Modeling Research",
-      "authors": "S Yan, R Li, Z Luo, Z Wang, D Li, L Jing, K He… - arXiv preprint arXiv …, 2025 - arxiv.org",
-      "journal": "Google Scholar Result",
-      "snippet": "Large language model (LLM) agents have demonstrated remarkable potential in advancing scientific discovery. However, their capability in the fundamental yet crucial task of …",
-      "link": "https://arxiv.org/abs/2506.17335",
-      "published_date": "June 2025",
-      "published_date_sort": "2025-06-01",
-      "citations": 2,
-      "institutions": "Unknown"
-    },
-    {
       "title": "AI Scientists Fail Without Strong Implementation Capability",
       "authors": "M Zhu, Q Xie, Y Weng, J Wu, Z Lin, L Yang… - arXiv preprint arXiv …, 2025 - arxiv.org",
       "journal": "Google Scholar Result",
@@ -248,17 +270,6 @@
       "published_date": "June 2025",
       "published_date_sort": "2025-06-01",
       "citations": 6,
-      "institutions": "Unknown"
-    },
-    {
-      "title": "A Comprehensive Survey of Deep Research: Systems, Methodologies, and Applications",
-      "authors": "R Xu, J Peng - arXiv preprint arXiv:2506.12594, 2025 - arxiv.org",
-      "journal": "Google Scholar Result",
-      "snippet": "This survey examines the rapidly evolving field of Deep Research systems--AI-powered applications that automate complex research workflows through the integration of large …",
-      "link": "https://arxiv.org/abs/2506.12594",
-      "published_date": "June 2025",
-      "published_date_sort": "2025-06-01",
-      "citations": 14,
       "institutions": "Unknown"
     },
     {
@@ -273,11 +284,66 @@
       "institutions": "Unknown"
     },
     {
+      "title": "LMR-BENCH: Evaluating LLM Agent's Ability on Reproducing Language Modeling Research",
+      "authors": "S Yan, R Li, Z Luo, Z Wang, D Li, L Jing, K He… - arXiv preprint arXiv …, 2025 - arxiv.org",
+      "journal": "Google Scholar Result",
+      "snippet": "Large language model (LLM) agents have demonstrated remarkable potential in advancing scientific discovery. However, their capability in the fundamental yet crucial task of …",
+      "link": "https://arxiv.org/abs/2506.17335",
+      "published_date": "June 2025",
+      "published_date_sort": "2025-06-01",
+      "citations": 2,
+      "institutions": "Unknown"
+    },
+    {
+      "title": "AutoMind: Adaptive Knowledgeable Agent for Automated Data Science",
+      "authors": "Y Ou, Y Luo, J Zheng, L Wei, S Qiao, J Zhang… - arXiv preprint arXiv …, 2025 - arxiv.org",
+      "journal": "Google Scholar Result",
+      "snippet": "Large Language Model (LLM) agents have shown great potential in addressing real-world data science problems. LLM-driven data science agents promise to automate the entire …",
+      "link": "https://arxiv.org/abs/2506.10974",
+      "published_date": "June 2025",
+      "published_date_sort": "2025-06-01",
+      "citations": 1,
+      "institutions": "Unknown"
+    },
+    {
+      "title": "CodePDE: An Inference Framework for LLM-driven PDE Solver Generation",
+      "authors": "S Li, T Marwah, J Shen, W Sun, A Risteski… - arXiv preprint arXiv …, 2025 - arxiv.org",
+      "journal": "Google Scholar Result",
+      "snippet": "Partial differential equations (PDEs) are fundamental to modeling physical systems, yet solving them remains a complex challenge. Traditional numerical solvers rely on expert …",
+      "link": "https://arxiv.org/abs/2505.08783",
+      "published_date": "May 2025",
+      "published_date_sort": "2025-05-01",
+      "citations": 3,
+      "institutions": "Unknown"
+    },
+    {
+      "title": "IDA-Bench: Evaluating LLMs on Interactive Guided Data Analysis",
+      "authors": "H Li, H Liu, T Zhu, T Guo, Z Zheng, X Deng… - arXiv preprint arXiv …, 2025 - arxiv.org",
+      "journal": "Google Scholar Result",
+      "snippet": "Large Language Models (LLMs) show promise as data analysis agents, but existing benchmarks overlook the iterative nature of the field, where experts' decisions evolve with …",
+      "link": "https://arxiv.org/abs/2505.18223",
+      "published_date": "May 2025",
+      "published_date_sort": "2025-05-01",
+      "citations": 2,
+      "institutions": "Unknown"
+    },
+    {
       "title": "Mlzero: A multi-agent system for end-to-end machine learning automation",
       "authors": "H Fang, B Han, N Erickson, X Zhang, S Zhou… - arXiv preprint arXiv …, 2025 - arxiv.org",
       "journal": "Google Scholar Result",
       "snippet": "Existing AutoML systems have advanced the automation of machine learning (ML); however, they still require substantial manual configuration and expert input, particularly …",
       "link": "https://arxiv.org/abs/2505.13941",
+      "published_date": "May 2025",
+      "published_date_sort": "2025-05-01",
+      "citations": 2,
+      "institutions": "Unknown"
+    },
+    {
+      "title": "Mle-dojo: Interactive environments for empowering llm agents in machine learning engineering",
+      "authors": "R Qiang, Y Zhuang, Y Li, R Zhang, C Li… - arXiv preprint arXiv …, 2025 - arxiv.org",
+      "journal": "Google Scholar Result",
+      "snippet": "We introduce MLE-Dojo, a Gym-style framework for systematically reinforcement learning, evaluating, and improving autonomous large language model (LLM) agents in iterative …",
+      "link": "https://arxiv.org/abs/2505.07782",
       "published_date": "May 2025",
       "published_date_sort": "2025-05-01",
       "citations": 2,
@@ -302,40 +368,7 @@
       "link": "https://arxiv.org/abs/2505.13259",
       "published_date": "May 2025",
       "published_date_sort": "2025-05-01",
-      "citations": 10,
-      "institutions": "Unknown"
-    },
-    {
-      "title": "CodePDE: An Inference Framework for LLM-driven PDE Solver Generation",
-      "authors": "S Li, T Marwah, J Shen, W Sun, A Risteski… - arXiv preprint arXiv …, 2025 - arxiv.org",
-      "journal": "Google Scholar Result",
-      "snippet": "Partial differential equations (PDEs) are fundamental to modeling physical systems, yet solving them remains a complex challenge. Traditional numerical solvers rely on expert …",
-      "link": "https://arxiv.org/abs/2505.08783",
-      "published_date": "May 2025",
-      "published_date_sort": "2025-05-01",
-      "citations": 3,
-      "institutions": "Unknown"
-    },
-    {
-      "title": "IDA-Bench: Evaluating LLMs on Interactive Guided Data Analysis",
-      "authors": "H Li, H Liu, T Zhu, T Guo, Z Zheng, X Deng… - arXiv preprint arXiv …, 2025 - arxiv.org",
-      "journal": "Google Scholar Result",
-      "snippet": "Large Language Models (LLMs) show promise as data analysis agents, but existing benchmarks overlook the iterative nature of the field, where experts' decisions evolve with …",
-      "link": "https://arxiv.org/abs/2505.18223",
-      "published_date": "May 2025",
-      "published_date_sort": "2025-05-01",
-      "citations": 1,
-      "institutions": "Unknown"
-    },
-    {
-      "title": "Mle-dojo: Interactive environments for empowering llm agents in machine learning engineering",
-      "authors": "R Qiang, Y Zhuang, Y Li, R Zhang, C Li… - arXiv preprint arXiv …, 2025 - arxiv.org",
-      "journal": "Google Scholar Result",
-      "snippet": "We introduce MLE-Dojo, a Gym-style framework for systematically reinforcement learning, evaluating, and improving autonomous large language model (LLM) agents in iterative …",
-      "link": "https://arxiv.org/abs/2505.07782",
-      "published_date": "May 2025",
-      "published_date_sort": "2025-05-01",
-      "citations": 2,
+      "citations": 12,
       "institutions": "Unknown"
     },
     {
@@ -357,7 +390,7 @@
       "link": "https://arxiv.org/abs/2503.14499",
       "published_date": "March 2025",
       "published_date_sort": "2025-03-01",
-      "citations": 39,
+      "citations": 40,
       "institutions": "Unknown"
     }
   ]
