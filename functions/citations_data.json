@@ -1,11 +1,11 @@
 {
-  "last_updated": "2025-10-11 00:10:14 UTC",
+  "last_updated": "2025-10-12 00:11:05 UTC",
   "target_paper": "https://www.arxiv.org/abs/2502.13138",
   "arxiv_id": "2502.13138",
-  "total_citations": 31,
+  "total_citations": 20,
   "h_index": 6,
-  "recent_citations": 11,
-  "avg_citations_per_month": "3.88",
+  "recent_citations": 0,
+  "avg_citations_per_month": "2.86",
   "timeline": [
     {
       "date": "2025-03-01",
@@ -34,143 +34,18 @@
     {
       "date": "2025-09-01",
       "citations": 20
-    },
-    {
-      "date": "2025-10-01",
-      "citations": 31
     }
   ],
   "papers": [
     {
-      "title": "AutoMLGen: Navigating Fine-Grained Optimization for Coding Agents",
-      "authors": "Shangheng Du, Xiangchao Yan, Dengyang Jiang, Jiakang Yuan, Yusong Hu, Xin Li, Liang He, Bo Zhang, Lei Bai",
-      "journal": "arXiv",
-      "snippet": "Large language models (LLMs) have shown impressive performance in general\nprogramming tasks. However, in Machine Learning Engineering (MLE) scenarios\nsuch as AutoML and Kaggle competitions, achieving high performance depends\nheavily on expert intervention and repeated adjustments rather than simply\ngenerating correct code. When applied directly to these tasks, LLMs often lack\nfine-grained domain priors, and existing MLE approaches that use linear or\ntree-structured searches limit knowledge transfer to adjacent hierarchical\nlinks. As a result, they cannot leverage past full trajectories or share\ninformation across branches, limiting self-evolving ability and search space\ndiversity. To address these limitations, we introduce AutoMLGen, an LLM-based\ncoding agent that integrates a domain knowledge base for high-quality prior\nguidance and Monte Carlo Graph Search (MCGS) for efficient exploration. MCGS\nretains the tree-guided exploration of MCTS while embedding a graph structure\ninto the expansion stage to enable dynamic path reorganization, historical\ntrajectory reuse, and multi-solution fusion to support both self-evolution and\ncollaborative learning. Combined with fine-grained operator sets, this design\nimproves stability and accelerates convergence. Evaluation on the MLE-Bench\nshows that AutoMLGen achieves state-of-the-art performance in numerous\ndimensions, such as the average medal rate and the valid submission rate, under\na 12-hour budget (half the standard runtime). The code is available at\nhttps://github.com/Alpha-Innovator/InternAgent.",
-      "link": "http://arxiv.org/abs/2510.08511v1",
-      "published_date": "October 09, 2025",
-      "published_date_sort": "2025-10-09",
-      "citations": 0,
-      "institutions": "Unknown"
-    },
-    {
-      "title": "DeepPrune: Parallel Scaling without Inter-trace Redundancy",
-      "authors": "Shangqing Tu, Yaxuan Li, Yushi Bai, Lei Hou, Juanzi Li",
-      "journal": "arXiv",
-      "snippet": "Parallel scaling has emerged as a powerful paradigm to enhance reasoning\ncapabilities in large language models (LLMs) by generating multiple\nChain-of-Thought (CoT) traces simultaneously. However, this approach introduces\nsignificant computational inefficiency due to inter-trace redundancy -- our\nanalysis reveals that over 80% of parallel reasoning traces yield identical\nfinal answers, representing substantial wasted computation. To address this\ncritical efficiency bottleneck, we propose DeepPrune, a novel framework that\nenables efficient parallel scaling through dynamic pruning. Our method features\na specialized judge model trained with focal loss and oversampling techniques\nto accurately predict answer equivalence from partial reasoning traces which\nrealizes 0.87 AUROC on equivalence prediction, combined with an online greedy\nclustering algorithm that dynamically prunes redundant paths while preserving\nanswer diversity. Comprehensive evaluations across three challenging benchmarks\n(AIME 2024, AIME 2025, and GPQA) and multiple reasoning models demonstrate that\nDeepPrune achieves remarkable token reduction by over 80% compared to\nconventional consensus sampling on most cases, while maintaining competitive\naccuracy within 3 percentage points. Our work establishes a new standard for\nefficient parallel reasoning, making high-performance reasoning more efficient.\nOur code and data are here: https://deepprune.github.io/",
-      "link": "http://arxiv.org/abs/2510.08483v1",
-      "published_date": "October 09, 2025",
-      "published_date_sort": "2025-10-09",
-      "citations": 0,
-      "institutions": "Unknown"
-    },
-    {
-      "title": "Reinforcement Learning from Probabilistic Forecasts for Safe\n  Decision-Making via Conditional Value-at-Risk Planning",
-      "authors": "Michal Koren, Or Peretz, Tai Dinh, Philip S. Yu",
-      "journal": "arXiv",
-      "snippet": "Sequential decisions in volatile, high-stakes settings require more than\nmaximizing expected return; they require principled uncertainty management.\nThis paper presents the Uncertainty-Aware Markov Decision Process (UAMDP), a\nunified framework that couples Bayesian forecasting, posterior-sampling\nreinforcement learning, and planning under a conditional value-at-risk (CVaR)\nconstraint. In a closed loop, the agent updates its beliefs over latent\ndynamics, samples plausible futures via Thompson sampling, and optimizes\npolicies subject to preset risk tolerances. We establish regret bounds that\nconverge to the Bayes-optimal benchmark under standard regularity conditions.\nWe evaluate UAMDP in two domains-high-frequency equity trading and retail\ninventory control-both marked by structural uncertainty and economic\nvolatility. Relative to strong deep learning baselines, UAMDP improves\nlong-horizon forecasting accuracy (RMSE decreases by up to 25\\% and sMAPE by\n32\\%), and these gains translate into economic performance: the trading Sharpe\nratio rises from 1.54 to 1.74 while maximum drawdown is roughly halved. These\nresults show that integrating calibrated probabilistic modeling, exploration\naligned with posterior uncertainty, and risk-aware control yields a robust,\ngeneralizable approach to safer and more profitable sequential decision-making.",
-      "link": "http://arxiv.org/abs/2510.08226v1",
-      "published_date": "October 09, 2025",
-      "published_date_sort": "2025-10-09",
-      "citations": 0,
-      "institutions": "Unknown"
-    },
-    {
-      "title": "Co-TAP: Three-Layer Agent Interaction Protocol Technical Report",
-      "authors": "Shunyu An, Miao Wang, Yongchao Li, Dong Wan, Lina Wang, Ling Qin, Liqin Gao, Congyao Fan, Zhiyong Mao, Jiange Pu, Wenji Xia, Dong Zhao, Rui Hu, Ji Lu, Guiyue Zhou, Baoyu Tang, Yanqin Gao, Yongsheng Du, Daigang Xu, Lingjun Huang, Baoli Wang, Xiwen Zhang, Luyao Wang, Shilong Liu",
-      "journal": "arXiv",
-      "snippet": "This paper proposes Co-TAP (T: Triple, A: Agent, P: Protocol), a three-layer\nagent interaction protocol designed to address the challenges faced by\nmulti-agent systems across the three core dimensions of Interoperability,\nInteraction and Collaboration, and Knowledge Sharing. We have designed and\nproposed a layered solution composed of three core protocols: the Human-Agent\nInteraction Protocol (HAI), the Unified Agent Protocol (UAP), and the\nMemory-Extraction-Knowledge Protocol (MEK). HAI focuses on the interaction\nlayer, standardizing the flow of information between users, interfaces, and\nagents by defining a standardized, event-driven communication paradigm. This\nensures the real-time performance, reliability, and synergy of interactions. As\nthe core of the infrastructure layer, UAP is designed to break down\ncommunication barriers among heterogeneous agents through unified service\ndiscovery and protocol conversion mechanisms, thereby enabling seamless\ninterconnection and interoperability of the underlying network. MEK, in turn,\noperates at the cognitive layer. By establishing a standardized ''Memory (M) -\nExtraction (E) - Knowledge (K)'' cognitive chain, it empowers agents with the\nability to learn from individual experiences and form shareable knowledge,\nthereby laying the foundation for the realization of true collective\nintelligence. We believe this protocol framework will provide a solid\nengineering foundation and theoretical guidance for building the next\ngeneration of efficient, scalable, and intelligent multi-agent applications.",
-      "link": "http://arxiv.org/abs/2510.08263v1",
-      "published_date": "October 09, 2025",
-      "published_date_sort": "2025-10-09",
-      "citations": 0,
-      "institutions": "Unknown"
-    },
-    {
-      "title": "First Try Matters: Revisiting the Role of Reflection in Reasoning Models",
-      "authors": "Liwei Kang, Yue Deng, Yao Xiao, Zhanfeng Mo, Wee Sun Lee, Lidong Bing",
-      "journal": "arXiv",
-      "snippet": "Large language models have recently demonstrated significant gains in\nreasoning ability, often attributed to their capacity to generate longer chains\nof thought and engage in reflective reasoning. However, the contribution of\nreflections to performance improvement remains unclear. In this paper, we\nsystematically analyze the rollouts of eight reasoning models on five\nmathematical datasets. We focus on reflective behaviours where the model has\nalready produced an answer but continues reflecting before finalizing its\noutput. Our analysis reveals that reflections are predominantly confirmatory\nand rarely alter the model's initial answer, a pattern consistent across models\nand datasets. To understand the role of reflections in training, we construct\nsupervised fine-tuning (SFT) datasets with varying amounts of reflection steps.\nWe observe that training models on rollouts with more reflection steps\nprimarily enhances first-answer correctness rather than the ability to correct\ninitially wrong answers through reflections. This motivates us to propose a\nquestion-aware early-stopping method that enhances inference-time token\nefficiency by stopping the reasoning process once a few plausible candidate\nanswers are generated, thereby reducing unnecessary reflection steps. Motivated\nby this, we further propose to dynamically truncate the reflections after a\ncandidate answer has appeared during generation, which reduces reasoning tokens\nby 24.5% across five mathematical datasets, within a 2.9% drop in accuracy.",
-      "link": "http://arxiv.org/abs/2510.08308v1",
-      "published_date": "October 09, 2025",
-      "published_date_sort": "2025-10-09",
-      "citations": 0,
-      "institutions": "Unknown"
-    },
-    {
-      "title": "Entropy Regularizing Activation: Boosting Continuous Control, Large\n  Language Models, and Image Classification with Activation as Entropy\n  Constraints",
-      "authors": "Zilin Kang, Chonghua Liao, Tingqiang Xu, Huazhe Xu",
-      "journal": "arXiv",
-      "snippet": "We propose ERA, a new paradigm that constrains the sampling entropy above\ngiven thresholds by applying specially designed activations to the outputs of\nmodels. Our approach demonstrates broad effectiveness across different domains:\n1) for large language models(LLMs), boosting the AIME 2025 score for\nQwen2.5-Math-7B by 37.4%; 2) for continuous control reinforcement learning\nagents, improving performance by more than 30% over strong baselines such as\nSAC on the challenging HumanoidBench; 3) for image classification, enhancing\nImageNet top-1 accuracy by 0.69% for ResNet-50. These gains are achieved with a\ncomputational overhead of less than 7%. Our work validates output activation as\na powerful tool for entropy control, opening a new direction for designing\nsimpler and more robust algorithms.",
-      "link": "http://arxiv.org/abs/2510.08549v1",
-      "published_date": "October 09, 2025",
-      "published_date_sort": "2025-10-09",
-      "citations": 0,
-      "institutions": "Unknown"
-    },
-    {
-      "title": "QAgent: A modular Search Agent with Interactive Query Understanding",
-      "authors": "Yi Jiang, Lei Shen, Lujie Niu, Sendong Zhao, Wenbo Su, Bo Zheng",
-      "journal": "arXiv",
-      "snippet": "Large language models (LLMs) excel at natural language tasks but are limited\nby their static parametric knowledge, especially in knowledge-intensive task.\nRetrieval-augmented generation (RAG) mitigates this by integrating external\ninformation. However, (1) traditional RAG struggles with complex query\nunderstanding, and (2) even search agents trained with reinforcement learning\n(RL), despite their promise, still face generalization and deployment\nchallenges. To address these limitations, we propose QAgent, a unified agentic\nRAG framework that employs a search agent for adaptive retrieval. This agent\noptimizes its understanding of the query through interactive reasoning and\nretrieval. To facilitate real-world application, we focus on modular search\nagent for query understanding that are plug-and-play in complex systems.\nSecifically, the agent follows a multi-step decision process trained with RL to\nmaximize retrieval quality and support accurate downstream answers. We further\nanalyze the strengths and weaknesses of end-to-end RL and propose a strategy\nthat focuses on effective retrieval, thereby enhancing generalization in LLM\napplications. Experiments show QAgent excels at QA and serves as a\nplug-and-play module for real-world deployment.",
-      "link": "http://arxiv.org/abs/2510.08383v1",
-      "published_date": "October 09, 2025",
-      "published_date_sort": "2025-10-09",
-      "citations": 0,
-      "institutions": "Unknown"
-    },
-    {
-      "title": "R-Horizon: How Far Can Your Large Reasoning Model Really Go in Breadth\n  and Depth?",
-      "authors": "Yi Lu, Jianing Wang, Linsen Guo, Wei He, Hongyin Tang, Tao Gui, Xuanjing Huang, Xuezhi Cao, Wei Wang, Xunliang Cai",
-      "journal": "arXiv",
-      "snippet": "Recent trends in test-time scaling for reasoning models (e.g., OpenAI o1,\nDeepSeek-R1) have led to remarkable improvements through long Chain-of-Thought\n(CoT). However, existing benchmarks mainly focus on immediate, single-horizon\ntasks, failing to adequately evaluate models' ability to understand and respond\nto complex, long-horizon scenarios. To address this incomplete evaluation of\nLarge Reasoning Models (LRMs), we propose R-HORIZON, a method designed to\nstimulate long-horizon reasoning behaviors in LRMs through query composition.\nBased on R-HORIZON, we construct a long-horizon reasoning benchmark, comprising\ncomplex multi-step reasoning tasks with interdependent problems that span long\nreasoning horizons. Through comprehensive evaluation of LRMs using the\nR-HORIZON benchmark, we find that even the most advanced LRMs suffer\nsignificant performance degradation. Our analysis reveals that LRMs exhibit\nlimited effective reasoning length and struggle to allocate thinking budget\nacross multiple problems appropriately. Recognizing these limitations, we use\nR-HORIZON to construct long-horizon reasoning data for reinforcement learning\nwith verified rewards (RLVR). Compared to training with single-horizon data,\nRLVR with R-HORIZON not only substantially improves performance on the\nmulti-horizon reasoning tasks, but also promotes accuracy on standard reasoning\ntasks, with an increase of 7.5 on AIME2024. These results position R-HORIZON as\na scalable, controllable, and low-cost paradigm for enhancing and evaluating\nthe long-horizon reasoning capabilities of LRMs.",
-      "link": "http://arxiv.org/abs/2510.08189v1",
-      "published_date": "October 09, 2025",
-      "published_date_sort": "2025-10-09",
-      "citations": 0,
-      "institutions": "Unknown"
-    },
-    {
-      "title": "Enhancing Reasoning for Diffusion LLMs via Distribution Matching Policy\n  Optimization",
-      "authors": "Yuchen Zhu, Wei Guo, Jaemoo Choi, Petr Molodyk, Bo Yuan, Molei Tao, Yongxin Chen",
-      "journal": "arXiv",
-      "snippet": "Diffusion large language models (dLLMs) are promising alternatives to\nautoregressive large language models (AR-LLMs), as they potentially allow\nhigher inference throughput. Reinforcement learning (RL) is a crucial component\nfor dLLMs to achieve comparable performance with AR-LLMs on important tasks,\nsuch as reasoning. However, RL algorithms that are well-suited for dLLMs'\nunique characteristics have yet to be developed. This paper proposes\nDistribution Matching Policy Optimization (DMPO), a principled and\ntheoretically grounded RL fine-tuning method specifically designed to enhance\nthe reasoning capabilities of dLLMs by matching the dLLM policy distribution to\nthe optimal, reward-tilted one through cross-entropy optimization. We identify\na key challenge in the implementation with a small training batch size and\npropose several effective solutions through a novel weight baseline subtraction\ntechnique. DMPO exhibits superior performance on multiple reasoning benchmarks\nwithout supervised fine-tuning, with an accuracy improvement of up to $42.9\\%$\nover previously SOTA baselines and $55.8\\%$ over the base model, underscoring\nthe effectiveness of the distribution matching framework. Our code is available\nat https://github.com/yuchen-zhu-zyc/DMPO.",
-      "link": "http://arxiv.org/abs/2510.08233v1",
-      "published_date": "October 09, 2025",
-      "published_date_sort": "2025-10-09",
-      "citations": 0,
-      "institutions": "Unknown"
-    },
-    {
-      "title": "SpatialLadder: Progressive Training for Spatial Reasoning in\n  Vision-Language Models",
-      "authors": "Hongxing Li, Dingming Li, Zixuan Wang, Yuchen Yan, Hang Wu, Wenqi Zhang, Yongliang Shen, Weiming Lu, Jun Xiao, Yueting Zhuang",
-      "journal": "arXiv",
-      "snippet": "Spatial reasoning remains a fundamental challenge for Vision-Language Models\n(VLMs), with current approaches struggling to achieve robust performance\ndespite recent advances. We identify that this limitation stems from a critical\ngap: existing methods attempt to learn spatial reasoning directly without\nestablishing the hierarchical foundations of perception and understanding. To\naddress this challenge, we present a comprehensive methodology for building\nspatial intelligence progressively. We introduce SpatialLadder-26k, a\nmultimodal dataset containing 26,610 samples spanning object localization,\nsingle image, multi-view, and video spatial reasoning tasks, constructed\nthrough a standardized pipeline that ensures systematic coverage across\nmodalities. Building on this dataset, we design a three-stage progressive\ntraining framework that (1) establishes spatial perception through object\nlocalization, (2) develops spatial understanding through multi-dimensional\nspatial tasks, and (3) strengthens complex reasoning via reinforcement learning\nwith verifiable rewards. This approach yields SpatialLadder, a 3B-parameter\nmodel that achieves state-of-the-art performance on spatial reasoning\nbenchmarks, with 23.4% average improvement over the base model, surpassing\nGPT-4o by 20.8% and Gemini-2.0-Flash by 10.1%. Notably, SpatialLadder maintains\nstrong generalization with 7.2% improvement on out-of-domain benchmarks,\ndemonstrating that progressive training from perception to reasoning is\nessential for robust spatial intelligence.",
-      "link": "http://arxiv.org/abs/2510.08531v1",
-      "published_date": "October 09, 2025",
-      "published_date_sort": "2025-10-09",
-      "citations": 0,
-      "institutions": "Unknown"
-    },
-    {
-      "title": "Selection, Reflection and Self-Refinement: Revisit Reasoning Tasks via a\n  Causal Lens",
-      "authors": "Yunlong Deng, Boyang Sun, Yan Li, Lingjing Kong, Zeyu Tang, Kun Zhang, Guangyi Chen",
-      "journal": "arXiv",
-      "snippet": "Due to their inherent complexity, reasoning tasks have long been regarded as\nrigorous benchmarks for assessing the capabilities of machine learning models,\nespecially large language models (LLMs). Although humans can solve these tasks\nwith ease, existing models, even after extensive pre-training and post-training\nat scale, still fail to perform reasoning reliably. In this paper, we revisit\nreasoning tasks from a causal perspective, seeking to understand their behavior\nin latent space and to offer insights for addressing their challenges.\nSpecifically, we cast reasoning tasks as a selection mechanism, in which\nhigh-level logical concepts function as selection operators on the given\nobservations, such as, identifying the correct answer in a math problem or\nfilling the appropriate entry in Sudoku. We emphasize two key properties of\nthis formulation that shed light on the difficulty of reasoning tasks. First,\nthe latent space exceeds the observation space in complexity, even when the\ncorrect answer is fully determined by the observed input. Second, the latent\nvariables, corresponding to logical thought, are densely structured and exhibit\nstrong dependencies. Building on this formulation, we introduce a framework,\ncalled SR$^2$, that incorporates the estimated latent variables as feedback\ninto the selection mechanism, thereby facilitating the learning of dense\ndependencies among latent representations. The framework consists of three key\nmodules: reflective representation learning, dependency self-refinement, and\nperiodic intermediate alignment. Experimentally, we show that our approach\nyields significant gains in reasoning accuracy, for example, attaining over\n10$\\%$ improvement in performance with 8$\\times$ fewer parameters on the Sudoku\nand Maze tasks over the recent advances.",
-      "link": "http://arxiv.org/abs/2510.08222v1",
-      "published_date": "October 09, 2025",
-      "published_date_sort": "2025-10-09",
-      "citations": 0,
-      "institutions": "Unknown"
-    },
-    {
-      "title": "Reinforcement Learning for Machine Learning Engineering Agents",
-      "authors": "S Yang, J He-Yueya, P Liang - arXiv preprint arXiv:2509.01684, 2025 - arxiv.org",
+      "title": "An AI system to help scientists write expert-level empirical software",
+      "authors": "E Aygün, A Belyaeva, G Comanici, M Coram… - arXiv preprint arXiv …, 2025 - arxiv.org",
       "journal": "Google Scholar Result",
-      "snippet": "Existing agents for solving tasks such as ML engineering rely on prompting powerful language models. As a result, these agents do not improve with more experience. In this …",
-      "link": "https://arxiv.org/abs/2509.01684",
+      "snippet": "The cycle of scientific discovery is frequently bottlenecked by the slow, manual creation of software to support computational experiments. To address this, we present an AI system …",
+      "link": "https://arxiv.org/abs/2509.06503",
       "published_date": "September 2025",
       "published_date_sort": "2025-09-01",
-      "citations": 0,
+      "citations": 1,
       "institutions": "Unknown"
     },
     {
@@ -185,14 +60,14 @@
       "institutions": "Unknown"
     },
     {
-      "title": "An AI system to help scientists write expert-level empirical software",
-      "authors": "E Aygün, A Belyaeva, G Comanici, M Coram… - arXiv preprint arXiv …, 2025 - arxiv.org",
+      "title": "Reinforcement Learning for Machine Learning Engineering Agents",
+      "authors": "S Yang, J He-Yueya, P Liang - arXiv preprint arXiv:2509.01684, 2025 - arxiv.org",
       "journal": "Google Scholar Result",
-      "snippet": "The cycle of scientific discovery is frequently bottlenecked by the slow, manual creation of software to support computational experiments. To address this, we present an AI system …",
-      "link": "https://arxiv.org/abs/2509.06503",
+      "snippet": "Existing agents for solving tasks such as ML engineering rely on prompting powerful language models. As a result, these agents do not improve with more experience. In this …",
+      "link": "https://arxiv.org/abs/2509.01684",
       "published_date": "September 2025",
       "published_date_sort": "2025-09-01",
-      "citations": 1,
+      "citations": 0,
       "institutions": "Unknown"
     },
     {
@@ -229,6 +104,28 @@
       "institutions": "Unknown"
     },
     {
+      "title": "AutoMind: Adaptive Knowledgeable Agent for Automated Data Science",
+      "authors": "Y Ou, Y Luo, J Zheng, L Wei, S Qiao, J Zhang… - arXiv preprint arXiv …, 2025 - arxiv.org",
+      "journal": "Google Scholar Result",
+      "snippet": "Large Language Model (LLM) agents have shown great potential in addressing real-world data science problems. LLM-driven data science agents promise to automate the entire …",
+      "link": "https://arxiv.org/abs/2506.10974",
+      "published_date": "June 2025",
+      "published_date_sort": "2025-06-01",
+      "citations": 1,
+      "institutions": "Unknown"
+    },
+    {
+      "title": "AI Scientists Fail Without Strong Implementation Capability",
+      "authors": "M Zhu, Q Xie, Y Weng, J Wu, Z Lin, L Yang… - arXiv preprint arXiv …, 2025 - arxiv.org",
+      "journal": "Google Scholar Result",
+      "snippet": "The emergence of Artificial Intelligence (AI) Scientist represents a paradigm shift in scientific discovery, with large language models (LLMs) taking the lead as the primary executor in the …",
+      "link": "https://arxiv.org/abs/2506.01372",
+      "published_date": "June 2025",
+      "published_date_sort": "2025-06-01",
+      "citations": 6,
+      "institutions": "Unknown"
+    },
+    {
       "title": "The Automated LLM Speedrunning Benchmark: Reproducing NanoGPT Improvements",
       "authors": "B Zhao, D Magka, M Jiang, X Li, R Raileanu… - arXiv preprint arXiv …, 2025 - arxiv.org",
       "journal": "Google Scholar Result",
@@ -247,40 +144,7 @@
       "link": "https://arxiv.org/abs/2506.12594",
       "published_date": "June 2025",
       "published_date_sort": "2025-06-01",
-      "citations": 15,
-      "institutions": "Unknown"
-    },
-    {
-      "title": "AutoMind: Adaptive Knowledgeable Agent for Automated Data Science",
-      "authors": "Y Ou, Y Luo, J Zheng, L Wei, S Qiao, J Zhang… - arXiv preprint arXiv …, 2025 - arxiv.org",
-      "journal": "Google Scholar Result",
-      "snippet": "Large Language Model (LLM) agents have shown great potential in addressing real-world data science problems. LLM-driven data science agents promise to automate the entire …",
-      "link": "https://arxiv.org/abs/2506.10974",
-      "published_date": "June 2025",
-      "published_date_sort": "2025-06-01",
-      "citations": 1,
-      "institutions": "Unknown"
-    },
-    {
-      "title": "MLE-STAR: Machine Learning Engineering Agent via Search and Targeted Refinement",
-      "authors": "J Nam, J Yoon, J Chen, J Shin, SÖ Arık… - arXiv preprint arXiv …, 2025 - arxiv.org",
-      "journal": "Google Scholar Result",
-      "snippet": "Agents based on large language models (LLMs) for machine learning engineering (MLE) can automatically implement ML models via code generation. However, existing approaches …",
-      "link": "https://arxiv.org/abs/2506.15692",
-      "published_date": "June 2025",
-      "published_date_sort": "2025-06-01",
-      "citations": 3,
-      "institutions": "Unknown"
-    },
-    {
-      "title": "AI Scientists Fail Without Strong Implementation Capability",
-      "authors": "M Zhu, Q Xie, Y Weng, J Wu, Z Lin, L Yang… - arXiv preprint arXiv …, 2025 - arxiv.org",
-      "journal": "Google Scholar Result",
-      "snippet": "The emergence of Artificial Intelligence (AI) Scientist represents a paradigm shift in scientific discovery, with large language models (LLMs) taking the lead as the primary executor in the …",
-      "link": "https://arxiv.org/abs/2506.01372",
-      "published_date": "June 2025",
-      "published_date_sort": "2025-06-01",
-      "citations": 7,
+      "citations": 16,
       "institutions": "Unknown"
     },
     {
@@ -295,11 +159,22 @@
       "institutions": "Unknown"
     },
     {
-      "title": "RepoMaster: Autonomous Exploration and Understanding of GitHub Repositories for Complex Task Solving",
-      "authors": "H Wang, Z Ni, S Zhang, S Lu, S Hu, Z He, C Hu… - arXiv preprint arXiv …, 2025 - arxiv.org",
+      "title": "MLE-STAR: Machine Learning Engineering Agent via Search and Targeted Refinement",
+      "authors": "J Nam, J Yoon, J Chen, J Shin, SÖ Arık… - arXiv preprint arXiv …, 2025 - arxiv.org",
       "journal": "Google Scholar Result",
-      "snippet": "The ultimate goal of code agents is to solve complex tasks autonomously. Although large language models (LLMs) have made substantial progress in code generation, real-world …",
-      "link": "https://arxiv.org/abs/2505.21577",
+      "snippet": "Agents based on large language models (LLMs) for machine learning engineering (MLE) can automatically implement ML models via code generation. However, existing approaches …",
+      "link": "https://arxiv.org/abs/2506.15692",
+      "published_date": "June 2025",
+      "published_date_sort": "2025-06-01",
+      "citations": 3,
+      "institutions": "Unknown"
+    },
+    {
+      "title": "IDA-Bench: Evaluating LLMs on Interactive Guided Data Analysis",
+      "authors": "H Li, H Liu, T Zhu, T Guo, Z Zheng, X Deng… - arXiv preprint arXiv …, 2025 - arxiv.org",
+      "journal": "Google Scholar Result",
+      "snippet": "Large Language Models (LLMs) show promise as data analysis agents, but existing benchmarks overlook the iterative nature of the field, where experts' decisions evolve with …",
+      "link": "https://arxiv.org/abs/2505.18223",
       "published_date": "May 2025",
       "published_date_sort": "2025-05-01",
       "citations": 2,
@@ -313,15 +188,15 @@
       "link": "https://arxiv.org/abs/2505.13259",
       "published_date": "May 2025",
       "published_date_sort": "2025-05-01",
-      "citations": 12,
+      "citations": 13,
       "institutions": "Unknown"
     },
     {
-      "title": "Mle-dojo: Interactive environments for empowering llm agents in machine learning engineering",
-      "authors": "R Qiang, Y Zhuang, Y Li, R Zhang, C Li… - arXiv preprint arXiv …, 2025 - arxiv.org",
+      "title": "RepoMaster: Autonomous Exploration and Understanding of GitHub Repositories for Complex Task Solving",
+      "authors": "H Wang, Z Ni, S Zhang, S Lu, S Hu, Z He, C Hu… - arXiv preprint arXiv …, 2025 - arxiv.org",
       "journal": "Google Scholar Result",
-      "snippet": "We introduce MLE-Dojo, a Gym-style framework for systematically reinforcement learning, evaluating, and improving autonomous large language model (LLM) agents in iterative …",
-      "link": "https://arxiv.org/abs/2505.07782",
+      "snippet": "The ultimate goal of code agents is to solve complex tasks autonomously. Although large language models (LLMs) have made substantial progress in code generation, real-world …",
+      "link": "https://arxiv.org/abs/2505.21577",
       "published_date": "May 2025",
       "published_date_sort": "2025-05-01",
       "citations": 2,
@@ -339,14 +214,14 @@
       "institutions": "Unknown"
     },
     {
-      "title": "IDA-Bench: Evaluating LLMs on Interactive Guided Data Analysis",
-      "authors": "H Li, H Liu, T Zhu, T Guo, Z Zheng, X Deng… - arXiv preprint arXiv …, 2025 - arxiv.org",
+      "title": "Mle-dojo: Interactive environments for empowering llm agents in machine learning engineering",
+      "authors": "R Qiang, Y Zhuang, Y Li, R Zhang, C Li… - arXiv preprint arXiv …, 2025 - arxiv.org",
       "journal": "Google Scholar Result",
-      "snippet": "Large Language Models (LLMs) show promise as data analysis agents, but existing benchmarks overlook the iterative nature of the field, where experts' decisions evolve with …",
-      "link": "https://arxiv.org/abs/2505.18223",
+      "snippet": "We introduce MLE-Dojo, a Gym-style framework for systematically reinforcement learning, evaluating, and improving autonomous large language model (LLM) agents in iterative …",
+      "link": "https://arxiv.org/abs/2505.07782",
       "published_date": "May 2025",
       "published_date_sort": "2025-05-01",
-      "citations": 2,
+      "citations": 3,
       "institutions": "Unknown"
     },
     {
@@ -368,7 +243,7 @@
       "link": "https://arxiv.org/abs/2504.04310",
       "published_date": "April 2025",
       "published_date_sort": "2025-04-01",
-      "citations": 11,
+      "citations": 13,
       "institutions": "Unknown"
     },
     {
@@ -379,7 +254,7 @@
       "link": "https://arxiv.org/abs/2503.14499",
       "published_date": "March 2025",
       "published_date_sort": "2025-03-01",
-      "citations": 40,
+      "citations": 41,
       "institutions": "Unknown"
     }
   ]
