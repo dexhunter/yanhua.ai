@@ -1,11 +1,11 @@
 {
-  "last_updated": "2025-10-15 00:10:37 UTC",
+  "last_updated": "2025-10-16 00:10:35 UTC",
   "target_paper": "https://www.arxiv.org/abs/2502.13138",
   "arxiv_id": "2502.13138",
-  "total_citations": 32,
+  "total_citations": 21,
   "h_index": 6,
-  "recent_citations": 12,
-  "avg_citations_per_month": "4.00",
+  "recent_citations": 1,
+  "avg_citations_per_month": "2.62",
   "timeline": [
     {
       "date": "2025-03-01",
@@ -37,162 +37,19 @@
     },
     {
       "date": "2025-10-01",
-      "citations": 32
+      "citations": 21
     }
   ],
   "papers": [
     {
-      "title": "From <Answer> to <Think>: Multidimensional Supervision of Reasoning\n  Process for LLM Optimization",
-      "authors": "Beining Wang, Weihang Su, Hongtao Tian, Tao Yang, Yujia Zhou, Ting Yao, Qingyao Ai, Yiqun Liu",
+      "title": "Ax-Prover: A Deep Reasoning Agentic Framework for Theorem Proving in\n  Mathematics and Quantum Physics",
+      "authors": "Marco Del Tredici, Jacob McCarran, Benjamin Breen, Javier Aspuru Mijares, Weichen Winston Yin, Jacob M. Taylor, Frank Koppens, Dirk Englund",
       "journal": "arXiv",
-      "snippet": "Improving the multi-step reasoning ability of Large Language Models (LLMs) is\na critical yet challenging task. The dominant paradigm, outcome-supervised\nreinforcement learning (RLVR), rewards only correct final answers, often\npropagating flawed reasoning and suffering from sparse reward signals. While\nprocess-level reward models (PRMs) provide denser, step-by-step feedback, they\nlack generalizability and interpretability, requiring task-specific\nsegmentation of the reasoning process. To this end, we propose the\nDimension-level Reward Model (DRM), a new supervision framework that bridges\nthe gap between these two approaches. DRM evaluates the quality of a reasoning\nprocess along three fundamental, complementary, and interpretable dimensions:\nConfidence for uncertainty calibration, Relevance for semantic alignment, and\nCoherence for logical consistency. Together, these dimensions capture aspects\nbeyond final answer correctness and enable interpretable assessment without\nrequiring ground truth answers. Experimental results show that DRM provides\neffective supervision signals, guides the optimization of LLMs and enhances\ntheir reasoning ability. In particular, DRM-supervised training achieves\nconsistent gains on both in-distribution and out-of-distribution open-domain\ntasks, including mathematics, question answering, code execution, and puzzles.\nOur findings demonstrate that multidimensional supervision of the reasoning\nprocess can improve the generalized reasoning ability of LLMs beyond the\ntraining distribution.",
-      "link": "http://arxiv.org/abs/2510.11457v1",
-      "published_date": "October 13, 2025",
-      "published_date_sort": "2025-10-13",
+      "snippet": "We present Ax-Prover, a multi-agent system for automated theorem proving in\nLean that can solve problems across diverse scientific domains and operate\neither autonomously or collaboratively with human experts. To achieve this,\nAx-Prover approaches scientific problem solving through formal proof\ngeneration, a process that demands both creative reasoning and strict syntactic\nrigor. Ax-Prover meets this challenge by equipping Large Language Models\n(LLMs), which provide knowledge and reasoning, with Lean tools via the Model\nContext Protocol (MCP), which ensure formal correctness. To evaluate its\nperformance as an autonomous prover, we benchmark our approach against frontier\nLLMs and specialized prover models on two public math benchmarks and on two\nLean benchmarks we introduce in the fields of abstract algebra and quantum\ntheory. On public datasets, Ax-Prover is competitive with state-of-the-art\nprovers, while it largely outperform them on the new benchmarks. This shows\nthat, unlike specialized systems that struggle to generalize, our tool-based\nagentic theorem prover approach offers a generalizable methodology for formal\nverification across diverse scientific domains. Furthermore, we demonstrate\nAx-Prover's assistant capabilities in a practical use case, showing how it\nenabled an expert mathematician to formalize the proof of a complex\ncryptography theorem.",
+      "link": "http://arxiv.org/abs/2510.12787v1",
+      "published_date": "October 14, 2025",
+      "published_date_sort": "2025-10-14",
       "citations": 0,
-      "institutions": "Unknown"
-    },
-    {
-      "title": "EvoCAD: Evolutionary CAD Code Generation with Vision Language Models",
-      "authors": "Tobias Preintner, Weixuan Yuan, Adrian König, Thomas Bäck, Elena Raponi, Niki van Stein",
-      "journal": "arXiv",
-      "snippet": "Combining large language models with evolutionary computation algorithms\nrepresents a promising research direction leveraging the remarkable generative\nand in-context learning capabilities of LLMs with the strengths of evolutionary\nalgorithms. In this work, we present EvoCAD, a method for generating\ncomputer-aided design (CAD) objects through their symbolic representations\nusing vision language models and evolutionary optimization. Our method samples\nmultiple CAD objects, which are then optimized using an evolutionary approach\nwith vision language and reasoning language models. We assess our method using\nGPT-4V and GPT-4o, evaluating it on the CADPrompt benchmark dataset and\ncomparing it to prior methods. Additionally, we introduce two new metrics based\non topological properties defined by the Euler characteristic, which capture a\nform of semantic similarity between 3D objects. Our results demonstrate that\nEvoCAD outperforms previous approaches on multiple metrics, particularly in\ngenerating topologically correct objects, which can be efficiently evaluated\nusing our two novel metrics that complement existing spatial metrics.",
-      "link": "http://arxiv.org/abs/2510.11631v1",
-      "published_date": "October 13, 2025",
-      "published_date_sort": "2025-10-13",
-      "citations": 0,
-      "institutions": "Unknown"
-    },
-    {
-      "title": "Boundary-Guided Policy Optimization for Memory-efficient RL of Diffusion\n  Large Language Models",
-      "authors": "Nianyi Lin, Jiajie Zhang, Lei Hou, Juanzi Li",
-      "journal": "arXiv",
-      "snippet": "A key challenge in applying reinforcement learning (RL) to diffusion large\nlanguage models (dLLMs) lies in the intractability of their likelihood\nfunctions, which are essential for the RL objective, necessitating\ncorresponding approximation in each training step. While existing methods\napproximate the log-likelihoods by their evidence lower bounds (ELBOs) via\ncustomized Monte Carlo (MC) sampling, the forward computational graphs of all\nMC samples need to be retained for the gradient computation of non-linear terms\nin the RL objective, resulting in significant memory overhead. This constraint\nrestricts feasible sample sizes, leading to imprecise likelihood approximations\nand ultimately distorting the RL objective. To overcome this limitation, we\npropose \\emph{Boundary-Guided Policy Optimization} (BGPO), a memory-efficient\nRL algorithm that maximizes a specially constructed lower bound of the\nELBO-based objective. This lower bound is carefully designed to satisfy two key\nproperties: (1) Linearity: it is formulated in a linear sum where each term\ndepends only on a single MC sample, thereby enabling gradient accumulation\nacross samples and ensuring constant memory usage; (2) Equivalence: Both the\nvalue and gradient of this lower bound are equal to those of the ELBO-based\nobjective in on-policy training, making it also an effective approximation for\nthe original RL objective. These properties allow BGPO to adopt a large MC\nsample size, resulting in more accurate likelihood approximations and improved\nRL objective estimation, which in turn leads to enhanced performance.\nExperiments show that BGPO significantly outperforms previous RL algorithms for\ndLLMs in math problem solving, code generation, and planning tasks.",
-      "link": "http://arxiv.org/abs/2510.11683v1",
-      "published_date": "October 13, 2025",
-      "published_date_sort": "2025-10-13",
-      "citations": 0,
-      "institutions": "Unknown"
-    },
-    {
-      "title": "Early Detection and Reduction of Memorisation for Domain Adaptation and\n  Instruction Tuning",
-      "authors": "Dean L. Slack, Noura Al Moubayed",
-      "journal": "arXiv",
-      "snippet": "Although large language models excel across many tasks, they can memorise\ntraining data and thereby expose private or copyrighted text. Most defences\ntarget the pre-training stage, leaving memorisation during fine-tuning,\nespecially for domain adaptation and instruction tuning, poorly understood. We\nfine-tune Pythia, Llama3, and Mistral models spanning 1.4B-70B parameters on\ncommon evaluation datasets and track verbatim memorisation throughout training.\nWe find that memorisation increases dramatically in the first few epochs, often\nsignificantly before either validation perplexity or evaluation performance is\noptimised. We use a simple but effective n-gram memorisation score which\nreliably precedes verbatim memorisation; using it as an early-stopping\ncriterion mitigates memorisation with minimal performance loss. Further, we\nintroduce an n-gram-aware loss regulariser and show that it reduces\nmemorisation across all model families tested by up to 40% while minimising\nevaluation performance trade-offs when compared to an existing memorisation\nmitigation strategy. These results yield practical, scalable insights into\nmemorisation dynamics during language model fine-tuning.",
-      "link": "http://arxiv.org/abs/2510.11372v1",
-      "published_date": "October 13, 2025",
-      "published_date_sort": "2025-10-13",
-      "citations": 0,
-      "institutions": "Unknown"
-    },
-    {
-      "title": "Adversarial Attacks Leverage Interference Between Features in\n  Superposition",
-      "authors": "Edward Stevinson, Lucas Prieto, Melih Barsbey, Tolga Birdal",
-      "journal": "arXiv",
-      "snippet": "Fundamental questions remain about when and why adversarial examples arise in\nneural networks, with competing views characterising them either as artifacts\nof the irregularities in the decision landscape or as products of sensitivity\nto non-robust input features. In this paper, we instead argue that adversarial\nvulnerability can stem from efficient information encoding in neural networks.\nSpecifically, we show how superposition - where networks represent more\nfeatures than they have dimensions - creates arrangements of latent\nrepresentations that adversaries can exploit. We demonstrate that adversarial\nperturbations leverage interference between superposed features, making attack\npatterns predictable from feature arrangements. Our framework provides a\nmechanistic explanation for two known phenomena: adversarial attack\ntransferability between models with similar training regimes and class-specific\nvulnerability patterns. In synthetic settings with precisely controlled\nsuperposition, we establish that superposition suffices to create adversarial\nvulnerability. We then demonstrate that these findings persist in a ViT trained\non CIFAR-10. These findings reveal adversarial vulnerability can be a byproduct\nof networks' representational compression, rather than flaws in the learning\nprocess or non-robust inputs.",
-      "link": "http://arxiv.org/abs/2510.11709v1",
-      "published_date": "October 13, 2025",
-      "published_date_sort": "2025-10-13",
-      "citations": 0,
-      "institutions": "Unknown"
-    },
-    {
-      "title": "ParaCook: On Time-Efficient Planning for Multi-Agent Systems",
-      "authors": "Shiqi Zhang, Xinbei Ma, Yunqing Xu, Zouying Cao, Pengrui Lu, Haobo Yuan, Tiancheng Shen, Zhuosheng Zhang, Hai Zhao, Ming-Hsuan Yang",
-      "journal": "arXiv",
-      "snippet": "Large Language Models (LLMs) exhibit strong reasoning abilities for planning\nlong-horizon, real-world tasks, yet existing agent benchmarks focus on task\ncompletion while neglecting time efficiency in parallel and asynchronous\noperations. To address this, we present ParaCook, a benchmark for\ntime-efficient collaborative planning. Inspired by the Overcooked game,\nParaCook provides an environment for various challenging interaction planning\nof multi-agent systems that are instantiated as cooking tasks, with a\nsimplified action space to isolate the core challenge of strategic parallel\nplanning. Through a comprehensive evaluation of state-of-the-art LLMs, we find\nthat current approaches achieve suboptimal plans, which struggle with parallel\nactions or coordination. Our analysis also reveals LLMs' potential on abstract\ntasks where they can focus on high-level parallel optimization. ParaCook\nprovides a scalable evaluation framework with adjustable complexity,\nestablishing a foundation for developing and assessing time efficiency-aware\nmulti-agent planning. The code and data are available at\nhttps://github.com/zsq259/ParaCook.",
-      "link": "http://arxiv.org/abs/2510.11608v1",
-      "published_date": "October 13, 2025",
-      "published_date_sort": "2025-10-13",
-      "citations": 0,
-      "institutions": "Unknown"
-    },
-    {
-      "title": "CodePlot-CoT: Mathematical Visual Reasoning by Thinking with Code-Driven\n  Images",
-      "authors": "Chengqi Duan, Kaiyue Sun, Rongyao Fang, Manyuan Zhang, Yan Feng, Ying Luo, Yufang Liu, Ke Wang, Peng Pei, Xunliang Cai, Hongsheng Li, Yi Ma, Xihui Liu",
-      "journal": "arXiv",
-      "snippet": "Recent advances in Large Language Models (LLMs) and Vision Language Models\n(VLMs) have shown significant progress in mathematical reasoning, yet they\nstill face a critical bottleneck with problems requiring visual assistance,\nsuch as drawing auxiliary lines or plotting functions to solve the problems.\nMost LLMs and VLMs are constrained to text-only reasoning chains, while\nmultimodal unified models that can generate interleaved text and images lack\nthe necessary precision and controllability for such tasks. To address this, we\npropose CodePlot-CoT, a code-driven Chain-of-Thought paradigm for \"thinking\nwith images\" in mathematics. Our approach leverages the VLM to generate text\nreasoning as well as executable plotting code, which is then rendered into\nimages as \"visual thought\", to solve mathematical problems. To achieve this, we\nfirst construct Math-VR, the first large-scale, bilingual dataset and benchmark\nfor Mathematics problems with Visual Reasoning, comprising 178K samples.\nSecond, to create high-quality training data, we develop a state-of-the-art\nimage-to-code converter specialized for parsing complex mathematical figures\ninto codes. Finally, using these training data, we train the CodePlot-CoT model\nfor solving mathematical problems. Experimental results show that our model\nachieves up to 21% increase over base model on our new benchmark, fully\nvalidating the efficacy of our proposed code-driven reasoning paradigm. Our\nwork opens a new direction for multimodal mathematical reasoning and provides\nthe community with the first large-scale dataset, comprehensive benchmark, and\nstrong approach for such problems. To facilitate future research, we make our\ndatasets, code, and pretrained models publicly available at\nhttps://github.com/HKU-MMLab/Math-VR-CodePlot-CoT.",
-      "link": "http://arxiv.org/abs/2510.11718v1",
-      "published_date": "October 13, 2025",
-      "published_date_sort": "2025-10-13",
-      "citations": 0,
-      "institutions": "Unknown"
-    },
-    {
-      "title": "LLM-Specific Utility: A New Perspective for Retrieval-Augmented\n  Generation",
-      "authors": "Hengran Zhang, Keping Bi, Jiafeng Guo, Jiaming Zhang, Shuaiqiang Wang, Dawei Yin, Xueqi Cheng",
-      "journal": "arXiv",
-      "snippet": "Retrieval-augmented generation (RAG) enhances large language models (LLMs) by\nincorporating external knowledge. While traditional retrieval focuses on\nrelevance, RAG's effectiveness depends on the utility of retrieved passages,\ni.e., the usefulness in facilitating the generation of an accurate and\ncomprehensive answer. Existing studies often treat utility as a generic\nattribute, ignoring the fact that different LLMs may benefit differently from\nthe same passage due to variations in internal knowledge and comprehension\nability. In this work, we introduce and systematically investigate the notion\nof LLM-specific utility. Through large-scale experiments across multiple\ndatasets and LLMs, we demonstrate that human-annotated passages are not optimal\nfor LLMs and that ground-truth utilitarian passages are not transferable across\ndifferent LLMs. These findings highlight the necessity of adopting the\nLLM-specific utility in RAG research. Our findings indicate that some\nhuman-annotated passages are not ground-truth utilitarian passages for specific\nLLMs, partially due to the varying readability of queries and passages for\nLLMs, a tendency for which perplexity is a key metric. Based on these findings,\nwe propose a benchmarking procedure for LLM-specific utility judgments. We\nevaluate existing utility judgment methods on six datasets and find that while\nverbalized methods using pseudo-answers perform robustly, LLMs struggle to\nassess utility effectively-failing to reject all passages for known queries and\nto select truly useful ones for unknown queries.",
-      "link": "http://arxiv.org/abs/2510.11358v1",
-      "published_date": "October 13, 2025",
-      "published_date_sort": "2025-10-13",
-      "citations": 0,
-      "institutions": "Unknown"
-    },
-    {
-      "title": "Context-Aware Model-Based Reinforcement Learning for Autonomous Racing",
-      "authors": "Emran Yasser Moustafa, Ivana Dusparic",
-      "journal": "arXiv",
-      "snippet": "Autonomous vehicles have shown promising potential to be a groundbreaking\ntechnology for improving the safety of road users. For these vehicles, as well\nas many other safety-critical robotic technologies, to be deployed in\nreal-world applications, we require algorithms that can generalize well to\nunseen scenarios and data. Model-based reinforcement learning algorithms (MBRL)\nhave demonstrated state-of-the-art performance and data efficiency across a\ndiverse set of domains. However, these algorithms have also shown\nsusceptibility to changes in the environment and its transition dynamics.\n  In this work, we explore the performance and generalization capabilities of\nMBRL algorithms for autonomous driving, specifically in the simulated\nautonomous racing environment, Roboracer (formerly F1Tenth). We frame the\nhead-to-head racing task as a learning problem using contextual Markov decision\nprocesses and parameterize the driving behavior of the adversaries using the\ncontext of the episode, thereby also parameterizing the transition and reward\ndynamics. We benchmark the behavior of MBRL algorithms in this environment and\npropose a novel context-aware extension of the existing literature, cMask. We\ndemonstrate that context-aware MBRL algorithms generalize better to\nout-of-distribution adversary behaviors relative to context-free approaches. We\nalso demonstrate that cMask displays strong generalization capabilities, as\nwell as further performance improvement relative to other context-aware MBRL\napproaches when racing against adversaries with in-distribution behaviors.",
-      "link": "http://arxiv.org/abs/2510.11501v1",
-      "published_date": "October 13, 2025",
-      "published_date_sort": "2025-10-13",
-      "citations": 0,
-      "institutions": "Unknown"
-    },
-    {
-      "title": "People use fast, flat goal-directed simulation to reason about novel\n  problems",
-      "authors": "Katherine M. Collins, Cedegao E. Zhang, Lionel Wong, Mauricio Barba da Costa, Graham Todd, Adrian Weller, Samuel J. Cheyette, Thomas L. Griffiths, Joshua B. Tenenbaum",
-      "journal": "arXiv",
-      "snippet": "Games have long been a microcosm for studying planning and reasoning in both\nnatural and artificial intelligence, especially with a focus on expert-level or\neven super-human play. But real life also pushes human intelligence along a\ndifferent frontier, requiring people to flexibly navigate decision-making\nproblems that they have never thought about before. Here, we use novice\ngameplay to study how people make decisions and form judgments in new problem\nsettings. We show that people are systematic and adaptively rational in how\nthey play a game for the first time, or evaluate a game (e.g., how fair or how\nfun it is likely to be) before they have played it even once. We explain these\ncapacities via a computational cognitive model that we call the \"Intuitive\nGamer\". The model is based on mechanisms of fast and flat (depth-limited)\ngoal-directed probabilistic simulation--analogous to those used in Monte Carlo\ntree-search models of expert game-play, but scaled down to use very few\nstochastic samples, simple goal heuristics for evaluating actions, and no deep\nsearch. In a series of large-scale behavioral studies with over 1000\nparticipants and 121 two-player strategic board games (almost all novel to our\nparticipants), our model quantitatively captures human judgments and decisions\nvarying the amount and kind of experience people have with a game--from no\nexperience at all (\"just thinking\"), to a single round of play, to indirect\nexperience watching another person and predicting how they should play--and\ndoes so significantly better than much more compute-intensive expert-level\nmodels. More broadly, our work offers new insights into how people rapidly\nevaluate, act, and make suggestions when encountering novel problems, and could\ninform the design of more flexible and human-like AI systems that can determine\nnot just how to solve new tasks, but whether a task is worth thinking about at\nall.",
-      "link": "http://arxiv.org/abs/2510.11503v1",
-      "published_date": "October 13, 2025",
-      "published_date_sort": "2025-10-13",
-      "citations": 0,
-      "institutions": "Unknown"
-    },
-    {
-      "title": "Phys2Real: Fusing VLM Priors with Interactive Online Adaptation for\n  Uncertainty-Aware Sim-to-Real Manipulation",
-      "authors": "Maggie Wang, Stephen Tian, Aiden Swann, Ola Shorinwa, Jiajun Wu, Mac Schwager",
-      "journal": "arXiv",
-      "snippet": "Learning robotic manipulation policies directly in the real world can be\nexpensive and time-consuming. While reinforcement learning (RL) policies\ntrained in simulation present a scalable alternative, effective sim-to-real\ntransfer remains challenging, particularly for tasks that require precise\ndynamics. To address this, we propose Phys2Real, a real-to-sim-to-real RL\npipeline that combines vision-language model (VLM)-inferred physical parameter\nestimates with interactive adaptation through uncertainty-aware fusion. Our\napproach consists of three core components: (1) high-fidelity geometric\nreconstruction with 3D Gaussian splatting, (2) VLM-inferred prior distributions\nover physical parameters, and (3) online physical parameter estimation from\ninteraction data. Phys2Real conditions policies on interpretable physical\nparameters, refining VLM predictions with online estimates via ensemble-based\nuncertainty quantification. On planar pushing tasks of a T-block with varying\ncenter of mass (CoM) and a hammer with an off-center mass distribution,\nPhys2Real achieves substantial improvements over a domain randomization\nbaseline: 100% vs 79% success rate for the bottom-weighted T-block, 57% vs 23%\nin the challenging top-weighted T-block, and 15% faster average task completion\nfor hammer pushing. Ablation studies indicate that the combination of VLM and\ninteraction information is essential for success. Project website:\nhttps://phys2real.github.io/ .",
-      "link": "http://arxiv.org/abs/2510.11689v1",
-      "published_date": "October 13, 2025",
-      "published_date_sort": "2025-10-13",
-      "citations": 0,
-      "institutions": "Unknown"
-    },
-    {
-      "title": "Uncertainty-Aware ControlNet: Bridging Domain Gaps with Synthetic Image\n  Generation",
-      "authors": "Joshua Niemeijer, Jan Ehrhardt, Heinz Handels, Hristina Uzunova",
-      "journal": "arXiv",
-      "snippet": "Generative Models are a valuable tool for the controlled creation of\nhigh-quality image data. Controlled diffusion models like the ControlNet have\nallowed the creation of labeled distributions. Such synthetic datasets can\naugment the original training distribution when discriminative models, like\nsemantic segmentation, are trained. However, this augmentation effect is\nlimited since ControlNets tend to reproduce the original training distribution.\n  This work introduces a method to utilize data from unlabeled domains to train\nControlNets by introducing the concept of uncertainty into the control\nmechanism. The uncertainty indicates that a given image was not part of the\ntraining distribution of a downstream task, e.g., segmentation. Thus, two types\nof control are engaged in the final network: an uncertainty control from an\nunlabeled dataset and a semantic control from the labeled dataset. The\nresulting ControlNet allows us to create annotated data with high uncertainty\nfrom the target domain, i.e., synthetic data from the unlabeled distribution\nwith labels. In our scenario, we consider retinal OCTs, where typically\nhigh-quality Spectralis images are available with given ground truth\nsegmentations, enabling the training of segmentation networks. The recent\ndevelopment in Home-OCT devices, however, yields retinal OCTs with lower\nquality and a large domain shift, such that out-of-the-pocket segmentation\nnetworks cannot be applied for this type of data. Synthesizing annotated images\nfrom the Home-OCT domain using the proposed approach closes this gap and leads\nto significantly improved segmentation results without adding any further\nsupervision. The advantage of uncertainty-guidance becomes obvious when\ncompared to style transfer: it enables arbitrary domain shifts without any\nstrict learning of an image style. This is also demonstrated in a traffic scene\nexperiment.",
-      "link": "http://arxiv.org/abs/2510.11346v1",
-      "published_date": "October 13, 2025",
-      "published_date_sort": "2025-10-13",
-      "citations": 0,
-      "institutions": "Unknown"
-    },
-    {
-      "title": "Reinforcement Learning for Machine Learning Engineering Agents",
-      "authors": "S Yang, J He-Yueya, P Liang - arXiv preprint arXiv:2509.01684, 2025 - arxiv.org",
-      "journal": "Google Scholar Result",
-      "snippet": "Existing agents for solving tasks such as ML engineering rely on prompting powerful language models. As a result, these agents do not improve with more experience. In this …",
-      "link": "https://arxiv.org/abs/2509.01684",
-      "published_date": "September 2025",
-      "published_date_sort": "2025-09-01",
-      "citations": 0,
-      "institutions": "Unknown"
-    },
-    {
-      "title": "Bootstrapping task spaces for self-improvement",
-      "authors": "M Jiang, A Lupu, Y Bachrach - arXiv preprint arXiv:2509.04575, 2025 - arxiv.org",
-      "journal": "Google Scholar Result",
-      "snippet": "Progress in many task domains emerges from repeated revisions to previous solution attempts. Training agents that can reliably self-improve over such sequences at inference …",
-      "link": "https://arxiv.org/abs/2509.04575",
-      "published_date": "September 2025",
-      "published_date_sort": "2025-09-01",
-      "citations": 1,
       "institutions": "Unknown"
     },
     {
@@ -207,14 +64,25 @@
       "institutions": "Unknown"
     },
     {
-      "title": "Tuning LLM-based Code Optimization via Meta-Prompting: An Industrial Perspective",
-      "authors": "J Gong, R Giavrimis, P Brookes, V Voskanyan… - arXiv preprint arXiv …, 2025 - arxiv.org",
+      "title": "Bootstrapping task spaces for self-improvement",
+      "authors": "M Jiang, A Lupu, Y Bachrach - arXiv preprint arXiv:2509.04575, 2025 - arxiv.org",
       "journal": "Google Scholar Result",
-      "snippet": "There is a growing interest in leveraging large language models (LLMs) for automated code optimization. However, industrial platforms deploying multiple LLMs face a critical challenge …",
-      "link": "https://arxiv.org/abs/2508.01443",
-      "published_date": "August 2025",
-      "published_date_sort": "2025-08-01",
+      "snippet": "Progress in many task domains emerges from repeated revisions to previous solution attempts. Training agents that can reliably self-improve over such sequences at inference …",
+      "link": "https://arxiv.org/abs/2509.04575",
+      "published_date": "September 2025",
+      "published_date_sort": "2025-09-01",
       "citations": 1,
+      "institutions": "Unknown"
+    },
+    {
+      "title": "Reinforcement Learning for Machine Learning Engineering Agents",
+      "authors": "S Yang, J He-Yueya, P Liang - arXiv preprint arXiv:2509.01684, 2025 - arxiv.org",
+      "journal": "Google Scholar Result",
+      "snippet": "Existing agents for solving tasks such as ML engineering rely on prompting powerful language models. As a result, these agents do not improve with more experience. In this …",
+      "link": "https://arxiv.org/abs/2509.01684",
+      "published_date": "September 2025",
+      "published_date_sort": "2025-09-01",
+      "citations": 0,
       "institutions": "Unknown"
     },
     {
@@ -223,6 +91,17 @@
       "journal": "Google Scholar Result",
       "snippet": "Recent Large Language Model (LLM)-based AutoML systems demonstrate impressive capabilities but face significant limitations such as constrained exploration strategies and a …",
       "link": "https://arxiv.org/abs/2508.10177",
+      "published_date": "August 2025",
+      "published_date_sort": "2025-08-01",
+      "citations": 1,
+      "institutions": "Unknown"
+    },
+    {
+      "title": "Tuning LLM-based Code Optimization via Meta-Prompting: An Industrial Perspective",
+      "authors": "J Gong, R Giavrimis, P Brookes, V Voskanyan… - arXiv preprint arXiv …, 2025 - arxiv.org",
+      "journal": "Google Scholar Result",
+      "snippet": "There is a growing interest in leveraging large language models (LLMs) for automated code optimization. However, industrial platforms deploying multiple LLMs face a critical challenge …",
+      "link": "https://arxiv.org/abs/2508.01443",
       "published_date": "August 2025",
       "published_date_sort": "2025-08-01",
       "citations": 1,
@@ -240,25 +119,14 @@
       "institutions": "Unknown"
     },
     {
-      "title": "Towards Community-Driven Agents for Machine Learning Engineering",
-      "authors": "S Li, W Sun, S Li, A Talwalkar, Y Yang - arXiv preprint arXiv:2506.20640, 2025 - arxiv.org",
+      "title": "LMR-BENCH: Evaluating LLM Agent's Ability on Reproducing Language Modeling Research",
+      "authors": "S Yan, R Li, Z Luo, Z Wang, D Li, L Jing, K He… - arXiv preprint arXiv …, 2025 - arxiv.org",
       "journal": "Google Scholar Result",
-      "snippet": "Large language model-based machine learning (ML) agents have shown great promise in automating ML research. However, existing agents typically operate in isolation on a given …",
-      "link": "https://arxiv.org/abs/2506.20640",
+      "snippet": "Large language model (LLM) agents have demonstrated remarkable potential in advancing scientific discovery. However, their capability in the fundamental yet crucial task of …",
+      "link": "https://arxiv.org/abs/2506.17335",
       "published_date": "June 2025",
       "published_date_sort": "2025-06-01",
-      "citations": 0,
-      "institutions": "Unknown"
-    },
-    {
-      "title": "MLE-STAR: Machine Learning Engineering Agent via Search and Targeted Refinement",
-      "authors": "J Nam, J Yoon, J Chen, J Shin, SÖ Arık… - arXiv preprint arXiv …, 2025 - arxiv.org",
-      "journal": "Google Scholar Result",
-      "snippet": "Agents based on large language models (LLMs) for machine learning engineering (MLE) can automatically implement ML models via code generation. However, existing approaches …",
-      "link": "https://arxiv.org/abs/2506.15692",
-      "published_date": "June 2025",
-      "published_date_sort": "2025-06-01",
-      "citations": 4,
+      "citations": 3,
       "institutions": "Unknown"
     },
     {
@@ -295,36 +163,25 @@
       "institutions": "Unknown"
     },
     {
-      "title": "LMR-BENCH: Evaluating LLM Agent's Ability on Reproducing Language Modeling Research",
-      "authors": "S Yan, R Li, Z Luo, Z Wang, D Li, L Jing, K He… - arXiv preprint arXiv …, 2025 - arxiv.org",
+      "title": "Towards Community-Driven Agents for Machine Learning Engineering",
+      "authors": "S Li, W Sun, S Li, A Talwalkar, Y Yang - arXiv preprint arXiv:2506.20640, 2025 - arxiv.org",
       "journal": "Google Scholar Result",
-      "snippet": "Large language model (LLM) agents have demonstrated remarkable potential in advancing scientific discovery. However, their capability in the fundamental yet crucial task of …",
-      "link": "https://arxiv.org/abs/2506.17335",
+      "snippet": "Large language model-based machine learning (ML) agents have shown great promise in automating ML research. However, existing agents typically operate in isolation on a given …",
+      "link": "https://arxiv.org/abs/2506.20640",
       "published_date": "June 2025",
       "published_date_sort": "2025-06-01",
-      "citations": 3,
+      "citations": 0,
       "institutions": "Unknown"
     },
     {
-      "title": "CodePDE: An Inference Framework for LLM-driven PDE Solver Generation",
-      "authors": "S Li, T Marwah, J Shen, W Sun, A Risteski… - arXiv preprint arXiv …, 2025 - arxiv.org",
+      "title": "MLE-STAR: Machine Learning Engineering Agent via Search and Targeted Refinement",
+      "authors": "J Nam, J Yoon, J Chen, J Shin, SÖ Arık… - arXiv preprint arXiv …, 2025 - arxiv.org",
       "journal": "Google Scholar Result",
-      "snippet": "Partial differential equations (PDEs) are fundamental to modeling physical systems, yet solving them remains a complex challenge. Traditional numerical solvers rely on expert …",
-      "link": "https://arxiv.org/abs/2505.08783",
-      "published_date": "May 2025",
-      "published_date_sort": "2025-05-01",
-      "citations": 6,
-      "institutions": "Unknown"
-    },
-    {
-      "title": "From automation to autonomy: A survey on large language models in scientific discovery",
-      "authors": "T Zheng, Z Deng, HT Tsang, W Wang, J Bai… - arXiv preprint arXiv …, 2025 - arxiv.org",
-      "journal": "Google Scholar Result",
-      "snippet": "Large Language Models (LLMs) are catalyzing a paradigm shift in scientific discovery, evolving from task-specific automation tools into increasingly autonomous agents and …",
-      "link": "https://arxiv.org/abs/2505.13259",
-      "published_date": "May 2025",
-      "published_date_sort": "2025-05-01",
-      "citations": 13,
+      "snippet": "Agents based on large language models (LLMs) for machine learning engineering (MLE) can automatically implement ML models via code generation. However, existing approaches …",
+      "link": "https://arxiv.org/abs/2506.15692",
+      "published_date": "June 2025",
+      "published_date_sort": "2025-06-01",
+      "citations": 4,
       "institutions": "Unknown"
     },
     {
@@ -339,14 +196,14 @@
       "institutions": "Unknown"
     },
     {
-      "title": "Mle-dojo: Interactive environments for empowering llm agents in machine learning engineering",
-      "authors": "R Qiang, Y Zhuang, Y Li, R Zhang, C Li… - arXiv preprint arXiv …, 2025 - arxiv.org",
+      "title": "From automation to autonomy: A survey on large language models in scientific discovery",
+      "authors": "T Zheng, Z Deng, HT Tsang, W Wang, J Bai… - arXiv preprint arXiv …, 2025 - arxiv.org",
       "journal": "Google Scholar Result",
-      "snippet": "We introduce MLE-Dojo, a Gym-style framework for systematically reinforcement learning, evaluating, and improving autonomous large language model (LLM) agents in iterative …",
-      "link": "https://arxiv.org/abs/2505.07782",
+      "snippet": "Large Language Models (LLMs) are catalyzing a paradigm shift in scientific discovery, evolving from task-specific automation tools into increasingly autonomous agents and …",
+      "link": "https://arxiv.org/abs/2505.13259",
       "published_date": "May 2025",
       "published_date_sort": "2025-05-01",
-      "citations": 3,
+      "citations": 13,
       "institutions": "Unknown"
     },
     {
@@ -361,11 +218,33 @@
       "institutions": "Unknown"
     },
     {
+      "title": "CodePDE: An Inference Framework for LLM-driven PDE Solver Generation",
+      "authors": "S Li, T Marwah, J Shen, W Sun, A Risteski… - arXiv preprint arXiv …, 2025 - arxiv.org",
+      "journal": "Google Scholar Result",
+      "snippet": "Partial differential equations (PDEs) are fundamental to modeling physical systems, yet solving them remains a complex challenge. Traditional numerical solvers rely on expert …",
+      "link": "https://arxiv.org/abs/2505.08783",
+      "published_date": "May 2025",
+      "published_date_sort": "2025-05-01",
+      "citations": 6,
+      "institutions": "Unknown"
+    },
+    {
       "title": "RepoMaster: Autonomous Exploration and Understanding of GitHub Repositories for Complex Task Solving",
       "authors": "H Wang, Z Ni, S Zhang, S Lu, S Hu, Z He, C Hu… - arXiv preprint arXiv …, 2025 - arxiv.org",
       "journal": "Google Scholar Result",
       "snippet": "The ultimate goal of code agents is to solve complex tasks autonomously. Although large language models (LLMs) have made substantial progress in code generation, real-world …",
       "link": "https://arxiv.org/abs/2505.21577",
+      "published_date": "May 2025",
+      "published_date_sort": "2025-05-01",
+      "citations": 4,
+      "institutions": "Unknown"
+    },
+    {
+      "title": "Mle-dojo: Interactive environments for empowering llm agents in machine learning engineering",
+      "authors": "R Qiang, Y Zhuang, Y Li, R Zhang, C Li… - arXiv preprint arXiv …, 2025 - arxiv.org",
+      "journal": "Google Scholar Result",
+      "snippet": "We introduce MLE-Dojo, a Gym-style framework for systematically reinforcement learning, evaluating, and improving autonomous large language model (LLM) agents in iterative …",
+      "link": "https://arxiv.org/abs/2505.07782",
       "published_date": "May 2025",
       "published_date_sort": "2025-05-01",
       "citations": 3,
