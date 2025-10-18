@@ -1,5 +1,5 @@
 {
-  "last_updated": "2025-10-17 00:10:46 UTC",
+  "last_updated": "2025-10-18 00:10:11 UTC",
   "target_paper": "https://www.arxiv.org/abs/2502.13138",
   "arxiv_id": "2502.13138",
   "total_citations": 29,
@@ -42,101 +42,101 @@
   ],
   "papers": [
     {
-      "title": "RECODE: Reasoning Through Code Generation for Visual Question Answering",
-      "authors": "Junhong Shen, Mu Cai, Bo Hu, Ameet Talwalkar, David A Ross, Cordelia Schmid, Alireza Fathi",
+      "title": "C4D: 4D Made from 3D through Dual Correspondences",
+      "authors": "Shizun Wang, Zhenxiang Jiang, Xingyi Yang, Xinchao Wang",
       "journal": "arXiv",
-      "snippet": "Multimodal Large Language Models (MLLMs) struggle with precise reasoning for\nstructured visuals like charts and diagrams, as pixel-based perception lacks a\nmechanism for verification. To address this, we propose to leverage derendering\n-- the process of reverse-engineering visuals into executable code -- as a new\nmodality for verifiable visual reasoning. Specifically, we propose RECODE, an\nagentic framework that first generates multiple candidate programs to reproduce\nthe input image. It then uses a critic to select the most faithful\nreconstruction and iteratively refines the code. This process not only\ntransforms an ambiguous perceptual task into a verifiable, symbolic problem,\nbut also enables precise calculations and logical inferences later on. On\nvarious visual reasoning benchmarks such as CharXiv, ChartQA, and Geometry3K,\nRECODE significantly outperforms methods that do not leverage code or only use\ncode for drawing auxiliary lines or cropping. Our work demonstrates that\ngrounding visual perception in executable code provides a new path toward more\naccurate and verifiable multimodal reasoning.",
-      "link": "http://arxiv.org/abs/2510.13756v1",
-      "published_date": "October 15, 2025",
-      "published_date_sort": "2025-10-15",
+      "snippet": "Recovering 4D from monocular video, which jointly estimates dynamic geometry\nand camera poses, is an inevitably challenging problem. While recent\npointmap-based 3D reconstruction methods (e.g., DUSt3R) have made great\nprogress in reconstructing static scenes, directly applying them to dynamic\nscenes leads to inaccurate results. This discrepancy arises because moving\nobjects violate multi-view geometric constraints, disrupting the\nreconstruction. To address this, we introduce C4D, a framework that leverages\ntemporal Correspondences to extend existing 3D reconstruction formulation to\n4D. Specifically, apart from predicting pointmaps, C4D captures two types of\ncorrespondences: short-term optical flow and long-term point tracking. We train\na dynamic-aware point tracker that provides additional mobility information,\nfacilitating the estimation of motion masks to separate moving elements from\nthe static background, thus offering more reliable guidance for dynamic scenes.\nFurthermore, we introduce a set of dynamic scene optimization objectives to\nrecover per-frame 3D geometry and camera parameters. Simultaneously, the\ncorrespondences lift 2D trajectories into smooth 3D trajectories, enabling\nfully integrated 4D reconstruction. Experiments show that our framework\nachieves complete 4D recovery and demonstrates strong performance across\nmultiple downstream tasks, including depth estimation, camera pose estimation,\nand point tracking. Project Page: https://littlepure2333.github.io/C4D",
+      "link": "http://arxiv.org/abs/2510.14960v1",
+      "published_date": "October 16, 2025",
+      "published_date_sort": "2025-10-16",
       "citations": 0,
       "institutions": "Unknown"
     },
     {
-      "title": "Assessing LLM Reasoning Through Implicit Causal Chain Discovery in\n  Climate Discourse",
-      "authors": "Liesbeth Allein, Nataly Pineda-Castañeda, Andrea Rocci, Marie-Francine Moens",
+      "title": "RoboGPT-R1: Enhancing Robot Planning with Reinforcement Learning",
+      "authors": "Jinrui Liu, Bingyan Nie, Boyu Li, Yaran Chen, Yuze Wang, Shunsen He, Haoran Li",
       "journal": "arXiv",
-      "snippet": "How does a cause lead to an effect, and which intermediate causal steps\nexplain their connection? This work scrutinizes the mechanistic causal\nreasoning capabilities of large language models (LLMs) to answer these\nquestions through the task of implicit causal chain discovery. In a diagnostic\nevaluation framework, we instruct nine LLMs to generate all possible\nintermediate causal steps linking given cause-effect pairs in causal chain\nstructures. These pairs are drawn from recent resources in argumentation\nstudies featuring polarized discussion on climate change. Our analysis reveals\nthat LLMs vary in the number and granularity of causal steps they produce.\nAlthough they are generally self-consistent and confident about the\nintermediate causal connections in the generated chains, their judgments are\nmainly driven by associative pattern matching rather than genuine causal\nreasoning. Nonetheless, human evaluations confirmed the logical coherence and\nintegrity of the generated chains. Our baseline causal chain discovery\napproach, insights from our diagnostic evaluation, and benchmark dataset with\ncausal chains lay a solid foundation for advancing future work in implicit,\nmechanistic causal reasoning in argumentation settings.",
-      "link": "http://arxiv.org/abs/2510.13417v1",
-      "published_date": "October 15, 2025",
-      "published_date_sort": "2025-10-15",
+      "snippet": "Improving the reasoning capabilities of embodied agents is crucial for robots\nto complete complex human instructions in long-view manipulation tasks\nsuccessfully. Despite the success of large language models and vision language\nmodels based on Supervised Fine-Tuning (SFT) in planning tasks, they continue\nfacing challenges in performing long-horizon manipulation tasks in complex\nreal-world environments, owing to their restricted common sense and reasoning\ncapabilities. Considering that aligning general-purpose vision language models\nto robotic planning tasks via supervised fine-tuning suffers from poor\ngeneralization and insufficient physical understanding, we propose RoboGPT-R1,\na two-stage fine-tuning framework for embodied planning. In this framework,\nsupervised training acquires foundational knowledge through expert sequences,\nfollowed by RL to address the model's shortcomings in visual-spatial\nunderstanding and reasoning. To achieve physical understanding and action\nsequence consistency in multi-step reasoning tasks, we design a rule-based\nreward function that simultaneously considers long-horizon performance and\naction constraint in the environment. The reasoning model, trained on\nQwen2.5-VL-3B, significantly outperforms the larger-scale model, GPT-4o-mini,\nby 21.33% and surpasses other work trained on Qwen2.5-VL-7B by 20.33% on the\nEmbodiedBench benchmark.",
+      "link": "http://arxiv.org/abs/2510.14828v1",
+      "published_date": "October 16, 2025",
+      "published_date_sort": "2025-10-16",
       "citations": 0,
       "institutions": "Unknown"
     },
     {
-      "title": "Bee: A High-Quality Corpus and Full-Stack Suite to Unlock Advanced Fully\n  Open MLLMs",
-      "authors": "Yi Zhang, Bolin Ni, Xin-Sheng Chen, Heng-Rui Zhang, Yongming Rao, Houwen Peng, Qinglin Lu, Han Hu, Meng-Hao Guo, Shi-Min Hu",
+      "title": "To Infinity and Beyond: Tool-Use Unlocks Length Generalization in State\n  Space Models",
+      "authors": "Eran Malach, Omid Saremi, Sinead Williamson, Arwen Bradley, Aryo Lotfi, Emmanuel Abbe, Josh Susskind, Etai Littwin",
       "journal": "arXiv",
-      "snippet": "Fully open multimodal large language models (MLLMs) currently lag behind\nproprietary counterparts, primarily due to a significant gap in data quality\nfor supervised fine-tuning (SFT). Existing open-source datasets are often\nplagued by widespread noise and a critical deficit in complex reasoning data,\nsuch as Chain-of-Thought (CoT), which hinders the development of advanced model\ncapabilities. Addressing these challenges, our work makes three primary\ncontributions. First, we introduce Honey-Data-15M, a new SFT dataset comprising\napproximately 15 million QA pairs, processed through multiple cleaning\ntechniques and enhanced with a novel dual-level (short and long) CoT enrichment\nstrategy. Second, we introduce HoneyPipe, the data curation pipeline, and its\nunderlying framework DataStudio, providing the community with a transparent and\nadaptable methodology for data curation that moves beyond static dataset\nreleases. Finally, to validate our dataset and pipeline, we train Bee-8B, an 8B\nmodel on Honey-Data-15M. Experiments show that Bee-8B establishes a new\nstate-of-the-art (SOTA) for fully open MLLMs, achieving performance that is\ncompetitive with, and in some cases surpasses, recent semi-open models such as\nInternVL3.5-8B. Our work delivers to the community a suite of foundational\nresources, including: the Honey-Data-15M corpus; the full-stack suite\ncomprising HoneyPipe and DataStudio; training recipes; an evaluation harness;\nand the model weights. This effort demonstrates that a principled focus on data\nquality is a key pathway to developing fully open MLLMs that are highly\ncompetitive with their semi-open counterparts.",
-      "link": "http://arxiv.org/abs/2510.13795v1",
-      "published_date": "October 15, 2025",
-      "published_date_sort": "2025-10-15",
+      "snippet": "State Space Models (SSMs) have become the leading alternative to Transformers\nfor sequence modeling. Their primary advantage is efficiency in long-context\nand long-form generation, enabled by fixed-size memory and linear scaling of\ncomputational complexity. We begin this work by showing a simple theoretical\nresult stating that SSMs cannot accurately solve any ``truly long-form''\ngeneration problem (in a sense we formally define), undermining their main\ncompetitive advantage. However, we show that this limitation can be mitigated\nby allowing SSMs interactive access to external tools. In fact, we show that\ngiven the right choice of tool access and problem-dependent training data, SSMs\ncan learn to solve any tractable problem and generalize to arbitrary problem\nlength/complexity (i.e., achieve length generalization). Following our\ntheoretical finding, we demonstrate that tool-augmented SSMs achieve remarkable\nlength generalization on a variety of arithmetic, reasoning, and coding tasks.\nThese findings highlight SSMs as a potential efficient alternative to\nTransformers in interactive tool-based and agentic settings.",
+      "link": "http://arxiv.org/abs/2510.14826v1",
+      "published_date": "October 16, 2025",
+      "published_date_sort": "2025-10-16",
       "citations": 0,
       "institutions": "Unknown"
     },
     {
-      "title": "UrbanFusion: Stochastic Multimodal Fusion for Contrastive Learning of\n  Robust Spatial Representations",
-      "authors": "Dominik J. Mühlematter, Lin Che, Ye Hong, Martin Raubal, Nina Wiedemann",
+      "title": "Agentic Design of Compositional Machines",
+      "authors": "Wenqian Zhang, Weiyang Liu, Zhen Liu",
       "journal": "arXiv",
-      "snippet": "Forecasting urban phenomena such as housing prices and public health\nindicators requires the effective integration of various geospatial data.\nCurrent methods primarily utilize task-specific models, while recent foundation\nmodels for spatial representations often support only limited modalities and\nlack multimodal fusion capabilities. To overcome these challenges, we present\nUrbanFusion, a Geo-Foundation Model (GeoFM) that features Stochastic Multimodal\nFusion (SMF). The framework employs modality-specific encoders to process\ndifferent types of inputs, including street view imagery, remote sensing data,\ncartographic maps, and points of interest (POIs) data. These multimodal inputs\nare integrated via a Transformer-based fusion module that learns unified\nrepresentations. An extensive evaluation across 41 tasks in 56 cities worldwide\ndemonstrates UrbanFusion's strong generalization and predictive performance\ncompared to state-of-the-art GeoAI models. Specifically, it 1) outperforms\nprior foundation models on location-encoding, 2) allows multimodal input during\ninference, and 3) generalizes well to regions unseen during training.\nUrbanFusion can flexibly utilize any subset of available modalities for a given\nlocation during both pretraining and inference, enabling broad applicability\nacross diverse data availability scenarios. All source code is available at\nhttps://github.com/DominikM198/UrbanFusion.",
-      "link": "http://arxiv.org/abs/2510.13774v1",
-      "published_date": "October 15, 2025",
-      "published_date_sort": "2025-10-15",
+      "snippet": "The design of complex machines stands as both a marker of human intelligence\nand a foundation of engineering practice. Given recent advances in large\nlanguage models (LLMs), we ask whether they, too, can learn to create. We\napproach this question through the lens of compositional machine design: a task\nin which machines are assembled from standardized components to meet functional\ndemands like locomotion or manipulation in a simulated physical environment. To\nsupport this investigation, we introduce BesiegeField, a testbed built on the\nmachine-building game Besiege, which enables part-based construction, physical\nsimulation and reward-driven evaluation. Using BesiegeField, we benchmark\nstate-of-the-art LLMs with agentic workflows and identify key capabilities\nrequired for success, including spatial reasoning, strategic assembly, and\ninstruction-following. As current open-source models fall short, we explore\nreinforcement learning (RL) as a path to improvement: we curate a cold-start\ndataset, conduct RL finetuning experiments, and highlight open challenges at\nthe intersection of language, machine design, and physical reasoning.",
+      "link": "http://arxiv.org/abs/2510.14980v1",
+      "published_date": "October 16, 2025",
+      "published_date_sort": "2025-10-16",
       "citations": 0,
       "institutions": "Unknown"
     },
     {
-      "title": "Optimizing Storage Overhead of User Behavior Log for ML-embedded Mobile\n  Apps",
-      "authors": "Chen Gong, Yan Zhuang, Zhenzhe Zheng, Yiliu Chen, Sheng Wang, Fan Wu, Guihai Chen",
+      "title": "RDD: Retrieval-Based Demonstration Decomposer for Planner Alignment in\n  Long-Horizon Tasks",
+      "authors": "Mingxuan Yan, Yuping Wang, Zechun Liu, Jiachen Li",
       "journal": "arXiv",
-      "snippet": "Machine learning (ML) models are increasingly integrated into modern mobile\napps to enable personalized and intelligent services. These models typically\nrely on rich input features derived from historical user behaviors to capture\nuser intents. However, as ML-driven services become more prevalent, recording\nnecessary user behavior data imposes substantial storage cost on mobile apps,\nleading to lower system responsiveness and more app uninstalls. To address this\nstorage bottleneck, we present AdaLog, a lightweight and adaptive system\ndesigned to improve the storage efficiency of user behavior log in ML-embedded\nmobile apps, without compromising model inference accuracy or latency. We\nidentify two key inefficiencies in current industrial practices of user\nbehavior log: (i) redundant logging of overlapping behavior data across\ndifferent features and models, and (ii) sparse storage caused by storing\nbehaviors with heterogeneous attribute descriptions in a single log file. To\nsolve these issues, AdaLog first formulates the elimination of feature-level\nredundant data as a maximum weighted matching problem in hypergraphs, and\nproposes a hierarchical algorithm for efficient on-device deployment. Then,\nAdaLog employs a virtually hashed attribute design to distribute heterogeneous\nbehaviors into a few log files with physically dense storage. Finally, to\nensure scalability to dynamic user behavior patterns, AdaLog designs an\nincremental update mechanism to minimize the I/O operations needed for adapting\noutdated behavior log. We implement a prototype of AdaLog and deploy it into\npopular mobile apps in collaboration with our industry partner. Evaluations on\nreal-world user data show that AdaLog reduces behavior log size by 19% to 44%\nwith minimal system overhead (only 2 seconds latency and 15 MB memory usage),\nproviding a more efficient data foundation for broader adoption of on-device\nML.",
-      "link": "http://arxiv.org/abs/2510.13405v1",
-      "published_date": "October 15, 2025",
-      "published_date_sort": "2025-10-15",
+      "snippet": "To tackle long-horizon tasks, recent hierarchical vision-language-action\n(VLAs) frameworks employ vision-language model (VLM)-based planners to\ndecompose complex manipulation tasks into simpler sub-tasks that low-level\nvisuomotor policies can easily handle. Typically, the VLM planner is finetuned\nto learn to decompose a target task. This finetuning requires target task\ndemonstrations segmented into sub-tasks by either human annotation or heuristic\nrules. However, the heuristic subtasks can deviate significantly from the\ntraining data of the visuomotor policy, which degrades task performance. To\naddress these issues, we propose a Retrieval-based Demonstration Decomposer\n(RDD) that automatically decomposes demonstrations into sub-tasks by aligning\nthe visual features of the decomposed sub-task intervals with those from the\ntraining data of the low-level visuomotor policies. Our method outperforms the\nstate-of-the-art sub-task decomposer on both simulation and real-world tasks,\ndemonstrating robustness across diverse settings. Code and more results are\navailable at rdd-neurips.github.io.",
+      "link": "http://arxiv.org/abs/2510.14968v1",
+      "published_date": "October 16, 2025",
+      "published_date_sort": "2025-10-16",
       "citations": 0,
       "institutions": "Unknown"
     },
     {
-      "title": "Generative Universal Verifier as Multimodal Meta-Reasoner",
-      "authors": "Xinchen Zhang, Xiaoying Zhang, Youbin Wu, Yanbin Cao, Renrui Zhang, Ruihang Chu, Ling Yang, Yujiu Yang",
+      "title": "Where to Search: Measure the Prior-Structured Search Space of LLM Agents",
+      "authors": "Zhuo-Yang Song",
       "journal": "arXiv",
-      "snippet": "We introduce Generative Universal Verifier, a novel concept and plugin\ndesigned for next-generation multimodal reasoning in vision-language models and\nunified multimodal models, providing the fundamental capability of reflection\nand refinement on visual outcomes during the reasoning and generation process.\nThis work makes three main contributions: (1) We build ViVerBench, a\ncomprehensive benchmark spanning 16 categories of critical tasks for evaluating\nvisual outcomes in multimodal reasoning. Results show that existing VLMs\nconsistently underperform across these tasks, underscoring a substantial gap\nfrom human-level capability in reliable visual verification. (2) We design two\nautomated pipelines to construct large-scale visual verification data and train\nOmniVerifier-7B, the first omni-capable generative verifier trained for\nuniversal visual verification and achieves notable gains on ViVerBench(+8.3).\nThrough training, we identify three atomic capabilities in visual verification\nand demonstrate how they generalize and interact synergistically. (3) We\npropose OmniVerifier-TTS, a sequential test-time scaling paradigm that\nleverages the universal verifier to bridge image generation and editing within\nunified models, enhancing the upper bound of generative ability through\niterative fine-grained optimization. Beyond generation, we extend universal\nverifier to broader world-modeling interleaved reasoning scenarios.\nEmpirically, OmniVerifier-TTS achieves improvements on T2I-ReasonBench(+3.7),\nand GenEval++(+4.3), outperforming existing parallel test-time scaling methods,\nsuch as Best-of-N. By endowing multimodal reasoning with reliable visual\nverification, OmniVerifier advances both reliable reflection during generation\nand scalable test-time refinement, marking a step toward more trustworthy and\ncontrollable next-generation reasoning systems.",
-      "link": "http://arxiv.org/abs/2510.13804v1",
-      "published_date": "October 15, 2025",
-      "published_date_sort": "2025-10-15",
+      "snippet": "The generate-filter-refine (iterative paradigm) based on large language\nmodels (LLMs) has achieved progress in reasoning, programming, and program\ndiscovery in AI+Science. However, the effectiveness of search depends on where\nto search, namely, how to encode the domain prior into an operationally\nstructured hypothesis space. To this end, this paper proposes a compact formal\ntheory that describes and measures LLM-assisted iterative search guided by\ndomain priors. We represent an agent as a fuzzy relation operator on inputs and\noutputs to capture feasible transitions; the agent is thereby constrained by a\nfixed safety envelope. To describe multi-step reasoning/search, we weight all\nreachable paths by a single continuation parameter and sum them to obtain a\ncoverage generating function; this induces a measure of reachability\ndifficulty; and it provides a geometric interpretation of search on the graph\ninduced by the safety envelope. We further provide the simplest testable\ninferences and validate them via a majority-vote instantiation. This theory\noffers a workable language and operational tools to measure agents and their\nsearch spaces, proposing a systematic formal description of iterative search\nconstructed by LLMs.",
+      "link": "http://arxiv.org/abs/2510.14846v1",
+      "published_date": "October 16, 2025",
+      "published_date_sort": "2025-10-16",
       "citations": 0,
       "institutions": "Unknown"
     },
     {
-      "title": "Assessing the Geographic Generalization and Physical Consistency of\n  Generative Models for Climate Downscaling",
-      "authors": "Carlo Saccardi, Maximilian Pierzyna, Haitz Sáez de Ocáriz Borde, Simone Monaco, Cristian Meo, Pietro Liò, Rudolf Saathof, Geethu Joseph, Justin Dauwels",
+      "title": "LaSeR: Reinforcement Learning with Last-Token Self-Rewarding",
+      "authors": "Wenkai Yang, Weijie Liu, Ruobing Xie, Yiju Guo, Lulu Wu, Saiyong Yang, Yankai Lin",
       "journal": "arXiv",
-      "snippet": "Kilometer-scale weather data is crucial for real-world applications but\nremains computationally intensive to produce using traditional weather\nsimulations. An emerging solution is to use deep learning models, which offer a\nfaster alternative for climate downscaling. However, their reliability is still\nin question, as they are often evaluated using standard machine learning\nmetrics rather than insights from atmospheric and weather physics. This paper\nbenchmarks recent state-of-the-art deep learning models and introduces\nphysics-inspired diagnostics to evaluate their performance and reliability,\nwith a particular focus on geographic generalization and physical consistency.\nOur experiments show that, despite the seemingly strong performance of models\nsuch as CorrDiff, when trained on a limited set of European geographies (e.g.,\ncentral Europe), they struggle to generalize to other regions such as Iberia,\nMorocco in the south, or Scandinavia in the north. They also fail to accurately\ncapture second-order variables such as divergence and vorticity derived from\npredicted velocity fields. These deficiencies appear even in in-distribution\ngeographies, indicating challenges in producing physically consistent\npredictions. We propose a simple initial solution: introducing a power spectral\ndensity loss function that empirically improves geographic generalization by\nencouraging the reconstruction of small-scale physical structures. The code for\nreproducing the experimental results can be found at\nhttps://github.com/CarloSaccardi/PSD-Downscaling",
-      "link": "http://arxiv.org/abs/2510.13722v1",
-      "published_date": "October 15, 2025",
-      "published_date_sort": "2025-10-15",
+      "snippet": "Reinforcement Learning with Verifiable Rewards (RLVR) has recently emerged as\na core paradigm for enhancing the reasoning capabilities of Large Language\nModels (LLMs). To address the lack of verification signals at test time, prior\nstudies incorporate the training of model's self-verification capability into\nthe standard RLVR process, thereby unifying reasoning and verification\ncapabilities within a single LLM. However, previous practice requires the LLM\nto sequentially generate solutions and self-verifications using two separate\nprompt templates, which significantly reduces efficiency. In this work, we\ntheoretically reveal that the closed-form solution to the RL objective of\nself-verification can be reduced to a remarkably simple form: the true\nreasoning reward of a solution is equal to its last-token self-rewarding score,\nwhich is computed as the difference between the policy model's next-token\nlog-probability assigned to any pre-specified token at the solution's last\ntoken and a pre-calculated constant, scaled by the KL coefficient. Based on\nthis insight, we propose LaSeR (Reinforcement Learning with Last-Token\nSelf-Rewarding), an algorithm that simply augments the original RLVR loss with\na MSE loss that aligns the last-token self-rewarding scores with verifier-based\nreasoning rewards, jointly optimizing the reasoning and self-rewarding\ncapabilities of LLMs. The optimized self-rewarding scores can be utilized in\nboth training and testing to enhance model performance. Notably, our algorithm\nderives these scores from the predicted next-token probability distribution of\nthe last token immediately after generation, incurring only the minimal extra\ncost of one additional token inference. Experiments show that our method not\nonly improves the model's reasoning performance but also equips it with\nremarkable self-rewarding capability, thereby boosting its inference-time\nscaling performance.",
+      "link": "http://arxiv.org/abs/2510.14943v1",
+      "published_date": "October 16, 2025",
+      "published_date_sort": "2025-10-16",
       "citations": 0,
       "institutions": "Unknown"
     },
     {
-      "title": "Simplicial Embeddings Improve Sample Efficiency in Actor-Critic Agents",
-      "authors": "Johan Obando-Ceron, Walter Mayor, Samuel Lavoie, Scott Fujimoto, Aaron Courville, Pablo Samuel Castro",
+      "title": "Information Gain-based Policy Optimization: A Simple and Effective\n  Approach for Multi-Turn LLM Agents",
+      "authors": "Guoqing Wang, Sunhao Dai, Guangze Ye, Zeyu Gan, Wei Yao, Yong Deng, Xiaofeng Wu, Zhenzhe Ying",
       "journal": "arXiv",
-      "snippet": "Recent works have proposed accelerating the wall-clock training time of\nactor-critic methods via the use of large-scale environment parallelization;\nunfortunately, these can sometimes still require large number of environment\ninteractions to achieve a desired level of performance. Noting that\nwell-structured representations can improve the generalization and sample\nefficiency of deep reinforcement learning (RL) agents, we propose the use of\nsimplicial embeddings: lightweight representation layers that constrain\nembeddings to simplicial structures. This geometric inductive bias results in\nsparse and discrete features that stabilize critic bootstrapping and strengthen\npolicy gradients. When applied to FastTD3, FastSAC, and PPO, simplicial\nembeddings consistently improve sample efficiency and final performance across\na variety of continuous- and discrete-control environments, without any loss in\nruntime speed.",
-      "link": "http://arxiv.org/abs/2510.13704v1",
-      "published_date": "October 15, 2025",
-      "published_date_sort": "2025-10-15",
+      "snippet": "Large language model (LLM)-based agents are increasingly trained with\nreinforcement learning (RL) to enhance their ability to interact with external\nenvironments through tool use, particularly in search-based settings that\nrequire multi-turn reasoning and knowledge acquisition. However, existing\napproaches typically rely on outcome-based rewards that are only provided at\nthe final answer. This reward sparsity becomes particularly problematic in\nmulti-turn settings, where long trajectories exacerbate two critical issues:\n(i) advantage collapse, where all rollouts receive identical rewards and\nprovide no useful learning signals, and (ii) lack of fine-grained credit\nassignment, where dependencies between turns are obscured, especially in\nlong-horizon tasks. In this paper, we propose Information Gain-based Policy\nOptimization (IGPO), a simple yet effective RL framework that provides dense\nand intrinsic supervision for multi-turn agent training. IGPO models each\ninteraction turn as an incremental process of acquiring information about the\nground truth, and defines turn-level rewards as the marginal increase in the\npolicy's probability of producing the correct answer. Unlike prior\nprocess-level reward approaches that depend on external reward models or costly\nMonte Carlo estimation, IGPO derives intrinsic rewards directly from the\nmodel's own belief updates. These intrinsic turn-level rewards are combined\nwith outcome-level supervision to form dense reward trajectories. Extensive\nexperiments on both in-domain and out-of-domain benchmarks demonstrate that\nIGPO consistently outperforms strong baselines in multi-turn scenarios,\nachieving higher accuracy and improved sample efficiency.",
+      "link": "http://arxiv.org/abs/2510.14967v1",
+      "published_date": "October 16, 2025",
+      "published_date_sort": "2025-10-16",
       "citations": 0,
       "institutions": "Unknown"
     },
     {
-      "title": "Document Intelligence in the Era of Large Language Models: A Survey",
-      "authors": "Weishi Wang, Hengchang Hu, Zhijie Zhang, Zhaochen Li, Hongxin Shao, Daniel Dahlmeier",
+      "title": "CBF-RL: Safety Filtering Reinforcement Learning in Training with Control\n  Barrier Functions",
+      "authors": "Lizhi Yang, Blake Werner, Massimiliano de Sa Aaron D. Ames",
       "journal": "arXiv",
-      "snippet": "Document AI (DAI) has emerged as a vital application area, and is\nsignificantly transformed by the advent of large language models (LLMs). While\nearlier approaches relied on encoder-decoder architectures, decoder-only LLMs\nhave revolutionized DAI, bringing remarkable advancements in understanding and\ngeneration. This survey provides a comprehensive overview of DAI's evolution,\nhighlighting current research attempts and future prospects of LLMs in this\nfield. We explore key advancements and challenges in multimodal, multilingual,\nand retrieval-augmented DAI, while also suggesting future research directions,\nincluding agent-based approaches and document-specific foundation models. This\npaper aims to provide a structured analysis of the state-of-the-art in DAI and\nits implications for both academic and practical applications.",
-      "link": "http://arxiv.org/abs/2510.13366v1",
-      "published_date": "October 15, 2025",
-      "published_date_sort": "2025-10-15",
+      "snippet": "Reinforcement learning (RL), while powerful and expressive, can often\nprioritize performance at the expense of safety. Yet safety violations can lead\nto catastrophic outcomes in real-world deployments. Control Barrier Functions\n(CBFs) offer a principled method to enforce dynamic safety -- traditionally\ndeployed \\emph{online} via safety filters. While the result is safe behavior,\nthe fact that the RL policy does not have knowledge of the CBF can lead to\nconservative behaviors. This paper proposes CBF-RL, a framework for generating\nsafe behaviors with RL by enforcing CBFs \\emph{in training}. CBF-RL has two key\nattributes: (1) minimally modifying a nominal RL policy to encode safety\nconstraints via a CBF term, (2) and safety filtering of the policy rollouts in\ntraining. Theoretically, we prove that continuous-time safety filters can be\ndeployed via closed-form expressions on discrete-time roll-outs. Practically,\nwe demonstrate that CBF-RL internalizes the safety constraints in the learned\npolicy -- both enforcing safer actions and biasing towards safer rewards --\nenabling safe deployment without the need for an online safety filter. We\nvalidate our framework through ablation studies on navigation tasks and on the\nUnitree G1 humanoid robot, where CBF-RL enables safer exploration, faster\nconvergence, and robust performance under uncertainty, enabling the humanoid\nrobot to avoid obstacles and climb stairs safely in real-world settings without\na runtime safety filter.",
+      "link": "http://arxiv.org/abs/2510.14959v1",
+      "published_date": "October 16, 2025",
+      "published_date_sort": "2025-10-16",
       "citations": 0,
       "institutions": "Unknown"
     },
@@ -152,6 +152,17 @@
       "institutions": "Unknown"
     },
     {
+      "title": "An AI system to help scientists write expert-level empirical software",
+      "authors": "E Aygün, A Belyaeva, G Comanici, M Coram… - arXiv preprint arXiv …, 2025 - arxiv.org",
+      "journal": "Google Scholar Result",
+      "snippet": "The cycle of scientific discovery is frequently bottlenecked by the slow, manual creation of software to support computational experiments. To address this, we present an AI system …",
+      "link": "https://arxiv.org/abs/2509.06503",
+      "published_date": "September 2025",
+      "published_date_sort": "2025-09-01",
+      "citations": 1,
+      "institutions": "Unknown"
+    },
+    {
       "title": "Bootstrapping task spaces for self-improvement",
       "authors": "M Jiang, A Lupu, Y Bachrach - arXiv preprint arXiv:2509.04575, 2025 - arxiv.org",
       "journal": "Google Scholar Result",
@@ -163,13 +174,13 @@
       "institutions": "Unknown"
     },
     {
-      "title": "An AI system to help scientists write expert-level empirical software",
-      "authors": "E Aygün, A Belyaeva, G Comanici, M Coram… - arXiv preprint arXiv …, 2025 - arxiv.org",
+      "title": "Tuning llm-based code optimization via meta-prompting: An industrial perspective",
+      "authors": "J Gong, R Giavrimis, P Brookes, V Voskanyan… - arXiv preprint arXiv …, 2025 - arxiv.org",
       "journal": "Google Scholar Result",
-      "snippet": "The cycle of scientific discovery is frequently bottlenecked by the slow, manual creation of software to support computational experiments. To address this, we present an AI system …",
-      "link": "https://arxiv.org/abs/2509.06503",
-      "published_date": "September 2025",
-      "published_date_sort": "2025-09-01",
+      "snippet": "There is a growing interest in leveraging large language models (LLMs) for automated code optimization. However, industrial platforms deploying multiple LLMs face a critical challenge …",
+      "link": "https://arxiv.org/abs/2508.01443",
+      "published_date": "August 2025",
+      "published_date_sort": "2025-08-01",
       "citations": 1,
       "institutions": "Unknown"
     },
@@ -182,17 +193,6 @@
       "published_date": "August 2025",
       "published_date_sort": "2025-08-01",
       "citations": 2,
-      "institutions": "Unknown"
-    },
-    {
-      "title": "Tuning llm-based code optimization via meta-prompting: An industrial perspective",
-      "authors": "J Gong, R Giavrimis, P Brookes, V Voskanyan… - arXiv preprint arXiv …, 2025 - arxiv.org",
-      "journal": "Google Scholar Result",
-      "snippet": "There is a growing interest in leveraging large language models (LLMs) for automated code optimization. However, industrial platforms deploying multiple LLMs face a critical challenge …",
-      "link": "https://arxiv.org/abs/2508.01443",
-      "published_date": "August 2025",
-      "published_date_sort": "2025-08-01",
-      "citations": 1,
       "institutions": "Unknown"
     },
     {
@@ -214,18 +214,18 @@
       "link": "https://arxiv.org/abs/2506.20640",
       "published_date": "June 2025",
       "published_date_sort": "2025-06-01",
-      "citations": 0,
+      "citations": 1,
       "institutions": "Unknown"
     },
     {
-      "title": "A Comprehensive Survey of Deep Research: Systems, Methodologies, and Applications",
-      "authors": "R Xu, J Peng - arXiv preprint arXiv:2506.12594, 2025 - arxiv.org",
+      "title": "MLE-STAR: Machine Learning Engineering Agent via Search and Targeted Refinement",
+      "authors": "J Nam, J Yoon, J Chen, J Shin, SÖ Arık… - arXiv preprint arXiv …, 2025 - arxiv.org",
       "journal": "Google Scholar Result",
-      "snippet": "This survey examines the rapidly evolving field of Deep Research systems--AI-powered applications that automate complex research workflows through the integration of large …",
-      "link": "https://arxiv.org/abs/2506.12594",
+      "snippet": "Agents based on large language models (LLMs) for machine learning engineering (MLE) can automatically implement ML models via code generation. However, existing approaches …",
+      "link": "https://arxiv.org/abs/2506.15692",
       "published_date": "June 2025",
       "published_date_sort": "2025-06-01",
-      "citations": 17,
+      "citations": 4,
       "institutions": "Unknown"
     },
     {
@@ -237,6 +237,17 @@
       "published_date": "June 2025",
       "published_date_sort": "2025-06-01",
       "citations": 3,
+      "institutions": "Unknown"
+    },
+    {
+      "title": "A Comprehensive Survey of Deep Research: Systems, Methodologies, and Applications",
+      "authors": "R Xu, J Peng - arXiv preprint arXiv:2506.12594, 2025 - arxiv.org",
+      "journal": "Google Scholar Result",
+      "snippet": "This survey examines the rapidly evolving field of Deep Research systems--AI-powered applications that automate complex research workflows through the integration of large …",
+      "link": "https://arxiv.org/abs/2506.12594",
+      "published_date": "June 2025",
+      "published_date_sort": "2025-06-01",
+      "citations": 18,
       "institutions": "Unknown"
     },
     {
@@ -262,36 +273,14 @@
       "institutions": "Unknown"
     },
     {
-      "title": "MLE-STAR: Machine Learning Engineering Agent via Search and Targeted Refinement",
-      "authors": "J Nam, J Yoon, J Chen, J Shin, SÖ Arık… - arXiv preprint arXiv …, 2025 - arxiv.org",
+      "title": "From automation to autonomy: A survey on large language models in scientific discovery",
+      "authors": "T Zheng, Z Deng, HT Tsang, W Wang, J Bai… - arXiv preprint arXiv …, 2025 - arxiv.org",
       "journal": "Google Scholar Result",
-      "snippet": "Agents based on large language models (LLMs) for machine learning engineering (MLE) can automatically implement ML models via code generation. However, existing approaches …",
-      "link": "https://arxiv.org/abs/2506.15692",
-      "published_date": "June 2025",
-      "published_date_sort": "2025-06-01",
-      "citations": 4,
-      "institutions": "Unknown"
-    },
-    {
-      "title": "RepoMaster: Autonomous Exploration and Understanding of GitHub Repositories for Complex Task Solving",
-      "authors": "H Wang, Z Ni, S Zhang, S Lu, S Hu, Z He, C Hu… - arXiv preprint arXiv …, 2025 - arxiv.org",
-      "journal": "Google Scholar Result",
-      "snippet": "The ultimate goal of code agents is to solve complex tasks autonomously. Although large language models (LLMs) have made substantial progress in code generation, real-world …",
-      "link": "https://arxiv.org/abs/2505.21577",
+      "snippet": "Large Language Models (LLMs) are catalyzing a paradigm shift in scientific discovery, evolving from task-specific automation tools into increasingly autonomous agents and …",
+      "link": "https://arxiv.org/abs/2505.13259",
       "published_date": "May 2025",
       "published_date_sort": "2025-05-01",
-      "citations": 4,
-      "institutions": "Unknown"
-    },
-    {
-      "title": "IDA-Bench: Evaluating LLMs on Interactive Guided Data Analysis",
-      "authors": "H Li, H Liu, T Zhu, T Guo, Z Zheng, X Deng… - arXiv preprint arXiv …, 2025 - arxiv.org",
-      "journal": "Google Scholar Result",
-      "snippet": "Large Language Models (LLMs) show promise as data analysis agents, but existing benchmarks overlook the iterative nature of the field, where experts' decisions evolve with …",
-      "link": "https://arxiv.org/abs/2505.18223",
-      "published_date": "May 2025",
-      "published_date_sort": "2025-05-01",
-      "citations": 2,
+      "citations": 16,
       "institutions": "Unknown"
     },
     {
@@ -306,6 +295,17 @@
       "institutions": "Unknown"
     },
     {
+      "title": "RepoMaster: Autonomous Exploration and Understanding of GitHub Repositories for Complex Task Solving",
+      "authors": "H Wang, Z Ni, S Zhang, S Lu, S Hu, Z He, C Hu… - arXiv preprint arXiv …, 2025 - arxiv.org",
+      "journal": "Google Scholar Result",
+      "snippet": "The ultimate goal of code agents is to solve complex tasks autonomously. Although large language models (LLMs) have made substantial progress in code generation, real-world …",
+      "link": "https://arxiv.org/abs/2505.21577",
+      "published_date": "May 2025",
+      "published_date_sort": "2025-05-01",
+      "citations": 4,
+      "institutions": "Unknown"
+    },
+    {
       "title": "Mlzero: A multi-agent system for end-to-end machine learning automation",
       "authors": "H Fang, B Han, N Erickson, X Zhang, S Zhou… - arXiv preprint arXiv …, 2025 - arxiv.org",
       "journal": "Google Scholar Result",
@@ -317,6 +317,17 @@
       "institutions": "Unknown"
     },
     {
+      "title": "IDA-Bench: Evaluating LLMs on Interactive Guided Data Analysis",
+      "authors": "H Li, H Liu, T Zhu, T Guo, Z Zheng, X Deng… - arXiv preprint arXiv …, 2025 - arxiv.org",
+      "journal": "Google Scholar Result",
+      "snippet": "Large Language Models (LLMs) show promise as data analysis agents, but existing benchmarks overlook the iterative nature of the field, where experts' decisions evolve with …",
+      "link": "https://arxiv.org/abs/2505.18223",
+      "published_date": "May 2025",
+      "published_date_sort": "2025-05-01",
+      "citations": 2,
+      "institutions": "Unknown"
+    },
+    {
       "title": "Mle-dojo: Interactive environments for empowering llm agents in machine learning engineering",
       "authors": "R Qiang, Y Zhuang, Y Li, R Zhang, C Li… - arXiv preprint arXiv …, 2025 - arxiv.org",
       "journal": "Google Scholar Result",
@@ -324,18 +335,7 @@
       "link": "https://arxiv.org/abs/2505.07782",
       "published_date": "May 2025",
       "published_date_sort": "2025-05-01",
-      "citations": 3,
-      "institutions": "Unknown"
-    },
-    {
-      "title": "From automation to autonomy: A survey on large language models in scientific discovery",
-      "authors": "T Zheng, Z Deng, HT Tsang, W Wang, J Bai… - arXiv preprint arXiv …, 2025 - arxiv.org",
-      "journal": "Google Scholar Result",
-      "snippet": "Large Language Models (LLMs) are catalyzing a paradigm shift in scientific discovery, evolving from task-specific automation tools into increasingly autonomous agents and …",
-      "link": "https://arxiv.org/abs/2505.13259",
-      "published_date": "May 2025",
-      "published_date_sort": "2025-05-01",
-      "citations": 16,
+      "citations": 4,
       "institutions": "Unknown"
     },
     {
@@ -346,7 +346,7 @@
       "link": "https://arxiv.org/abs/2504.04310",
       "published_date": "April 2025",
       "published_date_sort": "2025-04-01",
-      "citations": 13,
+      "citations": 14,
       "institutions": "Unknown"
     },
     {
