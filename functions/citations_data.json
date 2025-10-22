@@ -1,11 +1,11 @@
 {
-  "last_updated": "2025-10-21 00:10:42 UTC",
+  "last_updated": "2025-10-22 00:11:00 UTC",
   "target_paper": "https://www.arxiv.org/abs/2502.13138",
   "arxiv_id": "2502.13138",
-  "total_citations": 20,
+  "total_citations": 30,
   "h_index": 6,
-  "recent_citations": 0,
-  "avg_citations_per_month": "2.86",
+  "recent_citations": 10,
+  "avg_citations_per_month": "3.75",
   "timeline": [
     {
       "date": "2025-03-01",
@@ -34,9 +34,123 @@
     {
       "date": "2025-09-01",
       "citations": 20
+    },
+    {
+      "date": "2025-10-01",
+      "citations": 30
     }
   ],
   "papers": [
+    {
+      "title": "Quantum Federated Learning: Architectural Elements and Future Directions",
+      "authors": "Siva Sai, Abhishek Sawaika, Prabhjot Singh, Rajkumar Buyya",
+      "journal": "arXiv",
+      "snippet": "Federated learning (FL) focuses on collaborative model training without the\nneed to move the private data silos to a central server. Despite its several\nbenefits, the classical FL is plagued with several limitations, such as high\ncomputational power required for model training(which is critical for\nlow-resource clients), privacy risks, large update traffic, and non-IID\nheterogeneity. This chapter surveys a hybrid paradigm - Quantum Federated\nLearning (QFL), which introduces quantum computation, that addresses multiple\nchallenges of classical FL and offers rapid computing capability while keeping\nthe classical orchestration intact. Firstly, we motivate QFL with a concrete\npresentation on pain points of classical FL, followed by a discussion on a\ngeneral architecture of QFL frameworks specifying the roles of client and\nserver, communication primitives and the quantum model placement. We classify\nthe existing QFL systems based on four criteria - quantum architecture (pure\nQFL, hybrid QFL), data processing method (quantum data encoding, quantum\nfeature mapping, and quantum feature selection & dimensionality reduction),\nnetwork topology (centralized, hierarchial, decentralized), and quantum\nsecurity mechanisms (quantum key distribution, quantum homomorphic encryption,\nquantum differential privacy, blind quantum computing). We then describe\napplications of QFL in healthcare, vehicular networks, wireless networks, and\nnetwork security, clearly highlighting where QFL improves communication\nefficiency, security, and performance compared to classical FL. We close with\nmultiple challenges and future works in QFL, including extension of QFL beyond\nclassification tasks, adversarial attacks, realistic hardware deployment,\nquantum communication protocols deployment, aggregation of different quantum\nmodels, and quantum split learning as an alternative to QFL.",
+      "link": "http://arxiv.org/abs/2510.17642v1",
+      "published_date": "October 20, 2025",
+      "published_date_sort": "2025-10-20",
+      "citations": 0,
+      "institutions": "Unknown"
+    },
+    {
+      "title": "Reliable Inference in Edge-Cloud Model Cascades via Conformal Alignment",
+      "authors": "Jiayi Huang, Sangwoo Park, Nicola Paoletti, Osvaldo Simeone",
+      "journal": "arXiv",
+      "snippet": "Edge intelligence enables low-latency inference via compact on-device models,\nbut assuring reliability remains challenging. We study edge-cloud cascades that\nmust preserve conditional coverage: whenever the edge returns a prediction set,\nit should contain the true label with a user-specified probability, as if\nproduced by the cloud model. We formalize conditional coverage with respect to\nthe cloud predictive distribution, and introduce a conformal alignment-based\n(CAb) cascading mechanism that certifies this property with user control over\nthe risk level. Our method casts escalation from edge to cloud models as a\nmultiple-hypothesis testing (MHT) problem, tailoring conformal alignment (CA)\nto select which inputs can be safely handled at the edge. The proposed CAb\nmodel cascading method yields statistical guarantees on the average fraction of\nedge decisions that satisfy cloud-level conditional coverage. The procedure\napplies to arbitrary edge prediction sets, including variants of conformal\nprediction (CP), and exposes a tunable trade-off among coverage, deferral rate,\nand set size. Experiments on CIFAR-100 image classification and the TeleQnA\nquestion-answering (QA) benchmark show that the proposed CAb cascade maintains\nthe target conditional coverage for edge predictions while substantially\nreducing offloading to the cloud and incurring modest increases in\nprediction-set size.",
+      "link": "http://arxiv.org/abs/2510.17543v1",
+      "published_date": "October 20, 2025",
+      "published_date_sort": "2025-10-20",
+      "citations": 0,
+      "institutions": "Unknown"
+    },
+    {
+      "title": "SoftMimic: Learning Compliant Whole-body Control from Examples",
+      "authors": "Gabriel B. Margolis, Michelle Wang, Nolan Fey, Pulkit Agrawal",
+      "journal": "arXiv",
+      "snippet": "We introduce SoftMimic, a framework for learning compliant whole-body control\npolicies for humanoid robots from example motions. Imitating human motions with\nreinforcement learning allows humanoids to quickly learn new skills, but\nexisting methods incentivize stiff control that aggressively corrects\ndeviations from a reference motion, leading to brittle and unsafe behavior when\nthe robot encounters unexpected contacts. In contrast, SoftMimic enables robots\nto respond compliantly to external forces while maintaining balance and\nposture. Our approach leverages an inverse kinematics solver to generate an\naugmented dataset of feasible compliant motions, which we use to train a\nreinforcement learning policy. By rewarding the policy for matching compliant\nresponses rather than rigidly tracking the reference motion, SoftMimic learns\nto absorb disturbances and generalize to varied tasks from a single motion\nclip. We validate our method through simulations and real-world experiments,\ndemonstrating safe and effective interaction with the environment.",
+      "link": "http://arxiv.org/abs/2510.17792v1",
+      "published_date": "October 20, 2025",
+      "published_date_sort": "2025-10-20",
+      "citations": 0,
+      "institutions": "Unknown"
+    },
+    {
+      "title": "Glyph: Scaling Context Windows via Visual-Text Compression",
+      "authors": "Jiale Cheng, Yusen Liu, Xinyu Zhang, Yulin Fei, Wenyi Hong, Ruiliang Lyu, Weihan Wang, Zhe Su, Xiaotao Gu, Xiao Liu, Yushi Bai, Jie Tang, Hongning Wang, Minlie Huang",
+      "journal": "arXiv",
+      "snippet": "Large language models (LLMs) increasingly rely on long-context modeling for\ntasks such as document understanding, code analysis, and multi-step reasoning.\nHowever, scaling context windows to the million-token level brings prohibitive\ncomputational and memory costs, limiting the practicality of long-context LLMs.\nIn this work, we take a different perspective-visual context scaling-to tackle\nthis challenge. Instead of extending token-based sequences, we propose Glyph, a\nframework that renders long texts into images and processes them with\nvision-language models (VLMs). This approach substantially compresses textual\ninput while preserving semantic information, and we further design an\nLLM-driven genetic search to identify optimal visual rendering configurations\nfor balancing accuracy and compression. Through extensive experiments, we\ndemonstrate that our method achieves 3-4x token compression while maintaining\naccuracy comparable to leading LLMs such as Qwen3-8B on various long-context\nbenchmarks. This compression also leads to around 4x faster prefilling and\ndecoding, and approximately 2x faster SFT training. Furthermore, under extreme\ncompression, a 128K-context VLM could scale to handle 1M-token-level text\ntasks. In addition, the rendered text data benefits real-world multimodal\ntasks, such as document understanding. Our code and model are released at\nhttps://github.com/thu-coai/Glyph.",
+      "link": "http://arxiv.org/abs/2510.17800v1",
+      "published_date": "October 20, 2025",
+      "published_date_sort": "2025-10-20",
+      "citations": 0,
+      "institutions": "Unknown"
+    },
+    {
+      "title": "SimBench: Benchmarking the Ability of Large Language Models to Simulate\n  Human Behaviors",
+      "authors": "Tiancheng Hu, Joachim Baumann, Lorenzo Lupo, Dirk Hovy, Nigel Collier, Paul Röttger",
+      "journal": "arXiv",
+      "snippet": "Large language model (LLM) simulations of human behavior have the potential\nto revolutionize the social and behavioral sciences, if and only if they\nfaithfully reflect real human behaviors. Current evaluations are fragmented,\nbased on bespoke tasks and metrics, creating a patchwork of incomparable\nresults. To address this, we introduce SimBench, the first large-scale,\nstandardized benchmark for a robust, reproducible science of LLM simulation. By\nunifying 20 diverse datasets covering tasks from moral decision-making to\neconomic choice across a large global participant pool, SimBench provides the\nnecessary foundation to ask fundamental questions about when, how, and why LLM\nsimulations succeed or fail. We show that, while even the best LLMs today have\nlimited simulation ability (score: 40.80/100), performance scales log-linearly\nwith model size. Simulation performance is not improved by increased\ninference-time compute. We demonstrate an alignment-simulation trade-off:\ninstruction-tuning improves performance on low-entropy (consensus) questions\nbut degrades it on high-entropy (diverse) ones. Models particularly struggle\nwhen simulating specific demographic groups. Finally, we demonstrate that\nsimulation ability correlates most strongly with deep, knowledge-intensive\nreasoning (MMLU-Pro, r=0.939). By making progress measurable, we aim to\naccelerate the development of more faithful LLM simulators.",
+      "link": "http://arxiv.org/abs/2510.17516v1",
+      "published_date": "October 20, 2025",
+      "published_date_sort": "2025-10-20",
+      "citations": 0,
+      "institutions": "Unknown"
+    },
+    {
+      "title": "Mapping Post-Training Forgetting in Language Models at Scale",
+      "authors": "Jackson Harmon, Andreas Hochlehnert, Matthias Bethge, Ameya Prabhu",
+      "journal": "arXiv",
+      "snippet": "Scaled post-training now drives many of the largest capability gains in\nlanguage models (LMs), yet its effect on pretrained knowledge remains poorly\nunderstood. Not all forgetting is equal: Forgetting one fact (e.g., a U.S.\npresident or an API call) does not \"average out\" by recalling another. Hence,\nwe propose a sample-wise paradigm to measure what is forgotten and when\nbackward transfer occurs. Our metric counts 1->0 transitions (correct before\npost-training, incorrect after) to quantify forgetting and 0->1 transitions to\nquantify backward transfer. Traditional task averages conflate these effects\nand obscure large changes. For multiple-choice benchmarks, we add\nchance-adjusted variants that subtract the expected contribution of random\nguessing from pre- and post-training accuracies. We apply this framework across\npost-training stages, model sizes, and data scales. Our large-scale analysis\nshows that: (1) Domain-continual pretraining induces moderate forgetting with\nlow-to-moderate backward transfer; (2) RL/SFT post-training applied to base\nmodels and Instruction tuning yields moderate-to-large backward transfer on\nmath and logic with overall low-to-moderate forgetting; (3) Applying RL/SFT to\ninstruction-tuned models is sensitive on data scale: at small scales, both\nforgetting and backward transfer are small; at larger scales, effects are mixed\nand warrant further study with better controls; (4) Model merging does not\nreliably mitigate forgetting. Overall, our framework offers a practical\nyardstick for mapping how post-training alters pretrained knowledge at scale --\nenabling progress towards generally capable AI systems.",
+      "link": "http://arxiv.org/abs/2510.17776v1",
+      "published_date": "October 20, 2025",
+      "published_date_sort": "2025-10-20",
+      "citations": 0,
+      "institutions": "Unknown"
+    },
+    {
+      "title": "On-the-Fly OVD Adaptation with FLAME: Few-shot Localization via Active\n  Marginal-Samples Exploration",
+      "authors": "Yehonathan Refael, Amit Aides, Aviad Barzilai, George Leifman, Genady Beryozkin, Vered Silverman, Bolous Jaber, Tomer Shekel",
+      "journal": "arXiv",
+      "snippet": "Open-vocabulary object detection (OVD) models offer remarkable flexibility by\ndetecting objects from arbitrary text queries. However, their zero-shot\nperformance in specialized domains like Remote Sensing (RS) is often\ncompromised by the inherent ambiguity of natural language, limiting critical\ndownstream applications. For instance, an OVD model may struggle to distinguish\nbetween fine-grained classes such as \"fishing boat\" and \"yacht\" since their\nembeddings are similar and often inseparable. This can hamper specific user\ngoals, such as monitoring illegal fishing, by producing irrelevant detections.\nTo address this, we propose a cascaded approach that couples the broad\ngeneralization of a large pre-trained OVD model with a lightweight few-shot\nclassifier. Our method first employs the zero-shot model to generate\nhigh-recall object proposals. These proposals are then refined for high\nprecision by a compact classifier trained in real-time on only a handful of\nuser-annotated examples - drastically reducing the high costs of RS imagery\nannotation.The core of our framework is FLAME, a one-step active learning\nstrategy that selects the most informative samples for training. FLAME\nidentifies, on the fly, uncertain marginal candidates near the decision\nboundary using density estimation, followed by clustering to ensure sample\ndiversity. This efficient sampling technique achieves high accuracy without\ncostly full-model fine-tuning and enables instant adaptation, within less then\na minute, which is significantly faster than state-of-the-art alternatives.Our\nmethod consistently surpasses state-of-the-art performance on RS benchmarks,\nestablishing a practical and resource-efficient framework for adapting\nfoundation models to specific user needs.",
+      "link": "http://arxiv.org/abs/2510.17670v1",
+      "published_date": "October 20, 2025",
+      "published_date_sort": "2025-10-20",
+      "citations": 0,
+      "institutions": "Unknown"
+    },
+    {
+      "title": "Context-Aware Pseudo-Label Scoring for Zero-Shot Video Summarization",
+      "authors": "Yuanli Wu, Long Zhang, Yue Du, Bin Li",
+      "journal": "arXiv",
+      "snippet": "With the rapid proliferation of video content across social media,\nsurveillance, and education platforms, efficiently summarizing long videos into\nconcise yet semantically faithful surrogates has become increasingly vital.\nExisting supervised methods achieve strong in-domain accuracy by learning from\ndense annotations but suffer from high labeling costs and limited cross-dataset\ngeneralization, while unsupervised approaches, though label-free, often fail to\ncapture high-level human semantics and fine-grained narrative cues. More\nrecently, zero-shot prompting pipelines have leveraged large language models\n(LLMs) for training-free video summarization, yet remain highly sensitive to\nhandcrafted prompt templates and dataset-specific score normalization. To\novercome these limitations, we introduce a rubric-guided, pseudo-labeled\nprompting framework that transforms a small subset of ground-truth annotations\ninto high-confidence pseudo labels, which are aggregated into structured,\ndataset-adaptive scoring rubrics guiding interpretable scene evaluation. During\ninference, first and last segments are scored based solely on their\ndescriptions, whereas intermediate ones incorporate brief contextual summaries\nof adjacent scenes to assess narrative progression and redundancy. This\ncontextual prompting enables the LLM to balance local salience and global\ncoherence without parameter tuning. On SumMe and TVSum, our method achieves F1\nscores of \\textbf{57.58} and \\textbf{63.05}, surpassing unsupervised and prior\nzero-shot baselines while approaching supervised performance. The results\ndemonstrate that rubric-guided pseudo labeling effectively stabilizes LLM-based\nscoring and establishes a general, interpretable zero-shot paradigm for video\nsummarization.",
+      "link": "http://arxiv.org/abs/2510.17501v1",
+      "published_date": "October 20, 2025",
+      "published_date_sort": "2025-10-20",
+      "citations": 0,
+      "institutions": "Unknown"
+    },
+    {
+      "title": "Improving Cross-Patient Generalization in Parkinson's Disease Detection\n  through Chunk-Based Analysis of Hand-Drawn Patterns",
+      "authors": "Mhd Adnan Albani, Riad Sonbol",
+      "journal": "arXiv",
+      "snippet": "Parkinson's disease (PD) is a neurodegenerative disease affecting about 1% of\npeople over the age of 60, causing motor impairments that impede hand\ncoordination activities such as writing and drawing. Many approaches have tried\nto support early detection of Parkinson's disease based on hand-drawn images;\nhowever, we identified two major limitations in the related works: (1) the lack\nof sufficient datasets, (2) the robustness when dealing with unseen patient\ndata. In this paper, we propose a new approach to detect Parkinson's disease\nthat consists of two stages: The first stage classifies based on their drawing\ntype(circle, meander, spiral), and the second stage extracts the required\nfeatures from the images and detects Parkinson's disease. We overcame the\nprevious two limitations by applying a chunking strategy where we divide each\nimage into 2x2 chunks. Each chunk is processed separately when extracting\nfeatures and recognizing Parkinson's disease indicators. To make the final\nclassification, an ensemble method is used to merge the decisions made from\neach chunk. Our evaluation shows that our proposed approach outperforms the top\nperforming state-of-the-art approaches, in particular on unseen patients. On\nthe NewHandPD dataset our approach, it achieved 97.08% accuracy for seen\npatients and 94.91% for unseen patients, our proposed approach maintained a gap\nof only 2.17 percentage points, compared to the 4.76-point drop observed in\nprior work.",
+      "link": "http://arxiv.org/abs/2510.17703v1",
+      "published_date": "October 20, 2025",
+      "published_date_sort": "2025-10-20",
+      "citations": 0,
+      "institutions": "Unknown"
+    },
+    {
+      "title": "Just-In-Time Piecewise-Linear Semantics for ReLU-type Networks",
+      "authors": "Hongyi Duan, Haoyang Liu, Jian'an Zhang, Fengrui Liu, Yiyi Wang",
+      "journal": "arXiv",
+      "snippet": "We present a JIT PL semantics for ReLU-type networks that compiles models\ninto a guarded CPWL transducer with shared guards. The system adds hyperplanes\nonly when operands are affine on the current cell, maintains global lower/upper\nenvelopes, and uses a budgeted branch-and-bound. We obtain anytime soundness,\nexactness on fully refined cells, monotone progress, guard-linear complexity\n(avoiding global $\\binom{k}{2}$), dominance pruning, and decidability under\nfinite refinement. The shared carrier supports region extraction, decision\ncomplexes, Jacobians, exact/certified Lipschitz, LP/SOCP robustness, and\nmaximal causal influence. A minimal prototype returns certificates or\ncounterexamples with cost proportional to visited subdomains.",
+      "link": "http://arxiv.org/abs/2510.17622v1",
+      "published_date": "October 20, 2025",
+      "published_date_sort": "2025-10-20",
+      "citations": 0,
+      "institutions": "Unknown"
+    },
     {
       "title": "An AI system to help scientists write expert-level empirical software",
       "authors": "E Aygün, A Belyaeva, G Comanici, M Coram… - arXiv preprint arXiv …, 2025 - arxiv.org",
@@ -71,17 +185,6 @@
       "institutions": "Unknown"
     },
     {
-      "title": "KompeteAI: Accelerated autonomous multi-agent system for end-to-end pipeline generation for machine learning problems",
-      "authors": "S Kulibaba, A Dzhalilov, R Pakhomov… - arXiv preprint arXiv …, 2025 - arxiv.org",
-      "journal": "Google Scholar Result",
-      "snippet": "Recent Large Language Model (LLM)-based AutoML systems demonstrate impressive capabilities but face significant limitations such as constrained exploration strategies and a …",
-      "link": "https://arxiv.org/abs/2508.10177",
-      "published_date": "August 2025",
-      "published_date_sort": "2025-08-01",
-      "citations": 2,
-      "institutions": "Unknown"
-    },
-    {
       "title": "Tuning llm-based code optimization via meta-prompting: An industrial perspective",
       "authors": "J Gong, R Giavrimis, P Brookes, V Voskanyan… - arXiv preprint arXiv …, 2025 - arxiv.org",
       "journal": "Google Scholar Result",
@@ -93,6 +196,17 @@
       "institutions": "Unknown"
     },
     {
+      "title": "KompeteAI: Accelerated autonomous multi-agent system for end-to-end pipeline generation for machine learning problems",
+      "authors": "S Kulibaba, A Dzhalilov, R Pakhomov… - arXiv preprint arXiv …, 2025 - arxiv.org",
+      "journal": "Google Scholar Result",
+      "snippet": "Recent Large Language Model (LLM)-based AutoML systems demonstrate impressive capabilities but face significant limitations such as constrained exploration strategies and a …",
+      "link": "https://arxiv.org/abs/2508.10177",
+      "published_date": "August 2025",
+      "published_date_sort": "2025-08-01",
+      "citations": 2,
+      "institutions": "Unknown"
+    },
+    {
       "title": "How Far Are AI Scientists from Changing the World?",
       "authors": "Q Xie, Y Weng, M Zhu, F Shen, S Huang, Z Lin… - arXiv preprint arXiv …, 2025 - arxiv.org",
       "journal": "Google Scholar Result",
@@ -101,28 +215,6 @@
       "published_date": "July 2025",
       "published_date_sort": "2025-07-01",
       "citations": 2,
-      "institutions": "Unknown"
-    },
-    {
-      "title": "A Comprehensive Survey of Deep Research: Systems, Methodologies, and Applications",
-      "authors": "R Xu, J Peng - arXiv preprint arXiv:2506.12594, 2025 - arxiv.org",
-      "journal": "Google Scholar Result",
-      "snippet": "This survey examines the rapidly evolving field of Deep Research systems--AI-powered applications that automate complex research workflows through the integration of large …",
-      "link": "https://arxiv.org/abs/2506.12594",
-      "published_date": "June 2025",
-      "published_date_sort": "2025-06-01",
-      "citations": 19,
-      "institutions": "Unknown"
-    },
-    {
-      "title": "MLE-STAR: Machine Learning Engineering Agent via Search and Targeted Refinement",
-      "authors": "J Nam, J Yoon, J Chen, J Shin, SÖ Arık… - arXiv preprint arXiv …, 2025 - arxiv.org",
-      "journal": "Google Scholar Result",
-      "snippet": "Agents based on large language models (LLMs) for machine learning engineering (MLE) can automatically implement ML models via code generation. However, existing approaches …",
-      "link": "https://arxiv.org/abs/2506.15692",
-      "published_date": "June 2025",
-      "published_date_sort": "2025-06-01",
-      "citations": 4,
       "institutions": "Unknown"
     },
     {
@@ -148,14 +240,14 @@
       "institutions": "Unknown"
     },
     {
-      "title": "AI Scientists Fail Without Strong Implementation Capability",
-      "authors": "M Zhu, Q Xie, Y Weng, J Wu, Z Lin, L Yang… - arXiv preprint arXiv …, 2025 - arxiv.org",
+      "title": "A Comprehensive Survey of Deep Research: Systems, Methodologies, and Applications",
+      "authors": "R Xu, J Peng - arXiv preprint arXiv:2506.12594, 2025 - arxiv.org",
       "journal": "Google Scholar Result",
-      "snippet": "The emergence of Artificial Intelligence (AI) Scientist represents a paradigm shift in scientific discovery, with large language models (LLMs) taking the lead as the primary executor in the …",
-      "link": "https://arxiv.org/abs/2506.01372",
+      "snippet": "This survey examines the rapidly evolving field of Deep Research systems--AI-powered applications that automate complex research workflows through the integration of large …",
+      "link": "https://arxiv.org/abs/2506.12594",
       "published_date": "June 2025",
       "published_date_sort": "2025-06-01",
-      "citations": 7,
+      "citations": 19,
       "institutions": "Unknown"
     },
     {
@@ -170,33 +262,33 @@
       "institutions": "Unknown"
     },
     {
+      "title": "MLE-STAR: Machine Learning Engineering Agent via Search and Targeted Refinement",
+      "authors": "J Nam, J Yoon, J Chen, J Shin, SÖ Arık… - arXiv preprint arXiv …, 2025 - arxiv.org",
+      "journal": "Google Scholar Result",
+      "snippet": "Agents based on large language models (LLMs) for machine learning engineering (MLE) can automatically implement ML models via code generation. However, existing approaches …",
+      "link": "https://arxiv.org/abs/2506.15692",
+      "published_date": "June 2025",
+      "published_date_sort": "2025-06-01",
+      "citations": 4,
+      "institutions": "Unknown"
+    },
+    {
+      "title": "AI Scientists Fail Without Strong Implementation Capability",
+      "authors": "M Zhu, Q Xie, Y Weng, J Wu, Z Lin, L Yang… - arXiv preprint arXiv …, 2025 - arxiv.org",
+      "journal": "Google Scholar Result",
+      "snippet": "The emergence of Artificial Intelligence (AI) Scientist represents a paradigm shift in scientific discovery, with large language models (LLMs) taking the lead as the primary executor in the …",
+      "link": "https://arxiv.org/abs/2506.01372",
+      "published_date": "June 2025",
+      "published_date_sort": "2025-06-01",
+      "citations": 7,
+      "institutions": "Unknown"
+    },
+    {
       "title": "Mle-dojo: Interactive environments for empowering llm agents in machine learning engineering",
       "authors": "R Qiang, Y Zhuang, Y Li, R Zhang, C Li… - arXiv preprint arXiv …, 2025 - arxiv.org",
       "journal": "Google Scholar Result",
       "snippet": "We introduce MLE-Dojo, a Gym-style framework for systematically reinforcement learning, evaluating, and improving autonomous large language model (LLM) agents in iterative …",
       "link": "https://arxiv.org/abs/2505.07782",
-      "published_date": "May 2025",
-      "published_date_sort": "2025-05-01",
-      "citations": 4,
-      "institutions": "Unknown"
-    },
-    {
-      "title": "CodePDE: An Inference Framework for LLM-driven PDE Solver Generation",
-      "authors": "S Li, T Marwah, J Shen, W Sun, A Risteski… - arXiv preprint arXiv …, 2025 - arxiv.org",
-      "journal": "Google Scholar Result",
-      "snippet": "Partial differential equations (PDEs) are fundamental to modeling physical systems, yet solving them remains a complex challenge. Traditional numerical solvers rely on expert …",
-      "link": "https://arxiv.org/abs/2505.08783",
-      "published_date": "May 2025",
-      "published_date_sort": "2025-05-01",
-      "citations": 6,
-      "institutions": "Unknown"
-    },
-    {
-      "title": "Repomaster: Autonomous exploration and understanding of github repositories for complex task solving",
-      "authors": "H Wang, Z Ni, S Zhang, S Lu, S Hu, Z He, C Hu… - arXiv preprint arXiv …, 2025 - arxiv.org",
-      "journal": "Google Scholar Result",
-      "snippet": "The ultimate goal of code agents is to solve complex tasks autonomously. Although large language models (LLMs) have made substantial progress in code generation, real-world …",
-      "link": "https://arxiv.org/abs/2505.21577",
       "published_date": "May 2025",
       "published_date_sort": "2025-05-01",
       "citations": 4,
@@ -214,14 +306,14 @@
       "institutions": "Unknown"
     },
     {
-      "title": "IDA-Bench: Evaluating LLMs on Interactive Guided Data Analysis",
-      "authors": "H Li, H Liu, T Zhu, T Guo, Z Zheng, X Deng… - arXiv preprint arXiv …, 2025 - arxiv.org",
+      "title": "Repomaster: Autonomous exploration and understanding of github repositories for complex task solving",
+      "authors": "H Wang, Z Ni, S Zhang, S Lu, S Hu, Z He, C Hu… - arXiv preprint arXiv …, 2025 - arxiv.org",
       "journal": "Google Scholar Result",
-      "snippet": "Large Language Models (LLMs) show promise as data analysis agents, but existing benchmarks overlook the iterative nature of the field, where experts' decisions evolve with …",
-      "link": "https://arxiv.org/abs/2505.18223",
+      "snippet": "The ultimate goal of code agents is to solve complex tasks autonomously. Although large language models (LLMs) have made substantial progress in code generation, real-world …",
+      "link": "https://arxiv.org/abs/2505.21577",
       "published_date": "May 2025",
       "published_date_sort": "2025-05-01",
-      "citations": 2,
+      "citations": 4,
       "institutions": "Unknown"
     },
     {
@@ -233,6 +325,28 @@
       "published_date": "May 2025",
       "published_date_sort": "2025-05-01",
       "citations": 17,
+      "institutions": "Unknown"
+    },
+    {
+      "title": "IDA-Bench: Evaluating LLMs on Interactive Guided Data Analysis",
+      "authors": "H Li, H Liu, T Zhu, T Guo, Z Zheng, X Deng… - arXiv preprint arXiv …, 2025 - arxiv.org",
+      "journal": "Google Scholar Result",
+      "snippet": "Large Language Models (LLMs) show promise as data analysis agents, but existing benchmarks overlook the iterative nature of the field, where experts' decisions evolve with …",
+      "link": "https://arxiv.org/abs/2505.18223",
+      "published_date": "May 2025",
+      "published_date_sort": "2025-05-01",
+      "citations": 2,
+      "institutions": "Unknown"
+    },
+    {
+      "title": "CodePDE: An Inference Framework for LLM-driven PDE Solver Generation",
+      "authors": "S Li, T Marwah, J Shen, W Sun, A Risteski… - arXiv preprint arXiv …, 2025 - arxiv.org",
+      "journal": "Google Scholar Result",
+      "snippet": "Partial differential equations (PDEs) are fundamental to modeling physical systems, yet solving them remains a complex challenge. Traditional numerical solvers rely on expert …",
+      "link": "https://arxiv.org/abs/2505.08783",
+      "published_date": "May 2025",
+      "published_date_sort": "2025-05-01",
+      "citations": 6,
       "institutions": "Unknown"
     },
     {
