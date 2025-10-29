@@ -1,11 +1,11 @@
 {
-  "last_updated": "2025-10-28 00:10:27 UTC",
+  "last_updated": "2025-10-29 00:11:16 UTC",
   "target_paper": "https://www.arxiv.org/abs/2502.13138",
   "arxiv_id": "2502.13138",
-  "total_citations": 20,
+  "total_citations": 35,
   "h_index": 6,
-  "recent_citations": 0,
-  "avg_citations_per_month": "2.22",
+  "recent_citations": 15,
+  "avg_citations_per_month": "3.50",
   "timeline": [
     {
       "date": "2025-01-01",
@@ -38,18 +38,187 @@
     {
       "date": "2025-09-01",
       "citations": 20
+    },
+    {
+      "date": "2025-10-01",
+      "citations": 35
     }
   ],
   "papers": [
     {
-      "title": "Bootstrapping task spaces for self-improvement",
-      "authors": "M Jiang, A Lupu, Y Bachrach - arXiv preprint arXiv:2509.04575, 2025 - arxiv.org",
+      "title": "On the Faithfulness of Visual Thinking: Measurement and Enhancement",
+      "authors": "Zujing Liu, Junwen Pan, Qi She, Yuan Gao, Guisong Xia",
+      "journal": "arXiv",
+      "snippet": "Recent large vision-language models (LVLMs) can generate vision-text\nmultimodal chain-of-thought (MCoT) traces after reinforcement fine-tuning\n(RFT). However, we observe that the visual information incorporated in MCoT is\noften inaccurate, though still yield correct answers, indicating a lack of\nfaithfulness in the MCoT reasoning process. We attribute this unfaithfulness to\nthe RL reward in RFT, which solely incentivizes the format of interleaved\nvision-text cues, ie, it encourages the model to incorporate visual information\ninto its text reasoning steps without considering the correctness of the visual\ninformation. In this paper, we first probe the faithfulness of MCoT by\nmeasuring how much the prediction changes when its visual and textual thoughts\nare intervened. Surprisingly, the model's predictions remain nearly unchanged\nunder visual intervention but change significantly under textual intervention,\nindicating that the visual evidence is largely ignored. To further analyze\nvisual information, we introduce an automated LVLM-based evaluation metric that\nquantifies the faithfulness of visual cues from two perspectives: reliability\nand sufficiency. Our evaluation reveals that the visual information in current\nMCoT traces is simultaneously unreliable and insufficient. To address this\nissue, we propose a novel MCoT learning strategy termed Sufficient-Component\nCause Model (SCCM) learning. This approach encourages the MCoT to generate\nsufficient yet minimal visual components that are independently capable of\nleading to correct answers. We note that the proposed SCCM is annotation-free\nand compatible with various RFT for MCoT in a plug-and-play manner. Empirical\nresults demonstrate that SCCM consistently improves the visual faithfulness\nacross a suite of fine-grained perception and reasoning benchmarks. Code is\navailable at https://github.com/EugeneLiu01/Faithful_Thinking_with_Image.",
+      "link": "http://arxiv.org/abs/2510.23482v1",
+      "published_date": "October 27, 2025",
+      "published_date_sort": "2025-10-27",
+      "citations": 0,
+      "institutions": "Unknown"
+    },
+    {
+      "title": "Floating-Point Neural Network Verification at the Software Level",
+      "authors": "Edoardo Manino, Bruno Farias, Rafael Sá Menezes, Fedor Shmarov, Lucas C. Cordeiro",
+      "journal": "arXiv",
+      "snippet": "The behaviour of neural network components must be proven correct before\ndeployment in safety-critical systems. Unfortunately, existing neural network\nverification techniques cannot certify the absence of faults at the software\nlevel. In this paper, we show how to specify and verify that neural networks\nare safe, by explicitly reasoning about their floating-point implementation. In\ndoing so, we construct NeuroCodeBench 2.0, a benchmark comprising 912 neural\nnetwork verification examples that cover activation functions, common layers,\nand full neural networks of up to 170K parameters. Our verification suite is\nwritten in plain C and is compatible with the format of the International\nCompetition on Software Verification (SV-COMP). Thanks to it, we can conduct\nthe first rigorous evaluation of eight state-of-the-art software verifiers on\nneural network code. The results show that existing automated verification\ntools can correctly solve an average of 11% of our benchmark, while producing\naround 3% incorrect verdicts. At the same time, a historical analysis reveals\nthat the release of our benchmark has already had a significantly positive\nimpact on the latter.",
+      "link": "http://arxiv.org/abs/2510.23389v1",
+      "published_date": "October 27, 2025",
+      "published_date_sort": "2025-10-27",
+      "citations": 0,
+      "institutions": "Unknown"
+    },
+    {
+      "title": "A Survey of Data Agents: Emerging Paradigm or Overstated Hype?",
+      "authors": "Yizhang Zhu, Liangwei Wang, Chenyu Yang, Xiaotian Lin, Boyan Li, Wei Zhou, Xinyu Liu, Zhangyang Peng, Tianqi Luo, Yu Li, Chengliang Chai, Chong Chen, Shimin Di, Ju Fan, Ji Sun, Nan Tang, Fugee Tsung, Jiannan Wang, Chenglin Wu, Yanwei Xu, Shaolei Zhang, Yong Zhang, Xuanhe Zhou, Guoliang Li, Yuyu Luo",
+      "journal": "arXiv",
+      "snippet": "The rapid advancement of large language models (LLMs) has spurred the\nemergence of data agents--autonomous systems designed to orchestrate Data + AI\necosystems for tackling complex data-related tasks. However, the term \"data\nagent\" currently suffers from terminological ambiguity and inconsistent\nadoption, conflating simple query responders with sophisticated autonomous\narchitectures. This terminological ambiguity fosters mismatched user\nexpectations, accountability challenges, and barriers to industry growth.\nInspired by the SAE J3016 standard for driving automation, this survey\nintroduces the first systematic hierarchical taxonomy for data agents,\ncomprising six levels that delineate and trace progressive shifts in autonomy,\nfrom manual operations (L0) to a vision of generative, fully autonomous data\nagents (L5), thereby clarifying capability boundaries and responsibility\nallocation. Through this lens, we offer a structured review of existing\nresearch arranged by increasing autonomy, encompassing specialized data agents\nfor data management, preparation, and analysis, alongside emerging efforts\ntoward versatile, comprehensive systems with enhanced autonomy. We further\nanalyze critical evolutionary leaps and technical gaps for advancing data\nagents, especially the ongoing L2-to-L3 transition, where data agents evolve\nfrom procedural execution to autonomous orchestration. Finally, we conclude\nwith a forward-looking roadmap, envisioning the advent of proactive, generative\ndata agents.",
+      "link": "http://arxiv.org/abs/2510.23587v1",
+      "published_date": "October 27, 2025",
+      "published_date_sort": "2025-10-27",
+      "citations": 0,
+      "institutions": "Unknown"
+    },
+    {
+      "title": "The Benchmarking Epistemology: Construct Validity for Evaluating Machine\n  Learning Models",
+      "authors": "Timo Freiesleben, Sebastian Zezulka",
+      "journal": "arXiv",
+      "snippet": "Predictive benchmarking, the evaluation of machine learning models based on\npredictive performance and competitive ranking, is a central epistemic practice\nin machine learning research and an increasingly prominent method for\nscientific inquiry. Yet, benchmark scores alone provide at best measurements of\nmodel performance relative to an evaluation dataset and a concrete learning\nproblem. Drawing substantial scientific inferences from the results, say about\ntheoretical tasks like image classification, requires additional assumptions\nabout the theoretical structure of the learning problems, evaluation functions,\nand data distributions. We make these assumptions explicit by developing\nconditions of construct validity inspired by psychological measurement theory.\nWe examine these assumptions in practice through three case studies, each\nexemplifying a typical intended inference: measuring engineering progress in\ncomputer vision with ImageNet; evaluating policy-relevant weather predictions\nwith WeatherBench; and examining limitations of the predictability of life\nevents with the Fragile Families Challenge. Our framework clarifies the\nconditions under which benchmark scores can support diverse scientific claims,\nbringing predictive benchmarking into perspective as an epistemological\npractice and a key site of conceptual and theoretical reasoning in machine\nlearning.",
+      "link": "http://arxiv.org/abs/2510.23191v1",
+      "published_date": "October 27, 2025",
+      "published_date_sort": "2025-10-27",
+      "citations": 0,
+      "institutions": "Unknown"
+    },
+    {
+      "title": "Accelerating Eigenvalue Dataset Generation via Chebyshev Subspace Filter",
+      "authors": "Hong Wang, Jie Wang, Jian Luo, huanshuo dong, Yeqiu Chen, Runmin Jiang, Zhen huang",
+      "journal": "arXiv",
+      "snippet": "Eigenvalue problems are among the most important topics in many scientific\ndisciplines. With the recent surge and development of machine learning, neural\neigenvalue methods have attracted significant attention as a forward pass of\ninference requires only a tiny fraction of the computation time compared to\ntraditional solvers. However, a key limitation is the requirement for large\namounts of labeled data in training, including operators and their eigenvalues.\nTo tackle this limitation, we propose a novel method, named Sorting Chebyshev\nSubspace Filter (SCSF), which significantly accelerates eigenvalue data\ngeneration by leveraging similarities between operators -- a factor overlooked\nby existing methods. Specifically, SCSF employs truncated fast Fourier\ntransform sorting to group operators with similar eigenvalue distributions and\nconstructs a Chebyshev subspace filter that leverages eigenpairs from\npreviously solved problems to assist in solving subsequent ones, reducing\nredundant computations. To the best of our knowledge, SCSF is the first method\nto accelerate eigenvalue data generation. Experimental results show that SCSF\nachieves up to a $3.5\\times$ speedup compared to various numerical solvers.",
+      "link": "http://arxiv.org/abs/2510.23215v1",
+      "published_date": "October 27, 2025",
+      "published_date_sort": "2025-10-27",
+      "citations": 0,
+      "institutions": "Unknown"
+    },
+    {
+      "title": "Multitask Multimodal Self-Supervised Learning for Medical Images",
+      "authors": "Cristian Simionescu",
+      "journal": "arXiv",
+      "snippet": "This thesis works to address a pivotal challenge in medical image analysis:\nthe reliance on extensive labeled datasets, which are often limited due to the\nneed for expert annotation and constrained by privacy and legal issues. By\nfocusing on the development of self-supervised learning techniques and domain\nadaptation methods, this research aims to circumvent these limitations,\npresenting a novel approach to enhance the utility and efficacy of deep\nlearning in medical imaging.\n  Central to this thesis is the development of the Medformer, an innovative\nneural network architecture designed for multitask learning and deep domain\nadaptation. This model is adept at pre-training on diverse medical image\ndatasets, handling varying sizes and modalities, and is equipped with a dynamic\ninput-output adaptation mechanism. This enables efficient processing and\nintegration of a wide range of medical image types, from 2D X-rays to complex\n3D MRIs, thus mitigating the dependency on large labeled datasets.\n  Further, the thesis explores the current state of self-supervised learning in\nmedical imaging. It introduces novel pretext tasks that are capable of\nextracting meaningful information from unlabeled data, significantly advancing\nthe model's interpretative abilities. This approach is validated through\nrigorous experimentation, including the use of the MedMNIST dataset,\ndemonstrating the model's proficiency in learning generalized features\napplicable to various downstream tasks.\n  In summary, this thesis contributes to the advancement of medical image\nanalysis by offering a scalable, adaptable framework that reduces reliance on\nlabeled data. It paves the way for more accurate, efficient diagnostic tools in\nhealthcare, signifying a major step forward in the application of deep learning\nin medical imaging.",
+      "link": "http://arxiv.org/abs/2510.23325v1",
+      "published_date": "October 27, 2025",
+      "published_date_sort": "2025-10-27",
+      "citations": 0,
+      "institutions": "Unknown"
+    },
+    {
+      "title": "Towards Deep Physics-Informed Kolmogorov-Arnold Networks",
+      "authors": "Spyros Rigas, Fotios Anagnostopoulos, Michalis Papachristou, Georgios Alexandridis",
+      "journal": "arXiv",
+      "snippet": "Since their introduction, Kolmogorov-Arnold Networks (KANs) have been\nsuccessfully applied across several domains, with physics-informed machine\nlearning (PIML) emerging as one of the areas where they have thrived. In the\nPIML setting, Chebyshev-based physics-informed KANs (cPIKANs) have become the\nstandard due to their computational efficiency. However, like their multilayer\nperceptron-based counterparts, cPIKANs face significant challenges when scaled\nto depth, leading to training instabilities that limit their applicability to\nseveral PDE problems. To address this, we propose a basis-agnostic, Glorot-like\ninitialization scheme that preserves activation variance and yields substantial\nimprovements in stability and accuracy over the default initialization of\ncPIKANs. Inspired by the PirateNet architecture, we further introduce\nResidual-Gated Adaptive KANs (RGA KANs), designed to mitigate divergence in\ndeep cPIKANs where initialization alone is not sufficient. Through empirical\ntests and information bottleneck analysis, we show that RGA KANs successfully\ntraverse all training phases, unlike baseline cPIKANs, which stagnate in the\ndiffusion phase in specific PDE settings. Evaluations on seven standard forward\nPDE benchmarks under a fixed training pipeline with adaptive components\ndemonstrate that RGA KANs consistently outperform parameter-matched cPIKANs and\nPirateNets - often by several orders of magnitude - while remaining stable in\nsettings where the others diverge.",
+      "link": "http://arxiv.org/abs/2510.23501v1",
+      "published_date": "October 27, 2025",
+      "published_date_sort": "2025-10-27",
+      "citations": 0,
+      "institutions": "Unknown"
+    },
+    {
+      "title": "JanusCoder: Towards a Foundational Visual-Programmatic Interface for\n  Code Intelligence",
+      "authors": "Qiushi Sun, Jingyang Gong, Yang Liu, Qiaosheng Chen, Lei Li, Kai Chen, Qipeng Guo, Ben Kao, Fei Yuan",
+      "journal": "arXiv",
+      "snippet": "The scope of neural code intelligence is rapidly expanding beyond text-based\nsource code to encompass the rich visual outputs that programs generate. This\nvisual dimension is critical for advanced applications like flexible content\ngeneration and precise, program-driven editing of visualizations. However,\nprogress has been impeded by the scarcity of high-quality multimodal code data,\na bottleneck stemming from challenges in synthesis and quality assessment. To\naddress these challenges, we make contributions from both a data and modeling\nperspective. We first introduce a complete synthesis toolkit that leverages\nreciprocal synergies between data modalities to efficiently produce a\nlarge-scale, high-quality corpus spanning from standard charts to complex\ninteractive web UIs and code-driven animations. Leveraging this toolkit, we\nconstruct JanusCode-800K, the largest multimodal code corpus to date. This\npowers the training of our models, JanusCoder and JanusCoderV, which establish\na visual-programmatic interface for generating code from textual instructions,\nvisual inputs, or a combination of both. Our unified model is a departure from\nexisting approaches that build specialized models for isolated tasks. Extensive\nexperiments on both text-centric and vision-centric coding tasks demonstrate\nthe superior performance of the JanusCoder series, with our 7B to 14B scale\nmodels approaching or even exceeding the performance of commercial models.\nFurthermore, extensive analysis provides key insights into harmonizing\nprogrammatic logic with its visual expression. Our code and checkpoints will\nare available at https://github.com/InternLM/JanusCoder.",
+      "link": "http://arxiv.org/abs/2510.23538v1",
+      "published_date": "October 27, 2025",
+      "published_date_sort": "2025-10-27",
+      "citations": 0,
+      "institutions": "Unknown"
+    },
+    {
+      "title": "Learning to Reason Efficiently with Discounted Reinforcement Learning",
+      "authors": "Alex Ayoub, Kavosh Asadi, Dale Schuurmans, Csaba Szepesvári, Karim Bouyarmane",
+      "journal": "arXiv",
+      "snippet": "Large reasoning models (LRMs) often consume excessive tokens, inflating\ncomputational cost and latency. We challenge the assumption that longer\nresponses improve accuracy. By penalizing reasoning tokens using a discounted\nreinforcement learning setup (interpretable as a small token cost) and\nanalyzing Blackwell optimality in restricted policy classes, we encourage\nconcise yet accurate reasoning. Experiments confirm our theoretical results\nthat this approach shortens chains of thought while preserving accuracy.",
+      "link": "http://arxiv.org/abs/2510.23486v1",
+      "published_date": "October 27, 2025",
+      "published_date_sort": "2025-10-27",
+      "citations": 0,
+      "institutions": "Unknown"
+    },
+    {
+      "title": "ZeroFlood: A Geospatial Foundation Model for Data-Efficient Flood\n  Susceptibility Mapping",
+      "authors": "Hyeongkyun Kim, Orestis Oikonomou",
+      "journal": "arXiv",
+      "snippet": "Flood susceptibility mapping (FSM) is vital for disaster prevention but\nremains challenging in data-scarce regions where hydrodynamic models require\ndense geophysical inputs. This work introduces ZeroFlood, a geospatial\nfoundation model framework for data-efficient FSM. The approach fine-tunes\nGeospatial Foundation Models (GFMs) with Thinking-in-Modality (TiM) reasoning,\nenabling flood prediction from basic Earth observation data such as Sentinel-1\nor Sentinel-2 imagery. Using paired EO and simulated flood maps from data-rich\nregions, ZeroFlood bridges data availability gaps through cross-modal\nrepresentation learning. Experiments with TerraMind and Prithvi GFMs show that\nTiM enhances model robustness, with the TerraMind-Large configuration achieving\nan F1 score of 67.21. The results demonstrate the feasibility of\nfoundation-model-based FSM as a scalable and data-efficient solution for flood\nrisk management.",
+      "link": "http://arxiv.org/abs/2510.23364v1",
+      "published_date": "October 27, 2025",
+      "published_date_sort": "2025-10-27",
+      "citations": 0,
+      "institutions": "Unknown"
+    },
+    {
+      "title": "BBOPlace-Bench: Benchmarking Black-Box Optimization for Chip Placement",
+      "authors": "Ke Xue, Ruo-Tong Chen, Rong-Xi Tan, Xi Lin, Yunqi Shi, Siyuan Xu, Mingxuan Yuan, Chao Qian",
+      "journal": "arXiv",
+      "snippet": "Chip placement is a vital stage in modern chip design as it has a substantial\nimpact on the subsequent processes and the overall quality of the final chip.\nThe use of black-box optimization (BBO) for chip placement has a history of\nseveral decades. However, early efforts were limited by immature problem\nformulations and inefficient algorithm designs. Recent progress has shown the\neffectiveness and efficiency of BBO for chip placement, proving its potential\nto achieve state-of-the-art results. Despite these advancements, the field\nlacks a unified, BBO-specific benchmark for thoroughly assessing various\nproblem formulations and BBO algorithms. To fill this gap, we propose\nBBOPlace-Bench, the first benchmark designed specifically for evaluating and\ndeveloping BBO algorithms for chip placement tasks. It integrates three problem\nformulations of BBO for chip placement, and offers a modular, decoupled, and\nflexible framework that enables users to seamlessly implement, test, and\ncompare their own algorithms. BBOPlace-Bench integrates a wide variety of\nexisting BBO algorithms, including simulated annealing (SA), evolutionary\nalgorithms (EAs), and Bayesian optimization (BO). Experimental results show\nthat the problem formulations of mask-guided optimization and hyperparameter\noptimization exhibit superior performance than the sequence pair problem\nformulation, while EAs demonstrate better overall performance than SA and BO,\nespecially in high-dimensional search spaces, and also achieve state-of-the-art\nperformance compared to the mainstream chip placement methods. BBOPlace-Bench\nnot only facilitates the development of efficient BBO-driven solutions for chip\nplacement but also broadens the practical application scenarios (which are\nurgently needed) for the BBO community. The code of BBOPlace-Bench is available\nat https://github.com/lamda-bbo/BBOPlace-Bench.",
+      "link": "http://arxiv.org/abs/2510.23472v1",
+      "published_date": "October 27, 2025",
+      "published_date_sort": "2025-10-27",
+      "citations": 0,
+      "institutions": "Unknown"
+    },
+    {
+      "title": "TARC: Time-Adaptive Robotic Control",
+      "authors": "Arnav Sukhija, Lenart Treven, Jin Cheng, Florian Dörfler, Stelian Coros, Andreas Krause",
+      "journal": "arXiv",
+      "snippet": "Fixed-frequency control in robotics imposes a trade-off between the\nefficiency of low-frequency control and the robustness of high-frequency\ncontrol, a limitation not seen in adaptable biological systems. We address this\nwith a reinforcement learning approach in which policies jointly select control\nactions and their application durations, enabling robots to autonomously\nmodulate their control frequency in response to situational demands. We\nvalidate our method with zero-shot sim-to-real experiments on two distinct\nhardware platforms: a high-speed RC car and a quadrupedal robot. Our method\nmatches or outperforms fixed-frequency baselines in terms of rewards while\nsignificantly reducing the control frequency and exhibiting adaptive frequency\ncontrol under real-world conditions.",
+      "link": "http://arxiv.org/abs/2510.23176v1",
+      "published_date": "October 27, 2025",
+      "published_date_sort": "2025-10-27",
+      "citations": 0,
+      "institutions": "Unknown"
+    },
+    {
+      "title": "EMTSF:Extraordinary Mixture of SOTA Models for Time Series Forecasting",
+      "authors": "Musleh Alharthi, Kaleel Mahmood, Sarosh Patel, Ausif Mahmood",
+      "journal": "arXiv",
+      "snippet": "The immense success of the Transformer architecture\n  in Natural Language Processing has led to its adoption in Time Se ries\nForecasting (TSF), where superior performance has been shown.\n  However, a recent important paper questioned their effectiveness by\n  demonstrating that a simple single layer linear model outperforms\n  Transformer-based models. This was soon shown to be not as valid,\n  by a better transformer-based model termed PatchTST. More re cently, TimeLLM\ndemonstrated even better results by repurposing a\n  Large Language Model (LLM) for the TSF domain. Again, a follow\n  up paper challenged this by demonstrating that removing the LLM\n  component or replacing it with a basic attention layer in fact yields\n  better performance. One of the challenges in forecasting is the fact\n  that TSF data favors the more recent past, and is sometimes subject\n  to unpredictable events. Based upon these recent insights in TSF, we\n  propose a strong Mixture of Experts (MoE) framework. Our method\n  combines the state-of-the-art (SOTA) models including xLSTM, en hanced\nLinear, PatchTST, and minGRU, among others. This set of\n  complimentary and diverse models for TSF are integrated in a Trans former\nbased MoE gating network. Our proposed model outperforms\n  all existing TSF models on standard benchmarks, surpassing even the\n  latest approaches based on MoE frameworks.",
+      "link": "http://arxiv.org/abs/2510.23396v1",
+      "published_date": "October 27, 2025",
+      "published_date_sort": "2025-10-27",
+      "citations": 0,
+      "institutions": "Unknown"
+    },
+    {
+      "title": "CNOT Minimal Circuit Synthesis: A Reinforcement Learning Approach",
+      "authors": "Riccardo Romanello, Daniele Lizzio Bosco, Jacopo Cossio, Dusan Sutulovic, Giuseppe Serra, Carla Piazza, Paolo Burelli",
+      "journal": "arXiv",
+      "snippet": "CNOT gates are fundamental to quantum computing, as they facilitate\nentanglement, a crucial resource for quantum algorithms. Certain classes of\nquantum circuits are constructed exclusively from CNOT gates. Given their\nwidespread use, it is imperative to minimise the number of CNOT gates employed.\nThis problem, known as CNOT minimisation, remains an open challenge, with its\ncomputational complexity yet to be fully characterised. In this work, we\nintroduce a novel reinforcement learning approach to address this task. Instead\nof training multiple reinforcement learning agents for different circuit sizes,\nwe use a single agent up to a fixed size $m$. Matrices of sizes different from\nm are preprocessed using either embedding or Gaussian striping. To assess the\nefficacy of our approach, we trained an agent with m = 8, and evaluated it on\nmatrices of size n that range from 3 to 15. The results we obtained show that\nour method overperforms the state-of-the-art algorithm as the value of n\nincreases.",
+      "link": "http://arxiv.org/abs/2510.23304v1",
+      "published_date": "October 27, 2025",
+      "published_date_sort": "2025-10-27",
+      "citations": 0,
+      "institutions": "Unknown"
+    },
+    {
+      "title": "Accelerating IC Thermal Simulation Data Generation via Block Krylov and\n  Operator Action",
+      "authors": "Hong Wang, Wenkai Yang, Jie Wang, Huanshuo Dong, Zijie Geng, Zhen Huang, Depeng Xie, Zhezheng Hao, Hande Dong",
+      "journal": "arXiv",
+      "snippet": "Recent advances in data-driven approaches, such as neural operators (NOs),\nhave shown substantial efficacy in reducing the solution time for integrated\ncircuit (IC) thermal simulations. However, a limitation of these approaches is\nrequiring a large amount of high-fidelity training data, such as chip\nparameters and temperature distributions, thereby incurring significant\ncomputational costs. To address this challenge, we propose a novel algorithm\nfor the generation of IC thermal simulation data, named block Krylov and\noperator action (BlocKOA), which simultaneously accelerates the data generation\nprocess and enhances the precision of generated data. BlocKOA is specifically\ndesigned for IC applications. Initially, we use the block Krylov algorithm\nbased on the structure of the heat equation to quickly obtain a few basic\nsolutions. Then we combine them to get numerous temperature distributions that\nsatisfy the physical constraints. Finally, we apply heat operators on these\nfunctions to determine the heat source distributions, efficiently generating\nprecise data points. Theoretical analysis shows that the time complexity of\nBlocKOA is one order lower than the existing method. Experimental results\nfurther validate its efficiency, showing that BlocKOA achieves a 420-fold\nspeedup in generating thermal simulation data for 5000 chips with varying\nphysical parameters and IC structures. Even with just 4% of the generation\ntime, data-driven approaches trained on the data generated by BlocKOA exhibits\ncomparable performance to that using the existing method.",
+      "link": "http://arxiv.org/abs/2510.23221v1",
+      "published_date": "October 27, 2025",
+      "published_date_sort": "2025-10-27",
+      "citations": 0,
+      "institutions": "Unknown"
+    },
+    {
+      "title": "Reinforcement Learning for Machine Learning Engineering Agents",
+      "authors": "S Yang, J He-Yueya, P Liang - arXiv preprint arXiv:2509.01684, 2025 - arxiv.org",
       "journal": "Google Scholar Result",
-      "snippet": "Progress in many task domains emerges from repeated revisions to previous solution attempts. Training agents that can reliably self-improve over such sequences at inference …",
-      "link": "https://arxiv.org/abs/2509.04575",
+      "snippet": "Existing agents for solving tasks such as ML engineering rely on prompting powerful language models. As a result, these agents do not improve with more experience. In this …",
+      "link": "https://arxiv.org/abs/2509.01684",
       "published_date": "September 2025",
       "published_date_sort": "2025-09-01",
-      "citations": 1,
+      "citations": 0,
       "institutions": "Unknown"
     },
     {
@@ -64,14 +233,14 @@
       "institutions": "Unknown"
     },
     {
-      "title": "Reinforcement Learning for Machine Learning Engineering Agents",
-      "authors": "S Yang, J He-Yueya, P Liang - arXiv preprint arXiv:2509.01684, 2025 - arxiv.org",
+      "title": "Bootstrapping task spaces for self-improvement",
+      "authors": "M Jiang, A Lupu, Y Bachrach - arXiv preprint arXiv:2509.04575, 2025 - arxiv.org",
       "journal": "Google Scholar Result",
-      "snippet": "Existing agents for solving tasks such as ML engineering rely on prompting powerful language models. As a result, these agents do not improve with more experience. In this …",
-      "link": "https://arxiv.org/abs/2509.01684",
+      "snippet": "Progress in many task domains emerges from repeated revisions to previous solution attempts. Training agents that can reliably self-improve over such sequences at inference …",
+      "link": "https://arxiv.org/abs/2509.04575",
       "published_date": "September 2025",
       "published_date_sort": "2025-09-01",
-      "citations": 0,
+      "citations": 1,
       "institutions": "Unknown"
     },
     {
@@ -108,14 +277,14 @@
       "institutions": "Unknown"
     },
     {
-      "title": "MLE-STAR: Machine Learning Engineering Agent via Search and Targeted Refinement",
-      "authors": "J Nam, J Yoon, J Chen, J Shin, SÖ Arık… - arXiv preprint arXiv …, 2025 - arxiv.org",
+      "title": "AI Scientists Fail Without Strong Implementation Capability",
+      "authors": "M Zhu, Q Xie, Y Weng, J Wu, Z Lin, L Yang… - arXiv preprint arXiv …, 2025 - arxiv.org",
       "journal": "Google Scholar Result",
-      "snippet": "Agents based on large language models (LLMs) for machine learning engineering (MLE) can automatically implement ML models via code generation. However, existing approaches …",
-      "link": "https://arxiv.org/abs/2506.15692",
+      "snippet": "The emergence of Artificial Intelligence (AI) Scientist represents a paradigm shift in scientific discovery, with large language models (LLMs) taking the lead as the primary executor in the …",
+      "link": "https://arxiv.org/abs/2506.01372",
       "published_date": "June 2025",
       "published_date_sort": "2025-06-01",
-      "citations": 5,
+      "citations": 8,
       "institutions": "Unknown"
     },
     {
@@ -130,14 +299,14 @@
       "institutions": "Unknown"
     },
     {
-      "title": "AI Scientists Fail Without Strong Implementation Capability",
-      "authors": "M Zhu, Q Xie, Y Weng, J Wu, Z Lin, L Yang… - arXiv preprint arXiv …, 2025 - arxiv.org",
+      "title": "MLE-STAR: Machine Learning Engineering Agent via Search and Targeted Refinement",
+      "authors": "J Nam, J Yoon, J Chen, J Shin, SÖ Arık… - arXiv preprint arXiv …, 2025 - arxiv.org",
       "journal": "Google Scholar Result",
-      "snippet": "The emergence of Artificial Intelligence (AI) Scientist represents a paradigm shift in scientific discovery, with large language models (LLMs) taking the lead as the primary executor in the …",
-      "link": "https://arxiv.org/abs/2506.01372",
+      "snippet": "Agents based on large language models (LLMs) for machine learning engineering (MLE) can automatically implement ML models via code generation. However, existing approaches …",
+      "link": "https://arxiv.org/abs/2506.15692",
       "published_date": "June 2025",
       "published_date_sort": "2025-06-01",
-      "citations": 8,
+      "citations": 5,
       "institutions": "Unknown"
     },
     {
@@ -163,17 +332,6 @@
       "institutions": "Unknown"
     },
     {
-      "title": "Mle-dojo: Interactive environments for empowering llm agents in machine learning engineering",
-      "authors": "R Qiang, Y Zhuang, Y Li, R Zhang, C Li… - arXiv preprint arXiv …, 2025 - arxiv.org",
-      "journal": "Google Scholar Result",
-      "snippet": "We introduce MLE-Dojo, a Gym-style framework for systematically reinforcement learning, evaluating, and improving autonomous large language model (LLM) agents in iterative …",
-      "link": "https://arxiv.org/abs/2505.07782",
-      "published_date": "May 2025",
-      "published_date_sort": "2025-05-01",
-      "citations": 4,
-      "institutions": "Unknown"
-    },
-    {
       "title": "IDA-Bench: Evaluating LLMs on Interactive Guided Data Analysis",
       "authors": "H Li, H Liu, T Zhu, T Guo, Z Zheng, X Deng… - arXiv preprint arXiv …, 2025 - arxiv.org",
       "journal": "Google Scholar Result",
@@ -182,28 +340,6 @@
       "published_date": "May 2025",
       "published_date_sort": "2025-05-01",
       "citations": 2,
-      "institutions": "Unknown"
-    },
-    {
-      "title": "Repomaster: Autonomous exploration and understanding of github repositories for complex task solving",
-      "authors": "H Wang, Z Ni, S Zhang, S Lu, S Hu, Z He, C Hu… - arXiv preprint arXiv …, 2025 - arxiv.org",
-      "journal": "Google Scholar Result",
-      "snippet": "The ultimate goal of code agents is to solve complex tasks autonomously. Although large language models (LLMs) have made substantial progress in code generation, real-world …",
-      "link": "https://arxiv.org/abs/2505.21577",
-      "published_date": "May 2025",
-      "published_date_sort": "2025-05-01",
-      "citations": 4,
-      "institutions": "Unknown"
-    },
-    {
-      "title": "CodePDE: An Inference Framework for LLM-driven PDE Solver Generation",
-      "authors": "S Li, T Marwah, J Shen, W Sun, A Risteski… - arXiv preprint arXiv …, 2025 - arxiv.org",
-      "journal": "Google Scholar Result",
-      "snippet": "Partial differential equations (PDEs) are fundamental to modeling physical systems, yet solving them remains a complex challenge. Traditional numerical solvers rely on expert …",
-      "link": "https://arxiv.org/abs/2505.08783",
-      "published_date": "May 2025",
-      "published_date_sort": "2025-05-01",
-      "citations": 6,
       "institutions": "Unknown"
     },
     {
@@ -218,6 +354,17 @@
       "institutions": "Unknown"
     },
     {
+      "title": "CodePDE: An Inference Framework for LLM-driven PDE Solver Generation",
+      "authors": "S Li, T Marwah, J Shen, W Sun, A Risteski… - arXiv preprint arXiv …, 2025 - arxiv.org",
+      "journal": "Google Scholar Result",
+      "snippet": "Partial differential equations (PDEs) are fundamental to modeling physical systems, yet solving them remains a complex challenge. Traditional numerical solvers rely on expert …",
+      "link": "https://arxiv.org/abs/2505.08783",
+      "published_date": "May 2025",
+      "published_date_sort": "2025-05-01",
+      "citations": 6,
+      "institutions": "Unknown"
+    },
+    {
       "title": "From automation to autonomy: A survey on large language models in scientific discovery",
       "authors": "T Zheng, Z Deng, HT Tsang, W Wang, J Bai… - arXiv preprint arXiv …, 2025 - arxiv.org",
       "journal": "Google Scholar Result",
@@ -226,6 +373,28 @@
       "published_date": "May 2025",
       "published_date_sort": "2025-05-01",
       "citations": 18,
+      "institutions": "Unknown"
+    },
+    {
+      "title": "Mle-dojo: Interactive environments for empowering llm agents in machine learning engineering",
+      "authors": "R Qiang, Y Zhuang, Y Li, R Zhang, C Li… - arXiv preprint arXiv …, 2025 - arxiv.org",
+      "journal": "Google Scholar Result",
+      "snippet": "We introduce MLE-Dojo, a Gym-style framework for systematically reinforcement learning, evaluating, and improving autonomous large language model (LLM) agents in iterative …",
+      "link": "https://arxiv.org/abs/2505.07782",
+      "published_date": "May 2025",
+      "published_date_sort": "2025-05-01",
+      "citations": 4,
+      "institutions": "Unknown"
+    },
+    {
+      "title": "Repomaster: Autonomous exploration and understanding of github repositories for complex task solving",
+      "authors": "H Wang, Z Ni, S Zhang, S Lu, S Hu, Z He, C Hu… - arXiv preprint arXiv …, 2025 - arxiv.org",
+      "journal": "Google Scholar Result",
+      "snippet": "The ultimate goal of code agents is to solve complex tasks autonomously. Although large language models (LLMs) have made substantial progress in code generation, real-world …",
+      "link": "https://arxiv.org/abs/2505.21577",
+      "published_date": "May 2025",
+      "published_date_sort": "2025-05-01",
+      "citations": 4,
       "institutions": "Unknown"
     },
     {
