@@ -1,27 +1,31 @@
 {
-  "last_updated": "2025-10-29 00:11:16 UTC",
+  "last_updated": "2025-10-30 00:11:09 UTC",
   "target_paper": "https://www.arxiv.org/abs/2502.13138",
   "arxiv_id": "2502.13138",
-  "total_citations": 35,
+  "total_citations": 31,
   "h_index": 6,
-  "recent_citations": 15,
-  "avg_citations_per_month": "3.50",
+  "recent_citations": 11,
+  "avg_citations_per_month": "1.41",
   "timeline": [
     {
-      "date": "2025-01-01",
+      "date": "2024-01-01",
       "citations": 1
     },
     {
-      "date": "2025-03-01",
+      "date": "2025-01-01",
       "citations": 2
     },
     {
-      "date": "2025-04-01",
+      "date": "2025-03-01",
       "citations": 3
     },
     {
+      "date": "2025-04-01",
+      "citations": 4
+    },
+    {
       "date": "2025-05-01",
-      "citations": 9
+      "citations": 10
     },
     {
       "date": "2025-06-01",
@@ -41,172 +45,128 @@
     },
     {
       "date": "2025-10-01",
-      "citations": 35
+      "citations": 31
     }
   ],
   "papers": [
     {
-      "title": "On the Faithfulness of Visual Thinking: Measurement and Enhancement",
-      "authors": "Zujing Liu, Junwen Pan, Qi She, Yuan Gao, Guisong Xia",
+      "title": "Advancing site-specific disease and pest management in precision\n  agriculture: From reasoning-driven foundation models to adaptive,\n  feedback-based learning",
+      "authors": "Nitin Rai,  Daeun,  Choi, Nathan S. Boyd, Arnold W. Schumann",
       "journal": "arXiv",
-      "snippet": "Recent large vision-language models (LVLMs) can generate vision-text\nmultimodal chain-of-thought (MCoT) traces after reinforcement fine-tuning\n(RFT). However, we observe that the visual information incorporated in MCoT is\noften inaccurate, though still yield correct answers, indicating a lack of\nfaithfulness in the MCoT reasoning process. We attribute this unfaithfulness to\nthe RL reward in RFT, which solely incentivizes the format of interleaved\nvision-text cues, ie, it encourages the model to incorporate visual information\ninto its text reasoning steps without considering the correctness of the visual\ninformation. In this paper, we first probe the faithfulness of MCoT by\nmeasuring how much the prediction changes when its visual and textual thoughts\nare intervened. Surprisingly, the model's predictions remain nearly unchanged\nunder visual intervention but change significantly under textual intervention,\nindicating that the visual evidence is largely ignored. To further analyze\nvisual information, we introduce an automated LVLM-based evaluation metric that\nquantifies the faithfulness of visual cues from two perspectives: reliability\nand sufficiency. Our evaluation reveals that the visual information in current\nMCoT traces is simultaneously unreliable and insufficient. To address this\nissue, we propose a novel MCoT learning strategy termed Sufficient-Component\nCause Model (SCCM) learning. This approach encourages the MCoT to generate\nsufficient yet minimal visual components that are independently capable of\nleading to correct answers. We note that the proposed SCCM is annotation-free\nand compatible with various RFT for MCoT in a plug-and-play manner. Empirical\nresults demonstrate that SCCM consistently improves the visual faithfulness\nacross a suite of fine-grained perception and reasoning benchmarks. Code is\navailable at https://github.com/EugeneLiu01/Faithful_Thinking_with_Image.",
-      "link": "http://arxiv.org/abs/2510.23482v1",
-      "published_date": "October 27, 2025",
-      "published_date_sort": "2025-10-27",
+      "snippet": "Site-specific disease management (SSDM) in crops has advanced rapidly through\nmachine and deep learning (ML and DL) for real-time computer vision. Research\nevolved from handcrafted feature extraction to large-scale automated feature\nlearning. With foundation models (FMs), crop disease datasets are now processed\nin fundamentally new ways. Unlike traditional neural networks, FMs integrate\nvisual and textual data, interpret symptoms in text, reason about\nsymptom-management relationships, and support interactive QA for growers and\neducators. Adaptive and imitation learning in robotics further enables\nfield-based disease management. This review screened approx. 40 articles on FM\napplications for SSDM, focusing on large-language models (LLMs) and\nvision-language models (VLMs), and discussing their role in adaptive learning\n(AL), reinforcement learning (RL), and digital twin frameworks for targeted\nspraying. Key findings: (a) FMs are gaining traction with surging literature in\n2023-24; (b) VLMs outpace LLMs, with a 5-10x increase in publications; (c) RL\nand AL are still nascent for smart spraying; (d) digital twins with RL can\nsimulate targeted spraying virtually; (e) addressing the sim-to-real gap is\ncritical for real-world deployment; (f) human-robot collaboration remains\nlimited, especially in human-in-the-loop approaches where robots detect early\nsymptoms and humans validate uncertain cases; (g) multi-modal FMs with\nreal-time feedback will drive next-gen SSDM. For updates, resources, and\ncontributions, visit, https://github.com/nitin-dominic/AgriPathogenDatabase, to\nsubmit papers, code, or datasets.",
+      "link": "http://arxiv.org/abs/2510.24650v1",
+      "published_date": "October 28, 2025",
+      "published_date_sort": "2025-10-28",
       "citations": 0,
       "institutions": "Unknown"
     },
     {
-      "title": "Floating-Point Neural Network Verification at the Software Level",
-      "authors": "Edoardo Manino, Bruno Farias, Rafael Sá Menezes, Fedor Shmarov, Lucas C. Cordeiro",
+      "title": "Fill in the Blanks: Accelerating Q-Learning with a Handful of\n  Demonstrations in Sparse Reward Settings",
+      "authors": "Seyed Mahdi Basiri Azad, Joschka Boedecker",
       "journal": "arXiv",
-      "snippet": "The behaviour of neural network components must be proven correct before\ndeployment in safety-critical systems. Unfortunately, existing neural network\nverification techniques cannot certify the absence of faults at the software\nlevel. In this paper, we show how to specify and verify that neural networks\nare safe, by explicitly reasoning about their floating-point implementation. In\ndoing so, we construct NeuroCodeBench 2.0, a benchmark comprising 912 neural\nnetwork verification examples that cover activation functions, common layers,\nand full neural networks of up to 170K parameters. Our verification suite is\nwritten in plain C and is compatible with the format of the International\nCompetition on Software Verification (SV-COMP). Thanks to it, we can conduct\nthe first rigorous evaluation of eight state-of-the-art software verifiers on\nneural network code. The results show that existing automated verification\ntools can correctly solve an average of 11% of our benchmark, while producing\naround 3% incorrect verdicts. At the same time, a historical analysis reveals\nthat the release of our benchmark has already had a significantly positive\nimpact on the latter.",
-      "link": "http://arxiv.org/abs/2510.23389v1",
-      "published_date": "October 27, 2025",
-      "published_date_sort": "2025-10-27",
+      "snippet": "Reinforcement learning (RL) in sparse-reward environments remains a\nsignificant challenge due to the lack of informative feedback. We propose a\nsimple yet effective method that uses a small number of successful\ndemonstrations to initialize the value function of an RL agent. By precomputing\nvalue estimates from offline demonstrations and using them as targets for early\nlearning, our approach provides the agent with a useful prior over promising\nactions. The agent then refines these estimates through standard online\ninteraction. This hybrid offline-to-online paradigm significantly reduces the\nexploration burden and improves sample efficiency in sparse-reward settings.\nExperiments on benchmark tasks demonstrate that our method accelerates\nconvergence and outperforms standard baselines, even with minimal or suboptimal\ndemonstration data.",
+      "link": "http://arxiv.org/abs/2510.24432v1",
+      "published_date": "October 28, 2025",
+      "published_date_sort": "2025-10-28",
       "citations": 0,
       "institutions": "Unknown"
     },
     {
-      "title": "A Survey of Data Agents: Emerging Paradigm or Overstated Hype?",
-      "authors": "Yizhang Zhu, Liangwei Wang, Chenyu Yang, Xiaotian Lin, Boyan Li, Wei Zhou, Xinyu Liu, Zhangyang Peng, Tianqi Luo, Yu Li, Chengliang Chai, Chong Chen, Shimin Di, Ju Fan, Ji Sun, Nan Tang, Fugee Tsung, Jiannan Wang, Chenglin Wu, Yanwei Xu, Shaolei Zhang, Yong Zhang, Xuanhe Zhou, Guoliang Li, Yuyu Luo",
+      "title": "Mitigating Hallucination in Large Language Models (LLMs): An\n  Application-Oriented Survey on RAG, Reasoning, and Agentic Systems",
+      "authors": "Yihan Li, Xiyuan Fu, Ghanshyam Verma, Paul Buitelaar, Mingming Liu",
       "journal": "arXiv",
-      "snippet": "The rapid advancement of large language models (LLMs) has spurred the\nemergence of data agents--autonomous systems designed to orchestrate Data + AI\necosystems for tackling complex data-related tasks. However, the term \"data\nagent\" currently suffers from terminological ambiguity and inconsistent\nadoption, conflating simple query responders with sophisticated autonomous\narchitectures. This terminological ambiguity fosters mismatched user\nexpectations, accountability challenges, and barriers to industry growth.\nInspired by the SAE J3016 standard for driving automation, this survey\nintroduces the first systematic hierarchical taxonomy for data agents,\ncomprising six levels that delineate and trace progressive shifts in autonomy,\nfrom manual operations (L0) to a vision of generative, fully autonomous data\nagents (L5), thereby clarifying capability boundaries and responsibility\nallocation. Through this lens, we offer a structured review of existing\nresearch arranged by increasing autonomy, encompassing specialized data agents\nfor data management, preparation, and analysis, alongside emerging efforts\ntoward versatile, comprehensive systems with enhanced autonomy. We further\nanalyze critical evolutionary leaps and technical gaps for advancing data\nagents, especially the ongoing L2-to-L3 transition, where data agents evolve\nfrom procedural execution to autonomous orchestration. Finally, we conclude\nwith a forward-looking roadmap, envisioning the advent of proactive, generative\ndata agents.",
-      "link": "http://arxiv.org/abs/2510.23587v1",
-      "published_date": "October 27, 2025",
-      "published_date_sort": "2025-10-27",
+      "snippet": "Hallucination remains one of the key obstacles to the reliable deployment of\nlarge language models (LLMs), particularly in real-world applications. Among\nvarious mitigation strategies, Retrieval-Augmented Generation (RAG) and\nreasoning enhancement have emerged as two of the most effective and widely\nadopted approaches, marking a shift from merely suppressing hallucinations to\nbalancing creativity and reliability. However, their synergistic potential and\nunderlying mechanisms for hallucination mitigation have not yet been\nsystematically examined. This survey adopts an application-oriented perspective\nof capability enhancement to analyze how RAG, reasoning enhancement, and their\nintegration in Agentic Systems mitigate hallucinations. We propose a taxonomy\ndistinguishing knowledge-based and logic-based hallucinations, systematically\nexamine how RAG and reasoning address each, and present a unified framework\nsupported by real-world applications, evaluations, and benchmarks.",
+      "link": "http://arxiv.org/abs/2510.24476v1",
+      "published_date": "October 28, 2025",
+      "published_date_sort": "2025-10-28",
       "citations": 0,
       "institutions": "Unknown"
     },
     {
-      "title": "The Benchmarking Epistemology: Construct Validity for Evaluating Machine\n  Learning Models",
-      "authors": "Timo Freiesleben, Sebastian Zezulka",
+      "title": "An N-of-1 Artificial Intelligence Ecosystem for Precision Medicine",
+      "authors": "Pedram Fard, Alaleh Azhir, Neguine Rezaii, Jiazi Tian, Hossein Estiri",
       "journal": "arXiv",
-      "snippet": "Predictive benchmarking, the evaluation of machine learning models based on\npredictive performance and competitive ranking, is a central epistemic practice\nin machine learning research and an increasingly prominent method for\nscientific inquiry. Yet, benchmark scores alone provide at best measurements of\nmodel performance relative to an evaluation dataset and a concrete learning\nproblem. Drawing substantial scientific inferences from the results, say about\ntheoretical tasks like image classification, requires additional assumptions\nabout the theoretical structure of the learning problems, evaluation functions,\nand data distributions. We make these assumptions explicit by developing\nconditions of construct validity inspired by psychological measurement theory.\nWe examine these assumptions in practice through three case studies, each\nexemplifying a typical intended inference: measuring engineering progress in\ncomputer vision with ImageNet; evaluating policy-relevant weather predictions\nwith WeatherBench; and examining limitations of the predictability of life\nevents with the Fragile Families Challenge. Our framework clarifies the\nconditions under which benchmark scores can support diverse scientific claims,\nbringing predictive benchmarking into perspective as an epistemological\npractice and a key site of conceptual and theoretical reasoning in machine\nlearning.",
-      "link": "http://arxiv.org/abs/2510.23191v1",
-      "published_date": "October 27, 2025",
-      "published_date_sort": "2025-10-27",
+      "snippet": "Artificial intelligence in medicine is built to serve the average patient. By\nminimizing error across large datasets, most systems deliver strong aggregate\naccuracy yet falter at the margins: patients with rare variants,\nmultimorbidity, or underrepresented demographics. This average patient fallacy\nerodes both equity and trust. We propose a different design: a multi-agent\necosystem for N-of-1 decision support. In this environment, agents clustered by\norgan systems, patient populations, and analytic modalities draw on a shared\nlibrary of models and evidence synthesis tools. Their results converge in a\ncoordination layer that weighs reliability, uncertainty, and data density\nbefore presenting the clinician with a decision-support packet: risk estimates\nbounded by confidence ranges, outlier flags, and linked evidence. Validation\nshifts from population averages to individual reliability, measured by error in\nlow-density regions, calibration in the small, and risk--coverage trade-offs.\nAnticipated challenges include computational demands, automation bias, and\nregulatory fit, addressed through caching strategies, consensus checks, and\nadaptive trial frameworks. By moving from monolithic models to orchestrated\nintelligence, this approach seeks to align medical AI with the first principle\nof medicine: care that is transparent, equitable, and centered on the\nindividual.",
+      "link": "http://arxiv.org/abs/2510.24359v1",
+      "published_date": "October 28, 2025",
+      "published_date_sort": "2025-10-28",
       "citations": 0,
       "institutions": "Unknown"
     },
     {
-      "title": "Accelerating Eigenvalue Dataset Generation via Chebyshev Subspace Filter",
-      "authors": "Hong Wang, Jie Wang, Jian Luo, huanshuo dong, Yeqiu Chen, Runmin Jiang, Zhen huang",
+      "title": "Survey and Tutorial of Reinforcement Learning Methods in Process Systems\n  Engineering",
+      "authors": "Maximilian Bloor, Max Mowbray, Ehecatl Antonio Del Rio Chanona, Calvin Tsay",
       "journal": "arXiv",
-      "snippet": "Eigenvalue problems are among the most important topics in many scientific\ndisciplines. With the recent surge and development of machine learning, neural\neigenvalue methods have attracted significant attention as a forward pass of\ninference requires only a tiny fraction of the computation time compared to\ntraditional solvers. However, a key limitation is the requirement for large\namounts of labeled data in training, including operators and their eigenvalues.\nTo tackle this limitation, we propose a novel method, named Sorting Chebyshev\nSubspace Filter (SCSF), which significantly accelerates eigenvalue data\ngeneration by leveraging similarities between operators -- a factor overlooked\nby existing methods. Specifically, SCSF employs truncated fast Fourier\ntransform sorting to group operators with similar eigenvalue distributions and\nconstructs a Chebyshev subspace filter that leverages eigenpairs from\npreviously solved problems to assist in solving subsequent ones, reducing\nredundant computations. To the best of our knowledge, SCSF is the first method\nto accelerate eigenvalue data generation. Experimental results show that SCSF\nachieves up to a $3.5\\times$ speedup compared to various numerical solvers.",
-      "link": "http://arxiv.org/abs/2510.23215v1",
-      "published_date": "October 27, 2025",
-      "published_date_sort": "2025-10-27",
+      "snippet": "Sequential decision making under uncertainty is central to many Process\nSystems Engineering (PSE) challenges, where traditional methods often face\nlimitations related to controlling and optimizing complex and stochastic\nsystems. Reinforcement Learning (RL) offers a data-driven approach to derive\ncontrol policies for such challenges. This paper presents a survey and tutorial\non RL methods, tailored for the PSE community. We deliver a tutorial on RL,\ncovering fundamental concepts and key algorithmic families including\nvalue-based, policy-based and actor-critic methods. Subsequently, we survey\nexisting applications of these RL techniques across various PSE domains, such\nas in fed-batch and continuous process control, process optimization, and\nsupply chains. We conclude with PSE focused discussion of specialized\ntechniques and emerging directions. By synthesizing the current state of RL\nalgorithm development and implications for PSE this work identifies successes,\nchallenges, trends, and outlines avenues for future research at the interface\nof these fields.",
+      "link": "http://arxiv.org/abs/2510.24272v1",
+      "published_date": "October 28, 2025",
+      "published_date_sort": "2025-10-28",
       "citations": 0,
       "institutions": "Unknown"
     },
     {
-      "title": "Multitask Multimodal Self-Supervised Learning for Medical Images",
-      "authors": "Cristian Simionescu",
+      "title": "Generative AI for Healthcare: Fundamentals, Challenges, and Perspectives",
+      "authors": "Gang Chen, Changshuo Liu, Gene Anne Ooi, Marcus Tan, Zhongle Xie, Jianwei Yin, James Wei Luen Yip, Wenqiao Zhang, Jiaqi Zhu, Beng Chin Ooi",
       "journal": "arXiv",
-      "snippet": "This thesis works to address a pivotal challenge in medical image analysis:\nthe reliance on extensive labeled datasets, which are often limited due to the\nneed for expert annotation and constrained by privacy and legal issues. By\nfocusing on the development of self-supervised learning techniques and domain\nadaptation methods, this research aims to circumvent these limitations,\npresenting a novel approach to enhance the utility and efficacy of deep\nlearning in medical imaging.\n  Central to this thesis is the development of the Medformer, an innovative\nneural network architecture designed for multitask learning and deep domain\nadaptation. This model is adept at pre-training on diverse medical image\ndatasets, handling varying sizes and modalities, and is equipped with a dynamic\ninput-output adaptation mechanism. This enables efficient processing and\nintegration of a wide range of medical image types, from 2D X-rays to complex\n3D MRIs, thus mitigating the dependency on large labeled datasets.\n  Further, the thesis explores the current state of self-supervised learning in\nmedical imaging. It introduces novel pretext tasks that are capable of\nextracting meaningful information from unlabeled data, significantly advancing\nthe model's interpretative abilities. This approach is validated through\nrigorous experimentation, including the use of the MedMNIST dataset,\ndemonstrating the model's proficiency in learning generalized features\napplicable to various downstream tasks.\n  In summary, this thesis contributes to the advancement of medical image\nanalysis by offering a scalable, adaptable framework that reduces reliance on\nlabeled data. It paves the way for more accurate, efficient diagnostic tools in\nhealthcare, signifying a major step forward in the application of deep learning\nin medical imaging.",
-      "link": "http://arxiv.org/abs/2510.23325v1",
-      "published_date": "October 27, 2025",
-      "published_date_sort": "2025-10-27",
+      "snippet": "Generative Artificial Intelligence (GenAI) is taking the world by storm. It\npromises transformative opportunities for advancing and disrupting existing\npractices, including healthcare. From large language models (LLMs) for clinical\nnote synthesis and conversational assistance to multimodal systems that\nintegrate medical imaging, electronic health records, and genomic data for\ndecision support, GenAI is transforming the practice of medicine and the\ndelivery of healthcare, such as diagnosis and personalized treatments, with\ngreat potential in reducing the cognitive burden on clinicians, thereby\nimproving overall healthcare delivery. However, GenAI deployment in healthcare\nrequires an in-depth understanding of healthcare tasks and what can and cannot\nbe achieved. In this paper, we propose a data-centric paradigm in the design\nand deployment of GenAI systems for healthcare. Specifically, we reposition the\ndata life cycle by making the medical data ecosystem as the foundational\nsubstrate for generative healthcare systems. This ecosystem is designed to\nsustainably support the integration, representation, and retrieval of diverse\nmedical data and knowledge. With effective and efficient data processing\npipelines, such as semantic vector search and contextual querying, it enables\nGenAI-powered operations for upstream model components and downstream clinical\napplications. Ultimately, it not only supplies foundation models with\nhigh-quality, multimodal data for large-scale pretraining and domain-specific\nfine-tuning, but also serves as a knowledge retrieval backend to support\ntask-specific inference via the agentic layer. The ecosystem enables the\ndeployment of GenAI for high-quality and effective healthcare delivery.",
+      "link": "http://arxiv.org/abs/2510.24551v1",
+      "published_date": "October 28, 2025",
+      "published_date_sort": "2025-10-28",
       "citations": 0,
       "institutions": "Unknown"
     },
     {
-      "title": "Towards Deep Physics-Informed Kolmogorov-Arnold Networks",
-      "authors": "Spyros Rigas, Fotios Anagnostopoulos, Michalis Papachristou, Georgios Alexandridis",
+      "title": "Enforcing boundary conditions for physics-informed neural operators",
+      "authors": "Niklas Göschel, Sebastian Götschel, Daniel Ruprecht",
       "journal": "arXiv",
-      "snippet": "Since their introduction, Kolmogorov-Arnold Networks (KANs) have been\nsuccessfully applied across several domains, with physics-informed machine\nlearning (PIML) emerging as one of the areas where they have thrived. In the\nPIML setting, Chebyshev-based physics-informed KANs (cPIKANs) have become the\nstandard due to their computational efficiency. However, like their multilayer\nperceptron-based counterparts, cPIKANs face significant challenges when scaled\nto depth, leading to training instabilities that limit their applicability to\nseveral PDE problems. To address this, we propose a basis-agnostic, Glorot-like\ninitialization scheme that preserves activation variance and yields substantial\nimprovements in stability and accuracy over the default initialization of\ncPIKANs. Inspired by the PirateNet architecture, we further introduce\nResidual-Gated Adaptive KANs (RGA KANs), designed to mitigate divergence in\ndeep cPIKANs where initialization alone is not sufficient. Through empirical\ntests and information bottleneck analysis, we show that RGA KANs successfully\ntraverse all training phases, unlike baseline cPIKANs, which stagnate in the\ndiffusion phase in specific PDE settings. Evaluations on seven standard forward\nPDE benchmarks under a fixed training pipeline with adaptive components\ndemonstrate that RGA KANs consistently outperform parameter-matched cPIKANs and\nPirateNets - often by several orders of magnitude - while remaining stable in\nsettings where the others diverge.",
-      "link": "http://arxiv.org/abs/2510.23501v1",
-      "published_date": "October 27, 2025",
-      "published_date_sort": "2025-10-27",
+      "snippet": "Machine-learning based methods like physics-informed neural networks and\nphysics-informed neural operators are becoming increasingly adept at solving\neven complex systems of partial differential equations. Boundary conditions can\nbe enforced either weakly by penalizing deviations in the loss function or\nstrongly by training a solution structure that inherently matches the\nprescribed values and derivatives. The former approach is easy to implement but\nthe latter can provide benefits with respect to accuracy and training times.\nHowever, previous approaches to strongly enforcing Neumann or Robin boundary\nconditions require a domain with a fully $C^1$ boundary and, as we demonstrate,\ncan lead to instability if those boundary conditions are posed on a segment of\nthe boundary that is piecewise $C^1$ but only $C^0$ globally. We introduce a\ngeneralization of the approach by Sukumar \\& Srivastava (doi:\n10.1016/j.cma.2021.114333), and a new approach based on orthogonal projections\nthat overcome this limitation. The performance of these new techniques is\ncompared against weakly and semi-weakly enforced boundary conditions for the\nscalar Darcy flow equation and the stationary Navier-Stokes equations.",
+      "link": "http://arxiv.org/abs/2510.24557v1",
+      "published_date": "October 28, 2025",
+      "published_date_sort": "2025-10-28",
       "citations": 0,
       "institutions": "Unknown"
     },
     {
-      "title": "JanusCoder: Towards a Foundational Visual-Programmatic Interface for\n  Code Intelligence",
-      "authors": "Qiushi Sun, Jingyang Gong, Yang Liu, Qiaosheng Chen, Lei Li, Kai Chen, Qipeng Guo, Ben Kao, Fei Yuan",
+      "title": "Dual-Mind World Models: A General Framework for Learning in Dynamic\n  Wireless Networks",
+      "authors": "Lingyi Wang, Rashed Shelim, Walid Saad, Naren Ramakrishnan",
       "journal": "arXiv",
-      "snippet": "The scope of neural code intelligence is rapidly expanding beyond text-based\nsource code to encompass the rich visual outputs that programs generate. This\nvisual dimension is critical for advanced applications like flexible content\ngeneration and precise, program-driven editing of visualizations. However,\nprogress has been impeded by the scarcity of high-quality multimodal code data,\na bottleneck stemming from challenges in synthesis and quality assessment. To\naddress these challenges, we make contributions from both a data and modeling\nperspective. We first introduce a complete synthesis toolkit that leverages\nreciprocal synergies between data modalities to efficiently produce a\nlarge-scale, high-quality corpus spanning from standard charts to complex\ninteractive web UIs and code-driven animations. Leveraging this toolkit, we\nconstruct JanusCode-800K, the largest multimodal code corpus to date. This\npowers the training of our models, JanusCoder and JanusCoderV, which establish\na visual-programmatic interface for generating code from textual instructions,\nvisual inputs, or a combination of both. Our unified model is a departure from\nexisting approaches that build specialized models for isolated tasks. Extensive\nexperiments on both text-centric and vision-centric coding tasks demonstrate\nthe superior performance of the JanusCoder series, with our 7B to 14B scale\nmodels approaching or even exceeding the performance of commercial models.\nFurthermore, extensive analysis provides key insights into harmonizing\nprogrammatic logic with its visual expression. Our code and checkpoints will\nare available at https://github.com/InternLM/JanusCoder.",
-      "link": "http://arxiv.org/abs/2510.23538v1",
-      "published_date": "October 27, 2025",
-      "published_date_sort": "2025-10-27",
+      "snippet": "Despite the popularity of reinforcement learning (RL) in wireless networks,\nexisting approaches that rely on model-free RL (MFRL) and model-based RL (MBRL)\nare data inefficient and short-sighted. Such RL-based solutions cannot\ngeneralize to novel network states since they capture only statistical patterns\nrather than the underlying physics and logic from wireless data. These\nlimitations become particularly challenging in complex wireless networks with\nhigh dynamics and long-term planning requirements. To address these\nlimitations, in this paper, a novel dual-mind world model-based learning\nframework is proposed with the goal of optimizing completeness-weighted age of\ninformation (CAoI) in a challenging mmWave V2X scenario. Inspired by cognitive\npsychology, the proposed dual-mind world model encompasses a pattern-driven\nSystem 1 component and a logic-driven System 2 component to learn dynamics and\nlogic of the wireless network, and to provide long-term link scheduling over\nreliable imagined trajectories. Link scheduling is learned through end-to-end\ndifferentiable imagined trajectories with logical consistency over an extended\nhorizon rather than relying on wireless data obtained from environment\ninteractions. Moreover, through imagination rollouts, the proposed world model\ncan jointly reason network states and plan link scheduling. During intervals\nwithout observations, the proposed method remains capable of making efficient\ndecisions. Extensive experiments are conducted on a realistic simulator based\non Sionna with real-world physical channel, ray-tracing, and scene objects with\nmaterial properties. Simulation results show that the proposed world model\nachieves a significant improvement in data efficiency and achieves strong\ngeneralization and adaptation to unseen environments, compared to the\nstate-of-the-art RL baselines, and the world model approach with only System 1.",
+      "link": "http://arxiv.org/abs/2510.24546v1",
+      "published_date": "October 28, 2025",
+      "published_date_sort": "2025-10-28",
       "citations": 0,
       "institutions": "Unknown"
     },
     {
-      "title": "Learning to Reason Efficiently with Discounted Reinforcement Learning",
-      "authors": "Alex Ayoub, Kavosh Asadi, Dale Schuurmans, Csaba Szepesvári, Karim Bouyarmane",
+      "title": "Beyond MCQ: An Open-Ended Arabic Cultural QA Benchmark with Dialect\n  Variants",
+      "authors": "Hunzalah Hassan Bhatti, Firoj Alam",
       "journal": "arXiv",
-      "snippet": "Large reasoning models (LRMs) often consume excessive tokens, inflating\ncomputational cost and latency. We challenge the assumption that longer\nresponses improve accuracy. By penalizing reasoning tokens using a discounted\nreinforcement learning setup (interpretable as a small token cost) and\nanalyzing Blackwell optimality in restricted policy classes, we encourage\nconcise yet accurate reasoning. Experiments confirm our theoretical results\nthat this approach shortens chains of thought while preserving accuracy.",
-      "link": "http://arxiv.org/abs/2510.23486v1",
-      "published_date": "October 27, 2025",
-      "published_date_sort": "2025-10-27",
+      "snippet": "Large Language Models (LLMs) are increasingly used to answer everyday\nquestions, yet their performance on culturally grounded and dialectal content\nremains uneven across languages. We propose a comprehensive method that (i)\ntranslates Modern Standard Arabic (MSA) multiple-choice questions (MCQs) into\nEnglish and several Arabic dialects, (ii) converts them into open-ended\nquestions (OEQs), (iii) benchmarks a range of zero-shot and fine-tuned LLMs\nunder both MCQ and OEQ settings, and (iv) generates chain-of-thought (CoT)\nrationales to fine-tune models for step-by-step reasoning. Using this method,\nwe extend an existing dataset in which QAs are parallelly aligned across\nmultiple language varieties, making it, to our knowledge, the first of its\nkind. We conduct extensive experiments with both open and closed models. Our\nfindings show that (i) models underperform on Arabic dialects, revealing\npersistent gaps in culturally grounded and dialect-specific knowledge; (ii)\nArabic-centric models perform well on MCQs but struggle with OEQs; and (iii)\nCoT improves judged correctness while yielding mixed n-gram-based metrics. The\ndeveloped dataset will be publicly released to support further research on\nculturally and linguistically inclusive evaluation.",
+      "link": "http://arxiv.org/abs/2510.24328v1",
+      "published_date": "October 28, 2025",
+      "published_date_sort": "2025-10-28",
       "citations": 0,
       "institutions": "Unknown"
     },
     {
-      "title": "ZeroFlood: A Geospatial Foundation Model for Data-Efficient Flood\n  Susceptibility Mapping",
-      "authors": "Hyeongkyun Kim, Orestis Oikonomou",
+      "title": "VDSAgents: A PCS-Guided Multi-Agent System for Veridical Data Science\n  Automation",
+      "authors": "Yunxuan Jiang, Silan Hu, Xiaoning Wang, Yuanyuan Zhang, Xiangyu Chang",
       "journal": "arXiv",
-      "snippet": "Flood susceptibility mapping (FSM) is vital for disaster prevention but\nremains challenging in data-scarce regions where hydrodynamic models require\ndense geophysical inputs. This work introduces ZeroFlood, a geospatial\nfoundation model framework for data-efficient FSM. The approach fine-tunes\nGeospatial Foundation Models (GFMs) with Thinking-in-Modality (TiM) reasoning,\nenabling flood prediction from basic Earth observation data such as Sentinel-1\nor Sentinel-2 imagery. Using paired EO and simulated flood maps from data-rich\nregions, ZeroFlood bridges data availability gaps through cross-modal\nrepresentation learning. Experiments with TerraMind and Prithvi GFMs show that\nTiM enhances model robustness, with the TerraMind-Large configuration achieving\nan F1 score of 67.21. The results demonstrate the feasibility of\nfoundation-model-based FSM as a scalable and data-efficient solution for flood\nrisk management.",
-      "link": "http://arxiv.org/abs/2510.23364v1",
-      "published_date": "October 27, 2025",
-      "published_date_sort": "2025-10-27",
+      "snippet": "Large language models (LLMs) become increasingly integrated into data science\nworkflows for automated system design. However, these LLM-driven data science\nsystems rely solely on the internal reasoning of LLMs, lacking guidance from\nscientific and theoretical principles. This limits their trustworthiness and\nrobustness, especially when dealing with noisy and complex real-world datasets.\nThis paper provides VDSAgents, a multi-agent system grounded in the\nPredictability-Computability-Stability (PCS) principles proposed in the\nVeridical Data Science (VDS) framework. Guided by PCS principles, the system\nimplements a modular workflow for data cleaning, feature engineering, modeling,\nand evaluation. Each phase is handled by an elegant agent, incorporating\nperturbation analysis, unit testing, and model validation to ensure both\nfunctionality and scientific auditability. We evaluate VDSAgents on nine\ndatasets with diverse characteristics, comparing it with state-of-the-art\nend-to-end data science systems, such as AutoKaggle and DataInterpreter, using\nDeepSeek-V3 and GPT-4o as backends. VDSAgents consistently outperforms the\nresults of AutoKaggle and DataInterpreter, which validates the feasibility of\nembedding PCS principles into LLM-driven data science automation.",
+      "link": "http://arxiv.org/abs/2510.24339v1",
+      "published_date": "October 28, 2025",
+      "published_date_sort": "2025-10-28",
       "citations": 0,
       "institutions": "Unknown"
     },
     {
-      "title": "BBOPlace-Bench: Benchmarking Black-Box Optimization for Chip Placement",
-      "authors": "Ke Xue, Ruo-Tong Chen, Rong-Xi Tan, Xi Lin, Yunqi Shi, Siyuan Xu, Mingxuan Yuan, Chao Qian",
+      "title": "Trajectory Design for UAV-Based Low-Altitude Wireless Networks in\n  Unknown Environments: A Digital Twin-Assisted TD3 Approach",
+      "authors": "Jihao Luo, Zesong Fei, Xinyi Wang, Le Zhao, Yuanhao Cui, Guangxu Zhu, Dusit Niyato",
       "journal": "arXiv",
-      "snippet": "Chip placement is a vital stage in modern chip design as it has a substantial\nimpact on the subsequent processes and the overall quality of the final chip.\nThe use of black-box optimization (BBO) for chip placement has a history of\nseveral decades. However, early efforts were limited by immature problem\nformulations and inefficient algorithm designs. Recent progress has shown the\neffectiveness and efficiency of BBO for chip placement, proving its potential\nto achieve state-of-the-art results. Despite these advancements, the field\nlacks a unified, BBO-specific benchmark for thoroughly assessing various\nproblem formulations and BBO algorithms. To fill this gap, we propose\nBBOPlace-Bench, the first benchmark designed specifically for evaluating and\ndeveloping BBO algorithms for chip placement tasks. It integrates three problem\nformulations of BBO for chip placement, and offers a modular, decoupled, and\nflexible framework that enables users to seamlessly implement, test, and\ncompare their own algorithms. BBOPlace-Bench integrates a wide variety of\nexisting BBO algorithms, including simulated annealing (SA), evolutionary\nalgorithms (EAs), and Bayesian optimization (BO). Experimental results show\nthat the problem formulations of mask-guided optimization and hyperparameter\noptimization exhibit superior performance than the sequence pair problem\nformulation, while EAs demonstrate better overall performance than SA and BO,\nespecially in high-dimensional search spaces, and also achieve state-of-the-art\nperformance compared to the mainstream chip placement methods. BBOPlace-Bench\nnot only facilitates the development of efficient BBO-driven solutions for chip\nplacement but also broadens the practical application scenarios (which are\nurgently needed) for the BBO community. The code of BBOPlace-Bench is available\nat https://github.com/lamda-bbo/BBOPlace-Bench.",
-      "link": "http://arxiv.org/abs/2510.23472v1",
-      "published_date": "October 27, 2025",
-      "published_date_sort": "2025-10-27",
-      "citations": 0,
-      "institutions": "Unknown"
-    },
-    {
-      "title": "TARC: Time-Adaptive Robotic Control",
-      "authors": "Arnav Sukhija, Lenart Treven, Jin Cheng, Florian Dörfler, Stelian Coros, Andreas Krause",
-      "journal": "arXiv",
-      "snippet": "Fixed-frequency control in robotics imposes a trade-off between the\nefficiency of low-frequency control and the robustness of high-frequency\ncontrol, a limitation not seen in adaptable biological systems. We address this\nwith a reinforcement learning approach in which policies jointly select control\nactions and their application durations, enabling robots to autonomously\nmodulate their control frequency in response to situational demands. We\nvalidate our method with zero-shot sim-to-real experiments on two distinct\nhardware platforms: a high-speed RC car and a quadrupedal robot. Our method\nmatches or outperforms fixed-frequency baselines in terms of rewards while\nsignificantly reducing the control frequency and exhibiting adaptive frequency\ncontrol under real-world conditions.",
-      "link": "http://arxiv.org/abs/2510.23176v1",
-      "published_date": "October 27, 2025",
-      "published_date_sort": "2025-10-27",
-      "citations": 0,
-      "institutions": "Unknown"
-    },
-    {
-      "title": "EMTSF:Extraordinary Mixture of SOTA Models for Time Series Forecasting",
-      "authors": "Musleh Alharthi, Kaleel Mahmood, Sarosh Patel, Ausif Mahmood",
-      "journal": "arXiv",
-      "snippet": "The immense success of the Transformer architecture\n  in Natural Language Processing has led to its adoption in Time Se ries\nForecasting (TSF), where superior performance has been shown.\n  However, a recent important paper questioned their effectiveness by\n  demonstrating that a simple single layer linear model outperforms\n  Transformer-based models. This was soon shown to be not as valid,\n  by a better transformer-based model termed PatchTST. More re cently, TimeLLM\ndemonstrated even better results by repurposing a\n  Large Language Model (LLM) for the TSF domain. Again, a follow\n  up paper challenged this by demonstrating that removing the LLM\n  component or replacing it with a basic attention layer in fact yields\n  better performance. One of the challenges in forecasting is the fact\n  that TSF data favors the more recent past, and is sometimes subject\n  to unpredictable events. Based upon these recent insights in TSF, we\n  propose a strong Mixture of Experts (MoE) framework. Our method\n  combines the state-of-the-art (SOTA) models including xLSTM, en hanced\nLinear, PatchTST, and minGRU, among others. This set of\n  complimentary and diverse models for TSF are integrated in a Trans former\nbased MoE gating network. Our proposed model outperforms\n  all existing TSF models on standard benchmarks, surpassing even the\n  latest approaches based on MoE frameworks.",
-      "link": "http://arxiv.org/abs/2510.23396v1",
-      "published_date": "October 27, 2025",
-      "published_date_sort": "2025-10-27",
-      "citations": 0,
-      "institutions": "Unknown"
-    },
-    {
-      "title": "CNOT Minimal Circuit Synthesis: A Reinforcement Learning Approach",
-      "authors": "Riccardo Romanello, Daniele Lizzio Bosco, Jacopo Cossio, Dusan Sutulovic, Giuseppe Serra, Carla Piazza, Paolo Burelli",
-      "journal": "arXiv",
-      "snippet": "CNOT gates are fundamental to quantum computing, as they facilitate\nentanglement, a crucial resource for quantum algorithms. Certain classes of\nquantum circuits are constructed exclusively from CNOT gates. Given their\nwidespread use, it is imperative to minimise the number of CNOT gates employed.\nThis problem, known as CNOT minimisation, remains an open challenge, with its\ncomputational complexity yet to be fully characterised. In this work, we\nintroduce a novel reinforcement learning approach to address this task. Instead\nof training multiple reinforcement learning agents for different circuit sizes,\nwe use a single agent up to a fixed size $m$. Matrices of sizes different from\nm are preprocessed using either embedding or Gaussian striping. To assess the\nefficacy of our approach, we trained an agent with m = 8, and evaluated it on\nmatrices of size n that range from 3 to 15. The results we obtained show that\nour method overperforms the state-of-the-art algorithm as the value of n\nincreases.",
-      "link": "http://arxiv.org/abs/2510.23304v1",
-      "published_date": "October 27, 2025",
-      "published_date_sort": "2025-10-27",
-      "citations": 0,
-      "institutions": "Unknown"
-    },
-    {
-      "title": "Accelerating IC Thermal Simulation Data Generation via Block Krylov and\n  Operator Action",
-      "authors": "Hong Wang, Wenkai Yang, Jie Wang, Huanshuo Dong, Zijie Geng, Zhen Huang, Depeng Xie, Zhezheng Hao, Hande Dong",
-      "journal": "arXiv",
-      "snippet": "Recent advances in data-driven approaches, such as neural operators (NOs),\nhave shown substantial efficacy in reducing the solution time for integrated\ncircuit (IC) thermal simulations. However, a limitation of these approaches is\nrequiring a large amount of high-fidelity training data, such as chip\nparameters and temperature distributions, thereby incurring significant\ncomputational costs. To address this challenge, we propose a novel algorithm\nfor the generation of IC thermal simulation data, named block Krylov and\noperator action (BlocKOA), which simultaneously accelerates the data generation\nprocess and enhances the precision of generated data. BlocKOA is specifically\ndesigned for IC applications. Initially, we use the block Krylov algorithm\nbased on the structure of the heat equation to quickly obtain a few basic\nsolutions. Then we combine them to get numerous temperature distributions that\nsatisfy the physical constraints. Finally, we apply heat operators on these\nfunctions to determine the heat source distributions, efficiently generating\nprecise data points. Theoretical analysis shows that the time complexity of\nBlocKOA is one order lower than the existing method. Experimental results\nfurther validate its efficiency, showing that BlocKOA achieves a 420-fold\nspeedup in generating thermal simulation data for 5000 chips with varying\nphysical parameters and IC structures. Even with just 4% of the generation\ntime, data-driven approaches trained on the data generated by BlocKOA exhibits\ncomparable performance to that using the existing method.",
-      "link": "http://arxiv.org/abs/2510.23221v1",
-      "published_date": "October 27, 2025",
-      "published_date_sort": "2025-10-27",
+      "snippet": "Unmanned aerial vehicles (UAVs) are emerging as key enablers for low-altitude\nwireless network (LAWN), particularly when terrestrial networks are\nunavailable. In such scenarios, the environmental topology is typically\nunknown; hence, designing efficient and safe UAV trajectories is essential yet\nchallenging. To address this, we propose a digital twin (DT)-assisted training\nand deployment framework. In this framework, the UAV transmits integrated\nsensing and communication signals to provide communication services to ground\nusers, while simultaneously collecting echoes that are uploaded to the DT\nserver to progressively construct virtual environments (VEs). These VEs\naccelerate model training and are continuously updated with real-time UAV\nsensing data during deployment, supporting decision-making and enhancing flight\nsafety. Based on this framework, we further develop a trajectory design scheme\nthat integrates simulated annealing for efficient user scheduling with the\ntwin-delayed deep deterministic policy gradient algorithm for continuous\ntrajectory design, aiming to minimize mission completion time while ensuring\nobstacle avoidance. Simulation results demonstrate that the proposed approach\nachieves faster convergence, higher flight safety, and shorter mission\ncompletion time compared with baseline methods, providing a robust and\nefficient solution for LAWN deployment in unknown environments.",
+      "link": "http://arxiv.org/abs/2510.24255v1",
+      "published_date": "October 28, 2025",
+      "published_date_sort": "2025-10-28",
       "citations": 0,
       "institutions": "Unknown"
     },
@@ -218,17 +178,6 @@
       "link": "https://arxiv.org/abs/2509.01684",
       "published_date": "September 2025",
       "published_date_sort": "2025-09-01",
-      "citations": 0,
-      "institutions": "Unknown"
-    },
-    {
-      "title": "An AI system to help scientists write expert-level empirical software",
-      "authors": "E Aygün, A Belyaeva, G Comanici, M Coram… - arXiv preprint arXiv …, 2025 - arxiv.org",
-      "journal": "Google Scholar Result",
-      "snippet": "The cycle of scientific discovery is frequently bottlenecked by the slow, manual creation of software to support computational experiments. To address this, we present an AI system …",
-      "link": "https://arxiv.org/abs/2509.06503",
-      "published_date": "September 2025",
-      "published_date_sort": "2025-09-01",
       "citations": 1,
       "institutions": "Unknown"
     },
@@ -238,6 +187,17 @@
       "journal": "Google Scholar Result",
       "snippet": "Progress in many task domains emerges from repeated revisions to previous solution attempts. Training agents that can reliably self-improve over such sequences at inference …",
       "link": "https://arxiv.org/abs/2509.04575",
+      "published_date": "September 2025",
+      "published_date_sort": "2025-09-01",
+      "citations": 1,
+      "institutions": "Unknown"
+    },
+    {
+      "title": "An AI system to help scientists write expert-level empirical software",
+      "authors": "E Aygün, A Belyaeva, G Comanici, M Coram… - arXiv preprint arXiv …, 2025 - arxiv.org",
+      "journal": "Google Scholar Result",
+      "snippet": "The cycle of scientific discovery is frequently bottlenecked by the slow, manual creation of software to support computational experiments. To address this, we present an AI system …",
+      "link": "https://arxiv.org/abs/2509.06503",
       "published_date": "September 2025",
       "published_date_sort": "2025-09-01",
       "citations": 1,
@@ -288,17 +248,6 @@
       "institutions": "Unknown"
     },
     {
-      "title": "LMR-BENCH: Evaluating LLM Agent's Ability on Reproducing Language Modeling Research",
-      "authors": "S Yan, R Li, Z Luo, Z Wang, D Li, L Jing, K He… - arXiv preprint arXiv …, 2025 - arxiv.org",
-      "journal": "Google Scholar Result",
-      "snippet": "Large language model (LLM) agents have demonstrated remarkable potential in advancing scientific discovery. However, their capability in the fundamental yet crucial task of …",
-      "link": "https://arxiv.org/abs/2506.17335",
-      "published_date": "June 2025",
-      "published_date_sort": "2025-06-01",
-      "citations": 4,
-      "institutions": "Unknown"
-    },
-    {
       "title": "MLE-STAR: Machine Learning Engineering Agent via Search and Targeted Refinement",
       "authors": "J Nam, J Yoon, J Chen, J Shin, SÖ Arık… - arXiv preprint arXiv …, 2025 - arxiv.org",
       "journal": "Google Scholar Result",
@@ -307,17 +256,6 @@
       "published_date": "June 2025",
       "published_date_sort": "2025-06-01",
       "citations": 5,
-      "institutions": "Unknown"
-    },
-    {
-      "title": "The Automated LLM Speedrunning Benchmark: Reproducing NanoGPT Improvements",
-      "authors": "B Zhao, D Magka, M Jiang, X Li, R Raileanu… - arXiv preprint arXiv …, 2025 - arxiv.org",
-      "journal": "Google Scholar Result",
-      "snippet": "Rapid advancements in large language models (LLMs) have the potential to assist in scientific progress. A critical capability toward this endeavor is the ability to reproduce …",
-      "link": "https://arxiv.org/abs/2506.22419",
-      "published_date": "June 2025",
-      "published_date_sort": "2025-06-01",
-      "citations": 1,
       "institutions": "Unknown"
     },
     {
@@ -332,25 +270,14 @@
       "institutions": "Unknown"
     },
     {
-      "title": "IDA-Bench: Evaluating LLMs on Interactive Guided Data Analysis",
-      "authors": "H Li, H Liu, T Zhu, T Guo, Z Zheng, X Deng… - arXiv preprint arXiv …, 2025 - arxiv.org",
+      "title": "The Automated LLM Speedrunning Benchmark: Reproducing NanoGPT Improvements",
+      "authors": "B Zhao, D Magka, M Jiang, X Li, R Raileanu… - arXiv preprint arXiv …, 2025 - arxiv.org",
       "journal": "Google Scholar Result",
-      "snippet": "Large Language Models (LLMs) show promise as data analysis agents, but existing benchmarks overlook the iterative nature of the field, where experts' decisions evolve with …",
-      "link": "https://arxiv.org/abs/2505.18223",
-      "published_date": "May 2025",
-      "published_date_sort": "2025-05-01",
-      "citations": 2,
-      "institutions": "Unknown"
-    },
-    {
-      "title": "Mlzero: A multi-agent system for end-to-end machine learning automation",
-      "authors": "H Fang, B Han, N Erickson, X Zhang, S Zhou… - arXiv preprint arXiv …, 2025 - arxiv.org",
-      "journal": "Google Scholar Result",
-      "snippet": "Existing AutoML systems have advanced the automation of machine learning (ML); however, they still require substantial manual configuration and expert input, particularly …",
-      "link": "https://arxiv.org/abs/2505.13941",
-      "published_date": "May 2025",
-      "published_date_sort": "2025-05-01",
-      "citations": 3,
+      "snippet": "Rapid advancements in large language models (LLMs) have the potential to assist in scientific progress. A critical capability toward this endeavor is the ability to reproduce …",
+      "link": "https://arxiv.org/abs/2506.22419",
+      "published_date": "June 2025",
+      "published_date_sort": "2025-06-01",
+      "citations": 1,
       "institutions": "Unknown"
     },
     {
@@ -376,6 +303,28 @@
       "institutions": "Unknown"
     },
     {
+      "title": "Repomaster: Autonomous exploration and understanding of github repositories for complex task solving",
+      "authors": "H Wang, Z Ni, S Zhang, S Lu, S Hu, Z He, C Hu… - arXiv preprint arXiv …, 2025 - arxiv.org",
+      "journal": "Google Scholar Result",
+      "snippet": "The ultimate goal of code agents is to solve complex tasks autonomously. Although large language models (LLMs) have made substantial progress in code generation, real-world …",
+      "link": "https://arxiv.org/abs/2505.21577",
+      "published_date": "May 2025",
+      "published_date_sort": "2025-05-01",
+      "citations": 4,
+      "institutions": "Unknown"
+    },
+    {
+      "title": "IDA-Bench: Evaluating LLMs on Interactive Guided Data Analysis",
+      "authors": "H Li, H Liu, T Zhu, T Guo, Z Zheng, X Deng… - arXiv preprint arXiv …, 2025 - arxiv.org",
+      "journal": "Google Scholar Result",
+      "snippet": "Large Language Models (LLMs) show promise as data analysis agents, but existing benchmarks overlook the iterative nature of the field, where experts' decisions evolve with …",
+      "link": "https://arxiv.org/abs/2505.18223",
+      "published_date": "May 2025",
+      "published_date_sort": "2025-05-01",
+      "citations": 2,
+      "institutions": "Unknown"
+    },
+    {
       "title": "Mle-dojo: Interactive environments for empowering llm agents in machine learning engineering",
       "authors": "R Qiang, Y Zhuang, Y Li, R Zhang, C Li… - arXiv preprint arXiv …, 2025 - arxiv.org",
       "journal": "Google Scholar Result",
@@ -387,14 +336,14 @@
       "institutions": "Unknown"
     },
     {
-      "title": "Repomaster: Autonomous exploration and understanding of github repositories for complex task solving",
-      "authors": "H Wang, Z Ni, S Zhang, S Lu, S Hu, Z He, C Hu… - arXiv preprint arXiv …, 2025 - arxiv.org",
+      "title": "Mlzero: A multi-agent system for end-to-end machine learning automation",
+      "authors": "H Fang, B Han, N Erickson, X Zhang, S Zhou… - arXiv preprint arXiv …, 2025 - arxiv.org",
       "journal": "Google Scholar Result",
-      "snippet": "The ultimate goal of code agents is to solve complex tasks autonomously. Although large language models (LLMs) have made substantial progress in code generation, real-world …",
-      "link": "https://arxiv.org/abs/2505.21577",
+      "snippet": "Existing AutoML systems have advanced the automation of machine learning (ML); however, they still require substantial manual configuration and expert input, particularly …",
+      "link": "https://arxiv.org/abs/2505.13941",
       "published_date": "May 2025",
       "published_date_sort": "2025-05-01",
-      "citations": 4,
+      "citations": 3,
       "institutions": "Unknown"
     },
     {
@@ -428,6 +377,17 @@
       "published_date": "2025",
       "published_date_sort": "2025-01-01",
       "citations": 1,
+      "institutions": "Unknown"
+    },
+    {
+      "title": "Large language models for constructing and optimizing machine learning workflows: A survey",
+      "authors": "Y Gu, H You, J Cao, M Yu, H Fan, S Qian - ACM Transactions on …, 2024 - dl.acm.org",
+      "journal": "Google Scholar Result",
+      "snippet": "Machine Learning (ML) workflows—spanning data preprocessing and feature engineering, model selection and hyperparameter optimization, and workflow evaluation—are …",
+      "link": "https://dl.acm.org/doi/abs/10.1145/3773084",
+      "published_date": "2024",
+      "published_date_sort": "2024-01-01",
+      "citations": 13,
       "institutions": "Unknown"
     }
   ]
