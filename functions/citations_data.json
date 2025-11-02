@@ -1,11 +1,11 @@
 {
-  "last_updated": "2025-11-01 00:12:23 UTC",
+  "last_updated": "2025-11-02 00:11:53 UTC",
   "target_paper": "https://www.arxiv.org/abs/2502.13138",
   "arxiv_id": "2502.13138",
-  "total_citations": 29,
+  "total_citations": 20,
   "h_index": 6,
-  "recent_citations": 9,
-  "avg_citations_per_month": "1.32",
+  "recent_citations": 0,
+  "avg_citations_per_month": "0.95",
   "timeline": [
     {
       "date": "2024-01-01",
@@ -42,110 +42,18 @@
     {
       "date": "2025-09-01",
       "citations": 20
-    },
-    {
-      "date": "2025-10-01",
-      "citations": 29
     }
   ],
   "papers": [
     {
-      "title": "Stop Wasting Your Tokens: Towards Efficient Runtime Multi-Agent Systems",
-      "authors": "Fulin Lin, Shaowen Chen, Ruishan Fang, Hongwei Wang, Tao Lin",
-      "journal": "arXiv",
-      "snippet": "While Multi-Agent Systems (MAS) excel at complex tasks, their growing\nautonomy with operational complexity often leads to critical inefficiencies,\nsuch as excessive token consumption and failures arising from misinformation.\nExisting methods primarily focus on post-hoc failure attribution, lacking\nproactive, real-time interventions to enhance robustness and efficiency. To\nthis end, we introduce SupervisorAgent, a lightweight and modular framework for\nruntime, adaptive supervision that operates without altering the base agent's\narchitecture. Triggered by an LLM-free adaptive filter, SupervisorAgent\nintervenes at critical junctures to proactively correct errors, guide\ninefficient behaviors, and purify observations. On the challenging GAIA\nbenchmark, SupervisorAgent reduces the token consumption of the Smolagent\nframework by an average of 29.45% without compromising its success rate.\nExtensive experiments across five additional benchmarks (math reasoning, code\ngeneration, and question answering) and various SoTA foundation models validate\nthe broad applicability and robustness of our approach. The code is available\nat https://github.com/LINs-lab/SupervisorAgent.",
-      "link": "http://arxiv.org/abs/2510.26585v1",
-      "published_date": "October 30, 2025",
-      "published_date_sort": "2025-10-30",
-      "citations": 0,
-      "institutions": "Unknown"
-    },
-    {
-      "title": "Higher-Order Regularization Learning on Hypergraphs",
-      "authors": "Adrien Weihs, Andrea Bertozzi, Matthew Thorpe",
-      "journal": "arXiv",
-      "snippet": "Higher-Order Hypergraph Learning (HOHL) was recently introduced as a\nprincipled alternative to classical hypergraph regularization, enforcing\nhigher-order smoothness via powers of multiscale Laplacians induced by the\nhypergraph structure. Prior work established the well- and ill-posedness of\nHOHL through an asymptotic consistency analysis in geometric settings. We\nextend this theoretical foundation by proving the consistency of a truncated\nversion of HOHL and deriving explicit convergence rates when HOHL is used as a\nregularizer in fully supervised learning. We further demonstrate its strong\nempirical performance in active learning and in datasets lacking an underlying\ngeometric structure, highlighting HOHL's versatility and robustness across\ndiverse learning settings.",
-      "link": "http://arxiv.org/abs/2510.26533v1",
-      "published_date": "October 30, 2025",
-      "published_date_sort": "2025-10-30",
-      "citations": 0,
-      "institutions": "Unknown"
-    },
-    {
-      "title": "EdgeRunner 20B: Military Task Parity with GPT-5 while Running on the\n  Edge",
-      "authors": "Jack FitzGerald, Aristotelis Lazaridis, Dylan Bates, Aman Sharma, Jonnathan Castillo, Yousif Azami, Sean Bailey, Jeremy Cao, Peter Damianov, Kevin de Haan, Luke Kerbs, Vincent Lu, Joseph Madigan, Jeremy McLaurin, Jonathan Tainer, Dave Anderson, Jonathan Beck, Jamie Cuticello, Colton Malkerson, Tyler Saltsman",
-      "journal": "arXiv",
-      "snippet": "We present EdgeRunner 20B, a fine-tuned version of gpt-oss-20b optimized for\nmilitary tasks. EdgeRunner 20B was trained on 1.6M high-quality records curated\nfrom military documentation and websites. We also present four new tests sets:\n(a) combat arms, (b) combat medic, (c) cyber operations, and (d) mil-bench-5k\n(general military knowledge). On these military test sets, EdgeRunner 20B\nmatches or exceeds GPT-5 task performance with 95%+ statistical significance,\nexcept for the high reasoning setting on the combat medic test set and the low\nreasoning setting on the mil-bench-5k test set. Versus gpt-oss-20b, there is no\nstatistically-significant regression on general-purpose benchmarks like ARC-C,\nGPQA Diamond, GSM8k, IFEval, MMLU Pro, or TruthfulQA, except for GSM8k in the\nlow reasoning setting. We also present analyses on hyperparameter settings,\ncost, and throughput. These findings show that small, locally-hosted models are\nideal solutions for data-sensitive operations such as in the military domain,\nallowing for deployment in air-gapped edge devices.",
-      "link": "http://arxiv.org/abs/2510.26550v1",
-      "published_date": "October 30, 2025",
-      "published_date_sort": "2025-10-30",
-      "citations": 0,
-      "institutions": "Unknown"
-    },
-    {
-      "title": "SPG-CDENet: Spatial Prior-Guided Cross Dual Encoder Network for\n  Multi-Organ Segmentation",
-      "authors": "Xizhi Tian, Changjun Zhou, Yulin. Yang",
-      "journal": "arXiv",
-      "snippet": "Multi-organ segmentation is a critical task in computer-aided diagnosis.\nWhile recent deep learning methods have achieved remarkable success in image\nsegmentation, huge variations in organ size and shape challenge their\neffectiveness in multi-organ segmentation. To address these challenges, we\npropose a Spatial Prior-Guided Cross Dual Encoder Network (SPG-CDENet), a novel\ntwo-stage segmentation paradigm designed to improve multi-organ segmentation\naccuracy. Our SPG-CDENet consists of two key components: a spatial prior\nnetwork and a cross dual encoder network. The prior network generates coarse\nlocalization maps that delineate the approximate ROI, serving as spatial\nguidance for the dual encoder network. The cross dual encoder network comprises\nfour essential components: a global encoder, a local encoder, a symmetric\ncross-attention module, and a flow-based decoder. The global encoder captures\nglobal semantic features from the entire image, while the local encoder focuses\non features from the prior network. To enhance the interaction between the\nglobal and local encoders, a symmetric cross-attention module is proposed\nacross all layers of the encoders to fuse and refine features. Furthermore, the\nflow-based decoder directly propagates high-level semantic features from the\nfinal encoder layer to all decoder layers, maximizing feature preservation and\nutilization. Extensive qualitative and quantitative experiments on two public\ndatasets demonstrate the superior performance of SPG-CDENet compared to\nexisting segmentation methods. Furthermore, ablation studies further validate\nthe effectiveness of the proposed modules in improving segmentation accuracy.",
-      "link": "http://arxiv.org/abs/2510.26390v1",
-      "published_date": "October 30, 2025",
-      "published_date_sort": "2025-10-30",
-      "citations": 0,
-      "institutions": "Unknown"
-    },
-    {
-      "title": "Physics-Informed Mixture Models and Surrogate Models for Precision\n  Additive Manufacturing",
-      "authors": "Sebastian Basterrech, Shuo Shan, Debabrata Adhikari, Sankhya Mohanty",
-      "journal": "arXiv",
-      "snippet": "In this study, we leverage a mixture model learning approach to identify\ndefects in laser-based Additive Manufacturing (AM) processes. By incorporating\nphysics based principles, we also ensure that the model is sensitive to\nmeaningful physical parameter variations. The empirical evaluation was\nconducted by analyzing real-world data from two AM processes: Directed Energy\nDeposition and Laser Powder Bed Fusion. In addition, we also studied the\nperformance of the developed framework over public datasets with different\nalloy type and experimental parameter information. The results show the\npotential of physics-guided mixture models to examine the underlying physical\nbehavior of an AM system.",
-      "link": "http://arxiv.org/abs/2510.26586v1",
-      "published_date": "October 30, 2025",
-      "published_date_sort": "2025-10-30",
-      "citations": 0,
-      "institutions": "Unknown"
-    },
-    {
-      "title": "Chain-of-Thought Hijacking",
-      "authors": "Jianli Zhao, Tingchen Fu, Rylan Schaeffer, Mrinank Sharma, Fazl Barez",
-      "journal": "arXiv",
-      "snippet": "Large reasoning models (LRMs) achieve higher task performance by allocating\nmore inference-time compute, and prior works suggest this scaled reasoning may\nalso strengthen safety by improving refusal. Yet we find the opposite: the same\nreasoning can be used to bypass safeguards. We introduce Chain-of-Thought\nHijacking, a jailbreak attack on reasoning models. The attack pads harmful\nrequests with long sequences of harmless puzzle reasoning. Across HarmBench,\nCoT Hijacking reaches a 99%, 94%, 100%, and 94% attack success rate (ASR) on\nGemini 2.5 Pro, GPT o4 mini, Grok 3 mini, and Claude 4 Sonnet, respectively -\nfar exceeding prior jailbreak methods for LRMs. To understand the effectiveness\nof our attack, we turn to a mechanistic analysis, which shows that mid layers\nencode the strength of safety checking, while late layers encode the\nverification outcome. Long benign CoT dilutes both signals by shifting\nattention away from harmful tokens. Targeted ablations of attention heads\nidentified by this analysis causally decrease refusal, confirming their role in\na safety subnetwork. These results show that the most interpretable form of\nreasoning - explicit CoT - can itself become a jailbreak vector when combined\nwith final-answer cues. We release prompts, outputs, and judge decisions to\nfacilitate replication.",
-      "link": "http://arxiv.org/abs/2510.26418v1",
-      "published_date": "October 30, 2025",
-      "published_date_sort": "2025-10-30",
-      "citations": 0,
-      "institutions": "Unknown"
-    },
-    {
-      "title": "Gistify! Codebase-Level Understanding via Runtime Execution",
-      "authors": "Hyunji Lee, Minseon Kim, Chinmay Singh, Matheus Pereira, Atharv Sonwane, Isadora White, Elias Stengel-Eskin, Mohit Bansal, Zhengyan Shi, Alessandro Sordoni, Marc-Alexandre Côté, Xingdi Yuan, Lucas Caccia",
-      "journal": "arXiv",
-      "snippet": "As coding agents are increasingly deployed in large codebases, the need to\nautomatically design challenging, codebase-level evaluation is central. We\npropose Gistify, a task where a coding LLM must create a single, minimal,\nself-contained file that can reproduce a specific functionality of a codebase.\nThe coding LLM is given full access to a codebase along with a specific\nentrypoint (e.g., a python command), and the generated file must replicate the\noutput of the same command ran under the full codebase, while containing only\nthe essential components necessary to execute the provided command. Success on\nGistify requires both structural understanding of the codebase, accurate\nmodeling of its execution flow as well as the ability to produce potentially\nlarge code patches. Our findings show that current state-of-the-art models\nstruggle to reliably solve Gistify tasks, especially ones with long executions\ntraces.",
-      "link": "http://arxiv.org/abs/2510.26790v1",
-      "published_date": "October 30, 2025",
-      "published_date_sort": "2025-10-30",
-      "citations": 0,
-      "institutions": "Unknown"
-    },
-    {
-      "title": "A Three-Stage Bayesian Transfer Learning Framework to Improve\n  Predictions in Data-Scarce Domains",
-      "authors": "Aidan Furlong, Robert Salko, Xingang Zhao, Xu Wu",
-      "journal": "arXiv",
-      "snippet": "The use of ML in engineering has grown steadily to support a wide array of\napplications. Among these methods, deep neural networks have been widely\nadopted due to their performance and accessibility, but they require large,\nhigh-quality datasets. Experimental data are often sparse, noisy, or\ninsufficient to build resilient data-driven models. Transfer learning, which\nleverages relevant data-abundant source domains to assist learning in\ndata-scarce target domains, has shown efficacy. Parameter transfer, where\npretrained weights are reused, is common but degrades under large domain\nshifts. Domain-adversarial neural networks (DANNs) help address this issue by\nlearning domain-invariant representations, thereby improving transfer under\ngreater domain shifts in a semi-supervised setting. However, DANNs can be\nunstable during training and lack a native means for uncertainty\nquantification. This study introduces a fully-supervised three-stage framework,\nthe staged Bayesian domain-adversarial neural network (staged B-DANN), that\ncombines parameter transfer and shared latent space adaptation. In Stage 1, a\ndeterministic feature extractor is trained on the source domain. This feature\nextractor is then adversarially refined using a DANN in Stage 2. In Stage 3, a\nBayesian neural network is built on the adapted feature extractor for\nfine-tuning on the target domain to handle conditional shifts and yield\ncalibrated uncertainty estimates. This staged B-DANN approach was first\nvalidated on a synthetic benchmark, where it was shown to significantly\noutperform standard transfer techniques. It was then applied to the task of\npredicting critical heat flux in rectangular channels, leveraging data from\ntube experiments as the source domain. The results of this study show that the\nstaged B-DANN method can improve predictive accuracy and generalization,\npotentially assisting other domains in nuclear engineering.",
-      "link": "http://arxiv.org/abs/2510.26541v1",
-      "published_date": "October 30, 2025",
-      "published_date_sort": "2025-10-30",
-      "citations": 0,
-      "institutions": "Unknown"
-    },
-    {
-      "title": "Heuristic Adaptation of Potentially Misspecified Domain Support for\n  Likelihood-Free Inference in Stochastic Dynamical Systems",
-      "authors": "Georgios Kamaras, Craig Innes, Subramanian Ramamoorthy",
-      "journal": "arXiv",
-      "snippet": "In robotics, likelihood-free inference (LFI) can provide the domain\ndistribution that adapts a learnt agent in a parametric set of deployment\nconditions. LFI assumes an arbitrary support for sampling, which remains\nconstant as the initial generic prior is iteratively refined to more\ndescriptive posteriors. However, a potentially misspecified support can lead to\nsuboptimal, yet falsely certain, posteriors. To address this issue, we propose\nthree heuristic LFI variants: EDGE, MODE, and CENTRE. Each interprets the\nposterior mode shift over inference steps in its own way and, when integrated\ninto an LFI step, adapts the support alongside posterior inference. We first\nexpose the support misspecification issue and evaluate our heuristics using\nstochastic dynamical benchmarks. We then evaluate the impact of heuristic\nsupport adaptation on parameter inference and policy learning for a dynamic\ndeformable linear object (DLO) manipulation task. Inference results in a finer\nlength and stiffness classification for a parametric set of DLOs. When the\nresulting posteriors are used as domain distributions for sim-based policy\nlearning, they lead to more robust object-centric agent performance.",
-      "link": "http://arxiv.org/abs/2510.26656v1",
-      "published_date": "October 30, 2025",
-      "published_date_sort": "2025-10-30",
-      "citations": 0,
+      "title": "An AI system to help scientists write expert-level empirical software",
+      "authors": "E Aygün, A Belyaeva, G Comanici, M Coram… - arXiv preprint arXiv …, 2025 - arxiv.org",
+      "journal": "Google Scholar Result",
+      "snippet": "The cycle of scientific discovery is frequently bottlenecked by the slow, manual creation of software to support computational experiments. To address this, we present an AI system …",
+      "link": "https://arxiv.org/abs/2509.06503",
+      "published_date": "September 2025",
+      "published_date_sort": "2025-09-01",
+      "citations": 1,
       "institutions": "Unknown"
     },
     {
@@ -171,14 +79,14 @@
       "institutions": "Unknown"
     },
     {
-      "title": "An AI system to help scientists write expert-level empirical software",
-      "authors": "E Aygün, A Belyaeva, G Comanici, M Coram… - arXiv preprint arXiv …, 2025 - arxiv.org",
+      "title": "Tuning llm-based code optimization via meta-prompting: An industrial perspective",
+      "authors": "J Gong, R Giavrimis, P Brookes, V Voskanyan… - arXiv preprint arXiv …, 2025 - arxiv.org",
       "journal": "Google Scholar Result",
-      "snippet": "The cycle of scientific discovery is frequently bottlenecked by the slow, manual creation of software to support computational experiments. To address this, we present an AI system …",
-      "link": "https://arxiv.org/abs/2509.06503",
-      "published_date": "September 2025",
-      "published_date_sort": "2025-09-01",
-      "citations": 1,
+      "snippet": "There is a growing interest in leveraging large language models (LLMs) for automated code optimization. However, industrial platforms deploying multiple LLMs face a critical challenge …",
+      "link": "https://arxiv.org/abs/2508.01443",
+      "published_date": "August 2025",
+      "published_date_sort": "2025-08-01",
+      "citations": 2,
       "institutions": "Unknown"
     },
     {
@@ -193,17 +101,6 @@
       "institutions": "Unknown"
     },
     {
-      "title": "Tuning llm-based code optimization via meta-prompting: An industrial perspective",
-      "authors": "J Gong, R Giavrimis, P Brookes, V Voskanyan… - arXiv preprint arXiv …, 2025 - arxiv.org",
-      "journal": "Google Scholar Result",
-      "snippet": "There is a growing interest in leveraging large language models (LLMs) for automated code optimization. However, industrial platforms deploying multiple LLMs face a critical challenge …",
-      "link": "https://arxiv.org/abs/2508.01443",
-      "published_date": "August 2025",
-      "published_date_sort": "2025-08-01",
-      "citations": 2,
-      "institutions": "Unknown"
-    },
-    {
       "title": "How Far Are AI Scientists from Changing the World?",
       "authors": "Q Xie, Y Weng, M Zhu, F Shen, S Huang, Z Lin… - arXiv preprint arXiv …, 2025 - arxiv.org",
       "journal": "Google Scholar Result",
@@ -212,6 +109,17 @@
       "published_date": "July 2025",
       "published_date_sort": "2025-07-01",
       "citations": 3,
+      "institutions": "Unknown"
+    },
+    {
+      "title": "A Comprehensive Survey of Deep Research: Systems, Methodologies, and Applications",
+      "authors": "R Xu, J Peng - arXiv preprint arXiv:2506.12594, 2025 - arxiv.org",
+      "journal": "Google Scholar Result",
+      "snippet": "This survey examines the rapidly evolving field of Deep Research systems--AI-powered applications that automate complex research workflows through the integration of large …",
+      "link": "https://arxiv.org/abs/2506.12594",
+      "published_date": "June 2025",
+      "published_date_sort": "2025-06-01",
+      "citations": 23,
       "institutions": "Unknown"
     },
     {
@@ -237,17 +145,6 @@
       "institutions": "Unknown"
     },
     {
-      "title": "A Comprehensive Survey of Deep Research: Systems, Methodologies, and Applications",
-      "authors": "R Xu, J Peng - arXiv preprint arXiv:2506.12594, 2025 - arxiv.org",
-      "journal": "Google Scholar Result",
-      "snippet": "This survey examines the rapidly evolving field of Deep Research systems--AI-powered applications that automate complex research workflows through the integration of large …",
-      "link": "https://arxiv.org/abs/2506.12594",
-      "published_date": "June 2025",
-      "published_date_sort": "2025-06-01",
-      "citations": 23,
-      "institutions": "Unknown"
-    },
-    {
       "title": "Automind: Adaptive knowledgeable agent for automated data science",
       "authors": "Y Ou, Y Luo, J Zheng, L Wei, Z Yu, S Qiao… - arXiv preprint arXiv …, 2025 - arxiv.org",
       "journal": "Google Scholar Result",
@@ -259,14 +156,25 @@
       "institutions": "Unknown"
     },
     {
-      "title": "IDA-Bench: Evaluating LLMs on Interactive Guided Data Analysis",
-      "authors": "H Li, H Liu, T Zhu, T Guo, Z Zheng, X Deng… - arXiv preprint arXiv …, 2025 - arxiv.org",
+      "title": "CodePDE: An Inference Framework for LLM-driven PDE Solver Generation",
+      "authors": "S Li, T Marwah, J Shen, W Sun, A Risteski… - arXiv preprint arXiv …, 2025 - arxiv.org",
       "journal": "Google Scholar Result",
-      "snippet": "Large Language Models (LLMs) show promise as data analysis agents, but existing benchmarks overlook the iterative nature of the field, where experts' decisions evolve with …",
-      "link": "https://arxiv.org/abs/2505.18223",
+      "snippet": "Partial differential equations (PDEs) are fundamental to modeling physical systems, yet solving them remains a complex challenge. Traditional numerical solvers rely on expert …",
+      "link": "https://arxiv.org/abs/2505.08783",
       "published_date": "May 2025",
       "published_date_sort": "2025-05-01",
-      "citations": 2,
+      "citations": 6,
+      "institutions": "Unknown"
+    },
+    {
+      "title": "Mlzero: A multi-agent system for end-to-end machine learning automation",
+      "authors": "H Fang, B Han, N Erickson, X Zhang, S Zhou… - arXiv preprint arXiv …, 2025 - arxiv.org",
+      "journal": "Google Scholar Result",
+      "snippet": "Existing AutoML systems have advanced the automation of machine learning (ML); however, they still require substantial manual configuration and expert input, particularly …",
+      "link": "https://arxiv.org/abs/2505.13941",
+      "published_date": "May 2025",
+      "published_date_sort": "2025-05-01",
+      "citations": 3,
       "institutions": "Unknown"
     },
     {
@@ -292,17 +200,6 @@
       "institutions": "Unknown"
     },
     {
-      "title": "Mlzero: A multi-agent system for end-to-end machine learning automation",
-      "authors": "H Fang, B Han, N Erickson, X Zhang, S Zhou… - arXiv preprint arXiv …, 2025 - arxiv.org",
-      "journal": "Google Scholar Result",
-      "snippet": "Existing AutoML systems have advanced the automation of machine learning (ML); however, they still require substantial manual configuration and expert input, particularly …",
-      "link": "https://arxiv.org/abs/2505.13941",
-      "published_date": "May 2025",
-      "published_date_sort": "2025-05-01",
-      "citations": 3,
-      "institutions": "Unknown"
-    },
-    {
       "title": "From automation to autonomy: A survey on large language models in scientific discovery",
       "authors": "T Zheng, Z Deng, HT Tsang, W Wang, J Bai… - arXiv preprint arXiv …, 2025 - arxiv.org",
       "journal": "Google Scholar Result",
@@ -314,14 +211,14 @@
       "institutions": "Unknown"
     },
     {
-      "title": "CodePDE: An Inference Framework for LLM-driven PDE Solver Generation",
-      "authors": "S Li, T Marwah, J Shen, W Sun, A Risteski… - arXiv preprint arXiv …, 2025 - arxiv.org",
+      "title": "IDA-Bench: Evaluating LLMs on Interactive Guided Data Analysis",
+      "authors": "H Li, H Liu, T Zhu, T Guo, Z Zheng, X Deng… - arXiv preprint arXiv …, 2025 - arxiv.org",
       "journal": "Google Scholar Result",
-      "snippet": "Partial differential equations (PDEs) are fundamental to modeling physical systems, yet solving them remains a complex challenge. Traditional numerical solvers rely on expert …",
-      "link": "https://arxiv.org/abs/2505.08783",
+      "snippet": "Large Language Models (LLMs) show promise as data analysis agents, but existing benchmarks overlook the iterative nature of the field, where experts' decisions evolve with …",
+      "link": "https://arxiv.org/abs/2505.18223",
       "published_date": "May 2025",
       "published_date_sort": "2025-05-01",
-      "citations": 6,
+      "citations": 2,
       "institutions": "Unknown"
     },
     {
