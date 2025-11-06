@@ -1,11 +1,11 @@
 {
-  "last_updated": "2025-11-05 00:11:00 UTC",
+  "last_updated": "2025-11-06 00:11:00 UTC",
   "target_paper": "https://www.arxiv.org/abs/2502.13138",
   "arxiv_id": "2502.13138",
-  "total_citations": 20,
+  "total_citations": 31,
   "h_index": 6,
-  "recent_citations": 0,
-  "avg_citations_per_month": "0.95",
+  "recent_citations": 11,
+  "avg_citations_per_month": "1.35",
   "timeline": [
     {
       "date": "2024-01-01",
@@ -42,9 +42,145 @@
     {
       "date": "2025-09-01",
       "citations": 20
+    },
+    {
+      "date": "2025-11-01",
+      "citations": 31
     }
   ],
   "papers": [
+    {
+      "title": "CostBench: Evaluating Multi-Turn Cost-Optimal Planning and Adaptation in\n  Dynamic Environments for LLM Tool-Use Agents",
+      "authors": "Jiayu Liu, Cheng Qian, Zhaochen Su, Qing Zong, Shijue Huang, Bingxiang He, Yi R. Fung",
+      "journal": "arXiv",
+      "snippet": "Current evaluations of Large Language Model (LLM) agents primarily emphasize\ntask completion, often overlooking resource efficiency and adaptability. This\nneglects a crucial capability: agents' ability to devise and adjust\ncost-optimal plans in response to changing environments. To bridge this gap, we\nintroduce CostBench, a scalable, cost-centric benchmark designed to evaluate\nagents' economic reasoning and replanning abilities. Situated in the\ntravel-planning domain, CostBench comprises tasks solvable via multiple\nsequences of atomic and composite tools with diverse, customizable costs. It\nalso supports four types of dynamic blocking events, such as tool failures and\ncost changes, to simulate real-world unpredictability and necessitate agents to\nadapt in real time. Evaluating leading open-sourced and proprietary models on\nCostBench reveals a substantial gap in cost-aware planning: agents frequently\nfail to identify cost-optimal solutions in static settings, with even GPT-5\nachieving less than 75% exact match rate on the hardest tasks, and performance\nfurther dropping by around 40% under dynamic conditions. By diagnosing these\nweaknesses, CostBench lays the groundwork for developing future agents that are\nboth economically rational and robust.",
+      "link": "http://arxiv.org/abs/2511.02734v1",
+      "published_date": "November 04, 2025",
+      "published_date_sort": "2025-11-04",
+      "citations": 0,
+      "institutions": "Unknown"
+    },
+    {
+      "title": "Kosmos: An AI Scientist for Autonomous Discovery",
+      "authors": "Ludovico Mitchener, Angela Yiu, Benjamin Chang, Mathieu Bourdenx, Tyler Nadolski, Arvis Sulovari, Eric C. Landsness, Daniel L. Barabasi, Siddharth Narayanan, Nicky Evans, Shriya Reddy, Martha Foiani, Aizad Kamal, Leah P. Shriver, Fang Cao, Asmamaw T. Wassie, Jon M. Laurent, Edwin Melville-Green, Mayk Caldas, Albert Bou, Kaleigh F. Roberts, Sladjana Zagorac, Timothy C. Orr, Miranda E. Orr, Kevin J. Zwezdaryk, Ali E. Ghareeb, Laurie McCoy, Bruna Gomes, Euan A. Ashley, Karen E. Duff, Tonio Buonassisi, Tom Rainforth, Randall J. Bateman, Michael Skarlinski, Samuel G. Rodriques, Michaela M. Hinks, Andrew D. White",
+      "journal": "arXiv",
+      "snippet": "Data-driven scientific discovery requires iterative cycles of literature\nsearch, hypothesis generation, and data analysis. Substantial progress has been\nmade towards AI agents that can automate scientific research, but all such\nagents remain limited in the number of actions they can take before losing\ncoherence, thus limiting the depth of their findings. Here we present Kosmos,\nan AI scientist that automates data-driven discovery. Given an open-ended\nobjective and a dataset, Kosmos runs for up to 12 hours performing cycles of\nparallel data analysis, literature search, and hypothesis generation before\nsynthesizing discoveries into scientific reports. Unlike prior systems, Kosmos\nuses a structured world model to share information between a data analysis\nagent and a literature search agent. The world model enables Kosmos to\ncoherently pursue the specified objective over 200 agent rollouts, collectively\nexecuting an average of 42,000 lines of code and reading 1,500 papers per run.\nKosmos cites all statements in its reports with code or primary literature,\nensuring its reasoning is traceable. Independent scientists found 79.4% of\nstatements in Kosmos reports to be accurate, and collaborators reported that a\nsingle 20-cycle Kosmos run performed the equivalent of 6 months of their own\nresearch time on average. Furthermore, collaborators reported that the number\nof valuable scientific findings generated scales linearly with Kosmos cycles\n(tested up to 20 cycles). We highlight seven discoveries made by Kosmos that\nspan metabolomics, materials science, neuroscience, and statistical genetics.\nThree discoveries independently reproduce findings from preprinted or\nunpublished manuscripts that were not accessed by Kosmos at runtime, while four\nmake novel contributions to the scientific literature.",
+      "link": "http://arxiv.org/abs/2511.02824v1",
+      "published_date": "November 04, 2025",
+      "published_date_sort": "2025-11-04",
+      "citations": 0,
+      "institutions": "Unknown"
+    },
+    {
+      "title": "RL-Aided Cognitive ISAC: Robust Detection and Sensing-Communication\n  Trade-offs",
+      "authors": "Adam Umra, Aya M. Ahmed, Aydin Sezgin",
+      "journal": "arXiv",
+      "snippet": "This paper proposes a reinforcement learning (RL)-aided cognitive framework\nfor massive MIMO-based integrated sensing and communication (ISAC) systems\nemploying a uniform planar array (UPA). The focus is on enhancing radar sensing\nperformance in environments with unknown and dynamic disturbance\ncharacteristics. A Wald-type detector is employed for robust target detection\nunder non-Gaussian clutter, while a SARSA-based RL algorithm enables adaptive\nestimation of target positions without prior environmental knowledge. Based on\nthe RL-derived sensing information, a joint waveform optimization strategy is\nformulated to balance radar sensing accuracy and downlink communication\nthroughput. The resulting design provides an adaptive trade-off between\ndetection performance and achievable sum rate through an analytically derived\nclosed-form solution. Monte Carlo simulations demonstrate that the proposed\ncognitive ISAC framework achieves significantly improved detection probability\ncompared to orthogonal and non-learning adaptive baselines, while maintaining\ncompetitive communication performance. These results underline the potential of\nRL-assisted sensing for robust and spectrum-efficient ISAC in next-generation\nwireless networks.",
+      "link": "http://arxiv.org/abs/2511.02672v1",
+      "published_date": "November 04, 2025",
+      "published_date_sort": "2025-11-04",
+      "citations": 0,
+      "institutions": "Unknown"
+    },
+    {
+      "title": "Apriel-H1: Towards Efficient Enterprise Reasoning Models",
+      "authors": "Oleksiy Ostapenko, Luke Kumar, Raymond Li, Denis Kocetkov, Joel Lamy-Poirier, Shruthan Radhakrishna, Soham Parikh, Shambhavi Mishra, Sebastien Paquet, Srinivas Sunkara, Valérie Bécaert, Sathwik Tejaswi Madhusudhan, Torsten Scholak",
+      "journal": "arXiv",
+      "snippet": "Large Language Models (LLMs) achieve remarkable reasoning capabilities\nthrough transformer architectures with attention mechanisms. However,\ntransformers suffer from quadratic time and memory complexity in the attention\nmodule (MHA) and require caching key-value states during inference, which\nseverely limits throughput and scalability. High inference throughput is\ncritical for agentic tasks, long-context reasoning, efficient deployment under\nhigh request loads, and more efficient test-time compute scaling.\n  State Space Models (SSMs) such as Mamba offer a promising alternative with\nlinear inference complexity and a constant memory footprint via recurrent\ncomputation with fixed-size hidden states. In this technical report we\nintroduce the Apriel-H1 family of hybrid LLMs that combine transformer\nattention and SSM sequence mixers for efficient reasoning at 15B model size.\nThese models are obtained through incremental distillation from a pretrained\nreasoning transformer, Apriel-Nemotron-15B-Thinker, progressively replacing\nless critical attention layers with linear Mamba blocks.\n  We release multiple post-distillation variants of Apriel-H1-15B-Thinker with\ndifferent SSM-to-MHA ratios and analyse how reasoning performance degrades as\nmore Mamba layers replace MHA. Additionally, we release a 30/50 hybrid variant\nof Apriel-H1, further fine-tuned on a supervised dataset of reasoning traces,\nachieving over 2x higher inference throughput when deployed in the\nproduction-ready vLLM environment, with minimal degradation in reasoning\nperformance. This shows that distilled hybrid SSM-Transformer architectures can\ndeliver substantial efficiency gains over the pretrained transformer equivalent\nwithout substantially compromising the reasoning quality.",
+      "link": "http://arxiv.org/abs/2511.02651v1",
+      "published_date": "November 04, 2025",
+      "published_date_sort": "2025-11-04",
+      "citations": 0,
+      "institutions": "Unknown"
+    },
+    {
+      "title": "Can LLMs subtract numbers?",
+      "authors": "Mayank Jobanputra, Nils Philipp Walter, Maitrey Mehta, Blerta Veseli, Evan Parker Kelly Chapple, Yifan Wang, Sneha Chetani, Ellie Pavlick, Antonio Vergari, Vera Demberg",
+      "journal": "arXiv",
+      "snippet": "We present a systematic study of subtraction in large language models (LLMs).\nWhile prior benchmarks emphasize addition and multiplication, subtraction has\nreceived comparatively little attention despite being structurally distinct as\na non-commutative operation. We evaluate eight pretrained LLMs spanning four\nfamilies on addition and subtraction problems. Our experiments reveal that\nsubtraction accuracy lags behind addition by a wide margin. We find that the\nerrors for ($a-b$) are concentrated in cases where ($a<b$). In such cases, LLMs\nfrequently produce the correct magnitude but omit the negative sign. Probing\nanalyses show that LLMs internally encode whether results should be negative,\nyet this information is often not reflected in generated outputs. We further\ntest well-known techniques such as few-shot learning and instruction-tuning to\nsee if they can improve the LLMs' performance. Our results suggest that while\nfew-shot prompting yields modest gains, the instruction-tuned models achieve\nnear-perfect accuracies in generating the negative sign. Together, these\nfindings provide a clearer characterization of the limitations and\nrecoverability of LLMs' arithmetic capabilities in subtraction.",
+      "link": "http://arxiv.org/abs/2511.02795v1",
+      "published_date": "November 04, 2025",
+      "published_date_sort": "2025-11-04",
+      "citations": 0,
+      "institutions": "Unknown"
+    },
+    {
+      "title": "Wireless Video Semantic Communication with Decoupled Diffusion\n  Multi-frame Compensation",
+      "authors": "Bingyan Xie, Yongpeng Wu, Yuxuan Shi, Biqian Feng, Wenjun Zhang, Jihong Park, Tony Quek",
+      "journal": "arXiv",
+      "snippet": "Existing wireless video transmission schemes directly conduct video coding in\npixel level, while neglecting the inner semantics contained in videos. In this\npaper, we propose a wireless video semantic communication framework with\ndecoupled diffusion multi-frame compensation (DDMFC), abbreviated as WVSC-D,\nwhich integrates the idea of semantic communication into wireless video\ntransmission scenarios. WVSC-D first encodes original video frames as semantic\nframes and then conducts video coding based on such compact representations,\nenabling the video coding in semantic level rather than pixel level. Moreover,\nto further reduce the communication overhead, a reference semantic frame is\nintroduced to substitute motion vectors of each frame in common video coding\nmethods. At the receiver, DDMFC is proposed to generate compensated current\nsemantic frame by a two-stage conditional diffusion process. With both the\nreference frame transmission and DDMFC frame compensation, the bandwidth\nefficiency improves with satisfying video transmission performance.\nExperimental results verify the performance gain of WVSC-D over other DL-based\nmethods e.g. DVSC about 1.8 dB in terms of PSNR.",
+      "link": "http://arxiv.org/abs/2511.02478v1",
+      "published_date": "November 04, 2025",
+      "published_date_sort": "2025-11-04",
+      "citations": 0,
+      "institutions": "Unknown"
+    },
+    {
+      "title": "MammoClean: Toward Reproducible and Bias-Aware AI in Mammography through\n  Dataset Harmonization",
+      "authors": "Yalda Zafari, Hongyi Pan, Gorkem Durak, Ulas Bagci, Essam A. Rashed, Mohamed Mabrok",
+      "journal": "arXiv",
+      "snippet": "The development of clinically reliable artificial intelligence (AI) systems\nfor mammography is hindered by profound heterogeneity in data quality, metadata\nstandards, and population distributions across public datasets. This\nheterogeneity introduces dataset-specific biases that severely compromise the\ngeneralizability of the model, a fundamental barrier to clinical deployment. We\npresent MammoClean, a public framework for standardization and bias\nquantification in mammography datasets. MammoClean standardizes case selection,\nimage processing (including laterality and intensity correction), and unifies\nmetadata into a consistent multi-view structure. We provide a comprehensive\nreview of breast anatomy, imaging characteristics, and public mammography\ndatasets to systematically identify key sources of bias. Applying MammoClean to\nthree heterogeneous datasets (CBIS-DDSM, TOMPEI-CMMD, VinDr-Mammo), we quantify\nsubstantial distributional shifts in breast density and abnormality prevalence.\nCritically, we demonstrate the direct impact of data corruption: AI models\ntrained on corrupted datasets exhibit significant performance degradation\ncompared to their curated counterparts. By using MammoClean to identify and\nmitigate bias sources, researchers can construct unified multi-dataset training\ncorpora that enable development of robust models with superior cross-domain\ngeneralization. MammoClean provides an essential, reproducible pipeline for\nbias-aware AI development in mammography, facilitating fairer comparisons and\nadvancing the creation of safe, effective systems that perform equitably across\ndiverse patient populations and clinical settings. The open-source code is\npublicly available from: https://github.com/Minds-R-Lab/MammoClean.",
+      "link": "http://arxiv.org/abs/2511.02400v1",
+      "published_date": "November 04, 2025",
+      "published_date_sort": "2025-11-04",
+      "citations": 0,
+      "institutions": "Unknown"
+    },
+    {
+      "title": "Auditable-choice reframing unlocks RL-based verification for open-ended\n  tasks",
+      "authors": "Mengyu Zhang, Xubo Liu, Siyu Ding, Weichong Yin, Yu Sun, Hua Wu, Wenya Guo, Ying Zhang",
+      "journal": "arXiv",
+      "snippet": "Reinforcement Learning with Verifiable Rewards (RLVR) has demonstrated great\npotential in enhancing the reasoning capabilities of large language models\n(LLMs), achieving remarkable progress in domains such as mathematics and\nprogramming where standard answers are available. However, for open-ended tasks\nlacking ground-truth solutions (e.g., creative writing and instruction\nfollowing), existing studies typically regard them as non-reasoning scenarios,\nthereby overlooking the latent value of reasoning capabilities. This raises a\nkey question: Can strengthening reasoning improve performance in open-ended\ntasks? To address this, we explore the transfer of the RLVR paradigm to the\nopen domain. Yet, since RLVR fundamentally relies on verifiers that presuppose\nthe existence of standard answers, it cannot be directly applied to open-ended\ntasks. To overcome this challenge, we introduce Verifiable Multiple-Choice\nReformulation (VMR), a novel training strategy that restructures open-ended\ndata into verifiable multiple-choice formats, enabling effective training even\nin the absence of explicit ground truth. Experimental results on multiple\nbenchmarks validate the effectiveness of our method in improving LLM\nperformance on open-ended tasks. Notably, across eight open-ended benchmarks,\nour VMR-based training delivers an average gain of 5.99 points over the\nbaseline. Code will be released upon acceptance to facilitate reproducibility.",
+      "link": "http://arxiv.org/abs/2511.02463v1",
+      "published_date": "November 04, 2025",
+      "published_date_sort": "2025-11-04",
+      "citations": 0,
+      "institutions": "Unknown"
+    },
+    {
+      "title": "Verifying LLM Inference to Prevent Model Weight Exfiltration",
+      "authors": "Roy Rinberg, Adam Karvonen, Alex Hoover, Daniel Reuter, Keri Warr",
+      "journal": "arXiv",
+      "snippet": "As large AI models become increasingly valuable assets, the risk of model\nweight exfiltration from inference servers grows accordingly. An attacker\ncontrolling an inference server may exfiltrate model weights by hiding them\nwithin ordinary model outputs, a strategy known as steganography. This work\ninvestigates how to verify model responses to defend against such attacks and,\nmore broadly, to detect anomalous or buggy behavior during inference. We\nformalize model exfiltration as a security game, propose a verification\nframework that can provably mitigate steganographic exfiltration, and specify\nthe trust assumptions associated with our scheme. To enable verification, we\ncharacterize valid sources of non-determinism in large language model inference\nand introduce two practical estimators for them. We evaluate our detection\nframework on several open-weight models ranging from 3B to 30B parameters. On\nMOE-Qwen-30B, our detector reduces exfiltratable information to <0.5% with\nfalse-positive rate of 0.01%, corresponding to a >200x slowdown for\nadversaries. Overall, this work further establishes a foundation for defending\nagainst model weight exfiltration and demonstrates that strong protection can\nbe achieved with minimal additional cost to inference providers.",
+      "link": "http://arxiv.org/abs/2511.02620v1",
+      "published_date": "November 04, 2025",
+      "published_date_sort": "2025-11-04",
+      "citations": 0,
+      "institutions": "Unknown"
+    },
+    {
+      "title": "STAR-VAE: Latent Variable Transformers for Scalable and Controllable\n  Molecular Generation",
+      "authors": "Bum Chul Kwon, Ben Shapira, Moshiko Raboh, Shreyans Sethi, Shruti Murarka, Joseph A Morrone, Jianying Hu, Parthasarathy Suryanarayanan",
+      "journal": "arXiv",
+      "snippet": "The chemical space of drug-like molecules is vast, motivating the development\nof generative models that must learn broad chemical distributions, enable\nconditional generation by capturing structure-property representations, and\nprovide fast molecular generation. Meeting the objectives depends on modeling\nchoices, including the probabilistic modeling approach, the conditional\ngenerative formulation, the architecture, and the molecular input\nrepresentation. To address the challenges, we present STAR-VAE\n(Selfies-encoded, Transformer-based, AutoRegressive Variational Auto Encoder),\na scalable latent-variable framework with a Transformer encoder and an\nautoregressive Transformer decoder. It is trained on 79 million drug-like\nmolecules from PubChem, using SELFIES to guarantee syntactic validity. The\nlatent-variable formulation enables conditional generation: a property\npredictor supplies a conditioning signal that is applied consistently to the\nlatent prior, the inference network, and the decoder. Our contributions are:\n(i) a Transformer-based latent-variable encoder-decoder model trained on\nSELFIES representations; (ii) a principled conditional latent-variable\nformulation for property-guided generation; and (iii) efficient finetuning with\nlow-rank adapters (LoRA) in both encoder and decoder, enabling fast adaptation\nwith limited property and activity data. On the GuacaMol and MOSES benchmarks,\nour approach matches or exceeds baselines, and latent-space analyses reveal\nsmooth, semantically structured representations that support both unconditional\nexploration and property-aware generation. On the Tartarus benchmarks, the\nconditional model shifts docking-score distributions toward stronger predicted\nbinding. These results suggest that a modernized, scale-appropriate VAE remains\ncompetitive for molecular generation when paired with principled conditioning\nand parameter-efficient finetuning.",
+      "link": "http://arxiv.org/abs/2511.02769v1",
+      "published_date": "November 04, 2025",
+      "published_date_sort": "2025-11-04",
+      "citations": 0,
+      "institutions": "Unknown"
+    },
+    {
+      "title": "ReAcTree: Hierarchical LLM Agent Trees with Control Flow for\n  Long-Horizon Task Planning",
+      "authors": "Jae-Woo Choi, Hyungmin Kim, Hyobin Ong, Minsu Jang, Dohyung Kim, Jaehong Kim, Youngwoo Yoon",
+      "journal": "arXiv",
+      "snippet": "Recent advancements in large language models (LLMs) have enabled significant\nprogress in decision-making and task planning for embodied autonomous agents.\nHowever, most existing methods still struggle with complex, long-horizon tasks\nbecause they rely on a monolithic trajectory that entangles all past decisions\nand observations, attempting to solve the entire task in a single unified\nprocess. To address this limitation, we propose ReAcTree, a hierarchical\ntask-planning method that decomposes a complex goal into more manageable\nsubgoals within a dynamically constructed agent tree. Each subgoal is handled\nby an LLM agent node capable of reasoning, acting, and further expanding the\ntree, while control flow nodes coordinate the execution strategies of agent\nnodes. In addition, we integrate two complementary memory systems: each agent\nnode retrieves goal-specific, subgoal-level examples from episodic memory and\nshares environment-specific observations through working memory. Experiments on\nthe WAH-NL and ALFRED datasets demonstrate that ReAcTree consistently\noutperforms strong task-planning baselines such as ReAct across diverse LLMs.\nNotably, on WAH-NL, ReAcTree achieves a 61% goal success rate with Qwen 2.5\n72B, nearly doubling ReAct's 31%.",
+      "link": "http://arxiv.org/abs/2511.02424v1",
+      "published_date": "November 04, 2025",
+      "published_date_sort": "2025-11-04",
+      "citations": 0,
+      "institutions": "Unknown"
+    },
+    {
+      "title": "An ai system to help scientists write expert-level empirical software",
+      "authors": "E Aygün, A Belyaeva, G Comanici, M Coram… - arXiv preprint arXiv …, 2025 - arxiv.org",
+      "journal": "Google Scholar Result",
+      "snippet": "The cycle of scientific discovery is frequently bottlenecked by the slow, manual creation of software to support computational experiments. To address this, we present an AI system …",
+      "link": "https://arxiv.org/abs/2509.06503",
+      "published_date": "September 2025",
+      "published_date_sort": "2025-09-01",
+      "citations": 2,
+      "institutions": "Unknown"
+    },
     {
       "title": "Bootstrapping task spaces for self-improvement",
       "authors": "M Jiang, A Lupu, Y Bachrach - arXiv preprint arXiv:2509.04575, 2025 - arxiv.org",
@@ -68,14 +204,14 @@
       "institutions": "Unknown"
     },
     {
-      "title": "An AI system to help scientists write expert-level empirical software",
-      "authors": "E Aygün, A Belyaeva, G Comanici, M Coram… - arXiv preprint arXiv …, 2025 - arxiv.org",
+      "title": "Tuning llm-based code optimization via meta-prompting: An industrial perspective",
+      "authors": "J Gong, R Giavrimis, P Brookes, V Voskanyan… - arXiv preprint arXiv …, 2025 - arxiv.org",
       "journal": "Google Scholar Result",
-      "snippet": "The cycle of scientific discovery is frequently bottlenecked by the slow, manual creation of software to support computational experiments. To address this, we present an AI system …",
-      "link": "https://arxiv.org/abs/2509.06503",
-      "published_date": "September 2025",
-      "published_date_sort": "2025-09-01",
-      "citations": 1,
+      "snippet": "There is a growing interest in leveraging large language models (LLMs) for automated code optimization. However, industrial platforms deploying multiple LLMs face a critical challenge …",
+      "link": "https://arxiv.org/abs/2508.01443",
+      "published_date": "August 2025",
+      "published_date_sort": "2025-08-01",
+      "citations": 2,
       "institutions": "Unknown"
     },
     {
@@ -90,17 +226,6 @@
       "institutions": "Unknown"
     },
     {
-      "title": "Tuning llm-based code optimization via meta-prompting: An industrial perspective",
-      "authors": "J Gong, R Giavrimis, P Brookes, V Voskanyan… - arXiv preprint arXiv …, 2025 - arxiv.org",
-      "journal": "Google Scholar Result",
-      "snippet": "There is a growing interest in leveraging large language models (LLMs) for automated code optimization. However, industrial platforms deploying multiple LLMs face a critical challenge …",
-      "link": "https://arxiv.org/abs/2508.01443",
-      "published_date": "August 2025",
-      "published_date_sort": "2025-08-01",
-      "citations": 2,
-      "institutions": "Unknown"
-    },
-    {
       "title": "How Far Are AI Scientists from Changing the World?",
       "authors": "Q Xie, Y Weng, M Zhu, F Shen, S Huang, Z Lin… - arXiv preprint arXiv …, 2025 - arxiv.org",
       "journal": "Google Scholar Result",
@@ -108,29 +233,7 @@
       "link": "https://arxiv.org/abs/2507.23276",
       "published_date": "July 2025",
       "published_date_sort": "2025-07-01",
-      "citations": 3,
-      "institutions": "Unknown"
-    },
-    {
-      "title": "AI Scientists Fail Without Strong Implementation Capability",
-      "authors": "M Zhu, Q Xie, Y Weng, J Wu, Z Lin, L Yang… - arXiv preprint arXiv …, 2025 - arxiv.org",
-      "journal": "Google Scholar Result",
-      "snippet": "The emergence of Artificial Intelligence (AI) Scientist represents a paradigm shift in scientific discovery, with large language models (LLMs) taking the lead as the primary executor in the …",
-      "link": "https://arxiv.org/abs/2506.01372",
-      "published_date": "June 2025",
-      "published_date_sort": "2025-06-01",
-      "citations": 8,
-      "institutions": "Unknown"
-    },
-    {
-      "title": "The Automated LLM Speedrunning Benchmark: Reproducing NanoGPT Improvements",
-      "authors": "B Zhao, D Magka, M Jiang, X Li, R Raileanu… - arXiv preprint arXiv …, 2025 - arxiv.org",
-      "journal": "Google Scholar Result",
-      "snippet": "Rapid advancements in large language models (LLMs) have the potential to assist in scientific progress. A critical capability toward this endeavor is the ability to reproduce …",
-      "link": "https://arxiv.org/abs/2506.22419",
-      "published_date": "June 2025",
-      "published_date_sort": "2025-06-01",
-      "citations": 1,
+      "citations": 4,
       "institutions": "Unknown"
     },
     {
@@ -152,15 +255,59 @@
       "link": "https://arxiv.org/abs/2506.12594",
       "published_date": "June 2025",
       "published_date_sort": "2025-06-01",
-      "citations": 24,
+      "citations": 25,
       "institutions": "Unknown"
     },
     {
-      "title": "Mle-dojo: Interactive environments for empowering llm agents in machine learning engineering",
-      "authors": "R Qiang, Y Zhuang, Y Li, R Zhang, C Li… - arXiv preprint arXiv …, 2025 - arxiv.org",
+      "title": "The Automated LLM Speedrunning Benchmark: Reproducing NanoGPT Improvements",
+      "authors": "B Zhao, D Magka, M Jiang, X Li, R Raileanu… - arXiv preprint arXiv …, 2025 - arxiv.org",
       "journal": "Google Scholar Result",
-      "snippet": "We introduce MLE-Dojo, a Gym-style framework for systematically reinforcement learning, evaluating, and improving autonomous large language model (LLM) agents in iterative …",
-      "link": "https://arxiv.org/abs/2505.07782",
+      "snippet": "Rapid advancements in large language models (LLMs) have the potential to assist in scientific progress. A critical capability toward this endeavor is the ability to reproduce …",
+      "link": "https://arxiv.org/abs/2506.22419",
+      "published_date": "June 2025",
+      "published_date_sort": "2025-06-01",
+      "citations": 1,
+      "institutions": "Unknown"
+    },
+    {
+      "title": "AI Scientists Fail Without Strong Implementation Capability",
+      "authors": "M Zhu, Q Xie, Y Weng, J Wu, Z Lin, L Yang… - arXiv preprint arXiv …, 2025 - arxiv.org",
+      "journal": "Google Scholar Result",
+      "snippet": "The emergence of Artificial Intelligence (AI) Scientist represents a paradigm shift in scientific discovery, with large language models (LLMs) taking the lead as the primary executor in the …",
+      "link": "https://arxiv.org/abs/2506.01372",
+      "published_date": "June 2025",
+      "published_date_sort": "2025-06-01",
+      "citations": 8,
+      "institutions": "Unknown"
+    },
+    {
+      "title": "Repomaster: Autonomous exploration and understanding of github repositories for complex task solving",
+      "authors": "H Wang, Z Ni, S Zhang, S Lu, S Hu, Z He, C Hu… - arXiv preprint arXiv …, 2025 - arxiv.org",
+      "journal": "Google Scholar Result",
+      "snippet": "The ultimate goal of code agents is to solve complex tasks autonomously. Although large language models (LLMs) have made substantial progress in code generation, real-world …",
+      "link": "https://arxiv.org/abs/2505.21577",
+      "published_date": "May 2025",
+      "published_date_sort": "2025-05-01",
+      "citations": 4,
+      "institutions": "Unknown"
+    },
+    {
+      "title": "From automation to autonomy: A survey on large language models in scientific discovery",
+      "authors": "T Zheng, Z Deng, HT Tsang, W Wang, J Bai… - arXiv preprint arXiv …, 2025 - arxiv.org",
+      "journal": "Google Scholar Result",
+      "snippet": "Large Language Models (LLMs) are catalyzing a paradigm shift in scientific discovery, evolving from task-specific automation tools into increasingly autonomous agents and …",
+      "link": "https://arxiv.org/abs/2505.13259",
+      "published_date": "May 2025",
+      "published_date_sort": "2025-05-01",
+      "citations": 20,
+      "institutions": "Unknown"
+    },
+    {
+      "title": "Mlzero: A multi-agent system for end-to-end machine learning automation",
+      "authors": "H Fang, B Han, N Erickson, X Zhang, S Zhou… - arXiv preprint arXiv …, 2025 - arxiv.org",
+      "journal": "Google Scholar Result",
+      "snippet": "Existing AutoML systems have advanced the automation of machine learning (ML); however, they still require substantial manual configuration and expert input, particularly …",
+      "link": "https://arxiv.org/abs/2505.13941",
       "published_date": "May 2025",
       "published_date_sort": "2025-05-01",
       "citations": 4,
@@ -178,36 +325,14 @@
       "institutions": "Unknown"
     },
     {
-      "title": "From automation to autonomy: A survey on large language models in scientific discovery",
-      "authors": "T Zheng, Z Deng, HT Tsang, W Wang, J Bai… - arXiv preprint arXiv …, 2025 - arxiv.org",
+      "title": "Mle-dojo: Interactive environments for empowering llm agents in machine learning engineering",
+      "authors": "R Qiang, Y Zhuang, Y Li, R Zhang, C Li… - arXiv preprint arXiv …, 2025 - arxiv.org",
       "journal": "Google Scholar Result",
-      "snippet": "Large Language Models (LLMs) are catalyzing a paradigm shift in scientific discovery, evolving from task-specific automation tools into increasingly autonomous agents and …",
-      "link": "https://arxiv.org/abs/2505.13259",
-      "published_date": "May 2025",
-      "published_date_sort": "2025-05-01",
-      "citations": 19,
-      "institutions": "Unknown"
-    },
-    {
-      "title": "Repomaster: Autonomous exploration and understanding of github repositories for complex task solving",
-      "authors": "H Wang, Z Ni, S Zhang, S Lu, S Hu, Z He, C Hu… - arXiv preprint arXiv …, 2025 - arxiv.org",
-      "journal": "Google Scholar Result",
-      "snippet": "The ultimate goal of code agents is to solve complex tasks autonomously. Although large language models (LLMs) have made substantial progress in code generation, real-world …",
-      "link": "https://arxiv.org/abs/2505.21577",
+      "snippet": "We introduce MLE-Dojo, a Gym-style framework for systematically reinforcement learning, evaluating, and improving autonomous large language model (LLM) agents in iterative …",
+      "link": "https://arxiv.org/abs/2505.07782",
       "published_date": "May 2025",
       "published_date_sort": "2025-05-01",
       "citations": 4,
-      "institutions": "Unknown"
-    },
-    {
-      "title": "Mlzero: A multi-agent system for end-to-end machine learning automation",
-      "authors": "H Fang, B Han, N Erickson, X Zhang, S Zhou… - arXiv preprint arXiv …, 2025 - arxiv.org",
-      "journal": "Google Scholar Result",
-      "snippet": "Existing AutoML systems have advanced the automation of machine learning (ML); however, they still require substantial manual configuration and expert input, particularly …",
-      "link": "https://arxiv.org/abs/2505.13941",
-      "published_date": "May 2025",
-      "published_date_sort": "2025-05-01",
-      "citations": 3,
       "institutions": "Unknown"
     },
     {
@@ -229,7 +354,7 @@
       "link": "https://arxiv.org/abs/2504.04310",
       "published_date": "April 2025",
       "published_date_sort": "2025-04-01",
-      "citations": 14,
+      "citations": 15,
       "institutions": "Unknown"
     },
     {
@@ -240,7 +365,7 @@
       "link": "https://arxiv.org/abs/2503.14499",
       "published_date": "March 2025",
       "published_date_sort": "2025-03-01",
-      "citations": 51,
+      "citations": 53,
       "institutions": "Unknown"
     },
     {
