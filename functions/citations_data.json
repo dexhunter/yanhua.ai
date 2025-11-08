@@ -1,11 +1,11 @@
 {
-  "last_updated": "2025-11-07 00:11:16 UTC",
+  "last_updated": "2025-11-08 00:10:22 UTC",
   "target_paper": "https://www.arxiv.org/abs/2502.13138",
   "arxiv_id": "2502.13138",
-  "total_citations": 22,
+  "total_citations": 25,
   "h_index": 6,
-  "recent_citations": 2,
-  "avg_citations_per_month": "0.96",
+  "recent_citations": 5,
+  "avg_citations_per_month": "1.09",
   "timeline": [
     {
       "date": "2024-01-01",
@@ -13,19 +13,19 @@
     },
     {
       "date": "2025-01-01",
-      "citations": 2
-    },
-    {
-      "date": "2025-03-01",
       "citations": 3
     },
     {
-      "date": "2025-04-01",
+      "date": "2025-03-01",
       "citations": 4
     },
     {
+      "date": "2025-04-01",
+      "citations": 5
+    },
+    {
       "date": "2025-05-01",
-      "citations": 10
+      "citations": 11
     },
     {
       "date": "2025-06-01",
@@ -45,30 +45,74 @@
     },
     {
       "date": "2025-11-01",
-      "citations": 22
+      "citations": 25
     }
   ],
   "papers": [
     {
-      "title": "AnaFlow: Agentic LLM-based Workflow for Reasoning-Driven Explainable and\n  Sample-Efficient Analog Circuit Sizing",
-      "authors": "Mohsen Ahmadzadeh, Kaichang Chen, Georges Gielen",
+      "title": "AIM: Software and Hardware Co-design for Architecture-level IR-drop\n  Mitigation in High-performance PIM",
+      "authors": "Yuanpeng Zhang, Xing Hu, Xi Chen, Zhihang Yuan, Cong Li, Jingchen Zhu, Zhao Wang, Chenguang Zhang, Xin Si, Wei Gao, Qiang Wu, Runsheng Wang, Guangyu Sun",
       "journal": "arXiv",
-      "snippet": "Analog/mixed-signal circuits are key for interfacing electronics with the\nphysical world. Their design, however, remains a largely handcrafted process,\nresulting in long and error-prone design cycles. While the recent rise of\nAI-based reinforcement learning and generative AI has created new techniques to\nautomate this task, the need for many time-consuming simulations is a critical\nbottleneck hindering the overall efficiency. Furthermore, the lack of\nexplainability of the resulting design solutions hampers widespread adoption of\nthe tools. To address these issues, a novel agentic AI framework for\nsample-efficient and explainable analog circuit sizing is presented. It employs\na multi-agent workflow where specialized Large Language Model (LLM)-based\nagents collaborate to interpret the circuit topology, to understand the design\ngoals, and to iteratively refine the circuit's design parameters towards the\ntarget goals with human-interpretable reasoning. The adaptive simulation\nstrategy creates an intelligent control that yields a high sample efficiency.\nThe AnaFlow framework is demonstrated for two circuits of varying complexity\nand is able to complete the sizing task fully automatically, differently from\npure Bayesian optimization and reinforcement learning approaches. The system\nlearns from its optimization history to avoid past mistakes and to accelerate\nconvergence. The inherent explainability makes this a powerful tool for analog\ndesign space exploration and a new paradigm in analog EDA, where AI agents\nserve as transparent design assistants.",
-      "link": "http://arxiv.org/abs/2511.03697v1",
-      "published_date": "November 05, 2025",
-      "published_date_sort": "2025-11-05",
+      "snippet": "SRAM Processing-in-Memory (PIM) has emerged as the most promising\nimplementation for high-performance PIM, delivering superior computing density,\nenergy efficiency, and computational precision. However, the pursuit of higher\nperformance necessitates more complex circuit designs and increased operating\nfrequencies, which exacerbate IR-drop issues. Severe IR-drop can significantly\ndegrade chip performance and even threaten reliability. Conventional\ncircuit-level IR-drop mitigation methods, such as back-end optimizations, are\nresource-intensive and often compromise power, performance, and area (PPA). To\naddress these challenges, we propose AIM, comprehensive software and hardware\nco-design for architecture-level IR-drop mitigation in high-performance PIM.\nInitially, leveraging the bit-serial and in-situ dataflow processing properties\nof PIM, we introduce Rtog and HR, which establish a direct correlation between\nPIM workloads and IR-drop. Building on this foundation, we propose LHR and WDS,\nenabling extensive exploration of architecture-level IR-drop mitigation while\nmaintaining computational accuracy through software optimization. Subsequently,\nwe develop IR-Booster, a dynamic adjustment mechanism that integrates\nsoftware-level HR information with hardware-based IR-drop monitoring to adapt\nthe V-f pairs of the PIM macro, achieving enhanced energy efficiency and\nperformance. Finally, we propose the HR-aware task mapping method, bridging\nsoftware and hardware designs to achieve optimal improvement. Post-layout\nsimulation results on a 7nm 256-TOPS PIM chip demonstrate that AIM achieves up\nto 69.2% IR-drop mitigation, resulting in 2.29x energy efficiency improvement\nand 1.152x speedup.",
+      "link": "http://arxiv.org/abs/2511.04321v1",
+      "published_date": "November 06, 2025",
+      "published_date_sort": "2025-11-06",
       "citations": 0,
       "institutions": "Unknown"
     },
     {
-      "title": "Colorectal Cancer Histopathological Grading using Multi-Scale Federated\n  Learning",
-      "authors": "Md Ahasanul Arafath, Abhijit Kumar Ghosh, Md Rony Ahmed, Sabrin Afroz, Minhazul Hosen, Md Hasan Moon, Md Tanzim Reza, Md Ashad Alam",
+      "title": "Shared Spatial Memory Through Predictive Coding",
+      "authors": "Zhengru Fang, Yu Guo, Jingjing Wang, Yuang Zhang, Haonan An, Yinhai Wang, Yuguang Fang",
       "journal": "arXiv",
-      "snippet": "Colorectal cancer (CRC) grading is a critical prognostic factor but remains\nhampered by inter-observer variability and the privacy constraints of\nmulti-institutional data sharing. While deep learning offers a path to\nautomation, centralized training models conflict with data governance\nregulations and neglect the diagnostic importance of multi-scale analysis. In\nthis work, we propose a scalable, privacy-preserving federated learning (FL)\nframework for CRC histopathological grading that integrates multi-scale feature\nlearning within a distributed training paradigm. Our approach employs a\ndual-stream ResNetRS50 backbone to concurrently capture fine-grained nuclear\ndetail and broader tissue-level context. This architecture is integrated into a\nrobust FL system stabilized using FedProx to mitigate client drift across\nheterogeneous data distributions from multiple hospitals. Extensive evaluation\non the CRC-HGD dataset demonstrates that our framework achieves an overall\naccuracy of 83.5%, outperforming a comparable centralized model (81.6%).\nCrucially, the system excels in identifying the most aggressive Grade III\ntumors with a high recall of 87.5%, a key clinical priority to prevent\ndangerous false negatives. Performance further improves with higher\nmagnification, reaching 88.0% accuracy at 40x. These results validate that our\nfederated multi-scale approach not only preserves patient privacy but also\nenhances model performance and generalization. The proposed modular pipeline,\nwith built-in preprocessing, checkpointing, and error handling, establishes a\nfoundational step toward deployable, privacy-aware clinical AI for digital\npathology.",
-      "link": "http://arxiv.org/abs/2511.03693v1",
-      "published_date": "November 05, 2025",
-      "published_date_sort": "2025-11-05",
+      "snippet": "Sharing and reconstructing a consistent spatial memory is a critical\nchallenge in multi-agent systems, where partial observability and limited\nbandwidth often lead to catastrophic failures in coordination. We introduce a\nmulti-agent predictive coding framework that formulate coordination as the\nminimization of mutual uncertainty among agents. Instantiated as an information\nbottleneck objective, it prompts agents to learn not only who and what to\ncommunicate but also when. At the foundation of this framework lies a\ngrid-cell-like metric as internal spatial coding for self-localization,\nemerging spontaneously from self-supervised motion prediction. Building upon\nthis internal spatial code, agents gradually develop a bandwidth-efficient\ncommunication mechanism and specialized neural populations that encode\npartners' locations: an artificial analogue of hippocampal social place cells\n(SPCs). These social representations are further enacted by a hierarchical\nreinforcement learning policy that actively explores to reduce joint\nuncertainty. On the Memory-Maze benchmark, our approach shows exceptional\nresilience to bandwidth constraints: success degrades gracefully from 73.5% to\n64.4% as bandwidth shrinks from 128 to 4 bits/step, whereas a full-broadcast\nbaseline collapses from 67.6% to 28.6%. Our findings establish a theoretically\nprincipled and biologically plausible basis for how complex social\nrepresentations emerge from a unified predictive drive, leading to social\ncollective intelligence.",
+      "link": "http://arxiv.org/abs/2511.04235v1",
+      "published_date": "November 06, 2025",
+      "published_date_sort": "2025-11-06",
       "citations": 0,
+      "institutions": "Unknown"
+    },
+    {
+      "title": "Fraud-Proof Revenue Division on Subscription Platforms",
+      "authors": "Abheek Ghosh, Tzeh Yuan Neoh, Nicholas Teh, Giannis Tyrovolas",
+      "journal": "arXiv",
+      "snippet": "We study a model of subscription-based platforms where users pay a fixed fee\nfor unlimited access to content, and creators receive a share of the revenue.\nExisting approaches to detecting fraud predominantly rely on machine learning\nmethods, engaging in an ongoing arms race with bad actors. We explore revenue\ndivision mechanisms that inherently disincentivize manipulation. We formalize\nthree types of manipulation-resistance axioms and examine which existing rules\nsatisfy these. We show that a mechanism widely used by streaming platforms, not\nonly fails to prevent fraud, but also makes detecting manipulation\ncomputationally intractable. We also introduce a novel rule, ScaledUserProp,\nthat satisfies all three manipulation-resistance axioms. Finally, experiments\nwith both real-world and synthetic streaming data support ScaledUserProp as a\nfairer alternative compared to existing rules.",
+      "link": "http://arxiv.org/abs/2511.04465v1",
+      "published_date": "November 06, 2025",
+      "published_date_sort": "2025-11-06",
+      "citations": 0,
+      "institutions": "Unknown"
+    },
+    {
+      "title": "VeriCoT: Neuro-symbolic Chain-of-Thought Validation via Logical\n  Consistency Checks",
+      "authors": "Yu Feng, Nathaniel Weir, Kaj Bostrom, Sam Bayless, Darion Cassel, Sapana Chaudhary, Benjamin Kiesl-Reiter, Huzefa Rangwala",
+      "journal": "arXiv",
+      "snippet": "LLMs can perform multi-step reasoning through Chain-of-Thought (CoT), but\nthey cannot reliably verify their own logic. Even when they reach correct\nanswers, the underlying reasoning may be flawed, undermining trust in\nhigh-stakes scenarios. To mitigate this issue, we introduce VeriCoT, a\nneuro-symbolic method that extracts and verifies formal logical arguments from\nCoT reasoning. VeriCoT formalizes each CoT reasoning step into first-order\nlogic and identifies premises that ground the argument in source context,\ncommonsense knowledge, or prior reasoning steps. The symbolic representation\nenables automated solvers to verify logical validity while the NL premises\nallow humans and systems to identify ungrounded or fallacious reasoning steps.\nExperiments on the ProofWriter, LegalBench, and BioASQ datasets show VeriCoT\neffectively identifies flawed reasoning, and serves as a strong predictor of\nfinal answer correctness. We also leverage VeriCoT's verification signal for\n(1) inference-time self-reflection, (2) supervised fine-tuning (SFT) on\nVeriCoT-distilled datasets and (3) preference fine-tuning (PFT) with direct\npreference optimization (DPO) using verification-based pairwise rewards,\nfurther improving reasoning validity and accuracy.",
+      "link": "http://arxiv.org/abs/2511.04662v1",
+      "published_date": "November 06, 2025",
+      "published_date_sort": "2025-11-06",
+      "citations": 0,
+      "institutions": "Unknown"
+    },
+    {
+      "title": "Submanifold Sparse Convolutional Networks for Automated 3D Segmentation\n  of Kidneys and Kidney Tumours in Computed Tomography",
+      "authors": "Saúl Alonso-Monsalve, Leigh H. Whitehead, Adam Aurisano, Lorena Escudero Sanchez",
+      "journal": "arXiv",
+      "snippet": "The accurate delineation of tumours in radiological images like Computed\nTomography is a very specialised and time-consuming task, and currently a\nbottleneck preventing quantitative analyses to be performed routinely in the\nclinical setting. For this reason, developing methods for the automated\nsegmentation of tumours in medical imaging is of the utmost importance and has\ndriven significant efforts in recent years. However, challenges regarding the\nimpracticality of 3D scans, given the large amount of voxels to be analysed,\nusually requires the downsampling of such images or using patches thereof when\napplying traditional convolutional neural networks. To overcome this problem,\nin this paper we propose a new methodology that uses, divided into two stages,\nvoxel sparsification and submanifold sparse convolutional networks. This method\nallows segmentations to be performed with high-resolution inputs and a native\n3D model architecture, obtaining state-of-the-art accuracies while\nsignificantly reducing the computational resources needed in terms of GPU\nmemory and time. We studied the deployment of this methodology in the context\nof Computed Tomography images of renal cancer patients from the KiTS23\nchallenge, and our method achieved results competitive with the challenge\nwinners, with Dice similarity coefficients of 95.8% for kidneys + masses, 85.7%\nfor tumours + cysts, and 80.3% for tumours alone. Crucially, our method also\noffers significant computational improvements, achieving up to a 60% reduction\nin inference time and up to a 75\\% reduction in VRAM usage compared to an\nequivalent dense architecture, across both CPU and various GPU cards tested.",
+      "link": "http://arxiv.org/abs/2511.04334v1",
+      "published_date": "November 06, 2025",
+      "published_date_sort": "2025-11-06",
+      "citations": 0,
+      "institutions": "Unknown"
+    },
+    {
+      "title": "Bootstrapping task spaces for self-improvement",
+      "authors": "M Jiang, A Lupu, Y Bachrach - arXiv preprint arXiv:2509.04575, 2025 - arxiv.org",
+      "journal": "Google Scholar Result",
+      "snippet": "Progress in many task domains emerges from repeated revisions to previous solution attempts. Training agents that can reliably self-improve over such sequences at inference …",
+      "link": "https://arxiv.org/abs/2509.04575",
+      "published_date": "September 2025",
+      "published_date_sort": "2025-09-01",
+      "citations": 1,
       "institutions": "Unknown"
     },
     {
@@ -94,14 +138,14 @@
       "institutions": "Unknown"
     },
     {
-      "title": "Bootstrapping task spaces for self-improvement",
-      "authors": "M Jiang, A Lupu, Y Bachrach - arXiv preprint arXiv:2509.04575, 2025 - arxiv.org",
+      "title": "Tuning llm-based code optimization via meta-prompting: An industrial perspective",
+      "authors": "J Gong, R Giavrimis, P Brookes, V Voskanyan… - arXiv preprint arXiv …, 2025 - arxiv.org",
       "journal": "Google Scholar Result",
-      "snippet": "Progress in many task domains emerges from repeated revisions to previous solution attempts. Training agents that can reliably self-improve over such sequences at inference …",
-      "link": "https://arxiv.org/abs/2509.04575",
-      "published_date": "September 2025",
-      "published_date_sort": "2025-09-01",
-      "citations": 1,
+      "snippet": "There is a growing interest in leveraging large language models (LLMs) for automated code optimization. However, industrial platforms deploying multiple LLMs face a critical challenge …",
+      "link": "https://arxiv.org/abs/2508.01443",
+      "published_date": "August 2025",
+      "published_date_sort": "2025-08-01",
+      "citations": 2,
       "institutions": "Unknown"
     },
     {
@@ -116,17 +160,6 @@
       "institutions": "Unknown"
     },
     {
-      "title": "Tuning llm-based code optimization via meta-prompting: An industrial perspective",
-      "authors": "J Gong, R Giavrimis, P Brookes, V Voskanyan… - arXiv preprint arXiv …, 2025 - arxiv.org",
-      "journal": "Google Scholar Result",
-      "snippet": "There is a growing interest in leveraging large language models (LLMs) for automated code optimization. However, industrial platforms deploying multiple LLMs face a critical challenge …",
-      "link": "https://arxiv.org/abs/2508.01443",
-      "published_date": "August 2025",
-      "published_date_sort": "2025-08-01",
-      "citations": 2,
-      "institutions": "Unknown"
-    },
-    {
       "title": "How Far Are AI Scientists from Changing the World?",
       "authors": "Q Xie, Y Weng, M Zhu, F Shen, S Huang, Z Lin… - arXiv preprint arXiv …, 2025 - arxiv.org",
       "journal": "Google Scholar Result",
@@ -135,28 +168,6 @@
       "published_date": "July 2025",
       "published_date_sort": "2025-07-01",
       "citations": 4,
-      "institutions": "Unknown"
-    },
-    {
-      "title": "AI Scientists Fail Without Strong Implementation Capability",
-      "authors": "M Zhu, Q Xie, Y Weng, J Wu, Z Lin, L Yang… - arXiv preprint arXiv …, 2025 - arxiv.org",
-      "journal": "Google Scholar Result",
-      "snippet": "The emergence of Artificial Intelligence (AI) Scientist represents a paradigm shift in scientific discovery, with large language models (LLMs) taking the lead as the primary executor in the …",
-      "link": "https://arxiv.org/abs/2506.01372",
-      "published_date": "June 2025",
-      "published_date_sort": "2025-06-01",
-      "citations": 8,
-      "institutions": "Unknown"
-    },
-    {
-      "title": "The Automated LLM Speedrunning Benchmark: Reproducing NanoGPT Improvements",
-      "authors": "B Zhao, D Magka, M Jiang, X Li, R Raileanu… - arXiv preprint arXiv …, 2025 - arxiv.org",
-      "journal": "Google Scholar Result",
-      "snippet": "Rapid advancements in large language models (LLMs) have the potential to assist in scientific progress. A critical capability toward this endeavor is the ability to reproduce …",
-      "link": "https://arxiv.org/abs/2506.22419",
-      "published_date": "June 2025",
-      "published_date_sort": "2025-06-01",
-      "citations": 1,
       "institutions": "Unknown"
     },
     {
@@ -182,14 +193,14 @@
       "institutions": "Unknown"
     },
     {
-      "title": "CodePDE: An Inference Framework for LLM-driven PDE Solver Generation",
-      "authors": "S Li, T Marwah, J Shen, W Sun, A Risteski… - arXiv preprint arXiv …, 2025 - arxiv.org",
+      "title": "AI Scientists Fail Without Strong Implementation Capability",
+      "authors": "M Zhu, Q Xie, Y Weng, J Wu, Z Lin, L Yang… - arXiv preprint arXiv …, 2025 - arxiv.org",
       "journal": "Google Scholar Result",
-      "snippet": "Partial differential equations (PDEs) are fundamental to modeling physical systems, yet solving them remains a complex challenge. Traditional numerical solvers rely on expert …",
-      "link": "https://arxiv.org/abs/2505.08783",
-      "published_date": "May 2025",
-      "published_date_sort": "2025-05-01",
-      "citations": 6,
+      "snippet": "The emergence of Artificial Intelligence (AI) Scientist represents a paradigm shift in scientific discovery, with large language models (LLMs) taking the lead as the primary executor in the …",
+      "link": "https://arxiv.org/abs/2506.01372",
+      "published_date": "June 2025",
+      "published_date_sort": "2025-06-01",
+      "citations": 8,
       "institutions": "Unknown"
     },
     {
@@ -200,7 +211,7 @@
       "link": "https://arxiv.org/abs/2505.13259",
       "published_date": "May 2025",
       "published_date_sort": "2025-05-01",
-      "citations": 20,
+      "citations": 21,
       "institutions": "Unknown"
     },
     {
@@ -209,6 +220,17 @@
       "journal": "Google Scholar Result",
       "snippet": "The ultimate goal of code agents is to solve complex tasks autonomously. Although large language models (LLMs) have made substantial progress in code generation, real-world …",
       "link": "https://arxiv.org/abs/2505.21577",
+      "published_date": "May 2025",
+      "published_date_sort": "2025-05-01",
+      "citations": 4,
+      "institutions": "Unknown"
+    },
+    {
+      "title": "Mlzero: A multi-agent system for end-to-end machine learning automation",
+      "authors": "H Fang, B Han, N Erickson, X Zhang, S Zhou… - arXiv preprint arXiv …, 2025 - arxiv.org",
+      "journal": "Google Scholar Result",
+      "snippet": "Existing AutoML systems have advanced the automation of machine learning (ML); however, they still require substantial manual configuration and expert input, particularly …",
+      "link": "https://arxiv.org/abs/2505.13941",
       "published_date": "May 2025",
       "published_date_sort": "2025-05-01",
       "citations": 4,
@@ -226,22 +248,22 @@
       "institutions": "Unknown"
     },
     {
+      "title": "CodePDE: An Inference Framework for LLM-driven PDE Solver Generation",
+      "authors": "S Li, T Marwah, J Shen, W Sun, A Risteski… - arXiv preprint arXiv …, 2025 - arxiv.org",
+      "journal": "Google Scholar Result",
+      "snippet": "Partial differential equations (PDEs) are fundamental to modeling physical systems, yet solving them remains a complex challenge. Traditional numerical solvers rely on expert …",
+      "link": "https://arxiv.org/abs/2505.08783",
+      "published_date": "May 2025",
+      "published_date_sort": "2025-05-01",
+      "citations": 6,
+      "institutions": "Unknown"
+    },
+    {
       "title": "Mle-dojo: Interactive environments for empowering llm agents in machine learning engineering",
       "authors": "R Qiang, Y Zhuang, Y Li, R Zhang, C Li… - arXiv preprint arXiv …, 2025 - arxiv.org",
       "journal": "Google Scholar Result",
       "snippet": "We introduce MLE-Dojo, a Gym-style framework for systematically reinforcement learning, evaluating, and improving autonomous large language model (LLM) agents in iterative …",
       "link": "https://arxiv.org/abs/2505.07782",
-      "published_date": "May 2025",
-      "published_date_sort": "2025-05-01",
-      "citations": 4,
-      "institutions": "Unknown"
-    },
-    {
-      "title": "Mlzero: A multi-agent system for end-to-end machine learning automation",
-      "authors": "H Fang, B Han, N Erickson, X Zhang, S Zhou… - arXiv preprint arXiv …, 2025 - arxiv.org",
-      "journal": "Google Scholar Result",
-      "snippet": "Existing AutoML systems have advanced the automation of machine learning (ML); however, they still require substantial manual configuration and expert input, particularly …",
-      "link": "https://arxiv.org/abs/2505.13941",
       "published_date": "May 2025",
       "published_date_sort": "2025-05-01",
       "citations": 4,
@@ -266,7 +288,18 @@
       "link": "https://arxiv.org/abs/2503.14499",
       "published_date": "March 2025",
       "published_date_sort": "2025-03-01",
-      "citations": 53,
+      "citations": 55,
+      "institutions": "Unknown"
+    },
+    {
+      "title": "DatawiseAgent: A Notebook-Centric LLM Agent Framework for Adaptive and Robust Data Science Automation",
+      "authors": "Z You, Y Zhang, D Xu, Y Lou, Y Yan… - Proceedings of the …, 2025 - aclanthology.org",
+      "journal": "Google Scholar Result",
+      "snippet": "Existing large language model (LLM) agents for automating data science show promise, but they remain constrained by narrow task scopes, limited generalization across tasks and …",
+      "link": "https://aclanthology.org/2025.emnlp-main.58/",
+      "published_date": "2025",
+      "published_date_sort": "2025-01-01",
+      "citations": 0,
       "institutions": "Unknown"
     },
     {
