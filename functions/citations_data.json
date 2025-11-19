@@ -1,11 +1,11 @@
 {
-  "last_updated": "2025-11-18 00:11:11 UTC",
+  "last_updated": "2025-11-19 00:11:20 UTC",
   "target_paper": "https://www.arxiv.org/abs/2502.13138",
   "arxiv_id": "2502.13138",
-  "total_citations": 20,
+  "total_citations": 26,
   "h_index": 6,
-  "recent_citations": 0,
-  "avg_citations_per_month": "0.91",
+  "recent_citations": 6,
+  "avg_citations_per_month": "1.13",
   "timeline": [
     {
       "date": "2024-01-01",
@@ -46,9 +46,79 @@
     {
       "date": "2025-10-01",
       "citations": 20
+    },
+    {
+      "date": "2025-11-01",
+      "citations": 26
     }
   ],
   "papers": [
+    {
+      "title": "QUILL: An Algorithm-Architecture Co-Design for Cache-Local Deformable Attention",
+      "authors": "Hyunwoo Oh, Hanning Chen, Sanggeon Yun, Yang Ni, Wenjun Huang, Tamoghno Das, Suyeon Jang, Mohsen Imani",
+      "journal": "arXiv",
+      "snippet": "Deformable transformers deliver state-of-the-art detection but map poorly to hardware due to irregular memory access and low arithmetic intensity. We introduce QUILL, a schedule-aware accelerator that turns deformable attention into cache-friendly, single-pass work. At its core, Distance-based Out-of-Order Querying (DOOQ) orders queries by spatial proximity; the look-ahead drives a region prefetch into an alternate buffer--forming a schedule-aware prefetch loop that overlaps memory and compute. A fused MSDeformAttn engine executes interpolation, Softmax, aggregation, and the final projection (W''m) in one pass without spilling intermediates, while small tensors are kept on-chip and surrounding dense layers run on integrated GEMMs. Implemented as RTL and evaluated end-to-end, QUILL achieves up to 7.29x higher throughput and 47.3x better energy efficiency than an RTX 4090, and exceeds prior accelerators by 3.26-9.82x in throughput and 2.01-6.07x in energy efficiency. With mixed-precision quantization, accuracy tracks FP32 within <=0.9 AP across Deformable and Sparse DETR variants. By converting sparsity into locality--and locality into utilization--QUILL delivers consistent, end-to-end speedups.",
+      "link": "http://arxiv.org/abs/2511.13679v1",
+      "published_date": "November 17, 2025",
+      "published_date_sort": "2025-11-17",
+      "citations": 0,
+      "institutions": "Unknown"
+    },
+    {
+      "title": "Making Evidence Actionable in Adaptive Learning Closing the Diagnostic Pedagogical Loop",
+      "authors": "Amirreza Mehrabi, Jason Wade Morphew, Breejha Quezada, N. Sanjay Rebello",
+      "journal": "arXiv",
+      "snippet": "Adaptive learning often diagnoses precisely yet intervenes weakly, producing help that is mistimed or misaligned. This study presents evidence supporting an instructor-governed feedback loop that converts concept-level assessment evidence into vetted microinterventions. The adaptive learning algorithm includes three safeguards: adequacy as a hard guarantee of gap closure, attention as a budgeted limit for time and redundancy, and diversity as protection against overfitting to a single resource. We formulate intervention assignment as a binary integer program with constraints for coverage, time, difficulty windows derived from ability estimates, prerequisites encoded by a concept matrix, and anti-redundancy with diversity. Greedy selection serves low-richness and tight-latency settings, gradient-based relaxation serves rich repositories, and a hybrid switches along a richness-latency frontier. In simulation and in an introductory physics deployment with 1204 students, both solvers achieved full skill coverage for nearly all learners within bounded watch time. The gradient-based method reduced redundant coverage by about 12 percentage points relative to greedy and produced more consistent difficulty alignment, while greedy delivered comparable adequacy at lower computational cost in resource-scarce environments. Slack variables localized missing content and guided targeted curation, sustaining sufficiency across student subgroups. The result is a tractable and auditable controller that closes the diagnostic pedagogical loop and enables equitable, load-aware personalization at the classroom scale.",
+      "link": "http://arxiv.org/abs/2511.13542v1",
+      "published_date": "November 17, 2025",
+      "published_date_sort": "2025-11-17",
+      "citations": 0,
+      "institutions": "Unknown"
+    },
+    {
+      "title": "Protein Secondary Structure Prediction Using 3D Graphs and Relation-Aware Message Passing Transformers",
+      "authors": "Disha Varshney, Samarth Garg, Sarthak Tyagi, Deeksha Varshney, Nayan Deep, Asif Ekbal",
+      "journal": "arXiv",
+      "snippet": "In this study, we tackle the challenging task of predicting secondary structures from protein primary sequences, a pivotal initial stride towards predicting tertiary structures, while yielding crucial insights into protein activity, relationships, and functions. Existing methods often utilize extensive sets of unlabeled amino acid sequences. However, these approaches neither explicitly capture nor harness the accessible protein 3D structural data, which is recognized as a decisive factor in dictating protein functions. To address this, we utilize protein residue graphs and introduce various forms of sequential or structural connections to capture enhanced spatial information. We adeptly combine Graph Neural Networks (GNNs) and Language Models (LMs), specifically utilizing a pre-trained transformer-based protein language model to encode amino acid sequences and employing message-passing mechanisms like GCN and R-GCN to capture geometric characteristics of protein structures. Employing convolution within a specific node's nearby region, including relations, we stack multiple convolutional layers to efficiently learn combined insights from the protein's spatial graph, revealing intricate interconnections and dependencies in its structural arrangement. To assess our model's performance, we employed the training dataset provided by NetSurfP-2.0, which outlines secondary structure in 3-and 8-states. Extensive experiments show that our proposed model, SSRGNet surpasses the baseline on f1-scores.",
+      "link": "http://arxiv.org/abs/2511.13685v1",
+      "published_date": "November 17, 2025",
+      "published_date_sort": "2025-11-17",
+      "citations": 0,
+      "institutions": "Unknown"
+    },
+    {
+      "title": "Semi-Supervised Multi-Task Learning for Interpretable Quality As- sessment of Fundus Images",
+      "authors": "Lucas Gabriel Telesco, Danila Nejamkin, Estefanía Mata, Francisco Filizzola, Kevin Wignall, Lucía Franco Troilo, María de los Angeles Cenoz, Melissa Thompson, Mercedes Leguía, Ignacio Larrabide, José Ignacio Orlando",
+      "journal": "arXiv",
+      "snippet": "Retinal image quality assessment (RIQA) supports computer-aided diagnosis of eye diseases. However, most tools classify only overall image quality, without indicating acquisition defects to guide recapture. This gap is mainly due to the high cost of detailed annotations. In this paper, we aim to mitigate this limitation by introducing a hybrid semi-supervised learning approach that combines manual labels for overall quality with pseudo-labels of quality details within a multi-task framework. Our objective is to obtain more interpretable RIQA models without requiring extensive manual labeling. Pseudo-labels are generated by a Teacher model trained on a small dataset and then used to fine-tune a pre-trained model in a multi-task setting. Using a ResNet-18 backbone, we show that these weak annotations improve quality assessment over single-task baselines (F1: 0.875 vs. 0.863 on EyeQ, and 0.778 vs. 0.763 on DeepDRiD), matching or surpassing existing methods. The multi-task model achieved performance statistically comparable to the Teacher for most detail prediction tasks (p > 0.05). In a newly annotated EyeQ subset released with this paper, our model performed similarly to experts, suggesting that pseudo-label noise aligns with expert variability. Our main finding is that the proposed semi-supervised approach not only improves overall quality assessment but also provides interpretable feedback on capture conditions (illumination, clarity, contrast). This enhances interpretability at no extra manual labeling cost and offers clinically actionable outputs to guide image recapture.",
+      "link": "http://arxiv.org/abs/2511.13353v1",
+      "published_date": "November 17, 2025",
+      "published_date_sort": "2025-11-17",
+      "citations": 0,
+      "institutions": "Unknown"
+    },
+    {
+      "title": "Moving Pictures of Thought: Extracting Visual Knowledge in Charles S. Peirce's Manuscripts with Vision-Language Models",
+      "authors": "Carlo Teo Pedretti, Davide Picca, Dario Rodighiero",
+      "journal": "arXiv",
+      "snippet": "Diagrams are crucial yet underexplored tools in many disciplines, demonstrating the close connection between visual representation and scholarly reasoning. However, their iconic form poses obstacles to visual studies, intermedial analysis, and text-based digital workflows. In particular, Charles S. Peirce consistently advocated the use of diagrams as essential for reasoning and explanation. His manuscripts, often combining textual content with complex visual artifacts, provide a challenging case for studying documents involving heterogeneous materials. In this preliminary study, we investigate whether Visual Language Models (VLMs) can effectively help us identify and interpret such hybrid pages in context. First, we propose a workflow that (i) segments manuscript page layouts, (ii) reconnects each segment to IIIF-compliant annotations, and (iii) submits fragments containing diagrams to a VLM. In addition, by adopting Peirce's semiotic framework, we designed prompts to extract key knowledge about diagrams and produce concise captions. Finally, we integrated these captions into knowledge graphs, enabling structured representations of diagrammatic content within composite sources.",
+      "link": "http://arxiv.org/abs/2511.13378v1",
+      "published_date": "November 17, 2025",
+      "published_date_sort": "2025-11-17",
+      "citations": 0,
+      "institutions": "Unknown"
+    },
+    {
+      "title": "T-SAR: A Full-Stack Co-design for CPU-Only Ternary LLM Inference via In-Place SIMD ALU Reorganization",
+      "authors": "Hyunwoo Oh, KyungIn Nam, Rajat Bhattacharjya, Hanning Chen, Tamoghno Das, Sanggeon Yun, Suyeon Jang, Andrew Ding, Nikil Dutt, Mohsen Imani",
+      "journal": "arXiv",
+      "snippet": "Recent advances in LLMs have outpaced the computational and memory capacities of edge platforms that primarily employ CPUs, thereby challenging efficient and scalable deployment. While ternary quantization enables significant resource savings, existing CPU solutions rely heavily on memory-based lookup tables (LUTs) which limit scalability, and FPGA or GPU accelerators remain impractical for edge use. This paper presents T-SAR, the first framework to achieve scalable ternary LLM inference on CPUs by repurposing the SIMD register file for dynamic, in-register LUT generation with minimal hardware modifications. T-SAR eliminates memory bottlenecks and maximizes data-level parallelism, delivering 5.6-24.5x and 1.1-86.2x improvements in GEMM latency and GEMV throughput, respectively, with only 3.2% power and 1.4% area overheads in SIMD units. T-SAR achieves up to 2.5-4.9x the energy efficiency of an NVIDIA Jetson AGX Orin, establishing a practical approach for efficient LLM inference on edge platforms.",
+      "link": "http://arxiv.org/abs/2511.13676v1",
+      "published_date": "November 17, 2025",
+      "published_date_sort": "2025-11-17",
+      "citations": 0,
+      "institutions": "Unknown"
+    },
     {
       "title": "AutoMLGen: Navigating Fine-Grained Optimization for Coding Agents",
       "authors": "S Du, X Yan, D Jiang, J Yuan, Y Hu, X Li, L He… - arXiv preprint arXiv …, 2025 - arxiv.org",
@@ -72,17 +142,6 @@
       "institutions": "Unknown"
     },
     {
-      "title": "Reinforcement learning for machine learning engineering agents",
-      "authors": "S Yang, J He-Yueya, P Liang - arXiv preprint arXiv:2509.01684, 2025 - arxiv.org",
-      "journal": "Google Scholar Result",
-      "snippet": "Existing agents for solving tasks such as ML engineering rely on prompting powerful language models. As a result, these agents do not improve with more experience. In this …",
-      "link": "https://arxiv.org/abs/2509.01684",
-      "published_date": "September 2025",
-      "published_date_sort": "2025-09-01",
-      "citations": 2,
-      "institutions": "Unknown"
-    },
-    {
       "title": "An AI system to help scientists write expert-level empirical software",
       "authors": "E Aygün, A Belyaeva, G Comanici, M Coram… - arXiv preprint arXiv …, 2025 - arxiv.org",
       "journal": "Google Scholar Result",
@@ -91,6 +150,17 @@
       "published_date": "September 2025",
       "published_date_sort": "2025-09-01",
       "citations": 6,
+      "institutions": "Unknown"
+    },
+    {
+      "title": "Reinforcement learning for machine learning engineering agents",
+      "authors": "S Yang, J He-Yueya, P Liang - arXiv preprint arXiv:2509.01684, 2025 - arxiv.org",
+      "journal": "Google Scholar Result",
+      "snippet": "Existing agents for solving tasks such as ML engineering rely on prompting powerful language models. As a result, these agents do not improve with more experience. In this …",
+      "link": "https://arxiv.org/abs/2509.01684",
+      "published_date": "September 2025",
+      "published_date_sort": "2025-09-01",
+      "citations": 2,
       "institutions": "Unknown"
     },
     {
@@ -138,6 +208,17 @@
       "institutions": "Unknown"
     },
     {
+      "title": "AI Scientists Fail Without Strong Implementation Capability",
+      "authors": "M Zhu, Q Xie, Y Weng, J Wu, Z Lin, L Yang… - arXiv preprint arXiv …, 2025 - arxiv.org",
+      "journal": "Google Scholar Result",
+      "snippet": "The emergence of Artificial Intelligence (AI) Scientist represents a paradigm shift in scientific discovery, with large language models (LLMs) taking the lead as the primary executor in the …",
+      "link": "https://arxiv.org/abs/2506.01372",
+      "published_date": "June 2025",
+      "published_date_sort": "2025-06-01",
+      "citations": 8,
+      "institutions": "Unknown"
+    },
+    {
       "title": "Automind: Adaptive knowledgeable agent for automated data science",
       "authors": "Y Ou, Y Luo, J Zheng, L Wei, Z Yu, S Qiao… - arXiv preprint arXiv …, 2025 - arxiv.org",
       "journal": "Google Scholar Result",
@@ -149,14 +230,25 @@
       "institutions": "Unknown"
     },
     {
-      "title": "AI Scientists Fail Without Strong Implementation Capability",
-      "authors": "M Zhu, Q Xie, Y Weng, J Wu, Z Lin, L Yang… - arXiv preprint arXiv …, 2025 - arxiv.org",
+      "title": "Repomaster: Autonomous exploration and understanding of github repositories for complex task solving",
+      "authors": "H Wang, Z Ni, S Zhang, S Lu, S Hu, Z He, C Hu… - arXiv preprint arXiv …, 2025 - arxiv.org",
       "journal": "Google Scholar Result",
-      "snippet": "The emergence of Artificial Intelligence (AI) Scientist represents a paradigm shift in scientific discovery, with large language models (LLMs) taking the lead as the primary executor in the …",
-      "link": "https://arxiv.org/abs/2506.01372",
-      "published_date": "June 2025",
-      "published_date_sort": "2025-06-01",
-      "citations": 8,
+      "snippet": "The ultimate goal of code agents is to solve complex tasks autonomously. Although large language models (LLMs) have made substantial progress in code generation, real-world …",
+      "link": "https://arxiv.org/abs/2505.21577",
+      "published_date": "May 2025",
+      "published_date_sort": "2025-05-01",
+      "citations": 4,
+      "institutions": "Unknown"
+    },
+    {
+      "title": "Mle-dojo: Interactive environments for empowering llm agents in machine learning engineering",
+      "authors": "R Qiang, Y Zhuang, Y Li, R Zhang, C Li… - arXiv preprint arXiv …, 2025 - arxiv.org",
+      "journal": "Google Scholar Result",
+      "snippet": "We introduce MLE-Dojo, a Gym-style framework for systematically reinforcement learning, evaluating, and improving autonomous large language model (LLM) agents in iterative …",
+      "link": "https://arxiv.org/abs/2505.07782",
+      "published_date": "May 2025",
+      "published_date_sort": "2025-05-01",
+      "citations": 5,
       "institutions": "Unknown"
     },
     {
@@ -182,17 +274,6 @@
       "institutions": "Unknown"
     },
     {
-      "title": "Repomaster: Autonomous exploration and understanding of github repositories for complex task solving",
-      "authors": "H Wang, Z Ni, S Zhang, S Lu, S Hu, Z He, C Hu… - arXiv preprint arXiv …, 2025 - arxiv.org",
-      "journal": "Google Scholar Result",
-      "snippet": "The ultimate goal of code agents is to solve complex tasks autonomously. Although large language models (LLMs) have made substantial progress in code generation, real-world …",
-      "link": "https://arxiv.org/abs/2505.21577",
-      "published_date": "May 2025",
-      "published_date_sort": "2025-05-01",
-      "citations": 4,
-      "institutions": "Unknown"
-    },
-    {
       "title": "Mlzero: A multi-agent system for end-to-end machine learning automation",
       "authors": "H Fang, B Han, N Erickson, X Zhang, S Zhou… - arXiv preprint arXiv …, 2025 - arxiv.org",
       "journal": "Google Scholar Result",
@@ -201,17 +282,6 @@
       "published_date": "May 2025",
       "published_date_sort": "2025-05-01",
       "citations": 4,
-      "institutions": "Unknown"
-    },
-    {
-      "title": "Mle-dojo: Interactive environments for empowering llm agents in machine learning engineering",
-      "authors": "R Qiang, Y Zhuang, Y Li, R Zhang, C Li… - arXiv preprint arXiv …, 2025 - arxiv.org",
-      "journal": "Google Scholar Result",
-      "snippet": "We introduce MLE-Dojo, a Gym-style framework for systematically reinforcement learning, evaluating, and improving autonomous large language model (LLM) agents in iterative …",
-      "link": "https://arxiv.org/abs/2505.07782",
-      "published_date": "May 2025",
-      "published_date_sort": "2025-05-01",
-      "citations": 5,
       "institutions": "Unknown"
     },
     {
