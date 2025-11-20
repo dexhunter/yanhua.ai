@@ -1,11 +1,11 @@
 {
-  "last_updated": "2025-11-19 00:11:20 UTC",
+  "last_updated": "2025-11-20 00:11:34 UTC",
   "target_paper": "https://www.arxiv.org/abs/2502.13138",
   "arxiv_id": "2502.13138",
-  "total_citations": 26,
+  "total_citations": 28,
   "h_index": 6,
-  "recent_citations": 6,
-  "avg_citations_per_month": "1.13",
+  "recent_citations": 8,
+  "avg_citations_per_month": "1.22",
   "timeline": [
     {
       "date": "2024-01-01",
@@ -49,73 +49,95 @@
     },
     {
       "date": "2025-11-01",
-      "citations": 26
+      "citations": 28
     }
   ],
   "papers": [
     {
-      "title": "QUILL: An Algorithm-Architecture Co-Design for Cache-Local Deformable Attention",
-      "authors": "Hyunwoo Oh, Hanning Chen, Sanggeon Yun, Yang Ni, Wenjun Huang, Tamoghno Das, Suyeon Jang, Mohsen Imani",
+      "title": "Operationalizing Pluralistic Values in Large Language Model Alignment Reveals Trade-offs in Safety, Inclusivity, and Model Behavior",
+      "authors": "Dalia Ali, Dora Zhao, Allison Koenecke, Orestis Papakyriakopoulos",
       "journal": "arXiv",
-      "snippet": "Deformable transformers deliver state-of-the-art detection but map poorly to hardware due to irregular memory access and low arithmetic intensity. We introduce QUILL, a schedule-aware accelerator that turns deformable attention into cache-friendly, single-pass work. At its core, Distance-based Out-of-Order Querying (DOOQ) orders queries by spatial proximity; the look-ahead drives a region prefetch into an alternate buffer--forming a schedule-aware prefetch loop that overlaps memory and compute. A fused MSDeformAttn engine executes interpolation, Softmax, aggregation, and the final projection (W''m) in one pass without spilling intermediates, while small tensors are kept on-chip and surrounding dense layers run on integrated GEMMs. Implemented as RTL and evaluated end-to-end, QUILL achieves up to 7.29x higher throughput and 47.3x better energy efficiency than an RTX 4090, and exceeds prior accelerators by 3.26-9.82x in throughput and 2.01-6.07x in energy efficiency. With mixed-precision quantization, accuracy tracks FP32 within <=0.9 AP across Deformable and Sparse DETR variants. By converting sparsity into locality--and locality into utilization--QUILL delivers consistent, end-to-end speedups.",
-      "link": "http://arxiv.org/abs/2511.13679v1",
-      "published_date": "November 17, 2025",
-      "published_date_sort": "2025-11-17",
+      "snippet": "Although large language models (LLMs) are increasingly trained using human feedback for safety and alignment with human values, alignment decisions often overlook human social diversity. This study examines how incorporating pluralistic values affects LLM behavior by systematically evaluating demographic variation and design parameters in the alignment pipeline. We collected alignment data from US and German participants (N = 1,095, 27,375 ratings) who rated LLM responses across five dimensions: Toxicity, Emotional Awareness (EA), Sensitivity, Stereotypical Bias, and Helpfulness. We fine-tuned multiple Large Language Models and Large Reasoning Models using preferences from different social groups while varying rating scales, disagreement handling methods, and optimization techniques. The results revealed systematic demographic effects: male participants rated responses 18% less toxic than female participants; conservative and Black participants rated responses 27.9% and 44% more emotionally aware than liberal and White participants, respectively. Models fine-tuned on group-specific preferences exhibited distinct behaviors. Technical design choices showed strong effects: the preservation of rater disagreement achieved roughly 53% greater toxicity reduction than majority voting, and 5-point scales yielded about 22% more reduction than binary formats; and Direct Preference Optimization (DPO) consistently outperformed Group Relative Policy Optimization (GRPO) in multi-value optimization. These findings represent a preliminary step in answering a critical question: How should alignment balance expert-driven and user-driven signals to ensure both safety and fair representation?",
+      "link": "http://arxiv.org/abs/2511.14476v1",
+      "published_date": "November 18, 2025",
+      "published_date_sort": "2025-11-18",
       "citations": 0,
       "institutions": "Unknown"
     },
     {
-      "title": "Making Evidence Actionable in Adaptive Learning Closing the Diagnostic Pedagogical Loop",
-      "authors": "Amirreza Mehrabi, Jason Wade Morphew, Breejha Quezada, N. Sanjay Rebello",
+      "title": "MRI Embeddings Complement Clinical Predictors for Cognitive Decline Modeling in Alzheimer's Disease Cohorts",
+      "authors": "Nathaniel Putera, Daniel Vilet Rodríguez, Noah Videcrantz, Julia Machnio, Mostafa Mehdipour Ghazi",
       "journal": "arXiv",
-      "snippet": "Adaptive learning often diagnoses precisely yet intervenes weakly, producing help that is mistimed or misaligned. This study presents evidence supporting an instructor-governed feedback loop that converts concept-level assessment evidence into vetted microinterventions. The adaptive learning algorithm includes three safeguards: adequacy as a hard guarantee of gap closure, attention as a budgeted limit for time and redundancy, and diversity as protection against overfitting to a single resource. We formulate intervention assignment as a binary integer program with constraints for coverage, time, difficulty windows derived from ability estimates, prerequisites encoded by a concept matrix, and anti-redundancy with diversity. Greedy selection serves low-richness and tight-latency settings, gradient-based relaxation serves rich repositories, and a hybrid switches along a richness-latency frontier. In simulation and in an introductory physics deployment with 1204 students, both solvers achieved full skill coverage for nearly all learners within bounded watch time. The gradient-based method reduced redundant coverage by about 12 percentage points relative to greedy and produced more consistent difficulty alignment, while greedy delivered comparable adequacy at lower computational cost in resource-scarce environments. Slack variables localized missing content and guided targeted curation, sustaining sufficiency across student subgroups. The result is a tractable and auditable controller that closes the diagnostic pedagogical loop and enables equitable, load-aware personalization at the classroom scale.",
-      "link": "http://arxiv.org/abs/2511.13542v1",
-      "published_date": "November 17, 2025",
-      "published_date_sort": "2025-11-17",
+      "snippet": "Accurate modeling of cognitive decline in Alzheimer's disease is essential for early stratification and personalized management. While tabular predictors provide robust markers of global risk, their ability to capture subtle brain changes remains limited. In this study, we evaluate the predictive contributions of tabular and imaging-based representations, with a focus on transformer-derived Magnetic Resonance Imaging (MRI) embeddings. We introduce a trajectory-aware labeling strategy based on Dynamic Time Warping clustering to capture heterogeneous patterns of cognitive change, and train a 3D Vision Transformer (ViT) via unsupervised reconstruction on harmonized and augmented MRI data to obtain anatomy-preserving embeddings without progression labels. The pretrained encoder embeddings are subsequently assessed using both traditional machine learning classifiers and deep learning heads, and compared against tabular representations and convolutional network baselines. Results highlight complementary strengths across modalities. Clinical and volumetric features achieved the highest AUCs of around 0.70 for predicting mild and severe progression, underscoring their utility in capturing global decline trajectories. In contrast, MRI embeddings from the ViT model were most effective in distinguishing cognitively stable individuals with an AUC of 0.71. However, all approaches struggled in the heterogeneous moderate group. These findings indicate that clinical features excel in identifying high-risk extremes, whereas transformer-based MRI embeddings are more sensitive to subtle markers of stability, motivating multimodal fusion strategies for AD progression modeling.",
+      "link": "http://arxiv.org/abs/2511.14601v1",
+      "published_date": "November 18, 2025",
+      "published_date_sort": "2025-11-18",
       "citations": 0,
       "institutions": "Unknown"
     },
     {
-      "title": "Protein Secondary Structure Prediction Using 3D Graphs and Relation-Aware Message Passing Transformers",
-      "authors": "Disha Varshney, Samarth Garg, Sarthak Tyagi, Deeksha Varshney, Nayan Deep, Asif Ekbal",
+      "title": "Deep Learning-Based Regional White Matter Hyperintensity Mapping as a Robust Biomarker for Alzheimer's Disease",
+      "authors": "Julia Machnio, Mads Nielsen, Mostafa Mehdipour Ghazi",
       "journal": "arXiv",
-      "snippet": "In this study, we tackle the challenging task of predicting secondary structures from protein primary sequences, a pivotal initial stride towards predicting tertiary structures, while yielding crucial insights into protein activity, relationships, and functions. Existing methods often utilize extensive sets of unlabeled amino acid sequences. However, these approaches neither explicitly capture nor harness the accessible protein 3D structural data, which is recognized as a decisive factor in dictating protein functions. To address this, we utilize protein residue graphs and introduce various forms of sequential or structural connections to capture enhanced spatial information. We adeptly combine Graph Neural Networks (GNNs) and Language Models (LMs), specifically utilizing a pre-trained transformer-based protein language model to encode amino acid sequences and employing message-passing mechanisms like GCN and R-GCN to capture geometric characteristics of protein structures. Employing convolution within a specific node's nearby region, including relations, we stack multiple convolutional layers to efficiently learn combined insights from the protein's spatial graph, revealing intricate interconnections and dependencies in its structural arrangement. To assess our model's performance, we employed the training dataset provided by NetSurfP-2.0, which outlines secondary structure in 3-and 8-states. Extensive experiments show that our proposed model, SSRGNet surpasses the baseline on f1-scores.",
-      "link": "http://arxiv.org/abs/2511.13685v1",
-      "published_date": "November 17, 2025",
-      "published_date_sort": "2025-11-17",
+      "snippet": "White matter hyperintensities (WMH) are key imaging markers in cognitive aging, Alzheimer's disease (AD), and related dementias. Although automated methods for WMH segmentation have advanced, most provide only global lesion load and overlook their spatial distribution across distinct white matter regions. We propose a deep learning framework for robust WMH segmentation and localization, evaluated across public datasets and an independent Alzheimer's Disease Neuroimaging Initiative (ADNI) cohort. Our results show that the predicted lesion loads are in line with the reference WMH estimates, confirming the robustness to variations in lesion load, acquisition, and demographics. Beyond accurate segmentation, we quantify WMH load within anatomically defined regions and combine these measures with brain structure volumes to assess diagnostic value. Regional WMH volumes consistently outperform global lesion burden for disease classification, and integration with brain atrophy metrics further improves performance, reaching area under the curve (AUC) values up to 0.97. Several spatially distinct regions, particularly within anterior white matter tracts, are reproducibly associated with diagnostic status, indicating localized vulnerability in AD. These results highlight the added value of regional WMH quantification. Incorporating localized lesion metrics alongside atrophy markers may enhance early diagnosis and stratification in neurodegenerative disorders.",
+      "link": "http://arxiv.org/abs/2511.14588v1",
+      "published_date": "November 18, 2025",
+      "published_date_sort": "2025-11-18",
       "citations": 0,
       "institutions": "Unknown"
     },
     {
-      "title": "Semi-Supervised Multi-Task Learning for Interpretable Quality As- sessment of Fundus Images",
-      "authors": "Lucas Gabriel Telesco, Danila Nejamkin, Estefanía Mata, Francisco Filizzola, Kevin Wignall, Lucía Franco Troilo, María de los Angeles Cenoz, Melissa Thompson, Mercedes Leguía, Ignacio Larrabide, José Ignacio Orlando",
+      "title": "Enforcing hidden physics in physics-informed neural networks",
+      "authors": "Nanxi Chen, Sifan Wang, Rujin Ma, Airong Chen, Chuanjie Cui",
       "journal": "arXiv",
-      "snippet": "Retinal image quality assessment (RIQA) supports computer-aided diagnosis of eye diseases. However, most tools classify only overall image quality, without indicating acquisition defects to guide recapture. This gap is mainly due to the high cost of detailed annotations. In this paper, we aim to mitigate this limitation by introducing a hybrid semi-supervised learning approach that combines manual labels for overall quality with pseudo-labels of quality details within a multi-task framework. Our objective is to obtain more interpretable RIQA models without requiring extensive manual labeling. Pseudo-labels are generated by a Teacher model trained on a small dataset and then used to fine-tune a pre-trained model in a multi-task setting. Using a ResNet-18 backbone, we show that these weak annotations improve quality assessment over single-task baselines (F1: 0.875 vs. 0.863 on EyeQ, and 0.778 vs. 0.763 on DeepDRiD), matching or surpassing existing methods. The multi-task model achieved performance statistically comparable to the Teacher for most detail prediction tasks (p > 0.05). In a newly annotated EyeQ subset released with this paper, our model performed similarly to experts, suggesting that pseudo-label noise aligns with expert variability. Our main finding is that the proposed semi-supervised approach not only improves overall quality assessment but also provides interpretable feedback on capture conditions (illumination, clarity, contrast). This enhances interpretability at no extra manual labeling cost and offers clinically actionable outputs to guide image recapture.",
-      "link": "http://arxiv.org/abs/2511.13353v1",
-      "published_date": "November 17, 2025",
-      "published_date_sort": "2025-11-17",
+      "snippet": "Physics-informed neural networks (PINNs) represent a new paradigm for solving partial differential equations (PDEs) by integrating physical laws into the learning process of neural networks. However, despite their foundational role, the hidden irreversibility implied by the Second Law of Thermodynamics is often neglected during training, leading to unphysical solutions or even training failures in conventional PINNs. In this paper, we identify this critical gap and introduce a simple, generalized, yet robust irreversibility-regularized strategy that enforces hidden physical laws as soft constraints during training. This approach ensures that the learned solutions consistently respect the intrinsic one-way nature of irreversible physical processes. Across a wide range of benchmarks spanning traveling wave propagation, steady combustion, ice melting, corrosion evolution, and crack propagation, we demonstrate that our regularization scheme reduces predictive errors by more than an order of magnitude, while requiring only minimal modification to existing PINN frameworks. We believe that the proposed framework is broadly applicable to a wide class of PDE-governed physical systems and will have significant impact within the scientific machine learning community.",
+      "link": "http://arxiv.org/abs/2511.14348v1",
+      "published_date": "November 18, 2025",
+      "published_date_sort": "2025-11-18",
       "citations": 0,
       "institutions": "Unknown"
     },
     {
-      "title": "Moving Pictures of Thought: Extracting Visual Knowledge in Charles S. Peirce's Manuscripts with Vision-Language Models",
-      "authors": "Carlo Teo Pedretti, Davide Picca, Dario Rodighiero",
+      "title": "Biased Minds Meet Biased AI: How Class Imbalance Shapes Appropriate Reliance and Interacts with Human Base Rate Neglect",
+      "authors": "Nick von Felten, Johannes Schöning, Klaus Opwis, Nicolas Scharowksi",
       "journal": "arXiv",
-      "snippet": "Diagrams are crucial yet underexplored tools in many disciplines, demonstrating the close connection between visual representation and scholarly reasoning. However, their iconic form poses obstacles to visual studies, intermedial analysis, and text-based digital workflows. In particular, Charles S. Peirce consistently advocated the use of diagrams as essential for reasoning and explanation. His manuscripts, often combining textual content with complex visual artifacts, provide a challenging case for studying documents involving heterogeneous materials. In this preliminary study, we investigate whether Visual Language Models (VLMs) can effectively help us identify and interpret such hybrid pages in context. First, we propose a workflow that (i) segments manuscript page layouts, (ii) reconnects each segment to IIIF-compliant annotations, and (iii) submits fragments containing diagrams to a VLM. In addition, by adopting Peirce's semiotic framework, we designed prompts to extract key knowledge about diagrams and produce concise captions. Finally, we integrated these captions into knowledge graphs, enabling structured representations of diagrammatic content within composite sources.",
-      "link": "http://arxiv.org/abs/2511.13378v1",
-      "published_date": "November 17, 2025",
-      "published_date_sort": "2025-11-17",
+      "snippet": "Humans increasingly interact with artificial intelligence (AI) in decision-making. However, both AI and humans are prone to biases. While AI and human biases have been studied extensively in isolation, this paper examines their complex interaction. Specifically, we examined how class imbalance as an AI bias affects people's ability to appropriately rely on an AI-based decision-support system, and how it interacts with base rate neglect as a human bias. In a within-subject online study (N= 46), participants classified three diseases using an AI-based decision-support system trained on either a balanced or unbalanced dataset. We found that class imbalance disrupted participants' calibration of AI reliance. Moreover, we observed mutually reinforcing effects between class imbalance and base rate neglect, offering evidence of a compound human-AI bias. Based on these findings, we advocate for an interactionist perspective and further research into the mutually reinforcing effects of biases in human-AI interaction.",
+      "link": "http://arxiv.org/abs/2511.14591v1",
+      "published_date": "November 18, 2025",
+      "published_date_sort": "2025-11-18",
       "citations": 0,
       "institutions": "Unknown"
     },
     {
-      "title": "T-SAR: A Full-Stack Co-design for CPU-Only Ternary LLM Inference via In-Place SIMD ALU Reorganization",
-      "authors": "Hyunwoo Oh, KyungIn Nam, Rajat Bhattacharjya, Hanning Chen, Tamoghno Das, Sanggeon Yun, Suyeon Jang, Andrew Ding, Nikil Dutt, Mohsen Imani",
+      "title": "SweeperBot: Making 3D Browsing Accessible through View Analysis and Visual Question Answering",
+      "authors": "Chen Chen, Cuong Nguyen, Alexa Siu, Dingzeyu Li, Nadir Weibel",
       "journal": "arXiv",
-      "snippet": "Recent advances in LLMs have outpaced the computational and memory capacities of edge platforms that primarily employ CPUs, thereby challenging efficient and scalable deployment. While ternary quantization enables significant resource savings, existing CPU solutions rely heavily on memory-based lookup tables (LUTs) which limit scalability, and FPGA or GPU accelerators remain impractical for edge use. This paper presents T-SAR, the first framework to achieve scalable ternary LLM inference on CPUs by repurposing the SIMD register file for dynamic, in-register LUT generation with minimal hardware modifications. T-SAR eliminates memory bottlenecks and maximizes data-level parallelism, delivering 5.6-24.5x and 1.1-86.2x improvements in GEMM latency and GEMV throughput, respectively, with only 3.2% power and 1.4% area overheads in SIMD units. T-SAR achieves up to 2.5-4.9x the energy efficiency of an NVIDIA Jetson AGX Orin, establishing a practical approach for efficient LLM inference on edge platforms.",
-      "link": "http://arxiv.org/abs/2511.13676v1",
-      "published_date": "November 17, 2025",
-      "published_date_sort": "2025-11-17",
+      "snippet": "Accessing 3D models remains challenging for Screen Reader (SR) users. While some existing 3D viewers allow creators to provide alternative text, they often lack sufficient detail about the 3D models. Grounded on a formative study, this paper introduces SweeperBot, a system that enables SR users to leverage visual question answering to explore and compare 3D models. SweeperBot answers SR users' visual questions by combining an optimal view selection technique with the strength of generative- and recognition-based foundation models. An expert review with 10 Blind and Low-Vision (BLV) users with SR experience demonstrated the feasibility of using SweeperBot to assist BLV users in exploring and comparing 3D models. The quality of the descriptions generated by SweeperBot was validated by a second survey study with 30 sighted participants.",
+      "link": "http://arxiv.org/abs/2511.14567v1",
+      "published_date": "November 18, 2025",
+      "published_date_sort": "2025-11-18",
+      "citations": 0,
+      "institutions": "Unknown"
+    },
+    {
+      "title": "Is Your VLM for Autonomous Driving Safety-Ready? A Comprehensive Benchmark for Evaluating External and In-Cabin Risks",
+      "authors": "Xianhui Meng, Yuchen Zhang, Zhijian Huang, Zheng Lu, Ziling Ji, Yaoyao Yin, Hongyuan Zhang, Guangfeng Jiang, Yandan Lin, Long Chen, Hangjun Ye, Li Zhang, Jun Liu, Xiaoshuai Hao",
+      "journal": "arXiv",
+      "snippet": "Vision-Language Models (VLMs) show great promise for autonomous driving, but their suitability for safety-critical scenarios is largely unexplored, raising safety concerns. This issue arises from the lack of comprehensive benchmarks that assess both external environmental risks and in-cabin driving behavior safety simultaneously. To bridge this critical gap, we introduce DSBench, the first comprehensive Driving Safety Benchmark designed to assess a VLM's awareness of various safety risks in a unified manner. DSBench encompasses two major categories: external environmental risks and in-cabin driving behavior safety, divided into 10 key categories and a total of 28 sub-categories. This comprehensive evaluation covers a wide range of scenarios, ensuring a thorough assessment of VLMs' performance in safety-critical contexts. Extensive evaluations across various mainstream open-source and closed-source VLMs reveal significant performance degradation under complex safety-critical situations, highlighting urgent safety concerns. To address this, we constructed a large dataset of 98K instances focused on in-cabin and external safety scenarios, showing that fine-tuning on this dataset significantly enhances the safety performance of existing VLMs and paves the way for advancing autonomous driving technology. The benchmark toolkit, code, and model checkpoints will be publicly accessible.",
+      "link": "http://arxiv.org/abs/2511.14592v1",
+      "published_date": "November 18, 2025",
+      "published_date_sort": "2025-11-18",
+      "citations": 0,
+      "institutions": "Unknown"
+    },
+    {
+      "title": "NeuralSSD: A Neural Solver for Signed Distance Surface Reconstruction",
+      "authors": "Zi-Chen Xi, Jiahui Huang, Hao-Xiang Chen, Francis Williams, Qun-Ce Xu, Tai-Jiang Mu, Shi-Min Hu",
+      "journal": "arXiv",
+      "snippet": "We proposed a generalized method, NeuralSSD, for reconstructing a 3D implicit surface from the widely-available point cloud data. NeuralSSD is a solver-based on the neural Galerkin method, aimed at reconstructing higher-quality and accurate surfaces from input point clouds. Implicit method is preferred due to its ability to accurately represent shapes and its robustness in handling topological changes. However, existing parameterizations of implicit fields lack explicit mechanisms to ensure a tight fit between the surface and input data. To address this, we propose a novel energy equation that balances the reliability of point cloud information. Additionally, we introduce a new convolutional network that learns three-dimensional information to achieve superior optimization results. This approach ensures that the reconstructed surface closely adheres to the raw input points and infers valuable inductive biases from point clouds, resulting in a highly accurate and stable surface reconstruction. NeuralSSD is evaluated on a variety of challenging datasets, including the ShapeNet and Matterport datasets, and achieves state-of-the-art results in terms of both surface reconstruction accuracy and generalizability.",
+      "link": "http://arxiv.org/abs/2511.14283v1",
+      "published_date": "November 18, 2025",
+      "published_date_sort": "2025-11-18",
       "citations": 0,
       "institutions": "Unknown"
     },
@@ -142,17 +164,6 @@
       "institutions": "Unknown"
     },
     {
-      "title": "An AI system to help scientists write expert-level empirical software",
-      "authors": "E Aygün, A Belyaeva, G Comanici, M Coram… - arXiv preprint arXiv …, 2025 - arxiv.org",
-      "journal": "Google Scholar Result",
-      "snippet": "The cycle of scientific discovery is frequently bottlenecked by the slow, manual creation of software to support computational experiments. To address this, we present an AI system …",
-      "link": "https://arxiv.org/abs/2509.06503",
-      "published_date": "September 2025",
-      "published_date_sort": "2025-09-01",
-      "citations": 6,
-      "institutions": "Unknown"
-    },
-    {
       "title": "Reinforcement learning for machine learning engineering agents",
       "authors": "S Yang, J He-Yueya, P Liang - arXiv preprint arXiv:2509.01684, 2025 - arxiv.org",
       "journal": "Google Scholar Result",
@@ -161,6 +172,17 @@
       "published_date": "September 2025",
       "published_date_sort": "2025-09-01",
       "citations": 2,
+      "institutions": "Unknown"
+    },
+    {
+      "title": "An AI system to help scientists write expert-level empirical software",
+      "authors": "E Aygün, A Belyaeva, G Comanici, M Coram… - arXiv preprint arXiv …, 2025 - arxiv.org",
+      "journal": "Google Scholar Result",
+      "snippet": "The cycle of scientific discovery is frequently bottlenecked by the slow, manual creation of software to support computational experiments. To address this, we present an AI system …",
+      "link": "https://arxiv.org/abs/2509.06503",
+      "published_date": "September 2025",
+      "published_date_sort": "2025-09-01",
+      "citations": 6,
       "institutions": "Unknown"
     },
     {
@@ -197,14 +219,14 @@
       "institutions": "Unknown"
     },
     {
-      "title": "A Comprehensive Survey of Deep Research: Systems, Methodologies, and Applications",
-      "authors": "R Xu, J Peng - arXiv preprint arXiv:2506.12594, 2025 - arxiv.org",
+      "title": "Automind: Adaptive knowledgeable agent for automated data science",
+      "authors": "Y Ou, Y Luo, J Zheng, L Wei, Z Yu, S Qiao… - arXiv preprint arXiv …, 2025 - arxiv.org",
       "journal": "Google Scholar Result",
-      "snippet": "This survey examines the rapidly evolving field of Deep Research systems--AI-powered applications that automate complex research workflows through the integration of large …",
-      "link": "https://arxiv.org/abs/2506.12594",
+      "snippet": "Large Language Model (LLM) agents have shown great potential in addressing real-world data science problems. LLM-driven data science agents promise to automate the entire …",
+      "link": "https://arxiv.org/abs/2506.10974",
       "published_date": "June 2025",
       "published_date_sort": "2025-06-01",
-      "citations": 25,
+      "citations": 4,
       "institutions": "Unknown"
     },
     {
@@ -219,25 +241,47 @@
       "institutions": "Unknown"
     },
     {
-      "title": "Automind: Adaptive knowledgeable agent for automated data science",
-      "authors": "Y Ou, Y Luo, J Zheng, L Wei, Z Yu, S Qiao… - arXiv preprint arXiv …, 2025 - arxiv.org",
+      "title": "A Comprehensive Survey of Deep Research: Systems, Methodologies, and Applications",
+      "authors": "R Xu, J Peng - arXiv preprint arXiv:2506.12594, 2025 - arxiv.org",
       "journal": "Google Scholar Result",
-      "snippet": "Large Language Model (LLM) agents have shown great potential in addressing real-world data science problems. LLM-driven data science agents promise to automate the entire …",
-      "link": "https://arxiv.org/abs/2506.10974",
+      "snippet": "This survey examines the rapidly evolving field of Deep Research systems--AI-powered applications that automate complex research workflows through the integration of large …",
+      "link": "https://arxiv.org/abs/2506.12594",
       "published_date": "June 2025",
       "published_date_sort": "2025-06-01",
+      "citations": 25,
+      "institutions": "Unknown"
+    },
+    {
+      "title": "Mlzero: A multi-agent system for end-to-end machine learning automation",
+      "authors": "H Fang, B Han, N Erickson, X Zhang, S Zhou… - arXiv preprint arXiv …, 2025 - arxiv.org",
+      "journal": "Google Scholar Result",
+      "snippet": "Existing AutoML systems have advanced the automation of machine learning (ML); however, they still require substantial manual configuration and expert input, particularly …",
+      "link": "https://arxiv.org/abs/2505.13941",
+      "published_date": "May 2025",
+      "published_date_sort": "2025-05-01",
       "citations": 4,
       "institutions": "Unknown"
     },
     {
-      "title": "Repomaster: Autonomous exploration and understanding of github repositories for complex task solving",
-      "authors": "H Wang, Z Ni, S Zhang, S Lu, S Hu, Z He, C Hu… - arXiv preprint arXiv …, 2025 - arxiv.org",
+      "title": "IDA-Bench: Evaluating LLMs on Interactive Guided Data Analysis",
+      "authors": "H Li, H Liu, T Zhu, T Guo, Z Zheng, X Deng… - arXiv preprint arXiv …, 2025 - arxiv.org",
       "journal": "Google Scholar Result",
-      "snippet": "The ultimate goal of code agents is to solve complex tasks autonomously. Although large language models (LLMs) have made substantial progress in code generation, real-world …",
-      "link": "https://arxiv.org/abs/2505.21577",
+      "snippet": "Large Language Models (LLMs) show promise as data analysis agents, but existing benchmarks overlook the iterative nature of the field, where experts' decisions evolve with …",
+      "link": "https://arxiv.org/abs/2505.18223",
       "published_date": "May 2025",
       "published_date_sort": "2025-05-01",
-      "citations": 4,
+      "citations": 2,
+      "institutions": "Unknown"
+    },
+    {
+      "title": "CodePDE: An Inference Framework for LLM-driven PDE Solver Generation",
+      "authors": "S Li, T Marwah, J Shen, W Sun, A Risteski… - arXiv preprint arXiv …, 2025 - arxiv.org",
+      "journal": "Google Scholar Result",
+      "snippet": "Partial differential equations (PDEs) are fundamental to modeling physical systems, yet solving them remains a complex challenge. Traditional numerical solvers rely on expert …",
+      "link": "https://arxiv.org/abs/2505.08783",
+      "published_date": "May 2025",
+      "published_date_sort": "2025-05-01",
+      "citations": 6,
       "institutions": "Unknown"
     },
     {
@@ -263,36 +307,14 @@
       "institutions": "Unknown"
     },
     {
-      "title": "CodePDE: An Inference Framework for LLM-driven PDE Solver Generation",
-      "authors": "S Li, T Marwah, J Shen, W Sun, A Risteski… - arXiv preprint arXiv …, 2025 - arxiv.org",
+      "title": "Repomaster: Autonomous exploration and understanding of github repositories for complex task solving",
+      "authors": "H Wang, Z Ni, S Zhang, S Lu, S Hu, Z He, C Hu… - arXiv preprint arXiv …, 2025 - arxiv.org",
       "journal": "Google Scholar Result",
-      "snippet": "Partial differential equations (PDEs) are fundamental to modeling physical systems, yet solving them remains a complex challenge. Traditional numerical solvers rely on expert …",
-      "link": "https://arxiv.org/abs/2505.08783",
-      "published_date": "May 2025",
-      "published_date_sort": "2025-05-01",
-      "citations": 6,
-      "institutions": "Unknown"
-    },
-    {
-      "title": "Mlzero: A multi-agent system for end-to-end machine learning automation",
-      "authors": "H Fang, B Han, N Erickson, X Zhang, S Zhou… - arXiv preprint arXiv …, 2025 - arxiv.org",
-      "journal": "Google Scholar Result",
-      "snippet": "Existing AutoML systems have advanced the automation of machine learning (ML); however, they still require substantial manual configuration and expert input, particularly …",
-      "link": "https://arxiv.org/abs/2505.13941",
+      "snippet": "The ultimate goal of code agents is to solve complex tasks autonomously. Although large language models (LLMs) have made substantial progress in code generation, real-world …",
+      "link": "https://arxiv.org/abs/2505.21577",
       "published_date": "May 2025",
       "published_date_sort": "2025-05-01",
       "citations": 4,
-      "institutions": "Unknown"
-    },
-    {
-      "title": "IDA-Bench: Evaluating LLMs on Interactive Guided Data Analysis",
-      "authors": "H Li, H Liu, T Zhu, T Guo, Z Zheng, X Deng… - arXiv preprint arXiv …, 2025 - arxiv.org",
-      "journal": "Google Scholar Result",
-      "snippet": "Large Language Models (LLMs) show promise as data analysis agents, but existing benchmarks overlook the iterative nature of the field, where experts' decisions evolve with …",
-      "link": "https://arxiv.org/abs/2505.18223",
-      "published_date": "May 2025",
-      "published_date_sort": "2025-05-01",
-      "citations": 2,
       "institutions": "Unknown"
     },
     {
