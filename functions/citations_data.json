@@ -1,11 +1,11 @@
 {
-  "last_updated": "2025-11-25 00:09:20 UTC",
+  "last_updated": "2025-11-26 00:11:05 UTC",
   "target_paper": "https://www.arxiv.org/abs/2502.13138",
   "arxiv_id": "2502.13138",
-  "total_citations": 20,
+  "total_citations": 25,
   "h_index": 6,
-  "recent_citations": 0,
-  "avg_citations_per_month": "0.91",
+  "recent_citations": 5,
+  "avg_citations_per_month": "1.09",
   "timeline": [
     {
       "date": "2024-01-01",
@@ -46,9 +46,68 @@
     {
       "date": "2025-10-01",
       "citations": 20
+    },
+    {
+      "date": "2025-11-01",
+      "citations": 25
     }
   ],
   "papers": [
+    {
+      "title": "Mitigating Participation Imbalance Bias in Asynchronous Federated Learning",
+      "authors": "Xiangyu Chang, Manyi Yao, Srikanth V. Krishnamurthy, Christian R. Shelton, Anirban Chakraborty, Ananthram Swami, Samet Oymak, Amit Roy-Chowdhury",
+      "journal": "arXiv",
+      "snippet": "In Asynchronous Federated Learning (AFL), the central server immediately updates the global model with each arriving client's contribution. As a result, clients perform their local training on different model versions, causing information staleness (delay). In federated environments with non-IID local data distributions, this asynchronous pattern amplifies the adverse effect of client heterogeneity (due to different data distribution, local objectives, etc.), as faster clients contribute more frequent updates, biasing the global model. We term this phenomenon heterogeneity amplification. Our work provides a theoretical analysis that maps AFL design choices to their resulting error sources when heterogeneity amplification occurs. Guided by our analysis, we propose ACE (All-Client Engagement AFL), which mitigates participation imbalance through immediate, non-buffered updates that use the latest information available from all clients. We also introduce a delay-aware variant, ACED, to balance client diversity against update staleness. Experiments on different models for different tasks across diverse heterogeneity and delay settings validate our analysis and demonstrate the robust performance of our approaches.",
+      "link": "http://arxiv.org/abs/2511.19066v1",
+      "published_date": "November 24, 2025",
+      "published_date_sort": "2025-11-24",
+      "citations": 0,
+      "institutions": "Unknown"
+    },
+    {
+      "title": "Artificial Intelligence Driven Workflow for Accelerating Design of Novel Photosensitizers",
+      "authors": "Hongyi Wang, Xiuli Zheng, Weimin Liu, Zitian Tang, Sheng Gong",
+      "journal": "arXiv",
+      "snippet": "The discovery of high-performance photosensitizers has long been hindered by the time-consuming and resource-intensive nature of traditional trial-and-error approaches. Here, we present \\textbf{A}I-\\textbf{A}ccelerated \\textbf{P}hoto\\textbf{S}ensitizer \\textbf{I}nnovation (AAPSI), a closed-loop workflow that integrates expert knowledge, scaffold-based molecule generation, and Bayesian optimization to accelerate the design of novel photosensitizers. The scaffold-driven generation in AAPSI ensures structural novelty and synthetic feasibility, while the iterative AI-experiment loop accelerates the discovery of novel photosensitizers. AAPSI leverages a curated database of 102,534 photosensitizer-solvent pairs and generate 6,148 synthetically accessible candidates. These candidates are screened via graph transformers trained to predict singlet oxygen quantum yield ($φ_Δ$) and absorption maxima ($λ_{max}$), following experimental validation. This work generates several novel candidates for photodynamic therapy (PDT), among which the hypocrellin-based candidate HB4Ph exhibits exceptional performance at the Pareto frontier of high quantum yield of singlet oxygen and long absorption maxima among current photosensitizers ($φ_Δ$=0.85, $λ_{max}$=650nm).",
+      "link": "http://arxiv.org/abs/2511.19347v1",
+      "published_date": "November 24, 2025",
+      "published_date_sort": "2025-11-24",
+      "citations": 0,
+      "institutions": "Unknown"
+    },
+    {
+      "title": "Prompt Less, Smile More: MTP with Semantic Engineering in Lieu of Prompt Engineering",
+      "authors": "Jayanaka L. Dantanarayana, Savini Kashmira, Thakee Nathees, Zichen Zhang, Krisztian Flautner, Lingjia Tang, Jason Mars",
+      "journal": "arXiv",
+      "snippet": "AI-Integrated programming is emerging as a foundational paradigm for building intelligent systems with large language models (LLMs). Recent approaches such as Meaning Typed Programming (MTP) automate prompt generation by leveraging the semantics already present in code. However, many real-world applications depend on contextual cues, developer intent, and domain-specific reasoning that extend beyond what static code semantics alone can express. To address this limitation, we introduce Semantic Engineering, a lightweight method for enriching program semantics so that LLM-based systems can more accurately reflect developer intent without requiring full manual prompt design. We present Semantic Context Annotations (SemTexts), a language-level mechanism that allows developers to embed natural-language context directly into program constructs. Integrated into the Jac programming language, Semantic Engineering extends MTP to incorporate these enriched semantics during prompt generation. We further introduce a benchmark suite designed to reflect realistic AI-Integrated application scenarios. Our evaluation shows that Semantic Engineering substantially improves prompt fidelity, achieving performance comparable to Prompt Engineering while requiring significantly less developer effort.",
+      "link": "http://arxiv.org/abs/2511.19427v1",
+      "published_date": "November 24, 2025",
+      "published_date_sort": "2025-11-24",
+      "citations": 0,
+      "institutions": "Unknown"
+    },
+    {
+      "title": "MAESTRO: Multi-Agent Environment Shaping through Task and Reward Optimization",
+      "authors": "Boyuan Wu",
+      "journal": "arXiv",
+      "snippet": "Cooperative Multi-Agent Reinforcement Learning (MARL) faces two major design bottlenecks: crafting dense reward functions and constructing curricula that avoid local optima in high-dimensional, non-stationary environments. Existing approaches rely on fixed heuristics or use Large Language Models (LLMs) directly in the control loop, which is costly and unsuitable for real-time systems. We propose MAESTRO (Multi-Agent Environment Shaping through Task and Reward Optimization), a framework that moves the LLM outside the execution loop and uses it as an offline training architect. MAESTRO introduces two generative components: (i) a semantic curriculum generator that creates diverse, performance-driven traffic scenarios, and (ii) an automated reward synthesizer that produces executable Python reward functions adapted to evolving curriculum difficulty. These components guide a standard MARL backbone (MADDPG) without increasing inference cost at deployment. We evaluate MAESTRO on large-scale traffic signal control (Hangzhou, 16 intersections) and conduct controlled ablations. Results show that combining LLM-generated curricula with LLM-generated reward shaping yields improved performance and stability. Across four seeds, the full system achieves +4.0% higher mean return (163.26 vs. 156.93) and 2.2% better risk-adjusted performance (Sharpe 1.53 vs. 0.70) over a strong curriculum baseline. These findings highlight LLMs as effective high-level designers for cooperative MARL training.",
+      "link": "http://arxiv.org/abs/2511.19253v1",
+      "published_date": "November 24, 2025",
+      "published_date_sort": "2025-11-24",
+      "citations": 0,
+      "institutions": "Unknown"
+    },
+    {
+      "title": "The Core in Max-Loss Non-Centroid Clustering Can Be Empty",
+      "authors": "Robert Bredereck, Eva Deltl, Leon Kellerhals, Jannik Peters",
+      "journal": "arXiv",
+      "snippet": "We study core stability in non-centroid clustering under the max-loss objective, where each agent's loss is the maximum distance to other members of their cluster. We prove that for all $k\\geq 3$ there exist metric instances with $n\\ge 9$ agents, with $n$ divisible by $k$, for which no clustering lies in the $α$-core for any $α<2^{\\frac{1}{5}}\\sim 1.148$. The bound is tight for our construction. Using a computer-aided proof, we also identify a two-dimensional Euclidean point set whose associated lower bound is slightly smaller than that of our general construction. This is, to our knowledge, the first impossibility result showing that the core can be empty in non-centroid clustering under the max-loss objective.",
+      "link": "http://arxiv.org/abs/2511.19107v1",
+      "published_date": "November 24, 2025",
+      "published_date_sort": "2025-11-24",
+      "citations": 0,
+      "institutions": "Unknown"
+    },
     {
       "title": "AutoMLGen: Navigating Fine-Grained Optimization for Coding Agents",
       "authors": "S Du, X Yan, D Jiang, J Yuan, Y Hu, X Li, L He… - arXiv preprint arXiv …, 2025 - arxiv.org",
@@ -72,17 +131,6 @@
       "institutions": "Unknown"
     },
     {
-      "title": "Reinforcement learning for machine learning engineering agents",
-      "authors": "S Yang, J He-Yueya, P Liang - arXiv preprint arXiv:2509.01684, 2025 - arxiv.org",
-      "journal": "Google Scholar Result",
-      "snippet": "Existing agents for solving tasks such as ML engineering rely on prompting powerful language models. As a result, these agents do not improve with more experience. In this …",
-      "link": "https://arxiv.org/abs/2509.01684",
-      "published_date": "September 2025",
-      "published_date_sort": "2025-09-01",
-      "citations": 2,
-      "institutions": "Unknown"
-    },
-    {
       "title": "An AI system to help scientists write expert-level empirical software",
       "authors": "E Aygün, A Belyaeva, G Comanici, M Coram… - arXiv preprint arXiv …, 2025 - arxiv.org",
       "journal": "Google Scholar Result",
@@ -94,14 +142,14 @@
       "institutions": "Unknown"
     },
     {
-      "title": "KompeteAI: Accelerated autonomous multi-agent system for end-to-end pipeline generation for machine learning problems",
-      "authors": "S Kulibaba, A Dzhalilov, R Pakhomov… - arXiv preprint arXiv …, 2025 - arxiv.org",
+      "title": "Reinforcement learning for machine learning engineering agents",
+      "authors": "S Yang, J He-Yueya, P Liang - arXiv preprint arXiv:2509.01684, 2025 - arxiv.org",
       "journal": "Google Scholar Result",
-      "snippet": "Recent Large Language Model (LLM)-based AutoML systems demonstrate impressive capabilities but face significant limitations such as constrained exploration strategies and a …",
-      "link": "https://arxiv.org/abs/2508.10177",
-      "published_date": "August 2025",
-      "published_date_sort": "2025-08-01",
-      "citations": 3,
+      "snippet": "Existing agents for solving tasks such as ML engineering rely on prompting powerful language models. As a result, these agents do not improve with more experience. In this …",
+      "link": "https://arxiv.org/abs/2509.01684",
+      "published_date": "September 2025",
+      "published_date_sort": "2025-09-01",
+      "citations": 2,
       "institutions": "Unknown"
     },
     {
@@ -116,6 +164,17 @@
       "institutions": "Unknown"
     },
     {
+      "title": "KompeteAI: Accelerated autonomous multi-agent system for end-to-end pipeline generation for machine learning problems",
+      "authors": "S Kulibaba, A Dzhalilov, R Pakhomov… - arXiv preprint arXiv …, 2025 - arxiv.org",
+      "journal": "Google Scholar Result",
+      "snippet": "Recent Large Language Model (LLM)-based AutoML systems demonstrate impressive capabilities but face significant limitations such as constrained exploration strategies and a …",
+      "link": "https://arxiv.org/abs/2508.10177",
+      "published_date": "August 2025",
+      "published_date_sort": "2025-08-01",
+      "citations": 3,
+      "institutions": "Unknown"
+    },
+    {
       "title": "How Far Are AI Scientists from Changing the World?",
       "authors": "Q Xie, Y Weng, M Zhu, F Shen, S Huang, Z Lin… - arXiv preprint arXiv …, 2025 - arxiv.org",
       "journal": "Google Scholar Result",
@@ -123,6 +182,17 @@
       "link": "https://arxiv.org/abs/2507.23276",
       "published_date": "July 2025",
       "published_date_sort": "2025-07-01",
+      "citations": 5,
+      "institutions": "Unknown"
+    },
+    {
+      "title": "Automind: Adaptive knowledgeable agent for automated data science",
+      "authors": "Y Ou, Y Luo, J Zheng, L Wei, Z Yu, S Qiao… - arXiv preprint arXiv …, 2025 - arxiv.org",
+      "journal": "Google Scholar Result",
+      "snippet": "Large Language Model (LLM) agents have shown great potential in addressing real-world data science problems. LLM-driven data science agents promise to automate the entire …",
+      "link": "https://arxiv.org/abs/2506.10974",
+      "published_date": "June 2025",
+      "published_date_sort": "2025-06-01",
       "citations": 5,
       "institutions": "Unknown"
     },
@@ -149,25 +219,14 @@
       "institutions": "Unknown"
     },
     {
-      "title": "Automind: Adaptive knowledgeable agent for automated data science",
-      "authors": "Y Ou, Y Luo, J Zheng, L Wei, Z Yu, S Qiao… - arXiv preprint arXiv …, 2025 - arxiv.org",
+      "title": "IDA-Bench: Evaluating LLMs on Interactive Guided Data Analysis",
+      "authors": "H Li, H Liu, T Zhu, T Guo, Z Zheng, X Deng… - arXiv preprint arXiv …, 2025 - arxiv.org",
       "journal": "Google Scholar Result",
-      "snippet": "Large Language Model (LLM) agents have shown great potential in addressing real-world data science problems. LLM-driven data science agents promise to automate the entire …",
-      "link": "https://arxiv.org/abs/2506.10974",
-      "published_date": "June 2025",
-      "published_date_sort": "2025-06-01",
-      "citations": 5,
-      "institutions": "Unknown"
-    },
-    {
-      "title": "Mlzero: A multi-agent system for end-to-end machine learning automation",
-      "authors": "H Fang, B Han, N Erickson, X Zhang, S Zhou… - arXiv preprint arXiv …, 2025 - arxiv.org",
-      "journal": "Google Scholar Result",
-      "snippet": "Existing AutoML systems have advanced the automation of machine learning (ML); however, they still require substantial manual configuration and expert input, particularly …",
-      "link": "https://arxiv.org/abs/2505.13941",
+      "snippet": "Large Language Models (LLMs) show promise as data analysis agents, but existing benchmarks overlook the iterative nature of the field, where experts' decisions evolve with …",
+      "link": "https://arxiv.org/abs/2505.18223",
       "published_date": "May 2025",
       "published_date_sort": "2025-05-01",
-      "citations": 4,
+      "citations": 2,
       "institutions": "Unknown"
     },
     {
@@ -182,17 +241,6 @@
       "institutions": "Unknown"
     },
     {
-      "title": "IDA-Bench: Evaluating LLMs on Interactive Guided Data Analysis",
-      "authors": "H Li, H Liu, T Zhu, T Guo, Z Zheng, X Deng… - arXiv preprint arXiv …, 2025 - arxiv.org",
-      "journal": "Google Scholar Result",
-      "snippet": "Large Language Models (LLMs) show promise as data analysis agents, but existing benchmarks overlook the iterative nature of the field, where experts' decisions evolve with …",
-      "link": "https://arxiv.org/abs/2505.18223",
-      "published_date": "May 2025",
-      "published_date_sort": "2025-05-01",
-      "citations": 2,
-      "institutions": "Unknown"
-    },
-    {
       "title": "From automation to autonomy: A survey on large language models in scientific discovery",
       "authors": "T Zheng, Z Deng, HT Tsang, W Wang, J Bai… - arXiv preprint arXiv …, 2025 - arxiv.org",
       "journal": "Google Scholar Result",
@@ -200,7 +248,7 @@
       "link": "https://arxiv.org/abs/2505.13259",
       "published_date": "May 2025",
       "published_date_sort": "2025-05-01",
-      "citations": 23,
+      "citations": 24,
       "institutions": "Unknown"
     },
     {
@@ -223,6 +271,17 @@
       "published_date": "May 2025",
       "published_date_sort": "2025-05-01",
       "citations": 5,
+      "institutions": "Unknown"
+    },
+    {
+      "title": "Mlzero: A multi-agent system for end-to-end machine learning automation",
+      "authors": "H Fang, B Han, N Erickson, X Zhang, S Zhou… - arXiv preprint arXiv …, 2025 - arxiv.org",
+      "journal": "Google Scholar Result",
+      "snippet": "Existing AutoML systems have advanced the automation of machine learning (ML); however, they still require substantial manual configuration and expert input, particularly …",
+      "link": "https://arxiv.org/abs/2505.13941",
+      "published_date": "May 2025",
+      "published_date_sort": "2025-05-01",
+      "citations": 4,
       "institutions": "Unknown"
     },
     {
