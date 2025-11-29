@@ -1,11 +1,11 @@
 {
-  "last_updated": "2025-11-28 00:11:17 UTC",
+  "last_updated": "2025-11-29 00:10:36 UTC",
   "target_paper": "https://www.arxiv.org/abs/2502.13138",
   "arxiv_id": "2502.13138",
-  "total_citations": 24,
+  "total_citations": 20,
   "h_index": 6,
-  "recent_citations": 4,
-  "avg_citations_per_month": "1.04",
+  "recent_citations": 0,
+  "avg_citations_per_month": "0.91",
   "timeline": [
     {
       "date": "2024-01-01",
@@ -13,101 +13,42 @@
     },
     {
       "date": "2025-01-01",
-      "citations": 2
-    },
-    {
-      "date": "2025-03-01",
       "citations": 3
     },
     {
-      "date": "2025-04-01",
+      "date": "2025-03-01",
       "citations": 4
     },
     {
+      "date": "2025-04-01",
+      "citations": 5
+    },
+    {
       "date": "2025-05-01",
-      "citations": 10
+      "citations": 11
     },
     {
       "date": "2025-06-01",
-      "citations": 13
-    },
-    {
-      "date": "2025-07-01",
       "citations": 14
     },
     {
+      "date": "2025-07-01",
+      "citations": 15
+    },
+    {
       "date": "2025-08-01",
-      "citations": 16
+      "citations": 17
     },
     {
       "date": "2025-09-01",
-      "citations": 18
+      "citations": 19
     },
     {
       "date": "2025-10-01",
       "citations": 20
-    },
-    {
-      "date": "2025-11-01",
-      "citations": 24
     }
   ],
   "papers": [
-    {
-      "title": "Pessimistic Verification for Open Ended Math Questions",
-      "authors": "Yanxing Huang, Zihan Tang, Zejin Lin, Peng Li, Yang Liu",
-      "journal": "arXiv",
-      "snippet": "The key limitation of the verification performance lies in the ability of error detection. With this intuition we designed several variants of pessimistic verification, which are simple workflows that could significantly improve the verification of open-ended math questions. In pessimistic verification we construct multiple parallel verifications for the same proof, and the proof is deemed incorrect if any one of them reports an error. This simple technique significantly improves the performance across many math verification benchmarks without incurring substantial computational resources. Its token efficiency even surpassed extended long-CoT in test-time scaling. Our case studies further indicate that the majority of false negatives in stronger models are actually caused by annotation errors in the original dataset, so our method's performance is in fact underestimated. Self-verification for mathematical problems can effectively improve the reliability and performance of language model outputs, and it also plays a critical role in enabling long-horizon mathematical tasks. We believe that research on pessimistic verification will help enhance the mathematical capabilities of language models across a wide range of tasks.",
-      "link": "http://arxiv.org/abs/2511.21522v1",
-      "published_date": "November 26, 2025",
-      "published_date_sort": "2025-11-26",
-      "citations": 0,
-      "institutions": "Unknown"
-    },
-    {
-      "title": "SpatialBench: Benchmarking Multimodal Large Language Models for Spatial Cognition",
-      "authors": "Peiran Xu, Sudong Wang, Yao Zhu, Jianing Li, Yunjian Zhang",
-      "journal": "arXiv",
-      "snippet": "Spatial cognition is fundamental to real-world multimodal intelligence, allowing models to effectively interact with the physical environment. While multimodal large language models (MLLMs) have made significant strides, existing benchmarks often oversimplify spatial cognition, reducing it to a single-dimensional metric, which fails to capture the hierarchical structure and interdependence of spatial abilities. To address this gap, we propose a hierarchical spatial cognition framework that decomposes spatial intelligence into five progressively complex levels from basic observation to high-level planning. Building upon this taxonomy, we construct SpatialBench, a large-scale, fine-grained benchmark covering 15 tasks aligned with these cognitive levels. To provide a unified evaluation across heterogeneous tasks, we further introduce a high-level capability-oriented metric that reliably assesses a model's overall spatial reasoning ability. Extensive experiments over massive MLLMs reveal distinct performance stratification across cognitive levels: models exhibit strong perceptual grounding yet remain limited in symbolic reasoning, causal inference, and planning. Additional human tests demonstrate that humans perform selective, goal-directed abstraction, while MLLMs tend to over-attend to surface details without coherent spatial intent. Our work establishes the first systematic framework for measuring hierarchical spatial cognition in MLLMs, laying the foundation for future spatially intelligent systems.",
-      "link": "http://arxiv.org/abs/2511.21471v1",
-      "published_date": "November 26, 2025",
-      "published_date_sort": "2025-11-26",
-      "citations": 0,
-      "institutions": "Unknown"
-    },
-    {
-      "title": "Hierarchical Ranking Neural Network for Long Document Readability Assessment",
-      "authors": "Yurui Zheng, Yijun Chen, Shaohong Zhang",
-      "journal": "arXiv",
-      "snippet": "Readability assessment aims to evaluate the reading difficulty of a text. In recent years, while deep learning technology has been gradually applied to readability assessment, most approaches fail to consider either the length of the text or the ordinal relationship of readability labels. This paper proposes a bidirectional readability assessment mechanism that captures contextual information to identify regions with rich semantic information in the text, thereby predicting the readability level of individual sentences. These sentence-level labels are then used to assist in predicting the overall readability level of the document. Additionally, a pairwise sorting algorithm is introduced to model the ordinal relationship between readability levels through label subtraction. Experimental results on Chinese and English datasets demonstrate that the proposed model achieves competitive performance and outperforms other baseline models.",
-      "link": "http://arxiv.org/abs/2511.21473v1",
-      "published_date": "November 26, 2025",
-      "published_date_sort": "2025-11-26",
-      "citations": 0,
-      "institutions": "Unknown"
-    },
-    {
-      "title": "Agentic Learner with Grow-and-Refine Multimodal Semantic Memory",
-      "authors": "Weihao Bo, Shan Zhang, Yanpeng Sun, Jingjing Wu, Qunyi Xie, Xiao Tan, Kunbin Chen, Wei He, Xiaofan Li, Na Zhao, Jingdong Wang, Zechao Li",
-      "journal": "arXiv",
-      "snippet": "MLLMs exhibit strong reasoning on isolated queries, yet they operate de novo -- solving each problem independently and often repeating the same mistakes. Existing memory-augmented agents mainly store past trajectories for reuse. However, trajectory-based memory suffers from brevity bias, gradually losing essential domain knowledge. More critically, even in truly multimodal problem-solving settings, it records only a single-modality trace of past behavior, failing to preserve how visual attention and logical reasoning jointly contributed to the solution. This is fundamentally misaligned with human cognition: semantic memory is both multimodal and integrated, preserving visual and abstract knowledge through coordinated but distinct representational streams. We thus introduce ViLoMem, a dual-stream memory framework that constructs compact, schema-based memory. It separately encodes visual distraction patterns and logical reasoning errors, enabling MLLMs to learn from their successful and failed experiences. Following a grow-and-refine principle, the system incrementally accumulates and updates multimodal semantic knowledge -- preserving stable, generalizable strategies while avoiding catastrophic forgetting. Across six multimodal benchmarks, ViLoMem consistently improves pass@1 accuracy and substantially reduces repeated visual and logical errors. Ablations confirm the necessity of dual-stream memory with explicit distraction--hallucination separation, demonstrating the value of error-aware multimodal memory for lifelong and cross-domain agentic learning. Our project page will be available at https://weihao-bo.github.io/ViLoMeo-page.",
-      "link": "http://arxiv.org/abs/2511.21678v1",
-      "published_date": "November 26, 2025",
-      "published_date_sort": "2025-11-26",
-      "citations": 0,
-      "institutions": "Unknown"
-    },
-    {
-      "title": "The FM Agent",
-      "authors": "A Li, C Wu, Z Ge, YH Chong, Z Hou, L Cao, C Ju… - arXiv preprint arXiv …, 2025 - arxiv.org",
-      "journal": "Google Scholar Result",
-      "snippet": "Large language models (LLMs) are catalyzing the development of autonomous AI research agents for scientific and engineering discovery. We present FM Agent, a novel and general …",
-      "link": "https://arxiv.org/abs/2510.26144",
-      "published_date": "October 2025",
-      "published_date_sort": "2025-10-01",
-      "citations": 1,
-      "institutions": "Unknown"
-    },
     {
       "title": "AutoMLGen: Navigating Fine-Grained Optimization for Coding Agents",
       "authors": "S Du, X Yan, D Jiang, J Yuan, Y Hu, X Li, L He… - arXiv preprint arXiv …, 2025 - arxiv.org",
@@ -120,17 +61,6 @@
       "institutions": "Unknown"
     },
     {
-      "title": "An AI system to help scientists write expert-level empirical software",
-      "authors": "E Aygün, A Belyaeva, G Comanici, M Coram… - arXiv preprint arXiv …, 2025 - arxiv.org",
-      "journal": "Google Scholar Result",
-      "snippet": "The cycle of scientific discovery is frequently bottlenecked by the slow, manual creation of software to support computational experiments. To address this, we present an AI system …",
-      "link": "https://arxiv.org/abs/2509.06503",
-      "published_date": "September 2025",
-      "published_date_sort": "2025-09-01",
-      "citations": 6,
-      "institutions": "Unknown"
-    },
-    {
       "title": "Reinforcement learning for machine learning engineering agents",
       "authors": "S Yang, J He-Yueya, P Liang - arXiv preprint arXiv:2509.01684, 2025 - arxiv.org",
       "journal": "Google Scholar Result",
@@ -139,6 +69,17 @@
       "published_date": "September 2025",
       "published_date_sort": "2025-09-01",
       "citations": 2,
+      "institutions": "Unknown"
+    },
+    {
+      "title": "An AI system to help scientists write expert-level empirical software",
+      "authors": "E Aygün, A Belyaeva, G Comanici, M Coram… - arXiv preprint arXiv …, 2025 - arxiv.org",
+      "journal": "Google Scholar Result",
+      "snippet": "The cycle of scientific discovery is frequently bottlenecked by the slow, manual creation of software to support computational experiments. To address this, we present an AI system …",
+      "link": "https://arxiv.org/abs/2509.06503",
+      "published_date": "September 2025",
+      "published_date_sort": "2025-09-01",
+      "citations": 6,
       "institutions": "Unknown"
     },
     {
@@ -204,7 +145,29 @@
       "link": "https://arxiv.org/abs/2506.12594",
       "published_date": "June 2025",
       "published_date_sort": "2025-06-01",
-      "citations": 25,
+      "citations": 26,
+      "institutions": "Unknown"
+    },
+    {
+      "title": "Mle-dojo: Interactive environments for empowering llm agents in machine learning engineering",
+      "authors": "R Qiang, Y Zhuang, Y Li, R Zhang, C Li… - arXiv preprint arXiv …, 2025 - arxiv.org",
+      "journal": "Google Scholar Result",
+      "snippet": "We introduce MLE-Dojo, a Gym-style framework for systematically reinforcement learning, evaluating, and improving autonomous large language model (LLM) agents in iterative …",
+      "link": "https://arxiv.org/abs/2505.07782",
+      "published_date": "May 2025",
+      "published_date_sort": "2025-05-01",
+      "citations": 6,
+      "institutions": "Unknown"
+    },
+    {
+      "title": "CodePDE: An Inference Framework for LLM-driven PDE Solver Generation",
+      "authors": "S Li, T Marwah, J Shen, W Sun, A Risteski… - arXiv preprint arXiv …, 2025 - arxiv.org",
+      "journal": "Google Scholar Result",
+      "snippet": "Partial differential equations (PDEs) are fundamental to modeling physical systems, yet solving them remains a complex challenge. Traditional numerical solvers rely on expert …",
+      "link": "https://arxiv.org/abs/2505.08783",
+      "published_date": "May 2025",
+      "published_date_sort": "2025-05-01",
+      "citations": 6,
       "institutions": "Unknown"
     },
     {
@@ -219,25 +182,14 @@
       "institutions": "Unknown"
     },
     {
-      "title": "IDA-Bench: Evaluating LLMs on Interactive Guided Data Analysis",
-      "authors": "H Li, H Liu, T Zhu, T Guo, Z Zheng, X Deng… - arXiv preprint arXiv …, 2025 - arxiv.org",
+      "title": "From automation to autonomy: A survey on large language models in scientific discovery",
+      "authors": "T Zheng, Z Deng, HT Tsang, W Wang, J Bai… - arXiv preprint arXiv …, 2025 - arxiv.org",
       "journal": "Google Scholar Result",
-      "snippet": "Large Language Models (LLMs) show promise as data analysis agents, but existing benchmarks overlook the iterative nature of the field, where experts' decisions evolve with …",
-      "link": "https://arxiv.org/abs/2505.18223",
+      "snippet": "Large Language Models (LLMs) are catalyzing a paradigm shift in scientific discovery, evolving from task-specific automation tools into increasingly autonomous agents and …",
+      "link": "https://arxiv.org/abs/2505.13259",
       "published_date": "May 2025",
       "published_date_sort": "2025-05-01",
-      "citations": 2,
-      "institutions": "Unknown"
-    },
-    {
-      "title": "Mle-dojo: Interactive environments for empowering llm agents in machine learning engineering",
-      "authors": "R Qiang, Y Zhuang, Y Li, R Zhang, C Li… - arXiv preprint arXiv …, 2025 - arxiv.org",
-      "journal": "Google Scholar Result",
-      "snippet": "We introduce MLE-Dojo, a Gym-style framework for systematically reinforcement learning, evaluating, and improving autonomous large language model (LLM) agents in iterative …",
-      "link": "https://arxiv.org/abs/2505.07782",
-      "published_date": "May 2025",
-      "published_date_sort": "2025-05-01",
-      "citations": 5,
+      "citations": 24,
       "institutions": "Unknown"
     },
     {
@@ -252,25 +204,14 @@
       "institutions": "Unknown"
     },
     {
-      "title": "From automation to autonomy: A survey on large language models in scientific discovery",
-      "authors": "T Zheng, Z Deng, HT Tsang, W Wang, J Bai… - arXiv preprint arXiv …, 2025 - arxiv.org",
+      "title": "IDA-Bench: Evaluating LLMs on Interactive Guided Data Analysis",
+      "authors": "H Li, H Liu, T Zhu, T Guo, Z Zheng, X Deng… - arXiv preprint arXiv …, 2025 - arxiv.org",
       "journal": "Google Scholar Result",
-      "snippet": "Large Language Models (LLMs) are catalyzing a paradigm shift in scientific discovery, evolving from task-specific automation tools into increasingly autonomous agents and …",
-      "link": "https://arxiv.org/abs/2505.13259",
+      "snippet": "Large Language Models (LLMs) show promise as data analysis agents, but existing benchmarks overlook the iterative nature of the field, where experts' decisions evolve with …",
+      "link": "https://arxiv.org/abs/2505.18223",
       "published_date": "May 2025",
       "published_date_sort": "2025-05-01",
-      "citations": 24,
-      "institutions": "Unknown"
-    },
-    {
-      "title": "CodePDE: An Inference Framework for LLM-driven PDE Solver Generation",
-      "authors": "S Li, T Marwah, J Shen, W Sun, A Risteski… - arXiv preprint arXiv …, 2025 - arxiv.org",
-      "journal": "Google Scholar Result",
-      "snippet": "Partial differential equations (PDEs) are fundamental to modeling physical systems, yet solving them remains a complex challenge. Traditional numerical solvers rely on expert …",
-      "link": "https://arxiv.org/abs/2505.08783",
-      "published_date": "May 2025",
-      "published_date_sort": "2025-05-01",
-      "citations": 6,
+      "citations": 2,
       "institutions": "Unknown"
     },
     {
@@ -293,6 +234,17 @@
       "published_date": "March 2025",
       "published_date_sort": "2025-03-01",
       "citations": 57,
+      "institutions": "Unknown"
+    },
+    {
+      "title": "AIRepr: An Analyst-Inspector Framework for Evaluating Reproducibility of LLMs in Data Science",
+      "authors": "Q Zeng, C Jin, X Wang, Y Zheng… - Findings of the Association …, 2025 - aclanthology.org",
+      "journal": "Google Scholar Result",
+      "snippet": "Large language models (LLMs) are increasingly used to automate data analysis through executable code generation. Yet, data science tasks often admit multiple statistically valid …",
+      "link": "https://aclanthology.org/anthology-files/anthology-files/pdf/findings/2025.findings-emnlp.539.pdf",
+      "published_date": "2025",
+      "published_date_sort": "2025-01-01",
+      "citations": 1,
       "institutions": "Unknown"
     },
     {
