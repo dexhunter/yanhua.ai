@@ -1,5 +1,5 @@
 {
-  "last_updated": "2025-11-30 00:12:34 UTC",
+  "last_updated": "2025-12-01 00:13:46 UTC",
   "target_paper": "https://www.arxiv.org/abs/2502.13138",
   "arxiv_id": "2502.13138",
   "total_citations": 20,
@@ -61,17 +61,6 @@
       "institutions": "Unknown"
     },
     {
-      "title": "Reinforcement learning for machine learning engineering agents",
-      "authors": "S Yang, J He-Yueya, P Liang - arXiv preprint arXiv:2509.01684, 2025 - arxiv.org",
-      "journal": "Google Scholar Result",
-      "snippet": "Existing agents for solving tasks such as ML engineering rely on prompting powerful language models. As a result, these agents do not improve with more experience. In this …",
-      "link": "https://arxiv.org/abs/2509.01684",
-      "published_date": "September 2025",
-      "published_date_sort": "2025-09-01",
-      "citations": 2,
-      "institutions": "Unknown"
-    },
-    {
       "title": "An AI system to help scientists write expert-level empirical software",
       "authors": "E Aygün, A Belyaeva, G Comanici, M Coram… - arXiv preprint arXiv …, 2025 - arxiv.org",
       "journal": "Google Scholar Result",
@@ -80,6 +69,17 @@
       "published_date": "September 2025",
       "published_date_sort": "2025-09-01",
       "citations": 6,
+      "institutions": "Unknown"
+    },
+    {
+      "title": "Reinforcement learning for machine learning engineering agents",
+      "authors": "S Yang, J He-Yueya, P Liang - arXiv preprint arXiv:2509.01684, 2025 - arxiv.org",
+      "journal": "Google Scholar Result",
+      "snippet": "Existing agents for solving tasks such as ML engineering rely on prompting powerful language models. As a result, these agents do not improve with more experience. In this …",
+      "link": "https://arxiv.org/abs/2509.01684",
+      "published_date": "September 2025",
+      "published_date_sort": "2025-09-01",
+      "citations": 2,
       "institutions": "Unknown"
     },
     {
@@ -116,17 +116,6 @@
       "institutions": "Unknown"
     },
     {
-      "title": "A Comprehensive Survey of Deep Research: Systems, Methodologies, and Applications",
-      "authors": "R Xu, J Peng - arXiv preprint arXiv:2506.12594, 2025 - arxiv.org",
-      "journal": "Google Scholar Result",
-      "snippet": "This survey examines the rapidly evolving field of Deep Research systems--AI-powered applications that automate complex research workflows through the integration of large …",
-      "link": "https://arxiv.org/abs/2506.12594",
-      "published_date": "June 2025",
-      "published_date_sort": "2025-06-01",
-      "citations": 26,
-      "institutions": "Unknown"
-    },
-    {
       "title": "AI Scientists Fail Without Strong Implementation Capability",
       "authors": "M Zhu, Q Xie, Y Weng, J Wu, Z Lin, L Yang… - arXiv preprint arXiv …, 2025 - arxiv.org",
       "journal": "Google Scholar Result",
@@ -138,6 +127,17 @@
       "institutions": "Unknown"
     },
     {
+      "title": "A Comprehensive Survey of Deep Research: Systems, Methodologies, and Applications",
+      "authors": "R Xu, J Peng - arXiv preprint arXiv:2506.12594, 2025 - arxiv.org",
+      "journal": "Google Scholar Result",
+      "snippet": "This survey examines the rapidly evolving field of Deep Research systems--AI-powered applications that automate complex research workflows through the integration of large …",
+      "link": "https://arxiv.org/abs/2506.12594",
+      "published_date": "June 2025",
+      "published_date_sort": "2025-06-01",
+      "citations": 26,
+      "institutions": "Unknown"
+    },
+    {
       "title": "Automind: Adaptive knowledgeable agent for automated data science",
       "authors": "Y Ou, Y Luo, J Zheng, L Wei, Z Yu, S Qiao… - arXiv preprint arXiv …, 2025 - arxiv.org",
       "journal": "Google Scholar Result",
@@ -146,6 +146,50 @@
       "published_date": "June 2025",
       "published_date_sort": "2025-06-01",
       "citations": 5,
+      "institutions": "Unknown"
+    },
+    {
+      "title": "From automation to autonomy: A survey on large language models in scientific discovery",
+      "authors": "T Zheng, Z Deng, HT Tsang, W Wang, J Bai… - arXiv preprint arXiv …, 2025 - arxiv.org",
+      "journal": "Google Scholar Result",
+      "snippet": "Large Language Models (LLMs) are catalyzing a paradigm shift in scientific discovery, evolving from task-specific automation tools into increasingly autonomous agents and …",
+      "link": "https://arxiv.org/abs/2505.13259",
+      "published_date": "May 2025",
+      "published_date_sort": "2025-05-01",
+      "citations": 24,
+      "institutions": "Unknown"
+    },
+    {
+      "title": "Mlzero: A multi-agent system for end-to-end machine learning automation",
+      "authors": "H Fang, B Han, N Erickson, X Zhang, S Zhou… - arXiv preprint arXiv …, 2025 - arxiv.org",
+      "journal": "Google Scholar Result",
+      "snippet": "Existing AutoML systems have advanced the automation of machine learning (ML); however, they still require substantial manual configuration and expert input, particularly …",
+      "link": "https://arxiv.org/abs/2505.13941",
+      "published_date": "May 2025",
+      "published_date_sort": "2025-05-01",
+      "citations": 4,
+      "institutions": "Unknown"
+    },
+    {
+      "title": "CodePDE: An Inference Framework for LLM-driven PDE Solver Generation",
+      "authors": "S Li, T Marwah, J Shen, W Sun, A Risteski… - arXiv preprint arXiv …, 2025 - arxiv.org",
+      "journal": "Google Scholar Result",
+      "snippet": "Partial differential equations (PDEs) are fundamental to modeling physical systems, yet solving them remains a complex challenge. Traditional numerical solvers rely on expert …",
+      "link": "https://arxiv.org/abs/2505.08783",
+      "published_date": "May 2025",
+      "published_date_sort": "2025-05-01",
+      "citations": 6,
+      "institutions": "Unknown"
+    },
+    {
+      "title": "Repomaster: Autonomous exploration and understanding of github repositories for complex task solving",
+      "authors": "H Wang, Z Ni, S Zhang, S Lu, S Hu, Z He, C Hu… - arXiv preprint arXiv …, 2025 - arxiv.org",
+      "journal": "Google Scholar Result",
+      "snippet": "The ultimate goal of code agents is to solve complex tasks autonomously. Although large language models (LLMs) have made substantial progress in code generation, real-world …",
+      "link": "https://arxiv.org/abs/2505.21577",
+      "published_date": "May 2025",
+      "published_date_sort": "2025-05-01",
+      "citations": 6,
       "institutions": "Unknown"
     },
     {
@@ -171,50 +215,6 @@
       "institutions": "Unknown"
     },
     {
-      "title": "CodePDE: An Inference Framework for LLM-driven PDE Solver Generation",
-      "authors": "S Li, T Marwah, J Shen, W Sun, A Risteski… - arXiv preprint arXiv …, 2025 - arxiv.org",
-      "journal": "Google Scholar Result",
-      "snippet": "Partial differential equations (PDEs) are fundamental to modeling physical systems, yet solving them remains a complex challenge. Traditional numerical solvers rely on expert …",
-      "link": "https://arxiv.org/abs/2505.08783",
-      "published_date": "May 2025",
-      "published_date_sort": "2025-05-01",
-      "citations": 6,
-      "institutions": "Unknown"
-    },
-    {
-      "title": "Mlzero: A multi-agent system for end-to-end machine learning automation",
-      "authors": "H Fang, B Han, N Erickson, X Zhang, S Zhou… - arXiv preprint arXiv …, 2025 - arxiv.org",
-      "journal": "Google Scholar Result",
-      "snippet": "Existing AutoML systems have advanced the automation of machine learning (ML); however, they still require substantial manual configuration and expert input, particularly …",
-      "link": "https://arxiv.org/abs/2505.13941",
-      "published_date": "May 2025",
-      "published_date_sort": "2025-05-01",
-      "citations": 4,
-      "institutions": "Unknown"
-    },
-    {
-      "title": "From automation to autonomy: A survey on large language models in scientific discovery",
-      "authors": "T Zheng, Z Deng, HT Tsang, W Wang, J Bai… - arXiv preprint arXiv …, 2025 - arxiv.org",
-      "journal": "Google Scholar Result",
-      "snippet": "Large Language Models (LLMs) are catalyzing a paradigm shift in scientific discovery, evolving from task-specific automation tools into increasingly autonomous agents and …",
-      "link": "https://arxiv.org/abs/2505.13259",
-      "published_date": "May 2025",
-      "published_date_sort": "2025-05-01",
-      "citations": 24,
-      "institutions": "Unknown"
-    },
-    {
-      "title": "Repomaster: Autonomous exploration and understanding of github repositories for complex task solving",
-      "authors": "H Wang, Z Ni, S Zhang, S Lu, S Hu, Z He, C Hu… - arXiv preprint arXiv …, 2025 - arxiv.org",
-      "journal": "Google Scholar Result",
-      "snippet": "The ultimate goal of code agents is to solve complex tasks autonomously. Although large language models (LLMs) have made substantial progress in code generation, real-world …",
-      "link": "https://arxiv.org/abs/2505.21577",
-      "published_date": "May 2025",
-      "published_date_sort": "2025-05-01",
-      "citations": 6,
-      "institutions": "Unknown"
-    },
-    {
       "title": "Co-bench: Benchmarking language model agents in algorithm search for combinatorial optimization",
       "authors": "W Sun, S Feng, S Li, Y Yang - arXiv preprint arXiv:2504.04310, 2025 - arxiv.org",
       "journal": "Google Scholar Result",
@@ -237,17 +237,6 @@
       "institutions": "Unknown"
     },
     {
-      "title": "AIRepr: An Analyst-Inspector Framework for Evaluating Reproducibility of LLMs in Data Science",
-      "authors": "Q Zeng, C Jin, X Wang, Y Zheng… - Findings of the Association …, 2025 - aclanthology.org",
-      "journal": "Google Scholar Result",
-      "snippet": "Large language models (LLMs) are increasingly used to automate data analysis through executable code generation. Yet, data science tasks often admit multiple statistically valid …",
-      "link": "https://aclanthology.org/anthology-files/anthology-files/pdf/findings/2025.findings-emnlp.539.pdf",
-      "published_date": "2025",
-      "published_date_sort": "2025-01-01",
-      "citations": 1,
-      "institutions": "Unknown"
-    },
-    {
       "title": "An agentic framework for autonomous metamaterial modeling and inverse design",
       "authors": "D Lu, JM Malof, WJ Padilla - ACS Photonics, 2025 - ACS Publications",
       "journal": "Google Scholar Result",
@@ -256,6 +245,17 @@
       "published_date": "2025",
       "published_date_sort": "2025-01-01",
       "citations": 2,
+      "institutions": "Unknown"
+    },
+    {
+      "title": "AIRepr: An Analyst-Inspector Framework for Evaluating Reproducibility of LLMs in Data Science",
+      "authors": "Q Zeng, C Jin, X Wang, Y Zheng… - Findings of the Association …, 2025 - aclanthology.org",
+      "journal": "Google Scholar Result",
+      "snippet": "Large language models (LLMs) are increasingly used to automate data analysis through executable code generation. Yet, data science tasks often admit multiple statistically valid …",
+      "link": "https://aclanthology.org/anthology-files/anthology-files/pdf/findings/2025.findings-emnlp.539.pdf",
+      "published_date": "2025",
+      "published_date_sort": "2025-01-01",
+      "citations": 1,
       "institutions": "Unknown"
     },
     {
