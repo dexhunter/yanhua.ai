@@ -1,11 +1,11 @@
 {
-  "last_updated": "2025-12-02 00:11:11 UTC",
+  "last_updated": "2025-12-03 00:11:01 UTC",
   "target_paper": "https://www.arxiv.org/abs/2502.13138",
   "arxiv_id": "2502.13138",
-  "total_citations": 20,
+  "total_citations": 27,
   "h_index": 7,
-  "recent_citations": 0,
-  "avg_citations_per_month": "0.91",
+  "recent_citations": 7,
+  "avg_citations_per_month": "1.12",
   "timeline": [
     {
       "date": "2024-01-01",
@@ -46,9 +46,90 @@
     {
       "date": "2025-10-01",
       "citations": 20
+    },
+    {
+      "date": "2025-12-01",
+      "citations": 27
     }
   ],
   "papers": [
+    {
+      "title": "End-to-end Deep Reinforcement Learning for Stochastic Multi-objective Optimization in C-VRPTW",
+      "authors": "Abdo Abouelrous, Laurens Bliek, Yaoxin Wu, Yingqian Zhang",
+      "journal": "arXiv",
+      "snippet": "In this work, we consider learning-based applications in routing to solve a Vehicle Routing variant characterized by stochasticity and multiple objectives. Such problems are representative of practical settings where decision-makers have to deal with uncertainty in the operational environment as well as multiple conflicting objectives due to different stakeholders. We specifically consider travel time uncertainty. We also consider two objectives, total travel time and route makespan, that jointly target operational efficiency and labor regulations on shift length, although different objectives could be incorporated. Learning-based methods offer earnest computational advantages as they can repeatedly solve problems with limited interference from the decision-maker. We specifically focus on end-to-end deep learning models that leverage the attention mechanism and multiple solution trajectories. These models have seen several successful applications in routing problems. However, since travel times are not a direct input to these models due to the large dimensions of the travel time matrix, accounting for uncertainty is a challenge, especially in the presence of multiple objectives. In turn, we propose a model that simultaneously addresses stochasticity and multi-objectivity and provide a refined training mechanism for this model through scenario clustering to reduce training time. Our results show that our model is capable of constructing a Pareto Front of good quality within acceptable run times compared to three baselines.",
+      "link": "http://arxiv.org/abs/2512.01518v1",
+      "published_date": "December 01, 2025",
+      "published_date_sort": "2025-12-01",
+      "citations": 0,
+      "institutions": "Unknown"
+    },
+    {
+      "title": "Feature-Based Semantics-Aware Scheduling for Energy-Harvesting Federated Learning",
+      "authors": "Eunjeong Jeong, Giovanni Perin, Howard H. Yang, Nikolaos Pappas",
+      "journal": "arXiv",
+      "snippet": "Federated Learning (FL) on resource-constrained edge devices faces a critical challenge: The computational energy required for training Deep Neural Networks (DNNs) often dominates communication costs. However, most existing Energy-Harvesting FL (EHFL) strategies fail to account for this reality, resulting in wasted energy due to redundant local computations. For efficient and proactive resource management, algorithms that predict local update contributions must be devised. We propose a lightweight client scheduling framework using the Version Age of Information (VAoI), a semantics-aware metric that quantifies update timeliness and significance. Crucially, we overcome VAoI's typical prohibitive computational cost, which requires statistical distance over the entire parameter space, by introducing a feature-based proxy. This proxy estimates model redundancy using intermediate-layer extraction from a single forward pass, dramatically reducing computational complexity. Experiments conducted under extreme non-IID data distributions and scarce energy availability demonstrate superior learning performance while achieving energy reduction compared to existing baseline selection policies. Our framework establishes semantics-aware scheduling as a practical and vital solution for EHFL in realistic scenarios where training costs dominate transmission costs.",
+      "link": "http://arxiv.org/abs/2512.01983v1",
+      "published_date": "December 01, 2025",
+      "published_date_sort": "2025-12-01",
+      "citations": 0,
+      "institutions": "Unknown"
+    },
+    {
+      "title": "Multimodal Mixture-of-Experts for ISAC in Low-Altitude Wireless Networks",
+      "authors": "Kai Zhang, Wentao Yu, Hengtao He, Shenghui Song, Jun Zhang, Khaled B. Letaief",
+      "journal": "arXiv",
+      "snippet": "Integrated sensing and communication (ISAC) is a key enabler for low-altitude wireless networks (LAWNs), providing simultaneous environmental perception and data transmission in complex aerial scenarios. By combining heterogeneous sensing modalities such as visual, radar, lidar, and positional information, multimodal ISAC can improve both situational awareness and robustness of LAWNs. However, most existing multimodal fusion approaches use static fusion strategies that treat all modalities equally and cannot adapt to channel heterogeneity or time-varying modality reliability in dynamic low-altitude environments. To address this fundamental limitation, we propose a mixture-of-experts (MoE) framework for multimodal ISAC in LAWNs. Each modality is processed by a dedicated expert network, and a lightweight gating module adaptively assigns fusion weights according to the instantaneous informativeness and reliability of each modality. To improve scalability under the stringent energy constraints of aerial platforms, we further develop a sparse MoE variant that selectively activates only a subset of experts, thereby reducing computation overhead while preserving the benefits of adaptive fusion. Comprehensive simulations on three typical ISAC tasks in LAWNs demonstrate that the proposed frameworks consistently outperform conventional multimodal fusion baselines in terms of learning performance and training sample efficiency.",
+      "link": "http://arxiv.org/abs/2512.01750v1",
+      "published_date": "December 01, 2025",
+      "published_date_sort": "2025-12-01",
+      "citations": 0,
+      "institutions": "Unknown"
+    },
+    {
+      "title": "SynthStrategy: Extracting and Formalizing Latent Strategic Insights from LLMs in Organic Chemistry",
+      "authors": "Daniel Armstrong, Zlatko Jončev, Andres M Bran, Philippe Schwaller",
+      "journal": "arXiv",
+      "snippet": "Modern computer-assisted synthesis planning (CASP) systems show promises at generating chemically valid reaction steps but struggle to incorporate strategic considerations such as convergent assembly, protecting group minimization, and optimal ring-forming sequences. We introduce a methodology that leverages Large Language Models to distill synthetic knowledge into code. Our system analyzes synthesis routes and translates strategic principles into Python functions representing diverse strategic and tactical rules, such as strategic functional group interconversions and ring construction strategies. By formalizing this knowledge as verifiable code rather than simple heuristics, we create testable, interpretable representations of synthetic strategy. We release the complete codebase and the USPTO-ST dataset -- synthesis routes annotated with strategic tags. This framework unlocks a novel capability for CASP: natural language-based route retrieval, achieving 75\\% Top-3 accuracy on our benchmark. We further validate our library through temporal analysis of historical trends and chemically intuitive route clustering that offers more granular partitioning than common previous methods. This work bridges the tactical-strategic divide in CASP, enabling specification, search, and evaluation of routes by strategic criteria rather than structure alone.",
+      "link": "http://arxiv.org/abs/2512.01507v1",
+      "published_date": "December 01, 2025",
+      "published_date_sort": "2025-12-01",
+      "citations": 0,
+      "institutions": "Unknown"
+    },
+    {
+      "title": "Chain-of-Ground: Improving GUI Grounding via Iterative Reasoning and Reference Feedback",
+      "authors": "Aiden Yiliu Li, Bizhi Yu, Daoan Lei, Tianhe Ren, Shilong Liu",
+      "journal": "arXiv",
+      "snippet": "GUI grounding aims to align natural language instructions with precise regions in complex user interfaces. Advanced multimodal large language models show strong ability in visual GUI grounding but still struggle with small or visually similar targets and ambiguity in real world layouts. These limitations arise from limited grounding capacity and from underuse of existing reasoning potential. We present Chain of Ground CoG a training free multi step grounding framework that uses multimodal large language models for iterative visual reasoning and refinement. Instead of direct prediction the model progressively reflects and adjusts its hypotheses leading to more accurate and interpretable localization. Our approach achieves 68.4 accuracy on the ScreenSpot Pro benchmark an improvement of 4.8 points. To measure real world generalization we introduce TPanel UI a dataset of 420 labeled industrial control panels with visual distortions such as blur and masking. On TPanel UI Chain of Ground improves over the strong baseline Qwen3 VL 235B by 6.9 points showing the effectiveness of multi step training free grounding across real world and digital interfaces. These results highlight a direction for unlocking grounding potential through structured iterative refinement instead of additional training.",
+      "link": "http://arxiv.org/abs/2512.01979v1",
+      "published_date": "December 01, 2025",
+      "published_date_sort": "2025-12-01",
+      "citations": 0,
+      "institutions": "Unknown"
+    },
+    {
+      "title": "Topological Order in Deep State",
+      "authors": "Ahmed Abouelkomsan, Max Geier, Liang Fu",
+      "journal": "arXiv",
+      "snippet": "Topologically ordered states are among the most interesting quantum phases of matter that host emergent quasi-particles having fractional charge and obeying fractional quantum statistics. Theoretical study of such states is however challenging owing to their strong-coupling nature that prevents conventional mean-field treatment. Here, we demonstrate that an attention-based deep neural network provides an expressive variational wavefunction that discovers fractional Chern insulator ground states purely through energy minimization without prior knowledge and achieves remarkable accuracy. We introduce an efficient method to extract ground state topological degeneracy -- a hallmark of topological order -- from a single optimized real-space wavefunction in translation-invariant systems by decomposing it into different many-body momentum sectors. Our results establish neural network variational Monte Carlo as a versatile tool for discovering strongly correlated topological phases.",
+      "link": "http://arxiv.org/abs/2512.01863v1",
+      "published_date": "December 01, 2025",
+      "published_date_sort": "2025-12-01",
+      "citations": 0,
+      "institutions": "Unknown"
+    },
+    {
+      "title": "Agentic Policy Optimization via Instruction-Policy Co-Evolution",
+      "authors": "Han Zhou, Xingchen Wan, Ivan Vulić, Anna Korhonen",
+      "journal": "arXiv",
+      "snippet": "Reinforcement Learning with Verifiable Rewards (RLVR) has advanced the reasoning capability of large language models (LLMs), enabling autonomous agents that can conduct effective multi-turn and tool-integrated reasoning. While instructions serve as the primary protocol for defining agents, RLVR typically relies on static and manually designed instructions. However, those instructions may be suboptimal for the base model, and the optimal instruction may change as the agent's policy improves and explores the interaction with the environment. To bridge the gap, we introduce INSPO, a novel Instruction-Policy co-evolution framework that integrates instruction optimization as a dynamic component of the reinforcement learning (RL) loop. INSPO maintains a dynamic population of instruction candidates that are sampled with questions, where reward signals in RL loops are automatically attributed to each instruction, and low performers are periodically pruned. New instructions are generated and verified through an on-policy reflection mechanism, where an LLM-based optimizer analyzes past experience from a replay buffer and evolves more effective strategies given the current policy. We conduct extensive experiments on multi-turn retrieval and reasoning tasks, demonstrating that INSPO substantially outperforms strong baselines relying on static instructions. INSPO discovers innovative instructions that guide the agent toward more strategic reasoning paths, achieving substantial performance gains with only a marginal increase in computational overhead.",
+      "link": "http://arxiv.org/abs/2512.01945v1",
+      "published_date": "December 01, 2025",
+      "published_date_sort": "2025-12-01",
+      "citations": 0,
+      "institutions": "Unknown"
+    },
     {
       "title": "AutoMLGen: Navigating Fine-Grained Optimization for Coding Agents",
       "authors": "S Du, X Yan, D Jiang, J Yuan, Y Hu, X Li, L He… - arXiv preprint arXiv …, 2025 - arxiv.org",
@@ -58,17 +139,6 @@
       "published_date": "October 2025",
       "published_date_sort": "2025-10-01",
       "citations": 1,
-      "institutions": "Unknown"
-    },
-    {
-      "title": "An AI system to help scientists write expert-level empirical software",
-      "authors": "E Aygün, A Belyaeva, G Comanici, M Coram… - arXiv preprint arXiv …, 2025 - arxiv.org",
-      "journal": "Google Scholar Result",
-      "snippet": "The cycle of scientific discovery is frequently bottlenecked by the slow, manual creation of software to support computational experiments. To address this, we present an AI system …",
-      "link": "https://arxiv.org/abs/2509.06503",
-      "published_date": "September 2025",
-      "published_date_sort": "2025-09-01",
-      "citations": 6,
       "institutions": "Unknown"
     },
     {
@@ -83,14 +153,14 @@
       "institutions": "Unknown"
     },
     {
-      "title": "Tuning llm-based code optimization via meta-prompting: An industrial perspective",
-      "authors": "J Gong, R Giavrimis, P Brookes, V Voskanyan… - arXiv preprint arXiv …, 2025 - arxiv.org",
+      "title": "An AI system to help scientists write expert-level empirical software",
+      "authors": "E Aygün, A Belyaeva, G Comanici, M Coram… - arXiv preprint arXiv …, 2025 - arxiv.org",
       "journal": "Google Scholar Result",
-      "snippet": "There is a growing interest in leveraging multiple large language models (LLMs) for automated code optimization. However, industrial platforms deploying multiple LLMs face a …",
-      "link": "https://arxiv.org/abs/2508.01443",
-      "published_date": "August 2025",
-      "published_date_sort": "2025-08-01",
-      "citations": 2,
+      "snippet": "The cycle of scientific discovery is frequently bottlenecked by the slow, manual creation of software to support computational experiments. To address this, we present an AI system …",
+      "link": "https://arxiv.org/abs/2509.06503",
+      "published_date": "September 2025",
+      "published_date_sort": "2025-09-01",
+      "citations": 6,
       "institutions": "Unknown"
     },
     {
@@ -105,6 +175,17 @@
       "institutions": "Unknown"
     },
     {
+      "title": "Tuning llm-based code optimization via meta-prompting: An industrial perspective",
+      "authors": "J Gong, R Giavrimis, P Brookes, V Voskanyan… - arXiv preprint arXiv …, 2025 - arxiv.org",
+      "journal": "Google Scholar Result",
+      "snippet": "There is a growing interest in leveraging multiple large language models (LLMs) for automated code optimization. However, industrial platforms deploying multiple LLMs face a …",
+      "link": "https://arxiv.org/abs/2508.01443",
+      "published_date": "August 2025",
+      "published_date_sort": "2025-08-01",
+      "citations": 2,
+      "institutions": "Unknown"
+    },
+    {
       "title": "How Far Are AI Scientists from Changing the World?",
       "authors": "Q Xie, Y Weng, M Zhu, F Shen, S Huang, Z Lin… - arXiv preprint arXiv …, 2025 - arxiv.org",
       "journal": "Google Scholar Result",
@@ -113,28 +194,6 @@
       "published_date": "July 2025",
       "published_date_sort": "2025-07-01",
       "citations": 7,
-      "institutions": "Unknown"
-    },
-    {
-      "title": "A Comprehensive Survey of Deep Research: Systems, Methodologies, and Applications",
-      "authors": "R Xu, J Peng - arXiv preprint arXiv:2506.12594, 2025 - arxiv.org",
-      "journal": "Google Scholar Result",
-      "snippet": "This survey examines the rapidly evolving field of Deep Research systems--AI-powered applications that automate complex research workflows through the integration of large …",
-      "link": "https://arxiv.org/abs/2506.12594",
-      "published_date": "June 2025",
-      "published_date_sort": "2025-06-01",
-      "citations": 26,
-      "institutions": "Unknown"
-    },
-    {
-      "title": "Automind: Adaptive knowledgeable agent for automated data science",
-      "authors": "Y Ou, Y Luo, J Zheng, L Wei, Z Yu, S Qiao… - arXiv preprint arXiv …, 2025 - arxiv.org",
-      "journal": "Google Scholar Result",
-      "snippet": "Large Language Model (LLM) agents have shown great potential in addressing real-world data science problems. LLM-driven data science agents promise to automate the entire …",
-      "link": "https://arxiv.org/abs/2506.10974",
-      "published_date": "June 2025",
-      "published_date_sort": "2025-06-01",
-      "citations": 5,
       "institutions": "Unknown"
     },
     {
@@ -149,6 +208,39 @@
       "institutions": "Unknown"
     },
     {
+      "title": "Automind: Adaptive knowledgeable agent for automated data science",
+      "authors": "Y Ou, Y Luo, J Zheng, L Wei, Z Yu, S Qiao… - arXiv preprint arXiv …, 2025 - arxiv.org",
+      "journal": "Google Scholar Result",
+      "snippet": "Large Language Model (LLM) agents have shown great potential in addressing real-world data science problems. LLM-driven data science agents promise to automate the entire …",
+      "link": "https://arxiv.org/abs/2506.10974",
+      "published_date": "June 2025",
+      "published_date_sort": "2025-06-01",
+      "citations": 5,
+      "institutions": "Unknown"
+    },
+    {
+      "title": "A Comprehensive Survey of Deep Research: Systems, Methodologies, and Applications",
+      "authors": "R Xu, J Peng - arXiv preprint arXiv:2506.12594, 2025 - arxiv.org",
+      "journal": "Google Scholar Result",
+      "snippet": "This survey examines the rapidly evolving field of Deep Research systems--AI-powered applications that automate complex research workflows through the integration of large …",
+      "link": "https://arxiv.org/abs/2506.12594",
+      "published_date": "June 2025",
+      "published_date_sort": "2025-06-01",
+      "citations": 26,
+      "institutions": "Unknown"
+    },
+    {
+      "title": "Mle-dojo: Interactive environments for empowering llm agents in machine learning engineering",
+      "authors": "R Qiang, Y Zhuang, Y Li, R Zhang, C Li… - arXiv preprint arXiv …, 2025 - arxiv.org",
+      "journal": "Google Scholar Result",
+      "snippet": "We introduce MLE-Dojo, a Gym-style framework for systematically reinforcement learning, evaluating, and improving autonomous large language model (LLM) agents in iterative …",
+      "link": "https://arxiv.org/abs/2505.07782",
+      "published_date": "May 2025",
+      "published_date_sort": "2025-05-01",
+      "citations": 6,
+      "institutions": "Unknown"
+    },
+    {
       "title": "Repomaster: Autonomous exploration and understanding of github repositories for complex task solving",
       "authors": "H Wang, Z Ni, S Zhang, S Lu, S Hu, Z He, C Hu… - arXiv preprint arXiv …, 2025 - arxiv.org",
       "journal": "Google Scholar Result",
@@ -157,6 +249,17 @@
       "published_date": "May 2025",
       "published_date_sort": "2025-05-01",
       "citations": 6,
+      "institutions": "Unknown"
+    },
+    {
+      "title": "Mlzero: A multi-agent system for end-to-end machine learning automation",
+      "authors": "H Fang, B Han, N Erickson, X Zhang, S Zhou… - arXiv preprint arXiv …, 2025 - arxiv.org",
+      "journal": "Google Scholar Result",
+      "snippet": "Existing AutoML systems have advanced the automation of machine learning (ML); however, they still require substantial manual configuration and expert input, particularly …",
+      "link": "https://arxiv.org/abs/2505.13941",
+      "published_date": "May 2025",
+      "published_date_sort": "2025-05-01",
+      "citations": 4,
       "institutions": "Unknown"
     },
     {
@@ -179,28 +282,6 @@
       "published_date": "May 2025",
       "published_date_sort": "2025-05-01",
       "citations": 2,
-      "institutions": "Unknown"
-    },
-    {
-      "title": "Mlzero: A multi-agent system for end-to-end machine learning automation",
-      "authors": "H Fang, B Han, N Erickson, X Zhang, S Zhou… - arXiv preprint arXiv …, 2025 - arxiv.org",
-      "journal": "Google Scholar Result",
-      "snippet": "Existing AutoML systems have advanced the automation of machine learning (ML); however, they still require substantial manual configuration and expert input, particularly …",
-      "link": "https://arxiv.org/abs/2505.13941",
-      "published_date": "May 2025",
-      "published_date_sort": "2025-05-01",
-      "citations": 4,
-      "institutions": "Unknown"
-    },
-    {
-      "title": "Mle-dojo: Interactive environments for empowering llm agents in machine learning engineering",
-      "authors": "R Qiang, Y Zhuang, Y Li, R Zhang, C Li… - arXiv preprint arXiv …, 2025 - arxiv.org",
-      "journal": "Google Scholar Result",
-      "snippet": "We introduce MLE-Dojo, a Gym-style framework for systematically reinforcement learning, evaluating, and improving autonomous large language model (LLM) agents in iterative …",
-      "link": "https://arxiv.org/abs/2505.07782",
-      "published_date": "May 2025",
-      "published_date_sort": "2025-05-01",
-      "citations": 6,
       "institutions": "Unknown"
     },
     {
