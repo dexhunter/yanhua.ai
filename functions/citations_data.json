@@ -1,11 +1,11 @@
 {
-  "last_updated": "2025-12-04 00:11:07 UTC",
+  "last_updated": "2025-12-05 00:12:44 UTC",
   "target_paper": "https://www.arxiv.org/abs/2502.13138",
   "arxiv_id": "2502.13138",
-  "total_citations": 23,
+  "total_citations": 20,
   "h_index": 7,
-  "recent_citations": 3,
-  "avg_citations_per_month": "0.96",
+  "recent_citations": 0,
+  "avg_citations_per_month": "0.91",
   "timeline": [
     {
       "date": "2024-01-01",
@@ -46,46 +46,9 @@
     {
       "date": "2025-10-01",
       "citations": 20
-    },
-    {
-      "date": "2025-12-01",
-      "citations": 23
     }
   ],
   "papers": [
-    {
-      "title": "Model-Based Diagnosis with Multiple Observations: A Unified Approach for C Software and Boolean Circuits",
-      "authors": "Pedro Orvalho, Marta Kwiatkowska, Mikoláš Janota, Vasco Manquinho",
-      "journal": "arXiv",
-      "snippet": "Debugging is one of the most time-consuming and expensive tasks in software development and circuit design. Several formula-based fault localisation (FBFL) methods have been proposed, but they fail to guarantee a set of diagnoses across all failing tests or may produce redundant diagnoses that are not subset-minimal, particularly for programs/circuits with multiple faults.\n  This paper introduces CFaults, a novel fault localisation tool for C software and Boolean circuits with multiple faults. CFaults leverages Model-Based Diagnosis (MBD) with multiple observations and aggregates all failing test cases into a unified Maximum Satisfiability (MaxSAT) formula. Consequently, our method guarantees consistency across observations and simplifies the fault localisation procedure. Experimental results on three benchmark sets, two of C programs, TCAS and C-Pack-IPAs, and one of Boolean circuits, ISCAS85, show that CFaults is faster at localising faults in C software than other FBFL approaches such as BugAssist, SNIPER, and HSD. On the ISCAS85 benchmark, CFaults is generally slower than HSD; however, it localises faults in only 6% fewer circuits, demonstrating that it remains competitive in this domain. Furthermore, CFaults produces only subset-minimal diagnoses of faulty statements, whereas the other approaches tend to enumerate redundant diagnoses (e.g., BugAssist and SNIPER).",
-      "link": "http://arxiv.org/abs/2512.02898v1",
-      "published_date": "December 02, 2025",
-      "published_date_sort": "2025-12-02",
-      "citations": 0,
-      "institutions": "Unknown"
-    },
-    {
-      "title": "Are Detectors Fair to Indian IP-AIGC? A Cross-Generator Study",
-      "authors": "Vishal Dubey, Pallavi Tyagi",
-      "journal": "arXiv",
-      "snippet": "Modern image editors can produce identity-preserving AIGC (IP-AIGC), where the same person appears with new attire, background, or lighting. The robustness and fairness of current detectors in this regime remain unclear, especially for under-represented populations. We present what we believe is the first systematic study of IP-AIGC detection for Indian and South-Asian faces, quantifying cross-generator generalization and intra-population performance. We assemble Indian-focused training splits from FairFD and HAV-DF, and construct two held-out IP-AIGC test sets (HIDF-img-ip-genai and HIDF-vid-ip-genai) using commercial web-UI generators (Gemini and ChatGPT) with identity-preserving prompts. We evaluate two state-of-the-art detectors (AIDE and Effort) under pretrained (PT) and fine-tuned (FT) regimes and report AUC, AP, EER, and accuracy. Fine-tuning yields strong in-domain gains (for example, Effort AUC 0.739 to 0.944 on HAV-DF-test; AIDE EER 0.484 to 0.259), but consistently degrades performance on held-out IP-AIGC for Indian cohorts (for example, AIDE AUC 0.923 to 0.563 on HIDF-img-ip-genai; Effort 0.740 to 0.533), which indicates overfitting to training-generator cues. On non-IP HIDF images, PT performance remains high, which suggests a specific brittleness to identity-preserving edits rather than a generic distribution shift. Our study establishes IP-AIGC-Indian as a challenging and practically relevant scenario and motivates representation-preserving adaptation and India-aware benchmark curation to close generalization gaps in AIGC detection.",
-      "link": "http://arxiv.org/abs/2512.02850v1",
-      "published_date": "December 02, 2025",
-      "published_date_sort": "2025-12-02",
-      "citations": 0,
-      "institutions": "Unknown"
-    },
-    {
-      "title": "From Moderation to Mediation: Can LLMs Serve as Mediators in Online Flame Wars?",
-      "authors": "Dawei Li, Abdullah Alnaibari, Arslan Bisharat, Manny Sandoval, Deborah Hall, Yasin Silva, Huan Liu",
-      "journal": "arXiv",
-      "snippet": "The rapid advancement of large language models (LLMs) has opened new possibilities for AI for good applications. As LLMs increasingly mediate online communication, their potential to foster empathy and constructive dialogue becomes an important frontier for responsible AI research. This work explores whether LLMs can serve not only as moderators that detect harmful content, but as mediators capable of understanding and de-escalating online conflicts. Our framework decomposes mediation into two subtasks: judgment, where an LLM evaluates the fairness and emotional dynamics of a conversation, and steering, where it generates empathetic, de-escalatory messages to guide participants toward resolution. To assess mediation quality, we construct a large Reddit-based dataset and propose a multi-stage evaluation pipeline combining principle-based scoring, user simulation, and human comparison. Experiments show that API-based models outperform open-source counterparts in both reasoning and intervention alignment when doing mediation. Our findings highlight both the promise and limitations of current LLMs as emerging agents for online social mediation.",
-      "link": "http://arxiv.org/abs/2512.03005v1",
-      "published_date": "December 02, 2025",
-      "published_date_sort": "2025-12-02",
-      "citations": 0,
-      "institutions": "Unknown"
-    },
     {
       "title": "AutoMLGen: Navigating Fine-Grained Optimization for Coding Agents",
       "authors": "S Du, X Yan, D Jiang, J Yuan, Y Hu, X Li, L He… - arXiv preprint arXiv …, 2025 - arxiv.org",
@@ -98,17 +61,6 @@
       "institutions": "Unknown"
     },
     {
-      "title": "Reinforcement learning for machine learning engineering agents",
-      "authors": "S Yang, J He-Yueya, P Liang - arXiv preprint arXiv:2509.01684, 2025 - arxiv.org",
-      "journal": "Google Scholar Result",
-      "snippet": "Existing agents for solving tasks such as ML engineering rely on prompting powerful language models. As a result, these agents do not improve with more experience. In this …",
-      "link": "https://arxiv.org/abs/2509.01684",
-      "published_date": "September 2025",
-      "published_date_sort": "2025-09-01",
-      "citations": 2,
-      "institutions": "Unknown"
-    },
-    {
       "title": "An AI system to help scientists write expert-level empirical software",
       "authors": "E Aygün, A Belyaeva, G Comanici, M Coram… - arXiv preprint arXiv …, 2025 - arxiv.org",
       "journal": "Google Scholar Result",
@@ -117,6 +69,17 @@
       "published_date": "September 2025",
       "published_date_sort": "2025-09-01",
       "citations": 6,
+      "institutions": "Unknown"
+    },
+    {
+      "title": "Reinforcement learning for machine learning engineering agents",
+      "authors": "S Yang, J He-Yueya, P Liang - arXiv preprint arXiv:2509.01684, 2025 - arxiv.org",
+      "journal": "Google Scholar Result",
+      "snippet": "Existing agents for solving tasks such as ML engineering rely on prompting powerful language models. As a result, these agents do not improve with more experience. In this …",
+      "link": "https://arxiv.org/abs/2509.01684",
+      "published_date": "September 2025",
+      "published_date_sort": "2025-09-01",
+      "citations": 2,
       "institutions": "Unknown"
     },
     {
@@ -153,6 +116,17 @@
       "institutions": "Unknown"
     },
     {
+      "title": "AI Scientists Fail Without Strong Implementation Capability",
+      "authors": "M Zhu, Q Xie, Y Weng, J Wu, Z Lin, L Yang… - arXiv preprint arXiv …, 2025 - arxiv.org",
+      "journal": "Google Scholar Result",
+      "snippet": "The emergence of Artificial Intelligence (AI) Scientist represents a paradigm shift in scientific discovery, with large language models (LLMs) taking the lead as the primary executor in the …",
+      "link": "https://arxiv.org/abs/2506.01372",
+      "published_date": "June 2025",
+      "published_date_sort": "2025-06-01",
+      "citations": 8,
+      "institutions": "Unknown"
+    },
+    {
       "title": "A Comprehensive Survey of Deep Research: Systems, Methodologies, and Applications",
       "authors": "R Xu, J Peng - arXiv preprint arXiv:2506.12594, 2025 - arxiv.org",
       "journal": "Google Scholar Result",
@@ -160,7 +134,7 @@
       "link": "https://arxiv.org/abs/2506.12594",
       "published_date": "June 2025",
       "published_date_sort": "2025-06-01",
-      "citations": 26,
+      "citations": 27,
       "institutions": "Unknown"
     },
     {
@@ -175,39 +149,6 @@
       "institutions": "Unknown"
     },
     {
-      "title": "AI Scientists Fail Without Strong Implementation Capability",
-      "authors": "M Zhu, Q Xie, Y Weng, J Wu, Z Lin, L Yang… - arXiv preprint arXiv …, 2025 - arxiv.org",
-      "journal": "Google Scholar Result",
-      "snippet": "The emergence of Artificial Intelligence (AI) Scientist represents a paradigm shift in scientific discovery, with large language models (LLMs) taking the lead as the primary executor in the …",
-      "link": "https://arxiv.org/abs/2506.01372",
-      "published_date": "June 2025",
-      "published_date_sort": "2025-06-01",
-      "citations": 8,
-      "institutions": "Unknown"
-    },
-    {
-      "title": "From automation to autonomy: A survey on large language models in scientific discovery",
-      "authors": "T Zheng, Z Deng, HT Tsang, W Wang, J Bai… - arXiv preprint arXiv …, 2025 - arxiv.org",
-      "journal": "Google Scholar Result",
-      "snippet": "Large Language Models (LLMs) are catalyzing a paradigm shift in scientific discovery, evolving from task-specific automation tools into increasingly autonomous agents and …",
-      "link": "https://arxiv.org/abs/2505.13259",
-      "published_date": "May 2025",
-      "published_date_sort": "2025-05-01",
-      "citations": 24,
-      "institutions": "Unknown"
-    },
-    {
-      "title": "CodePDE: An Inference Framework for LLM-driven PDE Solver Generation",
-      "authors": "S Li, T Marwah, J Shen, W Sun, A Risteski… - arXiv preprint arXiv …, 2025 - arxiv.org",
-      "journal": "Google Scholar Result",
-      "snippet": "Partial differential equations (PDEs) are fundamental to modeling physical systems, yet solving them remains a complex challenge. Traditional numerical solvers rely on expert …",
-      "link": "https://arxiv.org/abs/2505.08783",
-      "published_date": "May 2025",
-      "published_date_sort": "2025-05-01",
-      "citations": 6,
-      "institutions": "Unknown"
-    },
-    {
       "title": "Mlzero: A multi-agent system for end-to-end machine learning automation",
       "authors": "H Fang, B Han, N Erickson, X Zhang, S Zhou… - arXiv preprint arXiv …, 2025 - arxiv.org",
       "journal": "Google Scholar Result",
@@ -216,6 +157,17 @@
       "published_date": "May 2025",
       "published_date_sort": "2025-05-01",
       "citations": 4,
+      "institutions": "Unknown"
+    },
+    {
+      "title": "Repomaster: Autonomous exploration and understanding of github repositories for complex task solving",
+      "authors": "H Wang, Z Ni, S Zhang, S Lu, S Hu, Z He, C Hu… - arXiv preprint arXiv …, 2025 - arxiv.org",
+      "journal": "Google Scholar Result",
+      "snippet": "The ultimate goal of code agents is to solve complex tasks autonomously. Although large language models (LLMs) have made substantial progress in code generation, real-world …",
+      "link": "https://arxiv.org/abs/2505.21577",
+      "published_date": "May 2025",
+      "published_date_sort": "2025-05-01",
+      "citations": 6,
       "institutions": "Unknown"
     },
     {
@@ -230,14 +182,25 @@
       "institutions": "Unknown"
     },
     {
-      "title": "Repomaster: Autonomous exploration and understanding of github repositories for complex task solving",
-      "authors": "H Wang, Z Ni, S Zhang, S Lu, S Hu, Z He, C Hu… - arXiv preprint arXiv …, 2025 - arxiv.org",
+      "title": "CodePDE: An Inference Framework for LLM-driven PDE Solver Generation",
+      "authors": "S Li, T Marwah, J Shen, W Sun, A Risteski… - arXiv preprint arXiv …, 2025 - arxiv.org",
       "journal": "Google Scholar Result",
-      "snippet": "The ultimate goal of code agents is to solve complex tasks autonomously. Although large language models (LLMs) have made substantial progress in code generation, real-world …",
-      "link": "https://arxiv.org/abs/2505.21577",
+      "snippet": "Partial differential equations (PDEs) are fundamental to modeling physical systems, yet solving them remains a complex challenge. Traditional numerical solvers rely on expert …",
+      "link": "https://arxiv.org/abs/2505.08783",
       "published_date": "May 2025",
       "published_date_sort": "2025-05-01",
-      "citations": 6,
+      "citations": 7,
+      "institutions": "Unknown"
+    },
+    {
+      "title": "From automation to autonomy: A survey on large language models in scientific discovery",
+      "authors": "T Zheng, Z Deng, HT Tsang, W Wang, J Bai… - arXiv preprint arXiv …, 2025 - arxiv.org",
+      "journal": "Google Scholar Result",
+      "snippet": "Large Language Models (LLMs) are catalyzing a paradigm shift in scientific discovery, evolving from task-specific automation tools into increasingly autonomous agents and …",
+      "link": "https://arxiv.org/abs/2505.13259",
+      "published_date": "May 2025",
+      "published_date_sort": "2025-05-01",
+      "citations": 24,
       "institutions": "Unknown"
     },
     {
@@ -270,7 +233,7 @@
       "link": "https://arxiv.org/abs/2503.14499",
       "published_date": "March 2025",
       "published_date_sort": "2025-03-01",
-      "citations": 58,
+      "citations": 60,
       "institutions": "Unknown"
     },
     {
