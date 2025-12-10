@@ -1,11 +1,11 @@
 {
-  "last_updated": "2025-12-09 00:11:38 UTC",
+  "last_updated": "2025-12-10 00:12:07 UTC",
   "target_paper": "https://www.arxiv.org/abs/2502.13138",
   "arxiv_id": "2502.13138",
-  "total_citations": 20,
+  "total_citations": 26,
   "h_index": 7,
-  "recent_citations": 0,
-  "avg_citations_per_month": "0.91",
+  "recent_citations": 6,
+  "avg_citations_per_month": "1.08",
   "timeline": [
     {
       "date": "2024-01-01",
@@ -46,9 +46,79 @@
     {
       "date": "2025-10-01",
       "citations": 20
+    },
+    {
+      "date": "2025-12-01",
+      "citations": 26
     }
   ],
   "papers": [
+    {
+      "title": "The Native Spiking Microarchitecture: From Iontronic Primitives to Bit-Exact FP8 Arithmetic",
+      "authors": "Zhengzheng Tang",
+      "journal": "arXiv",
+      "snippet": "The 2025 Nobel Prize in Chemistry for Metal-Organic Frameworks (MOFs) and recent breakthroughs by Huanting Wang's team at Monash University establish angstrom-scale channels as promising post-silicon substrates with native integrate-and-fire (IF) dynamics. However, utilizing these stochastic, analog materials for deterministic, bit-exact AI workloads (e.g., FP8) remains a paradox. Existing neuromorphic methods often settle for approximation, failing Transformer precision standards. To traverse the gap \"from stochastic ions to deterministic floats,\" we propose a Native Spiking Microarchitecture. Treating noisy neurons as logic primitives, we introduce a Spatial Combinational Pipeline and a Sticky-Extra Correction mechanism. Validation across all 16,129 FP8 pairs confirms 100% bit-exact alignment with PyTorch. Crucially, our architecture reduces Linear layer latency to O(log N), yielding a 17x speedup. Physical simulations further demonstrate robustness against extreme membrane leakage (beta approx 0.01), effectively immunizing the system against the stochastic nature of the hardware.",
+      "link": "http://arxiv.org/abs/2512.07724v1",
+      "published_date": "December 08, 2025",
+      "published_date_sort": "2025-12-08",
+      "citations": 0,
+      "institutions": "Unknown"
+    },
+    {
+      "title": "A scalable and real-time neural decoder for topological quantum codes",
+      "authors": "Andrew W. Senior, Thomas Edlich, Francisco J. H. Heras, Lei M. Zhang, Oscar Higgott, James S. Spencer, Taylor Applebaum, Sam Blackwell, Justin Ledford, Akvilė Žemgulytė, Augustin Žídek, Noah Shutty, Andrew Cowie, Yin Li, George Holland, Peter Brooks, Charlie Beattie, Michael Newman, Alex Davies, Cody Jones, Sergio Boixo, Hartmut Neven, Pushmeet Kohli, Johannes Bausch",
+      "journal": "arXiv",
+      "snippet": "Fault-tolerant quantum computing will require error rates far below those achievable with physical qubits. Quantum error correction (QEC) bridges this gap, but depends on decoders being simultaneously fast, accurate, and scalable. This combination of requirements has not yet been met by a machine-learning decoder, nor by any decoder for promising resource-efficient codes such as the colour code. Here we introduce AlphaQubit 2, a neural-network decoder that achieves near-optimal logical error rates for both surface and colour codes at large scales under realistic noise. For the colour code, it is orders of magnitude faster than other high-accuracy decoders. For the surface code, we demonstrate real-time decoding faster than 1 microsecond per cycle up to distance 11 on current commercial accelerators with better accuracy than leading real-time decoders. These results support the practical application of a wider class of promising QEC codes, and establish a credible path towards high-accuracy, real-time neural decoding at the scales required for fault-tolerant quantum computation.",
+      "link": "http://arxiv.org/abs/2512.07737v1",
+      "published_date": "December 08, 2025",
+      "published_date_sort": "2025-12-08",
+      "citations": 0,
+      "institutions": "Unknown"
+    },
+    {
+      "title": "Persian-Phi: Efficient Cross-Lingual Adaptation of Compact LLMs via Curriculum Learning",
+      "authors": "Amir Mohammad Akhlaghi, Amirhossein Shabani, Mostafa Abdolmaleki, Saeed Reza Kheradpisheh",
+      "journal": "arXiv",
+      "snippet": "The democratization of AI is currently hindered by the immense computational costs required to train Large Language Models (LLMs) for low-resource languages. This paper presents Persian-Phi, a 3.8B parameter model that challenges the assumption that robust multilingual capabilities require massive model sizes or multilingual baselines. We demonstrate how Microsoft Phi-3 Mini -- originally a monolingual English model -- can be effectively adapted to Persian through a novel, resource-efficient curriculum learning pipeline. Our approach employs a unique \"warm-up\" stage using bilingual narratives (Tiny Stories) to align embeddings prior to heavy training, followed by continual pretraining and instruction tuning via Parameter-Efficient Fine-Tuning (PEFT). Despite its compact size, Persian-Phi achieves competitive results on Open Persian LLM Leaderboard in HuggingFace. Our findings provide a validated, scalable framework for extending the reach of state-of-the-art LLMs to underrepresented languages with minimal hardware resources. The Persian-Phi model is publicly available at https://huggingface.co/amirakhlaghiqqq/PersianPhi.",
+      "link": "http://arxiv.org/abs/2512.07454v1",
+      "published_date": "December 08, 2025",
+      "published_date_sort": "2025-12-08",
+      "citations": 0,
+      "institutions": "Unknown"
+    },
+    {
+      "title": "R2MF-Net: A Recurrent Residual Multi-Path Fusion Network for Robust Multi-directional Spine X-ray Segmentation",
+      "authors": "Xuecheng Li, Weikuan Jia, Komildzhon Sharipov, Sharipov Hotam Beknazarovich, Farzona S. Ataeva, Qurbonaliev Alisher, Yuanjie Zheng",
+      "journal": "arXiv",
+      "snippet": "Accurate segmentation of spinal structures in X-ray images is a prerequisite for quantitative scoliosis assessment, including Cobb angle measurement, vertebral translation estimation and curvature classification. In routine practice, clinicians acquire coronal, left-bending and right-bending radiographs to jointly evaluate deformity severity and spinal flexibility. However, the segmentation step remains heavily manual, time-consuming and non-reproducible, particularly in low-contrast images and in the presence of rib shadows or overlapping tissues. To address these limitations, this paper proposes R2MF-Net, a recurrent residual multi-path encoder--decoder network tailored for automatic segmentation of multi-directional spine X-ray images. The overall design consists of a coarse segmentation network and a fine segmentation network connected in cascade. Both stages adopt an improved Inception-style multi-branch feature extractor, while a recurrent residual jump connection (R2-Jump) module is inserted into skip paths to gradually align encoder and decoder semantics. A multi-scale cross-stage skip (MC-Skip) mechanism allows the fine network to reuse hierarchical representations from multiple decoder levels of the coarse network, thereby strengthening the stability of segmentation across imaging directions and contrast conditions. Furthermore, a lightweight spatial-channel squeeze-and-excitation block (SCSE-Lite) is employed at the bottleneck to emphasize spine-related activations and suppress irrelevant structures and background noise. We evaluate R2MF-Net on a clinical multi-view radiograph dataset comprising 228 sets of coronal, left-bending and right-bending spine X-ray images with expert annotations.",
+      "link": "http://arxiv.org/abs/2512.07576v1",
+      "published_date": "December 08, 2025",
+      "published_date_sort": "2025-12-08",
+      "citations": 0,
+      "institutions": "Unknown"
+    },
+    {
+      "title": "Mitigating Bias in Graph Hyperdimensional Computing",
+      "authors": "Yezi Liu, William Youngwoo Chung, Yang Ni, Hanning Chen, Mohsen Imani",
+      "journal": "arXiv",
+      "snippet": "Graph hyperdimensional computing (HDC) has emerged as a promising paradigm for cognitive tasks, emulating brain-like computation with high-dimensional vectors known as hypervectors. While HDC offers robustness and efficiency on graph-structured data, its fairness implications remain largely unexplored. In this paper, we study fairness in graph HDC, where biases in data representation and decision rules can lead to unequal treatment of different groups. We show how hypervector encoding and similarity-based classification can propagate or even amplify such biases, and we propose a fairness-aware training framework, FairGHDC, to mitigate them. FairGHDC introduces a bias correction term, derived from a gap-based demographic-parity regularizer, and converts it into a scalar fairness factor that scales the update of the class hypervector for the ground-truth label. This enables debiasing directly in the hypervector space without modifying the graph encoder or requiring backpropagation. Experimental results on six benchmark datasets demonstrate that FairGHDC substantially reduces demographic-parity and equal-opportunity gaps while maintaining accuracy comparable to standard GNNs and fairness-aware GNNs. At the same time, FairGHDC preserves the computational advantages of HDC, achieving up to about one order of magnitude ($\\approx 10\\times$) speedup in training time on GPU compared to GNN and fairness-aware GNN baselines.",
+      "link": "http://arxiv.org/abs/2512.07433v1",
+      "published_date": "December 08, 2025",
+      "published_date_sort": "2025-12-08",
+      "citations": 0,
+      "institutions": "Unknown"
+    },
+    {
+      "title": "Large Causal Models from Large Language Models",
+      "authors": "Sridhar Mahadevan",
+      "journal": "arXiv",
+      "snippet": "We introduce a new paradigm for building large causal models (LCMs) that exploits the enormous potential latent in today's large language models (LLMs). We describe our ongoing experiments with an implemented system called DEMOCRITUS (Decentralized Extraction of Manifold Ontologies of Causal Relations Integrating Topos Universal Slices) aimed at building, organizing, and visualizing LCMs that span disparate domains extracted from carefully targeted textual queries to LLMs. DEMOCRITUS is methodologically distinct from traditional narrow domain and hypothesis centered causal inference that builds causal models from experiments that produce numerical data. A high-quality LLM is used to propose topics, generate causal questions, and extract plausible causal statements from a diverse range of domains. The technical challenge is then to take these isolated, fragmented, potentially ambiguous and possibly conflicting causal claims, and weave them into a coherent whole, converting them into relational causal triples and embedding them into a LCM. Addressing this technical challenge required inventing new categorical machine learning methods, which we can only briefly summarize in this paper, as it is focused more on the systems side of building DEMOCRITUS. We describe the implementation pipeline for DEMOCRITUS comprising of six modules, examine its computational cost profile to determine where the current bottlenecks in scaling the system to larger models. We describe the results of using DEMOCRITUS over a wide range of domains, spanning archaeology, biology, climate change, economics, medicine and technology. We discuss the limitations of the current DEMOCRITUS system, and outline directions for extending its capabilities.",
+      "link": "http://arxiv.org/abs/2512.07796v1",
+      "published_date": "December 08, 2025",
+      "published_date_sort": "2025-12-08",
+      "citations": 0,
+      "institutions": "Unknown"
+    },
     {
       "title": "AutoMLGen: Navigating Fine-Grained Optimization for Coding Agents",
       "authors": "S Du, X Yan, D Jiang, J Yuan, Y Hu, X Li, L He… - arXiv preprint arXiv …, 2025 - arxiv.org",
@@ -83,17 +153,6 @@
       "institutions": "Unknown"
     },
     {
-      "title": "Tuning llm-based code optimization via meta-prompting: An industrial perspective",
-      "authors": "J Gong, R Giavrimis, P Brookes, V Voskanyan… - arXiv preprint arXiv …, 2025 - arxiv.org",
-      "journal": "Google Scholar Result",
-      "snippet": "There is a growing interest in leveraging multiple large language models (LLMs) for automated code optimization. However, industrial platforms deploying multiple LLMs face a …",
-      "link": "https://arxiv.org/abs/2508.01443",
-      "published_date": "August 2025",
-      "published_date_sort": "2025-08-01",
-      "citations": 2,
-      "institutions": "Unknown"
-    },
-    {
       "title": "KompeteAI: Accelerated autonomous multi-agent system for end-to-end pipeline generation for machine learning problems",
       "authors": "S Kulibaba, A Dzhalilov, R Pakhomov… - arXiv preprint arXiv …, 2025 - arxiv.org",
       "journal": "Google Scholar Result",
@@ -102,6 +161,17 @@
       "published_date": "August 2025",
       "published_date_sort": "2025-08-01",
       "citations": 3,
+      "institutions": "Unknown"
+    },
+    {
+      "title": "Tuning llm-based code optimization via meta-prompting: An industrial perspective",
+      "authors": "J Gong, R Giavrimis, P Brookes, V Voskanyan… - arXiv preprint arXiv …, 2025 - arxiv.org",
+      "journal": "Google Scholar Result",
+      "snippet": "There is a growing interest in leveraging multiple large language models (LLMs) for automated code optimization. However, industrial platforms deploying multiple LLMs face a …",
+      "link": "https://arxiv.org/abs/2508.01443",
+      "published_date": "August 2025",
+      "published_date_sort": "2025-08-01",
+      "citations": 2,
       "institutions": "Unknown"
     },
     {
@@ -127,17 +197,6 @@
       "institutions": "Unknown"
     },
     {
-      "title": "Automind: Adaptive knowledgeable agent for automated data science",
-      "authors": "Y Ou, Y Luo, J Zheng, L Wei, Z Yu, S Qiao… - arXiv preprint arXiv …, 2025 - arxiv.org",
-      "journal": "Google Scholar Result",
-      "snippet": "Large Language Model (LLM) agents have shown great potential in addressing real-world data science problems. LLM-driven data science agents promise to automate the entire …",
-      "link": "https://arxiv.org/abs/2506.10974",
-      "published_date": "June 2025",
-      "published_date_sort": "2025-06-01",
-      "citations": 6,
-      "institutions": "Unknown"
-    },
-    {
       "title": "AI Scientists Fail Without Strong Implementation Capability",
       "authors": "M Zhu, Q Xie, Y Weng, J Wu, Z Lin, L Yang… - arXiv preprint arXiv …, 2025 - arxiv.org",
       "journal": "Google Scholar Result",
@@ -149,14 +208,25 @@
       "institutions": "Unknown"
     },
     {
-      "title": "CodePDE: An Inference Framework for LLM-driven PDE Solver Generation",
-      "authors": "S Li, T Marwah, J Shen, W Sun, A Risteski… - arXiv preprint arXiv …, 2025 - arxiv.org",
+      "title": "Automind: Adaptive knowledgeable agent for automated data science",
+      "authors": "Y Ou, Y Luo, J Zheng, L Wei, Z Yu, S Qiao… - arXiv preprint arXiv …, 2025 - arxiv.org",
       "journal": "Google Scholar Result",
-      "snippet": "Partial differential equations (PDEs) are fundamental to modeling physical systems, yet solving them remains a complex challenge. Traditional numerical solvers rely on expert …",
-      "link": "https://arxiv.org/abs/2505.08783",
+      "snippet": "Large Language Model (LLM) agents have shown great potential in addressing real-world data science problems. LLM-driven data science agents promise to automate the entire …",
+      "link": "https://arxiv.org/abs/2506.10974",
+      "published_date": "June 2025",
+      "published_date_sort": "2025-06-01",
+      "citations": 6,
+      "institutions": "Unknown"
+    },
+    {
+      "title": "Repomaster: Autonomous exploration and understanding of github repositories for complex task solving",
+      "authors": "H Wang, Z Ni, S Zhang, S Lu, S Hu, Z He, C Hu… - arXiv preprint arXiv …, 2025 - arxiv.org",
+      "journal": "Google Scholar Result",
+      "snippet": "The ultimate goal of code agents is to solve complex tasks autonomously. Although large language models (LLMs) have made substantial progress in code generation, real-world …",
+      "link": "https://arxiv.org/abs/2505.21577",
       "published_date": "May 2025",
       "published_date_sort": "2025-05-01",
-      "citations": 7,
+      "citations": 6,
       "institutions": "Unknown"
     },
     {
@@ -171,14 +241,25 @@
       "institutions": "Unknown"
     },
     {
-      "title": "Repomaster: Autonomous exploration and understanding of github repositories for complex task solving",
-      "authors": "H Wang, Z Ni, S Zhang, S Lu, S Hu, Z He, C Hu… - arXiv preprint arXiv …, 2025 - arxiv.org",
+      "title": "CodePDE: An Inference Framework for LLM-driven PDE Solver Generation",
+      "authors": "S Li, T Marwah, J Shen, W Sun, A Risteski… - arXiv preprint arXiv …, 2025 - arxiv.org",
       "journal": "Google Scholar Result",
-      "snippet": "The ultimate goal of code agents is to solve complex tasks autonomously. Although large language models (LLMs) have made substantial progress in code generation, real-world …",
-      "link": "https://arxiv.org/abs/2505.21577",
+      "snippet": "Partial differential equations (PDEs) are fundamental to modeling physical systems, yet solving them remains a complex challenge. Traditional numerical solvers rely on expert …",
+      "link": "https://arxiv.org/abs/2505.08783",
       "published_date": "May 2025",
       "published_date_sort": "2025-05-01",
-      "citations": 6,
+      "citations": 7,
+      "institutions": "Unknown"
+    },
+    {
+      "title": "IDA-Bench: Evaluating LLMs on Interactive Guided Data Analysis",
+      "authors": "H Li, H Liu, T Zhu, T Guo, Z Zheng, X Deng… - arXiv preprint arXiv …, 2025 - arxiv.org",
+      "journal": "Google Scholar Result",
+      "snippet": "Large Language Models (LLMs) show promise as data analysis agents, but existing benchmarks overlook the iterative nature of the field, where experts' decisions evolve with …",
+      "link": "https://arxiv.org/abs/2505.18223",
+      "published_date": "May 2025",
+      "published_date_sort": "2025-05-01",
+      "citations": 2,
       "institutions": "Unknown"
     },
     {
@@ -204,17 +285,6 @@
       "institutions": "Unknown"
     },
     {
-      "title": "IDA-Bench: Evaluating LLMs on Interactive Guided Data Analysis",
-      "authors": "H Li, H Liu, T Zhu, T Guo, Z Zheng, X Deng… - arXiv preprint arXiv …, 2025 - arxiv.org",
-      "journal": "Google Scholar Result",
-      "snippet": "Large Language Models (LLMs) show promise as data analysis agents, but existing benchmarks overlook the iterative nature of the field, where experts' decisions evolve with …",
-      "link": "https://arxiv.org/abs/2505.18223",
-      "published_date": "May 2025",
-      "published_date_sort": "2025-05-01",
-      "citations": 2,
-      "institutions": "Unknown"
-    },
-    {
       "title": "Co-bench: Benchmarking language model agents in algorithm search for combinatorial optimization",
       "authors": "W Sun, S Feng, S Li, Y Yang - arXiv preprint arXiv:2504.04310, 2025 - arxiv.org",
       "journal": "Google Scholar Result",
@@ -237,17 +307,6 @@
       "institutions": "Unknown"
     },
     {
-      "title": "AIRepr: An Analyst-Inspector Framework for Evaluating Reproducibility of LLMs in Data Science",
-      "authors": "Q Zeng, C Jin, X Wang, Y Zheng… - Findings of the Association …, 2025 - aclanthology.org",
-      "journal": "Google Scholar Result",
-      "snippet": "Large language models (LLMs) are increasingly used to automate data analysis through executable code generation. Yet, data science tasks often admit multiple statistically valid …",
-      "link": "https://aclanthology.org/anthology-files/anthology-files/pdf/findings/2025.findings-emnlp.539.pdf",
-      "published_date": "2025",
-      "published_date_sort": "2025-01-01",
-      "citations": 1,
-      "institutions": "Unknown"
-    },
-    {
       "title": "An agentic framework for autonomous metamaterial modeling and inverse design",
       "authors": "D Lu, JM Malof, WJ Padilla - ACS Photonics, 2025 - ACS Publications",
       "journal": "Google Scholar Result",
@@ -256,6 +315,17 @@
       "published_date": "2025",
       "published_date_sort": "2025-01-01",
       "citations": 3,
+      "institutions": "Unknown"
+    },
+    {
+      "title": "AIRepr: An Analyst-Inspector Framework for Evaluating Reproducibility of LLMs in Data Science",
+      "authors": "Q Zeng, C Jin, X Wang, Y Zheng… - Findings of the Association …, 2025 - aclanthology.org",
+      "journal": "Google Scholar Result",
+      "snippet": "Large language models (LLMs) are increasingly used to automate data analysis through executable code generation. Yet, data science tasks often admit multiple statistically valid …",
+      "link": "https://aclanthology.org/anthology-files/anthology-files/pdf/findings/2025.findings-emnlp.539.pdf",
+      "published_date": "2025",
+      "published_date_sort": "2025-01-01",
+      "citations": 1,
       "institutions": "Unknown"
     },
     {
