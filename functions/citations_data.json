@@ -1,11 +1,11 @@
 {
-  "last_updated": "2025-12-10 00:12:07 UTC",
+  "last_updated": "2025-12-11 00:12:02 UTC",
   "target_paper": "https://www.arxiv.org/abs/2502.13138",
   "arxiv_id": "2502.13138",
-  "total_citations": 26,
+  "total_citations": 25,
   "h_index": 7,
-  "recent_citations": 6,
-  "avg_citations_per_month": "1.08",
+  "recent_citations": 5,
+  "avg_citations_per_month": "1.04",
   "timeline": [
     {
       "date": "2024-01-01",
@@ -49,73 +49,62 @@
     },
     {
       "date": "2025-12-01",
-      "citations": 26
+      "citations": 25
     }
   ],
   "papers": [
     {
-      "title": "The Native Spiking Microarchitecture: From Iontronic Primitives to Bit-Exact FP8 Arithmetic",
-      "authors": "Zhengzheng Tang",
+      "title": "SAQ: Stabilizer-Aware Quantum Error Correction Decoder",
+      "authors": "David Zenati, Eliya Nachmani",
       "journal": "arXiv",
-      "snippet": "The 2025 Nobel Prize in Chemistry for Metal-Organic Frameworks (MOFs) and recent breakthroughs by Huanting Wang's team at Monash University establish angstrom-scale channels as promising post-silicon substrates with native integrate-and-fire (IF) dynamics. However, utilizing these stochastic, analog materials for deterministic, bit-exact AI workloads (e.g., FP8) remains a paradox. Existing neuromorphic methods often settle for approximation, failing Transformer precision standards. To traverse the gap \"from stochastic ions to deterministic floats,\" we propose a Native Spiking Microarchitecture. Treating noisy neurons as logic primitives, we introduce a Spatial Combinational Pipeline and a Sticky-Extra Correction mechanism. Validation across all 16,129 FP8 pairs confirms 100% bit-exact alignment with PyTorch. Crucially, our architecture reduces Linear layer latency to O(log N), yielding a 17x speedup. Physical simulations further demonstrate robustness against extreme membrane leakage (beta approx 0.01), effectively immunizing the system against the stochastic nature of the hardware.",
-      "link": "http://arxiv.org/abs/2512.07724v1",
-      "published_date": "December 08, 2025",
-      "published_date_sort": "2025-12-08",
+      "snippet": "Quantum Error Correction (QEC) decoding faces a fundamental accuracy-efficiency tradeoff. Classical methods like Minimum Weight Perfect Matching (MWPM) exhibit variable performance across noise models and suffer from polynomial complexity, while tensor network decoders achieve high accuracy but at prohibitively high computational cost. Recent neural decoders reduce complexity but lack the accuracy needed to compete with computationally expensive classical methods. We introduce SAQ-Decoder, a unified framework combining transformer-based learning with constraint aware post-processing that achieves both near Maximum Likelihood (ML) accuracy and linear computational scalability with respect to the syndrome size. Our approach combines a dual-stream transformer architecture that processes syndromes and logical information with asymmetric attention patterns, and a novel differentiable logical loss that directly optimizes Logical Error Rates (LER) through smooth approximations over finite fields. SAQ-Decoder achieves near-optimal performance, with error thresholds of 10.99% (independent noise) and 18.6% (depolarizing noise) on toric codes that approach the ML bounds of 11.0% and 18.9% while outperforming existing neural and classical baselines in accuracy, complexity, and parameter efficiency. Our findings establish that learned decoders can simultaneously achieve competitive decoding accuracy and computational efficiency, addressing key requirements for practical fault-tolerant quantum computing systems.",
+      "link": "http://arxiv.org/abs/2512.08914v1",
+      "published_date": "December 09, 2025",
+      "published_date_sort": "2025-12-09",
       "citations": 0,
       "institutions": "Unknown"
     },
     {
-      "title": "A scalable and real-time neural decoder for topological quantum codes",
-      "authors": "Andrew W. Senior, Thomas Edlich, Francisco J. H. Heras, Lei M. Zhang, Oscar Higgott, James S. Spencer, Taylor Applebaum, Sam Blackwell, Justin Ledford, Akvilė Žemgulytė, Augustin Žídek, Noah Shutty, Andrew Cowie, Yin Li, George Holland, Peter Brooks, Charlie Beattie, Michael Newman, Alex Davies, Cody Jones, Sergio Boixo, Hartmut Neven, Pushmeet Kohli, Johannes Bausch",
+      "title": "No Labels, No Problem: Training Visual Reasoners with Multimodal Verifiers",
+      "authors": "Damiano Marsili, Georgia Gkioxari",
       "journal": "arXiv",
-      "snippet": "Fault-tolerant quantum computing will require error rates far below those achievable with physical qubits. Quantum error correction (QEC) bridges this gap, but depends on decoders being simultaneously fast, accurate, and scalable. This combination of requirements has not yet been met by a machine-learning decoder, nor by any decoder for promising resource-efficient codes such as the colour code. Here we introduce AlphaQubit 2, a neural-network decoder that achieves near-optimal logical error rates for both surface and colour codes at large scales under realistic noise. For the colour code, it is orders of magnitude faster than other high-accuracy decoders. For the surface code, we demonstrate real-time decoding faster than 1 microsecond per cycle up to distance 11 on current commercial accelerators with better accuracy than leading real-time decoders. These results support the practical application of a wider class of promising QEC codes, and establish a credible path towards high-accuracy, real-time neural decoding at the scales required for fault-tolerant quantum computation.",
-      "link": "http://arxiv.org/abs/2512.07737v1",
-      "published_date": "December 08, 2025",
-      "published_date_sort": "2025-12-08",
+      "snippet": "Visual reasoning is challenging, requiring both precise object grounding and understanding complex spatial relationships. Existing methods fall into two camps: language-only chain-of-thought approaches, which demand large-scale (image, query, answer) supervision, and program-synthesis approaches which use pre-trained models and avoid training, but suffer from flawed logic and erroneous grounding. We propose an annotation-free training framework that improves both reasoning and grounding. Our framework uses AI-powered verifiers: an LLM verifier refines LLM reasoning via reinforcement learning, while a VLM verifier strengthens visual grounding through automated hard-negative mining, eliminating the need for ground truth labels. This design combines the strengths of modern AI systems: advanced language-only reasoning models for decomposing spatial queries into simpler subtasks, and strong vision specialist models improved via performant VLM critics. We evaluate our approach across diverse spatial reasoning tasks, and show that our method improves visual reasoning and surpasses open-source and proprietary models, while with our improved visual grounding model we further outperform recent text-only visual reasoning methods. Project webpage: https://glab-caltech.github.io/valor/",
+      "link": "http://arxiv.org/abs/2512.08889v1",
+      "published_date": "December 09, 2025",
+      "published_date_sort": "2025-12-09",
       "citations": 0,
       "institutions": "Unknown"
     },
     {
-      "title": "Persian-Phi: Efficient Cross-Lingual Adaptation of Compact LLMs via Curriculum Learning",
-      "authors": "Amir Mohammad Akhlaghi, Amirhossein Shabani, Mostafa Abdolmaleki, Saeed Reza Kheradpisheh",
+      "title": "Revisiting the Scaling Properties of Downstream Metrics in Large Language Model Training",
+      "authors": "Jakub Krajewski, Amitis Shidani, Dan Busbridge, Sam Wiseman, Jason Ramapuram",
       "journal": "arXiv",
-      "snippet": "The democratization of AI is currently hindered by the immense computational costs required to train Large Language Models (LLMs) for low-resource languages. This paper presents Persian-Phi, a 3.8B parameter model that challenges the assumption that robust multilingual capabilities require massive model sizes or multilingual baselines. We demonstrate how Microsoft Phi-3 Mini -- originally a monolingual English model -- can be effectively adapted to Persian through a novel, resource-efficient curriculum learning pipeline. Our approach employs a unique \"warm-up\" stage using bilingual narratives (Tiny Stories) to align embeddings prior to heavy training, followed by continual pretraining and instruction tuning via Parameter-Efficient Fine-Tuning (PEFT). Despite its compact size, Persian-Phi achieves competitive results on Open Persian LLM Leaderboard in HuggingFace. Our findings provide a validated, scalable framework for extending the reach of state-of-the-art LLMs to underrepresented languages with minimal hardware resources. The Persian-Phi model is publicly available at https://huggingface.co/amirakhlaghiqqq/PersianPhi.",
-      "link": "http://arxiv.org/abs/2512.07454v1",
-      "published_date": "December 08, 2025",
-      "published_date_sort": "2025-12-08",
+      "snippet": "While scaling laws for Large Language Models (LLMs) traditionally focus on proxy metrics like pretraining loss, predicting downstream task performance has been considered unreliable. This paper challenges that view by proposing a direct framework to model the scaling of benchmark performance from the training budget. We find that for a fixed token-to-parameter ratio, a simple power law can accurately describe the scaling behavior of log accuracy on multiple popular downstream tasks. Our results show that the direct approach extrapolates better than the previously proposed two-stage procedure, which is prone to compounding errors. Furthermore, we introduce functional forms that predict accuracy across token-to-parameter ratios and account for inference compute under repeated sampling. We validate our findings on models with up to 17B parameters trained on up to 350B tokens across two dataset mixtures. To support reproducibility and encourage future research, we release the complete set of pretraining losses and downstream evaluation results.",
+      "link": "http://arxiv.org/abs/2512.08894v1",
+      "published_date": "December 09, 2025",
+      "published_date_sort": "2025-12-09",
       "citations": 0,
       "institutions": "Unknown"
     },
     {
-      "title": "R2MF-Net: A Recurrent Residual Multi-Path Fusion Network for Robust Multi-directional Spine X-ray Segmentation",
-      "authors": "Xuecheng Li, Weikuan Jia, Komildzhon Sharipov, Sharipov Hotam Beknazarovich, Farzona S. Ataeva, Qurbonaliev Alisher, Yuanjie Zheng",
+      "title": "Open Polymer Challenge: Post-Competition Report",
+      "authors": "Gang Liu, Sobin Alosious, Subhamoy Mahajan, Eric Inae, Yihan Zhu, Yuhan Liu, Renzheng Zhang, Jiaxin Xu, Addison Howard, Ying Li, Tengfei Luo, Meng Jiang",
       "journal": "arXiv",
-      "snippet": "Accurate segmentation of spinal structures in X-ray images is a prerequisite for quantitative scoliosis assessment, including Cobb angle measurement, vertebral translation estimation and curvature classification. In routine practice, clinicians acquire coronal, left-bending and right-bending radiographs to jointly evaluate deformity severity and spinal flexibility. However, the segmentation step remains heavily manual, time-consuming and non-reproducible, particularly in low-contrast images and in the presence of rib shadows or overlapping tissues. To address these limitations, this paper proposes R2MF-Net, a recurrent residual multi-path encoder--decoder network tailored for automatic segmentation of multi-directional spine X-ray images. The overall design consists of a coarse segmentation network and a fine segmentation network connected in cascade. Both stages adopt an improved Inception-style multi-branch feature extractor, while a recurrent residual jump connection (R2-Jump) module is inserted into skip paths to gradually align encoder and decoder semantics. A multi-scale cross-stage skip (MC-Skip) mechanism allows the fine network to reuse hierarchical representations from multiple decoder levels of the coarse network, thereby strengthening the stability of segmentation across imaging directions and contrast conditions. Furthermore, a lightweight spatial-channel squeeze-and-excitation block (SCSE-Lite) is employed at the bottleneck to emphasize spine-related activations and suppress irrelevant structures and background noise. We evaluate R2MF-Net on a clinical multi-view radiograph dataset comprising 228 sets of coronal, left-bending and right-bending spine X-ray images with expert annotations.",
-      "link": "http://arxiv.org/abs/2512.07576v1",
-      "published_date": "December 08, 2025",
-      "published_date_sort": "2025-12-08",
+      "snippet": "Machine learning (ML) offers a powerful path toward discovering sustainable polymer materials, but progress has been limited by the lack of large, high-quality, and openly accessible polymer datasets. The Open Polymer Challenge (OPC) addresses this gap by releasing the first community-developed benchmark for polymer informatics, featuring a dataset with 10K polymers and 5 properties: thermal conductivity, radius of gyration, density, fractional free volume, and glass transition temperature. The challenge centers on multi-task polymer property prediction, a core step in virtual screening pipelines for materials discovery. Participants developed models under realistic constraints that include small data, label imbalance, and heterogeneous simulation sources, using techniques such as feature-based augmentation, transfer learning, self-supervised pretraining, and targeted ensemble strategies. The competition also revealed important lessons about data preparation, distribution shifts, and cross-group simulation consistency, informing best practices for future large-scale polymer datasets. The resulting models, analysis, and released data create a new foundation for molecular AI in polymer science and are expected to accelerate the development of sustainable and energy-efficient materials. Along with the competition, we release the test dataset at https://www.kaggle.com/datasets/alexliu99/neurips-open-polymer-prediction-2025-test-data. We also release the data generation pipeline at https://github.com/sobinalosious/ADEPT, which simulates more than 25 properties, including thermal conductivity, radius of gyration, and density.",
+      "link": "http://arxiv.org/abs/2512.08896v1",
+      "published_date": "December 09, 2025",
+      "published_date_sort": "2025-12-09",
       "citations": 0,
       "institutions": "Unknown"
     },
     {
-      "title": "Mitigating Bias in Graph Hyperdimensional Computing",
-      "authors": "Yezi Liu, William Youngwoo Chung, Yang Ni, Hanning Chen, Mohsen Imani",
+      "title": "Performance Comparison of Aerial RIS and STAR-RIS in 3D Wireless Environments",
+      "authors": "Dongdong Yang, Bin Li, Jiguang He",
       "journal": "arXiv",
-      "snippet": "Graph hyperdimensional computing (HDC) has emerged as a promising paradigm for cognitive tasks, emulating brain-like computation with high-dimensional vectors known as hypervectors. While HDC offers robustness and efficiency on graph-structured data, its fairness implications remain largely unexplored. In this paper, we study fairness in graph HDC, where biases in data representation and decision rules can lead to unequal treatment of different groups. We show how hypervector encoding and similarity-based classification can propagate or even amplify such biases, and we propose a fairness-aware training framework, FairGHDC, to mitigate them. FairGHDC introduces a bias correction term, derived from a gap-based demographic-parity regularizer, and converts it into a scalar fairness factor that scales the update of the class hypervector for the ground-truth label. This enables debiasing directly in the hypervector space without modifying the graph encoder or requiring backpropagation. Experimental results on six benchmark datasets demonstrate that FairGHDC substantially reduces demographic-parity and equal-opportunity gaps while maintaining accuracy comparable to standard GNNs and fairness-aware GNNs. At the same time, FairGHDC preserves the computational advantages of HDC, achieving up to about one order of magnitude ($\\approx 10\\times$) speedup in training time on GPU compared to GNN and fairness-aware GNN baselines.",
-      "link": "http://arxiv.org/abs/2512.07433v1",
-      "published_date": "December 08, 2025",
-      "published_date_sort": "2025-12-08",
-      "citations": 0,
-      "institutions": "Unknown"
-    },
-    {
-      "title": "Large Causal Models from Large Language Models",
-      "authors": "Sridhar Mahadevan",
-      "journal": "arXiv",
-      "snippet": "We introduce a new paradigm for building large causal models (LCMs) that exploits the enormous potential latent in today's large language models (LLMs). We describe our ongoing experiments with an implemented system called DEMOCRITUS (Decentralized Extraction of Manifold Ontologies of Causal Relations Integrating Topos Universal Slices) aimed at building, organizing, and visualizing LCMs that span disparate domains extracted from carefully targeted textual queries to LLMs. DEMOCRITUS is methodologically distinct from traditional narrow domain and hypothesis centered causal inference that builds causal models from experiments that produce numerical data. A high-quality LLM is used to propose topics, generate causal questions, and extract plausible causal statements from a diverse range of domains. The technical challenge is then to take these isolated, fragmented, potentially ambiguous and possibly conflicting causal claims, and weave them into a coherent whole, converting them into relational causal triples and embedding them into a LCM. Addressing this technical challenge required inventing new categorical machine learning methods, which we can only briefly summarize in this paper, as it is focused more on the systems side of building DEMOCRITUS. We describe the implementation pipeline for DEMOCRITUS comprising of six modules, examine its computational cost profile to determine where the current bottlenecks in scaling the system to larger models. We describe the results of using DEMOCRITUS over a wide range of domains, spanning archaeology, biology, climate change, economics, medicine and technology. We discuss the limitations of the current DEMOCRITUS system, and outline directions for extending its capabilities.",
-      "link": "http://arxiv.org/abs/2512.07796v1",
-      "published_date": "December 08, 2025",
-      "published_date_sort": "2025-12-08",
+      "snippet": "Reconfigurable intelligent surface (RIS) and simultaneously transmitting and reflecting RIS (STAR-RIS) have emerged as key enablers for enhancing wireless coverage and capacity in next-generation networks. When mounted on unmanned aerial vehicles (UAVs), they benefit from flexible deployment and improved line-of-sight conditions. Despite their promising potential, a comprehensive performance comparison between aerial RIS and STAR-RIS architectures has not been thoroughly investigated. This letter presents a detailed performance comparison between aerial RIS and STAR-RIS in three-dimensional wireless environments. Accurate channel models incorporating directional radiation patterns are established, and the influence of deployment altitude and orientation is thoroughly examined. To optimize the system sum-rate, we formulate joint optimization problems for both architectures and propose an efficient solution based on the weighted minimum mean square error and block coordinate descent algorithms. Simulation results reveal that STAR-RIS outperforms RIS in low-altitude scenarios due to its full-space coverage capability, whereas RIS delivers better performance near the base station at higher altitudes. The findings provide practical insights for the deployment of aerial intelligent surfaces in future 6G communication systems.",
+      "link": "http://arxiv.org/abs/2512.08755v1",
+      "published_date": "December 09, 2025",
+      "published_date_sort": "2025-12-09",
       "citations": 0,
       "institutions": "Unknown"
     },
@@ -131,17 +120,6 @@
       "institutions": "Unknown"
     },
     {
-      "title": "An AI system to help scientists write expert-level empirical software",
-      "authors": "E Aygün, A Belyaeva, G Comanici, M Coram… - arXiv preprint arXiv …, 2025 - arxiv.org",
-      "journal": "Google Scholar Result",
-      "snippet": "The cycle of scientific discovery is frequently bottlenecked by the slow, manual creation of software to support computational experiments. To address this, we present an AI system …",
-      "link": "https://arxiv.org/abs/2509.06503",
-      "published_date": "September 2025",
-      "published_date_sort": "2025-09-01",
-      "citations": 7,
-      "institutions": "Unknown"
-    },
-    {
       "title": "Reinforcement learning for machine learning engineering agents",
       "authors": "S Yang, J He-Yueya, P Liang - arXiv preprint arXiv:2509.01684, 2025 - arxiv.org",
       "journal": "Google Scholar Result",
@@ -150,6 +128,17 @@
       "published_date": "September 2025",
       "published_date_sort": "2025-09-01",
       "citations": 2,
+      "institutions": "Unknown"
+    },
+    {
+      "title": "An AI system to help scientists write expert-level empirical software",
+      "authors": "E Aygün, A Belyaeva, G Comanici, M Coram… - arXiv preprint arXiv …, 2025 - arxiv.org",
+      "journal": "Google Scholar Result",
+      "snippet": "The cycle of scientific discovery is frequently bottlenecked by the slow, manual creation of software to support computational experiments. To address this, we present an AI system …",
+      "link": "https://arxiv.org/abs/2509.06503",
+      "published_date": "September 2025",
+      "published_date_sort": "2025-09-01",
+      "citations": 7,
       "institutions": "Unknown"
     },
     {
@@ -219,17 +208,6 @@
       "institutions": "Unknown"
     },
     {
-      "title": "Repomaster: Autonomous exploration and understanding of github repositories for complex task solving",
-      "authors": "H Wang, Z Ni, S Zhang, S Lu, S Hu, Z He, C Hu… - arXiv preprint arXiv …, 2025 - arxiv.org",
-      "journal": "Google Scholar Result",
-      "snippet": "The ultimate goal of code agents is to solve complex tasks autonomously. Although large language models (LLMs) have made substantial progress in code generation, real-world …",
-      "link": "https://arxiv.org/abs/2505.21577",
-      "published_date": "May 2025",
-      "published_date_sort": "2025-05-01",
-      "citations": 6,
-      "institutions": "Unknown"
-    },
-    {
       "title": "From automation to autonomy: A survey on large language models in scientific discovery",
       "authors": "T Zheng, Z Deng, HT Tsang, W Wang, J Bai… - arXiv preprint arXiv …, 2025 - arxiv.org",
       "journal": "Google Scholar Result",
@@ -241,25 +219,14 @@
       "institutions": "Unknown"
     },
     {
-      "title": "CodePDE: An Inference Framework for LLM-driven PDE Solver Generation",
-      "authors": "S Li, T Marwah, J Shen, W Sun, A Risteski… - arXiv preprint arXiv …, 2025 - arxiv.org",
+      "title": "Mlzero: A multi-agent system for end-to-end machine learning automation",
+      "authors": "H Fang, B Han, N Erickson, X Zhang, S Zhou… - arXiv preprint arXiv …, 2025 - arxiv.org",
       "journal": "Google Scholar Result",
-      "snippet": "Partial differential equations (PDEs) are fundamental to modeling physical systems, yet solving them remains a complex challenge. Traditional numerical solvers rely on expert …",
-      "link": "https://arxiv.org/abs/2505.08783",
+      "snippet": "Existing AutoML systems have advanced the automation of machine learning (ML); however, they still require substantial manual configuration and expert input, particularly …",
+      "link": "https://arxiv.org/abs/2505.13941",
       "published_date": "May 2025",
       "published_date_sort": "2025-05-01",
-      "citations": 7,
-      "institutions": "Unknown"
-    },
-    {
-      "title": "IDA-Bench: Evaluating LLMs on Interactive Guided Data Analysis",
-      "authors": "H Li, H Liu, T Zhu, T Guo, Z Zheng, X Deng… - arXiv preprint arXiv …, 2025 - arxiv.org",
-      "journal": "Google Scholar Result",
-      "snippet": "Large Language Models (LLMs) show promise as data analysis agents, but existing benchmarks overlook the iterative nature of the field, where experts' decisions evolve with …",
-      "link": "https://arxiv.org/abs/2505.18223",
-      "published_date": "May 2025",
-      "published_date_sort": "2025-05-01",
-      "citations": 2,
+      "citations": 4,
       "institutions": "Unknown"
     },
     {
@@ -274,14 +241,36 @@
       "institutions": "Unknown"
     },
     {
-      "title": "Mlzero: A multi-agent system for end-to-end machine learning automation",
-      "authors": "H Fang, B Han, N Erickson, X Zhang, S Zhou… - arXiv preprint arXiv …, 2025 - arxiv.org",
+      "title": "CodePDE: An Inference Framework for LLM-driven PDE Solver Generation",
+      "authors": "S Li, T Marwah, J Shen, W Sun, A Risteski… - arXiv preprint arXiv …, 2025 - arxiv.org",
       "journal": "Google Scholar Result",
-      "snippet": "Existing AutoML systems have advanced the automation of machine learning (ML); however, they still require substantial manual configuration and expert input, particularly …",
-      "link": "https://arxiv.org/abs/2505.13941",
+      "snippet": "Partial differential equations (PDEs) are fundamental to modeling physical systems, yet solving them remains a complex challenge. Traditional numerical solvers rely on expert …",
+      "link": "https://arxiv.org/abs/2505.08783",
       "published_date": "May 2025",
       "published_date_sort": "2025-05-01",
-      "citations": 4,
+      "citations": 7,
+      "institutions": "Unknown"
+    },
+    {
+      "title": "Repomaster: Autonomous exploration and understanding of github repositories for complex task solving",
+      "authors": "H Wang, Z Ni, S Zhang, S Lu, S Hu, Z He, C Hu… - arXiv preprint arXiv …, 2025 - arxiv.org",
+      "journal": "Google Scholar Result",
+      "snippet": "The ultimate goal of code agents is to solve complex tasks autonomously. Although large language models (LLMs) have made substantial progress in code generation, real-world …",
+      "link": "https://arxiv.org/abs/2505.21577",
+      "published_date": "May 2025",
+      "published_date_sort": "2025-05-01",
+      "citations": 7,
+      "institutions": "Unknown"
+    },
+    {
+      "title": "IDA-Bench: Evaluating LLMs on Interactive Guided Data Analysis",
+      "authors": "H Li, H Liu, T Zhu, T Guo, Z Zheng, X Deng… - arXiv preprint arXiv …, 2025 - arxiv.org",
+      "journal": "Google Scholar Result",
+      "snippet": "Large Language Models (LLMs) show promise as data analysis agents, but existing benchmarks overlook the iterative nature of the field, where experts' decisions evolve with …",
+      "link": "https://arxiv.org/abs/2505.18223",
+      "published_date": "May 2025",
+      "published_date_sort": "2025-05-01",
+      "citations": 2,
       "institutions": "Unknown"
     },
     {
