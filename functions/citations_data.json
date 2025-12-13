@@ -1,11 +1,11 @@
 {
-  "last_updated": "2025-12-12 00:12:02 UTC",
+  "last_updated": "2025-12-13 00:11:25 UTC",
   "target_paper": "https://www.arxiv.org/abs/2502.13138",
   "arxiv_id": "2502.13138",
-  "total_citations": 30,
+  "total_citations": 25,
   "h_index": 7,
-  "recent_citations": 10,
-  "avg_citations_per_month": "1.25",
+  "recent_citations": 5,
+  "avg_citations_per_month": "1.04",
   "timeline": [
     {
       "date": "2024-01-01",
@@ -13,15 +13,15 @@
     },
     {
       "date": "2025-01-01",
-      "citations": 3
-    },
-    {
-      "date": "2025-03-01",
       "citations": 4
     },
     {
-      "date": "2025-04-01",
+      "date": "2025-03-01",
       "citations": 5
+    },
+    {
+      "date": "2025-04-01",
+      "citations": 6
     },
     {
       "date": "2025-05-01",
@@ -29,19 +29,15 @@
     },
     {
       "date": "2025-06-01",
-      "citations": 14
-    },
-    {
-      "date": "2025-07-01",
       "citations": 15
     },
     {
       "date": "2025-08-01",
-      "citations": 17
+      "citations": 16
     },
     {
       "date": "2025-09-01",
-      "citations": 19
+      "citations": 18
     },
     {
       "date": "2025-10-01",
@@ -49,118 +45,74 @@
     },
     {
       "date": "2025-12-01",
-      "citations": 30
+      "citations": 25
     }
   ],
   "papers": [
     {
-      "title": "Lazy Diffusion: Mitigating spectral collapse in generative diffusion-based stable autoregressive emulation of turbulent flows",
-      "authors": "Anish Sambamurthy, Ashesh Chattopadhyay",
+      "title": "Multi-Granular Node Pruning for Circuit Discovery",
+      "authors": "Muhammad Umair Haider, Hammad Rizwan, Hassan Sajjad, A. B. Siddique",
       "journal": "arXiv",
-      "snippet": "Turbulent flows posses broadband, power-law spectra in which multiscale interactions couple high-wavenumber fluctuations to large-scale dynamics. Although diffusion-based generative models offer a principled probabilistic forecasting framework, we show that standard DDPMs induce a fundamental \\emph{spectral collapse}: a Fourier-space analysis of the forward SDE reveals a closed-form, mode-wise signal-to-noise ratio (SNR) that decays monotonically in wavenumber, $|k|$ for spectra $S(k)\\!\\propto\\!|k|^{-λ}$, rendering high-wavenumber modes indistinguishable from noise and producing an intrinsic spectral bias. We reinterpret the noise schedule as a spectral regularizer and introduce power-law schedules $β(τ)\\!\\propto\\!τ^γ$ that preserve fine-scale structure deeper into diffusion time, along with \\emph{Lazy Diffusion}, a one-step distillation method that leverages the learned score geometry to bypass long reverse-time trajectories and prevent high-$k$ degradation. Applied to high-Reynolds-number 2D Kolmogorov turbulence and $1/12^\\circ$ Gulf of Mexico ocean reanalysis, these methods resolve spectral collapse, stabilize long-horizon autoregression, and restore physically realistic inertial-range scaling. Together, they show that naïve Gaussian scheduling is structurally incompatible with power-law physics and that physics-aware diffusion processes can yield accurate, efficient, and fully probabilistic surrogates for multiscale dynamical systems.",
-      "link": "http://arxiv.org/abs/2512.09572v1",
-      "published_date": "December 10, 2025",
-      "published_date_sort": "2025-12-10",
+      "snippet": "Circuit discovery aims to identify minimal subnetworks that are responsible for specific behaviors in large language models (LLMs). Existing approaches primarily rely on iterative edge pruning, which is computationally expensive and limited to coarse-grained units such as attention heads or MLP blocks, overlooking finer structures like individual neurons. We propose a node-level pruning framework for circuit discovery that addresses both scalability and granularity limitations. Our method introduces learnable masks across multiple levels of granularity, from entire blocks to individual neurons, within a unified optimization objective. Granularity-specific sparsity penalties guide the pruning process, allowing a comprehensive compression in a single fine-tuning run. Empirically, our approach identifies circuits that are smaller in nodes than those discovered by prior methods; moreover, we demonstrate that many neurons deemed important by coarse methods are actually irrelevant, while still maintaining task performance. Furthermore, our method has a significantly lower memory footprint, 5-10x, as it does not require keeping intermediate activations in the memory to work.",
+      "link": "http://arxiv.org/abs/2512.10903v1",
+      "published_date": "December 11, 2025",
+      "published_date_sort": "2025-12-11",
       "citations": 0,
       "institutions": "Unknown"
     },
     {
-      "title": "FlipLLM: Efficient Bit-Flip Attacks on Multimodal LLMs using Reinforcement Learning",
-      "authors": "Khurram Khalil, Khaza Anuarul Hoque",
+      "title": "Learning Controllable and Diverse Player Behaviors in Multi-Agent Environments",
+      "authors": "Atahan Cilan, Atay Özgövde",
       "journal": "arXiv",
-      "snippet": "Generative Artificial Intelligence models, such as Large Language Models (LLMs) and Large Vision Models (VLMs), exhibit state-of-the-art performance but remain vulnerable to hardware-based threats, specifically bit-flip attacks (BFAs). Existing BFA discovery methods lack generalizability and struggle to scale, often failing to analyze the vast parameter space and complex interdependencies of modern foundation models in a reasonable time. This paper proposes FlipLLM, a reinforcement learning (RL) architecture-agnostic framework that formulates BFA discovery as a sequential decision-making problem. FlipLLM combines sensitivity-guided layer pruning with Q-learning to efficiently identify minimal, high-impact bit sets that can induce catastrophic failure. We demonstrate the effectiveness and generalizability of FlipLLM by applying it to a diverse set of models, including prominent text-only LLMs (GPT-2 Large, LLaMA 3.1 8B, and DeepSeek-V2 7B), VLMs such as LLaVA 1.6, and datasets, such as MMLU, MMLU-Pro, VQAv2, and TextVQA. Our results show that FlipLLM can identify critical bits that are vulnerable to BFAs up to 2.5x faster than SOTA methods. We demonstrate that flipping the FlipLLM-identified bits plummets the accuracy of LLaMA 3.1 8B from 69.9% to ~0.2%, and for LLaVA's VQA score from 78% to almost 0%, by flipping as few as 5 and 7 bits, respectively. Further analysis reveals that applying standard hardware protection mechanisms, such as ECC SECDED, to the FlipLLM-identified bit locations completely mitigates the BFA impact, demonstrating the practical value of our framework in guiding hardware-level defenses. FlipLLM offers the first scalable and adaptive methodology for exploring the BFA vulnerability of both language and multimodal foundation models, paving the way for comprehensive hardware-security evaluation.",
-      "link": "http://arxiv.org/abs/2512.09872v1",
-      "published_date": "December 10, 2025",
-      "published_date_sort": "2025-12-10",
+      "snippet": "This paper introduces a reinforcement learning framework that enables controllable and diverse player behaviors without relying on human gameplay data. Existing approaches often require large-scale player trajectories, train separate models for different player types, or provide no direct mapping between interpretable behavioral parameters and the learned policy, limiting their scalability and controllability. We define player behavior in an N-dimensional continuous space and uniformly sample target behavior vectors from a region that encompasses the subset representing real human styles. During training, each agent receives both its current and target behavior vectors as input, and the reward is based on the normalized reduction in distance between them. This allows the policy to learn how actions influence behavioral statistics, enabling smooth control over attributes such as aggressiveness, mobility, and cooperativeness. A single PPO-based multi-agent policy can reproduce new or unseen play styles without retraining. Experiments conducted in a custom multi-player Unity game show that the proposed framework produces significantly greater behavioral diversity than a win-only baseline and reliably matches specified behavior vectors across diverse targets. The method offers a scalable solution for automated playtesting, game balancing, human-like behavior simulation, and replacing disconnected players in online games.",
+      "link": "http://arxiv.org/abs/2512.10835v1",
+      "published_date": "December 11, 2025",
+      "published_date_sort": "2025-12-11",
       "citations": 0,
       "institutions": "Unknown"
     },
     {
-      "title": "Rethinking Chain-of-Thought Reasoning for Videos",
-      "authors": "Yiwu Zhong, Zi-Yuan Hu, Yin Li, Liwei Wang",
+      "title": "Template-Free Retrosynthesis with Graph-Prior Augmented Transformers",
+      "authors": "Youjun Zhao",
       "journal": "arXiv",
-      "snippet": "Chain-of-thought (CoT) reasoning has been highly successful in solving complex tasks in natural language processing, and recent multimodal large language models (MLLMs) have extended this paradigm to video reasoning. However, these models typically build on lengthy reasoning chains and large numbers of input visual tokens. Motivated by empirical observations from our benchmark study, we hypothesize that concise reasoning combined with a reduced set of visual tokens can be sufficient for effective video reasoning. To evaluate this hypothesis, we design and validate an efficient post-training and inference framework that enhances a video MLLM's reasoning capability. Our framework enables models to operate on compressed visual tokens and generate brief reasoning traces prior to answering. The resulting models achieve substantially improved inference efficiency, deliver competitive performance across diverse benchmarks, and avoid reliance on manual CoT annotations or supervised fine-tuning. Collectively, our results suggest that long, human-like CoT reasoning may not be necessary for general video reasoning, and that concise reasoning can be both effective and efficient. Our code will be released at https://github.com/LaVi-Lab/Rethink_CoT_Video.",
-      "link": "http://arxiv.org/abs/2512.09616v1",
-      "published_date": "December 10, 2025",
-      "published_date_sort": "2025-12-10",
+      "snippet": "Retrosynthesis reaction prediction seeks to infer plausible reactant molecules for a given product and is a central problem in computer-aided organic synthesis. Despite recent progress, many existing models still fall short of the accuracy and robustness required for practical deployment. This work studies a template-free, Transformer-based framework that eliminates reliance on handcrafted reaction templates or additional chemical rule engines. The model injects molecular graph information into the attention mechanism to jointly exploit \\SMILES\\ sequences and structural cues, and further applies a paired data augmentation strategy to enhance training diversity and scale. On the USPTO-50K benchmark, our proposed approach achieves state-of-the-art performance among template-free methods and substantially outperforming a vanilla Transformer baseline.",
+      "link": "http://arxiv.org/abs/2512.10770v1",
+      "published_date": "December 11, 2025",
+      "published_date_sort": "2025-12-11",
       "citations": 0,
       "institutions": "Unknown"
     },
     {
-      "title": "RIFT: A Scalable Methodology for LLM Accelerator Fault Assessment using Reinforcement Learning",
-      "authors": "Khurram Khalil, Muhammad Mahad Khaliq, Khaza Anuarul Hoque",
+      "title": "Natural Language Interface for Firewall Configuration",
+      "authors": "F. Taghiyev, A. Aslanbayli",
       "journal": "arXiv",
-      "snippet": "The massive scale of modern AI accelerators presents critical challenges to traditional fault assessment methodologies, which face prohibitive computational costs and provide poor coverage of critical failure modes. This paper introduces RIFT (Reinforcement Learning-guided Intelligent Fault Targeting), a scalable framework that automates the discovery of minimal, high-impact fault scenarios for efficient design-time fault assessment. RIFT transforms the complex search for worst-case faults into a sequential decision-making problem, combining hybrid sensitivity analysis for search space pruning with reinforcement learning to intelligently generate minimal, high-impact test suites. Evaluated on billion-parameter Large Language Model (LLM) workloads using NVIDIA A100 GPUs, RIFT achieves a \\textbf{2.2$\\times$} fault assessment speedup over evolutionary methods and reduces the required test vector volume by over \\textbf{99\\%} compared to random fault injection, all while achieving \\textbf{superior fault coverage}. The proposed framework also provides actionable data to enable intelligent hardware protection strategies, demonstrating that RIFT-guided selective error correction code provides a \\textbf{12.8$\\times$} improvement in \\textbf{cost-effectiveness} (coverage per unit area) compared to uniform triple modular redundancy protection. RIFT automatically generates UVM-compliant verification artifacts, ensuring its findings are directly actionable and integrable into commercial RTL verification workflows.",
-      "link": "http://arxiv.org/abs/2512.09829v1",
-      "published_date": "December 10, 2025",
-      "published_date_sort": "2025-12-10",
+      "snippet": "This paper presents the design and prototype implementation of a natural language interface for configuring enterprise firewalls. The framework allows administrators to express access control policies in plain language, which are then translated into vendor specific configurations. A compact schema bound intermediate representation separates human intent from device syntax and in the current prototype compiles to Palo Alto PAN OS command line configuration while remaining extensible to other platforms. Large language models are used only as assistive parsers that generate typed intermediate representation objects, while compilation and enforcement remain deterministic. The prototype integrates three validation layers, namely a static linter that checks structural and vendor specific constraints, a safety gate that blocks overly permissive rules such as any to any allows, and a Batfish based simulator that validates configuration syntax and referential integrity against a synthetic device model. The paper describes the architecture, implementation, and test methodology on synthetic network context datasets and discusses how this approach can evolve into a scalable auditable and human centered workflow for firewall policy management.",
+      "link": "http://arxiv.org/abs/2512.10789v1",
+      "published_date": "December 11, 2025",
+      "published_date_sort": "2025-12-11",
       "citations": 0,
       "institutions": "Unknown"
     },
     {
-      "title": "MedForget: Hierarchy-Aware Multimodal Unlearning Testbed for Medical AI",
-      "authors": "Fengli Wu, Vaidehi Patil, Jaehong Yoon, Yue Zhang, Mohit Bansal",
+      "title": "Enhancing Radiology Report Generation and Visual Grounding using Reinforcement Learning",
+      "authors": "Benjamin Gundersen, Nicolas Deperrois, Samuel Ruiperez-Campillo, Thomas M. Sutter, Julia E. Vogt, Michael Moor, Farhad Nooralahzadeh, Michael Krauthammer",
       "journal": "arXiv",
-      "snippet": "Pretrained Multimodal Large Language Models (MLLMs) are increasingly deployed in medical AI systems for clinical reasoning, diagnosis support, and report generation. However, their training on sensitive patient data raises critical privacy and compliance challenges under regulations such as HIPAA and GDPR, which enforce the \"right to be forgotten\". Unlearning, the process of tuning models to selectively remove the influence of specific training data points, offers a potential solution, yet its effectiveness in complex medical settings remains underexplored. To systematically study this, we introduce MedForget, a Hierarchy-Aware Multimodal Unlearning Testbed with explicit retain and forget splits and evaluation sets containing rephrased variants. MedForget models hospital data as a nested hierarchy (Institution -> Patient -> Study -> Section), enabling fine-grained assessment across eight organizational levels. The benchmark contains 3840 multimodal (image, question, answer) instances, each hierarchy level having a dedicated unlearning target, reflecting distinct unlearning challenges. Experiments with four SOTA unlearning methods on three tasks (generation, classification, cloze) show that existing methods struggle to achieve complete, hierarchy-aware forgetting without reducing diagnostic performance. To test whether unlearning truly deletes hierarchical pathways, we introduce a reconstruction attack that progressively adds hierarchical level context to prompts. Models unlearned at a coarse granularity show strong resistance, while fine-grained unlearning leaves models vulnerable to such reconstruction. MedForget provides a practical, HIPAA-aligned testbed for building compliant medical AI systems.",
-      "link": "http://arxiv.org/abs/2512.09867v1",
-      "published_date": "December 10, 2025",
-      "published_date_sort": "2025-12-10",
+      "snippet": "Recent advances in vision-language models (VLMs) have improved Chest X-ray (CXR) interpretation in multiple aspects. However, many medical VLMs rely solely on supervised fine-tuning (SFT), which optimizes next-token prediction without evaluating answer quality. In contrast, reinforcement learning (RL) can incorporate task-specific feedback, and its combination with explicit intermediate reasoning (\"thinking\") has demonstrated substantial gains on verifiable math and coding tasks. To investigate the effects of RL and thinking in a CXR VLM, we perform large-scale SFT on CXR data to build an updated RadVLM based on Qwen3-VL, followed by a cold-start SFT stage that equips the model with basic thinking ability. We then apply Group Relative Policy Optimization (GRPO) with clinically grounded, task-specific rewards for report generation and visual grounding, and run matched RL experiments on both domain-specific and general-domain Qwen3-VL variants, with and without thinking. Across these settings, we find that while strong SFT remains crucial for high base performance, RL provides additional gains on both tasks, whereas explicit thinking does not appear to further improve results. Under a unified evaluation pipeline, the RL-optimized RadVLM models outperform their baseline counterparts and reach state-of-the-art performance on both report generation and grounding, highlighting clinically aligned RL as a powerful complement to SFT for medical VLMs.",
+      "link": "http://arxiv.org/abs/2512.10691v1",
+      "published_date": "December 11, 2025",
+      "published_date_sort": "2025-12-11",
       "citations": 0,
       "institutions": "Unknown"
     },
     {
-      "title": "Hands-on Evaluation of Visual Transformers for Object Recognition and Detection",
-      "authors": "Dimitrios N. Vlachogiannis, Dimitrios A. Koutsomitropoulos",
-      "journal": "arXiv",
-      "snippet": "Convolutional Neural Networks (CNNs) for computer vision sometimes struggle with understanding images in a global context, as they mainly focus on local patterns. On the other hand, Vision Transformers (ViTs), inspired by models originally created for language processing, use self-attention mechanisms, which allow them to understand relationships across the entire image. In this paper, we compare different types of ViTs (pure, hierarchical, and hybrid) against traditional CNN models across various tasks, including object recognition, detection, and medical image classification. We conduct thorough tests on standard datasets like ImageNet for image classification and COCO for object detection. Additionally, we apply these models to medical imaging using the ChestX-ray14 dataset. We find that hybrid and hierarchical transformers, especially Swin and CvT, offer a strong balance between accuracy and computational resources. Furthermore, by experimenting with data augmentation techniques on medical images, we discover significant performance improvements, particularly with the Swin Transformer model. Overall, our results indicate that Vision Transformers are competitive and, in many cases, outperform traditional CNNs, especially in scenarios requiring the understanding of global visual contexts like medical imaging.",
-      "link": "http://arxiv.org/abs/2512.09579v1",
-      "published_date": "December 10, 2025",
-      "published_date_sort": "2025-12-10",
-      "citations": 0,
-      "institutions": "Unknown"
-    },
-    {
-      "title": "Federated Distillation Assisted Vehicle Edge Caching Scheme Based on Lightweight DDPM",
-      "authors": "Xun Li, Qiong Wu, Pingyi Fan, Kezhi Wang, Wen Chen, Khaled B. Letaief",
-      "journal": "arXiv",
-      "snippet": "Vehicle edge caching is a promising technology that can significantly reduce the latency for vehicle users (VUs) to access content by pre-caching user-interested content at edge nodes. It is crucial to accurately predict the content that VUs are interested in without exposing their privacy. Traditional federated learning (FL) can protect user privacy by sharing models rather than raw data. However, the training of FL requires frequent model transmission, which can result in significant communication overhead. Additionally, vehicles may leave the road side unit (RSU) coverage area before training is completed, leading to training failures. To address these issues, in this letter, we propose a federated distillation-assisted vehicle edge caching scheme based on lightweight denoising diffusion probabilistic model (LDPM). The simulation results demonstrate that the proposed vehicle edge caching scheme has good robustness to variations in vehicle speed, significantly reducing communication overhead and improving cache hit percentage.",
-      "link": "http://arxiv.org/abs/2512.09378v1",
-      "published_date": "December 10, 2025",
-      "published_date_sort": "2025-12-10",
-      "citations": 0,
-      "institutions": "Unknown"
-    },
-    {
-      "title": "Semantic-Aware Cooperative Communication and Computation Framework in Vehicular Networks",
-      "authors": "Jingbo Zhang, Maoxin Ji, Qiong Wu, Pingyi Fan, Kezhi Wang, Wen Chen",
-      "journal": "arXiv",
-      "snippet": "Semantic Communication (SC) combined with Vehicular edge computing (VEC) provides an efficient edge task processing paradigm for Internet of Vehicles (IoV). Focusing on highway scenarios, this paper proposes a Tripartite Cooperative Semantic Communication (TCSC) framework, which enables Vehicle Users (VUs) to perform semantic task offloading via Vehicle-to-Infrastructure (V2I) and Vehicle-to-Vehicle (V2V) communications. Considering task latency and the number of semantic symbols, the framework constructs a Mixed-Integer Nonlinear Programming (MINLP) problem, which is transformed into two subproblems. First, we innovatively propose a multi-agent proximal policy optimization task offloading optimization method based on parametric distribution noise (MAPPO-PDN) to solve the optimization problem of the number of semantic symbols; second, linear programming (LP) is used to solve offloading ratio. Simulations show that performance of this scheme is superior to that of other algorithms.",
-      "link": "http://arxiv.org/abs/2512.09621v1",
-      "published_date": "December 10, 2025",
-      "published_date_sort": "2025-12-10",
-      "citations": 0,
-      "institutions": "Unknown"
-    },
-    {
-      "title": "Architectures for Building Agentic AI",
-      "authors": "Sławomir Nowaczyk",
-      "journal": "arXiv",
-      "snippet": "This chapter argues that the reliability of agentic and generative AI is chiefly an architectural property. We define agentic systems as goal-directed, tool-using decision makers operating in closed loops, and show how reliability emerges from principled componentisation (goal manager, planner, tool-router, executor, memory, verifiers, safety monitor, telemetry), disciplined interfaces (schema-constrained, validated, least-privilege tool calls), and explicit control and assurance loops. Building on classical foundations, we propose a practical taxonomy-tool-using agents, memory-augmented agents, planning and self-improvement agents, multi-agent systems, and embodied or web agents - and analyse how each pattern reshapes the reliability envelope and failure modes. We distil design guidance on typed schemas, idempotency, permissioning, transactional semantics, memory provenance and hygiene, runtime governance (budgets, termination conditions), and simulate-before-actuate safeguards.",
-      "link": "http://arxiv.org/abs/2512.09458v1",
-      "published_date": "December 10, 2025",
-      "published_date_sort": "2025-12-10",
-      "citations": 0,
-      "institutions": "Unknown"
-    },
-    {
-      "title": "An End-to-end Planning Framework with Agentic LLMs and PDDL",
-      "authors": "Emanuele La Malfa, Ping Zhu, Samuele Marro, Sara Bernardini, Michael Wooldridge",
-      "journal": "arXiv",
-      "snippet": "We present an end-to-end framework for planning supported by verifiers. An orchestrator receives a human specification written in natural language and converts it into a PDDL (Planning Domain Definition Language) model, where the domain and problem are iteratively refined by sub-modules (agents) to address common planning requirements, such as time constraints and optimality, as well as ambiguities and contradictions that may exist in the human specification. The validated domain and problem are then passed to an external planning engine to generate a plan. The orchestrator and agents are powered by Large Language Models (LLMs) and require no human intervention at any stage of the process. Finally, a module translates the final plan back into natural language to improve human readability while maintaining the correctness of each step. We demonstrate the flexibility and effectiveness of our framework across various domains and tasks, including the Google NaturalPlan benchmark and PlanBench, as well as planning problems like Blocksworld and the Tower of Hanoi (where LLMs are known to struggle even with small instances). Our framework can be integrated with any PDDL planning engine and validator (such as Fast Downward, LPG, POPF, VAL, and uVAL, which we have tested) and represents a significant step toward end-to-end planning aided by LLMs.",
-      "link": "http://arxiv.org/abs/2512.09629v1",
-      "published_date": "December 10, 2025",
-      "published_date_sort": "2025-12-10",
-      "citations": 0,
+      "title": "The FM Agent",
+      "authors": "A Li, C Wu, Z Ge, YH Chong, Z Hou, L Cao, C Ju… - arXiv preprint arXiv …, 2025 - arxiv.org",
+      "journal": "Google Scholar Result",
+      "snippet": "Large language models (LLMs) are catalyzing the development of autonomous AI research agents for scientific and engineering discovery. We present FM Agent, a novel and general …",
+      "link": "https://arxiv.org/abs/2510.26144",
+      "published_date": "October 2025",
+      "published_date_sort": "2025-10-01",
+      "citations": 1,
       "institutions": "Unknown"
     },
     {
@@ -171,6 +123,17 @@
       "link": "https://arxiv.org/abs/2510.08511",
       "published_date": "October 2025",
       "published_date_sort": "2025-10-01",
+      "citations": 1,
+      "institutions": "Unknown"
+    },
+    {
+      "title": "Bootstrapping task spaces for self-improvement",
+      "authors": "M Jiang, A Lupu, Y Bachrach - arXiv preprint arXiv:2509.04575, 2025 - arxiv.org",
+      "journal": "Google Scholar Result",
+      "snippet": "Progress in many task domains emerges from repeated revisions to previous solution attempts. Training agents that can reliably self-improve over such sequences at inference …",
+      "link": "https://arxiv.org/abs/2509.04575",
+      "published_date": "September 2025",
+      "published_date_sort": "2025-09-01",
       "citations": 1,
       "institutions": "Unknown"
     },
@@ -186,28 +149,6 @@
       "institutions": "Unknown"
     },
     {
-      "title": "An AI system to help scientists write expert-level empirical software",
-      "authors": "E Aygün, A Belyaeva, G Comanici, M Coram… - arXiv preprint arXiv …, 2025 - arxiv.org",
-      "journal": "Google Scholar Result",
-      "snippet": "The cycle of scientific discovery is frequently bottlenecked by the slow, manual creation of software to support computational experiments. To address this, we present an AI system …",
-      "link": "https://arxiv.org/abs/2509.06503",
-      "published_date": "September 2025",
-      "published_date_sort": "2025-09-01",
-      "citations": 7,
-      "institutions": "Unknown"
-    },
-    {
-      "title": "KompeteAI: Accelerated autonomous multi-agent system for end-to-end pipeline generation for machine learning problems",
-      "authors": "S Kulibaba, A Dzhalilov, R Pakhomov… - arXiv preprint arXiv …, 2025 - arxiv.org",
-      "journal": "Google Scholar Result",
-      "snippet": "Recent Large Language Model (LLM)-based AutoML systems demonstrate impressive capabilities but face significant limitations such as constrained exploration strategies and a …",
-      "link": "https://arxiv.org/abs/2508.10177",
-      "published_date": "August 2025",
-      "published_date_sort": "2025-08-01",
-      "citations": 3,
-      "institutions": "Unknown"
-    },
-    {
       "title": "Tuning llm-based code optimization via meta-prompting: An industrial perspective",
       "authors": "J Gong, R Giavrimis, P Brookes, V Voskanyan… - arXiv preprint arXiv …, 2025 - arxiv.org",
       "journal": "Google Scholar Result",
@@ -219,25 +160,14 @@
       "institutions": "Unknown"
     },
     {
-      "title": "How Far Are AI Scientists from Changing the World?",
-      "authors": "Q Xie, Y Weng, M Zhu, F Shen, S Huang, Z Lin… - arXiv preprint arXiv …, 2025 - arxiv.org",
+      "title": "The Automated LLM Speedrunning Benchmark: Reproducing NanoGPT Improvements",
+      "authors": "B Zhao, D Magka, M Jiang, X Li, R Raileanu… - arXiv preprint arXiv …, 2025 - arxiv.org",
       "journal": "Google Scholar Result",
-      "snippet": "The emergence of large language models (LLMs) is propelling automated scientific discovery to the next level, with LLM-based Artificial Intelligence (AI) Scientist systems now …",
-      "link": "https://arxiv.org/abs/2507.23276",
-      "published_date": "July 2025",
-      "published_date_sort": "2025-07-01",
-      "citations": 6,
-      "institutions": "Unknown"
-    },
-    {
-      "title": "Automind: Adaptive knowledgeable agent for automated data science",
-      "authors": "Y Ou, Y Luo, J Zheng, L Wei, Z Yu, S Qiao… - arXiv preprint arXiv …, 2025 - arxiv.org",
-      "journal": "Google Scholar Result",
-      "snippet": "Large Language Model (LLM) agents have shown great potential in addressing real-world data science problems. LLM-driven data science agents promise to automate the entire …",
-      "link": "https://arxiv.org/abs/2506.10974",
+      "snippet": "Rapid advancements in large language models (LLMs) have the potential to assist in scientific progress. A critical capability toward this endeavor is the ability to reproduce …",
+      "link": "https://arxiv.org/abs/2506.22419",
       "published_date": "June 2025",
       "published_date_sort": "2025-06-01",
-      "citations": 6,
+      "citations": 1,
       "institutions": "Unknown"
     },
     {
@@ -263,25 +193,14 @@
       "institutions": "Unknown"
     },
     {
-      "title": "Mle-dojo: Interactive environments for empowering llm agents in machine learning engineering",
-      "authors": "R Qiang, Y Zhuang, Y Li, R Zhang, C Li… - arXiv preprint arXiv …, 2025 - arxiv.org",
+      "title": "Automind: Adaptive knowledgeable agent for automated data science",
+      "authors": "Y Ou, Y Luo, J Zheng, L Wei, Z Yu, S Qiao… - arXiv preprint arXiv …, 2025 - arxiv.org",
       "journal": "Google Scholar Result",
-      "snippet": "We introduce MLE-Dojo, a Gym-style framework for systematically reinforcement learning, evaluating, and improving autonomous large language model (LLM) agents in iterative …",
-      "link": "https://arxiv.org/abs/2505.07782",
-      "published_date": "May 2025",
-      "published_date_sort": "2025-05-01",
+      "snippet": "Large Language Model (LLM) agents have shown great potential in addressing real-world data science problems. LLM-driven data science agents promise to automate the entire …",
+      "link": "https://arxiv.org/abs/2506.10974",
+      "published_date": "June 2025",
+      "published_date_sort": "2025-06-01",
       "citations": 6,
-      "institutions": "Unknown"
-    },
-    {
-      "title": "IDA-Bench: Evaluating LLMs on Interactive Guided Data Analysis",
-      "authors": "H Li, H Liu, T Zhu, T Guo, Z Zheng, X Deng… - arXiv preprint arXiv …, 2025 - arxiv.org",
-      "journal": "Google Scholar Result",
-      "snippet": "Large Language Models (LLMs) show promise as data analysis agents, but existing benchmarks overlook the iterative nature of the field, where experts' decisions evolve with …",
-      "link": "https://arxiv.org/abs/2505.18223",
-      "published_date": "May 2025",
-      "published_date_sort": "2025-05-01",
-      "citations": 2,
       "institutions": "Unknown"
     },
     {
@@ -296,14 +215,14 @@
       "institutions": "Unknown"
     },
     {
-      "title": "Mlzero: A multi-agent system for end-to-end machine learning automation",
-      "authors": "H Fang, B Han, N Erickson, X Zhang, S Zhou… - arXiv preprint arXiv …, 2025 - arxiv.org",
+      "title": "Mle-dojo: Interactive environments for empowering llm agents in machine learning engineering",
+      "authors": "R Qiang, Y Zhuang, Y Li, R Zhang, C Li… - arXiv preprint arXiv …, 2025 - arxiv.org",
       "journal": "Google Scholar Result",
-      "snippet": "Existing AutoML systems have advanced the automation of machine learning (ML); however, they still require substantial manual configuration and expert input, particularly …",
-      "link": "https://arxiv.org/abs/2505.13941",
+      "snippet": "We introduce MLE-Dojo, a Gym-style framework for systematically reinforcement learning, evaluating, and improving autonomous large language model (LLM) agents in iterative …",
+      "link": "https://arxiv.org/abs/2505.07782",
       "published_date": "May 2025",
       "published_date_sort": "2025-05-01",
-      "citations": 4,
+      "citations": 6,
       "institutions": "Unknown"
     },
     {
@@ -315,6 +234,17 @@
       "published_date": "May 2025",
       "published_date_sort": "2025-05-01",
       "citations": 7,
+      "institutions": "Unknown"
+    },
+    {
+      "title": "IDA-Bench: Evaluating LLMs on Interactive Guided Data Analysis",
+      "authors": "H Li, H Liu, T Zhu, T Guo, Z Zheng, X Deng… - arXiv preprint arXiv …, 2025 - arxiv.org",
+      "journal": "Google Scholar Result",
+      "snippet": "Large Language Models (LLMs) show promise as data analysis agents, but existing benchmarks overlook the iterative nature of the field, where experts' decisions evolve with …",
+      "link": "https://arxiv.org/abs/2505.18223",
+      "published_date": "May 2025",
+      "published_date_sort": "2025-05-01",
+      "citations": 2,
       "institutions": "Unknown"
     },
     {
@@ -351,17 +281,6 @@
       "institutions": "Unknown"
     },
     {
-      "title": "An agentic framework for autonomous metamaterial modeling and inverse design",
-      "authors": "D Lu, JM Malof, WJ Padilla - ACS Photonics, 2025 - ACS Publications",
-      "journal": "Google Scholar Result",
-      "snippet": "The evolution from large language models to agentic systems has created a new Frontier of scientific discovery, enabling the automation of complex research tasks that have …",
-      "link": "https://pubs.acs.org/doi/abs/10.1021/acsphotonics.5c01514",
-      "published_date": "2025",
-      "published_date_sort": "2025-01-01",
-      "citations": 3,
-      "institutions": "Unknown"
-    },
-    {
       "title": "AIRepr: An Analyst-Inspector Framework for Evaluating Reproducibility of LLMs in Data Science",
       "authors": "Q Zeng, C Jin, X Wang, Y Zheng… - Findings of the Association …, 2025 - aclanthology.org",
       "journal": "Google Scholar Result",
@@ -373,6 +292,28 @@
       "institutions": "Unknown"
     },
     {
+      "title": "DatawiseAgent: A Notebook-Centric LLM Agent Framework for Adaptive and Robust Data Science Automation",
+      "authors": "Z You, Y Zhang, D Xu, Y Lou, Y Yan… - Proceedings of the …, 2025 - aclanthology.org",
+      "journal": "Google Scholar Result",
+      "snippet": "Existing large language model (LLM) agents for automating data science show promise, but they remain constrained by narrow task scopes, limited generalization across tasks and …",
+      "link": "https://aclanthology.org/2025.emnlp-main.58/",
+      "published_date": "2025",
+      "published_date_sort": "2025-01-01",
+      "citations": 0,
+      "institutions": "Unknown"
+    },
+    {
+      "title": "An agentic framework for autonomous metamaterial modeling and inverse design",
+      "authors": "D Lu, JM Malof, WJ Padilla - ACS Photonics, 2025 - ACS Publications",
+      "journal": "Google Scholar Result",
+      "snippet": "The evolution from large language models to agentic systems has created a new Frontier of scientific discovery, enabling the automation of complex research tasks that have …",
+      "link": "https://pubs.acs.org/doi/abs/10.1021/acsphotonics.5c01514",
+      "published_date": "2025",
+      "published_date_sort": "2025-01-01",
+      "citations": 3,
+      "institutions": "Unknown"
+    },
+    {
       "title": "Large language models for constructing and optimizing machine learning workflows: A survey",
       "authors": "Y Gu, H You, J Cao, M Yu, H Fan, S Qian - ACM Transactions on …, 2024 - dl.acm.org",
       "journal": "Google Scholar Result",
@@ -380,7 +321,7 @@
       "link": "https://dl.acm.org/doi/abs/10.1145/3773084",
       "published_date": "2024",
       "published_date_sort": "2024-01-01",
-      "citations": 13,
+      "citations": 12,
       "institutions": "Unknown"
     }
   ]
