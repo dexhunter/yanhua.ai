@@ -1,11 +1,11 @@
 {
-  "last_updated": "2025-12-13 00:11:25 UTC",
+  "last_updated": "2025-12-14 00:12:39 UTC",
   "target_paper": "https://www.arxiv.org/abs/2502.13138",
   "arxiv_id": "2502.13138",
-  "total_citations": 25,
+  "total_citations": 20,
   "h_index": 7,
-  "recent_citations": 5,
-  "avg_citations_per_month": "1.04",
+  "recent_citations": 0,
+  "avg_citations_per_month": "0.91",
   "timeline": [
     {
       "date": "2024-01-01",
@@ -13,15 +13,15 @@
     },
     {
       "date": "2025-01-01",
-      "citations": 4
+      "citations": 3
     },
     {
       "date": "2025-03-01",
-      "citations": 5
+      "citations": 4
     },
     {
       "date": "2025-04-01",
-      "citations": 6
+      "citations": 5
     },
     {
       "date": "2025-05-01",
@@ -29,92 +29,26 @@
     },
     {
       "date": "2025-06-01",
+      "citations": 14
+    },
+    {
+      "date": "2025-07-01",
       "citations": 15
     },
     {
       "date": "2025-08-01",
-      "citations": 16
+      "citations": 17
     },
     {
       "date": "2025-09-01",
-      "citations": 18
+      "citations": 19
     },
     {
       "date": "2025-10-01",
       "citations": 20
-    },
-    {
-      "date": "2025-12-01",
-      "citations": 25
     }
   ],
   "papers": [
-    {
-      "title": "Multi-Granular Node Pruning for Circuit Discovery",
-      "authors": "Muhammad Umair Haider, Hammad Rizwan, Hassan Sajjad, A. B. Siddique",
-      "journal": "arXiv",
-      "snippet": "Circuit discovery aims to identify minimal subnetworks that are responsible for specific behaviors in large language models (LLMs). Existing approaches primarily rely on iterative edge pruning, which is computationally expensive and limited to coarse-grained units such as attention heads or MLP blocks, overlooking finer structures like individual neurons. We propose a node-level pruning framework for circuit discovery that addresses both scalability and granularity limitations. Our method introduces learnable masks across multiple levels of granularity, from entire blocks to individual neurons, within a unified optimization objective. Granularity-specific sparsity penalties guide the pruning process, allowing a comprehensive compression in a single fine-tuning run. Empirically, our approach identifies circuits that are smaller in nodes than those discovered by prior methods; moreover, we demonstrate that many neurons deemed important by coarse methods are actually irrelevant, while still maintaining task performance. Furthermore, our method has a significantly lower memory footprint, 5-10x, as it does not require keeping intermediate activations in the memory to work.",
-      "link": "http://arxiv.org/abs/2512.10903v1",
-      "published_date": "December 11, 2025",
-      "published_date_sort": "2025-12-11",
-      "citations": 0,
-      "institutions": "Unknown"
-    },
-    {
-      "title": "Learning Controllable and Diverse Player Behaviors in Multi-Agent Environments",
-      "authors": "Atahan Cilan, Atay Özgövde",
-      "journal": "arXiv",
-      "snippet": "This paper introduces a reinforcement learning framework that enables controllable and diverse player behaviors without relying on human gameplay data. Existing approaches often require large-scale player trajectories, train separate models for different player types, or provide no direct mapping between interpretable behavioral parameters and the learned policy, limiting their scalability and controllability. We define player behavior in an N-dimensional continuous space and uniformly sample target behavior vectors from a region that encompasses the subset representing real human styles. During training, each agent receives both its current and target behavior vectors as input, and the reward is based on the normalized reduction in distance between them. This allows the policy to learn how actions influence behavioral statistics, enabling smooth control over attributes such as aggressiveness, mobility, and cooperativeness. A single PPO-based multi-agent policy can reproduce new or unseen play styles without retraining. Experiments conducted in a custom multi-player Unity game show that the proposed framework produces significantly greater behavioral diversity than a win-only baseline and reliably matches specified behavior vectors across diverse targets. The method offers a scalable solution for automated playtesting, game balancing, human-like behavior simulation, and replacing disconnected players in online games.",
-      "link": "http://arxiv.org/abs/2512.10835v1",
-      "published_date": "December 11, 2025",
-      "published_date_sort": "2025-12-11",
-      "citations": 0,
-      "institutions": "Unknown"
-    },
-    {
-      "title": "Template-Free Retrosynthesis with Graph-Prior Augmented Transformers",
-      "authors": "Youjun Zhao",
-      "journal": "arXiv",
-      "snippet": "Retrosynthesis reaction prediction seeks to infer plausible reactant molecules for a given product and is a central problem in computer-aided organic synthesis. Despite recent progress, many existing models still fall short of the accuracy and robustness required for practical deployment. This work studies a template-free, Transformer-based framework that eliminates reliance on handcrafted reaction templates or additional chemical rule engines. The model injects molecular graph information into the attention mechanism to jointly exploit \\SMILES\\ sequences and structural cues, and further applies a paired data augmentation strategy to enhance training diversity and scale. On the USPTO-50K benchmark, our proposed approach achieves state-of-the-art performance among template-free methods and substantially outperforming a vanilla Transformer baseline.",
-      "link": "http://arxiv.org/abs/2512.10770v1",
-      "published_date": "December 11, 2025",
-      "published_date_sort": "2025-12-11",
-      "citations": 0,
-      "institutions": "Unknown"
-    },
-    {
-      "title": "Natural Language Interface for Firewall Configuration",
-      "authors": "F. Taghiyev, A. Aslanbayli",
-      "journal": "arXiv",
-      "snippet": "This paper presents the design and prototype implementation of a natural language interface for configuring enterprise firewalls. The framework allows administrators to express access control policies in plain language, which are then translated into vendor specific configurations. A compact schema bound intermediate representation separates human intent from device syntax and in the current prototype compiles to Palo Alto PAN OS command line configuration while remaining extensible to other platforms. Large language models are used only as assistive parsers that generate typed intermediate representation objects, while compilation and enforcement remain deterministic. The prototype integrates three validation layers, namely a static linter that checks structural and vendor specific constraints, a safety gate that blocks overly permissive rules such as any to any allows, and a Batfish based simulator that validates configuration syntax and referential integrity against a synthetic device model. The paper describes the architecture, implementation, and test methodology on synthetic network context datasets and discusses how this approach can evolve into a scalable auditable and human centered workflow for firewall policy management.",
-      "link": "http://arxiv.org/abs/2512.10789v1",
-      "published_date": "December 11, 2025",
-      "published_date_sort": "2025-12-11",
-      "citations": 0,
-      "institutions": "Unknown"
-    },
-    {
-      "title": "Enhancing Radiology Report Generation and Visual Grounding using Reinforcement Learning",
-      "authors": "Benjamin Gundersen, Nicolas Deperrois, Samuel Ruiperez-Campillo, Thomas M. Sutter, Julia E. Vogt, Michael Moor, Farhad Nooralahzadeh, Michael Krauthammer",
-      "journal": "arXiv",
-      "snippet": "Recent advances in vision-language models (VLMs) have improved Chest X-ray (CXR) interpretation in multiple aspects. However, many medical VLMs rely solely on supervised fine-tuning (SFT), which optimizes next-token prediction without evaluating answer quality. In contrast, reinforcement learning (RL) can incorporate task-specific feedback, and its combination with explicit intermediate reasoning (\"thinking\") has demonstrated substantial gains on verifiable math and coding tasks. To investigate the effects of RL and thinking in a CXR VLM, we perform large-scale SFT on CXR data to build an updated RadVLM based on Qwen3-VL, followed by a cold-start SFT stage that equips the model with basic thinking ability. We then apply Group Relative Policy Optimization (GRPO) with clinically grounded, task-specific rewards for report generation and visual grounding, and run matched RL experiments on both domain-specific and general-domain Qwen3-VL variants, with and without thinking. Across these settings, we find that while strong SFT remains crucial for high base performance, RL provides additional gains on both tasks, whereas explicit thinking does not appear to further improve results. Under a unified evaluation pipeline, the RL-optimized RadVLM models outperform their baseline counterparts and reach state-of-the-art performance on both report generation and grounding, highlighting clinically aligned RL as a powerful complement to SFT for medical VLMs.",
-      "link": "http://arxiv.org/abs/2512.10691v1",
-      "published_date": "December 11, 2025",
-      "published_date_sort": "2025-12-11",
-      "citations": 0,
-      "institutions": "Unknown"
-    },
-    {
-      "title": "The FM Agent",
-      "authors": "A Li, C Wu, Z Ge, YH Chong, Z Hou, L Cao, C Ju… - arXiv preprint arXiv …, 2025 - arxiv.org",
-      "journal": "Google Scholar Result",
-      "snippet": "Large language models (LLMs) are catalyzing the development of autonomous AI research agents for scientific and engineering discovery. We present FM Agent, a novel and general …",
-      "link": "https://arxiv.org/abs/2510.26144",
-      "published_date": "October 2025",
-      "published_date_sort": "2025-10-01",
-      "citations": 1,
-      "institutions": "Unknown"
-    },
     {
       "title": "AutoMLGen: Navigating Fine-Grained Optimization for Coding Agents",
       "authors": "S Du, X Yan, D Jiang, J Yuan, Y Hu, X Li, L He… - arXiv preprint arXiv …, 2025 - arxiv.org",
@@ -127,14 +61,14 @@
       "institutions": "Unknown"
     },
     {
-      "title": "Bootstrapping task spaces for self-improvement",
-      "authors": "M Jiang, A Lupu, Y Bachrach - arXiv preprint arXiv:2509.04575, 2025 - arxiv.org",
+      "title": "An AI system to help scientists write expert-level empirical software",
+      "authors": "E Aygün, A Belyaeva, G Comanici, M Coram… - arXiv preprint arXiv …, 2025 - arxiv.org",
       "journal": "Google Scholar Result",
-      "snippet": "Progress in many task domains emerges from repeated revisions to previous solution attempts. Training agents that can reliably self-improve over such sequences at inference …",
-      "link": "https://arxiv.org/abs/2509.04575",
+      "snippet": "The cycle of scientific discovery is frequently bottlenecked by the slow, manual creation of software to support computational experiments. To address this, we present an AI system …",
+      "link": "https://arxiv.org/abs/2509.06503",
       "published_date": "September 2025",
       "published_date_sort": "2025-09-01",
-      "citations": 1,
+      "citations": 7,
       "institutions": "Unknown"
     },
     {
@@ -156,29 +90,29 @@
       "link": "https://arxiv.org/abs/2508.01443",
       "published_date": "August 2025",
       "published_date_sort": "2025-08-01",
-      "citations": 2,
+      "citations": 3,
       "institutions": "Unknown"
     },
     {
-      "title": "The Automated LLM Speedrunning Benchmark: Reproducing NanoGPT Improvements",
-      "authors": "B Zhao, D Magka, M Jiang, X Li, R Raileanu… - arXiv preprint arXiv …, 2025 - arxiv.org",
+      "title": "KompeteAI: Accelerated autonomous multi-agent system for end-to-end pipeline generation for machine learning problems",
+      "authors": "S Kulibaba, A Dzhalilov, R Pakhomov… - arXiv preprint arXiv …, 2025 - arxiv.org",
       "journal": "Google Scholar Result",
-      "snippet": "Rapid advancements in large language models (LLMs) have the potential to assist in scientific progress. A critical capability toward this endeavor is the ability to reproduce …",
-      "link": "https://arxiv.org/abs/2506.22419",
-      "published_date": "June 2025",
-      "published_date_sort": "2025-06-01",
-      "citations": 1,
+      "snippet": "Recent Large Language Model (LLM)-based AutoML systems demonstrate impressive capabilities but face significant limitations such as constrained exploration strategies and a …",
+      "link": "https://arxiv.org/abs/2508.10177",
+      "published_date": "August 2025",
+      "published_date_sort": "2025-08-01",
+      "citations": 3,
       "institutions": "Unknown"
     },
     {
-      "title": "A Comprehensive Survey of Deep Research: Systems, Methodologies, and Applications",
-      "authors": "R Xu, J Peng - arXiv preprint arXiv:2506.12594, 2025 - arxiv.org",
+      "title": "How Far Are AI Scientists from Changing the World?",
+      "authors": "Q Xie, Y Weng, M Zhu, F Shen, S Huang, Z Lin… - arXiv preprint arXiv …, 2025 - arxiv.org",
       "journal": "Google Scholar Result",
-      "snippet": "This survey examines the rapidly evolving field of Deep Research systems--AI-powered applications that automate complex research workflows through the integration of large …",
-      "link": "https://arxiv.org/abs/2506.12594",
-      "published_date": "June 2025",
-      "published_date_sort": "2025-06-01",
-      "citations": 28,
+      "snippet": "The emergence of large language models (LLMs) is propelling automated scientific discovery to the next level, with LLM-based Artificial Intelligence (AI) Scientist systems now …",
+      "link": "https://arxiv.org/abs/2507.23276",
+      "published_date": "July 2025",
+      "published_date_sort": "2025-07-01",
+      "citations": 6,
       "institutions": "Unknown"
     },
     {
@@ -204,6 +138,50 @@
       "institutions": "Unknown"
     },
     {
+      "title": "A Comprehensive Survey of Deep Research: Systems, Methodologies, and Applications",
+      "authors": "R Xu, J Peng - arXiv preprint arXiv:2506.12594, 2025 - arxiv.org",
+      "journal": "Google Scholar Result",
+      "snippet": "This survey examines the rapidly evolving field of Deep Research systems--AI-powered applications that automate complex research workflows through the integration of large …",
+      "link": "https://arxiv.org/abs/2506.12594",
+      "published_date": "June 2025",
+      "published_date_sort": "2025-06-01",
+      "citations": 29,
+      "institutions": "Unknown"
+    },
+    {
+      "title": "From automation to autonomy: A survey on large language models in scientific discovery",
+      "authors": "T Zheng, Z Deng, HT Tsang, W Wang, J Bai… - arXiv preprint arXiv …, 2025 - arxiv.org",
+      "journal": "Google Scholar Result",
+      "snippet": "Large Language Models (LLMs) are catalyzing a paradigm shift in scientific discovery, evolving from task-specific automation tools into increasingly autonomous agents and …",
+      "link": "https://arxiv.org/abs/2505.13259",
+      "published_date": "May 2025",
+      "published_date_sort": "2025-05-01",
+      "citations": 24,
+      "institutions": "Unknown"
+    },
+    {
+      "title": "Repomaster: Autonomous exploration and understanding of github repositories for complex task solving",
+      "authors": "H Wang, Z Ni, S Zhang, S Lu, S Hu, Z He, C Hu… - arXiv preprint arXiv …, 2025 - arxiv.org",
+      "journal": "Google Scholar Result",
+      "snippet": "The ultimate goal of code agents is to solve complex tasks autonomously. Although large language models (LLMs) have made substantial progress in code generation, real-world …",
+      "link": "https://arxiv.org/abs/2505.21577",
+      "published_date": "May 2025",
+      "published_date_sort": "2025-05-01",
+      "citations": 7,
+      "institutions": "Unknown"
+    },
+    {
+      "title": "Mlzero: A multi-agent system for end-to-end machine learning automation",
+      "authors": "H Fang, B Han, N Erickson, X Zhang, S Zhou… - arXiv preprint arXiv …, 2025 - arxiv.org",
+      "journal": "Google Scholar Result",
+      "snippet": "Existing AutoML systems have advanced the automation of machine learning (ML); however, they still require substantial manual configuration and expert input, particularly …",
+      "link": "https://arxiv.org/abs/2505.13941",
+      "published_date": "May 2025",
+      "published_date_sort": "2025-05-01",
+      "citations": 4,
+      "institutions": "Unknown"
+    },
+    {
       "title": "CodePDE: An Inference Framework for LLM-driven PDE Solver Generation",
       "authors": "S Li, T Marwah, J Shen, W Sun, A Risteski… - arXiv preprint arXiv …, 2025 - arxiv.org",
       "journal": "Google Scholar Result",
@@ -226,17 +204,6 @@
       "institutions": "Unknown"
     },
     {
-      "title": "Repomaster: Autonomous exploration and understanding of github repositories for complex task solving",
-      "authors": "H Wang, Z Ni, S Zhang, S Lu, S Hu, Z He, C Hu… - arXiv preprint arXiv …, 2025 - arxiv.org",
-      "journal": "Google Scholar Result",
-      "snippet": "The ultimate goal of code agents is to solve complex tasks autonomously. Although large language models (LLMs) have made substantial progress in code generation, real-world …",
-      "link": "https://arxiv.org/abs/2505.21577",
-      "published_date": "May 2025",
-      "published_date_sort": "2025-05-01",
-      "citations": 7,
-      "institutions": "Unknown"
-    },
-    {
       "title": "IDA-Bench: Evaluating LLMs on Interactive Guided Data Analysis",
       "authors": "H Li, H Liu, T Zhu, T Guo, Z Zheng, X Deng… - arXiv preprint arXiv …, 2025 - arxiv.org",
       "journal": "Google Scholar Result",
@@ -248,17 +215,6 @@
       "institutions": "Unknown"
     },
     {
-      "title": "From automation to autonomy: A survey on large language models in scientific discovery",
-      "authors": "T Zheng, Z Deng, HT Tsang, W Wang, J Bai… - arXiv preprint arXiv …, 2025 - arxiv.org",
-      "journal": "Google Scholar Result",
-      "snippet": "Large Language Models (LLMs) are catalyzing a paradigm shift in scientific discovery, evolving from task-specific automation tools into increasingly autonomous agents and …",
-      "link": "https://arxiv.org/abs/2505.13259",
-      "published_date": "May 2025",
-      "published_date_sort": "2025-05-01",
-      "citations": 24,
-      "institutions": "Unknown"
-    },
-    {
       "title": "Co-bench: Benchmarking language model agents in algorithm search for combinatorial optimization",
       "authors": "W Sun, S Feng, S Li, Y Yang - arXiv preprint arXiv:2504.04310, 2025 - arxiv.org",
       "journal": "Google Scholar Result",
@@ -266,7 +222,7 @@
       "link": "https://arxiv.org/abs/2504.04310",
       "published_date": "April 2025",
       "published_date_sort": "2025-04-01",
-      "citations": 16,
+      "citations": 17,
       "institutions": "Unknown"
     },
     {
@@ -289,17 +245,6 @@
       "published_date": "2025",
       "published_date_sort": "2025-01-01",
       "citations": 1,
-      "institutions": "Unknown"
-    },
-    {
-      "title": "DatawiseAgent: A Notebook-Centric LLM Agent Framework for Adaptive and Robust Data Science Automation",
-      "authors": "Z You, Y Zhang, D Xu, Y Lou, Y Yan… - Proceedings of the …, 2025 - aclanthology.org",
-      "journal": "Google Scholar Result",
-      "snippet": "Existing large language model (LLM) agents for automating data science show promise, but they remain constrained by narrow task scopes, limited generalization across tasks and …",
-      "link": "https://aclanthology.org/2025.emnlp-main.58/",
-      "published_date": "2025",
-      "published_date_sort": "2025-01-01",
-      "citations": 0,
       "institutions": "Unknown"
     },
     {
