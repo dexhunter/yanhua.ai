@@ -1,5 +1,5 @@
 {
-  "last_updated": "2025-12-18 00:10:22 UTC",
+  "last_updated": "2025-12-19 00:12:29 UTC",
   "target_paper": "https://www.arxiv.org/abs/2502.13138",
   "arxiv_id": "2502.13138",
   "total_citations": 24,
@@ -50,46 +50,46 @@
   ],
   "papers": [
     {
-      "title": "Incentivizing Tool-augmented Thinking with Images for Medical Image Analysis",
-      "authors": "Yankai Jiang, Yujie Zhang, Peng Zhang, Yichen Li, Jintai Chen, Xiaoming Shi, Shihui Zhen",
+      "title": "ColliderML: The First Release of an OpenDataDetector High-Luminosity Physics Benchmark Dataset",
+      "authors": "Doğa Elitez, Paul Gessinger, Daniel Murnane, Marcus Selchou Raaholt, Andreas Salzburger, Stine Kofoed Skov, Andreas Stefl, Anna Zaborowska",
       "journal": "arXiv",
-      "snippet": "Recent reasoning based medical MLLMs have made progress in generating step by step textual reasoning chains. However, they still struggle with complex tasks that necessitate dynamic and iterative focusing on fine-grained visual regions to achieve precise grounding and diagnosis. We introduce Ophiuchus, a versatile, tool-augmented framework that equips an MLLM to (i) decide when additional visual evidence is needed, (ii) determine where to probe and ground within the medical image, and (iii) seamlessly weave the relevant sub-image content back into an interleaved, multimodal chain of thought. In contrast to prior approaches limited by the performance ceiling of specialized tools, Ophiuchus integrates the model's inherent grounding and perception capabilities with external tools, thereby fostering higher-level reasoning. The core of our method is a three-stage training strategy: cold-start training with tool-integrated reasoning data to achieve basic tool selection and adaptation for inspecting key regions; self-reflection fine-tuning to strengthen reflective reasoning and encourage revisiting tool outputs; and Agentic Tool Reinforcement Learning to directly optimize task-specific rewards and emulate expert-like diagnostic behavior. Extensive experiments show that Ophiuchus consistently outperforms both closed-source and open-source SOTA methods across diverse medical benchmarks, including VQA, detection, and reasoning-based segmentation. Our approach illuminates a path toward medical AI agents that can genuinely \"think with images\" through tool-integrated reasoning. Datasets, codes, and trained models will be released publicly.",
-      "link": "http://arxiv.org/abs/2512.14157v1",
-      "published_date": "December 16, 2025",
-      "published_date_sort": "2025-12-16",
+      "snippet": "We introduce ColliderML - a large, open, experiment-agnostic dataset of fully simulated and digitised proton-proton collisions in High-Luminosity Large Hadron Collider conditions ($\\sqrt{s}=14$ TeV, mean pile-up $μ= 200$). ColliderML provides one million events across ten Standard Model and Beyond Standard Model processes, plus extensive single-particle samples, all produced with modern next-to-leading order matrix element calculation and showering, realistic per-event pile-up overlay, a validated OpenDataDetector geometry, and standard reconstructions. The release fills a major gap for machine learning (ML) research on detector-level data, provided on the ML-friendly Hugging Face platform. We present physics coverage and the generation, simulation, digitisation and reconstruction pipeline, describe format and access, and initial collider physics benchmarks.",
+      "link": "http://arxiv.org/abs/2512.15230v1",
+      "published_date": "December 17, 2025",
+      "published_date_sort": "2025-12-17",
       "citations": 0,
       "institutions": "Unknown"
     },
     {
-      "title": "GRAFT: Grid-Aware Load Forecasting with Multi-Source Textual Alignment and Fusion",
-      "authors": "Fangzhou Lin, Guoshun He, Zhenyu Guo, Zhe Huang, Jinsong Tao",
+      "title": "Multi-Modal Semantic Communication",
+      "authors": "Matin Mortaheb, Erciyes Karakaya, Sennur Ulukus",
       "journal": "arXiv",
-      "snippet": "Electric load is simultaneously affected across multiple time scales by exogenous factors such as weather and calendar rhythms, sudden events, and policies. Therefore, this paper proposes GRAFT (GRid-Aware Forecasting with Text), which modifies and improves STanHOP to better support grid-aware forecasting and multi-source textual interventions. Specifically, GRAFT strictly aligns daily-aggregated news, social media, and policy texts with half-hour load, and realizes text-guided fusion to specific time positions via cross-attention during both training and rolling forecasting. In addition, GRAFT provides a plug-and-play external-memory interface to accommodate different information sources in real-world deployment. We construct and release a unified aligned benchmark covering 2019--2021 for five Australian states (half-hour load, daily-aligned weather/calendar variables, and three categories of external texts), and conduct systematic, reproducible evaluations at three scales -- hourly, daily, and monthly -- under a unified protocol for comparison across regions, external sources, and time scales. Experimental results show that GRAFT significantly outperforms strong baselines and reaches or surpasses the state of the art across multiple regions and forecasting horizons. Moreover, the model is robust in event-driven scenarios and enables temporal localization and source-level interpretation of text-to-load effects through attention read-out. We release the benchmark, preprocessing scripts, and forecasting results to facilitate standardized empirical evaluation and reproducibility in power grid load forecasting.",
-      "link": "http://arxiv.org/abs/2512.14400v1",
-      "published_date": "December 16, 2025",
-      "published_date_sort": "2025-12-16",
+      "snippet": "Semantic communication aims to transmit information most relevant to a task rather than raw data, offering significant gains in communication efficiency for applications such as telepresence, augmented reality, and remote sensing. Recent transformer-based approaches have used self-attention maps to identify informative regions within images, but they often struggle in complex scenes with multiple objects, where self-attention lacks explicit task guidance. To address this, we propose a novel Multi-Modal Semantic Communication framework that integrates text-based user queries to guide the information extraction process. Our proposed system employs a cross-modal attention mechanism that fuses visual features with language embeddings to produce soft relevance scores over the visual data. Based on these scores and the instantaneous channel bandwidth, we use an algorithm to transmit image patches at adaptive resolutions using independently trained encoder-decoder pairs, with total bitrate matching the channel capacity. At the receiver, the patches are reconstructed and combined to preserve task-critical information. This flexible and goal-driven design enables efficient semantic communication in complex and bandwidth-constrained environments.",
+      "link": "http://arxiv.org/abs/2512.15691v1",
+      "published_date": "December 17, 2025",
+      "published_date_sort": "2025-12-17",
       "citations": 0,
       "institutions": "Unknown"
     },
     {
-      "title": "A Multicenter Benchmark of Multiple Instance Learning Models for Lymphoma Subtyping from HE-stained Whole Slide Images",
-      "authors": "Rao Muhammad Umer, Daniel Sens, Jonathan Noll, Christian Matek, Lukas Wolfseher, Rainer Spang, Ralf Huss, Johannes Raffler, Sarah Reinke, Wolfram Klapper, Katja Steiger, Kristina Schwamborn, Carsten Marr",
+      "title": "Exploring User Acceptance and Concerns toward LLM-powered Conversational Agents in Immersive Extended Reality",
+      "authors": "Efe Bozkir, Enkelejda Kasneci",
       "journal": "arXiv",
-      "snippet": "Timely and accurate lymphoma diagnosis is essential for guiding cancer treatment. Standard diagnostic practice combines hematoxylin and eosin (HE)-stained whole slide images with immunohistochemistry, flow cytometry, and molecular genetic tests to determine lymphoma subtypes, a process requiring costly equipment, skilled personnel, and causing treatment delays. Deep learning methods could assist pathologists by extracting diagnostic information from routinely available HE-stained slides, yet comprehensive benchmarks for lymphoma subtyping on multicenter data are lacking. In this work, we present the first multicenter lymphoma benchmarking dataset covering four common lymphoma subtypes and healthy control tissue. We systematically evaluate five publicly available pathology foundation models (H-optimus-1, H0-mini, Virchow2, UNI2, Titan) combined with attention-based (AB-MIL) and transformer-based (TransMIL) multiple instance learning aggregators across three magnifications (10x, 20x, 40x). On in-distribution test sets, models achieve multiclass balanced accuracies exceeding 80% across all magnifications, with all foundation models performing similarly and both aggregation methods showing comparable results. The magnification study reveals that 40x resolution is sufficient, with no performance gains from higher resolutions or cross-magnification aggregation. However, on out-of-distribution test sets, performance drops substantially to around 60%, highlighting significant generalization challenges. To advance the field, larger multicenter studies covering additional rare lymphoma subtypes are needed. We provide an automated benchmarking pipeline to facilitate such future research.",
-      "link": "http://arxiv.org/abs/2512.14640v1",
-      "published_date": "December 16, 2025",
-      "published_date_sort": "2025-12-16",
+      "snippet": "The rapid development of generative artificial intelligence (AI) and large language models (LLMs), and the availability of services that make them accessible, have led the general public to begin incorporating them into everyday life. The extended reality (XR) community has also sought to integrate LLMs, particularly in the form of conversational agents, to enhance user experience and task efficiency. When interacting with such conversational agents, users may easily disclose sensitive information due to the naturalistic flow of the conversations, and combining such conversational data with fine-grained sensor data may lead to novel privacy issues. To address these issues, a user-centric understanding of technology acceptance and concerns is essential. Therefore, to this end, we conducted a large-scale crowdsourcing study with 1036 participants, examining user decision-making processes regarding LLM-powered conversational agents in XR, across factors of XR setting type, speech interaction type, and data processing location. We found that while users generally accept these technologies, they express concerns related to security, privacy, social implications, and trust. Our results suggest that familiarity plays a crucial role, as daily generative AI use is associated with greater acceptance. In contrast, previous ownership of XR devices is linked to less acceptance, possibly due to existing familiarity with the settings. We also found that men report higher acceptance with fewer concerns than women. Regarding data type sensitivity, location data elicited the most significant concern, while body temperature and virtual object states were considered least sensitive. Overall, our study highlights the importance of practitioners effectively communicating their measures to users, who may remain distrustful. We conclude with implications and recommendations for LLM-powered XR.",
+      "link": "http://arxiv.org/abs/2512.15343v1",
+      "published_date": "December 17, 2025",
+      "published_date_sort": "2025-12-17",
       "citations": 0,
       "institutions": "Unknown"
     },
     {
-      "title": "Gödel's Poetry",
-      "authors": "Kelly J. Davis",
+      "title": "Tracking Temporal Dynamics of Vector Sets with Gaussian Process",
+      "authors": "Taichi Aida, Mamoru Komachi, Toshinobu Ogiso, Hiroya Takamura, Daichi Mochihashi",
       "journal": "arXiv",
-      "snippet": "Formal, automated theorem proving has long been viewed as a challenge to artificial intelligence. We introduce here a new approach to computer theorem proving, one that employs specialized language models for Lean4 proof generation combined with recursive decomposition of difficult theorems into simpler entailing propositions. These models are coordinated through a multi-agent architecture that orchestrates autoformalization (if required), proof generation, decomposition of difficult theorems into simpler entailing propositions, and recursive proof (and/or decomposition) of these propositions. Without decomposition, we achieve a 90.4% pass rate on miniF2F. With decomposition, this is significantly improved. A key technical contribution lies in our extension of the Kimina Lean Server with abstract syntax tree (AST) parsing capabilities to facilitate automated, recursive proof decomposition. The system is made available on PyPI as goedels-poetry (at https://pypi.org/project/goedels-poetry ), and the open-source implementation KellyJDavis/goedels-poetry (at https://github.com/KellyJDavis/goedels-poetry ) facilitates both adaptation to alternative language models and extension with custom functionality.",
-      "link": "http://arxiv.org/abs/2512.14252v1",
-      "published_date": "December 16, 2025",
-      "published_date_sort": "2025-12-16",
+      "snippet": "Understanding the temporal evolution of sets of vectors is a fundamental challenge across various domains, including ecology, crime analysis, and linguistics. For instance, ecosystem structures evolve due to interactions among plants, herbivores, and carnivores; the spatial distribution of crimes shifts in response to societal changes; and word embedding vectors reflect cultural and semantic trends over time. However, analyzing such time-varying sets of vectors is challenging due to their complicated structures, which also evolve over time. In this work, we propose a novel method for modeling the distribution underlying each set of vectors using infinite-dimensional Gaussian processes. By approximating the latent function in the Gaussian process with Random Fourier Features, we obtain compact and comparable vector representations over time. This enables us to track and visualize temporal transitions of vector sets in a low-dimensional space. We apply our method to both sociological data (crime distributions) and linguistic data (word embeddings), demonstrating its effectiveness in capturing temporal dynamics. Our results show that the proposed approach provides interpretable and robust representations, offering a powerful framework for analyzing structural changes in temporally indexed vector sets across diverse domains.",
+      "link": "http://arxiv.org/abs/2512.15538v1",
+      "published_date": "December 17, 2025",
+      "published_date_sort": "2025-12-17",
       "citations": 0,
       "institutions": "Unknown"
     },
@@ -160,6 +160,17 @@
       "institutions": "Unknown"
     },
     {
+      "title": "A Comprehensive Survey of Deep Research: Systems, Methodologies, and Applications",
+      "authors": "R Xu, J Peng - arXiv preprint arXiv:2506.12594, 2025 - arxiv.org",
+      "journal": "Google Scholar Result",
+      "snippet": "This survey examines the rapidly evolving field of Deep Research systems--AI-powered applications that automate complex research workflows through the integration of large …",
+      "link": "https://arxiv.org/abs/2506.12594",
+      "published_date": "June 2025",
+      "published_date_sort": "2025-06-01",
+      "citations": 31,
+      "institutions": "Unknown"
+    },
+    {
       "title": "AI Scientists Fail Without Strong Implementation Capability",
       "authors": "M Zhu, Q Xie, Y Weng, J Wu, Z Lin, L Yang… - arXiv preprint arXiv …, 2025 - arxiv.org",
       "journal": "Google Scholar Result",
@@ -168,17 +179,6 @@
       "published_date": "June 2025",
       "published_date_sort": "2025-06-01",
       "citations": 8,
-      "institutions": "Unknown"
-    },
-    {
-      "title": "A Comprehensive Survey of Deep Research: Systems, Methodologies, and Applications",
-      "authors": "R Xu, J Peng - arXiv preprint arXiv:2506.12594, 2025 - arxiv.org",
-      "journal": "Google Scholar Result",
-      "snippet": "This survey examines the rapidly evolving field of Deep Research systems--AI-powered applications that automate complex research workflows through the integration of large …",
-      "link": "https://arxiv.org/abs/2506.12594",
-      "published_date": "June 2025",
-      "published_date_sort": "2025-06-01",
-      "citations": 29,
       "institutions": "Unknown"
     },
     {
@@ -193,25 +193,14 @@
       "institutions": "Unknown"
     },
     {
-      "title": "IDA-Bench: Evaluating LLMs on Interactive Guided Data Analysis",
-      "authors": "H Li, H Liu, T Zhu, T Guo, Z Zheng, X Deng… - arXiv preprint arXiv …, 2025 - arxiv.org",
+      "title": "Mle-dojo: Interactive environments for empowering llm agents in machine learning engineering",
+      "authors": "R Qiang, Y Zhuang, Y Li, R Zhang, C Li… - arXiv preprint arXiv …, 2025 - arxiv.org",
       "journal": "Google Scholar Result",
-      "snippet": "Large Language Models (LLMs) show promise as data analysis agents, but existing benchmarks overlook the iterative nature of the field, where experts' decisions evolve with …",
-      "link": "https://arxiv.org/abs/2505.18223",
+      "snippet": "We introduce MLE-Dojo, a Gym-style framework for systematically reinforcement learning, evaluating, and improving autonomous large language model (LLM) agents in iterative …",
+      "link": "https://arxiv.org/abs/2505.07782",
       "published_date": "May 2025",
       "published_date_sort": "2025-05-01",
-      "citations": 2,
-      "institutions": "Unknown"
-    },
-    {
-      "title": "CodePDE: An Inference Framework for LLM-driven PDE Solver Generation",
-      "authors": "S Li, T Marwah, J Shen, W Sun, A Risteski… - arXiv preprint arXiv …, 2025 - arxiv.org",
-      "journal": "Google Scholar Result",
-      "snippet": "Partial differential equations (PDEs) are fundamental to modeling physical systems, yet solving them remains a complex challenge. Traditional numerical solvers rely on expert …",
-      "link": "https://arxiv.org/abs/2505.08783",
-      "published_date": "May 2025",
-      "published_date_sort": "2025-05-01",
-      "citations": 7,
+      "citations": 6,
       "institutions": "Unknown"
     },
     {
@@ -223,17 +212,6 @@
       "published_date": "May 2025",
       "published_date_sort": "2025-05-01",
       "citations": 24,
-      "institutions": "Unknown"
-    },
-    {
-      "title": "Mle-dojo: Interactive environments for empowering llm agents in machine learning engineering",
-      "authors": "R Qiang, Y Zhuang, Y Li, R Zhang, C Li… - arXiv preprint arXiv …, 2025 - arxiv.org",
-      "journal": "Google Scholar Result",
-      "snippet": "We introduce MLE-Dojo, a Gym-style framework for systematically reinforcement learning, evaluating, and improving autonomous large language model (LLM) agents in iterative …",
-      "link": "https://arxiv.org/abs/2505.07782",
-      "published_date": "May 2025",
-      "published_date_sort": "2025-05-01",
-      "citations": 6,
       "institutions": "Unknown"
     },
     {
@@ -259,6 +237,28 @@
       "institutions": "Unknown"
     },
     {
+      "title": "IDA-Bench: Evaluating LLMs on Interactive Guided Data Analysis",
+      "authors": "H Li, H Liu, T Zhu, T Guo, Z Zheng, X Deng… - arXiv preprint arXiv …, 2025 - arxiv.org",
+      "journal": "Google Scholar Result",
+      "snippet": "Large Language Models (LLMs) show promise as data analysis agents, but existing benchmarks overlook the iterative nature of the field, where experts' decisions evolve with …",
+      "link": "https://arxiv.org/abs/2505.18223",
+      "published_date": "May 2025",
+      "published_date_sort": "2025-05-01",
+      "citations": 2,
+      "institutions": "Unknown"
+    },
+    {
+      "title": "CodePDE: An Inference Framework for LLM-driven PDE Solver Generation",
+      "authors": "S Li, T Marwah, J Shen, W Sun, A Risteski… - arXiv preprint arXiv …, 2025 - arxiv.org",
+      "journal": "Google Scholar Result",
+      "snippet": "Partial differential equations (PDEs) are fundamental to modeling physical systems, yet solving them remains a complex challenge. Traditional numerical solvers rely on expert …",
+      "link": "https://arxiv.org/abs/2505.08783",
+      "published_date": "May 2025",
+      "published_date_sort": "2025-05-01",
+      "citations": 7,
+      "institutions": "Unknown"
+    },
+    {
       "title": "Co-bench: Benchmarking language model agents in algorithm search for combinatorial optimization",
       "authors": "W Sun, S Feng, S Li, Y Yang - arXiv preprint arXiv:2504.04310, 2025 - arxiv.org",
       "journal": "Google Scholar Result",
@@ -281,6 +281,17 @@
       "institutions": "Unknown"
     },
     {
+      "title": "An agentic framework for autonomous metamaterial modeling and inverse design",
+      "authors": "D Lu, JM Malof, WJ Padilla - ACS Photonics, 2025 - ACS Publications",
+      "journal": "Google Scholar Result",
+      "snippet": "The evolution from large language models to agentic systems has created a new Frontier of scientific discovery, enabling the automation of complex research tasks that have …",
+      "link": "https://pubs.acs.org/doi/abs/10.1021/acsphotonics.5c01514",
+      "published_date": "2025",
+      "published_date_sort": "2025-01-01",
+      "citations": 4,
+      "institutions": "Unknown"
+    },
+    {
       "title": "AIRepr: An Analyst-Inspector Framework for Evaluating Reproducibility of LLMs in Data Science",
       "authors": "Q Zeng, C Jin, X Wang, Y Zheng… - Findings of the Association …, 2025 - aclanthology.org",
       "journal": "Google Scholar Result",
@@ -289,17 +300,6 @@
       "published_date": "2025",
       "published_date_sort": "2025-01-01",
       "citations": 1,
-      "institutions": "Unknown"
-    },
-    {
-      "title": "An agentic framework for autonomous metamaterial modeling and inverse design",
-      "authors": "D Lu, JM Malof, WJ Padilla - ACS Photonics, 2025 - ACS Publications",
-      "journal": "Google Scholar Result",
-      "snippet": "The evolution from large language models to agentic systems has created a new Frontier of scientific discovery, enabling the automation of complex research tasks that have …",
-      "link": "https://pubs.acs.org/doi/abs/10.1021/acsphotonics.5c01514",
-      "published_date": "2025",
-      "published_date_sort": "2025-01-01",
-      "citations": 3,
       "institutions": "Unknown"
     },
     {
