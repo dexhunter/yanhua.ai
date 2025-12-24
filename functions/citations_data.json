@@ -1,11 +1,11 @@
 {
-  "last_updated": "2025-12-23 00:11:48 UTC",
+  "last_updated": "2025-12-24 00:11:55 UTC",
   "target_paper": "https://www.arxiv.org/abs/2502.13138",
   "arxiv_id": "2502.13138",
-  "total_citations": 20,
+  "total_citations": 28,
   "h_index": 7,
-  "recent_citations": 0,
-  "avg_citations_per_month": "0.95",
+  "recent_citations": 8,
+  "avg_citations_per_month": "1.17",
   "timeline": [
     {
       "date": "2024-01-01",
@@ -42,29 +42,99 @@
     {
       "date": "2025-09-01",
       "citations": 20
+    },
+    {
+      "date": "2025-12-01",
+      "citations": 28
     }
   ],
   "papers": [
     {
-      "title": "An AI system to help scientists write expert-level empirical software",
-      "authors": "E Aygün, A Belyaeva, G Comanici, M Coram… - arXiv preprint arXiv …, 2025 - arxiv.org",
-      "journal": "Google Scholar Result",
-      "snippet": "The cycle of scientific discovery is frequently bottlenecked by the slow, manual creation of software to support computational experiments. To address this, we present an AI system …",
-      "link": "https://arxiv.org/abs/2509.06503",
-      "published_date": "September 2025",
-      "published_date_sort": "2025-09-01",
-      "citations": 7,
+      "title": "Owning the Intelligence: Global AI Patents Landscape and Europe's Quest for Technological Sovereignty",
+      "authors": "Lapo Santarlasci, Armando Rungi, Loredana Fattorini, Nestor Maslej",
+      "journal": "arXiv",
+      "snippet": "Artificial intelligence has become a key arena of global technological competition and a central concern for Europe's quest for technological sovereignty. This paper analyzes global AI patenting from 2010 to 2023 to assess Europe's position in an increasingly bipolar innovation landscape dominated by the United States and China. Using linked patent, firm, ownership, and citation data, we examine the geography, specialization, and international diffusion of AI innovation. We find a highly concentrated patent landscape: China leads in patent volumes, while the United States dominates in citation impact and technological influence. Europe accounts for a limited share of AI patents but exhibits signals of relatively high patent quality. Technological proximity reveals global convergence toward U.S. innovation trajectories, with Europe remaining fragmented rather than forming an autonomous pole. Gravity-model estimates show that cross-border AI knowledge flows are driven primarily by technological capability and specialization, while geographic and institutional factors play a secondary role. EU membership does not significantly enhance intra-European knowledge diffusion, suggesting that technological capacity, rather than political integration, underpins participation in global AI innovation networks.",
+      "link": "http://arxiv.org/abs/2512.19569v1",
+      "published_date": "December 22, 2025",
+      "published_date_sort": "2025-12-22",
+      "citations": 0,
       "institutions": "Unknown"
     },
     {
-      "title": "Bootstrapping task spaces for self-improvement",
-      "authors": "M Jiang, A Lupu, Y Bachrach - arXiv preprint arXiv:2509.04575, 2025 - arxiv.org",
-      "journal": "Google Scholar Result",
-      "snippet": "Progress in many task domains emerges from repeated revisions to previous solution attempts. Training agents that can reliably self-improve over such sequences at inference …",
-      "link": "https://arxiv.org/abs/2509.04575",
-      "published_date": "September 2025",
-      "published_date_sort": "2025-09-01",
-      "citations": 2,
+      "title": "PEDESTRIAN: An Egocentric Vision Dataset for Obstacle Detection on Pavements",
+      "authors": "Marios Thoma, Zenonas Theodosiou, Harris Partaourides, Vassilis Vassiliades, Loizos Michael, Andreas Lanitis",
+      "journal": "arXiv",
+      "snippet": "Walking has always been a primary mode of transportation and is recognized as an essential activity for maintaining good health. Despite the need for safe walking conditions in urban environments, sidewalks are frequently obstructed by various obstacles that hinder free pedestrian movement. Any object obstructing a pedestrian's path can pose a safety hazard. The advancement of pervasive computing and egocentric vision techniques offers the potential to design systems that can automatically detect such obstacles in real time, thereby enhancing pedestrian safety. The development of effective and efficient identification algorithms relies on the availability of comprehensive and well-balanced datasets of egocentric data. In this work, we introduce the PEDESTRIAN dataset, comprising egocentric data for 29 different obstacles commonly found on urban sidewalks. A total of 340 videos were collected using mobile phone cameras, capturing a pedestrian's point of view. Additionally, we present the results of a series of experiments that involved training several state-of-the-art deep learning algorithms using the proposed dataset, which can be used as a benchmark for obstacle detection and recognition tasks. The dataset can be used for training pavement obstacle detectors to enhance the safety of pedestrians in urban areas.",
+      "link": "http://arxiv.org/abs/2512.19190v1",
+      "published_date": "December 22, 2025",
+      "published_date_sort": "2025-12-22",
+      "citations": 0,
+      "institutions": "Unknown"
+    },
+    {
+      "title": "BabyFlow: 3D modeling of realistic and expressive infant faces",
+      "authors": "Antonia Alomar, Mireia Masias, Marius George Linguraru, Federico M. Sukno, Gemma Piella",
+      "journal": "arXiv",
+      "snippet": "Early detection of developmental disorders can be aided by analyzing infant craniofacial morphology, but modeling infant faces is challenging due to limited data and frequent spontaneous expressions. We introduce BabyFlow, a generative AI model that disentangles facial identity and expression, enabling independent control over both. Using normalizing flows, BabyFlow learns flexible, probabilistic representations that capture the complex, non-linear variability of expressive infant faces without restrictive linear assumptions. To address scarce and uncontrolled expressive data, we perform cross-age expression transfer, adapting expressions from adult 3D scans to enrich infant datasets with realistic and systematic expressive variants. As a result, BabyFlow improves 3D reconstruction accuracy, particularly in highly expressive regions such as the mouth, eyes, and nose, and supports synthesis and modification of infant expressions while preserving identity. Additionally, by integrating with diffusion models, BabyFlow generates high-fidelity 2D infant images with consistent 3D geometry, providing powerful tools for data augmentation and early facial analysis.",
+      "link": "http://arxiv.org/abs/2512.19560v1",
+      "published_date": "December 22, 2025",
+      "published_date_sort": "2025-12-22",
+      "citations": 0,
+      "institutions": "Unknown"
+    },
+    {
+      "title": "Helios: A Foundational Language Model for Smart Energy Knowledge Reasoning and Application",
+      "authors": "Haoyu Jiang, Fanjie Zeng, Boan Qu, Xiaojie Lin, Wei Zhong",
+      "journal": "arXiv",
+      "snippet": "In the global drive toward carbon neutrality, deeply coordinated smart energy systems underpin industrial transformation. However, the interdisciplinary, fragmented, and fast-evolving expertise in this domain prevents general-purpose LLMs, which lack domain knowledge and physical-constraint awareness, from delivering precise engineering-aligned inference and generation. To address these challenges, we introduce Helios, a large language model tailored to the smart energy domain, together with a comprehensive suite of resources to advance LLM research in this field. Specifically, we develop Enersys, a multi-agent collaborative framework for end-to-end dataset construction, through which we produce: (1) a smart energy knowledge base, EnerBase, to enrich the model's foundational expertise; (2) an instruction fine-tuning dataset, EnerInstruct, to strengthen performance on domain-specific downstream tasks; and (3) an RLHF dataset, EnerReinforce, to align the model with human preferences and industry standards. Leveraging these resources, Helios undergoes large-scale pretraining, SFT, and RLHF. We also release EnerBench, a benchmark for evaluating LLMs in smart energy scenarios, and demonstrate that our approach significantly enhances domain knowledge mastery, task execution accuracy, and alignment with human preferences.",
+      "link": "http://arxiv.org/abs/2512.19299v1",
+      "published_date": "December 22, 2025",
+      "published_date_sort": "2025-12-22",
+      "citations": 0,
+      "institutions": "Unknown"
+    },
+    {
+      "title": "ChemATP: A Training-Free Chemical Reasoning Framework for Large Language Models",
+      "authors": "Mingxu Zhang, Dazhong Shen, Qi Zhang, Ying Sun",
+      "journal": "arXiv",
+      "snippet": "Large Language Models (LLMs) exhibit strong general reasoning but struggle in molecular science due to the lack of explicit chemical priors in standard string representations. Current solutions face a fundamental dilemma. Training-based methods inject priors into parameters, but this static coupling hinders rapid knowledge updates and often compromises the model's general reasoning capabilities. Conversely, existing training-free methods avoid these issues but rely on surface-level prompting, failing to provide the fine-grained atom-level priors essential for precise chemical reasoning. To address this issue, we introduce ChemATP, a framework that decouples chemical knowledge from the reasoning engine. By constructing the first atom-level textual knowledge base, ChemATP enables frozen LLMs to explicitly retrieve and reason over this information dynamically. This architecture ensures interpretability and adaptability while preserving the LLM's intrinsic general intelligence. Experiments show that ChemATP significantly outperforms training-free baselines and rivals state-of-the-art training-based models, demonstrating that explicit prior injection is a competitive alternative to implicit parameter updates.",
+      "link": "http://arxiv.org/abs/2512.19240v1",
+      "published_date": "December 22, 2025",
+      "published_date_sort": "2025-12-22",
+      "citations": 0,
+      "institutions": "Unknown"
+    },
+    {
+      "title": "GLUE: Generative Latent Unification of Expertise-Informed Engineering Models",
+      "authors": "Tim Aebersold, Soheyl Massoudi, Mark D. Fuge",
+      "journal": "arXiv",
+      "snippet": "Engineering complex systems (aircraft, buildings, vehicles) requires accounting for geometric and performance couplings across subsystems. As generative models proliferate for specialized domains (wings, structures, engines), a key research gap is how to coordinate frozen, pre-trained submodels to generate full-system designs that are feasible, diverse, and high-performing. We introduce Generative Latent Unification of Expertise-Informed Engineering Models (GLUE), which orchestrates pre-trained, frozen subsystem generators while enforcing system-level feasibility, optimality, and diversity. We propose and benchmark (i) data-driven GLUE models trained on pre-generated system-level designs and (ii) a data-free GLUE model trained online on a differentiable geometry layer. On a UAV design problem with five coupling constraints, we find that data-driven approaches yield diverse, high-performing designs but require large datasets to satisfy constraints reliably. The data-free approach is competitive with Bayesian optimization and gradient-based optimization in performance and feasibility while training a full generative model in only 10 min on a RTX 4090 GPU, requiring more than two orders of magnitude fewer geometry evaluations and FLOPs than the data-driven method. Ablations focused on data-free training show that subsystem output continuity affects coordination, and equality constraints can trigger mode collapse unless mitigated. By integrating unmodified, domain-informed submodels into a modular generative workflow, this work provides a viable path for scaling generative design to complex, real-world engineering systems.",
+      "link": "http://arxiv.org/abs/2512.19469v1",
+      "published_date": "December 22, 2025",
+      "published_date_sort": "2025-12-22",
+      "citations": 0,
+      "institutions": "Unknown"
+    },
+    {
+      "title": "Vibe Reasoning: Eliciting Frontier AI Mathematical Capabilities -- A Case Study on IMO 2025 Problem 6",
+      "authors": "Jiaao Wu, Xian Zhang, Fan Yang, Yinpeng Dong",
+      "journal": "arXiv",
+      "snippet": "We introduce Vibe Reasoning, a human-AI collaborative paradigm for solving complex mathematical problems. Our key insight is that frontier AI models already possess the knowledge required to solve challenging problems -- they simply do not know how, what, or when to apply it. Vibe Reasoning transforms AI's latent potential into manifested capability through generic meta-prompts, agentic grounding, and model orchestration. We demonstrate this paradigm through IMO 2025 Problem 6, a combinatorial optimization problem where autonomous AI systems publicly reported failures. Our solution combined GPT-5's exploratory capabilities with Gemini 3 Pro's proof strengths, leveraging agentic workflows with Python code execution and file-based memory, to derive both the correct answer (2112) and a rigorous mathematical proof. Through iterative refinement across multiple attempts, we discovered the necessity of agentic grounding and model orchestration, while human prompts evolved from problem-specific hints to generic, transferable meta-prompts. We analyze why capable AI fails autonomously, how each component addresses specific failure modes, and extract principles for effective vibe reasoning. Our findings suggest that lightweight human guidance can unlock frontier models' mathematical reasoning potential. This is ongoing work; we are developing automated frameworks and conducting broader evaluations to further validate Vibe Reasoning's generality and effectiveness.",
+      "link": "http://arxiv.org/abs/2512.19287v1",
+      "published_date": "December 22, 2025",
+      "published_date_sort": "2025-12-22",
+      "citations": 0,
+      "institutions": "Unknown"
+    },
+    {
+      "title": "Digital Twin-Driven Zero-Shot Fault Diagnosis of Axial Piston Pumps Using Fluid-Borne Noise Signals",
+      "authors": "Chang Dong, Jianfeng Tao, Chengliang Liu",
+      "journal": "arXiv",
+      "snippet": "Axial piston pumps are crucial components in fluid power systems, where reliable fault diagnosis is essential for ensuring operational safety and efficiency. Traditional data-driven methods require extensive labeled fault data, which is often impractical to obtain, while model-based approaches suffer from parameter uncertainties. This paper proposes a digital twin (DT)-driven zero-shot fault diagnosis framework utilizing fluid-borne noise (FBN) signals. The framework calibrates a high-fidelity DT model using only healthy-state data, generates synthetic fault signals for training deep learning classifiers, and employs a physics-informed neural network (PINN) as a virtual sensor for flow ripple estimation. Gradient-weighted class activation mapping (Grad-CAM) is integrated to visualize the decision-making process of neural networks, revealing that large kernels matching the subsequence length in time-domain inputs and small kernels in time-frequency domain inputs enable higher diagnostic accuracy by focusing on physically meaningful features. Experimental validations demonstrate that training on signals from the calibrated DT model yields diagnostic accuracies exceeding 95\\% on real-world benchmarks, while uncalibrated models result in significantly lower performance, highlighting the framework's effectiveness in data-scarce scenarios.",
+      "link": "http://arxiv.org/abs/2512.19280v1",
+      "published_date": "December 22, 2025",
+      "published_date_sort": "2025-12-22",
+      "citations": 0,
       "institutions": "Unknown"
     },
     {
@@ -79,14 +149,25 @@
       "institutions": "Unknown"
     },
     {
-      "title": "KompeteAI: Accelerated autonomous multi-agent system for end-to-end pipeline generation for machine learning problems",
-      "authors": "S Kulibaba, A Dzhalilov, R Pakhomov… - arXiv preprint arXiv …, 2025 - arxiv.org",
+      "title": "Bootstrapping task spaces for self-improvement",
+      "authors": "M Jiang, A Lupu, Y Bachrach - arXiv preprint arXiv:2509.04575, 2025 - arxiv.org",
       "journal": "Google Scholar Result",
-      "snippet": "Recent Large Language Model (LLM)-based AutoML systems demonstrate impressive capabilities but face significant limitations such as constrained exploration strategies and a …",
-      "link": "https://arxiv.org/abs/2508.10177",
-      "published_date": "August 2025",
-      "published_date_sort": "2025-08-01",
-      "citations": 3,
+      "snippet": "Progress in many task domains emerges from repeated revisions to previous solution attempts. Training agents that can reliably self-improve over such sequences at inference …",
+      "link": "https://arxiv.org/abs/2509.04575",
+      "published_date": "September 2025",
+      "published_date_sort": "2025-09-01",
+      "citations": 2,
+      "institutions": "Unknown"
+    },
+    {
+      "title": "An AI system to help scientists write expert-level empirical software",
+      "authors": "E Aygün, A Belyaeva, G Comanici, M Coram… - arXiv preprint arXiv …, 2025 - arxiv.org",
+      "journal": "Google Scholar Result",
+      "snippet": "The cycle of scientific discovery is frequently bottlenecked by the slow, manual creation of software to support computational experiments. To address this, we present an AI system …",
+      "link": "https://arxiv.org/abs/2509.06503",
+      "published_date": "September 2025",
+      "published_date_sort": "2025-09-01",
+      "citations": 7,
       "institutions": "Unknown"
     },
     {
@@ -101,6 +182,17 @@
       "institutions": "Unknown"
     },
     {
+      "title": "KompeteAI: Accelerated autonomous multi-agent system for end-to-end pipeline generation for machine learning problems",
+      "authors": "S Kulibaba, A Dzhalilov, R Pakhomov… - arXiv preprint arXiv …, 2025 - arxiv.org",
+      "journal": "Google Scholar Result",
+      "snippet": "Recent Large Language Model (LLM)-based AutoML systems demonstrate impressive capabilities but face significant limitations such as constrained exploration strategies and a …",
+      "link": "https://arxiv.org/abs/2508.10177",
+      "published_date": "August 2025",
+      "published_date_sort": "2025-08-01",
+      "citations": 3,
+      "institutions": "Unknown"
+    },
+    {
       "title": "How Far Are AI Scientists from Changing the World?",
       "authors": "Q Xie, Y Weng, M Zhu, F Shen, S Huang, Z Lin… - arXiv preprint arXiv …, 2025 - arxiv.org",
       "journal": "Google Scholar Result",
@@ -109,17 +201,6 @@
       "published_date": "July 2025",
       "published_date_sort": "2025-07-01",
       "citations": 6,
-      "institutions": "Unknown"
-    },
-    {
-      "title": "Automind: Adaptive knowledgeable agent for automated data science",
-      "authors": "Y Ou, Y Luo, J Zheng, L Wei, Z Yu, S Qiao… - arXiv preprint arXiv …, 2025 - arxiv.org",
-      "journal": "Google Scholar Result",
-      "snippet": "Large Language Model (LLM) agents have shown great potential in addressing real-world data science problems. LLM-driven data science agents promise to automate the entire …",
-      "link": "https://arxiv.org/abs/2506.10974",
-      "published_date": "June 2025",
-      "published_date_sort": "2025-06-01",
-      "citations": 8,
       "institutions": "Unknown"
     },
     {
@@ -145,25 +226,14 @@
       "institutions": "Unknown"
     },
     {
-      "title": "Mle-dojo: Interactive environments for empowering llm agents in machine learning engineering",
-      "authors": "R Qiang, Y Zhuang, Y Li, R Zhang, C Li… - arXiv preprint arXiv …, 2025 - arxiv.org",
+      "title": "Automind: Adaptive knowledgeable agent for automated data science",
+      "authors": "Y Ou, Y Luo, J Zheng, L Wei, Z Yu, S Qiao… - arXiv preprint arXiv …, 2025 - arxiv.org",
       "journal": "Google Scholar Result",
-      "snippet": "We introduce MLE-Dojo, a Gym-style framework for systematically reinforcement learning, evaluating, and improving autonomous large language model (LLM) agents in iterative …",
-      "link": "https://arxiv.org/abs/2505.07782",
-      "published_date": "May 2025",
-      "published_date_sort": "2025-05-01",
-      "citations": 6,
-      "institutions": "Unknown"
-    },
-    {
-      "title": "Repomaster: Autonomous exploration and understanding of github repositories for complex task solving",
-      "authors": "H Wang, Z Ni, S Zhang, S Lu, S Hu, Z He, C Hu… - arXiv preprint arXiv …, 2025 - arxiv.org",
-      "journal": "Google Scholar Result",
-      "snippet": "The ultimate goal of code agents is to solve complex tasks autonomously. Although large language models (LLMs) have made substantial progress in code generation, real-world …",
-      "link": "https://arxiv.org/abs/2505.21577",
-      "published_date": "May 2025",
-      "published_date_sort": "2025-05-01",
-      "citations": 7,
+      "snippet": "Large Language Model (LLM) agents have shown great potential in addressing real-world data science problems. LLM-driven data science agents promise to automate the entire …",
+      "link": "https://arxiv.org/abs/2506.10974",
+      "published_date": "June 2025",
+      "published_date_sort": "2025-06-01",
+      "citations": 8,
       "institutions": "Unknown"
     },
     {
@@ -178,14 +248,14 @@
       "institutions": "Unknown"
     },
     {
-      "title": "From automation to autonomy: A survey on large language models in scientific discovery",
-      "authors": "T Zheng, Z Deng, HT Tsang, W Wang, J Bai… - arXiv preprint arXiv …, 2025 - arxiv.org",
+      "title": "Repomaster: Autonomous exploration and understanding of github repositories for complex task solving",
+      "authors": "H Wang, Z Ni, S Zhang, S Lu, S Hu, Z He, C Hu… - arXiv preprint arXiv …, 2025 - arxiv.org",
       "journal": "Google Scholar Result",
-      "snippet": "Large Language Models (LLMs) are catalyzing a paradigm shift in scientific discovery, evolving from task-specific automation tools into increasingly autonomous agents and …",
-      "link": "https://arxiv.org/abs/2505.13259",
+      "snippet": "The ultimate goal of code agents is to solve complex tasks autonomously. Although large language models (LLMs) have made substantial progress in code generation, real-world …",
+      "link": "https://arxiv.org/abs/2505.21577",
       "published_date": "May 2025",
       "published_date_sort": "2025-05-01",
-      "citations": 26,
+      "citations": 7,
       "institutions": "Unknown"
     },
     {
@@ -200,6 +270,17 @@
       "institutions": "Unknown"
     },
     {
+      "title": "Mle-dojo: Interactive environments for empowering llm agents in machine learning engineering",
+      "authors": "R Qiang, Y Zhuang, Y Li, R Zhang, C Li… - arXiv preprint arXiv …, 2025 - arxiv.org",
+      "journal": "Google Scholar Result",
+      "snippet": "We introduce MLE-Dojo, a Gym-style framework for systematically reinforcement learning, evaluating, and improving autonomous large language model (LLM) agents in iterative …",
+      "link": "https://arxiv.org/abs/2505.07782",
+      "published_date": "May 2025",
+      "published_date_sort": "2025-05-01",
+      "citations": 6,
+      "institutions": "Unknown"
+    },
+    {
       "title": "IDA-Bench: Evaluating LLMs on Interactive Guided Data Analysis",
       "authors": "H Li, H Liu, T Zhu, T Guo, Z Zheng, X Deng… - arXiv preprint arXiv …, 2025 - arxiv.org",
       "journal": "Google Scholar Result",
@@ -208,6 +289,17 @@
       "published_date": "May 2025",
       "published_date_sort": "2025-05-01",
       "citations": 2,
+      "institutions": "Unknown"
+    },
+    {
+      "title": "From automation to autonomy: A survey on large language models in scientific discovery",
+      "authors": "T Zheng, Z Deng, HT Tsang, W Wang, J Bai… - arXiv preprint arXiv …, 2025 - arxiv.org",
+      "journal": "Google Scholar Result",
+      "snippet": "Large Language Models (LLMs) are catalyzing a paradigm shift in scientific discovery, evolving from task-specific automation tools into increasingly autonomous agents and …",
+      "link": "https://arxiv.org/abs/2505.13259",
+      "published_date": "May 2025",
+      "published_date_sort": "2025-05-01",
+      "citations": 26,
       "institutions": "Unknown"
     },
     {
@@ -233,17 +325,6 @@
       "institutions": "Unknown"
     },
     {
-      "title": "AIRepr: An Analyst-Inspector Framework for Evaluating Reproducibility of LLMs in Data Science",
-      "authors": "Q Zeng, C Jin, X Wang, Y Zheng… - Findings of the Association …, 2025 - aclanthology.org",
-      "journal": "Google Scholar Result",
-      "snippet": "Large language models (LLMs) are increasingly used to automate data analysis through executable code generation. Yet, data science tasks often admit multiple statistically valid …",
-      "link": "https://aclanthology.org/anthology-files/anthology-files/pdf/findings/2025.findings-emnlp.539.pdf",
-      "published_date": "2025",
-      "published_date_sort": "2025-01-01",
-      "citations": 1,
-      "institutions": "Unknown"
-    },
-    {
       "title": "An agentic framework for autonomous metamaterial modeling and inverse design",
       "authors": "D Lu, JM Malof, WJ Padilla - ACS Photonics, 2025 - ACS Publications",
       "journal": "Google Scholar Result",
@@ -252,6 +333,17 @@
       "published_date": "2025",
       "published_date_sort": "2025-01-01",
       "citations": 4,
+      "institutions": "Unknown"
+    },
+    {
+      "title": "AIRepr: An Analyst-Inspector Framework for Evaluating Reproducibility of LLMs in Data Science",
+      "authors": "Q Zeng, C Jin, X Wang, Y Zheng… - Findings of the Association …, 2025 - aclanthology.org",
+      "journal": "Google Scholar Result",
+      "snippet": "Large language models (LLMs) are increasingly used to automate data analysis through executable code generation. Yet, data science tasks often admit multiple statistically valid …",
+      "link": "https://aclanthology.org/anthology-files/anthology-files/pdf/findings/2025.findings-emnlp.539.pdf",
+      "published_date": "2025",
+      "published_date_sort": "2025-01-01",
+      "citations": 1,
       "institutions": "Unknown"
     },
     {
