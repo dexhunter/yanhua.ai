@@ -1,5 +1,5 @@
 {
-  "last_updated": "2025-12-27 00:11:05 UTC",
+  "last_updated": "2025-12-28 00:13:30 UTC",
   "target_paper": "https://www.arxiv.org/abs/2502.13138",
   "arxiv_id": "2502.13138",
   "total_citations": 20,
@@ -46,17 +46,6 @@
   ],
   "papers": [
     {
-      "title": "Bootstrapping task spaces for self-improvement",
-      "authors": "M Jiang, A Lupu, Y Bachrach - arXiv preprint arXiv:2509.04575, 2025 - arxiv.org",
-      "journal": "Google Scholar Result",
-      "snippet": "Progress in many task domains emerges from repeated revisions to previous solution attempts. Training agents that can reliably self-improve over such sequences at inference …",
-      "link": "https://arxiv.org/abs/2509.04575",
-      "published_date": "September 2025",
-      "published_date_sort": "2025-09-01",
-      "citations": 2,
-      "institutions": "Unknown"
-    },
-    {
       "title": "An AI system to help scientists write expert-level empirical software",
       "authors": "E Aygün, A Belyaeva, G Comanici, M Coram… - arXiv preprint arXiv …, 2025 - arxiv.org",
       "journal": "Google Scholar Result",
@@ -76,6 +65,17 @@
       "published_date": "September 2025",
       "published_date_sort": "2025-09-01",
       "citations": 1,
+      "institutions": "Unknown"
+    },
+    {
+      "title": "Bootstrapping task spaces for self-improvement",
+      "authors": "M Jiang, A Lupu, Y Bachrach - arXiv preprint arXiv:2509.04575, 2025 - arxiv.org",
+      "journal": "Google Scholar Result",
+      "snippet": "Progress in many task domains emerges from repeated revisions to previous solution attempts. Training agents that can reliably self-improve over such sequences at inference …",
+      "link": "https://arxiv.org/abs/2509.04575",
+      "published_date": "September 2025",
+      "published_date_sort": "2025-09-01",
+      "citations": 2,
       "institutions": "Unknown"
     },
     {
@@ -112,17 +112,6 @@
       "institutions": "Unknown"
     },
     {
-      "title": "A Comprehensive Survey of Deep Research: Systems, Methodologies, and Applications",
-      "authors": "R Xu, J Peng - arXiv preprint arXiv:2506.12594, 2025 - arxiv.org",
-      "journal": "Google Scholar Result",
-      "snippet": "This survey examines the rapidly evolving field of Deep Research systems--AI-powered applications that automate complex research workflows through the integration of large …",
-      "link": "https://arxiv.org/abs/2506.12594",
-      "published_date": "June 2025",
-      "published_date_sort": "2025-06-01",
-      "citations": 36,
-      "institutions": "Unknown"
-    },
-    {
       "title": "Automind: Adaptive knowledgeable agent for automated data science",
       "authors": "Y Ou, Y Luo, J Zheng, L Wei, Z Yu, S Qiao… - arXiv preprint arXiv …, 2025 - arxiv.org",
       "journal": "Google Scholar Result",
@@ -131,6 +120,17 @@
       "published_date": "June 2025",
       "published_date_sort": "2025-06-01",
       "citations": 8,
+      "institutions": "Unknown"
+    },
+    {
+      "title": "A Comprehensive Survey of Deep Research: Systems, Methodologies, and Applications",
+      "authors": "R Xu, J Peng - arXiv preprint arXiv:2506.12594, 2025 - arxiv.org",
+      "journal": "Google Scholar Result",
+      "snippet": "This survey examines the rapidly evolving field of Deep Research systems--AI-powered applications that automate complex research workflows through the integration of large …",
+      "link": "https://arxiv.org/abs/2506.12594",
+      "published_date": "June 2025",
+      "published_date_sort": "2025-06-01",
+      "citations": 36,
       "institutions": "Unknown"
     },
     {
@@ -145,14 +145,14 @@
       "institutions": "Unknown"
     },
     {
-      "title": "IDA-Bench: Evaluating LLMs on Interactive Guided Data Analysis",
-      "authors": "H Li, H Liu, T Zhu, T Guo, Z Zheng, X Deng… - arXiv preprint arXiv …, 2025 - arxiv.org",
+      "title": "From automation to autonomy: A survey on large language models in scientific discovery",
+      "authors": "T Zheng, Z Deng, HT Tsang, W Wang, J Bai… - arXiv preprint arXiv …, 2025 - arxiv.org",
       "journal": "Google Scholar Result",
-      "snippet": "Large Language Models (LLMs) show promise as data analysis agents, but existing benchmarks overlook the iterative nature of the field, where experts' decisions evolve with …",
-      "link": "https://arxiv.org/abs/2505.18223",
+      "snippet": "Large Language Models (LLMs) are catalyzing a paradigm shift in scientific discovery, evolving from task-specific automation tools into increasingly autonomous agents and …",
+      "link": "https://arxiv.org/abs/2505.13259",
       "published_date": "May 2025",
       "published_date_sort": "2025-05-01",
-      "citations": 2,
+      "citations": 27,
       "institutions": "Unknown"
     },
     {
@@ -167,25 +167,14 @@
       "institutions": "Unknown"
     },
     {
-      "title": "From automation to autonomy: A survey on large language models in scientific discovery",
-      "authors": "T Zheng, Z Deng, HT Tsang, W Wang, J Bai… - arXiv preprint arXiv …, 2025 - arxiv.org",
+      "title": "IDA-Bench: Evaluating LLMs on Interactive Guided Data Analysis",
+      "authors": "H Li, H Liu, T Zhu, T Guo, Z Zheng, X Deng… - arXiv preprint arXiv …, 2025 - arxiv.org",
       "journal": "Google Scholar Result",
-      "snippet": "Large Language Models (LLMs) are catalyzing a paradigm shift in scientific discovery, evolving from task-specific automation tools into increasingly autonomous agents and …",
-      "link": "https://arxiv.org/abs/2505.13259",
+      "snippet": "Large Language Models (LLMs) show promise as data analysis agents, but existing benchmarks overlook the iterative nature of the field, where experts' decisions evolve with …",
+      "link": "https://arxiv.org/abs/2505.18223",
       "published_date": "May 2025",
       "published_date_sort": "2025-05-01",
-      "citations": 27,
-      "institutions": "Unknown"
-    },
-    {
-      "title": "Repomaster: Autonomous exploration and understanding of github repositories for complex task solving",
-      "authors": "H Wang, Z Ni, S Zhang, S Lu, S Hu, Z He, C Hu… - arXiv preprint arXiv …, 2025 - arxiv.org",
-      "journal": "Google Scholar Result",
-      "snippet": "The ultimate goal of code agents is to solve complex tasks autonomously. Although large language models (LLMs) have made substantial progress in code generation, real-world …",
-      "link": "https://arxiv.org/abs/2505.21577",
-      "published_date": "May 2025",
-      "published_date_sort": "2025-05-01",
-      "citations": 7,
+      "citations": 2,
       "institutions": "Unknown"
     },
     {
@@ -211,6 +200,17 @@
       "institutions": "Unknown"
     },
     {
+      "title": "Repomaster: Autonomous exploration and understanding of github repositories for complex task solving",
+      "authors": "H Wang, Z Ni, S Zhang, S Lu, S Hu, Z He, C Hu… - arXiv preprint arXiv …, 2025 - arxiv.org",
+      "journal": "Google Scholar Result",
+      "snippet": "The ultimate goal of code agents is to solve complex tasks autonomously. Although large language models (LLMs) have made substantial progress in code generation, real-world …",
+      "link": "https://arxiv.org/abs/2505.21577",
+      "published_date": "May 2025",
+      "published_date_sort": "2025-05-01",
+      "citations": 7,
+      "institutions": "Unknown"
+    },
+    {
       "title": "Co-bench: Benchmarking language model agents in algorithm search for combinatorial optimization",
       "authors": "W Sun, S Feng, S Li, Y Yang - arXiv preprint arXiv:2504.04310, 2025 - arxiv.org",
       "journal": "Google Scholar Result",
@@ -233,17 +233,6 @@
       "institutions": "Unknown"
     },
     {
-      "title": "An agentic framework for autonomous metamaterial modeling and inverse design",
-      "authors": "D Lu, JM Malof, WJ Padilla - ACS Photonics, 2025 - ACS Publications",
-      "journal": "Google Scholar Result",
-      "snippet": "The evolution from large language models to agentic systems has created a new Frontier of scientific discovery, enabling the automation of complex research tasks that have …",
-      "link": "https://pubs.acs.org/doi/abs/10.1021/acsphotonics.5c01514",
-      "published_date": "2025",
-      "published_date_sort": "2025-01-01",
-      "citations": 4,
-      "institutions": "Unknown"
-    },
-    {
       "title": "AIRepr: An Analyst-Inspector Framework for Evaluating Reproducibility of LLMs in Data Science",
       "authors": "Q Zeng, C Jin, X Wang, Y Zheng… - Findings of the Association …, 2025 - aclanthology.org",
       "journal": "Google Scholar Result",
@@ -252,6 +241,17 @@
       "published_date": "2025",
       "published_date_sort": "2025-01-01",
       "citations": 1,
+      "institutions": "Unknown"
+    },
+    {
+      "title": "An agentic framework for autonomous metamaterial modeling and inverse design",
+      "authors": "D Lu, JM Malof, WJ Padilla - ACS Photonics, 2025 - ACS Publications",
+      "journal": "Google Scholar Result",
+      "snippet": "The evolution from large language models to agentic systems has created a new Frontier of scientific discovery, enabling the automation of complex research tasks that have …",
+      "link": "https://pubs.acs.org/doi/abs/10.1021/acsphotonics.5c01514",
+      "published_date": "2025",
+      "published_date_sort": "2025-01-01",
+      "citations": 4,
       "institutions": "Unknown"
     },
     {
