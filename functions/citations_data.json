@@ -1,11 +1,11 @@
 {
-  "last_updated": "2025-12-30 00:11:53 UTC",
+  "last_updated": "2025-12-31 00:12:33 UTC",
   "target_paper": "https://www.arxiv.org/abs/2502.13138",
   "arxiv_id": "2502.13138",
-  "total_citations": 20,
+  "total_citations": 29,
   "h_index": 8,
-  "recent_citations": 0,
-  "avg_citations_per_month": "0.95",
+  "recent_citations": 9,
+  "avg_citations_per_month": "1.21",
   "timeline": [
     {
       "date": "2024-01-01",
@@ -42,9 +42,112 @@
     {
       "date": "2025-09-01",
       "citations": 20
+    },
+    {
+      "date": "2025-12-01",
+      "citations": 29
     }
   ],
   "papers": [
+    {
+      "title": "Securing the AI Supply Chain: What Can We Learn From Developer-Reported Security Issues and Solutions of AI Projects?",
+      "authors": "The Anh Nguyen, Triet Huynh Minh Le, M. Ali Babar",
+      "journal": "arXiv",
+      "snippet": "The rapid growth of Artificial Intelligence (AI) models and applications has led to an increasingly complex security landscape. Developers of AI projects must contend not only with traditional software supply chain issues but also with novel, AI-specific security threats. However, little is known about what security issues are commonly encountered and how they are resolved in practice. This gap hinders the development of effective security measures for each component of the AI supply chain. We bridge this gap by conducting an empirical investigation of developer-reported issues and solutions, based on discussions from Hugging Face and GitHub. To identify security-related discussions, we develop a pipeline that combines keyword matching with an optimal fine-tuned distilBERT classifier, which achieved the best performance in our extensive comparison of various deep learning and large language models. This pipeline produces a dataset of 312,868 security discussions, providing insights into the security reporting practices of AI applications and projects. We conduct a thematic analysis of 753 posts sampled from our dataset and uncover a fine-grained taxonomy of 32 security issues and 24 solutions across four themes: (1) System and Software, (2) External Tools and Ecosystem, (3) Model, and (4) Data. We reveal that many security issues arise from the complex dependencies and black-box nature of AI components. Notably, challenges related to Models and Data often lack concrete solutions. Our insights can offer evidence-based guidance for developers and researchers to address real-world security threats across the AI supply chain.",
+      "link": "http://arxiv.org/abs/2512.23385v1",
+      "published_date": "December 29, 2025",
+      "published_date_sort": "2025-12-29",
+      "citations": 0,
+      "institutions": "Unknown"
+    },
+    {
+      "title": "KernelEvolve: Scaling Agentic Kernel Coding for Heterogeneous AI Accelerators at Meta",
+      "authors": "Gang Liao, Hongsen Qin, Ying Wang, Alicia Golden, Michael Kuchnik, Yavuz Yetim, Jia Jiunn Ang, Chunli Fu, Yihan He, Samuel Hsia, Zewei Jiang, Dianshi Li, Uladzimir Pashkevich, Varna Puvvada, Feng Shi, Matt Steiner, Ruichao Xiao, Nathan Yan, Xiayu Yu, Zhou Fang, Abdul Zainul-Abedin, Ketan Singh, Hongtao Yu, Wenyuan Chi, Barney Huang, Sean Zhang, Noah Weller, Zach Marine, Wyatt Cook, Carole-Jean Wu, Gaoxiang Liu",
+      "journal": "arXiv",
+      "snippet": "Making deep learning recommendation model (DLRM) training and inference fast and efficient is important. However, this presents three key system challenges - model architecture diversity, kernel primitive diversity, and hardware generation and architecture heterogeneity. This paper presents KernelEvolve-an agentic kernel coding framework-to tackle heterogeneity at-scale for DLRM. KernelEvolve is designed to take kernel specifications as input and automate the process of kernel generation and optimization for recommendation model across heterogeneous hardware architectures. KernelEvolve does so by operating at multiple programming abstractions, from Triton and CuTe DSL to low-level hardware agnostic languages, spanning the full hardware-software optimization stack. The kernel optimization process is described as graph-based search with selection policy, universal operator, fitness function, and termination rule, dynamically adapts to runtime execution context through retrieval-augmented prompt synthesis. We designed, implemented, and deployed KernelEvolve to optimize a wide variety of production recommendation models across generations of NVIDIA and AMD GPUs, as well as Meta's AI accelerators. We validate KernelEvolve on the publicly-available KernelBench suite, achieving 100% pass rate on all 250 problems across three difficulty levels, and 160 PyTorch ATen operators across three heterogeneous hardware platforms, demonstrating 100% correctness. KernelEvolve reduces development time from weeks to hours and achieves substantial performance improvements over PyTorch baselines across diverse production use cases and for heterogeneous AI systems at-scale. Beyond performance efficiency improvements, KernelEvolve significantly mitigates the programmability barrier for new AI hardware by enabling automated kernel generation for in-house developed AI hardware.",
+      "link": "http://arxiv.org/abs/2512.23236v1",
+      "published_date": "December 29, 2025",
+      "published_date_sort": "2025-12-29",
+      "citations": 0,
+      "institutions": "Unknown"
+    },
+    {
+      "title": "ForCM: Forest Cover Mapping from Multispectral Sentinel-2 Image by Integrating Deep Learning with Object-Based Image Analysis",
+      "authors": "Maisha Haque, Israt Jahan Ayshi, Sadaf M. Anis, Nahian Tasnim, Mithila Moontaha, Md. Sabbir Ahmed, Muhammad Iqbal Hossain, Mohammad Zavid Parvez, Subrata Chakraborty, Biswajeet Pradhan, Biswajit Banik",
+      "journal": "arXiv",
+      "snippet": "This research proposes \"ForCM\", a novel approach to forest cover mapping that combines Object-Based Image Analysis (OBIA) with Deep Learning (DL) using multispectral Sentinel-2 imagery. The study explores several DL models, including UNet, UNet++, ResUNet, AttentionUNet, and ResNet50-Segnet, applied to high-resolution Sentinel-2 Level 2A satellite images of the Amazon Rainforest. The datasets comprise three collections: two sets of three-band imagery and one set of four-band imagery. After evaluation, the most effective DL models are individually integrated with the OBIA technique to enhance mapping accuracy. The originality of this work lies in evaluating different deep learning models combined with OBIA and comparing them with traditional OBIA methods. The results show that the proposed ForCM method improves forest cover mapping, achieving overall accuracies of 94.54 percent with ResUNet-OBIA and 95.64 percent with AttentionUNet-OBIA, compared to 92.91 percent using traditional OBIA. This research also demonstrates the potential of free and user-friendly tools such as QGIS for accurate mapping within their limitations, supporting global environmental monitoring and conservation efforts.",
+      "link": "http://arxiv.org/abs/2512.23196v1",
+      "published_date": "December 29, 2025",
+      "published_date_sort": "2025-12-29",
+      "citations": 0,
+      "institutions": "Unknown"
+    },
+    {
+      "title": "Beyond-Diagonal Reconfigurable Intelligent Surfaces for 6G Networks: Principles, Challenges, and Quantum Horizons",
+      "authors": "Abd Ullah Khan, Uman Khalid, Muhammad Tanveer, Trung Q. Duong, Hyundong Shin",
+      "journal": "arXiv",
+      "snippet": "A beyond-diagonal reconfigurable intelligent surface (BD-RIS) is an innovative type of reconfigurable intelligent surface (RIS) that has recently been proposed and is considered a revolutionary advancement in wave manipulation. Unlike the mutually disconnected arrangement of elements in traditional RISs, BD-RIS creates cost-effective and simple inter-element connections, allowing for greater freedom in configuring the amplitude and phase of impinging waves. However, there are numerous underlying challenges in realizing the advantages associated with BD-RIS, prompting the research community to actively investigate cutting-edge schemes and algorithms in this direction. Particularly, the passive beamforming design for BD-RIS under specific environmental conditions has become a major focus in this research area. In this article, we provide a systematic introduction to BD-RIS, elaborating on its functional principles concerning architectural design, promising advantages, and classification. Subsequently, we present recent advances and identify a series of challenges and opportunities. Additionally, we consider a specific case study where beamforming is designed using four different algorithms, and we analyze their performance with respect to sum rate and computation cost. To augment the beamforming capabilities in 6G BD-RIS with quantum enhancement, we analyze various hybrid quantum-classical machine learning (ML) models to improve beam prediction performance, employing real-world communication Scenario 8 from the DeepSense 6G dataset. Consequently, we derive useful insights about the practical implications of BD-RIS.",
+      "link": "http://arxiv.org/abs/2512.23400v1",
+      "published_date": "December 29, 2025",
+      "published_date_sort": "2025-12-29",
+      "citations": 0,
+      "institutions": "Unknown"
+    },
+    {
+      "title": "Training AI Co-Scientists Using Rubric Rewards",
+      "authors": "Shashwat Goel, Rishi Hazra, Dulhan Jayalath, Timon Willi, Parag Jain, William F. Shen, Ilias Leontiadis, Francesco Barbieri, Yoram Bachrach, Jonas Geiping, Chenxi Whitehouse",
+      "journal": "arXiv",
+      "snippet": "AI co-scientists are emerging as a tool to assist human researchers in achieving their research goals. A crucial feature of these AI co-scientists is the ability to generate a research plan given a set of aims and constraints. The plan may be used by researchers for brainstorming, or may even be implemented after further refinement. However, language models currently struggle to generate research plans that follow all constraints and implicit requirements. In this work, we study how to leverage the vast corpus of existing research papers to train language models that generate better research plans. We build a scalable, diverse training corpus by automatically extracting research goals and goal-specific grading rubrics from papers across several domains. We then train models for research plan generation via reinforcement learning with self-grading. A frozen copy of the initial policy acts as the grader during training, with the rubrics creating a generator-verifier gap that enables improvements without external human supervision. To validate this approach, we conduct a study with human experts for machine learning research goals, spanning 225 hours. The experts prefer plans generated by our finetuned Qwen3-30B-A3B model over the initial model for 70% of research goals, and approve 84% of the automatically extracted goal-specific grading rubrics. To assess generality, we also extend our approach to research goals from medical papers, and new arXiv preprints, evaluating with a jury of frontier models. Our finetuning yields 12-22% relative improvements and significant cross-domain generalization, proving effective even in problem settings like medical research where execution feedback is infeasible. Together, these findings demonstrate the potential of a scalable, automated training recipe as a step towards improving general AI co-scientists.",
+      "link": "http://arxiv.org/abs/2512.23707v1",
+      "published_date": "December 29, 2025",
+      "published_date_sort": "2025-12-29",
+      "citations": 0,
+      "institutions": "Unknown"
+    },
+    {
+      "title": "Agentic Physical AI toward a Domain-Specific Foundation Model for Nuclear Reactor Control",
+      "authors": "Yoonpyo Lee, Kazuma Kobayashi, Sai Puppala, Sajedul Talukder, Seid Koric, Souvik Chakraborty, Syed Bahauddin Alam",
+      "journal": "arXiv",
+      "snippet": "The prevailing paradigm in AI for physical systems, scaling general-purpose foundation models toward universal multimodal reasoning, confronts a fundamental barrier at the control interface. Recent benchmarks show that even frontier vision-language models achieve only 50-53% accuracy on basic quantitative physics tasks, behaving as approximate guessers that preserve semantic plausibility while violating physical constraints. This input unfaithfulness is not a scaling deficiency but a structural limitation. Perception-centric architectures optimize parameter-space imitation, whereas safety-critical control demands outcome-space guarantees over executed actions. Here, we present a fundamentally different pathway toward domain-specific foundation models by introducing compact language models operating as Agentic Physical AI, in which policy optimization is driven by physics-based validation rather than perceptual inference. We train a 360-million-parameter model on synthetic reactor control scenarios, scaling the dataset from 10^3 to 10^5 examples. This induces a sharp phase transition absent in general-purpose models. Small-scale systems exhibit high-variance imitation with catastrophic tail risk, while large-scale models undergo variance collapse exceeding 500x reduction, stabilizing execution-level behavior. Despite balanced exposure to four actuation families, the model autonomously rejects approximately 70% of the training distribution and concentrates 95% of runtime execution on a single-bank strategy. Learned representations transfer across distinct physics and continuous input modalities without architectural modification.",
+      "link": "http://arxiv.org/abs/2512.23292v1",
+      "published_date": "December 29, 2025",
+      "published_date_sort": "2025-12-29",
+      "citations": 0,
+      "institutions": "Unknown"
+    },
+    {
+      "title": "CubeBench: Diagnosing Interactive, Long-Horizon Spatial Reasoning Under Partial Observations",
+      "authors": "Huan-ang Gao, Zikang Zhang, Tianwei Luo, Kaisen Yang, Xinzhe Juan, Jiahao Qiu, Tianxing Chen, Bingxiang He, Hao Zhao, Hao Zhou, Shilong Liu, Mengdi Wang",
+      "journal": "arXiv",
+      "snippet": "Large Language Model (LLM) agents, while proficient in the digital realm, face a significant gap in physical-world deployment due to the challenge of forming and maintaining a robust spatial mental model. We identify three core cognitive challenges hindering this transition: spatial reasoning, long-horizon state tracking via mental simulation, and active exploration under partial observation. To isolate and evaluate these faculties, we introduce CubeBench, a novel generative benchmark centered on the Rubik's Cube. CubeBench uses a three-tiered diagnostic framework that progressively assesses agent capabilities, from foundational state tracking with full symbolic information to active exploration with only partial visual data. Our experiments on leading LLMs reveal critical limitations, including a uniform 0.00% pass rate on all long-horizon tasks, exposing a fundamental failure in long-term planning. We also propose a diagnostic framework to isolate these cognitive bottlenecks by providing external solver tools. By analyzing the failure modes, we provide key insights to guide the development of more physically-grounded intelligent agents.",
+      "link": "http://arxiv.org/abs/2512.23328v1",
+      "published_date": "December 29, 2025",
+      "published_date_sort": "2025-12-29",
+      "citations": 0,
+      "institutions": "Unknown"
+    },
+    {
+      "title": "CoFi-Dec: Hallucination-Resistant Decoding via Coarse-to-Fine Generative Feedback in Large Vision-Language Models",
+      "authors": "Zongsheng Cao, Yangfan He, Anran Liu, Jun Xie, Feng Chen, Zepeng Wang",
+      "journal": "arXiv",
+      "snippet": "Large Vision-Language Models (LVLMs) have achieved impressive progress in multi-modal understanding and generation. However, they still tend to produce hallucinated content that is inconsistent with the visual input, which limits their reliability in real-world applications. We propose \\textbf{CoFi-Dec}, a training-free decoding framework that mitigates hallucinations by integrating generative self-feedback with coarse-to-fine visual conditioning. Inspired by the human visual process from global scene perception to detailed inspection, CoFi-Dec first generates two intermediate textual responses conditioned on coarse- and fine-grained views of the original image. These responses are then transformed into synthetic images using a text-to-image model, forming multi-level visual hypotheses that enrich grounding cues. To unify the predictions from these multiple visual conditions, we introduce a Wasserstein-based fusion mechanism that aligns their predictive distributions into a geometrically consistent decoding trajectory. This principled fusion reconciles high-level semantic consistency with fine-grained visual grounding, leading to more robust and faithful outputs. Extensive experiments on six hallucination-focused benchmarks show that CoFi-Dec substantially reduces both entity-level and semantic-level hallucinations, outperforming existing decoding strategies. The framework is model-agnostic, requires no additional training, and can be seamlessly applied to a wide range of LVLMs. The implementation is available at https://github.com/AI-Researcher-Team/CoFi-Dec.",
+      "link": "http://arxiv.org/abs/2512.23453v1",
+      "published_date": "December 29, 2025",
+      "published_date_sort": "2025-12-29",
+      "citations": 0,
+      "institutions": "Unknown"
+    },
+    {
+      "title": "On Conformant Planning and Model-Checking of $\\exists^*\\forall^*$ Hyperproperties",
+      "authors": "Raven Beutner, Bernd Finkbeiner",
+      "journal": "arXiv",
+      "snippet": "We study the connection of two problems within the planning and verification community: Conformant planning and model-checking of hyperproperties. Conformant planning is the task of finding a sequential plan that achieves a given objective independent of non-deterministic action effects during the plan's execution. Hyperproperties are system properties that relate multiple execution traces of a system and, e.g., capture information-flow and fairness policies. In this paper, we show that model-checking of $\\exists^*\\forall^*$ hyperproperties is closely related to the problem of computing a conformant plan. Firstly, we show that we can efficiently reduce a hyperproperty model-checking instance to a conformant planning instance, and prove that our encoding is sound and complete. Secondly, we establish the converse direction: Every conformant planning problem is, itself, a hyperproperty model-checking task.",
+      "link": "http://arxiv.org/abs/2512.23324v1",
+      "published_date": "December 29, 2025",
+      "published_date_sort": "2025-12-29",
+      "citations": 0,
+      "institutions": "Unknown"
+    },
     {
       "title": "Reinforcement learning for machine learning engineering agents",
       "authors": "S Yang, J He-Yueya, P Liang - arXiv preprint arXiv:2509.01684, 2025 - arxiv.org",
@@ -156,17 +259,6 @@
       "institutions": "Unknown"
     },
     {
-      "title": "Mle-dojo: Interactive environments for empowering llm agents in machine learning engineering",
-      "authors": "R Qiang, Y Zhuang, Y Li, R Zhang, C Li… - arXiv preprint arXiv …, 2025 - arxiv.org",
-      "journal": "Google Scholar Result",
-      "snippet": "We introduce MLE-Dojo, a Gym-style framework for systematically reinforcement learning, evaluating, and improving autonomous large language model (LLM) agents in iterative …",
-      "link": "https://arxiv.org/abs/2505.07782",
-      "published_date": "May 2025",
-      "published_date_sort": "2025-05-01",
-      "citations": 6,
-      "institutions": "Unknown"
-    },
-    {
       "title": "Mlzero: A multi-agent system for end-to-end machine learning automation",
       "authors": "H Fang, B Han, N Erickson, X Zhang, S Zhou… - arXiv preprint arXiv …, 2025 - arxiv.org",
       "journal": "Google Scholar Result",
@@ -175,6 +267,17 @@
       "published_date": "May 2025",
       "published_date_sort": "2025-05-01",
       "citations": 3,
+      "institutions": "Unknown"
+    },
+    {
+      "title": "Repomaster: Autonomous exploration and understanding of github repositories for complex task solving",
+      "authors": "H Wang, Z Ni, S Zhang, S Lu, S Hu, Z He, C Hu… - arXiv preprint arXiv …, 2025 - arxiv.org",
+      "journal": "Google Scholar Result",
+      "snippet": "The ultimate goal of code agents is to solve complex tasks autonomously. Although large language models (LLMs) have made substantial progress in code generation, real-world …",
+      "link": "https://arxiv.org/abs/2505.21577",
+      "published_date": "May 2025",
+      "published_date_sort": "2025-05-01",
+      "citations": 7,
       "institutions": "Unknown"
     },
     {
@@ -200,14 +303,14 @@
       "institutions": "Unknown"
     },
     {
-      "title": "Repomaster: Autonomous exploration and understanding of github repositories for complex task solving",
-      "authors": "H Wang, Z Ni, S Zhang, S Lu, S Hu, Z He, C Hu… - arXiv preprint arXiv …, 2025 - arxiv.org",
+      "title": "Mle-dojo: Interactive environments for empowering llm agents in machine learning engineering",
+      "authors": "R Qiang, Y Zhuang, Y Li, R Zhang, C Li… - arXiv preprint arXiv …, 2025 - arxiv.org",
       "journal": "Google Scholar Result",
-      "snippet": "The ultimate goal of code agents is to solve complex tasks autonomously. Although large language models (LLMs) have made substantial progress in code generation, real-world …",
-      "link": "https://arxiv.org/abs/2505.21577",
+      "snippet": "We introduce MLE-Dojo, a Gym-style framework for systematically reinforcement learning, evaluating, and improving autonomous large language model (LLM) agents in iterative …",
+      "link": "https://arxiv.org/abs/2505.07782",
       "published_date": "May 2025",
       "published_date_sort": "2025-05-01",
-      "citations": 7,
+      "citations": 6,
       "institutions": "Unknown"
     },
     {
@@ -233,17 +336,6 @@
       "institutions": "Unknown"
     },
     {
-      "title": "AIRepr: An Analyst-Inspector Framework for Evaluating Reproducibility of LLMs in Data Science",
-      "authors": "Q Zeng, C Jin, X Wang, Y Zheng… - Findings of the Association …, 2025 - aclanthology.org",
-      "journal": "Google Scholar Result",
-      "snippet": "Large language models (LLMs) are increasingly used to automate data analysis through executable code generation. Yet, data science tasks often admit multiple statistically valid …",
-      "link": "https://aclanthology.org/anthology-files/anthology-files/pdf/findings/2025.findings-emnlp.539.pdf",
-      "published_date": "2025",
-      "published_date_sort": "2025-01-01",
-      "citations": 1,
-      "institutions": "Unknown"
-    },
-    {
       "title": "An agentic framework for autonomous metamaterial modeling and inverse design",
       "authors": "D Lu, JM Malof, WJ Padilla - ACS Photonics, 2025 - ACS Publications",
       "journal": "Google Scholar Result",
@@ -252,6 +344,17 @@
       "published_date": "2025",
       "published_date_sort": "2025-01-01",
       "citations": 4,
+      "institutions": "Unknown"
+    },
+    {
+      "title": "AIRepr: An Analyst-Inspector Framework for Evaluating Reproducibility of LLMs in Data Science",
+      "authors": "Q Zeng, C Jin, X Wang, Y Zheng… - Findings of the Association …, 2025 - aclanthology.org",
+      "journal": "Google Scholar Result",
+      "snippet": "Large language models (LLMs) are increasingly used to automate data analysis through executable code generation. Yet, data science tasks often admit multiple statistically valid …",
+      "link": "https://aclanthology.org/anthology-files/anthology-files/pdf/findings/2025.findings-emnlp.539.pdf",
+      "published_date": "2025",
+      "published_date_sort": "2025-01-01",
+      "citations": 1,
       "institutions": "Unknown"
     },
     {
