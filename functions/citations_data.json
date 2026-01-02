@@ -1,31 +1,27 @@
 {
-  "last_updated": "2026-01-01 00:13:42 UTC",
+  "last_updated": "2026-01-02 00:12:12 UTC",
   "target_paper": "https://www.arxiv.org/abs/2502.13138",
   "arxiv_id": "2502.13138",
-  "total_citations": 20,
-  "h_index": 8,
-  "recent_citations": 0,
-  "avg_citations_per_month": "0.95",
+  "total_citations": 24,
+  "h_index": 7,
+  "recent_citations": 4,
+  "avg_citations_per_month": "2.00",
   "timeline": [
     {
-      "date": "2024-01-01",
-      "citations": 1
-    },
-    {
       "date": "2025-01-01",
-      "citations": 3
+      "citations": 2
     },
     {
       "date": "2025-03-01",
-      "citations": 4
+      "citations": 3
     },
     {
       "date": "2025-04-01",
-      "citations": 5
+      "citations": 4
     },
     {
       "date": "2025-05-01",
-      "citations": 11
+      "citations": 10
     },
     {
       "date": "2025-06-01",
@@ -42,18 +38,55 @@
     {
       "date": "2025-09-01",
       "citations": 20
+    },
+    {
+      "date": "2025-12-01",
+      "citations": 24
     }
   ],
   "papers": [
     {
-      "title": "Reinforcement learning for machine learning engineering agents",
-      "authors": "S Yang, J He-Yueya, P Liang - arXiv preprint arXiv:2509.01684, 2025 - arxiv.org",
-      "journal": "Google Scholar Result",
-      "snippet": "Existing agents for solving tasks such as ML engineering rely on prompting powerful language models. As a result, these agents do not improve with more experience. In this …",
-      "link": "https://arxiv.org/abs/2509.01684",
-      "published_date": "September 2025",
-      "published_date_sort": "2025-09-01",
-      "citations": 1,
+      "title": "AI-Driven Cloud Resource Optimization for Multi-Cluster Environments",
+      "authors": "Vinoth Punniyamoorthy, Akash Kumar Agarwal, Bikesh Kumar, Abhirup Mazumder, Kabilan Kannan, Sumit Saha",
+      "journal": "arXiv",
+      "snippet": "Modern cloud-native systems increasingly rely on multi-cluster deployments to support scalability, resilience, and geographic distribution. However, existing resource management approaches remain largely reactive and cluster-centric, limiting their ability to optimize system-wide behavior under dynamic workloads. These limitations result in inefficient resource utilization, delayed adaptation, and increased operational overhead across distributed environments. This paper presents an AI-driven framework for adaptive resource optimization in multi-cluster cloud systems. The proposed approach integrates predictive learning, policy-aware decision-making, and continuous feedback to enable proactive and coordinated resource management across clusters. By analyzing cross-cluster telemetry and historical execution patterns, the framework dynamically adjusts resource allocation to balance performance, cost, and reliability objectives. A prototype implementation demonstrates improved resource efficiency, faster stabilization during workload fluctuations, and reduced performance variability compared to conventional reactive approaches. The results highlight the effectiveness of intelligent, self-adaptive infrastructure management as a key enabler for scalable and resilient cloud platforms.",
+      "link": "http://arxiv.org/abs/2512.24914v1",
+      "published_date": "December 31, 2025",
+      "published_date_sort": "2025-12-31",
+      "citations": 0,
+      "institutions": "Unknown"
+    },
+    {
+      "title": "GenZ: Foundational models as latent variable generators within traditional statistical models",
+      "authors": "Marko Jojic, Nebojsa Jojic",
+      "journal": "arXiv",
+      "snippet": "We present GenZ, a hybrid model that bridges foundational models and statistical modeling through interpretable semantic features. While large language models possess broad domain knowledge, they often fail to capture dataset-specific patterns critical for prediction tasks. Our approach addresses this by discovering semantic feature descriptions through an iterative process that contrasts groups of items identified via statistical modeling errors, rather than relying solely on the foundational model's domain understanding. We formulate this as a generalized EM algorithm that jointly optimizes semantic feature descriptors and statistical model parameters. The method prompts a frozen foundational model to classify items based on discovered features, treating these judgments as noisy observations of latent binary features that predict real-valued targets through learned statistical relationships. We demonstrate the approach on two domains: house price prediction (hedonic regression) and cold-start collaborative filtering for movie recommendations. On house prices, our model achieves 12\\% median relative error using discovered semantic features from multimodal listing data, substantially outperforming a GPT-5 baseline (38\\% error) that relies on the LLM's general domain knowledge. For Netflix movie embeddings, our model predicts collaborative filtering representations with 0.59 cosine similarity purely from semantic descriptions -- matching the performance that would require approximately 4000 user ratings through traditional collaborative filtering. The discovered features reveal dataset-specific patterns (e.g., architectural details predicting local housing markets, franchise membership predicting user preferences) that diverge from the model's domain knowledge alone.",
+      "link": "http://arxiv.org/abs/2512.24834v1",
+      "published_date": "December 31, 2025",
+      "published_date_sort": "2025-12-31",
+      "citations": 0,
+      "institutions": "Unknown"
+    },
+    {
+      "title": "LeanCat: A Benchmark Suite for Formal Category Theory in Lean (Part I: 1-Categories)",
+      "authors": "Rongge Xu, Hui Dai, Yiming Fu, Jiedong Jiang, Tianjiao Nie, Hongwei Wang, Junkai Wang, Holiverse Yang, Jiatong Yang, Zhi-Hao Zhang",
+      "journal": "arXiv",
+      "snippet": "Large language models (LLMs) have made rapid progress in formal theorem proving, yet current benchmarks under-measure the kind of abstraction and library-mediated reasoning that organizes modern mathematics. In parallel with FATE's emphasis on frontier algebra, we introduce LeanCat, a Lean benchmark for category-theoretic formalization -- a unifying language for mathematical structure and a core layer of modern proof engineering -- serving as a stress test of structural, interface-level reasoning. Part I: 1-Categories contains 100 fully formalized statement-level tasks, curated into topic families and three difficulty tiers via an LLM-assisted + human grading process. The best model solves 8.25% of tasks at pass@1 (32.50%/4.17%/0.00% by Easy/Medium/High) and 12.00% at pass@4 (50.00%/4.76%/0.00%). We also evaluate LeanBridge which use LeanExplore to search Mathlib, and observe consistent gains over single-model baselines. LeanCat is intended as a compact, reusable checkpoint for tracking both AI and human progress toward reliable, research-level formalization in Lean.",
+      "link": "http://arxiv.org/abs/2512.24796v1",
+      "published_date": "December 31, 2025",
+      "published_date_sort": "2025-12-31",
+      "citations": 0,
+      "institutions": "Unknown"
+    },
+    {
+      "title": "SpaceTimePilot: Generative Rendering of Dynamic Scenes Across Space and Time",
+      "authors": "Zhening Huang, Hyeonho Jeong, Xuelin Chen, Yulia Gryaditskaya, Tuanfeng Y. Wang, Joan Lasenby, Chun-Hao Huang",
+      "journal": "arXiv",
+      "snippet": "We present SpaceTimePilot, a video diffusion model that disentangles space and time for controllable generative rendering. Given a monocular video, SpaceTimePilot can independently alter the camera viewpoint and the motion sequence within the generative process, re-rendering the scene for continuous and arbitrary exploration across space and time. To achieve this, we introduce an effective animation time-embedding mechanism in the diffusion process, allowing explicit control of the output video's motion sequence with respect to that of the source video. As no datasets provide paired videos of the same dynamic scene with continuous temporal variations, we propose a simple yet effective temporal-warping training scheme that repurposes existing multi-view datasets to mimic temporal differences. This strategy effectively supervises the model to learn temporal control and achieve robust space-time disentanglement. To further enhance the precision of dual control, we introduce two additional components: an improved camera-conditioning mechanism that allows altering the camera from the first frame, and CamxTime, the first synthetic space-and-time full-coverage rendering dataset that provides fully free space-time video trajectories within a scene. Joint training on the temporal-warping scheme and the CamxTime dataset yields more precise temporal control. We evaluate SpaceTimePilot on both real-world and synthetic data, demonstrating clear space-time disentanglement and strong results compared to prior work. Project page: https://zheninghuang.github.io/Space-Time-Pilot/ Code: https://github.com/ZheningHuang/spacetimepilot",
+      "link": "http://arxiv.org/abs/2512.25075v1",
+      "published_date": "December 31, 2025",
+      "published_date_sort": "2025-12-31",
+      "citations": 0,
       "institutions": "Unknown"
     },
     {
@@ -65,6 +98,17 @@
       "published_date": "September 2025",
       "published_date_sort": "2025-09-01",
       "citations": 2,
+      "institutions": "Unknown"
+    },
+    {
+      "title": "Reinforcement learning for machine learning engineering agents",
+      "authors": "S Yang, J He-Yueya, P Liang - arXiv preprint arXiv:2509.01684, 2025 - arxiv.org",
+      "journal": "Google Scholar Result",
+      "snippet": "Existing agents for solving tasks such as ML engineering rely on prompting powerful language models. As a result, these agents do not improve with more experience. In this …",
+      "link": "https://arxiv.org/abs/2509.01684",
+      "published_date": "September 2025",
+      "published_date_sort": "2025-09-01",
+      "citations": 1,
       "institutions": "Unknown"
     },
     {
@@ -86,7 +130,7 @@
       "link": "https://arxiv.org/abs/2508.01443",
       "published_date": "August 2025",
       "published_date_sort": "2025-08-01",
-      "citations": 3,
+      "citations": 4,
       "institutions": "Unknown"
     },
     {
@@ -112,25 +156,14 @@
       "institutions": "Unknown"
     },
     {
-      "title": "Automind: Adaptive knowledgeable agent for automated data science",
-      "authors": "Y Ou, Y Luo, J Zheng, L Wei, Z Yu, S Qiao… - arXiv preprint arXiv …, 2025 - arxiv.org",
+      "title": "The Automated LLM Speedrunning Benchmark: Reproducing NanoGPT Improvements",
+      "authors": "B Zhao, D Magka, M Jiang, X Li, R Raileanu… - arXiv preprint arXiv …, 2025 - arxiv.org",
       "journal": "Google Scholar Result",
-      "snippet": "Large Language Model (LLM) agents have shown great potential in addressing real-world data science problems. LLM-driven data science agents promise to automate the entire …",
-      "link": "https://arxiv.org/abs/2506.10974",
+      "snippet": "Rapid advancements in large language models (LLMs) have the potential to assist in scientific progress. A critical capability toward this endeavor is the ability to reproduce …",
+      "link": "https://arxiv.org/abs/2506.22419",
       "published_date": "June 2025",
       "published_date_sort": "2025-06-01",
-      "citations": 8,
-      "institutions": "Unknown"
-    },
-    {
-      "title": "AI Scientists Fail Without Strong Implementation Capability",
-      "authors": "M Zhu, Q Xie, Y Weng, J Wu, Z Lin, L Yang… - arXiv preprint arXiv …, 2025 - arxiv.org",
-      "journal": "Google Scholar Result",
-      "snippet": "The emergence of Artificial Intelligence (AI) Scientist represents a paradigm shift in scientific discovery, with large language models (LLMs) taking the lead as the primary executor in the …",
-      "link": "https://arxiv.org/abs/2506.01372",
-      "published_date": "June 2025",
-      "published_date_sort": "2025-06-01",
-      "citations": 9,
+      "citations": 1,
       "institutions": "Unknown"
     },
     {
@@ -145,6 +178,39 @@
       "institutions": "Unknown"
     },
     {
+      "title": "Automind: Adaptive knowledgeable agent for automated data science",
+      "authors": "Y Ou, Y Luo, J Zheng, L Wei, Z Yu, S Qiao… - arXiv preprint arXiv …, 2025 - arxiv.org",
+      "journal": "Google Scholar Result",
+      "snippet": "Large Language Model (LLM) agents have shown great potential in addressing real-world data science problems. LLM-driven data science agents promise to automate the entire …",
+      "link": "https://arxiv.org/abs/2506.10974",
+      "published_date": "June 2025",
+      "published_date_sort": "2025-06-01",
+      "citations": 7,
+      "institutions": "Unknown"
+    },
+    {
+      "title": "AI Scientists Fail Without Strong Implementation Capability",
+      "authors": "M Zhu, Q Xie, Y Weng, J Wu, Z Lin, L Yang… - arXiv preprint arXiv …, 2025 - arxiv.org",
+      "journal": "Google Scholar Result",
+      "snippet": "The emergence of Artificial Intelligence (AI) Scientist represents a paradigm shift in scientific discovery, with large language models (LLMs) taking the lead as the primary executor in the …",
+      "link": "https://arxiv.org/abs/2506.01372",
+      "published_date": "June 2025",
+      "published_date_sort": "2025-06-01",
+      "citations": 9,
+      "institutions": "Unknown"
+    },
+    {
+      "title": "Mlzero: A multi-agent system for end-to-end machine learning automation",
+      "authors": "H Fang, B Han, N Erickson, X Zhang, S Zhou… - arXiv preprint arXiv …, 2025 - arxiv.org",
+      "journal": "Google Scholar Result",
+      "snippet": "Existing AutoML systems have advanced the automation of machine learning (ML); however, they still require substantial manual configuration and expert input, particularly …",
+      "link": "https://arxiv.org/abs/2505.13941",
+      "published_date": "May 2025",
+      "published_date_sort": "2025-05-01",
+      "citations": 3,
+      "institutions": "Unknown"
+    },
+    {
       "title": "From automation to autonomy: A survey on large language models in scientific discovery",
       "authors": "T Zheng, Z Deng, HT Tsang, W Wang, J Bai… - arXiv preprint arXiv …, 2025 - arxiv.org",
       "journal": "Google Scholar Result",
@@ -152,7 +218,18 @@
       "link": "https://arxiv.org/abs/2505.13259",
       "published_date": "May 2025",
       "published_date_sort": "2025-05-01",
-      "citations": 27,
+      "citations": 28,
+      "institutions": "Unknown"
+    },
+    {
+      "title": "Repomaster: Autonomous exploration and understanding of github repositories for complex task solving",
+      "authors": "H Wang, Z Ni, S Zhang, S Lu, S Hu, Z He, C Hu… - arXiv preprint arXiv …, 2025 - arxiv.org",
+      "journal": "Google Scholar Result",
+      "snippet": "The ultimate goal of code agents is to solve complex tasks autonomously. Although large language models (LLMs) have made substantial progress in code generation, real-world …",
+      "link": "https://arxiv.org/abs/2505.21577",
+      "published_date": "May 2025",
+      "published_date_sort": "2025-05-01",
+      "citations": 7,
       "institutions": "Unknown"
     },
     {
@@ -178,17 +255,6 @@
       "institutions": "Unknown"
     },
     {
-      "title": "Repomaster: Autonomous exploration and understanding of github repositories for complex task solving",
-      "authors": "H Wang, Z Ni, S Zhang, S Lu, S Hu, Z He, C Hu… - arXiv preprint arXiv …, 2025 - arxiv.org",
-      "journal": "Google Scholar Result",
-      "snippet": "The ultimate goal of code agents is to solve complex tasks autonomously. Although large language models (LLMs) have made substantial progress in code generation, real-world …",
-      "link": "https://arxiv.org/abs/2505.21577",
-      "published_date": "May 2025",
-      "published_date_sort": "2025-05-01",
-      "citations": 7,
-      "institutions": "Unknown"
-    },
-    {
       "title": "CodePDE: An Inference Framework for LLM-driven PDE Solver Generation",
       "authors": "S Li, T Marwah, J Shen, W Sun, A Risteski… - arXiv preprint arXiv …, 2025 - arxiv.org",
       "journal": "Google Scholar Result",
@@ -197,17 +263,6 @@
       "published_date": "May 2025",
       "published_date_sort": "2025-05-01",
       "citations": 7,
-      "institutions": "Unknown"
-    },
-    {
-      "title": "Mlzero: A multi-agent system for end-to-end machine learning automation",
-      "authors": "H Fang, B Han, N Erickson, X Zhang, S Zhou… - arXiv preprint arXiv …, 2025 - arxiv.org",
-      "journal": "Google Scholar Result",
-      "snippet": "Existing AutoML systems have advanced the automation of machine learning (ML); however, they still require substantial manual configuration and expert input, particularly …",
-      "link": "https://arxiv.org/abs/2505.13941",
-      "published_date": "May 2025",
-      "published_date_sort": "2025-05-01",
-      "citations": 3,
       "institutions": "Unknown"
     },
     {
@@ -240,7 +295,7 @@
       "link": "https://pubs.acs.org/doi/abs/10.1021/acsphotonics.5c01514",
       "published_date": "2025",
       "published_date_sort": "2025-01-01",
-      "citations": 4,
+      "citations": 5,
       "institutions": "Unknown"
     },
     {
@@ -252,17 +307,6 @@
       "published_date": "2025",
       "published_date_sort": "2025-01-01",
       "citations": 1,
-      "institutions": "Unknown"
-    },
-    {
-      "title": "Large language models for constructing and optimizing machine learning workflows: A survey",
-      "authors": "Y Gu, H You, J Cao, M Yu, H Fan, S Qian - ACM Transactions on …, 2024 - dl.acm.org",
-      "journal": "Google Scholar Result",
-      "snippet": "Machine Learning (ML) workflows—spanning data preprocessing and feature engineering, model selection and hyperparameter optimization, and workflow evaluation—are …",
-      "link": "https://dl.acm.org/doi/abs/10.1145/3773084",
-      "published_date": "2024",
-      "published_date_sort": "2024-01-01",
-      "citations": 13,
       "institutions": "Unknown"
     }
   ]
