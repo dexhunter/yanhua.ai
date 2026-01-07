@@ -1,11 +1,11 @@
 {
-  "last_updated": "2026-01-06 00:12:08 UTC",
+  "last_updated": "2026-01-07 00:11:00 UTC",
   "target_paper": "https://www.arxiv.org/abs/2502.13138",
   "arxiv_id": "2502.13138",
-  "total_citations": 20,
+  "total_citations": 23,
   "h_index": 8,
-  "recent_citations": 0,
-  "avg_citations_per_month": "0.95",
+  "recent_citations": 3,
+  "avg_citations_per_month": "0.92",
   "timeline": [
     {
       "date": "2024-01-01",
@@ -42,18 +42,44 @@
     {
       "date": "2025-09-01",
       "citations": 20
+    },
+    {
+      "date": "2026-01-01",
+      "citations": 23
     }
   ],
   "papers": [
     {
-      "title": "An AI system to help scientists write expert-level empirical software",
-      "authors": "E Aygün, A Belyaeva, G Comanici, M Coram… - arXiv preprint arXiv …, 2025 - arxiv.org",
-      "journal": "Google Scholar Result",
-      "snippet": "The cycle of scientific discovery is frequently bottlenecked by the slow, manual creation of software to support computational experiments. To address this, we present an AI system …",
-      "link": "https://arxiv.org/abs/2509.06503",
-      "published_date": "September 2025",
-      "published_date_sort": "2025-09-01",
-      "citations": 8,
+      "title": "MDAgent2: Large Language Model for Code Generation and Knowledge Q&A in Molecular Dynamics",
+      "authors": "Zhuofan Shi, Hubao A, Yufei Shao, Mengyan Dai, Yadong Yu, Pan Xiang, Dongliang Huang, Hongxu An, Chunxiao Xin, Haiyang Shen, Zhenyu Wang, Yunshan Na, Gang Huang, Xiang Jing",
+      "journal": "arXiv",
+      "snippet": "Molecular dynamics (MD) simulations are essential for understanding atomic-scale behaviors in materials science, yet writing LAMMPS scripts remains highly specialized and time-consuming tasks. Although LLMs show promise in code generation and domain-specific question answering, their performance in MD scenarios is limited by scarce domain data, the high deployment cost of state-of-the-art LLMs, and low code executability. Building upon our prior MDAgent, we present MDAgent2, the first end-to-end framework capable of performing both knowledge Q&A and code generation within the MD domain. We construct a domain-specific data-construction pipeline that yields three high-quality datasets spanning MD knowledge, question answering, and code generation. Based on these datasets, we adopt a three stage post-training strategy--continued pre-training (CPT), supervised fine-tuning (SFT), and reinforcement learning (RL)--to train two domain-adapted models, MD-Instruct and MD-Code. Furthermore, we introduce MD-GRPO, a closed-loop RL method that leverages simulation outcomes as reward signals and recycles low-reward trajectories for continual refinement. We further build MDAgent2-RUNTIME, a deployable multi-agent system that integrates code generation, execution, evaluation, and self-correction. Together with MD-EvalBench proposed in this work, the first benchmark for LAMMPS code generation and question answering, our models and system achieve performance surpassing several strong baselines.This work systematically demonstrates the adaptability and generalization capability of large language models in industrial simulation tasks, laying a methodological foundation for automatic code generation in AI for Science and industrial-scale simulations. URL: https://github.com/FredericVAN/PKU_MDAgent2",
+      "link": "http://arxiv.org/abs/2601.02075v1",
+      "published_date": "January 05, 2026",
+      "published_date_sort": "2026-01-05",
+      "citations": 0,
+      "institutions": "Unknown"
+    },
+    {
+      "title": "SynRXN: An Open Benchmark and Curated Dataset for Computational Reaction Modeling",
+      "authors": "Tieu-Long Phan, Nhu-Ngoc Nguyen Song, Peter F. Stadler",
+      "journal": "arXiv",
+      "snippet": "We present SynRXN, a unified benchmarking framework and open-data resource for computer-aided synthesis planning (CASP). SynRXN decomposes end-to-end synthesis planning into five task families, covering reaction rebalancing, atom-to-atom mapping, reaction classification, reaction property prediction, and synthesis route design. Curated, provenance-tracked reaction corpora are assembled from heterogeneous public sources into a harmonized representation and packaged as versioned datasets for each task family, with explicit source metadata, licence tags, and machine-readable manifests that record checksums, and row counts. For every task, SynRXN provides transparent splitting functions that generate leakage-aware train, validation, and test partitions, together with standardized evaluation workflows and metric suites tailored to classification, regression, and structured prediction settings. For sensitive benchmarking, we combine public training and validation data with held-out gold-standard test sets, and contamination-prone tasks such as reaction rebalancing and atom-to-atom mapping are distributed only as evaluation sets and are explicitly not intended for model training. Scripted build recipes enable bitwise-reproducible regeneration of all corpora across machines and over time, and the entire resource is released under permissive open licences to support reuse and extension. By removing dataset heterogeneity and packaging transparent, reusable evaluation scaffolding, SynRXN enables fair longitudinal comparison of CASP methods, supports rigorous ablations and stress tests along the full reaction-informatics pipeline, and lowers the barrier for practitioners who seek robust and comparable performance estimates for real-world synthesis planning workloads.",
+      "link": "http://arxiv.org/abs/2601.01943v1",
+      "published_date": "January 05, 2026",
+      "published_date_sort": "2026-01-05",
+      "citations": 0,
+      "institutions": "Unknown"
+    },
+    {
+      "title": "LLM-Empowered Functional Safety and Security by Design in Automotive Systems",
+      "authors": "Nenad Petrovic, Vahid Zolfaghari, Fengjunjie Pan, Alois Knoll",
+      "journal": "arXiv",
+      "snippet": "This paper presents LLM-empowered workflow to support Software Defined Vehicle (SDV) software development, covering the aspects of security-aware system topology design, as well as event-driven decision-making code analysis. For code analysis we adopt event chains model which provides formal foundations to systematic validation of functional safety, taking into account the semantic validity of messages exchanged between key components, including both CAN and Vehicle Signal Specification (VSS). Analysis of security aspects for topology relies on synergy with Model-Driven Engineering (MDE) approach and Object Constraint Language (OCL) rules. Both locally deployable and proprietary solution are taken into account for evaluation within Advanced Driver-Assistance Systems (ADAS)-related scenarios.",
+      "link": "http://arxiv.org/abs/2601.02215v1",
+      "published_date": "January 05, 2026",
+      "published_date_sort": "2026-01-05",
+      "citations": 0,
       "institutions": "Unknown"
     },
     {
@@ -76,6 +102,17 @@
       "published_date": "September 2025",
       "published_date_sort": "2025-09-01",
       "citations": 2,
+      "institutions": "Unknown"
+    },
+    {
+      "title": "An AI system to help scientists write expert-level empirical software",
+      "authors": "E Aygün, A Belyaeva, G Comanici, M Coram… - arXiv preprint arXiv …, 2025 - arxiv.org",
+      "journal": "Google Scholar Result",
+      "snippet": "The cycle of scientific discovery is frequently bottlenecked by the slow, manual creation of software to support computational experiments. To address this, we present an AI system …",
+      "link": "https://arxiv.org/abs/2509.06503",
+      "published_date": "September 2025",
+      "published_date_sort": "2025-09-01",
+      "citations": 8,
       "institutions": "Unknown"
     },
     {
@@ -123,6 +160,17 @@
       "institutions": "Unknown"
     },
     {
+      "title": "A Comprehensive Survey of Deep Research: Systems, Methodologies, and Applications",
+      "authors": "R Xu, J Peng - arXiv preprint arXiv:2506.12594, 2025 - arxiv.org",
+      "journal": "Google Scholar Result",
+      "snippet": "This survey examines the rapidly evolving field of Deep Research systems--AI-powered applications that automate complex research workflows through the integration of large …",
+      "link": "https://arxiv.org/abs/2506.12594",
+      "published_date": "June 2025",
+      "published_date_sort": "2025-06-01",
+      "citations": 36,
+      "institutions": "Unknown"
+    },
+    {
       "title": "AI Scientists Fail Without Strong Implementation Capability",
       "authors": "M Zhu, Q Xie, Y Weng, J Wu, Z Lin, L Yang… - arXiv preprint arXiv …, 2025 - arxiv.org",
       "journal": "Google Scholar Result",
@@ -134,14 +182,14 @@
       "institutions": "Unknown"
     },
     {
-      "title": "A Comprehensive Survey of Deep Research: Systems, Methodologies, and Applications",
-      "authors": "R Xu, J Peng - arXiv preprint arXiv:2506.12594, 2025 - arxiv.org",
+      "title": "Mlzero: A multi-agent system for end-to-end machine learning automation",
+      "authors": "H Fang, B Han, N Erickson, X Zhang, S Zhou… - arXiv preprint arXiv …, 2025 - arxiv.org",
       "journal": "Google Scholar Result",
-      "snippet": "This survey examines the rapidly evolving field of Deep Research systems--AI-powered applications that automate complex research workflows through the integration of large …",
-      "link": "https://arxiv.org/abs/2506.12594",
-      "published_date": "June 2025",
-      "published_date_sort": "2025-06-01",
-      "citations": 36,
+      "snippet": "Existing AutoML systems have advanced the automation of machine learning (ML); however, they still require substantial manual configuration and expert input, particularly …",
+      "link": "https://arxiv.org/abs/2505.13941",
+      "published_date": "May 2025",
+      "published_date_sort": "2025-05-01",
+      "citations": 3,
       "institutions": "Unknown"
     },
     {
@@ -197,17 +245,6 @@
       "published_date": "May 2025",
       "published_date_sort": "2025-05-01",
       "citations": 28,
-      "institutions": "Unknown"
-    },
-    {
-      "title": "Mlzero: A multi-agent system for end-to-end machine learning automation",
-      "authors": "H Fang, B Han, N Erickson, X Zhang, S Zhou… - arXiv preprint arXiv …, 2025 - arxiv.org",
-      "journal": "Google Scholar Result",
-      "snippet": "Existing AutoML systems have advanced the automation of machine learning (ML); however, they still require substantial manual configuration and expert input, particularly …",
-      "link": "https://arxiv.org/abs/2505.13941",
-      "published_date": "May 2025",
-      "published_date_sort": "2025-05-01",
-      "citations": 3,
       "institutions": "Unknown"
     },
     {
