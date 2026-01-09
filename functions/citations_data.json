@@ -1,11 +1,11 @@
 {
-  "last_updated": "2026-01-08 00:13:16 UTC",
+  "last_updated": "2026-01-09 00:12:04 UTC",
   "target_paper": "https://www.arxiv.org/abs/2502.13138",
   "arxiv_id": "2502.13138",
-  "total_citations": 27,
+  "total_citations": 29,
   "h_index": 8,
-  "recent_citations": 7,
-  "avg_citations_per_month": "1.08",
+  "recent_citations": 9,
+  "avg_citations_per_month": "1.16",
   "timeline": [
     {
       "date": "2024-01-01",
@@ -45,84 +45,106 @@
     },
     {
       "date": "2026-01-01",
-      "citations": 27
+      "citations": 29
     }
   ],
   "papers": [
     {
-      "title": "Fine-tuning Small Language Models as Efficient Enterprise Search Relevance Labelers",
-      "authors": "Yue Kang, Zhuoyi Huang, Benji Schussheim, Diana Licon, Dina Atia, Shixing Cao, Jacob Danovitch, Kunho Kim, Billy Norcilien, Jonah Karpman, Mahmound Sayed, Mike Taylor, Tao Sun, Pavel Metrikov, Vipul Agarwal, Chris Quirk, Ye-Yi Wang, Nick Craswell, Irene Shaffer, Tianwei Chen, Sulaiman Vesal, Soundar Srinivasan",
+      "title": "PointWorld: Scaling 3D World Models for In-The-Wild Robotic Manipulation",
+      "authors": "Wenlong Huang, Yu-Wei Chao, Arsalan Mousavian, Ming-Yu Liu, Dieter Fox, Kaichun Mo, Li Fei-Fei",
       "journal": "arXiv",
-      "snippet": "In enterprise search, building high-quality datasets at scale remains a central challenge due to the difficulty of acquiring labeled data. To resolve this challenge, we propose an efficient approach to fine-tune small language models (SLMs) for accurate relevance labeling, enabling high-throughput, domain-specific labeling comparable or even better in quality to that of state-of-the-art large language models (LLMs). To overcome the lack of high-quality and accessible datasets in the enterprise domain, our method leverages on synthetic data generation. Specifically, we employ an LLM to synthesize realistic enterprise queries from a seed document, apply BM25 to retrieve hard negatives, and use a teacher LLM to assign relevance scores. The resulting dataset is then distilled into an SLM, producing a compact relevance labeler. We evaluate our approach on a high-quality benchmark consisting of 923 enterprise query-document pairs annotated by trained human annotators, and show that the distilled SLM achieves agreement with human judgments on par with or better than the teacher LLM. Furthermore, our fine-tuned labeler substantially improves throughput, achieving 17 times increase while also being 19 times more cost-effective. This approach enables scalable and cost-effective relevance labeling for enterprise-scale retrieval applications, supporting rapid offline evaluation and iteration in real-world settings.",
-      "link": "http://arxiv.org/abs/2601.03211v1",
-      "published_date": "January 06, 2026",
-      "published_date_sort": "2026-01-06",
+      "snippet": "Humans anticipate, from a glance and a contemplated action of their bodies, how the 3D world will respond, a capability that is equally vital for robotic manipulation. We introduce PointWorld, a large pre-trained 3D world model that unifies state and action in a shared 3D space as 3D point flows: given one or few RGB-D images and a sequence of low-level robot action commands, PointWorld forecasts per-pixel displacements in 3D that respond to the given actions. By representing actions as 3D point flows instead of embodiment-specific action spaces (e.g., joint positions), this formulation directly conditions on physical geometries of robots while seamlessly integrating learning across embodiments. To train our 3D world model, we curate a large-scale dataset spanning real and simulated robotic manipulation in open-world environments, enabled by recent advances in 3D vision and simulated environments, totaling about 2M trajectories and 500 hours across a single-arm Franka and a bimanual humanoid. Through rigorous, large-scale empirical studies of backbones, action representations, learning objectives, partial observability, data mixtures, domain transfers, and scaling, we distill design principles for large-scale 3D world modeling. With a real-time (0.1s) inference speed, PointWorld can be efficiently integrated in the model-predictive control (MPC) framework for manipulation. We demonstrate that a single pre-trained checkpoint enables a real-world Franka robot to perform rigid-body pushing, deformable and articulated object manipulation, and tool use, without requiring any demonstrations or post-training and all from a single image captured in-the-wild. Project website at https://point-world.github.io/.",
+      "link": "http://arxiv.org/abs/2601.03782v1",
+      "published_date": "January 07, 2026",
+      "published_date_sort": "2026-01-07",
       "citations": 0,
       "institutions": "Unknown"
     },
     {
-      "title": "PiDR: Physics-Informed Inertial Dead Reckoning for Autonomous Platforms",
-      "authors": "Arup Kumar Sahoo, Itzik Klein",
+      "title": "ETR: Outcome-Guided Elastic Trust Regions for Policy Optimization",
+      "authors": "Shijie Zhang, Kevin Zhang, Zheyuan Gu, Xiang Guo, Rujun Guo, Shaoyu Liu, Guanjun Jiang, Xiaozhao Wang",
       "journal": "arXiv",
-      "snippet": "A fundamental requirement for full autonomy is the ability to sustain accurate navigation in the absence of external data, such as GNSS signals or visual information. In these challenging environments, the platform must rely exclusively on inertial sensors, leading to pure inertial navigation. However, the inherent noise and other error terms of the inertial sensors in such real-world scenarios will cause the navigation solution to drift over time. Although conventional deep-learning models have emerged as a possible approach to inertial navigation, they are inherently black-box in nature. Furthermore, they struggle to learn effectively with limited supervised sensor data and often fail to preserve physical principles. To address these limitations, we propose PiDR, a physics-informed inertial dead-reckoning framework for autonomous platforms in situations of pure inertial navigation. PiDR offers transparency by explicitly integrating inertial navigation principles into the network training process through the physics-informed residual component. PiDR plays a crucial role in mitigating abrupt trajectory deviations even under limited or sparse supervision. We evaluated PiDR on real-world datasets collected by a mobile robot and an autonomous underwater vehicle. We obtained more than 29% positioning improvement in both datasets, demonstrating the ability of PiDR to generalize different platforms operating in various environments and dynamics. Thus, PiDR offers a robust, lightweight, yet effective architecture and can be deployed on resource-constrained platforms, enabling real-time pure inertial navigation in adverse scenarios.",
-      "link": "http://arxiv.org/abs/2601.03040v1",
-      "published_date": "January 06, 2026",
-      "published_date_sort": "2026-01-06",
+      "snippet": "Reinforcement Learning with Verifiable Rewards (RLVR) has emerged as an important paradigm for unlocking reasoning capabilities in large language models, exemplified by the success of OpenAI o1 and DeepSeek-R1. Currently, Group Relative Policy Optimization (GRPO) stands as the dominant algorithm in this domain due to its stable training and critic-free efficiency. However, we argue that GRPO suffers from a structural limitation: it imposes a uniform, static trust region constraint across all samples. This design implicitly assumes signal homogeneity, a premise misaligned with the heterogeneous nature of outcome-driven learning, where advantage magnitudes and variances fluctuate significantly. Consequently, static constraints fail to fully exploit high-quality signals while insufficiently suppressing noise, often precipitating rapid entropy collapse. To address this, we propose \\textbf{E}lastic \\textbf{T}rust \\textbf{R}egions (\\textbf{ETR}), a dynamic mechanism that aligns optimization constraints with signal quality. ETR constructs a signal-aware landscape through dual-level elasticity: at the micro level, it scales clipping boundaries based on advantage magnitude to accelerate learning from high-confidence paths; at the macro level, it leverages group variance to implicitly allocate larger update budgets to tasks in the optimal learning zone. Extensive experiments on AIME and MATH benchmarks demonstrate that ETR consistently outperforms GRPO, achieving superior accuracy while effectively mitigating policy entropy degradation to ensure sustained exploration.",
+      "link": "http://arxiv.org/abs/2601.03723v1",
+      "published_date": "January 07, 2026",
+      "published_date_sort": "2026-01-07",
       "citations": 0,
       "institutions": "Unknown"
     },
     {
-      "title": "ATLAS: Adaptive Test-Time Latent Steering with External Verifiers for Enhancing LLMs Reasoning",
-      "authors": "Tuc Nguyen, Thai Le",
+      "title": "Symbolic Regression for Shared Expressions: Introducing Partial Parameter Sharing",
+      "authors": "Viktor Martinek, Roland Herzog",
       "journal": "arXiv",
-      "snippet": "Recent work on activation and latent steering has demonstrated that modifying internal representations can effectively guide large language models (LLMs) toward improved reasoning and efficiency without additional training. However, most existing approaches rely on fixed steering policies and static intervention strengths, which limit their robustness across problem instances and often result in over- or under-steering. We propose Adaptive Test-time Latent Steering, called (ATLAS), a task-specific framework that dynamically controls steering decisions at inference time using an external, lightweight latent verifier. Given intermediate hidden states, the verifier predicts the quality of ongoing reasoning and adaptively selects whether and how strongly to apply steering, enabling per-example and per-step adjustment with minimal overhead. To our knowledge, ATLAS is the first method to integrate learned latent verification into test-time steering for enhancing LLMs reasoning. Experiments on multiple mathematical reasoning benchmarks show that ATLAS consistently outperforms both vanilla decoding and fixed steering baselines, achieving higher accuracy while substantially reducing test-time token usage. These results demonstrate that verifier-guided latent adaptation provides an effective and scalable mechanism for controlling reasoning efficiency without sacrificing solution quality. All source code will be publicly available.",
-      "link": "http://arxiv.org/abs/2601.03093v1",
-      "published_date": "January 06, 2026",
-      "published_date_sort": "2026-01-06",
+      "snippet": "Symbolic Regression aims to find symbolic expressions that describe datasets. Due to better interpretability, it is a machine learning paradigm particularly powerful for scientific discovery. In recent years, several works have expanded the concept to allow the description of similar phenomena using a single expression with varying sets of parameters, thereby introducing categorical variables. Some previous works allow only \"non-shared\" (category-value-specific) parameters, and others also incorporate \"shared\" (category-value-agnostic) parameters. We expand upon those efforts by considering multiple categorical variables, and introducing intermediate levels of parameter sharing. With two categorical variables, an intermediate level of parameter sharing emerges, i.e., parameters which are shared across either category but change across the other. The new approach potentially decreases the number of parameters, while revealing additional information about the problem. Using a synthetic, fitting-only example, we test the limits of this setup in terms of data requirement reduction and transfer learning. As a real-world symbolic regression example, we demonstrate the benefits of the proposed approach on an astrophysics dataset used in a previous study, which considered only one categorical variable. We achieve a similar fit quality but require significantly fewer individual parameters, and extract additional information about the problem.",
+      "link": "http://arxiv.org/abs/2601.04051v1",
+      "published_date": "January 07, 2026",
+      "published_date_sort": "2026-01-07",
       "citations": 0,
       "institutions": "Unknown"
     },
     {
-      "title": "Empowering Reliable Visual-Centric Instruction Following in MLLMs",
-      "authors": "Weilei He, Feng Ju, Zhiyuan Fan, Rui Min, Minhao Cheng, Yi R. Fung",
+      "title": "MHRC-Bench: A Multilingual Hardware Repository-Level Code Completion benchmark",
+      "authors": "Qingyun Zou, Jiahao Cui, Nuo Chen, Bingsheng He, Weng-Fai Wong",
       "journal": "arXiv",
-      "snippet": "Evaluating the instruction-following (IF) capabilities of Multimodal Large Language Models (MLLMs) is essential for rigorously assessing how faithfully model outputs adhere to user-specified intentions. Nevertheless, existing benchmarks for evaluating MLLMs' instruction-following capability primarily focus on verbal instructions in the textual modality. These limitations hinder a thorough analysis of instruction-following capabilities, as they overlook the implicit constraints embedded in the semantically rich visual modality. To address this gap, we introduce VC-IFEval, a new benchmark accompanied by a systematically constructed dataset that evaluates MLLMs' instruction-following ability under multimodal settings. Our benchmark systematically incorporates vision-dependent constraints into instruction design, enabling a more rigorous and fine-grained assessment of how well MLLMs align their outputs with both visual input and textual instructions. Furthermore, by fine-tuning MLLMs on our dataset, we achieve substantial gains in visual instruction-following accuracy and adherence. Through extensive evaluation across representative MLLMs, we provide new insights into the strengths and limitations of current models.",
-      "link": "http://arxiv.org/abs/2601.03198v1",
-      "published_date": "January 06, 2026",
-      "published_date_sort": "2026-01-06",
+      "snippet": "Large language models (LLMs) have achieved strong performance on code completion tasks in general-purpose programming languages. However, existing repository-level code completion benchmarks focus almost exclusively on software code and largely overlook hardware description languages. In this work, we present \\textbf{MHRC-Bench}, consisting of \\textbf{MHRC-Bench-Train} and \\textbf{MHRC-Bench-Eval}, the first benchmark designed for multilingual hardware code completion at the repository level. Our benchmark targets completion tasks and covers three major hardware design coding styles. Each completion target is annotated with code-structure-level and hardware-oriented semantic labels derived from concrete syntax tree analysis. We conduct a comprehensive evaluation of models on MHRC-Bench-Eval. Comprehensive evaluation results and analysis demonstrate the effectiveness of MHRC-Bench.",
+      "link": "http://arxiv.org/abs/2601.03708v1",
+      "published_date": "January 07, 2026",
+      "published_date_sort": "2026-01-07",
       "citations": 0,
       "institutions": "Unknown"
     },
     {
-      "title": "Bridging Mechanistic Interpretability and Prompt Engineering with Gradient Ascent for Interpretable Persona Control",
-      "authors": "Harshvardhan Saini, Yiming Tang, Dianbo Liu",
+      "title": "A Scheduling Framework for Efficient MoE Inference on Edge GPU-NDP Systems",
+      "authors": "Qi Wu, Chao Fang, Jiayuan Chen, Ye Lin, Yueqi Zhang, Yichuan Bai, Yuan Du, Li Du",
       "journal": "arXiv",
-      "snippet": "Controlling emergent behavioral personas (e.g., sycophancy, hallucination) in Large Language Models (LLMs) is critical for AI safety, yet remains a persistent challenge. Existing solutions face a dilemma: manual prompt engineering is intuitive but unscalable and imprecise, while automatic optimization methods are effective but operate as \"black boxes\" with no interpretable connection to model internals. We propose a novel framework that adapts gradient ascent to LLMs, enabling targeted prompt discovery. In specific, we propose two methods, RESGA and SAEGA, that both optimize randomly initialized prompts to achieve better aligned representation with an identified persona direction. We introduce fluent gradient ascent to control the fluency of discovered persona steering prompts. We demonstrate RESGA and SAEGA's effectiveness across Llama 3.1, Qwen 2.5, and Gemma 3 for steering three different personas,sycophancy, hallucination, and myopic reward. Crucially, on sycophancy, our automatically discovered prompts achieve significant improvement (49.90% compared with 79.24%). By grounding prompt discovery in mechanistically meaningful features, our method offers a new paradigm for controllable and interpretable behavior modification.",
-      "link": "http://arxiv.org/abs/2601.02896v1",
-      "published_date": "January 06, 2026",
-      "published_date_sort": "2026-01-06",
+      "snippet": "Mixture-of-Experts (MoE) models facilitate edge deployment by decoupling model capacity from active computation, yet their large memory footprint drives the need for GPU systems with near-data processing (NDP) capabilities that offload experts to dedicated processing units. However, deploying MoE models on such edge-based GPU-NDP systems faces three critical challenges: 1) severe load imbalance across NDP units due to non-uniform expert selection and expert parallelism, 2) insufficient GPU utilization during expert computation within NDP units, and 3) extensive data pre-profiling necessitated by unpredictable expert activation patterns for pre-fetching. To address these challenges, this paper proposes an efficient inference framework featuring three key optimizations. First, the underexplored tensor parallelism in MoE inference is exploited to partition and compute large expert parameters across multiple NDP units simultaneously towards edge low-batch scenarios. Second, a load-balancing-aware scheduling algorithm distributes expert computations across NDP units and GPU to maximize resource utilization. Third, a dataset-free pre-fetching strategy proactively loads frequently accessed experts to minimize activation delays. Experimental results show that our framework enables GPU-NDP systems to achieve 2.41x on average and up to 2.56x speedup in end-to-end latency compared to state-of-the-art approaches, significantly enhancing MoE inference efficiency in resource-constrained environments.",
+      "link": "http://arxiv.org/abs/2601.03992v1",
+      "published_date": "January 07, 2026",
+      "published_date_sort": "2026-01-07",
       "citations": 0,
       "institutions": "Unknown"
     },
     {
-      "title": "SastBench: A Benchmark for Testing Agentic SAST Triage",
-      "authors": "Jake Feiglin, Guy Dar",
+      "title": "Compact Example-Based Explanations for Language Models",
+      "authors": "Loris Schoenegger, Benjamin Roth",
       "journal": "arXiv",
-      "snippet": "SAST (Static Application Security Testing) tools are among the most widely used techniques in defensive cybersecurity, employed by commercial and non-commercial organizations to identify potential vulnerabilities in software. Despite their great utility, they generate numerous false positives, requiring costly manual filtering (aka triage). While LLM-powered agents show promise for automating cybersecurity tasks, existing benchmarks fail to emulate real-world SAST finding distributions. We introduce SastBench, a benchmark for evaluating SAST triage agents that combines real CVEs as true positives with filtered SAST tool findings as approximate false positives. SastBench features an agent-agnostic design. We evaluate different agents on the benchmark and present a comparative analysis of their performance, provide a detailed analysis of the dataset, and discuss the implications for future development.",
-      "link": "http://arxiv.org/abs/2601.02941v1",
-      "published_date": "January 06, 2026",
-      "published_date_sort": "2026-01-06",
+      "snippet": "Training data influence estimation methods quantify the contribution of training documents to a model's output, making them a promising source of information for example-based explanations. As humans cannot interpret thousands of documents, only a small subset of the training data can be presented as an explanation. Although the choice of which documents to include directly affects explanation quality, previous evaluations of such systems have largely ignored any selection strategies. To address this, we propose a novel selection relevance score, a retraining-free metric that quantifies how useful a set of examples is for explaining a model's output. We validate this score through fine-tuning experiments, confirming that it can predict whether a set of examples supports or undermines the model's predictions. Using this metric, we further show that common selection strategies often underperform random selection. Motivated by this finding, we propose a strategy that balances influence and representativeness, enabling better use of selection budgets than naively selecting the highest-ranking examples.",
+      "link": "http://arxiv.org/abs/2601.03786v1",
+      "published_date": "January 07, 2026",
+      "published_date_sort": "2026-01-07",
       "citations": 0,
       "institutions": "Unknown"
     },
     {
-      "title": "Multi-Modal Data-Enhanced Foundation Models for Prediction and Control in Wireless Networks: A Survey",
-      "authors": "Han Zhang, Mohammad Farzanullah, Mohammad Ghassemi, Akram Bin Sediq, Ali Afana, Melike Erol-Kantarci",
+      "title": "FLNet: Flood-Induced Agriculture Damage Assessment using Super Resolution of Satellite Images",
+      "authors": "Sanidhya Ghosal, Anurag Sharma, Sushil Ghildiyal, Mukesh Saini",
       "journal": "arXiv",
-      "snippet": "Foundation models (FMs) are recognized as a transformative breakthrough that has started to reshape the future of artificial intelligence (AI) across both academia and industry. The integration of FMs into wireless networks is expected to enable the development of general-purpose AI agents capable of handling diverse network management requests and highly complex wireless-related tasks involving multi-modal data. Inspired by these ideas, this work discusses the utilization of FMs, especially multi-modal FMs in wireless networks. We focus on two important types of tasks in wireless network management: prediction tasks and control tasks. In particular, we first discuss FMs-enabled multi-modal contextual information understanding in wireless networks. Then, we explain how FMs can be applied to prediction and control tasks, respectively. Following this, we introduce the development of wireless-specific FMs from two perspectives: available datasets for development and the methodologies used. Finally, we conclude with a discussion of the challenges and future directions for FM-enhanced wireless networks.",
-      "link": "http://arxiv.org/abs/2601.03181v1",
-      "published_date": "January 06, 2026",
-      "published_date_sort": "2026-01-06",
+      "snippet": "Distributing government relief efforts after a flood is challenging. In India, the crops are widely affected by floods; therefore, making rapid and accurate crop damage assessment is crucial for effective post-disaster agricultural management. Traditional manual surveys are slow and biased, while current satellite-based methods face challenges like cloud cover and low spatial resolution. Therefore, to bridge this gap, this paper introduced FLNet, a novel deep learning based architecture that used super-resolution to enhance the 10 m spatial resolution of Sentinel-2 satellite images into 3 m resolution before classifying damage. We tested our model on the Bihar Flood Impacted Croplands Dataset (BFCD-22), and the results showed an improved critical \"Full Damage\" F1-score from 0.83 to 0.89, nearly matching the 0.89 score of commercial high-resolution imagery. This work presented a cost-effective and scalable solution, paving the way for a nationwide shift from manual to automated, high-fidelity damage assessment.",
+      "link": "http://arxiv.org/abs/2601.03884v1",
+      "published_date": "January 07, 2026",
+      "published_date_sort": "2026-01-07",
+      "citations": 0,
+      "institutions": "Unknown"
+    },
+    {
+      "title": "Quantum vs. Classical Machine Learning: A Benchmark Study for Financial Prediction",
+      "authors": "Rehan Ahmad, Muhammad Kashif, Nouhaila Innan, Muhammad Shafique",
+      "journal": "arXiv",
+      "snippet": "In this paper, we present a reproducible benchmarking framework that systematically compares QML models with architecture-matched classical counterparts across three financial tasks: (i) directional return prediction on U.S. and Turkish equities, (ii) live-trading simulation with Quantum LSTMs versus classical LSTMs on the S\\&P 500, and (iii) realized volatility forecasting using Quantum Support Vector Regression. By standardizing data splits, features, and evaluation metrics, our study provides a fair assessment of when current-generation QML models can match or exceed classical methods. Our results reveal that quantum approaches show performance gains when data structure and circuit design are well aligned. In directional classification, hybrid quantum neural networks surpass the parameter-matched ANN by \\textbf{+3.8 AUC} and \\textbf{+3.4 accuracy points} on \\texttt{AAPL} stock and by \\textbf{+4.9 AUC} and \\textbf{+3.6 accuracy points} on Turkish stock \\texttt{KCHOL}. In live trading, the QLSTM achieves higher risk-adjusted returns in \\textbf{two of four} S\\&P~500 regimes. For volatility forecasting, an angle-encoded QSVR attains the \\textbf{lowest QLIKE} on \\texttt{KCHOL} and remains within $\\sim$0.02-0.04 QLIKE of the best classical kernels on \\texttt{S\\&P~500} and \\texttt{AAPL}. Our benchmarking framework clearly identifies the scenarios where current QML architectures offer tangible improvements and where established classical methods continue to dominate.",
+      "link": "http://arxiv.org/abs/2601.03802v1",
+      "published_date": "January 07, 2026",
+      "published_date_sort": "2026-01-07",
+      "citations": 0,
+      "institutions": "Unknown"
+    },
+    {
+      "title": "Feature-Aware One-Shot Federated Learning via Hierarchical Token Sequences",
+      "authors": "Shudong Liu, Hanwen Zhang, Xiuling Wang, Yuesheng Zhu, Guibo Luo",
+      "journal": "arXiv",
+      "snippet": "One-shot federated learning (OSFL) reduces the communication cost and privacy risks of iterative federated learning by constructing a global model with a single round of communication. However, most existing methods struggle to achieve robust performance on real-world domains such as medical imaging, or are inefficient when handling non-IID (Independent and Identically Distributed) data. To address these limitations, we introduce FALCON, a framework that enhances the effectiveness of OSFL over non-IID image data. The core idea of FALCON is to leverage the feature-aware hierarchical token sequences generation and knowledge distillation into OSFL. First, each client leverages a pretrained visual encoder with hierarchical scale encoding to compress images into hierarchical token sequences, which capture multi-scale semantics. Second, a multi-scale autoregressive transformer generator is used to model the distribution of these token sequences and generate the synthetic sequences. Third, clients upload the synthetic sequences along with the local classifier trained on the real token sequences to the server. Finally, the server incorporates knowledge distillation into global training to reduce reliance on precise distribution modeling. Experiments on medical and natural image datasets validate the effectiveness of FALCON in diverse non-IID scenarios, outperforming the best OSFL baselines by 9.58% in average accuracy.",
+      "link": "http://arxiv.org/abs/2601.03882v1",
+      "published_date": "January 07, 2026",
+      "published_date_sort": "2026-01-07",
       "citations": 0,
       "institutions": "Unknown"
     },
@@ -193,17 +215,6 @@
       "institutions": "Unknown"
     },
     {
-      "title": "Automind: Adaptive knowledgeable agent for automated data science",
-      "authors": "Y Ou, Y Luo, J Zheng, L Wei, Z Yu, S Qiao… - arXiv preprint arXiv …, 2025 - arxiv.org",
-      "journal": "Google Scholar Result",
-      "snippet": "Large Language Model (LLM) agents have shown great potential in addressing real-world data science problems. LLM-driven data science agents promise to automate the entire …",
-      "link": "https://arxiv.org/abs/2506.10974",
-      "published_date": "June 2025",
-      "published_date_sort": "2025-06-01",
-      "citations": 8,
-      "institutions": "Unknown"
-    },
-    {
       "title": "AI Scientists Fail Without Strong Implementation Capability",
       "authors": "M Zhu, Q Xie, Y Weng, J Wu, Z Lin, L Yang… - arXiv preprint arXiv …, 2025 - arxiv.org",
       "journal": "Google Scholar Result",
@@ -226,6 +237,17 @@
       "institutions": "Unknown"
     },
     {
+      "title": "Automind: Adaptive knowledgeable agent for automated data science",
+      "authors": "Y Ou, Y Luo, J Zheng, L Wei, Z Yu, S Qiao… - arXiv preprint arXiv …, 2025 - arxiv.org",
+      "journal": "Google Scholar Result",
+      "snippet": "Large Language Model (LLM) agents have shown great potential in addressing real-world data science problems. LLM-driven data science agents promise to automate the entire …",
+      "link": "https://arxiv.org/abs/2506.10974",
+      "published_date": "June 2025",
+      "published_date_sort": "2025-06-01",
+      "citations": 8,
+      "institutions": "Unknown"
+    },
+    {
       "title": "Mle-dojo: Interactive environments for empowering llm agents in machine learning engineering",
       "authors": "R Qiang, Y Zhuang, Y Li, R Zhang, C Li… - arXiv preprint arXiv …, 2025 - arxiv.org",
       "journal": "Google Scholar Result",
@@ -234,17 +256,6 @@
       "published_date": "May 2025",
       "published_date_sort": "2025-05-01",
       "citations": 6,
-      "institutions": "Unknown"
-    },
-    {
-      "title": "From automation to autonomy: A survey on large language models in scientific discovery",
-      "authors": "T Zheng, Z Deng, HT Tsang, W Wang, J Bai… - arXiv preprint arXiv …, 2025 - arxiv.org",
-      "journal": "Google Scholar Result",
-      "snippet": "Large Language Models (LLMs) are catalyzing a paradigm shift in scientific discovery, evolving from task-specific automation tools into increasingly autonomous agents and …",
-      "link": "https://arxiv.org/abs/2505.13259",
-      "published_date": "May 2025",
-      "published_date_sort": "2025-05-01",
-      "citations": 28,
       "institutions": "Unknown"
     },
     {
@@ -278,6 +289,17 @@
       "published_date": "May 2025",
       "published_date_sort": "2025-05-01",
       "citations": 8,
+      "institutions": "Unknown"
+    },
+    {
+      "title": "From automation to autonomy: A survey on large language models in scientific discovery",
+      "authors": "T Zheng, Z Deng, HT Tsang, W Wang, J Bai… - arXiv preprint arXiv …, 2025 - arxiv.org",
+      "journal": "Google Scholar Result",
+      "snippet": "Large Language Models (LLMs) are catalyzing a paradigm shift in scientific discovery, evolving from task-specific automation tools into increasingly autonomous agents and …",
+      "link": "https://arxiv.org/abs/2505.13259",
+      "published_date": "May 2025",
+      "published_date_sort": "2025-05-01",
+      "citations": 28,
       "institutions": "Unknown"
     },
     {
