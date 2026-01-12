@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-01-11 00:13:26 UTC",
+  "last_updated": "2026-01-12 00:12:30 UTC",
   "target_paper": "https://www.arxiv.org/abs/2502.13138",
   "arxiv_id": "2502.13138",
   "total_citations": 20,
@@ -97,7 +97,7 @@
       "link": "https://arxiv.org/abs/2508.01443",
       "published_date": "August 2025",
       "published_date_sort": "2025-08-01",
-      "citations": 4,
+      "citations": 5,
       "institutions": "Unknown"
     },
     {
@@ -112,17 +112,6 @@
       "institutions": "Unknown"
     },
     {
-      "title": "A Comprehensive Survey of Deep Research: Systems, Methodologies, and Applications",
-      "authors": "R Xu, J Peng - arXiv preprint arXiv:2506.12594, 2025 - arxiv.org",
-      "journal": "Google Scholar Result",
-      "snippet": "This survey examines the rapidly evolving field of Deep Research systems--AI-powered applications that automate complex research workflows through the integration of large …",
-      "link": "https://arxiv.org/abs/2506.12594",
-      "published_date": "June 2025",
-      "published_date_sort": "2025-06-01",
-      "citations": 36,
-      "institutions": "Unknown"
-    },
-    {
       "title": "AI Scientists Fail Without Strong Implementation Capability",
       "authors": "M Zhu, Q Xie, Y Weng, J Wu, Z Lin, L Yang… - arXiv preprint arXiv …, 2025 - arxiv.org",
       "journal": "Google Scholar Result",
@@ -131,6 +120,17 @@
       "published_date": "June 2025",
       "published_date_sort": "2025-06-01",
       "citations": 9,
+      "institutions": "Unknown"
+    },
+    {
+      "title": "A Comprehensive Survey of Deep Research: Systems, Methodologies, and Applications",
+      "authors": "R Xu, J Peng - arXiv preprint arXiv:2506.12594, 2025 - arxiv.org",
+      "journal": "Google Scholar Result",
+      "snippet": "This survey examines the rapidly evolving field of Deep Research systems--AI-powered applications that automate complex research workflows through the integration of large …",
+      "link": "https://arxiv.org/abs/2506.12594",
+      "published_date": "June 2025",
+      "published_date_sort": "2025-06-01",
+      "citations": 37,
       "institutions": "Unknown"
     },
     {
@@ -145,14 +145,14 @@
       "institutions": "Unknown"
     },
     {
-      "title": "IDA-Bench: Evaluating LLMs on Interactive Guided Data Analysis",
-      "authors": "H Li, H Liu, T Zhu, T Guo, Z Zheng, X Deng… - arXiv preprint arXiv …, 2025 - arxiv.org",
+      "title": "CodePDE: An Inference Framework for LLM-driven PDE Solver Generation",
+      "authors": "S Li, T Marwah, J Shen, W Sun, A Risteski… - arXiv preprint arXiv …, 2025 - arxiv.org",
       "journal": "Google Scholar Result",
-      "snippet": "Large Language Models (LLMs) show promise as data analysis agents, but existing benchmarks overlook the iterative nature of the field, where experts' decisions evolve with …",
-      "link": "https://arxiv.org/abs/2505.18223",
+      "snippet": "Partial differential equations (PDEs) are fundamental to modeling physical systems, yet solving them remains a complex challenge. Traditional numerical solvers rely on expert …",
+      "link": "https://arxiv.org/abs/2505.08783",
       "published_date": "May 2025",
       "published_date_sort": "2025-05-01",
-      "citations": 2,
+      "citations": 7,
       "institutions": "Unknown"
     },
     {
@@ -163,7 +163,18 @@
       "link": "https://arxiv.org/abs/2505.13259",
       "published_date": "May 2025",
       "published_date_sort": "2025-05-01",
-      "citations": 29,
+      "citations": 30,
+      "institutions": "Unknown"
+    },
+    {
+      "title": "IDA-Bench: Evaluating LLMs on Interactive Guided Data Analysis",
+      "authors": "H Li, H Liu, T Zhu, T Guo, Z Zheng, X Deng… - arXiv preprint arXiv …, 2025 - arxiv.org",
+      "journal": "Google Scholar Result",
+      "snippet": "Large Language Models (LLMs) show promise as data analysis agents, but existing benchmarks overlook the iterative nature of the field, where experts' decisions evolve with …",
+      "link": "https://arxiv.org/abs/2505.18223",
+      "published_date": "May 2025",
+      "published_date_sort": "2025-05-01",
+      "citations": 2,
       "institutions": "Unknown"
     },
     {
@@ -178,14 +189,14 @@
       "institutions": "Unknown"
     },
     {
-      "title": "CodePDE: An Inference Framework for LLM-driven PDE Solver Generation",
-      "authors": "S Li, T Marwah, J Shen, W Sun, A Risteski… - arXiv preprint arXiv …, 2025 - arxiv.org",
+      "title": "Mlzero: A multi-agent system for end-to-end machine learning automation",
+      "authors": "H Fang, B Han, N Erickson, X Zhang, S Zhou… - arXiv preprint arXiv …, 2025 - arxiv.org",
       "journal": "Google Scholar Result",
-      "snippet": "Partial differential equations (PDEs) are fundamental to modeling physical systems, yet solving them remains a complex challenge. Traditional numerical solvers rely on expert …",
-      "link": "https://arxiv.org/abs/2505.08783",
+      "snippet": "Existing AutoML systems have advanced the automation of machine learning (ML); however, they still require substantial manual configuration and expert input, particularly …",
+      "link": "https://arxiv.org/abs/2505.13941",
       "published_date": "May 2025",
       "published_date_sort": "2025-05-01",
-      "citations": 7,
+      "citations": 3,
       "institutions": "Unknown"
     },
     {
@@ -197,17 +208,6 @@
       "published_date": "May 2025",
       "published_date_sort": "2025-05-01",
       "citations": 6,
-      "institutions": "Unknown"
-    },
-    {
-      "title": "Mlzero: A multi-agent system for end-to-end machine learning automation",
-      "authors": "H Fang, B Han, N Erickson, X Zhang, S Zhou… - arXiv preprint arXiv …, 2025 - arxiv.org",
-      "journal": "Google Scholar Result",
-      "snippet": "Existing AutoML systems have advanced the automation of machine learning (ML); however, they still require substantial manual configuration and expert input, particularly …",
-      "link": "https://arxiv.org/abs/2505.13941",
-      "published_date": "May 2025",
-      "published_date_sort": "2025-05-01",
-      "citations": 3,
       "institutions": "Unknown"
     },
     {
@@ -233,17 +233,6 @@
       "institutions": "Unknown"
     },
     {
-      "title": "An agentic framework for autonomous metamaterial modeling and inverse design",
-      "authors": "D Lu, JM Malof, WJ Padilla - ACS Photonics, 2025 - ACS Publications",
-      "journal": "Google Scholar Result",
-      "snippet": "The evolution from large language models to agentic systems has created a new Frontier of scientific discovery, enabling the automation of complex research tasks that have …",
-      "link": "https://pubs.acs.org/doi/abs/10.1021/acsphotonics.5c01514",
-      "published_date": "2025",
-      "published_date_sort": "2025-01-01",
-      "citations": 6,
-      "institutions": "Unknown"
-    },
-    {
       "title": "AIRepr: An Analyst-Inspector Framework for Evaluating Reproducibility of LLMs in Data Science",
       "authors": "Q Zeng, C Jin, X Wang, Y Zheng… - Findings of the Association …, 2025 - aclanthology.org",
       "journal": "Google Scholar Result",
@@ -252,6 +241,17 @@
       "published_date": "2025",
       "published_date_sort": "2025-01-01",
       "citations": 1,
+      "institutions": "Unknown"
+    },
+    {
+      "title": "An agentic framework for autonomous metamaterial modeling and inverse design",
+      "authors": "D Lu, JM Malof, WJ Padilla - ACS Photonics, 2025 - ACS Publications",
+      "journal": "Google Scholar Result",
+      "snippet": "The evolution from large language models to agentic systems has created a new Frontier of scientific discovery, enabling the automation of complex research tasks that have …",
+      "link": "https://pubs.acs.org/doi/abs/10.1021/acsphotonics.5c01514",
+      "published_date": "2025",
+      "published_date_sort": "2025-01-01",
+      "citations": 6,
       "institutions": "Unknown"
     },
     {
