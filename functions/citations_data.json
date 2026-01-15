@@ -1,11 +1,11 @@
 {
-  "last_updated": "2026-01-14 00:12:42 UTC",
+  "last_updated": "2026-01-15 00:12:31 UTC",
   "target_paper": "https://www.arxiv.org/abs/2502.13138",
   "arxiv_id": "2502.13138",
-  "total_citations": 27,
+  "total_citations": 28,
   "h_index": 8,
-  "recent_citations": 7,
-  "avg_citations_per_month": "1.08",
+  "recent_citations": 8,
+  "avg_citations_per_month": "1.12",
   "timeline": [
     {
       "date": "2024-01-01",
@@ -45,84 +45,95 @@
     },
     {
       "date": "2026-01-01",
-      "citations": 27
+      "citations": 28
     }
   ],
   "papers": [
     {
-      "title": "Kinship Data Benchmark for Multi-hop Reasoning",
-      "authors": "Tianda Sun, Dimitar Kazakov",
+      "title": "Silence the Judge: Reinforcement Learning with Self-Verifier via Latent Geometric Clustering",
+      "authors": "Nonghai Zhang, Weitao Ma, Zhanyu Ma, Jun Xu, Jiuchong Gao, Jinghua Hao, Renqing He, Jingwen Xu",
       "journal": "arXiv",
-      "snippet": "Large language models (LLMs) are increasingly evaluated on their ability to perform multi-hop reasoning, i.e., to combine multiple pieces of information into a coherent inference. We introduce KinshipQA, a benchmark designed to probe this capability through reasoning over kinship relations. The central contribution of our work is a generative pipeline that produces, on demand, large-scale, realistic, and culture-specific genealogical data: collections of interconnected family trees that satisfy explicit marriage constraints associated with different kinship systems. This allows task difficulty, cultural assumptions, and relational depth to be systematically controlled and varied. From these genealogies, we derive textual inference tasks that require reasoning over implicit relational chains. We evaluate the resulting benchmark using six state-of-the-art LLMs, spanning both open-source and closed-source models, under a uniform zero-shot protocol with deterministic decoding. Performance is measured using exact-match and set-based metrics. Our results demonstrate that KinshipQA yields a wide spread of outcomes and exposes systematic differences in multi-hop reasoning across models and cultural settings.",
-      "link": "http://arxiv.org/abs/2601.07794v1",
-      "published_date": "January 12, 2026",
-      "published_date_sort": "2026-01-12",
+      "snippet": "Group Relative Policy Optimization (GRPO) significantly enhances the reasoning performance of Large Language Models (LLMs). However, this success heavily relies on expensive external verifiers or human rules. Such dependency not only leads to significant computational costs and training latency, but also yields sparse rewards that hinder optimization efficiency. To address these challenges, we propose Latent-GRPO, a framework that derives intrinsic rewards directly from latent space geometry. Crucially, our empirical analysis reveals a compelling geometric property: terminal token representations of correct reasoning trajectories form dense clusters with high intra-class similarity, whereas incorrect trajectories remain scattered as outliers. In light of this discovery, we introduce the Iterative Robust Centroid Estimation (IRCE) algorithm, which generates dense, continuous rewards by mitigating magnitude fluctuations via spherical projection and estimating a robust ``truth centroid'' through iterative aggregation. Experimental results on multiple datasets show that our method maintains model performance while achieving a training speedup of over 2x compared to baselines. Furthermore, extensive results demonstrate strong generalization ability and robustness. The code will be released soon.",
+      "link": "http://arxiv.org/abs/2601.08427v1",
+      "published_date": "January 13, 2026",
+      "published_date_sort": "2026-01-13",
       "citations": 0,
       "institutions": "Unknown"
     },
     {
-      "title": "OS-Symphony: A Holistic Framework for Robust and Generalist Computer-Using Agent",
-      "authors": "Bowen Yang, Kaiming Jin, Zhenyu Wu, Zhaoyang Liu, Qiushi Sun, Zehao Li, JingJing Xie, Zhoumianze Liu, Fangzhi Xu, Kanzhi Cheng, Qingyun Li, Yian Wang, Yu Qiao, Zun Wang, Zichen Ding",
+      "title": "TerraFormer: Automated Infrastructure-as-Code with LLMs Fine-Tuned via Policy-Guided Verifier Feedback",
+      "authors": "Prithwish Jana, Sam Davidson, Bhavana Bhasker, Andrey Kan, Anoop Deoras, Laurent Callot",
       "journal": "arXiv",
-      "snippet": "While Vision-Language Models (VLMs) have significantly advanced Computer-Using Agents (CUAs), current frameworks struggle with robustness in long-horizon workflows and generalization in novel domains. These limitations stem from a lack of granular control over historical visual context curation and the absence of visual-aware tutorial retrieval. To bridge these gaps, we introduce OS-Symphony, a holistic framework that comprises an Orchestrator coordinating two key innovations for robust automation: (1) a Reflection-Memory Agent that utilizes milestone-driven long-term memory to enable trajectory-level self-correction, effectively mitigating visual context loss in long-horizon tasks; (2) Versatile Tool Agents featuring a Multimodal Searcher that adopts a SeeAct paradigm to navigate a browser-based sandbox to synthesize live, visually aligned tutorials, thereby resolving fidelity issues in unseen scenarios. Experimental results demonstrate that OS-Symphony delivers substantial performance gains across varying model scales, establishing new state-of-the-art results on three online benchmarks, notably achieving 65.84% on OSWorld.",
-      "link": "http://arxiv.org/abs/2601.07779v1",
-      "published_date": "January 12, 2026",
-      "published_date_sort": "2026-01-12",
+      "snippet": "Automating Infrastructure-as-Code (IaC) is challenging, and large language models (LLMs) often produce incorrect configurations from natural language (NL). We present TerraFormer, a neuro-symbolic framework for IaC generation and mutation that combines supervised fine-tuning with verifier-guided reinforcement learning, using formal verification tools to provide feedback on syntax, deployability, and policy compliance. We curate two large, high-quality NL-to-IaC datasets, TF-Gen (152k instances) and TF-Mutn (52k instances), via multi-stage verification and iterative LLM self-correction. Evaluations against 17 state-of-the-art LLMs, including ~50x larger models like Sonnet 3.7, DeepSeek-R1, and GPT-4.1, show that TerraFormer improves correctness over its base LLM by 15.94% on IaC-Eval, 11.65% on TF-Gen (Test), and 19.60% on TF-Mutn (Test). It outperforms larger models on both TF-Gen (Test) and TF-Mutn (Test), ranks third on IaC-Eval, and achieves top best-practices and security compliance.",
+      "link": "http://arxiv.org/abs/2601.08734v1",
+      "published_date": "January 13, 2026",
+      "published_date_sort": "2026-01-13",
       "citations": 0,
       "institutions": "Unknown"
     },
     {
-      "title": "IFDNS: An Iterative Feedback-Driven Neuro-Symbolic Method for Faithful Logical Reasoning",
-      "authors": "Xiaoheng Wang, Tongxuan Liu, Zi Gong, Xianzhe Dong, Yuting Zeng, Minhan Hu, Weizhe Huang, Jing Li",
+      "title": "Moral Lenses, Political Coordinates: Towards Ideological Positioning of Morally Conditioned LLMs",
+      "authors": "Chenchen Yuan, Bolei Ma, Zheyu Zhang, Bardh Prenkaj, Frauke Kreuter, Gjergji Kasneci",
       "journal": "arXiv",
-      "snippet": "Large language models (LLMs) have demonstrated impressive capabilities across a wide range of reasoning tasks, including logical and mathematical problem-solving. While prompt-based methods like Chain-of-Thought (CoT) can enhance LLM reasoning abilities to some extent, they often suffer from a lack of faithfulness, where the derived conclusions may not align with the generated reasoning chain. To address this issue, researchers have explored neuro-symbolic approaches to bolster LLM logical reasoning capabilities. However, existing neuro-symbolic methods still face challenges with information loss during the process. To overcome these limitations, we introduce Iterative Feedback-Driven Neuro-Symbolic (IFDNS), a novel prompt-based method that employs a multi-round feedback mechanism to address LLM limitations in handling complex logical relationships. IFDNS utilizes iterative feedback during the logic extraction phase to accurately extract causal relationship statements and translate them into propositional and logical implication expressions, effectively mitigating information loss issues. Furthermore, IFDNS is orthogonal to existing prompt methods, allowing for seamless integration with various prompting approaches. Empirical evaluations across six datasets demonstrate the effectiveness of IFDNS in significantly improving the performance of CoT and Chain-of-Thought with Self-Consistency (CoT-SC). Specifically, IFDNS achieves a +9.40% accuracy boost for CoT on the LogiQA dataset and a +11.70% improvement for CoT-SC on the PrOntoQA dataset.",
-      "link": "http://arxiv.org/abs/2601.07464v1",
-      "published_date": "January 12, 2026",
-      "published_date_sort": "2026-01-12",
+      "snippet": "While recent research has systematically documented political orientation in large language models (LLMs), existing evaluations rely primarily on direct probing or demographic persona engineering to surface ideological biases. In social psychology, however, political ideology is also understood as a downstream consequence of fundamental moral intuitions. In this work, we investigate the causal relationship between moral values and political positioning by treating moral orientation as a controllable condition. Rather than simply assigning a demographic persona, we condition models to endorse or reject specific moral values and evaluate the resulting shifts on their political orientations, using the Political Compass Test. By treating moral values as lenses, we observe how moral conditioning actively steers model trajectories across economic and social dimensions. Our findings show that such conditioning induces pronounced, value-specific shifts in models' political coordinates. We further notice that these effects are systematically modulated by role framing and model scale, and are robust across alternative assessment instruments instantiating the same moral value. This highlights that effective alignment requires anchoring political assessments within the context of broader social values including morality, paving the way for more socially grounded alignment techniques.",
+      "link": "http://arxiv.org/abs/2601.08634v1",
+      "published_date": "January 13, 2026",
+      "published_date_sort": "2026-01-13",
       "citations": 0,
       "institutions": "Unknown"
     },
     {
-      "title": "Hiking in the Wild: A Scalable Perceptive Parkour Framework for Humanoids",
-      "authors": "Shaoting Zhu, Ziwen Zhuang, Mengjie Zhao, Kun-Ying Lee, Hang Zhao",
+      "title": "EfficientFSL: Enhancing Few-Shot Classification via Query-Only Tuning in Vision Transformers",
+      "authors": "Wenwen Liao, Hang Ruan",
       "journal": "arXiv",
-      "snippet": "Achieving robust humanoid hiking in complex, unstructured environments requires transitioning from reactive proprioception to proactive perception. However, integrating exteroception remains a significant challenge: mapping-based methods suffer from state estimation drift; for instance, LiDAR-based methods do not handle torso jitter well. Existing end-to-end approaches often struggle with scalability and training complexity; specifically, some previous works using virtual obstacles are implemented case-by-case. In this work, we present \\textit{Hiking in the Wild}, a scalable, end-to-end parkour perceptive framework designed for robust humanoid hiking. To ensure safety and training stability, we introduce two key mechanisms: a foothold safety mechanism combining scalable \\textit{Terrain Edge Detection} with \\textit{Foot Volume Points} to prevent catastrophic slippage on edges, and a \\textit{Flat Patch Sampling} strategy that mitigates reward hacking by generating feasible navigation targets. Our approach utilizes a single-stage reinforcement learning scheme, mapping raw depth inputs and proprioception directly to joint actions, without relying on external state estimation. Extensive field experiments on a full-size humanoid demonstrate that our policy enables robust traversal of complex terrains at speeds up to 2.5 m/s. The training and deployment code is open-sourced to facilitate reproducible research and deployment on real robots with minimal hardware modifications.",
-      "link": "http://arxiv.org/abs/2601.07718v1",
-      "published_date": "January 12, 2026",
-      "published_date_sort": "2026-01-12",
+      "snippet": "Large models such as Vision Transformers (ViTs) have demonstrated remarkable superiority over smaller architectures like ResNet in few-shot classification, owing to their powerful representational capacity. However, fine-tuning such large models demands extensive GPU memory and prolonged training time, making them impractical for many real-world low-resource scenarios. To bridge this gap, we propose EfficientFSL, a query-only fine-tuning framework tailored specifically for few-shot classification with ViT, which achieves competitive performance while significantly reducing computational overhead. EfficientFSL fully leverages the knowledge embedded in the pre-trained model and its strong comprehension ability, achieving high classification accuracy with an extremely small number of tunable parameters. Specifically, we introduce a lightweight trainable Forward Block to synthesize task-specific queries that extract informative features from the intermediate representations of the pre-trained model in a query-only manner. We further propose a Combine Block to fuse multi-layer outputs, enhancing the depth and robustness of feature representations. Finally, a Support-Query Attention Block mitigates distribution shift by adjusting prototypes to align with the query set distribution. With minimal trainable parameters, EfficientFSL achieves state-of-the-art performance on four in-domain few-shot datasets and six cross-domain datasets, demonstrating its effectiveness in real-world applications.",
+      "link": "http://arxiv.org/abs/2601.08499v1",
+      "published_date": "January 13, 2026",
+      "published_date_sort": "2026-01-13",
       "citations": 0,
       "institutions": "Unknown"
     },
     {
-      "title": "Studying the Role of Synthetic Data for Machine Learning-based Wireless Networks Traffic Forecasting",
-      "authors": "José Pulido, Francesc Wilhelmi, Sergio Fortes, Alfonso Fernández-Durán, Lorenzo Galati Giordano, Raquel Barco",
+      "title": "Learner-Tailored Program Repair: A Solution Generator with Iterative Edit-Driven Retrieval Enhancement",
+      "authors": "Zhenlong Dai, Zhuoluo Zhao, Hengning Wang, Xiu Tang, Sai Wu, Chang Yao, Zhipeng Gao, Jingyuan Chen",
       "journal": "arXiv",
-      "snippet": "Synthetic data generation is an appealing tool for augmenting and enriching datasets, playing a crucial role in advancing artificial intelligence (AI) and machine learning (ML). Not only does synthetic data help build robust AI/ML datasets cost-effectively, but it also offers privacy-friendly solutions and bypasses the complexities of storing large data volumes. This paper proposes a novel method to generate synthetic data, based on first-order auto-regressive noise statistics, for large-scale Wi-Fi deployments. The approach operates with minimal real data requirements while producing statistically rich traffic patterns that effectively mimic real Access Point (AP) behavior. Experimental results show that ML models trained on synthetic data achieve Mean Absolute Error (MAE) values within 10 to 15 of those obtained using real data when trained on the same APs, while requiring significantly less training data. Moreover, when generalization is required, synthetic-data-trained models improve prediction accuracy by up to 50 percent compared to real-data-trained baselines, thanks to the enhanced variability and diversity of the generated traces. Overall, the proposed method bridges the gap between synthetic data generation and practical Wi-Fi traffic forecasting, providing a scalable, efficient, and real-time solution for modern wireless networks.",
-      "link": "http://arxiv.org/abs/2601.07646v1",
-      "published_date": "January 12, 2026",
-      "published_date_sort": "2026-01-12",
+      "snippet": "With the development of large language models (LLMs) in the field of programming, intelligent programming coaching systems have gained widespread attention. However, most research focuses on repairing the buggy code of programming learners without providing the underlying causes of the bugs. To address this gap, we introduce a novel task, namely \\textbf{LPR} (\\textbf{L}earner-Tailored \\textbf{P}rogram \\textbf{R}epair). We then propose a novel and effective framework, \\textbf{\\textsc{\\MethodName{}}} (\\textbf{L}earner-Tailored \\textbf{S}olution \\textbf{G}enerator), to enhance program repair while offering the bug descriptions for the buggy code. In the first stage, we utilize a repair solution retrieval framework to construct a solution retrieval database and then employ an edit-driven code retrieval approach to retrieve valuable solutions, guiding LLMs in identifying and fixing the bugs in buggy code. In the second stage, we propose a solution-guided program repair method, which fixes the code and provides explanations under the guidance of retrieval solutions. Moreover, we propose an Iterative Retrieval Enhancement method that utilizes evaluation results of the generated code to iteratively optimize the retrieval direction and explore more suitable repair strategies, improving performance in practical programming coaching scenarios. The experimental results show that our approach outperforms a set of baselines by a large margin, validating the effectiveness of our framework for the newly proposed LPR task.",
+      "link": "http://arxiv.org/abs/2601.08545v1",
+      "published_date": "January 13, 2026",
+      "published_date_sort": "2026-01-13",
       "citations": 0,
       "institutions": "Unknown"
     },
     {
-      "title": "GRPO with State Mutations: Improving LLM-Based Hardware Test Plan Generation",
-      "authors": "Dimple Vijay Kochar, Nathaniel Pinckney, Guan-Ting Liu, Chia-Tung Ho, Chenhui Deng, Haoxing Ren, Brucek Khailany",
+      "title": "WaveFormer: Frequency-Time Decoupled Vision Modeling with Wave Equation",
+      "authors": "Zishan Shu, Juntong Wu, Wei Yan, Xudong Liu, Hongyu Zhang, Chang Liu, Youdong Mao, Jie Chen",
       "journal": "arXiv",
-      "snippet": "RTL design often relies heavily on ad-hoc testbench creation early in the design cycle. While large language models (LLMs) show promise for RTL code generation, their ability to reason about hardware specifications and generate targeted test plans remains largely unexplored. We present the first systematic study of LLM reasoning capabilities for RTL verification stimuli generation, establishing a two-stage framework that decomposes test plan generation from testbench execution. Our benchmark reveals that state-of-the-art models, including DeepSeek-R1 and Claude-4.0-Sonnet, achieve only 15.7-21.7% success rates on generating stimuli that pass golden RTL designs. To improve LLM generated stimuli, we develop a comprehensive training methodology combining supervised fine-tuning with a novel reinforcement learning approach, GRPO with State Mutation (GRPO-SMu), which enhances exploration by varying input mutations. Our approach leverages a tree-based branching mutation strategy to construct training data comprising equivalent and mutated trees, moving beyond linear mutation approaches to provide rich learning signals. Training on this curated dataset, our 7B parameter model achieves a 33.3% golden test pass rate and a 13.9% mutation detection rate, representing a 17.6% absolute improvement over baseline and outperforming much larger general-purpose models. These results demonstrate that specialized training methodologies can significantly enhance LLM reasoning capabilities for hardware verification tasks, establishing a foundation for automated sub-unit testing in semiconductor design workflows.",
-      "link": "http://arxiv.org/abs/2601.07593v1",
-      "published_date": "January 12, 2026",
-      "published_date_sort": "2026-01-12",
+      "snippet": "Vision modeling has advanced rapidly with Transformers, whose attention mechanisms capture visual dependencies but lack a principled account of how semantic information propagates spatially. We revisit this problem from a wave-based perspective: feature maps are treated as spatial signals whose evolution over an internal propagation time (aligned with network depth) is governed by an underdamped wave equation. In this formulation, spatial frequency-from low-frequency global layout to high-frequency edges and textures-is modeled explicitly, and its interaction with propagation time is controlled rather than implicitly fixed. We derive a closed-form, frequency-time decoupled solution and implement it as the Wave Propagation Operator (WPO), a lightweight module that models global interactions in O(N log N) time-far lower than attention. Building on WPO, we propose a family of WaveFormer models as drop-in replacements for standard ViTs and CNNs, achieving competitive accuracy across image classification, object detection, and semantic segmentation, while delivering up to 1.6x higher throughput and 30% fewer FLOPs than attention-based alternatives. Furthermore, our results demonstrate that wave propagation introduces a complementary modeling bias to heat-based methods, effectively capturing both global coherence and high-frequency details essential for rich visual semantics. Codes are available at: https://github.com/ZishanShu/WaveFormer.",
+      "link": "http://arxiv.org/abs/2601.08602v1",
+      "published_date": "January 13, 2026",
+      "published_date_sort": "2026-01-13",
       "citations": 0,
       "institutions": "Unknown"
     },
     {
-      "title": "Beyond Single-Shot: Multi-step Tool Retrieval via Query Planning",
-      "authors": "Wei Fang, James Glass",
+      "title": "On the use of graph models to achieve individual and group fairness",
+      "authors": "Arturo Pérez-Peralta, Sandra Benítez-Peña, Rosa E. Lillo",
       "journal": "arXiv",
-      "snippet": "LLM agents operating over massive, dynamic tool libraries rely on effective retrieval, yet standard single-shot dense retrievers struggle with complex requests. These failures primarily stem from the disconnect between abstract user goals and technical documentation, and the limited capacity of fixed-size embeddings to model combinatorial tool compositions. To address these challenges, we propose TOOLQP, a lightweight framework that models retrieval as iterative query planning. Instead of single-shot matching, TOOLQP decomposes instructions into sub-tasks and dynamically generates queries to interact with the retriever, effectively bridging the semantic gap by targeting the specific sub-tasks required for composition. We train TOOLQP using synthetic query trajectories followed by optimization via Reinforcement Learning with Verifiable Rewards (RLVR). Experiments demonstrate that TOOLQP achieves state-of-the-art performance, exhibiting superior zero-shot generalization, robustness across diverse retrievers, and significant improvements in downstream agentic execution.",
-      "link": "http://arxiv.org/abs/2601.07782v1",
-      "published_date": "January 12, 2026",
-      "published_date_sort": "2026-01-12",
+      "snippet": "Machine Learning algorithms are ubiquitous in key decision-making contexts such as justice, healthcare and finance, which has spawned a great demand for fairness in these procedures. However, the theoretical properties of such models in relation with fairness are still poorly understood, and the intuition behind the relationship between group and individual fairness is still lacking. In this paper, we provide a theoretical framework based on Sheaf Diffusion to leverage tools based on dynamical systems and homology to model fairness. Concretely, the proposed method projects input data into a bias-free space that encodes fairness constrains, resulting in fair solutions. Furthermore, we present a collection of network topologies handling different fairness metrics, leading to a unified method capable of dealing with both individual and group bias. The resulting models have a layer of interpretability in the form of closed-form expressions for their SHAP values, consolidating their place in the responsible Artificial Intelligence landscape. Finally, these intuitions are tested on a simulation study and standard fairness benchmarks, where the proposed methods achieve satisfactory results. More concretely, the paper showcases the performance of the proposed models in terms of accuracy and fairness, studying available trade-offs on the Pareto frontier, checking the effects of changing the different hyper-parameters, and delving into the interpretation of its outputs.",
+      "link": "http://arxiv.org/abs/2601.08784v1",
+      "published_date": "January 13, 2026",
+      "published_date_sort": "2026-01-13",
+      "citations": 0,
+      "institutions": "Unknown"
+    },
+    {
+      "title": "CoMa: Contextual Massing Generation with Vision-Language Models",
+      "authors": "Evgenii Maslov, Valentin Khrulkov, Anastasia Volkova, Anton Gusarov, Andrey Kuznetsov, Ivan Oseledets",
+      "journal": "arXiv",
+      "snippet": "The conceptual design phase in architecture and urban planning, particularly building massing, is complex and heavily reliant on designer intuition and manual effort. To address this, we propose an automated framework for generating building massing based on functional requirements and site context. A primary obstacle to such data-driven methods has been the lack of suitable datasets. Consequently, we introduce the CoMa-20K dataset, a comprehensive collection that includes detailed massing geometries, associated economical and programmatic data, and visual representations of the development site within its existing urban context. We benchmark this dataset by formulating massing generation as a conditional task for Vision-Language Models (VLMs), evaluating both fine-tuned and large zero-shot models. Our experiments reveal the inherent complexity of the task while demonstrating the potential of VLMs to produce context-sensitive massing options. The dataset and analysis establish a foundational benchmark and highlight significant opportunities for future research in data-driven architectural design.",
+      "link": "http://arxiv.org/abs/2601.08464v1",
+      "published_date": "January 13, 2026",
+      "published_date_sort": "2026-01-13",
       "citations": 0,
       "institutions": "Unknown"
     },
@@ -160,6 +171,17 @@
       "institutions": "Unknown"
     },
     {
+      "title": "Kompeteai: Accelerated autonomous multi-agent system for end-to-end pipeline generation for machine learning problems",
+      "authors": "S Kulibaba, A Dzhalilov, R Pakhomov… - arXiv preprint arXiv …, 2025 - arxiv.org",
+      "journal": "Google Scholar Result",
+      "snippet": "Recent Large Language Model (LLM)-based AutoML systems demonstrate impressive capabilities but face significant limitations such as constrained exploration strategies and a …",
+      "link": "https://arxiv.org/abs/2508.10177",
+      "published_date": "August 2025",
+      "published_date_sort": "2025-08-01",
+      "citations": 4,
+      "institutions": "Unknown"
+    },
+    {
       "title": "Tuning llm-based code optimization via meta-prompting: An industrial perspective",
       "authors": "J Gong, R Giavrimis, P Brookes, V Voskanyan… - arXiv preprint arXiv …, 2025 - arxiv.org",
       "journal": "Google Scholar Result",
@@ -168,17 +190,6 @@
       "published_date": "August 2025",
       "published_date_sort": "2025-08-01",
       "citations": 5,
-      "institutions": "Unknown"
-    },
-    {
-      "title": "Kompeteai: Accelerated autonomous multi-agent system for end-to-end pipeline generation for machine learning problems",
-      "authors": "S Kulibaba, A Dzhalilov, R Pakhomov… - arXiv preprint arXiv …, 2025 - arxiv.org",
-      "journal": "Google Scholar Result",
-      "snippet": "Recent Large Language Model (LLM)-based AutoML systems demonstrate impressive capabilities but face significant limitations such as constrained exploration strategies and a …",
-      "link": "https://arxiv.org/abs/2508.10177",
-      "published_date": "August 2025",
-      "published_date_sort": "2025-08-01",
-      "citations": 3,
       "institutions": "Unknown"
     },
     {
@@ -200,7 +211,7 @@
       "link": "https://arxiv.org/abs/2506.01372",
       "published_date": "June 2025",
       "published_date_sort": "2025-06-01",
-      "citations": 9,
+      "citations": 10,
       "institutions": "Unknown"
     },
     {
@@ -222,18 +233,29 @@
       "link": "https://arxiv.org/abs/2506.10974",
       "published_date": "June 2025",
       "published_date_sort": "2025-06-01",
-      "citations": 8,
+      "citations": 9,
       "institutions": "Unknown"
     },
     {
-      "title": "Repomaster: Autonomous exploration and understanding of github repositories for complex task solving",
-      "authors": "H Wang, Z Ni, S Zhang, S Lu, S Hu, Z He, C Hu… - arXiv preprint arXiv …, 2025 - arxiv.org",
+      "title": "From automation to autonomy: A survey on large language models in scientific discovery",
+      "authors": "T Zheng, Z Deng, HT Tsang, W Wang, J Bai… - arXiv preprint arXiv …, 2025 - arxiv.org",
       "journal": "Google Scholar Result",
-      "snippet": "The ultimate goal of code agents is to solve complex tasks autonomously. Although large language models (LLMs) have made substantial progress in code generation, real-world …",
-      "link": "https://arxiv.org/abs/2505.21577",
+      "snippet": "Large Language Models (LLMs) are catalyzing a paradigm shift in scientific discovery, evolving from task-specific automation tools into increasingly autonomous agents and …",
+      "link": "https://arxiv.org/abs/2505.13259",
       "published_date": "May 2025",
       "published_date_sort": "2025-05-01",
-      "citations": 9,
+      "citations": 31,
+      "institutions": "Unknown"
+    },
+    {
+      "title": "Mle-dojo: Interactive environments for empowering llm agents in machine learning engineering",
+      "authors": "R Qiang, Y Zhuang, Y Li, R Zhang, C Li… - arXiv preprint arXiv …, 2025 - arxiv.org",
+      "journal": "Google Scholar Result",
+      "snippet": "We introduce MLE-Dojo, a Gym-style framework for systematically reinforcement learning, evaluating, and improving autonomous large language model (LLM) agents in iterative …",
+      "link": "https://arxiv.org/abs/2505.07782",
+      "published_date": "May 2025",
+      "published_date_sort": "2025-05-01",
+      "citations": 7,
       "institutions": "Unknown"
     },
     {
@@ -248,28 +270,6 @@
       "institutions": "Unknown"
     },
     {
-      "title": "From automation to autonomy: A survey on large language models in scientific discovery",
-      "authors": "T Zheng, Z Deng, HT Tsang, W Wang, J Bai… - arXiv preprint arXiv …, 2025 - arxiv.org",
-      "journal": "Google Scholar Result",
-      "snippet": "Large Language Models (LLMs) are catalyzing a paradigm shift in scientific discovery, evolving from task-specific automation tools into increasingly autonomous agents and …",
-      "link": "https://arxiv.org/abs/2505.13259",
-      "published_date": "May 2025",
-      "published_date_sort": "2025-05-01",
-      "citations": 30,
-      "institutions": "Unknown"
-    },
-    {
-      "title": "Mlzero: A multi-agent system for end-to-end machine learning automation",
-      "authors": "H Fang, B Han, N Erickson, X Zhang, S Zhou… - arXiv preprint arXiv …, 2025 - arxiv.org",
-      "journal": "Google Scholar Result",
-      "snippet": "Existing AutoML systems have advanced the automation of machine learning (ML); however, they still require substantial manual configuration and expert input, particularly …",
-      "link": "https://arxiv.org/abs/2505.13941",
-      "published_date": "May 2025",
-      "published_date_sort": "2025-05-01",
-      "citations": 3,
-      "institutions": "Unknown"
-    },
-    {
       "title": "IDA-Bench: Evaluating LLMs on Interactive Guided Data Analysis",
       "authors": "H Li, H Liu, T Zhu, T Guo, Z Zheng, X Deng… - arXiv preprint arXiv …, 2025 - arxiv.org",
       "journal": "Google Scholar Result",
@@ -281,14 +281,25 @@
       "institutions": "Unknown"
     },
     {
-      "title": "Mle-dojo: Interactive environments for empowering llm agents in machine learning engineering",
-      "authors": "R Qiang, Y Zhuang, Y Li, R Zhang, C Li… - arXiv preprint arXiv …, 2025 - arxiv.org",
+      "title": "Repomaster: Autonomous exploration and understanding of github repositories for complex task solving",
+      "authors": "H Wang, Z Ni, S Zhang, S Lu, S Hu, Z He, C Hu… - arXiv preprint arXiv …, 2025 - arxiv.org",
       "journal": "Google Scholar Result",
-      "snippet": "We introduce MLE-Dojo, a Gym-style framework for systematically reinforcement learning, evaluating, and improving autonomous large language model (LLM) agents in iterative …",
-      "link": "https://arxiv.org/abs/2505.07782",
+      "snippet": "The ultimate goal of code agents is to solve complex tasks autonomously. Although large language models (LLMs) have made substantial progress in code generation, real-world …",
+      "link": "https://arxiv.org/abs/2505.21577",
       "published_date": "May 2025",
       "published_date_sort": "2025-05-01",
-      "citations": 6,
+      "citations": 9,
+      "institutions": "Unknown"
+    },
+    {
+      "title": "Mlzero: A multi-agent system for end-to-end machine learning automation",
+      "authors": "H Fang, B Han, N Erickson, X Zhang, S Zhou… - arXiv preprint arXiv …, 2025 - arxiv.org",
+      "journal": "Google Scholar Result",
+      "snippet": "Existing AutoML systems have advanced the automation of machine learning (ML); however, they still require substantial manual configuration and expert input, particularly …",
+      "link": "https://arxiv.org/abs/2505.13941",
+      "published_date": "May 2025",
+      "published_date_sort": "2025-05-01",
+      "citations": 4,
       "institutions": "Unknown"
     },
     {
@@ -299,7 +310,7 @@
       "link": "https://arxiv.org/abs/2504.04310",
       "published_date": "April 2025",
       "published_date_sort": "2025-04-01",
-      "citations": 17,
+      "citations": 18,
       "institutions": "Unknown"
     },
     {
@@ -314,17 +325,6 @@
       "institutions": "Unknown"
     },
     {
-      "title": "AIRepr: An Analyst-Inspector Framework for Evaluating Reproducibility of LLMs in Data Science",
-      "authors": "Q Zeng, C Jin, X Wang, Y Zheng… - Findings of the Association …, 2025 - aclanthology.org",
-      "journal": "Google Scholar Result",
-      "snippet": "Large language models (LLMs) are increasingly used to automate data analysis through executable code generation. Yet, data science tasks often admit multiple statistically valid …",
-      "link": "https://aclanthology.org/anthology-files/anthology-files/pdf/findings/2025.findings-emnlp.539.pdf",
-      "published_date": "2025",
-      "published_date_sort": "2025-01-01",
-      "citations": 1,
-      "institutions": "Unknown"
-    },
-    {
       "title": "An agentic framework for autonomous metamaterial modeling and inverse design",
       "authors": "D Lu, JM Malof, WJ Padilla - ACS Photonics, 2025 - ACS Publications",
       "journal": "Google Scholar Result",
@@ -333,6 +333,17 @@
       "published_date": "2025",
       "published_date_sort": "2025-01-01",
       "citations": 6,
+      "institutions": "Unknown"
+    },
+    {
+      "title": "AIRepr: An Analyst-Inspector Framework for Evaluating Reproducibility of LLMs in Data Science",
+      "authors": "Q Zeng, C Jin, X Wang, Y Zheng… - Findings of the Association …, 2025 - aclanthology.org",
+      "journal": "Google Scholar Result",
+      "snippet": "Large language models (LLMs) are increasingly used to automate data analysis through executable code generation. Yet, data science tasks often admit multiple statistically valid …",
+      "link": "https://aclanthology.org/anthology-files/anthology-files/pdf/findings/2025.findings-emnlp.539.pdf",
+      "published_date": "2025",
+      "published_date_sort": "2025-01-01",
+      "citations": 1,
       "institutions": "Unknown"
     },
     {
