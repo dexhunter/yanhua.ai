@@ -1,11 +1,11 @@
 {
-  "last_updated": "2026-01-16 00:12:15 UTC",
+  "last_updated": "2026-01-17 00:11:45 UTC",
   "target_paper": "https://www.arxiv.org/abs/2502.13138",
   "arxiv_id": "2502.13138",
-  "total_citations": 28,
+  "total_citations": 26,
   "h_index": 8,
-  "recent_citations": 8,
-  "avg_citations_per_month": "1.12",
+  "recent_citations": 6,
+  "avg_citations_per_month": "1.04",
   "timeline": [
     {
       "date": "2024-01-01",
@@ -45,107 +45,74 @@
     },
     {
       "date": "2026-01-01",
-      "citations": 28
+      "citations": 26
     }
   ],
   "papers": [
     {
-      "title": "Hybrid guided variational autoencoder for visual place recognition",
-      "authors": "Ni Wang, Zihan You, Emre Neftci, Thorben Schoepe",
+      "title": "In-Context Source and Channel Coding",
+      "authors": "Ziqiong Wang, Tianqi Ren, Rongpeng Li, Zhifeng Zhao, Honggang Zhang",
       "journal": "arXiv",
-      "snippet": "Autonomous agents such as cars, robots and drones need to precisely localize themselves in diverse environments, including in GPS-denied indoor environments. One approach for precise localization is visual place recognition (VPR), which estimates the place of an image based on previously seen places. State-of-the-art VPR models require high amounts of memory, making them unwieldy for mobile deployment, while more compact models lack robustness and generalization capabilities. This work overcomes these limitations for robotics using a combination of event-based vision sensors and an event-based novel guided variational autoencoder (VAE). The encoder part of our model is based on a spiking neural network model which is compatible with power-efficient low latency neuromorphic hardware. The VAE successfully disentangles the visual features of 16 distinct places in our new indoor VPR dataset with a classification performance comparable to other state-of-the-art approaches while, showing robust performance also under various illumination conditions. When tested with novel visual inputs from unknown scenes, our model can distinguish between these places, which demonstrates a high generalization capability by learning the essential features of location. Our compact and robust guided VAE with generalization capabilities poses a promising model for visual place recognition that can significantly enhance mobile robot navigation in known and unknown indoor environments.",
-      "link": "http://arxiv.org/abs/2601.09248v1",
-      "published_date": "January 14, 2026",
-      "published_date_sort": "2026-01-14",
+      "snippet": "Separate Source-Channel Coding (SSCC) remains attractive for text transmission due to its modularity and compatibility with mature entropy coders and powerful channel codes. However, SSCC often suffers from a pronounced cliff effect in low Signal-to-Noise Ratio (SNR) regimes, where residual bit errors after channel decoding can catastrophically break lossless source decoding, especially for Arithmetic Coding (AC) driven by Large Language Models (LLMs). This paper proposes a receiver-side In-Context Decoding (ICD) framework that enhances SSCC robustness without modifying the transmitter. ICD leverages an Error Correction Code Transformer (ECCT) to obtain bit-wise reliability for the decoded information bits. Based on the context-consistent bitstream, ICD constructs a confidence-ranked candidate pool via reliability-guided bit flipping, samples a compact yet diverse subset of candidates, and applies an LLM-based arithmetic decoder to obtain both reconstructions and sequence-level log-likelihoods. A reliability-likelihood fusion rule then selects the final output. We further provide theoretical guarantees on the stability and convergence of the proposed sampling procedure. Extensive experiments over Additive White Gaussian Noise (AWGN) and Rayleigh fading channels demonstrate consistent gains compared with conventional SSCC baselines and representative Joint Source-Channel Coding (JSCC) schemes.",
+      "link": "http://arxiv.org/abs/2601.10267v1",
+      "published_date": "January 15, 2026",
+      "published_date_sort": "2026-01-15",
       "citations": 0,
       "institutions": "Unknown"
     },
     {
-      "title": "FairGE: Fairness-Aware Graph Encoding in Incomplete Social Networks",
-      "authors": "Renqiang Luo, Huafei Huang, Tao Tang, Jing Ren, Ziqi Xu, Mingliang Hou, Enyan Dai, Feng Xia",
+      "title": "Sim2Real Deep Transfer for Per-Device CFO Calibration",
+      "authors": "Jingze Zheng, Zhiguo Shi, Shibo He, Chaojie Gu",
       "journal": "arXiv",
-      "snippet": "Graph Transformers (GTs) are increasingly applied to social network analysis, yet their deployment is often constrained by fairness concerns. This issue is particularly critical in incomplete social networks, where sensitive attributes are frequently missing due to privacy and ethical restrictions. Existing solutions commonly generate these incomplete attributes, which may introduce additional biases and further compromise user privacy. To address this challenge, FairGE (Fair Graph Encoding) is introduced as a fairness-aware framework for GTs in incomplete social networks. Instead of generating sensitive attributes, FairGE encodes fairness directly through spectral graph theory. By leveraging the principal eigenvector to represent structural information and padding incomplete sensitive attributes with zeros to maintain independence, FairGE ensures fairness without data reconstruction. Theoretical analysis demonstrates that the method suppresses the influence of non-principal spectral components, thereby enhancing fairness. Extensive experiments on seven real-world social network datasets confirm that FairGE achieves at least a 16% improvement in both statistical parity and equality of opportunity compared with state-of-the-art baselines. The source code is shown in https://github.com/LuoRenqiang/FairGE.",
-      "link": "http://arxiv.org/abs/2601.09394v1",
-      "published_date": "January 14, 2026",
-      "published_date_sort": "2026-01-14",
+      "snippet": "Carrier Frequency Offset (CFO) estimation in Orthogonal Frequency Division Multiplexing (OFDM) systems faces significant performance degradation across heterogeneous software-defined radio (SDR) platforms due to uncalibrated hardware impairments. Existing deep neural network (DNN)-based approaches lack device-level adaptation, limiting their practical deployment. This paper proposes a Sim2Real transfer learning framework for per-device CFO calibration, combining simulation-driven pretraining with lightweight receiver adaptation. A backbone DNN is pre-trained on synthetic OFDM signals incorporating parametric hardware distortions (e.g., phase noise, IQ imbalance), enabling generalized feature learning without costly cross-device data collection. Subsequently, only the regression layers are fine-tuned using $1,000$ real frames per target device, preserving hardware-agnostic knowledge while adapting to device-specific impairments. Experiments across three SDR families (USRP B210, USRP N210, HackRF One) achieve $30\\times$ BER reduction compared to conventional CP-based methods under indoor multipath conditions. The framework bridges the simulation-to-reality gap for robust CFO estimation, enabling cost-effective deployment in heterogeneous wireless systems.",
+      "link": "http://arxiv.org/abs/2601.10264v1",
+      "published_date": "January 15, 2026",
+      "published_date_sort": "2026-01-15",
       "citations": 0,
       "institutions": "Unknown"
     },
     {
-      "title": "Draw it like Euclid: Teaching transformer models to generate CAD profiles using ruler and compass construction steps",
-      "authors": "Siyi Li, Joseph G. Lambourne, Longfei Zhang, Pradeep Kumar Jayaraman, Karl. D. D. Willis",
+      "title": "Classification Imbalance as Transfer Learning",
+      "authors": "Eric Xia, Jason M. Klusowski",
       "journal": "arXiv",
-      "snippet": "We introduce a new method of generating Computer Aided Design (CAD) profiles via a sequence of simple geometric constructions including curve offsetting, rotations and intersections. These sequences start with geometry provided by a designer and build up the points and curves of the final profile step by step. We demonstrate that adding construction steps between the designer's input geometry and the final profile improves generation quality in a similar way to the introduction of a chain of thought in language models. Similar to the constraints in a parametric CAD model, the construction sequences reduce the degrees of freedom in the modeled shape to a small set of parameter values which can be adjusted by the designer, allowing parametric editing with the constructed geometry evaluated to floating point precision. In addition we show that applying reinforcement learning to the construction sequences gives further improvements over a wide range of metrics, including some which were not explicitly optimized.",
-      "link": "http://arxiv.org/abs/2601.09428v1",
-      "published_date": "January 14, 2026",
-      "published_date_sort": "2026-01-14",
+      "snippet": "Classification imbalance arises when one class is much rarer than the other. We frame this setting as transfer learning under label (prior) shift between an imbalanced source distribution induced by the observed data and a balanced target distribution under which performance is evaluated. Within this framework, we study a family of oversampling procedures that augment the training data by generating synthetic samples from an estimated minority-class distribution to roughly balance the classes, among which the celebrated SMOTE algorithm is a canonical example. We show that the excess risk decomposes into the rate achievable under balanced training (as if the data had been drawn from the balanced target distribution) and an additional term, the cost of transfer, which quantifies the discrepancy between the estimated and true minority-class distributions. In particular, we show that the cost of transfer for SMOTE dominates that of bootstrapping (random oversampling) in moderately high dimensions, suggesting that we should expect bootstrapping to have better performance than SMOTE in general. We corroborate these findings with experimental evidence. More broadly, our results provide guidance for choosing among augmentation strategies for imbalanced classification.",
+      "link": "http://arxiv.org/abs/2601.10630v1",
+      "published_date": "January 15, 2026",
+      "published_date_sort": "2026-01-15",
       "citations": 0,
       "institutions": "Unknown"
     },
     {
-      "title": "Improving Symbolic Translation of Language Models for Logical Reasoning",
-      "authors": "Ramya Keerthy Thatikonda, Jiuzhou Han, Wray Buntine, Ehsan Shareghi",
+      "title": "OctoBench: Benchmarking Scaffold-Aware Instruction Following in Repository-Grounded Agentic Coding",
+      "authors": "Deming Ding, Shichun Liu, Enhui Yang, Jiahang Lin, Ziying Chen, Shihan Dou, Honglin Guo, Weiyu Cheng, Pengyu Zhao, Chengjun Xiao, Qunhong Zeng, Qi Zhang, Xuanjing Huang, Qidi Xu, Tao Gui",
       "journal": "arXiv",
-      "snippet": "The use of formal language for deductive logical reasoning aligns well with language models (LMs), where translating natural language (NL) into first-order logic (FOL) and employing an external solver results in a verifiable and therefore reliable reasoning system. However, smaller LMs often struggle with this translation task, frequently producing incorrect symbolic outputs due to formatting and translation errors. Existing approaches typically rely on self-iteration to correct these errors, but such methods depend heavily on the capabilities of the underlying model. To address this, we first categorize common errors and fine-tune smaller LMs using data synthesized by large language models. The evaluation is performed using the defined error categories. We introduce incremental inference, which divides inference into two stages, predicate generation and FOL translation, providing greater control over model behavior and enhancing generation quality as measured by predicate metrics. This decomposition framework also enables the use of a verification module that targets predicate-arity errors to further improve performance. Our study evaluates three families of models across four logical-reasoning datasets. The comprehensive fine-tuning, incremental inference, and verification modules reduce error rates, increase predicate coverage, and improve reasoning performance for smaller LMs, moving us closer to developing reliable and accessible symbolic-reasoning systems.",
-      "link": "http://arxiv.org/abs/2601.09446v1",
-      "published_date": "January 14, 2026",
-      "published_date_sort": "2026-01-14",
+      "snippet": "Modern coding scaffolds turn LLMs into capable software agents, but their ability to follow scaffold-specified instructions remains under-examined, especially when constraints are heterogeneous and persist across interactions. To fill this gap, we introduce OctoBench, which benchmarks scaffold-aware instruction following in repository-grounded agentic coding. OctoBench includes 34 environments and 217 tasks instantiated under three scaffold types, and is paired with 7,098 objective checklist items. To disentangle solving the task from following the rules, we provide an automated observation-and-scoring toolkit that captures full trajectories and performs fine-grained checks. Experiments on eight representative models reveal a systematic gap between task-solving and scaffold-aware compliance, underscoring the need for training and evaluation that explicitly targets heterogeneous instruction following. We release the benchmark to support reproducible benchmarking and to accelerate the development of more scaffold-aware coding agents.",
+      "link": "http://arxiv.org/abs/2601.10343v1",
+      "published_date": "January 15, 2026",
+      "published_date_sort": "2026-01-15",
       "citations": 0,
       "institutions": "Unknown"
     },
     {
-      "title": "ProFit: Leveraging High-Value Signals in SFT via Probability-Guided Token Selection",
-      "authors": "Tao Liu, Taiqiang Wu, Runming Yang, Shaoning Sun, Junjie Wang, Yujiu Yang",
+      "title": "Toward Ultra-Long-Horizon Agentic Science: Cognitive Accumulation for Machine Learning Engineering",
+      "authors": "Xinyu Zhu, Yuzhu Cai, Zexi Liu, Bingyang Zheng, Cheng Wang, Rui Ye, Jiaao Chen, Hanrui Wang, Wei-Chen Wang, Yuzhi Zhang, Linfeng Zhang, Weinan E, Di Jin, Siheng Chen",
       "journal": "arXiv",
-      "snippet": "Supervised fine-tuning (SFT) is a fundamental post-training strategy to align Large Language Models (LLMs) with human intent. However, traditional SFT often ignores the one-to-many nature of language by forcing alignment with a single reference answer, leading to the model overfitting to non-core expressions. Although our empirical analysis suggests that introducing multiple reference answers can mitigate this issue, the prohibitive data and computational costs necessitate a strategic shift: prioritizing the mitigation of single-reference overfitting over the costly pursuit of answer diversity. To achieve this, we reveal the intrinsic connection between token probability and semantic importance: high-probability tokens carry the core logical framework, while low-probability tokens are mostly replaceable expressions. Based on this insight, we propose ProFit, which selectively masks low-probability tokens to prevent surface-level overfitting. Extensive experiments confirm that ProFit consistently outperforms traditional SFT baselines on general reasoning and mathematical benchmarks.",
-      "link": "http://arxiv.org/abs/2601.09195v1",
-      "published_date": "January 14, 2026",
-      "published_date_sort": "2026-01-14",
+      "snippet": "The advancement of artificial intelligence toward agentic science is currently bottlenecked by the challenge of ultra-long-horizon autonomy, the ability to sustain strategic coherence and iterative correction over experimental cycles spanning days or weeks. While Large Language Models (LLMs) have demonstrated prowess in short-horizon reasoning, they are easily overwhelmed by execution details in the high-dimensional, delayed-feedback environments of real-world research, failing to consolidate sparse feedback into coherent long-term guidance. Here, we present ML-Master 2.0, an autonomous agent that masters ultra-long-horizon machine learning engineering (MLE) which is a representative microcosm of scientific discovery. By reframing context management as a process of cognitive accumulation, our approach introduces Hierarchical Cognitive Caching (HCC), a multi-tiered architecture inspired by computer systems that enables the structural differentiation of experience over time. By dynamically distilling transient execution traces into stable knowledge and cross-task wisdom, HCC allows agents to decouple immediate execution from long-term experimental strategy, effectively overcoming the scaling limits of static context windows. In evaluations on OpenAI's MLE-Bench under 24-hour budgets, ML-Master 2.0 achieves a state-of-the-art medal rate of 56.44%. Our findings demonstrate that ultra-long-horizon autonomy provides a scalable blueprint for AI capable of autonomous exploration beyond human-precedent complexities.",
+      "link": "http://arxiv.org/abs/2601.10402v1",
+      "published_date": "January 15, 2026",
+      "published_date_sort": "2026-01-15",
       "citations": 0,
       "institutions": "Unknown"
     },
     {
-      "title": "Bridging Semantic Understanding and Popularity Bias with LLMs",
-      "authors": "Renqiang Luo, Dong Zhang, Yupeng Gao, Wen Shi, Mingliang Hou, Jiaying Liu, Zhe Wang, Shuo Yu",
+      "title": "Introduction to optimization methods for training SciML models",
+      "authors": "Alena Kopaničáková, Elisa Riccietti",
       "journal": "arXiv",
-      "snippet": "Semantic understanding of popularity bias is a crucial yet underexplored challenge in recommender systems, where popular items are often favored at the expense of niche content. Most existing debiasing methods treat the semantic understanding of popularity bias as a matter of diversity enhancement or long-tail coverage, neglecting the deeper semantic layer that embodies the causal origins of the bias itself. Consequently, such shallow interpretations limit both their debiasing effectiveness and recommendation accuracy. In this paper, we propose FairLRM, a novel framework that bridges the gap in the semantic understanding of popularity bias with Recommendation via Large Language Model (RecLLM). FairLRM decomposes popularity bias into item-side and user-side components, using structured instruction-based prompts to enhance the model's comprehension of both global item distributions and individual user preferences. Unlike traditional methods that rely on surface-level features such as \"diversity\" or \"debiasing\", FairLRM improves the model's ability to semantically interpret and address the underlying bias. Through empirical evaluation, we show that FairLRM significantly enhances both fairness and recommendation accuracy, providing a more semantically aware and trustworthy approach to enhance the semantic understanding of popularity bias. The implementation is available at https://github.com/LuoRenqiang/FairLRM.",
-      "link": "http://arxiv.org/abs/2601.09478v1",
-      "published_date": "January 14, 2026",
-      "published_date_sort": "2026-01-14",
+      "snippet": "Optimization is central to both modern machine learning (ML) and scientific machine learning (SciML), yet the structure of the underlying optimization problems differs substantially across these domains. Classical ML typically relies on stochastic, sample-separable objectives that favor first-order and adaptive gradient methods. In contrast, SciML often involves physics-informed or operator-constrained formulations in which differential operators induce global coupling, stiffness, and strong anisotropy in the loss landscape. As a result, optimization behavior in SciML is governed by the spectral properties of the underlying physical models rather than by data statistics, frequently limiting the effectiveness of standard stochastic methods and motivating deterministic or curvature-aware approaches. This document provides a unified introduction to optimization methods in ML and SciML, emphasizing how problem structure shapes algorithmic choices. We review first- and second-order optimization techniques in both deterministic and stochastic settings, discuss their adaptation to physics-constrained and data-driven SciML models, and illustrate practical strategies through tutorial examples, while highlighting open research directions at the interface of scientific computing and scientific machine learning.",
+      "link": "http://arxiv.org/abs/2601.10222v1",
+      "published_date": "January 15, 2026",
+      "published_date_sort": "2026-01-15",
       "citations": 0,
-      "institutions": "Unknown"
-    },
-    {
-      "title": "FairGU: Fairness-aware Graph Unlearning in Social Network",
-      "authors": "Renqiang Luo, Yongshuai Yang, Huafei Huang, Qing Qing, Mingliang Hou, Ziqi Xu, Yi Yu, Jingjing Zhou, Feng Xia",
-      "journal": "arXiv",
-      "snippet": "Graph unlearning has emerged as a critical mechanism for supporting sustainable and privacy-preserving social networks, enabling models to remove the influence of deleted nodes and thereby better safeguard user information. However, we observe that existing graph unlearning techniques insufficiently protect sensitive attributes, often leading to degraded algorithmic fairness compared with traditional graph learning methods. To address this gap, we introduce FairGU, a fairness-aware graph unlearning framework designed to preserve both utility and fairness during the unlearning process. FairGU integrates a dedicated fairness-aware module with effective data protection strategies, ensuring that sensitive attributes are neither inadvertently amplified nor structurally exposed when nodes are removed. Through extensive experiments on multiple real-world datasets, we demonstrate that FairGU consistently outperforms state-of-the-art graph unlearning methods and fairness-enhanced graph learning baselines in terms of both accuracy and fairness metrics. Our findings highlight a previously overlooked risk in current unlearning practices and establish FairGU as a robust and equitable solution for the next generation of socially sustainable networked systems. The codes are available at https://github.com/LuoRenqiang/FairGU.",
-      "link": "http://arxiv.org/abs/2601.09469v1",
-      "published_date": "January 14, 2026",
-      "published_date_sort": "2026-01-14",
-      "citations": 0,
-      "institutions": "Unknown"
-    },
-    {
-      "title": "Toward Understanding Unlearning Difficulty: A Mechanistic Perspective and Circuit-Guided Difficulty Metric",
-      "authors": "Jiali Cheng, Ziheng Chen, Chirag Agarwal, Hadi Amiri",
-      "journal": "arXiv",
-      "snippet": "Machine unlearning is becoming essential for building trustworthy and compliant language models. Yet unlearning success varies considerably across individual samples: some are reliably erased, while others persist despite the same procedure. We argue that this disparity is not only a data-side phenomenon, but also reflects model-internal mechanisms that encode and protect memorized information. We study this problem from a mechanistic perspective based on model circuits--structured interaction pathways that govern how predictions are formed. We propose Circuit-guided Unlearning Difficulty (CUD), a {\\em pre-unlearning} metric that assigns each sample a continuous difficulty score using circuit-level signals. Extensive experiments demonstrate that CUD reliably separates intrinsically easy and hard samples, and remains stable across unlearning methods. We identify key circuit-level patterns that reveal a mechanistic signature of difficulty: easy-to-unlearn samples are associated with shorter, shallower interactions concentrated in earlier-to-intermediate parts of the original model, whereas hard samples rely on longer and deeper pathways closer to late-stage computation. Compared to existing qualitative studies, CUD takes a first step toward a principled, fine-grained, and interpretable analysis of unlearning difficulty; and motivates the development of unlearning methods grounded in model mechanisms.",
-      "link": "http://arxiv.org/abs/2601.09624v1",
-      "published_date": "January 14, 2026",
-      "published_date_sort": "2026-01-14",
-      "citations": 0,
-      "institutions": "Unknown"
-    },
-    {
-      "title": "Reinforcement learning for machine learning engineering agents",
-      "authors": "S Yang, J He-Yueya, P Liang - arXiv preprint arXiv:2509.01684, 2025 - arxiv.org",
-      "journal": "Google Scholar Result",
-      "snippet": "Existing agents for solving tasks such as ML engineering rely on prompting powerful language models. As a result, these agents do not improve with more experience. In this …",
-      "link": "https://arxiv.org/abs/2509.01684",
-      "published_date": "September 2025",
-      "published_date_sort": "2025-09-01",
-      "citations": 1,
       "institutions": "Unknown"
     },
     {
@@ -168,6 +135,17 @@
       "published_date": "September 2025",
       "published_date_sort": "2025-09-01",
       "citations": 8,
+      "institutions": "Unknown"
+    },
+    {
+      "title": "Reinforcement learning for machine learning engineering agents",
+      "authors": "S Yang, J He-Yueya, P Liang - arXiv preprint arXiv:2509.01684, 2025 - arxiv.org",
+      "journal": "Google Scholar Result",
+      "snippet": "Existing agents for solving tasks such as ML engineering rely on prompting powerful language models. As a result, these agents do not improve with more experience. In this …",
+      "link": "https://arxiv.org/abs/2509.01684",
+      "published_date": "September 2025",
+      "published_date_sort": "2025-09-01",
+      "citations": 1,
       "institutions": "Unknown"
     },
     {
@@ -200,7 +178,7 @@
       "link": "https://arxiv.org/abs/2507.23276",
       "published_date": "July 2025",
       "published_date_sort": "2025-07-01",
-      "citations": 6,
+      "citations": 7,
       "institutions": "Unknown"
     },
     {
@@ -215,17 +193,6 @@
       "institutions": "Unknown"
     },
     {
-      "title": "A Comprehensive Survey of Deep Research: Systems, Methodologies, and Applications",
-      "authors": "R Xu, J Peng - arXiv preprint arXiv:2506.12594, 2025 - arxiv.org",
-      "journal": "Google Scholar Result",
-      "snippet": "This survey examines the rapidly evolving field of Deep Research systems--AI-powered applications that automate complex research workflows through the integration of large …",
-      "link": "https://arxiv.org/abs/2506.12594",
-      "published_date": "June 2025",
-      "published_date_sort": "2025-06-01",
-      "citations": 37,
-      "institutions": "Unknown"
-    },
-    {
       "title": "AI Scientists Fail Without Strong Implementation Capability",
       "authors": "M Zhu, Q Xie, Y Weng, J Wu, Z Lin, L Yang… - arXiv preprint arXiv …, 2025 - arxiv.org",
       "journal": "Google Scholar Result",
@@ -233,29 +200,18 @@
       "link": "https://arxiv.org/abs/2506.01372",
       "published_date": "June 2025",
       "published_date_sort": "2025-06-01",
-      "citations": 10,
+      "citations": 11,
       "institutions": "Unknown"
     },
     {
-      "title": "IDA-Bench: Evaluating LLMs on Interactive Guided Data Analysis",
-      "authors": "H Li, H Liu, T Zhu, T Guo, Z Zheng, X Deng… - arXiv preprint arXiv …, 2025 - arxiv.org",
+      "title": "A Comprehensive Survey of Deep Research: Systems, Methodologies, and Applications",
+      "authors": "R Xu, J Peng - arXiv preprint arXiv:2506.12594, 2025 - arxiv.org",
       "journal": "Google Scholar Result",
-      "snippet": "Large Language Models (LLMs) show promise as data analysis agents, but existing benchmarks overlook the iterative nature of the field, where experts' decisions evolve with …",
-      "link": "https://arxiv.org/abs/2505.18223",
-      "published_date": "May 2025",
-      "published_date_sort": "2025-05-01",
-      "citations": 2,
-      "institutions": "Unknown"
-    },
-    {
-      "title": "Mle-dojo: Interactive environments for empowering llm agents in machine learning engineering",
-      "authors": "R Qiang, Y Zhuang, Y Li, R Zhang, C Li… - arXiv preprint arXiv …, 2025 - arxiv.org",
-      "journal": "Google Scholar Result",
-      "snippet": "We introduce MLE-Dojo, a Gym-style framework for systematically reinforcement learning, evaluating, and improving autonomous large language model (LLM) agents in iterative …",
-      "link": "https://arxiv.org/abs/2505.07782",
-      "published_date": "May 2025",
-      "published_date_sort": "2025-05-01",
-      "citations": 7,
+      "snippet": "This survey examines the rapidly evolving field of Deep Research systems--AI-powered applications that automate complex research workflows through the integration of large …",
+      "link": "https://arxiv.org/abs/2506.12594",
+      "published_date": "June 2025",
+      "published_date_sort": "2025-06-01",
+      "citations": 38,
       "institutions": "Unknown"
     },
     {
@@ -270,6 +226,17 @@
       "institutions": "Unknown"
     },
     {
+      "title": "Mle-dojo: Interactive environments for empowering llm agents in machine learning engineering",
+      "authors": "R Qiang, Y Zhuang, Y Li, R Zhang, C Li… - arXiv preprint arXiv …, 2025 - arxiv.org",
+      "journal": "Google Scholar Result",
+      "snippet": "We introduce MLE-Dojo, a Gym-style framework for systematically reinforcement learning, evaluating, and improving autonomous large language model (LLM) agents in iterative …",
+      "link": "https://arxiv.org/abs/2505.07782",
+      "published_date": "May 2025",
+      "published_date_sort": "2025-05-01",
+      "citations": 7,
+      "institutions": "Unknown"
+    },
+    {
       "title": "CodePDE: An Inference Framework for LLM-driven PDE Solver Generation",
       "authors": "S Li, T Marwah, J Shen, W Sun, A Risteski… - arXiv preprint arXiv …, 2025 - arxiv.org",
       "journal": "Google Scholar Result",
@@ -281,17 +248,6 @@
       "institutions": "Unknown"
     },
     {
-      "title": "Mlzero: A multi-agent system for end-to-end machine learning automation",
-      "authors": "H Fang, B Han, N Erickson, X Zhang, S Zhou… - arXiv preprint arXiv …, 2025 - arxiv.org",
-      "journal": "Google Scholar Result",
-      "snippet": "Existing AutoML systems have advanced the automation of machine learning (ML); however, they still require substantial manual configuration and expert input, particularly …",
-      "link": "https://arxiv.org/abs/2505.13941",
-      "published_date": "May 2025",
-      "published_date_sort": "2025-05-01",
-      "citations": 4,
-      "institutions": "Unknown"
-    },
-    {
       "title": "Repomaster: Autonomous exploration and understanding of github repositories for complex task solving",
       "authors": "H Wang, Z Ni, S Zhang, S Lu, S Hu, Z He, C Hu… - arXiv preprint arXiv …, 2025 - arxiv.org",
       "journal": "Google Scholar Result",
@@ -300,6 +256,28 @@
       "published_date": "May 2025",
       "published_date_sort": "2025-05-01",
       "citations": 9,
+      "institutions": "Unknown"
+    },
+    {
+      "title": "IDA-Bench: Evaluating LLMs on Interactive Guided Data Analysis",
+      "authors": "H Li, H Liu, T Zhu, T Guo, Z Zheng, X Deng… - arXiv preprint arXiv …, 2025 - arxiv.org",
+      "journal": "Google Scholar Result",
+      "snippet": "Large Language Models (LLMs) show promise as data analysis agents, but existing benchmarks overlook the iterative nature of the field, where experts' decisions evolve with …",
+      "link": "https://arxiv.org/abs/2505.18223",
+      "published_date": "May 2025",
+      "published_date_sort": "2025-05-01",
+      "citations": 2,
+      "institutions": "Unknown"
+    },
+    {
+      "title": "Mlzero: A multi-agent system for end-to-end machine learning automation",
+      "authors": "H Fang, B Han, N Erickson, X Zhang, S Zhou… - arXiv preprint arXiv …, 2025 - arxiv.org",
+      "journal": "Google Scholar Result",
+      "snippet": "Existing AutoML systems have advanced the automation of machine learning (ML); however, they still require substantial manual configuration and expert input, particularly …",
+      "link": "https://arxiv.org/abs/2505.13941",
+      "published_date": "May 2025",
+      "published_date_sort": "2025-05-01",
+      "citations": 4,
       "institutions": "Unknown"
     },
     {
@@ -325,17 +303,6 @@
       "institutions": "Unknown"
     },
     {
-      "title": "An agentic framework for autonomous metamaterial modeling and inverse design",
-      "authors": "D Lu, JM Malof, WJ Padilla - ACS Photonics, 2025 - ACS Publications",
-      "journal": "Google Scholar Result",
-      "snippet": "The evolution from large language models to agentic systems has created a new Frontier of scientific discovery, enabling the automation of complex research tasks that have …",
-      "link": "https://pubs.acs.org/doi/abs/10.1021/acsphotonics.5c01514",
-      "published_date": "2025",
-      "published_date_sort": "2025-01-01",
-      "citations": 6,
-      "institutions": "Unknown"
-    },
-    {
       "title": "AIRepr: An Analyst-Inspector Framework for Evaluating Reproducibility of LLMs in Data Science",
       "authors": "Q Zeng, C Jin, X Wang, Y Zheng… - Findings of the Association …, 2025 - aclanthology.org",
       "journal": "Google Scholar Result",
@@ -344,6 +311,17 @@
       "published_date": "2025",
       "published_date_sort": "2025-01-01",
       "citations": 1,
+      "institutions": "Unknown"
+    },
+    {
+      "title": "An agentic framework for autonomous metamaterial modeling and inverse design",
+      "authors": "D Lu, JM Malof, WJ Padilla - ACS Photonics, 2025 - ACS Publications",
+      "journal": "Google Scholar Result",
+      "snippet": "The evolution from large language models to agentic systems has created a new Frontier of scientific discovery, enabling the automation of complex research tasks that have …",
+      "link": "https://pubs.acs.org/doi/abs/10.1021/acsphotonics.5c01514",
+      "published_date": "2025",
+      "published_date_sort": "2025-01-01",
+      "citations": 6,
       "institutions": "Unknown"
     },
     {
