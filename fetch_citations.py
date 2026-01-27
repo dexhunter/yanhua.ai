@@ -143,31 +143,54 @@ class CitationTracker:
         if not cites_id:
             return []
 
-        logger.info("SerpAPI: Step 2 - Fetching citing papers using cites_id...")
+        logger.info("SerpAPI: Step 2 - Fetching all citing papers using cites_id (with pagination)...")
         papers = []
         raw_results = []
-        params = {
-            "engine": "google_scholar",
-            "cites": cites_id,
-            "api_key": self.serpapi_key,
-            "num": 20, # Google Scholar pages usually have 10 or 20 results
-        }
-        try:
-            response = requests.get(self.serpapi_base_url, params=params, timeout=30)
-            response.raise_for_status()
-            data = response.json()
-            logger.info(f"SerpAPI raw response: {json.dumps(data, indent=2)}")
-            raw_results = data.get('organic_results', [])
-            if raw_results:
-                papers.extend([self._parse_serpapi_paper(res) for res in raw_results])
-            
-            logger.info(f"SerpAPI: Fetched {len(papers)} papers.")
-            # Save the raw results to the cache
-            self._save_cache(raw_results)
-            return papers
-        except requests.exceptions.RequestException as e:
-            logger.error(f"SerpAPI request for citing papers failed: {e}")
-            return []
+        start = 0
+        page_size = 20  # Google Scholar max per page
+
+        while len(papers) < max_results:
+            params = {
+                "engine": "google_scholar",
+                "cites": cites_id,
+                "api_key": self.serpapi_key,
+                "num": page_size,
+                "start": start,
+            }
+            try:
+                response = requests.get(self.serpapi_base_url, params=params, timeout=30)
+                response.raise_for_status()
+                data = response.json()
+
+                # Only log first page in detail
+                if start == 0:
+                    total_results = data.get('search_information', {}).get('total_results', 0)
+                    logger.info(f"SerpAPI: Total citations reported: {total_results}")
+
+                page_results = data.get('organic_results', [])
+                if not page_results:
+                    logger.info(f"SerpAPI: No more results at start={start}")
+                    break
+
+                raw_results.extend(page_results)
+                papers.extend([self._parse_serpapi_paper(res) for res in page_results])
+                logger.info(f"SerpAPI: Fetched page starting at {start}, got {len(page_results)} papers (total: {len(papers)})")
+
+                # Check if there are more pages
+                if len(page_results) < page_size:
+                    break
+
+                start += page_size
+                time.sleep(1)  # Rate limit between pages
+
+            except requests.exceptions.RequestException as e:
+                logger.error(f"SerpAPI request failed at start={start}: {e}")
+                break
+
+        logger.info(f"SerpAPI: Fetched {len(papers)} total papers.")
+        # Save the raw results to the cache
+        self._save_cache(raw_results)
+        return papers
 
     def _parse_serpapi_paper(self, result: Dict) -> Paper:
         title = result.get('title', 'Untitled')
@@ -260,6 +283,47 @@ class CitationTracker:
             logger.error(f"arXiv API search for citing papers failed: {e}")
             return []
 
+    # --- arXiv Topic Search for Related Research ---
+    def find_papers_by_topic(self, topic_queries: List[str], max_results: int = 50) -> List[Paper]:
+        """
+        Search arXiv for papers matching topic queries.
+        Used to find related papers in fields like self-evolving agents.
+        """
+        all_papers = []
+
+        for query in topic_queries:
+            logger.info(f"arXiv Topic Search: Searching for '{query}'")
+            params = {
+                'search_query': query,
+                'max_results': max_results,
+                'sortBy': 'submittedDate',
+                'sortOrder': 'descending'
+            }
+
+            try:
+                time.sleep(3)  # Respect arXiv rate limit
+                response = requests.get(self.arxiv_api_url, params=params, timeout=30)
+                response.raise_for_status()
+                root = ET.fromstring(response.content)
+                atom_namespace = {'atom': 'http://www.w3.org/2005/Atom'}
+
+                for entry in root.findall('atom:entry', atom_namespace):
+                    paper = self._parse_arxiv_xml_entry(entry, atom_namespace)
+                    if paper:
+                        # Don't include our own paper in related papers
+                        if self._extract_arxiv_id(paper.link) != self.target_arxiv_id:
+                            all_papers.append(paper)
+
+                logger.info(f"arXiv Topic Search: Found {len(all_papers)} papers so far.")
+            except Exception as e:
+                logger.error(f"arXiv topic search failed for query '{query}': {e}")
+
+        # Remove duplicates and sort by date
+        unique_papers = list(set(all_papers))
+        unique_papers.sort(key=lambda p: p.published_date_sort, reverse=True)
+        logger.info(f"arXiv Topic Search: Total {len(unique_papers)} unique related papers found.")
+        return unique_papers
+
     # --- arXiv HTML Search Methods for very recent papers ---
     def _fetch_latest_arxiv_papers_for_scraping(self) -> List[Paper]:
         """Fetches the most recent papers from relevant CS categories to scan their HTML."""
@@ -297,22 +361,24 @@ class CitationTracker:
     def _search_html_for_citation(self, paper: Paper) -> bool:
         """Checks the HTML version of a paper for a citation to the target paper."""
         paper_id = self._extract_arxiv_id(paper.link)
-        # Check both v1, v2, etc.
         html_url = f"https://arxiv.org/html/{paper_id}"
 
         logger.debug(f"Checking HTML: {html_url}")
         try:
-            # A short timeout is crucial here to avoid getting stuck.
             response = requests.get(html_url, timeout=15)
             if response.status_code == 200:
-                # Simple string search is much faster than regex for this.
-                # We check for both the plain ID and the project name "aideml".
-                text_to_search = response.text.lower()
-                if self.target_arxiv_id in text_to_search or "aide" in text_to_search:
+                text = response.text.lower()
+                # Check for specific identifiers to avoid false positives:
+                # 1. The exact arXiv ID
+                # 2. The project URL "aide.ml"
+                # 3. The specific paper title pattern
+                if (self.target_arxiv_id in text or
+                    "aide.ml" in text or
+                    "aideml" in text or
+                    "ai-driven exploration in the space of code" in text):
                     logger.info(f"  -> Found citation in {paper.title}")
                     return True
         except requests.exceptions.RequestException:
-            # This is expected to happen sometimes (e.g., timeouts, 404s for withdrawn papers)
             pass
         return False
 
@@ -432,7 +498,7 @@ class CitationTracker:
         logger.info(f"Fetched a total of {len(merged_papers)} unique citing papers from all sources.")
         return merged_papers
 
-    def save_data(self, papers: List[Paper], filename: str = 'citations_data.json'):
+    def save_data(self, papers: List[Paper], related_papers: List[Paper] = None, filename: str = 'citations_data.json'):
         stats = self._calculate_statistics(papers)
         data = {
             'last_updated': datetime.now().strftime('%Y-%m-%d %H:%M:%S UTC'),
@@ -447,6 +513,15 @@ class CitationTracker:
                     'institutions': paper.institutions
                 }
                 for paper in papers
+            ],
+            'related_papers': [
+                {
+                    'title': paper.title, 'authors': paper.authors, 'journal': paper.journal,
+                    'snippet': paper.snippet, 'link': paper.link, 'published_date': paper.published_date,
+                    'published_date_sort': paper.published_date_sort, 'citations': paper.citations,
+                    'institutions': paper.institutions
+                }
+                for paper in (related_papers or [])
             ]
         }
         with open(filename, 'w', encoding='utf-8') as f:
@@ -461,11 +536,24 @@ def main():
         return
 
     tracker = CitationTracker(serpapi_key=serpapi_key)
-    
+
     try:
+        # Fetch citations for our paper
         papers = tracker.fetch_citations(max_results=100)
+
+        # Fetch related papers on self-evolving agents
+        # Using multiple query variations to maximize coverage
+        self_evolving_queries = [
+            'abs:"self-evolving agent" OR abs:"self evolving agent"',
+            'abs:"self-improving agent" OR abs:"self improving agent"',
+            'ti:"self-evolving" AND (cat:cs.AI OR cat:cs.LG)',
+            'abs:"autonomous agent" AND abs:"self-improvement" AND (cat:cs.AI OR cat:cs.LG)',
+            'abs:"LLM agent" AND (abs:evolution OR abs:self-improving)',
+        ]
+        related_papers = tracker.find_papers_by_topic(self_evolving_queries, max_results=30)
+
         # Write to the correct path for the Pages Function
-        tracker.save_data(papers, filename='functions/citations_data.json')
+        tracker.save_data(papers, related_papers=related_papers, filename='functions/citations_data.json')
         logger.info("Citation tracking completed successfully!")
     except Exception as e:
         logger.error(f"Error in main execution: {e}", exc_info=True)
