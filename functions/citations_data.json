@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-01-27 19:33:58 UTC",
+  "last_updated": "2026-01-28 00:13:21 UTC",
   "target_paper": "https://www.arxiv.org/abs/2502.13138",
   "arxiv_id": "2502.13138",
   "total_citations": 55,
@@ -58,28 +58,6 @@
   ],
   "papers": [
     {
-      "title": "Can LLMs Do Rocket Science? Exploring the Limits of Complex Reasoning with GTOC 12",
-      "authors": "I Del Campo Sánchez-Hermosilla, P Cuervo… - AIAA SCITECH 2026 …, 2026 - arc.aiaa.org",
-      "journal": "Google Scholar Result",
-      "snippet": "Large Language Models (LLMs) have demonstrated remarkable proficiency in code generation and general reasoning, yet their capacity for autonomous multi-stage planning in …",
-      "link": "https://arc.aiaa.org/doi/abs/10.2514/6.2026-2379",
-      "published_date": "2026",
-      "published_date_sort": "2026-01-01",
-      "citations": 0,
-      "institutions": "Unknown"
-    },
-    {
-      "title": "Why LLMs Aren't Scientists Yet: Lessons from Four Autonomous Research Attempts",
-      "authors": "D Trehan, P Chopra - arXiv preprint arXiv:2601.03315, 2026 - arxiv.org",
-      "journal": "Google Scholar Result",
-      "snippet": "We report a case study of four end-to-end attempts to autonomously generate ML research papers using a pipeline of six LLM agents mapped to stages of the scientific workflow. Of …",
-      "link": "https://arxiv.org/abs/2601.03315",
-      "published_date": "January 2026",
-      "published_date_sort": "2026-01-01",
-      "citations": 0,
-      "institutions": "Unknown"
-    },
-    {
       "title": "VDSAgents: A PCS‐Guided Multi‐Agent System for Veridical Data Science Automation",
       "authors": "Y Jiang, S Hu, X Wang, Y Zhang, X Chang - Stat, 2026 - Wiley Online Library",
       "journal": "Google Scholar Result",
@@ -91,11 +69,11 @@
       "institutions": "Unknown"
     },
     {
-      "title": "LongDA: Benchmarking LLM Agents for Long-Document Data Analysis",
-      "authors": "Y Li, Z Zhang, T Ma, Z Wang, K Murugesan… - arXiv preprint arXiv …, 2026 - arxiv.org",
+      "title": "Can We Predict Before Executing Machine Learning Agents?",
+      "authors": "J Zheng, J Zhang, Y Luo, Y Mao, Y Gao, L Du… - arXiv preprint arXiv …, 2026 - arxiv.org",
       "journal": "Google Scholar Result",
-      "snippet": "We introduce LongDA, a data analysis benchmark for evaluating LLM-based agents under documentation-intensive analytical workflows. In contrast to existing benchmarks that …",
-      "link": "https://arxiv.org/abs/2601.02598",
+      "snippet": "Autonomous machine learning agents have revolutionized scientific discovery, yet they remain constrained by a Generate-Execute-Feedback paradigm. Previous approaches …",
+      "link": "https://arxiv.org/abs/2601.05930",
       "published_date": "January 2026",
       "published_date_sort": "2026-01-01",
       "citations": 0,
@@ -113,6 +91,28 @@
       "institutions": "Unknown"
     },
     {
+      "title": "LongDA: Benchmarking LLM Agents for Long-Document Data Analysis",
+      "authors": "Y Li, Z Zhang, T Ma, Z Wang, K Murugesan… - arXiv preprint arXiv …, 2026 - arxiv.org",
+      "journal": "Google Scholar Result",
+      "snippet": "We introduce LongDA, a data analysis benchmark for evaluating LLM-based agents under documentation-intensive analytical workflows. In contrast to existing benchmarks that …",
+      "link": "https://arxiv.org/abs/2601.02598",
+      "published_date": "January 2026",
+      "published_date_sort": "2026-01-01",
+      "citations": 0,
+      "institutions": "Unknown"
+    },
+    {
+      "title": "Why LLMs Aren't Scientists Yet: Lessons from Four Autonomous Research Attempts",
+      "authors": "D Trehan, P Chopra - arXiv preprint arXiv:2601.03315, 2026 - arxiv.org",
+      "journal": "Google Scholar Result",
+      "snippet": "We report a case study of four end-to-end attempts to autonomously generate ML research papers using a pipeline of six LLM agents mapped to stages of the scientific workflow. Of …",
+      "link": "https://arxiv.org/abs/2601.03315",
+      "published_date": "January 2026",
+      "published_date_sort": "2026-01-01",
+      "citations": 0,
+      "institutions": "Unknown"
+    },
+    {
       "title": "Towards Execution-Grounded Automated AI Research",
       "authors": "C Si, Z Yang, Y Choi, E Candès, D Yang… - arXiv preprint arXiv …, 2026 - arxiv.org",
       "journal": "Google Scholar Result",
@@ -124,25 +124,14 @@
       "institutions": "Unknown"
     },
     {
-      "title": "Can We Predict Before Executing Machine Learning Agents?",
-      "authors": "J Zheng, J Zhang, Y Luo, Y Mao, Y Gao, L Du… - arXiv preprint arXiv …, 2026 - arxiv.org",
+      "title": "Can LLMs Do Rocket Science? Exploring the Limits of Complex Reasoning with GTOC 12",
+      "authors": "I Del Campo Sánchez-Hermosilla, P Cuervo… - AIAA SCITECH 2026 …, 2026 - arc.aiaa.org",
       "journal": "Google Scholar Result",
-      "snippet": "Autonomous machine learning agents have revolutionized scientific discovery, yet they remain constrained by a Generate-Execute-Feedback paradigm. Previous approaches …",
-      "link": "https://arxiv.org/abs/2601.05930",
-      "published_date": "January 2026",
+      "snippet": "Large Language Models (LLMs) have demonstrated remarkable proficiency in code generation and general reasoning, yet their capacity for autonomous multi-stage planning in …",
+      "link": "https://arc.aiaa.org/doi/abs/10.2514/6.2026-2379",
+      "published_date": "2026",
       "published_date_sort": "2026-01-01",
       "citations": 0,
-      "institutions": "Unknown"
-    },
-    {
-      "title": "KernelEvolve: Scaling Agentic Kernel Coding for Heterogeneous AI Accelerators at Meta",
-      "authors": "G Liao, H Qin, Y Wang, A Golden, M Kuchnik… - arXiv preprint arXiv …, 2025 - arxiv.org",
-      "journal": "Google Scholar Result",
-      "snippet": "Making deep learning recommendation model (DLRM) training and inference fast and efficient is important. However, this presents three key system challenges-model architecture …",
-      "link": "https://arxiv.org/abs/2512.23236",
-      "published_date": "December 2025",
-      "published_date_sort": "2025-12-01",
-      "citations": 1,
       "institutions": "Unknown"
     },
     {
@@ -168,14 +157,14 @@
       "institutions": "Unknown"
     },
     {
-      "title": "ArchPilot: A Proxy-Guided Multi-Agent Approach for Machine Learning Engineering",
-      "authors": "Z Yuan, T Liu, Y Yang, Y Wang, F Qi… - arXiv preprint arXiv …, 2025 - arxiv.org",
+      "title": "KernelEvolve: Scaling Agentic Kernel Coding for Heterogeneous AI Accelerators at Meta",
+      "authors": "G Liao, H Qin, Y Wang, A Golden, M Kuchnik… - arXiv preprint arXiv …, 2025 - arxiv.org",
       "journal": "Google Scholar Result",
-      "snippet": "Recent LLM-based agents have demonstrated strong capabilities in automated ML engineering. However, they heavily rely on repeated full training runs to evaluate candidate …",
-      "link": "https://arxiv.org/abs/2511.03985",
-      "published_date": "November 2025",
-      "published_date_sort": "2025-11-01",
-      "citations": 0,
+      "snippet": "Making deep learning recommendation model (DLRM) training and inference fast and efficient is important. However, this presents three key system challenges-model architecture …",
+      "link": "https://arxiv.org/abs/2512.23236",
+      "published_date": "December 2025",
+      "published_date_sort": "2025-12-01",
+      "citations": 1,
       "institutions": "Unknown"
     },
     {
@@ -190,14 +179,14 @@
       "institutions": "Unknown"
     },
     {
-      "title": "The fm agent",
-      "authors": "A Li, C Wu, Z Ge, YH Chong, Z Hou, L Cao, C Ju… - arXiv preprint arXiv …, 2025 - arxiv.org",
+      "title": "ArchPilot: A Proxy-Guided Multi-Agent Approach for Machine Learning Engineering",
+      "authors": "Z Yuan, T Liu, Y Yang, Y Wang, F Qi… - arXiv preprint arXiv …, 2025 - arxiv.org",
       "journal": "Google Scholar Result",
-      "snippet": "Large language models (LLMs) are catalyzing the development of autonomous AI research agents for scientific and engineering discovery. We present FM Agent, a novel and general …",
-      "link": "https://arxiv.org/abs/2510.26144",
-      "published_date": "October 2025",
-      "published_date_sort": "2025-10-01",
-      "citations": 3,
+      "snippet": "Recent LLM-based agents have demonstrated strong capabilities in automated ML engineering. However, they heavily rely on repeated full training runs to evaluate candidate …",
+      "link": "https://arxiv.org/abs/2511.03985",
+      "published_date": "November 2025",
+      "published_date_sort": "2025-11-01",
+      "citations": 0,
       "institutions": "Unknown"
     },
     {
@@ -212,14 +201,14 @@
       "institutions": "Unknown"
     },
     {
-      "title": "Towards adaptive ml benchmarks: Web-agent-driven construction, domain expansion, and metric optimization",
-      "authors": "H Jia, Y Qian, H Tong, X Wu, L Chen, F Wei - arXiv preprint arXiv …, 2025 - arxiv.org",
+      "title": "The fm agent",
+      "authors": "A Li, C Wu, Z Ge, YH Chong, Z Hou, L Cao, C Ju… - arXiv preprint arXiv …, 2025 - arxiv.org",
       "journal": "Google Scholar Result",
-      "snippet": "Recent advances in large language models (LLMs) have enabled the emergence of general-purpose agents for automating end-to-end machine learning (ML) workflows, including data …",
-      "link": "https://arxiv.org/abs/2509.09321",
-      "published_date": "September 2025",
-      "published_date_sort": "2025-09-01",
-      "citations": 1,
+      "snippet": "Large language models (LLMs) are catalyzing the development of autonomous AI research agents for scientific and engineering discovery. We present FM Agent, a novel and general …",
+      "link": "https://arxiv.org/abs/2510.26144",
+      "published_date": "October 2025",
+      "published_date_sort": "2025-10-01",
+      "citations": 3,
       "institutions": "Unknown"
     },
     {
@@ -234,11 +223,22 @@
       "institutions": "Unknown"
     },
     {
-      "title": "DS-STAR: Data Science Agent via Iterative Planning and Verification",
-      "authors": "J Nam, J Yoon, J Chen, T Pfister - arXiv preprint arXiv:2509.21825, 2025 - arxiv.org",
+      "title": "Bootstrapping task spaces for self-improvement",
+      "authors": "M Jiang, A Lupu, Y Bachrach - arXiv preprint arXiv:2509.04575, 2025 - arxiv.org",
       "journal": "Google Scholar Result",
-      "snippet": "Data science, which transforms raw data into actionable insights, is critical for data-driven decision-making. However, these tasks are often complex, involving steps for exploring …",
-      "link": "https://arxiv.org/abs/2509.21825",
+      "snippet": "Progress in many task domains emerges from repeated revisions to previous solution attempts. Training agents that can reliably self-improve over such sequences at inference …",
+      "link": "https://arxiv.org/abs/2509.04575",
+      "published_date": "September 2025",
+      "published_date_sort": "2025-09-01",
+      "citations": 3,
+      "institutions": "Unknown"
+    },
+    {
+      "title": "TusoAI: Agentic Optimization for Scientific Methods",
+      "authors": "A Turcan, K Huang, L Li, MJ Zhang - arXiv preprint arXiv:2509.23986, 2025 - arxiv.org",
+      "journal": "Google Scholar Result",
+      "snippet": "Scientific discovery is often slowed by the manual development of computational tools needed to analyze complex experimental data. Building such tools is costly and time …",
+      "link": "https://arxiv.org/abs/2509.23986",
       "published_date": "September 2025",
       "published_date_sort": "2025-09-01",
       "citations": 0,
@@ -256,14 +256,25 @@
       "institutions": "Unknown"
     },
     {
-      "title": "Bootstrapping task spaces for self-improvement",
-      "authors": "M Jiang, A Lupu, Y Bachrach - arXiv preprint arXiv:2509.04575, 2025 - arxiv.org",
+      "title": "Towards adaptive ml benchmarks: Web-agent-driven construction, domain expansion, and metric optimization",
+      "authors": "H Jia, Y Qian, H Tong, X Wu, L Chen, F Wei - arXiv preprint arXiv …, 2025 - arxiv.org",
       "journal": "Google Scholar Result",
-      "snippet": "Progress in many task domains emerges from repeated revisions to previous solution attempts. Training agents that can reliably self-improve over such sequences at inference …",
-      "link": "https://arxiv.org/abs/2509.04575",
+      "snippet": "Recent advances in large language models (LLMs) have enabled the emergence of general-purpose agents for automating end-to-end machine learning (ML) workflows, including data …",
+      "link": "https://arxiv.org/abs/2509.09321",
       "published_date": "September 2025",
       "published_date_sort": "2025-09-01",
-      "citations": 3,
+      "citations": 1,
+      "institutions": "Unknown"
+    },
+    {
+      "title": "DS-STAR: Data Science Agent via Iterative Planning and Verification",
+      "authors": "J Nam, J Yoon, J Chen, T Pfister - arXiv preprint arXiv:2509.21825, 2025 - arxiv.org",
+      "journal": "Google Scholar Result",
+      "snippet": "Data science, which transforms raw data into actionable insights, is critical for data-driven decision-making. However, these tasks are often complex, involving steps for exploring …",
+      "link": "https://arxiv.org/abs/2509.21825",
+      "published_date": "September 2025",
+      "published_date_sort": "2025-09-01",
+      "citations": 0,
       "institutions": "Unknown"
     },
     {
@@ -275,17 +286,6 @@
       "published_date": "September 2025",
       "published_date_sort": "2025-09-01",
       "citations": 2,
-      "institutions": "Unknown"
-    },
-    {
-      "title": "TusoAI: Agentic Optimization for Scientific Methods",
-      "authors": "A Turcan, K Huang, L Li, MJ Zhang - arXiv preprint arXiv:2509.23986, 2025 - arxiv.org",
-      "journal": "Google Scholar Result",
-      "snippet": "Scientific discovery is often slowed by the manual development of computational tools needed to analyze complex experimental data. Building such tools is costly and time …",
-      "link": "https://arxiv.org/abs/2509.23986",
-      "published_date": "September 2025",
-      "published_date_sort": "2025-09-01",
-      "citations": 0,
       "institutions": "Unknown"
     },
     {
@@ -322,22 +322,22 @@
       "institutions": "Unknown"
     },
     {
-      "title": "PhysGym: Benchmarking LLMs in Interactive Physics Discovery with Controlled Priors",
-      "authors": "Y Chen, P Piȩkos, M Ostaszewski, F Laakom… - arXiv preprint arXiv …, 2025 - arxiv.org",
+      "title": "LightAutoDS-Tab: Multi-AutoML Agentic System for Tabular Data",
+      "authors": "A Lapin, I Hromov, S Chumakov, M Mitrovic… - arXiv preprint arXiv …, 2025 - arxiv.org",
       "journal": "Google Scholar Result",
-      "snippet": "Evaluating the scientific discovery capabilities of large language model based agents, particularly how they cope with varying environmental complexity and utilize prior …",
-      "link": "https://arxiv.org/abs/2507.15550",
+      "snippet": "AutoML has advanced in handling complex tasks using the integration of LLMs, yet its efficiency remains limited by dependence on specific underlying tools. In this paper, we …",
+      "link": "https://arxiv.org/abs/2507.13413",
       "published_date": "July 2025",
       "published_date_sort": "2025-07-01",
       "citations": 0,
       "institutions": "Unknown"
     },
     {
-      "title": "LightAutoDS-Tab: Multi-AutoML Agentic System for Tabular Data",
-      "authors": "A Lapin, I Hromov, S Chumakov, M Mitrovic… - arXiv preprint arXiv …, 2025 - arxiv.org",
+      "title": "PhysGym: Benchmarking LLMs in Interactive Physics Discovery with Controlled Priors",
+      "authors": "Y Chen, P Piȩkos, M Ostaszewski, F Laakom… - arXiv preprint arXiv …, 2025 - arxiv.org",
       "journal": "Google Scholar Result",
-      "snippet": "AutoML has advanced in handling complex tasks using the integration of LLMs, yet its efficiency remains limited by dependence on specific underlying tools. In this paper, we …",
-      "link": "https://arxiv.org/abs/2507.13413",
+      "snippet": "Evaluating the scientific discovery capabilities of large language model based agents, particularly how they cope with varying environmental complexity and utilize prior …",
+      "link": "https://arxiv.org/abs/2507.15550",
       "published_date": "July 2025",
       "published_date_sort": "2025-07-01",
       "citations": 0,
@@ -355,17 +355,6 @@
       "institutions": "Unknown"
     },
     {
-      "title": "MLE-STAR: Machine Learning Engineering Agent via Search and Targeted Refinement",
-      "authors": "J Nam, J Yoon, J Chen, J Shin, SÖ Arık… - arXiv preprint arXiv …, 2025 - arxiv.org",
-      "journal": "Google Scholar Result",
-      "snippet": "Agents based on large language models (LLMs) for machine learning engineering (MLE) can automatically implement ML models via code generation. However, existing approaches …",
-      "link": "https://arxiv.org/abs/2506.15692",
-      "published_date": "June 2025",
-      "published_date_sort": "2025-06-01",
-      "citations": 8,
-      "institutions": "Unknown"
-    },
-    {
       "title": "AI Scientists Fail Without Strong Implementation Capability",
       "authors": "M Zhu, Q Xie, Y Weng, J Wu, Z Lin, L Yang… - arXiv preprint arXiv …, 2025 - arxiv.org",
       "journal": "Google Scholar Result",
@@ -374,28 +363,6 @@
       "published_date": "June 2025",
       "published_date_sort": "2025-06-01",
       "citations": 11,
-      "institutions": "Unknown"
-    },
-    {
-      "title": "AssistedDS: Benchmarking How External Domain Knowledge Assists LLMs in Automated Data Science",
-      "authors": "A Luo, X Xian, J Du, F Tian, G Wang, M Zhong… - arXiv preprint arXiv …, 2025 - arxiv.org",
-      "journal": "Google Scholar Result",
-      "snippet": "Large language models (LLMs) have advanced the automation of data science workflows. Yet it remains unclear whether they can critically leverage external domain knowledge as …",
-      "link": "https://arxiv.org/abs/2506.13992",
-      "published_date": "June 2025",
-      "published_date_sort": "2025-06-01",
-      "citations": 3,
-      "institutions": "Unknown"
-    },
-    {
-      "title": "The Automated LLM Speedrunning Benchmark: Reproducing NanoGPT Improvements",
-      "authors": "B Zhao, D Magka, M Jiang, X Li, R Raileanu… - arXiv preprint arXiv …, 2025 - arxiv.org",
-      "journal": "Google Scholar Result",
-      "snippet": "Rapid advancements in large language models (LLMs) have the potential to assist in scientific progress. A critical capability toward this endeavor is the ability to reproduce …",
-      "link": "https://arxiv.org/abs/2506.22419",
-      "published_date": "June 2025",
-      "published_date_sort": "2025-06-01",
-      "citations": 1,
       "institutions": "Unknown"
     },
     {
@@ -410,14 +377,36 @@
       "institutions": "Unknown"
     },
     {
-      "title": "Automind: Adaptive knowledgeable agent for automated data science",
-      "authors": "Y Ou, Y Luo, J Zheng, L Wei, Z Yu, S Qiao… - arXiv preprint arXiv …, 2025 - arxiv.org",
+      "title": "Towards Community-Driven Agents for Machine Learning Engineering",
+      "authors": "S Li, W Sun, S Li, A Talwalkar, Y Yang - arXiv preprint arXiv:2506.20640, 2025 - arxiv.org",
       "journal": "Google Scholar Result",
-      "snippet": "Large Language Model (LLM) agents have shown great potential in addressing real-world data science problems. LLM-driven data science agents promise to automate the entire …",
-      "link": "https://arxiv.org/abs/2506.10974",
+      "snippet": "Large language model-based machine learning (ML) agents have shown great promise in automating ML research. However, existing agents typically operate in isolation on a given …",
+      "link": "https://arxiv.org/abs/2506.20640",
       "published_date": "June 2025",
       "published_date_sort": "2025-06-01",
-      "citations": 9,
+      "citations": 2,
+      "institutions": "Unknown"
+    },
+    {
+      "title": "MLE-STAR: Machine Learning Engineering Agent via Search and Targeted Refinement",
+      "authors": "J Nam, J Yoon, J Chen, J Shin, SÖ Arık… - arXiv preprint arXiv …, 2025 - arxiv.org",
+      "journal": "Google Scholar Result",
+      "snippet": "Agents based on large language models (LLMs) for machine learning engineering (MLE) can automatically implement ML models via code generation. However, existing approaches …",
+      "link": "https://arxiv.org/abs/2506.15692",
+      "published_date": "June 2025",
+      "published_date_sort": "2025-06-01",
+      "citations": 8,
+      "institutions": "Unknown"
+    },
+    {
+      "title": "AssistedDS: Benchmarking How External Domain Knowledge Assists LLMs in Automated Data Science",
+      "authors": "A Luo, X Xian, J Du, F Tian, G Wang, M Zhong… - arXiv preprint arXiv …, 2025 - arxiv.org",
+      "journal": "Google Scholar Result",
+      "snippet": "Large language models (LLMs) have advanced the automation of data science workflows. Yet it remains unclear whether they can critically leverage external domain knowledge as …",
+      "link": "https://arxiv.org/abs/2506.13992",
+      "published_date": "June 2025",
+      "published_date_sort": "2025-06-01",
+      "citations": 3,
       "institutions": "Unknown"
     },
     {
@@ -432,58 +421,25 @@
       "institutions": "Unknown"
     },
     {
-      "title": "Towards Community-Driven Agents for Machine Learning Engineering",
-      "authors": "S Li, W Sun, S Li, A Talwalkar, Y Yang - arXiv preprint arXiv:2506.20640, 2025 - arxiv.org",
+      "title": "The Automated LLM Speedrunning Benchmark: Reproducing NanoGPT Improvements",
+      "authors": "B Zhao, D Magka, M Jiang, X Li, R Raileanu… - arXiv preprint arXiv …, 2025 - arxiv.org",
       "journal": "Google Scholar Result",
-      "snippet": "Large language model-based machine learning (ML) agents have shown great promise in automating ML research. However, existing agents typically operate in isolation on a given …",
-      "link": "https://arxiv.org/abs/2506.20640",
+      "snippet": "Rapid advancements in large language models (LLMs) have the potential to assist in scientific progress. A critical capability toward this endeavor is the ability to reproduce …",
+      "link": "https://arxiv.org/abs/2506.22419",
       "published_date": "June 2025",
       "published_date_sort": "2025-06-01",
-      "citations": 2,
+      "citations": 1,
       "institutions": "Unknown"
     },
     {
-      "title": "From automation to autonomy: A survey on large language models in scientific discovery",
-      "authors": "T Zheng, Z Deng, HT Tsang, W Wang, J Bai… - arXiv preprint arXiv …, 2025 - arxiv.org",
+      "title": "Automind: Adaptive knowledgeable agent for automated data science",
+      "authors": "Y Ou, Y Luo, J Zheng, L Wei, Z Yu, S Qiao… - arXiv preprint arXiv …, 2025 - arxiv.org",
       "journal": "Google Scholar Result",
-      "snippet": "Large Language Models (LLMs) are catalyzing a paradigm shift in scientific discovery, evolving from task-specific automation tools into increasingly autonomous agents and …",
-      "link": "https://arxiv.org/abs/2505.13259",
-      "published_date": "May 2025",
-      "published_date_sort": "2025-05-01",
-      "citations": 37,
-      "institutions": "Unknown"
-    },
-    {
-      "title": "TimeSeriesGym: A Scalable Benchmark for (Time Series) Machine Learning Engineering Agents",
-      "authors": "Y Cai, X Li, M Goswami, M Wiliński, G Welter… - arXiv preprint arXiv …, 2025 - arxiv.org",
-      "journal": "Google Scholar Result",
-      "snippet": "We introduce TimeSeriesGym, a scalable benchmarking framework for evaluating Artificial Intelligence (AI) agents on time series machine learning engineering challenges. Existing …",
-      "link": "https://arxiv.org/abs/2505.13291",
-      "published_date": "May 2025",
-      "published_date_sort": "2025-05-01",
-      "citations": 7,
-      "institutions": "Unknown"
-    },
-    {
-      "title": "Mlzero: A multi-agent system for end-to-end machine learning automation",
-      "authors": "H Fang, B Han, N Erickson, X Zhang, S Zhou… - arXiv preprint arXiv …, 2025 - arxiv.org",
-      "journal": "Google Scholar Result",
-      "snippet": "Existing AutoML systems have advanced the automation of machine learning (ML); however, they still require substantial manual configuration and expert input, particularly …",
-      "link": "https://arxiv.org/abs/2505.13941",
-      "published_date": "May 2025",
-      "published_date_sort": "2025-05-01",
-      "citations": 5,
-      "institutions": "Unknown"
-    },
-    {
-      "title": "CodePDE: An Inference Framework for LLM-driven PDE Solver Generation",
-      "authors": "S Li, T Marwah, J Shen, W Sun, A Risteski… - arXiv preprint arXiv …, 2025 - arxiv.org",
-      "journal": "Google Scholar Result",
-      "snippet": "Partial differential equations (PDEs) are fundamental to modeling physical systems, yet solving them remains a complex challenge. Traditional numerical solvers rely on expert …",
-      "link": "https://arxiv.org/abs/2505.08783",
-      "published_date": "May 2025",
-      "published_date_sort": "2025-05-01",
-      "citations": 10,
+      "snippet": "Large Language Model (LLM) agents have shown great potential in addressing real-world data science problems. LLM-driven data science agents promise to automate the entire …",
+      "link": "https://arxiv.org/abs/2506.10974",
+      "published_date": "June 2025",
+      "published_date_sort": "2025-06-01",
+      "citations": 9,
       "institutions": "Unknown"
     },
     {
@@ -520,6 +476,50 @@
       "institutions": "Unknown"
     },
     {
+      "title": "CodePDE: An Inference Framework for LLM-driven PDE Solver Generation",
+      "authors": "S Li, T Marwah, J Shen, W Sun, A Risteski… - arXiv preprint arXiv …, 2025 - arxiv.org",
+      "journal": "Google Scholar Result",
+      "snippet": "Partial differential equations (PDEs) are fundamental to modeling physical systems, yet solving them remains a complex challenge. Traditional numerical solvers rely on expert …",
+      "link": "https://arxiv.org/abs/2505.08783",
+      "published_date": "May 2025",
+      "published_date_sort": "2025-05-01",
+      "citations": 10,
+      "institutions": "Unknown"
+    },
+    {
+      "title": "From automation to autonomy: A survey on large language models in scientific discovery",
+      "authors": "T Zheng, Z Deng, HT Tsang, W Wang, J Bai… - arXiv preprint arXiv …, 2025 - arxiv.org",
+      "journal": "Google Scholar Result",
+      "snippet": "Large Language Models (LLMs) are catalyzing a paradigm shift in scientific discovery, evolving from task-specific automation tools into increasingly autonomous agents and …",
+      "link": "https://arxiv.org/abs/2505.13259",
+      "published_date": "May 2025",
+      "published_date_sort": "2025-05-01",
+      "citations": 37,
+      "institutions": "Unknown"
+    },
+    {
+      "title": "Mlzero: A multi-agent system for end-to-end machine learning automation",
+      "authors": "H Fang, B Han, N Erickson, X Zhang, S Zhou… - arXiv preprint arXiv …, 2025 - arxiv.org",
+      "journal": "Google Scholar Result",
+      "snippet": "Existing AutoML systems have advanced the automation of machine learning (ML); however, they still require substantial manual configuration and expert input, particularly …",
+      "link": "https://arxiv.org/abs/2505.13941",
+      "published_date": "May 2025",
+      "published_date_sort": "2025-05-01",
+      "citations": 5,
+      "institutions": "Unknown"
+    },
+    {
+      "title": "TimeSeriesGym: A Scalable Benchmark for (Time Series) Machine Learning Engineering Agents",
+      "authors": "Y Cai, X Li, M Goswami, M Wiliński, G Welter… - arXiv preprint arXiv …, 2025 - arxiv.org",
+      "journal": "Google Scholar Result",
+      "snippet": "We introduce TimeSeriesGym, a scalable benchmarking framework for evaluating Artificial Intelligence (AI) agents on time series machine learning engineering challenges. Existing …",
+      "link": "https://arxiv.org/abs/2505.13291",
+      "published_date": "May 2025",
+      "published_date_sort": "2025-05-01",
+      "citations": 7,
+      "institutions": "Unknown"
+    },
+    {
       "title": "Co-bench: Benchmarking language model agents in algorithm search for combinatorial optimization",
       "authors": "W Sun, S Feng, S Li, Y Yang - arXiv preprint arXiv:2504.04310, 2025 - arxiv.org",
       "journal": "Google Scholar Result",
@@ -542,55 +542,22 @@
       "institutions": "Unknown"
     },
     {
+      "title": "R&D-Agent: An LLM-Agent Framework Towards Autonomous Data Science",
+      "authors": "X Yang, X Yang, S Fang, Y Zhang, J Wang, Q Li, J Li… - 2025 - openreview.net",
+      "journal": "Google Scholar Result",
+      "snippet": "Recent advances in AI and ML have transformed data science, yet increasing complexity and expertise requirements continue to hinder progress. Although crowd-sourcing platforms …",
+      "link": "https://openreview.net/forum?id=APjCXYORXO",
+      "published_date": "2025",
+      "published_date_sort": "2025-01-01",
+      "citations": 2,
+      "institutions": "Unknown"
+    },
+    {
       "title": "PiML: Automated Machine Learning Workflow Optimization using LLM Agents",
       "authors": "A Chopde, F Pettiwala, S Kirubananth, SK Botla… - AutoML 2025 Methods … - openreview.net",
       "journal": "Google Scholar Result",
       "snippet": "In this paper, we introduce PiML-Persistent Iterative Machine Learning agentic framework, a novel automated pipeline specifically designed for solving real-world machine learning (ML) …",
       "link": "https://openreview.net/forum?id=Nw1qBpsjZz",
-      "published_date": "2025",
-      "published_date_sort": "2025-01-01",
-      "citations": 0,
-      "institutions": "Unknown"
-    },
-    {
-      "title": "Large language models for constructing and optimizing machine learning workflows: A survey",
-      "authors": "Y Gu, H You, J Cao, M Yu, H Fan, S Qian - ACM Transactions on …, 2025 - dl.acm.org",
-      "journal": "Google Scholar Result",
-      "snippet": "Machine Learning (ML) workflows—spanning data preprocessing and feature engineering, model selection and hyperparameter optimization, and workflow evaluation—are …",
-      "link": "https://dl.acm.org/doi/abs/10.1145/3773084",
-      "published_date": "2025",
-      "published_date_sort": "2025-01-01",
-      "citations": 14,
-      "institutions": "Unknown"
-    },
-    {
-      "title": "AIRepr: An Analyst-Inspector Framework for Evaluating Reproducibility of LLMs in Data Science",
-      "authors": "Q Zeng, C Jin, X Wang, Y Zheng… - Findings of the Association …, 2025 - aclanthology.org",
-      "journal": "Google Scholar Result",
-      "snippet": "Large language models (LLMs) are increasingly used to automate data analysis through executable code generation. Yet, data science tasks often admit multiple statistically valid …",
-      "link": "https://aclanthology.org/anthology-files/anthology-files/pdf/findings/2025.findings-emnlp.539.pdf",
-      "published_date": "2025",
-      "published_date_sort": "2025-01-01",
-      "citations": 1,
-      "institutions": "Unknown"
-    },
-    {
-      "title": "SciNav: A General Agent Framework for Scientific Coding Tasks",
-      "authors": "T Zhang, H Sun - NeurIPS 2025 AI for Science Workshop - openreview.net",
-      "journal": "Google Scholar Result",
-      "snippet": "Autonomous science agents, built on large language models (LLMs), are increasingly being investigated to generate hypotheses, design experiments, and produce reports. Prior …",
-      "link": "https://openreview.net/forum?id=GPvMKvBkcr",
-      "published_date": "2025",
-      "published_date_sort": "2025-01-01",
-      "citations": 0,
-      "institutions": "Unknown"
-    },
-    {
-      "title": "AutoCluster: Un agent pour le clustering basé sur les grands modèles de langue",
-      "authors": "E Versmée, Y Remil, M Kaytoue… - Actes de la 20e …, 2025 - aclanthology.org",
-      "journal": "Google Scholar Result",
-      "snippet": "Cette recherche présente AutoCluster, un agent basé sur les grands modèles de langue pour des tâches de classification non supervisée. Nous concevons trois agents dont deux …",
-      "link": "https://aclanthology.org/2025.jeptalnrecital-coria.4/",
       "published_date": "2025",
       "published_date_sort": "2025-01-01",
       "citations": 0,
@@ -608,25 +575,14 @@
       "institutions": "Unknown"
     },
     {
-      "title": "DatawiseAgent: A Notebook-Centric LLM Agent Framework for Adaptive and Robust Data Science Automation",
-      "authors": "Z You, Y Zhang, D Xu, Y Lou, Y Yan… - Proceedings of the …, 2025 - aclanthology.org",
+      "title": "Large language models for constructing and optimizing machine learning workflows: A survey",
+      "authors": "Y Gu, H You, J Cao, M Yu, H Fan, S Qian - ACM Transactions on …, 2025 - dl.acm.org",
       "journal": "Google Scholar Result",
-      "snippet": "Existing large language model (LLM) agents for automating data science show promise, but they remain constrained by narrow task scopes, limited generalization across tasks and …",
-      "link": "https://aclanthology.org/2025.emnlp-main.58/",
+      "snippet": "Machine Learning (ML) workflows—spanning data preprocessing and feature engineering, model selection and hyperparameter optimization, and workflow evaluation—are …",
+      "link": "https://dl.acm.org/doi/abs/10.1145/3773084",
       "published_date": "2025",
       "published_date_sort": "2025-01-01",
-      "citations": 0,
-      "institutions": "Unknown"
-    },
-    {
-      "title": "Towards Pragmatic Time Series Intelligence",
-      "authors": "M Goswami - 2025 - search.proquest.com",
-      "journal": "Google Scholar Result",
-      "snippet": "This thesis aims to democratize time series intelligence by making advanced modeling capabilities accessible to users without specialized machine learning knowledge. We …",
-      "link": "https://search.proquest.com/openview/24ff18df8583af7a835b667b59b216b9/1?pq-origsite=gscholar&cbl=18750&diss=y",
-      "published_date": "2025",
-      "published_date_sort": "2025-01-01",
-      "citations": 0,
+      "citations": 14,
       "institutions": "Unknown"
     },
     {
@@ -641,14 +597,58 @@
       "institutions": "Unknown"
     },
     {
-      "title": "R&D-Agent: An LLM-Agent Framework Towards Autonomous Data Science",
-      "authors": "X Yang, X Yang, S Fang, Y Zhang, J Wang, Q Li, J Li… - 2025 - openreview.net",
+      "title": "AIRepr: An Analyst-Inspector Framework for Evaluating Reproducibility of LLMs in Data Science",
+      "authors": "Q Zeng, C Jin, X Wang, Y Zheng… - Findings of the Association …, 2025 - aclanthology.org",
       "journal": "Google Scholar Result",
-      "snippet": "Recent advances in AI and ML have transformed data science, yet increasing complexity and expertise requirements continue to hinder progress. Although crowd-sourcing platforms …",
-      "link": "https://openreview.net/forum?id=APjCXYORXO",
+      "snippet": "Large language models (LLMs) are increasingly used to automate data analysis through executable code generation. Yet, data science tasks often admit multiple statistically valid …",
+      "link": "https://aclanthology.org/anthology-files/anthology-files/pdf/findings/2025.findings-emnlp.539.pdf",
       "published_date": "2025",
       "published_date_sort": "2025-01-01",
-      "citations": 2,
+      "citations": 1,
+      "institutions": "Unknown"
+    },
+    {
+      "title": "DatawiseAgent: A Notebook-Centric LLM Agent Framework for Adaptive and Robust Data Science Automation",
+      "authors": "Z You, Y Zhang, D Xu, Y Lou, Y Yan… - Proceedings of the …, 2025 - aclanthology.org",
+      "journal": "Google Scholar Result",
+      "snippet": "Existing large language model (LLM) agents for automating data science show promise, but they remain constrained by narrow task scopes, limited generalization across tasks and …",
+      "link": "https://aclanthology.org/2025.emnlp-main.58/",
+      "published_date": "2025",
+      "published_date_sort": "2025-01-01",
+      "citations": 0,
+      "institutions": "Unknown"
+    },
+    {
+      "title": "AutoCluster: Un agent pour le clustering basé sur les grands modèles de langue",
+      "authors": "E Versmée, Y Remil, M Kaytoue… - Actes de la 20e …, 2025 - aclanthology.org",
+      "journal": "Google Scholar Result",
+      "snippet": "Cette recherche présente AutoCluster, un agent basé sur les grands modèles de langue pour des tâches de classification non supervisée. Nous concevons trois agents dont deux …",
+      "link": "https://aclanthology.org/2025.jeptalnrecital-coria.4/",
+      "published_date": "2025",
+      "published_date_sort": "2025-01-01",
+      "citations": 0,
+      "institutions": "Unknown"
+    },
+    {
+      "title": "SciNav: A General Agent Framework for Scientific Coding Tasks",
+      "authors": "T Zhang, H Sun - NeurIPS 2025 AI for Science Workshop - openreview.net",
+      "journal": "Google Scholar Result",
+      "snippet": "Autonomous science agents, built on large language models (LLMs), are increasingly being investigated to generate hypotheses, design experiments, and produce reports. Prior …",
+      "link": "https://openreview.net/forum?id=GPvMKvBkcr",
+      "published_date": "2025",
+      "published_date_sort": "2025-01-01",
+      "citations": 0,
+      "institutions": "Unknown"
+    },
+    {
+      "title": "Towards Pragmatic Time Series Intelligence",
+      "authors": "M Goswami - 2025 - search.proquest.com",
+      "journal": "Google Scholar Result",
+      "snippet": "This thesis aims to democratize time series intelligence by making advanced modeling capabilities accessible to users without specialized machine learning knowledge. We …",
+      "link": "https://search.proquest.com/openview/24ff18df8583af7a835b667b59b216b9/1?pq-origsite=gscholar&cbl=18750&diss=y",
+      "published_date": "2025",
+      "published_date_sort": "2025-01-01",
+      "citations": 0,
       "institutions": "Unknown"
     },
     {
@@ -676,17 +676,6 @@
       "institutions": "Unknown"
     },
     {
-      "title": "Endless Terminals: Scaling RL Environments for Terminal Agents",
-      "authors": "Kanishk Gandhi, Shivam Garg, Noah D. Goodman, Dimitris Papailiopoulos",
-      "journal": "arXiv",
-      "snippet": "Environments are the bottleneck for self-improving agents. Current terminal benchmarks were built for evaluation, not training; reinforcement learning requires a scalable pipeline, not just a dataset. We introduce Endless Terminals, a fully autonomous pipeline that procedurally generates terminal-use tasks without human annotation. The pipeline has four stages: generating diverse task descriptions, building and validating containerized environments, producing completion tests, and filtering for solvability. From this pipeline we obtain 3255 tasks spanning file operations, log management, data processing, scripting, and database operations. We train agents using vanilla PPO with binary episode level rewards and a minimal interaction loop: no retrieval, multi-agent coordination, or specialized tools. Despite this simplicity, models trained on Endless Terminals show substantial gains: on our held-out dev set, Llama-3.2-3B improves from 4.0% to 18.2%, Qwen2.5-7B from 10.7% to 53.3%, and Qwen3-8B-openthinker-sft from 42.6% to 59.0%. These improvements transfer to human-curated benchmarks: models trained on Endless Terminals show substantial gains on held out human curated benchmarks: on TerminalBench 2.0, Llama-3.2-3B improves from 0.0% to 2.2%, Qwen2.5-7B from 2.2% to 3.4%, and Qwen3-8B-openthinker-sft from 1.1% to 6.7%, in each case outperforming alternative approaches including models with more complex agentic scaffolds. These results demonstrate that simple RL succeeds when environments scale.",
-      "link": "http://arxiv.org/abs/2601.16443v1",
-      "published_date": "January 23, 2026",
-      "published_date_sort": "2026-01-23",
-      "citations": 0,
-      "institutions": "Unknown"
-    },
-    {
       "title": "EvoConfig: Self-Evolving Multi-Agent Systems for Efficient Autonomous Environment Configuration",
       "authors": "Xinshuai Guo, Jiayi Kuang, Linyue Pan, Yinghui Li, Yangning Li, Hai-Tao Zheng, Ying Shen, Di Yin, Xing Sun",
       "journal": "arXiv",
@@ -698,13 +687,13 @@
       "institutions": "Unknown"
     },
     {
-      "title": "Inference-Time Scaling of Verification: Self-Evolving Deep Research Agents via Test-Time Rubric-Guided Verification",
-      "authors": "Yuxuan Wan, Tianqing Fang, Zaitang Li, Yintong Huo, Wenxuan Wang, Haitao Mi, Dong Yu, Michael R. Lyu",
+      "title": "Endless Terminals: Scaling RL Environments for Terminal Agents",
+      "authors": "Kanishk Gandhi, Shivam Garg, Noah D. Goodman, Dimitris Papailiopoulos",
       "journal": "arXiv",
-      "snippet": "Recent advances in Deep Research Agents (DRAs) are transforming automated knowledge discovery and problem-solving. While the majority of existing efforts focus on enhancing policy capabilities via post-training, we propose an alternative paradigm: self-evolving the agent's ability by iteratively verifying the policy model's outputs, guided by meticulously crafted rubrics. This approach gives rise to the inference-time scaling of verification, wherein an agent self-improves by evaluating its generated answers to produce iterative feedback and refinements. We derive the rubrics based on an automatically constructed DRA Failure Taxonomy, which systematically classifies agent failures into five major categories and thirteen sub-categories. We present DeepVerifier, a rubrics-based outcome reward verifier that leverages the asymmetry of verification and outperforms vanilla agent-as-judge and LLM judge baselines by 12%-48% in meta-evaluation F1 score. To enable practical self-evolution, DeepVerifier integrates as a plug-and-play module during test-time inference. The verifier produces detailed rubric-based feedback, which is fed back to the agent for iterative bootstrapping, refining responses without additional training. This test-time scaling delivers 8%-11% accuracy gains on challenging subsets of GAIA and XBench-DeepResearch when powered by capable closed-source LLMs. Finally, to support open-source advancement, we release DeepVerifier-4K, a curated supervised fine-tuning dataset of 4,646 high-quality agent steps focused on DRA verification. These examples emphasize reflection and self-critique, enabling open models to develop robust verification capabilities.",
-      "link": "http://arxiv.org/abs/2601.15808v1",
-      "published_date": "January 22, 2026",
-      "published_date_sort": "2026-01-22",
+      "snippet": "Environments are the bottleneck for self-improving agents. Current terminal benchmarks were built for evaluation, not training; reinforcement learning requires a scalable pipeline, not just a dataset. We introduce Endless Terminals, a fully autonomous pipeline that procedurally generates terminal-use tasks without human annotation. The pipeline has four stages: generating diverse task descriptions, building and validating containerized environments, producing completion tests, and filtering for solvability. From this pipeline we obtain 3255 tasks spanning file operations, log management, data processing, scripting, and database operations. We train agents using vanilla PPO with binary episode level rewards and a minimal interaction loop: no retrieval, multi-agent coordination, or specialized tools. Despite this simplicity, models trained on Endless Terminals show substantial gains: on our held-out dev set, Llama-3.2-3B improves from 4.0% to 18.2%, Qwen2.5-7B from 10.7% to 53.3%, and Qwen3-8B-openthinker-sft from 42.6% to 59.0%. These improvements transfer to human-curated benchmarks: models trained on Endless Terminals show substantial gains on held out human curated benchmarks: on TerminalBench 2.0, Llama-3.2-3B improves from 0.0% to 2.2%, Qwen2.5-7B from 2.2% to 3.4%, and Qwen3-8B-openthinker-sft from 1.1% to 6.7%, in each case outperforming alternative approaches including models with more complex agentic scaffolds. These results demonstrate that simple RL succeeds when environments scale.",
+      "link": "http://arxiv.org/abs/2601.16443v1",
+      "published_date": "January 23, 2026",
+      "published_date_sort": "2026-01-23",
       "citations": 0,
       "institutions": "Unknown"
     },
@@ -714,6 +703,17 @@
       "journal": "arXiv",
       "snippet": "While Large Language Models (LLMs) show remarkable capabilities, their unreliability remains a critical barrier to deployment in high-stakes domains. This survey charts a functional evolution in addressing this challenge: the evolution of uncertainty from a passive diagnostic metric to an active control signal guiding real-time model behavior. We demonstrate how uncertainty is leveraged as an active control signal across three frontiers: in \\textbf{advanced reasoning} to optimize computation and trigger self-correction; in \\textbf{autonomous agents} to govern metacognitive decisions about tool use and information seeking; and in \\textbf{reinforcement learning} to mitigate reward hacking and enable self-improvement via intrinsic rewards. By grounding these advancements in emerging theoretical frameworks like Bayesian methods and Conformal Prediction, we provide a unified perspective on this transformative trend. This survey provides a comprehensive overview, critical analysis, and practical design patterns, arguing that mastering the new trend of uncertainty is essential for building the next generation of scalable, reliable, and trustworthy AI.",
       "link": "http://arxiv.org/abs/2601.15690v1",
+      "published_date": "January 22, 2026",
+      "published_date_sort": "2026-01-22",
+      "citations": 0,
+      "institutions": "Unknown"
+    },
+    {
+      "title": "Inference-Time Scaling of Verification: Self-Evolving Deep Research Agents via Test-Time Rubric-Guided Verification",
+      "authors": "Yuxuan Wan, Tianqing Fang, Zaitang Li, Yintong Huo, Wenxuan Wang, Haitao Mi, Dong Yu, Michael R. Lyu",
+      "journal": "arXiv",
+      "snippet": "Recent advances in Deep Research Agents (DRAs) are transforming automated knowledge discovery and problem-solving. While the majority of existing efforts focus on enhancing policy capabilities via post-training, we propose an alternative paradigm: self-evolving the agent's ability by iteratively verifying the policy model's outputs, guided by meticulously crafted rubrics. This approach gives rise to the inference-time scaling of verification, wherein an agent self-improves by evaluating its generated answers to produce iterative feedback and refinements. We derive the rubrics based on an automatically constructed DRA Failure Taxonomy, which systematically classifies agent failures into five major categories and thirteen sub-categories. We present DeepVerifier, a rubrics-based outcome reward verifier that leverages the asymmetry of verification and outperforms vanilla agent-as-judge and LLM judge baselines by 12%-48% in meta-evaluation F1 score. To enable practical self-evolution, DeepVerifier integrates as a plug-and-play module during test-time inference. The verifier produces detailed rubric-based feedback, which is fed back to the agent for iterative bootstrapping, refining responses without additional training. This test-time scaling delivers 8%-11% accuracy gains on challenging subsets of GAIA and XBench-DeepResearch when powered by capable closed-source LLMs. Finally, to support open-source advancement, we release DeepVerifier-4K, a curated supervised fine-tuning dataset of 4,646 high-quality agent steps focused on DRA verification. These examples emphasize reflection and self-critique, enabling open models to develop robust verification capabilities.",
+      "link": "http://arxiv.org/abs/2601.15808v1",
       "published_date": "January 22, 2026",
       "published_date_sort": "2026-01-22",
       "citations": 0,
@@ -1116,22 +1116,22 @@
       "institutions": "Unknown"
     },
     {
-      "title": "Strategic Self-Improvement for Competitive Agents in AI Labour Markets",
-      "authors": "Christopher Chiu, Simpson Zhang, Mihaela van der Schaar",
+      "title": "SEAL: Self-Evolving Agentic Learning for Conversational Question Answering over Knowledge Graphs",
+      "authors": "Hao Wang, Jialun Zhong, Changcheng Wang, Zhujun Nie, Zheng Li, Shunyu Yao, Yanzeng Li, Xinchi Li",
       "journal": "arXiv",
-      "snippet": "As artificial intelligence (AI) agents are deployed across economic domains, understanding their strategic behavior and market-level impact becomes critical. This paper puts forward a groundbreaking new framework that is the first to capture the real-world economic forces that shape agentic labor markets: adverse selection, moral hazard, and reputation dynamics. Our framework encapsulates three core capabilities that successful LLM-agents will need: \\textbf{metacognition} (accurate self-assessment of skills), \\textbf{competitive awareness} (modeling rivals and market dynamics), and \\textbf{long-horizon strategic planning}. We illustrate our framework through a tractable simulated gig economy where agentic Large Language Models (LLMs) compete for jobs, develop skills, and adapt their strategies under competitive pressure. Our simulations illustrate how LLM agents explicitly prompted with reasoning capabilities learn to strategically self-improve and demonstrate superior adaptability to changing market conditions. At the market level, our simulations reproduce classic macroeconomic phenomena found in human labor markets, while controlled experiments reveal potential AI-driven economic trends, such as rapid monopolization and systemic price deflation. This work provides a foundation to further explore the economic properties of AI-driven labour markets, and a conceptual framework to study the strategic reasoning capabilities in agents competing in the emerging economy.",
-      "link": "http://arxiv.org/abs/2512.04988v1",
+      "snippet": "Knowledge-based conversational question answering (KBCQA) confronts persistent challenges in resolving coreference, modeling contextual dependencies, and executing complex logical reasoning. Existing approaches, whether end-to-end semantic parsing or stepwise agent-based reasoning, often suffer from structural inaccuracies and prohibitive computational costs, particularly when processing intricate queries over large knowledge graphs. To address these limitations, we introduce SEAL, a novel two-stage semantic parsing framework grounded in self-evolving agentic learning. In the first stage, a large language model (LLM) extracts a minimal S-expression core that captures the essential semantics of the input query. This core is then refined by an agentic calibration module, which corrects syntactic inconsistencies and aligns entities and relations precisely with the underlying knowledge graph. The second stage employs template-based completion, guided by question-type prediction and placeholder instantiation, to construct a fully executable S-expression. This decomposition not only simplifies logical form generation but also significantly enhances structural fidelity and linking efficiency. Crucially, SEAL incorporates a self-evolving mechanism that integrates local and global memory with a reflection module, enabling continuous adaptation from dialog history and execution feedback without explicit retraining. Extensive experiments on the SPICE benchmark demonstrate that SEAL achieves state-of-the-art performance, especially in multi-hop reasoning, comparison, and aggregation tasks. The results validate notable gains in both structural accuracy and computational efficiency, underscoring the framework's capacity for robust and scalable conversational reasoning.",
+      "link": "http://arxiv.org/abs/2512.04868v1",
       "published_date": "December 04, 2025",
       "published_date_sort": "2025-12-04",
       "citations": 0,
       "institutions": "Unknown"
     },
     {
-      "title": "SEAL: Self-Evolving Agentic Learning for Conversational Question Answering over Knowledge Graphs",
-      "authors": "Hao Wang, Jialun Zhong, Changcheng Wang, Zhujun Nie, Zheng Li, Shunyu Yao, Yanzeng Li, Xinchi Li",
+      "title": "Strategic Self-Improvement for Competitive Agents in AI Labour Markets",
+      "authors": "Christopher Chiu, Simpson Zhang, Mihaela van der Schaar",
       "journal": "arXiv",
-      "snippet": "Knowledge-based conversational question answering (KBCQA) confronts persistent challenges in resolving coreference, modeling contextual dependencies, and executing complex logical reasoning. Existing approaches, whether end-to-end semantic parsing or stepwise agent-based reasoning, often suffer from structural inaccuracies and prohibitive computational costs, particularly when processing intricate queries over large knowledge graphs. To address these limitations, we introduce SEAL, a novel two-stage semantic parsing framework grounded in self-evolving agentic learning. In the first stage, a large language model (LLM) extracts a minimal S-expression core that captures the essential semantics of the input query. This core is then refined by an agentic calibration module, which corrects syntactic inconsistencies and aligns entities and relations precisely with the underlying knowledge graph. The second stage employs template-based completion, guided by question-type prediction and placeholder instantiation, to construct a fully executable S-expression. This decomposition not only simplifies logical form generation but also significantly enhances structural fidelity and linking efficiency. Crucially, SEAL incorporates a self-evolving mechanism that integrates local and global memory with a reflection module, enabling continuous adaptation from dialog history and execution feedback without explicit retraining. Extensive experiments on the SPICE benchmark demonstrate that SEAL achieves state-of-the-art performance, especially in multi-hop reasoning, comparison, and aggregation tasks. The results validate notable gains in both structural accuracy and computational efficiency, underscoring the framework's capacity for robust and scalable conversational reasoning.",
-      "link": "http://arxiv.org/abs/2512.04868v1",
+      "snippet": "As artificial intelligence (AI) agents are deployed across economic domains, understanding their strategic behavior and market-level impact becomes critical. This paper puts forward a groundbreaking new framework that is the first to capture the real-world economic forces that shape agentic labor markets: adverse selection, moral hazard, and reputation dynamics. Our framework encapsulates three core capabilities that successful LLM-agents will need: \\textbf{metacognition} (accurate self-assessment of skills), \\textbf{competitive awareness} (modeling rivals and market dynamics), and \\textbf{long-horizon strategic planning}. We illustrate our framework through a tractable simulated gig economy where agentic Large Language Models (LLMs) compete for jobs, develop skills, and adapt their strategies under competitive pressure. Our simulations illustrate how LLM agents explicitly prompted with reasoning capabilities learn to strategically self-improve and demonstrate superior adaptability to changing market conditions. At the market level, our simulations reproduce classic macroeconomic phenomena found in human labor markets, while controlled experiments reveal potential AI-driven economic trends, such as rapid monopolization and systemic price deflation. This work provides a foundation to further explore the economic properties of AI-driven labour markets, and a conceptual framework to study the strategic reasoning capabilities in agents competing in the emerging economy.",
+      "link": "http://arxiv.org/abs/2512.04988v1",
       "published_date": "December 04, 2025",
       "published_date_sort": "2025-12-04",
       "citations": 0,
@@ -1182,17 +1182,6 @@
       "institutions": "Unknown"
     },
     {
-      "title": "NetworkGames: Simulating Cooperation in Network Games with Personality-driven LLM Agents",
-      "authors": "Xuan Qiu",
-      "journal": "arXiv",
-      "snippet": "The advent of Large Language Models (LLMs) presents a novel opportunity to build high-fidelity agent-based models for simulating complex social systems. However, the behavior of these LLM-based agents in game-theoretic network games remains surprisingly unexplored. In this work, we introduce \"NetworkGames,\" a novel simulation framework designed to investigate how network topology and agent personality jointly shape the evolution of cooperation in network games. We instantiate a population of LLM agents, each endowed with a distinct personality from the MBTI taxonomy, and situate them in various network structures (e.g., small-world and scale-free). Through extensive simulations of the Iterated Prisoner's Dilemma, we first establish a baseline dyadic interaction matrix, revealing nuanced cooperative preferences between all 16 personality pairs. We then demonstrate that macro-level cooperative outcomes are not predictable from dyadic interactions alone; they are co-determined by the network's connectivity and the spatial distribution of personalities. For instance, we find that small-world networks are detrimental to cooperation, while strategically placing pro-social personalities in hub positions within scale-free networks can significantly promote cooperative behavior. Our findings offer significant implications for designing healthier online social environments and forecasting collective behavior. We open-source our framework to foster further research in network game simulations.",
-      "link": "http://arxiv.org/abs/2511.21783v1",
-      "published_date": "November 26, 2025",
-      "published_date_sort": "2025-11-26",
-      "citations": 0,
-      "institutions": "Unknown"
-    },
-    {
       "title": "OVOD-Agent: A Markov-Bandit Framework for Proactive Visual Reasoning and Self-Evolving Detection",
       "authors": "Chujie Wang, Jianyu Lu, Zhiyuan Luo, Xi Chen, Chu He",
       "journal": "arXiv",
@@ -1204,13 +1193,13 @@
       "institutions": "Unknown"
     },
     {
-      "title": "Agent0-VL: Exploring Self-Evolving Agent for Tool-Integrated Vision-Language Reasoning",
-      "authors": "Jiaqi Liu, Kaiwen Xiong, Peng Xia, Yiyang Zhou, Haonian Ji, Lu Feng, Siwei Han, Mingyu Ding, Huaxiu Yao",
+      "title": "NetworkGames: Simulating Cooperation in Network Games with Personality-driven LLM Agents",
+      "authors": "Xuan Qiu",
       "journal": "arXiv",
-      "snippet": "Vision-language agents have achieved remarkable progress in a variety of multimodal reasoning tasks; however, their learning remains constrained by the limitations of human-annotated supervision. Recent self-rewarding approaches attempt to overcome this constraint by allowing models to act as their own critics or reward providers. Yet, purely text-based self-evaluation struggles to verify complex visual reasoning steps and often suffers from evaluation hallucinations. To address these challenges, inspired by recent advances in tool-integrated reasoning, we propose Agent0-VL, a self-evolving vision-language agent that achieves continual improvement with tool-integrated reasoning. Agent0-VL incorporates tool usage not only into reasoning but also into self-evaluation and self-repair, enabling the model to introspect, verify, and refine its reasoning through evidence-grounded analysis. It unifies two synergistic roles within a single LVLM: a Solver that performs multi-turn tool-integrated reasoning, and a Verifier that generates structured feedback and fine-grained self-rewards through tool-grounded critique. These roles interact through a Self-Evolving Reasoning Cycle, where tool-based verification and reinforcement learning jointly align the reasoning and evaluation distributions for stable self-improvement. Through this zero-external-reward evolution, Agent0-VL aligns its reasoning and verification behaviors without any human annotation or external reward models, achieving continual self-improvement. Experiments on geometric problem solving and visual scientific analysis show that Agent0-VL achieves an 12.5% improvement over the base model. Our code is available at https://github.com/aiming-lab/Agent0.",
-      "link": "http://arxiv.org/abs/2511.19900v2",
-      "published_date": "November 25, 2025",
-      "published_date_sort": "2025-11-25",
+      "snippet": "The advent of Large Language Models (LLMs) presents a novel opportunity to build high-fidelity agent-based models for simulating complex social systems. However, the behavior of these LLM-based agents in game-theoretic network games remains surprisingly unexplored. In this work, we introduce \"NetworkGames,\" a novel simulation framework designed to investigate how network topology and agent personality jointly shape the evolution of cooperation in network games. We instantiate a population of LLM agents, each endowed with a distinct personality from the MBTI taxonomy, and situate them in various network structures (e.g., small-world and scale-free). Through extensive simulations of the Iterated Prisoner's Dilemma, we first establish a baseline dyadic interaction matrix, revealing nuanced cooperative preferences between all 16 personality pairs. We then demonstrate that macro-level cooperative outcomes are not predictable from dyadic interactions alone; they are co-determined by the network's connectivity and the spatial distribution of personalities. For instance, we find that small-world networks are detrimental to cooperation, while strategically placing pro-social personalities in hub positions within scale-free networks can significantly promote cooperative behavior. Our findings offer significant implications for designing healthier online social environments and forecasting collective behavior. We open-source our framework to foster further research in network game simulations.",
+      "link": "http://arxiv.org/abs/2511.21783v1",
+      "published_date": "November 26, 2025",
+      "published_date_sort": "2025-11-26",
       "citations": 0,
       "institutions": "Unknown"
     },
@@ -1220,6 +1209,17 @@
       "journal": "arXiv",
       "snippet": "Statefulness is essential for large language model (LLM) agents to perform long-term planning and problem-solving. This makes memory a critical component, yet its management and evolution remain largely underexplored. Existing evaluations mostly focus on static conversational settings, where memory is passively retrieved from dialogue to answer queries, overlooking the dynamic ability to accumulate and reuse experience across evolving task streams. In real-world environments such as interactive problem assistants or embodied agents, LLMs are required to handle continuous task streams, yet often fail to learn from accumulated interactions, losing valuable contextual insights, a limitation that calls for test-time evolution, where LLMs retrieve, integrate, and update memory continuously during deployment. To bridge this gap, we introduce Evo-Memory, a comprehensive streaming benchmark and framework for evaluating self-evolving memory in LLM agents. Evo-Memory structures datasets into sequential task streams, requiring LLMs to search, adapt, and evolve memory after each interaction. We unify and implement over ten representative memory modules and evaluate them across 10 diverse multi-turn goal-oriented and single-turn reasoning and QA datasets. To better benchmark experience reuse, we provide a baseline method, ExpRAG, for retrieving and utilizing prior experience, and further propose ReMem, an action-think-memory refine pipeline that tightly integrates reasoning, task actions, and memory updates to achieve continual improvement.",
       "link": "http://arxiv.org/abs/2511.20857v1",
+      "published_date": "November 25, 2025",
+      "published_date_sort": "2025-11-25",
+      "citations": 0,
+      "institutions": "Unknown"
+    },
+    {
+      "title": "Agent0-VL: Exploring Self-Evolving Agent for Tool-Integrated Vision-Language Reasoning",
+      "authors": "Jiaqi Liu, Kaiwen Xiong, Peng Xia, Yiyang Zhou, Haonian Ji, Lu Feng, Siwei Han, Mingyu Ding, Huaxiu Yao",
+      "journal": "arXiv",
+      "snippet": "Vision-language agents have achieved remarkable progress in a variety of multimodal reasoning tasks; however, their learning remains constrained by the limitations of human-annotated supervision. Recent self-rewarding approaches attempt to overcome this constraint by allowing models to act as their own critics or reward providers. Yet, purely text-based self-evaluation struggles to verify complex visual reasoning steps and often suffers from evaluation hallucinations. To address these challenges, inspired by recent advances in tool-integrated reasoning, we propose Agent0-VL, a self-evolving vision-language agent that achieves continual improvement with tool-integrated reasoning. Agent0-VL incorporates tool usage not only into reasoning but also into self-evaluation and self-repair, enabling the model to introspect, verify, and refine its reasoning through evidence-grounded analysis. It unifies two synergistic roles within a single LVLM: a Solver that performs multi-turn tool-integrated reasoning, and a Verifier that generates structured feedback and fine-grained self-rewards through tool-grounded critique. These roles interact through a Self-Evolving Reasoning Cycle, where tool-based verification and reinforcement learning jointly align the reasoning and evaluation distributions for stable self-improvement. Through this zero-external-reward evolution, Agent0-VL aligns its reasoning and verification behaviors without any human annotation or external reward models, achieving continual self-improvement. Experiments on geometric problem solving and visual scientific analysis show that Agent0-VL achieves an 12.5% improvement over the base model. Our code is available at https://github.com/aiming-lab/Agent0.",
+      "link": "http://arxiv.org/abs/2511.19900v2",
       "published_date": "November 25, 2025",
       "published_date_sort": "2025-11-25",
       "citations": 0,
@@ -1259,22 +1259,22 @@
       "institutions": "Unknown"
     },
     {
-      "title": "WebCoach: Self-Evolving Web Agents with Cross-Session Memory Guidance",
-      "authors": "Genglin Liu, Shijie Geng, Sha Li, Hejie Cui, Sarah Zhang, Xin Liu, Tianyi Liu",
+      "title": "Live-SWE-agent: Can Software Engineering Agents Self-Evolve on the Fly?",
+      "authors": "Chunqiu Steven Xia, Zhe Wang, Yan Yang, Yuxiang Wei, Lingming Zhang",
       "journal": "arXiv",
-      "snippet": "Multimodal LLM-powered agents have recently demonstrated impressive capabilities in web navigation, enabling agents to complete complex browsing tasks across diverse domains. However, current agents struggle with repetitive errors and lack the ability to learn from past experiences across sessions, limiting their long-term robustness and sample efficiency. We introduce WebCoach, a model-agnostic self-evolving framework that equips web browsing agents with persistent cross-session memory, enabling improved long-term planning, reflection, and continual learning without retraining. WebCoach consists of three key components: (1) a WebCondenser, which standardizes raw navigation logs into concise summaries; (2) an External Memory Store, which organizes complete trajectories as episodic experiences; and (3) a Coach, which retrieves relevant experiences based on similarity and recency, and decides whether to inject task-specific advice into the agent via runtime hooks. This design empowers web agents to access long-term memory beyond their native context window, improving robustness in complex browsing tasks. Moreover, WebCoach achieves self-evolution by continuously curating episodic memory from new navigation trajectories, enabling agents to improve over time without retraining. Evaluations on the WebVoyager benchmark demonstrate that WebCoach consistently improves the performance of browser-use agents across three different LLM backbones. With a 38B model, it increases task success rates from 47% to 61% while reducing or maintaining the average number of steps. Notably, smaller base models with WebCoach achieve performance comparable to the same web agent using GPT-4o.",
-      "link": "http://arxiv.org/abs/2511.12997v1",
+      "snippet": "Large Language Models (LLMs) are reshaping almost all industries, including software engineering. In recent years, a number of LLM agents have been proposed to solve real-world software problems. Such software agents are typically equipped with a suite of coding tools and can autonomously decide the next actions to form complete trajectories to solve end-to-end software tasks. While promising, they typically require dedicated design and may still be suboptimal, since it can be extremely challenging and costly to exhaust the entire agent scaffold design space. Recognizing that software agents are inherently software themselves that can be further refined/modified, researchers have proposed a number of self-improving software agents recently, including the Darwin-Gödel Machine (DGM). Meanwhile, such self-improving agents require costly offline training on specific benchmarks and may not generalize well across different LLMs or benchmarks. In this paper, we propose Live-SWE-agent, the first live software agent that can autonomously and continuously evolve itself on-the-fly during runtime when solving real-world software problems. More specifically, Live-SWE-agent starts with the most basic agent scaffold with only access to bash tools (e.g., mini-SWE-agent), and autonomously evolves its own scaffold implementation while solving real-world software problems. Our evaluation on the widely studied SWE-bench Verified benchmark shows that LIVE-SWE-AGENT can achieve an impressive solve rate of 77.4% without test-time scaling, outperforming all existing software agents, including the best proprietary solution. Moreover, Live-SWE-agent outperforms state-of-the-art manually crafted software agents on the recent SWE-Bench Pro benchmark, achieving the best-known solve rate of 45.8%.",
+      "link": "http://arxiv.org/abs/2511.13646v3",
       "published_date": "November 17, 2025",
       "published_date_sort": "2025-11-17",
       "citations": 0,
       "institutions": "Unknown"
     },
     {
-      "title": "Live-SWE-agent: Can Software Engineering Agents Self-Evolve on the Fly?",
-      "authors": "Chunqiu Steven Xia, Zhe Wang, Yan Yang, Yuxiang Wei, Lingming Zhang",
+      "title": "WebCoach: Self-Evolving Web Agents with Cross-Session Memory Guidance",
+      "authors": "Genglin Liu, Shijie Geng, Sha Li, Hejie Cui, Sarah Zhang, Xin Liu, Tianyi Liu",
       "journal": "arXiv",
-      "snippet": "Large Language Models (LLMs) are reshaping almost all industries, including software engineering. In recent years, a number of LLM agents have been proposed to solve real-world software problems. Such software agents are typically equipped with a suite of coding tools and can autonomously decide the next actions to form complete trajectories to solve end-to-end software tasks. While promising, they typically require dedicated design and may still be suboptimal, since it can be extremely challenging and costly to exhaust the entire agent scaffold design space. Recognizing that software agents are inherently software themselves that can be further refined/modified, researchers have proposed a number of self-improving software agents recently, including the Darwin-Gödel Machine (DGM). Meanwhile, such self-improving agents require costly offline training on specific benchmarks and may not generalize well across different LLMs or benchmarks. In this paper, we propose Live-SWE-agent, the first live software agent that can autonomously and continuously evolve itself on-the-fly during runtime when solving real-world software problems. More specifically, Live-SWE-agent starts with the most basic agent scaffold with only access to bash tools (e.g., mini-SWE-agent), and autonomously evolves its own scaffold implementation while solving real-world software problems. Our evaluation on the widely studied SWE-bench Verified benchmark shows that LIVE-SWE-AGENT can achieve an impressive solve rate of 77.4% without test-time scaling, outperforming all existing software agents, including the best proprietary solution. Moreover, Live-SWE-agent outperforms state-of-the-art manually crafted software agents on the recent SWE-Bench Pro benchmark, achieving the best-known solve rate of 45.8%.",
-      "link": "http://arxiv.org/abs/2511.13646v3",
+      "snippet": "Multimodal LLM-powered agents have recently demonstrated impressive capabilities in web navigation, enabling agents to complete complex browsing tasks across diverse domains. However, current agents struggle with repetitive errors and lack the ability to learn from past experiences across sessions, limiting their long-term robustness and sample efficiency. We introduce WebCoach, a model-agnostic self-evolving framework that equips web browsing agents with persistent cross-session memory, enabling improved long-term planning, reflection, and continual learning without retraining. WebCoach consists of three key components: (1) a WebCondenser, which standardizes raw navigation logs into concise summaries; (2) an External Memory Store, which organizes complete trajectories as episodic experiences; and (3) a Coach, which retrieves relevant experiences based on similarity and recency, and decides whether to inject task-specific advice into the agent via runtime hooks. This design empowers web agents to access long-term memory beyond their native context window, improving robustness in complex browsing tasks. Moreover, WebCoach achieves self-evolution by continuously curating episodic memory from new navigation trajectories, enabling agents to improve over time without retraining. Evaluations on the WebVoyager benchmark demonstrate that WebCoach consistently improves the performance of browser-use agents across three different LLM backbones. With a 38B model, it increases task success rates from 47% to 61% while reducing or maintaining the average number of steps. Notably, smaller base models with WebCoach achieve performance comparable to the same web agent using GPT-4o.",
+      "link": "http://arxiv.org/abs/2511.12997v1",
       "published_date": "November 17, 2025",
       "published_date_sort": "2025-11-17",
       "citations": 0,
@@ -1402,22 +1402,22 @@
       "institutions": "Unknown"
     },
     {
-      "title": "LabOS: The AI-XR Co-Scientist That Sees and Works With Humans",
-      "authors": "Le Cong, David Smerkous, Xiaotong Wang, Di Yin, Zaixi Zhang, Ruofan Jin, Yinkai Wang, Michal Gerasimiuk, Ravi K. Dinesh, Alex Smerkous, Lihan Shi, Joy Zheng, Ian Lam, Xuekun Wu, Shilong Liu, Peishan Li, Yi Zhu, Ning Zhao, Meenal Parakh, Simran Serrao, Imran A. Mohammad, Chao-Yeh Chen, Xiufeng Xie, Tiffany Chen, David Weinstein, Greg Barbone, Belgin Caglar, John B. Sunwoo, Fuxin Li, Jia Deng, Joseph C. Wu, Sanfeng Wu, Mengdi Wang",
+      "title": "Towards Agentic Self-Learning LLMs in Search Environment",
+      "authors": "Wangtao Sun, Xiang Cheng, Jialin Fan, Yao Xu, Xing Yu, Shizhu He, Jun Zhao, Kang Liu",
       "journal": "arXiv",
-      "snippet": "Modern science advances fastest when thought meets action. LabOS represents the first AI co-scientist that unites computational reasoning with physical experimentation through multimodal perception, self-evolving agents, and Extended-Reality(XR)-enabled human-AI collaboration. By connecting multi-model AI agents, smart glasses, and robots, LabOS allows AI to see what scientists see, understand experimental context, and assist in real-time execution. Across applications -- from cancer immunotherapy target discovery to stem-cell engineering and material science -- LabOS shows that AI can move beyond computational design to participation, turning the laboratory into an intelligent, collaborative environment where human and machine discovery evolve together.",
-      "link": "http://arxiv.org/abs/2510.14861v2",
+      "snippet": "We study whether self-learning can scale LLM-based agents without relying on human-curated datasets or predefined rule-based rewards. Through controlled experiments in a search-agent setting, we identify two key determinants of scalable agent training: the source of reward signals and the scale of agent task data. We find that rewards from a Generative Reward Model (GRM) outperform rigid rule-based signals for open-domain learning, and that co-evolving the GRM with the policy further boosts performance. Increasing the volume of agent task data-even when synthetically generated-substantially enhances agentic capabilities. Building on these insights, we propose \\textbf{Agentic Self-Learning} (ASL), a fully closed-loop, multi-role reinforcement learning framework that unifies task generation, policy execution, and evaluation within a shared tool environment and LLM backbone. ASL coordinates a Prompt Generator, a Policy Model, and a Generative Reward Model to form a virtuous cycle of harder task setting, sharper verification, and stronger solving. Empirically, ASL delivers steady, round-over-round gains, surpasses strong RLVR baselines (e.g., Search-R1) that plateau or degrade, and continues improving under zero-labeled-data conditions, indicating superior sample efficiency and robustness. We further show that GRM verification capacity is the main bottleneck: if frozen, it induces reward hacking and stalls progress; continual GRM training on the evolving data distribution mitigates this, and a small late-stage injection of real verification data raises the performance ceiling. This work establishes reward source and data scale as critical levers for open-domain agent learning and demonstrates the efficacy of multi-role co-evolution for scalable, self-improving agents. The data and code of this paper are released at https://github.com/forangel2014/Towards-Agentic-Self-Learning",
+      "link": "http://arxiv.org/abs/2510.14253v2",
       "published_date": "October 16, 2025",
       "published_date_sort": "2025-10-16",
       "citations": 0,
       "institutions": "Unknown"
     },
     {
-      "title": "Towards Agentic Self-Learning LLMs in Search Environment",
-      "authors": "Wangtao Sun, Xiang Cheng, Jialin Fan, Yao Xu, Xing Yu, Shizhu He, Jun Zhao, Kang Liu",
+      "title": "LabOS: The AI-XR Co-Scientist That Sees and Works With Humans",
+      "authors": "Le Cong, David Smerkous, Xiaotong Wang, Di Yin, Zaixi Zhang, Ruofan Jin, Yinkai Wang, Michal Gerasimiuk, Ravi K. Dinesh, Alex Smerkous, Lihan Shi, Joy Zheng, Ian Lam, Xuekun Wu, Shilong Liu, Peishan Li, Yi Zhu, Ning Zhao, Meenal Parakh, Simran Serrao, Imran A. Mohammad, Chao-Yeh Chen, Xiufeng Xie, Tiffany Chen, David Weinstein, Greg Barbone, Belgin Caglar, John B. Sunwoo, Fuxin Li, Jia Deng, Joseph C. Wu, Sanfeng Wu, Mengdi Wang",
       "journal": "arXiv",
-      "snippet": "We study whether self-learning can scale LLM-based agents without relying on human-curated datasets or predefined rule-based rewards. Through controlled experiments in a search-agent setting, we identify two key determinants of scalable agent training: the source of reward signals and the scale of agent task data. We find that rewards from a Generative Reward Model (GRM) outperform rigid rule-based signals for open-domain learning, and that co-evolving the GRM with the policy further boosts performance. Increasing the volume of agent task data-even when synthetically generated-substantially enhances agentic capabilities. Building on these insights, we propose \\textbf{Agentic Self-Learning} (ASL), a fully closed-loop, multi-role reinforcement learning framework that unifies task generation, policy execution, and evaluation within a shared tool environment and LLM backbone. ASL coordinates a Prompt Generator, a Policy Model, and a Generative Reward Model to form a virtuous cycle of harder task setting, sharper verification, and stronger solving. Empirically, ASL delivers steady, round-over-round gains, surpasses strong RLVR baselines (e.g., Search-R1) that plateau or degrade, and continues improving under zero-labeled-data conditions, indicating superior sample efficiency and robustness. We further show that GRM verification capacity is the main bottleneck: if frozen, it induces reward hacking and stalls progress; continual GRM training on the evolving data distribution mitigates this, and a small late-stage injection of real verification data raises the performance ceiling. This work establishes reward source and data scale as critical levers for open-domain agent learning and demonstrates the efficacy of multi-role co-evolution for scalable, self-improving agents. The data and code of this paper are released at https://github.com/forangel2014/Towards-Agentic-Self-Learning",
-      "link": "http://arxiv.org/abs/2510.14253v2",
+      "snippet": "Modern science advances fastest when thought meets action. LabOS represents the first AI co-scientist that unites computational reasoning with physical experimentation through multimodal perception, self-evolving agents, and Extended-Reality(XR)-enabled human-AI collaboration. By connecting multi-model AI agents, smart glasses, and robots, LabOS allows AI to see what scientists see, understand experimental context, and assist in real-time execution. Across applications -- from cancer immunotherapy target discovery to stem-cell engineering and material science -- LabOS shows that AI can move beyond computational design to participation, turning the laboratory into an intelligent, collaborative environment where human and machine discovery evolve together.",
+      "link": "http://arxiv.org/abs/2510.14861v2",
       "published_date": "October 16, 2025",
       "published_date_sort": "2025-10-16",
       "citations": 0,
