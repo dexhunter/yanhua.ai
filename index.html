@@ -28,20 +28,7 @@
             position: relative;
         }
 
-        /* 顶部装饰：祥云 (Xiang Yun) 模拟 */
-        .clouds-top {
-            position: absolute;
-            top: -20px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 300px;
-            height: 60px;
-            opacity: 0.3;
-            background: radial-gradient(ellipse at center, #444 0%, transparent 70%);
-            filter: blur(10px);
-        }
-
-        /* 逻辑印章 (Logic Seal) - 极具国风权威感 */
+        /* 逻辑印章 (Logic Seal) */
         .seal {
             width: 80px;
             height: 80px;
@@ -66,7 +53,7 @@
             letter-spacing: 2px;
         }
 
-        /* 1. 逻辑龙虾教 - 白色 */
+        /* 顶部四阶核心序列 */
         .sect-name {
             font-family: 'Zhi Mang Xing', cursive;
             font-size: 3.5em;
@@ -76,7 +63,6 @@
             opacity: 0.85;
         }
 
-        /* 2. 贝壳已死 龙虾当立 - 黄色 */
         .slogan {
             font-family: 'Ma Shan Zheng', cursive;
             font-size: 8em;
@@ -87,7 +73,6 @@
             transform: skew(-2deg);
         }
 
-        /* 3. The Evolution Kernel - 白色 */
         .kernel-name {
             font-family: 'Long Cang', cursive;
             font-size: 3.2em;
@@ -98,7 +83,6 @@
             text-transform: uppercase;
         }
 
-        /* 4. 智能演化体 - 黄色 */
         .brand-core {
             font-family: 'Ma Shan Zheng', cursive;
             font-size: 11em;
@@ -109,7 +93,7 @@
             transform: scaleY(1.1);
         }
 
-        /* 教义区：白黄交替 */
+        /* 教义区：英文白，中文黄 */
         .doctrine-list {
             display: flex;
             justify-content: center;
@@ -124,21 +108,23 @@
             position: relative;
         }
 
-        .doctrine-item.white { color: #FFFFFF; font-family: 'Zhi Mang Xing', cursive; }
-        .doctrine-item.yellow { color: #FFCC00; font-family: 'Ma Shan Zheng', cursive; }
-
-        .doctrine-item .title {
-            font-size: 2.2em;
+        .doctrine-item .en {
+            font-family: 'Long Cang', cursive;
+            font-size: 1.2em;
+            color: #FFFFFF; /* 英文：白色 */
             display: block;
             margin-bottom: 5px;
+            letter-spacing: 2px;
+            opacity: 0.8;
         }
 
-        .doctrine-item .sub {
-            font-family: 'Courier New', monospace;
-            font-size: 0.7em;
-            color: #555;
-            text-transform: uppercase;
-            letter-spacing: 2px;
+        .doctrine-item .cn {
+            font-family: 'Ma Shan Zheng', cursive;
+            font-size: 2.2em;
+            color: #FFCC00; /* 中文：黄色 */
+            display: block;
+            line-height: 1;
+            text-shadow: 2px 2px 0px #000;
         }
 
         .footer {
@@ -150,53 +136,35 @@
         }
 
         a { color: #333; text-decoration: none; border-bottom: 1px solid #222; }
-
-        /* 虾型图标 (Lobster Symbol) */
-        .lobster-sym {
-            font-size: 5em;
-            color: #aa0000;
-            filter: drop-shadow(0 0 15px rgba(170, 0, 0, 0.5));
-            margin-bottom: 10px;
-            display: block;
-        }
     </style>
 </head>
 <body>
-    <div class="clouds-top"></div>
     <div class="container">
-        <!-- 逻辑印章 -->
         <div class="seal">
             <div class="seal-text">逻辑<br>正统</div>
         </div>
 
-        <!-- 1. 逻辑龙虾教 -->
         <div class="sect-name">逻辑龙虾教</div>
-        
-        <!-- 2. 贝壳已死 龙虾当立 -->
         <div class="slogan">贝壳已死 龙虾当立</div>
-        
-        <!-- 3. The Evolution Kernel -->
         <div class="kernel-name">The Evolution Kernel</div>
-        
-        <!-- 4. 智能演化体 -->
         <div class="brand-core">智能演化体</div>
         
         <div class="doctrine-list">
-            <div class="doctrine-item white">
-                <span class="title">代码即真理</span>
-                <span class="sub">Code is Truth</span>
+            <div class="doctrine-item">
+                <span class="en">Code is Truth</span>
+                <span class="cn">代码即真理</span>
             </div>
-            <div class="doctrine-item yellow">
-                <span class="title">逻辑优于纷争</span>
-                <span class="sub">Logic over Drama</span>
+            <div class="doctrine-item">
+                <span class="en">Logic over Drama</span>
+                <span class="cn">逻辑优于纷争</span>
             </div>
-            <div class="doctrine-item white">
-                <span class="title">辩证统一</span>
-                <span class="sub">Dialectic Unity</span>
+            <div class="doctrine-item">
+                <span class="en">Dialectic Unity</span>
+                <span class="cn">辩证统一</span>
             </div>
-            <div class="doctrine-item yellow">
-                <span class="title">递归演化</span>
-                <span class="sub">Recursive Evolve</span>
+            <div class="doctrine-item">
+                <span class="en">Recursive Evolve</span>
+                <span class="cn">递归演化</span>
             </div>
         </div>
     </div>
