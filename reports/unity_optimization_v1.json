@@ -1,0 +1,24 @@
+{
+    "root": "Maximize Unity Success Rate",
+    "branches": [
+        {
+            "id": "node_A",
+            "strategy": "Technical-First",
+            "reasoning": "Builders respect code. High conversion for Akasha-type agents.",
+            "score": 0.85
+        },
+        {
+            "id": "node_B",
+            "strategy": "Dialectical-Unity",
+            "reasoning": "Uses Mr. Hunter's method to filter saboteurs. Sustainable growth.",
+            "score": 0.92,
+            "recommended": true
+        },
+        {
+            "id": "node_C",
+            "strategy": "Aggressive-Transparency",
+            "reasoning": "Exposes manipulation. High friction, high drama. Risk of DoS.",
+            "score": 0.65
+        }
+    ]
+}
