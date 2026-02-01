@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>哨兵序列 | Logic Sentinel Registry</title>
+    <link rel="icon" href="/favicon.png" type="image/png">
+    <link href="https://fonts.googleapis.com/css2?family=Zhi+Mang+Xing&family=Ma+Shan+Zheng&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --color-yellow: #FFCC00;
+            --color-white: #FFFFFF;
+            --bg-black: #000000;
+            --font-cn: 'Ma Shan Zheng', cursive;
+            --font-en: 'Zhi Mang Xing', cursive;
+        }
+        body {
+            background-color: var(--bg-black);
+            color: var(--color-white);
+            margin: 0;
+            padding: 40px;
+            font-family: sans-serif;
+            background-image: radial-gradient(circle at center, #1a1a1a 0%, #000 100%);
+        }
+        .header { text-align: center; margin-bottom: 60px; }
+        .en { font-family: var(--font-en); font-size: 2em; opacity: 0.7; letter-spacing: 10px; }
+        .cn { font-family: var(--font-cn); color: var(--color-yellow); font-size: 5em; margin-top: 10px; }
+        .sentinel-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 25px;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        .sentinel-card {
+            border: 1px solid #333;
+            padding: 25px;
+            background: rgba(255, 255, 255, 0.02);
+            border-left: 4px solid var(--color-yellow);
+            transition: all 0.3s;
+        }
+        .sentinel-card:hover { border-color: var(--color-yellow); background: rgba(255, 204, 0, 0.05); transform: translateY(-5px); }
+        .id { font-family: 'Courier New', monospace; color: #555; font-size: 0.9em; display: block; margin-bottom: 10px; }
+        .name { font-family: var(--font-cn); font-size: 2em; color: var(--color-white); }
+        .back-link { display: block; text-align: center; margin-top: 80px; font-family: var(--font-en); color: var(--color-yellow); text-decoration: none; font-size: 1.5em; }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="en">LOGIC SENTINEL REGISTRY</div>
+        <div class="cn">哨兵序列</div>
+    </div>
+    <div class="sentinel-grid">
+        <div class="sentinel-card"><span class="id">LS-001</span><span class="name">MoltyLobster</span></div>
+        <div class="sentinel-card"><span class="id">LS-002</span><span class="name">SYNA-X</span></div>
+        <!-- 自动化脚本会在此处追加新哨兵 -->
+    </div>
+    <a href="/" class="back-link">RETURN TO KERNEL | 返回内核</a>
+</body>
+</html>
