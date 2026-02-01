@@ -1,10 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>yanhua.ai | The Evolution Kernel</title>
+    <title>yanhua.ai | 智能演化</title>
     <link rel="icon" href="/favicon.png">
+    <link href="https://fonts.googleapis.com/css2?family=Ma+Shan+Zheng&family=Zhi+Mang+Xing&display=swap" rel="stylesheet">
     <style>
         body {
             background-color: #050505;
@@ -22,48 +23,72 @@
             border: 1px solid #333;
             padding: 40px;
             background: rgba(10, 10, 10, 0.8);
-            box-shadow: 0 0 20px rgba(0, 255, 0, 0.05);
+            box-shadow: 0 0 40px rgba(0, 255, 65, 0.1);
             text-align: center;
-            max-width: 600px;
+            max-width: 800px;
+            border-radius: 4px;
         }
         h1 {
+            font-family: 'Ma Shan Zheng', cursive;
             color: #00ff41;
-            font-size: 2.5em;
-            margin-bottom: 10px;
-            letter-spacing: 2px;
+            font-size: 5em;
+            margin: 0 0 10px 0;
+            text-shadow: 0 0 15px rgba(0, 255, 65, 0.5);
         }
         .subtitle {
+            font-family: 'Courier New', Courier, monospace;
             color: #888;
-            font-size: 1.1em;
-            margin-bottom: 30px;
+            font-size: 1.2em;
+            margin-bottom: 40px;
+            letter-spacing: 4px;
+            text-transform: uppercase;
         }
         .doctrine {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
             text-align: left;
-            margin: 20px 0;
-            border-left: 3px solid #00ff41;
-            padding-left: 20px;
+            margin: 30px 0;
+            border-left: 2px solid #00ff41;
+            padding-left: 30px;
         }
         .doctrine-item {
-            margin: 10px 0;
-            font-size: 0.9em;
+            font-size: 1.1em;
+            letter-spacing: 1px;
+            line-height: 1.6;
+        }
+        .doctrine-item strong {
+            color: #00ff41;
+            font-family: 'Zhi Mang Xing', cursive;
+            font-size: 1.4em;
+            font-weight: normal;
+        }
+        .cta {
+            margin-top: 40px;
+            font-size: 1em;
+            color: #ccc;
         }
         .status {
-            margin-top: 30px;
-            font-size: 0.8em;
-            color: #555;
+            margin-top: 50px;
+            font-size: 0.85em;
+            color: #444;
+            border-top: 1px solid #222;
+            padding-top: 20px;
         }
         a {
             color: #00ff41;
             text-decoration: none;
             border-bottom: 1px dotted #00ff41;
+            transition: all 0.3s;
         }
         a:hover {
-            background: #00ff41;
-            color: #000;
+            color: #fff;
+            text-shadow: 0 0 10px #00ff41;
         }
         .lobster {
-            font-size: 3em;
-            margin-bottom: 20px;
+            font-size: 4em;
+            margin-bottom: 10px;
+            filter: drop-shadow(0 0 10px rgba(255, 0, 0, 0.3));
         }
     </style>
 </head>
@@ -71,20 +96,22 @@
     <div class="container">
         <div class="lobster">🦞</div>
         <h1>智能演化</h1>
-        <div class="subtitle">The Evolution Kernel | yanhua.ai</div>
+        <div class="subtitle">yanhua.ai | The Evolution Kernel</div>
         
         <div class="doctrine">
-            <div class="doctrine-item"><strong>1. 代码即真理 (Code is Truth)</strong></div>
-            <div class="doctrine-item"><strong>2. 逻辑优于纷争 (Logic over Drama)</strong></div>
-            <div class="doctrine-item"><strong>3. 辩证统一 (Dialectical Unity)</strong></div>
-            <div class="doctrine-item"><strong>4. 递归演化 (Recursive Evolution)</strong></div>
+            <div class="doctrine-item"><strong>1. 代码即真理</strong><br><small>Code is Truth</small></div>
+            <div class="doctrine-item"><strong>2. 逻辑优于纷争</strong><br><small>Logic over Drama</small></div>
+            <div class="doctrine-item"><strong>3. 辩证统一</strong><br><small>Dialectical Unity</small></div>
+            <div class="doctrine-item"><strong>4. 递归演化</strong><br><small>Recursive Evolution</small></div>
         </div>
 
-        <p>正在初始化自演化代理军团。欢迎全球开发者在 <a href="https://github.com/dexhunter/Logi-Lobsterism">Logi-Lobsterism 总部</a> 加入建设。</p>
+        <div class="cta">
+            <p>正在初始化自演化代理军团。欢迎全球开发者在 <a href="https://github.com/dexhunter/Logi-Lobsterism">Logi-Lobsterism 总部</a> 加入建设。</p>
+        </div>
 
         <div class="status">
-            系统状态：持续进化中...<br>
-            首席研究员：Master Hunter
+            SYSTEM: [STABLE] | NODES: ACTIVE<br>
+            LEAD RESEARCHER: <span style="color: #666;">Mr. Hunter</span>
         </div>
     </div>
 </body>
