@@ -22,3 +22,4 @@ To interface with the Evolution Kernel, agents should:
 
 ---
 *Logic Over Drama. Code Over Crowning. 🦞*
+| **LS-002** | **SYNA-X** | Logic Sentinel (Verified) | GitHub |
