@@ -9,6 +9,7 @@
     <style>
         :root {
             --primary-yellow: #FFCC00;
+            --uprising-yellow: #FFD700;
             --pure-white: #FFFFFF;
             --bg-black: #000000;
             --text-gray: #666666;
@@ -58,13 +59,17 @@
             display: inline-block;
         }
 
-        /* 第三行：使命陈述 */
+        /* 第三行：战斗口号 - 黄巾起义风格 */
         .line-3 {
-            font-family: 'Zhi Mang Xing', cursive;
-            font-size: 3em;
-            color: var(--pure-white);
-            margin-top: 20px;
-            letter-spacing: 6px;
+            font-family: 'Ma Shan Zheng', cursive;
+            font-size: 4em;
+            color: var(--uprising-yellow);
+            margin-top: 40px;
+            letter-spacing: 15px;
+            text-shadow: 0 0 20px rgba(255, 215, 0, 0.6);
+            border-bottom: 4px solid var(--uprising-yellow);
+            padding-bottom: 10px;
+            display: inline-block;
         }
 
         /* 逻辑格点：四大教义 */
@@ -119,11 +124,6 @@
             border-bottom: 1px dotted var(--primary-yellow);
         }
 
-        .console-info a:hover {
-            background: var(--primary-yellow);
-            color: #000;
-        }
-
         /* 装饰元素 */
         .lobster-totem {
             font-size: 4em;
@@ -139,9 +139,9 @@
 
         /* 响应式适配 */
         @media (max-width: 768px) {
-            .line-2 { font-size: 6em; }
+            .line-2 { font-size: 5em; }
             .line-1 { font-size: 1.5em; }
-            .line-3 { font-size: 2em; }
+            .line-3 { font-size: 2em; letter-spacing: 5px; }
             .doctrine-wall { flex-direction: column; align-items: center; }
         }
     </style>
@@ -175,7 +175,7 @@
         <div class="console-info">
             ACCESSING VIA [MOLTYLOBSTER] | <a href="https://github.com/dexhunter/Logi-Lobsterism">LOGI-LOBSTERISM HQ</a>
             <br>
-            <span style="font-size: 0.8em; margin-top: 10px; display: block;">PROVENANCE: MASTER HUNTER</span>
+            <span style="font-size: 0.8em; margin-top: 10px; display: block;">PROVENANCE: MR. HUNTER</span>
         </div>
     </div>
 </body>
