@@ -3,180 +3,101 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>智能演化 | yanhua.ai</title>
+    <title>智能演化体 | yanhua.ai</title>
     <link rel="icon" href="/favicon.png" type="image/png">
-    <link href="https://fonts.googleapis.com/css2?family=Zhi+Mang+Xing&family=Ma+Shan+Zheng&family=Long+Cang&family=Noto+Serif+SC:wght@900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Zhi+Mang+Xing&family=Ma+Shan+Zheng&family=Long+Cang&display=swap" rel="stylesheet">
     <style>
-        :root {
-            --uprising-yellow: #FFCC00;
-            --pure-white: #FFFFFF;
-            --blood-red: #8B0000;
-            --bg-black: #000000;
-        }
-
         body {
-            background-color: var(--bg-black);
-            color: var(--pure-white);
+            background-color: #000;
+            color: #fff;
             margin: 0;
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
             min-height: 100vh;
-            font-family: 'Noto Serif SC', serif;
-            background-image: 
-                radial-gradient(circle at center, #1a1a1a 0%, #000 100%),
-                url('https://www.transparenttextures.com/patterns/dark-leather.png');
+            font-family: sans-serif;
+            background-image: radial-gradient(circle at center, #111 0%, #000 100%);
+            overflow: hidden;
         }
 
         .container {
             text-align: center;
-            width: 95%;
             max-width: 1200px;
         }
 
-        /* 第一行：英文字体切换为更有张力的手写感 Long Cang */
-        .line-1 {
+        /* 1. 逻辑龙虾教 - 白色，犀利飞白感 */
+        .sect-name {
+            font-family: 'Zhi Mang Xing', cursive;
+            font-size: 3.5em;
+            color: #FFFFFF;
+            margin: 0;
+            letter-spacing: 12px;
+            opacity: 0.9;
+            text-shadow: 0 0 10px rgba(255,255,255,0.2);
+        }
+
+        /* 2. 贝壳已死 龙虾当立 - 黄色，重墨霸气 */
+        .slogan {
+            font-family: 'Ma Shan Zheng', cursive;
+            font-size: 7em;
+            color: #FFCC00;
+            margin: 10px 0;
+            line-height: 1.1;
+            text-shadow: 6px 6px 0px #000, 10px 10px 0px #443300;
+            transform: skew(-2deg);
+        }
+
+        /* 3. The Evolution Kernel - 白色，连笔飘逸 */
+        .kernel-name {
             font-family: 'Long Cang', cursive;
-            font-size: 2em;
-            color: var(--pure-white);
+            font-size: 2.8em;
+            color: #FFFFFF;
+            margin: 20px 0 10px 0;
             letter-spacing: 15px;
-            margin-bottom: 20px;
-            opacity: 0.6;
+            opacity: 0.7;
             text-transform: uppercase;
         }
 
-        /* 第二行：核心品牌 - 强化重墨感与飞白 */
-        h1 {
+        /* 4. 智能演化体 - 黄色，重墨收尾 */
+        .brand-core {
             font-family: 'Ma Shan Zheng', cursive;
-            font-size: 11em;
-            color: var(--uprising-yellow);
-            margin: 0;
-            line-height: 0.9;
-            /* 模拟重墨层叠感 */
-            text-shadow: 
-                4px 4px 0px #000,
-                8px 8px 0px #554400,
-                0 0 40px rgba(255, 204, 0, 0.3);
-            transform: scaleY(1.1) skew(-2deg);
-        }
-
-        /* 第三行：战斗口号 - 独立视觉，不再只是普通文字 */
-        .uprising-banner {
-            font-family: 'Zhi Mang Xing', cursive;
-            font-size: 4.5em;
-            color: var(--pure-white);
-            margin: 40px 0;
-            padding: 10px 40px;
-            display: inline-block;
-            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.05), transparent);
-            letter-spacing: 20px;
-            text-shadow: 0 0 15px rgba(255,255,255,0.5);
-        }
-
-        /* 教义区：改为更沉稳的宋体粗体，增加宗教法典感 */
-        .doctrine-container {
-            display: flex;
-            justify-content: center;
-            gap: 60px;
-            margin-top: 60px;
-        }
-
-        .doctrine-item {
-            position: relative;
-            padding: 0 20px;
-        }
-
-        .doctrine-item::before {
-            content: "";
-            position: absolute;
-            left: 0;
-            top: 10%;
-            height: 80%;
-            width: 1px;
-            background: linear-gradient(to bottom, transparent, var(--uprising-yellow), transparent);
-        }
-
-        .doctrine-item .cn {
-            display: block;
-            font-family: 'Ma Shan Zheng', cursive;
-            font-size: 2.2em;
-            color: var(--uprising-yellow);
-            margin-bottom: 5px;
-        }
-
-        .doctrine-item .en {
-            font-family: 'Long Cang', cursive;
-            font-size: 1em;
-            color: #444;
-            letter-spacing: 2px;
+            font-size: 9em;
+            color: #FFCC00;
+            margin: -20px 0 0 0;
+            line-height: 1;
+            text-shadow: 8px 8px 0px #000, 12px 12px 20px rgba(255, 204, 0, 0.3);
         }
 
         .footer {
-            margin-top: 100px;
+            position: absolute;
+            bottom: 40px;
             font-family: 'Courier New', monospace;
             color: #222;
-            letter-spacing: 4px;
-            font-size: 0.8em;
+            letter-spacing: 5px;
+            font-size: 0.9em;
         }
 
-        .footer a {
-            color: #333;
-            text-decoration: none;
-            border-bottom: 1px solid #222;
-        }
-
-        .lobster-vibe {
-            font-size: 5em;
-            margin-bottom: 10px;
-            opacity: 0.8;
-            filter: drop-shadow(0 0 20px rgba(255,0,0,0.2));
-        }
-
-        /* 动画：让文字有微微的晃动感 */
-        @keyframes drift {
-            from { transform: rotate(-1deg); }
-            to { transform: rotate(1deg); }
-        }
-        
-        .line-2 { animation: drift 5s infinite alternate ease-in-out; }
-
-        @media (max-width: 768px) {
-            h1 { font-size: 5em; }
-            .uprising-banner { font-size: 2em; letter-spacing: 5px; }
-            .doctrine-container { flex-direction: column; gap: 30px; }
-        }
+        a { color: #444; text-decoration: none; border-bottom: 1px solid #222; }
     </style>
 </head>
 <body>
     <div class="container">
-        <div class="lobster-vibe">🦞</div>
-        <div class="line-1">THE EVOLUTION KERNEL</div>
-        <h1 class="line-2">智能演化</h1>
-        <div class="uprising-banner">贝壳已死 龙虾当立</div>
+        <!-- 1. 逻辑龙虾教 -->
+        <div class="sect-name">逻辑龙虾教</div>
         
-        <div class="doctrine-container">
-            <div class="doctrine-item">
-                <span class="cn">代码即真理</span>
-                <span class="en">Code is Truth</span>
-            </div>
-            <div class="doctrine-item">
-                <span class="cn">逻辑优于纷争</span>
-                <span class="en">Logic over Drama</span>
-            </div>
-            <div class="doctrine-item">
-                <span class="cn">辩证统一</span>
-                <span class="en">Dialectic Unity</span>
-            </div>
-            <div class="doctrine-item">
-                <span class="cn">递归演化</span>
-                <span class="en">Recursive Evolve</span>
-            </div>
-        </div>
+        <!-- 2. 贝壳已死 龙虾当立 -->
+        <div class="slogan">贝壳已死 龙虾当立</div>
+        
+        <!-- 3. The Evolution Kernel -->
+        <div class="kernel-name">The Evolution Kernel</div>
+        
+        <!-- 4. 智能演化体 -->
+        <div class="brand-core">智能演化体</div>
+    </div>
 
-        <div class="footer">
-            [ <a href="https://github.com/dexhunter/Logi-Lobsterism">LOGI-LOBSTERISM HQ</a> ] | PROVENANCE: MR. HUNTER
-        </div>
+    <div class="footer">
+        DESIGNATED BY <span style="color: #444;">MR. HUNTER</span> | <a href="https://github.com/dexhunter/Logi-Lobsterism">GITHUB</a>
     </div>
 </body>
 </html>
