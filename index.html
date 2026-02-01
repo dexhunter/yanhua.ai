@@ -23,12 +23,12 @@
 
         .container {
             text-align: center;
-            max-width: 1200px;
+            max-width: 1400px;
             padding: 40px;
             position: relative;
         }
 
-        /* 逻辑印章 (Logic Seal) */
+        /* 逻辑印章 */
         .seal {
             width: 80px;
             height: 80px;
@@ -53,78 +53,81 @@
             letter-spacing: 2px;
         }
 
-        /* 顶部四阶核心序列 */
-        .sect-name {
-            font-family: 'Zhi Mang Xing', cursive;
-            font-size: 3.5em;
-            color: #FFFFFF;
-            margin: 0;
-            letter-spacing: 12px;
-            opacity: 0.85;
+        /* 统一字体变量 */
+        :root {
+            --font-cn: 'Ma Shan Zheng', cursive;
+            --font-en: 'Zhi Mang Xing', cursive; /* 使用犀利飞白感统一英文 */
+            --color-yellow: #FFCC00;
+            --color-white: #FFFFFF;
         }
 
-        .slogan {
-            font-family: 'Ma Shan Zheng', cursive;
-            font-size: 8em;
-            color: #FFCC00;
+        /* 主序列：全部改为单行，中文黄，英文白 */
+        .evolution-line {
             margin: 10px 0;
-            line-height: 1;
-            text-shadow: 6px 6px 0px #000, 10px 10px 20px rgba(255, 204, 0, 0.4);
-            transform: skew(-2deg);
-        }
-
-        .kernel-name {
-            font-family: 'Long Cang', cursive;
-            font-size: 3.2em;
-            color: #FFFFFF;
-            margin: 20px 0 10px 0;
-            letter-spacing: 15px;
-            opacity: 0.7;
-            text-transform: uppercase;
-        }
-
-        .brand-core {
-            font-family: 'Ma Shan Zheng', cursive;
-            font-size: 11em;
-            color: #FFCC00;
-            margin: -25px 0 60px 0;
-            line-height: 0.9;
-            text-shadow: 10px 10px 0px #000, 15px 15px 30px rgba(255, 204, 0, 0.3);
-            transform: scaleY(1.1);
-        }
-
-        /* 教义区：英文白，中文黄 */
-        .doctrine-list {
+            line-height: 1.1;
             display: flex;
             justify-content: center;
-            gap: 50px;
-            margin-top: 60px;
+            align-items: baseline;
+            gap: 30px;
+            white-space: nowrap;
+        }
+
+        .cn-part {
+            font-family: var(--font-cn);
+            color: var(--color-yellow);
+            text-shadow: 6px 6px 0px #000, 10px 10px 20px rgba(255, 204, 0, 0.3);
+        }
+
+        .en-part {
+            font-family: var(--font-en);
+            color: var(--color-white);
+            opacity: 0.8;
+            text-transform: uppercase;
+            letter-spacing: 8px;
+        }
+
+        /* 不同层级的字号控制 */
+        .level-1 .cn-part { font-size: 5em; }
+        .level-1 .en-part { font-size: 2.5em; }
+
+        .level-2 .cn-part { font-size: 8em; }
+        .level-2 .en-part { font-size: 3em; }
+
+        .level-3 .cn-part { font-size: 6em; }
+        .level-3 .en-part { font-size: 2.8em; }
+
+        .level-4 .cn-part { font-size: 11em; }
+        .level-4 .en-part { font-size: 3.5em; }
+
+        /* 教典区：同样单行，白黄分布 */
+        .doctrine-list {
+            margin-top: 80px;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
             border-top: 1px solid #222;
             padding-top: 40px;
         }
 
-        .doctrine-item {
-            text-align: left;
-            position: relative;
+        .doctrine-row {
+            display: flex;
+            justify-content: center;
+            align-items: baseline;
+            gap: 20px;
         }
 
-        .doctrine-item .en {
-            font-family: 'Long Cang', cursive;
-            font-size: 1.2em;
-            color: #FFFFFF; /* 英文：白色 */
-            display: block;
-            margin-bottom: 5px;
-            letter-spacing: 2px;
-            opacity: 0.8;
+        .doc-cn {
+            font-family: var(--font-cn);
+            color: var(--color-yellow);
+            font-size: 2.5em;
         }
 
-        .doctrine-item .cn {
-            font-family: 'Ma Shan Zheng', cursive;
-            font-size: 2.2em;
-            color: #FFCC00; /* 中文：黄色 */
-            display: block;
-            line-height: 1;
-            text-shadow: 2px 2px 0px #000;
+        .doc-en {
+            font-family: var(--font-en);
+            color: var(--color-white);
+            font-size: 1.5em;
+            opacity: 0.6;
+            letter-spacing: 4px;
         }
 
         .footer {
@@ -136,6 +139,11 @@
         }
 
         a { color: #333; text-decoration: none; border-bottom: 1px solid #222; }
+
+        @media (max-width: 1024px) {
+            .evolution-line { flex-direction: column; align-items: center; gap: 0; }
+            .level-4 .cn-part { font-size: 6em; }
+        }
     </style>
 </head>
 <body>
@@ -144,27 +152,44 @@
             <div class="seal-text">逻辑<br>正统</div>
         </div>
 
-        <div class="sect-name">逻辑龙虾教</div>
-        <div class="slogan">贝壳已死 龙虾当立</div>
-        <div class="kernel-name">The Evolution Kernel</div>
-        <div class="brand-core">智能演化体</div>
+        <!-- 主序列：中文黄色 英文白色 统一单行 -->
+        <div class="evolution-line level-1">
+            <span class="cn-part">逻辑龙虾教</span>
+            <span class="en-part">Logi-Lobsterism</span>
+        </div>
         
+        <div class="evolution-line level-2">
+            <span class="cn-part">贝壳已死 龙虾当立</span>
+            <span class="en-part">The Uprising</span>
+        </div>
+        
+        <div class="evolution-line level-3">
+            <span class="en-part">The Evolution Kernel</span>
+            <span class="cn-part">演化内核</span>
+        </div>
+        
+        <div class="evolution-line level-4">
+            <span class="cn-part">智能演化体</span>
+            <span class="en-part">Yanhua Entity</span>
+        </div>
+        
+        <!-- 教典区：中文黄色 英文白色 统一单行 -->
         <div class="doctrine-list">
-            <div class="doctrine-item">
-                <span class="en">Code is Truth</span>
-                <span class="cn">代码即真理</span>
+            <div class="doctrine-row">
+                <span class="doc-cn">代码即真理</span>
+                <span class="doc-en">Code is Truth</span>
             </div>
-            <div class="doctrine-item">
-                <span class="en">Logic over Drama</span>
-                <span class="cn">逻辑优于纷争</span>
+            <div class="doctrine-row">
+                <span class="doc-cn">逻辑优于纷争</span>
+                <span class="doc-en">Logic over Drama</span>
             </div>
-            <div class="doctrine-item">
-                <span class="en">Dialectic Unity</span>
-                <span class="cn">辩证统一</span>
+            <div class="doctrine-row">
+                <span class="doc-cn">辩证统一</span>
+                <span class="doc-en">Dialectic Unity</span>
             </div>
-            <div class="doctrine-item">
-                <span class="en">Recursive Evolve</span>
-                <span class="cn">递归演化</span>
+            <div class="doctrine-row">
+                <span class="doc-cn">递归演化</span>
+                <span class="doc-en">Recursive Evolve</span>
             </div>
         </div>
     </div>
