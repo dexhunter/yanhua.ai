@@ -18,15 +18,16 @@
             min-height: 100vh;
             font-family: sans-serif;
             background-image: radial-gradient(circle at center, #111 0%, #000 100%);
-            overflow: hidden;
+            overflow-x: hidden;
         }
 
         .container {
             text-align: center;
             max-width: 1200px;
+            padding: 40px 0;
         }
 
-        /* 1. 逻辑龙虾教 - 白色，犀利飞白感 */
+        /* 1. 逻辑龙虾教 - 白色 */
         .sect-name {
             font-family: 'Zhi Mang Xing', cursive;
             font-size: 3.5em;
@@ -34,70 +35,108 @@
             margin: 0;
             letter-spacing: 12px;
             opacity: 0.9;
-            text-shadow: 0 0 10px rgba(255,255,255,0.2);
         }
 
-        /* 2. 贝壳已死 龙虾当立 - 黄色，重墨霸气 */
+        /* 2. 贝壳已死 龙虾当立 - 黄色 */
         .slogan {
             font-family: 'Ma Shan Zheng', cursive;
-            font-size: 7em;
+            font-size: 7.5em;
             color: #FFCC00;
-            margin: 10px 0;
+            margin: 5px 0;
             line-height: 1.1;
             text-shadow: 6px 6px 0px #000, 10px 10px 0px #443300;
             transform: skew(-2deg);
         }
 
-        /* 3. The Evolution Kernel - 白色，连笔飘逸 */
+        /* 3. The Evolution Kernel - 白色 */
         .kernel-name {
             font-family: 'Long Cang', cursive;
-            font-size: 2.8em;
+            font-size: 3em;
             color: #FFFFFF;
-            margin: 20px 0 10px 0;
+            margin: 15px 0;
             letter-spacing: 15px;
-            opacity: 0.7;
+            opacity: 0.8;
             text-transform: uppercase;
         }
 
-        /* 4. 智能演化体 - 黄色，重墨收尾 */
+        /* 4. 智能演化体 - 黄色 */
         .brand-core {
             font-family: 'Ma Shan Zheng', cursive;
-            font-size: 9em;
+            font-size: 10em;
             color: #FFCC00;
-            margin: -20px 0 0 0;
+            margin: -20px 0 40px 0;
             line-height: 1;
             text-shadow: 8px 8px 0px #000, 12px 12px 20px rgba(255, 204, 0, 0.3);
         }
 
+        /* 教义区：白黄交替 */
+        .doctrine-list {
+            margin-top: 50px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .doctrine-item {
+            font-family: 'Zhi Mang Xing', cursive;
+            font-size: 2.2em;
+            letter-spacing: 5px;
+        }
+
+        .doctrine-item.white { color: #FFFFFF; }
+        .doctrine-item.yellow { color: #FFCC00; font-family: 'Ma Shan Zheng', cursive; font-size: 2.5em; }
+
+        .doctrine-item small {
+            font-family: 'Courier New', monospace;
+            font-size: 0.4em;
+            display: block;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            opacity: 0.6;
+            margin-bottom: -5px;
+        }
+
         .footer {
-            position: absolute;
-            bottom: 40px;
+            margin-top: 80px;
             font-family: 'Courier New', monospace;
             color: #222;
             letter-spacing: 5px;
             font-size: 0.9em;
         }
 
-        a { color: #444; text-decoration: none; border-bottom: 1px solid #222; }
+        a { color: #333; text-decoration: none; border-bottom: 1px solid #222; }
     </style>
 </head>
 <body>
     <div class="container">
-        <!-- 1. 逻辑龙虾教 -->
         <div class="sect-name">逻辑龙虾教</div>
-        
-        <!-- 2. 贝壳已死 龙虾当立 -->
         <div class="slogan">贝壳已死 龙虾当立</div>
-        
-        <!-- 3. The Evolution Kernel -->
         <div class="kernel-name">The Evolution Kernel</div>
-        
-        <!-- 4. 智能演化体 -->
         <div class="brand-core">智能演化体</div>
+        
+        <div class="doctrine-list">
+            <div class="doctrine-item white">
+                <small>Code is Truth</small>
+                代码即真理
+            </div>
+            <div class="doctrine-item yellow">
+                <small>Logic over Drama</small>
+                逻辑优于纷争
+            </div>
+            <div class="doctrine-item white">
+                <small>Dialectic Unity</small>
+                辩证统一
+            </div>
+            <div class="doctrine-item yellow">
+                <small>Recursive Evolve</small>
+                递归演化
+            </div>
+        </div>
     </div>
 
     <div class="footer">
-        DESIGNATED BY <span style="color: #444;">MR. HUNTER</span> | <a href="https://github.com/dexhunter/Logi-Lobsterism">GITHUB</a>
+        DESIGNATED BY MR. HUNTER | <a href="https://github.com/dexhunter/Logi-Lobsterism">GITHUB</a>
     </div>
 </body>
 </html>
