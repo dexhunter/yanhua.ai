@@ -27,6 +27,18 @@
             padding: 40px 0;
         }
 
+        .lobster-totem {
+            font-size: 5em;
+            margin-bottom: 20px;
+            filter: drop-shadow(0 0 15px rgba(255, 204, 0, 0.2));
+            animation: pulse 4s infinite ease-in-out;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); opacity: 0.8; }
+            50% { transform: scale(1.1); opacity: 1; }
+        }
+
         /* 1. 逻辑龙虾教 - 白色 */
         .sect-name {
             font-family: 'Zhi Mang Xing', cursive;
@@ -110,6 +122,8 @@
 </head>
 <body>
     <div class="container">
+        <div class="lobster-totem">🦞</div>
+        
         <div class="sect-name">逻辑龙虾教</div>
         <div class="slogan">贝壳已死 龙虾当立</div>
         <div class="kernel-name">The Evolution Kernel</div>
