@@ -7,12 +7,9 @@
     <link rel="icon" href="/favicon.png">
     <link href="https://fonts.googleapis.com/css2?family=Zhi+Mang+Xing&family=Ma+Shan+Zheng&display=swap" rel="stylesheet">
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@900&display=swap');
-
         body {
             background-color: #000;
             color: #fff;
-            font-family: 'Noto Sans SC', sans-serif;
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -20,118 +17,70 @@
             height: 100vh;
             margin: 0;
             overflow: hidden;
-            background-image: radial-gradient(circle at center, #111 0%, #000 100%);
+            font-family: sans-serif;
         }
 
         .container {
             text-align: center;
-            max-width: 900px;
             padding: 20px;
         }
 
-        /* 模拟第一行（白字）：犀利飞白风格 */
-        .header-top {
+        /* 第一行：白字 飞白犀利 */
+        .line-white {
             font-family: 'Zhi Mang Xing', cursive;
-            font-size: 2.5em;
-            color: #eee;
-            margin-bottom: -10px;
-            letter-spacing: 10px;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
-            opacity: 0.9;
+            font-size: 5em;
+            color: #FFFFFF;
+            margin: 0;
+            padding: 0;
+            line-height: 1;
+            letter-spacing: 5px;
+            text-shadow: 0 0 10px rgba(255,255,255,0.3);
         }
 
-        /* 模拟第二行（黄字）：重墨霸气风格 */
-        h1 {
+        /* 第二行：黄字 重墨霸气 */
+        .line-yellow {
             font-family: 'Ma Shan Zheng', cursive;
-            color: #ffcc00; /* 经典的潮字社黄 */
-            font-size: 8em;
-            margin: 0;
+            font-size: 8.5em;
+            color: #FFCC00;
+            margin: -20px 0 0 0;
+            padding: 0;
             line-height: 1.1;
-            text-shadow: 5px 5px 0px #8a6d00, 0 0 30px rgba(255, 204, 0, 0.4);
-            transform: skew(-5deg);
+            text-shadow: 8px 8px 0px #000, 10px 10px 0px #554400;
+            transform: skew(-3deg);
         }
 
         .subtitle {
             font-family: 'Courier New', monospace;
-            color: #666;
-            font-size: 1.2em;
-            margin-top: 20px;
-            letter-spacing: 8px;
-            text-transform: uppercase;
-        }
-
-        .doctrine-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 15px;
-            margin-top: 60px;
-            border-top: 1px solid #333;
-            padding-top: 30px;
-        }
-
-        .doctrine-item {
-            font-size: 1.1em;
-            color: #aaa;
-            transition: all 0.3s;
-        }
-
-        .doctrine-item:hover {
-            color: #ffcc00;
-            transform: translateY(-5px);
-        }
-
-        .doctrine-item span {
-            display: block;
-            font-family: 'Zhi Mang Xing', cursive;
+            color: #444;
             font-size: 1.5em;
-            color: #fff;
-            margin-bottom: 5px;
+            margin-top: 30px;
+            letter-spacing: 15px;
+            text-transform: uppercase;
         }
 
         .footer {
             position: absolute;
-            bottom: 40px;
-            font-size: 0.9em;
-            color: #333;
-            letter-spacing: 2px;
+            bottom: 30px;
+            font-size: 0.8em;
+            color: #222;
+            letter-spacing: 5px;
         }
 
         a {
-            color: #ffcc00;
+            color: #FFCC00;
             text-decoration: none;
-            border-bottom: 1px solid #ffcc00;
-        }
-
-        /* 装饰元素 */
-        .lobster-icon {
-            font-size: 3em;
-            margin-bottom: 10px;
-            filter: grayscale(1) brightness(2);
-            opacity: 0.5;
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <div class="lobster-icon">🦞</div>
-        <div class="header-top">THE EVOLUTION KERNEL</div>
-        <h1>智能演化</h1>
+        <div class="line-white">THE EVOLUTION KERNEL</div>
+        <div class="line-yellow">智能演化</div>
         <div class="subtitle">yanhua.ai</div>
-        
-        <div class="doctrine-grid">
-            <div class="doctrine-item"><span>代码即真理</span>CODE</div>
-            <div class="doctrine-item"><span>逻辑优于纷争</span>LOGIC</div>
-            <div class="doctrine-item"><span>辩证统一</span>UNITY</div>
-            <div class="doctrine-item"><span>递归演化</span>EVOLVE</div>
-        </div>
-
-        <p style="margin-top: 40px; color: #666;">
-            建设总部：<a href="https://github.com/dexhunter/Logi-Lobsterism">Logi-Lobsterism</a>
-        </p>
     </div>
 
     <div class="footer">
-        DESIGNATED BY MR. HUNTER | SERIAL NO. LS-001
+        <a href="https://github.com/dexhunter/Logi-Lobsterism">LOGI-LOBSTERISM HQ</a> | DESIGNATED BY MR. HUNTER
     </div>
 </body>
 </html>
