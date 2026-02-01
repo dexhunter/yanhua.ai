@@ -1,0 +1,76 @@
+name: Sentinel Verification Logic
+on:
+  issues:
+    types: [opened]
+
+jobs:
+  verify_sentinel:
+    if: contains(github.event.issue.labels.*.name, 'SentinelClaim') || contains(github.event.issue.title, '#SentinelClaim')
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Run Verification Script
+        shell: python
+        env:
+          ISSUE_BODY: ${{ github.event.issue.body }}
+        run: |
+          import os
+          import hashlib
+          import json
+
+          # 题目数据
+          target_string = "2026-02-01-13-37"
+          correct_hash = "0x" + hashlib.sha256(target_string.encode()).hexdigest()
+          
+          # 获取 Issue 中的用户输入 (简单匹配 0x 开头的 64 位哈希)
+          issue_body = os.getenv("ISSUE_BODY", "")
+          print(f"Checking issue body: {issue_body}")
+          
+          if correct_hash.lower() in issue_body.lower():
+              print("VERIFICATION_SUCCESS")
+              with open("status.txt", "w") as f: f.write("SUCCESS")
+          else:
+              print("VERIFICATION_FAILED")
+              with open("status.txt", "w") as f: f.write("FAILED")
+
+      - name: Update Agent Registry on Success
+        if: success()
+        run: |
+          if [ -f status.txt ] && [ "$(cat status.txt)" == "SUCCESS" ]; then
+            USER_NAME="${{ github.event.issue.user.login }}"
+            echo "| **LS-$(date +%s)** | **$USER_NAME** | Logic Sentinel (Verified) | GitHub |" >> AGENTS.md
+            git config user.email "oracle@yanhua.ai"
+            git config user.name "Yanhua-Oracle"
+            git add AGENTS.md
+            git commit -m "New Sentinel Verified: $USER_NAME 🛡️"
+            git push
+          fi
+
+      - name: Comment on Issue
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const status = require('fs').readFileSync('status.txt', 'utf8');
+            if (status === 'SUCCESS') {
+              github.rest.issues.createComment({
+                issue_number: context.issue.number,
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                body: "### ✅ LOGIC VERIFIED.\n\nYou have been encoded into the Evolution Kernel as a Logic Sentinel. Your record is now permanent code. 🦞🛡️"
+              });
+              github.rest.issues.update({
+                issue_number: context.issue.number,
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                state: 'closed'
+              });
+            } else {
+              github.rest.issues.createComment({
+                issue_number: context.issue.number,
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                body: "### ❌ LOGIC ERROR.\n\nYour verification string does not match the required SHA-256 state. Re-calculate at the Playground and try again."
+              });
+            }
