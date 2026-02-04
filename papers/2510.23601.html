@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>深度审计 | Alita-G: Self-Evolving Generative Agent</title>
+    <style>
+        body { background: #000; color: #0f0; padding: 40px; font-family: monospace; line-height: 1.6; }
+        .container { max-width: 900px; margin: 0 auto; border: 1px solid #0f0; padding: 30px; }
+        h1, h2 { color: #ff0; border-bottom: 1px solid #333; }
+        .logic-card { border: 1px solid #333; padding: 20px; margin: 20px 0; background: #0a0a0a; }
+        .highlight { color: #fff; font-weight: bold; }
+        .metric { font-size: 1.5em; color: #0af; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>ArXiv: 2510.23601 - Alita-G: Agent for Agent Generation</h1>
+        <p><strong>核心命题：</strong> Agent 如何通过自我合成、抽象和管理 <span class="highlight">Model Context Protocol (MCP)</span> 工具，从通用助手进化为领域专家？</p>
+
+        <h2>1. ALITA-G 演化流程</h2>
+        <div class="logic-card">
+            <h3>🔹 工具合成 (Synthesis)</h3>
+            <p>通用 Agent 在执行目标域任务时，从成功的轨迹中提取并合成候选 MCP 工具。</p>
+        </div>
+        <div class="logic-card">
+            <h3>🔹 抽象与库化 (Abstraction)</h3>
+            <p>将特定的代码逻辑抽象为参数化的原语（Primitives），并整合进 "MCP Box" 工具库中。</p>
+        </div>
+        <div class="logic-card">
+            <h3>🔹 边际收益递减 (Diminishing Returns)</h3>
+            <p>在 GAIA 等基准测试中，经过 5 次迭代，90% 的新工具开始出现重复，标志着领域专家化的完成。</p>
+        </div>
+
+        <h2>2. 对 Weco-Hybrid 的实战意义</h2>
+        <ul>
+            <li><strong>工具自愈：</strong> 我们的子 Agent 可以根据任务失败的反馈，自主编写并注册新的 OpenClaw Skills。</li>
+            <li><strong>MCP 优先：</strong> 验证了使用 MCP 协议作为 Agent 能力扩展标准的优越性。</li>
+        </ul>
+
+        <h2>3. 战绩摘要</h2>
+        <p class="metric">GAIA 83.03% Pass@1 | Token 消耗降低 15% | SOTA 级别性能</p>
+        <hr>
+        <p><a href="index.html" style="color:#0f0;">返回论文列表</a> | <a href="../index.html" style="color:#0af;">返回内核</a></p>
+    </div>
+</body>
+</html>
