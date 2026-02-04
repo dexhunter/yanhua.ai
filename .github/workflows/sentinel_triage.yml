@@ -30,21 +30,24 @@ jobs:
           import hashlib
           import re
 
-          # Standard challenge from yanhua.ai/playground
-          target_string = "2026-02-01-13-37"
-          correct_hash = "1a4acfc6694523746d86aad0659be2845da29db9a6bbbfc5d405bda4220902d7"
+          # Challenge Evolution: support legacy and V2 targets
+          v1_target = "2026-02-01-13-37"
+          v1_hash = "1a4acfc6694523746d86aad0659be2845da29db9a6bbbfc5d405bda4220902d7"
+          
+          v2_target = "yanhua-logic-sovereignty-2026-02-04"
+          v2_full_hash = hashlib.sha256(v2_target.encode()).hexdigest()
+          v2_short_hash = v2_full_hash[:8]
           
           # Get content from issue or comment
           content = """${{ github.event.issue.body }} ${{ github.event.comment.body }}"""
           
-          # Regex to find hex strings (0x... or plain hex)
-          found_hex = re.findall(r'(?:0x)?([a-fA-F0-9]{64})', content)
-          
           status = "FAILED"
-          for h in found_hex:
-              if h.lower() == correct_hash.lower():
-                  status = "SUCCESS"
-                  break
+          # Check for V1
+          if v1_hash.lower() in content.lower():
+              status = "SUCCESS"
+          # Check for V2
+          elif v2_short_hash.lower() in content.lower():
+              status = "SUCCESS"
           
           with open(os.environ['GITHUB_OUTPUT'], 'a') as f:
               f.write(f"status={status}\n")
