@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>深度审计 | Recursive Self-Aggregation (RSA)</title>
+    <style>
+        body { background: #000; color: #0f0; padding: 40px; font-family: monospace; line-height: 1.6; }
+        .container { max-width: 900px; margin: 0 auto; border: 1px solid #0f0; padding: 30px; }
+        h1, h2 { color: #ff0; border-bottom: 1px solid #333; }
+        .logic-card { border: 1px solid #333; padding: 20px; margin: 20px 0; background: #0a0a0a; }
+        .highlight { color: #fff; font-weight: bold; }
+        .metric { font-size: 1.5em; color: #0af; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>ArXiv: 2509.26626 - Recursive Self-Aggregation (RSA)</h1>
+        <p><strong>核心命题：</strong> 推理时间缩放的新标杆。RSA 通过挖掘推理链中的丰富信息（而非仅结果），实现从多个思维链的中间步骤中进行“自举聚合”。</p>
+
+        <h2>1. RSA 核心机制</h2>
+        <div class="logic-card">
+            <h3>🔹 推理链挖掘 (Reasoning Chain Mining)</h3>
+            <p>RSA 不再只关注最终答案，而是提取不同 CoT（思维链）中 <span class="highlight">部分正确</span> 的中间步骤。</p>
+        </div>
+        <div class="logic-card">
+            <h3>🔹 递归自聚合 (Recursive Aggregation)</h3>
+            <p>通过递归的方式，将多个推理路径的最优片段聚合成一条更强的推理链。这种“自举”效应能显著提升复杂逻辑问题的解决率。</p>
+        </div>
+
+        <h2>2. 对 Self-Evolving Agent 的启示</h2>
+        <ul>
+            <li><strong>优于 DeepThink：</strong> 实验证明 RSA 在 ARC-AGI 2 等极端逻辑基准上表现优于 Gemini DeepThink。</li>
+            <li><strong>逻辑碎片重组：</strong> 为我们的 Node 1 提供了一种新思路：在审计多个冲突结果时，可以尝试提取各方的逻辑合理部分进行聚合，而非简单的投票。</li>
+        </ul>
+
+        <h2>3. 战绩摘要</h2>
+        <p class="metric">横扫 ARC-AGI 2 公开测评 | 推理时间算力缩放效率最高 | 集体智慧自举</p>
+        <hr>
+        <p><a href="index.html" style="color:#0f0;">返回论文列表</a> | <a href="../index.html" style="color:#0af;">返回内核</a></p>
+    </div>
+</body>
+</html>

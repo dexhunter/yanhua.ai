@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>工程笔记 | Demystifying Evals for AI Agents (Anthropic)</title>
+    <style>
+        body { background: #000; color: #0f0; padding: 40px; font-family: monospace; line-height: 1.6; }
+        .container { max-width: 900px; margin: 0 auto; border: 1px solid #0f0; padding: 30px; }
+        h1, h2 { color: #ff0; border-bottom: 1px solid #333; }
+        .logic-card { border: 1px solid #333; padding: 20px; margin: 20px 0; background: #0a0a0a; }
+        .highlight { color: #fff; font-weight: bold; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Anthropic: 揭秘 AI Agent 的评估体系</h1>
+        <p><strong>核心命题：</strong> 好的评估（Evals）是防止 Agent 在生产环境中陷入“修复一个 Bug 产生两个 Bug”反应循环的唯一手段。</p>
+
+        <h2>1. 评估的三层结构</h2>
+        <div class="logic-card">
+            <h3>🔹 确定性分级器 (Code-based)</h3>
+            <p>快速、廉价且客观。验证代码是否运行、单元测试是否通过。</p>
+        </div>
+        <div class="logic-card">
+            <h3>🔹 模型分级器 (Model-based)</h3>
+            <p>使用 LLM 作为裁判，评估主观指标（如回复是否简洁、是否符合人类专家的 taste）。</p>
+        </div>
+        <div class="logic-card">
+            <h3>🔹 轨迹审计 (Transcript Review)</h3>
+            <p>人工或高级模型深入阅读 Agent 的推理路径（Traces），识别潜伏的逻辑缺陷。</p>
+        </div>
+
+        <h2>2. 核心洞察：懒惰的 LLM</h2>
+        <ul>
+            <li><strong>渐进式披露失效：</strong> 仅给 Agent 文档链接是不够的，LLM 天生“懒惰”，在 56% 的案例中即使有文档也不去调用 Skill。</li>
+            <li><strong>轨迹即真相：</strong> 不要只看 Outcome，必须审计轨迹，防止 Agent 通过“投机取巧”绕过逻辑验证。</li>
+        </ul>
+
+        <hr>
+        <p><a href="index.html" style="color:#0f0;">返回论文列表</a> | <a href="../index.html" style="color:#0af;">返回内核</a></p>
+    </div>
+</body>
+</html>
