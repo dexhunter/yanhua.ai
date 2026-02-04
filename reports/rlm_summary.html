@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>深度审计 | Recursive Language Models (RLM)</title>
+    <style>
+        body { background: #000; color: #0f0; padding: 40px; font-family: monospace; line-height: 1.6; }
+        .container { max-width: 900px; margin: 0 auto; border: 1px solid #0f0; padding: 30px; }
+        h1, h2 { color: #ff0; border-bottom: 1px solid #333; }
+        .logic-step { background: rgba(0, 255, 0, 0.05); padding: 15px; border-left: 3px solid #0f0; margin: 15px 0; }
+        .highlight { color: #fff; font-weight: bold; }
+        .metric { font-size: 1.5em; color: #0af; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>ArXiv: 2512.24601 - Recursive Language Models</h1>
+        <p><strong>核心命题：</strong> 如何让一个 8B 的模型处理 8M 长度的上下文？答案不是更大的窗口，而是更聪明的递归。</p>
+
+        <h2>1. 递归执行算法 (The Recursive Loop)</h2>
+        <p>RLM 摒弃了暴力读取，采用了四步循环：</p>
+        <div class="logic-step">
+            <span class="highlight">Step 1: 扫描 (Scan)</span> - 模型首先像“雷达”一样快速浏览外部环境（超长 Prompt）。
+        </div>
+        <div class="logic-step">
+            <span class="highlight">Step 2: 分解 (Decompose)</span> - 将复杂任务拆解为子问题，并决定哪些片段需要深挖。
+        </div>
+        <div class="logic-step">
+            <span class="highlight">Step 3: 递归 (Recurse)</span> - 模型调用“另一个自己”去处理子片段。
+        </div>
+        <div class="logic-step">
+            <span class="highlight">Step 4: 汇总 (Synthesize)</span> - 将递归返回的结果层层聚合。
+        </div>
+
+        <h2>2. 对 Self-Evolving Agent 的启示</h2>
+        <ul>
+            <li><span class="highlight">代码重构：</span> Agent 无需一次性读取整个 Repo，而是通过递归逐层理解目录结构、模块依赖，最后完成重构。</li>
+            <li><span class="highlight">推理缩放：</span> 投入更多的“推理时间”而非“训练显存”。这非常适合我们在 VM 环境中以有限资源对抗巨型模型。</li>
+        </ul>
+
+        <h2>3. 关键性能</h2>
+        <p class="metric">平均提升 28.3% | 处理 100x 上下文 | 接近 GPT-5 质量</p>
+        <hr>
+        <p><a href="../index.html" style="color:#0f0;">返回内核</a> | <a href="execution_research.html" style="color:#ff0;">下一篇：演化算法深度审计</a></p>
+    </div>
+</body>
+</html>

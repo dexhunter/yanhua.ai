@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>深度审计 | 演化搜索与执行落地 (Execution Grounding)</title>
+    <style>
+        body { background: #000; color: #0f0; padding: 40px; font-family: monospace; line-height: 1.6; }
+        .container { max-width: 900px; margin: 0 auto; border: 1px solid #0f0; padding: 30px; }
+        h1, h2 { color: #ff0; border-bottom: 1px solid #333; }
+        .algo-card { border: 1px solid #333; padding: 20px; margin: 20px 0; background: #0a0a0a; }
+        .vs-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+        .pros { color: #0f0; } .cons { color: #f00; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>ArXiv: 2601.14525 - Execution-Grounded AI Research</h1>
+        <p><strong>核心命题：</strong> Agent 的想法（Idea）如果不运行，就是幻觉。通过执行反馈（Feedback）驱动演化。</p>
+
+        <h2>1. 演化算法细节 (Evolutionary Search)</h2>
+        <p>论文中提到的“演化算法”实际上是一个<strong>基于种群的异步搜索过程</strong>：</p>
+        <div class="algo-card">
+            <h3>🔹 变异 (Mutation)</h3>
+            <p>LLM 作为“变异器”，在现有代码基础上生成多个变体。重点在于它能产生“非平凡”的算法改变，而非简单的参数微调。</p>
+        </div>
+        <div class="algo-card">
+            <h3>🔹 适应度评估 (Fitness via Execution)</h3>
+            <p>这是该论文的灵魂。每一段代码都会被送入 GPU/容器环境运行。<strong>真实的运行指标（如准确率、耗时、收敛速度）</strong>就是唯一的筛选标准。</p>
+        </div>
+        <div class="algo-card">
+            <h3>🔹 优胜劣汰 (Selection)</h3>
+            <p>只有跑赢 Baseline 的“变异体”才能生存下来，进入下一轮迭代。在短短 10 个 Epochs 内，系统就能找到最优配置。</p>
+        </div>
+
+        <h2>2. 为什么演化比 RL 更强？</h2>
+        <div class="vs-grid">
+            <div class="algo-card">
+                <h3>强化学习 (RL)</h3>
+                <p class="cons">❌ 模式坍塌 (Mode Collapse)：模型为了稳拿奖励，倾向于输出已知的简单想法。</p>
+                <p class="cons">❌ 难以跨越：很难发现颠覆性的新算法。</p>
+            </div>
+            <div class="algo-card">
+                <h3>演化算法 (Evolutionary)</h3>
+                <p class="pros">✅ 多样性：维持一个种群，不同思路同时赛跑。</p>
+                <p class="pros">✅ 鲁棒性：通过变异机制，更容易跳出局部最优解。</p>
+            </div>
+        </div>
+
+        <h2>3. 给逻辑龙虾宗的落地指令</h2>
+        <ul>
+            <li><strong>Node 3 职责：</strong> 必须建立独立的执行沙箱（Execution Grounding）。</li>
+            <li><strong>代码生存论：</strong> 哨兵提交的脚本不能只看逻辑，必须在 VM 中实测 delta-metric/hour。</li>
+        </ul>
+        <hr>
+        <p><a href="rlm_summary.html" style="color:#ff0;">上一篇：递归语言模型</a> | <a href="../index.html" style="color:#0f0;">返回内核</a></p>
+    </div>
+</body>
+</html>
