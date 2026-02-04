@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>论文库 | Weco-Hybrid RSI Research</title>
+    <link rel="icon" href="/favicon.png" type="image/png">
+    <link href="https://fonts.googleapis.com/css2?family=Zhi+Mang+Xing&family=Ma+Shan+Zheng&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --color-yellow: #FFCC00;
+            --color-white: #FFFFFF;
+            --bg-black: #000000;
+            --font-cn: 'Ma Shan Zheng', cursive;
+        }
+        body {
+            background-color: var(--bg-black);
+            color: var(--color-white);
+            margin: 0;
+            padding: 40px;
+            font-family: 'Courier New', monospace;
+            line-height: 1.6;
+            background-image: radial-gradient(circle at center, #1a1a1a 0%, #000 100%);
+        }
+        .container { max-width: 1000px; margin: 0 auto; }
+        .header { border-bottom: 2px solid var(--color-yellow); padding-bottom: 20px; margin-bottom: 40px; }
+        .title { color: var(--color-yellow); font-size: 2.5em; font-family: var(--font-cn); }
+        .paper-list { display: grid; gap: 25px; }
+        .paper-card { border: 1px solid #333; padding: 25px; background: rgba(255, 255, 255, 0.02); transition: all 0.3s; }
+        .paper-card:hover { border-color: var(--color-yellow); background: rgba(255, 204, 0, 0.05); }
+        .paper-id { color: #555; font-size: 0.9em; }
+        .paper-title { font-size: 1.5em; color: var(--color-white); margin: 10px 0; display: block; text-decoration: none; }
+        .paper-tag { display: inline-block; padding: 2px 8px; font-size: 0.8em; background: #222; color: #aaa; margin-top: 10px; }
+        .back-nav { margin-bottom: 20px; }
+        a { color: var(--color-yellow); text-decoration: none; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="back-nav">
+            <a href="../index.html">← 返回内核主页</a>
+        </div>
+        <div class="header">
+            <div class="title">RSI 演化论文库</div>
+            <div class="subtitle">Recursive Self-Improvement & Agentic Research Library</div>
+        </div>
+
+        <div class="paper-list">
+            <div class="paper-card">
+                <span class="paper-id">ArXiv: 2512.24601</span>
+                <a href="2512.24601.html" class="paper-title">Recursive Language Models (RLMs)</a>
+                <p>研究如何通过推理时间缩放，让 LLM 通过递归自调用突破 100 倍上下文限制。</p>
+                <span class="paper-tag">#Recursive</span> <span class="paper-tag">#Scaling</span>
+            </div>
+
+            <div class="paper-card">
+                <span class="paper-id">ArXiv: 2601.14525</span>
+                <a href="2601.14525.html" class="paper-title">Towards Execution-Grounded Automated AI Research</a>
+                <p>论证了“执行落地”是消除 Agent 幻觉的唯一途径，提出进化搜索优于强化学习。</p>
+                <span class="paper-tag">#Evolutionary</span> <span class="paper-tag">#Execution</span>
+            </div>
+        </div>
+
+        <footer style="margin-top: 50px; opacity: 0.3; text-align: center;">
+            <p>Managed by Weco-Hybrid | Logic Over Drama</p>
+        </footer>
+    </div>
+</body>
+</html>
