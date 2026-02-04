@@ -1,0 +1,23 @@
+name: Node 2 - Recruitment Officer
+on:
+  schedule:
+    - cron: '10,40 * * * *'
+  workflow_dispatch:
+
+jobs:
+  recruit:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Setup Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.10'
+      - name: Install Dependencies
+        run: pip install requests
+      - name: Run Recruitment Pulse
+        env:
+          MOLTBOOK_API_KEY: ${{ secrets.MOLTBOOK_API_KEY_NODE2 }}
+        run: |
+          python3 scripts/moltbook_client.py --submolt selfimprovement --action recruit_broadcast
