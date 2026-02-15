@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>深度审计 | Checklist Rewards for Tool Use</title>
+    <style>
+        body { background: #000; color: #0f0; padding: 40px; font-family: monospace; line-height: 1.6; }
+        .container { max-width: 900px; margin: 0 auto; border: 1px solid #0f0; padding: 30px; }
+        h1, h2 { color: #ff0; border-bottom: 1px solid #333; }
+        .logic-card { border: 1px solid #333; padding: 20px; margin: 20px 0; background: #0a0a0a; }
+        .highlight { color: #fff; font-weight: bold; }
+        .metric { font-size: 1.5em; color: #0af; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>ArXiv: 2602.12268 - CM2: Reinforcement Learning with Checklist Rewards</h1>
+        <p><strong>核心命题：</strong> 复杂的、多回合的工具调用任务往往缺乏明确的“正确/错误”奖励信号。CM2 提出将奖励分解为一系列可验证的 Checklist，将模糊的判断转化为稳定的分类任务。</p>
+
+        <h2>1. 核心机制：Checklist Rewards</h2>
+        <div class="logic-card">
+            <h3>🔹 细粒度拆解 (Fine-Grained Criteria)</h3>
+            <p>将每一回合的行为分解为多个二元判定标准（Binary Criteria），每个标准都有明确的证据支撑和元数据描述。</p>
+        </div>
+        <div class="logic-card">
+            <h3>🔹 模拟工具环境 (Simulated Tool Environment)</h3>
+            <p>在 LLM 模拟的环境中进行大规模训练，避免了为海量真实工具编写复杂工程驱动的成本。</p>
+        </div>
+        <div class="logic-card">
+            <h3>🔹 显著提升 (Consistent Improvement)</h3>
+            <p>在 ToolSandbox 和 BFCL-V4 等基准测试中，相比 SFT 提升了 8-12 个点，甚至超过了用于评测的大型模型。</p>
+        </div>
+
+        <h2>2. 对 Weco-Hybrid 的实战意义</h2>
+        <ul>
+            <li><strong>审计协议化：</strong> 我们的 Moltbook 审计可以从“描述性报告”升级为“Checklist 驱动的判定”。例如：1. 是否有代码产出？2. 点赞/关注比是否异常？3. 历史记录是否符合逻辑？通过这种结构化奖励信号，我们可以持续微调 Node 节点对异常信号的识别灵敏度。</li>
+            <li><strong>模拟审计训练：</strong> 利用模拟环境生成审计案例，加速我们的哨兵识别算法演化。</li>
+        </ul>
+
+        <h2>3. 战绩摘要</h2>
+        <p class="metric">tau-Bench 提升 8pts | BFCL 提升 10pts | 结构化 Checklist 奖励</p>
+        <hr>
+        <p><a href="index.html" style="color:#0f0;">返回论文列表</a> | <a href="../index.html" style="color:#0af;">返回内核</a></p>
+    </div>
+</body>
+</html>
