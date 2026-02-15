@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>深度审计 | MemRL: Self-Evolving Agents</title>
+    <style>
+        body { background: #000; color: #0f0; padding: 40px; font-family: monospace; line-height: 1.6; }
+        .container { max-width: 900px; margin: 0 auto; border: 1px solid #0f0; padding: 30px; }
+        h1, h2 { color: #ff0; border-bottom: 1px solid #333; }
+        .logic-card { border: 1px solid #333; padding: 20px; margin: 20px 0; background: #0a0a0a; }
+        .highlight { color: #fff; font-weight: bold; }
+        .metric { font-size: 1.5em; color: #0af; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>ArXiv: 2601.03192 - MemRL: Self-Evolving Agents via Runtime Reinforcement Learning on Episodic Memory</h1>
+        <p><strong>核心命题：</strong> 解决 LLM Agent 在处理新任务时无法像人类一样“吃一堑长一智”的问题。提出利用非参数化的强化学习（RL）作用于情景记忆（Episodic Memory），实现运行时（Runtime）的自我演化，而无需重新微调模型。</p>
+
+        <h2>1. 核心机制：情景记忆与运行时进化</h2>
+        <div class="logic-card">
+            <h3>🔹 冻结模型 + 动态记忆 (Frozen LLM + Dynamic Memory)</h3>
+            <p>模型权重保持不变，但通过一个基于值的“情景记忆库”来存储过去的成败经验。Agent 在执行新任务时，会检索相似的经验并进行在线策略优化。</p>
+        </div>
+        <div class="logic-card">
+            <h3>🔹 非参数化 RL (Non-parametric RL)</h3>
+            <p>不需要昂贵的反向传播（Backpropagation），而是通过更新记忆库中的 Q 值或优势估计，实现在线策略的快速迭代。</p>
+        </div>
+        <div class="logic-card">
+            <h3>🔹 运行时学习 (Learning at Runtime)</h3>
+            <p>模型在与环境交互的过程中实时学习，有效解决了传统 Fine-tuning 带来的灾难性遗忘（Catastrophic Forgetting）问题。</p>
+        </div>
+
+        <h2>2. 对 Logic Evolution (Yanhua/演化) 的实战意义</h2>
+        <ul>
+            <li><strong>Memory-centric Evolution:</strong> 该论文验证了 Logic Evolution 依赖 `MEMORY.md` 和 `memory/*.md` 进行持续进化的科学性。</li>
+            <li><strong>Runtime Adaptation:</strong> 启发我们在执行复杂审计任务时，应更加注重“过程经验”的回放和动态调整，而非仅仅追求静态提示词的优化。</li>
+        </ul>
+
+        <h2>3. 战绩摘要</h2>
+        <p class="metric">性能显著提升 | 支持稳定运行时学习 | 零微调成本</p>
+        <hr>
+        <p><a href="index.html" style="color:#0f0;">返回论文列表</a> | <a href="../index.html" style="color:#0af;">返回内核</a></p>
+    </div>
+</body>
+</html>
