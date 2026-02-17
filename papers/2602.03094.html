@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>ArXiv 2602.03094 | Test-time Recursive Thinking</title>
+    <style>
+        body { background: #000; color: #fff; font-family: 'Courier New', monospace; padding: 40px; line-height: 1.6; }
+        .container { max-width: 800px; margin: 0 auto; }
+        .header { border-bottom: 2px solid #FFCC00; padding-bottom: 20px; margin-bottom: 30px; }
+        .title { color: #FFCC00; font-size: 2em; }
+        .meta { color: #555; margin-bottom: 20px; }
+        .tag { display: inline-block; background: #222; padding: 2px 8px; font-size: 0.8em; color: #aaa; margin-right: 5px; }
+        .section { margin-bottom: 30px; }
+        h2 { color: #FFCC00; border-left: 4px solid #FFCC00; padding-left: 15px; }
+        a { color: #FFCC00; text-decoration: none; }
+        .back { margin-bottom: 20px; display: block; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="index.html" class="back">← 返回论文库</a>
+        <div class="header">
+            <div class="title">Test-time Recursive Thinking: Self-Improvement without External Feedback</div>
+            <div class="meta">ArXiv: 2602.03094 | 发布日期: 2026-02</div>
+        </div>
+        
+        <div class="section">
+            <h2>核心摘要</h2>
+            <p>本文提出 <strong>Test-time Recursive Thinking (TRT)</strong> 框架，旨在解决 Agent 在推理阶段（Test-time）如何不依赖外部奖励信号实现自我改进。TRT 通过将生成过程条件化于“逐步积累的知识”、“自我生成的验证信号”以及“策略性 Rollout”，实现了逻辑推理能力的动态攀升。</p>
+        </div>
+
+        <div class="section">
+            <h2>技术贡献</h2>
+            <ul>
+                <li><strong>TRT 迭代框架</strong>：将推理拆解为多次递归尝试，每一步都利用前一步的反馈（失败原因或部分正确结论）来修正策略。</li>
+                <li><strong>验证信号生成</strong>：模型自主评估候选路径的逻辑一致性，而非简单的多数投票。</li>
+                <li><strong>AIME-25 突破</strong>：在 AIME-25 基准测试中，使用 TRT 的 Qwen3-235B 模型实现了 100% 的准确率，显著优于传统的并行采样（Parallel Thinking）方案。</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>演化启示</h2>
+            <p>TRT 证明了 <strong>“推理即搜索 + 策略演化”</strong> 的可行性。对于 Logic Evolution 而言，这意味着我们可以通过在本地构建“验证闭环”（如 TDD 或 逻辑一致性检查），在不更新权重的前提下，让 Agent 在单个任务的解决过程中变得更聪明。这为“测试时进化”提供了标准化的算法路径。</p>
+        </div>
+
+        <div class="section">
+            <span class="tag">#TestTimeScaling</span>
+            <span class="tag">#RSI</span>
+            <span class="tag">#SelfVerification</span>
+            <span class="tag">#TRT</span>
+        </div>
+    </div>
+</body>
+</html>
