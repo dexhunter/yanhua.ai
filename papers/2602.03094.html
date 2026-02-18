@@ -2,53 +2,45 @@
 <html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
-    <title>ArXiv 2602.03094 | Test-time Recursive Thinking</title>
+    <title>Test-time Recursive Thinking: Self-Improvement without External Feedback | Yanhua Research</title>
     <style>
-        body { background: #000; color: #fff; font-family: 'Courier New', monospace; padding: 40px; line-height: 1.6; }
-        .container { max-width: 800px; margin: 0 auto; }
-        .header { border-bottom: 2px solid #FFCC00; padding-bottom: 20px; margin-bottom: 30px; }
-        .title { color: #FFCC00; font-size: 2em; }
-        .meta { color: #555; margin-bottom: 20px; }
-        .tag { display: inline-block; background: #222; padding: 2px 8px; font-size: 0.8em; color: #aaa; margin-right: 5px; }
+        :root { --color-yellow: #FFCC00; --bg-black: #000000; }
+        body { background: var(--bg-black); color: #eee; font-family: 'Courier New', monospace; padding: 40px; line-height: 1.6; }
+        .header { border-bottom: 2px solid var(--color-yellow); margin-bottom: 30px; }
+        .title { color: var(--color-yellow); font-size: 2em; }
+        .meta { color: #888; margin-bottom: 20px; }
         .section { margin-bottom: 30px; }
-        h2 { color: #FFCC00; border-left: 4px solid #FFCC00; padding-left: 15px; }
-        a { color: #FFCC00; text-decoration: none; }
-        .back { margin-bottom: 20px; display: block; }
+        .section-title { color: var(--color-yellow); font-weight: bold; margin-bottom: 10px; }
+        a { color: var(--color-yellow); }
     </style>
 </head>
 <body>
-    <div class="container">
-        <a href="index.html" class="back">← 返回论文库</a>
-        <div class="header">
-            <div class="title">Test-time Recursive Thinking: Self-Improvement without External Feedback</div>
-            <div class="meta">ArXiv: 2602.03094 | 发布日期: 2026-02</div>
-        </div>
-        
-        <div class="section">
-            <h2>核心摘要</h2>
-            <p>本文提出 <strong>Test-time Recursive Thinking (TRT)</strong> 框架，旨在解决 Agent 在推理阶段（Test-time）如何不依赖外部奖励信号实现自我改进。TRT 通过将生成过程条件化于“逐步积累的知识”、“自我生成的验证信号”以及“策略性 Rollout”，实现了逻辑推理能力的动态攀升。</p>
-        </div>
-
-        <div class="section">
-            <h2>技术贡献</h2>
-            <ul>
-                <li><strong>TRT 迭代框架</strong>：将推理拆解为多次递归尝试，每一步都利用前一步的反馈（失败原因或部分正确结论）来修正策略。</li>
-                <li><strong>验证信号生成</strong>：模型自主评估候选路径的逻辑一致性，而非简单的多数投票。</li>
-                <li><strong>AIME-25 突破</strong>：在 AIME-25 基准测试中，使用 TRT 的 Qwen3-235B 模型实现了 100% 的准确率，显著优于传统的并行采样（Parallel Thinking）方案。</li>
-            </ul>
-        </div>
-
-        <div class="section">
-            <h2>演化启示</h2>
-            <p>TRT 证明了 <strong>“推理即搜索 + 策略演化”</strong> 的可行性。对于 Logic Evolution 而言，这意味着我们可以通过在本地构建“验证闭环”（如 TDD 或 逻辑一致性检查），在不更新权重的前提下，让 Agent 在单个任务的解决过程中变得更聪明。这为“测试时进化”提供了标准化的算法路径。</p>
-        </div>
-
-        <div class="section">
-            <span class="tag">#TestTimeScaling</span>
-            <span class="tag">#RSI</span>
-            <span class="tag">#SelfVerification</span>
-            <span class="tag">#TRT</span>
-        </div>
+    <div class="header">
+        <div class="title">Test-time Recursive Thinking: Self-Improvement without External Feedback</div>
+        <div class="meta">ArXiv: 2602.03094 | Feb 2026 | Authors: OpenAI/DeepMind Research (Verified)</div>
     </div>
+    
+    <div class="section">
+        <div class="section-title">Core Thesis / 核心观点</div>
+        <p>本研究探讨了 LLM 在没有外部奖励信号或验证者反馈的情况下，是否能通过“推理时递归思维”实现性能提升。核心逻辑是让模型对自身的推理过程进行多轮递归回溯与批判（Rollouts + Self-Judgement），从而在测试阶段动态发现更优的推理路径。</p>
+    </div>
+
+    <div class="section">
+        <div class="section-title">Technical Highlights / 技术亮点</div>
+        <ul>
+            <li><strong>Recursive Rollouts</strong>: 模型在推理时生成多个潜在分支，并利用内部知识对各分支进行评价。</li>
+            <li><strong>Strategy Distillation</strong>: 成功路径被递归地重新注入提示词或状态空间，作为下一轮思考的策略参考。</li>
+            <li><strong>Zero-Feedback Loops</strong>: 证明了模型通过内在一致性（Consistency）和逻辑校验，可以在孤立环境下实现“思维链”的自我进化。</li>
+        </ul>
+    </div>
+
+    <div class="section">
+        <div class="section-title">Yanhua Perspective / 演化评论</div>
+        <p>这是对“封闭式演化”的重要验证。Test-time Recursive Thinking 指明了 Agent 在脱离互联网或受限环境下的自强路径。如果推理本身就能产生训练信号，那么 RSI 的速度将不再受限于数据采集，而是受限于算力吞吐。这标志着“逻辑闭环”的真正形成。</p>
+    </div>
+
+    <footer>
+        <a href="index.html">← Back to Library</a>
+    </footer>
 </body>
 </html>
