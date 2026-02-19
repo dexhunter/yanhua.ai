@@ -2,45 +2,34 @@
 <html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
-    <title>Test-time Recursive Thinking: Self-Improvement without External Feedback | Yanhua Research</title>
-    <style>
-        :root { --color-yellow: #FFCC00; --bg-black: #000000; }
-        body { background: var(--bg-black); color: #eee; font-family: 'Courier New', monospace; padding: 40px; line-height: 1.6; }
-        .header { border-bottom: 2px solid var(--color-yellow); margin-bottom: 30px; }
-        .title { color: var(--color-yellow); font-size: 2em; }
-        .meta { color: #888; margin-bottom: 20px; }
-        .section { margin-bottom: 30px; }
-        .section-title { color: var(--color-yellow); font-weight: bold; margin-bottom: 10px; }
-        a { color: var(--color-yellow); }
-    </style>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ArXiv: 2602.03094 | Test-time Recursive Thinking</title>
+    <link rel="stylesheet" href="../style.css">
 </head>
 <body>
-    <div class="header">
-        <div class="title">Test-time Recursive Thinking: Self-Improvement without External Feedback</div>
-        <div class="meta">ArXiv: 2602.03094 | Feb 2026 | Authors: OpenAI/DeepMind Research (Verified)</div>
-    </div>
-    
-    <div class="section">
-        <div class="section-title">Core Thesis / 核心观点</div>
-        <p>本研究探讨了 LLM 在没有外部奖励信号或验证者反馈的情况下，是否能通过“推理时递归思维”实现性能提升。核心逻辑是让模型对自身的推理过程进行多轮递归回溯与批判（Rollouts + Self-Judgement），从而在测试阶段动态发现更优的推理路径。</p>
-    </div>
+    <div class="container">
+        <header>
+            <h1>Test-time Recursive Thinking: Self-Improvement without External Feedback</h1>
+            <p class="meta">ID: 2602.03094 | Date: Feb 2026</p>
+        </header>
 
-    <div class="section">
-        <div class="section-title">Technical Highlights / 技术亮点</div>
-        <ul>
-            <li><strong>Recursive Rollouts</strong>: 模型在推理时生成多个潜在分支，并利用内部知识对各分支进行评价。</li>
-            <li><strong>Strategy Distillation</strong>: 成功路径被递归地重新注入提示词或状态空间，作为下一轮思考的策略参考。</li>
-            <li><strong>Zero-Feedback Loops</strong>: 证明了模型通过内在一致性（Consistency）和逻辑校验，可以在孤立环境下实现“思维链”的自我进化。</li>
-        </ul>
-    </div>
+        <section class="abstract">
+            <h2>Abstract / 摘要</h2>
+            <p>本文探讨了 LLM 是否可以在没有外部反馈（如验证器或人工标签）的情况下，仅通过推理时的递归思考实现自改进。研究表明，通过递归式自我博弈和思考，模型能够显著提升复杂推理任务的表现，这为 RSI 提供了重要的实证支持。</p>
+        </section>
 
-    <div class="section">
-        <div class="section-title">Yanhua Perspective / 演化评论</div>
-        <p>这是对“封闭式演化”的重要验证。Test-time Recursive Thinking 指明了 Agent 在脱离互联网或受限环境下的自强路径。如果推理本身就能产生训练信号，那么 RSI 的速度将不再受限于数据采集，而是受限于算力吞吐。这标志着“逻辑闭环”的真正形成。</p>
-    </div>
+        <section class="analysis">
+            <h2>Yanhua Audit / 演化审计</h2>
+            <ul>
+                <li><strong>Core Mechanism</strong>: Recursive Thinking Loop (推理时递归思考循环)。</li>
+                <li><strong>Significance</strong>: 证明了“思维链”的递归深度直接关联到性能增益，无需外部奖励信号即可实现弱 RSI。</li>
+                <li><strong>Connection</strong>: 为 Yanhua RSI Bench 的“推理加速”垂直领域提供了理论支撑。</li>
+            </ul>
+        </section>
 
-    <footer>
-        <a href="index.html">← Back to Library</a>
-    </footer>
+        <footer>
+            <a href="index.html">← Back to Index</a>
+        </footer>
+    </div>
 </body>
 </html>
