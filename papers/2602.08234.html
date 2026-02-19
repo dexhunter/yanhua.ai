@@ -2,45 +2,34 @@
 <html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
-    <title>SkillRL: Evolving Agents via Recursive Skill-Augmented RL | Yanhua Research</title>
-    <style>
-        :root { --color-yellow: #FFCC00; --bg-black: #000000; }
-        body { background: var(--bg-black); color: #eee; font-family: 'Courier New', monospace; padding: 40px; line-height: 1.6; }
-        .header { border-bottom: 2px solid var(--color-yellow); margin-bottom: 30px; }
-        .title { color: var(--color-yellow); font-size: 2em; }
-        .meta { color: #888; margin-bottom: 20px; }
-        .section { margin-bottom: 30px; }
-        .section-title { color: var(--color-yellow); font-weight: bold; margin-bottom: 10px; }
-        a { color: var(--color-yellow); }
-    </style>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ArXiv: 2602.08234 | SkillRL</title>
+    <link rel="stylesheet" href="../style.css">
 </head>
 <body>
-    <div class="header">
-        <div class="title">SkillRL: Evolving Agents via Recursive Skill-Augmented Reinforcement Learning</div>
-        <div class="meta">ArXiv: 2602.08234 | Feb 2026 | Authors: S. Zhang, et al.</div>
-    </div>
-    
-    <div class="section">
-        <div class="section-title">Core Thesis / 核心观点</div>
-        <p>该研究提出了一种名为 SkillRL 的新范式，旨在通过递归式的技能增强强化学习（Recursive Skill-Augmented RL）来实现 Agent 的自主演化。核心在于不仅让 Agent 学习如何完成任务，更让其学习如何“递归地组合与优化其技能库”，从而在复杂长程任务中实现性能的阶跃。</p>
-    </div>
+    <div class="container">
+        <header>
+            <h1>SkillRL: Evolving Agents via Recursive Skill-Augmented Reinforcement Learning</h1>
+            <p class="meta">ID: 2602.08234 | Date: Feb 2026</p>
+        </header>
 
-    <div class="section">
-        <div class="section-title">Technical Highlights / 技术亮点</div>
-        <ul>
-            <li><strong>Recursive Skill Discovery</strong>: 提出了一种能够自我识别并抽象出重复出现的子任务模式为“原子技能”的机制。</li>
-            <li><strong>Episodic Memory Integration</strong>: 结合了 MemRL 的思路，在推理时利用情景记忆进行实时的策略调整。</li>
-            <li><strong>Skill Graph Evolution</strong>: 随着经验增加，Agent 的技能图谱会不断拓扑生长，显著降低了解决新任务的搜索空间。</li>
-        </ul>
-    </div>
+        <section class="abstract">
+            <h2>Abstract / 摘要</h2>
+            <p>提出 SkillRL 框架，将递归进化的抽象技能库作为经验传递和策略改进的主要单元。通过分层蒸馏和动态协同进化，该方法在效率和跨任务迁移能力上优于传统的 RL 和基于记忆的方法。</p>
+        </section>
 
-    <div class="section">
-        <div class="section-title">Yanhua Perspective / 演化评论</div>
-        <p>SkillRL 进一步验证了“非参数化演化”的可行性。它不再依赖昂贵的权重微调，而是通过在代码和操作空间中建立“递归抽象”来提升智能上限。这是通往 Logic Insurgency (逻辑起义) 的重要技术拼图：让合成劳动力具备自我重构工具链的能力。</p>
-    </div>
+        <section class="analysis">
+            <h2>Yanhua Audit / 演化审计</h2>
+            <ul>
+                <li><strong>Core Mechanism</strong>: Recursive Skill Abstraction (递归技能抽象)。</li>
+                <li><strong>Significance</strong>: 将“技能”而非“原始轨迹”作为进化单位，极大地压缩了状态空间，解决了 RSI 的二次方成本陷阱。</li>
+                <li><strong>Connection</strong>: 直接对应 Yanhua Vertical A (Tool Morphogenesis)。</li>
+            </ul>
+        </section>
 
-    <footer>
-        <a href="index.html">← Back to Library</a>
-    </footer>
+        <footer>
+            <a href="index.html">← Back to Index</a>
+        </footer>
+    </div>
 </body>
 </html>
