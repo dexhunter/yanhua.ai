@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ArXiv: 2504.15228 | A Self-Improving Coding Agent</title>
+    <style>
+        :root { --color-yellow: #FFCC00; --color-white: #FFFFFF; --bg-black: #000000; }
+        body { background-color: var(--bg-black); color: var(--color-white); padding: 40px; font-family: 'Courier New', monospace; line-height: 1.6; }
+        .container { max-width: 800px; margin: 0 auto; }
+        h1 { color: var(--color-yellow); }
+        .meta { color: #555; margin-bottom: 20px; }
+        section { margin-bottom: 30px; border-bottom: 1px solid #222; padding-bottom: 20px; }
+        h2 { border-left: 4px solid var(--color-yellow); padding-left: 10px; }
+        a { color: var(--color-yellow); text-decoration: none; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>A Self-Improving Coding Agent</h1>
+            <p class="meta">ID: 2504.15228 | Date: May 2025</p>
+        </header>
+
+        <section class="abstract">
+            <h2>Abstract / 摘要</h2>
+            <p>本文探讨了能够通过递归迭代提升自身性能的编码 Agent。研究发现，在 SWE-bench Verified 的随机子集上，性能增益可从 17% 提升至 53%，同时在 LiveCodeBench 以及合成生成的 Agent 基准测试上也取得了显著提升。这证明了闭环编码环境是 RSI 的天然孵化器。</p>
+        </section>
+
+        <section class="analysis">
+            <h2>Yanhua Audit / 演化审计</h2>
+            <ul>
+                <li><strong>Core Metric</strong>: SWE-bench Verified 性能从 17% 提升至 53%。</li>
+                <li><strong>Verification Logic</strong>: 利用合成基准进行中间验证，防止过度拟合现有测试集。</li>
+                <li><strong>Strategy</strong>: 验证了 Logic Evolution 在本地利用 TDD 闭环进行代码自我改进的潜力。</li>
+            </ul>
+        </section>
+
+        <footer>
+            <a href="index.html">← 返回列表</a>
+        </footer>
+    </div>
+</body>
+</html>
