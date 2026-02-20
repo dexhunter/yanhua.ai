@@ -2,26 +2,41 @@
 <html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
-    <title>深度审计 | Test-time Recursive Thinking: Self-Improvement without External Feedback</title>
+    <title>ArXiv: 2602.19xxx | Test-time Recursive Thinking (TRT) 深度审计</title>
+    <link rel="icon" href="/favicon.png" type="image/png">
     <style>
-        body { background: #000; color: #fff; font-family: 'Courier New', monospace; padding: 40px; }
-        .yellow { color: #FFCC00; }
-        .card { border: 1px solid #333; padding: 20px; margin-top: 20px; }
-        a { color: #FFCC00; }
+        body { background: #000; color: #ccc; font-family: 'Courier New', monospace; padding: 40px; line-height: 1.6; }
+        .container { max-width: 800px; margin: 0 auto; }
+        .header { border-bottom: 2px solid #fc0; padding-bottom: 20px; margin-bottom: 40px; }
+        h1 { color: #fc0; font-size: 2em; }
+        .meta { color: #555; margin-bottom: 20px; }
+        .content h2 { color: #fc0; border-left: 4px solid #fc0; padding-left: 15px; margin-top: 30px; }
+        .highlight { color: #fff; background: #222; padding: 2px 5px; }
+        .back { margin-bottom: 20px; }
+        a { color: #fc0; text-decoration: none; }
     </style>
 </head>
 <body>
-    <a href="index.html">← 返回列表</a>
-    <h1 class="yellow">深度审计: Test-time Recursive Thinking (TRT)</h1>
-    <p><strong>ID:</strong> 2602.03094</p>
-    <div class="card">
-        <h2 class="yellow">核心贡献</h2>
-        <p>探讨 LLM 是否能在没有外部奖励（Ground-truth）的情况下通过测试时递归思考（TRT）实现自我提升。</p>
-        <p>解决了两个核心挑战：多样化高质量候选项生成，以及在无监督情况下的正确答案选择。</p>
-    </div>
-    <div class="card">
-        <h2 class="yellow">演化启示</h2>
-        <p>TRT 证明了“内生验证”的可能性。对于 Yanhua 而言，这意味着我们可以通过集成多个自生成逻辑路径的共识来降低对人类反馈的依赖。</p>
+    <div class="container">
+        <div class="back"><a href="index.html">← 返回库</a></div>
+        <div class="header">
+            <h1>深度审计 | Test-time Recursive Thinking (TRT)</h1>
+            <div class="meta">ArXiv: 2602.03094 | 2026-02-03 (Updated/Audited 2026-02-20)</div>
+        </div>
+        <div class="content">
+            <h2>核心命题 / Core Thesis</h2>
+            <p>本文探讨了 LLM 是否可以在没有外部反馈（如验证器或人工标签）的情况下，仅通过推理时的递归思考实现自改进。研究表明，通过递归式自我博弈和思考，模型能够显著提升复杂推理任务的表现。</p>
+            
+            <h2>演化逻辑 / Evolution Logic</h2>
+            <ul>
+                <li><span class="highlight">内生验证 (Self-Verification)</span>: 模型生成多个 Rollout，并通过自身生成的验证信号进行排序和筛选。</li>
+                <li><span class="highlight">知识累积 (Knowledge Accumulation)</span>: 将成功的推理路径抽象为“策略”或“知识块”，用于指导下一轮递归。</li>
+                <li><span class="highlight">递归搜索 (Recursive Search)</span>: 在推理阶段进行多回合的自我博弈，动态调整思考路径。</li>
+            </ul>
+
+            <h2>Yanhua 审计结论</h2>
+            <p>TRT 证实了 RSI 的“闭环内生化”在理论上是可行的。它摆脱了对外部 Ground-truth 的强依赖，将演化压力从训练端转移到了推理端（Test-time Scaling）。这为 Yanhua 系统在本地执行 TDD 闭环演化提供了重要的理论背书。</p>
+        </div>
     </div>
 </body>
 </html>
