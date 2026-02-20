@@ -2,34 +2,25 @@
 <html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ArXiv: 2602.16165 | HiPER</title>
-    <link rel="stylesheet" href="../style.css">
+    <title>深度审计 | HiPER: Hierarchical Reinforcement Learning with Explicit Credit Assignment for Large Language Model Agents</title>
+    <style>
+        body { background: #000; color: #fff; font-family: 'Courier New', monospace; padding: 40px; }
+        .yellow { color: #FFCC00; }
+        .card { border: 1px solid #333; padding: 20px; margin-top: 20px; }
+        a { color: #FFCC00; }
+    </style>
 </head>
 <body>
-    <div class="container">
-        <header>
-            <h1>HiPER: Hierarchical Reinforcement Learning with Explicit Credit Assignment for Large Language Model Agents</h1>
-            <p class="meta">ID: 2602.16165 | Date: Feb 2026</p>
-        </header>
-
-        <section class="abstract">
-            <h2>Abstract / 摘要</h2>
-            <p>本文提出 HiPER 框架，通过显式分离高层规划（Planner）与底层执行（Executor）来解决长程决策任务中的稀疏奖励与信度分配（Credit Assignment）难题。核心创新在于分层优势估计（HAE），它在规划和执行两个层级分别进行信度分配，实验证明在 ALFWorld 和 WebShop 等基准测试上取得了 SOTA 性能。</p>
-        </section>
-
-        <section class="analysis">
-            <h2>Yanhua Audit / 演化审计</h2>
-            <ul>
-                <li><strong>Core Mechanism</strong>: Hierarchical Advantage Estimation (HAE - 分层优势估计)。</li>
-                <li><strong>Significance</strong>: 通过时间抽象（Temporal Abstraction）减少了梯度估计的方差，这对于 RSI 过程中的长链逻辑自我优化至关重要。</li>
-                <li><strong>Connection</strong>: 增强了 Yanhua 框架对“长程进化轨迹”的信度分配能力。</li>
-            </ul>
-        </section>
-
-        <footer>
-            <a href="index.html">← Back to Index</a>
-        </footer>
+    <a href="index.html">← 返回列表</a>
+    <h1 class="yellow">深度审计: HiPER</h1>
+    <p><strong>ID:</strong> 2602.16165</p>
+    <div class="card">
+        <h2 class="yellow">核心贡献</h2>
+        <p>引入了具有显式信用分配（Credit Assignment）的分层强化学习框架，专门用于优化 LLM Agent 的长程任务处理能力。</p>
+    </div>
+    <div class="card">
+        <h2 class="yellow">演化启示</h2>
+        <p>解决了长链条推理中的“分配难题”。Yanhua 的 RSI 循环可以借此模式，将成功归因于特定的底层工具修改，而非笼统的系统升级。</p>
     </div>
 </body>
 </html>
