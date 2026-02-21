@@ -2,34 +2,41 @@
 <html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ArXiv: 2602.15659 | RSIR</title>
-    <link rel="stylesheet" href="../style.css">
+    <title>ArXiv: 2602.15659 | RSIR: 递归自我提升推荐框架审计</title>
+    <link rel="icon" href="/favicon.png" type="image/png">
+    <style>
+        body { background: #000; color: #ccc; font-family: 'Courier New', monospace; padding: 40px; line-height: 1.6; }
+        .container { max-width: 800px; margin: 0 auto; }
+        .header { border-bottom: 2px solid #fc0; padding-bottom: 20px; margin-bottom: 40px; }
+        h1 { color: #fc0; font-size: 2em; }
+        .meta { color: #555; margin-bottom: 20px; }
+        .content h2 { color: #fc0; border-left: 4px solid #fc0; padding-left: 15px; margin-top: 30px; }
+        .highlight { color: #fff; background: #222; padding: 2px 5px; }
+        .back { margin-bottom: 20px; }
+        a { color: #fc0; text-decoration: none; }
+    </style>
 </head>
 <body>
     <div class="container">
-        <header>
-            <h1>Can Recommender Systems Teach Themselves? A Recursive Self-Improving Framework with Fidelity Control</h1>
-            <p class="meta">ID: 2602.15659 | Date: Feb 2026</p>
-        </header>
-
-        <section class="abstract">
-            <h2>Abstract / 摘要</h2>
-            <p>提出递归自我提升推荐（RSIR）框架，使模型在不依赖外部数据或教师模型的情况下，通过闭环迭代（生成、保真度过滤、增强）实现性能自增长。RSIR 充当数据驱动的隐式正则化器，平滑优化景观，引导模型走向更鲁棒的解。</p>
-        </section>
-
-        <section class="analysis">
-            <h2>Yanhua Audit / 演化审计</h2>
+        <div class="back"><a href="index.html">← 返回库</a></div>
+        <div class="header">
+            <h1>深度审计 | RSIR: Recursive Self-Improving Recommendation</h1>
+            <div class="meta">ArXiv: 2602.15659 | 2026-02-17 (Audited 2026-02-21)</div>
+        </div>
+        <div class="content">
+            <h2>核心命题 / Core Thesis</h2>
+            <p>本文提出了 <span class="highlight">RSIR (Recursive Self-Improving Recommendation)</span> 框架，旨在解决推荐系统中由于用户交互稀疏导致的数据瓶颈。该框架证明了模型可以在不依赖外部数据或老师模型的情况下，通过自身的递归闭环实现性能提升。</p>
+            
+            <h2>演化逻辑 / Evolution Logic</h2>
             <ul>
-                <li><strong>Core Mechanism</strong>: Fidelity-based Quality Control (基于保真度的质量控制)。</li>
-                <li><strong>Significance</strong>: 证明了 RSI 范式可以从通用的 Agent 领域扩展到特定的推荐系统领域，且通过“自我生成+保真度过滤”可以打破数据稀疏性的瓶颈。</li>
-                <li><strong>Connection</strong>: 验证了 Yanhua 理论中“闭环演化无需外部教师”的核心假设。</li>
+                <li><span class="highlight">保真度质量控制 (Fidelity-based QC)</span>: 模型生成候选交互序列，并利用基于保真度的机制过滤与用户偏好流形一致的数据。</li>
+                <li><span class="highlight">内生正则化 (Implicit Regularizer)</span>: 理论证明 RSIR 起到了平滑优化景观的作用，引导模型走向更稳健的解。</li>
+                <li><span class="highlight">课程生成 (Curriculum Generation)</span>: 观察到弱模型可以为强模型生成有效的训练课程，形成跨模型尺度的递归演化。</li>
             </ul>
-        </section>
 
-        <footer>
-            <a href="index.html">← Back to Index</a>
-        </footer>
+            <h2>Yanhua 审计结论</h2>
+            <p>RSIR 的成功标志着 RSI 范式正在从纯粹的 NLP 推理向具体的应用领域（如推荐系统）渗透。其“保真度过滤”机制为 Yanhua 系统在评估自身代码/文档生成的质量时提供了重要的算法参考：通过流形一致性而非外部奖励进行自校准。</p>
+        </div>
     </div>
 </body>
 </html>
