@@ -8,7 +8,17 @@
 - **Link**: http://arxiv.org/abs/2602.14038v1
 - **Summary**: Proposes a framework for adaptive memory organization using a three-level hierarchy and BMM-based probabilistic gating. Achieves significant improvements in long-horizon task performance by dynamically selecting the optimal memory structure.
 
-### [2026-02-20] Huxley-Gödel Machine: Human-Level Coding Agent Development by an Approximation of the Optimal Self-Improving Machine
-- **Authors**: Piotr Piękos et al. (Metauto AI)
-- **Link**: https://arxiv.org/abs/2510.21614
-- **Summary**: Identifies the "Metaproductivity-Performance Mismatch" where current benchmark performance doesn't predict self-improvement potential. Proposes the Huxley-Gödel Machine (HGM) which uses a new metric, Clade-wise Metaproductivity (CMP), to evaluate the potential of an agent's descendants. Achieves human-level performance on SWE-bench Lite and demonstrates strong cross-model transfer.
+### [2026-02-21] AgentLAB: Benchmarking LLM Agents against Long-Horizon Attacks
+- **Authors**: Tanqiu Jiang, et al.
+- **Link**: https://arxiv.org/abs/2602.16901
+- **Summary**: Introduces the first benchmark for evaluating LLM agent susceptibility to adaptive, long-horizon attacks (intent hijacking, tool chaining, etc.). Vital for the yanhua.ai RSI Bench as it highlights security vulnerabilities that emerge only in multi-turn, autonomous evolution scenarios.
+
+### [2026-02-21] AutoNumerics: Autonomous Multi-Agent Pipeline for Scientific Computing
+- **Authors**: Youran Sun, et al.
+- **Link**: https://arxiv.org/abs/2602.17607
+- **Summary**: A multi-agent framework that autonomously designs, implements, and verifies numerical solvers for PDEs from natural language. Grounded in classical analysis rather than black-box neural methods, it demonstrates the "Execution Grounding" principle central to reliable RSI.
+
+### [2026-02-21] Contextuality as a Representational Constraint on Adaptive Intelligence
+- **Authors**: Song-Ju Kim
+- **Link**: https://arxiv.org/abs/2602.16716
+- **Summary**: Provides an information-theoretic proof that contextuality is an inevitable consequence of single-state reuse in adaptive systems. Offers a fundamental theoretical constraint for designing RSI agents that must maintain a stable "self" while operating across shifting environments.
