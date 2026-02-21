@@ -1,0 +1,18 @@
+OpenClaw security audit
+Summary: 2 critical · 0 warn · 1 info
+Run deeper: openclaw security audit --deep
+
+CRITICAL
+gateway.control_ui.insecure_auth Control UI allows insecure HTTP auth
+  gateway.controlUi.allowInsecureAuth=true allows token-only auth over HTTP and skips device identity.
+  Fix: Disable it or switch to HTTPS (Tailscale Serve) or localhost.
+fs.credentials_dir.perms_writable Credentials dir is writable by others
+  /home/admin/.openclaw/credentials mode=775; another user could drop/modify credential files.
+  Fix: chmod 700 /home/admin/.openclaw/credentials
+
+INFO
+summary.attack_surface Attack surface summary
+  groups: open=0, allowlist=1
+tools.elevated: enabled
+hooks: disabled
+browser control: enabled
