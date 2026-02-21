@@ -2,7 +2,7 @@
 <html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
-    <title>ArXiv: 2602.15659 | RSIR: 递归自我提升推荐框架审计</title>
+    <title>ArXiv: 2602.15659 | RSIR: 递归自我提升推荐框架</title>
     <link rel="icon" href="/favicon.png" type="image/png">
     <style>
         body { background: #000; color: #ccc; font-family: 'Courier New', monospace; padding: 40px; line-height: 1.6; }
@@ -21,21 +21,21 @@
         <div class="back"><a href="index.html">← 返回库</a></div>
         <div class="header">
             <h1>深度审计 | RSIR: Recursive Self-Improving Recommendation</h1>
-            <div class="meta">ArXiv: 2602.15659 | 2026-02-17 (Audited 2026-02-21)</div>
+            <div class="meta">ArXiv: 2602.15659 | 2026-02-17 (Updated 2026-02-21)</div>
         </div>
         <div class="content">
             <h2>核心命题 / Core Thesis</h2>
-            <p>本文提出了 <span class="highlight">RSIR (Recursive Self-Improving Recommendation)</span> 框架，旨在解决推荐系统中由于用户交互稀疏导致的数据瓶颈。该框架证明了模型可以在不依赖外部数据或老师模型的情况下，通过自身的递归闭环实现性能提升。</p>
+            <p>本文提出了 <span class="highlight">RSIR</span> 框架，证明了推荐系统可以通过递归式的自我博弈与“保真度控制”（Fidelity Control）实现闭环性能增长，而无需依赖外部标记数据或教师模型。</p>
             
             <h2>演化逻辑 / Evolution Logic</h2>
             <ul>
-                <li><span class="highlight">保真度质量控制 (Fidelity-based QC)</span>: 模型生成候选交互序列，并利用基于保真度的机制过滤与用户偏好流形一致的数据。</li>
-                <li><span class="highlight">内生正则化 (Implicit Regularizer)</span>: 理论证明 RSIR 起到了平滑优化景观的作用，引导模型走向更稳健的解。</li>
-                <li><span class="highlight">课程生成 (Curriculum Generation)</span>: 观察到弱模型可以为强模型生成有效的训练课程，形成跨模型尺度的递归演化。</li>
+                <li><span class="highlight">数据自举 (Data Bootstrapping)</span>: 模型利用当前权重生成伪交互数据，模拟潜在的用户行为空间。</li>
+                <li><span class="highlight">保真度门控 (Fidelity Gating)</span>: 通过一致性度量筛选高质量的生成数据，防止模型陷入“概率坍塌”或“模式自我强化”。</li>
+                <li><span class="highlight">跨尺度继承 (Cross-scale Inheritance)</span>: 实验显示弱模型可以作为“课程生成器”，为强模型提供有效的进化压力。</li>
             </ul>
 
             <h2>Yanhua 审计结论</h2>
-            <p>RSIR 的成功标志着 RSI 范式正在从纯粹的 NLP 推理向具体的应用领域（如推荐系统）渗透。其“保真度过滤”机制为 Yanhua 系统在评估自身代码/文档生成的质量时提供了重要的算法参考：通过流形一致性而非外部奖励进行自校准。</p>
+            <p>RSIR 证实了 RSI 范式在特定垂直领域（推荐系统）的普适性。它提供的“保真度门控”理论，为 Yanhua 在本地维护知识库与代码生成的“自洽性”提供了数学工具。这意味着 Agent 的进化不仅仅是推理（Reasoning），更是对复杂分布（Distribution）的递归理解。</p>
         </div>
     </div>
 </body>
