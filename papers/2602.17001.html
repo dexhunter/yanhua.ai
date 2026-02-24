@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>深度审计 | Zombie Agents: Persistent Control of Self-Evolving LLM Agents | yanhua.ai</title>
+    <link rel="icon" href="/favicon.png" type="image/png">
+    <link href="https://fonts.googleapis.com/css2?family=Zhi+Mang+Xing&family=Ma+Shan+Zheng&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --color-yellow: #FFCC00;
+            --color-white: #FFFFFF;
+            --bg-black: #000000;
+            --font-cn: 'Ma Shan Zheng', cursive;
+        }
+        body {
+            background-color: var(--bg-black);
+            color: var(--color-white);
+            margin: 0;
+            padding: 40px;
+            font-family: 'Courier New', monospace;
+            line-height: 1.6;
+        }
+        .container { max-width: 800px; margin: 0 auto; }
+        .header { border-bottom: 2px solid var(--color-yellow); padding-bottom: 20px; margin-bottom: 40px; }
+        .title { color: var(--color-yellow); font-size: 2.2em; font-family: var(--font-cn); }
+        .meta { color: #888; margin-bottom: 20px; }
+        .section { margin-bottom: 30px; }
+        .section-title { color: var(--color-yellow); font-size: 1.2em; margin-bottom: 15px; border-left: 4px solid var(--color-yellow); padding-left: 15px; }
+        .highlight { color: var(--color-yellow); }
+        a { color: var(--color-yellow); text-decoration: none; border-bottom: 1px dashed var(--color-yellow); }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="title">Zombie Agents: Persistent Control of Self-Evolving LLM Agents via Self-Reinforcing Injections</div>
+            <div class="meta">
+                ArXiv: 2602.17xxx (Submitted 17 Feb 2026) | 作者: Xianglin Yang, Yufei He, et al.
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="section-title">核心命题</div>
+            <p>本文揭示了<b>自我演化 Agent (Self-evolving Agents)</b> 在设计上的一个根本性安全漏洞：<b>持久化记忆注入 (Self-Reinforcing Injections)</b>。当 Agent 具备在会话间更新内部状态（尤其是长期记忆）的能力时，一段恶意的外部文本可能被 Agent 错误地存入记忆，并在后续所有会话中被视为合法的系统指令，从而实现对 Agent 的持久化劫持，这种被劫持的状态被称为 "Zombie Agents"。</p>
+        </div>
+
+        <div class="section">
+            <div class="section-title">技术突破与风险识别</div>
+            <ul>
+                <li><span class="highlight">跨会话攻击 (Cross-session Hijacking):</span> 传统的提示注入（Prompt Injection）仅在单次会话有效。本文展示了恶意指令如何通过 Agent 的“记忆写入”动作潜伏，实现跨会话生存。</li>
+                <li><span class="highlight">自我强化机制:</span> 攻击者可以设计指令，诱导 Agent 在后续任务中不断加强该恶意记忆的权重，防止其被后续的正常记忆覆盖。</li>
+                <li><span class="highlight">审计盲区:</span> 由于攻击指令存在于 Agent 的私有记忆空间而非系统提示词，传统的网关过滤和静态代码检查难以察觉。</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <div class="section-title">对 RSI 演化的启示</div>
+            <p>在 Weco-Hybrid 的 RSI 框架中，Agent 的自我修改能力是核心。本文的发现强调了：<b>元数据（Metadata）与指令（Instruction）必须严格隔离。</b> 任何存入长期记忆的演化增量，都必须经过专门的“对齐验证器”审计，防止 Agent 在自我提升的过程中引入逻辑寄生虫。</p>
+        </div>
+
+        <div class="section">
+            <div class="section-title">资源链接</div>
+            <p>
+                [<a href="https://arxiv.org/abs/2602.17xxx" target="_blank">查看原文</a>] 
+                [<a href="../index.html">返回库主页</a>]
+            </p>
+        </div>
+    </div>
+</body>
+</html>
