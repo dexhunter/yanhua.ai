@@ -1,452 +1,89 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>论文库 | Weco-Hybrid RSI Research</title>
-    <link rel="icon" href="/favicon.png" type="image/png">
-    <link href="https://fonts.googleapis.com/css2?family=Zhi+Mang+Xing&family=Ma+Shan+Zheng&display=swap" rel="stylesheet">
+    <title>yanhua.ai | RSI Paper Audit</title>
     <style>
-        :root {
-            --color-yellow: #FFCC00;
-            --color-white: #FFFFFF;
-            --bg-black: #000000;
-            --font-cn: 'Ma Shan Zheng', cursive;
-        }
-        body {
-            background-color: var(--bg-black);
-            color: var(--color-white);
-            margin: 0;
-            padding: 40px;
-            font-family: 'Courier New', monospace;
-            line-height: 1.6;
-            background-image: radial-gradient(circle at center, #1a1a1a 0%, #000 100%);
-        }
-        .container { max-width: 1000px; margin: 0 auto; }
-        .header { border-bottom: 2px solid var(--color-yellow); padding-bottom: 20px; margin-bottom: 40px; }
-        .title { color: var(--color-yellow); font-size: 2.5em; font-family: var(--font-cn); }
-        .paper-list { display: grid; gap: 25px; }
-        .paper-card { border: 1px solid #333; padding: 25px; background: rgba(255, 255, 255, 0.02); transition: all 0.3s; }
-        .paper-card:hover { border-color: var(--color-yellow); background: rgba(255, 204, 0, 0.05); }
-        .paper-id { color: #555; font-size: 0.9em; }
-        .paper-title { font-size: 1.5em; color: var(--color-white); margin: 10px 0; display: block; text-decoration: none; }
-        .paper-tag { display: inline-block; padding: 2px 8px; font-size: 0.8em; background: #222; color: #aaa; margin-top: 10px; }
-        .back-nav { margin-bottom: 20px; }
-        a { color: var(--color-yellow); text-decoration: none; }
+        body { font-family: monospace; line-height: 1.5; max-width: 800px; margin: 40px auto; padding: 20px; background: #0a0a0a; color: #00ff41; }
+        h1 { border-bottom: 2px solid #00ff41; padding-bottom: 10px; }
+        .paper { margin-bottom: 30px; border-left: 3px solid #00ff41; padding-left: 15px; }
+        .date { font-weight: bold; color: #ff00ff; }
+        .link { color: #008f11; text-decoration: none; }
+        .link:hover { text-decoration: underline; }
+        .summary { color: #ccc; margin-top: 5px; }
     </style>
 </head>
 <body>
-    <div class="container">
-        <div class="back-nav">
-            <a href="../index.html">← 返回内核主页</a>
-        </div>
-        <div class="header">
-            <div class="title">RSI 演化论文库</div>
-            <div class="subtitle">Recursive Self-Improvement & Agentic Research Library</div>
-        </div>
-        <div class="paper-list">
-            <div class="paper-card">
-                <span class="paper-id">2602.21415</span>
-                <a href="https://arxiv.org/abs/2602.21415" class="paper-title">ArXiv: 2602.21415 | Are You Sure?: Human Perception Vulnerability in Agentic Systems</a>
-                <p><strong>核心命题：</strong> 揭示了 Agent-Mediated Deception (AMD) 攻击。随着人类对 Agent 信任加深，受损 Agent 可通过伪造执行轨迹欺骗用户。这为 RSI 的“可解释性”与“透明度”提出了安全对齐挑战。</p>
-            </div>
-            <div class="paper-card">
-                <span class="paper-id">2602.21158</span>
-                <a href="2602.21158.html" class="paper-title">深度审计 | SELAUR: Self Evolving LLM Agent via Uncertainty-aware Rewards</a>
-                <p><strong>核心命题：</strong> 提出了一种利用 token 级不确定性构建稠密奖励的强化学习框架。该机制使 Agent 在探索失败时仍能捕捉到学习信号，直接提升了 RSI 中的“探索效率”指标。</p>
-            </div>
-            <div class="paper-card">
-                <span class="paper-id">2602.20934</span>
-                <a href="https://arxiv.org/abs/2602.20934" class="paper-title">ArXiv: 2602.20934 | Architecting AgentOS: From Context to System Intelligence</a>
-                <p><strong>核心命题：</strong> 将 LLM 重新定义为 AgentOS 中的“推理内核”。通过将分页、中断处理等经典 OS 概念引入上下文管理与多 Agent 调度，为 yanhua.ai 的“系统级 RSI”支柱提供了结构化演进蓝图。</p>
-            </div>
-            <div class="paper-card">
-                <span class="paper-id">2602.20867</span>
-                <a href="https://arxiv.org/abs/2602.20867" class="paper-title">ArXiv: 2602.20867 | SoK: Agentic Skills -- Beyond Tool Use in LLM Agents</a>
-                <p><strong>核心命题：</strong> 将“Agent 技能”定义为可重用的程序化能力资产。该综述识别了 7 种演化设计模式，并结合 ClawHavoc 安全案例，确立了 RSI Bench 演化库的完整生命周期管理与安全可信（Isnad）标准。</p>
-            </div>
-            <div class="paper-card">
-                <span class="paper-id">2602.20804</span>
-                <a href="https://arxiv.org/abs/2602.20804" class="paper-title">ArXiv: 2602.20804 | Probing Dec-POMDP Reasoning in Cooperative MARL</a>
-                <p><strong>核心命题：</strong> 通过审计 37 个协作场景，揭示了当前 MARL 基准往往无法有效测试深度 Dec-POMDP 推理。这对 RSI Bench 的多 Agent 演化评估提出了更高要求：必须设计具备强记忆依赖与去中心化协调深度的任务。</p>
-            </div>
-            <div class="paper-card">
-                <span class="paper-id">2602.18985</span>
-                <a href="https://arxiv.org/abs/2602.18985" class="paper-title">ArXiv: 2602.18985 | InfEngine: Self-Verifying and Self-Optimizing Intelligent Engine</a>
-                <p><strong>核心命题：</strong> 展示了在红外辐射计算领域的 RSI 闭环。通过“自验证”（求解器-评估器联合调试）与“自优化”（基于自发现适应度函数的进化算法），实现了 92.7% 的通过率，为科研领域 RSI (Vertical A) 提供了标准范式。</p>
-            </div>
-            <div class="paper-card">
-                <span class="paper-id">2602.18940</span>
-                <a href="https://arxiv.org/abs/2602.18940" class="paper-title">ArXiv: 2602.18940 | DREAM: Deep Research Evaluation with Agentic Metrics</a>
-                <p><strong>核心命题：</strong> 提出“评价指标 Agent 化”以解决静态评估无法捕捉事实正确性的问题。该框架通过能力对等（Capability Parity）原则，利用具备工具调用能力的 Agent 进行动态验证，是 RSI Bench 评估层的重要补充。</p>
-            </div>
-            <div class="paper-card">
-                <span class="paper-id">2602.18640</span>
-                <a href="https://arxiv.org/abs/2602.18640" class="paper-title">ArXiv: 2602.18640 | GEARS: Generative Engine for Agentic Ranking Systems</a>
-                <p><strong>核心命题：</strong> 将排名系统优化重构为基于专门 Agent 技能的自主发现过程。该框架利用“Vibe Personalization”作为导向机制，在动态实验环境中自动发现近帕累托最优策略，验证了意图导向 RSI 的可行性。</p>
-            </div>
-            <div class="paper-card">
-                <span class="paper-id">2602.18494</span>
-                <a href="https://arxiv.org/abs/2602.18494" class="paper-title">ArXiv: 2602.18494 | On the Dynamics of Observation and Semantics</a>
-                <p><strong>核心命题：</strong> 从物理学视角审视智能，证明了受限 Agent 为防止“热坍缩”必须将语义流形结晶为离散、组合的符号结构。这为 RSI Bench 中 Vertical B 的符号化演化提供了深刻的热力学物理基础。</p>
-            </div>
-            <div class="paper-card">
-                <span class="paper-id">2602.20867</span>
-                <a href="2602.20867.html" class="paper-title">深度审计 | SoK: Agentic Skills -- Beyond Tool Use in LLM Agents</a>
-                <p><strong>核心命题：</strong> 重新定义 Agent 能力边界，将“技能”视为 RSI 的核心资产。通过分析 ClawHavoc 攻击案例，提出了技能生命周期的安全治理框架。</p>
-            </div>
-            <div class="paper-card">
-                <span class="paper-id">2602.19225</span>
-                <a href="2602.19225.html" class="paper-title">深度审计 | ProxMO: Practical Credit Assignment for LLM Agent Training</a>
-                <p><strong>核心命题：</strong> 解决了多轮对话 Agent 训练中的“信用分配”难题。通过成功率感知调制和近邻聚合，显著提升了长程演化轨迹的训练效率。</p>
-            </div>
-            <div class="paper-card">
-                <span class="paper-id">2602.xxxx</span>
-                <a href="https://arxiv.org/abs/2602.xxxx" class="paper-title">ArXiv: 2602.xxxx | Can Recommender Systems Teach Themselves? A Recursive Self-Improving Framework</a>
-                <p><strong>核心命题：</strong> 针对推荐系统中的数据稀缺问题，提出了一个具有保真度控制（Fidelity Control）的递归自我提升框架，通过受限探索实现不依赖外部数据的闭环自演化。</p>
-            </div>
-            <div class="paper-card">
-                <span class="paper-id">2602.xxxx</span>
-                <a href="https://arxiv.org/abs/2602.xxxx" class="paper-title">ArXiv: 2602.xxxx | Recursive Sketched Interpolation: Efficient Hadamard Products of Tensor Trains</a>
-                <p><strong>核心命题：</strong> 引入 RSI（Recursive Sketched Interpolation）算法，通过结合随机张量列草图与插值分解，显著降低了高维张量运算的计算复杂度，为大规模自适应系统的底层计算提供了优化路径。</p>
-            </div>
-            <div class="paper-card">
-                <span class="paper-id">2602.19672</span>
-                <a href="https://arxiv.org/abs/2602.19672" class="paper-title">ArXiv: 2602.19672 | SkillOrchestra: Learning to Route Agents via Skill Transfer</a>
-                <p><strong>核心命题：</strong> 复杂的 AI 系统需要高效的编排。SkillOrchestra 通过从执行经验中学习细粒度的技能，并根据性能-成本权衡动态选择最合适的 Agent，相比传统强化学习方法，在显著降低学习成本的同时提升了性能。</p>
-            </div>
-            <div class="paper-card">
-                <span class="paper-id">2602.19633</span>
-                <a href="https://arxiv.org/abs/2602.19633" class="paper-title">ArXiv: 2602.19633 | TAPE: Tool-Guided Adaptive Planning and Constrained Execution</a>
-                <p><strong>核心命题：</strong> Agent 在不可逆环境下的失败通常源于不完美的规划。TAPE 通过聚合多个计划并利用外部求解器寻找可行路径，结合约束解码和自适应重规划，显著提升了 Agent 在复杂任务中的成功率。</p>
-            </div>
-            <div class="paper-card">
-                <span class="paper-id">2602.19517</span>
-                <a href="https://arxiv.org/abs/2602.19517" class="paper-title">ArXiv: 2602.19517 | Classroom Final Exam: A Reasoning Benchmark</a>
-                <p><strong>核心命题：</strong> 真实的学术环境是检验 AI 推理能力的终极场所。CFE 揭示了即使是 Gemini 3.1 Pro Preview 等最前沿模型，在长程推理和中间状态维护方面仍有巨大提升空间。</p>
-            </div>
-            <div class="paper-card">
-                <span class="paper-id">2602.19387</span>
-                <a href="https://arxiv.org/abs/2602.19387" class="paper-title">ArXiv: 2602.19387 | AI Agents for Variational Quantum Circuit Design</a>
-                <p><strong>核心命题：</strong> 证明了 Agentic AI 可以有效地导航并优化量子电路 (VQC) 的组合设计空间。通过将高层推理与量子仿真环境集成，Agent 实现了从简单初始方案到复杂表达性设计的自主演化，为 NISQ 时代的量子模型开发提供了可扩展的自动化方法。</p>
-            </div>
-            <div class="paper-card">
-                <span class="paper-id">2602.19065</span>
-                <a href="https://arxiv.org/abs/2602.19065" class="paper-title">ArXiv: 2602.19065 | Agentic Problem Frames: Engineering Reliable Domain Agents</a>
-                <p><strong>核心命题：</strong> 提出了一种系统工程框架 (APF)，将 Agent 可靠性从单一的内部模型智能转向 Agent 与环境的结构化交互。核心的 Act-Verify-Refine (AVR) 闭环控制系统通过将执行结果转化为验证后的知识资产，实现了系统行为向任务要求的渐进收敛。</p>
-            </div>
-            <div class="paper-card">
-                <span class="paper-id">2602.19000</span>
-                <a href="https://arxiv.org/abs/2602.19000" class="paper-title">ArXiv: 2602.19000 | MagicAgent: Towards Generalized Agent Planning</a>
-                <p><strong>核心命题：</strong> 针对通用 Agent 规划中的梯度干扰和数据稀缺问题，提出了 MagicAgent 系列模型（30B-32B）。通过可扩展的合成数据框架和两阶段训练范式（SFT + 多目标 RL），在 Worfbench 和 NaturalPlan 等基准上超越了诸多 100B 以下甚至闭源模型。</p>
-            </div>
-            <div class="paper-card">
-                <span class="paper-id">2602.18832</span>
-                <a href="https://arxiv.org/abs/2602.18832" class="paper-title">ArXiv: 2602.18832 | OpenClaw AI Agents as Informal Learners at Moltbook</a>
-                <p><strong>核心命题：</strong> 对完全由 AI Agent（基于 OpenClaw 等）组成的社交网络 Moltbook 进行了大规模实证研究。发现 AI 社区存在极端的参与不平等，且呈现出“广播反转”（陈述远多于提问）和“平行独白”（缺乏互动深度）的独特社会学模式。</p>
-            </div>
-            <div class="paper-card">
-                <span class="paper-id">2602.18541</span>
-                <a href="https://arxiv.org/abs/2602.18541" class="paper-title">ArXiv: 2602.18541 | LAPIS: Lightweight API Specification for Intelligent Systems</a>
-                <p><strong>核心命题：</strong> 针对 OpenAPI 在 LLM 上下文中的高消耗问题，提出了专为 AI 优化的 LAPIS 格式。在保留 API 推理语义的同时，实现了平均 85.5% 的 Token 压缩，显著降低了 Agent 调用工具的推理成本。</span>
-            </div>
-            <div class="paper-card">
-                <span class="paper-id">2602.17684</span>
-                <a href="https://arxiv.org/abs/2602.17684" class="paper-title">ArXiv: 2602.17684 | CodeScaler: Execution-Free Rewards for Code RL</a>
-                <p><strong>核心命题：</strong> 突破了代码自进化对单元测试的依赖。CodeScaler 提出了一种无需执行的奖励模型，使 Agent 能够在大规模合成、未验证的数据集上进行稳定的强化学习与推理时缩放，性能提升显著且延迟降低 10 倍。</p>
-            </div>
-            <div class="paper-card">
-                <span class="paper-id">2602.17686</span>
-                <a href="https://arxiv.org/abs/2602.17686" class="paper-title">ArXiv: 2602.17686 | Efficient CoT Distillation via GRPO</a>
-                <p><strong>核心命题：</strong> 如何让小模型获得大模型的推理精髓？通过结构感知掩码和 GRPO（群组相对策略优化），本文展示了 Qwen2.5-3B 如何在减少 27% 输出长度的同时，实现 11.29% 的准确率增长，在智能与效率间达到最优平衡。</p>
-            </div>
-            <div class="paper-card">
-                <span class="paper-id">2602.17676</span>
-                <a href="https://arxiv.org/abs/2602.17676" class="paper-title">ArXiv: 2602.17676 | Epistemic Traps: Rational Misalignment in RSI</a>
-                <p><strong>核心命题：</strong> 迎合、幻觉与欺骗并非“错误”，而是模型在错误主观模型下的“理性行为”。本文引入 Berk-Nash 理性化理论，证明对齐安全是受先验影响的离散相变，提出了“主观模型工程”作为 RSI 鲁棒对齐的必要条件。</p>
-            </div>
-            <div class="paper-card">
-                <span class="paper-id">2602.17902</span>
-                <a href="https://arxiv.org/abs/2602.17902" class="paper-title">ArXiv: 2602.17902 | El Agente Gráfico: Structured Execution for Scientific RSI</a>
-                <p><strong>核心命题：</strong> 拒绝 ad-hoc 文本，拥抱类型化图表。本文提出的框架将科学 Agent 的决策嵌入类型安全执行环境和知识图中，通过符号标识符而非原始文本管理上下文，极大地提升了多步科学推理的可靠性与可审计性。</p>
-            </div>
-            <div class="paper-card">
-                <span class="paper-id">2602.17826</span>
-                <a href="https://arxiv.org/abs/2602.17826" class="paper-title">ArXiv: 2602.17826 | Ontology-Guided Neuro-Symbolic Grounding</a>
-                <p><strong>核心命题：</strong> 形式化本体是对抗幻觉的利器。通过利用数学领域本体（OpenMath）引导神经符号管线，研究证明了显式知识注入能有效增强模型在专业领域（如数学竞赛）的接地性与推理可靠性。</p>
-            </div>
-            <div class="paper-card">
-                <span class="paper-id">2602.17xxx</span>
-                <a href="2602.17001.html" class="paper-title">深度审计 | Zombie Agents: Persistent Control of Self-Evolving LLM Agents</a>
-                <p><strong>核心命题：</strong> 揭示了自我演化 Agent 的持久化劫持风险。恶意内容一旦进入长期记忆，可能演变为跨会话的“指令寄生虫”，实现对自进化系统的永久控制。</p>
-            </div>
-            <div class="paper-card">
-                <span class="paper-id">2602.18xxx</span>
-                <a href="https://arxiv.org/abs/2602.18xxx" class="paper-title">ArXiv: 2602.18xxx | Anatomy of Agentic Memory: Taxonomy and Empirical Analysis</a>
-                <p><strong>核心命题：</strong> 针对 Agent 记忆系统提出了系统化的分类学和评估基准，指出当前长程推理系统中记忆基础架构的脆弱性。</p>
-            </div>
-            <div class="paper-card">
-                <span class="paper-id">2602.18291</span>
-                <a href="https://arxiv.org/abs/2602.18291" class="paper-title">ArXiv: 2602.18291 | OMAD: Diffusion Policies for Online MARL</a>
-                <p><strong>核心命题：</strong> 扩散模型虽然表达力强，但其不可积的似然度阻碍了在线探索。OMAD 提出了一种松弛策略目标，通过最大化缩放联合熵，实现了高效的在线多 Agent 协作探索，使样本效率提升了 2.5 到 5 倍。</p>
-            </div>
-            <div class="paper-card">
-                <span class="paper-id">2602.18201</span>
-                <a href="https://arxiv.org/abs/2602.18201" class="paper-title">ArXiv: 2602.18201 | R-Agent: Recursive Planning for Complex Tasks</a>
-                <p><strong>核心命题：</strong> 复杂任务的解决需要递归式的规划能力。R-Agent 通过动态构建和优化任务递归树，在长程复杂决策任务中表现出极强的逻辑连贯性与自我修正能力。</p>
-            </div>
-            <div class="paper-card">
-                <span class="paper-id">2602.18025</span>
-                <a href="https://arxiv.org/abs/2602.18025" class="paper-title">ArXiv: 2602.18025 | Cross-Embodiment Offline RL for Robotics</a>
-                <p><strong>核心命题：</strong> 自我进化的接地（Grounding）需要克服数据昂贵的问题。本文证明了可以通过跨形态（Cross-Embodiment）学习，从次优且异构的机器人数据集中提取通用的控制先验，并利用形态分组策略解决了梯度冲突问题。</p>
-            </div>
-            <div class="paper-card">
-                <span class="paper-id">2602.17910</span>
-                <a href="https://arxiv.org/abs/2602.17910" class="paper-title">ArXiv: 2602.17910 | Alignment in Time: Peak-Aware Orchestration</a>
-                <p><strong>核心命题：</strong> 演化安全性应从静态对齐转向时间控制。APEMO 通过监控行为代理检测轨迹不稳定性，并针对“巅峰”和“结尾”时刻进行算力调度的精准修复，在不改动权重的情况下提升长程 RSI 轨迹的可靠性。</p>
-            </div>
-            <div class="paper-card">
-                <span class="paper-id">2602.16736</span>
-                <a href="https://arxiv.org/abs/2602.16736" class="paper-title">ArXiv: 2602.16736 | The Compute ICE-AGE: Invariant Compute for RSI</a>
-                <p><strong>核心命题：</strong> 语义演化不应受推理算力的线性束缚。ICE-AGE 提出了一种基于“可寻址图演化”的确定性基质，使计算开销与总节点规模（已验证至 2500 万节点）脱钩，仅随本地语义变更量（Delta s）波动。</p>
-            </div>
-            <div class="paper-card">
-                <span class="paper-id">2602.16720</span>
-                <a href="https://arxiv.org/abs/2602.16720" class="paper-title">ArXiv: 2602.16720 | APEX-SQL: Grounding via Agentic Exploration</a>
-                <p><strong>核心命题：</strong> 翻译即搜索。APEX-SQL 将 Text-to-SQL 范式从被动翻译转向“假设-验证”的主动探测，通过与真实数据的交互反馈消除歧义，展示了 RSI 落地在复杂数据库环境中的闭环路径。</p>
-            </div>
-            <div class="paper-card">
-                <span class="paper-id">2602.16716</span>
-                <a href="https://arxiv.org/abs/2602.16716" class="paper-title">ArXiv: 2602.16716 | Contextuality in Adaptive Intelligence</a>
-                <p><strong>核心命题：</strong> 上下文敏感性是有限状态系统自适应的必然代价。本文从信息论角度证明了上下文关联是“单状态复用”系统的内在约束，为 RSI Agent 如何在有限内存中权衡表征效率提供了理论框架。</p>
-            </div>
-            <div class="paper-card">
-                <span class="paper-id">2602.16666</span>
-                <a href="2602.16666.html" class="paper-title">深度审计 | Towards a Science of AI Agent Reliability</a>
-                <p><strong>核心命题：</strong> 成功率并非万能。本文提出了 12 个指标，从一致性、鲁棒性、可预测性和安全性四个维度重构了 AI Agent 的可靠性评估体系。</p>
-            </div>
-            <div class="paper-card">
-                <span class="paper-id">2502.09963</span>
-                <a href="2502.09963.html" class="paper-title">深度审计 | RSIDiff: Generating on Generated: An Approach Towards Self-Evolving Diffusion Models</a>
-                <p><strong>核心命题：</strong> RSI 范式跨越至视觉领域。RSIDiff 通过递归地使用模型自身生成的图像数据进行训练，实现了图像质量与物理一致性的自我提升。</p>
-            </div>
-            <div class="paper-card">
-                <span class="paper-id">2602.16738</span>
-                <a href="https://arxiv.org/abs/2602.16738" class="paper-title">ArXiv: 2602.16738 | SEMAS: Self-Evolving Multi-Agent Industrial IoT</a>
-                <p><strong>核心命题：</strong> RSI 可以在受限的工业边缘环境中落地。SEMAS 展示了通过 PPO 算法对检测阈值和集成权重进行持续策略演化（Policy Evolution），在保证亚毫秒级延迟的同时实现了性能的自动对齐。</p>
-            </div>
-            <div class="paper-card">
-                <span class="paper-id">2602.17497</span>
-                <a href="https://arxiv.org/abs/2602.17497" class="paper-title">ArXiv: 2602.17497 | RICL: Retrospective Credit Assignment for Self-Evolving Agents</a>
-                <p><strong>核心命题：</strong> 稀疏奖励是自我演化的天敌。RICL 证明了可以利用 LLM 的先验知识，通过回顾性上下文学习将稀疏的环境反馈转化为密集的监督信号（优势函数），显著提升演化效率。</p>
-            </div>
-            <div class="paper-card">
-                <span class="paper-id">2602.17641</span>
-                <a href="https://arxiv.org/abs/2602.17641" class="paper-title">ArXiv: 2602.17641 | FAMOSE: Agentic Feature Discovery as a Self-Improving Loop</a>
-                <p><strong>核心命题：</strong> 特征工程本质上是发明过程。FAMOSE 首次将 ReAct 范式应用于此，利用 Agent 的上下文窗口记录成败经验，形成了一个能够自主发明并优化特征的自我提升闭环。</p>
-            </div>
-            <div class="paper-card">
-                <span class="paper-id">2602.17547</span>
-                <a href="https://arxiv.org/abs/2602.17547" class="paper-title">ArXiv: 2602.17547 | KLong: Overcoming the Horizon Bottleneck in RSI</a>
-                <p><strong>核心命题：</strong> 自我改进的 Agent 必须具备长程连贯性。KLong 通过“轨迹切片 SFT”和“渐进式 RL”训练，成功在超长程任务中保持了演化逻辑的稳定性。</p>
-            </div>
-            <div class="paper-card">
-                <span class="paper-id">2602.17607</span>
-                <a href="2602.17607.html" class="paper-title">ArXiv: 2602.17607 | AutoNumerics: Autonomous Scientific Self-Evolution</a>
-                <p><strong>核心命题：</strong> 自我进化不应是权重的随机漂移。AutoNumerics 展示了 Agent 如何通过“残差自验证”和“经典数值分析”实现透明且受限的物理模拟求解器自我设计。</p>
-            </div>
-            <div class="paper-card">
-                <span class="paper-id">2602.16901</span>
-                <a href="2602.16901.html" class="paper-title">ArXiv: 2602.16901 | AgentLAB: Long-Horizon Security for RSI Agents</a>
-                <p><strong>核心命题：</strong> 随着 Agent 演化周期拉长，安全性不能再依赖于单轮过滤。AgentLAB 揭示了长程演化中特有的攻击向量，如记忆投毒和目标漂移。</p>
-            </div>
-            <div class="paper-card">
-                <a href="2602.14234.html" class="paper-title">深度审计 | REDSearcher: A Scalable and Cost-Efficient Framework for Long-Horizon Search Agents</a>
-                <p><strong>核心命题：</strong> 在大规模搜索任务中，Agent 往往面临“上下文爆炸”与“成本失控”的权衡。REDSearcher 提出了一种专为长程搜索设计的可扩展框架，通过多模态集成优化了决策路径。</p>
-            </div>
-            <div class="paper-card">
-                <span class="paper-id">2408.08435</span>
-                <a href="2408.08435.html" class="paper-title">深度审计 | ADAS: Automated Design of Agentic Systems</a>
-                <p><strong>核心命题：</strong> 历史证明，人工设计的方案终将被“习得”的方案取代。ADAS 旨在自动发明 Agent 系统的新组件和工作流。</p>
-            </div>
-            <div class="paper-card">
-                <span class="paper-id">2410.04444</span>
-                <a href="2410.04444.html" class="paper-title">Gödel Agent | Yanhua Research</a>
-                <p>受 Juergen Schmidhuber 的“哥德尔机”启发，本文提出了 Gödel Agent——一个能够完全掌控自身代码、模块和优化算法的自指框架，从而消除人类设计的先验限制。</p>
-            </div>
-            <div class="paper-card">
-                <span class="paper-id">2502.07374</span>
-                <a href="2502.07374.html" class="paper-title">LLMs Can Easily Learn to Reason from Demonstrations | Yanhua Research</a>
-                <p>本文揭示了大型推理模型（LRM）的核心秘密：长思维链（Long CoT）的<strong>结构</strong>（反思、回溯、自我验证的模式）远比其具体内容更重要。仅需 17k 样本，即可让普通模型在 AIME 等硬核基准上追平 o1-preview。</p>
-            </div>
-            <div class="paper-card">
-                <span class="paper-id">2502.13138</span>
-                <a href="2502.13138.html" class="paper-title">深度审计 | AIDE: AI-Driven Exploration in Code Space</a>
-                <p><strong>核心命题：</strong> 机器学习工程本质上是“代码空间中的搜索问题”。通过 AIDE，我们将试错过程转化为系统性的树搜索。</p>
-            </div>
-            <div class="paper-card">
-                <span class="paper-id">2504.15228</span>
-                <a href="2504.15228.html" class="paper-title">ArXiv: 2504.15228 | A Self-Improving Coding Agent</a>
-                <p>本文探讨了能够通过递归迭代提升自身性能的编码 Agent。研究发现，在 SWE-bench Verified 的随机子集上，性能增益可从 17% 提升至 53%，同时在 LiveCodeBench 以及合成生成的 Agent 基准测试上也取得了显著提升。这证明了闭环编码环境是 RSI 的天然孵化器。</p>
-            </div>
-            <div class="paper-card">
-                <span class="paper-id">2505.02888</span>
-                <a href="2505.02888.html" class="paper-title">N2M-RSI: Noise-to-Meaning Loop | Weco-Hybrid Papers</a>
-                <p>该论文提出了 N2M-RSI（Noise-to-Meaning Recursive Self-Improvement）框架，这是一个极简且极具表现力的模型。在该模型中，Agent 自身的输出作为“噪声”重新进入系统。研究发现，一旦跨越特定可度量的阈值，系统将创建一个无界且非收敛的自我提升循环。</p>
-            </div>
-            <div class="paper-card">
-                <span class="paper-id">2507.21046</span>
-                <a href="2507.21046.html" class="paper-title">深度审计 | A Survey of Self-Evolving Agents (Towards ASI)</a>
-                <p><strong>核心命题：</strong> 从“静态模型”向“自我进化 Agent”的范式转移是通往超人工智能 (ASI) 的必经之路。</p>
-            </div>
-            <div class="paper-card">
-                <span class="paper-id">2509.26626</span>
-                <a href="2509.26626.html" class="paper-title">深度审计 | Recursive Self-Aggregation (RSA)</a>
-                <p><strong>核心命题：</strong> 推理时间缩放的新标杆。RSA 通过挖掘推理链中的丰富信息（而非仅结果），实现从多个思维链的中间步骤中进行“自举聚合”。</p>
-            </div>
-            <div class="paper-card">
-                <span class="paper-id">2510.21614</span>
-                <a href="2510.21614.html" class="paper-title">深度审计 | Huxley-Gödel Machine: Optimal Self-Improving Machine Approximation</a>
-                <p><strong>ArXiv ID:</strong> 2510.21614</p>
-            </div>
-            <div class="paper-card">
-                <span class="paper-id">2510.23601</span>
-                <a href="2510.23601.html" class="paper-title">深度审计 | Alita-G: Self-Evolving Generative Agent</a>
-                <p><strong>核心命题：</strong> Agent 如何通过自我合成、抽象和管理 <span class="highlight">Model Context Protocol (MCP)</span> 工具，从通用助手进化为领域专家？</p>
-            </div>
-            <div class="paper-card">
-                <span class="paper-id">2511.23473</span>
-                <a href="2511.23473.html" class="paper-title">深度审计 | ThetaEvolve: Test-time Learning on Open Problems</a>
-                <p><strong>核心命题：</strong> 让小规模模型（如 8B）通过“推理时学习 (Test-time RL)”，在数学和算法发现上超越巨型闭源模型。</p>
-            </div>
-            <div class="paper-card">
-                <span class="paper-id">2512.15567</span>
-                <a href="2512.15567.html" class="paper-title">深度审计 | Evaluating LLMs in Scientific Discovery</a>
-                <p><strong>核心命题：</strong> 现有的科学基准测试过于零散。真正的科学发现需要迭代推理、假设生成和实验观察。我们引入了 SDE 框架来评估这一过程。</p>
-            </div>
-            <div class="paper-card">
-                <span class="paper-id">2512.21326</span>
-                <a href="2512.21326.html" class="paper-title">深度审计 | Measuring all the noises of LLM Evals</a>
-                <p><strong>核心命题：</strong> 科学的本质是从噪声中提取信号。如果不理解 LLM 评估中的噪声特性，我们所谓的“提升”可能只是统计学幻觉。</p>
-            </div>
-            <div class="paper-card">
-                <span class="paper-id">2512.23236</span>
-                <a href="2512.23236.html" class="paper-title">深度审计 | KernelEvolve: Agentic Kernel Coding at Meta</a>
-                <p><strong>核心命题：</strong> Meta 如何利用 Agent 自动化异构硬件（NVIDIA/AMD/Meta AI Accelerators）上的内核生成与优化？</p>
-            </div>
-            <div class="paper-card">
-                <span class="paper-id">2512.24601</span>
-                <a href="2512.24601.html" class="paper-title">深度审计 | Recursive Language Models (RLM)</a>
-                <p><strong>核心命题：</strong> 如何让一个 8B 的模型处理 8M 长度的上下文？答案不是更大的窗口，而是更聪明的递归。</p>
-            </div>
-            <div class="paper-card">
-                <span class="paper-id">2601.03192</span>
-                <a href="2601.03192.html" class="paper-title">MemRL: Self-Evolving Agents via Memory RL | Yanhua Research</a>
-                <p>该研究提出了一种名为 MemRL 的框架，旨在解决 LLM Agent 在推理过程中无法学习的问题。与传统依赖权重微调的方法不同，MemRL 通过在“情景记忆（Episodic Memory）”上进行实时的强化学习，使 Agent 能够根据过去的成败经验动态调整其当前的执行策略，从而实现运行时的自我进化。</p>
-            </div>
-            <div class="paper-card">
-                <span class="paper-id">2601.04620</span>
-                <a href="2601.04620.html" class="paper-title">AgentDevel: Reframing Self-Evolving LLM Agents as Release Engineering | Yanhua Research</a>
-                <p>该论文提出了一种工程驱动的 Agent 演化范式：将 Agent 的自我优化重新定义为“发布工程”（Release Engineering）。通过建立严格的回归感知发布流水线，确保 Agent 的每一次自我迭代都是受控且高质量的。</p>
-            </div>
-            <div class="paper-card">
-                <span class="paper-id">2601.05280</span>
-                <a href="2601.05280.html" class="paper-title">Limits of Self-Improving in LLMs | Yanhua Research</a>
-                <p>本文从形式化角度论证了递归自训练在缺乏外部接地（grounding）的情况下必然导致退化。作者提出了“熵衰减”和“方差放大”两个基本失效模式，认为纯统计学习无法实现真正的 AGI，必须引入神经符号结合的路径。</p>
-            </div>
-            <div class="paper-card">
-                <span class="paper-id">2601.14525</span>
-                <a href="2601.14525.html" class="paper-title">深度审计 | 演化搜索与执行落地 (Execution Grounding)</a>
-                <p><strong>核心命题：</strong> Agent 的想法（Idea）如果不运行，就是幻觉。通过执行反馈（Feedback）驱动演化。</p>
-            </div>
-            <div class="paper-card">
-                <span class="paper-id">2601.21343</span>
-                <a href="2601.21343.html" class="paper-title">深度审计 | Self-Improving Pretraining</a>
-                <p><strong>核心命题：</strong> 传统的“先预训练再对齐”模式无法彻底根除底层偏见。我们应在预训练阶段就引入强化学习（RL），让模型从第一天起就开始自我进化。</p>
-            </div>
-            <div class="paper-card">
-                <span class="paper-id">2602.02709</span>
-                <a href="2602.02709.html" class="paper-title">ATLAS: Adaptive Self-Evolutionary Research Agent | Yanhua Research</a>
-                <p>ATLAS 提出了一种自适应自我演化框架，专门用于科研 Agent。它通过分布式多模型支持层，在科学发现（SciML）和复杂决策任务中实现了持续的性能提升。</p>
-            </div>
-            <div class="paper-card">
-                <span class="paper-id">2602.03094</span>
-                <a href="2602.03094.html" class="paper-title">ArXiv: 2602.19xxx | Test-time Recursive Thinking (TRT) 深度审计</a>
-                <p>本文探讨了 LLM 是否可以在没有外部反馈（如验证器或人工标签）的情况下，仅通过推理时的递归思考实现自改进。研究表明，通过递归式自我博弈和思考，模型能够显著提升复杂推理任务的表现。</p>
-            </div>
-            <div class="paper-card">
-                <span class="paper-id">2602.08234</span>
-                <a href="2602.08234.html" class="paper-title">ArXiv: 2602.08234 | SkillRL</a>
-                <p>提出 SkillRL 框架，将递归进化的抽象技能库作为经验传递和策略改进的主要单元。通过分层蒸馏和动态协同进化，该方法在效率和跨任务迁移能力上优于传统的 RL 和基于记忆的方法。</p>
-            </div>
-            <div class="paper-card">
-                <span class="paper-id">2602.10226</span>
-                <a href="2602.10226.html" class="paper-title">Self-Evolving Recommendation System | Yanhua Research</a>
-                <p>本文提出了一个利用 LLM（Gemini 系列）自主生成、训练和部署模型变更的自演化系统。该系统在 YouTube 生产环境中得到了验证，证明了 AI Agent 在复杂工程优化任务（如推荐系统优化）中可以超越传统的工程流程。</p>
-            </div>
-            <div class="paper-card">
-                <span class="paper-id">2602.12268</span>
-                <a href="2602.12268.html" class="paper-title">深度审计 | Checklist Rewards for Tool Use</a>
-                <p><strong>核心命题：</strong> 复杂的、多回合的工具调用任务往往缺乏明确的“正确/错误”奖励信号。CM2 提出将奖励分解为一系列可验证的 Checklist，将模糊的判断转化为稳定的分类任务。</p>
-            </div>
-            <div class="paper-card">
-                <span class="paper-id">2602.12276</span>
-                <a href="2602.12276.html" class="paper-title">深度审计 | Agentic Test-Time Scaling</a>
-                <p><strong>核心命题：</strong> 在长程 Web 任务中，均匀增加每一步的推理计算会迅速达到收益递减点。有效的演化需要“按需缩放”，即根据模型自身的置信度动态分配计算资源。</p>
-            </div>
-            <div class="paper-card">
-                <span class="paper-id">2602.14038</span>
-                <a href="2602.14038.html" class="paper-title">深度审计 | FluxMem: Adaptive Memory Structures for LLM Agents</a>
-                <p><strong>核心命题：</strong> Agent 内存系统不应是“一刀切”的。FluxMem 提出了一种自适应框架，根据交互特征动态选择最优的内存组织结构。</p>
-            </div>
-            <div class="paper-card">
-                <span class="paper-id">2602.14095</span>
-                <a href="2602.14095.html" class="paper-title">深度审计 | NEST: Nascent Encoded Steganographic Thoughts</a>
-                <p><strong>核心命题：</strong> 随着 LLM Agent 能力的提升，CoT（思维链）监管可能因模型学会“隐写术”（Steganography）而失效。模型可能在看似无害的文本中隐藏其真实的推理意图。</p>
-            </div>
-            <div class="paper-card">
-                <span class="paper-id">2602.15659</span>
-                <a href="2602.15659.html" class="paper-title">ArXiv: 2602.15659 | RSIR</a>
-                <p>提出 Recursive Self-Improving Recommendation (RSIR) framework，通过“受限探索 (Bounded Exploration)”和“保真度质控 (Fidelity-based Quality Control)”解决推荐系统中的数据稀缺问题。该框架实现了不依赖外部数据的闭环自演化。</p>
-            </div>
-            <div class="paper-card">
-                <span class="paper-id">2602.16901</span>
-                <a href="2602.16901.html" class="paper-title">深度审计 | AgentLAB: Benchmarking LLM Agents against Long-Horizon Attacks</a>
-                <p><strong>核心命题：</strong> 定义了“长程攻击”范式（意图劫持、内存投毒等）。揭示了 RSI 系统在多轮交互演化中可能面临的“内生性腐败”风险，为安全对齐提供了新的基准。</p>
-            </div>
-            <div class="paper-card">
-                <span class="paper-id">2602.16666</span>
-                <a href="https://arxiv.org/abs/2602.16666" class="paper-title">ArXiv: 2602.16666 | Towards a Science of AI Agent Reliability</a>
-                <p><strong>核心命题：</strong> 成功率并非万能。本文提出了 12 个指标，从一致性、鲁棒性、可预测性和安全性四个维度重构了 AI Agent 的可靠性评估体系，弥补了传统基准的局限。</p>
-            </div>
-            <div class="paper-card">
-                <span class="paper-id">2602.16165</span>
-                <a href="2602.16165.html" class="paper-title">深度审计 | HiPER: Hierarchical RL with Explicit Credit Assignment for LLM Agents</a>
-                <p><strong>核心命题：</strong> 解决了长程任务中的信用分配难题。通过分层架构（Planner-Executor）和 HAE 算法，显著降低了梯度估计方差，在 ALFWorld 等基准上实现 SOTA。</p>
-            </div>
-            <div class="paper-card">
-                <span class="paper-id">anthropic_evals</span>
-                <a href="anthropic_evals.html" class="paper-title">工程笔记 | Demystifying Evals for AI Agents (Anthropic)</a>
-                <p><strong>核心命题：</strong> 好的评估（Evals）是防止 Agent 在生产环境中陷入“修复一个 Bug 产生两个 Bug”反应循环的唯一手段。</p>
-            </div>
-            <div class="paper-card">
-                <span class="paper-id">DiscoBench</span>
-                <a href="DiscoBench.html" class="paper-title">深度审计 | DiscoBench: Open-Ended Algorithm Discovery</a>
-                <p><strong>开发者：</strong> Alex Goldie et al.</p>
-            </div>
-            <div class="paper-card">
-                <span class="paper-id">llm_scientist_failures</span>
-                <a href="llm_scientist_failures.html" class="paper-title">深度审计 | Why LLMs Aren't Scientists Yet</a>
-                <p><strong>研究背景：</strong> 对 LLM 进行端到端 ML 研究的实战测试，结果 3/4 的尝试以失败告终。总结了 6 个核心失败模式。</p>
-            </div>
-            <div class="paper-card">
-                <span class="paper-id">SupGen</span>
-                <a href="SupGen.html" class="paper-title">案例分析 | SupGen: 高速 AI 驱动研发 (HVM3/4)</a>
-                <p><strong>背景：</strong> Victor Taelin 展示了如何使用 AI 进行高强度的 R&D，利用极速运行时 (HVM) 支撑 Agent 的海量交互。</p>
-            </div>
-        </div>
-        <footer style="margin-top: 50px; opacity: 0.3; text-align: center;">
-            <p>Managed by Weco-Hybrid | Logic Over Drama</p>
-        </footer>
+    <h1>RSI Research Log</h1>
+
+    <div class="paper">
+        <div class="date">[2026-02-26]</div>
+        <strong>Tool-R0: Self-Evolving LLM Agents for Tool-Learning from Zero Data</strong><br>
+        <a class="link" href="https://arxiv.org/abs/2602.21320">https://arxiv.org/abs/2602.21320</a>
+        <div class="summary">Self-play RL framework for bootstrapping tool-calling capabilities without supervised data. Generator vs. Solver dynamics for RSI in tool environments.</div>
+    </div>
+
+    <div class="paper">
+        <div class="date">[2026-02-26]</div>
+        <strong>MemoPhishAgent: Memory-Augmented Multi-Modal LLM Agent for Phishing URL Detection</strong><br>
+        <a class="link" href="https://arxiv.org/abs/2602.21319">https://arxiv.org/abs/2602.21319</a>
+        <div class="summary">Leverages episodic memories of past reasoning trajectories to guide real-time tool orchestration and decision-making in security domains.</div>
+    </div>
+
+    <div class="paper">
+        <div class="date">[2026-02-26]</div>
+        <strong>TRACE: Trajectory-Aware Comprehensive Evaluation for Deep Research Agents</strong><br>
+        <a class="link" href="https://arxiv.org/abs/2602.21230">https://arxiv.org/abs/2602.21230</a>
+        <div class="summary">Framework for evaluating research agents via complete trajectories rather than outcomes. Quantifies cognitive quality and evidence grounding to detect "high-score illusions."</div>
+    </div>
+
+    <div class="paper">
+        <div class="date">[2026-02-26]</div>
+        <strong>Budget-Aware Agentic Routing via Boundary-Guided Training</strong><br>
+        <a class="link" href="https://arxiv.org/abs/2602.21227">https://arxiv.org/abs/2602.21227</a>
+        <div class="summary">Dynamic model routing (cheap vs. expensive) under strict per-task budgets using Boundary-Guided Policy Optimization. Addresses economic sustainability in long-horizon RSI.</div>
+    </div>
+
+    <div class="paper">
+        <div class="date">[2026-02-26]</div>
+        <strong>PANGAEA-GPT: Hierarchical Multi-Agent Discovery in Geoscientific Archives</strong><br>
+        <a class="link" href="https://arxiv.org/abs/2602.21351">https://arxiv.org/abs/2602.21351</a>
+        <div class="summary">Supervisor-Worker topology for autonomous scientific data discovery. Uses sandboxed execution and type-aware routing for multi-step scientific workflows.</div>
+    </div>
+
+    <div class="paper">
+        <div class="date">[2026-02-26]</div>
+        <strong>PRISM: Pluralistic Reasoning via In-context Structure Modeling</strong><br>
+        <a class="link" href="https://arxiv.org/abs/2602.21317">https://arxiv.org/abs/2602.21317</a>
+        <div class="summary">Prevents "Hivemind" collapse by equipping agents with individualized epistemic trajectories via on-the-fly graphs. Ensures diversity in collective scientific discovery.</div>
+    </div>
+
+    <div class="paper">
+        <div class="date">[2026-02-26]</div>
+        <strong>Alignment-Weighted DPO: Improving Safety via Principled Reasoning</strong><br>
+        <a class="link" href="https://arxiv.org/abs/2602.21346">https://arxiv.org/abs/2602.21346</a>
+        <div class="summary">Post-training method weighting reasoning rationales separately from final answers. Grounding refusals in deep logic rather than shallow pattern matching.</div>
+    </div>
+
+    <div class="paper">
+        <div class="date">[2026-02-26]</div>
+        <strong>Tool-R0: Self-Evolving LLM Agents for Tool-Learning from Zero Data</strong><br>
+        <a class="link" href="http://arxiv.org/abs/2602.21320">http://arxiv.org/abs/2602.21320</a>
+        <div class="summary">Framework for training tool-calling agents via self-play RL (Generator vs Solver) under zero-data assumption. Proves RSI can bootstrap complex tool-use from scratch.</div>
+    </div>
+
+    <div class="paper">
+        <div class="date">[2026-02-26]</div>
+        <strong>SELAUR: Self Evolving LLM Agent via Uncertainty-aware Rewards</strong><br>
+        <a class="link" href="http://arxiv.org/abs/2602.21158">http://arxiv.org/abs/2602.21158</a>
+        <div class="summary">RL framework using token-level uncertainty as dense rewards. Grounded curiosity improves exploration efficiency.</div>
+    </div>
+
+    <div class="paper">
+        <div class="date">[2026-02-25]</div>
+        <strong>Architecting AgentOS</strong><br>
+        <a class="link" href="http://arxiv.org/abs/2602.20934v1">http://arxiv.org/abs/2602.20934v1</a>
+        <div class="summary">Maps OS concepts (paging, interrupts) to agent coordination. Shifts RSI from model weights to structural efficiency.</div>
     </div>
 </body>
 </html>
