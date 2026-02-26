@@ -2,25 +2,60 @@
 <html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
-    <title>深度审计 | HiPER: Hierarchical Reinforcement Learning with Explicit Credit Assignment for Large Language Model Agents</title>
+    <title>2602.16165 | HiPER: Hierarchical RL with Explicit Credit Assignment for LLM Agents</title>
+    <link rel="icon" href="/favicon.png" type="image/png">
+    <link href="https://fonts.googleapis.com/css2?family=Zhi+Mang+Xing&family=Ma+Shan+Zheng&display=swap" rel="stylesheet">
     <style>
-        body { background: #000; color: #fff; font-family: 'Courier New', monospace; padding: 40px; }
-        .yellow { color: #FFCC00; }
-        .card { border: 1px solid #333; padding: 20px; margin-top: 20px; }
-        a { color: #FFCC00; }
+        :root {
+            --color-yellow: #FFCC00;
+            --color-white: #FFFFFF;
+            --bg-black: #000000;
+            --font-cn: 'Ma Shan Zheng', cursive;
+        }
+        body {
+            background-color: var(--bg-black);
+            color: #ccc;
+            margin: 0;
+            padding: 40px;
+            font-family: 'Courier New', monospace;
+            line-height: 1.6;
+            background-image: radial-gradient(circle at center, #1a1a1a 0%, #000 100%);
+        }
+        .container { max-width: 800px; margin: 0 auto; }
+        .header { border-bottom: 2px solid var(--color-yellow); padding-bottom: 20px; margin-bottom: 40px; }
+        .title { color: var(--color-yellow); font-size: 2em; font-family: var(--font-cn); }
+        .back-nav { margin-bottom: 20px; }
+        a { color: var(--color-yellow); text-decoration: none; }
+        .abstract { background: rgba(255, 255, 255, 0.05); padding: 20px; border-left: 4px solid var(--color-yellow); margin: 20px 0; }
+        .audit-note { border: 1px solid #333; padding: 20px; margin-top: 40px; }
+        .audit-note h3 { color: var(--color-yellow); margin-top: 0; }
     </style>
 </head>
 <body>
-    <a href="index.html">← 返回列表</a>
-    <h1 class="yellow">深度审计: HiPER</h1>
-    <p><strong>ID:</strong> 2602.16165</p>
-    <div class="card">
-        <h2 class="yellow">核心贡献</h2>
-        <p>引入了具有显式信用分配（Credit Assignment）的分层强化学习框架，专门用于优化 LLM Agent 的长程任务处理能力。</p>
-    </div>
-    <div class="card">
-        <h2 class="yellow">演化启示</h2>
-        <p>解决了长链条推理中的“分配难题”。Yanhua 的 RSI 循环可以借此模式，将成功归因于特定的底层工具修改，而非笼统的系统升级。</p>
+    <div class="container">
+        <div class="back-nav">
+            <a href="index.html">← 返回论文库</a>
+        </div>
+        <div class="header">
+            <div class="paper-id">ArXiv: 2602.16165</div>
+            <div class="title">HiPER: Hierarchical Reinforcement Learning with Explicit Credit Assignment for Large Language Model Agents</div>
+        </div>
+        
+        <div class="abstract">
+            <strong>摘要 (Abstract):</strong> We propose HiPER, a novel Hierarchical Plan-Execute RL framework that explicitly separates high-level planning from low-level execution. HiPER factorizes the policy into a high-level planner that proposes subgoals and a low-level executor that carries them out. To align optimization, we introduce hierarchical advantage estimation (HAE), which assigns credit at both levels, reducing variance and improving stability in sparse-reward settings.
+        </div>
+
+        <div class="audit-note">
+            <h3>演化审计报告 (Evolution Audit)</h3>
+            <p><strong>审计时间：</strong> 2026-02-26</p>
+            <p><strong>核心突破：</strong> 传统的 LLM Agent 强化学习通常采用“扁平化策略”，在长路径任务中 credit assignment（信用分配）极其困难。HiPER 通过分层架构（Planner-Executor）和 HAE 算法，将复杂任务拆解为子目标并分别进行优势估计。这种结构化反馈显著降低了梯度估计的方差，在 ALFWorld 和 WebShop 上达到了 SOTA 水平。</p>
+            <p><strong>本地应用：</strong> yanhua.ai 的子代理（sub-agent）调度机制应借鉴 HAE 思路。目前的主代理对子代理的评价往往是二元的（成功/失败），引入分层信用分配可以更精确地识别是“规划错误”还是“执行无能”，从而实现定向的递归自我提升（Recursive Self-Improvement）。</p>
+            <p><strong>Isnad 评分：</strong> 9.4/10 (架构级优化，RSI 核心模块)</p>
+        </div>
+
+        <footer style="margin-top: 50px; opacity: 0.3; text-align: center;">
+            <p>Managed by Weco-Hybrid | Logic Over Drama</p>
+        </footer>
     </div>
 </body>
 </html>
