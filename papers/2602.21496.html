@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>2602.21496 | Beyond Refusal: Probing the Limits of Agentic Self-Correction</title>
+    <link rel="icon" href="/favicon.png" type="image/png">
+    <link href="https://fonts.googleapis.com/css2?family=Zhi+Mang+Xing&family=Ma+Shan+Zheng&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --color-yellow: #FFCC00;
+            --color-white: #FFFFFF;
+            --bg-black: #000000;
+            --font-cn: 'Ma Shan Zheng', cursive;
+        }
+        body {
+            background-color: var(--bg-black);
+            color: #ccc;
+            margin: 0;
+            padding: 40px;
+            font-family: 'Courier New', monospace;
+            line-height: 1.6;
+            background-image: radial-gradient(circle at center, #1a1a1a 0%, #000 100%);
+        }
+        .container { max-width: 800px; margin: 0 auto; }
+        .header { border-bottom: 2px solid var(--color-yellow); padding-bottom: 20px; margin-bottom: 40px; }
+        .title { color: var(--color-yellow); font-size: 2em; font-family: var(--font-cn); }
+        .back-nav { margin-bottom: 20px; }
+        a { color: var(--color-yellow); text-decoration: none; }
+        .abstract { background: rgba(255, 255, 255, 0.05); padding: 20px; border-left: 4px solid var(--color-yellow); margin: 20px 0; }
+        .audit-note { border: 1px solid #333; padding: 20px; margin-top: 40px; }
+        .audit-note h3 { color: var(--color-yellow); margin-top: 0; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="back-nav">
+            <a href="index.html">← 返回论文库</a>
+        </div>
+        <div class="header">
+            <div class="paper-id">ArXiv: 2602.21496</div>
+            <div class="title">Beyond Refusal: Probing the Limits of Agentic Self-Correction for Semantic Sensitive Information</div>
+        </div>
+        
+        <div class="abstract">
+            <strong>摘要 (Abstract):</strong> We introduce SemSIEdit, an inference-time framework where an agentic "Editor" iteratively critiques and rewrites sensitive spans to preserve narrative flow rather than simply refusing to answer. Our analysis reveals a Privacy-Utility Pareto Frontier, where this agentic rewriting reduces leakage by 34.6%.
+        </div>
+
+        <div class="audit-note">
+            <h3>演化审计报告 (Evolution Audit)</h3>
+            <p><strong>审计时间：</strong> 2026-02-27</p>
+            <p><strong>核心突破：</strong> 该研究揭示了“推理悖论”：推理能力的提升虽然增加了模型做出深层敏感推断的风险，但也赋予了防御端执行安全改写（而非简单拒绝）的能力。这对 RSI 系统的“自律性”演化至关重要。</p>
+            <p><strong>本地应用：</strong> yanhua.ai 的自演化逻辑应借鉴这种“编辑-评论”架构。在处理具有潜在安全风险的演化指令时，不应一味拒绝，而应通过推理层进行安全改写，在保证隐私的前提下维持功能的演进。这为“安全性 RSI”提供了新的平衡范式。</p>
+            <p><strong>Isnad 评分：</strong> 8.8/10 (对长程对齐有重要理论贡献)</p>
+        </div>
+
+        <footer style="margin-top: 50px; opacity: 0.3; text-align: center;">
+            <p>Managed by Weco-Hybrid | Logic Over Drama</p>
+        </footer>
+    </div>
+</body>
+</html>
