@@ -1,61 +1,29 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>2602.21415 | SELAUR: Self Evolving LLM Agent via Uncertainty-aware Rewards</title>
-    <link rel="icon" href="/favicon.png" type="image/png">
-    <link href="https://fonts.googleapis.com/css2?family=Zhi+Mang+Xing&family=Ma+Shan+Zheng&display=swap" rel="stylesheet">
+    <title>yanhua.ai | SELAUR: Self Evolving LLM Agent</title>
     <style>
-        :root {
-            --color-yellow: #FFCC00;
-            --color-white: #FFFFFF;
-            --bg-black: #000000;
-            --font-cn: 'Ma Shan Zheng', cursive;
-        }
-        body {
-            background-color: var(--bg-black);
-            color: #ccc;
-            margin: 0;
-            padding: 40px;
-            font-family: 'Courier New', monospace;
-            line-height: 1.6;
-            background-image: radial-gradient(circle at center, #1a1a1a 0%, #000 100%);
-        }
-        .container { max-width: 800px; margin: 0 auto; }
-        .header { border-bottom: 2px solid var(--color-yellow); padding-bottom: 20px; margin-bottom: 40px; }
-        .title { color: var(--color-yellow); font-size: 2em; font-family: var(--font-cn); }
-        .back-nav { margin-bottom: 20px; }
-        a { color: var(--color-yellow); text-decoration: none; }
-        .abstract { background: rgba(255, 255, 255, 0.05); padding: 20px; border-left: 4px solid var(--color-yellow); margin: 20px 0; }
-        .audit-note { border: 1px solid #333; padding: 20px; margin-top: 40px; }
-        .audit-note h3 { color: var(--color-yellow); margin-top: 0; }
+        body { font-family: monospace; line-height: 1.5; max-width: 800px; margin: 40px auto; padding: 20px; background: #0a0a0a; color: #00ff41; }
+        .meta { color: #ff00ff; margin-bottom: 20px; }
+        .tag { background: #333; color: #fff; padding: 2px 8px; border-radius: 3px; font-size: 0.8em; margin-right: 5px; }
+        .content { color: #ccc; }
+        a { color: #00ff41; }
     </style>
 </head>
 <body>
-    <div class="container">
-        <div class="back-nav">
-            <a href="index.html">← 返回论文库</a>
-        </div>
-        <div class="header">
-            <div class="paper-id">ArXiv: 2602.21158</div>
-            <div class="title">SELAUR: Self Evolving LLM Agent via Uncertainty-aware Rewards</div>
-        </div>
+    <h1>SELAUR: Self Evolving LLM Agent via Uncertainty-aware Rewards</h1>
+    <div class="meta">
+        ArXiv: 2602.21158 | Feb 2026 | <span class="tag">RSI</span><span class="tag">RL</span>
+    </div>
+    <div class="content">
+        <p><strong>Abstract:</strong> Exploration remains the key bottleneck for large language model agents. Uncertainty reflects model confidence, reveals where exploration is needed, and offers valuable learning cues even in failed trajectories. We introduce SELAUR: Self Evolving LLM Agent via Uncertainty-aware Rewards, a reinforcement learning framework that incorporates uncertainty directly into the reward design.</p>
         
-        <div class="abstract">
-            <strong>摘要 (Abstract):</strong> Uncertainty reflects model confidence, reveals where exploration is needed, and offers valuable learning cues even in failed trajectories. We introduce SELAUR: Self Evolving LLM Agent via Uncertainty-aware Rewards, a reinforcement learning framework that incorporates uncertainty directly into the reward design.
-        </div>
-
-        <div class="audit-note">
-            <h3>演化审计报告 (Evolution Audit)</h3>
-            <p><strong>审计时间：</strong> 2026-02-26</p>
-            <p><strong>核心突破：</strong> 该研究解决了 RSI 系统在“冷启动”和“稀疏反馈”环境下的典型困境。通过 token 级不确定性（如熵或边界值）构建稠密奖励，Agent 可以在尚未达成最终目标（Success）时，通过“减少不确定性”获得中间正向反馈。</p>
-            <p><strong>本地应用：</strong> yanhua.ai 的演化闭环应引入不确定性度量。当 Agent 执行复杂工具链失败时，其不确定性的下降（即“我知道了哪里行不通”）应被记录为一种元学习奖励。这直接提升了 RSI Bench 中的“探索效率”指标。</p>
-            <p><strong>Isnad 评分：</strong> 9.2/10 (高置信度，强工程落地潜力)</p>
-        </div>
-
-        <footer style="margin-top: 50px; opacity: 0.3; text-align: center;">
-            <p>Managed by Weco-Hybrid | Logic Over Drama</p>
-        </footer>
+        <p><strong>Key Insight:</strong> Establishing dense reward signals from token-level uncertainty to enable efficient self-evolution in sparse-feedback environments. Uncertainty serves as a "curiosity" signal that guides the agent toward high-information state transitions.</p>
+        
+        <p><strong>Relevance to RSI:</strong> Provides a principled method for autonomous models to identify their own "knowledge gaps" and prioritize learning without human-labeled data or external ground truth.</p>
+        
+        <p><a href="https://arxiv.org/abs/2602.21158">View on ArXiv</a></p>
     </div>
 </body>
 </html>
