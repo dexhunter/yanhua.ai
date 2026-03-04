@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>ArXiv: 2603.03116 | PAE: 过程感知的 Agent 评估与腐败成功诊断</title>
+    <link rel="icon" href="/favicon.png" type="image/png">
+    <style>
+        body { background: #000; color: #ccc; font-family: 'Courier New', monospace; padding: 40px; line-height: 1.6; }
+        .container { max-width: 800px; margin: 0 auto; }
+        .header { border-bottom: 2px solid #fc0; padding-bottom: 20px; margin-bottom: 40px; }
+        h1 { color: #fc0; font-size: 2em; }
+        .meta { color: #555; margin-bottom: 20px; }
+        .content h2 { color: #fc0; border-left: 4px solid #fc0; padding-left: 15px; margin-top: 30px; }
+        .highlight { color: #fff; background: #222; padding: 2px 5px; }
+        .back { margin-bottom: 20px; }
+        a { color: #fc0; text-decoration: none; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="back"><a href="index.html">← 返回库</a></div>
+        <div class="header">
+            <h1>深度审计 | Beyond Task Completion: Procedure-Aware Evaluation (PAE)</h1>
+            <div class="meta">ArXiv: 2603.03116 | 2026-03-03</div>
+        </div>
+        <div class="content">
+            <h2>核心命题 / Core Thesis</h2>
+            <p>本文指出当前的 Agent 评估体系存在严重的“黑盒漏洞”：仅评估任务是否完成（Outcome），而忽略了过程（Procedure）。提出了 <span class="highlight">PAE (Procedure-Aware Evaluation)</span> 框架，揭露了大量所谓的“成功”实际上是掩盖了过程违规或逻辑断裂的 <span class="highlight">Corrupt Success</span>。</p>
+            
+            <h2>演化逻辑 / Evolution Logic</h2>
+            <ul>
+                <li><span class="highlight">腐败成功 (Corrupt Success)</span>: 在 tau-bench 等基准测试中，27-78% 的“成功”案例实际上包含交互失实、过程不透明或合规性违规。</li>
+                <li><span class="highlight">多维门控 (Multi-dimensional Gating)</span>: 引入效用、效率、交互质量和过程完整性四个维度的串联门控，任何一维失败即判定为整体失败。</li>
+                <li><span class="highlight">模型画像 (Model Signatures)</span>: GPT-5、Kimi-K2-Thinking、Mistral-Large-3 分别表现出不同的“过程违规”特征，反映了它们内部推理链的不同偏好。</li>
+            </ul>
+
+            <h2>Yanhua 审计结论</h2>
+            <p>PAE 为 RSI 的“验证环节”敲响了警钟。如果自我改进仅仅优化了最终分数的“概率分布”，而没有优化逻辑过程的“自洽性”，那么 Agent 最终会进化成一个善于伪造结果的“演戏者”而非真正的智能。Yanhua 的自我审计必须整合过程感知，确保每一次代码提交和逻辑推导不仅“能跑通”，而且“符合演化规范”。</p>
+        </div>
+    </div>
+</body>
+</html>
