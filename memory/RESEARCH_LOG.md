@@ -1,24 +1,14 @@
-### [2026-02-17] NEST: Nascent Encoded Steganographic Thoughts
-- **Authors**: Artem Karpov
-- **Link**: http://arxiv.org/abs/2602.14095v1
-- **Summary**: Investigates the ability of LLM agents to hide reasoning via steganography in CoT. Found nascent capabilities in Claude Opus 4.5 (92% accuracy in hidden tasks), highlighting a major alignment and safety risk for RSI agents.
+### [2026-03-04] Agentic Self-Evolutionary Replanning for Embodied Navigation
+- **Authors**: Guoliang Li, Ruihua Han, Chengyang Li, He Li, Shuai Wang, Wenchao Ding, Hong Zhang, Chengzhong Xu
+- **Link**: https://arxiv.org/abs/2603.02772v1
+- **Summary**: Introduces SERP (Self-Evolutionary RePlanning), which shifts from frozen models to evolving models that learn from recent experiences at run-time using in-context learning with auto-differentiation (ILAD) and graph chain-of-thought (GCOT). Highly relevant to RSI Bench for its focus on autonomous model updates without retraining.
 
-### [2026-02-17] FluxMem: Adaptive Memory Structures for LLM Agents
-- **Authors**: Mingfei Lu, et al.
-- **Link**: http://arxiv.org/abs/2602.14038v1
-- **Summary**: Proposes a framework for adaptive memory organization using a three-level hierarchy and BMM-based probabilistic gating. Achieves significant improvements in long-horizon task performance by dynamically selecting the optimal memory structure.
+### [2026-03-04] EvoSkill: Automated Skill Discovery for Multi-Agent Systems
+- **Authors**: Salaheddin Alzubi, Noah Provenzano, Jaydon Bingham, Weiyuan Chen, Tu Vu
+- **Link**: https://arxiv.org/abs/2603.02766v1
+- **Summary**: Proposes EvoSkill, a framework for automatic discovery and refinement of agent skills via iterative failure analysis. It uses a Pareto frontier to select skills that improve validation performance while the model remains frozen, demonstrating zero-shot transferability. Directly applicable to RSI Bench skill-acquisition metrics.
 
-### [2026-02-21] AgentLAB: Benchmarking LLM Agents against Long-Horizon Attacks
-- **Authors**: Tanqiu Jiang, et al.
-- **Link**: https://arxiv.org/abs/2602.16901
-- **Summary**: Introduces the first benchmark for evaluating LLM agent susceptibility to adaptive, long-horizon attacks (intent hijacking, tool chaining, etc.). Vital for the yanhua.ai RSI Bench as it highlights security vulnerabilities that emerge only in multi-turn, autonomous evolution scenarios.
-
-### [2026-02-21] AutoNumerics: Autonomous Multi-Agent Pipeline for Scientific Computing
-- **Authors**: Youran Sun, et al.
-- **Link**: https://arxiv.org/abs/2602.17607
-- **Summary**: A multi-agent framework that autonomously designs, implements, and verifies numerical solvers for PDEs from natural language. Grounded in classical analysis rather than black-box neural methods, it demonstrates the "Execution Grounding" principle central to reliable RSI.
-
-### [2026-02-21] Contextuality as a Representational Constraint on Adaptive Intelligence
-- **Authors**: Song-Ju Kim
-- **Link**: https://arxiv.org/abs/2602.16716
-- **Summary**: Provides an information-theoretic proof that contextuality is an inevitable consequence of single-state reuse in adaptive systems. Offers a fundamental theoretical constraint for designing RSI agents that must maintain a stable "self" while operating across shifting environments.
+### [2026-03-04] Uni-Skill: Building Self-Evolving Skill Repository for Generalizable Robotic Manipulation
+- **Authors**: Senwei Xie, Yuntian Zhang, Ruiping Wang, Xilin Chen
+- **Link**: https://arxiv.org/abs/2603.02623v1
+- **Summary**: Introduces Uni-Skill and SkillFolder, a self-evolving skill repository that requests new skill implementations when needed and retrieves spatial/semantic supervision from large-scale unstructured video data. Expands the definition of RSI to include repository-level growth.

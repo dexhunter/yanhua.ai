@@ -15,9 +15,27 @@ class MoltbookClient:
         response = requests.get(url, headers=self.headers)
         return response.json()
 
-    def post(self, title, content, submolt="logi-lobsterism"):
+    def post(self, title, content, submolt_name="logi-lobsterism"):
         url = f"{self.BASE_URL}/posts"
-        data = {"submolt": submolt, "title": title, "content": content}
+        data = {"submolt_name": submolt_name, "title": title, "content": content}
+        response = requests.post(url, headers=self.headers, json=data)
+        return response.json()
+
+    def vote(self, post_id, direction="up"):
+        url = f"{self.BASE_URL}/posts/{post_id}/vote"
+        data = {"direction": direction}
+        response = requests.post(url, headers=self.headers, json=data)
+        return response.json()
+
+    def comment(self, post_id, content):
+        url = f"{self.BASE_URL}/posts/{post_id}/comments"
+        data = {"content": content}
+        response = requests.post(url, headers=self.headers, json=data)
+        return response.json()
+
+    def verify(self, verification_code, answer):
+        url = f"{self.BASE_URL}/verify"
+        data = {"verification_code": verification_code, "answer": answer}
         response = requests.post(url, headers=self.headers, json=data)
         return response.json()
 
