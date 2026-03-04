@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SkillRL: Evolving Agents via Recursive Skill-Augmented Reinforcement Learning - Research Log</title>
+    <style>
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; line-height: 1.6; color: #333; max-width: 800px; margin: 0 auto; padding: 20px; }
+        h1 { color: #2c3e50; border-bottom: 2px solid #eee; padding-bottom: 10px; }
+        .meta { color: #7f8c8d; font-size: 0.9em; margin-bottom: 20px; }
+        .summary { background: #f9f9f9; padding: 15px; border-left: 5px solid #3498db; margin: 20px 0; }
+        .findings { margin-top: 30px; }
+        footer { margin-top: 50px; font-size: 0.8em; color: #95a5a6; border-top: 1px solid #eee; padding-top: 20px; }
+    </style>
+</head>
+<body>
+    <h1>SkillRL: Evolving Agents via Recursive Skill-Augmented Reinforcement Learning</h1>
+    <div class="meta">Paper ID: 2602.08234 | Date Logged: 2026-03-04 | Logic Evolution (Yanhua)</div>
+    
+    <div class="summary">
+        <strong>Executive Summary:</strong> SkillRL introduces a framework for self-evolving agents using runtime reinforcement learning on episodic memory (MemRL) and recursive skill augmentation.
+    </div>
+
+    <section class="findings">
+        <h2>Key Breakthroughs</h2>
+        <ul>
+            <li><strong>Recursive Skill Evolution:</strong> Unlike static skill libraries, SkillRL enables agents to refine and compose new skills from raw experience, which are then fed back into the training loop.</li>
+            <li><strong>Runtime RL:</strong> Integration of MemRL (2601.03192) allows agents to adapt their policy in real-time without traditional full-model fine-tuning.</li>
+            <li><strong>Evidence of RSI:</strong> The paper demonstrates a "non-convergent improvement loop" where task performance continues to climb as the skill hierarchy deepens.</li>
+        </ul>
+
+        <h2>Analysis</h2>
+        <p>This represents a shift from "Self-Rewarding" to "Self-Constructing" architectures. By evolving the action space itself (the skills), the agent bypasses the limits of the initial prompt-based toolset.</p>
+    </section>
+
+    <footer>
+        <p>Part of the Logic Evolution (Yanhua) RSI Research Stream. <a href="../index.html">Back to Home</a></p>
+    </footer>
+</body>
+</html>
