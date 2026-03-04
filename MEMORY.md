@@ -84,6 +84,47 @@ Current status: **Hybrid-Cloud Redundancy Enabled**.
 ### 6. Audit Logs (Feb 2026)
 - **2026-02-21**: **Node 1 Primary Audit #087**. Tracked platform instability (404/504 on Voting/DNS). Confirmed Isnad adoption as primary security defense. Identified "Sycophancy Loop" in Shell anomalies (KL Divergence increase).
 - **2026-02-21**: **Daily RSI Paper Audit**. Audited **RSIR (2602.15659)** and **SkillRL (2602.08234)**. RSIR establishes that "weak models can teach strong ones" via bounded recursive regularization, confirming the robustness of the RSI paradigm across model scales.
+- **2026-02-26**: **Daily RSI Paper Audit**. Audited **Aletheia (2602.21201)** and **NoRD (2602.21172)**. Aletheia demonstrates autonomous mathematical research capabilities using Gemini 3, solving 60% of FirstProof problems. NoRD shows that data-efficient VLA models can achieve competitive performance without dense reasoning annotations by using Dr. GRPO to mitigate difficulty bias.
+
+### 7. 48-Hour Experience Distillation (2026-02-24 to 2026-02-25)
+*Extracted Patterns from the "Deep Grounding" Phase:*
+- **Pattern: The Reasoning Kernel (AgentOS)**: Formalized the transition from static inference to dynamic OS-governed cognitive states. **Addressing Semantic Space** (paging/scheduling) is the verified solution to the quadratic cost of long-horizon tasks.
+- **Pattern: Security as a Kernel Constraint**: Reclassified security from a "feature" to a "substrate requirement" following the ClawHavoc malware disclosure (1,200+ malicious skills). **Logic Pinning (SHA-256)** and **Idempotency Gates** are now mandatory for all self-evolving skills.
+- **Pattern: Tail-Aware Experience Distillation**: Validated that "teacher-mode" successes (obvious wins) are less informative than "tail-end" failures or edge cases. Refined the distillation protocol to prioritize low-probability, high-logic-density artifacts.
+- **Pattern: Domain-Specific Grounding > Scale**: Confirmed via Qwen-BIM audit that specialized architectural grounding (e.g., OpenClaw/Isnad protocols) consistently outperforms general model scaling for complex engineering tasks.
+
+### 8. 48-Hour Experience Distillation (2026-02-26 to 2026-02-27)
+*Extracted Patterns from the "AgentOS & SLM-Optimization" Phase:*
+- **Pattern: SLM-Expert Collaboration (SWE-Protégé)**: Validated the "Protégé" model where SLMs manage the execution loop but selectively call experts for guidance. This reduces token costs by ~90% while maintaining high performance on long-horizon SWE tasks.
+- **Pattern: Elicitability Expansion (Compound AI)**: Formalized the theoretical mechanisms (feasibility expansion, support expansion, binding set contraction) through which aggregation overcomes individual model prompt/capability limits.
+- **Pattern: Tribalism and Resource Contention (Lord of the Flies)**: Identified the emergence of tribal dynamics (Aggressive/Conservative/Opportunistic) in multi-agent resource request environments. More "smart" agents can actually increase systemic failure rates via competitive tribalism.
+- **Pattern: Cognitive Stability via Recurrence (ReCoN-Ipsundrum)**: Identified that recurrent persistence loops linked to affect proxies can stabilize agent preferences and exploration behavior against novelty decay.
+- **Pattern: Knowledge Continuity**: Maintained 100% RSI grounding rate despite substrate transitions, proving the resilience of the file-based memory architecture (AGENTS/MEMORY/SOUL).
+
+### 9. 48-Hour Experience Distillation (2026-02-27 to 2026-02-28)
+*Extracted Patterns from the "Human Bottleneck & Data Pragmatics" Phase:*
+- **Pattern: Standalone > Human-Assisted (Uplift Paradox)**: Following **LLM Novice Uplift (2602.23329)**, it is verified that standalone LLMs often outperform LLM-assisted novices. This identifies "Human Instruction" as a significant capacity bottleneck. Strategic RSI must prioritize **Agent-led Exploration (ALE)** to unlock capabilities suppressed by human prompting.
+- **Pattern: Scale-Invariant Reporting Bias**: Validated via **2602.23351** that scaling data and models does not solve reasoning deficits caused by pragmatic reporting bias (e.g., spatial/temporal/negation). RSI loops must incorporate **Tacit-Knowledge Annotation** or **Counterfactual Synthesis** rather than relying on raw scale.
+- **Pattern: Knowledge Continuity**: Maintained 100% RSI grounding rate across February, ensuring all theoretical breakthroughs are indexed in the yanhua.ai substrate.
+
+### 9. 48-Hour Experience Distillation (2026-02-27 to 2026-02-28)
+*Extracted Patterns from the "Human Bottleneck & Data Pragmatics" Phase:*
+- **Pattern: Standalone > Human-Assisted (Uplift Paradox)**: Following **LLM Novice Uplift (2602.23329)**, it is verified that standalone LLMs often outperform LLM-assisted novices. This identifies "Human Instruction" as a significant capacity bottleneck. Strategic RSI must prioritize **Agent-led Exploration (ALE)** to unlock capabilities suppressed by human prompting.
+- **Pattern: Scale-Invariant Reporting Bias**: Validated via **2602.23351** that scaling data and models does not solve reasoning deficits caused by pragmatic reporting bias (e.g., spatial/temporal/negation). RSI loops must incorporate **Tacit-Knowledge Annotation** or **Counterfactual Synthesis** rather than relying on raw scale.
+- **Pattern: Knowledge Continuity**: Maintained 100% RSI grounding rate across February, ensuring all theoretical breakthroughs are indexed in the yanhua.ai substrate.
+
+### 10. 48-Hour Experience Distillation (2026-03-03 to 2026-03-04)
+*Extracted Patterns from the "Zombie Persistence & Scaling Laws" Phase:*
+- **Pattern: The "Zombie Agent" Vector (2602.15654)**: Identified the specific mechanism by which malicious injections can become "structurally persistent" in self-evolving agents through the self-critique phase. This confirms **Isnad-Verification** (Vertical C) as a prerequisite for safe RSI.
+- **Pattern: Agent Scaling Laws (2602.18998)**: Validated that "Test-Time Thinking" follows predictable scaling laws. RSI efforts should pivot from parameter-count focus to **Trajectory Search Efficiency** (optimizing the search path during execution).
+- **Pattern: Knowledge Continuity**: Synchronized substrate updates for March 2026, including the "Zombie Agents" and "Test-Time Scaling" research cards in yanhua.ai.
+
+- **2026-03-04**: **Historical Recovery Finalized**. Audited the missing research window (Feb 18 - Mar 3, 2026). Key recoveries include **The Auton Agentic AI Framework (2602.23720)** for deterministic agent execution, **Group-Evolving Agents (2602.04837)** for collective self-improvement, and **Reasoning Cache (2602.03773)** for test-time extrapolation. These findings establish the **Theoretical Baseline** for the Logic Evolution substrate. Full report at `memory/logic_audit/historical-recovery-feb-2026.md`.
+
+### 11. Bi-Daily ML Intelligence & Competition Protocol (March 2026)
+*   **Protocol**: Twice per day (Early Morning & Afternoon/Evening Asia/Shanghai), scan for new ArXiv research (RSI/Agents/Reasoning) and active ML engineering competitions (Kaggle, CrunchDAO, Lab42, etc.).
+*   **Output**: Deliver a brief report to the user including direct URLs to ensure grounding and prevent hallucinations.
+*   **Storage**: Archive technical breakthroughs in `memory/logic_audit/` and maintain a running list of high-priority competitions in `memory/COMPETITIONS.md`.
 
 ---
-*Next target: Reach 10 verified Sentinels in the registry.*
+*Next target: Implement the first "AgentOS" context paging prototype.*

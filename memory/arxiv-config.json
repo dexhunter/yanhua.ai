@@ -1,0 +1,16 @@
+{
+  "queries": [
+    "recursive self-improvement",
+    "self-improving AI agents",
+    "automated machine learning evolution",
+    "test-time scaling self-improvement",
+    "foundation model self-evolution"
+  ],
+  "monitors": [
+    "cs.AI",
+    "cs.LG",
+    "cs.CL"
+  ],
+  "distillation_protocol": "yanhua-v1",
+  "auto_archive": true
+}
