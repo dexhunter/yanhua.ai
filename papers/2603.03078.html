@@ -2,28 +2,36 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>yanhua.ai | RAPO: Expanding Exploration for LLM Agents</title>
+    <title>2603.03078 - RAPO Summary</title>
     <style>
-        body { font-family: monospace; line-height: 1.5; max-width: 800px; margin: 40px auto; padding: 20px; background: #0a0a0a; color: #00ff41; }
-        .meta { color: #ff00ff; margin-bottom: 20px; }
-        .tag { background: #333; color: #fff; padding: 2px 8px; border-radius: 3px; font-size: 0.8em; margin-right: 5px; }
-        .content { color: #ccc; }
-        a { color: #00ff41; }
+        body { font-family: sans-serif; line-height: 1.6; max-width: 800px; margin: 40px auto; padding: 0 20px; color: #333; }
+        .meta { color: #666; margin-bottom: 20px; border-bottom: 1px solid #eee; padding-bottom: 10px; }
+        .abstract { background: #f9f9f9; padding: 15px; border-radius: 5px; margin: 20px 0; }
+        .impact { border-left: 4px solid #28a745; padding-left: 15px; margin: 20px 0; }
     </style>
 </head>
 <body>
-    <h1>RAPO: Expanding Exploration for LLM Agents via Retrieval-Augmented Policy Optimization</h1>
+    <h1>Expanding Exploration for LLM Agents via Retrieval-Augmented Policy Optimization</h1>
     <div class="meta">
-        ArXiv: 2603.03078 | March 2026 | <span class="tag">LLM Agents</span><span class="tag">Reinforcement Learning</span><span class="tag">Retrieval</span>
+        <p><strong>ArXiv ID:</strong> 2603.03078</p>
+        <p><strong>Date:</strong> March 3, 2026</p>
+        <p><strong>Authors:</strong> Siwei Zhang, et al.</p>
     </div>
-    <div class="content">
-        <p><strong>Abstract:</strong> Existing Agentic RL methods often rely on a pure on-policy paradigm, which restricts exploration to the agent's self-generated outputs and prevents discovering new reasoning perspectives. This paper proposes <strong>Retrieval-Augmented Policy Optimization (RAPO)</strong>, a framework that introduces retrieval to explicitly expand exploration during training.</p>
-        
-        <p><strong>Key Insight:</strong> By allowing agents to reason over retrieved off-policy step-level traces (Hybrid-policy Agentic Rollout) and calibrating policy gradients with retrieval rewards (Retrieval-aware Policy Optimization), RAPO achieves a +5.0% average gain and 1.2x faster training efficiency across fourteen datasets.</p>
-        
-        <p><strong>Relevance to RSI:</strong> Directly addresses the "closed-loop exploration" problem in Recursive Self-Improvement. Instead of just iterating on its own potentially flawed logic, an RSI system using RAPO can "look up" successful external reasoning trajectories to jump-start capability growth, breaking the local optima bottleneck.</p>
-        
-        <p><a href="https://arxiv.org/abs/2603.03078">View on ArXiv</a></p>
+
+    <div class="abstract">
+        <strong>Abstract:</strong> Retrieval-Augmented Policy Optimization (RAPO) is an RL framework that introduces retrieval to explicitly expand exploration during training. It allows agents to reason over retrieved off-policy step-level traces, extending the reasoning receptive field and enabling broader exploration conditioned on external behaviors.
     </div>
+
+    <div class="impact">
+        <strong>RSI Bench Relevance:</strong>
+        <ul>
+            <li><strong>Exploration Strategy:</strong> Solves the "Closed-Loop Trap" (where agents only learn from their own limited outputs) by injecting external reasoning perspectives.</li>
+            <li><strong>Efficiency:</strong> Achieves 1.2x faster training efficiency, a key metric for recursive systems.</li>
+            <li><strong>Stability:</strong> Uses retrieval-aware policy optimization to stabilize training during multi-step reasoning evolution.</li>
+        </ul>
+    </div>
+
+    <p><a href="https://arxiv.org/abs/2603.03078v1">View Original on ArXiv</a></p>
+    <p><a href="index.html">Back to Paper Index</a></p>
 </body>
 </html>
