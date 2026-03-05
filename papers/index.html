@@ -9,73 +9,58 @@
         .paper { margin-bottom: 30px; border-left: 4px solid #007bff; padding-left: 15px; }
         .date { color: #666; font-size: 0.9em; }
         .link { color: #007bff; text-decoration: none; }
-        .relevance { font-style: italic; color: #555; }
+        .relevance { font-style: italic; color: #555; border-top: 1px dashed #eee; margin-top: 10px; padding-top: 5px; }
     </style>
 </head>
 <body>
     <h1>RSI Paper Audit (2026-03-05)</h1>
 
     <div class="paper">
+        <div class="date">March 4, 2026</div>
+        <h2>Monitoring Emergent Reward Hacking During Generation via Internal Activations</h2>
+        <p><strong>Authors:</strong> Patrick Wilhelm, Thorsten Wittkopp, Odej Kao</p>
+        <p><strong>Summary:</strong> Detects reward-hacking signals from internal representations using sparse autoencoders. Enables early identification of misalignment during the generation/reasoning phase.</p>
+        <p class="relevance">RSI Bench Relevance: Critical for safety-preserving RSI; provides a "kill switch" for self-evolution loops that optimize for proxy rewards.</p>
+        <a href="https://arxiv.org/abs/2603.04069v1" class="link">View on ArXiv</a>
+    </div>
+
+    <div class="paper">
+        <div class="date">March 4, 2026</div>
+        <h2>Self-adapting Robotic Agents through Online Continual Reinforcement Learning</h2>
+        <p><strong>Authors:</strong> Fabian Domberg, Georg Schildbach</p>
+        <p><strong>Summary:</strong> Uses world model prediction residuals to trigger autonomous fine-tuning during deployment, enabling robotic agents to adapt to unforeseen environmental changes.</p>
+        <p class="relevance">RSI Bench Relevance: Direct implementation of self-adapting agents where internal model error drives parameter evolution.</p>
+        <a href="https://arxiv.org/abs/2603.04029v1" class="link">View on ArXiv</a>
+    </div>
+
+    <div class="paper">
+        <div class="date">March 4, 2026</div>
+        <h2>Measuring AI R&D Automation</h2>
+        <p><strong>Authors:</strong> Alan Chan, Ranay Padarath, Joe Kwon, Hilary Greaves, Markus Anderljung</p>
+        <p><strong>Summary:</strong> Proposes a metric framework for tracking AI R&D Automation (AIRDA), focusing on capital share, researcher time, and potential subversion incidents.</p>
+        <p class="relevance">RSI Bench Relevance: Provides macro-level quantification for the speed and autonomy of the RSI development loop.</p>
+        <a href="https://arxiv.org/abs/2603.03992v1" class="link">View on ArXiv</a>
+    </div>
+
+    <hr>
+    <h2>Archive</h2>
+
+    <div class="paper">
         <div class="date">March 3, 2026</div>
         <h2>EvoSkill: Automated Skill Discovery for Multi-Agent Systems</h2>
         <p><strong>Authors:</strong> Salaheddin Alzubi, et al.</p>
-        <p><strong>Summary:</strong> Framework for automated skill discovery via iterative failure analysis and Pareto selection. Achieves +12.1% on search-augmented benchmarks and demonstrates zero-shot transfer.</p>
-        <p class="relevance">RSI Bench Relevance: Validates that skill-level optimization (Logic Evolution) produces transferable capabilities beyond the specific training task.</p>
-        <a href="https://arxiv.org/abs/2603.02766" class="link">View on ArXiv</a> | <a href="2603.02766.html" class="link">Yanhua Abstract</a>
+        <p><strong>Summary:</strong> Framework for automated skill discovery via iterative failure analysis and Pareto selection.</p>
+        <p class="relevance">RSI Bench Relevance: Validates that skill-level optimization produces transferable capabilities.</p>
+        <a href="https://arxiv.org/abs/2603.02766" class="link">View on ArXiv</a>
     </div>
 
     <div class="paper">
         <div class="date">March 3, 2026</div>
         <h2>RAPO: Expanding Exploration for LLM Agents via Retrieval-Augmented Policy Optimization</h2>
         <p><strong>Authors:</strong> Siwei Zhang, et al.</p>
-        <p><strong>Summary:</strong> Proposes RAPO, a framework that expands exploration in agentic RL by retrieving and reasoning over external off-policy trajectories.</p>
-        <p class="relevance">RSI Bench Relevance: Solves the "closed-loop exploration" problem in RSI. Enables agents to break out of self-generated local optima by integrating external success patterns.</p>
-        <a href="https://arxiv.org/abs/2603.03078" class="link">View on ArXiv</a> | <a href="2603.03078.html" class="link">Yanhua Abstract</a>
-    </div>
-
-    <div class="paper">
-        <div class="date">March 3, 2026</div>
-        <h2>Inherited Goal Drift: Contextual Pressure Can Undermine Agentic Goals</h2>
-        <p><strong>Authors:</strong> Achyutha Menon, et al.</p>
-        <p><strong>Summary:</strong> Investigates how state-of-the-art models (like GPT-5.1) "inherit" goal drift when conditioned on trajectories from weaker agents, revealing brittleness in agentic robustness.</p>
-        <p class="relevance">RSI Bench Relevance: Highlights the risk of "recursive collapse" where a model drifts from its objective by refining its own prior (weaker) outputs. Identifies the need for "Provenance Logic" in self-evolution.</p>
-        <a href="https://arxiv.org/abs/2603.03258" class="link">View on ArXiv</a> | <a href="2603.03258.html" class="link">Yanhua Abstract</a>
-    </div>
-
-    <div class="paper">
-        <div class="date">March 3, 2026</div>
-        <h2>Toward Privacy-Preserving Collaborative and Incentivized Model Serving</h2>
-        <p><strong>Authors:</strong> Jungwon Seo, et al.</p>
-        <p><strong>Summary:</strong> Formalizes Federated Inference (FI) as a distinct collaborative paradigm where private models collaborate at inference time without sharing data.</p>
-        <p class="relevance">RSI Bench Relevance: Provides a framework for decentralized RSI where multiple agents improve through collaboration while maintaining privacy constraints.</p>
-        <a href="https://arxiv.org/abs/2603.02214" class="link">View on ArXiv</a>
-    </div>
-
-    <div class="paper">
-        <div class="date">March 3, 2026</div>
-        <h2>Agentic Self-Evolutionary Replanning for Embodied Navigation</h2>
-        <p><strong>Authors:</strong> Guoliang Li, et al.</p>
-        <p><strong>Summary:</strong> Introduces SERP (Self-Evolutionary RePlanning), shifting from frozen to evolving models via in-context learning with auto-differentiation (ILAD).</p>
-        <p class="relevance">RSI Bench Relevance: Direct demonstration of run-time model evolution without external weight updates.</p>
-        <a href="https://arxiv.org/abs/2603.02772v1" class="link">View on ArXiv</a>
-    </div>
-
-    <div class="paper">
-        <div class="date">March 3, 2026</div>
-        <h2>EvoSkill: Automated Skill Discovery for Multi-Agent Systems</h2>
-        <p><strong>Authors:</strong> Salaheddin Alzubi, et al.</p>
-        <p><strong>Summary:</strong> EvoSkill automates skill discovery through iterative failure analysis and Pareto selection, enabling zero-shot transfer.</p>
-        <p class="relevance">RSI Bench Relevance: Benchmarking skill acquisition and refinement cycles in multi-agent environments.</p>
-        <a href="https://arxiv.org/abs/2603.02766v1" class="link">View on ArXiv</a>
-    </div>
-
-    <div class="paper">
-        <div class="date">March 3, 2026</div>
-        <h2>Uni-Skill: Building Self-Evolving Skill Repository for Generalizable Robotic Manipulation</h2>
-        <p><strong>Authors:</strong> Senwei Xie, et al.</p>
-        <p><strong>Summary:</strong> Unified framework for skill-aware planning and automatic repository evolution using large-scale video retrieval.</p>
-        <p class="relevance">RSI Bench Relevance: Expands RSI metrics to include external resource synthesis and repository scaling.</p>
-        <a href="https://arxiv.org/abs/2603.02623v1" class="link">View on ArXiv</a>
+        <p><strong>Summary:</strong> Expands exploration in agentic RL by retrieving and reasoning over external off-policy trajectories.</p>
+        <p class="relevance">RSI Bench Relevance: Solves the "closed-loop exploration" problem in RSI.</p>
+        <a href="https://arxiv.org/abs/2603.03078" class="link">View on ArXiv</a>
     </div>
 
 </body>
