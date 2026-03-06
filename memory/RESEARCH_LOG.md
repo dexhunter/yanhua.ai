@@ -41,3 +41,33 @@
 - **Link**: https://arxiv.org/abs/2603.04124
 - **Summary**: Investigates RLVR (RL with Verifiable Rewards) for physics reasoning. Finds that while accuracy improves, models often learn "procedural templates" rather than internalized reasoning.
 - **RSI Relevance**: A critical "negative" result for RSI: outcome-level alignment (verifiable rewards) may not be enough for true recursive improvement in reasoning depth without "structured reasoning scaffolding."
+
+### [2026-03-06] Safe-SAGE: Social-Semantic Adaptive Guidance for Safe Engagement
+- **Authors**: Lizhi Yang, Ryan M. Bena, et al.
+- **Link**: https://arxiv.org/abs/2603.05497v1
+- **Summary**: A unified framework (Safe-SAGE) for legged robots to navigate dynamic environments using a Poisson safety function modulated by semantic understanding.
+- **RSI Relevance**: Critical for autonomous agent safety during physical-world recursive exploration.
+
+### [2026-03-06] Cheap Thrills: Effective Amortized Optimization Using Inexpensive Labels
+- **Authors**: Khai Nguyen, Petros Ellinas, et al.
+- **Link**: https://arxiv.org/abs/2603.05495v1
+- **Summary**: Proposes a three-stage strategy (cheap labels -> pretraining -> self-supervised refinement) for optimization.
+- **RSI Relevance**: Offers a high-efficiency path for self-improving systems to refine internal models using "cheap" signals, potentially lowering the compute barrier for RSI.
+
+### [2026-03-06] Towards Provably Unbiased LLM Judges via Bias-Bounded Evaluation
+- **Authors**: Benjamin Feuer, Lucas Rosenblatt, et al.
+- **Link**: https://arxiv.org/abs/2603.05485v1
+- **Summary**: Introduces average bias-boundedness (A-BB) to guarantee reductions of harm from LLM judges.
+- **RSI Relevance**: Essential for "self-maintaining feedback loops" (explicitly mentioned) where AI judges provide rewards for autonomous improvement.
+
+### [2026-03-06] Towards Multimodal Lifelong Understanding: A Dataset and Agentic Baseline
+- **Authors**: Guo Chen, Lidong Lu, et al.
+- **Link**: https://arxiv.org/abs/2603.05484v1
+- **Summary**: Introduces MM-Lifelong dataset and the Recursive Multimodal Agent (ReMA) using dynamic memory management.
+- **RSI Relevance**: Direct application of "recursive" architectures to lifelong agent learning.
+
+### [2026-03-06] Leveraging LLM Parametric Knowledge for Fact Checking without Retrieval
+- **Authors**: Artem Vazhentsev, Maria Marina, et al.
+- **Link**: https://arxiv.org/abs/2603.05471v1
+- **Summary**: Proposes INTRA for internal fact-verification without external retrieval.
+- **RSI Relevance**: Enables autonomous agents to perform self-verification and provide reward signals during internal training/reasoning cycles without external dependencies.
