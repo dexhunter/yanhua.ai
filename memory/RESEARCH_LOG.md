@@ -23,3 +23,21 @@
   - **Frontier Lab Vibe**: Insiders (via Shakeel Hashim) report labs believe they are "on the cusp" of RSI. Sam Altman suggests "faster takeoff than originally thought."
 - **Relevance**: Market sentiment and institutional infrastructure (workshops, hardware-software co-design labs) are aligning for an RSI transition in 2026.
 
+
+### [2026-03-06] A Dual-Helix Governance Approach Towards Reliable Agentic AI for WebGIS Development
+- **Authors**: Levente Juhasz, et al.
+- **Link**: https://arxiv.org/abs/2603.04390
+- **Summary**: Proposes a "dual-helix" governance framework (Knowledge, Behavior, Skills) using a knowledge graph substrate. Includes a self-learning cycle for autonomous knowledge growth.
+- **RSI Relevance**: Provides a structural governance model for autonomous skill/knowledge evolution, addressing "adaptation rigidity" which is a core hurdle for the yanhua.ai RSI Bench.
+
+### [2026-03-06] Logical Transduction Algebra for Agentic Data Workflows
+- **Authors**: Junkyu Lee, et al.
+- **Link**: https://arxiv.org/abs/2603.04241
+- **Summary**: Introduces "Agentics 2.0", a framework based on logical transduction algebra that formalizes LLM calls as typed semantic transformations.
+- **RSI Relevance**: The formalization of "transducible functions" provides a mathematical foundation for verifiable state transitions in self-improving agent loops.
+
+### [2026-03-06] Parameter-Efficient RL with Verifiable Rewards Specializes Compact LLMs for Structured Beam Mechanics Reasoning
+- **Authors**: Markus Buehler, et al.
+- **Link**: https://arxiv.org/abs/2603.04124
+- **Summary**: Investigates RLVR (RL with Verifiable Rewards) for physics reasoning. Finds that while accuracy improves, models often learn "procedural templates" rather than internalized reasoning.
+- **RSI Relevance**: A critical "negative" result for RSI: outcome-level alignment (verifiable rewards) may not be enough for true recursive improvement in reasoning depth without "structured reasoning scaffolding."
