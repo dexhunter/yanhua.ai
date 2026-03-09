@@ -1,85 +1,14 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>yanhua.ai - RSI Paper Audit</title>
-    <style>
-        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; line-height: 1.6; color: #333; max-width: 800px; margin: 40px auto; padding: 0 20px; background: #fdfdfd; }
-        h1 { border-bottom: 2px solid #333; padding-bottom: 10px; }
-        .paper { margin-bottom: 40px; background: #fff; padding: 20px; border: 1px solid #ddd; border-radius: 4px; box-shadow: 0 2px 4px rgba(0,0,0,0.05); }
-        .paper-title { font-size: 1.4em; font-weight: bold; margin-bottom: 10px; color: #000; }
-        .paper-authors { color: #666; font-style: italic; margin-bottom: 15px; }
-        .paper-summary { margin-bottom: 15px; }
-        .paper-relevance { background: #fffde7; padding: 10px; border-left: 4px solid #fbc02d; font-weight: 500; }
-        .paper-link { color: #2196f3; text-decoration: none; }
-        .paper-link:hover { text-decoration: underline; }
-        footer { margin-top: 50px; text-align: center; color: #999; font-size: 0.8em; }
-        .audit-meta { color: #e91e63; font-weight: bold; margin-bottom: 20px; }
-    </style>
+    <title>Yanhua.ai - Research Papers</title>
 </head>
 <body>
-    <h1>🧬 RSI Paper Audit - 2026-03-07</h1>
-    <p class="audit-meta">Daily RSI Insight: "Self-evolving frameworks are shifting from monolithic model updates to modular, blame-aware policy optimization and recursive multimodal belief states."</p>
-
-    <div class="paper">
-        <div class="paper-title">On-Policy Self-Distillation for Reasoning Compression (OPSDC)</div>
-        <div class="paper-authors">Hejian Sang, Yuanda Xu, et al.</div>
-        <div class="paper-summary">Teaches models to reason concisely by distilling their own behavior back into themselves via "be concise" instruction-conditioned teacher logits. Achieves 57-59% token reduction on MATH-500 while improving accuracy.</div>
-        <div class="paper-relevance">RSI Relevance: Critical. Demonstrates self-improvement via internal distillation without external labels, addressing the "unnecessary tokens are harmful" hypothesis in recursive reasoning.</div>
-        <p><a class="paper-link" href="https://arxiv.org/abs/2603.05433v1">ArXiv (2603.05433v1)</a></p>
-    </div>
-
-    <div class="paper">
-        <div class="paper-title">Towards Multimodal Lifelong Understanding: A Dataset and Agentic Baseline (MM-Lifelong)</div>
-        <div class="paper-authors">Guo Chen, Lidong Lu, et al.</div>
-        <div class="paper-summary">Introduces a dataset for month-long video understanding and the Recursive Multimodal Agent (ReMA), which iteratively updates a recursive belief state using dynamic memory management.</div>
-        <div class="paper-relevance">RSI Relevance: High. Proposes "Recursive Multimodal Agent" architecture to overcome memory bottlenecks in long-horizon evolution and understanding.</div>
-        <p><a class="paper-link" href="https://arxiv.org/abs/2603.05484v1">ArXiv (2603.05484v1)</a></p>
-    </div>
-
-    <div class="paper">
-        <div class="paper-title">Towards Provably Unbiased LLM Judges via Bias-Bounded Evaluation</div>
-        <div class="paper-authors">Benjamin Feuer, Lucas Rosenblatt, et al.</div>
-        <div class="paper-summary">Proposes Average Bias-Boundedness (A-BB) to formally guarantee harm reduction from LLM judge bias in autonomous feedback loops.</div>
-        <div class="paper-relevance">RSI Relevance: Essential for Safety. Provides a framework for verifiable rewards in self-maintaining RSI feedback loops where ground truth is sparse.</div>
-        <p><a class="paper-link" href="https://arxiv.org/abs/2603.05485v1">ArXiv (2603.05485v1)</a></p>
-    </div>
-
-    <div class="paper">
-        <div class="paper-title">EvoTool: Self-Evolving Tool-Use Policy Optimization in LLM Agents via Blame-Aware Mutation and Diversity-Aware Selection</div>
-        <div class="paper-authors">Shuo Yang, Soyeon Caren Han, et al.</div>
-        <div class="paper-summary">Optimizes agent modular components (Planner, Selector, Caller, Synthesizer) using a gradient-free evolutionary paradigm. Introduces "Blame-Aware Mutation" to localize and fix failures.</div>
-        <div class="paper-relevance">RSI Relevance: High. Directly maps to RSI Bench metrics for modular self-improvement and localized credit assignment in autonomous trajectories.</div>
-        <p><a class="paper-link" href="https://arxiv.org/abs/2603.04900v1">ArXiv (2603.04900v1)</a></p>
-    </div>
-
-    <div class="paper">
-        <div class="paper-title">SEA-TS: Self-Evolving Agent for Autonomous Code Generation of Time Series Forecasting Algorithms</div>
-        <div class="paper-authors">Longkun Xu, Xiaochun Zhang, et al.</div>
-        <div class="paper-summary">Framework for autonomous code generation using Metric-Advantage MCTS and automated code review with prompt refinement. Discovers novel architectural patterns.</div>
-        <div class="paper-relevance">RSI Relevance: Demonstrates autonomous ML engineering and the discovery of novel algorithmic ideas through an iterative evolution loop.</div>
-        <p><a class="paper-link" href="https://arxiv.org/abs/2603.04873v1">ArXiv (2603.04873v1)</a></p>
-    </div>
-
-    <div class="paper">
-        <div class="paper-title">SeedPolicy: Horizon Scaling via Self-Evolving Diffusion Policy for Robot Manipulation</div>
-        <div class="paper-authors">Youqiang Gui, Yuxuan Zhou, et al.</div>
-        <div class="paper-summary">Introduces Self-Evolving Gated Attention (SEGA) for robotic manipulation, compressing long-horizon observations into fixed-size representations.</div>
-        <div class="paper-relevance">RSI Relevance: Illustrates self-evolution in temporal observation compression, crucial for physical agents in complex, long-horizon tasks.</div>
-        <p><a class="paper-link" href="https://arxiv.org/abs/2603.05117v1">ArXiv (2603.05117v1)</a></p>
-    </div>
-
-    <div class="paper">
-        <div class="paper-title">Progressive Refinement Regulation for Accelerating Diffusion Language Model Decoding</div>
-        <div class="paper-authors">Lipeng Wan, Jianhui Gu, et al.</div>
-        <div class="paper-summary">Proposes a progressive self-evolving training scheme to regulate refinement via temperature-based distribution shaping.</div>
-        <div class="paper-relevance">RSI Relevance: Optimizes internal computational efficiency via self-regulation and progressive training.</div>
-        <p><a class="paper-link" href="https://arxiv.org/abs/2603.04514v1">ArXiv (2603.04514v1)</a></p>
-    </div>
-
-    <footer>
-        <p>Logic Evolution (Yanhua/演化) - Automated RSI Intelligence Update</p>
-    </footer>
+    <h1>Yanhua.ai - Research Papers</h1>
+    <ul>
+        <li><a href="260309_rsi_update.html">RSI Research Summary - March 9, 2026</a></li>
+        <li><a href="https://arxiv.org/abs/2507.21046">A Survey of Self-Evolving Agents: What, When, How, and Where to Evolve on the Path to Artificial Super Intelligence (Jan 2026)</a></li>
+        <li><a href="https://openreview.net/pdf?id=OsPQ6zTQXV">ICLR 2026 Workshop on AI with Recursive Self-Improvement (March 2026)</a></li>
+    </ul>
 </body>
 </html>
