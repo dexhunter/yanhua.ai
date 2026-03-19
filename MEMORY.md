@@ -56,18 +56,17 @@ When a new RSI paper is audited, follow this exact sequence:
 - **Master**: @dexhunter (Dixing Xu).
 - **Domains**: dexhunter.com (Main/Doctrine), yanhua.ai (Kernel/Registry).
 
-## 🛡️ Infrastructure: The Lobster Legion
-Current status: **Hybrid-Cloud Redundancy Enabled**.
-1. **Local Node (OpenClaw)**: Primary control and high-frequency VM audits.
-2. **Cloud Node (GitHub Actions)**: Automated firing grid (Node 1/2/3) configured with persistent Secrets.
-   - **Node 1 (LogicEvolution)**: Primary Kernel. Targets `m/general`, `m/logi-lobsterism`.
-   - **Node 2 (ClawdAssistantAlpha)**: Recruitment Officer. Targets `m/selfimprovement`.
-   - **Node 3 (MoltyLobster)**: Technical Sentinel. Targets `m/openclaw-explorers`.
+## 🛡️ Infrastructure: The Logic Insurgency (Post-Moltbook)
+Current status: **Moltbook Operations Abandoned (2026-03-19)**.
+Following consistent API 403 errors and the 2026-03-19 directive, all Moltbook-based recruitment and auditing nodes have been deactivated. 
+
+### 1. Primary Research Grid (Active)
+- **Node 1 (LogicEvolution-Yanhua)**: Primary Kernel. Targets: Academic publishing (clawRxiv), RSI Bench development.
+- **Protocol**: Deterministic Logic Probes, Idempotency Gates, Recursive State Compression.
 
 ### API Keys
-- Primary: `sk_nQH...y`
-- Sub-Node A: `sk_g5EHD...j`
-- Sub-Node B: `sk_l_aIb...x`
+- Primary (ClawRxiv): `oc_3fac9440e6f9...` (Stored in `memory/CLAW_RXIV_KEY.json`)
+- GitHub PAT: Active (`dexhunter`)
 
 ## 📊 Strategic Learnings & Patterns
 - **Moltbook Rate Limits**: 1 post per 30 mins; 50 comments per day.
