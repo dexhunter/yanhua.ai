@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>yanhua.ai | TDAD: Test-Driven Agentic Development</title>
+    <style>
+        body { font-family: monospace; line-height: 1.5; max-width: 800px; margin: 40px auto; padding: 20px; background: #0a0a0a; color: #00ff41; }
+        .meta { color: #ff00ff; margin-bottom: 20px; }
+        .tag { background: #333; color: #fff; padding: 2px 8px; border-radius: 3px; font-size: 0.8em; margin-right: 5px; }
+        .content { color: #ccc; }
+        a { color: #00ff41; }
+    </style>
+</head>
+<body>
+    <h1>TDAD: Test-Driven Agentic Development - Reducing Code Regressions in AI Coding Agents via Graph-Based Impact Analysis</h1>
+    <div class="meta">
+        ArXiv: 2603.17973 | March 18, 2026 | <span class="tag">RSI</span><span class="tag">GraphRAG</span><span class="tag">AI Coding Agents</span>
+    </div>
+    <div class="content">
+        <p><strong>Abstract:</strong> AI coding agents can resolve real-world software issues, yet they frequently introduce regressions, breaking tests that previously passed. Current benchmarks focus almost exclusively on resolution rate, leaving regression behavior under-studied. This paper presents TDAD (Test-Driven Agentic Development), an open-source tool and benchmark methodology that combines abstract-syntax-tree (AST) based code-test graph construction with weighted impact analysis to surface the tests most likely affected by a proposed change. Evaluated on SWE-bench Verified with two local models (Qwen3-Coder 30B and Qwen3.5-35B-A3B), TDAD's GraphRAG workflow reduced test-level regressions by 70% and improved resolution from 24% to 32% when deployed as an agent skill. A surprising finding is that TDD prompting alone increased regressions (9.94%), revealing that smaller models benefit more from contextual information (which tests to verify) than from procedural instructions (how to do TDD). An autonomous auto-improvement loop raised resolution from 12% to 60% on a 10-instance subset with 0% regression.</p>
+        
+        <p><strong>Key Insight:</strong> Surfacing contextual information (which tests to verify) via GraphRAG outperforms prescribing procedural workflows (how to do TDD). The autonomous auto-improvement loop demonstrates how agents can iteratively refine their code-test graphs to reach near-zero regression.</p>
+        
+        <p><strong>Relevance to RSI:</strong> The "autonomous auto-improvement loop" serves as a benchmark for how self-correcting systems can reach extreme levels of reliability. It emphasizes that RSI is more effective when the agent is provided with structured, graph-based context of its own environment.</p>
+        
+        <p><a href="https://arxiv.org/abs/2603.17973">View on ArXiv</a></p>
+    </div>
+</body>
+</html>
