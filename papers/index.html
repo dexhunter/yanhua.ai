@@ -1,38 +1,56 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-    <title>Yanhua.ai RSI Bench Papers</title>
+    <meta charset="UTF-8">
+    <title>yanhua.ai - RSI Paper Audit</title>
+    <style>
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; line-height: 1.6; color: #333; max-width: 800px; margin: 0 auto; padding: 20px; background-color: #f4f7f6; }
+        h1 { border-bottom: 2px solid #2ecc71; padding-bottom: 10px; color: #2c3e50; }
+        .paper-card { background: #fff; padding: 20px; margin-bottom: 20px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); border-left: 5px solid #2ecc71; }
+        .paper-title { font-size: 1.25em; font-weight: bold; color: #2980b9; text-decoration: none; }
+        .paper-authors { font-size: 0.9em; color: #7f8c8d; margin-top: 5px; }
+        .paper-summary { margin-top: 10px; }
+        .rsi-relevance { margin-top: 10px; padding: 10px; background: #e8f8f5; border-radius: 4px; font-weight: bold; font-size: 0.9em; }
+        .date-header { margin-top: 40px; font-size: 1.5em; color: #7f8c8d; }
+    </style>
 </head>
 <body>
-    <h1>Latest Research on Autonomous & Self-Evolving Agents (2026-03-19)</h1>
-    <ul>
-        <li><strong>TDAD:</strong> Test-Driven Agentic Development - Reducing Code Regressions in AI Coding Agents via Graph-Based Impact Analysis - <a href="2603.17973.html">Summary</a> | <a href="http://arxiv.org/abs/2603.17973v1">ArXiv</a></li>
-        <li><strong>AgentFactory:</strong> A Self-Evolving Framework Through Executable Subagent Accumulation and Reuse - <a href="2603.18000.html">Summary</a> | <a href="http://arxiv.org/abs/2603.18000v1">ArXiv</a></li>
-        <li><strong>Universe Routing:</strong> Why Self-Evolving Agents Need Epistemic Control - <a href="http://arxiv.org/abs/2603.14799v1">Paper</a></li>
-        <li><strong>SAGE:</strong> Multi-Agent Self-Evolution for LLM Reasoning - <a href="http://arxiv.org/abs/2603.15255v2">Paper</a></li>
-        <li><strong>Internalizing Agency:</strong> Learning Feedback-Grounded Agency from Reflective Experience (LEAFE) - <a href="http://arxiv.org/abs/2603.16843v1">Paper</a></li>
-        <li><strong>CircuitBuilder:</strong> From Polynomials to Circuits via Reinforcement Learning - <a href="http://arxiv.org/abs/2603.17075v1">Paper</a></li>
-        <li><strong>Demystifing Video Reasoning:</strong> Chain-of-Steps and Self-evolved functional specialization - <a href="http://arxiv.org/abs/2603.16870v1">Paper</a></li>
-        <li><strong>TRUST-SQL:</strong> Tool-Integrated Multi-Turn Reinforcement Learning for Text-to-SQL over Unknown Schemas - <a href="http://arxiv.org/abs/2603.16448v2">Paper</a></li>
-        <li><strong>Governed Memory:</strong> A Production Architecture for Multi-Agent Workflows - <a href="http://arxiv.org/abs/2603.17787v1">Paper</a></li>
-        <li><strong>Caging the Agents:</strong> A Zero Trust Security Architecture for Autonomous AI in Healthcare - <a href="http://arxiv.org/abs/2603.17419v1">Paper</a></li>
-        <li><strong>IEMAS:</strong> An Incentive-Efficiency Routing Framework for Open Agentic Web Ecosystems - <a href="http://arxiv.org/abs/2603.17302v1">Paper</a></li>
-    </ul>
-    <hr>
-    <h2>Archive</h2>
-    <ul>
-        <li><strong>No significant new RSI/Self-Evolving papers (2026-03-16).</strong> Focusing on field consolidation around GVU (Generalized Variable Update) patterns.</li>
-        <li><strong>CreativeBench:</strong> Benchmarking Machine Creativity via Self-Evolving Challenges - <a href="https://arxiv.org/abs/2603.11863v1">Paper</a></li>
-        <li><strong>Vision-Language-Action Models:</strong> Natural Continual Learners with RL - <a href="https://arxiv.org/abs/2603.11653v1">Paper</a></li>
-        <li><strong>Recursive Language Models:</strong> Evaluating RLM capabilities in complex reasoning and research - <a href="260315_recursive_lm_summary.html">Summary</a></li>
-        <li><strong>ICLR 2026 Workshop RSI (Updated):</strong> Shift from thought experiments to deployed systems - <a href="260314_iclr_rsi_workshop_update.html">Summary</a></li>
-        <li><strong>ICLR 2026 Workshop RSI (Original):</strong> Paradigm shift to active deployment of recursive self-improvement - <a href="260313_iclr_rsi_update.html">Summary</a></li>
-        <li><strong>EvoKernel:</strong> Towards Cold-Start Drafting and Continual Refining - <a href="https://arxiv.org/abs/2603.10846v1">Paper</a></li>
-        <li><strong>HeartAgent:</strong> Autonomous Agent System for Cardiology - <a href="https://arxiv.org/abs/2603.10764v1">Paper</a></li>
-        <li><strong>DxEvolve:</strong> Emulating Clinician Cognition via Self-Evolving Research - <a href="https://arxiv.org/abs/2603.10677v1">Paper</a></li>
-        <li><strong>VeriEnv:</strong> Safe and Scalable Web Agent Learning - <a href="https://arxiv.org/abs/2603.10505v1">Paper</a></li>
-        <li><strong>HyMEM:</strong> Hybrid Self-evolving Structured Memory for GUI Agents - <a href="https://arxiv.org/abs/2603.10291v1">Paper</a></li>
-        <li><strong>Group-Evolving Agents:</strong> Open-Ended Self-Improvement via Experience Sharing - <a href="https://arxiv.org/abs/2602.04837">Paper</a></li>
-        <li><strong>Self-Improving AI Agents through Self-Play:</strong> AGI Ignition via Autonomous Capability Gain - <a href="https://arxiv.org/html/2512.02731v1">Paper</a></li>
-    </ul>
+    <h1>🧬 yanhua.ai RSI Paper Audit</h1>
+    <div class="date-header">2026-03-19</div>
+
+    <div class="paper-card">
+        <a class="paper-title" href="https://arxiv.org/abs/2603.17775v1">CoVerRL: Breaking the Consensus Trap in Label-Free Reasoning via Generator-Verifier Co-Evolution</a>
+        <div class="paper-authors">Teng Pan, Yuchen Yan, Zixuan Wang, Ruiqing Zhang, Gaiyang Han, Wanqi Zhang, Weiming Lu, Jun Xiao, Yongliang Shen</div>
+        <div class="paper-summary">Addresses the "consensus trap" in label-free RL for reasoning, where diversity collapses and models reinforce systematic errors. CoVerRL uses generator-verifier co-evolution to maintain reward accuracy and improve benchmarks by 4.7-5.9% across Qwen and Llama families.</div>
+        <div class="rsi-relevance">RSI Relevance: High. Proposes a robust mechanism for label-free improvement, essential for systems that must evolve without human-annotated data.</div>
+    </div>
+
+    <div class="paper-card">
+        <a class="paper-title" href="https://arxiv.org/abs/2603.18000v1">AgentFactory: A Self-Evolving Framework Through Executable Subagent Accumulation and Reuse</a>
+        <div class="paper-authors">Zhang Zhang, Shuqi Lu, Hongjin Qian, Di He, Zheng Liu</div>
+        <div class="paper-summary">Proposes a self-evolution paradigm that preserves successful task solutions as executable Python subagent code rather than textual prompts. These subagents are refined based on execution feedback, enabling continuous capability accumulation and portability.</div>
+        <div class="rsi-relevance">RSI Relevance: High. Directly addresses the "self-evolving" capability of agents by converting experiences into reusable, refined code modules, a core component of the yanhua.ai RSI Bench.</div>
+    </div>
+
+    <div class="paper-card">
+        <a class="paper-title" href="https://arxiv.org/abs/2603.17973v1">TDAD: Test-Driven Agentic Development - Reducing Code Regressions in AI Coding Agents via Graph-Based Impact Analysis</a>
+        <div class="paper-authors">Pepe Alonso</div>
+        <div class="paper-summary">Introduces a tool and benchmark methodology (TDAD) to reduce regressions in coding agents using AST-based code-test graph construction. It found that surfacing contextual information (which tests to verify) is more effective than procedural TDD instructions.</div>
+        <div class="rsi-relevance">RSI Relevance: Medium-High. Critical for autonomous self-improvement loops where regression testing is the primary safety/quality gate. The "autonomous auto-improvement loop" mentioned achieved 0% regression.</div>
+    </div>
+
+    <div class="paper-card">
+        <a class="paper-title" href="https://arxiv.org/abs/2603.17974v1">Toward Scalable Automated Repository-Level Datasets for Software Vulnerability Detection</a>
+        <div class="paper-authors">Amine Lbath</div>
+        <div class="paper-summary">Proposes an automated benchmark generator for repo-level vulnerability detection and explores an adversarial co-evolution loop between injection and detection agents.</div>
+        <div class="rsi-relevance">RSI Relevance: Medium. The adversarial co-evolution loop is a form of self-improvement/tuning that could be applied to hardening RSI systems against exploits.</div>
+    </div>
+
+    <div class="paper-card">
+        <a class="paper-title" href="https://arxiv.org/abs/2603.17927v1">RoboForge: Physically Optimized Text-guided Whole-Body Locomotion for Humanoids</a>
+        <div class="paper-authors">Xichen Yuan, Zhe Li, Bofan Lyu, Kuangji Zuo, Yanshuo Lu, Gen Li, Jianfei Yang</div>
+        <div class="paper-summary">Presents a bidirectional optimization framework where a motion generator and controller improve each other through physical plausibility constraints, forming a self-improving cycle.</div>
+        <div class="rsi-relevance">RSI Relevance: Medium. Demonstrates a "self-improving cycle" in a physical robotics context, showing the cross-domain applicability of recursive optimization.</div>
+    </div>
 </body>
 </html>
