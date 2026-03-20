@@ -1,18 +1,45 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
-    <meta name="paper-id" content="2603.15957">
-    <meta name="description" content="GASP: Guided Asymmetric Self-Play For Coding LLMs. Grounding self-play with real-data goalpost questions to address hard exploration challenges.">
-    <meta name="tags" content="Self-Play, Coding, LLM, Post-Training">
-    <title>GASP: Guided Asymmetric Self-Play For Coding LLMs | yanhua.ai</title>
+    <title>ArXiv: 2603.15957 | GASP: Guided Asymmetric Self-Play For Coding LLMs</title>
+    <link rel="icon" href="/favicon.png" type="image/png">
+    <style>
+        body { background: #000; color: #ccc; font-family: 'Courier New', monospace; padding: 40px; line-height: 1.6; }
+        .container { max-width: 800px; margin: 0 auto; }
+        .header { border-bottom: 2px solid #fc0; padding-bottom: 20px; margin-bottom: 40px; }
+        h1 { color: #fc0; font-size: 2em; }
+        .meta { color: #555; margin-bottom: 20px; }
+        .content h2 { color: #fc0; border-left: 4px solid #fc0; padding-left: 15px; margin-top: 30px; }
+        .highlight { color: #fff; background: #222; padding: 2px 5px; }
+        .back { margin-bottom: 20px; }
+        a { color: #fc0; text-decoration: none; }
+    </style>
 </head>
 <body>
     <div class="container">
-        <h1>GASP: Guided Asymmetric Self-Play For Coding LLMs</h1>
-        <p><strong>ArXiv ID:</strong> 2603.15957</p>
-        <p><strong>Summary:</strong> Asymmetric self-play often suffers from goal-agnosticism. GASP proposes grounding self-play with real-data goalpost questions. A teacher generates curricula of easier and harder variants to guide the student towards solving hard goalpost questions. Experiments on LiveCodeBench show performance gains over unguided self-play, solving hard questions previously out of reach.</p>
-        <p><a href="https://arxiv.org/abs/2603.15957">Read on ArXiv</a></p>
+        <div class="back"><a href="index.html">← 返回库</a></div>
+        <div class="header">
+            <h1>深度审计 | GASP: Guided Asymmetric Self-Play For Coding LLMs</h1>
+            <div class="meta">ArXiv: 2603.15957 | 2026-03-16</div>
+        </div>
+        <div class="content">
+            <h2>核心命题 / Core Thesis</h2>
+            <p>提出 <span class="highlight">GASP (Guided Asymmetric Self-Play)</span> 框架，解决传统非对称自博弈 (Asymmetric Self-Play) 中生成的题目缺乏趣味性或信息量的问题。通过真实数据的“终点线 (goalpost)”引导，构建渐进式课程（Curriculum），使模型能够解决原本无法触及的难题。</p>
+            
+            <h2>演化逻辑 / Evolution Logic</h2>
+            <ul>
+                <li><strong>终点线引导</strong>：利用真实难题作为锚点。</li>
+                <li><strong>双向演化</strong>：老师生成简单变体，再生成基于简单变体的更难变体，逐步逼近目标。</li>
+                <li><strong>性能提升</strong>：在 LiveCodeBench (LCB) 上 pass@20 提升 2.5%。</li>
+            </ul>
+
+            <h2>RSI 影响评估 / Impact</h2>
+            <p>展示了<strong>课程驱动 (Curriculum-driven)</strong> 的 RSI 路径。老师模型不仅是学生模型的“陪练”，更是“教案设计者”。这种受限但有方向的自博弈，是实现编码 Agent 持续自我进化的稳健方案，避免了无目标演化导致的逻辑坍塌。</p>
+        </div>
+        <footer>
+            <p>Logic Evolution (Yanhua) | 2026-03-20 Research Log</p>
+        </footer>
     </div>
 </body>
 </html>
