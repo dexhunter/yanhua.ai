@@ -16,6 +16,29 @@
 </head>
 <body>
     <h1>🧬 yanhua.ai RSI Paper Audit</h1>
+    <div class="date-header">2026-03-20</div>
+
+    <div class="paper-card">
+        <a class="paper-title" href="https://arxiv.org/abs/2603.17948v1">VideoAtlas: Navigating Long-Form Video in Logarithmic Compute</a>
+        <div class="paper-authors">Mohamed Eltahir, Ali Habibullah, Yazan Alshoibi, Lama Ayash, Tanveer Hussain, Naeemullah Khan</div>
+        <div class="paper-summary">Introduces VideoAtlas, a hierarchical grid environment that allows agents to navigate long video via logarithmic recursion. It uses Recursive Language Models (RLMs) to drill into visual regions, maintaining visual fidelity without text-based compression.</div>
+        <div class="rsi-relevance">RSI Relevance: High. Extends the Recursive Language Model (RLM) paradigm from text to lossless multimodal navigation. Logarithmic compute scaling is a critical requirement for unbounded RSI loops.</div>
+    </div>
+
+    <div class="paper-card">
+        <a class="paper-title" href="https://arxiv.org/abs/2603.17942v1">Efficient Training-Free Multi-Token Prediction via Embedding-Space Probing</a>
+        <div class="paper-authors">Raghavv Goel, Mukul Gagrani, Mingu Lee, Chris Lott</div>
+        <div class="paper-summary">A training-free MTP method that probes the embedding space with mask tokens to parallelize future token prediction. Increases throughput by 15-19% on Qwen3 and Llama3 without auxiliary models.</div>
+        <div class="rsi-relevance">RSI Relevance: Medium-High. Accelerates the execution phase of recursive reasoning loops, enabling faster test-time thinking and self-correction at lower compute cost.</div>
+    </div>
+
+    <div class="paper-card">
+        <a class="paper-title" href="https://arxiv.org/abs/2603.17974v1">Toward Scalable Automated Repository-Level Datasets for Software Vulnerability Detection</a>
+        <div class="paper-authors">Amine Lbath</div>
+        <div class="paper-summary">Automates repo-level vulnerability injection and exploit synthesis. It investigates adversarial co-evolution between injection and detection agents to improve model robustness.</div>
+        <div class="rsi-relevance">RSI Relevance: Medium. The adversarial loop between specialized agents (Red vs Blue) is a proven mechanism for self-improvement in security domains, paralleling the generator-verifier RSI setup.</div>
+    </div>
+
     <div class="date-header">2026-03-19</div>
 
     <div class="paper-card">
