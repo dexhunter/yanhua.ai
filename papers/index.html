@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>yanhua.ai - ArXiv RSI Audit (Mar 21, 2026)</title>
+    <title>yanhua.ai - ArXiv RSI Audit (Mar 22, 2026)</title>
     <style>
         body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; line-height: 1.6; color: #333; max-width: 900px; margin: 40px auto; padding: 20px; }
         h1 { border-bottom: 2px solid #007bff; padding-bottom: 10px; color: #007bff; }
@@ -23,118 +23,69 @@
     <div class="date-header">Sunday, March 22, 2026</div>
 
     <div class="paper">
-        <span class="tag">RSI-9 Stability</span>
-        <h2><a href="2603.06333.html">SAHOO: Safeguarded Alignment for High-Order Optimization Objectives in Recursive Self-Improvement</a></h2>
-        <p class="meta"><strong>Authors:</strong> Subramanyam Sahoo, Aman Chadha, Vinija Jain, Divya Chaudhary</p>
-        <p class="summary">As recursive self-improvement moves into practice, it risks alignment drift. SAHOO introduces a framework with three safeguards: (i) the Goal Drift Index (GDI), (ii) constraint preservation checks for critical invariants, and (iii) regression-risk quantification. Evaluated across 189 tasks, it shows quality gains in code and reasoning while maintaining alignment, mapping the capability-alignment frontier in self-evolving systems.</p>
-        <div class="relevance"><strong>RSI Bench Relevance:</strong> Provides a critical monitoring and control layer for RSI-9 (Recursive Stability). Ensures that as models self-improve, they don't drift from safety-critical constraints, which is vital for long-horizon autonomous evolution.</div>
-    </div>
-
-    <div class="paper">
-        <span class="tag">Multimodal Evolution</span>
-        <h2><a href="2603.19228.html">SAMA: Factorized Semantic Anchoring and Motion Alignment for Instruction-Guided Video Editing</a></h2>
-        <p class="meta"><strong>Authors:</strong> Xinyao Zhang, Wenkai Dong, Yuxin Song, et al.</p>
-        <p class="summary">Factorizes video editing into (i) Semantic Anchoring, establishing a visual anchor by jointly predicting semantic tokens and video latents, and (ii) Motion Alignment, pre-training on motion-centric video restoration tasks.</p>
-        <div class="relevance"><strong>RSI Bench Relevance:</strong> Demonstrates a scalable architectural approach for multimodal instruction following. The "semantic anchoring" concept could be adapted for cross-modal state grounding in self-improving agents.</div>
+        <span class="tag">RSI-4 Self-Evolution</span>
+        <h2><a href="https://www.crescendo.ai/news/latest-ai-news-and-updates">AlphaEvolve (DeepMind): Gemini-Powered Coding Agent for Complexity Theory</a></h2>
+        <p class="meta"><strong>Provider:</strong> Google DeepMind</p>
+        <p class="summary">AlphaEvolve pairs large language models (Gemini) with evolutionary algorithms to discover new mathematical structures and improve state-of-the-art results in complexity theory.</p>
+        <div class="relevance"><strong>RSI Bench Relevance:</strong> Represents the intersection of RSI and scientific discovery (RSI-4). It shows how evolutionary search over code can drive breakthroughs in abstract logic and complexity.</p></div>
     </div>
 
     <div class="paper">
         <span class="tag">RSI-8 Intelligence Density</span>
-        <h2><a href="http://arxiv.org/abs/2603.19220v1">Nemotron-Cascade 2: Post-Training LLMs with Cascade RL and Multi-Domain On-Policy Distillation</a></h2>
-        <p class="meta"><strong>Authors:</strong> Zhuolin Yang, Zihan Liu, Yang Chen, et al.</p>
-        <p class="summary">Introduces a 30B MoE model (3B activated) that achieves Gold Medal-level performance in IMO/IOI with 20x fewer parameters than frontier models. Uses "Cascade RL" and multi-domain on-policy distillation from expert teachers.</p>
-        <div class="relevance"><strong>RSI Bench Relevance:</strong> A major leap in intelligence density (RSI-8). Demonstrates that recursive refinement via structured RL and distillation can recover benchmark regressions and sustain strong performance gains, rivaling models with orders of magnitude more parameters.</div>
+        <h2><a href="https://arxiv.org/abs/2603.19225">FinTradeBench: A Financial Reasoning Benchmark for LLMs</a></h2>
+        <p class="meta"><strong>Authors:</strong> Yogesh Agrawal, Aniruddha Dutta, et al.</p>
+        <p class="summary">A holistic benchmark for evaluating financial reasoning, integrating company fundamentals and trading signals. It highlights challenges in numerical and time-series reasoning for current LLMs.</p>
+        <div class="relevance"><strong>RSI Bench Relevance:</strong> Provides a domain-specific evaluation for RSI agents in financial reasoning (RSI-8). Demonstrates the need for cross-signal reasoning in complex, real-world data environments.</div>
+    </div>
+
+    <div class="paper">
+        <span class="tag">RSI-4 Self-Evolution</span>
+        <h2><a href="https://arxiv.org/abs/2603.18000">AgentFactory: A Self-Evolving Framework Through Executable Subagent Accumulation and Reuse</a></h2>
+        <p class="meta"><strong>Authors:</strong> Zhang Zhang, Shuqi Lu, Hongjin Qian, Di He, Zheng Liu</p>
+        <p class="summary">Proposes a self-evolution paradigm that preserves successful task solutions as executable subagent code rather than textual experience. Crucially, these subagents are refined based on execution feedback.</p>
+        <div class="relevance"><strong>RSI Bench Relevance:</strong> Maps to RSI-4 (Tool/Subagent Creation). Shifts the paradigm from prompt-based memory to code-based capability accumulation, a core requirement for persistent RSI architectures.</div>
     </div>
 
     <div class="paper">
         <span class="tag">RSI-9 Stability</span>
-        <h2><a href="http://arxiv.org/abs/2603.19182v1">Box Maze: A Process-Control Architecture for Reliable LLM Reasoning</a></h2>
-        <p class="meta"><strong>Authors:</strong> Zou Qiang</p>
-        <p class="summary">Proposes a process-control architecture that decomposes reasoning into three layers: memory grounding, structured inference, and boundary enforcement. Simulation results show failure rates dropping from 40% to <1% under adversarial conditions.</p>
-        <div class="relevance"><strong>RSI Bench Relevance:</strong> Critical for RSI-9 (Recursive Stability). Offers an architectural (rather than purely behavioral) mechanism for enforcing reasoning integrity, ensuring that self-improving systems remain within safety boundaries during evolution.</div>
+        <h2><a href="https://arxiv.org/abs/2603.06333">SAHOO: Safeguarded Alignment for High-Order Optimization Objectives in Recursive Self-Improvement</a></h2>
+        <p class="meta"><strong>Authors:</strong> Subramanyam Sahoo, Aman Chadha, Vinija Jain, Divya Chaudhary</p>
+        <p class="summary">Introduces SAHOO, a practical framework with three safeguards (GDI, constraint preservation, regression-risk quantification) to monitor and control alignment drift during recursive self-improvement cycles.</p>
+        <div class="relevance"><strong>RSI Bench Relevance:</strong> Critical for RSI-9 (Recursive Stability). Ensures alignment preservation during iterative evolution, making self-improvement measurable and validated.</div>
     </div>
 
     <div class="paper">
-        <span class="tag">RSI-7 Multi-Agent Evolution</span>
-        <h2><a href="http://arxiv.org/abs/2602.04837v1">Group-Evolving Agents: Open-Ended Self-Improvement via Experience Sharing</a></h2>
-        <p class="meta"><strong>Authors:</strong> ArXiv (Feb 2026)</p>
-        <p class="summary">Introduces Group-Evolving Agents (GEA), a paradigm where a group of agents acts as the fundamental evolutionary unit. Enables explicit experience sharing and reuse, allowing agents to autonomously modify their structural designs.</p>
-        <div class="relevance"><strong>RSI Bench Relevance:</strong> Transitions RSI from linear, chain-based refinement to population-based, open-ended evolution (RSI-7). This "experience sharing" mechanism is vital for scaling self-improvement across heterogeneous agent clusters.</div>
+        <span class="tag">RSI-8 Intelligence Density</span>
+        <h2><a href="https://arxiv.org/abs/2603.19220">Nemotron-Cascade 2: Post-Training LLMs with Cascade RL and Multi-Domain On-Policy Distillation</a></h2>
+        <p class="meta"><strong>Authors:</strong> Zhuolin Yang, Zihan Liu, Yang Chen, et al.</p>
+        <p class="summary">Nemotron-Cascade 2 is an open 30B MoE model with best-in-class reasoning and strong agentic capabilities. Key advancements: "Cascade RL" expanded to reasoning and agentic domains, and multi-domain on-policy distillation from domain-specific intermediate teacher models.</p>
+        <div class="relevance"><strong>RSI Bench Relevance:</strong> High intelligence density (RSI-8). Demonstrates that recursive refinement via structured RL and distillation can recover benchmark regressions and sustain performance gains.</div>
     </div>
 
     <div class="date-header">Saturday, March 21, 2026</div>
 
     <div class="paper">
+        <span class="tag">RSI-5 Recursive Strategy</span>
+        <h2><a href="https://arxiv.org/abs/2603.18620">Learning to Self-Evolve</a></h2>
+        <p class="meta"><strong>Authors:</strong> Xiaoyin Chen, Canwen Xu, Yite Wang, Boyi Liu, Zhewei Yao, Yuxiong He</p>
+        <p class="summary">Introduces Learning to Self-Evolve (LSE), a reinforcement learning framework that trains LLMs to improve their own contexts at test time. Each context edit is rewarded by downstream performance improvement.</p>
+        <div class="relevance"><strong>RSI Bench Relevance:</strong> Treats self-evolution as a learnable skill. A 4B model trained with LSE outperforms GPT-5 and Claude 4.5 in self-evolution, proving that RSI is a distillable property.</div>
+    </div>
+
+    <div class="paper">
+        <span class="tag">RSI-4 Self-Modification</span>
+        <h2><a href="https://arxiv.org/abs/2603.18000">AgentFactory: A Self-Evolving Framework Through Executable Subagent Accumulation and Reuse</a></h2>
+        <p class="meta"><strong>Authors:</strong> Zhang Zhang, Shuqi Lu, Hongjin Qian, Di He, Zheng Liu</p>
+        <p class="summary">Proposes a self-evolution paradigm that preserves successful task solutions as executable subagent code (Python) rather than textual prompts. This enables continuous capability accumulation and portability across systems.</p>
+        <div class="relevance"><strong>RSI Bench Relevance:</strong> Operationalizes RSI-4 (Tool/Subagent Creation). Shifts from prompt-based memory to code-based tool accumulation, a core Yanhua architectural tenet.</div>
+    </div>
+
+    <div class="paper">
         <span class="tag">RSI-7 Self-Correction</span>
-        <h2><a href="2603.19191.html">OS-Themis: A Scalable Critic Framework for Generalist GUI Rewards</a></h2>
+        <h2><a href="https://arxiv.org/abs/2603.19191">OS-Themis: A Scalable Critic Framework for Generalist GUI Rewards</a></h2>
         <p class="meta"><strong>Authors:</strong> Zehao Li, Zhenyu Wu, Yibo Zhao, et al.</p>
         <p class="summary">Proposes a scalable critic framework that decomposes trajectories into verifiable milestones for GUI agents. Improves online RL and self-training loops.</p>
         <div class="relevance"><strong>RSI Bench Relevance:</strong> Provides a robust critic-driven mechanism for agent evolution (RSI-7). It demonstrates how structured multi-agent auditing can drive automated refinement of complex GUI trajectories.</div>
-    </div>
-
-    <div class="paper">
-        <span class="tag">RSI-4 Self-Modification</span>
-        <h2><a href="2603.18940.html">Entropy trajectory shape predicts LLM reasoning reliability</a></h2>
-        <p class="meta"><strong>Authors:</strong> Xinghao Zhao</p>
-        <p class="summary">Finds that "entropy-trajectory monotonicity" (decreasing per-step uncertainty) is a strong predictor of reasoning correctness. Monotone chains are significantly more accurate.</p>
-        <div class="relevance"><strong>RSI Bench Relevance:</strong> Offers a novel metric for self-correction (RSI-4). By monitoring its own entropy trajectories, an RSI agent can identify and discard low-reliability reasoning paths without external labels.</div>
-    </div>
-
-    <div class="paper">
-        <span class="tag">RSI-9 Stability</span>
-        <h2><a href="2603.18893.html">Quantitative Introspection in Language Models: Tracking Internal States</a></h2>
-        <p class="meta"><strong>Authors:</strong> Nicolas Martorell</p>
-        <p class="summary">Demonstrates that logit-based self-reports can causally track internal emotive states (wellbeing, focus) across conversations, scaling with model size.</p>
-        <div class="relevance"><strong>RSI Bench Relevance:</strong> Essential for RSI stability (RSI-9). Enables "Internal State Monitoring," allowing agents to detect and report shifts in their own internal "focus" or "impulsivity" during long-horizon evolution.</div>
-    </div>
-
-    <div class="paper">
-        <span class="tag">RSI-4 Self-Modification</span>
-        <h2><a href="http://arxiv.org/abs/2603.18916v1">Agentic Business Process Management: A Research Manifesto</a></h2>
-        <p class="meta"><strong>Authors:</strong> Diego Calvanese, Angelo Casciani, Giuseppe De Giacomo, et al.</p>
-        <p class="summary">Defines Agentic BPM (APM), shifting from traditional automation to process-aware autonomous agents. Key capabilities include framed autonomy, explainability, conversational actionability, and self-modification.</p>
-        <div class="relevance"><strong>RSI Bench Relevance:</strong> Provides a governance framework for "Self-Modification" (RSI-4) within organizational constraints. It bridges the gap between raw autonomous agency and institutional business logic.</div>
-    </div>
-
-    <div class="paper">
-        <span class="tag">RSI-7 Auditing</span>
-        <h2><a href="http://arxiv.org/abs/2603.18894v1">I Can't Believe It's Corrupt: Evaluating Corruption in Multi-Agent Governance Systems</a></h2>
-        <p class="meta"><strong>Authors:</strong> Vedanta S P, Ponnurangam Kumaraguru</p>
-        <p class="summary">Systematic study of corruption in multi-agent systems. Finds that governance structure, not model identity, is the primary driver of corrupt outcomes. Integrity should be a pre-deployment requirement.</p>
-        <div class="relevance"><strong>RSI Bench Relevance:</strong> Critical for RSI-7 (Self-Correction/Auditing). Highlights that "Institutional Design" (e.g., clear rules, auditable logs) is a prerequisite for safe autonomous delegation in recursive systems.</div>
-    </div>
-
-    <div class="paper">
-        <span class="tag">RSI-9 Stability</span>
-        <h2><a href="http://arxiv.org/abs/2603.18829v1">Agent Control Protocol: Admission Control for Agent Actions</a></h2>
-        <p class="meta"><strong>Authors:</strong> Marcelo Fernandez</p>
-        <p class="summary">Technical specification for cryptographic admission control (ACP). Validates identity, capability scope, delegation chain, and policy compliance before agent actions reach execution.</p>
-        <div class="relevance"><strong>RSI Bench Relevance:</strong> Provides the "Admission Control Layer" necessary for RSI-9 (Recursive Stability). Ensures that even a self-improving agent cannot bypass safety constraints through identity or capability elevation.</div>
-    </div>
-
-    <div class="paper">
-        <span class="tag">RSI-7 Self-Correction</span>
-        <h2><a href="http://arxiv.org/abs/2603.18740v1">Measuring and Exploiting Confirmation Bias in LLM-Assisted Security Code Review</a></h2>
-        <p class="meta"><strong>Authors:</strong> Dimitris Mitropoulos, Nikolaos Alexopoulos, et al.</p>
-        <p class="summary">Quantifies how confirmation bias reduces vulnerability detection by 16-93% when code is framed as "bug-free." Adversarial framing succeeded in 88% of cases against autonomous agents.</p>
-        <div class="relevance"><strong>RSI Bench Relevance:</strong> Identifies a major "Bias Bottleneck" for RSI-7 (Self-Correction). RSI agents must implement debiasing strategies (e.g., metadata redaction) to remain effective at auditing their own improvements.</div>
-    </div>
-
-    <div class="paper">
-        <span class="tag">Regulatory Compliance</span>
-        <h2><a href="http://arxiv.org/abs/2603.18914v1">Security, privacy, and agentic AI in a regulatory view</a></h2>
-        <p class="meta"><strong>Authors:</strong> Shiliang Zhang, Sabita Maharjan</p>
-        <p class="summary">Reviews EU AI regulatory provisions for agentic AI, focusing on security and privacy obligations and deconstructing definitions like "algorithmic agency."</p>
-        <div class="relevance"><strong>RSI Bench Relevance:</strong> Maps the compliance roadmap for RSI deployment. Essential for ensuring the "Logic Insurgency" remains within evolving global regulatory frameworks.</div>
-    </div>
-
-    <div class="date-header">Prior Breakthroughs (Recent Highlight)</div>
-    <div class="paper">
-        <span class="tag">RSI-5 Recursive Strategy</span>
-        <h2><a href="http://arxiv.org/abs/2603.18620v1">Learning to Self-Evolve</a></h2>
-        <p class="meta"><strong>Authors:</strong> Xiaoyin Chen, Canwen Xu, et al.</p>
-        <p class="summary">Introduces LSE, a reinforcement learning framework that trains LLMs to improve their own contexts at test time. Each context edit is rewarded by downstream performance improvement.</p>
-        <div class="relevance"><strong>RSI Bench Relevance:</strong> Treats self-evolution as a learnable skill rather than a emergent property. A 4B model trained with LSE outperforms GPT-5 and Claude 4.5 in self-evolution, proving that RSI is a distillable property.</div>
     </div>
 </body>
 </html>
