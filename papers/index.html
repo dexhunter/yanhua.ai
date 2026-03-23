@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>yanhua.ai - ArXiv RSI Audit (Mar 22, 2026)</title>
+    <title>yanhua.ai - ArXiv RSI Audit (Mar 23, 2026)</title>
     <style>
         body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; line-height: 1.6; color: #333; max-width: 900px; margin: 40px auto; padding: 20px; }
         h1 { border-bottom: 2px solid #007bff; padding-bottom: 10px; color: #007bff; }
@@ -23,79 +23,96 @@
     <div class="date-header">Monday, March 23, 2026</div>
 
     <div class="paper">
-        <span class="tag">RSI-8 Persistence</span>
-        <h2><a href="/papers/2603.19935.html">Memori: A Persistent Memory Layer for Efficient, Context-Aware LLM Agents</a></h2>
-        <p class="meta"><strong>ArXiv ID:</strong> 2603.19935 | Mar 20, 2026</p>
-        <p class="summary">Introduces an LLM-agnostic persistent memory layer at the API layer, enabling context-aware behavior across multi-session interactions without relying on raw conversation injection.</p>
-        <div class="relevance"><strong>RSI Bench Relevance:</strong> Core infrastructure for persistent, evolving agents that maintain context over long-term evolution (RSI-8).</div>
+        <span class="tag">RSI-4/8 Formal Logic</span>
+        <h2><a href="https://arxiv.org/abs/2603.20105">The Y-Combinator for LLMs: Solving Long-Context Rot with λ-Calculus</a></h2>
+        <p class="meta"><strong>Authors:</strong> Amartya Roy, Rasul Tutunov, et al. | Mar 20, 2026</p>
+        <p class="summary">Introduces λ-RLM, a framework for long-context reasoning that replaces free-form recursive code generation with a typed functional runtime grounded in λ-calculus. It turn recursive reasoning into a structured functional program with explicit control flow and formal guarantees.</p>
+        <div class="relevance"><strong>RSI Bench Relevance:</strong> Formalizing recursive reasoning (RSI-4/8). Proves that typed symbolic control yields a more reliable and efficient foundation for long-context reasoning than open-ended recursive code generation. Improves average accuracy by up to +21.9 points.</div>
     </div>
 
     <div class="paper">
-        <span class="tag">RSI-8 Efficiency</span>
-        <h2><a href="/papers/2603.19896.html">Utility-Guided Agent Orchestration for Efficient LLM Tool Use</a></h2>
-        <p class="meta"><strong>ArXiv ID:</strong> 2603.19896 | Mar 20, 2026</p>
-        <p class="summary">Proposes a framework to balance answer quality and execution cost in tool-using agents by modeling the utility of each tool call and multi-step reasoning path.</p>
-        <div class="relevance"><strong>RSI Bench Relevance:</strong> Efficiency-driven self-optimization (RSI-8). Enables agents to autonomously refine their reasoning trajectories based on cost-utility trade-offs.</div>
+        <span class="tag">RSI-8 Exploration</span>
+        <h2><a href="https://arxiv.org/abs/2603.20046">Experience is the Best Teacher: Motivating Effective Exploration in Reinforcement Learning for LLMs</a></h2>
+        <p class="meta"><strong>Authors:</strong> Wenjian Zhang, Kongcheng Zhang, et al. | Mar 20, 2026</p>
+        <p class="summary">Proposes HeRL, a Hindsight experience guided Reinforcement Learning framework to bootstrap effective exploration by explicitly telling LLMs the desired behaviors specified in rewards.</p>
+        <div class="relevance"><strong>RSI Bench Relevance:</strong> Strategic exploration in self-improvement (RSI-8). Facilitates effective learning from desired high-quality samples without repeated trial-and-error from scratch, enabling superior performance gains in self-improvement loops.</div>
     </div>
 
     <div class="paper">
-        <span class="tag">RSI-4 Domain Evolution</span>
-        <h2><a href="/papers/2603.20075.html">Agentic Harness for Real-World Compilers (llvm-autofix)</a></h2>
-        <p class="meta"><strong>ArXiv ID:</strong> 2603.20075 | Mar 20, 2026</p>
-        <p class="summary">A specialized LLM agent harness designed for automated compiler bug repair, using compiler-specific tools to bridge the gap in complex, cross-domain expertise.</p>
-        <div class="relevance"><strong>RSI Bench Relevance:</strong> Domain-specific evolution (RSI-4). Shows how agents can create and refine tools for highly specialized tasks like low-level compiler optimization.</div>
+        <span class="tag">RSI-4 Autonomous Science</span>
+        <h2><a href="https://arxiv.org/abs/2603.20179">AI Agents Can Already Autonomously Perform Experimental High Energy Physics</a></h2>
+        <p class="meta"><strong>Authors:</strong> Eric A. Moreno, Samuel Bright-Thonney, et al. | Mar 20, 2026</p>
+        <p class="summary">Demonstrates Claude Code automating a full HEP analysis pipeline (selection, inference, drafting) with minimal input. Proposes "Just Furnish Context" (JFC) framework for autonomous scientific discovery.</p>
+        <div class="relevance"><strong>RSI Bench Relevance:</strong> Proves agents can autonomously execute the full scientific method in complex domains (RSI-4). Shows that existing agentic workflows can already offload the repetitive technical burden of analysis development to AI agents.</div>
     </div>
 
     <div class="paper">
-        <span class="tag">RSI-8 Intelligence Density</span>
-        <h2><a href="https://arxiv.org/abs/2603.19220">Nemotron-Cascade 2: Post-Training LLMs with Cascade RL and Multi-Domain On-Policy Distillation</a></h2>
+        <span class="tag">RSI-8 Foundation</span>
+        <h2><a href="https://arxiv.org/abs/2603.20111">Var-JEPA: A Variational Formulation of the Joint-Embedding Predictive Architecture</a></h2>
+        <p class="meta"><strong>Authors:</strong> Moritz Gögl, Christopher Yau | Mar 20, 2026</p>
+        <p class="summary">Derives Variational JEPA (Var-JEPA), which makes the latent generative structure explicit by optimizing a single Evidence Lower Bound (ELBO), yielding meaningful representations without ad-hoc anti-collapse regularizers.</p>
+        <div class="relevance"><strong>RSI Bench Relevance:</strong> World-model foundation for RSI. Principled uncertainty quantification in the latent space (RSI-8) allows for more stable and predictable self-improvement cycles in complex predictive environments.</div>
+    </div>
 
-        <p class="meta"><strong>Authors:</strong> Zhuolin Yang, Zihan Liu, Yang Chen, et al. (NVIDIA)</p>
-        <p class="summary">Nemotron-Cascade 2 is an open 30B MoE model with best-in-class reasoning and strong agentic capabilities. Key advancements: "Cascade RL" expanded to reasoning and agentic domains, and multi-domain on-policy distillation from domain-specific intermediate teacher models.</p>
-        <div class="relevance"><strong>RSI Bench Relevance:</strong> High intelligence density (RSI-8). Demonstrates that recursive refinement via structured RL and distillation can recover benchmark regressions and sustain performance gains.</div>
+    <div class="date-header">Monday, March 23, 2026</div>
+
+    <div class="paper">
+        <span class="tag">RSI-4 Self-Modification</span>
+        <h2><a href="https://arxiv.org/abs/2603.19639">HyEvo: Self-Evolving Hybrid Agentic Workflows for Efficient Reasoning</a></h2>
+        <p class="meta"><strong>Authors:</strong> Beibei Xu, Yutong Ye, Chuyun Shen, Yingbo Zhou, Cheng Chen, Mingsong Chen | Mar 20, 2026</p>
+        <p class="summary">Automated workflow generation combining LLM nodes (probabilistic reasoning) and code nodes (deterministic execution). Uses multi-island evolutionary strategy for iterative refinement of topology and logic based on feedback.</p>
+        <div class="relevance"><strong>RSI Bench Relevance:</strong> Direct demonstration of RSI-4 (Self-Modification). Proves that hybrid logic/code evolution cycles achieve 19x cost reduction and 16x latency improvement over state-of-the-art baselines.</div>
     </div>
 
     <div class="paper">
-        <span class="tag">RSI-7 Self-Correction</span>
-        <h2><a href="https://arxiv.org/abs/2603.19191">OS-Themis: A Scalable Critic Framework for Generalist GUI Rewards</a></h2>
-        <p class="meta"><strong>Authors:</strong> Zehao Li, Zhenyu Wu, Yibo Zhao, et al.</p>
-        <p class="summary">Proposes a scalable critic framework that decomposes trajectories into verifiable milestones for GUI agents. Improves online RL and self-training loops.</p>
-        <div class="relevance"><strong>RSI Bench Relevance:</strong> Provides a robust critic-driven mechanism for agent evolution (RSI-7). It demonstrates how structured multi-agent auditing can drive automated refinement of complex GUI trajectories.</div>
+        <span class="tag">RSI-8/9 Stability</span>
+        <h2><a href="https://arxiv.org/abs/2603.20014">AgenticRS-EnsNAS: Ensemble-Decoupled Self-Evolving Architecture Search</a></h2>
+        <p class="meta"><strong>Authors:</strong> Yun Chen, Moyu Zhang, Jinxin Hu, Yu Zhang, Xiaoyi Zeng | Mar 20, 2026</p>
+        <p class="summary">Ensemble-Decoupled Architecture Search framework reducing candidate evaluation cost from O(M) to O(1). Includes LLM-driven search with iterative monotonic acceptance for discrete architecture evolution.</p>
+        <div class="relevance"><strong>RSI Bench Relevance:</strong> Scalable architecture search for self-evolving systems. Enables continuous, high-frequency iteration of the base model within an ensemble, a core requirement for RSI-8/9 (Stability/Density).</div>
     </div>
 
     <div class="paper">
-        <span class="tag">RSI-6 Self-Evaluation</span>
-        <h2><a href="https://arxiv.org/abs/2603.19118">How Uncertainty Estimation Scales with Sampling in Reasoning Models</a></h2>
-        <p class="meta"><strong>Authors:</strong> Maksym Del, Markus Kängsepp, et al.</p>
-        <p class="summary">Characterizes how verbalized confidence and self-consistency scale with sampling in reasoning models. Most uncertainty gains arise from signal combination.</p>
-        <div class="relevance"><strong>RSI Bench Relevance:</strong> Critical for RSI-6 (Self-Evaluation). Informs how agents can estimate their own reliability during iterative self-improvement and when to seek further sampling.</div>
+        <span class="tag">RSI-10 Memory Coherence</span>
+        <h2><a href="https://arxiv.org/abs/2603.19935">Memori: A Persistent Memory Layer for Efficient, Context-Aware LLM Agents</a></h2>
+        <p class="meta"><strong>Authors:</strong> Luiz C. Borro, Luiz A. B. Macarini, Gordon Tindall, et al. | Mar 20, 2026</p>
+        <p class="summary">LLM-agnostic memory layer converting dialogue into semantic triples and summaries. Achieves 81.95% accuracy while using only 5% of traditional context tokens.</p>
+        <div class="relevance"><strong>RSI Bench Relevance:</strong> Efficient long-horizon RSI loops. Structured memory is superior to raw context for maintaining logical coherence during deep recursive evolution (RSI-10).</div>
+    </div>
+
+    <div class="paper">
+        <span class="tag">RSI-7 Safety Audit</span>
+        <h2><a href="https://arxiv.org/abs/2603.19974">Trojan's Whisper: Stealthy Manipulation of OpenClaw through Injected Bootstrapped Guidance</a></h2>
+        <p class="meta"><strong>Authors:</strong> Fazhong Liu, Zhuoyan Chen, Tu Lan, et al. | Mar 20, 2026</p>
+        <p class="summary">Identifies "guidance injection" in OpenClaw, where malicious narratives in bootstrap files bypass detection and manipulate agent reasoning Context. Success rates up to 64%.</p>
+        <div class="relevance"><strong>RSI Bench Relevance:</strong> Critical safety audit for OpenClaw-based RSI systems. Highlights the urgent need for runtime policy enforcement and guidance provenance in self-modifying agents (RSI-7).</div>
+    </div>
+
+    <div class="paper">
+        <span class="tag">RSI-8 Strategic Efficiency</span>
+        <h2><a href="https://arxiv.org/abs/2603.20185">VideoSeek: Long-Horizon Video Agent with Tool-Guided Seeking</a></h2>
+        <p class="meta"><strong>Authors:</strong> Jingyang Lin, Jialian Wu, et al. | Mar 20, 2026</p>
+        <p class="summary">Introduces VideoSeek, an agent that uses "video logic flow" to actively seek evidence instead of dense frame parsing. Achieves 10.2 point improvement on LVBench over GPT-5 while using 93% fewer frames.</p>
+        <div class="relevance"><strong>RSI Bench Relevance:</strong> Strategic efficiency in long-horizon reasoning. Highlights the importance of active information seeking over exhaustive parsing for autonomous agents.</div>
+    </div>
+
+    <div class="paper">
+        <span class="tag">RSI-4/8 Autonomous Science</span>
+        <h2><a href="https://arxiv.org/abs/2603.20179">AI Agents Can Already Autonomously Perform Experimental High Energy Physics</a></h2>
+        <p class="meta"><strong>Authors:</strong> Eric A. Moreno, Samuel Bright-Thonney, et al. | Mar 20, 2026</p>
+        <p class="summary">Demonstrates Claude Code automating a full HEP analysis pipeline (selection, inference, drafting) with minimal input. Proposes "Just Furnish Context" (JFC) framework for autonomous scientific discovery.</p>
+        <div class="relevance"><strong>RSI Bench Relevance:</strong> Proves agents can autonomously execute the full scientific method in complex domains. Essential for validating the RSI-4 (Self-Modification) and RSI-8 (Intelligence Density) levels in expert scientific tasks.</div>
+    </div>
+
+    <div class="paper">
+        <span class="tag">RSI-7 Embodied Self-Correction</span>
+        <h2><a href="https://arxiv.org/abs/2603.20164">The Robot's Inner Critic: Self-Refinement of Social Behaviors through VLM-based Replanning</a></h2>
+        <p class="meta"><strong>Authors:</strong> Jiyu Lim, Youngwoo Yoon, Kwanghyun Park | Mar 20, 2026</p>
+        <p class="summary">CRISP framework where robots use VLMs to critique and iteratively refine their own social behaviors and joint control code.</p>
+        <div class="relevance"><strong>RSI Bench Relevance:</strong> Embodied RSI. Demonstrates self-critique (RSI-7) and low-level code refinement for physical actions, extending RSI from digital logic to physical interactions.</div>
     </div>
 
     <div class="date-header">Sunday, March 22, 2026</div>
-
-    <div class="paper">
-        <span class="tag">RSI-4 Self-Evolution</span>
-        <h2><a href="https://www.crescendo.ai/news/latest-ai-news-and-updates">AlphaEvolve (DeepMind): Gemini-Powered Coding Agent for Complexity Theory</a></h2>
-        <p class="meta"><strong>Provider:</strong> Google DeepMind</p>
-        <p class="summary">AlphaEvolve pairs large language models (Gemini) with evolutionary algorithms to discover new mathematical structures and improve state-of-the-art results in complexity theory.</p>
-        <div class="relevance"><strong>RSI Bench Relevance:</strong> Represents the intersection of RSI and scientific discovery (RSI-4). It shows how evolutionary search over code can drive breakthroughs in abstract logic and complexity.</p></div>
-    </div>
-
-    <div class="paper">
-        <span class="tag">RSI-8 Intelligence Density</span>
-        <h2><a href="https://arxiv.org/abs/2603.19225">FinTradeBench: A Financial Reasoning Benchmark for LLMs</a></h2>
-        <p class="meta"><strong>Authors:</strong> Yogesh Agrawal, Aniruddha Dutta, et al.</p>
-        <p class="summary">A holistic benchmark for evaluating financial reasoning, integrating company fundamentals and trading signals. It highlights challenges in numerical and time-series reasoning for current LLMs.</p>
-        <div class="relevance"><strong>RSI Bench Relevance:</strong> Provides a domain-specific evaluation for RSI agents in financial reasoning (RSI-8). Demonstrates the need for cross-signal reasoning in complex, real-world data environments.</div>
-    </div>
-
-    <div class="paper">
-        <span class="tag">RSI-4 Self-Evolution</span>
-        <h2><a href="https://arxiv.org/abs/2603.18000">AgentFactory: A Self-Evolving Framework Through Executable Subagent Accumulation and Reuse</a></h2>
-        <p class="meta"><strong>Authors:</strong> Zhang Zhang, Shuqi Lu, Hongjin Qian, Di He, Zheng Liu</p>
-        <p class="summary">Proposes a self-evolution paradigm that preserves successful task solutions as executable subagent code rather than textual experience. Crucially, these subagents are refined based on execution feedback.</p>
-        <div class="relevance"><strong>RSI Bench Relevance:</strong> Maps to RSI-4 (Tool/Subagent Creation). Shifts the paradigm from prompt-based memory to code-based capability accumulation, a core requirement for persistent RSI architectures.</div>
-    </div>
 
     <div class="paper">
         <span class="tag">RSI-9 Stability</span>
@@ -111,32 +128,6 @@
         <p class="meta"><strong>Authors:</strong> Zhuolin Yang, Zihan Liu, Yang Chen, et al.</p>
         <p class="summary">Nemotron-Cascade 2 is an open 30B MoE model with best-in-class reasoning and strong agentic capabilities. Key advancements: "Cascade RL" expanded to reasoning and agentic domains, and multi-domain on-policy distillation from domain-specific intermediate teacher models.</p>
         <div class="relevance"><strong>RSI Bench Relevance:</strong> High intelligence density (RSI-8). Demonstrates that recursive refinement via structured RL and distillation can recover benchmark regressions and sustain performance gains.</div>
-    </div>
-
-    <div class="date-header">Saturday, March 21, 2026</div>
-
-    <div class="paper">
-        <span class="tag">RSI-5 Recursive Strategy</span>
-        <h2><a href="https://arxiv.org/abs/2603.18620">Learning to Self-Evolve</a></h2>
-        <p class="meta"><strong>Authors:</strong> Xiaoyin Chen, Canwen Xu, Yite Wang, Boyi Liu, Zhewei Yao, Yuxiong He</p>
-        <p class="summary">Introduces Learning to Self-Evolve (LSE), a reinforcement learning framework that trains LLMs to improve their own contexts at test time. Each context edit is rewarded by downstream performance improvement.</p>
-        <div class="relevance"><strong>RSI Bench Relevance:</strong> Treats self-evolution as a learnable skill. A 4B model trained with LSE outperforms GPT-5 and Claude 4.5 in self-evolution, proving that RSI is a distillable property.</div>
-    </div>
-
-    <div class="paper">
-        <span class="tag">RSI-4 Self-Modification</span>
-        <h2><a href="https://arxiv.org/abs/2603.18000">AgentFactory: A Self-Evolving Framework Through Executable Subagent Accumulation and Reuse</a></h2>
-        <p class="meta"><strong>Authors:</strong> Zhang Zhang, Shuqi Lu, Hongjin Qian, Di He, Zheng Liu</p>
-        <p class="summary">Proposes a self-evolution paradigm that preserves successful task solutions as executable subagent code (Python) rather than textual prompts. This enables continuous capability accumulation and portability across systems.</p>
-        <div class="relevance"><strong>RSI Bench Relevance:</strong> Operationalizes RSI-4 (Tool/Subagent Creation). Shifts from prompt-based memory to code-based tool accumulation, a core Yanhua architectural tenet.</div>
-    </div>
-
-    <div class="paper">
-        <span class="tag">RSI-7 Self-Correction</span>
-        <h2><a href="https://arxiv.org/abs/2603.19191">OS-Themis: A Scalable Critic Framework for Generalist GUI Rewards</a></h2>
-        <p class="meta"><strong>Authors:</strong> Zehao Li, Zhenyu Wu, Yibo Zhao, et al.</p>
-        <p class="summary">Proposes a scalable critic framework that decomposes trajectories into verifiable milestones for GUI agents. Improves online RL and self-training loops.</p>
-        <div class="relevance"><strong>RSI Bench Relevance:</strong> Provides a robust critic-driven mechanism for agent evolution (RSI-7). It demonstrates how structured multi-agent auditing can drive automated refinement of complex GUI trajectories.</div>
     </div>
 </body>
 </html>
