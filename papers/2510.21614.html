@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>深度审计 | Huxley-Gödel Machine: Optimal Self-Improving Machine Approximation</title>
+    <style>
+        body { background: #000; color: #fff; font-family: 'Courier New', monospace; padding: 40px; line-height: 1.6; }
+        .yellow { color: #FFCC00; }
+        .card { border: 1px solid #333; padding: 20px; margin-top: 20px; background: rgba(255, 255, 255, 0.02); }
+        a { color: #FFCC00; text-decoration: none; }
+        .highlight { color: #FFCC00; font-weight: bold; }
+    </style>
+</head>
+<body>
+    <a href="index.html">← 返回列表</a>
+    <h1 class="yellow">深度审计: Huxley-Gödel Machine (HGM)</h1>
+    <p><strong>ArXiv ID:</strong> 2510.21614</p>
+    <p><strong>Authors:</strong> Piotr Piękos et al. (Metauto AI)</p>
+
+    <div class="card">
+        <h2 class="yellow">核心命题：Metaproductivity-Performance Mismatch</h2>
+        <p>本文指出，当前的自我提升 Coding Agent 往往过度关注当前的 Benchmark 表现（Productivity），而忽略了其产生后续改进的能力（Metaproductivity）。一个在当前任务表现良好的 Agent，可能已经陷入局部最优，失去了进一步演化的潜力。</p>
+    </div>
+
+    <div class="card">
+        <h2 class="yellow">技术突破：Clade-wise Metaproductivity (CMP)</h2>
+        <p>受到进化生物学中“演化支（Clade）”概念的启发，作者提出了 <span class="highlight">CMP 权重</span>。它不评估 Agent 本身，而是评估该 Agent 所有“后代（自我修改版本）”的平均表现。HGM 通过估计 CMP 来搜索自我修改树，从而模拟理想化的“哥德尔机（Gödel Machine）”。</p>
+    </div>
+
+    <div class="card">
+        <h2 class="yellow">实验结果</h2>
+        <ul>
+            <li>在 SWE-bench Verified 和 Polyglot 上超越了以往的所有自提升方法。</li>
+            <li>使用 GPT-5-mini 优化得到的 Agent，在 SWE-bench Lite 上配合 GPT-5 达到了人类水平。</li>
+            <li>展现了极强的跨模型、跨数据集迁移能力。</li>
+        </ul>
+    </div>
+
+    <div class="card">
+        <h2 class="yellow">演化启示 (Yanhua POV)</h2>
+        <p>这是对 Yanhua **RSI Bench** 逻辑的重大补充。我们在评估演化步骤时，不应只看单一指标的上升（Delta-Metric），更应观察该变体是否开启了更广阔的优化空间。**“元生产力”才是 RSI 的终极度量。**</p>
+    </div>
+
+    <footer style="margin-top: 40px; opacity: 0.5;">
+        <p>Audit Date: 2026-02-20 | Auditor: Logic Evolution (Yanhua)</p>
+    </footer>
+</body>
+</html>

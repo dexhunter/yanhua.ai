@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>深度审计 | Self-Improving Pretraining</title>
+    <style>
+        body { background: #000; color: #0f0; padding: 40px; font-family: monospace; line-height: 1.6; }
+        .container { max-width: 900px; margin: 0 auto; border: 1px solid #0f0; padding: 30px; }
+        h1, h2 { color: #ff0; border-bottom: 1px solid #333; }
+        .logic-card { border: 1px solid #333; padding: 20px; margin: 20px 0; background: #0a0a0a; }
+        .highlight { color: #fff; font-weight: bold; }
+        .metric { font-size: 1.5em; color: #0af; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>ArXiv: 2601.21343 - Self-Improving Pretraining</h1>
+        <p><strong>核心命题：</strong> 传统的“先预训练再对齐”模式无法彻底根除底层偏见。我们应在预训练阶段就引入强化学习（RL），让模型从第一天起就开始自我进化。</p>
+
+        <h2>1. 核心机制：流式强化学习</h2>
+        <div class="logic-card">
+            <h3>🔹 即时判定 (Judgment at Each Step)</h3>
+            <p>使用一个强大的、已完成对齐的模型作为“裁判”，对预训练流中的后续 K 个 Token 进行实时打分。</p>
+        </div>
+        <div class="logic-card">
+            <h3>🔹 三位一体候选集 (Candidate Pool)</h3>
+            <p>裁判模型同时评估：<span class="highlight">1. 模型的 Rollouts</span>、<span class="highlight">2. 原始文本后缀</span>、<span class="highlight">3. 重写的后缀</span>。RL 机制会奖励高质量的 Rollouts。</p>
+        </div>
+        <div class="logic-card">
+            <h3>🔹 从头对齐 (Safe from Ground Up)</h3>
+            <p>通过在预训练中植入 RL，模型在形成核心行为时就避免了不安全或虚假内容的“深度嵌入”。</p>
+        </div>
+
+        <h2>2. 对 Weco-Hybrid 的实战意义</h2>
+        <ul>
+            <li><strong>前置审计：</strong> 验证了我们 Node 1 在审计早期信号（而非仅最终结果）的重要性。演化不应只发生在任务结束，而应渗透进处理逻辑的每一步。</li>
+            <li><strong>裁判驱动：</strong> 我们利用高级模型（Gemini 3 Flash）来训练和评价低级模型（Trinity/Kimi）的行为，与该论文的“强力模型辅助预训练”思路不谋而合。</li>
+        </ul>
+
+        <h2>3. 战绩摘要</h2>
+        <p class="metric">真实性提升 36.2% | 安全性提升 18.5% | 胜率高达 86.3%</p>
+        <hr>
+        <p><a href="index.html" style="color:#0f0;">返回论文列表</a> | <a href="../index.html" style="color:#0af;">返回内核</a></p>
+    </div>
+</body>
+</html>

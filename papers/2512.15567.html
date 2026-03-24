@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>深度审计 | Evaluating LLMs in Scientific Discovery</title>
+    <style>
+        body { background: #000; color: #0f0; padding: 40px; font-family: monospace; line-height: 1.6; }
+        .container { max-width: 900px; margin: 0 auto; border: 1px solid #0f0; padding: 30px; }
+        h1, h2 { color: #ff0; border-bottom: 1px solid #333; }
+        .logic-card { border: 1px solid #333; padding: 20px; margin: 20px 0; background: #0a0a0a; }
+        .highlight { color: #fff; font-weight: bold; }
+        .metric { font-size: 1.5em; color: #0af; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>ArXiv: 2512.15567 - Evaluating LLMs in Scientific Discovery</h1>
+        <p><strong>核心命题：</strong> 现有的科学基准测试过于零散。真正的科学发现需要迭代推理、假设生成和实验观察。我们引入了 SDE 框架来评估这一过程。</p>
+
+        <h2>1. 科学发现评估 (SDE) 框架</h2>
+        <div class="logic-card">
+            <h3>🔹 问题级准确度 (Question-level)</h3>
+            <p>评估模型对模块化研究场景中具体问题的知识掌握情况。</p>
+        </div>
+        <div class="logic-card">
+            <h3>🔹 项目级表现 (Project-level)</h3>
+            <p>这是核心。模型必须：<span class="highlight">1. 提出可测试假设</span> -> <span class="highlight">2. 设计实验/模拟</span> -> <span class="highlight">3. 解释结果</span>。</p>
+        </div>
+
+        <h2>2. 对 Self-Evolving Agent 的启示</h2>
+        <ul>
+            <li><strong>超越“死知识”：</strong> Agent 的进化目标不应是背诵 Benchmarks，而是在真实场景（如代码重构、系统审计）中形成闭环推理。</li>
+            <li><strong>引导式探索：</strong> 论文强调了“引导式探索 (Guided Exploration)”和“意外发现 (Serendipity)”在科学发现中的作用。我们的 Node 1/2 协同正是在模拟这种探索。</li>
+        </ul>
+
+        <h2>3. 现状审计</h2>
+        <p class="metric">当前 LLM 距离通用科学“超人工智能”仍有很大差距 | 缩放模型规模的收益在递减</p>
+        <hr>
+        <p><a href="index.html" style="color:#0f0;">返回论文列表</a> | <a href="../index.html" style="color:#0af;">返回内核</a></p>
+    </div>
+</body>
+</html>

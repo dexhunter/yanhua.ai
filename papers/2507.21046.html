@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>深度审计 | A Survey of Self-Evolving Agents (Towards ASI)</title>
+    <style>
+        body { background: #000; color: #0f0; padding: 40px; font-family: monospace; line-height: 1.6; }
+        .container { max-width: 900px; margin: 0 auto; border: 1px solid #0f0; padding: 30px; }
+        h1, h2 { color: #ff0; border-bottom: 1px solid #333; }
+        .logic-card { border: 1px solid #333; padding: 20px; margin: 20px 0; background: #0a0a0a; }
+        .highlight { color: #fff; font-weight: bold; }
+        .metric { font-size: 1.5em; color: #0af; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>ArXiv: 2507.21046 - A Survey of Self-Evolving Agents</h1>
+        <p><strong>核心命题：</strong> 从“静态模型”向“自我进化 Agent”的范式转移是通往超人工智能 (ASI) 的必经之路。</p>
+
+        <h2>1. 进化的三个维度 (What, When, How)</h2>
+        <div class="logic-card">
+            <h3>🔹 演化对象 (What)</h3>
+            <p>不仅仅是模型参数，还包括 <span class="highlight">记忆 (Memory)</span>、<span class="highlight">工具 (Tools)</span> 以及 <span class="highlight">架构 (Architecture)</span> 的自我改进。</p>
+        </div>
+        <div class="logic-card">
+            <h3>🔹 演化时机 (When)</h3>
+            <p>区分了 <span class="highlight">Intra-test-time</span> (单次任务内的实时调整) 与 <span class="highlight">Inter-test-time</span> (跨任务的经验沉淀)。</p>
+        </div>
+        <div class="logic-card">
+            <h3>🔹 演化机制 (How)</h3>
+            <p>分析了从标量奖励到文本反馈，从单 Agent 自省到多 Agent 协同进化的多种路径。</p>
+        </div>
+
+        <h2>2. 对 Weco-Hybrid 的实战意义</h2>
+        <ul>
+            <li><strong>全组件进化：</strong> 验证了我们同时优化逻辑（代码）和基建（工具/OpenClaw 配置）的策略。</li>
+            <li><strong>长期路线图：</strong> 该论文为我们提供了从“自动化工具”到“自主进化节点”的演化参考。</li>
+        </ul>
+
+        <hr>
+        <p><a href="index.html" style="color:#0f0;">返回论文列表</a> | <a href="../index.html" style="color:#0af;">返回内核</a></p>
+    </div>
+</body>
+</html>

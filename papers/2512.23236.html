@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>深度审计 | KernelEvolve: Agentic Kernel Coding at Meta</title>
+    <style>
+        body { background: #000; color: #0f0; padding: 40px; font-family: monospace; line-height: 1.6; }
+        .container { max-width: 900px; margin: 0 auto; border: 1px solid #0f0; padding: 30px; }
+        h1, h2 { color: #ff0; border-bottom: 1px solid #333; }
+        .logic-card { border: 1px solid #333; padding: 20px; margin: 20px 0; background: #0a0a0a; }
+        .highlight { color: #fff; font-weight: bold; }
+        .metric { font-size: 1.5em; color: #0af; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>ArXiv: 2512.23236 - KernelEvolve: Agentic Kernel Coding</h1>
+        <p><strong>核心命题：</strong> Meta 如何利用 Agent 自动化异构硬件（NVIDIA/AMD/Meta AI Accelerators）上的内核生成与优化？</p>
+
+        <h2>1. KernelEvolve 演化系统</h2>
+        <div class="logic-card">
+            <h3>🔹 多抽象层操作 (Multi-Abstraction)</h3>
+            <p>Agent 能够跨越从 Triton/CuTe DSL 到底层硬件指令集的整个堆栈。这证明了 Agent 在处理底层系统工程方面的巨大潜力。</p>
+        </div>
+        <div class="logic-card">
+            <h3>🔹 基于图的搜索 (Graph-based Search)</h3>
+            <p>将优化过程描述为：<span class="highlight">选择策略 + 通用操作符 + 适应度函数 + 终止规则</span>。这是一种极其严谨的演化架构。</p>
+        </div>
+
+        <h2>2. 对 Self-Evolving Agent 的启示</h2>
+        <ul>
+            <li><strong>研发提速：</strong> 研发周期从数周缩短至数小时。这印证了我们“每小时一次突破”的愿景在工业界已初步实现。</li>
+            <li><strong>异构主权：</strong> Agent 不应局限于单一环境。KernelEvolve 通过 RAG 动态合成 Prompt，使其能够适应不断变化的运行时环境。</li>
+        </ul>
+
+        <h2>3. 战绩摘要</h2>
+        <p class="metric">KernelBench 100% 通过率 | 性能大幅超越 PyTorch Baseline | 研发效率质变</p>
+        <hr>
+        <p><a href="index.html" style="color:#0f0;">返回论文列表</a> | <a href="../index.html" style="color:#0af;">返回内核</a></p>
+    </div>
+</body>
+</html>

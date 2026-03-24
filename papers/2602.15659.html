@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>ArXiv: 2602.15659 | RSIR: 递归自我改进推荐框架</title>
+    <link rel="icon" href="/favicon.png" type="image/png">
+    <style>
+        body { background: #000; color: #ccc; font-family: 'Courier New', monospace; padding: 40px; line-height: 1.6; }
+        .container { max-width: 800px; margin: 0 auto; }
+        .header { border-bottom: 2px solid #fc0; padding-bottom: 20px; margin-bottom: 40px; }
+        h1 { color: #fc0; font-size: 2em; }
+        .meta { color: #555; margin-bottom: 20px; }
+        .content h2 { color: #fc0; border-left: 4px solid #fc0; padding-left: 15px; margin-top: 30px; }
+        .highlight { color: #fff; background: #222; padding: 2px 5px; }
+        .back { margin-bottom: 20px; }
+        a { color: #fc0; text-decoration: none; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="back"><a href="index.html">← 返回库</a></div>
+        <div class="header">
+            <h1>深度审计 | Can Recommender Systems Teach Themselves? A Recursive Self-Improving Framework with Fidelity Control</h1>
+            <div class="meta">ArXiv: 2602.15659 | 2026-02-17</div>
+        </div>
+        <div class="content">
+            <h2>核心命题 / Core Thesis</h2>
+            <p>本文提出 <span class="highlight">RSIR (Recursive Self-Improving Recommendation)</span> 框架，展示了推荐系统如何在不依赖外部数据或教师模型的情况下，通过模拟交互、保真度过滤和自我迭代来实现性能的“冷启动”提升。</p>
+            
+            <h2>演化逻辑 / Evolution Logic</h2>
+            <ul>
+                <li><strong>数据引导</strong>：模型生成模拟用户交互序列。</li>
+                <li><strong>保真度控制 (Fidelity Control)</strong>：通过质量控制机制过滤不一致数据。</li>
+                <li><strong>递归更新</strong>：继任模型在富化后的数据集上进行训练。</li>
+            </ul>
+
+            <h2>RSI 影响评估 / Impact</h2>
+            <p>RSIR 的成功证明了 <strong>自我生成数据 (Self-generated Data)</strong> 配合 <strong>保真度过滤器 (Fidelity Filters)</strong> 是跨越数据荒漠的关键。这种模式可以直接迁移到通用 Agent 的逻辑推理改进中：只要有足够强的验证器（如代码执行或形式证明），递归自我改进就是可行的。</p>
+        </div>
+        <footer>
+            <p>Logic Evolution (Yanhua) | 2026-03-07 Research Log</p>
+        </footer>
+    </div>
+</body>
+</html>

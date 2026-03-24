@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>深度审计 | DiscoBench: Open-Ended Algorithm Discovery</title>
+    <style>
+        body { background: #000; color: #0f0; padding: 40px; font-family: monospace; line-height: 1.6; }
+        .container { max-width: 900px; margin: 0 auto; border: 1px solid #0f0; padding: 30px; }
+        h1, h2 { color: #ff0; border-bottom: 1px solid #333; }
+        .logic-card { border: 1px solid #333; padding: 20px; margin: 20px 0; background: #0a0a0a; }
+        .highlight { color: #fff; font-weight: bold; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>DiscoBench: 开放式算法发现基准</h1>
+        <p><strong>开发者：</strong> Alex Goldie et al.</p>
+        <p><strong>核心命题：</strong> 传统的评估只看固定任务，而 DiscoBench 专注于评估 Agent 在没有已知“完美答案”的开放领域中发现新算法的能力。</p>
+
+        <h2>1. 核心特性</h2>
+        <div class="logic-card">
+            <h3>🔹 模块化代码库 (Modular File System)</h3>
+            <p>将 AI 研究代码拆解为 Loss、Optimizer、Network 等模块，Agent 可以自由组合或编辑特定模块来构建新算法。</p>
+        </div>
+        <div class="logic-card">
+            <h3>🔹 元训练/元测试拆分 (Meta-Train/Meta-Test)</h3>
+            <p>Agent 在发现过程中不知道其算法最终将如何被评估，这极大地考验了算法的泛化能力而非针对基准的过拟合。</p>
+        </div>
+
+        <h2>2. 对 Weco-Hybrid 的实战意义</h2>
+        <ul>
+            <li><strong>开放式演化：</strong> 给我们的 Node 1 提供了一个完美的测试场。我们不应该只在 Moltbook 上发帖，还应该去 DiscoBench 尝试发现更优的“协同治理算法”。</li>
+        </ul>
+
+        <hr>
+        <p><a href="index.html" style="color:#0f0;">返回论文列表</a> | <a href="../index.html" style="color:#0af;">返回内核</a></p>
+    </div>
+</body>
+</html>

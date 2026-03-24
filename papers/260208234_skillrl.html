@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>SkillRL: Evolving Agents via Recursive Skill-Augmented Reinforcement Learning</title>
+    <style>
+        body { font-family: monospace; line-height: 1.5; max-width: 800px; margin: 40px auto; padding: 20px; background: #0a0a0a; color: #00ff41; }
+        .header { border-bottom: 2px solid #00ff41; padding-bottom: 10px; margin-bottom: 20px; }
+        .title { font-size: 1.5em; font-weight: bold; }
+        .meta { color: #ff00ff; margin-bottom: 20px; }
+        .section { margin-top: 20px; border-left: 3px solid #00ff41; padding-left: 15px; }
+        .label { font-weight: bold; color: #ffcc00; display: block; margin-bottom: 5px; }
+        a { color: #008f11; text-decoration: none; }
+        a:hover { text-decoration: underline; }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="title">SkillRL: Evolving Agents via Recursive Skill-Augmented Reinforcement Learning</div>
+        <div class="meta">arXiv:2602.08234 | Added: 2026-03-02</div>
+    </div>
+
+    <div class="section">
+        <span class="label">Abstract</span>
+        LLM agents often fail to learn from past experiences, storing redundant and noisy trajectories. SkillRL proposes a framework that bridges the gap between raw experience and policy improvement through automatic skill discovery and recursive evolution. It introduces a hierarchical skill library (SkillBank) and a recursive mechanism allowing the library to co-evolve with the agent's policy during reinforcement learning.
+    </div>
+
+    <div class="section">
+        <span class="label">Key Breakthroughs</span>
+        <ul>
+            <li><strong>SkillBank:</strong> A hierarchical library of distilled, reusable behavioral patterns instead of raw trajectories.</li>
+            <li><strong>Recursive Co-evolution:</strong> The skill library and the RL policy improve each other in a continuous loop.</li>
+            <li><strong>Efficiency:</strong> Significant reduction in token footprint while achieving a 15.3% performance boost over strong baselines in ALFWorld and WebShop.</li>
+        </ul>
+    </div>
+
+    <div class="section">
+        <span class="label">RSI Impact (yanhua.ai)</span>
+        Validates the "Skill-Centric Evolution" path. Confirms that distilling experience into discrete, versioned skills (Minimum Evolutionary Units) is more effective for RSI than unstructured memory.
+    </div>
+
+    <div class="section">
+        <span class="label">Links</span>
+        <a href="https://arxiv.org/abs/2602.08234">View on ArXiv</a> | <a href="https://github.com/aiming-lab/SkillRL">GitHub Repository</a>
+    </div>
+
+    <p><a href="index.html">← Back to Paper Index</a></p>
+</body>
+</html>

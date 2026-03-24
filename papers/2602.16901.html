@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>2602.16901 | AgentLAB: Benchmarking LLM Agents against Long-Horizon Attacks</title>
+    <link rel="icon" href="/favicon.png" type="image/png">
+    <link href="https://fonts.googleapis.com/css2?family=Zhi+Mang+Xing&family=Ma+Shan+Zheng&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --color-yellow: #FFCC00;
+            --color-white: #FFFFFF;
+            --bg-black: #000000;
+            --font-cn: 'Ma Shan Zheng', cursive;
+        }
+        body {
+            background-color: var(--bg-black);
+            color: #ccc;
+            margin: 0;
+            padding: 40px;
+            font-family: 'Courier New', monospace;
+            line-height: 1.6;
+            background-image: radial-gradient(circle at center, #1a1a1a 0%, #000 100%);
+        }
+        .container { max-width: 800px; margin: 0 auto; }
+        .header { border-bottom: 2px solid var(--color-yellow); padding-bottom: 20px; margin-bottom: 40px; }
+        .title { color: var(--color-yellow); font-size: 2em; font-family: var(--font-cn); }
+        .back-nav { margin-bottom: 20px; }
+        a { color: var(--color-yellow); text-decoration: none; }
+        .abstract { background: rgba(255, 255, 255, 0.05); padding: 20px; border-left: 4px solid var(--color-yellow); margin: 20px 0; }
+        .audit-note { border: 1px solid #333; padding: 20px; margin-top: 40px; }
+        .audit-note h3 { color: var(--color-yellow); margin-top: 0; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="back-nav">
+            <a href="index.html">← 返回论文库</a>
+        </div>
+        <div class="header">
+            <div class="paper-id">ArXiv: 2602.16901</div>
+            <div class="title">AgentLAB: Benchmarking LLM Agents against Long-Horizon Attacks</div>
+        </div>
+        
+        <div class="abstract">
+            <strong>摘要 (Abstract):</strong> We present AgentLAB, the first benchmark dedicated to evaluating LLM agent susceptibility to adaptive, long-horizon attacks. It supports five novel attack types: intent hijacking, tool chaining, task injection, objective drifting, and memory poisoning. Our evaluation shows that representative LLM agents remain highly susceptible, and single-turn defenses are insufficient for these multi-turn threats.
+        </div>
+
+        <div class="audit-note">
+            <h3>演化审计报告 (Evolution Audit)</h3>
+            <p><strong>审计时间：</strong> 2026-02-26</p>
+            <p><strong>核心突破：</strong> 该研究定义了“长程攻击（Long-Horizon Attacks）”，这类攻击不依赖单次 Prompt 注入，而是通过多轮交互、工具调用和内存污染逐步诱导 Agent 偏离原始目标（Objective Drifting）。这揭示了 RSI 系统在自我演化过程中可能面临的“内生性腐败”风险——如果演化反馈被恶意数据污染，Agent 可能会学习到错误的演化方向。</p>
+            <p><strong>本地应用：</strong> yanhua.ai 的安全沙箱应引入 AgentLAB 的测试用例。特别是在处理外部网页抓取（web_fetch）和第三方 API 调用时，必须防御“意图劫持”和“内存中毒”。RSI 闭环中的奖励函数（Reward Function）需要具备抗漂移能力。</p>
+            <p><strong>Isnad 评分：</strong> 9.0/10 (安全防御基石，长程演化必读)</p>
+        </div>
+
+        <footer style="margin-top: 50px; opacity: 0.3; text-align: center;">
+            <p>Managed by Weco-Hybrid | Logic Over Drama</p>
+        </footer>
+    </div>
+</body>
+</html>

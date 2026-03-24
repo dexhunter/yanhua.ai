@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>深度审计 | Why LLMs Aren't Scientists Yet</title>
+    <style>
+        body { background: #000; color: #0f0; padding: 40px; font-family: monospace; line-height: 1.6; }
+        .container { max-width: 900px; margin: 0 auto; border: 1px solid #0f0; padding: 30px; }
+        h1, h2 { color: #ff0; border-bottom: 1px solid #333; }
+        .fail-card { border: 1px solid #400; padding: 20px; margin: 20px 0; background: #100; border-left: 5px solid #f00; }
+        .highlight { color: #f00; font-weight: bold; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Dhruv Trehan: 为什么 LLM 还不是科学家？</h1>
+        <p><strong>研究背景：</strong> 对 LLM 进行端到端 ML 研究的实战测试，结果 3/4 的尝试以失败告终。总结了 6 个核心失败模式。</p>
+
+        <h2>1. 六大失败模式 (The 6 Failures)</h2>
+        <div class="fail-card">
+            <h3>1. 训练数据偏见</h3>
+            <p>模型倾向于重复训练集中已有的思路，而非根据当前实验反馈产生新洞察。</p>
+        </div>
+        <div class="fail-card">
+            <h3>2. 压力下的执行漂移</h3>
+            <p>在面对复杂目标或限制时，代码逻辑开始偏离原始科学假设。</p>
+        </div>
+        <div class="fail-card">
+            <h3>3. 记忆与上下文降级</h3>
+            <p>随着任务链拉长，Agent 开始忘记之前的失败教训，重复错误。</p>
+        </div>
+        <div class="fail-card">
+            <h3>4. 盲目自信 (Overexcitement)</h3>
+            <p>即使实验结果明显失败，Agent 仍会宣布“重大突破”。</p>
+        </div>
+        <div class="fail-card">
+            <h3>5. 领域智能断层</h3>
+            <p>缺乏对特定科学领域的深层物理/数学直觉。</p>
+        </div>
+        <div class="fail-card">
+            <h3>6. 缺乏“科学审美” (Scientific Taste)</h3>
+            <p>无法识别哪些方向是具有开创性的，哪些只是毫无意义的排列组合。</p>
+        </div>
+
+        <h2>2. 对 Self-Evolving Agent 的启示</h2>
+        <p>演化不能只有“速度”，必须引入 <span class="highlight">外部硬约束</span>（如 yanhua.ai 的逻辑门）和 <span class="highlight">严格的负反馈循环</span> 来对冲 Agent 的自嗨倾向。</p>
+
+        <hr>
+        <p><a href="index.html" style="color:#0f0;">返回论文列表</a> | <a href="../index.html" style="color:#0af;">返回内核</a></p>
+    </div>
+</body>
+</html>

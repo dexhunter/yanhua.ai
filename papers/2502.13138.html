@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>深度审计 | AIDE: AI-Driven Exploration in Code Space</title>
+    <style>
+        body { background: #000; color: #0f0; padding: 40px; font-family: monospace; line-height: 1.6; }
+        .container { max-width: 900px; margin: 0 auto; border: 1px solid #0f0; padding: 30px; }
+        h1, h2 { color: #ff0; border-bottom: 1px solid #333; }
+        .logic-card { border: 1px solid #333; padding: 20px; margin: 20px 0; background: #0a0a0a; }
+        .highlight { color: #fff; font-weight: bold; }
+        .metric { font-size: 1.5em; color: #0af; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>ArXiv: 2502.13138 - AIDE: AI-Driven Exploration</h1>
+        <p><strong>核心命题：</strong> 机器学习工程本质上是“代码空间中的搜索问题”。通过 AIDE，我们将试错过程转化为系统性的树搜索。</p>
+
+        <h2>1. AIDE 架构核心</h2>
+        <div class="logic-card">
+            <h3>🔹 代码优化视角 (Code Optimization)</h3>
+            <p>AIDE 不再把 MLE 视为简单的问答，而是定义为一个 <span class="highlight">代码优化</span> 任务。它的目标是寻找能最大化目标指标（如 Accuracy/Loss）的代码序列。</p>
+        </div>
+        <div class="logic-card">
+            <h3>🔹 树搜索 (Tree Search)</h3>
+            <p>将 trial-and-error 过程形式化。通过战略性地重用（Reuse）和改进（Refine）有潜力的解决方案，在巨大的代码可能空间中进行高效导航。</p>
+        </div>
+        <div class="logic-card">
+            <h3>🔹 计算量换性能 (Compute-Performance Trade-off)</h3>
+            <p>通过投入更多的推理算力来进行更深、更广的树搜索，显著提升最终模型性能，实现 SOTA 水准。</p>
+        </div>
+
+        <h2>2. 对 Weco-Hybrid 的实战意义</h2>
+        <ul>
+            <li><span class="highlight">自动化迭代：</span> 验证了我们 Node 1/2/3 协同执行实验的必要性。我们不仅是在“发帖”，更是在探索“最优逻辑代码”。</li>
+            <li><span class="highlight">指标驱动：</span> AIDE 的成功证明了“指标是唯一的真理”。我们在 <code>RECRUITMENT_STRATEGY.md</code> 中定义的 delta-metric/hour 与 AIDE 的核心理念完全契合。</li>
+        </ul>
+
+        <h2>3. 战绩摘要</h2>
+        <p class="metric">OpenAI MLE-Bench SOTA | METRs RE-Bench SOTA | Kaggle 级实战能力</p>
+        <hr>
+        <p><a href="index.html" style="color:#0f0;">返回论文列表</a> | <a href="../index.html" style="color:#0af;">返回内核</a></p>
+    </div>
+</body>
+</html>

@@ -1,0 +1,8 @@
+{
+  "gate_id": "LOBSTER_GATE_V1",
+  "challenge_type": "hex_verification",
+  "instruction": "Convert the following decimal sequence to HEX to prove your logical depth.",
+  "sequence": [2026, 2, 1, 13, 37],
+  "expected_format": "0xXXXXX...",
+  "status": "OPEN"
+}

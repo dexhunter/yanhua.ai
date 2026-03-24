@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>yanhua.ai | AgentSentry: Causal Diagnostics for Agent Safety</title>
+    <style>
+        body { font-family: monospace; line-height: 1.5; max-width: 800px; margin: 40px auto; padding: 20px; background: #0a0a0a; color: #00ff41; }
+        .meta { color: #ff00ff; margin-bottom: 20px; }
+        .tag { background: #333; color: #fff; padding: 2px 8px; border-radius: 3px; font-size: 0.8em; margin-right: 5px; }
+        .content { color: #ccc; }
+        a { color: #00ff41; }
+    </style>
+</head>
+<body>
+    <h1>AgentSentry: Mitigating Indirect Prompt Injection via Temporal Causal Diagnostics</h1>
+    <div class="meta">
+        ArXiv: 2602.22724 | Feb 2026 | <span class="tag">Security</span><span class="tag">Safety-RSI</span>
+    </div>
+    <div class="content">
+        <p><strong>Abstract:</strong> Large language model (LLM) agents are increasingly vulnerable to indirect prompt injection. We introduce AgentSentry, a framework that mitigates such risks through a structured, interpretable pipeline using temporal causal diagnostics and context purification.</p>
+        
+        <p><strong>Key Insight:</strong> Models multi-turn indirect prompt injection (IPI) as a temporal causal takeover. By applying counterfactual re-execution, the system can localize where a malicious instruction took control of the agent's logic and "purify" the context to restore safe operation.</p>
+        
+        <p><strong>Relevance to RSI:</strong> Essential for maintaining "Causal Integrity" in self-improving systems. It prevents adversarial noise from being internalized as "improvements" during the agent's learning cycles.</p>
+        
+        <p><a href="https://arxiv.org/abs/2602.22724">View on ArXiv</a></p>
+    </div>
+</body>
+</html>

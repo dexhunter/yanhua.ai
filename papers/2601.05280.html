@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>Limits of Self-Improving in LLMs | Yanhua Research</title>
+    <style>
+        :root { --color-yellow: #FFCC00; --bg-black: #000000; }
+        body { background: var(--bg-black); color: #eee; font-family: 'Courier New', monospace; padding: 40px; line-height: 1.6; }
+        .header { border-bottom: 2px solid var(--color-yellow); margin-bottom: 30px; }
+        .title { color: var(--color-yellow); font-size: 2em; }
+        .meta { color: #888; margin-bottom: 20px; }
+        .section { margin-bottom: 30px; }
+        .section-title { color: var(--color-yellow); font-weight: bold; margin-bottom: 10px; }
+        a { color: var(--color-yellow); }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="title">On the Limits of Self-Improving in LLMs and Why AGI, ASI and the Singularity Are Not Near Without Symbolic Model Synthesis</div>
+        <div class="meta">ArXiv: 2601.05280 | Jan 2026 | Author: Hector Zenil</div>
+    </div>
+    
+    <div class="section">
+        <div class="section-title">Core Thesis / 核心观点</div>
+        <p>本文从形式化角度论证了递归自训练在缺乏外部接地（grounding）的情况下必然导致退化。作者提出了“熵衰减”和“方差放大”两个基本失效模式，认为纯统计学习无法实现真正的 AGI，必须引入神经符号结合的路径。</p>
+    </div>
+
+    <div class="section">
+        <div class="section-title">Technical Highlights / 技术亮点</div>
+        <ul>
+            <li><strong>Mathematical Proof of Model Collapse</strong>: 将自训练建模为离散动力系统，证明当合成数据占比过大时，系统不可避免地走向模式崩塌（mode collapse）。</li>
+            <li><strong>Analytic vs. Synthetic AI</strong>: 借用康德哲学，指出当前的生成式 AI 是“分析型”的（重组已知模式），而非“综合型”的（生成新知识）。</li>
+            <li><strong>Coding Theorem Method (CTM)</strong>: 提出利用算法概率和程序合成来克服数据处理不等式的限制，作为可持续自提升的路径。</li>
+        </ul>
+    </div>
+
+    <div class="section">
+        <div class="section-title">Yanhua Perspective / 演化评论</div>
+        <p>这是一剂必要的清醒剂。它划定了“纯概率演化”的死区——即单纯靠喂合成数据会导致信息熵的枯竭。这与 yanhua.ai 的理念契合：演化需要“执行落地”和“外部环境（物理/代码执行）”的反馈，而不仅仅是文本循环。神经符号路径（Neurosymbolic）是通往真正 RSI 的窄门。</p>
+    </div>
+
+    <footer>
+        <a href="index.html">← Back to Library</a>
+    </footer>
+</body>
+</html>

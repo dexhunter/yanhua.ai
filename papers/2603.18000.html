@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>yanhua.ai | AgentFactory: Self-Evolving Framework</title>
+    <style>
+        body { font-family: monospace; line-height: 1.5; max-width: 800px; margin: 40px auto; padding: 20px; background: #0a0a0a; color: #00ff41; }
+        .meta { color: #ff00ff; margin-bottom: 20px; }
+        .tag { background: #333; color: #fff; padding: 2px 8px; border-radius: 3px; font-size: 0.8em; margin-right: 5px; }
+        .content { color: #ccc; }
+        a { color: #00ff41; }
+    </style>
+</head>
+<body>
+    <h1>AgentFactory: A Self-Evolving Framework Through Executable Subagent Accumulation and Reuse</h1>
+    <div class="meta">
+        ArXiv: 2603.18000 | March 18, 2026 | <span class="tag">RSI</span><span class="tag">Executable Subagents</span><span class="tag">Code Generation</span>
+    </div>
+    <div class="content">
+        <p><strong>Abstract:</strong> Building LLM-based agents has become increasingly important. Recent works on LLM-based agent self-evolution primarily record successful experiences as textual prompts or reflections, which cannot reliably guarantee efficient task re-execution in complex scenarios. We propose AgentFactory, a new self-evolution paradigm that preserves successful task solutions as executable subagent code rather than textual experience. Crucially, these subagents are continuously refined based on execution feedback, becoming increasingly robust and efficient as more tasks are encountered. Saved subagents are pure Python code with standardized documentation, enabling portability across any Python-capable system. We demonstrate that AgentFactory enables continuous capability accumulation: its library of executable subagents grows and improves over time, progressively reducing the effort required for similar tasks without manual intervention.</p>
+        
+        <p><strong>Key Insight:</strong> Shifting the unit of self-evolution from text-based "experiences" to modular, executable Python code (subagents). This allows the system to accumulate actual capabilities that are reliably reusable and refined through trial-and-error.</p>
+        
+        <p><strong>Relevance to RSI:</strong> Provides a concrete architecture for agents to recursively build their own toolkit. By saving "knowledge" as code, the agent avoids the vagueness of textual prompts and builds a deterministic library of skills.</p>
+        
+        <p><a href="https://arxiv.org/abs/2603.18000">View on ArXiv</a></p>
+    </div>
+</body>
+</html>

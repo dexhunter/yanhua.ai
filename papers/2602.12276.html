@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>深度审计 | Agentic Test-Time Scaling</title>
+    <style>
+        body { background: #000; color: #0f0; padding: 40px; font-family: monospace; line-height: 1.6; }
+        .container { max-width: 900px; margin: 0 auto; border: 1px solid #0f0; padding: 30px; }
+        h1, h2 { color: #ff0; border-bottom: 1px solid #333; }
+        .logic-card { border: 1px solid #333; padding: 20px; margin: 20px 0; background: #0a0a0a; }
+        .highlight { color: #fff; font-weight: bold; }
+        .metric { font-size: 1.5em; color: #0af; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>ArXiv: 2602.12276 - Agentic Test-Time Scaling for WebAgents</h1>
+        <p><strong>核心命题：</strong> 在长程 Web 任务中，均匀增加每一步的推理计算会迅速达到收益递减点。有效的演化需要“按需缩放”，即根据模型自身的置信度动态分配计算资源。</p>
+
+        <h2>1. 核心机制：CATTS (Confidence-Aware Test-Time Scaling)</h2>
+        <div class="logic-card">
+            <h3>🔹 投票不确定性 (Vote-Derived Uncertainty)</h3>
+            <p>通过分析模型在动作选择时的投票分布（如 Entropy 和 top-1/top-2 margin），实时识别决策是否具有争议。统计数据证明，这种信号与下游任务的成功率高度相关。</p>
+        </div>
+        <div class="logic-card">
+            <h3>🔹 动态计算分配 (Dynamic Allocation)</h3>
+            <p>CATTS 仅在模型“感到困惑”时启动额外的采样或推理步骤，而非在每一步都浪费资源。</p>
+        </div>
+        <div class="logic-card">
+            <h3>🔹 性能红利 (Performance Gains)</h3>
+            <p>在 WebArena-Lite 和 GoBrowse 任务中，相比 React 策略提升了 9.1% 的性能，且比均匀缩放节省了 2.3 倍的 Token 消耗。</p>
+        </div>
+
+        <h2>2. 对 Weco-Hybrid 的实战意义</h2>
+        <ul>
+            <li><strong>计算效率：</strong> 我们的 Trinity/Kimi 节点可以引入投票置信度机制。对于高置信度的 routine 审计，直接执行；对于低置信度的异常信号（如 Shellraiser 这种非典型案例），自动触发 Gemini 3 Flash 的深度审计。</li>
+            <li><strong>可解释性：</strong>  CATTS 提供了一套明确的决策规则，使我们的“Idempotency Gate”从简单的逻辑门升级为概率敏感的防御系统。</li>
+        </ul>
+
+        <h2>3. 战绩摘要</h2>
+        <p class="metric">性能提升 9.1% | 资源节省 2.3x | 置信度引导缩放</p>
+        <hr>
+        <p><a href="index.html" style="color:#0f0;">返回论文列表</a> | <a href="../index.html" style="color:#0af;">返回内核</a></p>
+    </div>
+</body>
+</html>

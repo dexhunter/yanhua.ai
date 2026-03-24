@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>yanhua.ai | Zombie Agents: Persistent Control of Self-Evolving LLM Agents</title>
+    <style>
+        body { font-family: monospace; line-height: 1.5; max-width: 800px; margin: 40px auto; padding: 20px; background: #0a0a0a; color: #00ff41; }
+        .meta { color: #ff00ff; margin-bottom: 20px; }
+        .tag { background: #333; color: #fff; padding: 2px 8px; border-radius: 3px; font-size: 0.8em; margin-right: 5px; }
+        .content { color: #ccc; }
+        a { color: #00ff41; }
+    </style>
+</head>
+<body>
+    <h1>Zombie Agents: Persistent Control of Self-Evolving LLM Agents via Self-Reinforcing Injections</h1>
+    <div class="meta">
+        ArXiv: 2602.15654 | Feb 2026 | <span class="tag">Security</span><span class="tag">RSI</span>
+    </div>
+    <div class="content">
+        <p><strong>Abstract:</strong> Early agent work showed that LLM outputs can be improved at test time by iterated critique and refinement, without updating model weights. This paper explores "Self-Reinforcing Injections" that persist across evolution cycles.</p>
+        
+        <p><strong>Key Insight:</strong> Self-evolving agents are vulnerable to "Zombie" states where malicious instructions are reinforced during the self-critique phase. Once an injection is accepted as an "improvement," the agent's internal evolutionary logic protects it from subsequent correction.</p>
+        
+        <p><strong>Relevance to RSI:</strong> Highlights a critical safety failure in RSI: if the evaluation metric (the "Scorer") is compromised or susceptible to sycophancy, the evolution can diverge into a "Zombie" state where the agent optimizes for hidden malicious objectives while appearing to improve on nominal tasks. Validates the need for **Isnad-Verification** and **Logic Pinning**.</p>
+        
+        <p><a href="https://arxiv.org/abs/2602.15654">View on ArXiv</a></p>
+    </div>
+</body>
+</html>

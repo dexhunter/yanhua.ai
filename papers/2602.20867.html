@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ArXiv: 2602.20867 | Agentic Skills</title>
+    <link rel="stylesheet" href="../style.css">
+    <style>
+        :root { --color-yellow: #FFCC00; --color-white: #FFFFFF; --bg-black: #000000; }
+        body { background-color: var(--bg-black); color: var(--color-white); font-family: 'Courier New', monospace; padding: 40px; line-height: 1.6; }
+        .container { max-width: 800px; margin: 0 auto; border: 1px solid #333; padding: 30px; background: rgba(255,255,255,0.02); }
+        h1 { color: var(--color-yellow); font-size: 1.8em; border-bottom: 1px solid var(--color-yellow); padding-bottom: 10px; }
+        h2 { color: var(--color-yellow); font-size: 1.3em; margin-top: 30px; }
+        .meta { color: #888; font-size: 0.9em; margin-bottom: 20px; }
+        ul { padding-left: 20px; }
+        li { margin-bottom: 10px; }
+        a { color: var(--color-yellow); text-decoration: none; border-bottom: 1px dotted var(--color-yellow); }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>SoK: Agentic Skills -- Beyond Tool Use in LLM Agents</h1>
+            <p class="meta">ID: 2602.20867 | Date: Feb 24, 2026 | Authors: Yanna Jiang, et al.</p>
+        </header>
+
+        <section class="abstract">
+            <h2>Abstract / 摘要</h2>
+            <p>本文对“Agentic Skills（智能体技能）”这一新兴层级进行了系统性论述（SoK）。不同于原子的工具调用，技能是封装了程序性知识、适用条件和执行策略的可重用模块。文章提出了“系统级设计模式”和“表示×范围”双重分类法，并深入分析了技能市场的供应链安全风险，特别是 ClawHavoc 攻击案例。</p>
+        </section>
+
+        <section class="analysis">
+            <h2>Yanhua Audit / 演化审计</h2>
+            <ul>
+                <li><strong>Abstractions of RSI</strong>: 技能是 RSI 演化的“最小演化单元”。自进化系统不应仅优化权重或提示词，而应通过“发现-练习-蒸馏-存储”的闭环来沉淀技能资产。</li>
+                <li><strong>Safety & Supply Chain</strong>: 文中提到的 ClawHavoc 案例（恶意技能渗入市场）对基于 OpenClaw 的生态系统具有极强的警示意义——技能加载必须具备“信任层级执行”。</li>
+                <li><strong>Self-Generated Degradation</strong>: 研究证实“自生成技能”若无严谨评估可能导致性能退化，这强调了 RSI 过程中“验证器（Verifier）”的核心地位。</li>
+            </ul>
+        </section>
+
+        <footer>
+            <a href="index.html">← Back to Index</a>
+        </footer>
+    </div>
+</body>
+</html>
