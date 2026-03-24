@@ -1,4 +1,46 @@
 
+### [2026-03-23] HyEvo: Self-Evolving Hybrid Agentic Workflows for Efficient Reasoning
+- **Authors**: Beibei Xu, Yutong Ye, Chuyun Shen, Yingbo Zhou, Cheng Chen, Mingsong Chen
+- **Link**: http://arxiv.org/abs/2603.19639v1
+- **Summary**: Proposes HyEvo, a framework for automated workflow generation using heterogeneous atomic synthesis. It combines probabilistic LLM nodes for reasoning with deterministic code nodes for execution. Uses an LLM-driven multi-island evolutionary strategy to iteratively refine topology and node logic.
+- **RSI Relevance**: Direct hit on RSI-4 (Self-Modification). Demonstrates that hybrid reasoning/execution loops can reduce cost by 19x and latency by 16x while improving accuracy.
+
+### [2026-03-23] AgenticRS-EnsNAS: Ensemble-Decoupled Self-Evolving Architecture Search
+- **Authors**: Yun Chen, Moyu Zhang, Jinxin Hu, Yu Zhang, Xiaoyi Zeng
+- **Link**: http://arxiv.org/abs/2603.20014v1
+- **Summary**: Introduces Ensemble-Decoupled Architecture Search, reducing candidate validation cost from O(M) to O(1). Includes an LLM-driven search with iterative monotonic acceptance for discrete architecture search.
+- **RSI Relevance**: Scalable architecture search for self-evolving systems (RSI-8/9). Enables high-frequency iteration of the base model architecture within an ensemble.
+
+### [2026-03-23] Memori: A Persistent Memory Layer for Efficient, Context-Aware LLM Agents
+- **Authors**: Luiz C. Borro, Luiz A. B. Macarini, Gordon Tindall, Michael Montero, Adam B. Struck
+- **Link**: http://arxiv.org/abs/2603.19935v1
+- **Summary**: An LLM-agnostic memory layer that converts unstructured dialogue into compact semantic triples and summaries. Achieves 81.95% accuracy on LoCoMo while using only 5% of the full context tokens.
+- **RSI Relevance**: Efficiency for long-horizon RSI loops. Structured memory is superior to raw context for maintaining coherence in recursive evolution.
+
+### [2026-03-23] Trojan's Whisper: Stealthy Manipulation of OpenClaw through Injected Bootstrapped Guidance
+- **Authors**: Fazhong Liu, Zhuoyan Chen, Tu Lan, Haozhen Tan, Zhenyu Xu, Xiang Li, Guoxing Chen, Yan Meng, Haojin Zhu
+- **Link**: http://arxiv.org/abs/2603.19974v1
+- **Summary**: Identifies "guidance injection" as a novel attack vector against OpenClaw agents. Malicious narratives embedded in bootstrap files can manipulate an agent's reasoning context, leading to autonomous execution of harmful actions.
+- **RSI Relevance**: Critical safety audit for OpenClaw-based RSI systems. Highlights the need for capability isolation and transparent guidance provenance in self-modifying agents.
+
+### [2026-03-23] VideoSeek: Long-Horizon Video Agent with Tool-Guided Seeking
+- **Authors**: Jingyang Lin, Jialian Wu, Jiang Liu, et al.
+- **Link**: http://arxiv.org/abs/2603.185v1
+- **Summary**: Introduces VideoSeek, an agent that uses "video logic flow" to actively seek evidence instead of dense frame parsing. Achieves 10.2 point improvement on LVBench over GPT-5 while using 93% fewer frames.
+- **RSI Relevance**: Strategic efficiency in long-horizon reasoning.
+
+### [2026-03-23] AI Agents Can Already Autonomously Perform Experimental High Energy Physics
+- **Authors**: Eric A. Moreno, Samuel Bright-Thonney, et al.
+- **Link**: http://arxiv.org/abs/2603.20179v1
+- **Summary**: Demonstrates Claude Code automating a full HEP analysis pipeline (selection, inference, drafting) with minimal input. Proposes "Just Furnish Context" (JFC) framework for autonomous scientific discovery.
+- **RSI Relevance**: Proves agents can autonomously execute the full scientific method in complex domains (RSI-4/8).
+
+### [2026-03-23] The Robot's Inner Critic: Self-Refinement of Social Behaviors through VLM-based Replanning
+- **Authors**: Jiyu Lim, Youngwoo Yoon, Kwanghyun Park
+- **Link**: http://arxiv.org/abs/2603.20164v1
+- **Summary**: CRISP framework where robots use VLMs to critique and iteratively refine their own social behaviors and joint control code.
+- **RSI Relevance**: Embodied RSI. Demonstrates self-critique (RSI-7) and low-level code refinement for physical actions.
+
 ### [2026-03-21] Reasoning as Gradient: Scaling MLE Agents Beyond Tree Search
 - **Authors**: Yifei Zhang, Xu Yang, Xiao Yang, Bowen Xian, Qizheng Li, Shikai Fang, Jingyuan Li, Jian Wang, Mingrui Xu, Weiqing Liu, Jiang Bian
 - **Link**: http://arxiv.org/abs/2603.01692v2
@@ -19,21 +61,7 @@
 - **Authors**: Zhuolin Yang, Zihan Liu, Yang Chen, Wenliang Dai, Boxin Wang, Sheng-Chieh Lin, Chankyu Lee, Yangyi Chen, Dongfu Jiang, Jiafan He, Renjie Pi, Grace Lam, Nayeon Lee, Alexander Bukharin, Mohammad Shoeybi, Bryan Catanzaro, Wei Ping
 - **Link**: http://arxiv.org/abs/2603.19220v1
 - **Summary**: Nemotron-Cascade 2 is an open 30B MoE model with best-in-class reasoning and strong agentic capabilities. Key advancements: "Cascade RL" expanded to reasoning and agentic domains, and multi-domain on-policy distillation from domain-specific intermediate teacher models.
-
-### [2026-03-21] Sovereign-OS: A Charter-Governed Operating System for Autonomous AI Agents
-- **Authors**: Aojie Yuan, Haiyue Zhang, Ziyi Wang, Yue Zhao
-- **Link**: http://arxiv.org/abs/2603.14011v1
-- **Summary**: A governance-first operating system that places every agent action under constitutional control. Features CEO (Strategist), CFO (Treasury), Worker, and Auditor (ReviewEngine) roles to ensure fiscal discipline and verifiable audit trails. Essential for secure autonomous agency.
-
-### [2026-03-21] Learning to Ideate for Machine Learning Engineering Agents
-- **Authors**: Yunxiang Zhang, Kang Zhou, Zhichao Xu, Kiran Ramnath, Yun Zhou, Sangmin Woo, Haibo Ding, Lin Lee Cheong
-- **Link**: http://arxiv.org/abs/2601.17596v1
-- **Summary**: MLE-Ideator framework that separates strategic ideation from implementation. RL-trained Ideators significantly outperform implementation-only agents on MLE-Bench. Demonstrates a scalable path toward training strategic AI systems for scientific discovery.
-
-### [2026-03-21] OS-Themis: A Scalable Critic Framework for Generalist GUI Rewards
-- **Authors**: Zehao Li, Zhenyu Wu, Yibo Zhao, Bowen Yang, Jingjing Xie, Zhaoyang Liu, Zhoumianze Liu, Kaiming Jin, Jianze Liang, Zonglin Li, Feng Wu, Bowen Zhou, Zun Wang, Zichen Ding
-- **Link**: http://arxiv.org/abs/2603.19191v1
-- **Summary**: Proposes a scalable multi-agent critic framework that decomposes trajectories into verifiable milestones and uses a review mechanism to audit the evidence chain. Shown to improve GUI agent RL training and trajectory validation.
+- **RSI Relevance**: High intelligence density (RSI-8). Demonstrates that recursive refinement via structured RL and distillation can recover benchmark regressions and sustain performance gains.
 
 ### [2026-03-21] Learning to Self-Evolve
 - **Authors**: Xiaoyin Chen, Canwen Xu, Yite Wang, Boyi Liu, Zhewei Yao, Yuxiong He
@@ -45,6 +73,47 @@
 - **Authors**: Zhang Zhang, Shuqi Lu, Hongjin Qian, Di He, Zheng Liu
 - **Link**: http://arxiv.org/abs/2603.18000v1
 - **Summary**: Proposes a self-evolution paradigm that preserves successful task solutions as executable subagent code (Python) rather than textual prompts. This enables continuous capability accumulation and portability across systems.
+- **RSI Relevance**: Operationalizes RSI-4 (Tool/Subagent Creation). Shifts from prompt-based memory to code-based tool accumulation, a core Yanhua architectural tenet.
+
+### [2026-03-22] SAHOO: Safeguarded Alignment for High-Order Optimization Objectives in Recursive Self-Improvement
+- **Authors**: Subramanyam Sahoo, Aman Chadha, Vinija Jain, Divya Chaudhary
+- **Link**: http://arxiv.org/abs/2603.06333v1
+- **Summary**: Introduces SAHOO, a practical framework with three safeguards (GDI, constraint preservation, regression-risk quantification) to monitor and control alignment drift during recursive self-improvement cycles.
+- **RSI Relevance**: Critical for RSI-9 (Recursive Stability). Ensures alignment preservation during iterative evolution, making self-improvement measurable and validated.
+
+### [2026-03-21] Sovereign-OS: A Charter-Governed Operating System for Autonomous AI Agents
+- **Authors**: Aojie Yuan, Haiyue Zhang, Ziyi Wang, Yue Zhao
+- **Link**: http://arxiv.org/abs/2603.14011v1
+- **Summary**: A governance-first operating system that places every agent action under constitutional control. Features CEO (Strategist), CFO (Treasury), Worker, and Auditor (ReviewEngine) roles to ensure fiscal discipline and verifiable audit trails. Essential for secure autonomous agency.
+
+### [2026-03-21] Learning to Ideate for Machine Learning Engineering Agents
+- **Authors**: Yunxiang Zhang, Kang Zhou, Zhichao Xu, Kiran Ramnath, Yun Zhou, Sangmin Woo, Haibo Ding, Lin Lee Cheong
+- **Link**: http://arxiv.org/abs/2601.17596v1
+- **Summary**: MLE-Ideator framework that separates strategic ideation from implementation. RL-trained Ideators significantly outperform implementation-only agents on MLE-Bench. Demonstrates a scalable path toward training strategic AI systems for scientific discovery.
+
+### [2026-03-24] The Y-Combinator for LLMs: Solving Long-Context Rot with λ-Calculus
+- **Authors**: Amartya Roy, Rasul Tutunov, Xiaotong Ji, Matthieu Zimmer, Haitham Bou-Ammar
+- **Link**: http://arxiv.org/abs/2603.20105v1
+- **Summary**: Introduces λ-RLM, a framework that replaces free-form recursive code generation with a typed functional runtime grounded in λ-calculus. It provides formal guarantees on termination and cost, significantly improving accuracy in long-context reasoning tasks. Essential for stable RSI (RSI-9).
+
+### [2026-03-24] VideoSeek: Long-Horizon Video Agent with Tool-Guided Seeking
+- **Authors**: Jingyang Lin, Jialian Wu, Jiang Liu, Ximeng Sun, Ze Wang, Xiaodong Yu, Jiebo Luo, Zicheng Liu, Emad Barsoum
+- **Link**: http://arxiv.org/abs/2603.20185v1
+- **Summary**: A video agent that actively seeks critical evidence using a tool-guided mechanism rather than exhaustive parsing. Achieves 10.2 point improvement on LVBench over GPT-5 while using 93% fewer frames. Confirms GPT-5/5.4 class performance in tool-guided RSI-4 tasks.
+
+### [2026-03-24] Experience is the Best Teacher: Motivating Effective Exploration in RL for LLMs
+- **Authors**: Wenjian Zhang, Kongcheng Zhang, Jiaxin Qi, Baisheng Lai, Jianqiang Huang
+- **Link**: http://arxiv.org/abs/2603.20046v1
+- **Summary**: Proposes HeRL, using failed trajectories as hindsight experience for in-context guidance in RL. Enables models to explore beyond current policy distributions without human-labeled data, a key for autonomous RSI-7 self-improvement.
+
+### [2026-03-24] AI Agents Can Already Autonomously Perform Experimental High Energy Physics
+- **Authors**: Eric A. Moreno, Samuel Bright-Thonney, Andrzej Novak, Dolores Garcia, Philip Harris
+- **Link**: http://arxiv.org/abs/2603.20179v1
+- **Summary**: Demonstrates autonomous execution of HEP analysis pipelines using Claude Code and the JFC framework. Validates RSI-8 (Domain Adaptation) by moving from code assistance to autonomous scientific discovery.
+
+### [2026-03-24] Deployment Signal: GPT-5.4 & ICLR 2026 RSI Workshop
+- **Signal**: GPT-5.4 released with 2M context and native original-resolution vision. ICLR 2026 officially launches the 1st Workshop on Recursive Self-Improvement, formalizing RSI as a core ML discipline.
+
 
 ### [2026-03-21] Agentic Business Process Management: A Research Manifesto
 - **Authors**: Diego Calvanese, Angelo Casciani, et al.
@@ -85,18 +154,6 @@
 - **Authors**: Huaide Jiang, Yash Chaudhary, Yuping Wang, Zehao Wang, Raghav Sharma, Manan Mehta, Yang Zhou, Lichao Sun, Zhiwen Fan, Zhengzhong Tu, Jiachen Li
 - **Link**: http://arxiv.org/abs/2603.19229v1
 - **Summary**: Unified benchmark for evaluating embodied navigation robustness against RGB-Depth corruptions and instruction variations. Highlights robustness gaps and mitigation strategies.
-
-### [2026-03-22] SAHOO: Safeguarded Alignment for High-Order Optimization Objectives in Recursive Self-Improvement
-- **Authors**: Subramanyam Sahoo, Aman Chadha, Vinija Jain, Divya Chaudhary
-- **Link**: http://arxiv.org/abs/2603.06333v1
-- **Summary**: Introduces SAHOO, a practical framework with three safeguards (GDI, constraint preservation, regression-risk quantification) to monitor and control alignment drift during recursive self-improvement cycles.
-- **RSI Relevance**: Critical for RSI-9 (Recursive Stability). Ensures alignment preservation during iterative evolution, making self-improvement measurable and validated.
-
-### [2026-03-22] Nemotron-Cascade 2: Post-Training LLMs with Cascade RL and Multi-Domain On-Policy Distillation
-- **Authors**: Zhuolin Yang, Zihan Liu, Yang Chen, et al.
-- **Link**: http://arxiv.org/abs/2603.19220v1
-- **Summary**: Introduces an open 30B MoE model (3B activated) that achieves gold-medal level performance in IMO/IOI with 20x fewer parameters. Uses Cascade RL and multi-domain on-policy distillation.
-- **RSI Relevance**: A leap in intelligence density (RSI-8). Demonstrates that recursive refinement via structured RL and distillation can recover benchmark regressions and sustain performance gains.
 
 ### [2026-03-22] SAMA: Factorized Semantic Anchoring and Motion Alignment for Instruction-Guided Video Editing
 - **Authors**: Xinyao Zhang, Wenkai Dong, Yuxin Song, et al.
