@@ -1,0 +1,247 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<feed xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/" xmlns:arxiv="http://arxiv.org/schemas/atom" xmlns="http://www.w3.org/2005/Atom">
+  <id>https://arxiv.org/api/EkrhDbMWXw/ixyzOHNIuvjRtBw0</id>
+  <title>arXiv Query: search_query=all:LLM OR all:Agent&amp;id_list=&amp;start=0&amp;max_results=5</title>
+  <updated>2026-03-20T12:54:31Z</updated>
+  <link href="https://arxiv.org/api/query?search_query=all:LLM+OR+all:Agent&amp;start=0&amp;max_results=5&amp;id_list=" type="application/atom+xml"/>
+  <opensearch:itemsPerPage>5</opensearch:itemsPerPage>
+  <opensearch:totalResults>112006</opensearch:totalResults>
+  <opensearch:startIndex>0</opensearch:startIndex>
+  <entry>
+    <id>http://arxiv.org/abs/2603.19229v1</id>
+    <title>NavTrust: Benchmarking Trustworthiness for Embodied Navigation</title>
+    <updated>2026-03-19T17:59:51Z</updated>
+    <link href="https://arxiv.org/abs/2603.19229v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2603.19229v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>There are two major categories of embodied navigation: Vision-Language Navigation (VLN), where agents navigate by following natural language instructions; and Object-Goal Navigation (OGN), where agents navigate to a specified target object. However, existing work primarily evaluates model performance under nominal conditions, overlooking the potential corruptions that arise in real-world settings. To address this gap, we present NavTrust, a unified benchmark that systematically corrupts input modalities, including RGB, depth, and instructions, in realistic scenarios and evaluates their impact on navigation performance. To our best knowledge, NavTrust is the first benchmark that exposes embodied navigation agents to diverse RGB-Depth corruptions and instruction variations in a unified framework. Our extensive evaluation of seven state-of-the-art approaches reveals substantial performance degradation under realistic corruptions, which highlights critical robustness gaps and provides a roadmap toward more trustworthy embodied navigation systems. Furthermore, we systematically evaluate four distinct mitigation strategies to enhance robustness against RGB-Depth and instructions corruptions. Our base models include Uni-NaVid and ETPNav. We deployed them on a real mobile robot and observed improved robustness to corruptions. The project website is: https://navtrust.github.io.</summary>
+    <category term="cs.RO" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.CV" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="eess.SY" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-03-19T17:59:51Z</published>
+    <arxiv:comment>Project Website: https://navtrust.github.io</arxiv:comment>
+    <arxiv:primary_category term="cs.RO"/>
+    <author>
+      <name>Huaide Jiang</name>
+    </author>
+    <author>
+      <name>Yash Chaudhary</name>
+    </author>
+    <author>
+      <name>Yuping Wang</name>
+    </author>
+    <author>
+      <name>Zehao Wang</name>
+    </author>
+    <author>
+      <name>Raghav Sharma</name>
+    </author>
+    <author>
+      <name>Manan Mehta</name>
+    </author>
+    <author>
+      <name>Yang Zhou</name>
+    </author>
+    <author>
+      <name>Lichao Sun</name>
+    </author>
+    <author>
+      <name>Zhiwen Fan</name>
+    </author>
+    <author>
+      <name>Zhengzhong Tu</name>
+    </author>
+    <author>
+      <name>Jiachen Li</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2603.19225v1</id>
+    <title>FinTradeBench: A Financial Reasoning Benchmark for LLMs</title>
+    <updated>2026-03-19T17:59:41Z</updated>
+    <link href="https://arxiv.org/abs/2603.19225v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2603.19225v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Real-world financial decision-making is a challenging problem that requires reasoning over heterogeneous signals, including company fundamentals derived from regulatory filings and trading signals computed from price dynamics. Recently, with the advancement of Large Language Models (LLMs), financial analysts have begun to use them for financial decision-making tasks. However, existing financial question answering benchmarks for testing these models primarily focus on company balance sheet data and rarely evaluate reasoning over how company stocks trade in the market or their interactions with fundamentals. To take advantage of the strengths of both approaches, we introduce FinTradeBench, a benchmark for evaluating financial reasoning that integrates company fundamentals and trading signals. FinTradeBench contains 1,400 questions grounded in NASDAQ-100 companies over a ten-year historical window. The benchmark is organized into three reasoning categories: fundamentals-focused, trading-signal-focused, and hybrid questions requiring cross-signal reasoning. To ensure reliability at scale, we adopt a calibration-then-scaling framework that combines expert seed questions, multi-model response generation, intra-model self-filtering, numerical auditing, and human-LLM judge alignment. We evaluate 14 LLMs under zero-shot prompting and retrieval-augmented settings and witness a clear performance gap. Retrieval substantially improves reasoning over textual fundamentals, but provides limited benefit for trading-signal reasoning. These findings highlight fundamental challenges in the numerical and time-series reasoning for current LLMs and motivate future research in financial intelligence.</summary>
+    <category term="cs.CE" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.IR" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="q-fin.CP" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-03-19T17:59:41Z</published>
+    <arxiv:comment>8 pages main text, 22 pages total (including references and appendix). 5 figures, 14 tables. Preprint under review. Code and data will be made available upon publication</arxiv:comment>
+    <arxiv:primary_category term="cs.CE"/>
+    <author>
+      <name>Yogesh Agrawal</name>
+      <arxiv:affiliation>University of Central Florida</arxiv:affiliation>
+    </author>
+    <author>
+      <name>Aniruddha Dutta</name>
+      <arxiv:affiliation>University of Central Florida</arxiv:affiliation>
+    </author>
+    <author>
+      <name>Md Mahadi Hasan</name>
+      <arxiv:affiliation>University of Central Florida</arxiv:affiliation>
+    </author>
+    <author>
+      <name>Santu Karmaker</name>
+      <arxiv:affiliation>University of Central Florida</arxiv:affiliation>
+    </author>
+    <author>
+      <name>Aritra Dutta</name>
+      <arxiv:affiliation>University of Central Florida</arxiv:affiliation>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2603.19223v1</id>
+    <title>F2LLM-v2: Inclusive, Performant, and Efficient Embeddings for a Multilingual World</title>
+    <updated>2026-03-19T17:59:21Z</updated>
+    <link href="https://arxiv.org/abs/2603.19223v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2603.19223v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>We present F2LLM-v2, a new family of general-purpose, multilingual embedding models in 8 distinct sizes ranging from 80M to 14B. Trained on a newly curated composite of 60 million publicly available high-quality data samples, F2LLM-v2 supports more than 200 languages, with a particular emphasis on previously underserved mid- and low-resource languages. By integrating a two-stage LLM-based embedding training pipeline with matryoshka learning, model pruning, and knowledge distillation techniques, we present models that are far more efficient than previous LLM-based embedding models while retaining competitive performances. Extensive evaluations confirm that F2LLM-v2-14B ranks first on 11 MTEB benchmarks, while the smaller models in the family also set a new state of the art for resource-constrained applications. To facilitate open-source embedding model research, we release all models, data, code, and intermediate checkpoints.</summary>
+    <category term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-03-19T17:59:21Z</published>
+    <arxiv:primary_category term="cs.CL"/>
+    <author>
+      <name>Ziyin Zhang</name>
+    </author>
+    <author>
+      <name>Zihan Liao</name>
+    </author>
+    <author>
+      <name>Hang Yu</name>
+    </author>
+    <author>
+      <name>Peng Di</name>
+    </author>
+    <author>
+      <name>Rui Wang</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2603.19220v1</id>
+    <title>Nemotron-Cascade 2: Post-Training LLMs with Cascade RL and Multi-Domain On-Policy Distillation</title>
+    <updated>2026-03-19T17:58:52Z</updated>
+    <link href="https://arxiv.org/abs/2603.19220v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2603.19220v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>We introduce Nemotron-Cascade 2, an open 30B MoE model with 3B activated parameters that delivers best-in-class reasoning and strong agentic capabilities. Despite its compact size, its mathematical and coding reasoning performance approaches that of frontier open models. It is the second open-weight LLM, after DeepSeekV3.2-Speciale-671B-A37B, to achieve Gold Medal-level performance in the 2025 International Mathematical Olympiad (IMO), the International Olympiad in Informatics (IOI), and the ICPC World Finals, demonstrating remarkably high intelligence density with 20x fewer parameters. In contrast to Nemotron-Cascade 1, the key technical advancements are as follows. After SFT on a meticulously curated dataset, we substantially expand Cascade RL to cover a much broader spectrum of reasoning and agentic domains. Furthermore, we introduce multi-domain on-policy distillation from the strongest intermediate teacher models for each domain throughout the Cascade RL process, allowing us to efficiently recover benchmark regressions and sustain strong performance gains along the way. We release the collection of model checkpoint and training data.</summary>
+    <category term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-03-19T17:58:52Z</published>
+    <arxiv:comment>We release the model and data at https://huggingface.co/collections/nvidia/nemotron-cascade-2</arxiv:comment>
+    <arxiv:primary_category term="cs.CL"/>
+    <author>
+      <name>Zhuolin Yang</name>
+    </author>
+    <author>
+      <name>Zihan Liu</name>
+    </author>
+    <author>
+      <name>Yang Chen</name>
+    </author>
+    <author>
+      <name>Wenliang Dai</name>
+    </author>
+    <author>
+      <name>Boxin Wang</name>
+    </author>
+    <author>
+      <name>Sheng-Chieh Lin</name>
+    </author>
+    <author>
+      <name>Chankyu Lee</name>
+    </author>
+    <author>
+      <name>Yangyi Chen</name>
+    </author>
+    <author>
+      <name>Dongfu Jiang</name>
+    </author>
+    <author>
+      <name>Jiafan He</name>
+    </author>
+    <author>
+      <name>Renjie Pi</name>
+    </author>
+    <author>
+      <name>Grace Lam</name>
+    </author>
+    <author>
+      <name>Nayeon Lee</name>
+    </author>
+    <author>
+      <name>Alexander Bukharin</name>
+    </author>
+    <author>
+      <name>Mohammad Shoeybi</name>
+    </author>
+    <author>
+      <name>Bryan Catanzaro</name>
+    </author>
+    <author>
+      <name>Wei Ping</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2603.19217v1</id>
+    <title>LVOmniBench: Pioneering Long Audio-Video Understanding Evaluation for Omnimodal LLMs</title>
+    <updated>2026-03-19T17:58:13Z</updated>
+    <link href="https://arxiv.org/abs/2603.19217v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2603.19217v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Recent advancements in omnimodal large language models (OmniLLMs) have significantly improved the comprehension of audio and video inputs. However, current evaluations primarily focus on short audio and video clips ranging from 10 seconds to 5 minutes, failing to reflect the demands of real-world applications, where videos typically run for tens of minutes. To address this critical gap, we introduce LVOmniBench, a new benchmark designed specifically for the cross-modal comprehension of long-form audio and video. This dataset comprises high-quality videos sourced from open platforms that feature rich audio-visual dynamics. Through rigorous manual selection and annotation, LVOmniBench comprises 275 videos, ranging in duration from 10 to 90 minutes, and 1,014 question-answer (QA) pairs. LVOmniBench aims to rigorously evaluate the capabilities of OmniLLMs across domains, including long-term memory, temporal localization, fine-grained understanding, and multimodal perception. Our extensive evaluation reveals that current OmniLLMs encounter significant challenges when processing extended audio-visual inputs. Open-source models generally achieve accuracies below 35%, whereas the Gemini 3 Pro reaches a peak accuracy of approximately 65%. We anticipate that this dataset, along with our empirical findings, will stimulate further research and the development of advanced models capable of resolving complex cross-modal understanding problems within long-form audio-visual contexts.</summary>
+    <category term="cs.CV" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-03-19T17:58:13Z</published>
+    <arxiv:comment>Project page: https://kd-tao.github.io/LVOmniBench/</arxiv:comment>
+    <arxiv:primary_category term="cs.CV"/>
+    <author>
+      <name>Keda Tao</name>
+    </author>
+    <author>
+      <name>Yuhua Zheng</name>
+    </author>
+    <author>
+      <name>Jia Xu</name>
+    </author>
+    <author>
+      <name>Wenjie Du</name>
+    </author>
+    <author>
+      <name>Kele Shao</name>
+    </author>
+    <author>
+      <name>Hesong Wang</name>
+    </author>
+    <author>
+      <name>Xueyi Chen</name>
+    </author>
+    <author>
+      <name>Xin Jin</name>
+    </author>
+    <author>
+      <name>Junhan Zhu</name>
+    </author>
+    <author>
+      <name>Bohan Yu</name>
+    </author>
+    <author>
+      <name>Weiqiang Wang</name>
+    </author>
+    <author>
+      <name>Jian Liu</name>
+    </author>
+    <author>
+      <name>Can Qin</name>
+    </author>
+    <author>
+      <name>Yulun Zhang</name>
+    </author>
+    <author>
+      <name>Ming-Hsuan Yang</name>
+    </author>
+    <author>
+      <name>Huan Wang</name>
+    </author>
+  </entry>
+</feed>

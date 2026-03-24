@@ -1,0 +1,144 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<feed xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/" xmlns:arxiv="http://arxiv.org/schemas/atom" xmlns="http://www.w3.org/2005/Atom">
+  <id>https://arxiv.org/api/wDuytAOyjU0qkrmyxB7My8GF/E8</id>
+  <title>arXiv Query: search_query=all:"Recursive Self-Improvement"&amp;id_list=&amp;start=0&amp;max_results=5</title>
+  <updated>2026-03-23T02:00:46Z</updated>
+  <link href="https://arxiv.org/api/query?search_query=all:%22Recursive+Self-Improvement%22&amp;start=0&amp;max_results=5&amp;id_list=" type="application/atom+xml"/>
+  <opensearch:itemsPerPage>5</opensearch:itemsPerPage>
+  <opensearch:totalResults>27</opensearch:totalResults>
+  <opensearch:startIndex>0</opensearch:startIndex>
+  <entry>
+    <id>http://arxiv.org/abs/2603.17075v1</id>
+    <title>CircuitBuilder: From Polynomials to Circuits via Reinforcement Learning</title>
+    <updated>2026-03-17T19:04:37Z</updated>
+    <link href="https://arxiv.org/abs/2603.17075v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2603.17075v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Motivated by auto-proof generation and Valiant's VP vs. VNP conjecture, we study the problem of discovering efficient arithmetic circuits to compute polynomials, using addition and multiplication gates. We formulate this problem as a single-player game, where an RL agent attempts to build the circuit within a fixed number of operations. We implement an AlphaZero-style training loop and compare two approaches: Proximal Policy Optimization with Monte Carlo Tree Search (PPO+MCTS) and Soft Actor-Critic (SAC). SAC achieves the highest success rates on two-variable targets, while PPO+MCTS scales to three variables and demonstrates steady improvement on harder instances. These results suggest that polynomial circuit synthesis is a compact, verifiable setting for studying self-improving search policies.</summary>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.CC" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-03-17T19:04:37Z</published>
+    <arxiv:comment>ICLR 2026 Workshop on AI with Recursive Self-Improvement</arxiv:comment>
+    <arxiv:primary_category term="cs.LG"/>
+    <author>
+      <name>Weikun K. Zhang</name>
+    </author>
+    <author>
+      <name>Rohan Pandey</name>
+    </author>
+    <author>
+      <name>Bhaumik Mehta</name>
+    </author>
+    <author>
+      <name>Kaijie Jin</name>
+    </author>
+    <author>
+      <name>Naomi Morato</name>
+    </author>
+    <author>
+      <name>Archit Ganapule</name>
+    </author>
+    <author>
+      <name>Michael Ruofan Zeng</name>
+    </author>
+    <author>
+      <name>Jarod Alper</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2603.15957v1</id>
+    <title>GASP: Guided Asymmetric Self-Play For Coding LLMs</title>
+    <updated>2026-03-16T22:13:19Z</updated>
+    <link href="https://arxiv.org/abs/2603.15957v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2603.15957v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Asymmetric self-play has emerged as a promising paradigm for post-training large language models, where a teacher continually generates questions for a student to solve at the edge of the student's learnability. Although these methods promise open-ended data generation bootstrapped from no human data, they suffer from one major problem: not all problems that are hard to solve are interesting or informative to improve the overall capabilities of the model. Current asymmetric self-play methods are goal-agnostic with no real grounding. We propose Guided Asymmetric Self-Play (GASP), where grounding is provided by real-data goalpost questions that are identified to pose a hard exploration challenge to the model. During self-play, the teacher first generates an easier variant of a hard question, and then a harder variant of that easier question, with the goal of gradually closing the gap to the goalpost throughout training. Doing so, we improve pass@20 on LiveCodeBench (LCB) by 2.5% over unguided asymmetric self-play, and through the curriculum constructed by the teacher, we manage to solve hard goalpost questions that remain out of reach for all baselines.</summary>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-03-16T22:13:19Z</published>
+    <arxiv:comment>Accepted at ICLR 2026 Workshop on AI with Recursive Self-Improvement (RSI 2026) as Spotlight, and ICLR 2026 Workshop on Lifelong Agents (LLA 2026)</arxiv:comment>
+    <arxiv:primary_category term="cs.LG"/>
+    <author>
+      <name>Swadesh Jana</name>
+    </author>
+    <author>
+      <name>Cansu Sancaktar</name>
+    </author>
+    <author>
+      <name>Tomáš Daniš</name>
+    </author>
+    <author>
+      <name>Georg Martius</name>
+    </author>
+    <author>
+      <name>Antonio Orvieto</name>
+    </author>
+    <author>
+      <name>Pavel Kolev</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2603.11210v1</id>
+    <title>Reference-Guided Machine Unlearning</title>
+    <updated>2026-03-11T18:27:05Z</updated>
+    <link href="https://arxiv.org/abs/2603.11210v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2603.11210v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Machine unlearning aims to remove the influence of specific data from trained models while preserving general utility. Existing approximate unlearning methods often rely on performance-degradation heuristics, such as loss maximization or random labeling. However, these signals can be poorly conditioned, leading to unstable optimization and harming the model's generalization. We argue that unlearning should instead prioritize distributional indistinguishability, aligning the model's behavior on forget data with its behavior on truly unseen data. Motivated by this, we propose Reference-Guided Unlearning (ReGUn), a framework that leverages a disjoint held-out dataset to provide a principled, class-conditioned reference for distillation. We demonstrate across various model architectures, natural image datasets, and varying forget fractions that ReGUn consistently outperforms standard approximate baselines, achieving a superior forgetting-utility trade-off.</summary>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-03-11T18:27:05Z</published>
+    <arxiv:comment>12 pages, 1 figure, 4 tables. Accepted at three ICLR 2026 workshops: Test-Time Updates (TTU), AI with Recursive Self-Improvement (RSI), and Agents in the Wild (AIWILD)</arxiv:comment>
+    <arxiv:primary_category term="cs.LG"/>
+    <author>
+      <name>Jonas Mirlach</name>
+    </author>
+    <author>
+      <name>Sonia Laguna</name>
+    </author>
+    <author>
+      <name>Julia E. Vogt</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2603.06333v1</id>
+    <title>SAHOO: Safeguarded Alignment for High-Order Optimization Objectives in Recursive Self-Improvement</title>
+    <updated>2026-03-06T14:44:51Z</updated>
+    <link href="https://arxiv.org/abs/2603.06333v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2603.06333v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Recursive self-improvement is moving from theory to practice: modern systems can critique, revise, and evaluate their own outputs, yet iterative self-modification risks subtle alignment drift. We introduce SAHOO, a practical framework to monitor and control drift through three safeguards: (i) the Goal Drift Index (GDI), a learned multi-signal detector combining semantic, lexical, structural, and distributional measures; (ii) constraint preservation checks that enforce safety-critical invariants such as syntactic correctness and non-hallucination; and (iii) regression-risk quantification to flag improvement cycles that undo prior gains. Across 189 tasks in code generation, mathematical reasoning, and truthfulness, SAHOO produces substantial quality gains, including 18.3 percent improvement in code tasks and 16.8 percent in reasoning, while preserving constraints in two domains and maintaining low violations in truthfulness. Thresholds are calibrated on a small validation set of 18 tasks across three cycles. We further map the capability-alignment frontier, showing efficient early improvement cycles but rising alignment costs later and exposing domain-specific tensions such as fluency versus factuality. SAHOO therefore makes alignment preservation during recursive self-improvement measurable, deployable, and systematically validated at scale.</summary>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-03-06T14:44:51Z</published>
+    <arxiv:comment>Published at ICLR 2026 Workshop on AI with Recursive Self-Improvement. 20 pages, 5 figures</arxiv:comment>
+    <arxiv:primary_category term="cs.AI"/>
+    <author>
+      <name>Subramanyam Sahoo</name>
+    </author>
+    <author>
+      <name>Aman Chadha</name>
+    </author>
+    <author>
+      <name>Vinija Jain</name>
+    </author>
+    <author>
+      <name>Divya Chaudhary</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2603.03524v2</id>
+    <title>Test-Time Meta-Adaptation with Self-Synthesis</title>
+    <updated>2026-03-08T21:53:33Z</updated>
+    <link href="https://arxiv.org/abs/2603.03524v2" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2603.03524v2" rel="related" type="application/pdf" title="pdf"/>
+    <summary>As strong general reasoners, large language models (LLMs) encounter diverse domains and tasks, where the ability to adapt and self-improve at test time is valuable. We introduce MASS, a meta-learning framework that enables LLMs to self-adapt by generating problem-specific synthetic training data and performing targeted self-updates optimized for downstream performance at inference time. We train this behavior end-to-end via bilevel optimization: an inner loop adapts on self-generated examples while an outer loop meta-learns data-attribution signals and rewards post-update task performance. The synthetic data is optimized with scalable meta-gradients, backpropagating the downstream loss through the inner updates to reward useful generations. Experiments on mathematical reasoning show that MASS learns to synthesize per-instance curricula that yield effective, data-efficient test-time adaptation.</summary>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-03-03T21:16:18Z</published>
+    <arxiv:comment>5 pages, 2 figures, 1 table. Accepted to AI with Recursive Self-Improvement (RSI) Workshop @ ICLR 2026</arxiv:comment>
+    <arxiv:primary_category term="cs.LG"/>
+    <author>
+      <name>Zeyneb N. Kaya</name>
+    </author>
+    <author>
+      <name>Nick Rui</name>
+    </author>
+  </entry>
+</feed>
