@@ -1,0 +1,166 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<feed xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/" xmlns:arxiv="http://arxiv.org/schemas/atom" xmlns="http://www.w3.org/2005/Atom">
+  <id>https://arxiv.org/api/7a76jFyX1/XCqsf+CIJrCe7NWcI</id>
+  <title>arXiv Query: search_query=all:Agent OR all:Self-Evolving&amp;id_list=&amp;start=0&amp;max_results=5</title>
+  <updated>2026-03-23T02:00:49Z</updated>
+  <link href="https://arxiv.org/api/query?search_query=all:Agent+OR+all:Self-Evolving&amp;start=0&amp;max_results=5&amp;id_list=" type="application/atom+xml"/>
+  <opensearch:itemsPerPage>5</opensearch:itemsPerPage>
+  <opensearch:totalResults>65761</opensearch:totalResults>
+  <opensearch:startIndex>0</opensearch:startIndex>
+  <entry>
+    <id>http://arxiv.org/abs/2603.20185v1</id>
+    <title>VideoSeek: Long-Horizon Video Agent with Tool-Guided Seeking</title>
+    <updated>2026-03-20T17:58:47Z</updated>
+    <link href="https://arxiv.org/abs/2603.20185v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2603.20185v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Video agentic models have advanced challenging video-language tasks. However, most agentic approaches still heavily rely on greedy parsing over densely sampled video frames, resulting in high computational cost. We present VideoSeek, a long-horizon video agent that leverages video logic flow to actively seek answer-critical evidence instead of exhaustively parsing the full video. This insight allows the model to use far fewer frames while maintaining, or even improving, its video understanding capability. VideoSeek operates in a think-act-observe loop with a well-designed toolkit for collecting multi-granular video observations. This design enables query-aware exploration over accumulated observations and supports practical video understanding and reasoning. Experiments on four challenging video understanding and reasoning benchmarks demonstrate that VideoSeek achieves strong accuracy while using far fewer frames than prior video agents and standalone LMMs. Notably, VideoSeek achieves a 10.2 absolute points improvement on LVBench over its base model, GPT-5, while using 93% fewer frames. Further analysis highlights the significance of leveraging video logic flow, strong reasoning capability, and the complementary roles of toolkit design.</summary>
+    <category term="cs.CV" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-03-20T17:58:47Z</published>
+    <arxiv:comment>Accepted at CVPR 2026</arxiv:comment>
+    <arxiv:primary_category term="cs.CV"/>
+    <author>
+      <name>Jingyang Lin</name>
+    </author>
+    <author>
+      <name>Jialian Wu</name>
+    </author>
+    <author>
+      <name>Jiang Liu</name>
+    </author>
+    <author>
+      <name>Ximeng Sun</name>
+    </author>
+    <author>
+      <name>Ze Wang</name>
+    </author>
+    <author>
+      <name>Xiaodong Yu</name>
+    </author>
+    <author>
+      <name>Jiebo Luo</name>
+    </author>
+    <author>
+      <name>Zicheng Liu</name>
+    </author>
+    <author>
+      <name>Emad Barsoum</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2603.20179v1</id>
+    <title>AI Agents Can Already Autonomously Perform Experimental High Energy Physics</title>
+    <updated>2026-03-20T17:55:27Z</updated>
+    <link href="https://arxiv.org/abs/2603.20179v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2603.20179v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Large language model-based AI agents are now able to autonomously execute substantial portions of a high energy physics (HEP) analysis pipeline with minimal expert-curated input. Given access to a HEP dataset, an execution framework, and a corpus of prior experimental literature, we find that Claude Code succeeds in automating all stages of a typical analysis: event selection, background estimation, uncertainty quantification, statistical inference, and paper drafting. We argue that the experimental HEP community is underestimating the current capabilities of these systems, and that most proposed agentic workflows are too narrowly scoped or scaffolded to specific analysis structures. We present a proof-of-concept framework, Just Furnish Context (JFC), that integrates autonomous analysis agents with literature-based knowledge retrieval and multi-agent review, and show that this is sufficient to plan, execute, and document a credible high energy physics analysis. We demonstrate this by conducting analyses on open data from ALEPH, DELPHI, and CMS to perform electroweak, QCD, and Higgs boson measurements. Rather than replacing physicists, these tools promise to offload the repetitive technical burden of analysis code development, freeing researchers to focus on physics insight, truly novel method development, and rigorous validation. Given these developments, we advocate for new strategies for how the community trains students, organizes analysis efforts, and allocates human expertise.</summary>
+    <category term="hep-ex" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-03-20T17:55:27Z</published>
+    <arxiv:primary_category term="hep-ex"/>
+    <author>
+      <name>Eric A. Moreno</name>
+    </author>
+    <author>
+      <name>Samuel Bright-Thonney</name>
+    </author>
+    <author>
+      <name>Andrzej Novak</name>
+    </author>
+    <author>
+      <name>Dolores Garcia</name>
+    </author>
+    <author>
+      <name>Philip Harris</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2603.20151v1</id>
+    <title>Design-OS: A Specification-Driven Framework for Engineering System Design with a Control-Systems Design Case</title>
+    <updated>2026-03-20T17:26:44Z</updated>
+    <link href="https://arxiv.org/abs/2603.20151v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2603.20151v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Engineering system design -- whether mechatronic, control, or embedded -- often proceeds in an ad hoc manner, with requirements left implicit and traceability from intent to parameters largely absent. Existing specification-driven and systematic design methods mostly target software, and AI-assisted tools tend to enter the workflow at solution generation rather than at problem framing. Human--AI collaboration in the design of physical systems remains underexplored. This paper presents Design-OS, a lightweight, specification-driven workflow for engineering system design organized in five stages: concept definition, literature survey, conceptual design, requirements definition, and design definition. Specifications serve as the shared contract between human designers and AI agents; each stage produces structured artifacts that maintain traceability and support agent-augmented execution. We position Design-OS relative to requirements-driven design, systematic design frameworks, and AI-assisted design pipelines, and demonstrate it on a control systems design case using two rotary inverted pendulum platforms -- an open-source SimpleFOC reaction wheel and a commercial Quanser Furuta pendulum -- showing how the same specification-driven workflow accommodates fundamentally different implementations. A blank template and the full design-case artifacts are shared in a public repository to support reproducibility and reuse. The workflow makes the design process visible and auditable, and extends specification-driven orchestration of AI from software to physical engineering system design.</summary>
+    <category term="cs.CE" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="eess.SY" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-03-20T17:26:44Z</published>
+    <arxiv:comment>2 figures, 11 pages, Submitted to ASME IDETC 2026 - DAC-09</arxiv:comment>
+    <arxiv:primary_category term="cs.CE"/>
+    <author>
+      <name>H. Sinan Bank</name>
+    </author>
+    <author>
+      <name>Daniel R. Herber</name>
+    </author>
+    <author>
+      <name>Thomas H. Bradley</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2603.20148v1</id>
+    <title>Can Large Multimodal Models Inspect Buildings? A Hierarchical Benchmark for Structural Pathology Reasoning</title>
+    <updated>2026-03-20T17:24:46Z</updated>
+    <link href="https://arxiv.org/abs/2603.20148v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2603.20148v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Automated building facade inspection is a critical component of urban resilience and smart city maintenance. Traditionally, this field has relied on specialized discriminative models (e.g., YOLO, Mask R-CNN) that excel at pixel-level localization but are constrained to passive perception and worse generization without the visual understandng to interpret structural topology. Large Multimodal Models (LMMs) promise a paradigm shift toward active reasoning, yet their application in such high-stakes engineering domains lacks rigorous evaluation standards. To bridge this gap, we introduce a human-in-the-loop semi-automated annotation framework, leveraging expert-proposal verification to unify 12 fragmented datasets into a standardized, hierarchical ontology. Building on this foundation, we present \textit{DefectBench}, the first multi-dimensional benchmark designed to interrogate LMMs beyond basic semantic recognition. \textit{DefectBench} evaluates 18 state-of-the-art (SOTA) LMMs across three escalating cognitive dimensions: Semantic Perception, Spatial Localization, and Generative Geometry Segmentation. Extensive experiments reveal that while current LMMs demonstrate exceptional topological awareness and semantic understanding (effectively diagnosing "what" and "how"), they exhibit significant deficiencies in metric localization precision ("where"). Crucially, however, we validate the viability of zero-shot generative segmentation, showing that general-purpose foundation models can rival specialized supervised networks without domain-specific training. This work provides both a rigorous benchmarking standard and a high-quality open-source database, establishing a new baseline for the advancement of autonomous AI agents in civil engineering.</summary>
+    <category term="cs.CV" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-03-20T17:24:46Z</published>
+    <arxiv:primary_category term="cs.CV"/>
+    <author>
+      <name>Hui Zhong</name>
+    </author>
+    <author>
+      <name>Yichun Gao</name>
+    </author>
+    <author>
+      <name>Luyan Liu</name>
+    </author>
+    <author>
+      <name>Hai Yang</name>
+    </author>
+    <author>
+      <name>Wang Wang</name>
+    </author>
+    <author>
+      <name>Haowei Zhang</name>
+    </author>
+    <author>
+      <name>Xinhu Zheng</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2603.20143v1</id>
+    <title>Synergistic Perception and Generative Recomposition: A Multi-Agent Orchestration for Expert-Level Building Inspection</title>
+    <updated>2026-03-20T17:17:22Z</updated>
+    <link href="https://arxiv.org/abs/2603.20143v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2603.20143v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Building facade defect inspection is fundamental to structural health monitoring and sustainable urban maintenance, yet it remains a formidable challenge due to extreme geometric variability, low contrast against complex backgrounds, and the inherent complexity of composite defects (e.g., cracks co-occurring with spalling). Such characteristics lead to severe pixel imbalance and feature ambiguity, which, coupled with the critical scarcity of high-quality pixel-level annotations, hinder the generalization of existing detection and segmentation models. To address gaps, we propose \textit{FacadeFixer}, a unified multi-agent framework that treats defect perception as a collaborative reasoning task rather than isolated recognition. Specifically,\textit{FacadeFixer} orchestrates specialized agents for detection and segmentation to handle multi-type defect interference, working in tandem with a generative agent to enable semantic recomposition. This process decouples intricate defects from noisy backgrounds and realistically synthesizes them onto diverse clean textures, generating high-fidelity augmented data with precise expert-level masks. To support this, we introduce a comprehensive multi-task dataset covering six primary facade categories with pixel-level annotations. Extensive experiments demonstrate that \textit{FacadeFixer} significantly outperforms state-of-the-art (SOTA) baselines. Specifically, it excels in capturing pixel-level structural anomalies and highlights generative synthesis as a robust solution to data scarcity in infrastructure inspection. Our code and dataset will be made publicly available.</summary>
+    <category term="cs.CV" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-03-20T17:17:22Z</published>
+    <arxiv:primary_category term="cs.CV"/>
+    <author>
+      <name>Hui Zhong</name>
+    </author>
+    <author>
+      <name>Yichun Gao</name>
+    </author>
+    <author>
+      <name>Luyan Liu</name>
+    </author>
+    <author>
+      <name>Xusen Guo</name>
+    </author>
+    <author>
+      <name>Zhaonian Kuang</name>
+    </author>
+    <author>
+      <name>Qiming Zhang</name>
+    </author>
+    <author>
+      <name>Xinhu Zheng</name>
+    </author>
+  </entry>
+</feed>

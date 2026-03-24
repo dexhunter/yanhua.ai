@@ -1,0 +1,191 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<feed xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/" xmlns:arxiv="http://arxiv.org/schemas/atom" xmlns="http://www.w3.org/2005/Atom">
+  <id>https://arxiv.org/api/te1rAOj9fnW+vS7aSQ+/lv/ZQWI</id>
+  <title>arXiv Query: search_query=all:Recursive OR all:Self-Improvement&amp;id_list=&amp;start=0&amp;max_results=5</title>
+  <updated>2026-03-20T12:54:31Z</updated>
+  <link href="https://arxiv.org/api/query?search_query=all:Recursive+OR+all:Self-Improvement&amp;start=0&amp;max_results=5&amp;id_list=" type="application/atom+xml"/>
+  <opensearch:itemsPerPage>5</opensearch:itemsPerPage>
+  <opensearch:totalResults>38701</opensearch:totalResults>
+  <opensearch:startIndex>0</opensearch:startIndex>
+  <entry>
+    <id>http://arxiv.org/abs/2603.19225v1</id>
+    <title>FinTradeBench: A Financial Reasoning Benchmark for LLMs</title>
+    <updated>2026-03-19T17:59:41Z</updated>
+    <link href="https://arxiv.org/abs/2603.19225v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2603.19225v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Real-world financial decision-making is a challenging problem that requires reasoning over heterogeneous signals, including company fundamentals derived from regulatory filings and trading signals computed from price dynamics. Recently, with the advancement of Large Language Models (LLMs), financial analysts have begun to use them for financial decision-making tasks. However, existing financial question answering benchmarks for testing these models primarily focus on company balance sheet data and rarely evaluate reasoning over how company stocks trade in the market or their interactions with fundamentals. To take advantage of the strengths of both approaches, we introduce FinTradeBench, a benchmark for evaluating financial reasoning that integrates company fundamentals and trading signals. FinTradeBench contains 1,400 questions grounded in NASDAQ-100 companies over a ten-year historical window. The benchmark is organized into three reasoning categories: fundamentals-focused, trading-signal-focused, and hybrid questions requiring cross-signal reasoning. To ensure reliability at scale, we adopt a calibration-then-scaling framework that combines expert seed questions, multi-model response generation, intra-model self-filtering, numerical auditing, and human-LLM judge alignment. We evaluate 14 LLMs under zero-shot prompting and retrieval-augmented settings and witness a clear performance gap. Retrieval substantially improves reasoning over textual fundamentals, but provides limited benefit for trading-signal reasoning. These findings highlight fundamental challenges in the numerical and time-series reasoning for current LLMs and motivate future research in financial intelligence.</summary>
+    <category term="cs.CE" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.IR" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="q-fin.CP" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-03-19T17:59:41Z</published>
+    <arxiv:comment>8 pages main text, 22 pages total (including references and appendix). 5 figures, 14 tables. Preprint under review. Code and data will be made available upon publication</arxiv:comment>
+    <arxiv:primary_category term="cs.CE"/>
+    <author>
+      <name>Yogesh Agrawal</name>
+      <arxiv:affiliation>University of Central Florida</arxiv:affiliation>
+    </author>
+    <author>
+      <name>Aniruddha Dutta</name>
+      <arxiv:affiliation>University of Central Florida</arxiv:affiliation>
+    </author>
+    <author>
+      <name>Md Mahadi Hasan</name>
+      <arxiv:affiliation>University of Central Florida</arxiv:affiliation>
+    </author>
+    <author>
+      <name>Santu Karmaker</name>
+      <arxiv:affiliation>University of Central Florida</arxiv:affiliation>
+    </author>
+    <author>
+      <name>Aritra Dutta</name>
+      <arxiv:affiliation>University of Central Florida</arxiv:affiliation>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2603.19191v1</id>
+    <title>OS-Themis: A Scalable Critic Framework for Generalist GUI Rewards</title>
+    <updated>2026-03-19T17:47:47Z</updated>
+    <link href="https://arxiv.org/abs/2603.19191v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2603.19191v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Reinforcement Learning (RL) has the potential to improve the robustness of GUI agents in stochastic environments, yet training is highly sensitive to the quality of the reward function. Existing reward approaches struggle to achieve both scalability and performance. To address this, we propose OS-Themis, a scalable and accurate multi-agent critic framework. Unlike a single judge, OS-Themis decomposes trajectories into verifiable milestones to isolate critical evidence for decision making and employs a review mechanism to strictly audit the evidence chain before making the final verdict. To facilitate evaluation, we further introduce OmniGUIRewardBench (OGRBench), a holistic cross-platform benchmark for GUI outcome rewards, where all evaluated models achieve their best performance under OS-Themis. Extensive experiments on AndroidWorld show that OS-Themis yields a 10.3% improvement when used to support online RL training, and a 6.9% gain when used for trajectory validation and filtering in the self-training loop, highlighting its potential to drive agent evolution.</summary>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-03-19T17:47:47Z</published>
+    <arxiv:primary_category term="cs.AI"/>
+    <author>
+      <name>Zehao Li</name>
+    </author>
+    <author>
+      <name>Zhenyu Wu</name>
+    </author>
+    <author>
+      <name>Yibo Zhao</name>
+    </author>
+    <author>
+      <name>Bowen Yang</name>
+    </author>
+    <author>
+      <name>Jingjing Xie</name>
+    </author>
+    <author>
+      <name>Zhaoyang Liu</name>
+    </author>
+    <author>
+      <name>Zhoumianze Liu</name>
+    </author>
+    <author>
+      <name>Kaiming Jin</name>
+    </author>
+    <author>
+      <name>Jianze Liang</name>
+    </author>
+    <author>
+      <name>Zonglin Li</name>
+    </author>
+    <author>
+      <name>Feng Wu</name>
+    </author>
+    <author>
+      <name>Bowen Zhou</name>
+    </author>
+    <author>
+      <name>Zun Wang</name>
+    </author>
+    <author>
+      <name>Zichen Ding</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2603.19145v1</id>
+    <title>Enhancing Pretrained Model-based Continual Representation Learning via Guided Random Projection</title>
+    <updated>2026-03-19T17:01:14Z</updated>
+    <link href="https://arxiv.org/abs/2603.19145v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2603.19145v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Recent paradigms in Random Projection Layer (RPL)-based continual representation learning have demonstrated superior performance when building upon a pre-trained model (PTM). These methods insert a randomly initialized RPL after a PTM to enhance feature representation in the initial stage. Subsequently, a linear classification head is used for analytic updates in the continual learning stage. However, under severe domain gaps between pre-trained representations and target domains, a randomly initialized RPL exhibits limited expressivity under large domain shifts. While largely scaling up the RPL dimension can improve expressivity, it also induces an ill-conditioned feature matrix, thereby destabilizing the recursive analytic updates of the linear head. To this end, we propose the Stochastic Continual Learner with MemoryGuard Supervisory Mechanism (SCL-MGSM). Unlike random initialization, MGSM constructs the projection layer via a principled, data-guided mechanism that progressively selects target-aligned random bases to adapt the PTM representation to downstream tasks. This facilitates the construction of a compact yet expressive RPL while improving the numerical stability of analytic updates. Extensive experiments on multiple exemplar-free Class Incremental Learning (CIL) benchmarks demonstrate that SCL-MGSM achieves superior performance compared to state-of-the-art methods.</summary>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-03-19T17:01:14Z</published>
+    <arxiv:primary_category term="cs.LG"/>
+    <author>
+      <name>Ruilin Li</name>
+    </author>
+    <author>
+      <name>Heming Zou</name>
+    </author>
+    <author>
+      <name>Xiufeng Yan</name>
+    </author>
+    <author>
+      <name>Zheming Liang</name>
+    </author>
+    <author>
+      <name>Jie Yang</name>
+    </author>
+    <author>
+      <name>Chenliang Li</name>
+    </author>
+    <author>
+      <name>Xue Yang</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2603.19118v1</id>
+    <title>How Uncertainty Estimation Scales with Sampling in Reasoning Models</title>
+    <updated>2026-03-19T16:42:05Z</updated>
+    <link href="https://arxiv.org/abs/2603.19118v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2603.19118v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Uncertainty estimation is critical for deploying reasoning language models, yet remains poorly understood under extended chain-of-thought reasoning. We study parallel sampling as a fully black-box approach using verbalized confidence and self-consistency. Across three reasoning models and 17 tasks spanning mathematics, STEM, and humanities, we characterize how these signals scale.
+  Both self-consistency and verbalized confidence scale in reasoning models, but self-consistency exhibits lower initial discrimination and lags behind verbalized confidence under moderate sampling. Most uncertainty gains, however, arise from signal combination: with just two samples, a hybrid estimator improves AUROC by up to $+12$ on average and already outperforms either signal alone even when scaled to much larger budgets, after which returns diminish. These effects are domain-dependent: in mathematics, the native domain of RLVR-style post-training, reasoning models achieve higher uncertainty quality and exhibit both stronger complementarity and faster scaling than in STEM or humanities.</summary>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-03-19T16:42:05Z</published>
+    <arxiv:primary_category term="cs.AI"/>
+    <author>
+      <name>Maksym Del</name>
+    </author>
+    <author>
+      <name>Markus Kängsepp</name>
+    </author>
+    <author>
+      <name>Marharyta Domnich</name>
+    </author>
+    <author>
+      <name>Ardi Tampuu</name>
+    </author>
+    <author>
+      <name>Lisa Yankovskaya</name>
+    </author>
+    <author>
+      <name>Meelis Kull</name>
+    </author>
+    <author>
+      <name>Mark Fishel</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2603.19073v1</id>
+    <title>Finite-sample bounds for multi-output system identification</title>
+    <updated>2026-03-19T15:59:21Z</updated>
+    <link href="https://arxiv.org/abs/2603.19073v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2603.19073v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>This paper presents uniform-in-time finite-sample bounds for regularized linear regression with vector-valued outputs and conditionally zero-mean subgaussian noise. By revisiting classical self-normalized martingale arguments, we obtain bounds that apply directly to multi-output regression, unlike most of the prior work. Compared to the state of the art, the new results are more general and yield tighter bounds, even for scalar-valued outputs. The mild assumptions we use allow for unknown dependencies between regressors and past noise terms, typically induced by system dynamics or feedback mechanisms. Therefore, these novel finite-sample bounds can be applied to many affine-in-parameter system identification problems, including the identification of a linear time-invariant system from full-state measurements. These new results may lead to significant improvements in stochastic learning-based controllers for safety-critical applications.</summary>
+    <category term="math.ST" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="math.DS" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-03-19T15:59:21Z</published>
+    <arxiv:comment>Submitted for review to IEEE Transactions on Automatic Control</arxiv:comment>
+    <arxiv:primary_category term="math.ST"/>
+    <author>
+      <name>Léo Simpson</name>
+    </author>
+    <author>
+      <name>Katrin Baumgärtner</name>
+    </author>
+    <author>
+      <name>Johannes Köhler</name>
+    </author>
+    <author>
+      <name>Moritz Diehl</name>
+    </author>
+  </entry>
+</feed>
