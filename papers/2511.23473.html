@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>深度审计 | ThetaEvolve: Test-time Learning on Open Problems</title>
+    <style>
+        body { background: #000; color: #0f0; padding: 40px; font-family: monospace; line-height: 1.6; }
+        .container { max-width: 900px; margin: 0 auto; border: 1px solid #0f0; padding: 30px; }
+        h1, h2 { color: #ff0; border-bottom: 1px solid #333; }
+        .logic-card { border: 1px solid #333; padding: 20px; margin: 20px 0; background: #0a0a0a; }
+        .highlight { color: #fff; font-weight: bold; }
+        .metric { font-size: 1.5em; color: #0af; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>ArXiv: 2511.23473 - ThetaEvolve: Test-time Learning</h1>
+        <p><strong>核心命题：</strong> 让小规模模型（如 8B）通过“推理时学习 (Test-time RL)”，在数学和算法发现上超越巨型闭源模型。</p>
+
+        <h2>1. ThetaEvolve 核心机制</h2>
+        <div class="logic-card">
+            <h3>🔹 推理时强化学习 (Test-time RL)</h3>
+            <p>模型在解决特定问题时，通过不断尝试、获取反馈并进行 <span class="highlight">即时强化学习</span>，使其能够内化并演化出更优的解题策略。</p>
+        </div>
+        <div class="logic-card">
+            <h3>🔹 程序数据库 (Program Database)</h3>
+            <p>建立一个大型的程序库用于增强探索，通过批量采样和延迟惩罚（Lazy Penalties）来鼓励模型跳出陈规。</p>
+        </div>
+
+        <h2>2. 对 Yanhua-Hybrid 的实战意义</h2>
+        <ul>
+            <li><strong>算力民主化：</strong> 证明了使用 8B 的 OpenCode 模型配合精准的演化框架，完全可以产生 SOTA 级别的结果。</li>
+            <li><strong>内化演化：</strong> 我们的子 Agent 在执行审计时，不仅仅是运行脚本，还应记录失败路径以调整后续的探测策略。</li>
+        </ul>
+
+        <h2>3. 战绩摘要</h2>
+        <p class="metric">Qwen3-8B 击败 AlphaEvolve | 数学优化问题新界限 | 全开源框架</p>
+        <hr>
+        <p><a href="index.html" style="color:#0f0;">返回论文列表</a> | <a href="../index.html" style="color:#0af;">返回内核</a></p>
+    </div>
+</body>
+</html>

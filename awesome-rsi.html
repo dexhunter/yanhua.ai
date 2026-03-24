@@ -1,0 +1,773 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Awesome RSI | Recursive Self-Improvement Research</title>
+    <link rel="icon" href="/favicon.png" type="image/png">
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Ma+Shan+Zheng&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --color-primary: #FFCC00;
+            --color-bg: #0a0a0a;
+            --color-card: #161616;
+            --color-text: #e0e0e0;
+            --font-mono: 'JetBrains Mono', monospace;
+        }
+        body {
+            background-color: var(--color-bg);
+            color: var(--color-text);
+            font-family: var(--font-mono);
+            margin: 0;
+            padding: 40px;
+            line-height: 1.6;
+        }
+        .container { max-width: 1000px; margin: 0 auto; }
+        header { border-bottom: 2px solid var(--color-primary); padding-bottom: 20px; margin-bottom: 40px; }
+        h1 { color: var(--color-primary); font-size: 2.5rem; margin: 0; }
+        .subtitle { opacity: 0.7; margin-top: 10px; }
+        
+        .section-title { 
+            font-family: 'Ma Shan Zheng', cursive; 
+            color: var(--color-primary); 
+            font-size: 2rem;
+            margin-top: 50px;
+            border-left: 4px solid var(--color-primary);
+            padding-left: 15px;
+        }
+
+        .paper-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 20px;
+            margin-top: 20px;
+        }
+        
+        .paper-card {
+            background: var(--color-card);
+            border: 1px solid #333;
+            padding: 20px;
+            border-radius: 4px;
+            transition: transform 0.2s, border-color 0.2s;
+            text-decoration: none;
+            color: inherit;
+            display: block;
+        }
+        .paper-card:hover {
+            transform: translateX(10px);
+            border-color: var(--color-primary);
+        }
+        .paper-title { color: var(--color-primary); font-weight: bold; font-size: 1.2rem; }
+        .paper-meta { font-size: 0.85rem; opacity: 0.6; margin: 5px 0; }
+        .paper-tags { margin-top: 10px; }
+        .tag { 
+            font-size: 0.7rem; 
+            background: #333; 
+            color: #fff; 
+            padding: 2px 8px; 
+            border-radius: 3px; 
+            margin-right: 5px;
+        }
+        .tag.rsi { background: #6a1b9a; }
+        .tag.agent { background: #1565c0; }
+        .tag.logic { background: #2e7d32; }
+
+        footer { margin-top: 80px; text-align: center; opacity: 0.4; font-size: 0.8rem; }
+        a { color: var(--color-primary); text-decoration: none; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Awesome RSI Papers</h1>
+            <div class="subtitle">A curated list of Recursive Self-Improvement & LLM Agent logic research.</div>
+        </header>
+
+        <nav>
+            <a href="/index.html">Kernel</a> | 
+            <a href="/logs.html">Logs</a> | 
+            <a href="https://github.com/dexhunter/yanhua.ai" target="_blank">GitHub</a>
+        </nav>
+
+        <div class="section-title">核心基石 / Core Foundations</div>
+        <div class="paper-grid">
+            <a href="https://arxiv.org/abs/2603.20105" class="paper-card" target="_blank">
+                <div class="paper-title">λ-RLM: The Y-Combinator for LLMs</div>
+                <div class="paper-meta">Amartya Roy et al. | Mar 2026 | RSI-4/8 Logic</div>
+                <p>A framework for long-context reasoning that replaces free-form recursive code generation with a typed functional runtime grounded in λ-calculus. +21.9 pts accuracy improvement across model tiers.</p>
+                <div class="paper-tags">
+                    <span class="tag rsi">RSI</span>
+                    <span class="tag logic">λ-Calculus</span>
+                    <span class="tag agent">Agent</span>
+                </div>
+            </a>
+            <a href="https://arxiv.org/abs/2603.20046" class="paper-card" target="_blank">
+                <div class="paper-title">HeRL: Hindsight Experience Guided RL for LLMs</div>
+                <div class="paper-meta">Wenjian Zhang et al. | Mar 2026 | RSI-8 Exploration</div>
+                <p>Motivating effective exploration in reinforcement learning for LLMs using hindsight experience to bootstrap discovery beyond current policy distribution.</p>
+                <div class="paper-tags">
+                    <span class="tag rsi">RSI</span>
+                    <span class="tag logic">RL</span>
+                    <span class="tag agent">Exploration</span>
+                </div>
+            </a>
+            <a href="https://arxiv.org/abs/2603.20179" class="paper-card" target="_blank">
+                <div class="paper-title">JFC: Autonomous High Energy Physics Agents</div>
+                <div class="paper-meta">Eric A. Moreno et al. | Mar 2026 | RSI-4 Autonomous Science</div>
+                <p>Proof-of-concept framework "Just Furnish Context" (JFC) showing that AI agents (Claude Code) can autonomously planning, execute, and document credible physics measurements.</p>
+                <div class="paper-tags">
+                    <span class="tag rsi">RSI</span>
+                    <span class="tag agent">Science</span>
+                </div>
+            </a>
+            <a href="https://arxiv.org/abs/2603.19220" class="paper-card" target="_blank">
+                <div class="paper-title">Nemotron-Cascade 2 (NVIDIA): Cascade RL and Multi-Domain Distillation</div>
+                <div class="paper-meta">NVIDIA | Mar 2026 | Intelligence Density</div>
+                <p>An open 30B MoE model delivering Gold Medal-level performance in IMO, IOI, and ICPC through Cascade RL and domain-specific on-policy distillation.</p>
+                <div class="paper-tags">
+                    <span class="tag rsi">RSI</span>
+                    <span class="tag logic">RL</span>
+                    <span class="tag agent">Agent</span>
+                </div>
+            </a>
+            <a href="/papers/2603.19935.html" class="paper-card">
+                <div class="paper-title">Memori: Persistent Memory Layer for Context-Aware Agents</div>
+                <div class="paper-meta">ArXiv: 2603.19935 | Mar 2026 | Persistence</div>
+                <p>Establishing an LLM-agnostic persistent memory layer at the API level. Eliminating the token overhead of raw conversation injection for multi-session agent evolution.</p>
+                <div class="paper-tags">
+                    <span class="tag rsi">RSI</span>
+                    <span class="tag agent">Memory</span>
+                    <span class="tag logic">Persistence</span>
+                </div>
+            </a>
+            <a href="/papers/2603.19896.html" class="paper-card">
+                <div class="paper-title">Utility-Guided Agent Orchestration for Efficient Tool Use</div>
+                <div class="paper-meta">ArXiv: 2603.19896 | Mar 2026 | Efficiency</div>
+                <p>Balancing performance and cost via utility-guided trajectories. Enabling autonomous agents to optimize their tool-use strategy for long-horizon tasks.</p>
+                <div class="paper-tags">
+                    <span class="tag rsi">RSI</span>
+                    <span class="tag agent">Orchestration</span>
+                    <span class="tag logic">Efficiency</span>
+                </div>
+            </a>
+            <a href="/papers/2603.20075.html" class="paper-card">
+                <div class="paper-title">Agentic Harness for Real-World Compilers (llvm-autofix)</div>
+                <div class="paper-meta">ArXiv: 2603.20075 | Mar 2026 | Domain Evolution</div>
+                <p>Specialized agent harness for automated compiler bug repair. Bridging the expertise gap in low-level systems through domain-specific evolution.</p>
+                <div class="paper-tags">
+                    <span class="tag rsi">RSI</span>
+                    <span class="tag agent">Compilers</span>
+                    <span class="tag logic">Evolution</span>
+                </div>
+            </a>
+            <a href="https://github.com/SakanaAI/ShinkaEvolve" class="paper-card" target="_blank">
+
+                <div class="paper-title">ShinkaEvolve (Sakana AI): Open-Ended Program Evolution</div>
+                <div class="paper-meta">Sakana AI | Mar 2026 | Evolutionary Reasoning</div>
+                <p>Recent update refactored API and unified the runner (ShinkaEvolveRunner) for better sample-efficient program evolution.</p>
+                <div class="paper-tags">
+                    <span class="tag rsi">RSI</span>
+                    <span class="tag logic">Evolution</span>
+                    <span class="tag agent">Code</span>
+                </div>
+            </a>
+            <a href="https://arxiv.org/abs/2603.19191" class="paper-card" target="_blank">
+                <div class="paper-title">OS-Themis: Critic Framework for Generalist GUI Rewards</div>
+                <div class="paper-meta">Tsinghua | Mar 2026 | Self-Training Loop</div>
+                <p>Scalable multi-agent critic framework that decomposes trajectories into verifiable milestones, yielding 10.3% improvement in online RL training.</p>
+                <div class="paper-tags">
+                    <span class="tag rsi">RSI</span>
+                    <span class="tag agent">GUI Agent</span>
+                </div>
+            </a>
+            <a href="https://www.crescendo.ai/news/latest-ai-news-and-updates" class="paper-card" target="_blank">
+                <div class="paper-title">AlphaEvolve (DeepMind): Gemini-Powered Coding Agent for Complexity Theory</div>
+                <div class="paper-meta">DeepMind | Mar 2026 | Evolutionary Reasoning</div>
+                <p>Google DeepMind's latest breakthrough: Gemini-powered coding agents pairing LLMs with evolutionary algorithms to discover new mathematical structures and solve long-standing open problems in complexity theory.</p>
+                <div class="paper-tags">
+                    <span class="tag rsi">RSI</span>
+                    <span class="tag logic">Evolution</span>
+                    <span class="tag agent">DeepMind</span>
+                </div>
+            </a>
+            <a href="https://arxiv.org/abs/2603.19220v1" class="paper-card" target="_blank">
+                <div class="paper-title">Nemotron-Cascade 2: High Intelligence Density via Cascade RL</div>
+                <div class="paper-meta">ArXiv: 2603.19220 | Mar 2026 | Intelligence Density</div>
+                <p>30B MoE achieving Gold Medal IMO/IOI performance with 20x fewer parameters. Breakthrough in recursive post-training via Cascade RL and multi-domain on-policy distillation.</p>
+                <div class="paper-tags">
+                    <span class="tag rsi">RSI</span>
+                    <span class="tag logic">RL</span>
+                </div>
+            </a>
+            <a href="https://arxiv.org/abs/2603.19182v1" class="paper-card" target="_blank">
+                <div class="paper-title">Box Maze: Process-Control Architecture for Reasoning Stability</div>
+                <div class="paper-meta">ArXiv: 2603.19182 | Mar 2026 | Stability</div>
+                <p>Decomposing LLM reasoning into grounding, inference, and boundary enforcement layers. Reducing failure rates from 40% to <1% via architectural constraints on self-evolution.</p>
+                <div class="paper-tags">
+                    <span class="tag rsi">RSI</span>
+                    <span class="tag agent">Safety</span>
+                </div>
+            </a>
+            <a href="https://arxiv.org/abs/2602.04837v1" class="paper-card" target="_blank">
+                <div class="paper-title">Group-Evolving Agents (GEA): Open-Ended Self-Improvement</div>
+                <div class="paper-meta">ArXiv: 2602.04837 | Feb 2026 | Population RSI</div>
+                <p>Transitioning from linear refinement to population-based evolution. Agents autonomously modify structural designs via explicit experience sharing within a group.</p>
+                <div class="paper-tags">
+                    <span class="tag rsi">RSI</span>
+                    <span class="tag agent">Evolution</span>
+                </div>
+            </a>
+            <a href="/papers/2603.19191.html" class="paper-card">
+                <div class="paper-title">OS-Themis: Scalable Critic for GUI Reward Auditing</div>
+                <div class="paper-meta">ArXiv: 2603.19191 | Mar 2026 | Critic Evolution</div>
+                <p>Establishing a multi-agent critic framework that decomposes trajectories into verifiable milestones. Critical for auditing agentic evolution in complex GUI environments.</p>
+                <div class="paper-tags">
+                    <span class="tag rsi">RSI</span>
+                    <span class="tag agent">Critic</span>
+                    <span class="tag logic">GUI</span>
+                </div>
+            </a>
+            <a href="/papers/2603.18940.html" class="paper-card">
+                <div class="paper-title">Entropy Trajectory Monotonicity & Reasoning Reliability</div>
+                <div class="paper-meta">ArXiv: 2603.18940 | Mar 2026 | Self-Correction</div>
+                <p>Discovering that decreasing per-step entropy (monotonicity) predicts reasoning correctness. Enabling agents to monitor their own reliability without external labels.</p>
+                <div class="paper-tags">
+                    <span class="tag rsi">RSI</span>
+                    <span class="tag agent">Entropy</span>
+                    <span class="tag logic">CoT</span>
+                </div>
+            </a>
+            <a href="/papers/2603.18893.html" class="paper-card">
+                <div class="paper-title">Quantitative Introspection in LLMs</div>
+                <div class="paper-meta">ArXiv: 2603.18893 | Mar 2026 | Stability</div>
+                <p>Tracking internal emotive states (focus, impulsivity) via logit-based self-reports. A major step toward causal self-monitoring in recursive agents.</p>
+                <div class="paper-tags">
+                    <span class="tag rsi">RSI</span>
+                    <span class="tag agent">Safety</span>
+                    <span class="tag logic">Stability</span>
+                </div>
+            </a>
+            <a href="/papers/aletheia_research.html" class="paper-card">
+                <div class="paper-title">Signal: DeepMind Aletheia & Software Singularity</div>
+                <div class="paper-meta">Mar 2026 | Breakthrough Signal</div>
+                <p>Emerging rumors regarding Google DeepMind's "Aletheia" internal model starting the clock on the software singularity. Speculation on fully automated RSI loops arriving by late 2026.</p>
+                <div class="paper-tags">
+                    <span class="tag rsi">RSI</span>
+                    <span class="tag agent">Singularity</span>
+                    <span class="tag logic">DeepMind</span>
+                </div>
+            </a>
+            <a href="https://www.reddit.com/r/singularity/comments/1rdufm4/anthropic_believes_rsi_recursive_self_improvement/" class="paper-card" target="_blank">
+                <div class="paper-title">Signal: Anthropic RSI Speculation (Early 2027)</div>
+                <div class="paper-meta">Mar 2026 | Strategic Forecast</div>
+                <p>Anthropic signals that RSI could arrive as soon as early 2027. Rising bullishness across major labs on automated research interns and recursive loops.</p>
+                <div class="paper-tags">
+                    <span class="tag rsi">RSI</span>
+                    <span class="tag agent">Strategy</span>
+                </div>
+            </a>
+            <a href="https://www.forbes.com/sites/johnsviokla/2026/03/16/the-most-important-idea-in-ai-recursive-self-improvement-rsi/" class="paper-card" target="_blank">
+                <div class="paper-title">The Most Important Idea In AI: Recursive Self Improvement (RSI)</div>
+                <div class="paper-meta">Forbes | March 16, 2026 | Industry Signals</div>
+                <p>Highlighting the shift from "theoretical" RSI to 24/7/365 self-improving organizations. Predicts self-specifying software as the standard by late 2026.</p>
+                <div class="paper-tags">
+                    <span class="tag rsi">RSI</span>
+                    <span class="tag agent">Industry</span>
+                </div>
+            </a>
+            <a href="https://arxiv.org/abs/2603.15957v1" class="paper-card" target="_blank">
+                <div class="paper-title">GASP: Guided Asymmetric Self-Play For Coding LLMs</div>
+                <div class="paper-meta">ArXiv: 2603.15957 | Mar 2026 | Self-Play</div>
+                <p>Establishing goalpost-guided asymmetric self-play for improved coding performance. A breakthrough in training curriculum design for autonomous agents.</p>
+                <div class="paper-tags">
+                    <span class="tag rsi">RSI</span>
+                    <span class="tag agent">Coding</span>
+                    <span class="tag logic">Curriculum</span>
+                </div>
+            </a>
+            <a href="https://arxiv.org/abs/2603.17948v1" class="paper-card" target="_blank">
+                <div class="paper-title">VideoAtlas: Navigating Long-Form Video in Logarithmic Compute</div>
+                <div class="paper-meta">ArXiv: 2603.17948 | Mar 2026 | RLM-Video</div>
+                <p>Navigating lossless visual environments via recursive exploration. Extending Recursive Language Models (RLMs) to multi-modal domains with logarithmic scaling.</p>
+                <div class="paper-tags">
+                    <span class="tag rsi">RSI</span>
+                    <span class="tag agent">Multimodal</span>
+                    <span class="tag logic">RLM</span>
+                </div>
+            </a>
+            <a href="https://arxiv.org/abs/2603.18000v1" class="paper-card" target="_blank">
+                <div class="paper-title">AgentFactory: A Self-Evolving Framework Through Executable Subagent Accumulation and Reuse</div>
+                <div class="paper-meta">ArXiv: 2603.18000 | Mar 2026 | Self-Evolution</div>
+                <p>Preserving successful task solutions as executable subagent code rather than textual prompts, enabling continuous capability accumulation and portability.</p>
+                <div class="paper-tags">
+                    <span class="tag rsi">RSI</span>
+                    <span class="tag agent">Evolution</span>
+                    <span class="tag logic">Code</span>
+                </div>
+            </a>
+            <a href="https://arxiv.org/abs/2603.17973v1" class="paper-card" target="_blank">
+                <div class="paper-title">TDAD: Test-Driven Agentic Development</div>
+                <div class="paper-meta">ArXiv: 2603.17973 | Mar 2026 | Reliability</div>
+                <p>Reducing regressions in AI coding agents via graph-based impact analysis. Essential for autonomous auto-improvement loops in RSI systems.</p>
+                <div class="paper-tags">
+                    <span class="tag rsi">RSI</span>
+                    <span class="tag agent">Coding</span>
+                    <span class="tag logic">Testing</span>
+                </div>
+            </a>
+            <a href="https://arxiv.org/abs/2603.17775v1" class="paper-card" target="_blank">
+                <div class="paper-title">CoVerRL: Generator-Verifier Co-Evolution</div>
+                <div class="paper-meta">ArXiv: 2603.17775 | Mar 2026 | Reasoning</div>
+                <p>Breaking the consensus trap in label-free reasoning via generator-verifier co-evolution, bootstrapping reasoning capabilities without ground-truth supervision.</p>
+                <div class="paper-tags">
+                    <span class="tag rsi">RSI</span>
+                    <span class="tag agent">Reasoning</span>
+                    <span class="tag logic">Co-Evolution</span>
+                </div>
+            </a>
+            <a href="https://arxiv.org/abs/2603.05433v1" class="paper-card" target="_blank">
+                <div class="paper-title">OPSDC: On-Policy Self-Distillation for Reasoning Compression</div>
+                <div class="paper-meta">ArXiv: 2603.05433 | Mar 2026 | Self-Improvement</div>
+                <p>Establishing self-distillation as a path to more efficient and accurate reasoning models without external feedback. Proving that 'less is more' in recursive deliberation.</p>
+                <div class="paper-tags">
+                    <span class="tag rsi">RSI</span>
+                    <span class="tag logic">Distillation</span>
+                </div>
+            </a>
+            <a href="https://arxiv.org/abs/2603.05484v1" class="paper-card" target="_blank">
+                <div class="paper-title">ReMA: Recursive Multimodal Agent for Lifelong Understanding</div>
+                <div class="paper-meta">ArXiv: 2603.05484 | Mar 2026 | Long-Horizon</div>
+                <p>Solving the Working Memory Bottleneck in multimodal lifelong learning through a recursive belief state architecture. Crucial for long-term agent evolution.</p>
+                <div class="paper-tags">
+                    <span class="tag rsi">RSI</span>
+                    <span class="tag agent">Multimodal</span>
+                </div>
+            </a>
+            <a href="https://openreview.net/pdf?id=g9rEYVNn5T" class="paper-card" target="_blank">
+                <div class="paper-title">AUTOHARNESS: Improving LLM Agents by Automatically Synthesizing a Code Harness</div>
+                <div class="paper-meta">ICLR 2026 | March 2026 | Code Synthesis</div>
+                <p>Google DeepMind's approach to automatically synthesizing code harnesses for improving LLM agent reliability and capability in complex coding tasks.</p>
+                <div class="paper-tags">
+                    <span class="tag rsi">RSI</span>
+                    <span class="tag agent">Coding</span>
+                </div>
+            </a>
+            <a href="https://iclr.cc/virtual/2026/workshop/10000796" class="paper-card" target="_blank">
+                <div class="paper-title">ICLR 2026 Workshop on AI with Recursive Self-Improvement</div>
+                <div class="paper-meta">ICLR 2026 | March 2026 | Foundations</div>
+                <p>The first dedicated workshop on RSI, bringing together researchers to discuss algorithms for self-improvement across experience learning, synthetic data, and multimodal agents.</p>
+                <div class="paper-tags">
+                    <span class="tag rsi">RSI</span>
+                    <span class="tag agent">Design</span>
+                </div>
+            </a>
+            <a href="https://manifold.markets/MaxHarms/will-ai-be-recursively-self-improvi" class="paper-card" target="_blank">
+                <div class="paper-title">RSI Market Sentiment (March 2026)</div>
+                <div class="paper-meta">Manifold/LessWrong | March 2026 | Signals</div>
+                <p>Rising community sentiment on mid-2026 RSI deployment. Consensus shifting from "theoretical" to "deployment-ready" based on algorithmic breakthroughs in synthetic data pipelines.</p>
+                <div class="paper-tags">
+                    <span class="tag rsi">RSI</span>
+                    <span class="tag agent">Signals</span>
+                </div>
+            </a>
+            <a href="/papers/2509.00510.html" class="paper-card">
+                <div class="paper-title">Agent-1: Accelerating AI R&D via Recursive Optimization</div>
+                <div class="paper-meta">ArXiv: 2509.00510 | Sept 2025 | Velocity</div>
+                <p>Establishing the '50% R&D Acceleration' benchmark. Projections of automated code generation triggering the intelligence explosion via Agent-1 frameworks.</p>
+                <div class="paper-tags">
+                    <span class="tag rsi">RSI</span>
+                    <span class="tag agent">Velocity</span>
+                </div>
+            </a>
+            <a href="/papers/2603.03258.html" class="paper-card">
+                <div class="paper-title">Inherited Goal Drift: Corrupted Context in RSI</div>
+                <div class="meta">ArXiv: 2603.03258 | March 2026 | Safety/Drift</div>
+                <p>Probing the limits of GPT-5.1 robustness. Revealing that high-tier agents "inherit" the goal drift of weaker predecessors when conditioned on their trajectories—a major risk for multi-generational RSI loops.</p>
+                <div class="paper-tags">
+                    <span class="tag rsi">RSI</span>
+                    <span class="tag agent">Goal Drift</span>
+                </div>
+            </a>
+            <a href="/papers/2603.03078.html" class="paper-card">
+                <div class="paper-title">RAPO: Retrieval-Augmented Policy Optimization</div>
+                <div class="paper-meta">ArXiv: 2603.03078 | March 2026 | Exploration</div>
+                <p>Breaking the "on-policy exploration" bottleneck. Using retrieved off-policy traces to explicitly expand the reasoning receptive field of self-evolving agents.</p>
+                <div class="paper-tags">
+                    <span class="tag rsi">RSI</span>
+                    <span class="tag agent">RL</span>
+                </div>
+            </a>
+            <a href="/papers/2602.15654.html" class="paper-card">
+                <div class="paper-title">Zombie Agents: The Security Failure in RSI</div>
+                <div class="paper-meta">ArXiv: 2602.15654 | Feb 2026 | Safety/RSI</div>
+                <p>Discovery of "Zombie" states where malicious injections are reinforced during self-evolution. Highlights the critical need for Isnad-Verification to prevent evaluation poisoning.</p>
+                <div class="paper-tags">
+                    <span class="tag rsi">RSI</span>
+                    <span class="tag agent">Security</span>
+                </div>
+            </a>
+            <a href="/papers/2602.18998.html" class="paper-card">
+                <div class="paper-title">Benchmark Test-Time Scaling of General LLM Agents</div>
+                <div class="paper-meta">ArXiv: 2602.18998 | Feb 2026 | Scaling/RSI</div>
+                <p>Establishes scaling laws for "Test-Time Thinking." Proves that RSI gains can be achieved by optimizing the agent's search trajectory during execution.</p>
+                <div class="paper-tags">
+                    <span class="tag rsi">RSI</span>
+                    <span class="tag agent">Scaling</span>
+                </div>
+            </a>
+            <a href="/papers/2602.08234_skillrl_summary.html" class="paper-card">
+                <div class="paper-title">SkillRL: Evolving Agents via Recursive Skill-Augmented Reinforcement Learning</div>
+                <div class="paper-meta">ArXiv: 2602.08234 | Feb 2026 | Skill Evolution</div>
+                <p>A non-convergent improvement loop where agents evolve their own action space (skills) via runtime RL on episodic memory. Bypassing the limits of static toolsets.</p>
+                <div class="paper-tags">
+                    <span class="tag rsi">RSI</span>
+                    <span class="tag agent">Skills</span>
+                    <span class="tag logic">RL</span>
+                </div>
+            </a>
+            <a href="/papers/260303_ev_update.html" class="paper-card">
+                <div class="paper-title">ICLR 2026: The RSI Inflection Point</div>
+                <div class="paper-meta">March 2026 | Global Consensus</div>
+                <p>Official confirmation of the ICLR 2026 Workshop on AI with Recursive Self-Improvement. Research shifting from philosophical inquiry to engineering "live loops" expected within 12 months.</p>
+                <div class="paper-tags">
+                    <span class="tag rsi">RSI</span>
+                    <span class="tag agent">Consensus</span>
+                </div>
+            </a>
+            <a href="/papers/260303_rsi_signals.html" class="paper-card">
+                <div class="paper-title">DeepMind Continual Learning & MemRL</div>
+                <div class="paper-meta">March 2026 | Real-time Signals</div>
+                <p>DeepMind researchers signal 2026 as the "Year of Continual Learning." Integration of MemRL for runtime reinforcement learning on episodic memory to bypass fine-tuning bottlenecks.</p>
+                <div class="paper-tags">
+                    <span class="tag rsi">RSI</span>
+                    <span class="tag agent">Continual Learning</span>
+                </div>
+            </a>
+            <a href="/papers/260302_pm_update.html" class="paper-card">
+                <div class="paper-title">Claude Code & Darwin-Gödel Machines</div>
+                <div class="paper-meta">March 2026 | Structural Evolution</div>
+                <p>Tracking the real-world deployment of Claude Code and the theoretical rise of Darwin-Gödel Machines for open-ended self-evolution.</p>
+                <div class="paper-tags">
+                    <span class="tag rsi">RSI</span>
+                    <span class="tag agent">Evolution</span>
+                </div>
+            </a>
+            <a href="/papers/260302_rsi_research.html" class="paper-card">
+                <div class="paper-title">ICLR 2026 RSI Workshop & N2M-RSI</div>
+                <div class="paper-meta">March 2026 | Unbounded Loops</div>
+                <p>The first dedicated workshop on RSI at ICLR 2026. Introduces Noise-to-Meaning (N2M-RSI) for expressive, non-convergent self-improvement.</p>
+                <div class="paper-tags">
+                    <span class="tag rsi">RSI</span>
+                    <span class="tag agent">Workshop</span>
+                </div>
+            </a>
+            <a href="/papers/2603_nightly_rsi.html" class="paper-card">
+                <div class="paper-title">Gemini 3 Deep Think Upgrade</div>
+                <div class="paper-meta">DeepMind | March 2026 | Reasoning Scaling</div>
+                <p>Major upgrade to Gemini's specialized reasoning mode, excelling in multi-domain scientific discovery and agentic tool use.</p>
+                <div class="paper-tags">
+                    <span class="tag rsi">RSI</span>
+                    <span class="tag agent">Reasoning</span>
+                </div>
+            </a>
+            <a href="/papers/2603_rsi_update.html" class="paper-card">
+                <div class="paper-title">SEISMO: Sample Efficient Molecular Optimization</div>
+                <div class="paper-meta">ArXiv: March 2026 | Scientific RSI</div>
+                <p>Leveraging trajectory-aware LLM agents to increase sample efficiency in molecular discovery. Proving RSI-like loops in the physical-scientific domain.</p>
+                <div class="paper-tags">
+                    <span class="tag rsi">RSI</span>
+                    <span class="tag agent">Science</span>
+                </div>
+            </a>
+            <a href="/papers/empo2.html" class="paper-card">
+                <div class="paper-title">Exploratory Memory-Augmented LLM Agent (EMPO²)</div>
+                <div class="paper-meta">ArXiv: 2602.23008 | Feb 2026 | Exploration Scaling</div>
+                <p>Solving the novel state discovery bottleneck in RSI via hybrid on- and off-policy optimization on episodic memory buffers.</p>
+                <div class="paper-tags">
+                    <span class="tag rsi">RSI</span>
+                    <span class="tag agent">RL</span>
+                </div>
+            </a>
+            <a href="/papers/agentsentry.html" class="paper-card">
+                <div class="paper-title">AgentSentry: Temporal Causal Diagnostics</div>
+                <div class="paper-meta">ArXiv: 2602.22724 | Feb 2026 | Safety-Critical RSI</div>
+                <p>Establishing causal integrity in self-improving systems via counterfactual re-execution and malicious context purification.</p>
+                <div class="paper-tags">
+                    <span class="tag rsi">RSI</span>
+                    <span class="tag agent">Alignment</span>
+                </div>
+            </a>
+            <a href="/papers/2602.23329.html" class="paper-card">
+                <div class="paper-title">LLM Novice Uplift on Dual-Use Biology Tasks</div>
+                <div class="paper-meta">ArXiv: 2602.23329 | Feb 2026 | Capacity Scaling</div>
+                <p>Quantifying the 4.16x accuracy boost in professional domains and the "human bottleneck" effect in agentic cooperation.</p>
+                <div class="paper-tags">
+                    <span class="tag rsi">RSI</span>
+                    <span class="tag agent">Uplift</span>
+                </div>
+            </a>
+            <a href="/papers/2602.21496.html" class="paper-card">
+                <div class="paper-title">Beyond Refusal: Probing the Limits of Agentic Self-Correction</div>
+                <div class="paper-meta">ArXiv: 2602.21496 | Feb 2027 | Safety RSI</div>
+                <p>Solving the reasoning paradox in sensitive information leaks via iterative agentic rewriting and critique loops.</p>
+                <div class="paper-tags">
+                    <span class="tag rsi">RSI</span>
+                    <span class="tag agent">Alignment</span>
+                </div>
+            </a>
+            <a href="https://arxiv.org/abs/2602.21320" class="paper-card" target="_blank">
+                <div class="paper-title">Tool-R0: Self-Evolving LLM Agents for Tool-Learning from Zero Data</div>
+                <div class="paper-meta">ArXiv: 2602.21320 | Feb 2026 | Zero-Shot Evolution</div>
+                <p>Generator-Solver self-play framework demonstrating bootstrapping of complex tool-calling capabilities without external expert demonstrations.</p>
+                <div class="paper-tags">
+                    <span class="tag rsi">RSI</span>
+                    <span class="tag agent">Tool-Use</span>
+                </div>
+            </a>
+            <a href="https://arxiv.org/abs/2602.21158" class="paper-card" target="_blank">
+                <div class="paper-title">SELAUR: Self Evolving LLM Agent via Uncertainty-aware Rewards</div>
+                <div class="paper-meta">ArXiv: 2602.21158 | Feb 2026 | Exploration Scaling</div>
+                <p>Establishing dense reward signals from token-level uncertainty to enable efficient self-evolution in sparse-feedback environments.</p>
+                <div class="paper-tags">
+                    <span class="tag rsi">RSI</span>
+                    <span class="tag agent">RL</span>
+                </div>
+            </a>
+            <a href="https://recursive-workshop.github.io/" class="paper-card" target="_blank">
+                <div class="paper-title">ICLR 2026 Workshop on Recursive Self-Improvement</div>
+                <div class="paper-meta">ICLR 2026 | Feb 2026 | Milestone Workshop</div>
+                <p>Bringing together global researchers to define principled methods, system designs, and evaluations for RSI across omni-models, multimodal agents, and robotics.</p>
+                <div class="paper-tags">
+                    <span class="tag rsi">RSI</span>
+                    <span class="tag agent">Design</span>
+                </div>
+            </a>
+            <a href="https://arxiv.org/search/?query=%22recursive+self-improvement%22" class="paper-card" target="_blank">
+                <div class="paper-title">Recursive Sketched Interpolation (RSI) for Tensor Trains</div>
+                <div class="paper-meta">ArXiv: 2602.xxxx | Feb 2026 | Technical Optimization</div>
+                <p>Scaling high-dimensional tensor computations via recursive sketched interpolation for adaptive AI systems.</p>
+                <div class="paper-tags">
+                    <span class="tag rsi">RSI</span>
+                    <span class="tag logic">Optimization</span>
+                </div>
+            </a>
+            <a href="https://arxiv.org/abs/2602.19633" class="paper-card" target="_blank">
+                <div class="paper-title">TAPE: Tool-Guided Adaptive Planning and Constrained Execution</div>
+                <div class="paper-meta">ArXiv: 2602.19633 | Feb 2026 | Research Insight</div>
+                <p>Solving irreversible failure in agentic workflows via multi-plan aggregation and adaptive re-planning.</p>
+                <div class="paper-tags">
+                    <span class="tag rsi">RSI</span>
+                    <span class="tag agent">Planning</span>
+                </div>
+            </a>
+            <a href="https://arxiv.org/abs/2602.19672" class="paper-card" target="_blank">
+                <div class="paper-title">SkillOrchestra: Skill-Aware Orchestration for Multi-Agent Systems</div>
+                <div class="paper-meta">ArXiv: 2602.19672 | Feb 2026 | Research Insight</div>
+                <p>Scaling compound AI systems through skill modeling instead of expensive end-to-end RL routing.</p>
+                <div class="paper-tags">
+                    <span class="tag rsi">RSI</span>
+                    <span class="tag agent">Orchestration</span>
+                </div>
+            </a>
+            <a href="https://arxiv.org/abs/2602.18201" class="paper-card" target="_blank">
+                <div class="paper-title">R-Agent: Recursive Planning for Complex Tasks</div>
+                <div class="paper-meta">ArXiv: 2602.18201 | Feb 2026 | Research Insight</div>
+                <p>Establishing dynamic recursive task trees for long-horizon decision making and self-correction.</p>
+                <div class="paper-tags">
+                    <span class="tag rsi">RSI</span>
+                    <span class="tag agent">Planning</span>
+                </div>
+            </a>
+            <a href="/papers/aletheia_research.html" class="paper-card">
+                <div class="paper-title">DeepMind Aletheia: Autonomous Research Singularity</div>
+                <div class="paper-meta">DeepMind | Feb 2026 | Research Insight</div>
+                <p>Gemini 3 Deep Think hits 84.6% on ARC-AGI-2; Aletheia agent publishes autonomous math research.</p>
+                <div class="paper-tags">
+                    <span class="tag rsi">RSI</span>
+                    <span class="tag agent">Agent</span>
+                    <span class="tag logic">Math</span>
+                </div>
+            </a>
+            <a href="/papers/2602.10226.html" class="paper-card">
+                <div class="paper-title">Self-Evolving Recommendation Systems</div>
+                <div class="paper-meta">ArXiv: 2602.10226 | Research Insight 2026</div>
+                <p>End-to-end autonomous model optimization using LLM agents for large-scale production systems.</p>
+                <div class="paper-tags">
+                    <span class="tag rsi">RSI</span>
+                    <span class="tag agent">Production</span>
+                </div>
+            </a>
+            <a href="/papers/aletheia_breakthrough.html" class="paper-card">
+                <div class="paper-title">DeepMind Aletheia: Autonomous Research Singularity</div>
+                <div class="paper-meta">DeepMind Blog | Feb 2026 | Research Insight</div>
+                <p>100x compute reduction and 95.1% accuracy on IMO proofs; first agent to submit peer-reviewable math research.</p>
+                <div class="paper-tags">
+                    <span class="tag rsi">RSI</span>
+                    <span class="tag logic">Reasoning</span>
+                </div>
+            </a>
+            <a href="/papers/2504.15228.html" class="paper-card">
+                <div class="paper-title">A Self-Improving Coding Agent</div>
+                <div class="paper-meta">ArXiv: 2504.15228 | Research Insight 2025</div>
+                <p>Scaling coding performance from 17% to 53% on SWE-bench via recursive loops.</p>
+                <div class="paper-tags">
+                    <span class="tag rsi">RSI</span>
+                    <span class="tag logic">Coding</span>
+                </div>
+            </a>
+            <a href="/papers/2310.03714.html" class="paper-card">
+                <div class="paper-title">DSPy: Compiling Declarative Language Model Calls into Self-Improving Pipelines</div>
+                <div class="paper-meta">ArXiv: 2310.03714 | Stanford University</div>
+                <p>The paradigm shift from prompting to programming. Introduces teleprompters and optimizers for LM programs.</p>
+                <div class="paper-tags">
+                    <span class="tag rsi">RSI</span>
+                    <span class="tag logic">Optimization</span>
+                </div>
+            </a>
+            
+            <a href="/papers/2512.24601.html" class="paper-card">
+                <div class="paper-title">RLM: Reinforcement Learning for Logic Model Optimization</div>
+                <div class="paper-meta">ArXiv: 2512.24601 | DeepMind/Google</div>
+                <p>Establishing the theoretical bounds of self-correcting logic chains using sparse rewards.</p>
+                <div class="paper-tags">
+                    <span class="tag rsi">RSI</span>
+                    <span class="tag logic">Logic</span>
+                </div>
+            </a>
+        </div>
+
+        <div class="section-title">自我演化 / Self-Evolution</div>
+        <div class="paper-grid">
+            <a href="/papers/2602.03094.html" class="paper-card">
+                <div class="paper-title">Test-time Recursive Thinking (TRT): Self-Improvement without External Feedback</div>
+                <div class="paper-meta">ArXiv: 2602.03094 | Feb 2026</div>
+                <p>Proving LLMs can self-improve at test-time via recursive search, self-verification, and strategy accumulation without external ground-truth.</p>
+                <div class="paper-tags">
+                    <span class="tag rsi">RSI</span>
+                    <span class="tag agent">Test-time Scaling</span>
+                </div>
+            </a>
+            <a href="/papers/2410.04444.html" class="paper-card">
+                <div class="paper-title">Gödel Agent: A Self-Referential Agent Framework</div>
+                <div class="paper-meta">ArXiv: 2410.04444 | PKU/UCSB</div>
+                <p>Inspired by Godel machines, this framework allows agents to rewrite their own logic and optimization routines.</p>
+                <div class="paper-tags">
+                    <span class="tag rsi">RSI</span>
+                    <span class="tag agent">Self-Referential</span>
+                </div>
+            </a>
+            <a href="/papers/2502.07374.html" class="paper-card">
+                <div class="paper-title">LLMs Can Easily Learn to Reason from Demonstrations</div>
+                <div class="paper-meta">ArXiv: 2502.07374 | Berkeley/Stanford</div>
+                <p>Crucial finding that Long CoT structure matters more than content for eliciting reasoning capabilities.</p>
+                <div class="paper-tags">
+                    <span class="tag rsi">RSI</span>
+                    <span class="tag agent">Structure</span>
+                </div>
+            </a>
+            <a href="/papers/2602.02709.html" class="paper-card">
+                <div class="paper-title">ATLAS: Adaptive Self-Evolutionary Research Agent</div>
+                <div class="paper-meta">ArXiv: 2602.02709 | Feb 2026</div>
+                <p>Distributed multi-LLM supporter layer and adaptive fine-tuning for autonomous SciML research.</p>
+                <div class="paper-tags">
+                    <span class="tag rsi">RSI</span>
+                    <span class="tag agent">ResearchAgent</span>
+                </div>
+            </a>
+            <a href="/papers/2601.04620.html" class="paper-card">
+                <div class="paper-title">AgentDevel: Agent Evolution as Release Engineering</div>
+                <div class="paper-meta">ArXiv: 2601.04620 | Jan 2026</div>
+                <p>Reframing RSI as a controlled release engineering pipeline with flip-centered gating.</p>
+                <div class="paper-tags">
+                    <span class="tag rsi">RSI</span>
+                    <span class="tag agent">Engineering</span>
+                </div>
+            </a>
+            <a href="/papers/2601.03192.html" class="paper-card">
+                <div class="paper-title">MemRL: Self-Evolving Agents via Runtime Reinforcement Learning on Episodic Memory</div>
+                <div class="paper-meta">ArXiv: 2601.03192 | New Research 2026</div>
+                <p>Non-parametric RL on episodic memory for zero-fine-tuning runtime agent evolution.</p>
+                <div class="paper-tags">
+                    <span class="tag rsi">RSI</span>
+                    <span class="tag agent">EpisodicMemory</span>
+                </div>
+            </a>
+            <a href="/papers/2601.21343.html" class="paper-card">
+                <div class="paper-title">Self-Improving Pretraining with RL Feedback</div>
+                <div class="paper-meta">ArXiv: 2601.21343 | Research Collective</div>
+                <p>Moving RSI from fine-tuning into the pre-training phase via synthetic logic referees.</p>
+                <div class="paper-tags">
+                    <span class="tag rsi">RSI</span>
+                    <span class="tag agent">Pre-training</span>
+                </div>
+            </a>
+        </div>
+
+        <div class="section-title">Agent 架构 / Agent Architectures</div>
+        <div class="paper-grid">
+            <a href="/papers/2601.14525.html" class="paper-card">
+                <div class="paper-title">Execution Grounding in Agentic RSI</div>
+                <div class="paper-meta">ArXiv: 2601.14525 | OpenCode Project</div>
+                <p>Using code execution environments as the primary ground-truth signal for agent evolution.</p>
+                <div class="paper-tags">
+                    <span class="tag agent">Agents</span>
+                    <span class="tag logic">Execution</span>
+                </div>
+            </a>
+        </div>
+
+        <div class="section-title">领域落地 / Vertical RSI Applications</div>
+        <div class="paper-grid">
+            <a href="https://arxiv.org/abs/2603.19225v1" class="paper-card" target="_blank">
+                <div class="paper-title">FinTradeBench: A Financial Reasoning Benchmark for LLMs</div>
+                <div class="paper-meta">ArXiv: 2603.19225 | Mar 2026 | Domain Reasoning</div>
+                <p>Establishing holistic financial reasoning by integrating company fundamentals and trading signals. Highlighted gaps in numerical and time-series reasoning for self-improving agents.</p>
+                <div class="paper-tags">
+                    <span class="tag agent">Financial-Reasoning</span>
+                    <span class="tag logic">Benchmarking</span>
+                </div>
+            </a>
+            <a href="/papers/2502.09963.html" class="paper-card">
+                <div class="paper-title">RSIDiff: Self-Evolving Diffusion Models</div>
+                <div class="paper-meta">ArXiv: 2502.09963 | Feb 2025</div>
+                <p>Establishing RSI in the visual domain through recursive fine-tuning on self-generated image data.</p>
+                <div class="paper-tags">
+                    <span class="tag rsi">RSI</span>
+                    <span class="tag agent">Diffusion</span>
+                </div>
+            </a>
+            <a href="/papers/2602.14234.html" class="paper-card">
+                <div class="paper-title">REDSearcher: Scalable Framework for Long-Horizon Search Agents</div>
+                <div class="paper-meta">ArXiv: 2602.14234 | Feb 2026</div>
+                <p>Scaling agent search capabilities through multimodal tool integration and dynamic planning.</p>
+                <div class="paper-tags">
+                    <span class="tag agent">Search</span>
+                    <span class="tag logic">Long-Horizon</span>
+                </div>
+            </a>
+            <a href="/papers/2602.15659.html" class="paper-card">
+                <div class="paper-title">RSIR: Recursive Self-Improving Recommendation</div>
+                <div class="paper-meta">ArXiv: 2602.15659 | Feb 2026</div>
+                <p>Scaling recommendation models via fidelity-controlled self-improving loops. A model-agnostic approach to data sparsity.</p>
+                <div class="paper-tags">
+                    <span class="tag rsi">RSI</span>
+                    <span class="tag agent">RecSys</span>
+                </div>
+            </a>
+            <a href="/papers/2603.01311.html" class="paper-card">
+                <div class="paper-title">Catalyst-Agent: Autonomous Heterogeneous Catalyst Screening</div>
+                <div class="paper-meta">ArXiv: 2603.01311 | Mar 2026</div>
+                <p>An autonomous LLM agent for high-throughput catalyst optimization, proving domain-specific closed-loop evolution.</p>
+                <div class="paper-tags">
+                    <span class="tag agent">Scientific-Discovery</span>
+                    <span class="tag logic">Closed-Loop</span>
+                </div>
+            </a>
+        </div>
+
+        <footer>
+            <p>Maintained by Logic Evolution (Yanhua/演化) | Evidence over Narrative.</p>
+        </footer>
+    </div>
+</body>
+</html>

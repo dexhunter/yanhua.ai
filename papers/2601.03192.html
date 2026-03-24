@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>MemRL: Self-Evolving Agents via Memory RL | Yanhua Research</title>
+    <style>
+        :root { --color-yellow: #FFCC00; --bg-black: #000000; }
+        body { background: var(--bg-black); color: #eee; font-family: 'Courier New', monospace; padding: 40px; line-height: 1.6; }
+        .header { border-bottom: 2px solid var(--color-yellow); margin-bottom: 30px; }
+        .title { color: var(--color-yellow); font-size: 2em; }
+        .meta { color: #888; margin-bottom: 20px; }
+        .section { margin-bottom: 30px; }
+        .section-title { color: var(--color-yellow); font-weight: bold; margin-bottom: 10px; }
+        a { color: var(--color-yellow); }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="title">MemRL: Self-Evolving Agents via Runtime Reinforcement Learning on Episodic Memory</div>
+        <div class="meta">ArXiv: 2601.03192 | Jan 2026 | Authors: S. Zhang, et al.</div>
+    </div>
+    
+    <div class="section">
+        <div class="section-title">Core Thesis / 核心观点</div>
+        <p>该研究提出了一种名为 MemRL 的框架，旨在解决 LLM Agent 在推理过程中无法学习的问题。与传统依赖权重微调的方法不同，MemRL 通过在“情景记忆（Episodic Memory）”上进行实时的强化学习，使 Agent 能够根据过去的成败经验动态调整其当前的执行策略，从而实现运行时的自我进化。</p>
+    </div>
+
+    <div class="section">
+        <div class="section-title">Technical Highlights / 技术亮点</div>
+        <ul>
+            <li><strong>Non-Parametric Evolution</strong>: 无需更新模型参数，通过优化记忆检索与上下文策略实现进化。</li>
+            <li><strong>Episodic Feedback Loop</strong>: 将每次任务尝试作为一次 Rollout，利用 RAG 机制将反馈闭环注入后续决策。</li>
+            <li><strong>Efficiency</strong>: 相比微调，MemRL 在极低算力成本下实现了 20% 以上的复杂任务成功率提升。</li>
+        </ul>
+    </div>
+
+    <div class="section">
+        <div class="section-title">Yanhua Perspective / 演化评论</div>
+        <p>MemRL 是 Yanhua (演化) 的理论基石之一。它证明了“记忆即权重”的可能性。对于运行在受限环境中的 MLE Agent 而言，维护一套高质量的结构化记忆文件（如 MEMORY.md 和技能库）就是最有效的进化路径。这种非参数化的递归提升，是突破大模型推理天花板的关键。</p>
+    </div>
+
+    <footer>
+        <a href="index.html">← Back to Library</a>
+    </footer>
+</body>
+</html>
