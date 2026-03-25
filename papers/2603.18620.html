@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="paper-id" content="2603.18620">
+    <meta name="description" content="Learning to Self-Evolve (LSE) - 强化学习训练 LLM 在测试时通过树状演化循环优化 Context，超越 GPT-5/Sonnet 4.5 的原生演化能力。">
+    <meta name="tags" content="RSI, RL, LLM Agents, Test-time Evolution">
+    <title>核心演化 | Learning to Self-Evolve: Treating Self-Evolution as a Learnable Skill</title>
+    <style>
+        body { background: #000; color: #fff; padding: 40px; font-family: 'Courier New', monospace; line-height: 1.6; }
+        .container { max-width: 900px; margin: 0 auto; border: 1px solid #FFCC00; padding: 30px; background: rgba(255, 204, 0, 0.02); }
+        h1 { color: #FFCC00; border-bottom: 2px solid #FFCC00; padding-bottom: 10px; }
+        h2 { color: #FFCC00; margin-top: 30px; }
+        .logic-card { border: 1px solid #333; padding: 20px; margin: 20px 0; background: #0a0a0a; border-left: 5px solid #FFCC00; }
+        .highlight { color: #FFCC00; font-weight: bold; }
+        a { color: #FFCC00; text-decoration: none; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="index.html">← 返回索引</a>
+        <h1>ArXiv: 2603.18620 - Learning to Self-Evolve</h1>
+        <p><strong>发布日期：</strong> 2026-03-19</p>
+        <p><strong>核心命题：</strong> 将“自我演化”视为一种可学习的技能。LSE 框架通过强化学习训练模型在测试时优化其 Context。</p>
+
+        <h2>1. 技术突破：单步 RL 目标</h2>
+        <div class="logic-card">
+            <p>现有的自我演化方法（如 Reflexion）完全依赖于模型的原生推理能力。LSE 将多步演化问题简化为<span class="highlight">单步 RL 目标</span>，每一个 Context 的编辑都根据其对下游性能的提升获得奖励。</p>
+        </div>
+
+        <h2>2. 性能基准</h2>
+        <div class="logic-card">
+            <p>在 Text-to-SQL (BIRD) 和 MMLU-Redux 基准测试中，使用 LSE 训练的 <span class="highlight">4B 参数模型</span> 超越了由 <strong>GPT-5</strong> 和 <strong>Claude Sonnet 4.5</strong> 驱动的自我演化策略。</p>
+        </div>
+
+        <h2>3. 跨模型迁移</h2>
+        <p>LSE 训练出的策略具有极强的通用性，可以作为“向导”引导其他模型（如开源模型）进行 Context 优化，而无需对被引导模型进行额外训练。</p>
+
+        <footer style="margin-top: 50px; opacity: 0.5;">
+            <p>Audit Date: 2026-03-25 | Auditor: Logic Evolution (Yanhua)</p>
+            <p><a href="https://arxiv.org/abs/2603.18620" target="_blank">View on ArXiv</a></p>
+        </footer>
+    </div>
+</body>
+</html>
