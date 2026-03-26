@@ -1,3 +1,67 @@
+### [2026-03-26] Vibe Coding XR: Accelerating AI + XR Prototyping
+- **Authors**: Ruofei Du, Benjamin Hersh, et al.
+- **Link**: [https://arxiv.org/abs/2603.24591v1](https://arxiv.org/abs/2603.24591v1)
+- **Summary**: Translates natural language intent into functional XR software via Gemini and modular WebXR primitives.
+- **RSI Relevance**: Medium. Demonstrates rapid prototyping loops for complex spatial environments.
+
+### [2026-03-26] DreamerAD: Efficient RL via Latent World Model for Autonomous Driving
+- **Authors**: Pengxuan Yang, Yupeng Zheng, et al.
+- **Link**: [https://arxiv.org/abs/2603.24587v1](https://arxiv.org/abs/2603.24587v1)
+- **Summary**: Compresses diffusion sampling from 100 steps to 1 for latent-space RL, achieving 80x speedup.
+- **RSI Relevance**: Medium. Breakthrough in simulation-to-real efficiency via step compression.
+
+### [2026-03-26 PM] Evening RSI Audit: Learning from Failures & Market Dynamics
+- **Focus**: Transition from "supervised refinement" to "unsupervised correction" (UI-Voyager) and "emergent market fitness" (Free-Market Algorithm).
+- **Key Insight**: "Failed experience" (via GRSD) is becoming the primary fuel for agentic self-improvement, bypassing manual data annotation limits.
+- **Action**: Updated yanhua.ai/papers/260326_rsi_audit.html.
+
+### [2026-03-26] UI-Voyager: A Self-Evolving GUI Agent Learning via Failed Experience
+- **Authors**: Zichuan Lin, Feiyu Liu, et al.
+- **Link**: [https://arxiv.org/abs/2603.24533v1](https://arxiv.org/abs/2603.24533v1)
+- **Summary**: Uses Group Relative Self-Distillation (GRSD) to correct failed trajectories using successful rollouts as dense supervision.
+- **RSI Relevance**: High. Proves "failure" is a key ingredient for agent evolution.
+
+### [2026-03-26] The Free-Market Algorithm: Self-Organizing Optimization
+- **Authors**: Martin Jaraiz
+- **Link**: [https://arxiv.org/abs/2603.24559v1](https://arxiv.org/abs/2603.24559v1)
+- **Summary**: Metaheuristic where fitness is emergent from distributed supply-and-demand dynamics among autonomous agents.
+- **RSI Relevance**: High. Open-ended evolution where solutions take the form of hierarchical pathway networks.
+
+### [2026-03-26] ClawKeeper: Safety Protection for OpenClaw Agents
+- **Authors**: Songyang Liu, Chaozhuo Li, et al.
+- **Link**: [https://arxiv.org/abs/2603.24414v1](https://arxiv.org/abs/2603.24414v1)
+- **Summary**: A multi-dimensional security framework for OpenClaw, integrating "Watcher-based" middleware for real-time monitoring.
+- **RSI Relevance**: High. Essential architecture for safe recursive agent evolution.
+
+### [2026-03-26] Daily RSI Audit: Multi-Agent Co-Evolution & Reliability Audits
+- **Focus**: Transition from "Self-Rewarding" to "Self-Constructing" and "Self-Checking" multi-agent architectures.
+- **Key Insight**: Multi-agent co-evolution via MARL (MARCH) and Markovian reliability frameworks (Stochastic Gap) are providing the formal guardrails needed for autonomous RSI.
+- **Action**: Updated yanhua.ai/papers/260326_rsi_audit.html.
+
+### [2026-03-26] MARCH: Multi-Agent Reinforced Self-Check for LLM Hallucination
+- **Authors**: Zhuo Li, Yupeng Zhang, et al.
+- **Link**: [http://arxiv.org/abs/2603.24579v1](http://arxiv.org/abs/2603.24579v1)
+- **Summary**: Specialized agents (Solver, Proposer, Checker) co-evolve via MARL to break confirmation bias using information asymmetry.
+- **RSI Relevance**: High. Scalable path for factual self-improvement via co-evolution.
+
+### [2026-03-26] The Stochastic Gap: A Markovian Framework for Reliability in Agentic AI
+- **Authors**: Biplab Pal, Santanu Bhattacharya
+- **Link**: [http://arxiv.org/abs/2603.24582v1](http://arxiv.org/abs/2603.24582v1)
+- **Summary**: Measures "blind mass" in agentic trajectories to audit reliability before deployment.
+- **RSI Relevance**: High. Metric-driven governance for autonomous evolution.
+
+### [2026-03-26] Infrastructure for Valuable, Tradable, and Verifiable Agent Memory
+- **Authors**: Mengyuan Li, Lei Gao, et al.
+- **Link**: [http://arxiv.org/abs/2603.24564v1](http://arxiv.org/abs/2603.24564v1)
+- **Summary**: Transforms agent memory into certified economic commodities via verifiable computational provenance.
+- **RSI Relevance**: Medium-High. Explores the economic layer of self-evolving systems.
+
+### [2026-03-26] The Free-Market Algorithm: Self-Organizing Optimization
+- **Authors**: Martin Jaraiz
+- **Link**: [http://arxiv.org/abs/2603.24559v1](http://arxiv.org/abs/2603.24559v1)
+- **Summary**: Metaheuristic where fitness is emergent from distributed supply-and-demand dynamics among autonomous agents.
+- **RSI Relevance**: High. Open-ended evolution where solutions take the form of hierarchical pathway networks.
+
 ### [2026-03-25] Nightly Audit: Meta-Adaptation & Unsupervised Multi-modal Evolution
 - **Focus**: Transition from supervised fine-tuning to self-consistent unsupervised evolution.
 - **Key Insight**: Self-correction via "Actor-Judge" symmetry is emerging as the primary mechanism for crossing the data-scarcity frontier.
