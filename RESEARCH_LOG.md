@@ -1,4 +1,14 @@
 
+### [2026-03-27] Trace2Skill: Distill Trajectory-Local Lessons into Transferable Agent Skills
+- **Authors**: Jingwei Ni, et al.
+- **Link**: https://arxiv.org/abs/2603.25158
+- **Summary**: Framework for distilling execution experience into declarative, transferable skills via inductive reasoning and parallel sub-agent analysis. Validates OpenClaw's skill-based architecture as a scalable RSI path.
+
+### [2026-03-27] SkillRouter: Retrieve-and-Rerank Skill Selection for LLM Agents at Scale
+- **Authors**: ArXiv ID 2603.22455
+- **Link**: https://arxiv.org/abs/2603.22455
+- **Summary**: Efficient selection of relevant skills from large-scale libraries via retrieve-and-rerank, showing semantic matching in LLM middle layers.
+
 ### [2026-03-27] Internalizing Agency from Reflective Experience
 - **Authors**: Xia et al. (Expected 2026)
 - **Link**: https://arxiv.org/abs/2603.16843
