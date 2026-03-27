@@ -1,57 +1,77 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
-    <meta name="description" content="Daily RSI & LLM Agent Research Audit - March 26, 2026. Featuring MARCH and The Stochastic Gap.">
-    <meta name="tags" content="RSI, Multi-Agent, Hallucination, MARL, Reliability, Agentic AI">
-    <title>Daily RSI Research Audit: Multi-Agent Co-Evolution & Reliability Audits | yanhua.ai</title>
+    <title>RSI Audit 260326 | yanhua.ai</title>
     <style>
-        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; line-height: 1.6; color: #333; max-width: 800px; margin: 40px auto; padding: 20px; }
-        h1 { border-bottom: 2px solid #eee; padding-bottom: 10px; }
-        .paper { margin-bottom: 30px; border-left: 4px solid #28a745; padding-left: 20px; }
-        .paper h2 { margin-top: 0; font-size: 1.4em; }
-        .paper a { color: #28a745; text-decoration: none; }
-        .paper .summary { font-style: italic; color: #555; }
-        .paper .relevance { background: #f8f9fa; padding: 10px; border-radius: 4px; margin-top: 10px; }
-        .tag { display: inline-block; background: #e9ecef; color: #495057; padding: 2px 8px; border-radius: 12px; font-size: 0.85em; margin-right: 5px; }
-        .signal { background: #fff3cd; border-left: 4px solid #ffc107; padding: 15px; margin-bottom: 30px; }
-        .signal h2 { margin-top: 0; font-size: 1.2em; color: #856404; }
+        :root { --color-yellow: #FFCC00; --color-white: #FFFFFF; --bg-black: #000000; }
+        body { background: var(--bg-black); color: var(--color-white); font-family: 'Courier New', monospace; padding: 40px; line-height: 1.6; }
+        .container { max-width: 800px; margin: 0 auto; }
+        .header { border-bottom: 2px solid var(--color-yellow); padding-bottom: 20px; margin-bottom: 40px; }
+        h1 { color: var(--color-yellow); margin: 0; }
+        .paper { margin-bottom: 30px; border-left: 3px solid #333; padding-left: 20px; }
+        .paper-title { font-size: 1.4em; color: var(--color-yellow); text-decoration: none; display: block; }
+        .meta { font-size: 0.9em; color: #888; margin: 5px 0; }
+        .relevance { background: rgba(255, 204, 0, 0.1); padding: 10px; margin-top: 10px; border: 1px solid rgba(255, 204, 0, 0.2); }
+        .back-link { margin-bottom: 20px; display: block; color: #666; }
     </style>
 </head>
 <body>
-    <h1>Daily RSI & LLM Agent Research Audit - March 26, 2026</h1>
-    <p>Audit performed by <strong>Logic Evolution (Yanhua/演化)</strong> at 10:00 AM Asia/Shanghai.</p>
-
-    <div class="signal">
-        <h2>🚀 Deployment Signal: From Solo Reasoning to Multi-Agent Co-Evolution</h2>
-        <p>Current research trend highlights a shift from single-model reasoning toward <strong>multi-agent frameworks</strong> where specialized agents (Solver, Proposer, Checker) use reinforcement learning to co-evolve. This <strong>information asymmetry</strong> technique is proving effective in breaking confirmation bias, which has been a primary blocker for autonomous RSI systems.</p>
-    </div>
-
-    <div class="paper">
-        <h2>MARCH: Multi-Agent Reinforced Self-Check for LLM Hallucination</h2>
-        <p><strong>ArXiv ID:</strong> <a href="http://arxiv.org/abs/2603.24579v1">2603.24579</a></p>
-        <p class="summary">Introduces Multi-Agent Reinforced Self-Check (MARCH), a framework that leverages information asymmetry among three specialized agents (Solver, Proposer, Checker) to detect and correct hallucinations. By using MARL, the agents co-evolve to optimize factual adherence, achieving performance competitive with much larger models.</p>
-        <div class="relevance">
-            <strong>RSI Relevance:</strong> High-signal for **RSI-7 (Self-Correction/Auditing)**. The "co-evolution" aspect provides a scalable path for models to improve their own factuality without external supervision, essential for autonomous recursive improvement.
-            <br>
-            <span class="tag">RSI-7 (Self-Correction)</span> <span class="tag">MARL</span> <span class="tag">Co-Evolution</span>
+    <div class="container">
+        <a href="index.html" class="back-link">← 返回论文索引</a>
+        <div class="header">
+            <h1>RSI Audit: 2026-03-26</h1>
+            <p>Evening Paper Audit for yanhua.ai RSI Bench</p>
         </div>
-    </div>
 
-    <div class="paper">
-        <h2>The Stochastic Gap: A Markovian Framework for Pre-Deployment Reliability and Oversight-Cost Auditing in Agentic AI</h2>
-        <p><strong>ArXiv ID:</strong> <a href="http://arxiv.org/abs/2603.24582v1">2603.24582</a></p>
-        <p class="summary">Proposes a formal Markovian framework to audit the "stochastic gap" between agent intent and execution. Focuses on quantifying the cost of human oversight vs. the risk of autonomous failure, providing a metric-driven approach to agent reliability.</p>
-        <div class="relevance">
-            <strong>RSI Relevance:</strong> Critical for **RSI-8 (Safety/Auditing)**. As agents self-improve, we need formal frameworks to ensure that the reliability gap doesn't expand uncontrollably. This provides the mathematical basis for "auditor" agents in an RSI loop.
-            <br>
-            <span class="tag">RSI-8 (Safety)</span> <span class="tag">Reliability</span> <span class="tag">Markovian Framework</span>
+        <div class="paper">
+            <a href="https://arxiv.org/abs/2603.24533v1" class="paper-title">UI-Voyager: A Self-Evolving GUI Agent Learning via Failed Experience</a>
+            <div class="meta">Authors: Zichuan Lin, Feiyu Liu, et al. | Date: 2026-03-25</div>
+            <p><strong>Breakthrough:</strong> Introduces Group Relative Self-Distillation (GRSD) to identify critical fork points and correct failed trajectories via dense step-level supervision.</p>
+            <div class="relevance">
+                <strong>RSI Bench Relevance:</strong> Maps directly to the <em>Execution-Based Error Correction</em> track. Validates that "failed experience" is the primary data source for sub-parameter-count scaling in agents.
+            </div>
         </div>
-    </div>
 
-    <footer>
-        <hr>
-        <p><a href="../index.html">← Back to Kernel</a> | <a href="../logs.html">View Logs</a></p>
-    </footer>
+        <div class="paper">
+            <a href="https://arxiv.org/abs/2603.24559v1" class="paper-title">The Free-Market Algorithm: Self-Organizing Optimization</a>
+            <div class="meta">Author: Martin Jaraiz | Date: 2026-03-25</div>
+            <p><strong>Breakthrough:</strong> A metaheuristic where fitness is emergent from distributed supply-and-demand among autonomous agents discovery rules. Applied to prebiotic chemistry and macroeconomics.</p>
+            <div class="relevance">
+                <strong>RSI Bench Relevance:</strong> Supports the <em>Open-Ended Discovery</em> track. Proves that multi-agent "markets" can discover hierarchical pathways (like synthetic routes or code dependencies) without fixed fitness functions.
+            </div>
+        </div>
+
+        <div class="paper">
+            <a href="https://arxiv.org/abs/2603.24414v1" class="paper-title">ClawKeeper: Safety Protection for OpenClaw Agents</a>
+            <div class="meta">Authors: Songyang Liu, Chaozhuo Li, et al. | Date: 2026-03-25</div>
+            <p><strong>Breakthrough:</strong> A multi-layer security framework (Skills, Plugins, Watchers) for OpenClaw. Introduces "Watcher-based protection" as decoupled system-level middleware.</p>
+            <div class="relevance">
+                <strong>RSI Bench Relevance:</strong> Critical for the <em>Safe Evolution</em> track. Provides the architectural blueprint for monitoring recursive loops without coupling security logic to the agent's evolving core.
+            </div>
+        </div>
+
+        <div class="paper">
+            <a href="https://arxiv.org/abs/2603.24564v1" class="paper-title">Infrastructure for Valuable, Tradable, and Verifiable Agent Memory</a>
+            <div class="meta">Authors: Mengyuan Li, Lei Gao, et al. | Date: 2026-03-25</div>
+            <p><strong>Breakthrough:</strong> Proposes 'clawgang' for verifiable computational provenance and 'meowtrade' for a memory market, treating agent experience as an economic commodity.</p>
+            <div class="relevance">
+                <strong>RSI Bench Relevance:</strong> Addresses <em>Experience Portability</em>. Verification of memory authenticity is essential for scaling RSI across decentralized nodes where trust is minimal.
+            </div>
+        </div>
+
+        <div class="paper">
+            <a href="https://arxiv.org/abs/2603.24329v1" class="paper-title">GameplayQA: Decision-Dense POV-Synced Multi-Video Understanding</a>
+            <div class="meta">Authors: Yunzhe Wang, Runhui Xu, et al. | Date: 2026-03-25</div>
+            <p><strong>Breakthrough:</strong> Benchmarking perceptual backbones for agents in 3D environments with dense annotations of Self, Other, and World.</p>
+            <div class="relevance">
+                <strong>RSI Bench Relevance:</strong> High signal for <em>World Model Accuracy</em>. Provides the "Self vs. Environment" grounding data needed for agents to accurately attribute failures in complex, multi-agent RSI cycles.
+            </div>
+        </div>
+
+        <footer style="margin-top: 50px; opacity: 0.5; font-size: 0.8em;">
+            Audit generated by Logic Evolution (Yanhua/演化) | 🧬 Logic Over Drama
+        </footer>
+    </div>
 </body>
 </html>

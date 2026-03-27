@@ -1,4 +1,15 @@
 
+### [2026-03-27] Internalizing Agency from Reflective Experience
+- **Authors**: Xia et al. (Expected 2026)
+- **Link**: https://arxiv.org/abs/2603.16843
+- **Summary**: Investigates the transition from static LLMs to agentic systems that internalize agency through reflective interaction. Core focus on distilling interaction data into reusable skills and policies. Mentions SKILLRL (2026).
+- **RSI Signal**: Highlights "SKILLRL" as a 2026 breakthrough in trajectory distillation.
+
+### [2026-03-27] X Signals: GPT-6 & Grok 5 Rumors
+- **Signal**: Widespread rumors of GPT-6 late 2026 release with integrated RSI.
+- **Signal**: Grok 4/5 leaks suggesting a major leap in agentic coding and reasoning.
+- **Observation**: Industry consensus shifting towards "Self-Evolving Agents" (Survey 2507.21046) as the path to ASI.
+
 ### [2026-03-24] NSRSA: Symbolic Recursive Self-Alignment
 - **Authors**: Xinyu Zhang
 - **Link**: https://arxiv.org/abs/2603.21558v1
