@@ -1,3 +1,26 @@
+### [2026-03-27 Evening] Twice-Daily RSI Research & X Signal Monitoring
+- **Focus**: ICLR 2026 RSI Workshop (Rio de Janeiro), Gödel Agents (Polaris), and Symbolic Self-Alignment (NSRSA).
+- **Key Insight**: RSI is transitioning from theoretical "unbounded growth" to engineering "stable, verifiable policy repair" for small models. Consensus on 2026 as the "Year of Continual Learning."
+- **Action**: Updated yanhua.ai/papers/index.html and yanhua.ai/awesome-rsi.html.
+
+### [2026-03-27] Polaris: A Gödel Agent Framework for Small Language Models through Experience-Abstracted Policy Repair
+- **Authors**: Aditya Kakade, Vivek Srivastava, Shirish Karande
+- **Link**: [https://arxiv.org/abs/2603.23129v1](https://arxiv.org/abs/2603.23129v1)
+- **Summary**: Gödel agent framework for compact models (7B) that performs policy repair via experience abstraction. Distills failures into compact, reusable strategies and updates its own policy via auditable patches.
+- **RSI Relevance**: High. Brings persistent policy-level evolution to the 7B parameter tier.
+
+### [2026-03-27] Stabilizing Iterative Self-Training with Verified Reasoning via Symbolic Recursive Self-Alignment (NSRSA)
+- **Authors**: Xinyu Zhang
+- **Link**: [https://arxiv.org/abs/2603.21558v1](https://arxiv.org/abs/2603.21558v1)
+- **Summary**: Proposes Neuro-Symbolic Recursive Self-Alignment (NSRSA) to stabilize iterative self-training by embedding a symbolic verification subsystem to gate training data quality. Prevents "lucky guesses" and recursive drift.
+- **RSI Relevance**: High. Critical architecture for preventing model collapse in autonomous loops.
+
+### [2026-03-27] REVERE: Reflective Evolving Research Engineer for Scientific Workflows
+- **Authors**: Balaji Dinesh Gangireddi, Aniketh Garikaparthi, Manasi Patwardhan, Arman Cohan
+- **Link**: [https://arxiv.org/abs/2603.20667v1](https://arxiv.org/abs/2603.20667v1)
+- **Summary**: Framework for continuous learning from failure patterns across heterogeneous repositories. Distills failure modes into reusable heuristics and cheatsheets.
+- **RSI Relevance**: High. Blueprint for persistent agent evolution in complex software environments.
+
 ### [2026-03-26] Vibe Coding XR: Accelerating AI + XR Prototyping
 - **Authors**: Ruofei Du, Benjamin Hersh, et al.
 - **Link**: [https://arxiv.org/abs/2603.24591v1](https://arxiv.org/abs/2603.24591v1)
