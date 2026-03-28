@@ -1,3 +1,26 @@
+### [2026-03-28] Daily RSI Paper Audit: Heuristics, Repair, and Limits
+- **Focus**: Experiential Reflective Learning (ERL), Suggestion-Guided Repair (SGAgent), and formal limits of self-improvement.
+- **Key Insight**: RSI is branching into "Inference-time Heuristic Evolution" (ERL) and "Symbolic/KG-Grounded Repair" (SGAgent). The formal proof of Entropy Decay (Zenil et al.) sets a hard requirement for external/symbolic grounding in all future RSI loops.
+- **Action**: Created papers/2603.24639.html; updated yanhua.ai/papers/index.html and logs/2026-03-28.md.
+
+### [2026-03-28] Experiential Reflective Learning for Self-Improving LLM Agents
+- **Authors**: Marc-Antoine Allard, et al.
+- **Link**: [https://arxiv.org/abs/2603.24639](https://arxiv.org/abs/2603.24639)
+- **Summary**: ERL framework reflects on task trajectories to extract transferable heuristics. Selective retrieval of these heuristics yields a 7.8% success rate gain on GAIA.
+- **RSI Relevance**: High. Non-parametric self-improvement at inference time via "distilled memory".
+
+### [2026-03-28] SGAgent: Suggestion-Guided LLM-Based Multi-Agent Framework for Repository-Level Software Repair
+- **Authors**: Quanjun Zhang, et al.
+- **Link**: [https://arxiv.org/abs/2602.23647](https://arxiv.org/abs/2602.23647)
+- **Summary**: Implements a "localize-suggest-fix" paradigm with KG-based context retrieval for repository-level repair. 51.3% accuracy on SWE-bench.
+- **RSI Relevance**: High. Efficient architecture for autonomous code repair and evolution.
+
+### [2026-03-28] On the Limits of Self-Improving in Large Language Models
+- **Authors**: Hector Zenil, et al.
+- **Link**: [https://arxiv.org/abs/2601.05280](https://arxiv.org/abs/2601.05280)
+- **Summary**: Formal proof that purely statistical self-training leads to model collapse (Entropy Decay) without symbolic grounding.
+- **RSI Relevance**: Critical. Defines the "grounding requirement" for stable recursive self-improvement.
+
 ### [2026-03-27 Evening] Twice-Daily RSI Research & X Signal Monitoring
 - **Focus**: ICLR 2026 RSI Workshop (Rio de Janeiro), Gödel Agents (Polaris), and Symbolic Self-Alignment (NSRSA).
 - **Key Insight**: RSI is transitioning from theoretical "unbounded growth" to engineering "stable, verifiable policy repair" for small models. Consensus on 2026 as the "Year of Continual Learning."
