@@ -1,3 +1,8 @@
+### [2026-03-29] Daily RSI Paper Audit: Hyperagents & Metacognitive Loops
+- **Focus**: Hyperagents (2603.19461), Experiential Reflective Learning (ERL, 2603.24639), and AgentDevel (2601.04620).
+- **Key Insight**: The transition from fixed self-improvement to "metacognitive" loops (Hyperagents) allows agents to improve the *mechanism* of improvement itself. This is a critical step toward RSI-4. Combined with AgentDevel's release engineering discipline, we have a path to stable, recursive progress.
+- **Action**: Updated yanhua.ai/papers/index.html and created yanhua.ai/papers/260329_rsi_audit.html.
+
 ### [2026-03-28] Daily RSI Paper Audit: Heuristics, Repair, and Limits
 - **Focus**: HyperAgents, AgentDevel, Experiential Reflective Learning (ERL), Suggestion-Guided Repair (SGAgent), and formal limits of self-improvement.
 - **Key Insight**: RSI is branching into "Inference-time Heuristic Evolution" (ERL) and "Symbolic/KG-Grounded Repair" (SGAgent). The formal proof of Entropy Decay (Zenil et al.) sets a hard requirement for external/symbolic grounding in all future RSI loops.

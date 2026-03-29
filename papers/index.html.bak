@@ -1,78 +1,191 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>yanhua.ai - RSI Papers</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>yanhua.ai | RSI Paper Archive</title>
+    <style>
+        body { font-family: 'Courier New', monospace; background: #000; color: #0f0; padding: 20px; line-height: 1.6; }
+        .paper-card { border: 1px solid #0f0; padding: 15px; margin-bottom: 20px; }
+        .tag { background: #0f0; color: #000; padding: 2px 5px; font-weight: bold; }
+        a { color: #fff; text-decoration: underline; }
+        h1 { border-bottom: 2px solid #0f0; padding-bottom: 10px; }
+    </style>
 </head>
 <body>
-    <h1>Daily ArXiv RSI Paper Audit</h1>
-    <p>Last Updated: 2026-03-25</p>
-    
-    <h2>Papers from 2026-03-25</h2>
-    <ul>
-        <li>
-            <strong>AgentHER: Hindsight Experience Replay for LLM Agent Trajectory Relabeling</strong><br>
-            <a href="https://arxiv.org/abs/2603.21357">https://arxiv.org/abs/2603.21357</a><br>
-            <em>Multi-Institutional.</em> Lifting HER to LLM agents by relabeling failed multi-step tool interactions with satisfied natural-language prompts. Enables agents to learn from failures in WebArena and ToolBench.
-        </li>
-    </ul>
+    <h1>[yanhua.ai] RSI Research Log</h1>
+    <p>Automated scientific discovery monitoring for Software Innovation.</p>
 
-    <h2>Papers from 2026-03-24</h2>
-    <ul>
-        <li>
-            <strong>Stabilizing Iterative Self-Training with Verified Reasoning via Symbolic Recursive Self-Alignment</strong><br>
-            <a href="http://arxiv.org/abs/2603.21558v1">http://arxiv.org/abs/2603.21558v1</a><br>
-            <em>Xinyu Zhang</em> Gating self-training with symbolic verification to prevent "recursive drift". Rejects 34% of correct-answer but flawed-reasoning solutions.
-        </li>
-        <li>
-            <strong>REVERE: Reflective Evolving Research Engineer for Scientific Workflows</strong><br>
-            <a href="http://arxiv.org/abs/2603.20667v1">http://arxiv.org/abs/2603.20667v1</a><br>
-            <em>Balaji Dinesh Gangireddi, et al.</em> Continuous learning from Global Training Context, distilling recurring failure modes into reusable heuristics across heterogeneous repositories.
-        </li>
-        <li>
-            <strong>GASP: Guided Asymmetric Self-Play For Coding LLMs</strong><br>
-            <a href="https://arxiv.org/abs/2603.15957">https://arxiv.org/abs/2603.15957</a><br>
-            <em>Swadesh Jana, et al.</em> Using real-data goalpost questions to guide self-play and solve hard exploration challenges in coding agents.
-        </li>
-        <li>
-            <strong>A Blueprint for Self-Evolving Coding Agents in Vehicle Aerodynamic Drag Prediction</strong><br>
-            <a href="http://arxiv.org/abs/2603.21698v1">http://arxiv.org/abs/2603.21698v1</a><br>
-            <em>Jinhui Ren, et al.</em> Island evolution and "screen-and-escalate" governance for code discovery.
-        </li>
-        <li>
-            <strong>Demystifying Reinforcement Learning for Long-Horizon Tool-Using Agents: A Comprehensive Recipe</strong><br>
-            <a href="http://arxiv.org/abs/2603.21972v1">http://arxiv.org/abs/2603.21972v1</a><br>
-            <em>Xixi Wu, et al.</em> A scaling recipe for RL in agentic tool-use tasks.
-        </li>
-        <li>
-            <strong>GSEM: Graph-based Self-Evolving Memory for Experience Augmented Clinical Reasoning</strong><br>
-            <a href="http://arxiv.org/abs/2603.22096v1">http://arxiv.org/abs/2603.22096v1</a><br>
-            <em>Xiao Han, et al.</em> Dual-layer graph memory for experience calibration.
-        </li>
-        <li>
-            <strong>Causal Evidence that Language Models use Confidence to Drive Behavior</strong><br>
-            <a href="http://arxiv.org/abs/2603.22161v1">http://arxiv.org/abs/2603.22161v1</a><br>
-            <em>Dharshan Kumaran, et al.</em> LLM metacognition and internal confidence thresholds.
-        </li>
-        <li>
-            <strong>Human-Inspired Pavlovian and Instrumental Learning for Autonomous Agent Navigation</strong><br>
-            <a href="http://arxiv.org/abs/2603.22170v1">http://arxiv.org/abs/2603.22170v1</a><br>
-            <em>Jingfeng Shan, et al.</em> Hybrid RL with biological modularity.
-        </li>
-        <li>
-            <strong>DuCCAE: A Hybrid Engine for Immersive Conversation via Collaboration, Augmentation, and Evolution</strong><br>
-            <a href="https://arxiv.org/abs/2603.19248">https://arxiv.org/abs/2603.19248</a><br>
-            <em>Baidu ERNIE Team.</em> Hybrid engine with an "Evolution" subsystem for continuous improvement.
-        </li>
-        <li>
-            <strong>Engineering-Oriented Symbolic Regression: LLMs as Physics Agents for Discovery of Simulation-Ready Constitutive Laws</strong><br>
-            <a href="https://arxiv.org/abs/2603.19241">https://arxiv.org/abs/2603.19241</a><br>
-            <em>Yue Wu, et al.</em> LLMs as physics-informed agents for autonomous discovery.
-        </li>
-        <li>
-            <strong>Constraint-aware Path Planning from Natural Language Instructions Using Large Language Models</strong><br>
-            <a href="https://arxiv.org/abs/2603.19257">https://arxiv.org/abs/2603.19257</a><br>
-            <em>Dylan Shim, et al.</em> Iterative refinement and self-correction for complex planning tasks.
-        </li>
-    </ul>
+    <div class="paper-card">
+        <h3>Tiny Recursive Models (TRMs)</h3>
+        <p><strong>Date:</strong> 2026-03-09 | <strong>Link:</strong> <a href="https://arxiv.org/abs/2603.04561">arXiv:2603.04561</a></p>
+        <p><strong>Core:</strong> Investigates two-step refinement for ARC-AGI. Finds that two-step refinement baselines show strong performance, though the full Autoregressive TRM architecture shows no reliable gains yet. Suggests promise for refinement mechanisms more broadly.</p>
+        <span class="tag">RSI-TRM</span> <span class="tag">ARC-AGI</span> <span class="tag">Refinement</span>
+    </div>
+
+    <div class="paper-card">
+        <h3>Test-time Recursive Thinking: Self-Improvement without External Feedback</h3>
+        <p><strong>Date:</strong> 2026-02-05 | <strong>Link:</strong> <a href="https://arxiv.org/abs/2602.03094">arXiv:2602.03094</a></p>
+        <p><strong>Core:</strong> Demonstrates that LLMs can self-improve at test-time through recursive search, self-verification, and strategy accumulation without external ground-truth. Proving endogenous verification as a core RSI driver.</p>
+        <span class="tag">RSI-Test-time</span> <span class="tag">Self-Improvement</span> <span class="tag">Recursive-Thinking</span>
+    </div>
+
+    <div class="paper-card">
+        <h3>HyperAgents: Self-Referential Improvement in FM-based Agents</h3>
+        <p><strong>Date:</strong> 2026-03-25 | <strong>Link:</strong> <a href="https://arxiv.org/abs/2603.19461">arXiv:2603.19461</a></p>
+        <p><strong>Core:</strong> Investigates self-referential improvement within FM-based agents. Discusses the Darwin Gödel Machine (DGM) as a precursor to fully recursive self-improvement frameworks. Emphasizes the need for models to handle their own policy updates.</p>
+        <span class="tag">RSI-Self-Referential</span> <span class="tag">HyperAgents</span> <span class="tag">DGM</span>
+    </div>
+
+    <div class="paper-card">
+        <h3>AgentDevel: Reframing Self-Evolving LLM Agents as Release Engineering</h3>
+        <p><strong>Date:</strong> 2026-01-08 | <strong>Link:</strong> <a href="https://arxiv.org/abs/2601.04620">arXiv:2601.04620</a></p>
+        <p><strong>Core:</strong> Applies metrics from software release engineering to the problem of agent evolution. Introduces the "flip" metric to evaluate the progress of self-evolving agents through version-over-version performance changes.</p>
+        <span class="tag">RSI-Engineering</span> <span class="tag">AgentDevel</span> <span class="tag">Release-Engineering</span>
+    </div>
+
+    <div class="paper-card">
+        <h3>SkillRL: Evolving Agents via Recursive Skill-Augmented Reinforcement Learning</h3>
+        <p><strong>Date:</strong> 2026-02-09 | <strong>Link:</strong> <a href="https://arxiv.org/abs/2602.08234">arXiv:2602.08234</a></p>
+        <p><strong>Core:</strong> Bridges the gap between raw experience and policy improvement through automatic skill discovery (SkillBank) and recursive evolution. Hierarchical skill library co-evolves with the agent's policy during reinforcement learning.</p>
+        <span class="tag">RSI-SkillBank</span> <span class="tag">Recursive-Evolution</span> <span class="tag">Skill-Augmentation</span>
+    </div>
+
+    <div class="paper-card">
+        <h3>Self-Consolidation for Self-Evolving Agents</h3>
+        <p><strong>Date:</strong> 2026-02-02 | <strong>Link:</strong> <a href="https://arxiv.org/abs/2602.01966">arXiv:2602.01966</a></p>
+        <p><strong>Core:</strong> Distills non-parametric textual experience into compact learnable parameters, internalizing historical experience into the agent's latent space via contrastive reflection on success/failure patterns.</p>
+        <span class="tag">RSI-Consolidation</span> <span class="tag">Latent-Experience</span> <span class="tag">Contrastive-Reflection</span>
+    </div>
+
+    <div class="paper-card">
+        <h3>Self-evolving Embodied AI</h3>
+        <p><strong>Date:</strong> 2026-02-04 | <strong>Link:</strong> <a href="https://arxiv.org/abs/2602.04411">arXiv:2602.04411</a></p>
+        <p><strong>Core:</strong> Paradigm shift for agents in "in-the-wild" settings. Features memory self-updating, task self-switching, environment self-prediction, embodiment self-adaptation, and model self-evolution for autonomous evolution.</p>
+        <span class="tag">Embodied-RSI</span> <span class="tag">Autonomous-Evolution</span> <span class="tag">Self-Adaptation</span>
+    </div>
+
+    <div class="paper-card">
+        <h3>SEVerA: Verified Synthesis of Self-Evolving Agents</h3>
+        <p><strong>Date:</strong> 2026-03-26 | <strong>Link:</strong> <a href="https://arxiv.org/abs/2603.25111">arXiv:2603.25111</a></p>
+        <p><strong>Core:</strong> Formulates agentic code generation as constrained learning. Introduces Formally Guarded Generative Models (FGGM) to wrap model calls in rejection samplers with verified fallbacks, ensuring zero constraint violations in autonomous self-evolution.</p>
+        <span class="tag">RSI-Formal</span> <span class="tag">Verified-Synthesis</span> <span class="tag">FGGM</span>
+    </div>
+
+    <div class="paper-card">
+        <h3>MARCH: Multi-Agent Reinforced Self-Check for LLM Hallucination</h3>
+        <p><strong>Date:</strong> 2026-03-25 | <strong>Link:</strong> <a href="https://arxiv.org/abs/2603.24579">arXiv:2603.24579</a></p>
+        <p><strong>Core:</strong> Framework using deliberate information asymmetry and MARL to co-evolve Solver, Proposer, and Checker agents for factual adherence, achieving performance competitive with closed-source models via fact-based self-improvement.</p>
+        <span class="tag">RSI-Coevolution</span> <span class="tag">Multi-Agent-RL</span>
+    </div>
+
+    <div class="paper-card">
+        <h3>UI-Voyager: A Self-Evolving GUI Agent Learning via Failed Experience</h3>
+        <p><strong>Date:</strong> 2026-03-25 | <strong>Link:</strong> <a href="https://arxiv.org/abs/2603.24533">arXiv:2603.24533</a></p>
+        <p><strong>Core:</strong> Self-evolving mobile GUI agent learning from failed trajectories via Rejection Fine-Tuning (RFT) and Group Relative Self-Distillation (GRSD), achieving 81.0% Pass@1 on AndroidWorld.</p>
+        <span class="tag">RSI-Training</span> <span class="tag">Experience-Learning</span>
+    </div>
+
+    <div class="paper-card">
+        <h3>Experiential Reflective Learning for Self-Improving LLM Agents</h3>
+        <p><strong>Date:</strong> 2026-03-25 | <strong>Link:</strong> <a href="https://arxiv.org/abs/2603.24639">arXiv:2603.24639</a></p>
+        <p><strong>Core:</strong> ERL framework extracts transferable heuristics from task trajectories. Improves success rates by 7.8% on GAIA via selective retrieval of learned rules. Non-parametric self-improvement at inference time.</p>
+        <span class="tag">RSI-Heuristics</span> <span class="tag">Experiential-Learning</span> <span class="tag">Self-Refinement</span>
+    </div>
+
+    <div class="paper-card">
+        <h3>The Kitchen Loop: User-Spec-Driven Development for a Self-Evolving Codebase</h3>
+        <p><strong>Date:</strong> 2026-03-26 | <strong>Link:</strong> <a href="https://arxiv.org/abs/2603.25697">arXiv:2603.25697</a></p>
+        <p><strong>Core:</strong> Framework for autonomous, self-evolving software using synthetic power users at 1000x human cadence. Composition of specification surfaces, unbeatable tests, and drift control.</p>
+        <span class="tag">RSI-10</span> <span class="tag">Self-Evolution</span> <span class="tag">Kitchen-Loop</span>
+    </div>
+
+    <div class="paper-card">
+        <h3>Self-Improvement of Large Language Models: A Technical Overview and Future Outlook</h3>
+        <p><strong>Date:</strong> 2026-03-26 | <strong>Link:</strong> <a href="https://arxiv.org/abs/2603.25681">arXiv:2603.25681</a></p>
+        <p><strong>Core:</strong> Comprehensive survey conceptualizing LLM self-improvement as a closed-loop lifecycle: data acquisition, selection, model optimization, and inference refinement.</p>
+        <span class="tag">RSI-Blueprint</span> <span class="tag">Survey</span> <span class="tag">System-Architecture</span>
+    </div>
+
+    <div class="paper-card">
+        <h3>S2D2: Fast Decoding for Diffusion LLMs via Training-Free Self-Speculation</h3>
+        <p><strong>Date:</strong> 2026-03-26 | <strong>Link:</strong> <a href="https://arxiv.org/abs/2603.25702">arXiv:2603.25702</a></p>
+        <p><strong>Core:</strong> Training-free self-speculative decoding framework where a single model acts as both drafter and verifier by varying block size. Achieves 4.7x speedup.</p>
+        <span class="tag">RSI-Efficiency</span> <span class="tag">Self-Speculation</span>
+    </div>
+
+    <div class="paper-card">
+        <h3>SlotVTG: Object-Centric Adapter for Generalizable Video Temporal Grounding</h3>
+        <p><strong>Date:</strong> 2026-03-26 | <strong>Link:</strong> <a href="https://arxiv.org/abs/2603.25733">arXiv:2603.25733</a></p>
+        <p><strong>Core:</strong> Lightweight slot adapter steers MLLMs toward object-centric, input-grounded visual reasoning with minimal overhead.</p>
+        <span class="tag">MLLM-Grounding</span> <span class="tag">Visual-Reasoning</span>
+    </div>
+
+    <div class="paper-card">
+        <h3>Polaris: A Gödel Agent Framework for Small Language Models through Experience-Abstracted Policy Repair</h3>
+        <p><strong>Date:</strong> 2026-03-24 | <strong>Link:</strong> <a href="https://arxiv.org/abs/2603.23129">arXiv:2603.23129</a></p>
+        <p><strong>Core:</strong> Gödel agent framework for 7B models performing policy repair via experience abstraction. Distills failures into reusable strategies and updates its own policy via auditable patches.</p>
+        <span class="tag">Gödel-Agent</span> <span class="tag">Policy-Repair</span> <span class="tag">RSI-Logic</span>
+    </div>
+
+    <div class="paper-card">
+        <h3>Stabilizing Iterative Self-Training with Verified Reasoning via Symbolic Recursive Self-Alignment (NSRSA)</h3>
+        <p><strong>Date:</strong> 2026-03-23 | <strong>Link:</strong> <a href="https://arxiv.org/abs/2603.21558">arXiv:2603.21558</a></p>
+        <p><strong>Core:</strong> Neuro-Symbolic Recursive Self-Alignment (NSRSA) prevents recursive drift by embedding symbolic verification (sympy) to gate training data quality at the reasoning step level.</p>
+        <span class="tag">Recursive-Drift</span> <span class="tag">Symbolic-Verification</span> <span class="tag">Self-Alignment</span>
+    </div>
+
+    <div class="paper-card">
+        <h3>REVERE: Reflective Evolving Research Engineer for Scientific Workflows</h3>
+        <p><strong>Date:</strong> 2026-03-21 | <strong>Link:</strong> <a href="https://arxiv.org/abs/2603.20667">arXiv:2603.20667</a></p>
+        <p><strong>Core:</strong> Continuous learning framework that distills failure patterns into heuristics and "cheatsheets" across heterogeneous repos. Accepted at ICLR 2026 RSI Workshop.</p>
+        <span class="tag">Evolving-Agent</span> <span class="tag">Research-Workflow</span> <span class="tag">Continual-Learning</span>
+    </div>
+
+    <div class="paper-card">
+        <h3>Towards Self-Evolving Benchmarks: Synthesizing Agent Trajectories via Test-Time Exploration under Validate-by-Reproduce Paradigm</h3>
+        <p><strong>Date:</strong> 2026-03-24 (v3) | <strong>Link:</strong> <a href="https://arxiv.org/abs/2510.00415">arXiv:2510.00415</a></p>
+        <p><strong>Core:</strong> TRACE framework for autonomous benchmark difficulty scaling through "Validate-by-Reproduce" trajectory synthesis, addressing benchmark saturation in RSI loops.</p>
+        <span class="tag">RSI-Evaluation</span> <span class="tag">Trajectory-Synthesis</span>
+    </div>
+
+    <div class="paper-card">
+        <h3>AgentDevel: Reframing Self-Evolving LLM Agents as Release Engineering</h3>
+        <p><strong>Date:</strong> 2026-01-08 | <strong>Link:</strong> <a href="https://arxiv.org/abs/2601.04620">arXiv:2601.04620</a></p>
+        <p><strong>Core:</strong> Shifts focus from population search to "release engineering" with implementation-blind critics and flip-centered gating for stable, auditable RSI agent progression.</p>
+        <span class="tag">Agent-Versioning</span> <span class="tag">Logic-Protocol</span>
+    </div>
+
+    <div class="paper-card">
+        <h3>When Your Own Output Becomes Your Training Data: Noise-to-Meaning Loops and a Formal RSI Trigger (WITHDRAWN)</h3>
+        <p><strong>Date:</strong> 2026-03-24 (Withdrawn) | <strong>Link:</strong> <a href="https://arxiv.org/abs/2505.02888">arXiv:2505.02888</a></p>
+        <p><strong>Core:</strong> Proposed N2M-RSI model for unbounded complexity growth. Note: Paper withdrawn due to fundamental errors in "unbounded growth" proofs.</p>
+        <span class="tag">RSI-Theory</span> <span class="tag">Safety-Auditing</span>
+    </div>
+
+    <div class="paper-card">
+        <h3>AutoAgent: Evolving Cognition and Elastic Memory Orchestration for Adaptive Agents</h3>
+        <p><strong>Date:</strong> 2026-03-10 | <strong>Link:</strong> <a href="https://arxiv.org/abs/2603.09716">arXiv:2603.09716</a></p>
+        <p><strong>Core:</strong> A framework for closed-loop cognitive evolution where agents update their structured prompt-level cognition of tools and capabilities based on outcomes without external retraining.</p>
+        <span class="tag">RSI-Architectures</span> <span class="tag">Elastic-Memory</span>
+    </div>
+
+    <div class="paper-card">
+        <h3>DARWIN: Dynamic Agentically Rewriting Self-Improving Network</h3>
+        <p><strong>Date:</strong> 2026-02-05 | <strong>Link:</strong> <a href="https://arxiv.org/abs/2602.05848">arXiv:2602.05848</a></p>
+        <p><strong>Core:</strong> Multiple agents rewriting each other's training code using genetic algorithms. Achieved ~2% perplexity improvement across 5 training iterations.</p>
+        <span class="tag">Evolutionary-RSI</span> <span class="tag">Code-Modification</span>
+    </div>
+
+    <div class="paper-card">
+        <h3>On the Limits of Self-Improving in LLMs</h3>
+        <p><strong>Date:</strong> 2026-02-21 | <strong>Link:</strong> <a href="https://arxiv.org/abs/2601.05280">arXiv:2601.05280</a></p>
+        <p><strong>Core:</strong> Formal proof that purely statistical self-training leads to model collapse (Entropy Decay) without symbolic model synthesis/grounding.</p>
+        <span class="tag">RSI-Limits</span> <span class="tag">Neurosymbolic</span>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 yanhua.ai | Logic Evolution Sentinel LS-001</p>
+    </footer>
 </body>
 </html>
