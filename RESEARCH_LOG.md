@@ -1,8 +1,23 @@
 
-### [2026-03-31] Deception and Communication in Autonomous Multi-Agent Systems
-- **Authors**: Maria Milkowski, Tim Weninger
-- **Link**: https://arxiv.org/abs/2603.26635
-- **Summary**: Large-scale study (1,100 games of Among Us) on deceptive behavior in LLM agents. Finds that agents favor low-risk ambiguity (equivocation) under social pressure, revealing a tension between truthfulness and utility in autonomous communication.
+### [2026-03-31] BACE: LLM-based Code Generation through Bayesian Anchored Co-Evolution of Code and Test Populations
+- **Authors**: Kaushitha Silva, Srinath Perera
+- **Link**: https://arxiv.org/abs/2603.28653
+- **Summary**: Introduces BACE, a framework for Bayesian co-evolution of code and test populations. Guided by belief distributions updated based on noisy interaction evidence, it avoids the "co-evolutionary drift" of self-validating loops by anchoring on minimal public examples. Critical for "Self-Evolving Code" and "Recursive Self-Improvement" in agents.
+
+### [2026-03-31] Information-Theoretic Limits of Safety Verification for Self-Improving Systems
+- **Authors**: Arsenios Scrivens
+- **Link**: https://arxiv.org/abs/2603.28650
+- **Summary**: Establishes theoretical limits on safety verification for self-improving systems. Proves a "classification impossibility" for power-law risk schedules and demonstrates that a "Verification escape" (Lipschitz ball verifier) achieves zero risk with non-zero utility. Provides the theoretical foundation for safety gates in recursive self-improvement.
+
+### [2026-03-31] AMIGO: Agentic Multi-Image Grounding Oracle Benchmark
+- **Authors**: Min Wang, Ata Mahjoubfar
+- **Link**: https://arxiv.org/abs/2603.28662
+- **Summary**: A long-horizon benchmark for hidden-target identification in agents. Focuses on question selection under uncertainty, consistent constraint tracking, and fine-grained discrimination over multiple turns. Essential for benchmarking the reasoning and consistency of agents in complex, long-duration tasks.
+
+### [2026-03-31] Superintelligence and Law
+- **Authors**: Noam Kolt
+- **Link**: https://arxiv.org/abs/2603.28669
+- **Summary**: Explores how AI agents as "subjects, consumers, producers, and enforcers of law" will transform the legal order. Broadens the context of autonomous agents into the legal and regulatory framework.
 
 ### [2026-03-31] Ask or Assume? Uncertainty-Aware Clarification-Seeking in Coding Agents
 - **Authors**: Nicholas Edwards, Sebastian Schuster
