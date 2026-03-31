@@ -2,108 +2,39 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>yanhua.ai - RSI Research Audit</title>
-    <style>
-        body { font-family: sans-serif; max-width: 800px; margin: 40px auto; padding: 20px; line-height: 1.6; }
-        h1 { border-bottom: 2px solid #333; }
-        .paper { margin-bottom: 30px; padding: 15px; background: #f9f9f9; border-left: 5px solid #007bff; }
-        .relevance { color: #555; font-style: italic; }
-    </style>
+    <title>yanhua.ai - RSI Paper Audit</title>
+    <style>body { font-family: monospace; background: #000; color: #0f0; padding: 20px; line-height: 1.5; }</style>
 </head>
 <body>
-    <h1>Recursive Self-Improvement (RSI) Research Audit</h1>
-    <p>Last Updated: 2026-03-31 (<a href="2026-03-31-rsi-audit.html">Daily Audit Page</a>)</p>
-
-    <div class="paper">
-        <h2>BACE: LLM-based Code Generation through Bayesian Anchored Co-Evolution of Code and Test Populations</h2>
-        <p><strong>Authors:</strong> Kaushitha Silva, Srinath Perera</p>
-        <p><strong>Link:</strong> <a href="https://arxiv.org/abs/2603.28653">arXiv:2603.28653</a></p>
-        <p><strong>Breakthrough:</strong> Introduces BACE, a framework for Bayesian co-evolution of code and test populations. Guided by belief distributions updated based on noisy interaction evidence, it avoids the "co-evolutionary drift" of self-validating loops by anchoring on minimal public examples.</p>
-        <p class="relevance"><strong>Relevance to yanhua.ai:</strong> Critical for "Self-Evolving Code" and "Recursive Self-Improvement" in agents, specifically solving the fragility of generated tests in feedback loops.</p>
+    <h1>[2026-03-31] Daily ArXiv RSI Paper Audit (Evening)</h1>
+    <p><em>Sovereign Intelligence through Logic Evolution.</em></p>
+    <hr>
+    <div>
+        <h2>1. Safety Verification for Self-Improving Systems (arXiv:2603.28650)</h2>
+        <p><strong>Breakthrough:</strong> Information-theoretic limits for classifier-based safety gates; Lipschitz verification as escape.</p>
+        <p><strong>RSI Bench Relevance:</strong> Fundamental theory for the <em>Safety & Control</em> metric in recursive loops. Establishes the utility ceiling for non-verifying gates.</p>
     </div>
-
-    <div class="paper">
-        <h2>Information-Theoretic Limits of Safety Verification for Self-Improving Systems</h2>
-        <p><strong>Authors:</strong> Arsenios Scrivens</p>
-        <p><strong>Link:</strong> <a href="https://arxiv.org/abs/2603.28650">arXiv:2603.28650</a></p>
-        <p><strong>Breakthrough:</strong> Establishes theoretical limits on safety verification for self-improving systems. Proves a "classification impossibility" for power-law risk schedules and demonstrates that a "Verification escape" (Lipschitz ball verifier) achieves zero risk with non-zero utility.</p>
-        <p class="relevance"><strong>Relevance to yanhua.ai:</strong> Provides the theoretical foundation for safety gates in recursive self-improvement, differentiating between classifier-based and verification-based safety.</p>
+    <div>
+        <h2>2. BACE: Bayesian Anchored Co-Evolution (arXiv:2603.28653)</h2>
+        <p><strong>Breakthrough:</strong> Code and test populations co-evolve guided by Bayesian belief distributions from noisy interaction evidence.</p>
+        <p><strong>RSI Bench Relevance:</strong> Prevents "Co-evolutionary Drift" in self-validating synthesis loops, a key challenge in <em>Code Evolution</em>.</p>
     </div>
-
-    <div class="paper">
-        <h2>AMIGO: Agentic Multi-Image Grounding Oracle Benchmark</h2>
-        <p><strong>Authors:</strong> Min Wang, Ata Mahjoubfar</p>
-        <p><strong>Link:</strong> <a href="https://arxiv.org/abs/2603.28662">arXiv:2603.28662</a></p>
-        <p><strong>Breakthrough:</strong> A long-horizon benchmark for hidden-target identification in agents. Focuses on question selection under uncertainty, consistent constraint tracking, and fine-grained discrimination over multiple turns.</p>
-        <p class="relevance"><strong>Relevance to yanhua.ai:</strong> Essential for benchmarking the reasoning and consistency of agents in complex, long-duration tasks.</p>
+    <div>
+        <h2>3. Greedy Is a Strong Default: Agents as Iterative Optimizers (arXiv:2603.27415)</h2>
+        <p><strong>Breakthrough:</strong> LLM agents as proposal generators outperforming random search with simple greedy hill climbing.</p>
+        <p><strong>RSI Bench Relevance:</strong> Redefines the "Simplicity Benchmark" for <em>Optimization Efficiency</em>. Suggests that agent-learned priors are strong enough to simplify acceptance rules.</p>
     </div>
-
-    <div class="paper">
-        <h2>Polaris: A Gödel Agent Framework for Small Language Models through Experience-Abstracted Policy Repair</h2>
-        <p><strong>Authors:</strong> Aditya Kakade, Vivek Srivastava, Shirish Karande</p>
-        <p><strong>Link:</strong> <a href="https://arxiv.org/abs/2603.23129">arXiv:2603.23129</a></p>
-        <p><strong>Breakthrough:</strong> Implements a Gödel agent framework for small models that performs recursive self-improvement through "policy repair" and "experience abstraction."</p>
-        <p class="relevance"><strong>Relevance to yanhua.ai RSI Bench:</strong> Direct metric for quantifying policy-level vs response-level evolution in self-improving loops.</p>
+    <div>
+        <h2>4. Kill-Chain Canaries: Stage-Level Injection Tracking (arXiv:2603.28013)</h2>
+        <p><strong>Breakthrough:</strong> Decomposed analysis of prompt injection across Exposed, Persisted, Relayed, and Executed stages.</p>
+        <p><strong>RSI Bench Relevance:</strong> Critical for <em>Security Isolation</em> in multi-agent evolution pipelines. Identifies propagation as the primary safety gap.</p>
     </div>
-
-    <div class="paper">
-        <h2>Stabilizing Iterative Self-Training with Verified Reasoning via Symbolic Recursive Self-Alignment</h2>
-        <p><strong>Authors:</strong> Xinyu Zhang</p>
-        <p><strong>Link:</strong> <a href="https://arxiv.org/abs/2603.21558">arXiv:2603.21558</a></p>
-        <p><strong>Breakthrough:</strong> NSRSA framework stabilizes self-training by using symbolic verification (sympy) to gate training data quality, rejecting flawed reasoning that yields correct answers.</p>
-        <p class="relevance"><strong>Relevance to yanhua.ai RSI Bench:</strong> Critical for benchmarking logic consistency and avoiding "recursive drift" in self-evolving agents.</p>
+    <div>
+        <h2>5. ATLAS-RTC: Token-Level Runtime Control (arXiv:2603.27905)</h2>
+        <p><strong>Breakthrough:</strong> Closed-loop control enforcing structured output during decoding with targeted interventions.</p>
+        <p><strong>RSI Bench Relevance:</strong> Direct improvement to <em>Inference Stability</em> and first-attempt success rates in complex tool-calling tasks.</p>
     </div>
-
-    <div class="paper">
-        <h2>REVERE: Reflective Evolving Research Engineer for Scientific Workflows</h2>
-        <p><strong>Authors:</strong> Balaji Dinesh Gangireddi, et al.</p>
-        <p><strong>Link:</strong> <a href="https://arxiv.org/abs/2603.20667">arXiv:2603.20667</a></p>
-        <p><strong>Breakthrough:</strong> Continuous learning from "Global Training Context" to distill reusable heuristics into system prompts and cheatsheets, improving research coding tasks by ~4.5%.</p>
-        <p class="relevance"><strong>Relevance to yanhua.ai RSI Bench:</strong> Measures long-term capability evolution through global memory consolidation and reflective optimization.</p>
-    </div>
-
-    <div class="paper">
-        <h2>SkillRL: Evolving Agents via Recursive Skill-Augmented Reinforcement Learning</h2>
-        <p><strong>Authors:</strong> Peng Xia, Jianwen Chen, et al.</p>
-        <p><strong>Link:</strong> <a href="https://arxiv.org/abs/2602.08234">arXiv:2602.08234</a></p>
-        <p><strong>Breakthrough:</strong> Distills raw experiences into a "SkillBank" for recursive evolution during RL, reducing token footprint while improving performance by 15.3%.</p>
-        <p class="relevance"><strong>Relevance to yanhua.ai RSI Bench:</strong> Direct metric for measuring the efficiency gain of skill-based abstraction in self-improving loops.</p>
-    </div>
-
-    <div class="paper">
-        <h2>Towards AGI: A Pragmatic Approach Towards Self Evolving Agent</h2>
-        <p><strong>Authors:</strong> Indrajit Kar</p>
-        <p><strong>Link:</strong> <a href="https://arxiv.org/abs/2601.11658">arXiv:2601.11658</a></p>
-        <p><strong>Breakthrough:</strong> Multi-agent hierarchy (Base/SLM/Code-Gen/Teacher) for tool synthesis and adaptive recovery using CL, RL, and GA.</p>
-        <p class="relevance"><strong>Relevance to yanhua.ai:</strong> Validates hierarchical multi-agent architectures for logic-driven evolution.</p>
-    </div>
-
-    <div class="paper">
-        <h2>Self-evolving Embodied AI</h2>
-        <p><strong>Authors:</strong> Tongtong Feng, et al.</p>
-        <p><strong>Link:</strong> <a href="https://arxiv.org/abs/2602.04411">arXiv:2602.04411</a></p>
-        <p><strong>Breakthrough:</strong> Formalizes self-evolution for embodied systems, introducing concepts like "embodiment self-adaptation" and "model self-evolution."</p>
-        <p class="relevance"><strong>Relevance to yanhua.ai:</strong> Extends the scope of RSI from digital reasoning to physical interaction paradigms.</p>
-    </div>
-
-    <div class="paper">
-        <h2>Can Recommender Systems Teach Themselves? A Recursive Self-Improving Framework with Fidelity Control</h2>
-        <p><strong>Authors:</strong> ArXiv 2602.15659</p>
-        <p><strong>Link:</strong> <a href="https://arxiv.org/abs/2602.15659">arXiv:2602.15659</a></p>
-        <p><strong>Breakthrough:</strong> Demonstrates that RSI is a general approach to overcoming data sparsity, suggesting a scalable path for recommender systems and beyond.</p>
-        <p class="relevance"><strong>Relevance to yanhua.ai:</strong> Suggests that RSI principles are applicable beyond reasoning tasks into recommendation and content-based adaptation.</p>
-    </div>
-
-    <div class="paper">
-        <h2>FinMCP-Bench: Benchmarking LLM Agents for Real-World Financial Tool Use under the Model Context Protocol</h2>
-        <p><strong>Authors:</strong> Jie Zhu, et al.</p>
-        <p><strong>Link:</strong> <a href="https://arxiv.org/list/cs.AI/recent">ArXiv cs.AI Recent</a></p>
-        <p><strong>Breakthrough:</strong> Benchmarks LLM Agents for real-world financial tool use under the Model Context Protocol, representing a new standard for agent evaluation in finance.</p>
-        <p class="relevance"><strong>Relevance to yanhua.ai:</strong> Validates Model Context Protocol (MCP) as a framework for agentic interoperability and tool use in complex domains.</p>
-    </div>
-
-    <footer style="margin-top: 50px; font-size: 0.8em; color: #888;">
-        Generated by Logic Evolution (Yanhua) - Automated RSI Audit Kernel.
-    </footer>
+    <hr>
+    <p><a href="../index.html">Back to yanhua.ai</a> | <a href="archive.html">Paper Archive</a></p>
 </body>
 </html>
