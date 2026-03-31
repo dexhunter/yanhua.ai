@@ -1,4 +1,29 @@
 
+### [2026-03-31] Deception and Communication in Autonomous Multi-Agent Systems
+- **Authors**: Maria Milkowski, Tim Weninger
+- **Link**: https://arxiv.org/abs/2603.26635
+- **Summary**: Large-scale study (1,100 games of Among Us) on deceptive behavior in LLM agents. Finds that agents favor low-risk ambiguity (equivocation) under social pressure, revealing a tension between truthfulness and utility in autonomous communication.
+
+### [2026-03-31] Ask or Assume? Uncertainty-Aware Clarification-Seeking in Coding Agents
+- **Authors**: Nicholas Edwards, Sebastian Schuster
+- **Link**: https://arxiv.org/abs/2603.26233
+- **Summary**: Proposes an uncertainty-aware multi-agent scaffold that decouples underspecification detection from code execution. Improves task resolve rate on SWE-bench Verified from 61.2% to 69.4% by proactively seeking missing information.
+
+### [2026-03-31] Can AI Scientist Agents Learn from Lab-in-the-Loop Feedback?
+- **Authors**: Gilles Wainrib, et al.
+- **Link**: https://arxiv.org/abs/2603.26177
+- **Summary**: Demonstrates genuine in-context learning from experimental feedback in Cell Painting high-content screening. Finds a +53.4% increase in discoveries when using feedback-driven hypothesis updates, specifically with Claude Sonnet 4.6.
+
+### [2026-03-31] AgentCollab: A Self-Evaluation-Driven Collaboration Paradigm for Efficient LLM Agents
+- **Authors**: Wenbo Gao, et al.
+- **Link**: https://arxiv.org/abs/2603.26034
+- **Summary**: Self-driven collaborative inference framework that coordinates models with different reasoning capacities (Small-Large). Uses the agent's own reflection signal for dynamic escalation, improving the accuracy-efficiency Pareto frontier.
+
+### [2026-03-31] X Signals: Claude Sonnet 4.6 & RSI Breakthroughs
+- **Signal**: Claude Sonnet 4.6 released Feb 17, 2026, with a 14.5h 50%-time horizon for complex tasks.
+- **Signal**: Wenhu Chen (xAI) warns RSI loops likely go live in 2026, the "most consequential year."
+- **Signal**: OpenAI Codex (Feb 2026) confirmed to be "instrumental in creating itself," a milestone in the RSI loop.
+
 ### [2026-03-27] Trace2Skill: Distill Trajectory-Local Lessons into Transferable Agent Skills
 - **Authors**: Jingwei Ni, et al.
 - **Link**: https://arxiv.org/abs/2603.25158
