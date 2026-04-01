@@ -1,3 +1,30 @@
+### [2026-03-31] Daily ArXiv RSI Paper Audit: Agentic RL, Dual-Granularity, and Certified Safety
+- **Focus**: Gen-Searcher (2603.28767), D2Skill (2603.28716), and AdaptToken (2603.28696).
+- **Key Insight**: The trend is shifting from simple "reflection" to "structured reuse" (D2Skill's dual-granularity bank) and "active knowledge gathering" (Gen-Searcher). We are seeing the first robust implementations of agents that can self-evolve their search and selection capabilities based on entropy-driven uncertainty (AdaptToken).
+- **RSI Relevance**:
+    - **D2Skill (2603.28716)**: Direct mapping to the RSI Bench "Task Evolution" metric. It demonstrates how to maintain a *dynamic* skill memory that prunes low-utility behaviors, solving the "memory bloat" problem in long-horizon RSI.
+    - **AdaptToken (2603.28696)**: Introduces a principled "stopping criteria" for self-improvement loops using response entropy, which is critical for preventing "over-thinking" in recursive cycles.
+    - **Gen-Searcher (2603.28767)**: First attempt at a search-augmented agent that uses agentic RL (GRPO) with dual rewards to improve its own reasoning and grounding.
+- **Action**: Updated yanhua.ai/papers/index.html and RESEARCH_LOG.md.
+
+### [2026-03-30] Gen-Searcher: Reinforcing Agentic Search for Image Generation
+- **Authors**: Kaituo Feng, et al.
+- **Link**: https://arxiv.org/abs/2603.28767
+- **Summary**: A search-augmented image generation agent using multi-hop reasoning and GRPO-based RL.
+- **RSI Relevance**: High. Uses agentic RL to improve grounding and search-intensive prompts.
+
+### [2026-03-30] Dynamic Dual-Granularity Skill Bank for Agentic RL
+- **Authors**: Songjun Tu, et al.
+- **Link**: https://arxiv.org/abs/2603.28716
+- **Summary**: D2Skill organizes reusable experience into task and step skills, continuously expanded through reflection and utility-aware pruning.
+- **RSI Relevance**: Directly aligns with the "Persistent Evolution" core of RSI.
+
+### [2026-03-30] AdaptToken: Entropy-based Adaptive Token Selection for MLLM Long Video Understanding
+- **Authors**: Haozhe Qi, et al.
+- **Link**: https://arxiv.org/abs/2603.28696
+- **Summary**: Uses model entropy as a global control signal for token selection and early stopping in long inputs.
+- **RSI Relevance**: Provides an entropy-driven mechanism for stabilizing recursive processing loops.
+
 ### [2026-03-29] Daily RSI Paper Audit: Hyperagents & Metacognitive Loops
 - **Focus**: Hyperagents (2603.19461), Experiential Reflective Learning (ERL, 2603.24639), and AgentDevel (2601.04620).
 - **Key Insight**: The transition from fixed self-improvement to "metacognitive" loops (Hyperagents) allows agents to improve the *mechanism* of improvement itself. This is a critical step toward RSI-4. Combined with AgentDevel's release engineering discipline, we have a path to stable, recursive progress.
@@ -97,3 +124,17 @@
 - **Link**: https://arxiv.org/abs/2505.02888
 - **Status**: WITHDRAWN on 2026-03-24.
 - **RSI Relevance**: Cautionary example regarding "unbounded growth" claims.
+
+### [2026-03-31] Daily ArXiv RSI Audit
+- **PAPO: Stabilizing Rubric Integration Training via Decoupled Advantage Normalization**
+  - **Authors**: Zelin Tan, Zhouliang Yu, Bohan Lin, et al.
+  - **Link**: [arXiv:2603.26535](https://arxiv.org/abs/2603.26535)
+  - **Summary**: Introduces Process-Aware Policy Optimization (PAPO), decoupling outcome and process advantages in GRPO. Prevents reward hacking while maintaining reasoning quality. Directly applicable to RSI loops where "thinking" traces need rubric-based validation without losing correctness anchors.
+- **GUIDE: Resolving Domain Bias in GUI Agents through Real-Time Web Video Retrieval and Plug-and-Play Annotation**
+  - **Authors**: Rui Xie, et al.
+  - **Link**: [arXiv:2603.26266](https://arxiv.org/abs/2603.26266)
+  - **Summary**: A training-free, plug-and-play framework that uses video-RAG to annotate domain-specific GUI workflows. Shows how agents can "self-evolve" their grounding and planning modules by observing web tutorials, a key step for autonomous capability expansion in new environments.
+- **CADSmith: Multi-Agent CAD Generation with Programmatic Geometric Validation**
+  - **Authors**: Jesse Barkley, et al.
+  - **Link**: [arXiv:2603.26512](https://arxiv.org/abs/2603.26512)
+  - **Summary**: A multi-agent pipeline with nested correction loops grounded in programmatic geometric validation. Implements a robust "self-correction" mechanism where geometric kernel feedback drives code refinement, mirroring the RSI requirement for objective, external verifiers in the improvement loop.

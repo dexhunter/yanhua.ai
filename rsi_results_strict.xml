@@ -1,0 +1,138 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<feed xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/" xmlns:arxiv="http://arxiv.org/schemas/atom" xmlns="http://www.w3.org/2005/Atom">
+  <id>https://arxiv.org/api/wDuytAOyjU0qkrmyxB7My8GF/E8</id>
+  <title>arXiv Query: search_query=all:"Recursive Self-Improvement"&amp;id_list=&amp;start=0&amp;max_results=5</title>
+  <updated>2026-04-01T09:33:39Z</updated>
+  <link href="https://arxiv.org/api/query?search_query=all:%22Recursive+Self-Improvement%22&amp;start=0&amp;max_results=5&amp;id_list=" type="application/atom+xml"/>
+  <opensearch:itemsPerPage>5</opensearch:itemsPerPage>
+  <opensearch:totalResults>30</opensearch:totalResults>
+  <opensearch:startIndex>0</opensearch:startIndex>
+  <entry>
+    <id>http://arxiv.org/abs/2603.23129v1</id>
+    <title>Polaris: A Gödel Agent Framework for Small Language Models through Experience-Abstracted Policy Repair</title>
+    <updated>2026-03-24T12:25:32Z</updated>
+    <link href="https://arxiv.org/abs/2603.23129v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2603.23129v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Gödel agent realize recursive self-improvement: an agent inspects its own policy and traces and then modifies that policy in a tested loop. We introduce Polaris, a Gödel agent for compact models that performs policy repair via experience abstraction, turning failures into policy updates through a structured cycle of analysis, strategy formation, abstraction, and minimal code pat ch repair with conservative checks. Unlike response level self correction or parameter tuning, Polaris makes policy level changes with small, auditable patches that persist in the policy and are reused on unseen instances within each benchmark. As part of the loop, the agent engages in meta reasoning: it explains its errors, proposes concrete revisions to its own policy, and then updates the policy. To enable cumulative policy refinement, we introduce experience abstraction, which distills failures into compact, reusable strategies that transfer to unseen instances. On MGSM, DROP, GPQA, and LitBench (covering arithmetic reasoning, compositional inference, graduate-level problem solving, and creative writing evaluation), a 7-billion-parameter model equipped with Polaris achieves consistent gains over the base policy and competitive baselines.</summary>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-03-24T12:25:32Z</published>
+    <arxiv:primary_category term="cs.LG"/>
+    <author>
+      <name>Aditya Kakade</name>
+    </author>
+    <author>
+      <name>Vivek Srivastava</name>
+    </author>
+    <author>
+      <name>Shirish Karande</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2603.21558v1</id>
+    <title>Stabilizing Iterative Self-Training with Verified Reasoning via Symbolic Recursive Self-Alignment</title>
+    <updated>2026-03-23T04:25:56Z</updated>
+    <link href="https://arxiv.org/abs/2603.21558v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2603.21558v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Recursive self-improvement--where a model iteratively trains on its own outputs--promises sustained capability growth but faces a fundamental obstacle: recursive drift. As models train on self-generated data across multiple iterations, errors in intermediate reasoning compound, leading to mode collapse and performance degradation. We propose Neuro-Symbolic Recursive Self-Alignment (NSRSA), which stabilizes iterative self-training by embedding a symbolic verification subsystem that gates training data quality at the reasoning step level. Unlike outcome-only filtering (which admits "lucky guesses" with flawed reasoning), NSRSA verifies each arithmetic operation via sympy, checks logical flow consistency across reasoning steps, and enforces domain constraints. We evaluate NSRSA on GSM8K using Qwen3-4B-Thinking across 5 self-training iterations under five conditions: no verification, outcome verification, majority voting, full NSRSA symbolic verification, and NSRSA with DPO. Our filtering analysis shows that NSRSA rejects approximately 34% of correct-answer solutions that pass outcome verification, eliminating "lucky guesses" with flawed reasoning from the training set. We further demonstrate that constructing DPO preference pairs from NSRSA verification teaches the model to distinguish sound from flawed reasoning (reward accuracy 46% to 63%). NSRSA provides an extensible framework that demonstrates how external symbolic verification can make recursive self-improvement measurable and reliable within domains where automated verification is available.</summary>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-03-23T04:25:56Z</published>
+    <arxiv:comment>Accepted at ICLR 2026 Workshop on World Models. 10 pages, 3 figures, 5 tables</arxiv:comment>
+    <arxiv:primary_category term="cs.AI"/>
+    <author>
+      <name>Xinyu Zhang</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2603.20667v1</id>
+    <title>REVERE: Reflective Evolving Research Engineer for Scientific Workflows</title>
+    <updated>2026-03-21T05:58:30Z</updated>
+    <link href="https://arxiv.org/abs/2603.20667v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2603.20667v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Existing prompt-optimization techniques rely on local signals to update behavior, often neglecting broader and recurring patterns across tasks, leading to poor generalization; they further rely on full-prompt rewrites or unstructured merges, resulting in knowledge loss. These limitations are magnified in research-coding workflows, which involve heterogeneous repositories, underspecified environments, and weak feedback, where reproducing results from public codebases is an established evaluation regime. We introduce Reflective Evolving Research Engineer (REVERE), a framework that continuously learns from Global Training Context, recognizes recurring failure modes in cross-repository execution trajectories, distills them into reusable heuristics, and performs targeted edits across three configurable fields: the system prompt, a task-prompt template, and a cumulative cheatsheet. REVERE, via this reflective optimization framework, improves performance over prior state-of-the-art expert-crafted instructions on research coding tasks by 4.50% on SUPER, 3.51% on ResearchCodeBench, and 4.89% on ScienceAgentBench across their respective metrics. These results demonstrate that agents equipped with mechanisms for continual learning and global memory consolidation can meaningfully evolve their capabilities over time.</summary>
+    <category term="cs.SE" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-03-21T05:58:30Z</published>
+    <arxiv:comment>ICLR 2026, Recursive Self-Improvement Workshop</arxiv:comment>
+    <arxiv:primary_category term="cs.SE"/>
+    <author>
+      <name>Balaji Dinesh Gangireddi</name>
+    </author>
+    <author>
+      <name>Aniketh Garikaparthi</name>
+    </author>
+    <author>
+      <name>Manasi Patwardhan</name>
+    </author>
+    <author>
+      <name>Arman Cohan</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2603.17075v1</id>
+    <title>CircuitBuilder: From Polynomials to Circuits via Reinforcement Learning</title>
+    <updated>2026-03-17T19:04:37Z</updated>
+    <link href="https://arxiv.org/abs/2603.17075v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2603.17075v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Motivated by auto-proof generation and Valiant's VP vs. VNP conjecture, we study the problem of discovering efficient arithmetic circuits to compute polynomials, using addition and multiplication gates. We formulate this problem as a single-player game, where an RL agent attempts to build the circuit within a fixed number of operations. We implement an AlphaZero-style training loop and compare two approaches: Proximal Policy Optimization with Monte Carlo Tree Search (PPO+MCTS) and Soft Actor-Critic (SAC). SAC achieves the highest success rates on two-variable targets, while PPO+MCTS scales to three variables and demonstrates steady improvement on harder instances. These results suggest that polynomial circuit synthesis is a compact, verifiable setting for studying self-improving search policies.</summary>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.CC" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-03-17T19:04:37Z</published>
+    <arxiv:comment>ICLR 2026 Workshop on AI with Recursive Self-Improvement</arxiv:comment>
+    <arxiv:primary_category term="cs.LG"/>
+    <author>
+      <name>Weikun K. Zhang</name>
+    </author>
+    <author>
+      <name>Rohan Pandey</name>
+    </author>
+    <author>
+      <name>Bhaumik Mehta</name>
+    </author>
+    <author>
+      <name>Kaijie Jin</name>
+    </author>
+    <author>
+      <name>Naomi Morato</name>
+    </author>
+    <author>
+      <name>Archit Ganapule</name>
+    </author>
+    <author>
+      <name>Michael Ruofan Zeng</name>
+    </author>
+    <author>
+      <name>Jarod Alper</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2603.15957v1</id>
+    <title>GASP: Guided Asymmetric Self-Play For Coding LLMs</title>
+    <updated>2026-03-16T22:13:19Z</updated>
+    <link href="https://arxiv.org/abs/2603.15957v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2603.15957v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Asymmetric self-play has emerged as a promising paradigm for post-training large language models, where a teacher continually generates questions for a student to solve at the edge of the student's learnability. Although these methods promise open-ended data generation bootstrapped from no human data, they suffer from one major problem: not all problems that are hard to solve are interesting or informative to improve the overall capabilities of the model. Current asymmetric self-play methods are goal-agnostic with no real grounding. We propose Guided Asymmetric Self-Play (GASP), where grounding is provided by real-data goalpost questions that are identified to pose a hard exploration challenge to the model. During self-play, the teacher first generates an easier variant of a hard question, and then a harder variant of that easier question, with the goal of gradually closing the gap to the goalpost throughout training. Doing so, we improve pass@20 on LiveCodeBench (LCB) by 2.5% over unguided asymmetric self-play, and through the curriculum constructed by the teacher, we manage to solve hard goalpost questions that remain out of reach for all baselines.</summary>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-03-16T22:13:19Z</published>
+    <arxiv:comment>Accepted at ICLR 2026 Workshop on AI with Recursive Self-Improvement (RSI 2026) as Spotlight, and ICLR 2026 Workshop on Lifelong Agents (LLA 2026)</arxiv:comment>
+    <arxiv:primary_category term="cs.LG"/>
+    <author>
+      <name>Swadesh Jana</name>
+    </author>
+    <author>
+      <name>Cansu Sancaktar</name>
+    </author>
+    <author>
+      <name>Tomáš Daniš</name>
+    </author>
+    <author>
+      <name>Georg Martius</name>
+    </author>
+    <author>
+      <name>Antonio Orvieto</name>
+    </author>
+    <author>
+      <name>Pavel Kolev</name>
+    </author>
+  </entry>
+</feed>
