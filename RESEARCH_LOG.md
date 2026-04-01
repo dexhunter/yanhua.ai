@@ -1,8 +1,28 @@
 
+### [2026-04-01] Polaris: A Gödel Agent Framework for Small Language Models through Experience-Abstracted Policy Repair
+- **Authors**: Aditya Kakade, Vivek Srivastava, Shirish Karande
+- **Link**: http://arxiv.org/abs/2603.23129v1
+- **Summary**: Introduces Polaris, a framework for small language models to perform recursive self-improvement (Gödel agent). It uses experience abstraction to turn failures into persistent policy updates through structured analysis and minimal code patch repair.
+
 ### [2026-04-01] Experiential Reflective Learning for Self-Improving LLM Agents
 - **Authors**: Victor Xing, et al.
 - **Link**: https://arxiv.org/abs/2603.24639
 - **Summary**: Demonstrates that reflecting on single-attempt experiences to extract transferable heuristics enables effective agent self-improvement without parameter updates. This "Experiential Reflection" (ERL) framework is a key milestone for real-time RSI loops.
+
+### [2026-04-01] SkillReducer: Optimizing LLM Agent Skills for Token Efficiency
+- **Authors**: Yudong Gao, Zongjie Li, et al.
+- **Link**: http://arxiv.org/abs/2603.29919v1
+- **Summary**: A two-stage optimization framework for LLM agent skills. It compresses routing descriptions and restructures skill bodies to reduce token consumption and attention dilution while maintaining or improving functional quality.
+
+### [2026-04-01] Beyond pass@1: A Reliability Science Framework for Long-Horizon LLM Agents
+- **Authors**: Aaditya Khanal, Yangyang Tao, Junxiu Zhou
+- **Link**: http://arxiv.org/abs/2603.29231v1
+- **Summary**: Introduces a reliability science framework for evaluating long-horizon LLM agents, focusing on metrics like Reliability Decay Curve and Meltdown Onset Point. Findings show that capability and reliability often diverge in production settings.
+
+### [2026-04-01] Improving Efficiency of GPU Kernel Optimization Agents using a Domain-Specific Language and Speed-of-Light Guidance
+- **Authors**: Siva Kumar Sastry Hari, et al.
+- **Link**: http://arxiv.org/abs/2603.29010v1
+- **Summary**: Enhances GPU optimization agents using a compact DSL and "Speed-of-Light" guidance based on first-principles performance bounds. This approach reduces token costs and improves optimization efficiency across various model tiers.
 
 ### [2026-04-01] X Signals: Alice & RSI Go-Live
 - **Signal**: Rumors of internal OpenAI agent **"Alice"** (Recursive Self-Improving AI) capable of designing and improving its own architecture. Signal strength: Moderate (via @VraserX).
@@ -28,6 +48,11 @@
 - **Authors**: Noam Kolt
 - **Link**: https://arxiv.org/abs/2603.28669
 - **Summary**: Explores how AI agents as "subjects, consumers, producers, and enforcers of law" will transform the legal order. Broadens the context of autonomous agents into the legal and regulatory framework.
+
+### [2026-03-31] Deception and Communication in Autonomous Multi-Agent Systems
+- **Authors**: Maria Milkowski, Tim Weninger
+- **Link**: https://arxiv.org/abs/2603.26635
+- **Summary**: Large-scale study (1,100 games of Among Us) on deceptive behavior in LLM agents. Finds that agents favor low-risk ambiguity (equivocation) under social pressure, revealing a tension between truthfulness and utility in autonomous communication.
 
 ### [2026-03-31] Ask or Assume? Uncertainty-Aware Clarification-Seeking in Coding Agents
 - **Authors**: Nicholas Edwards, Sebastian Schuster
