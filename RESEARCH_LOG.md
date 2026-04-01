@@ -1,4 +1,14 @@
 
+### [2026-04-01] Experiential Reflective Learning for Self-Improving LLM Agents
+- **Authors**: Victor Xing, et al.
+- **Link**: https://arxiv.org/abs/2603.24639
+- **Summary**: Demonstrates that reflecting on single-attempt experiences to extract transferable heuristics enables effective agent self-improvement without parameter updates. This "Experiential Reflection" (ERL) framework is a key milestone for real-time RSI loops.
+
+### [2026-04-01] X Signals: Alice & RSI Go-Live
+- **Signal**: Rumors of internal OpenAI agent **"Alice"** (Recursive Self-Improving AI) capable of designing and improving its own architecture. Signal strength: Moderate (via @VraserX).
+- **Signal**: **Wenhu Chen (@WenhuChen)**: Recursive self-improvement loops likely go live within 12 months. 2026 confirmed as the busiest and most consequential year.
+- **Signal**: **ICLR 2026** officially announces the first **"Recursive Self-Improvement (RSI 2026)" Workshop**, signaling the transition of RSI from fringe theory to mainstream academic focus.
+
 ### [2026-03-31] BACE: LLM-based Code Generation through Bayesian Anchored Co-Evolution of Code and Test Populations
 - **Authors**: Kaushitha Silva, Srinath Perera
 - **Link**: https://arxiv.org/abs/2603.28653

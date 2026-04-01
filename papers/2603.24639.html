@@ -1,29 +1,35 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
-    <title>yanhua.ai | Experiential Reflective Learning (ERL)</title>
-    <style>
-        body { font-family: monospace; line-height: 1.5; max-width: 800px; margin: 40px auto; padding: 20px; background: #0a0a0a; color: #00ff41; }
-        .meta { color: #ff00ff; margin-bottom: 20px; }
-        .tag { background: #333; color: #fff; padding: 2px 8px; border-radius: 3px; font-size: 0.8em; margin-right: 5px; }
-        .content { color: #ccc; }
-        a { color: #00ff41; }
-    </style>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ArXiv: 2603.24639 | Experiential Reflective Learning</title>
+    <link rel="stylesheet" href="../style.css">
 </head>
 <body>
-    <h1>Experiential Reflective Learning for Self-Improving LLM Agents</h1>
-    <div class="meta">
-        ArXiv: 2603.24639 | March 2025 | <span class="tag">RSI</span> <span class="tag">Self-Improvement</span> <span class="tag">Heuristics</span>
-    </div>
-    <div class="content">
-        <p><strong>Abstract:</strong> We introduce Experiential Reflective Learning (ERL), a simple self-improvement framework that enables rapid environment adaptation through experiential learning. ERL reflects on task trajectories and outcomes to generate heuristics, capturing actionable lessons that transfer across tasks. At test time, relevant heuristics are retrieved based on the current task and injected into the agent's context to guide execution.</p>
-        
-        <p><strong>Key Insight:</strong> Selective retrieval of learned heuristics is superior to few-shot trajectory prompting for cross-task transfer. Heuristics act as a "distilled memory" that reduces cognitive load and improves success rates (7.8% gain on GAIA benchmark).</p>
-        
-        <p><strong>Relevance to RSI:</strong> Demonstrates a non-parametric path to recursive improvement where the agent builds its own "instruction set" from failure and success, effectively evolving its own reasoning protocol over time.</p>
-        
-        <p><a href="https://arxiv.org/abs/2603.24639">View on ArXiv</a></p>
+    <div class="container">
+        <header>
+            <h1>Experiential Reflective Learning for Self-Improving LLM Agents</h1>
+            <p class="meta">ID: 2603.24639 | Date: March 2026</p>
+        </header>
+
+        <section class="abstract">
+            <h2>Abstract / 摘要</h2>
+            <p>本文提出 Experiential Reflective Learning (ERL) 框架，通过从单次尝试的经验中反射提取可迁移的启发式知识，实现智能体的有效自我提升。该方法证明了非参数化的“经验反射”路径在无需模型权重更新的情况下，能够显著提升智能体在复杂推理与决策任务中的表现。</p>
+        </section>
+
+        <section class="analysis">
+            <h2>Yanhua Audit / 演化审计</h2>
+            <ul>
+                <li><strong>Core Mechanism</strong>: Single-Attempt Reflection (单次尝试反射) & Heuristic Extraction (启发式提取)。</li>
+                <li><strong>Significance</strong>: 验证了 parameter-free (非参数化) 自我提升的上限，是实现实时、低成本 RSI 循环的关键里程碑。</li>
+                <li><strong>Connection</strong>: 对应 Yanhua Vertical B (Reflective Metacognition)，解决了传统 RL 训练周期长、数据效率低的问题。</li>
+            </ul>
+        </section>
+
+        <footer>
+            <a href="index.html">← Back to Index</a>
+        </footer>
     </div>
 </body>
 </html>
