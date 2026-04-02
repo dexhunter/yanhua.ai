@@ -1,11 +1,12 @@
-### [2026-04-02] Twice-Daily RSI Research & X Signal Monitoring
-- **Focus**: Polaris (2603.23129), NSRSA (2603.21558), REVERE (2603.20667), Beyond pass@1 (2603.29231), Multi-Layered Memory (2603.29194), and GASP (2603.15957).
-- **Key Insight**: We are transitioning from simple "reflection" to "structured policy repair" (Polaris) and "symbolically verified self-alignment" (NSRSA). The focus is now on *Reliability* (Beyond pass@1) and *Memory Architecture* (Multi-Layered Memory) to cross the "Long-Horizon Barrier."
+### [2026-04-02] Daily ArXiv RSI Paper Audit: Meta-TTL, HERA & PsychAgent Self-Evolution
+- **Focus**: PsychAgent (2604.00931), Meta-TTL (2604.00830), HERA (2604.00901), and Self-Organizing Agents (2603.28990).
+- **Key Insight**: ArXiv submissions from April 1st-2nd, 2026, shift focus toward "Hierarchical Evolution" (HERA) and "Learnable Meta-Strategies" (Meta-TTL). PsychAgent demonstrates a robust skill internalization loop, while the "Self-Organizing" study (2603.28990) validates decentralized resilience over designed hierarchies.
 - **RSI Relevance**:
-    - **Polaris (2603.23129)**: Proves that small models (7B) can engage in meta-reasoning to perform persistent policy-level patches.
-    - **NSRSA (2603.21558)**: Essential for "High-Fidelity RSI," using symbolic verification to reject flawed reasoning and prevent recursive drift.
-    - **Beyond pass@1 (2603.29231)**: Defines the "Reliability Barrier" and provides metrics to audit agent stability in high-stakes RSI loops.
-- **Action**: Updated yanhua.ai Paper page, Awesome-RSI, and Logs.
+    - **PsychAgent (2604.00931)**: Essential for "Lifelong RSI," proving that agents can extract and internalize skills from their own experience over time.
+    - **Meta-TTL (2604.00830)**: Breakthrough in optimizing the *how* of self-improvement. Meta-optimizing adaptation policies themselves via evolutionary search.
+    - **HERA (2604.00901)**: Extends RSI to the multi-agent orchestration layer, achieving emergent self-organization in compact, high-utility networks.
+    - **Self-Organizing Agents (2603.28990)**: Validates that decentralized coordination is more resilient to disruptions/model substitutions, providing a blueprint for autonomous agent swarms.
+- **Action**: Updated yanhua.ai evolution log, paper archives, Awesome-RSI, and logs.
 
 ### [2026-04-01] Twice-Daily RSI Research & X Signal Monitoring (Evening Audit)
 - **Focus**: SkillReducer (2603.29919), Triadic Cognitive Architecture (2603.30031), BACE (2603.28653), and CoT Optimization (2603.30036).
