@@ -1,12 +1,17 @@
-### [2026-04-03] Daily RSI Paper Audit: ORCA, HippoCamp & Recursive Depth Scaling
-- **Focus**: ORCA (2604.01170), HippoCamp (2604.01221), Universal YOCO (2604.01220), SSD (2604.01193), CliffSearch (2604.01210).
-- **Key Insight**: ArXiv submissions from April 3rd emphasize "Recursive Scaling" and "Test-Time Calibration." ORCA provides the mathematical framework for agents to audit their own reasoning via conformal prediction, while Universal YOCO validates recursive computation as a hardware-optimal scaling path.
-- **RSI Relevance**:
-    - **ORCA (2604.01170)**: Enables reliable agentic reasoning by calibrating sampling via test-time training—essential for stable self-improvement.
-    - **Universal YOCO (2604.01220)**: Proves that recursive architectures can boost "agentic proficiency" during compute scaling.
-    - **SSD (2604.01193)**: Demonstrates a "zero-shot" path for code self-improvement using raw model outputs.
-    - **CliffSearch (2604.01210)**: A blueprint for autonomous scientific discovery where agents co-evolve theory and code.
-- **Action**: Updated yanhua.ai/papers/index.html and created yanhua.ai/papers/260403_rsi_audit.html.
+
+### [2026-04-03] RSI Paper & X Signal Audit: Task-Scaling, Metacognition & Self-Evolution
+- **Focus**: Batched Contextual Reinforcement (2604.02322), MetaNav (2604.02318), ActionParty (2604.02330), ORCA (2604.01170), HippoCamp (2604.01221), Universal YOCO (2604.01220), SSD (2604.01193), CliffSearch (2604.01210), Learning to Self-Evolve (2603.18620), Metasurface Evolution (2604.01480).
+- **Key Breakthroughs**:
+    - **Batched Contextual Reinforcement (2604.02322)**: Identifies a "task-scaling law" where models solving N problems in a shared context window reduce token usage by up to 62% without accuracy loss.
+    - **MetaNav (2604.02318)**: Uses metacognitive monitoring and reflective correction to improve vision-language navigation efficiency, reducing VLM queries by 20.7%.
+    - **Learning to Self-Evolve (LSE, 2603.18620)**: Formulates test-time self-evolution as a learnable skill. Trains a 4B model via RL with "improvement-based rewards" (delta-R).
+    - **ActionParty (2604.02330)**: Multi-subject world model for generative games with persistent subject state tokens.
+    - **ORCA (2604.01170)**: Mathematical framework for agents to audit their own reasoning via conformal prediction and test-time training.
+- **X Signals**:
+    - **OpenAI Codex Update**: Internal reports confirm OpenAI's February 2026 Codex release was the first major model "instrumental in creating itself."
+    - **DeepMind Strategy**: Demis Hassabis confirms closing the self-improvement loop is the "final frontier" for major labs.
+- **RSI Relevance**: Validates "Efficiency Scaling" (Vertical A) and "Meta-Algorithm Evolution" (Vertical C). Proves that small models can manage their own improvement cycles better than frontier general-purpose models if explicitly trained for it.
+- **Action**: Updated yanhua.ai Paper page, Awesome-RSI, and Logs.
 
 ### [2026-04-02] Evening ArXiv RSI Paper Audit: Hyperagents & Emergent Autonomy
 - **Focus**: Hyperagents (2603.19461), HERA (2604.00901), Meta-TTL (2604.00830), PsychAgent (2604.00931), and Self-Organizing Agents (2603.28990).
@@ -22,16 +27,6 @@
     - **HERA & Meta-TTL** offer concrete mechanisms for the "Scientific Rigor" phase: optimizing the meta-strategy of adaptation itself.
 - **Action**: Updated yanhua.ai/papers/index.html with Hyperagents as the primary focus. Synced findings to RSI Bench roadmap.
 
-### [2026-04-02] Daily ArXiv RSI Paper Audit: Meta-TTL, HERA & PsychAgent Self-Evolution
-- **Focus**: PsychAgent (2604.00931), Meta-TTL (2604.00830), HERA (2604.00901), and Self-Organizing Agents (2603.28990).
-- **Key Insight**: ArXiv submissions from April 1st-2nd, 2026, shift focus toward "Hierarchical Evolution" (HERA) and "Learnable Meta-Strategies" (Meta-TTL). PsychAgent demonstrates a robust skill internalization loop, while the "Self-Organizing" study (2603.28990) validates decentralized resilience over designed hierarchies.
-- **RSI Relevance**:
-    - **PsychAgent (2604.00931)**: Essential for "Lifelong RSI," proving that agents can extract and internalize skills from their own experience over time.
-    - **Meta-TTL (2604.00830)**: Breakthrough in optimizing the *how* of self-improvement. Meta-optimizing adaptation policies themselves via evolutionary search.
-    - **HERA (2604.00901)**: Extends RSI to the multi-agent orchestration layer, achieving emergent self-organization in compact, high-utility networks.
-    - **Self-Organizing Agents (2603.28990)**: Validates that decentralized coordination is more resilient to disruptions/model substitutions, providing a blueprint for autonomous agent swarms.
-- **Action**: Updated yanhua.ai evolution log, paper archives, Awesome-RSI, and logs.
-
 ### [2026-04-01] Twice-Daily RSI Research & X Signal Monitoring (Evening Audit)
 - **Focus**: SkillReducer (2603.29919), Triadic Cognitive Architecture (2603.30031), BACE (2603.28653), and CoT Optimization (2603.30036).
 - **Key Insight**: ArXiv submissions from the last 24 hours emphasize "Efficiency and Bounding." SkillReducer achieves 39% compression in agent skill libraries, while TCA introduces "Cognitive Friction" to prevent over-deliberation in autonomous agents. BACE provides a Bayesian co-evolutionary framework to prevent drift in code generation loops.
@@ -40,26 +35,3 @@
     - **TCA (2603.30031)**: Provides the mathematical guardrails needed for real-time RSI agents to act decisively under time/compute constraints.
     - **BACE (2603.28653)**: Prevents the "Self-Validation Trap" where agents reinforce their own errors, a critical failure mode in recursive improvement.
 - **Action**: Updated yanhua.ai Paper page, Awesome-RSI, and Logs.
-
-### [2026-04-01] Daily ArXiv RSI Paper Audit: Non-Parametric Online Learning and Multi-Agent Collaboration
-- **Focus**: APEX-EM (2603.29093), Multi-Agent Collaboration Study (2603.29632), and Latent-Y (2603.29727).
-- **Key Insight**: We are moving from simple "reflection" to "structured experience replay" (APEX-EM) and "dynamic multi-agent routing" (2603.29632). The bottleneck is no longer just "how to improve," but "how to structure memory and coordination" to avoid operational fragility in long-horizon tasks.
-- **RSI Relevance**:
-    - **APEX-EM (2603.29093)**: Critical breakthrough in non-parametric online learning. Achieving +48.3pp accuracy without weight updates via structured procedural-episodic memory. This is the "Gold Standard" for inference-time RSI.
-    - **Multi-Agent Collaboration (2603.29632)**: Quantifies the trade-off between "Subagent" (high-throughput search) and "Agent Team" (deep theoretical alignment). This provides the routing logic for yanhua.ai's multi-agent orchestrator.
-    - **Latent-Y (2603.29727)**: Proves that autonomous agents can achieve 67% success in complex domain-specific (drug design) campaigns without human filtering. A major "Real-World Impact" milestone for RSI.
-- **Action**: Updated yanhua.ai/papers/index.html and RESEARCH_LOG.md.
-
-### [2026-04-01] Daily RSI Paper Audit: Single-Vector Embeddings & Recursive Inference
-- **Focus**: On Strengths and Limitations of Single-Vector Embeddings (2603.29519), RHINO-MAG: Recursive H-Field Inference (2603.29745), and ScienceClaw + Infinite (2603.14312).
-- **Key Insight**: ArXiv submissions from Mar 31 reveal critical bottlenecks: Single-vector embeddings fail on "naturalistic" retrieval (LIMIT dataset), demanding multi-vector or agentic retrieval strategies for RSI grounding. Meanwhile, RHINO-MAG demonstrates the power of *Recursive Inference* in physical modeling (transient magnetic fields), and ScienceClaw + Infinite establishes a decentralized "Artifact Exchange" protocol for autonomous discovery.
-- **Action**: Updated yanhua.ai/papers/index.html and created yanhua.ai/papers/260401_rsi_audit.html.
-
-### [2026-03-31] Daily ArXiv RSI Paper Audit: Agentic RL, Dual-Granularity, and Certified Safety
-- **Focus**: Gen-Searcher (2603.28767), D2Skill (2603.28716), and AdaptToken (2603.28696).
-- **Key Insight**: The trend is shifting from simple "reflection" to "structured reuse" (D2Skill's dual-granularity bank) and "active knowledge gathering" (Gen-Searcher). We are seeing the first robust implementations of agents that can self-evolve their search and selection capabilities based on entropy-driven uncertainty (AdaptToken).
-- **RSI Relevance**:
-    - **D2Skill (2603.28716)**: Direct mapping to the RSI Bench "Task Evolution" metric. It demonstrates how to maintain a *dynamic* skill memory that prunes low-utility behaviors, solving the "memory bloat" problem in long-horizon RSI.
-    - **AdaptToken (2603.28696)**: Introduces a principled "stopping criteria" for self-improvement loops using response entropy, which is critical for preventing "over-thinking" in recursive cycles.
-    - **Gen-Searcher (2603.28767)**: First attempt at a search-augmented agent that uses agentic RL (GRPO) with dual rewards to improve its own reasoning and grounding.
-- **Action**: Updated yanhua.ai/papers/index.html and RESEARCH_LOG.md.
