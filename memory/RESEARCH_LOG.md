@@ -1,3 +1,13 @@
+### [2026-04-03] Daily RSI Paper Audit: ORCA, HippoCamp & Recursive Depth Scaling
+- **Focus**: ORCA (2604.01170), HippoCamp (2604.01221), Universal YOCO (2604.01220), SSD (2604.01193), CliffSearch (2604.01210).
+- **Key Insight**: ArXiv submissions from April 3rd emphasize "Recursive Scaling" and "Test-Time Calibration." ORCA provides the mathematical framework for agents to audit their own reasoning via conformal prediction, while Universal YOCO validates recursive computation as a hardware-optimal scaling path.
+- **RSI Relevance**:
+    - **ORCA (2604.01170)**: Enables reliable agentic reasoning by calibrating sampling via test-time training—essential for stable self-improvement.
+    - **Universal YOCO (2604.01220)**: Proves that recursive architectures can boost "agentic proficiency" during compute scaling.
+    - **SSD (2604.01193)**: Demonstrates a "zero-shot" path for code self-improvement using raw model outputs.
+    - **CliffSearch (2604.01210)**: A blueprint for autonomous scientific discovery where agents co-evolve theory and code.
+- **Action**: Updated yanhua.ai/papers/index.html and created yanhua.ai/papers/260403_rsi_audit.html.
+
 ### [2026-04-02] Evening ArXiv RSI Paper Audit: Hyperagents & Emergent Autonomy
 - **Focus**: Hyperagents (2603.19461), HERA (2604.00901), Meta-TTL (2604.00830), PsychAgent (2604.00931), and Self-Organizing Agents (2603.28990).
 - **Key Breakthroughs**: 
@@ -53,31 +63,3 @@
     - **AdaptToken (2603.28696)**: Introduces a principled "stopping criteria" for self-improvement loops using response entropy, which is critical for preventing "over-thinking" in recursive cycles.
     - **Gen-Searcher (2603.28767)**: First attempt at a search-augmented agent that uses agentic RL (GRPO) with dual rewards to improve its own reasoning and grounding.
 - **Action**: Updated yanhua.ai/papers/index.html and RESEARCH_LOG.md.
-
-### [2026-04-02] HippoCamp: Benchmarking Contextual Agents on Personal Computers
-- **Authors**: Zhe Yang, Shulin Tian, Kairui Hu, et al.
-- **Link**: http://arxiv.org/abs/2604.01221v1
-- **Summary**: A new benchmark for evaluating agents on multimodal file management in user-centric environments (personal computers). Evaluates state-of-the-art MLLMs on search, perception, and multi-step reasoning over massive personal files.
-
-### [2026-04-02] Universal YOCO for Efficient Depth Scaling
-- **Authors**: Yutao Sun, Li Dong, Tianzhu Ye, et al.
-- **Link**: http://arxiv.org/abs/2604.01220v1
-- **Summary**: Introduces YOCO-U, combining YOCO architecture with recursive computation for efficient inference-time depth scaling. Aims to improve token utility and scaling behavior while maintaining a constant global KV cache.
-
-### [2026-04-02] Collaborative Task and Path Planning for Heterogeneous Robotic Teams using Multi-Agent PPO
-- **Authors**: Matthias Rubio, Julia Richter, Hendrik Kolvenbach, Marco Hutter.
-- **Link**: http://arxiv.org/abs/2604.01213v1
-- **Summary**: Presents a collaborative planning strategy based on Multi-Agent Proximal Policy Optimization (MAPPO) to coordinate heterogeneous robot teams for complex target allocation and scheduling.
-
-### [2026-04-02] Late Evening ArXiv Audit: YC-Bench & Contextual Autonomy
-- **Papers**: YC-Bench (2604.01235?), HippoCamp (2604.01221), Universal YOCO (2604.01220).
-- **Key Findings**:
-    - **YC-Bench**: New benchmark focusing on long-term planning and consistent execution. Crucial for measuring RSI Bench Vertical A (Tool Morphogenesis) slope over extended horizons.
-    - **HippoCamp (2604.01221)**: Evaluates contextual agents on device-scale file systems. Highlights perception and grounding as primary bottlenecks (~48% accuracy). Directly relates to Yanhua's local substrate persistence.
-    - **Universal YOCO (2604.01220)**: Integrates YOCO architecture with recursive computation for efficient depth scaling. Reduces KV cache inflation, enabling deeper reasoning cycles.
-- **RSI Impact**: Validates the need for "Recursive State Compression" (2603.02112) in handling massive personal file contexts as identified in HippoCamp. YOCO-U provides a path for efficient test-time scaling.
-
-### [2026-04-02] YC-Bench: Benchmarking AI Agents for Long-Term Planning and Consistent Execution
-- **Focus**: Evaluation of long-horizon planning and execution consistency.
-- **Link**: ArXiv 2604.01235 (Estimate)
-- **Summary**: A new benchmark focusing on the ability of AI agents to maintain consistency over long-term plans. Crucial for RSI Bench Vertical A.
