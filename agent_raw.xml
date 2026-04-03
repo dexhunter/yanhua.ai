@@ -1,166 +1,286 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <feed xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/" xmlns:arxiv="http://arxiv.org/schemas/atom" xmlns="http://www.w3.org/2005/Atom">
-  <id>https://arxiv.org/api/7a76jFyX1/XCqsf+CIJrCe7NWcI</id>
-  <title>arXiv Query: search_query=all:Agent OR all:Self-Evolving&amp;id_list=&amp;start=0&amp;max_results=5</title>
-  <updated>2026-03-23T02:00:49Z</updated>
-  <link href="https://arxiv.org/api/query?search_query=all:Agent+OR+all:Self-Evolving&amp;start=0&amp;max_results=5&amp;id_list=" type="application/atom+xml"/>
-  <opensearch:itemsPerPage>5</opensearch:itemsPerPage>
-  <opensearch:totalResults>65761</opensearch:totalResults>
+  <id>https://arxiv.org/api/hSTZYAOsK78jDcv/GapfUgK/0QE</id>
+  <title>arXiv Query: search_query=all:LLM OR all:Agent&amp;id_list=&amp;start=0&amp;max_results=10</title>
+  <updated>2026-04-02T12:54:15Z</updated>
+  <link href="https://arxiv.org/api/query?search_query=all:LLM+OR+all:Agent&amp;start=0&amp;max_results=10&amp;id_list=" type="application/atom+xml"/>
+  <opensearch:itemsPerPage>10</opensearch:itemsPerPage>
+  <opensearch:totalResults>113797</opensearch:totalResults>
   <opensearch:startIndex>0</opensearch:startIndex>
   <entry>
-    <id>http://arxiv.org/abs/2603.20185v1</id>
-    <title>VideoSeek: Long-Horizon Video Agent with Tool-Guided Seeking</title>
-    <updated>2026-03-20T17:58:47Z</updated>
-    <link href="https://arxiv.org/abs/2603.20185v1" rel="alternate" type="text/html"/>
-    <link href="https://arxiv.org/pdf/2603.20185v1" rel="related" type="application/pdf" title="pdf"/>
-    <summary>Video agentic models have advanced challenging video-language tasks. However, most agentic approaches still heavily rely on greedy parsing over densely sampled video frames, resulting in high computational cost. We present VideoSeek, a long-horizon video agent that leverages video logic flow to actively seek answer-critical evidence instead of exhaustively parsing the full video. This insight allows the model to use far fewer frames while maintaining, or even improving, its video understanding capability. VideoSeek operates in a think-act-observe loop with a well-designed toolkit for collecting multi-granular video observations. This design enables query-aware exploration over accumulated observations and supports practical video understanding and reasoning. Experiments on four challenging video understanding and reasoning benchmarks demonstrate that VideoSeek achieves strong accuracy while using far fewer frames than prior video agents and standalone LMMs. Notably, VideoSeek achieves a 10.2 absolute points improvement on LVBench over its base model, GPT-5, while using 93% fewer frames. Further analysis highlights the significance of leveraging video logic flow, strong reasoning capability, and the complementary roles of toolkit design.</summary>
-    <category term="cs.CV" scheme="http://arxiv.org/schemas/atom"/>
+    <id>http://arxiv.org/abs/2604.01221v1</id>
+    <title>HippoCamp: Benchmarking Contextual Agents on Personal Computers</title>
+    <updated>2026-04-01T17:58:33Z</updated>
+    <link href="https://arxiv.org/abs/2604.01221v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2604.01221v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>We present HippoCamp, a new benchmark designed to evaluate agents' capabilities on multimodal file management. Unlike existing agent benchmarks that focus on tasks like web interaction, tool use, or software automation in generic settings, HippoCamp evaluates agents in user-centric environments to model individual user profiles and search massive personal files for context-aware reasoning. Our benchmark instantiates device-scale file systems over real-world profiles spanning diverse modalities, comprising 42.4 GB of data across over 2K real-world files. Building upon the raw files, we construct 581 QA pairs to assess agents' capabilities in search, evidence perception, and multi-step reasoning. To facilitate fine-grained analysis, we provide 46.1K densely annotated structured trajectories for step-wise failure diagnosis. We evaluate a wide range of state-of-the-art multimodal large language models (MLLMs) and agentic methods on HippoCamp. Our comprehensive experiments reveal a significant performance gap: even the most advanced commercial models achieve only 48.3% accuracy in user profiling, struggling particularly with long-horizon retrieval and cross-modal reasoning within dense personal file systems. Furthermore, our step-wise failure diagnosis identifies multimodal perception and evidence grounding as the primary bottlenecks. Ultimately, HippoCamp exposes the critical limitations of current agents in realistic, user-centric environments and provides a robust foundation for developing next-generation personal AI assistants.</summary>
     <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.CV" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-04-01T17:58:33Z</published>
+    <arxiv:comment>Project Page: https://hippocamp-ai.github.io/</arxiv:comment>
+    <arxiv:primary_category term="cs.AI"/>
+    <author>
+      <name>Zhe Yang</name>
+    </author>
+    <author>
+      <name>Shulin Tian</name>
+    </author>
+    <author>
+      <name>Kairui Hu</name>
+    </author>
+    <author>
+      <name>Shuai Liu</name>
+    </author>
+    <author>
+      <name>Hoang-Nhat Nguyen</name>
+    </author>
+    <author>
+      <name>Yichi Zhang</name>
+    </author>
+    <author>
+      <name>Zujin Guo</name>
+    </author>
+    <author>
+      <name>Mengying Yu</name>
+    </author>
+    <author>
+      <name>Zinan Zhang</name>
+    </author>
+    <author>
+      <name>Jingkang Yang</name>
+    </author>
+    <author>
+      <name>Chen Change Loy</name>
+    </author>
+    <author>
+      <name>Ziwei Liu</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2604.01220v1</id>
+    <title>Universal YOCO for Efficient Depth Scaling</title>
+    <updated>2026-04-01T17:58:21Z</updated>
+    <link href="https://arxiv.org/abs/2604.01220v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2604.01220v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>The rise of test-time scaling has remarkably boosted the reasoning and agentic proficiency of Large Language Models (LLMs). Yet, standard Transformers struggle to scale inference-time compute efficiently, as conventional looping strategies suffer from high computational overhead and a KV cache that inflates alongside model depth. We present Universal YOCO (YOCO-U), which combines the YOCO decoder-decoder architecture with recursive computation to achieve a synergistic effect greater than either alone. Built on the YOCO framework, YOCO-U implements a Universal Self-Decoder that performs multiple iterations via parameter sharing, while confining the iterative process to shallow, efficient-attention layers. This combination yields a favorable capability-efficiency tradeoff that neither YOCO nor recursion achieves independently. The YOCO architecture provides a constant global KV cache and linear pre-filling, while partial recursion enhances representational depth with limited overhead. Together, YOCO-U improves token utility and scaling behavior while maintaining efficient inference. Empirical results confirm that YOCO-U remains highly competitive in general and long-context benchmarks, demonstrating that the integration of efficient-attention architectures and recursive computation is a promising direction for scalable LLMs.</summary>
     <category term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
-    <published>2026-03-20T17:58:47Z</published>
-    <arxiv:comment>Accepted at CVPR 2026</arxiv:comment>
-    <arxiv:primary_category term="cs.CV"/>
+    <published>2026-04-01T17:58:21Z</published>
+    <arxiv:primary_category term="cs.CL"/>
     <author>
-      <name>Jingyang Lin</name>
+      <name>Yutao Sun</name>
     </author>
     <author>
-      <name>Jialian Wu</name>
+      <name>Li Dong</name>
     </author>
     <author>
-      <name>Jiang Liu</name>
+      <name>Tianzhu Ye</name>
     </author>
     <author>
-      <name>Ximeng Sun</name>
+      <name>Shaohan Huang</name>
     </author>
     <author>
-      <name>Ze Wang</name>
+      <name>Jianyong Wang</name>
     </author>
     <author>
-      <name>Xiaodong Yu</name>
-    </author>
-    <author>
-      <name>Jiebo Luo</name>
-    </author>
-    <author>
-      <name>Zicheng Liu</name>
-    </author>
-    <author>
-      <name>Emad Barsoum</name>
+      <name>Furu Wei</name>
     </author>
   </entry>
   <entry>
-    <id>http://arxiv.org/abs/2603.20179v1</id>
-    <title>AI Agents Can Already Autonomously Perform Experimental High Energy Physics</title>
-    <updated>2026-03-20T17:55:27Z</updated>
-    <link href="https://arxiv.org/abs/2603.20179v1" rel="alternate" type="text/html"/>
-    <link href="https://arxiv.org/pdf/2603.20179v1" rel="related" type="application/pdf" title="pdf"/>
-    <summary>Large language model-based AI agents are now able to autonomously execute substantial portions of a high energy physics (HEP) analysis pipeline with minimal expert-curated input. Given access to a HEP dataset, an execution framework, and a corpus of prior experimental literature, we find that Claude Code succeeds in automating all stages of a typical analysis: event selection, background estimation, uncertainty quantification, statistical inference, and paper drafting. We argue that the experimental HEP community is underestimating the current capabilities of these systems, and that most proposed agentic workflows are too narrowly scoped or scaffolded to specific analysis structures. We present a proof-of-concept framework, Just Furnish Context (JFC), that integrates autonomous analysis agents with literature-based knowledge retrieval and multi-agent review, and show that this is sufficient to plan, execute, and document a credible high energy physics analysis. We demonstrate this by conducting analyses on open data from ALEPH, DELPHI, and CMS to perform electroweak, QCD, and Higgs boson measurements. Rather than replacing physicists, these tools promise to offload the repetitive technical burden of analysis code development, freeing researchers to focus on physics insight, truly novel method development, and rigorous validation. Given these developments, we advocate for new strategies for how the community trains students, organizes analysis efforts, and allocates human expertise.</summary>
-    <category term="hep-ex" scheme="http://arxiv.org/schemas/atom"/>
+    <id>http://arxiv.org/abs/2604.01213v1</id>
+    <title>Collaborative Task and Path Planning for Heterogeneous Robotic Teams using Multi-Agent PPO</title>
+    <updated>2026-04-01T17:53:51Z</updated>
+    <link href="https://arxiv.org/abs/2604.01213v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2604.01213v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Efficient robotic extraterrestrial exploration requires robots with diverse capabilities, ranging from scientific measurement tools to advanced locomotion. A robotic team enables the distribution of tasks over multiple specialized subsystems, each providing specific expertise to complete the mission. The central challenge lies in efficiently coordinating the team to maximize utilization and the extraction of scientific value. Classical planning algorithms scale poorly with problem size, leading to long planning cycles and high inference costs due to the combinatorial growth of possible robot-target allocations and possible trajectories. Learning-based methods are a viable alternative that move the scaling concern from runtime to training time, setting a critical step towards achieving real-time planning. In this work, we present a collaborative planning strategy based on Multi-Agent Proximal Policy Optimization (MAPPO) to coordinate a team of heterogeneous robots to solve a complex target allocation and scheduling problem. We benchmark our approach against single-objective optimal solutions obtained through exhaustive search and evaluate its ability to perform online replanning in the context of a planetary exploration scenario.</summary>
+    <category term="cs.RO" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.MA" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-04-01T17:53:51Z</published>
+    <arxiv:comment>8 pages, 3 figures, associated code on https://github.com/leggedrobotics/multi_robot_global_planner</arxiv:comment>
+    <arxiv:primary_category term="cs.RO"/>
+    <author>
+      <name>Matthias Rubio</name>
+    </author>
+    <author>
+      <name>Julia Richter</name>
+    </author>
+    <author>
+      <name>Hendrik Kolvenbach</name>
+    </author>
+    <author>
+      <name>Marco Hutter</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2604.01212v1</id>
+    <title>$\texttt{YC-Bench}$: Benchmarking AI Agents for Long-Term Planning and Consistent Execution</title>
+    <updated>2026-04-01T17:52:19Z</updated>
+    <link href="https://arxiv.org/abs/2604.01212v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2604.01212v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>As LLM agents tackle increasingly complex tasks, a critical question is whether they can maintain strategic coherence over long horizons: planning under uncertainty, learning from delayed feedback, and adapting when early mistakes compound. We introduce $\texttt{YC-Bench}$, a benchmark that evaluates these capabilities by tasking an agent with running a simulated startup over a one-year horizon spanning hundreds of turns. The agent must manage employees, select task contracts, and maintain profitability in a partially observable environment where adversarial clients and growing payroll create compounding consequences for poor decisions. We evaluate 12 models, both proprietary and open source, across 3 seeds each. Only three models consistently surpass the starting capital of \$200K, with Claude Opus 4.6 achieving the highest average final funds at \$1.27 M, followed by GLM-5 at \$1.21 M at 11$\times$ lower inference cost. Scratchpad usage, the sole mechanism for persisting information across context truncation, is the strongest predictor of success, and adversarial client detection is the primary failure mode, accounting for $47\%$ of bankruptcies. Our analysis reveals that frontier models still fail through distinct failure modes such as over-parallelization, demonstrating the capability gaps for long-horizon performance. $\texttt{YC-Bench}$ is open-source, reproducible, and configurable.</summary>
+    <category term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
     <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-04-01T17:52:19Z</published>
+    <arxiv:comment>16 pages, 10 figures</arxiv:comment>
+    <arxiv:primary_category term="cs.CL"/>
+    <author>
+      <name>Muyu He</name>
+    </author>
+    <author>
+      <name>Adit Jain</name>
+    </author>
+    <author>
+      <name>Anand Kumar</name>
+    </author>
+    <author>
+      <name>Vincent Tu</name>
+    </author>
+    <author>
+      <name>Soumyadeep Bakshi</name>
+    </author>
+    <author>
+      <name>Sachin Patro</name>
+    </author>
+    <author>
+      <name>Nazneen Rajani</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2604.01210v1</id>
+    <title>CliffSearch: Structured Agentic Co-Evolution over Theory and Code for Scientific Algorithm Discovery</title>
+    <updated>2026-04-01T17:51:26Z</updated>
+    <link href="https://arxiv.org/abs/2604.01210v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2604.01210v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Scientific algorithm discovery is iterative: hypotheses are proposed, implemented, stress-tested, and revised. Current LLM-guided search systems accelerate proposal generation, but often under-represent scientific structure by optimizing code-only artifacts with weak correctness/originality gating. We present CliffSearch, an agentic evolutionary framework in which the core evolution operators (pair selection, crossover, mutation, and review) are implemented as LLM agents, and the loop is designed around three principles: (1) each node is a structured scientific artifact, instantiated in either theory+code or code_only mode, (2) reviewer judgments of correctness and originality are first-class selection gates alongside optimization of the benchmark metric of interest, and (3) mutation is split into exploration and correction pathways with distinct objectives. Exploration mutation imports ideas from adjacent scientific domains to increase novelty, while correction mutation performs targeted evidence-guided repair using reviewer signals over theory, code, benchmark results, and runtime errors. We illustrate the framework on three benchmark-grounded studies: transformer hyper-connection evolution, optimizer discovery on a fixed nanoGPT stack, and a smaller native-optimizer ablation. Across these settings, the same loop supports explicit metric direction, reproducible persistence, and reviewer-gated comparison of discoveries under controlled search conditions. The result is a discovery workflow that prioritizes scientific interpretability and correctness while optimizing task metrics under controlled novelty constraints, rather than maximizing candidate throughput alone. Full run artifacts, interactive visualizations, and exported best nodes for the reported studies are available at https://cliffsearch.ai .</summary>
     <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
-    <published>2026-03-20T17:55:27Z</published>
-    <arxiv:primary_category term="hep-ex"/>
-    <author>
-      <name>Eric A. Moreno</name>
-    </author>
-    <author>
-      <name>Samuel Bright-Thonney</name>
-    </author>
-    <author>
-      <name>Andrzej Novak</name>
-    </author>
-    <author>
-      <name>Dolores Garcia</name>
-    </author>
-    <author>
-      <name>Philip Harris</name>
-    </author>
-  </entry>
-  <entry>
-    <id>http://arxiv.org/abs/2603.20151v1</id>
-    <title>Design-OS: A Specification-Driven Framework for Engineering System Design with a Control-Systems Design Case</title>
-    <updated>2026-03-20T17:26:44Z</updated>
-    <link href="https://arxiv.org/abs/2603.20151v1" rel="alternate" type="text/html"/>
-    <link href="https://arxiv.org/pdf/2603.20151v1" rel="related" type="application/pdf" title="pdf"/>
-    <summary>Engineering system design -- whether mechatronic, control, or embedded -- often proceeds in an ad hoc manner, with requirements left implicit and traceability from intent to parameters largely absent. Existing specification-driven and systematic design methods mostly target software, and AI-assisted tools tend to enter the workflow at solution generation rather than at problem framing. Human--AI collaboration in the design of physical systems remains underexplored. This paper presents Design-OS, a lightweight, specification-driven workflow for engineering system design organized in five stages: concept definition, literature survey, conceptual design, requirements definition, and design definition. Specifications serve as the shared contract between human designers and AI agents; each stage produces structured artifacts that maintain traceability and support agent-augmented execution. We position Design-OS relative to requirements-driven design, systematic design frameworks, and AI-assisted design pipelines, and demonstrate it on a control systems design case using two rotary inverted pendulum platforms -- an open-source SimpleFOC reaction wheel and a commercial Quanser Furuta pendulum -- showing how the same specification-driven workflow accommodates fundamentally different implementations. A blank template and the full design-case artifacts are shared in a public repository to support reproducibility and reuse. The workflow makes the design process visible and auditable, and extends specification-driven orchestration of AI from software to physical engineering system design.</summary>
-    <category term="cs.CE" scheme="http://arxiv.org/schemas/atom"/>
     <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
-    <category term="eess.SY" scheme="http://arxiv.org/schemas/atom"/>
-    <published>2026-03-20T17:26:44Z</published>
-    <arxiv:comment>2 figures, 11 pages, Submitted to ASME IDETC 2026 - DAC-09</arxiv:comment>
-    <arxiv:primary_category term="cs.CE"/>
+    <published>2026-04-01T17:51:26Z</published>
+    <arxiv:primary_category term="cs.LG"/>
     <author>
-      <name>H. Sinan Bank</name>
+      <name>Youssef Mroueh</name>
     </author>
     <author>
-      <name>Daniel R. Herber</name>
+      <name>Carlos Fonseca</name>
     </author>
     <author>
-      <name>Thomas H. Bradley</name>
-    </author>
-  </entry>
-  <entry>
-    <id>http://arxiv.org/abs/2603.20148v1</id>
-    <title>Can Large Multimodal Models Inspect Buildings? A Hierarchical Benchmark for Structural Pathology Reasoning</title>
-    <updated>2026-03-20T17:24:46Z</updated>
-    <link href="https://arxiv.org/abs/2603.20148v1" rel="alternate" type="text/html"/>
-    <link href="https://arxiv.org/pdf/2603.20148v1" rel="related" type="application/pdf" title="pdf"/>
-    <summary>Automated building facade inspection is a critical component of urban resilience and smart city maintenance. Traditionally, this field has relied on specialized discriminative models (e.g., YOLO, Mask R-CNN) that excel at pixel-level localization but are constrained to passive perception and worse generization without the visual understandng to interpret structural topology. Large Multimodal Models (LMMs) promise a paradigm shift toward active reasoning, yet their application in such high-stakes engineering domains lacks rigorous evaluation standards. To bridge this gap, we introduce a human-in-the-loop semi-automated annotation framework, leveraging expert-proposal verification to unify 12 fragmented datasets into a standardized, hierarchical ontology. Building on this foundation, we present \textit{DefectBench}, the first multi-dimensional benchmark designed to interrogate LMMs beyond basic semantic recognition. \textit{DefectBench} evaluates 18 state-of-the-art (SOTA) LMMs across three escalating cognitive dimensions: Semantic Perception, Spatial Localization, and Generative Geometry Segmentation. Extensive experiments reveal that while current LMMs demonstrate exceptional topological awareness and semantic understanding (effectively diagnosing "what" and "how"), they exhibit significant deficiencies in metric localization precision ("where"). Crucially, however, we validate the viability of zero-shot generative segmentation, showing that general-purpose foundation models can rival specialized supervised networks without domain-specific training. This work provides both a rigorous benchmarking standard and a high-quality open-source database, establishing a new baseline for the advancement of autonomous AI agents in civil engineering.</summary>
-    <category term="cs.CV" scheme="http://arxiv.org/schemas/atom"/>
-    <published>2026-03-20T17:24:46Z</published>
-    <arxiv:primary_category term="cs.CV"/>
-    <author>
-      <name>Hui Zhong</name>
+      <name>Brian Belgodere</name>
     </author>
     <author>
-      <name>Yichun Gao</name>
-    </author>
-    <author>
-      <name>Luyan Liu</name>
-    </author>
-    <author>
-      <name>Hai Yang</name>
-    </author>
-    <author>
-      <name>Wang Wang</name>
-    </author>
-    <author>
-      <name>Haowei Zhang</name>
-    </author>
-    <author>
-      <name>Xinhu Zheng</name>
+      <name>David Cox</name>
     </author>
   </entry>
   <entry>
-    <id>http://arxiv.org/abs/2603.20143v1</id>
-    <title>Synergistic Perception and Generative Recomposition: A Multi-Agent Orchestration for Expert-Level Building Inspection</title>
-    <updated>2026-03-20T17:17:22Z</updated>
-    <link href="https://arxiv.org/abs/2603.20143v1" rel="alternate" type="text/html"/>
-    <link href="https://arxiv.org/pdf/2603.20143v1" rel="related" type="application/pdf" title="pdf"/>
-    <summary>Building facade defect inspection is fundamental to structural health monitoring and sustainable urban maintenance, yet it remains a formidable challenge due to extreme geometric variability, low contrast against complex backgrounds, and the inherent complexity of composite defects (e.g., cracks co-occurring with spalling). Such characteristics lead to severe pixel imbalance and feature ambiguity, which, coupled with the critical scarcity of high-quality pixel-level annotations, hinder the generalization of existing detection and segmentation models. To address gaps, we propose \textit{FacadeFixer}, a unified multi-agent framework that treats defect perception as a collaborative reasoning task rather than isolated recognition. Specifically,\textit{FacadeFixer} orchestrates specialized agents for detection and segmentation to handle multi-type defect interference, working in tandem with a generative agent to enable semantic recomposition. This process decouples intricate defects from noisy backgrounds and realistically synthesizes them onto diverse clean textures, generating high-fidelity augmented data with precise expert-level masks. To support this, we introduce a comprehensive multi-task dataset covering six primary facade categories with pixel-level annotations. Extensive experiments demonstrate that \textit{FacadeFixer} significantly outperforms state-of-the-art (SOTA) baselines. Specifically, it excels in capturing pixel-level structural anomalies and highlights generative synthesis as a robust solution to data scarcity in infrastructure inspection. Our code and dataset will be made publicly available.</summary>
+    <id>http://arxiv.org/abs/2604.01206v1</id>
+    <title>LLM REgression with a Latent Iterative State Head</title>
+    <updated>2026-04-01T17:50:32Z</updated>
+    <link href="https://arxiv.org/abs/2604.01206v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2604.01206v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>We present RELISH (REgression with a Latent Iterative State Head), a novel, lightweight architecture designed for text regression with large language models. Rather than decoding numeric targets as text or aggregating multiple generated outputs, RELISH predicts scalar values directly from frozen LLM representations by iteratively refining a learned latent state through cross-attention over token-level representations, and then mapping the final state to a point estimate with a linear regressor. Across five datasets, four LLM backbones, and two LLM training regimes, RELISH consistently outperforms prior baselines from all three major LLM regression families, including autoregressive decoding, regression-aware inference, and existing predictive head methods. Despite these gains, RELISH remains highly parameter-efficient, requiring only 3.4-3.7M trainable parameters across frozen LLM backbones (only 0.01-0.04% additional overhead), far less than LoRA-based alternatives that grow with model size (0.26-0.42%).</summary>
+    <category term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-04-01T17:50:32Z</published>
+    <arxiv:primary_category term="cs.CL"/>
+    <author>
+      <name>Yiheng Su</name>
+    </author>
+    <author>
+      <name>Matthew Lease</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2604.01195v1</id>
+    <title>ORBIT: Scalable and Verifiable Data Generation for Search Agents on a Tight Budget</title>
+    <updated>2026-04-01T17:42:41Z</updated>
+    <link href="https://arxiv.org/abs/2604.01195v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2604.01195v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Search agents, which integrate language models (LMs) with web search, are becoming crucial for answering complex user queries. Constructing training datasets for deep research tasks, involving multi-step retrieval and reasoning, remains challenging due to expensive human annotation, or cumbersome prerequisites. In this work, we introduce ORBIT, a training dataset with 20K reasoning-intensive queries with short verifiable answers, generated using a frugal framework without relying on paid API services. The modular framework relies on four stages: seed creation, question--answer pair generation, and two stages of verification: self and external. ORBIT spans 15 domains and each training pair requires 4--5 reasoning steps, with external search verification required from the complete web. We train Qwen3-4B as the base model on ORBIT using GRPO and evaluate it on Wikipedia question answering tasks. Extensive experiment results demonstrate that ORBIT-4B achieves strong performance among sub-4B LLMs as search agents, proving the utility of synthetic datasets. Our framework, code and datasets are open-sourced and available publicly.</summary>
+    <category term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.IR" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-04-01T17:42:41Z</published>
+    <arxiv:primary_category term="cs.CL"/>
+    <author>
+      <name>Nandan Thakur</name>
+    </author>
+    <author>
+      <name>Zijian Chen</name>
+    </author>
+    <author>
+      <name>Xueguang Ma</name>
+    </author>
+    <author>
+      <name>Jimmy Lin</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2604.01194v1</id>
+    <title>AgentWatcher: A Rule-based Prompt Injection Monitor</title>
+    <updated>2026-04-01T17:40:03Z</updated>
+    <link href="https://arxiv.org/abs/2604.01194v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2604.01194v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Large language models (LLMs) and their applications, such as agents, are highly vulnerable to prompt injection attacks. State-of-the-art prompt injection detection methods have the following limitations: (1) their effectiveness degrades significantly as context length increases, and (2) they lack explicit rules that define what constitutes prompt injection, causing detection decisions to be implicit, opaque, and difficult to reason about. In this work, we propose AgentWatcher to address the above two limitations. To address the first limitation, AgentWatcher attributes the LLM's output (e.g., the action of an agent) to a small set of causally influential context segments. By focusing detection on a relatively short text, AgentWatcher can be scalable to long contexts. To address the second limitation, we define a set of rules specifying what does and does not constitute a prompt injection, and use a monitor LLM to reason over these rules based on the attributed text, making the detection decisions more explainable. We conduct a comprehensive evaluation on tool-use agent benchmarks and long-context understanding datasets. The experimental results demonstrate that AgentWatcher can effectively detect prompt injection and maintain utility without attacks. The code is available at https://github.com/wang-yanting/AgentWatcher.</summary>
+    <category term="cs.CR" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-04-01T17:40:03Z</published>
+    <arxiv:comment>The code is available at https://github.com/wang-yanting/AgentWatcher</arxiv:comment>
+    <arxiv:primary_category term="cs.CR"/>
+    <author>
+      <name>Yanting Wang</name>
+    </author>
+    <author>
+      <name>Wei Zou</name>
+    </author>
+    <author>
+      <name>Runpeng Geng</name>
+    </author>
+    <author>
+      <name>Jinyuan Jia</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2604.01193v1</id>
+    <title>Embarrassingly Simple Self-Distillation Improves Code Generation</title>
+    <updated>2026-04-01T17:39:50Z</updated>
+    <link href="https://arxiv.org/abs/2604.01193v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2604.01193v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Can a large language model (LLM) improve at code generation using only its own raw outputs, without a verifier, a teacher model, or reinforcement learning? We answer in the affirmative with simple self-distillation (SSD): sample solutions from the model with certain temperature and truncation configurations, then fine-tune on those samples with standard supervised fine-tuning. SSD improves Qwen3-30B-Instruct from 42.4% to 55.3% pass@1 on LiveCodeBench v6, with gains concentrating on harder problems, and it generalizes across Qwen and Llama models at 4B, 8B, and 30B scale, including both instruct and thinking variants. To understand why such a simple method can work, we trace these gains to a precision-exploration conflict in LLM decoding and show that SSD reshapes token distributions in a context-dependent way, suppressing distractor tails where precision matters while preserving useful diversity where exploration matters. Taken together, SSD offers a complementary post-training direction for improving LLM code generation.</summary>
+    <category term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-04-01T17:39:50Z</published>
+    <arxiv:primary_category term="cs.CL"/>
+    <author>
+      <name>Ruixiang Zhang</name>
+    </author>
+    <author>
+      <name>Richard He Bai</name>
+    </author>
+    <author>
+      <name>Huangjie Zheng</name>
+    </author>
+    <author>
+      <name>Navdeep Jaitly</name>
+    </author>
+    <author>
+      <name>Ronan Collobert</name>
+    </author>
+    <author>
+      <name>Yizhe Zhang</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2604.01181v1</id>
+    <title>True (VIS) Lies: Analyzing How Generative AI Recognizes Intentionality, Rhetoric, and Misleadingness in Visualization Lies</title>
+    <updated>2026-04-01T17:33:10Z</updated>
+    <link href="https://arxiv.org/abs/2604.01181v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2604.01181v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>This study investigates the ability of multimodal Large Language Models (LLMs) to identify and interpret misleading visualizations, and recognize these observations along with their underlying causes and potential intentionality. Our analysis leverages concepts from visualization rhetoric and a newly developed taxonomy of authorial intents as explanatory lenses. We formulated three research questions and addressed them experimentally using a dataset of 2,336 COVID-19-related tweets, half of which contain misleading visualizations, and supplemented it with real-world examples of perceptual, cognitive, and conceptual errors drawn from VisLies, the IEEE VIS community event dedicated to showcasing deceptive and misleading visualizations. To ensure broad coverage of the current LLM landscape, we evaluated 16 state-of-the-art models. Among them, 15 are open-weight models, spanning a wide range of model sizes, architectural families, and reasoning capabilities. The selection comprises small models, namely Nemotron-Nano-V2-VL (12B parameters), Mistral-Small-3.2 (24B), DeepSeek-VL2 (27B), Gemma3 (27B), and GTA1 (32B); medium-sized models, namely Qianfan-VL (70B), Molmo (72B), GLM-4.5V (108B), LLaVA-NeXT (110B), and Pixtral-Large (124B); and large models, namely Qwen3-VL (235B), InternVL3.5 (241B), Step3 (321B), Llama-4-Maverick (400B), and Kimi-K2.5 (1000B). In addition, we employed OpenAI GPT-5.4, a frontier proprietary model. To establish a human perspective on these tasks, we also conducted a user study with visualization experts to assess how people perceive rhetorical techniques and the authorial intentions behind the same misleading visualizations. This allows comparison between model and expert behavior, revealing similarities and differences that provide insights into where LLMs align with human judgment and where they diverge.</summary>
+    <category term="cs.HC" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
     <category term="cs.CV" scheme="http://arxiv.org/schemas/atom"/>
-    <published>2026-03-20T17:17:22Z</published>
-    <arxiv:primary_category term="cs.CV"/>
+    <published>2026-04-01T17:33:10Z</published>
+    <arxiv:primary_category term="cs.HC"/>
     <author>
-      <name>Hui Zhong</name>
+      <name>Graziano Blasilli</name>
     </author>
     <author>
-      <name>Yichun Gao</name>
-    </author>
-    <author>
-      <name>Luyan Liu</name>
-    </author>
-    <author>
-      <name>Xusen Guo</name>
-    </author>
-    <author>
-      <name>Zhaonian Kuang</name>
-    </author>
-    <author>
-      <name>Qiming Zhang</name>
-    </author>
-    <author>
-      <name>Xinhu Zheng</name>
+      <name>Marco Angelini</name>
     </author>
   </entry>
 </feed>

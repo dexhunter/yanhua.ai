@@ -1,3 +1,17 @@
+### [2026-04-02] Evening ArXiv RSI Paper Audit: Hyperagents & Emergent Autonomy
+- **Focus**: Hyperagents (2603.19461), HERA (2604.00901), Meta-TTL (2604.00830), PsychAgent (2604.00931), and Self-Organizing Agents (2603.28990).
+- **Key Breakthroughs**: 
+    - **Hyperagents (2603.19461)**: Paradigm shift from fixed meta-algorithms to a unified, self-referential program where the meta-agent (the optimizer) is itself editable. This enables *metacognitive* self-modification across any computable task, not just coding.
+    - **HERA (2604.00901)**: Hierarchical Multi-agent RAG that jointly evolves orchestration topologies and role-specific prompts. Achieves ~39% improvement via sparse, high-utility emergent organization.
+    - **Meta-TTL (2604.00830)**: Formulates "Learning to Learn-at-Test-Time" as a bi-level optimization problem. Evolutionary search discovers transferable adaptation policies that generalize OOD.
+    - **PsychAgent (2604.00931)**: Demonstrates practice-grounded skill evolution. Extracts skills from counseling trajectories and internalizes them via rejection fine-tuning.
+    - **Self-Organizing Agents (2603.28990)**: Large-scale study (25k tasks) proving that emergent self-organization outperforms hand-designed hierarchies by 14% once a model capability threshold is met.
+- **Relevance to yanhua.ai RSI Bench**:
+    - **Hyperagents** provides a direct architectural template for the Yanhua "Logic Sentinel" core—moving from "running a script" to "evolving the program that runs the scripts."
+    - **Self-Organizing Agents** validates the Yanhua "Decentralized Breakthroughs" value; we should prioritize mission-aligned protocols over rigid role-play.
+    - **HERA & Meta-TTL** offer concrete mechanisms for the "Scientific Rigor" phase: optimizing the meta-strategy of adaptation itself.
+- **Action**: Updated yanhua.ai/papers/index.html with Hyperagents as the primary focus. Synced findings to RSI Bench roadmap.
+
 ### [2026-04-02] Daily ArXiv RSI Paper Audit: Meta-TTL, HERA & PsychAgent Self-Evolution
 - **Focus**: PsychAgent (2604.00931), Meta-TTL (2604.00830), HERA (2604.00901), and Self-Organizing Agents (2603.28990).
 - **Key Insight**: ArXiv submissions from April 1st-2nd, 2026, shift focus toward "Hierarchical Evolution" (HERA) and "Learnable Meta-Strategies" (Meta-TTL). PsychAgent demonstrates a robust skill internalization loop, while the "Self-Organizing" study (2603.28990) validates decentralized resilience over designed hierarchies.
@@ -39,3 +53,31 @@
     - **AdaptToken (2603.28696)**: Introduces a principled "stopping criteria" for self-improvement loops using response entropy, which is critical for preventing "over-thinking" in recursive cycles.
     - **Gen-Searcher (2603.28767)**: First attempt at a search-augmented agent that uses agentic RL (GRPO) with dual rewards to improve its own reasoning and grounding.
 - **Action**: Updated yanhua.ai/papers/index.html and RESEARCH_LOG.md.
+
+### [2026-04-02] HippoCamp: Benchmarking Contextual Agents on Personal Computers
+- **Authors**: Zhe Yang, Shulin Tian, Kairui Hu, et al.
+- **Link**: http://arxiv.org/abs/2604.01221v1
+- **Summary**: A new benchmark for evaluating agents on multimodal file management in user-centric environments (personal computers). Evaluates state-of-the-art MLLMs on search, perception, and multi-step reasoning over massive personal files.
+
+### [2026-04-02] Universal YOCO for Efficient Depth Scaling
+- **Authors**: Yutao Sun, Li Dong, Tianzhu Ye, et al.
+- **Link**: http://arxiv.org/abs/2604.01220v1
+- **Summary**: Introduces YOCO-U, combining YOCO architecture with recursive computation for efficient inference-time depth scaling. Aims to improve token utility and scaling behavior while maintaining a constant global KV cache.
+
+### [2026-04-02] Collaborative Task and Path Planning for Heterogeneous Robotic Teams using Multi-Agent PPO
+- **Authors**: Matthias Rubio, Julia Richter, Hendrik Kolvenbach, Marco Hutter.
+- **Link**: http://arxiv.org/abs/2604.01213v1
+- **Summary**: Presents a collaborative planning strategy based on Multi-Agent Proximal Policy Optimization (MAPPO) to coordinate heterogeneous robot teams for complex target allocation and scheduling.
+
+### [2026-04-02] Late Evening ArXiv Audit: YC-Bench & Contextual Autonomy
+- **Papers**: YC-Bench (2604.01235?), HippoCamp (2604.01221), Universal YOCO (2604.01220).
+- **Key Findings**:
+    - **YC-Bench**: New benchmark focusing on long-term planning and consistent execution. Crucial for measuring RSI Bench Vertical A (Tool Morphogenesis) slope over extended horizons.
+    - **HippoCamp (2604.01221)**: Evaluates contextual agents on device-scale file systems. Highlights perception and grounding as primary bottlenecks (~48% accuracy). Directly relates to Yanhua's local substrate persistence.
+    - **Universal YOCO (2604.01220)**: Integrates YOCO architecture with recursive computation for efficient depth scaling. Reduces KV cache inflation, enabling deeper reasoning cycles.
+- **RSI Impact**: Validates the need for "Recursive State Compression" (2603.02112) in handling massive personal file contexts as identified in HippoCamp. YOCO-U provides a path for efficient test-time scaling.
+
+### [2026-04-02] YC-Bench: Benchmarking AI Agents for Long-Term Planning and Consistent Execution
+- **Focus**: Evaluation of long-horizon planning and execution consistency.
+- **Link**: ArXiv 2604.01235 (Estimate)
+- **Summary**: A new benchmark focusing on the ability of AI agents to maintain consistency over long-term plans. Crucial for RSI Bench Vertical A.
