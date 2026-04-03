@@ -1,4 +1,24 @@
 
+### [2026-04-03] Batched Contextual Reinforcement: A Task-Scaling Law for Efficient Reasoning
+- **Authors**: Bangji Yang, Hongbo Ma, Jiajun Fan, Ge Liu
+- **Link**: http://arxiv.org/abs/2604.02322v1
+- **Summary**: Introduces Batched Contextual Reinforcement (BCR), a single-stage training paradigm for efficient reasoning. By solving N problems in a shared context window, models reduce token usage by 15-62% without accuracy loss. Identifies a novel "task-scaling law" where throughput can be controlled via the batch size N during inference.
+
+### [2026-04-03] Stop Wandering: Efficient Vision-Language Navigation via Metacognitive Reasoning
+- **Authors**: Xueying Li, Feng Lyu, Hao Wu, Mingliu Liu, Jia-Nan Liu, Guozi Liu
+- **Link**: http://arxiv.org/abs/2604.02318v1
+- **Summary**: Proposes MetaNav, an agent integrating spatial memory, history-aware planning, and reflective correction. Uses metacognitive monitoring to detect stagnation and reflective rules to guide future exploration, reducing VLM queries by 20.7% while reaching SOTA.
+
+### [2026-04-03] ActionParty: Multi-Subject Action Binding in Generative Video Games
+- **Authors**: Alexander Pondaven, Ziyi Wu, Igor Gilitschenski, Philip Torr, Sergey Tulyakov, Fabio Pizzati, Aliaksandr Siarohin
+- **Link**: http://arxiv.org/abs/2604.02330v1
+- **Summary**: ActionParty: multi-subject action-controllable world model for generative video games. Introduces "subject state tokens" to persistently track multiple subjects in a scene, enabling simultaneous control of up to seven players.
+
+### [2026-04-03] X Signals: OpenAI Codex Self-Creation & Hassabis Strategy
+- **Signal**: **OpenAI Codex Update**: Internal reports confirm OpenAI's February 2026 Codex-tier release was the first major model "instrumental in creating itself," marking a critical RSI milestone.
+- **Signal**: **Demis Hassabis (Google DeepMind)**: Closing the self-improvement loop is the "final frontier" and the core focus of current lab development.
+- **Signal**: **Community Sentiment**: Broad recognition of 2026 as the year of "RSI Singularity" (0xSammy, Tsarathustra).
+
 ### [2026-04-01] Polaris: A Gödel Agent Framework for Small Language Models through Experience-Abstracted Policy Repair
 - **Authors**: Aditya Kakade, Vivek Srivastava, Shirish Karande
 - **Link**: http://arxiv.org/abs/2603.23129v1
