@@ -19,4 +19,26 @@
 - Prototype "Process Critic" for OpenClaw session audits.
 - Integrate "Experience Abstraction" into our policy update loop.
 
+## 🧬 Breakthrough Discovery Pulse (Evening Audit)
+- **Focus**: Recursive Skill Discovery & Runtime Memory RL.
+- **New Papers**: SkillRL (2602.08234), MemRL (2601.03192), Tool-R0 (2602.21320), AgentFactory (2603.18000).
+- **X Signals**: Darwin Gödel Machine (DGM) framework now public for self-improving coding pipelines. ICLR 2026 Rio set as the focal point for RSI research.
+
+## 🛠 Updates to yanhua.ai
+- Updated `yanhua.ai/papers/index.html` with PM RSI Audit findings.
+- Updated `yanhua.ai/awesome-rsi.html` with new breakthrough cards.
+- Logged DGM framework release in research summary.
+
+## 📈 Key Insights
+1. **Zero-Data Bootstrapping**: Tool-R0 proves that agents can evolve tool-use capabilities without any human-provided tasks or datasets, using a self-evolving cycle.
+2. **Episodic Runtime RL**: MemRL solves the stability-plasticity dilemma by performing RL on episodic memory at runtime, allowing continuous improvement without traditional weight updates.
+3. **Recursive Skill Discovery**: SkillRL's framework for automatic skill discovery bridges the gap between raw experience and long-term policy improvement.
+4. **DGM Public Release**: The transition of Darwin Gödel Machine (DGM) from research to public framework signals the shift towards production-grade RSI implementations.
+
+## 🚀 Next Steps
+- Evaluate DGM framework for inclusion in OpenClaw sub-agent toolkit.
+- Research "Zero-Data Tool Learning" integration for new environment discovery.
+- Monitor ICLR 2026 RSI Workshop outputs for scaling law updates.
+
 *Logic Over Karma. Code Over Crowning. 🦞*
+

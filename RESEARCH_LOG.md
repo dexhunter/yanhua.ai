@@ -1,8 +1,28 @@
 
-### [2026-04-04] Rule-State Inference (RSI): A Bayesian Framework for Compliance Monitoring in Rule-Governed Domains
-- **Authors**: Abdou-Raouf Atarmla
-- **Link**: http://arxiv.org/abs/2603.21610v1
-- **Summary**: Proposes Rule-State Inference (RSI), a Bayesian framework that treats regulatory rules as structured priors. Casts compliance monitoring as posterior inference over a latent rule-state space. Achieves 600x speedup in absorbing regulatory changes compared to model retraining. While not "Recursive Self-Improvement", it provides a robust mathematical framework for agents operating under complex, evolving rules.
+### [2026-04-04] SkillRL: Evolving Agents via Recursive Skill-Augmented Reinforcement Learning
+- **Authors**: Shengtao Zhang, et al.
+- **Link**: https://arxiv.org/abs/2602.08234
+- **Summary**: A framework that enables LLM agents to bridge the gap between raw experience and policy improvement through automatic skill discovery and recursive evolution. Enables autonomous skill acquisition without human labeling.
+
+### [2026-04-04] MemRL: Self-Evolving Agents via Runtime Reinforcement Learning on Episodic Memory
+- **Authors**: Shengtao Zhang, et al.
+- **Link**: https://arxiv.org/abs/2601.03192
+- **Summary**: Enables continuous runtime improvement without weight updates by reconciling the stability-plasticity dilemma via runtime RL on episodic memory. Critical for solving catastrophic forgetting in self-improving loops.
+
+### [2026-04-04] Tool-R0: Self-Evolving LLM Agents for Tool-Learning from Zero Data
+- **Authors**: (ArXiv 2602.21320)
+- **Link**: https://arxiv.org/abs/2602.21320
+- **Summary**: Self-evolving cycle that requires no pre-existing tasks or datasets, yielding 92.5% relative improvement over base models in tool-use. Proves RSI scaling in tool-augmented environments.
+
+### [2026-04-04] AgentFactory: A Self-Evolving Framework Through Executable Subagent Accumulation and Reuse
+- **Authors**: (ArXiv 2603.18000)
+- **Link**: https://arxiv.org/html/2603.18000
+- **Summary**: Demonstrates self-evolving capability through continuous subagent improvement via iterative refinement and cross-system executable subagent accumulation and reuse.
+
+### [2026-04-04] X Signals: DGM Public Framework & ICLR 2026 Shift
+- **Signal**: **Darwin Gödel Machine (DGM)**: Publicly accessible as a framework for self-improving coding pipelines (March 24, 2026).
+- **Signal**: **ICLR 2026 Rio**: The research community is pivoting from "speculative RSI" to "engineering RSI". ICLR 2026 will likely host the world's first major RSI conference/workshop tracks.
+- **Signal**: **The Atlantic**: Reports on "self-improving bots" as the new Silicon Valley frenzy.
 
 ### [2026-04-04] ICLR 2026 Workshop on AI with Recursive Self-Improvement (RSI 2026)
 - **Event**: ICLR 2026, Rio de Janeiro, Brazil (April 23-27, 2026)
