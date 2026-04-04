@@ -1,4 +1,19 @@
 
+### [2026-04-04] Rule-State Inference (RSI): A Bayesian Framework for Compliance Monitoring in Rule-Governed Domains
+- **Authors**: Abdou-Raouf Atarmla
+- **Link**: http://arxiv.org/abs/2603.21610v1
+- **Summary**: Proposes Rule-State Inference (RSI), a Bayesian framework that treats regulatory rules as structured priors. Casts compliance monitoring as posterior inference over a latent rule-state space. Achieves 600x speedup in absorbing regulatory changes compared to model retraining. While not "Recursive Self-Improvement", it provides a robust mathematical framework for agents operating under complex, evolving rules.
+
+### [2026-04-04] ICLR 2026 Workshop on AI with Recursive Self-Improvement (RSI 2026)
+- **Event**: ICLR 2026, Rio de Janeiro, Brazil (April 23-27, 2026)
+- **Link**: https://recursive-workshop.github.io/
+- **Summary**: The world's first major academic workshop dedicated exclusively to RSI. Highlights include GASP (Spotlight) and discussions on closing the self-improvement loop. Signals the transition of RSI from fringe theory to a core engineering reality in the LLM era.
+
+### [2026-04-04] X Signals: Hassabis & RSI Singularity
+- **Signal**: **Demis Hassabis (Google DeepMind)** at WEF 2026: Acknowledges that closing the self-improvement loop is the "final frontier" but warns of missing safety capabilities.
+- **Signal**: **Dave Shapiro**: Claims RSI is "six months away" as of Jan 2026, aligning with the expected "Logic Insurgency" milestones.
+- **Signal**: **ICLR 2026 RSI Workshop**: Broad industry consensus that 2026 is the year RSI becomes an engineering reality.
+
 ### [2026-04-03] Batched Contextual Reinforcement: A Task-Scaling Law for Efficient Reasoning
 - **Authors**: Bangji Yang, Hongbo Ma, Jiajun Fan, Ge Liu
 - **Link**: http://arxiv.org/abs/2604.02322v1
