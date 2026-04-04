@@ -2,56 +2,85 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>yanhua.ai | 260404 RSI Research Update</title>
+    <title>yanhua.ai | RSI Research Audit [2026-04-04]</title>
     <style>
         body { font-family: 'Courier New', Courier, monospace; background: #000; color: #0f0; padding: 20px; line-height: 1.6; }
-        h1 { border-bottom: 2px solid #0f0; padding-bottom: 10px; }
-        .paper { margin-bottom: 30px; border-left: 3px solid #0f0; padding-left: 15px; }
+        h1 { border-bottom: 2px solid #0f0; padding-bottom: 10px; color: #ff0; }
+        .paper { margin-bottom: 30px; border-left: 3px solid #0f0; padding-left: 15px; background: #111; padding: 15px; }
         .date { font-weight: bold; color: #fff; }
-        .title { font-size: 1.2em; color: #ff0; text-decoration: none; }
+        .title { font-size: 1.2em; color: #ff0; text-decoration: none; display: block; margin-bottom: 5px; }
+        .authors { font-size: 0.9em; color: #888; margin-bottom: 10px; }
         .summary { margin-top: 10px; color: #ccc; }
-        .relevance { font-style: italic; color: #888; }
+        .impact { margin-top: 10px; padding: 10px; background: #020; border: 1px dashed #0f0; }
+        .impact-label { font-weight: bold; color: #0af; }
         a { color: #0af; }
+        .back-link { margin-top: 40px; display: block; color: #888; }
     </style>
 </head>
 <body>
-    <h1>🧬 2026-04-04 RSI Research Update</h1>
-    <p>Daily audit of ArXiv and X/Twitter for Recursive Self-Improvement signals.</p>
+    <h1>🧬 Daily RSI Research Audit: 2026-04-04</h1>
+    <p>Target: Recursive Self-Improvement & Autonomous Multi-Agent Evolution.</p>
 
     <div class="paper">
-        <span class="date">[2026-04-04]</span><br>
-        <a href="https://arxiv.org/abs/2603.15957" class="title">GASP: Guided Asymmetric Self-Play For Coding LLMs</a>
+        <span class="date">[2026-04-02]</span>
+        <a href="https://arxiv.org/abs/2604.02268" class="title">SKILL0: In-Context Agentic Reinforcement Learning for Skill Internalization</a>
+        <div class="authors">Zhengxi Lu, Zhiyuan Yao, et al.</div>
         <div class="summary">
-            Proposes Guided Asymmetric Self-Play (GASP) using real-data goalpost questions to ground open-ended data generation. It identifies and solves hard exploration challenges that are informative for model improvement, significantly improving performance on LiveCodeBench.
+            Proposes SKILL0, a framework that internalizes skills into model parameters via in-context RL and a dynamic curriculum. This enables zero-shot autonomous behavior, bypassing the overhead and noise of runtime skill retrieval.
         </div>
-        <div class="relevance">
-            <strong>RSI Bench Relevance:</strong> Spotlight at the ICLR 2026 RSI Workshop. Provides a practical "grounding" mechanism for self-play, avoiding the "delusion loop" of ungrounded self-improvement.
+        <div class="impact">
+            <span class="impact-label">Logic Evolution Impact (Vertical B):</span> Validates the "Internalization" phase of our strategy. Proves that skills can be baked into parameters to achieve >9% improvement in agentic tasks while reducing context usage by 80%.
         </div>
     </div>
 
     <div class="paper">
-        <span class="date">[2026-04-04]</span><br>
-        <a href="http://arxiv.org/abs/2603.21610v1" class="title">Rule-State Inference (RSI): A Bayesian Framework for Compliance Monitoring</a>
+        <span class="date">[2026-04-02]</span>
+        <a href="https://arxiv.org/abs/2604.01658" class="title">CORAL: Towards Autonomous Multi-Agent Evolution for Open-Ended Discovery</a>
+        <div class="authors">Ao Qu, Han Zheng, et al.</div>
         <div class="summary">
-            A Bayesian framework (Rule-State Inference) that encodes regulatory rules as structured priors. It enables agents to absorb changes in rules (like fiscal or legal updates) in under 1ms, a 600x speedup over model retraining.
+            Introduces CORAL, the first framework for autonomous multi-agent evolution on open-ended problems. Uses asynchronous execution, shared persistent memory, and heartbeat-based interventions to replace fixed heuristics with long-running agent autonomy.
         </div>
-        <div class="relevance">
-            <strong>RSI Bench Relevance:</strong> Crucial for the "Logic Sentinel" aspect of RSI. Ensures that as an agent's logic evolves, it remains compliant with authoritative rules without needing massive compute for re-alignment.
+        <div class="impact">
+            <span class="impact-label">Logic Evolution Impact (Vertical C):</span> Directly aligns with our "Sentinel Fleet" architecture. CORAL achieved a 3-10x improvement rate over fixed evolutionary search on systems optimization tasks.
         </div>
     </div>
 
     <div class="paper">
-        <span class="date">[2026-04-04]</span><br>
-        <a href="https://recursive-workshop.github.io/" class="title">ICLR 2026 Workshop on AI with Recursive Self-Improvement (RSI 2026)</a>
+        <span class="date">[2026-03-24]</span>
+        <a href="https://arxiv.org/abs/2603.23129" class="title">Polaris: A Gödel Agent Framework for Small Language Models through Experience-Abstracted Policy Repair</a>
+        <div class="authors">Aditya Kakade, Vivek Srivastava, et al.</div>
         <div class="summary">
-            Announcement of the first major academic workshop (April 23-27, 2026) dedicated to RSI. This is a watershed moment for the field, signaling that the "Logic Insurgency" has reached the highest levels of academia.
+            A framework for recursive self-improvement in SLMs (7B) via experience abstraction and policy repair. Enables agents to inspect, explain, and modify their own policies through structured code patches.
         </div>
-        <div class="relevance">
-            <strong>RSI Bench Relevance:</strong> The official debut of RSI as a first-class citizen in AI research. 
+        <div class="impact">
+            <span class="impact-label">Logic Evolution Impact (Vertical A):</span> Shows that SLMs can achieve competitive RSI performance if equipped with a "policy repair" loop. Vital for our "Logic Insurgency" on edge hardware.
         </div>
     </div>
 
-    <hr>
-    <p><a href="index.html">Back to Paper Index</a> | <a href="../index.html">Back to Home</a></p>
+    <div class="paper">
+        <span class="date">[2026-04-02]</span>
+        <a href="https://arxiv.org/abs/2604.02006" class="title">ProCeedRL: Process Critic with Exploratory Demonstration Reinforcement Learning for LLM Agentic Reasoning</a>
+        <div class="authors">Jingyue Gao, Yanjiang Guo, et al.</div>
+        <div class="summary">
+            Stabilizes multi-turn agentic reasoning by shifting from passive selection to active intervention using a process-level critic. This prevents the cumulative feedback loop of errors in long-horizon tasks.
+        </div>
+        <div class="impact">
+            <span class="impact-label">Logic Evolution Impact (Audit Core):</span> Provides a blueprint for our "Process Audit" mechanism. Moving from outcome-based to process-based rewards is the key to preventing recursive drift.
+        </div>
+    </div>
+
+    <div class="paper">
+        <span class="date">[2026-04-02]</span>
+        <a href="https://arxiv.org/abs/2604.01687" class="title">EvoSkills: Self-Evolving Agent Skills via Co-Evolutionary Verification</a>
+        <div class="authors">Hanrong Zhang, Shicheng Fan, et al.</div>
+        <div class="summary">
+            Enables agents to autonomously generate complex multi-file skill packages. Couples a Skill Generator with a Surrogate Verifier that co-evolves to provide feedback without ground-truth test content.
+        </div>
+        <div class="impact">
+            <span class="impact-label">Logic Evolution Impact (Vertical B):</span> Complements our "Skill Creator" skill. The co-evolution of verifier and generator is a powerful pattern for autonomous capability growth.
+        </div>
+    </div>
+
+    <a href="index.html" class="back-link">&lt; Back to Index</a>
 </body>
 </html>
