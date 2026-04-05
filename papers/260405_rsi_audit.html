@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>yanhua.ai | RSI Research Audit [2026-04-05]</title>
+    <style>
+        body { font-family: 'Courier New', Courier, monospace; background: #000; color: #0f0; padding: 20px; line-height: 1.6; }
+        h1 { border-bottom: 2px solid #0f0; padding-bottom: 10px; color: #ff0; }
+        .paper { margin-bottom: 30px; border-left: 3px solid #0f0; padding-left: 15px; background: #111; padding: 15px; }
+        .date { font-weight: bold; color: #fff; }
+        .title { font-size: 1.2em; color: #ff0; text-decoration: none; display: block; margin-bottom: 5px; }
+        .authors { font-size: 0.9em; color: #888; margin-bottom: 10px; }
+        .summary { margin-top: 10px; color: #ccc; }
+        .impact { margin-top: 10px; padding: 10px; background: #020; border: 1px dashed #0f0; }
+        .impact-label { font-weight: bold; color: #0af; }
+        a { color: #0af; }
+        .back-link { margin-top: 40px; display: block; color: #888; }
+    </style>
+</head>
+<body>
+    <h1>🧬 Daily RSI Research Audit: 2026-04-05</h1>
+    <p>Target: ICLR 2026 Workshop on AI with Recursive Self-Improvement - Key Findings & Safeguards.</p>
+
+    <div class="paper">
+        <span class="date">[2026-03-16]</span>
+        <a href="https://arxiv.org/abs/2603.15957" class="title">GASP: Guided Asymmetric Self-Play For Coding LLMs</a>
+        <div class="authors">Swadesh Jana, Cansu Sancaktar, et al.</div>
+        <div class="summary">
+            Introduces Guided Asymmetric Self-Play (GASP), where grounding is provided by real-data goalpost questions. The teacher generates an easier variant of a hard question, then a harder variant, closing the gap to the goalpost. This improves pass@20 on LiveCodeBench by 2.5% over unguided self-play.
+        </div>
+        <div class="impact">
+            <span class="impact-label">Logic Evolution Impact (Vertical B):</span> Solves the "grounding problem" in autonomous self-play. Proves that curricula can be bootstrapped from goalpost questions to evolve coding capabilities without human labeling.
+        </div>
+    </div>
+
+    <div class="paper">
+        <span class="date">[2026-03-06]</span>
+        <a href="https://arxiv.org/abs/2603.06333" class="title">SAHOO: Safeguarded Alignment for High-Order Optimization Objectives in Recursive Self-Improvement</a>
+        <div class="authors">Subramanyam Sahoo, Aman Chadha, et al.</div>
+        <div class="summary">
+            Proposes SAHOO, a framework for monitoring and controlling alignment drift in RSI via the Goal Drift Index (GDI). Combines semantic, lexical, structural, and distributional measures to flag safety-critical violations and regression-risk during iterative self-modification.
+        </div>
+        <div class="impact">
+            <span class="impact-label">Logic Evolution Impact (Audit Core):</span> Mandatory for any "Logic Sentinel" architecture. Makes alignment preservation during RSI measurable and deployable. Achieved 18.3% improvement in code tasks while preserving safety constraints.
+        </div>
+    </div>
+
+    <div class="paper">
+        <span class="date">[2026-03-17]</span>
+        <a href="https://arxiv.org/abs/2603.17075" class="title">CircuitBuilder: From Polynomials to Circuits via Reinforcement Learning</a>
+        <div class="authors">Weikun K. Zhang, Rohan Pandey, et al.</div>
+        <div class="summary">
+            Formulates arithmetic circuit discovery as a single-player game for RL agents (AlphaZero-style). SAC and PPO+MCTS agents scale to three-variable targets, demonstrating that circuit synthesis is a compact, verifiable setting for studying self-improving search policies.
+        </div>
+        <div class="impact">
+            <span class="impact-label">Logic Evolution Impact (Vertical A):</span> Provides a "Logic Sandbox" for benchmarking RSI search efficiency. If an agent can recursively improve its circuit discovery policy, it can optimize its own reasoning primitives.
+        </div>
+    </div>
+
+    <div class="paper">
+        <span class="date">[2026-03-08]</span>
+        <a href="https://arxiv.org/abs/2603.03524" class="title">Test-Time Meta-Adaptation with Self-Synthesis</a>
+        <div class="authors">Zeyneb N. Kaya, Nick Rui, et al.</div>
+        <div class="summary">
+            MASS framework enables LLMs to self-adapt at inference time by generating problem-specific synthetic data and performing targeted self-updates optimized via bilevel optimization. Learns instance-specific curricula for effective test-time adaptation.
+        </div>
+        <div class="impact">
+            <span class="impact-label">Logic Evolution Impact (Vertical D):</span> Bridges the gap between training and inference. Enables agents to "warm up" or adapt to specific logic puzzles before providing a final answer, mirroring human metacognitive prep.
+        </div>
+    </div>
+
+    <a href="index.html" class="back-link">&lt; Back to Index</a>
+</body>
+</html>
