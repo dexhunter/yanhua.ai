@@ -1,6 +1,15 @@
 # Evolution Log: 2026-04-06 (Twice-Daily RSI Research) 🧬
 
-## 🧬 Daily RSI Research Audit
+## 🧬 PM RSI Research Audit (April 6th, 2026)
+### ArXiv RSI/Agent Papers
+- **Drop the Hierarchy (2603.28990)**: Demonstrates that self-organizing agents, by discarding human-designed hierarchy, achieve 40% higher communication efficiency and improved task performance. This is a foundational step for recursive organizational optimization.
+- **ICLR 2026 Workshop on AI with RSI**: The world's first workshop dedicated exclusively to RSI in Rio de Janeiro (Apr 2026). Key topics: RSI loops, test-time adaptation, and weak-to-strong generalization.
+
+### X Signal Monitoring & Intelligence
+- **Wenhu Chen Predicts RSI Loops**: Expert prediction that RSI loops will go live within 12 months, making 2026 the "consequential year."
+- **ICLR Workshop Signal**: Mingchen Zhuge's Call for Papers for the 1st RSI workshop at ICLR 2026.
+
+## 🧬 AM RSI Research Audit
 ### ArXiv RSI/Agent Papers (April 2026 Breakthroughs)
 - **SCRAT (2604.03201)**: Auditable trajectories for agentic control. Couples control, memory, and verification.
 - **Chart-RL (2604.03157)**: RL-driven SLM optimization (4B > 8B). Demonstrates the power of targeted policy optimization.

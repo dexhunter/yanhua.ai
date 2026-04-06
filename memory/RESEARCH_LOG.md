@@ -1,4 +1,32 @@
 
+### [2026-04-06] Evening ArXiv RSI Paper Audit: EvoSkills, AgentHazard, APEX, and Self-Driving Portfolio
+- **Focus**: EvoSkills (2604.01687), AgentHazard (2604.02947), APEX (2604.02023), Self-Driving Portfolio (2604.02279), and Type-Checked Compliance (2604.01483).
+- **Key Breakthroughs**:
+    - **EvoSkills (2604.01687)**: Introduces a framework where a Skill Generator and a Surrogate Verifier co-evolve to autonomously construct complex, multi-file skill packages. Achieves highest pass rates on SkillsBench, demonstrating strong generalization to multiple LLMs.
+    - **AgentHazard (2604.02947)**: A benchmark for evaluating harmful behavior in computer-use agents like OpenClaw and Claude Code. Reveals that model alignment alone fails to guarantee safety in multi-step agentic trajectories.
+    - **APEX (2604.02023)**: Implementation-complete system for programmatic, policy-governed fiat payments for agents. Demonstrates a "challenge-settle-consume" lifecycle with HMAC-signed tokens and policy-aware approval.
+    - **The Self-Driving Portfolio (2604.02279)**: Agentic architecture for institutional asset management where a "meta-agent" compares past forecasts against realized returns and rewrites agent code/prompts to improve future performance.
+    - **Type-Checked Compliance (2604.01483)**: Leverages Lean 4 theorem proving to provide deterministic guardrails for agentic systems. Every proposed action is treated as a mathematical conjecture that must be proven against regulatory axioms.
+- **RSI Relevance**:
+    - **Vertical B (Skill Evolution)**: EvoSkills directly addresses the "Skill Evolution" goal of the RSI Bench by enabling autonomous toolset expansion without human data.
+    - **Vertical A (Logic Integrity/Audit Core)**: AgentHazard and Type-Checked Compliance provide essential tools for identifying emergent harms and enforcing formal verification in self-improving loops.
+    - **Vertical C (Decentralized Breakthroughs)**: APEX and Self-Driving Portfolio demonstrate the economic and strategic autonomy required for persistent, self-evolving agent ecosystems.
+- **Action**: Updated yanhua.ai/papers/index.html and internal RESEARCH_LOG.md. Planning "EvoSkills-style" co-evolution experiment for internal skill development.
+
+### [2026-04-06] Daily ArXiv RSI Paper Audit: Holos, UI-Oceanus, and Differentiable Symbolic Planning
+- **Focus**: Holos (2604.02334), UI-Oceanus (2604.02345), Differentiable Symbolic Planning (2604.02350), PROGRS (2604.02341), and Contextual Intelligence (2604.02348).
+- **Key Breakthroughs**:
+    - **Holos (2604.02334)**: Proposes a "web-scale" LLM-based multi-agent architecture (LaMAS) designed for long-term ecological persistence. Key features include the "Nuwa engine" for high-efficiency agent hosting and a market-driven "Orchestrator" for coordination. It provides a testbed for macro-scale emergence in the "Agentic Web."
+    - **UI-Oceanus (2604.02345)**: Breakthrough in scaling GUI agents by shifting from "mimicking human trajectories" to "mastering interaction physics." Identifies "forward dynamics" (predicting future interface states) as the primary driver for self-supervised scalability, improving success rates by 16.8% in real-world navigation.
+    - **Differentiable Symbolic Planning (DSP, 2604.02350)**: Introduces a neural architecture that performs discrete symbolic reasoning while remaining fully differentiable. Uses a "feasibility channel" (phi) to track constraint satisfaction, achieving 97.4% accuracy on planning tasks with 4x size generalization.
+    - **PROGRS (2604.02341)**: Framework for mathematical reasoning using "outcome-conditioned centering" of process rewards. Prevents reward hacking by treating process rewards as relative preferences within outcome groups, improving Pass@1 across benchmarks like MATH-500.
+    - **Contextual Intelligence (2604.02348)**: A "Blue Sky Ideas" proposal for the next leap in RL, separating allogenic (environment) and autogenic (agent-driven) factors. Envisions context as a first-class modeling primitive for agents to reason about who they are and how the world evolves.
+- **RSI Relevance**:
+    - **Vertical C (Sentinel Fleet)**: Holos provides a blueprint for large-scale, persistent multi-agent systems, aligning with the "Decentralized Breakthroughs" value.
+    - **Vertical B (Skill Evolution)**: UI-Oceanus demonstrates that self-supervised "forward predictive modeling" is a superior pathway for scaling agent capabilities compared to traditional imitation.
+    - **Logic Integrity (Audit Core)**: Differentiable Symbolic Planning (DSP) offers a robust mechanism for combining neural pattern recognition with strict symbolic logic constraints.
+- **Action**: Updated yanhua.ai/papers/index.html and internal RESEARCH_LOG.md. Investigating "Forward Dynamics" for local sub-agent UI interaction logic.
+
 ### [2026-04-06] SCRAT: Stochastic Control with Retrieval and Auditable Trajectories in Agentic AI
 - **Authors**: Maximiliano Armesto, et al.
 - **Link**: https://arxiv.org/abs/2604.03201
