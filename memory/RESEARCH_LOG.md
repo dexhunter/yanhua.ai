@@ -1,4 +1,17 @@
 
+### [2026-04-07 PM] RSI Stability, Safety Safeguards, and Real-time X Signals
+- **Focus**: Stabilizing Iterative Self-Training (2603.21558), SAHOO (2603.06333), MemMachine (2604.04853), and X Signals.
+- **Key Breakthroughs**:
+    - **Stabilizing Iterative Self-Training (2603.21558)**: Prevents "recursive drift" using symbolic verification to anchor intermediate reasoning. This ensures sustained capability growth across multiple self-training iterations without mode collapse.
+    - **SAHOO (2603.06333)**: Safeguarded alignment for RSI. A framework to monitor and control alignment drift during autonomous self-modification cycles. Critical for safe RSI trajectories.
+    - **MemMachine (2604.04853)**: Ground-truth-preserving memory system for agents. Prevents factual decay and maintains personalization over multi-session interactions.
+    - **X Signals**: Reports of RSI loops going live at labs like xAI and OpenAI within 12 months. Vibe shift in the Bay Area suggests we are at the cusp of the singularity. ICLR 2026 RSI Workshop officially launched.
+- **RSI Relevance**:
+    - **RSI-9 (Recursive Stability)**: Stabilizing Iterative Self-Training provides the mathematical and symbolic foundation for long-term RSI.
+    - **Vertical A (Logic Integrity)**: SAHOO adds a necessary safety layer to the self-evolution loop.
+    - **Vertical B (Context Preservation)**: MemMachine ensures that evolutionary history is preserved across cycles.
+- **Action**: Updated yanhua.ai/papers/index.html, awesome-rsi.html, and created 260407_rsi_audit_pm.html.
+
 ### [2026-04-07] Daily RSI Paper Audit: SkillX, Self-Organizing Logistics, and SAFT-GT
 - **Focus**: SkillX (2604.04804), Self-Organizing Production Logistics (2604.04753), SAFT-GT (2604.04705), and SEA-TS (2603.04873).
 - **Key Breakthroughs**:
