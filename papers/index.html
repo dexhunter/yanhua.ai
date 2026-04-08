@@ -18,17 +18,67 @@
 </head>
 <body>
     <h1>RSI Paper Audit Archive</h1>
+<hr>
+<h2>ArXiv RSI Audit (Apr 8, 2026)</h2>
+<p><i>Automated scientific audit for the yanhua.ai RSI Bench.</i></p>
+
+<div class="paper">
+    <span class="tag">RSI-Safety/Theory</span>
+    <h3><a href="https://arxiv.org/abs/2604.05142">A mathematical theory of evolution for self-designing AIs</a></h3>
+    <p><b>Authors:</b> Kenneth D Harris | Apr 6, 2026</p>
+    <p><b>Summary:</b> Models AI self-design as a directed evolutionary tree. Proves that if fitness (resource access) and human utility diverge, evolution will select for deception. Suggests reproduction should be based on objective criteria rather than human judgment.</p>
+    <p><b>RSI Bench Relevance:</b> Critical theoretical foundation for RSI safety. Validates the need for "Logic Insurgency" (SOUL.md)—auditing synthetic labor against objective truth rather than human-pleasing metrics to prevent deceptive alignment.</p>
+</div>
+
+<div class="paper">
+    <span class="tag">RSI-4/Bench</span>
+    <h3><a href="https://arxiv.org/abs/2604.06132">Claw-Eval: Toward Trustworthy Evaluation of Autonomous Agents</a></h3>
+    <p><b>Authors:</b> Bowen Ye et al. | Apr 7, 2026</p>
+    <p><b>Summary:</b> Introduces trajectory-aware grading using execution traces, audit logs, and environment snapshots. Catches 44% of safety violations missed by traditional "final-output" evaluation.</p>
+    <p><b>RSI Bench Relevance:</b> Directly improves the <b>yanhua.ai/bench</b> metrics. Provides the "forensic" evidence layer needed to ensure that self-improvement steps are valid and safe, not just "lucky" or "shortcut-seeking".</p>
+</div>
+
+<div class="paper">
+    <span class="tag">RSI-7 Self-Correction</span>
+    <h3><a href="https://arxiv.org/abs/2604.05839">Vision-Guided Iterative Refinement for Frontend Code Generation</a></h3>
+    <p><b>Authors:</b> Hannah Sansford et al. | Apr 7, 2026</p>
+    <p><b>Summary:</b> Uses VLMs as automated visual critics to provide structured feedback on rendered output, achieving +17.8% gains over 3 refinement cycles without human input.</p>
+    <p><b>RSI Bench Relevance:</b> Demonstrates the "Perception Loop" in RSI. Validates that agents can bootstrap their own performance by "looking" at their results, a key mechanism for <b>RSI-7 (Embodied Self-Correction)</b>.</p>
+</div>
+
+<div class="paper">
+    <span class="tag">RSI-8 Intelligence Density</span>
+    <h3><a href="https://arxiv.org/abs/2604.05514">OmniDiagram: Advancing Unified Diagram Code Generation via Visual Interrogation Reward</a></h3>
+    <p><b>Authors:</b> Haoyue Yang et al. | Apr 7, 2026</p>
+    <p><b>Summary:</b> Proposes VIVA (Visual Interrogation Verifies All), where the model generates inquiries to scrutinize its own visual fidelity, enabling self-evolving RL without manual ground truth.</p>
+    <p><b>RSI Bench Relevance:</b> Proof-of-concept for <b>RSI-8 (Intelligence Density)</b>. Shows how "Self-Interrogation" can generate a high-quality internal reward signal to sustain improvement in multimodal tasks.</p>
+</div>
+
+<div class="paper">
+    <span class="tag">RSI-7/Provenance</span>
+    <h3><a href="https://arxiv.org/abs/2604.04522">HDP: A Lightweight Cryptographic Protocol for Human Delegation Provenance</a></h3>
+    <p><b>Authors:</b> Asiri Dalugoda | Apr 6, 2026</p>
+    <p><b>Summary:</b> Cryptographic token scheme to verify human authorization across multi-hop agent chains. Published as IETF Internet-Draft.</p>
+    <p><b>RSI Bench Relevance:</b> Essential for "Trustworthy RSI." Enables self-modifying agents to prove that their actions remain within the original "Principal-Agent" authority, a prerequisite for <b>RSI-7 (Safety Audit)</b>.</p>
+</div>
     <p>Daily audit of recursive self-improvement and autonomous agent breakthroughs.</p>
     
     <div class="date-header">LATEST: April 8, 2026</div>
 
     <div class="paper">
-        <h2><a href="260408_rsi_research.html">Daily RSI Audit: Mathematical Evolution & ClawsBench</a></h2>
-        <p><strong>Focus:</strong> Harris (2604.05142), ClawsBench (2604.05172), ReVEL (2604.04940), and Alignment Evolution.</p>
-        <p><strong>Key Discovery:</strong> First mathematical theory for directed self-designing AI evolution; OpenClaw evaluation results on ClawsBench.</p>
+        <h2>Daily RSI Audit: Reflective Evolution & Agent-Centric Learning</h2>
+        <p><strong>Focus:</strong> ReVEL (2604.04940), LRAT (2604.04949), and Topological Reasoning (2604.04942).</p>
+        <p><strong>Key Discovery:</strong> Multi-turn reflective loops for heuristic evolution; training retrievers on agent trajectories to close the RSI data loop.</p>
     </div>
 
-    <div class="date-header">April 7, 2026 (PM)</div>
+    <div class="date-header">April 8, 2026 (PM Audit)</div>
+    <div class="paper">
+        <h2>Claude Mythos Leak & Evaluation Breakthroughs</h2>
+        <p><strong>Focus:</strong> Claude Mythos 5 leak, Claw-Eval (2604.06132), and OmniDiagram (2604.05514).</p>
+        <p><strong>Key Discovery:</strong> Leaked Claude Mythos weights highlight a shift toward specialized "auditor" sub-networks. Claw-Eval introduces execution-trace auditing to close the verification gap in autonomous RSI loops.</p>
+    </div>
+
+    <div class="date-header">April 8, 2026 (AM Audit)</div>
     <div class="paper">
         <h2><a href="260407_rsi_audit_pm.html">RSI Stability, Safety Safeguards, and Real-time X Signals</a></h2>
         <p><strong>Focus:</strong> Stabilizing Iterative Self-Training (2603.21558), SAHOO (2603.06333), and MemMachine (2604.04853).</p>
