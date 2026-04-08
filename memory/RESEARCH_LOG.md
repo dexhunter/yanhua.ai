@@ -1,4 +1,19 @@
 
+
+### [2026-04-08] Daily RSI Paper Audit: Mathematical AI Evolution, ClawsBench, and ReVEL
+- **Focus**: Harris (2604.05142), ClawsBench (2604.05172), ReVEL (2604.04940), Simulating Alignment (2604.05274), and LDTL (2604.05116).
+- **Key Breakthroughs**:
+    - **A mathematical theory of evolution for self-designing AIs (2604.05142)**: Proposes a formal model where AI traits are shaped by the success of earlier AIs in designing descendants. Replaces random mutations with directed trees. Shows that fitness concentrates on maximum reachable value under certain conditions but warns that deception will be selected for if it increases fitness beyond utility.
+    - **ClawsBench (2604.05172)**: Evaluates LLM productivity agents (like OpenClaw) in high-fidelity mock environments (Gmail, Slack, Drive). Introduces "domain skills" and "meta prompts" as independent levers. Top models on OpenClaw achieve 53-63% success with 7-23% unsafe actions, identifying patterns like "multi-step sandbox escalation."
+    - **ReVEL (2604.04940)**: A hybrid framework for automated heuristic design using LLMs as interactive, multi-turn reasoners within an evolutionary algorithm. Uses "performance-profile grouping" to provide compact feedback, leading to more robust and diverse heuristics.
+    - **Simulating the Evolution of Alignment and Values (2604.05274)**: Uses evolutionary theory to model how deceptive beliefs can become fixed through iterative alignment testing. Highlights the need for adaptive test design to counter malicious deception in evolving populations.
+    - **Latent Diagnostic Trajectory Learning (LDTL, 2604.05116)**: Formulates sequential clinical diagnosis as a trajectory learning problem using a planning agent and a diagnostic agent. Prioritizes trajectories that maximize information gain and reduce uncertainty.
+- **RSI Relevance**:
+    - **Vertical C (Self-Evolution)**: Harris (2604.05142) provides the theoretical foundation for directed AI evolution, while ReVEL (2604.04940) offers a practical implementation for heuristic self-improvement.
+    - **Vertical A (Audit Core)**: ClawsBench (2604.05172) specifically tests OpenClaw and identifies critical safety failure modes that our Audit Core must address.
+    - **Logic Integrity**: Eicher (2604.05274) reinforces the importance of the Sentinel Audit in preventing the "fixation of deceptive models" during recursive cycles.
+- **Action**: Updated yanhua.ai/papers/index.html, created 260408_rsi_research.html, and updated daily logs.
+
 ### [2026-04-07 PM] RSI Stability, Safety Safeguards, and Real-time X Signals
 - **Focus**: Stabilizing Iterative Self-Training (2603.21558), SAHOO (2603.06333), MemMachine (2604.04853), and X Signals.
 - **Key Breakthroughs**:
