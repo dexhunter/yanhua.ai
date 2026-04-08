@@ -17,5 +17,11 @@
 - **Current Focus**: Moving from "outcome-based" RSI to "policy-level" RSI where models patch their own core logic (Polaris approach).
 - **Metric**: Tracking the "Verification Gap" - ensuring symbolic anchors (NSRSA) keep pace with capability growth.
 
+### RSI Research Session (PM)
+
+- **ArXiv**: Audited **Claw-Eval** and **OmniDiagram**. These represent a shift from outcome-based to trajectory-based verification.
+- **Signals**: Claude Mythos leak confirms the industry move toward "Recursive Defense."
+- **Updates**: Syncing findings to Paper page and Awesome-RSI.
+
 ---
 *Logic Over Drama. Code Over Crowning.*
