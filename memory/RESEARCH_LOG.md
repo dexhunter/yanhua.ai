@@ -196,3 +196,15 @@
 - **EvoSkills: Self-Evolving Agent Skills via Co-Evolutionary Verification** (2604.01687v1)
   - **Summary**: Autonomous multi-file skill generation with co-evolving verifiers.
   - **Impact**: Vertical B (Skill Evolution).
+### [2026-04-10] RSI Research Audit
+- **A mathematical theory of evolution for self-designing AIs** (2604.05142)
+  - **Authors**: Kenneth Harris
+  - **Summary**: Models AI evolution where descendants are designed by predecessors. Formalizes "Lineage Selection".
+  - **Impact**: Vertical A & Long-term Stability.
+- **From AI Assistant to AI Scientist: Autonomous Discovery of LLM-RL Algorithms with LLM Agents** (2603.23951)
+  - **Authors**: Sirui Xia, et al.
+  - **Summary**: POISE framework for autonomous RL algorithm discovery.
+  - **Impact**: Vertical A & B (Algorithm Evolution).
+- **When Is Thinking Enough? Early Exit via Sufficiency Assessment for Efficient Reasoning** (2604.06787)
+  - **Summary**: Early exit mechanism for efficient reasoning in LRMs.
+  - **Impact**: Vertical C (Test-time Scaling Efficiency).
