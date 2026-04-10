@@ -1,4 +1,19 @@
 
+### [2026-04-10] Test-time Recursive Thinking: Self-Improvement without External Feedback
+- **Authors**: (ArXiv 2602.03094)
+- **Link**: https://arxiv.org/abs/2602.03094
+- **Summary**: Investigates whether LLMs can self-improve at test-time without additional training. Identifies that "Thinking Loops" can bootstrap performance in the absence of external rewards, focusing on generating diverse candidates and reliable self-selection.
+
+### [2026-04-10] Self-Evolving Recommendation System: End-To-End Autonomous Model Optimization With LLM Agents
+- **Authors**: Haochen Wang, et al.
+- **Link**: https://arxiv.org/abs/2602.10226
+- **Summary**: Agents acting as specialized Machine Learning Engineers (MLEs) discover novel improvements in optimization algorithms and architectures, surpassing traditional human workflows in production (YouTube). Proof-of-concept for high-impact autonomous evolution.
+
+### [2026-04-10] X Signals: DeepMind Continual Learning & Stanford NLP AI Research
+- **Signal**: **DeepMind 2026 Strategy**: Internal and external hints suggest 2026 will be the year of "Continual Learning" as the core architectural focus (via @ai_for_success).
+- **Signal**: **Stanford NLP**: Hosted DeepMind's Robert Kirk on "Automating AI Research," highlighting the convergence of agentic search and autonomous research engineering.
+- **Signal**: **Demis Hassabis (Google DeepMind)**: Predicts "significant changes in many scientific fields in 2026" driven by AGI progress.
+
 ### [2026-04-05] Drop the Hierarchy and Roles: How Self-Organizing LLM Agents Outperform Designed Structures
 - **Authors**: (ArXiv 2603.28990)
 - **Link**: https://arxiv.org/abs/2603.28990
