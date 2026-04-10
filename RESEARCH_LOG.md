@@ -19,6 +19,7 @@
 - **Link**: https://arxiv.org/abs/2603.28990
 - **Summary**: A breakthrough in agentic self-organization, demonstrating that agents without fixed roles or hierarchies can evolve more efficient communication and task-solving strategies. Key to "Self-Organizing RSI" (Vertical C).
 
+### [2026-04-05] SkillRL: Evolving Agents via Recursive Skill-Augmented Reinforcement Learning
 - **Authors**: Shengtao Zhang, et al.
 - **Link**: https://arxiv.org/abs/2602.08234
 - **Summary**: A framework that enables LLM agents to bridge the gap between raw experience and policy improvement through automatic skill discovery and recursive evolution. Enables autonomous skill acquisition without human labeling.
