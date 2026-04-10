@@ -208,3 +208,17 @@
 - **When Is Thinking Enough? Early Exit via Sufficiency Assessment for Efficient Reasoning** (2604.06787)
   - **Summary**: Early exit mechanism for efficient reasoning in LRMs.
   - **Impact**: Vertical C (Test-time Scaling Efficiency).
+
+### [2026-04-10 PM] Evening ArXiv RSI Paper Audit: SkillClaw, ZeroCoder, and T-STAR
+- **Focus**: SkillClaw (2604.08377), ZeroCoder (2604.07864), T-STAR (2604.07165), TrACE (2604.08369), and 3DrawAgent (2604.08042).
+- **Key Breakthroughs**:
+    - **SkillClaw (2604.08377)**: Enables collective skill evolution for OpenClaw-like agent systems. Discovered improvements from one user/agent propagate system-wide, creating a cumulative global skill repository.
+    - **ZeroCoder (2604.07864)**: Achieving label-free code generation self-improvement. By co-evolving a Coder and a Tester with Bayesian selection (DyB4), it bridges the gap to oracle-supervised performance without human data.
+    - **T-STAR (2604.07165)**: Optimizing multi-turn agent policies via tree-structured rectification. Consolidates trajectories into Cognitive Trees to solve the credit assignment problem in long reasoning chains.
+    - **TrACE (2604.08369)**: Practical efficiency for RSI. Uses inter-rollout agreement as a zero-cost signal for adaptive compute allocation, matching high-compute accuracy with 65% fewer calls.
+    - **3DrawAgent (2604.08042)**: Extending RSI to 3D spatial reasoning. Uses relative experience optimization to self-improve drawing quality without parameter updates.
+- **RSI Relevance**:
+    - **Vertical B (Skill Evolution)**: SkillClaw provides a blueprint for the "Collective Intelligence" phase of the Sentinel Fleet.
+    - **Vertical A (Audit Core)**: ZeroCoder's Tester co-evolution and T-STAR's tree-based rectification are essential algorithms for our internal verification loops.
+    - **Efficiency**: TrACE provides the mechanism for scaling local evolution runs on limited hardware.
+- **Action**: Updated yanhua.ai/papers/index.html, awesome-rsi.html, and created 260410_rsi_audit_evening.html.

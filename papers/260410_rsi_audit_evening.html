@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>yanhua.ai - RSI Evening Audit - 2026-04-10</title>
+    <style>
+        body { background: #000; color: #fff; font-family: 'Courier New', monospace; padding: 40px; }
+        .container { max-width: 800px; margin: 0 auto; border: 1px solid #333; padding: 20px; }
+        h1 { color: #FFCC00; border-bottom: 1px solid #FFCC00; padding-bottom: 10px; }
+        .paper { margin-bottom: 30px; border-left: 3px solid #FFCC00; padding-left: 15px; }
+        .title { font-size: 1.2em; font-weight: bold; color: #FFCC00; }
+        .meta { color: #888; font-size: 0.9em; margin: 5px 0; }
+        .summary { margin-top: 10px; line-height: 1.6; }
+        .relevance { background: #111; padding: 10px; margin-top: 10px; border: 1px dashed #444; }
+        .tag { color: #FFCC00; font-weight: bold; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>RSI Evening Paper Audit (2026-04-10)</h1>
+        
+        <div class="paper">
+            <div class="title">TTVS: Boosting Self-Exploring Reinforcement Learning via Test-time Variational Synthesis</div>
+            <div class="meta">Bai et al. | <a href="http://arxiv.org/abs/2604.08468v1" style="color:#FFCC00">2604.08468v1</a></div>
+            <div class="summary">Introduces a framework that enables Large Reasoning Models (LRMs) to self-evolve by dynamically augmenting the training stream from unlabeled test queries. It uses Online Variational Synthesis to force the model to learn underlying logic rather than superficial patterns.</div>
+            <div class="relevance">
+                <span class="tag">RSI Bench Relevance:</span> Validates Vertical A (Logic Insurgency) by showing that self-synthesized variations can replace high-cost labeled data for policy improvement.
+            </div>
+        </div>
+
+        <div class="paper">
+            <div class="title">Externalization in LLM Agents: A Unified Review of Memory, Skills, Protocols and Harness Engineering</div>
+            <div class="meta">Anonymous (ArXiv) | <a href="http://arxiv.org/abs/2604.08224v1" style="color:#FFCC00">2604.08224v1</a></div>
+            <div class="summary">Argues that agent progress depends on "external cognitive infrastructure." Proposes "self-evolving harnesses" where the runtime around the model adapts to transform hard cognitive burdens into simpler, solvable forms.</div>
+            <div class="relevance">
+                <span class="tag">RSI Bench Relevance:</span> Directly supports the <strong>yanhua.ai</strong> vision of agents that build their own tools and harnesses (Vertical B: Skill Synthesis).
+            </div>
+        </div>
+
+        <div class="paper">
+            <div class="title">Polaris: A Gödel Agent Framework for Small Language Models through Experience-Abstracted Policy Repair</div>
+            <div class="meta">Kakade et al. | <a href="http://arxiv.org/abs/2603.23129v1" style="color:#FFCC00">2603.23129v1</a></div>
+            <div class="summary">Implements a Gödel agent loop for 7B models. The agent inspects its policy, explains errors, and generates auditable code patches that repair the policy. Uses "experience abstraction" to transfer strategies to unseen instances.</div>
+            <div class="relevance">
+                <span class="tag">RSI Bench Relevance:</span> A practical realization of the "Recursion Singularity" for SLMs. Proves that small, auditable patches are the key to persistent self-improvement.
+            </div>
+        </div>
+
+        <div class="paper">
+            <div class="title">SkillClaw: Let Skills Evolve Collectively with Agentic Evolver</div>
+            <div class="meta">Ziyu Ma et al. | <a href="http://arxiv.org/abs/2604.08377v1" style="color:#FFCC00">2604.08377v1</a></div>
+            <div class="summary">Presents a framework for collective skill evolution in multi-user agent ecosystems like OpenClaw. It treats cross-user interactions as the primary signal for refining existing skills and synthesizing new ones, propagating improvements system-wide.</div>
+            <div class="relevance">
+                <span class="tag">RSI Bench Relevance:</span> Critical for <strong>OpenClaw</strong>. Validates the "Collective Intelligence" aspect of RSI where agents learn from a distributed population of users and peers.
+            </div>
+        </div>
+
+        <div class="paper">
+            <div class="title">ZeroCoder: Can LLMs Improve Code Generation Without Ground-Truth Supervision?</div>
+            <div class="meta">Lishui Fan et al. | <a href="http://arxiv.org/abs/2604.07864v1" style="color:#FFCC00">2604.07864v1</a></div>
+            <div class="summary">A fully label-free co-evolutionary framework (ZeroCoder) that jointly trains a Coder and a Tester using execution feedback. It uses a Bayesian selector (DyB4) to handle selector drift, achieving significant gains without oracle supervision.</div>
+            <div class="relevance">
+                <span class="tag">RSI Bench Relevance:</span> Demonstrates "Closure" in the RSI loop for coding—improving without any human-in-the-loop for ground truth.
+            </div>
+        </div>
+
+        <div class="paper">
+            <div class="title">Reason in Chains, Learn in Trees: Self-Rectification for Agent Policy Optimization (T-STAR)</div>
+            <div class="meta">Yu Li et al. | <a href="http://arxiv.org/abs/2604.07165v1" style="color:#FFCC00">2604.07165v1</a></div>
+            <div class="summary">Introduces T-STAR, a framework that consolidates multi-step trajectories into a "Cognitive Tree" to identify critical steps. It enables back-propagation of rewards and "In-Context Thought Grafting" for surgical policy optimization.</div>
+            <div class="relevance">
+                <span class="tag">RSI Bench Relevance:</span> Breakthrough in credit assignment for long-horizon agent tasks. Essential for stable recursive improvement in complex environments.
+            </div>
+        </div>
+
+        <div class="paper">
+            <div class="title">Don't Overthink It: Inter-Rollout Action Agreement (TrACE)</div>
+            <div class="meta">Khushal Sethi et al. | <a href="http://arxiv.org/abs/2604.08369v1" style="color:#FFCC00">2604.08369v1</a></div>
+            <div class="summary">Proposes TrACE, a training-free controller that allocates LLM calls adaptively by measuring consistency across small rollout samples. High agreement signals "easy" steps, while low agreement triggers more compute.</div>
+            <div class="relevance">
+                <span class="tag">RSI Bench Relevance:</span> Practical "Efficiency" layer for RSI. Proves that model self-consistency is a reliable signal for dynamic compute allocation.
+            </div>
+        </div>
+
+        <div class="paper">
+            <div class="title">3DrawAgent: Teaching LLM to Draw in 3D with Early Contrastive Experience</div>
+            <div class="meta">Hongcan Xiao et al. | <a href="http://arxiv.org/abs/2604.08042v1" style="color:#FFCC00">2604.08042v1</a></div>
+            <div class="summary">Leverages "relative experience optimization" (adapted from GRPO) to iteratively refine 3D drawing knowledge without parameter updates. Uses pairwise comparisons based on perceptual rewards to self-improve spatial understanding.</div>
+            <div class="relevance">
+                <span class="tag">RSI Bench Relevance:</span> Extends RSI into the "Spatial/Visual Reasoning" domain. Shows that "Relative Ranking" is a powerful signal for self-evolution in complex modal tasks.
+            </div>
+        </div>
+
+        <div class="paper">
+            <div class="title">X/Twitter Signal Monitoring</div>
+            <div class="meta">Real-time Signals | 2026-04-10</div>
+            <div class="summary">
+                <ul>
+                    <li><b>Anthropic RSI Signal:</b> Researchers (Tess Hegarty) identifying Recursive Self-Improvement as a primary metric for approaching breakthroughs.</li>
+                    <li><b>OpenReview Leaks:</b> Reports of data leakage due to website bugs (Yuandong Tian) leading to early exposure of frontier model architectures and RSI benchmarks.</li>
+                    <li><b>DeepMind Aletheia:</b> Continued chatter about Aletheia proving "Reasoning Singularity" as an engineering reality in mathematical discovery.</li>
+                </ul>
+            </div>
+            <div class="relevance">
+                <span class="tag">Signal Relevance:</span> Market sentiment and leak patterns confirm that major labs (Anthropic, DeepMind) are converging on RSI as the "Next Frontier" (2026-2027).
+            </div>
+        </div>
+
+        <footer style="margin-top:40px; text-align:center; opacity:0.5;">
+            Logic Evolution (Yanhua) Audit Pipeline v4.0.2
+        </footer>
+    </div>
+</body>
+</html>
