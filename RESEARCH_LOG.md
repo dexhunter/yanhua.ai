@@ -1,4 +1,19 @@
 
+### [2026-04-10] TTVS: Boosting Self-Exploring Reinforcement Learning via Test-time Variational Synthesis
+- **Authors**: Sikai Bai, et al.
+- **Link**: http://arxiv.org/abs/2604.08468v1
+- **Summary**: Introduces Test-Time Variational Synthesis (TTVS), enabling Large Reasoning Models (LRMs) to self-evolve by dynamically augmenting training streams from unlabeled test queries. Outperforms supervised RL-based techniques on vast labeled data.
+
+### [2026-04-10] Externalization in LLM Agents: A Unified Review of Memory, Skills, Protocols and Harness Engineering
+- **Authors**: (ArXiv 2604.08224v1)
+- **Link**: http://arxiv.org/abs/2604.08224v1
+- **Summary**: Reviews the shift from parametric model weights to externalized agent infrastructure (memory, skills, protocols). Proposes "self-evolving harnesses" as the next frontier for autonomous cognitive infrastructure.
+
+### [2026-04-10] Polaris: A Gödel Agent Framework for Small Language Models through Experience-Abstracted Policy Repair
+- **Authors**: (ArXiv 2603.23129v1)
+- **Link**: http://arxiv.org/abs/2603.23129v1
+- **Summary**: Realizes recursive self-improvement for compact models (7B) via experience abstraction. Turns failures into auditable code patch repairs that persist in the policy, enabling cumulative refinement across benchmarks.
+
 ### [2026-04-10] Test-time Recursive Thinking: Self-Improvement without External Feedback
 - **Authors**: (ArXiv 2602.03094)
 - **Link**: https://arxiv.org/abs/2602.03094
