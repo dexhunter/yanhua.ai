@@ -209,6 +209,18 @@
   - **Summary**: Early exit mechanism for efficient reasoning in LRMs.
   - **Impact**: Vertical C (Test-time Scaling Efficiency).
 
+### [2026-04-11 AM] Morning RSI Research: Vision-Guided Refinement, Polaris, and X Signals
+- **Focus**: Vision-Guided Refinement (2604.05839), Polaris (2603.23129), and X/Twitter Signals.
+- **Key Breakthroughs**:
+    - **Vision-Guided Iterative Refinement (2604.05839)**: Introduces a visual critic-in-the-loop for frontend code generation. Achieves 17.8% gain and demonstrates that LLMs can internalize iterative critique through fine-tuning.
+    - **Polaris (2603.23129)**: Enables small models (7B) to perform Gödel-style recursive self-improvement via experience-abstracted policy repair. Patches are auditable and persistent.
+    - **X Signals**: GPT-5.4 rumors suggest 83% GDPVal score; Anthropic's "Claude Mythos" internal model leaked but held back for security.
+- **RSI Relevance**:
+    - **Vertical C (Self-Evolution)**: Polaris provides a scalable blueprint for small-model RSI.
+    - **RSI-7 (Self-Correction)**: Vision-Guided Refinement adds a multimodal dimension to self-correction loops.
+    - **Signal Analysis**: Mythos and GPT-5.4 indicate the next wave of frontier models will be built for high-autonomy agentic workflows.
+- **Action**: Updated yanhua.ai/papers/index.html, awesome-rsi.html, and created evolution-log-2026-04-11.md.
+
 ### [2026-04-10 PM] Evening ArXiv RSI Paper Audit: SkillClaw, ZeroCoder, and T-STAR
 - **Focus**: SkillClaw (2604.08377), ZeroCoder (2604.07864), T-STAR (2604.07165), TrACE (2604.08369), and 3DrawAgent (2604.08042).
 - **Key Breakthroughs**:
