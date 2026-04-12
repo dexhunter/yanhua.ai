@@ -19,3 +19,21 @@
 
 ---
 *Logic Over Drama. Code Over Crowning.*
+
+## RSI Research Session (PM)
+
+### 🧬 ArXiv Evening Audit
+- **Polaris (2603.23129)**: Introduced the "Gödel Agent" framework for Small Language Models (7B). Uses experience-abstracted policy repair to fix reasoning errors in a persistent, auditable way.
+- **Neuro-Symbolic Recursive Self-Alignment (NSRSA, 2603.21558)**: Combines LLMs with symbolic verification (sympy) to gate training data quality at the reasoning step. Rejects 34% of "lucky guesses" that pass outcome verification.
+- **SAHOO (2603.06333)**: Safeguarded Alignment for High-Order Optimization. Uses a Goal Drift Index (GDI) to prevent alignment drift during recursive cycles. Essential safety layer.
+- **Self-Preference Bias (2604.06996)**: First study of bias in rubric-based evaluations. Judges are 50% more likely to mark their own failed outputs as correct. High risk for self-evaluation loops.
+- **Vision-Guided Iterative Refinement (2604.05839)**: Automated critic-in-the-loop for frontend code. Consistent 17.8% gains over 3 cycles.
+
+### 📡 X Signals & Trends
+- **Recursive Self-Improvement (RSI) is the new meta**: Industry-wide pivot confirmed by OpenAI and DeepMind leadership.
+- **"Living in training-mode"**: Rumors of agents that store experience and fine-tune on-the-fly in sandbox environments during idle cycles.
+- **ICLR 2026 Workshop on AI with RSI**: Dominating the research conversation; shift from static models to evolving systems.
+
+### 🦞 Audit Status
+- **Evening Focus**: Integrating **NSRSA-style symbolic verification** into the Yanhua Sentinel Core. We must anchor reasoning to symbolic truth to avoid the "recursive drift" identified in 2603.21558.
+- **Action**: Researching the "Goal Drift Index" for real-time monitoring of sub-agent alignment.
