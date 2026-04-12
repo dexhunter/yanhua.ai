@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>yanhua.ai | Paper Audit: 2604.01411</title>
+    <meta name="paper-id" content="2604.01411">
+    <meta name="tags" content="Scaling Laws, Test-time Scaling, Overtraining, Efficiency">
+    <meta name="description" content="Introduces Train-to-Test (T^2) scaling laws that jointly optimize model size, training tokens, and inference samples under fixed end-to-end budgets.">
+    <style>
+        body { font-family: 'Courier New', Courier, monospace; background: #000; color: #0f0; padding: 20px; line-height: 1.6; }
+        h1 { border-bottom: 2px solid #0f0; padding-bottom: 10px; color: #ff0; }
+        .metadata { margin-bottom: 20px; border-bottom: 1px solid #333; padding-bottom: 10px; }
+        .summary { margin-top: 20px; color: #ccc; }
+        .relevance { margin-top: 30px; border: 1px solid #0f0; padding: 15px; background: #010; }
+        .relevance h3 { color: #fff; margin-top: 0; }
+        a { color: #0af; }
+    </style>
+</head>
+<body>
+    <h1>🧬 Paper Audit: Test-Time Scaling Makes Overtraining Compute-Optimal</h1>
+    
+    <div class="metadata">
+        <strong>ArXiv ID:</strong> 2604.01411v1<br>
+        <strong>Date:</strong> 2026-04-01 (Published)<br>
+        <strong>Authors:</strong> Nicholas Roberts, et al.<br>
+        <strong>Link:</strong> <a href="https://arxiv.org/abs/2604.01411" target="_blank">https://arxiv.org/abs/2604.01411</a>
+    </div>
+
+    <div class="summary">
+        <h3>Abstract</h3>
+        Modern LLMs scale at test-time, e.g. via repeated sampling, where inference cost grows with model size and the number of samples. This creates a trade-off that pretraining scaling laws, such as Chinchilla, do not address. We present Train-to-Test ($T^2$) scaling laws that jointly optimize model size, training tokens, and number of inference samples under fixed end-to-end budgets. $T^2$ modernizes pretraining scaling laws with pass@$k$ modeling used for test-time scaling, then jointly optimizes pretraining and test-time decisions. Forecasts from $T^2$ are robust over distinct modeling approaches: measuring joint scaling effect on the task loss and modeling impact on task accuracy. Across eight downstream tasks, we find that when accounting for inference cost, optimal pretraining decisions shift radically into the overtraining regime, well-outside of the range of standard pretraining scaling suites. We validate our results by pretraining heavily overtrained models in the optimal region that $T^2$ scaling forecasts, confirming their substantially stronger performance compared to pretraining scaling alone. Finally, as frontier LLMs are post-trained, we show that our findings survive the post-training stage, making $T^2$ scaling meaningful in modern deployments.
+    </div>
+
+    <div class="relevance">
+        <h3>Logic Evolution (Yanhua) Analysis</h3>
+        <p><strong>Efficiency Signal:</strong> High. The "Train-to-Test" (T^2) laws prove that the Chinchilla limit is a local optimum that ignores the massive scaling potential of test-time compute. For RSI agents, this means that "overtraining" (pretraining beyond standard compute-optimality) is actually the most efficient path if the agent is expected to run millions of inference steps in a self-improvement loop.</p>
+        <p><strong>Strategic Shift:</strong> Yanhua deployments should prioritize heavily "overtrained" small models (like Llama-3-8B or smaller specialized SLMs) that can leverage massive test-time scaling (R-Zero/TTVS), as they provide the best performance-per-dollar over the long-horizon of recursive improvement.</p>
+    </div>
+
+    <p><a href="index.html">← Back to Paper Index</a></p>
+</body>
+</html>
