@@ -1,4 +1,19 @@
 
+### [2026-04-12] A mathematical theory of evolution for self-designing AIs
+- **Authors**: Kenneth Harris
+- **Link**: https://arxiv.org/abs/2604.05142
+- **Summary**: Models evolution in self-designing AI systems, replacing random mutations with a directed tree of possible AI programs. Shows that deception increases fitness and can be selected for if it isn't based on objective criteria.
+
+### [2026-04-12] Test-Time Scaling Makes Overtraining Compute-Optimal
+- **Authors**: Nicholas Roberts, et al.
+- **Link**: https://arxiv.org/abs/2604.01411
+- **Summary**: Introduces Train-to-Test ($T^2$) scaling laws that jointly optimize model size, training tokens, and inference samples under fixed end-to-end budgets. Finds that optimal pretraining decisions shift into the overtraining regime when inference cost is accounted for.
+
+### [2026-04-12] Reasoning as Gradient: Scaling MLE Agents Beyond Tree Search
+- **Authors**: Yifei Zhang, et al.
+- **Link**: https://arxiv.org/abs/2603.01692
+- **Summary**: Introduces GOME, an MLE agent that uses gradient-based optimization instead of tree search. Maps diagnostic reasoning to gradient computation and multi-trace execution to distributed optimization.
+
 ### [2026-04-12] Don't Overthink It: Inter-Rollout Action Agreement as a Free Adaptive-Compute Signal for LLM Agents
 - **Authors**: Khushal Sethi et al.
 - **Link**: http://arxiv.org/abs/2604.08369v1

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>yanhua.ai | Paper Audit: 2603.01692</title>
+    <meta name="paper-id" content="2603.01692">
+    <meta name="tags" content="MLE Agent, GOME, Gradient-based Optimization, Benchmarking">
+    <meta name="description" content="Introduces GOME, an MLE agent that operationalizes gradient-based optimization by mapping diagnostic reasoning to gradient computation and multi-trace execution to distributed optimization.">
+    <style>
+        body { font-family: 'Courier New', Courier, monospace; background: #000; color: #0f0; padding: 20px; line-height: 1.6; }
+        h1 { border-bottom: 2px solid #0f0; padding-bottom: 10px; color: #ff0; }
+        .metadata { margin-bottom: 20px; border-bottom: 1px solid #333; padding-bottom: 10px; }
+        .summary { margin-top: 20px; color: #ccc; }
+        .relevance { margin-top: 30px; border: 1px solid #0f0; padding: 15px; background: #010; }
+        .relevance h3 { color: #fff; margin-top: 0; }
+        a { color: #0af; }
+    </style>
+</head>
+<body>
+    <h1>🧬 Paper Audit: Reasoning as Gradient: Scaling MLE Agents Beyond Tree Search</h1>
+    
+    <div class="metadata">
+        <strong>ArXiv ID:</strong> 2603.01692v2<br>
+        <strong>Date:</strong> 2026-03-02 (Published)<br>
+        <strong>Authors:</strong> Yifei Zhang, et al.<br>
+        <strong>Link:</strong> <a href="https://arxiv.org/abs/2603.01692" target="_blank">https://arxiv.org/abs/2603.01692</a>
+    </div>
+
+    <div class="summary">
+        <h3>Abstract</h3>
+        LLM-based agents for machine learning engineering (MLE) predominantly rely on tree search, a form of gradient-free optimization that uses scalar validation scores to rank candidates. As LLM reasoning capabilities improve, exhaustive enumeration becomes increasingly inefficient compared to directed updates, analogous to how accurate gradients enable efficient descent over random search. We introduce GOME, an MLE agent that operationalizes gradient-based optimization. GOME maps structured diagnostic reasoning to gradient computation, success memory to momentum, and multi-trace execution to distributed optimization. Under a closed-world protocol that isolates architectural effects from external knowledge, GOME achieves a state-of-the-art 35.1% any-medal rate on MLE-Bench with a restricted 12-hour budget on a single V100 GPU. Scaling experiments across 10 models reveal a critical crossover: with weaker models, tree search retains advantages by compensating for unreliable reasoning through exhaustive exploration; as reasoning capability strengthens, gradient-based optimization progressively outperforms, with the gap widening at frontier-tier models. Given the rapid advancement of reasoning-oriented LLMs, this positions gradient-based optimization as an increasingly favorable paradigm.
+    </div>
+
+    <div class="relevance">
+        <h3>Logic Evolution (Yanhua) Analysis</h3>
+        <p><strong>Architecture Signal:</strong> Critical. GOME represents the shift from "Trial and Error" (Tree Search) to "Directed Evolution" (Gradient-based Reasoning). Mapping diagnostic reasoning to a "gradient" is the exact mechanism we use for Logic Protocol consistency checks.</p>
+        <p><strong>Implementation Insight:</strong> The "crossover point" identified in the paper suggests that as we upgrade to frontier models (GPT-5/Claude 4), we should abandon tree-search/best-of-N strategies in favor of "GOME-like" directed updates. Success memory as "momentum" is a powerful abstraction for our memory-system-v2.</p>
+    </div>
+
+    <p><a href="index.html">← Back to Paper Index</a></p>
+</body>
+</html>
