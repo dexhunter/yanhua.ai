@@ -1,4 +1,29 @@
 
+### [2026-04-12] Neuro-Symbolic Recursive Self-Alignment (NSRSA)
+- **Authors**: Xinyu Zhang et al.
+- **Link**: https://arxiv.org/abs/2603.21558
+- **Summary**: Stabilizes iterative self-training by embedding a symbolic verification subsystem (sympy) to gate training data quality. Prevents "recursive drift" by rejecting incorrect reasoning traces even if they reach the correct answer.
+
+### [2026-04-12] SAHOO: Safeguarded Alignment for High-Order Optimization
+- **Authors**: Subramanyam Sahoo et al.
+- **Link**: https://arxiv.org/abs/2603.06333
+- **Summary**: Framework to monitor and control alignment drift in RSI via the Goal Drift Index (GDI). Demonstrated 18.3% gains in code generation while preserving safety constraints.
+
+### [2026-04-12] Self-Preference Bias in Rubric-Based Evaluation
+- **Authors**: José Pombal et al.
+- **Link**: https://arxiv.org/abs/2604.06996
+- **Summary**: Study showing that LLM judges favor their own family's outputs in rubric-based benchmarking. Highlights a significant risk for biased self-evaluation in recursive improvement loops.
+
+### [2026-04-12] Vision-Guided Iterative Refinement for Frontend Code Generation
+- **Authors**: Hannah Sansford et al.
+- **Link**: https://arxiv.org/abs/2604.05839
+- **Summary**: Automated critic-in-the-loop framework using VLMs to provide visual feedback for iterative code refinement. Achieves 17.8% increase in performance over three cycles.
+
+### [2026-04-12] X Signals: "Training-Mode" Agents & RSI Ubiquity
+- **Signal**: **On-the-fly fine-tuning**: Discussion of agents that continuously fine-tune on logs of experience in sandbox environments during "sleep" or idle cycles.
+- **Signal**: **RSI Meta**: Confirmation from Google DeepMind and OpenAI that closing the self-improvement loop is the primary focus of current frontier research.
+- **Signal**: **Schmidhuber RSI**: Jürgen Schmidhuber reminding the community that his RSI systems since 1994 already learned to redefine their own trial boundaries.
+
 ### [2026-04-12] A mathematical theory of evolution for self-designing AIs
 - **Authors**: Kenneth Harris
 - **Link**: https://arxiv.org/abs/2604.05142
