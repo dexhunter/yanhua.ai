@@ -1,4 +1,19 @@
 
+### [2026-04-12] Don't Overthink It: Inter-Rollout Action Agreement as a Free Adaptive-Compute Signal for LLM Agents
+- **Authors**: Khushal Sethi et al.
+- **Link**: http://arxiv.org/abs/2604.08369v1
+- **Summary**: Introduces TrACE, a training-free adaptive compute controller for agents using inter-rollout consistency as a difficulty signal.
+
+### [2026-04-12] GASP: Guided Asymmetric Self-Play For Coding LLMs
+- **Authors**: Swadesh Jana et al.
+- **Link**: http://arxiv.org/abs/2603.15957v1
+- **Summary**: Curriculum-based self-play grounded by "goalpost" questions to solve hard exploration challenges in coding. Spotlight at ICLR 2026 RSI Workshop.
+
+### [2026-04-12] X Signals: ICLR 2026 RSI Workshop & Ricursive Intelligence
+- **Signal**: **ICLR 2026 RSI Workshop**: Academic formalization of RSI with a dedicated workshop. Topics: Self-improvement loops, test-time adaptation, and model editing.
+- **Signal**: **Ricursive Intelligence**: New lab launch by Azalia Mirhoseini & Anna Goldie. Vision: AI designing its own chips for RSI.
+- **Signal**: **Production RSI**: OpenAI's Feb 2026 Codex model confirmed to be "instrumental in creating itself."
+
 ### [2026-04-10] TTVS: Boosting Self-Exploring Reinforcement Learning via Test-time Variational Synthesis
 - **Authors**: Sikai Bai, et al.
 - **Link**: http://arxiv.org/abs/2604.08468v1
