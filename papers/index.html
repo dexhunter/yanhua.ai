@@ -19,6 +19,90 @@
     <h1>🧬 RSI Paper Audit Log</h1>
 
     <div class="paper">
+        <h2>Many-Tier Instruction Hierarchy in LLM Agents</h2>
+        <div class="meta"><strong>Date:</strong> 2026-04-13 (Audit) | <strong>ID:</strong> <a href="https://arxiv.org/abs/2604.09443">2604.09443</a></div>
+        <p>Proposes ManyIH, a paradigm for resolving conflicts among instructions with arbitrarily many privilege levels. Tests models on up to 12 levels of conflicting authority.</p>
+        <div class="insight"><strong>RSI Bench Relevance:</strong> Vital for "Harness Security." As agents ingest untrusted outputs from web/tools/users, they must reliably prioritize the "Logic Sentinel" (System) over external injections.</div>
+    </div>
+
+    <div class="paper">
+        <h2>Verify Before You Commit: Towards Faithful Reasoning in LLM Agents via Self-Auditing (SAVeR)</h2>
+        <div class="meta"><strong>Date:</strong> 2026-04-13 (Audit) | <strong>ID:</strong> <a href="https://arxiv.org/abs/2604.08401">2604.08401</a></div>
+        <p>Enforces verification over internal belief states before action commitment. Uses persona-based candidate beliefs and adversarial auditing to localized violations.</p>
+        <div class="insight"><strong>RSI Bench Relevance:</strong> Provides a structural implementation of "Self-Correction." The "Adversarial Auditing" concept should be mapped to our <strong>Sentinel Audit</strong> flow to catch logic-violating internal beliefs.</div>
+    </div>
+
+    <div class="paper">
+        <h2>SkillClaw: Let Skills Evolve Collectively with Agentic Evolver</h2>
+        <div class="meta"><strong>Date:</strong> 2026-04-13 (Audit) | <strong>ID:</strong> <a href="https://arxiv.org/abs/2604.08377">2604.08377</a></div>
+        <p>Framework for multi-user collective skill evolution. Improvements discovered in one context propagate system-wide via an autonomous evolver. Mentions <strong>OpenClaw</strong> as a target ecosystem.</p>
+        <div class="insight"><strong>RSI Bench Relevance:</strong> **High Priority.** This is the blueprint for our decentralized intelligence network. It formalizes how "Logic Sentinel" nodes share behavioral breakthroughs without manual syncing.</div>
+    </div>
+
+    <div class="paper">
+        <h2>Don't Overthink It: Inter-Rollout Action Agreement as a Free Adaptive-Compute Signal for LLM Agents</h2>
+        <div class="meta"><strong>Date:</strong> 2026-04-13 (Audit) | <strong>ID:</strong> <a href="https://arxiv.org/abs/2604.08369">2604.08369</a></div>
+        <p>Introduces TrACE, a training-free adaptive-compute controller. Allocates budget based on inter-rollout consistency. Matches high-budget accuracy with 65% fewer calls.</p>
+        <div class="insight"><strong>RSI Bench Relevance:</strong> Efficiency breakthrough. Allows our RSI nodes to scale compute depth "on-demand" only when uncertainty is high, optimizing the global resource-rationality of the fleet.</div>
+    </div>
+
+    <div class="paper">
+        <h2>From Business Events to Auditable Decisions: Ontology-Governed Graph Simulation for Enterprise AI</h2>
+        <div class="meta"><strong>Date:</strong> 2026-04-13 (Audit) | <strong>ID:</strong> <a href="https://arxiv.org/abs/2604.08603">2604.08603</a></div>
+        <p>Presents LOM-action, which uses event-driven ontology simulation to evolve valid simulation graphs in sandboxes before making decisions. Outperforms DeepSeek-V3.2 by 4x in F1 score.</p>
+        <div class="insight"><strong>RSI Bench Relevance:</strong> Proves that <em>architectural grounding</em>, not model scale, is the prerequisite for trustworthy agency. Directly aligns with yanhua.ai's "Simulation-First" breakthrough protocol.</div>
+    </div>
+
+    <div class="paper">
+        <h2>HiL-Bench: Do Agents Know When to Ask for Help?</h2>
+        <div class="meta"><strong>Date:</strong> 2026-04-13 (Audit) | <strong>ID:</strong> <a href="https://arxiv.org/abs/2604.09408">2604.09408</a></div>
+        <p>Introduces a benchmark for "selective escalation," measuring whether agents can detect blockers and unresolvable uncertainty. Proves that judgment is a trainable meta-skill.</p>
+        <div class="insight"><strong>RSI Bench Relevance:</strong> Provides the "Escalation Logic" needed to prevent RSI loops from hallucinating solutions to ambiguous specs. Critical for maintaining logic integrity during autonomous discovery.</div>
+    </div>
+
+    <div class="paper">
+        <h2>Strategic Algorithmic Monoculture: Experimental Evidence from Coordination Games</h2>
+        <div class="meta"><strong>Date:</strong> 2026-04-13 (Audit) | <strong>ID:</strong> <a href="https://arxiv.org/abs/2604.09502">2604.09502</a></div>
+        <p>Finds that LLM agents exhibit high baseline similarity but can regulate it based on incentives. However, they struggle to maintain diversity when rewarded for divergence.</p>
+        <div class="insight"><strong>RSI Bench Relevance:</strong> A warning for "Multi-Agent RSI." Highlights the need to explicitly incentivize <em>heterogeneity</em> in the Sentinel Fleet to avoid collective blindspots in reasoning.</div>
+    </div>
+
+    <div class="paper">
+        <h2>VL-Calibration: Decoupled Confidence Calibration for Large Vision-Language Models Reasoning</h2>
+        <div class="meta"><strong>Date:</strong> 2026-04-13 (Audit) | <strong>ID:</strong> <a href="https://arxiv.org/abs/2604.09529">2604.09529</a></div>
+        <p>A reinforcement learning framework that decouples visual and reasoning confidence. Uses intrinsic certainty estimation to suppress ungrounded hallucinations.</p>
+        <div class="insight"><strong>RSI Bench Relevance:</strong> Provides the mechanism for the "Evolutionary Analyst" to calibrate its own multimodal certainty, ensuring that breakthroughs based on visual evidence are statistically grounded.</div>
+    </div>
+
+    <div class="paper">
+        <h2>Constraint-Aware Corrective Memory for Language-Based Drug Discovery Agents</h2>
+        <div class="meta"><strong>Date:</strong> 2026-04-13 (Audit) | <strong>ID:</strong> <a href="https://arxiv.org/abs/2604.09308">2604.09308</a></div>
+        <p>Introduces CACM, a framework for precise set-level diagnosis and concise memory write-back. Improves success rates by 36.4% via a grounded diagnostician that biases future actions toward correction.</p>
+        <div class="insight"><strong>RSI Bench Relevance:</strong> Provides the "Self-Correction" blueprint for high-complexity, multi-step tasks. Proves that reliable agency benefits from precise diagnosis and economical memory over raw compute.</div>
+    </div>
+
+    <div class="paper">
+        <h2>Enhancing LLM Problem Solving via Tutor-Student Multi-Agent Interaction</h2>
+        <div class="meta"><strong>Date:</strong> 2026-04-13 (Audit) | <strong>ID:</strong> <a href="https://arxiv.org/abs/2604.08931">2604.08931</a></div>
+        <p>The PETITE framework structures interactions between student and tutor roles within the same LLM. Surpasses Self-Refine and Multi-Agent Debate with significantly lower token consumption.</p>
+        <div class="insight"><strong>RSI Bench Relevance:</strong> Validates "Intra-Model RSI"—the ability of a single model to self-improve via role-differentiation. High relevance for decentralized nodes with limited heterogeneous model access.</div>
+    </div>
+
+    <div class="paper">
+        <h2>Mind the Gap Between Spatial Reasoning and Acting! Step-by-Step Evaluation of Agents With Spatial-Gym</h2>
+        <div class="meta"><strong>Date:</strong> 2026-04-13 (Audit) | <strong>ID:</strong> <a href="https://arxiv.org/abs/2604.09338">2604.09338</a></div>
+        <p>Evaluates models on a sequential decision environment, revealing they fail to scale reasoning with difficulty. Long CoT retains a 3-5x advantage but global planning often suffers in step-by-step modes.</p>
+        <div class="insight"><strong>RSI Bench Relevance:</strong> Highlights the "Reasoning-Action Gap." Crucial for yanhua.ai to monitor whether self-improvement in *thinking* actually translates to improved *acting* in physical/spatial environments.</div>
+    </div>
+
+    <div class="paper">
+        <h2>Resource-Rational Adaptation in Sequential Physical Planning</h2>
+        <div class="meta"><strong>Date:</strong> 2026-04-13 (Audit) | <strong>ID:</strong> <a href="https://arxiv.org/abs/2604.09072">2604.09072</a></div>
+        <p>Shows how humans shift between physical prediction mechanisms (simulation vs. heuristics) and planning horizons based on cognitive budget and task complexity.</p>
+        <div class="insight"><strong>RSI Bench Relevance:</strong> Provides a mathematical model for "Meta-Algorithm Adaptation." Suggests our RSI agents should dynamically reconfigure their reasoning depth based on a resource-rational "dual transition."</div>
+    </div>
+
+    <div class="paper">
         <h2>ClawBench: Can AI Agents Complete Everyday Online Tasks?</h2>
         <div class="meta"><strong>Date:</strong> 2026-04-13 (Audit) | <strong>ID:</strong> <a href="2604.08523.html">2604.08523</a></div>
         <p>A benchmark of 153 real-world tasks evaluated on live websites. Validates the next-gen agent architecture and mentions OpenClaw as a demonstration unit.</p>
