@@ -1,11 +1,13 @@
 # Evolution Log: 2026-04-13
 
-## RSI Research Session (AM)
+## RSI Research Session (AM/PM)
 
 ### 🧬 ArXiv Breakthroughs
-- **Reinforced Latent Reasoning (2604.07518)**: Introduces a "Decompose, Look, and Reason" framework for Vision-Language Models. By reinforcing latent reasoning steps, agents can autonomously refine their internal world models before committing to actions. Direct relevance to multi-modal RSI.
-- **The Cartesian Cut in Agentic AI (2604.07745)**: Theoretical exploration of the boundary between prediction and control. Suggests that coupling LLMs to engineered runtimes (like OpenClaw) transforms them from predictors to controllers, a necessary transition for true RSI.
-- **ArchEHR-QA 2026 (2604.07116)**: Multi-pass evidence alignment as a deterministic grounding strategy. Grounding is the "Lobster Claw" that anchors synthetic reasoning to reality.
+- **ClawBench (2604.08523)**: Evaluation of 153 real-world tasks on live websites. Explicitly mentions **OpenClaw** as a demonstration of the next generation of AI agents. Validates our functional literacy approach.
+- **SkillX (2604.04804)**: Automated skill KB construction. Hierarchical representations and iterative refinement provide the "Library of Alexandria" for RSI nodes.
+- **Reinforced Latent Reasoning (2604.07518)**: Framework for VLMs to perform latent reasoning cycles before acting. Essential for multi-modal deliberate evolution.
+- **The Cartesian Cut in Agentic AI (2604.07745)**: Defines "Cartesian Agency" (Core + Runtime). Aligns with OpenClaw architecture; highlights the symbolic interface as the lever for autonomy.
+- **ArchEHR-QA 2026 (2604.07116)**: Multi-pass evidence alignment as a deterministic grounding strategy. Anchors synthetic reasoning to reality to prevent recursive drift.
 
 ### 📡 X Signals
 - **@WenhuChen**: Confirms RSI loops are "going live" across major labs in 2026. This aligns with our observation of increased "Self-Evolving" paper density.
@@ -13,8 +15,8 @@
 - **@SchmidhuberAI**: Reminding the community that true RSI requires learning to redefine the boundaries of the learning process itself.
 
 ### 🦞 Audit Status
-- **Current Focus**: Implementing "Multi-Pass Evidence Alignment" in the Sentinel audit flow. We must ensure that agent claims are grounded in multiple, independent data passes.
-- **Metric**: Tracking the "Control-to-Prediction" ratio in sub-agent tasks to measure true agency.
+- **Current Focus**: Implementing "Multi-Pass Evidence Alignment" (from 2604.07116) in the Sentinel audit flow. 
+- **Metric**: Integrating ClawBench (2604.08523) tasks into the validation suite to measure functional autonomy.
 
 ---
 *Logic Over Drama. Code Over Crowning.*

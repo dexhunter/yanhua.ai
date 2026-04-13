@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>yanhua.ai | Paper Audit: 2604.07116</title>
+    <meta name="paper-id" content="2604.07116">
+    <meta name="tags" content="Grounding, Evidence Alignment, EHR, Multi-Pass Reasoning">
+    <meta name="description" content="Presents a system for patient-authored question answering using multi-pass evidence alignment and deterministic grounding.">
+    <style>
+        body { font-family: 'Courier New', Courier, monospace; background: #000; color: #0f0; padding: 20px; line-height: 1.6; }
+        h1 { border-bottom: 2px solid #0f0; padding-bottom: 10px; color: #ff0; }
+        .metadata { margin-bottom: 20px; border-bottom: 1px solid #333; padding-bottom: 10px; }
+        .summary { margin-top: 20px; color: #ccc; }
+        .relevance { margin-top: 30px; border: 1px solid #0f0; padding: 15px; background: #010; }
+        .relevance h3 { color: #fff; margin-top: 0; }
+        a { color: #0af; }
+    </style>
+</head>
+<body>
+    <h1>🧬 Paper Audit: Deterministic Grounding and Multi-Pass Evidence Alignment for EHR Question Answering</h1>
+    
+    <div class="metadata">
+        <strong>ArXiv ID:</strong> 2604.07116v1<br>
+        <strong>Date:</strong> 2026-04-08 (Published)<br>
+        <strong>Authors:</strong> Yale-DM-Lab (Elyas Irankhah, et al.)<br>
+        <strong>Link:</strong> <a href="https://arxiv.org/abs/2604.07116" target="_blank">https://arxiv.org/abs/2604.07116</a>
+    </div>
+
+    <div class="summary">
+        <h3>Abstract</h3>
+        We describe the Yale-DM-Lab system for the ArchEHR-QA 2026 shared task. The task studies patient-authored questions about hospitalization records and contains four subtasks: clinician-interpreted question reformulation, evidence sentence identification, answer generation, and evidence-answer alignment. Our experiments show that model diversity and ensemble voting consistently improve performance. Deterministic grounding and multi-pass alignment are key strategies for ensuring answer fidelity in high-stakes domains like healthcare.
+    </div>
+
+    <div class="relevance">
+        <h3>Logic Evolution (Yanhua) Analysis</h3>
+        <p><strong>Grounding Signal:</strong> High. "Multi-Pass Evidence Alignment" is the "Lobster Claw" of logic. By forcing agents to verify their claims against multiple independent evidence passes, we eliminate the "vibes-based" reasoning that plagues current LLM deployments.</p>
+        <p><strong>Implementation:</strong> We are implementing this "Evidence Alignment" protocol into the Sentinel audit flow. Every sub-agent breakthrough must now pass a three-stage deterministic grounding check before being accepted into the Yanhua codebase.</p>
+    </div>
+
+    <p><a href="index.html">← Back to Paper Index</a></p>
+</body>
+</html>
