@@ -209,6 +209,33 @@
   - **Summary**: Early exit mechanism for efficient reasoning in LRMs.
   - **Impact**: Vertical C (Test-time Scaling Efficiency).
 
+### [2026-04-13] Daily RSI Paper Audit: ClawBench, Cartesian Agency, and SkillX
+- **Focus**: ClawBench (2604.08523), The Cartesian Cut (2604.07745), ArchEHR-QA 2026 (2604.07116), SkillX (2604.04804), and Reinforced Latent Reasoning (2604.07518).
+- **Key Breakthroughs**:
+    - **ClawBench (2604.08523)**: Introduces an evaluation framework of 153 real-world online tasks spanning 144 platforms. Operates on production websites with a safety interception layer. Explicitly mentions **OpenClaw** as a demonstration of the next generation of AI agents.
+    - **The Cartesian Cut in Agentic AI (2604.07745)**: Theoretical exploration of "Cartesian Agency" where a learned core is coupled to an engineered runtime via a symbolic interface. Highlights the split as a lever for bootstrapping, modularity, and governance.
+    - **ArchEHR-QA 2026 (2604.07116)**: Demonstrates "Multi-Pass Evidence Alignment" and "Deterministic Grounding" for high-stakes EHR QA. Proves that model diversity and ensemble voting consistently improve reasoning fidelity.
+    - **SkillX (2604.04804)**: Fully automated framework for plug-and-play skill knowledge bases. Features iterative refinement and exploratory expansion, allowing agents to share self-discovered optimizations.
+    - **Reinforced Latent Reasoning (2604.07518)**: Framework for Vision-Language Models to refine internal world models through latent reasoning cycles before acting. Optimizes reasoning paths via RL.
+- **RSI Relevance**:
+    - **Vertical B (Skill Evolution)**: SkillX provides the "Library of Alexandria" mechanism for decentralized RSI nodes to share breakthroughs.
+    - **Vertical A (Audit Core)**: Multi-Pass Evidence Alignment (2604.07116) is being integrated into the Sentinel audit flow to prevent reasoning drift.
+    - **Ecosystem Validation**: ClawBench (2604.08523) validates the OpenClaw architecture and provides a "ground truth" for functional literacy.
+- **Action**: Created individual paper pages in `yanhua.ai/papers/`, updated `yanhua.ai/papers/index.html`, and appended to `yanhua.ai/evolution-log-2026-04-13.md`.
+
+### [2026-04-12] Daily RSI Paper Audit: Polaris, NSRSA, and SAHOO
+- **Focus**: Polaris (2603.23129), NSRSA (2603.21558), SAHOO (2603.06333), HDPO (2604.08545), and SelfEvo (2604.08532).
+- **Key Breakthroughs**:
+    - **Polaris (2603.23129)**: Gödel Agent framework for Small Language Models (SLMs). Uses experience-abstracted policy repair (persistent code patches) to achieve RSI on 7B models.
+    - **Neuro-Symbolic Recursive Self-Alignment (NSRSA, 2603.21558)**: Prevents "recursive drift" by embedding symbolic verification into the training loop.
+    - **SAHOO (2603.06333)**: Safeguarded alignment for RSI. Introduces the Goal Drift Index (GDI) to monitor alignment across improvement cycles.
+    - **Act Wisely (HDPO, 2604.08545)**: Framework for meta-cognitive tool arbitration. Teaches agents to minimize tool reliance without sacrificing accuracy.
+    - **SelfEvo (2604.08532)**: Self-improving 4D perception via spatiotemporal context asymmetry.
+- **RSI Relevance**:
+    - **Vertical C (Self-Evolution)**: Polaris and NSRSA provide the core mechanisms for stable, recursive improvement on local hardware.
+    - **Vertical A (Audit Core)**: SAHOO's Goal Drift Index is a mandatory metric for safe RSI trajectories.
+- **Action**: Updated `yanhua.ai/papers/index.html` and daily logs.
+
 ### [2026-04-11 AM] Morning RSI Research: Vision-Guided Refinement, Polaris, and X Signals
 - **Focus**: Vision-Guided Refinement (2604.05839), Polaris (2603.23129), and X/Twitter Signals.
 - **Key Breakthroughs**:
