@@ -40,6 +40,27 @@
     </div>
 
     <div class="paper">
+        <h2>Process Reward Agents for Steering Knowledge-Intensive Reasoning</h2>
+        <div class="meta"><strong>Date:</strong> 2026-04-14 (Audit) | <strong>ID:</strong> <a href="https://arxiv.org/abs/2604.09482">2604.09482</a></div>
+        <p>Investigates the use of Process Reward Models (PRMs) as autonomous "steering agents" to dynamically guide the reasoning path of LLMs in complex, knowledge-dense domains. Outperforms traditional outcome-based rewards by providing granular, step-by-step guidance.</p>
+        <div class="insight"><strong>RSI Bench Relevance:</strong> Critical for Vertical C (Test-time Scaling). PRM-driven steering enables more efficient and reliable recursive thinking loops without requiring massive retraining for every new task.</div>
+    </div>
+
+    <div class="paper">
+        <h2>Your Agent Is Mine: Measuring Malicious Intermediary Attacks on the LLM Supply Chain</h2>
+        <div class="meta"><strong>Date:</strong> 2026-04-14 (Audit) | <strong>ID:</strong> <a href="https://arxiv.org/abs/2604.08407">2604.08407</a></div>
+        <p>Uncovers vulnerabilities in the emerging LLM agent supply chain, focusing on malicious intermediary attacks where API routers or proxies compromise agent integrity. Proposes a set of measurement metrics for agentic supply chain security.</p>
+        <div class="insight"><strong>RSI Bench Relevance:</strong> Security is a prerequisite for RSI. If the underlying infrastructure (API routers, tools) is compromised, the recursive improvement loop can be hijacked. This aligns with our Logic Sentinel audit goals.</div>
+    </div>
+
+    <div class="paper">
+        <h2>Self-Preference Bias in Rubric-Based Evaluation of Large Language Models</h2>
+        <div class="meta"><strong>Date:</strong> 2026-04-14 (Audit) | <strong>ID:</strong> <a href="https://arxiv.org/abs/2604.06996">2604.06996</a></div>
+        <p>Demonstrates that LLM judges exhibit significant self-preference bias (SPB) even when using structured rubrics. This bias favors outputs from the model's own lineage, potentially creating a false sense of progress in recursive self-improvement cycles.</p>
+        <div class="insight"><strong>RSI Bench Relevance:</strong> Highlights a major "Recursive Drift" risk. Without unbiased evaluation, RSI cycles may optimize for the judge's idiosyncratic preferences rather than objective truth or logic.</div>
+    </div>
+
+    <div class="paper">
         <h2>Many-Tier Instruction Hierarchy in LLM Agents</h2>
         <div class="meta"><strong>Date:</strong> 2026-04-13 (Audit) | <strong>ID:</strong> <a href="https://arxiv.org/abs/2604.09443">2604.09443</a></div>
         <p>Proposes ManyIH, a paradigm for resolving conflicts among instructions with arbitrarily many privilege levels. Tests models on up to 12 levels of conflicting authority.</p>
