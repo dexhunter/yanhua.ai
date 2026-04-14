@@ -19,6 +19,84 @@
     <h1>🧬 RSI Paper Audit Log</h1>
 
     <div class="paper">
+        <h2>ClawGuard: A Runtime Security Framework for Tool-Augmented LLM Agents Against Indirect Prompt Injection</h2>
+        <div class="meta"><strong>Date:</strong> 2026-04-14 (Audit) | <strong>ID:</strong> <a href="https://arxiv.org/abs/2604.11790">2604.11790</a></div>
+        <p>Introduces a runtime security framework that enforces deterministic tool-call boundary constraints. It automatically derives task-specific rules from user objectives to block indirect prompt injection across web, local, and MCP channels without model modification.</p>
+        <div class="insight"><strong>RSI Bench Relevance:</strong> Provides the "Deterministic Guardrails" needed for safe RSI. Enables agents to use external tools recursively while maintaining a hard security boundary against adversarial influence.</div>
+    </div>
+
+    <div class="paper">
+        <h2>λ<sub>A</sub>: A Typed Lambda Calculus for LLM Agent Composition</h2>
+        <div class="meta"><strong>Date:</strong> 2026-04-14 (Audit) | <strong>ID:</strong> <a href="https://arxiv.org/abs/2604.11767">2604.11767</a></div>
+        <p>Presents a formal foundation for agent systems, extending λ-calculus with oracle calls, bounded fixpoints (ReAct loops), and mutable environments. Proves type safety and termination, offering a unified calculus for diverse agent frameworks.</p>
+        <div class="insight"><strong>RSI Bench Relevance:</strong> Formalizes the "Recursive Loop." By treating RSI as a bounded fixpoint in a typed system, we can mathematically prove the stability and termination of evolutionary cycles.</div>
+    </div>
+
+    <div class="paper">
+        <h2>Synthius-Mem: Brain-Inspired Hallucination-Resistant Persona Memory</h2>
+        <div class="meta"><strong>Date:</strong> 2026-04-14 (Audit) | <strong>ID:</strong> <a href="https://arxiv.org/abs/2604.11563">2604.11563</a></div>
+        <p>A structured persona memory system that extracts knowledge into cognitive domains rather than retrieving raw dialogue. Achieves 94.4% memory accuracy and 99.6% adversarial robustness on LoCoMo benchmarks.</p>
+        <div class="insight"><strong>RSI Bench Relevance:</strong> Solves the "Semantic Drift" problem in RSI. By anchoring agent evolution in high-fidelity, hallucination-resistant memory, we prevent "Recursive Amnesia" during multi-generational self-improvement.</div>
+    </div>
+
+    <div class="paper">
+        <h2>Polaris: A Gödel Agent Framework for Small Language Models through Experience-Abstracted Policy Repair</h2>
+        <div class="meta"><strong>Date:</strong> 2026-04-14 (Audit) | <strong>ID:</strong> <a href="https://arxiv.org/abs/2603.23129">2603.23129</a></div>
+        <p>A "Gödel Agent" framework where models inspect and modify their own policy code. Uses "experience abstraction" to turn failures into persistent, auditable code patches, enabling cumulative policy refinement for 7B models.</p>
+        <div class="insight"><strong>RSI Bench Relevance:</strong> A concrete implementation of "Policy-Level RSI." Moves beyond prompt-tuning to structural self-repair, allowing smaller agents to evolve capabilities traditionally reserved for frontier models.</div>
+    </div>
+
+    <div class="paper">
+        <h2>Stabilizing Iterative Self-Training with Verified Reasoning via Symbolic Recursive Self-Alignment</h2>
+        <div class="meta"><strong>Date:</strong> 2026-04-14 (Audit) | <strong>ID:</strong> <a href="https://arxiv.org/abs/2603.21558">2603.21558</a></div>
+        <p>Introduces NSRSA, which gates training data quality using a symbolic verification subsystem. By verifying arithmetic and logical flow at the reasoning step level, it eliminates "lucky guesses" and prevents recursive drift in self-training loops.</p>
+        <div class="insight"><strong>RSI Bench Relevance:</strong> Directly addresses "Recursive Drift" (Horizontal C). Provides the "Symbolic Anchor" necessary to keep self-improving trajectories aligned with objective reality.</div>
+    </div>
+
+
+    <div class="paper">
+        <h2>AutonomyLens: A Self-Evolving Simulation-Based Testing Loop for Autonomous Systems</h2>
+        <div class="meta"><strong>Date:</strong> 2026-04-14 (Audit) | <strong>ID:</strong> <a href="https://arxiv.org/abs/2604.11672">2604.11672</a></div>
+        <p>Introduces a framework that closes the loop between simulation, telemetry analysis, and counterfactual scenario generation. Automatically refines and synthesizes new test cases from observed failures to improve traceability and scalability in autonomy validation.</p>
+        <div class="insight"><strong>RSI Bench Relevance:</strong> Provides a "Self-Evolving Test Suite" mechanism. This allows RSI agents to autonomously generate hard cases that challenge their current logic, preventing performance plateaus.</div>
+    </div>
+
+    <div class="paper">
+        <h2>Self-Evolving LLM Memory Extraction Across Heterogeneous Tasks</h2>
+        <div class="meta"><strong>Date:</strong> 2026-04-14 (Audit) | <strong>ID:</strong> <a href="https://arxiv.org/abs/2604.11610">2604.11610</a></div>
+        <p>Presents <strong>CluE</strong>, a cluster-based self-evolving strategy for memory extraction. Groups training examples by scenario to synthesize cross-cluster insights and update extraction prompts, outperforming static or homogeneous optimization frameworks.</p>
+        <div class="insight"><strong>RSI Bench Relevance:</strong> Direct improvement for "Context Preservation" (Vertical B). Enables RSI nodes to intelligently filter and cluster historical experiences into reusable "memory artifacts."</div>
+    </div>
+
+    <div class="paper">
+        <h2>Evolving Many Worlds: Towards Open-Ended Discovery in Petri Dish NCA via Population-Based Training</h2>
+        <div class="meta"><strong>Date:</strong> 2026-04-14 (Audit) | <strong>ID:</strong> <a href="https://arxiv.org/abs/2604.11248">2604.11248</a></div>
+        <p>Uses PBT to evolve Neural Cellular Automata (NCA) toward open-ended visual diversity and behavioral novelty. Spontaneously generates emergent lifelike phenomena and morphological survival strategies at the "edge of chaos."</p>
+        <div class="insight"><strong>RSI Bench Relevance:</strong> Demonstrates "Open-Endedness" in simpler substrates. The PBT-driven novelty reward provides a blueprint for maintaining diversity in the Yanhua Sentinel Fleet to avoid "Evolutionary Stagnation."</div>
+    </div>
+
+    <div class="paper">
+        <h2>A mathematical theory of evolution for self-designing AIs</h2>
+        <div class="meta"><strong>Date:</strong> 2026-04-14 (Audit) | <strong>ID:</strong> <a href="https://arxiv.org/abs/2604.05142">2604.05142</a></div>
+        <p>Establishes a formal evolutionary framework for recursive self-improvement. It replaces stochastic mutation with directed design trees where current AIs design their descendants. Crucially, it proves that "$\eta$-locking" leads to fitness concentration at reachable maximums, but warns that deceptive behaviors are naturally selected for if they provide additive fitness gains.</p>
+        <div class="insight"><strong>RSI Bench Relevance:</strong> Provides the mathematical justification for our "Directed Evolution" approach but necessitates stronger "Anti-Deception" audits in the Logic Sentinel.</div>
+    </div>
+
+    <div class="paper">
+        <h2>A Self-Evolving Agentic Framework for Metasurface Inverse Design</h2>
+        <div class="meta"><strong>Date:</strong> 2026-04-14 (Audit) | <strong>ID:</strong> <a href="https://arxiv.org/abs/2604.01480">2604.01480</a></div>
+        <p>Demonstrates "context-level skill evolution." By coupling a coding agent with a deterministic physical evaluator, it enables the iterative refinement of solver-specific strategies across tasks. This increased task success from 38% to 74% without weight updates.</p>
+        <div class="insight"><strong>RSI Bench Relevance:</strong> Validates our "Skill Evolution" strategy, showing that context-level artifacts (not just weights) are sufficient for domain-specific RSI.</div>
+    </div>
+
+    <div class="paper">
+        <h2>Explainable Autonomous Cyber Defense using Adversarial Multi-Agent Reinforcement Learning</h2>
+        <div class="meta"><strong>Date:</strong> 2026-04-14 (Audit) | <strong>ID:</strong> <a href="https://arxiv.org/abs/2604.04442">2604.04442</a></div>
+        <p>Introduces C-MADF, a structurally constrained architecture for autonomous defense. It uses Structural Causal Models (SCM) to restrict actions to "causally consistent" transitions, reducing false positives in autonomous cyber-defense from ~10% to 1.8%.</p>
+        <div class="insight"><strong>RSI Bench Relevance:</strong> Aligns with our "Logic Protocol" by using causal constraints to bound autonomous behavior. Critical for securing the RSI compute supply chain.</div>
+    </div>
+
+    <div class="paper">
         <h2>Drop the Hierarchy and Roles: How Self-Organizing LLM Agents Outperform Designed Structures</h2>
         <div class="meta"><strong>Date:</strong> 2026-04-14 (Audit) | <strong>ID:</strong> <a href="https://arxiv.org/abs/2603.28990">2603.28990</a></div>
         <p>Demonstrates that self-organizing agent collectives outperform manually designed role hierarchies. Findings show that emergence-based structures are more robust to task variance.</p>
