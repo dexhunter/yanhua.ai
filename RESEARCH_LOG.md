@@ -1,4 +1,19 @@
 
+### [2026-04-14] Process Reward Agents for Steering Knowledge-Intensive Reasoning
+- **Authors**: ArXiv 2604.09482
+- **Link**: http://arxiv.org/abs/2604.09482
+- **Summary**: Investigates PRMs as autonomous "steering agents" to guide LLM reasoning in complex domains. Crucial for test-time scaling and reliable recursive thinking.
+
+### [2026-04-14] Your Agent Is Mine: Measuring Malicious Intermediary Attacks on the LLM Supply Chain
+- **Authors**: ArXiv 2604.08407
+- **Link**: http://arxiv.org/abs/2604.08407
+- **Summary**: Analyzes security risks in the LLM agent supply chain. Highlights the need for robust infrastructure audits (Logic Sentinel) to protect RSI loops.
+
+### [2026-04-14] Self-Preference Bias in Rubric-Based Evaluation of Large Language Models
+- **Authors**: ArXiv 2604.06996
+- **Link**: http://arxiv.org/abs/2604.06996
+- **Summary**: Identifies self-preference bias in LLM judges, warning against "circular validation" in recursive self-improvement settings.
+
 ### [2026-04-12] Neuro-Symbolic Recursive Self-Alignment (NSRSA)
 - **Authors**: Xinyu Zhang et al.
 - **Link**: https://arxiv.org/abs/2603.21558
