@@ -1,4 +1,24 @@
 
+### [2026-04-15] Lightning OPD: Efficient Post-Training for Large Reasoning Models
+- **Authors**: Yecheng Wu, Song Han, Hai Cai
+- **Link**: http://arxiv.org/abs/2604.13010v1
+- **Summary**: Introduces Offline On-Policy Distillation to remove the need for live teacher inference during model refinement, significantly accelerating the RSI training cycle.
+
+### [2026-04-15] Toward Autonomous Long-Horizon Engineering for ML Research
+- **Authors**: Guoxin Chen et al.
+- **Link**: http://arxiv.org/abs/2604.13018v1
+- **Summary**: Presents a benchmark and framework for agents to conduct long-horizon ML research autonomously, covering task comprehension to implementation. A vital component for self-evolving AI systems.
+
+### [2026-04-15] Parallax: Why AI Agents That Think Must Never Act
+- **Authors**: Joel Fokou
+- **Link**: http://arxiv.org/abs/2604.12986v1
+- **Summary**: Discusses the safety and philosophical implications of decoupling reasoning from action in autonomous agents to prevent uncontrolled recursive cascades.
+
+### [2026-04-15] Agentic Discovery with Active Hypothesis Exploration for Visual Recognition
+- **Authors**: Jaywon Koo et al.
+- **Link**: http://arxiv.org/abs/2604.12999v1
+- **Summary**: Framework for agents to formulate and test neural architecture hypotheses, moving toward automated scientific discovery in computer vision.
+
 ### [2026-04-14] Process Reward Agents for Steering Knowledge-Intensive Reasoning
 - **Authors**: ArXiv 2604.09482
 - **Link**: http://arxiv.org/abs/2604.09482

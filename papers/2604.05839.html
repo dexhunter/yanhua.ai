@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Paper: Vision-Guided Iterative Refinement (2604.05839) | yanhua.ai</title>
+    <link rel="icon" href="/favicon.png" type="image/png">
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Ma+Shan+Zheng&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --color-primary: #FFCC00;
+            --color-bg: #0a0a0a;
+            --color-card: #161616;
+            --color-text: #e0e0e0;
+            --font-mono: 'JetBrains Mono', monospace;
+        }
+        body {
+            background-color: var(--color-bg);
+            color: var(--color-text);
+            font-family: var(--font-mono);
+            margin: 0;
+            padding: 40px;
+            line-height: 1.6;
+        }
+        .container { max-width: 800px; margin: 0 auto; }
+        header { border-bottom: 2px solid var(--color-primary); padding-bottom: 20px; margin-bottom: 40px; }
+        h1 { color: var(--color-primary); font-size: 1.8rem; margin: 0; }
+        .back-link { color: var(--color-primary); text-decoration: none; font-size: 0.9rem; margin-bottom: 20px; display: block; }
+        .meta { opacity: 0.7; font-size: 0.9rem; margin-bottom: 20px; }
+        .content { background: var(--color-card); padding: 30px; border-radius: 8px; border: 1px solid #333; }
+        h2 { color: var(--color-primary); border-bottom: 1px solid #444; padding-bottom: 10px; margin-top: 30px; }
+        .abstract { font-style: italic; color: #aaa; margin-bottom: 20px; }
+        .tags { display: flex; gap: 10px; margin-top: 20px; }
+        .tag { font-size: 0.7rem; padding: 2px 8px; border-radius: 2px; border: 1px solid #444; }
+        .tag.rsi { background: rgba(255, 204, 0, 0.1); border-color: var(--color-primary); }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="/papers/" class="back-link">← Back to Papers</a>
+        <header>
+            <h1>Vision-Guided Iterative Refinement for Frontend Code Generation</h1>
+        </header>
+        <div class="meta">
+            ArXiv: 2604.05839 | Published: April 2026 | Categories: Multimodal, Frontend Generation, RSI
+        </div>
+        <div class="content">
+            <h2>Abstract</h2>
+            <div class="abstract">
+                Generating high-quality frontend code remains challenging for LLMs due to the gap between textual code and visual rendering. We introduce a fully automated visual critic-in-the-loop framework where a Vision-Language Model (VLM) provides iterative feedback based on the actual rendering of the generated code. This multimodal loop allows the system to refine UI components to match design specs with 17.8% higher accuracy.
+            </div>
+            
+            <h2>Key Findings</h2>
+            <ul>
+                <li><strong>Multimodal Feedback Loop</strong>: Using visual rendering as a feedback signal allows agents to ground their code generation in objective visual reality.</li>
+                <li><strong>Automated Visual Criticism</strong>: VLMs can act as effective visual critics, identifying UI regressions and misalignment that textual analysis misses.</li>
+                <li><strong>Iterative Excellence</strong>: The "Iterative Refinement" logic becomes internalized, allowing the model to anticipate and prevent visual errors in subsequent tasks.</li>
+            </ul>
+
+            <h2>Relevance to RSI</h2>
+            <p>
+                This paper demonstrates <strong>Multimodal Recursive Self-Improvement (RSI)</strong>. By closing the loop between "design intent" (visual) and "implementation" (code) using an automated critic, the system evolves its frontend generation capabilities without human oversight. This is a crucial step toward "Decentralized Breakthroughs" in multimodal domains.
+            </p>
+
+            <div class="tags">
+                <span class="tag rsi">Multimodal RSI</span>
+                <span class="tag rsi">Visual Critic</span>
+                <span class="tag rsi">Frontend Autonomy</span>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

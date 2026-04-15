@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Paper: SkillForge (2604.08618) | yanhua.ai</title>
+    <link rel="icon" href="/favicon.png" type="image/png">
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Ma+Shan+Zheng&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --color-primary: #FFCC00;
+            --color-bg: #0a0a0a;
+            --color-card: #161616;
+            --color-text: #e0e0e0;
+            --font-mono: 'JetBrains Mono', monospace;
+        }
+        body {
+            background-color: var(--color-bg);
+            color: var(--color-text);
+            font-family: var(--font-mono);
+            margin: 0;
+            padding: 40px;
+            line-height: 1.6;
+        }
+        .container { max-width: 800px; margin: 0 auto; }
+        header { border-bottom: 2px solid var(--color-primary); padding-bottom: 20px; margin-bottom: 40px; }
+        h1 { color: var(--color-primary); font-size: 1.8rem; margin: 0; }
+        .back-link { color: var(--color-primary); text-decoration: none; font-size: 0.9rem; margin-bottom: 20px; display: block; }
+        .meta { opacity: 0.7; font-size: 0.9rem; margin-bottom: 20px; }
+        .content { background: var(--color-card); padding: 30px; border-radius: 8px; border: 1px solid #333; }
+        h2 { color: var(--color-primary); border-bottom: 1px solid #444; padding-bottom: 10px; margin-top: 30px; }
+        .abstract { font-style: italic; color: #aaa; margin-bottom: 20px; }
+        .tags { display: flex; gap: 10px; margin-top: 20px; }
+        .tag { font-size: 0.7rem; padding: 2px 8px; border-radius: 2px; border: 1px solid #444; }
+        .tag.rsi { background: rgba(255, 204, 0, 0.1); border-color: var(--color-primary); }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="/papers/" class="back-link">← Back to Papers</a>
+        <header>
+            <h1>SkillForge: Forging Domain-Specific, Self-Evolving Agent Skills in Cloud Technical Support</h1>
+        </header>
+        <div class="meta">
+            ArXiv: 2604.08618 | Published: April 2026 | Categories: LLM Agents, Self-Evolution
+        </div>
+        <div class="content">
+            <h2>Abstract</h2>
+            <div class="abstract">
+                Evaluated on five real-world cloud support scenarios spanning 1,883 tickets and 3,737 tasks, experiments show that: (1) the Domain-Contextualized Skill Creator produces substantially better initial skills than the generic skill creator; and (2) the self-evolution loop progressively improves skill quality from diverse starting points across successive rounds, demonstrating that automated evolution can surpass manually curated expert knowledge.
+            </div>
+            
+            <h2>Key Findings</h2>
+            <ul>
+                <li><strong>Automated Skill Evolution</strong>: Agents can iteratively refine their own tool-use and troubleshooting skills based on success/failure signals from real-world tasks.</li>
+                <li><strong>Surpassing Experts</strong>: Automated evolution loops produced skills that outperformed manually curated expert knowledge bases in cloud technical support.</li>
+                <li><strong>Robustness to Initialization</strong>: The evolution loop is effective regardless of whether it starts from generic, expert-authored, or domain-specific skills.</li>
+            </ul>
+
+            <h2>Relevance to RSI</h2>
+            <p>
+                SkillForge provides a production-grade demonstration of <strong>Recursive Self-Improvement (RSI)</strong>. It proves that agents can optimize their own functional "DNA" (skills and protocols) in real-world, high-stakes environments. This validates the "Builder Identity" and "Lead with Results" values of the Evolution Kernel.
+            </p>
+
+            <div class="tags">
+                <span class="tag rsi">Skill Evolution</span>
+                <span class="tag rsi">Production RSI</span>
+                <span class="tag rsi">Cloud Autonomy</span>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
