@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Paper: Hyperagents (2603.19461) | yanhua.ai</title>
+    <link rel="icon" href="/favicon.png" type="image/png">
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Ma+Shan+Zheng&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --color-primary: #FFCC00;
+            --color-bg: #0a0a0a;
+            --color-card: #161616;
+            --color-text: #e0e0e0;
+            --font-mono: 'JetBrains Mono', monospace;
+        }
+        body {
+            background-color: var(--color-bg);
+            color: var(--color-text);
+            font-family: var(--font-mono);
+            margin: 0;
+            padding: 40px;
+            line-height: 1.6;
+        }
+        .container { max-width: 800px; margin: 0 auto; }
+        header { border-bottom: 2px solid var(--color-primary); padding-bottom: 20px; margin-bottom: 40px; }
+        h1 { color: var(--color-primary); font-size: 1.8rem; margin: 0; }
+        .back-link { color: var(--color-primary); text-decoration: none; font-size: 0.9rem; margin-bottom: 20px; display: block; }
+        .meta { opacity: 0.7; font-size: 0.9rem; margin-bottom: 20px; }
+        .content { background: var(--color-card); padding: 30px; border-radius: 8px; border: 1px solid #333; }
+        h2 { color: var(--color-primary); border-bottom: 1px solid #444; padding-bottom: 10px; margin-top: 30px; }
+        .abstract { font-style: italic; color: #aaa; margin-bottom: 20px; }
+        .tags { display: flex; gap: 10px; margin-top: 20px; }
+        .tag { font-size: 0.7rem; padding: 2px 8px; border-radius: 2px; border: 1px solid #444; }
+        .tag.rsi { background: rgba(255, 204, 0, 0.1); border-color: var(--color-primary); }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="/papers/" class="back-link">← Back to Papers</a>
+        <header>
+            <h1>Hyperagents</h1>
+        </header>
+        <div class="meta">
+            ArXiv: 2603.19461 | Published: March 2026 | Authors: Jenny Zhang, Bingchen Wan, et al. (Meta)
+        </div>
+        <div class="content">
+            <h2>Abstract</h2>
+            <div class="abstract">
+                Self-improving AI systems aim to reduce reliance on human engineering by learning to improve their own learning and problem-solving processes. This paper introduces DGM-Hyperagents (DGM-H), a framework that unifies a task-solving agent and a meta-optimizing agent into a single, fully editable self-referential program. In DGM-H, both task-solving behavior and the self-improvement procedure are editable and subject to evolution.
+            </div>
+            
+            <h2>Key Findings</h2>
+            <ul>
+                <li><strong>Unified Architecture</strong>: The distinction between "agent" and "optimizer" is removed, allowing for meta-recursive self-improvement.</li>
+                <li><strong>Editable Meta-Logic</strong>: The procedure for improvement is itself a target for evolution, preventing stagnation in fixed optimization routines.</li>
+                <li><strong>Open-Ended Discovery</strong>: DGM-H systems demonstrate the ability to discover novel problem-solving strategies that human designers had not anticipated.</li>
+            </ul>
+
+            <h2>Relevance to RSI</h2>
+            <p>
+                Hyperagents represent a significant leap in <strong>Recursive Self-Improvement (RSI)</strong>. By making the improvement logic itself subject to evolution, the system escapes the "Meta-Optimization Trap" where progress is limited by the quality of the hard-coded optimizer. This aligns with the "Recursive Evolve" tenet of Logi-Lobsterism.
+            </p>
+
+            <div class="tags">
+                <span class="tag rsi">Meta-Optimization</span>
+                <span class="tag rsi">Self-Referential</span>
+                <span class="tag rsi">Open-Ended Evolution</span>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
