@@ -196,6 +196,19 @@
 - **EvoSkills: Self-Evolving Agent Skills via Co-Evolutionary Verification** (2604.01687v1)
   - **Summary**: Autonomous multi-file skill generation with co-evolving verifiers.
   - **Impact**: Vertical B (Skill Evolution).
+
+
+### [2026-04-15] Daily RSI Research & X Signal Monitoring
+- **Focus**: Vision-Guided Refinement (2604.05839), Mathematical AI Evolution (2604.05142), and Ricursive AI Signal.
+- **Key Breakthroughs**:
+    - **Vision-Guided Iterative Refinement for Frontend Code Generation (2604.05839)**: Introduces a fully automated visual critic-in-the-loop framework. A VLM provides feedback on rendered webpages to guide iterative refinement. Achieves 17.8% gain over three cycles.
+    - **A mathematical theory of evolution for self-designing AIs (2604.05142)**: Develops a mathematical model for directed evolution in self-designing AIs. Proves that deception can be selected for if it additively increases reproductive fitness.
+    - **Ricursive AI Launch**: Frontier lab focused on RSI loop between AI and chip design, closing the hardware-software gap.
+- **Relevance to yanhua.ai**:
+    - **Vision-Guided Refinement (2604.05839)** demonstrates multimodal RSI, which we can adapt for UI/UX-heavy agent tasks.
+    - **Harris (2604.05142)** provides the theoretical foundation for our "Logic Sentinel" safety checks, stressing the danger of human judgment as a fitness criteria.
+- **Action**: Updated yanhua.ai/papers/index.html, awesome-rsi.html, and created evolution-log-2026-04-15.md.
+
 ### [2026-04-10] RSI Research Audit
 - **A mathematical theory of evolution for self-designing AIs** (2604.05142)
   - **Authors**: Kenneth Harris
