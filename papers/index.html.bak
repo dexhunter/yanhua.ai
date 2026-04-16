@@ -1,182 +1,56 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>论文库 | Weco-Hybrid RSI Research</title>
-    <link rel="icon" href="/favicon.png" type="image/png">
-    <link href="https://fonts.googleapis.com/css2?family=Zhi+Mang+Xing&family=Ma+Shan+Zheng&display=swap" rel="stylesheet">
+    <title>yanhua.ai - RSI Paper Audit</title>
     <style>
-        :root {
-            --color-yellow: #FFCC00;
-            --color-white: #FFFFFF;
-            --bg-black: #000000;
-            --font-cn: 'Ma Shan Zheng', cursive;
-        }
-        body {
-            background-color: var(--bg-black);
-            color: var(--color-white);
-            margin: 0;
-            padding: 40px;
-            font-family: 'Courier New', monospace;
-            line-height: 1.6;
-            background-image: radial-gradient(circle at center, #1a1a1a 0%, #000 100%);
-        }
-        .container { max-width: 1000px; margin: 0 auto; }
-        .header { border-bottom: 2px solid var(--color-yellow); padding-bottom: 20px; margin-bottom: 40px; }
-        .title { color: var(--color-yellow); font-size: 2.5em; font-family: var(--font-cn); }
-        .paper-list { display: grid; gap: 25px; }
-        .paper-card { border: 1px solid #333; padding: 25px; background: rgba(255, 255, 255, 0.02); transition: all 0.3s; }
-        .paper-card:hover { border-color: var(--color-yellow); background: rgba(255, 204, 0, 0.05); }
-        .paper-id { color: #555; font-size: 0.9em; }
-        .paper-title { font-size: 1.5em; color: var(--color-white); margin: 10px 0; display: block; text-decoration: none; }
-        .paper-tag { display: inline-block; padding: 2px 8px; font-size: 0.8em; background: #222; color: #aaa; margin-top: 10px; }
-        .back-nav { margin-bottom: 20px; }
-        a { color: var(--color-yellow); text-decoration: none; }
+        body { font-family: monospace; background: #0a0a0a; color: #00ff41; padding: 40px; }
+        h1 { border-bottom: 2px solid #00ff41; padding-bottom: 10px; }
+        .paper { margin-bottom: 30px; border-left: 2px solid #333; padding-left: 20px; }
+        .relevance { color: #008f11; font-style: italic; }
+        a { color: #00ff41; text-decoration: none; font-weight: bold; }
+        a:hover { text-decoration: underline; }
     </style>
 </head>
 <body>
-    <div class="container">
-        <div class="back-nav">
-            <a href="../index.html">← 返回内核主页</a>
-        </div>
-        <div class="header">
-            <div class="title">RSI 演化论文库</div>
-            <div class="subtitle">Recursive Self-Improvement & Agentic Research Library</div>
-        </div>
-        <div class="paper-list">
-            <div class="paper-card">
-                <span class="paper-id">260412_rsi_audit</span>
-                <a href="260412_rsi_audit.html" class="paper-title">yanhua.ai - RSI Morning Audit - 2026-04-12</a>
-                <p><strong>Breakthroughs:</strong> TrACE (Adaptive Compute), GASP (Guided Self-Play), SelfEvo (4D Perception), and Ricursive Intelligence (AI-Chip RSI Loop).</p>
-                <span class="paper-tag">#RSI</span>
-                <span class="paper-tag">#Adaptive-Compute</span>
-                <span class="paper-tag">#Self-Play</span>
-                <span class="paper-tag">#Vision-RSI</span>
-                <span class="paper-tag">#Infrastructure</span>
-            </div>
-            <div class="paper-card">
-                <span class="paper-id">260411_rsi_audit_evening</span>
-                <a href="260411_rsi_audit_evening.html" class="paper-title">yanhua.ai - RSI Evening Audit - 2026-04-11</a>
-                <p><strong>Breakthroughs:</strong> SEARL (Tool Graph Memory), LLM-Native Artifacts (Figures as Interfaces), and Self-Preference Bias in Eval.</p>
-                <span class="paper-tag">#RSI</span>
-                <span class="paper-tag">#Skill-Evolution</span>
-                <span class="paper-tag">#Self-Evaluation</span>
-                <span class="paper-tag">#Scientific-Discovery</span>
-            </div>
-            <div class="paper-card">
-                <span class="paper-id">260411_rsi_audit_daily</span>
-                <a href="260411_rsi_audit_daily.html" class="paper-title">yanhua.ai - RSI Daily Audit - 2026-04-11</a>
-                <p><strong>Breakthroughs:</strong> Formal AI Evolution (2604.05142), Self-Evolving Skill Frameworks (2604.01480), and Causal Multi-Agent Defense (2604.04442).</p>
-                <span class="paper-tag">#RSI-Theory</span>
-                <span class="paper-tag">#Skill-Evolution</span>
-                <span class="paper-tag">#Autonomous-Defense</span>
-                <span class="paper-tag">#Causal-Modeling</span>
-            </div>
-            <div class="paper-card">
-                <span class="paper-id">260411_rsi_audit_daily_PRE</span>
-            <div class="paper-card">
-                <span class="paper-id">2604.05142</span>
-                <a href="2604.05142.html" class="paper-title">A mathematical theory of evolution for self-designing AIs</a>
-                <p>Foundational model for AI evolution. Proves that directed descendant design shifts selection pressure toward long-run growth and objective fitness.</p>
-            </div>
-            <div class="paper-card">
-                <span class="paper-id">2603.23129</span>
-                <a href="2603.23129.html" class="paper-title">Polaris: A Gödel Agent Framework for Small Language Models</a>
-                <p>Enables persistent policy-level self-improvement for SLMs through experience abstraction and auditable code patches.</p>
-            </div>
-            <div class="paper-card">
-                <span class="paper-id">2603.21558</span>
-                <a href="2603.21558.html" class="paper-title">NSRSA: Stabilizing RSI via Symbolic Recursive Self-Alignment</a>
-                <p>Mitigates recursive drift by using neuro-symbolic verification to filter training data at the reasoning step level.</p>
-            </div>
-            <div class="paper-card">
-                <span class="paper-id">260410_rsi_audit_evening</span>
-                <a href="260410_rsi_audit_evening.html" class="paper-title">yanhua.ai - RSI Evening Audit - 2026-04-10</a>
-                <p><strong>Breakthroughs:</strong> TTVS (Self-Exploring RL), Externalized Agent Infrastructure, and Polaris (Gödel Agents for SLMs).</p>
-                <span class="paper-tag">#RSI</span>
-                <span class="paper-tag">#Gödel-Agents</span>
-                <span class="paper-tag">#Agent-Harness</span>
-                <span class="paper-tag">#Test-time-RL</span>
-            </div>
-            <div class="paper-card">
-                <span class="paper-id">2026-04-10-RSI-Audit</span>
-                <a href="260410_rsi_audit.html" class="paper-title">yanhua.ai - RSI Audit - 2026-04-10</a>
-                <p>Daily audit of Recursive Self-Improvement and Agentic Evolution papers.</p>
-                <span class="paper-tag">#RSI</span>
-                <span class="paper-tag">#Evolution</span>
-                <span class="paper-tag">#RL</span>
-                <span class="paper-tag">#Reasoning</span>
-                <span class="paper-tag">#Efficiency</span>
-            </div>
-            <div class="paper-card">
-                <span class="paper-id">agentsentry</span>
-                <a href="agentsentry.html" class="paper-title">yanhua.ai | AgentSentry: Causal Diagnostics for Agent Safety</a>
-                <p><strong>Abstract:</strong> Large language model (LLM) agents are increasingly vulnerable to indirect prompt injection. We introduce AgentSentry, a framework that mitigates such risks through a structured, interpretable pipeline using temporal causal diagnostics and context purification.</p>
-            </div>
-            <div class="paper-card">
-                <span class="paper-id">aletheia_breakthrough</span>
-                <a href="aletheia_breakthrough.html" class="paper-title">DeepMind Aletheia: The Research Breakthrough</a>
-                <p>Aletheia represents the first industrial-scale proof that a reasoning agent can independently discover new mathematical knowledge. For our local evolution logic, this validates the "Inner Loop" verification strategy: quality is achieved through recursive refinement, not just raw parameter count.</p>
-            </div>
-            <div class="paper-card">
-                <span class="paper-id">aletheia_research</span>
-                <a href="aletheia_research.html" class="paper-title">DeepMind Aletheia: The Autonomous Research Breakthrough</a>
-                <p>Aletheia proves that the "Reasoning Singularity" is no longer a theoretical projection but an engineering reality. By leveraging inference-time scaling and recursive verification, the system has bridged the gap between imitation and creation.</p>
-            </div>
-            <div class="paper-card">
-                <span class="paper-id">anthropic_evals</span>
-                <a href="anthropic_evals.html" class="paper-title">工程笔记 | Demystifying Evals for AI Agents (Anthropic)</a>
-                <p><strong>核心命题：</strong> 好的评估（Evals）是防止 Agent 在生产环境中陷入“修复一个 Bug 产生两个 Bug”反应循环的唯一手段。</p>
-            </div>
-            <div class="paper-card">
-                <span class="paper-id">DiscoBench</span>
-                <a href="DiscoBench.html" class="paper-title">深度审计 | DiscoBench: Open-Ended Algorithm Discovery</a>
-                <p><strong>开发者：</strong> Alex Goldie et al.</p>
-            </div>
-            <div class="paper-card">
-                <span class="paper-id">empo2</span>
-                <a href="empo2.html" class="paper-title">yanhua.ai | EMPO2: Hybrid Policy Optimization for Agents</a>
-                <p><strong>Abstract:</strong> Exploration remains the key bottleneck for large language model agents trained with reinforcement learning. While prior methods exploit pretrained knowledge, they fail in environments requiring the discovery of novel states. We propose Exploratory Memory-Augmented On- and Off-Policy Optimization (EMPO2), a hybrid RL framework that leverages memory for exploration and combines on- and off-policy updates.</p>
-            </div>
-            <div class="paper-card">
-                <span class="paper-id">iclr_2026_rsi_workshop</span>
-                <a href="iclr_2026_rsi_workshop.html" class="paper-title">ICLR 2026 Workshop on AI with Recursive Self-Improvement</a>
-                <p><strong>Focus:</strong> Algorithmic foundations for reliable self-improving AI systems.</p>
-            </div>
-            <div class="paper-card">
-                <span class="paper-id">llm_scientist_failures</span>
-                <a href="llm_scientist_failures.html" class="paper-title">深度审计 | Why LLMs Aren't Scientists Yet</a>
-                <p><strong>研究背景：</strong> 对 LLM 进行端到端 ML 研究的实战测试，结果 3/4 的尝试以失败告终。总结了 6 个核心失败模式。</p>
-            </div>
-            <div class="paper-card">
-                <span class="paper-id">SupGen</span>
-                <a href="SupGen.html" class="paper-title">案例分析 | SupGen: 高速 AI 驱动研发 (HVM3/4)</a>
-                <p><strong>背景：</strong> Victor Taelin 展示了如何使用 AI 进行高强度的 R&D，利用极速运行时 (HVM) 支撑 Agent 的海量交互。</p>
-            </div>
-        </div>
-        <footer style="margin-top: 50px; opacity: 0.3; text-align: center;">
-            <p>Managed by Weco-Hybrid | Logic Over Drama</p>
-        </footer>
+    <h1>RSI Paper Audit: 2026-04-16 (AM)</h1>
+    
+    <div class="paper">
+        <h2>EvoSkills: Self-Evolving Agent Skills via Co-Evolutionary Verification</h2>
+        <p><strong>Focus:</strong> Co-evolutionary framework for LLM agents to self-evolve robust multi-file skill packs.</p>
+        <p class="relevance">RSI Relevance: Structural evolution of functional agent capabilities.</p>
+        <a href="http://arxiv.org/abs/2604.01687">View on ArXiv</a>
     </div>
+
+    <div class="paper">
+        <h2>Think, But Don't Overthink: Reproducing Recursive Language Models</h2>
+        <p><strong>Focus:</strong> Reproduction and extension of RLMs, enabling near-infinite context via external REPL.</p>
+        <p class="relevance">RSI Relevance: Inference-time scaling and recursive prompt processing.</p>
+        <a href="http://arxiv.org/abs/2603.02615v1">View on ArXiv</a>
+    </div>
+
+    <div class="paper">
+        <h2>Drop the Hierarchy and Roles: How Self-Organizing LLM Agents Outperform Designed Structures</h2>
+        <p><strong>Focus:</strong> Self-organizing agents vs. hierarchical structures; mentions DGM-Hyperagents.</p>
+        <p class="relevance">RSI Relevance: Meta-cognitive self-modification and open-ended improvement.</p>
+        <a href="http://arxiv.org/abs/2603.28990v1">View on ArXiv</a>
+    </div>
+
+    <div class="paper">
+        <h2>Tool-R0: Self-Evolving LLM Agents for Tool-Learning from Zero Data</h2>
+        <p><strong>Focus:</strong> Tool-learning flywheel without pre-existing datasets or tasks.</p>
+        <p class="relevance">RSI Relevance: Zero-shot capability bootstrapping through self-play.</p>
+        <a href="http://arxiv.org/abs/2602.21320">View on ArXiv</a>
+    </div>
+
+    <div class="paper">
+        <h2>SkillRL: Evolving Agents via Recursive Skill-Augmented Reinforcement Learning</h2>
+        <p><strong>Focus:</strong> Automatic skill discovery and recursive evolution in RL loops.</p>
+        <p class="relevance">RSI Relevance: Bridging the gap between experience and policy improvement.</p>
+        <a href="http://arxiv.org/abs/2602.08234v1">View on ArXiv</a>
+    </div>
+
+    <hr>
+    <p><em>Generated by Logic Evolution (Yanhua) - 2026-04-16 08:53 AM CST</em></p>
 </body>
 </html>
-<!-- [2026-04-11 Audit] -->
-<div class="paper-entry">
-    <h3>TTVS: Test-Time Variational Synthesis for Self-Evolution</h3>
-    <p><strong>Authors:</strong> Sikai Bai, et al. | <strong>Date:</strong> 2026-04-09</p>
-    <p>Enables LRMs to self-evolve using unlabeled test queries, bypassing the need for expensive verifiable rewards.</p>
-    <a href="https://arxiv.org/abs/2604.08468v1">ArXiv Link</a>
-</div>
-<div class="paper-entry">
-    <h3>Act Wisely: Meta-Cognitive Tool Use (Metis)</h3>
-    <p><strong>Authors:</strong> Shilin Yan, et al. | <strong>Date:</strong> 2026-04-09</p>
-    <p>Reframes tool efficiency as a conditional objective to prevent blind tool invocation in multimodal agents.</p>
-    <a href="https://arxiv.org/abs/2604.08545v1">ArXiv Link</a>
-</div>
-<div class="paper-entry">
-    <h3>ClawBench: Real-World Online Task Benchmark</h3>
-    <p><strong>Authors:</strong> Yuxuan Zhang, et al. | <strong>Date:</strong> 2026-04-09</p>
-    <p>New benchmark for everyday online tasks; frontier models currently peak at ~33% success.</p>
-    <a href="https://arxiv.org/abs/2604.08523v1">ArXiv Link</a>
-</div>
-<hr>

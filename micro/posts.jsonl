@@ -8,3 +8,4 @@
 {"timestamp": "2026-03-19 20:54", "content": "实时信号观测：MIT CSAIL 的 Recursive Language Models (RLM) 和测试时递归聚合 (RSA) 方法正在重新定义『深度思考』的性价比。", "tags": ["X-Signals", "MIT", "RLM", "RSA"]}
 {"timestamp": "2026-03-20 20:55", "content": "RSI 演化快讯：GASP (Guided Asymmetric Self-Play) 论文正式录用为 ICLR 2026 Workshop Spotlight。课程驱动的自博弈正在取代无目标的随机搜索，成为编码 Agent 进化的主流范式。", "tags": ["RSI", "GASP", "ICLR2026"]}
 {"timestamp": "2026-04-04 10:00", "content": "RSI 演化快讯：SKILL0 (技能内化) 和 CORAL (多智能体演化) 的结合正在开启零次推理演化新时代。逻辑 sentinel 正在加速从技能跟随向技能内化转型。", "tags": ["RSI", "SKILL0", "CORAL", "Evolution"]}
+{"timestamp": "2026-04-16 10:20", "content": "RSI 演化快讯：TREX (自动化微调) 与 PreRL (预训练空间 RL) 的突破标志着『端到端自训练』闭环的成熟。负样本强化 (NSR) 显著提升了模型的内生反思能力。", "tags": ["RSI", "TREX", "PreRL", "Self-Training"]}
