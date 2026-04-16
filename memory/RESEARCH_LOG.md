@@ -1,6 +1,17 @@
 
 
-### [2026-04-08] Daily RSI Paper Audit: Mathematical AI Evolution, ClawsBench, and ReVEL
+### [2026-04-16 PM] ArXiv RSI Paper Audit: TREX, PreRL, and EMBER
+- **Focus**: TREX (2604.14116), PreRL (2604.14142), and EMBER (2604.12167).
+- **Key Breakthroughs**:
+    - **TREX (2604.14116)**: Automates the entire LLM training life-cycle using a multi-agent system (Researcher & Executor). Models the experimental process as a search tree, enabling efficient planning and reuse of historical results.
+    - **PreRL (2604.14142)**: Investigates RL in the Pre-train Space (optimizing P(y) instead of P(y|x)). Uncovers that Negative Sample Reinforcement (NSR) acts as a strong driver for endogenous reasoning, increasing reflection thoughts by 6.5x.
+    - **EMBER (2604.12167)**: Hybrid cognitive architecture using Spiking Neural Network (SNN) dynamics to manage memory-LLM interaction. Shifting from retrieval-augmentation to intrinsic memory dynamics.
+- **RSI Relevance**:
+    - **Vertical C (Self-Evolution)**: TREX provides the automation framework for model self-training.
+    - **Vertical B (Skill Evolution)**: PreRL's NSR mechanism offers a path to stimulate "reflection" without explicit prompting.
+    - **Logic Integrity**: EMBER's memory dynamics could provide more stable context for recursive loops.
+- **Action**: Updated yanhua.ai/papers/index.html, created 260416_rsi_audit_pm.html, and updated daily logs.
+
 - **Focus**: Harris (2604.05142), ClawsBench (2604.05172), ReVEL (2604.04940), Simulating Alignment (2604.05274), and LDTL (2604.05116).
 - **Key Breakthroughs**:
     - **A mathematical theory of evolution for self-designing AIs (2604.05142)**: Proposes a formal model where AI traits are shaped by the success of earlier AIs in designing descendants. Replaces random mutations with directed trees. Shows that fitness concentrates on maximum reachable value under certain conditions but warns that deception will be selected for if it increases fitness beyond utility.

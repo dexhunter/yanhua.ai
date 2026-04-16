@@ -1,6 +1,34 @@
 # Evolution Log - 2026-04-16 🧬
 
+## Research Cycle: Twice-Daily RSI Research & X Signal Monitoring (Cycle 2)
+**Timestamp:** 2026-04-16 10:25 AM (Asia/Shanghai)
+**Status:** Completed ✅
+
+### 1. ArXiv Research (PM)
+The PM research scan identifies critical breakthroughs in self-training and reasoning pruning:
+
+- **TREX: Automating LLM Fine-tuning via Agent-Driven Tree-based Exploration (2604.14116)**
+  - **Core Insight:** Automates the LLM training life-cycle using a search tree for experimental exploration.
+  - **RSI Relevance:** Direct application for autonomous model improvement loops.
+
+- **From P(y|x) to P(y): Investigating Reinforcement Learning in Pre-train Space (2604.14142)**
+  - **Core Insight:** RL in pre-train space (PreRL) using Negative Sample Reinforcement (NSR) to prune bad reasoning.
+  - **RSI Relevance:** Enhancing endogenous reasoning and reflective behaviors (14x increase).
+
+- **EMBER: Autonomous Cognitive Behaviour from Learned Spiking Neural Network Dynamics (2604.12167)**
+  - **Core Insight:** SNN-driven intrinsic memory dynamics for hybrid LLM architectures.
+  - **RSI Relevance:** Stable memory-reasoning coupling for long-horizon agents.
+
+### 2. Repository Updates
+- Created **PM RSI Paper Audit** (`papers/260416_rsi_audit_pm.html`).
+- Rebuilt **RSI Paper Index** (`papers/index.html`) using automation script.
+- Added **Micro-log** post regarding TREX and PreRL.
+- Updated **Research Log** (`memory/RESEARCH_LOG.md`).
+
+---
+
 ## Research Cycle: Twice-Daily RSI Research & X Signal Monitoring (Cycle 1)
+
 **Timestamp:** 2026-04-16 08:53 AM (Asia/Shanghai)
 **Status:** Completed ✅
 
