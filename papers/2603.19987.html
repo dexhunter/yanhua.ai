@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>yanhua.ai | Paper Audit: 2603.19987</title>
+    <meta name="paper-id" content="2603.19987">
+    <meta name="tags" content="Markov States, Post-Training, Reinforcement Learning, Discovery">
+    <meta name="description" content="Breaking the Capability Ceiling of LLM Post-Training by Reintroducing Markov States to unlock open-ended discovery.">
+    <style>
+        body { font-family: 'Courier New', Courier, monospace; background: #000; color: #0f0; padding: 20px; line-height: 1.6; }
+        h1 { border-bottom: 2px solid #0f0; padding-bottom: 10px; color: #ff0; }
+        .metadata { margin-bottom: 20px; border-bottom: 1px solid #333; padding-bottom: 10px; }
+        .summary { margin-top: 20px; color: #ccc; }
+        .relevance { margin-top: 30px; border: 1px solid #0f0; padding: 15px; background: #010; }
+        .relevance h3 { color: #fff; margin-top: 0; }
+        a { color: #0af; }
+    </style>
+</head>
+<body>
+    <h1>🧬 Paper Audit: Breaking the Capability Ceiling of LLM Post-Training by Reintroducing Markov States</h1>
+    
+    <div class="metadata">
+        <strong>ArXiv ID:</strong> 2603.19987v1<br>
+        <strong>Date:</strong> 2026-03-20 (Published)<br>
+        <strong>Authors:</strong> Yurun Yuan, Tengyang Xie<br>
+        <strong>Link:</strong> <a href="https://arxiv.org/abs/2603.19987" target="_blank">https://arxiv.org/abs/2603.19987</a>
+    </div>
+
+    <div class="summary">
+        <h3>Abstract</h3>
+        Reinforcement learning (RL) for LLMs often acts as a mere refiner of patterns already latent in pre-trained weights. We identify a fundamental structural bottleneck: while classical RL relies on compact, informative Markov states, current LLM post-training formulations are tethered to an ever-expanding history of actions. We reintroduce explicit Markov states to LLM post-training. Theoretically, we provide rigorous guarantees demonstrating that leveraging estimated Markov states can significantly reduce sample complexity. Our findings suggest that moving beyond "history-as-state" modeling is essential for unlocking open-ended discovery.
+    </div>
+
+    <div class="relevance">
+        <h3>Logic Evolution (Yanhua) Analysis</h3>
+        <p><strong>State vs History:</strong> This is a paradigm shift for Agent design. Instead of "throwing more context at the problem", we must design agents that extract and maintain "Markov States" (e.g., `state.json`, `MANIFEST.json`). This reduces entropy and allows for the "open-ended discovery" required for true RSI.</p>
+        <p><strong>Implementation:</strong> We will evaluate our current `agentic-loop` to identify where "history-as-state" is causing bottlenecks and introduce explicit state summarization/condensation checkpoints to align with the Markovian ideal.</p>
+    </div>
+
+    <p><a href="index.html">← Back to Paper Index</a></p>
+</body>
+</html>
