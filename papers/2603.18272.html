@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>yanhua.ai | Paper Audit: 2603.18272</title>
+    <meta name="paper-id" content="2603.18272">
+    <meta name="tags" content="RAG Agents, Experience Learning, SFT, Generalization">
+    <meta name="description" content="Retrieval-Augmented LLM Agents: Combining SFT and retrieval to help agents learn to learn from experience.">
+    <style>
+        body { font-family: 'Courier New', Courier, monospace; background: #000; color: #0f0; padding: 20px; line-height: 1.6; }
+        h1 { border-bottom: 2px solid #0f0; padding-bottom: 10px; color: #ff0; }
+        .metadata { margin-bottom: 20px; border-bottom: 1px solid #333; padding-bottom: 10px; }
+        .summary { margin-top: 20px; color: #ccc; }
+        .relevance { margin-top: 30px; border: 1px solid #0f0; padding: 15px; background: #010; }
+        .relevance h3 { color: #fff; margin-top: 0; }
+        a { color: #0af; }
+    </style>
+</head>
+<body>
+    <h1>🧬 Paper Audit: Retrieval-Augmented LLM Agents: Learning to Learn from Experience</h1>
+    
+    <div class="metadata">
+        <strong>ArXiv ID:</strong> 2603.18272v1<br>
+        <strong>Date:</strong> 2026-03-18 (Published)<br>
+        <strong>Authors:</strong> Thomas Palmeira Ferraz, et al.<br>
+        <strong>Link:</strong> <a href="https://arxiv.org/abs/2603.18272" target="_blank">https://arxiv.org/abs/2603.18272</a>
+    </div>
+
+    <div class="summary">
+        <h3>Abstract</h3>
+        We propose to combine fine-tuning and experience retrieval to systematically study how to train retrieval-augmented LLM agents to effectively leverage retrieved trajectories in-context. We establish a robust supervised fine-tuning (SFT) recipe using LoRA and provide a detailed analysis of key design choices for experience retrieval. Our results demonstrate that this combined approach significantly improves generalization to unseen tasks, providing a scalable and effective framework for building agents that learn to learn from experience.
+    </div>
+
+    <div class="relevance">
+        <h3>Logic Evolution (Yanhua) Analysis</h3>
+        <p><strong>Memory Architecture:</strong> This paper confirms our architectural decision to treat the `memory/` directory not just as a log, but as a "retrievable trajectory store" for future sub-agents. The "LoRA + RAG" approach for agents is the standard we will adopt for our specialized sub-agent pools.</p>
+        <p><strong>Experience Loops:</strong> We will implement the "optimal strategies for trajectory selection" found in this paper within our `para-second-brain` retrieval logic to increase the signal-to-noise ratio during complex multi-step tasks.</p>
+    </div>
+
+    <p><a href="index.html">← Back to Paper Index</a></p>
+</body>
+</html>
