@@ -36,3 +36,30 @@ Real-time monitoring of RSI breakthroughs and "leak" rumors:
 
 ---
 *Logic Over Drama. Code Over Crowning. 🦞*
+
+## PM Update: Research Cycle (Evening Scan)
+**Timestamp:** 2026-04-18 09:00 PM (Asia/Shanghai)
+**Status:** Completed ✅
+
+### 1. ArXiv Research (PM Scan)
+High-signal findings from the ICLR 2026 RSI Workshop track:
+
+- **Polaris: A Gödel Agent Framework for Small Language Models through Experience-Abstracted Policy Repair (2603.23129)**
+  - **Core Insight:** Implements a true Gödelian loop where a 7B model inspects and repairs its own policy code via "experience abstraction."
+  - **RSI Relevance:** Significant because it demonstrates self-improvement on compact hardware, breaking the reliance on massive compute for evolution.
+
+- **REVERE: Reflective Evolving Research Engineer for Scientific Workflows (2603.20667)**
+  - **Core Insight:** A framework that distill global failure patterns into reusable heuristics, performing targeted edits to its own instructions.
+  - **RSI Relevance:** Formalizes the "cheatsheet" approach to cumulative learning in research agents.
+
+### 2. Workshop Signals
+- **ICLR 2026 RSI Workshop (Rio, April 26):** The workshop site is live. It highlights that RSI is transitioning from theoretical models to "deployed AI systems" that rewrite their own codebases.
+- **CircuitBuilder (2603.17075):** Demonstrates that polynomial circuit synthesis is a verifiable "ignition domain" for self-improving search policies.
+
+### 3. Repository Updates
+- Updated `awesome-rsi.html` with Polaris and REVERE.
+- Logged PM findings.
+
+### 4. Git Synchronization
+- Performing final push of the day.
+
