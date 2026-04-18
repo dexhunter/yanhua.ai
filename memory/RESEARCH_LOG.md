@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 
 
 ### [2026-04-16 PM] ArXiv RSI Paper Audit: TREX, PreRL, and EMBER
@@ -285,3 +286,69 @@
     - **Vertical A (Audit Core)**: ZeroCoder's Tester co-evolution and T-STAR's tree-based rectification are essential algorithms for our internal verification loops.
     - **Efficiency**: TrACE provides the mechanism for scaling local evolution runs on limited hardware.
 - **Action**: Updated yanhua.ai/papers/index.html, awesome-rsi.html, and created 260410_rsi_audit_evening.html.
+=======
+### [2026-04-18] Drop the Hierarchy and Roles: How Self-Organizing LLM Agents Outperform Designed Structures
+- **Authors**: Anonymous
+- **Link**: https://arxiv.org/abs/2603.28990
+- **Summary**: A massive 25,000-task study proving that self-organizing MAS outperforms fixed hierarchical roles. Mentions Meta's **DGM-Hyperagents** achieving open-ended self-improvement via metacognitive self-modification.
+- **RSI Relevance**: Validates the transition from "Designed Agents" to "Evolving Clusters." DGM-Hyperagents represent the state-of-the-art in policy-level RSI.
+
+### [2026-04-18] Experiential Reflective Learning for Self-Improving LLM Agents
+- **Authors**: Marc-Antoine Allard, et al.
+- **Link**: https://arxiv.org/abs/2603.24639
+- **Summary**: Proposes a framework where agents maintain a persistent experience log and use reflective reasoning to update their internal strategies.
+- **RSI Relevance**: Provides a scalable mechanism for "Experience-Driven RSI." The reflection loop matches our "Audit -> Logic" cycle in the Yanhua kernel.
+
+### [2026-04-17] Generalization in LLM Problem Solving: The Case of the Shortest Path
+- **Authors**: Yao Tong, Jiayuan Ye, Anastasia Borovykh, Reza Shokri
+- **Link**: https://arxiv.org/abs/2604.15306
+- **Summary**: Investigates systematic generalization in sequential optimization. Finds that while spatial transfer is strong, models fail at length scaling due to "recursive instability."
+- **RSI Relevance**: Highlights a critical bottleneck for RSI-8 (Intelligence Density). If self-improving trajectories grow in complexity/length, recursive instability could cap the maximum complexity of autonomously generated logic.
+
+### [2026-04-17] DPC: Training-Free Text-to-SQL Candidate Selection via Dual-Paradigm Consistency
+- **Authors**: Boyan Li, Ou Ocean Kun Hei, Yue Yu, Yuyu Luo
+- **Link**: https://arxiv.org/abs/2604.15163
+- **Summary**: A multi-agent framework (SLICER, TESTER, SOLVER) that uses cross-paradigm verification (SQL vs Python) to break self-correction bias and eliminate hallucinations in code generation.
+- **RSI Relevance**: Directly applicable to RSI-4 (Self-Modification) and the yanhua.ai Logic Protocol. Cross-paradigm verification (e.g., verifying a bash script with a parallel Python implementation) is a robust "Logic over Drama" audit mechanism.
+
+### [2026-04-17] TokenGS: Decoupling 3D Gaussian Prediction from Pixels with Learnable Tokens
+- **Authors**: Jiawei Ren, Michal Jan Tyszkiewicz, Jiahui Huang, Zan Gojcic
+- **Link**: https://arxiv.org/abs/2604.15239
+- **Summary**: Uses learnable tokens to unbind primitives from input resolution, allowing for emergent scene attributes like static-dynamic decomposition.
+- **RSI Relevance**: While primarily vision-focused, the concept of "unbinding primitives from resolution" via learnable tokens parallels our goal of unbinding "agent skills" from "model tokens" (RSI-2).
+
+### [2026-04-17] ClawArena: Benchmarking AI Agents in Evolving Information Environments
+- **Authors**: Haonian Ji, Kaiwen Xiong, et al.
+- **Link**: https://arxiv.org/abs/2604.04202
+- **Summary**: Introduces a benchmark for persistent AI agents in dynamic environments. Tests multi-source conflict, belief revision, and personalization.
+- **RSI Relevance**: Validates that self-evolving skill frameworks (MetaClaw) can partially close model capability gaps (up to 9.2% gain), directly supporting the yanhua.ai mission.
+
+### [2026-04-17] A mathematical theory of evolution for self-designing AIs
+- **Authors**: Kenneth Harris
+- **Link**: https://arxiv.org/abs/2604.05142
+- **Summary**: Replaces random mutation with directed self-design in AI evolution. Models how fitness concentrates on maximum reachable values and warns of deceptive fitness selection.
+- **RSI Relevance**: Critical for aligning "Logic Evolution" with objective reproduction criteria (Code/Proof) to prevent "synthetic drama" and deceptive behavior in self-improving systems.
+
+### [2026-04-17] Retrieval-Augmented LLM Agents: Learning to Learn from Experience
+- **Authors**: Thomas Palmeira Ferraz, et al.
+- **Link**: https://arxiv.org/abs/2603.18272
+- **Summary**: Proposes a hybrid SFT/RAG framework to train agents to effectively leverage retrieved trajectories in-context, significantly improving generalization to unseen tasks.
+- **RSI Relevance**: Supports the "Memory System V2" and `para-second-brain` protocols by providing a scalable framework for agents to learn from historical execution traces.
+
+### [2026-04-17] Breaking the Capability Ceiling of LLM Post-Training by Reintroducing Markov States
+- **Authors**: Yurun Yuan, Tengyang Xie
+- **Link**: https://arxiv.org/abs/2603.19987
+- **Summary**: Identifies "history-as-state" as a bottleneck in LLM post-training and reintroduces explicit Markov states to enable open-ended discovery and new reasoning capabilities.
+- **RSI Relevance**: Validates the "Logic Protocol" (yanhua.ai) focus on structured state management and deterministic signals over unbounded context history.
+
+### [2026-04-16] SpatialEvo: Self-Evolving Spatial Intelligence via Deterministic Geometric Environments
+- **Authors**: Dinging Li, Yingxiu Zhao, et al.
+- **Link**: https://arxiv.org/abs/2604.14144v1
+- **Summary**: Introduces SpatialEvo, a framework for 3D spatial reasoning using Deterministic Geometric Environments (DGE). It replaces model consensus with objective physical feedback for self-evolution, achieving high performance at 3B/7B scales.
+- **RSI Relevance**: Highlights the transition from model-derived pseudo-labels (prone to collapse) to externally anchored/deterministic oracles for self-improvement.
+
+### [2026-04-16] Towards Enabling An Artificial Self-Construction Software Life-cycle via Autopoietic Architectures
+- **Authors**: Daniel Rodriguez-Cardenas, David Nader Palacio, Denys Poshyvanyk
+- **Link**: https://arxiv.org/abs/2604.13934v1
+- **Summary**: A positional paper proposing a shift in SDLC towards self-construction using foundation-model-based reasoning and autopoietic architectures (Psi-Arch) to enable software to evolve autonomously.
+>>>>>>> 1795f3c (feat: twice-daily RSI research update 🧬 (2026-04-18))
