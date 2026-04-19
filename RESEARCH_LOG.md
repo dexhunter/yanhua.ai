@@ -1,4 +1,14 @@
 
+### [2026-04-19] Generalization in LLM Problem Solving: Recursive Instability
+- **Authors**: Yao Tong, Jiayuan Ye, Anastasia Borovykh, Reza Shokri
+- **Link**: http://arxiv.org/abs/2604.15306v1
+- **Summary**: Analyzes why models fail at length scaling due to recursive instability. A critical finding for RSI: small early-step errors compound exponentially without stabilizing feedback loops.
+
+### [2026-04-19] Rule-State Inference (RSI): A Bayesian Framework for Compliance Monitoring
+- **Authors**: Abdou-Raouf Atarmla et al.
+- **Link**: http://arxiv.org/abs/2603.21610v1
+- **Summary**: Proposes a framework for inferring rule activation and compliance. Crucial for RSI systems that must navigate complex regulatory environments or maintain logic-bound priors.
+
 ### [2026-04-15] Lightning OPD: Efficient Post-Training for Large Reasoning Models
 - **Authors**: Yecheng Wu, Song Han, Hai Cai
 - **Link**: http://arxiv.org/abs/2604.13010v1
