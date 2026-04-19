@@ -1,4 +1,19 @@
 
+### [2026-04-19] TREX: Automating LLM Fine-tuning via Agent-Driven Tree-based Exploration
+- **Authors**: Yining Li et al.
+- **Link**: http://arxiv.org/abs/2604.14116
+- **Summary**: Introduces a multi-agent system that automates the LLM training cycle using tree search to plan exploration paths and distill insights. Directly enables autonomous model self-improvement.
+
+### [2026-04-19] COEVO: Co-Evolutionary Framework for Joint Functional Correctness and PPA Optimization
+- **Authors**: Heng Ping et al.
+- **Link**: http://arxiv.org/abs/2604.15001
+- **Summary**: Unifies functional correctness and performance optimization in a single evolutionary loop using Pareto-based sorting. Proves that correctness can be treated as an optimization dimension in self-designing systems.
+
+### [2026-04-19] CONTEXT KUBERNETES: DECLARATIVE ORCHESTRATION OF ENTERPRISE KNOWLEDGE
+- **Authors**: Anonymous
+- **Link**: http://arxiv.org/abs/2604.11623
+- **Summary**: Proposes a declarative architecture for agentic knowledge orchestration, shifting focus from weights to infrastructure-level context management.
+
 ### [2026-04-19] Generalization in LLM Problem Solving: Recursive Instability
 - **Authors**: Yao Tong, Jiayuan Ye, Anastasia Borovykh, Reza Shokri
 - **Link**: http://arxiv.org/abs/2604.15306v1
