@@ -1,0 +1,260 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<feed xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/" xmlns:arxiv="http://arxiv.org/schemas/atom" xmlns="http://www.w3.org/2005/Atom">
+  <id>https://arxiv.org/api/adr0VTsrOD5RdKMBtF8zsWPV78M</id>
+  <title>arXiv Query: search_query=all:RSI&amp;id_list=&amp;start=0&amp;max_results=10</title>
+  <updated>2026-04-20T12:54:19Z</updated>
+  <link href="https://arxiv.org/api/query?search_query=all:RSI&amp;start=0&amp;max_results=10&amp;id_list=" type="application/atom+xml"/>
+  <opensearch:itemsPerPage>10</opensearch:itemsPerPage>
+  <opensearch:totalResults>281</opensearch:totalResults>
+  <opensearch:startIndex>0</opensearch:startIndex>
+  <entry>
+    <id>http://arxiv.org/abs/2604.03813v1</id>
+    <title>Partial Number Theoretic Transform Masking in Post Quantum Cryptography Hardware: A Security Margin Analysis</title>
+    <updated>2026-04-04T17:38:34Z</updated>
+    <link href="https://arxiv.org/abs/2604.03813v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2604.03813v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Adams Bridge, a hardware accelerator for ML-DSA and ML-KEM designed for the Caliptra root of trust, masks 1 of its Inverse Number Theoretic Transform (INTT) layers and relies on shuffling for the remainder, claiming per-butterfly Correlation Power Analysis (CPA) complexities of 2^46 (ML-DSA) and 2^96 (ML-KEM). We evaluate these claims against published side-channel literature across seven analysis tracks with confidence-rated evidence. Register-Transfer Level (RTL) analysis confirms that the design's Random Start Index (RSI) shuffling provides 6 bits of entropy per layer (64 orderings) rather than the 296 bits of a full random permutation assumed in its scaling argument, with effective margins below the designers' estimates. A soft-analytical attack pipeline demonstrates a 37-bit enumeration reduction, independent of Belief Propagation (BP) gains, quantifying the attack-model gap without achieving key recovery. Full-scale BP on the complete INTT factor graph achieves 100% coefficient recovery over the single-layer baseline, resolving whether BP gains scale to production-size Number Theoretic Transform (NTT) structures. A genie-aided information-theoretic bound shows observations contain sufficient mutual information for full recovery at SNRxN as low as 15. Layer-ablation analysis identifies four necessary conditions governing BP convergence. Observation topology, not count, determines recovery: 4 evenly spread layers achieve 100% while 4 consecutive layers achieve 0%, yielding a practical countermeasure design tool. Strategic masking of 3 consecutive mid-layers (43% overhead vs. full masking) creates an unrecoverable gap that defeats soft-analytical attacks. We contribute a reusable security margin audit methodology combining RTL verification, epistemic confidence tagging, sensitivity-scenario analysis, and experimental validation applicable to any partially masked NTT accelerator.</summary>
+    <category term="cs.CR" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-04-04T17:38:34Z</published>
+    <arxiv:comment>38 pages, 2 figures</arxiv:comment>
+    <arxiv:primary_category term="cs.CR"/>
+    <author>
+      <name>Ray Iskander</name>
+    </author>
+    <author>
+      <name>Khaled Kirah</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2604.02659v1</id>
+    <title>Low-Rank Compression of Pretrained Models via Randomized Subspace Iteration</title>
+    <updated>2026-04-03T02:47:03Z</updated>
+    <link href="https://arxiv.org/abs/2604.02659v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2604.02659v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>The massive scale of pretrained models has made efficient compression essential for practical deployment. Low-rank decomposition based on the singular value decomposition (SVD) provides a principled approach for model reduction, but its exact computation is expensive for large weight matrices. Randomized alternatives such as randomized SVD (RSVD) improve efficiency, yet they can suffer from poor approximation quality when the singular value spectrum decays slowly, a regime commonly observed in modern pretrained models. In this work, we address this limitation from both theoretical and empirical perspectives. First, we establish a connection between low-rank approximation error and predictive performance by analyzing softmax perturbations, showing that deviations in class probabilities are controlled by the spectral error of the compressed weights. Second, we demonstrate that RSVD is inadequate, and we propose randomized subspace iteration (RSI) as a more effective alternative. By incorporating multiple power iterations, RSI improves spectral separation and provides a controllable mechanism for enhancing approximation quality. We evaluate our approach on both convolutional networks and transformer-based architectures. Our results show that RSI achieves near-optimal approximation quality while outperforming RSVD in predictive accuracy under aggressive compression, enabling efficient model compression.</summary>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="math.NA" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="stat.ML" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-04-03T02:47:03Z</published>
+    <arxiv:comment>13 pages</arxiv:comment>
+    <arxiv:primary_category term="cs.LG"/>
+    <author>
+      <name>Farhad Pourkamali-Anaraki</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2604.00373v1</id>
+    <title>From discrete to dense: explorations in the moduli space of triangles</title>
+    <updated>2026-04-01T01:49:20Z</updated>
+    <link href="https://arxiv.org/abs/2604.00373v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2604.00373v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>The moduli space of triangles is a two-dimensional space that records triangle shapes in the plane, considered up to similarity. We study the subset corresponding to \textit{lattice triangles}, which are triangles whose vertices have integer coordinates. We prove that this subset is \textit{dense}, that is, every triangle shape can be approximated arbitrarily well by lattice triangles. However, when one restricts to lattice triangles in the square $[-N,N]^2$, their shapes do \textit{not} become uniformly distributed in the moduli space as $N$ grows. Along the way, we encounter connections with geometry, number theory, analysis, and probability.</summary>
+    <category term="math.MG" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="math.PR" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-04-01T01:49:20Z</published>
+    <arxiv:comment>Accepted for publication by Math. Magazine. This work was done as part of the RSI-India program for high-school students in June-July 2025</arxiv:comment>
+    <arxiv:primary_category term="math.MG"/>
+    <author>
+      <name>Aahana Aggarwal</name>
+    </author>
+    <author>
+      <name>Subhojoy Gupta</name>
+    </author>
+    <author>
+      <name>Ajay K. Nair</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2603.29392v1</id>
+    <title>Communication-Aware Synthesis of Safety Controller for Networked Control Systems</title>
+    <updated>2026-03-31T07:56:37Z</updated>
+    <link href="https://arxiv.org/abs/2603.29392v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2603.29392v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Networked control systems (NCS) are widely used in safety-critical applications, but they are often analyzed under the assumption of ideal communication channels. This work focuses on the synthesis of safety controllers for discrete-time linear systems affected by unknown disturbances operating in imperfect communication channels. The proposed method guarantees safety by constructing ellipsoidal robust safety invariant (RSI) sets and verifying their invariance through linear matrix inequalities (LMI), which are formulated and solved as semi-definite programming (SDP). In particular, our framework simultaneously considers controller synthesis and communication errors without requiring explicit modeling of the communication channel. A case study on cruise control problem demonstrates that the proposed controller ensures safety in the presence of unexpected disturbances and multiple communication imperfections simultaneously.</summary>
+    <category term="eess.SY" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-03-31T07:56:37Z</published>
+    <arxiv:primary_category term="eess.SY"/>
+    <author>
+      <name>Yihan Liu</name>
+    </author>
+    <author>
+      <name>Meiqi Tian</name>
+    </author>
+    <author>
+      <name>teng Yan</name>
+    </author>
+    <author>
+      <name>Bingzhuo Zhong</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2603.21610v1</id>
+    <title>Rule-State Inference (RSI): A Bayesian Framework for Compliance Monitoring in Rule-Governed Domains</title>
+    <updated>2026-03-23T06:12:52Z</updated>
+    <link href="https://arxiv.org/abs/2603.21610v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2603.21610v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Existing machine learning frameworks for compliance monitoring -- Markov Logic Networks, Probabilistic Soft Logic, supervised models -- share a fundamental paradigm: they treat observed data as ground truth and attempt to approximate rules from it. This assumption breaks down in rule-governed domains such as taxation or regulatory compliance, where authoritative rules are known a priori and the true challenge is to infer the latent state of rule activation, compliance, and parametric drift from partial and noisy observations.
+  We propose Rule-State Inference (RSI), a Bayesian framework that inverts this paradigm by encoding regulatory rules as structured priors and casting compliance monitoring as posterior inference over a latent rule-state space S = {(a_i, c_i, delta_i)}, where a_i captures rule activation, c_i models the compliance rate, and delta_i quantifies parametric drift. We prove three theoretical guarantees: (T1) RSI absorbs regulatory changes in O(1) time via a prior ratio correction, independently of dataset size; (T2) the posterior is Bernstein-von Mises consistent, converging to the true rule state as observations accumulate; (T3) mean-field variational inference monotonically maximizes the Evidence Lower BOund (ELBO).
+  We instantiate RSI on the Togolese fiscal system and introduce RSI-Togo-Fiscal-Synthetic v1.0, a benchmark of 2,000 synthetic enterprises grounded in real OTR regulatory rules (2022-2025). Without any labeled training data, RSI achieves F1=0.519 and AUC=0.599, while absorbing regulatory changes in under 1ms versus 683-1082ms for full model retraining -- at least a 600x speedup.</summary>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="stat.ML" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-03-23T06:12:52Z</published>
+    <arxiv:comment>16 pages, 2 tables, 1 figure. Code and dataset available at github.com/fless-lab/rsi-togo-fiscal</arxiv:comment>
+    <arxiv:primary_category term="cs.LG"/>
+    <author>
+      <name>Abdou-Raouf Atarmla</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2603.21561v2</id>
+    <title>Digital Self-Interference Cancellation in Full-Duplex Radios: A Fundamental Limit Perspective</title>
+    <updated>2026-03-24T07:26:28Z</updated>
+    <link href="https://arxiv.org/abs/2603.21561v2" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2603.21561v2" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Digital self-interference cancellation (D-SIC) plays a crucial role in in-band full-duplex radios. Unfortunately, its fundamental limit remains unclear. In this paper, we aim to address this problem by exploring the performance limit of the parallel Hammerstein (PH) canceller for D-SIC, which is most commonly used in practice. First, a comprehensive analysis of the power of the residual self-interference (RSI) after the PH canceller with the least squares (LS) estimator is provided, which takes into account the truncation error, reconstruction error and transmitter noise. Specifically, the analysis is greatly simplified by equivalently expanding the PH canceller via generalized Laguerre polynomials (GLP), which enjoys the desirable property of mutual orthogonality among the basis functions. As a by-product of this orthogonal expansion, we establish that the LS estimator for the weights of the GLP canceller is asymptotically \textit{unbiased}, if the pilot sequence is Gaussian distributed. Second, in order to minimize the reconstruction error of the PH canceller, we propose a succinct criterion for optimizing the pilot sequence, which essentially seeks for small eigenvalue spread and large minimum eigenvalue of the Gram matrix corresponding to the pilot sequence. Specifically, the criterion is to minimize the product of the Shannon rank, an effective rank of a positive semidefinite matrix and the minimum eigenvalue of the Gram matrix. Simulation results demonstrate that with the optimized pilot sequence of a single OFDM symbol, over 10 dB gain can be achieved compared to the conventional pilot sequence (HE-LTF) for the PH canceller, and the corresponding RSI can be as low as -87.6 dBm.</summary>
+    <category term="eess.SP" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-03-23T04:32:31Z</published>
+    <arxiv:primary_category term="eess.SP"/>
+    <author>
+      <name>Limin Liao</name>
+    </author>
+    <author>
+      <name>Jun Sun</name>
+    </author>
+    <author>
+      <name>Junzhi Wang</name>
+    </author>
+    <author>
+      <name>Chao Deng</name>
+    </author>
+    <author>
+      <name>Jizhao Wang</name>
+    </author>
+    <author>
+      <name>Fangsen Li</name>
+    </author>
+    <author>
+      <name>Yingzhuang Liu</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2603.20533v1</id>
+    <title>Revenue-Sharing as Infrastructure: A Distributed Business Model for Generative AI Platforms</title>
+    <updated>2026-03-20T22:02:51Z</updated>
+    <link href="https://arxiv.org/abs/2603.20533v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2603.20533v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Generative AI platforms (Google AI Studio, OpenAI, Anthropic) provide infrastructures (APIs, models) that are transforming the application development ecosystem. Recent literature distinguishes three generations of business models: a first generation modeled on cloud computing (pay-per-use), a second characterized by diversification (freemium, subscriptions), and a third, emerging generation exploring multi-layer market architectures with revenue-sharing mechanisms. Despite these advances, current models impose a financial barrier to entry for developers, limiting innovation and excluding actors from emerging economies. This paper proposes and analyzes an original model, "Revenue-Sharing as Infrastructure" (RSI), where the platform offers its AI infrastructure for free and takes a percentage of the revenues generated by developers applications. This model reverses the traditional upstream payment logic and mobilizes concepts of value co-creation, incentive mechanisms, and multi-layer market architecture to build an original theoretical framework. A detailed comparative analysis shows that the RSI model lowers entry barriers for developers, aligns stakeholder interests, and could stimulate innovation in the ecosystem. Beyond its economic relevance, RSI has a major societal dimension: by enabling developers without initial capital to participate in the digital economy, it could unlock the "latent jobs dividend" in low-income countries, where mobile penetration reaches 84%, and help address local challenges in health, agriculture, and services. Finally, we discuss the conditions of feasibility and strategic implications for platforms and developers.</summary>
+    <category term="cs.CY" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-03-20T22:02:51Z</published>
+    <arxiv:comment>11 pages, 1 figures, 2 tables</arxiv:comment>
+    <arxiv:primary_category term="cs.CY"/>
+    <author>
+      <name>Ghislain Dorian Tchuente Mondjo</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2603.20289v1</id>
+    <title>Remote Sensing Image Dehazing: A Systematic Review of Progress, Challenges, and Prospects</title>
+    <updated>2026-03-18T14:44:49Z</updated>
+    <link href="https://arxiv.org/abs/2603.20289v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2603.20289v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Remote sensing images (RSIs) are frequently degraded by haze, fog, and thin clouds, which obscure surface reflectance and hinder downstream applications. This study presents the first systematic and unified survey of RSIs dehazing, integrating methodological evolution, benchmark assessment, and physical consistency analysis. We categorize existing approaches into a three-stage progression: from handcrafted physical priors, to data-driven deep restoration, and finally to hybrid physical-intelligent generation, and summarize more than 30 representative methods across CNNs, GANs, Transformers, and diffusion models. To provide a reliable empirical reference, we conduct large-scale quantitative experiments on five public datasets using 12 metrics, including PSNR, SSIM, CIEDE, LPIPS, FID, SAM, ERGAS, UIQI, QNR, NIQE, and HIST. Cross-domain comparison reveals that recent Transformer- and diffusion-based models improve SSIM by 12%~18% and reduce perceptual errors by 20%~35% on average, while hybrid physics-guided designs achieve higher radiometric stability. A dedicated physical radiometric consistency experiment further demonstrates that models with explicit transmission or airlight constraints reduce color bias by up to 27%. Based on these findings, we summarize open challenges: dynamic atmospheric modeling, multimodal fusion, lightweight deployment, data scarcity, and joint degradations, and outline promising research directions for future development of trustworthy, controllable, and efficient (TCE) dehazing systems. All reviewed resources, including source code, benchmark datasets, evaluation metrics, and reproduction configurations are publicly available at https://github.com/VisionVerse/RemoteSensing-Restoration-Survey.</summary>
+    <category term="cs.CV" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-03-18T14:44:49Z</published>
+    <arxiv:comment>82 pages, 23 figures,</arxiv:comment>
+    <arxiv:primary_category term="cs.CV"/>
+    <arxiv:journal_ref>ISPRS P&amp;RS 2026</arxiv:journal_ref>
+    <author>
+      <name>Heng Zhou</name>
+    </author>
+    <author>
+      <name>Xiaoxiong Liu</name>
+    </author>
+    <author>
+      <name>Zhenxi Zhang</name>
+    </author>
+    <author>
+      <name>Jieheng Yun</name>
+    </author>
+    <author>
+      <name>Chengyang Li</name>
+    </author>
+    <author>
+      <name>Yunchu Yang</name>
+    </author>
+    <author>
+      <name>Dongyi Xia</name>
+    </author>
+    <author>
+      <name>Chunna Tian</name>
+    </author>
+    <author>
+      <name>Xiao-Jun Wu</name>
+    </author>
+    <arxiv:doi>10.1016/j.isprsjprs.2026.03.008</arxiv:doi>
+    <link rel="related" href="https://doi.org/10.1016/j.isprsjprs.2026.03.008" title="doi"/>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2603.16341v1</id>
+    <title>PKINet-v2: Towards Powerful and Efficient Poly-Kernel Remote Sensing Object Detection</title>
+    <updated>2026-03-17T10:17:58Z</updated>
+    <link href="https://arxiv.org/abs/2603.16341v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2603.16341v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Object detection in remote sensing images (RSIs) is challenged by the coexistence of geometric and spatial complexity: targets may appear with diverse aspect ratios, while spanning a wide range of object sizes under varied contexts. Existing RSI backbones address the two challenges separately, either by adopting anisotropic strip kernels to model slender targets or by using isotropic large kernels to capture broader context. However, such isolated treatments lead to complementary drawbacks: the strip-only design can disrupt spatial coherence for regular-shaped objects and weaken tiny details, whereas isotropic large kernels often introduce severe background noise and geometric mismatch for slender structures. In this paper, we extend PKINet, and present a powerful and efficient backbone that jointly handles both challenges within a unified paradigm named Poly Kernel Inception Network v2 (PKINet-v2). PKINet-v2 synergizes anisotropic axial-strip convolutions with isotropic square kernels and builds a multi-scope receptive field, preserving fine-grained local textures while progressively aggregating long-range context across scales. To enable efficient deployment, we further introduce a Heterogeneous Kernel Re-parameterization (HKR) Strategy that fuses all heterogeneous branches into a single depth-wise convolution for inference, eliminating fragmented kernel launches without accuracy loss. Extensive experiments on four widely-used benchmarks, including DOTA-v1.0, DOTA-v1.5, HRSC2016, and DIOR-R, demonstrate that PKINet-v2 achieves state-of-the-art accuracy while delivering a $\textbf{3.9}\times$ FPS acceleration compared to PKINet-v1, surpassing previous remote sensing backbones in both effectiveness and efficiency.</summary>
+    <category term="cs.CV" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-03-17T10:17:58Z</published>
+    <arxiv:primary_category term="cs.CV"/>
+    <author>
+      <name>Xinhao Cai</name>
+    </author>
+    <author>
+      <name>Liulei Li</name>
+    </author>
+    <author>
+      <name>Gensheng Pei</name>
+    </author>
+    <author>
+      <name>Zeren Sun</name>
+    </author>
+    <author>
+      <name>Yazhou Yao</name>
+    </author>
+    <author>
+      <name>Wenguan Wang</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2603.15957v1</id>
+    <title>GASP: Guided Asymmetric Self-Play For Coding LLMs</title>
+    <updated>2026-03-16T22:13:19Z</updated>
+    <link href="https://arxiv.org/abs/2603.15957v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2603.15957v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Asymmetric self-play has emerged as a promising paradigm for post-training large language models, where a teacher continually generates questions for a student to solve at the edge of the student's learnability. Although these methods promise open-ended data generation bootstrapped from no human data, they suffer from one major problem: not all problems that are hard to solve are interesting or informative to improve the overall capabilities of the model. Current asymmetric self-play methods are goal-agnostic with no real grounding. We propose Guided Asymmetric Self-Play (GASP), where grounding is provided by real-data goalpost questions that are identified to pose a hard exploration challenge to the model. During self-play, the teacher first generates an easier variant of a hard question, and then a harder variant of that easier question, with the goal of gradually closing the gap to the goalpost throughout training. Doing so, we improve pass@20 on LiveCodeBench (LCB) by 2.5% over unguided asymmetric self-play, and through the curriculum constructed by the teacher, we manage to solve hard goalpost questions that remain out of reach for all baselines.</summary>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-03-16T22:13:19Z</published>
+    <arxiv:comment>Accepted at ICLR 2026 Workshop on AI with Recursive Self-Improvement (RSI 2026) as Spotlight, and ICLR 2026 Workshop on Lifelong Agents (LLA 2026)</arxiv:comment>
+    <arxiv:primary_category term="cs.LG"/>
+    <author>
+      <name>Swadesh Jana</name>
+    </author>
+    <author>
+      <name>Cansu Sancaktar</name>
+    </author>
+    <author>
+      <name>Tomáš Daniš</name>
+    </author>
+    <author>
+      <name>Georg Martius</name>
+    </author>
+    <author>
+      <name>Antonio Orvieto</name>
+    </author>
+    <author>
+      <name>Pavel Kolev</name>
+    </author>
+  </entry>
+</feed>
