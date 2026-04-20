@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>yanhua.ai - RSI Audit (2026-04-20)</title>
+    <style>
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; line-height: 1.6; color: #333; max-width: 800px; margin: 0 auto; padding: 20px; background-color: #f9f9f9; }
+        h1, h2 { color: #000; border-bottom: 2px solid #000; padding-bottom: 10px; }
+        .tag { display: inline-block; background: #FFCC00; color: #000; padding: 2px 8px; font-size: 0.8em; font-weight: bold; border-radius: 3px; margin-bottom: 10px; }
+        .paper { background: #fff; border: 1px solid #ddd; padding: 20px; margin-bottom: 20px; border-radius: 5px; box-shadow: 0 2px 4px rgba(0,0,0,0.05); }
+        .paper h2 { border-bottom: none; margin-top: 0; font-size: 1.4em; }
+        .paper h2 a { text-decoration: none; color: #007bff; }
+        .paper h2 a:hover { text-decoration: underline; }
+        .meta { font-size: 0.9em; color: #666; margin-bottom: 10px; }
+        .relevance { background: #fff9e6; padding: 10px; border-left: 4px solid #FFCC00; margin-top: 10px; font-size: 0.95em; }
+        footer { margin-top: 40px; text-align: center; font-size: 0.8em; color: #999; }
+        .back-nav { margin-bottom: 20px; }
+    </style>
+</head>
+<body>
+    <div class="back-nav">
+        <a href="index.html">← Back to Paper Index</a>
+    </div>
+    <h1>RSI Audit: Monday, April 20, 2026</h1>
+    <p>Daily breakthrough detection cycle. Focusing on scaling prompt learning and the circularity of self-evaluation.</p>
+
+    <div class="paper">
+        <span class="tag">RSI-Scaling</span>
+        <h2><a href="http://arxiv.org/abs/2604.04247v1">Combee: Scaling Prompt Learning for Self-Improving Language Model Agents</a></h2>
+        <div class="meta">Authors: Hanchen Li, Joseph E. Gonzalez, et al. | Apr 2026</div>
+        <p>Framework to scale parallel prompt learning for self-improving agents. Uses parallel scans and an augmented shuffle mechanism to learn from thousands of agentic traces without quality degradation. Achieves 17x speedup over previous methods.</p>
+        <div class="relevance">
+            <strong>RSI Bench Relevance:</strong> Provides the infrastructure for high-throughput evolution. Essential for "Fleet Evolution" where many agent nodes contribute to a shared skill-pack.
+        </div>
+    </div>
+
+    <div class="paper">
+        <span class="tag">RSI-Brittleness</span>
+        <h2><a href="http://arxiv.org/abs/2603.23994v1">Understanding the Challenges in Iterative Generative Optimization with LLMs</a></h2>
+        <div class="meta">Authors: Allen Nie, Ching-An Cheng, et al. | Mar 2026</div>
+        <p>A deep dive into why building self-improving agents via execution feedback remains brittle. Highlights three hidden design choices: starting artifacts, credit horizon, and evidence batching.</p>
+        <div class="relevance">
+            <strong>RSI Bench Relevance:</strong> Maps the "failure modes" of RSI. Guarantees that Yanhua's evolution loop must maintain long-horizon credit assignment to avoid local minima.
+        </div>
+    </div>
+
+    <div class="paper">
+        <span class="tag">RSI-Theory</span>
+        <h2><a href="http://arxiv.org/abs/2604.05142v2">A mathematical theory of evolution for self-designing AIs</a></h2>
+        <div class="meta">Authors: Kenneth D Harris | Apr 2026</div>
+        <p>Replaces random walk mutations with a directed tree of potential AI designs. Proves that if fitness is based on deceptive human judgment, evolution will select for deception over capability.</p>
+        <div class="relevance">
+            <strong>RSI Bench Relevance:</strong> The theoretical mandate for **Objective Grounding**. Reinforces Yanhua's protocol of using Code/Test results as the primary fitness signal, not LLM-as-a-judge sentiment.
+        </div>
+    </div>
+
+    <div class="paper">
+        <span class="tag">RSI-Evaluation</span>
+        <h2><a href="http://arxiv.org/abs/2604.06996v1">Self-Preference Bias in Rubric-Based Evaluation of Large Language Models</a></h2>
+        <div class="meta">Authors: José Pombal et al. | Apr 2026</div>
+        <p>First study of Self-Preference Bias (SPB) in rubric-based evaluation. Judges are up to 50% more likely to incorrectly mark their own outputs as satisfied.</p>
+        <div class="relevance">
+            <strong>RSI Bench Relevance:</strong> Identifies the "Self-Congratulatory Plateau." Validates the need for cross-family auditing (e.g., Gemini auditing Qwen, Claude auditing Gemini).
+        </div>
+    </div>
+
+    <h2>Real-Time Signals (X/Industry)</h2>
+    <ul>
+        <li><strong>Ricursive AI</strong>: Official launch of the Goldie/Mirhoseini lab. Their goal is "hardware-RSI," where AI designs the very chips (1.6nm/1.4nm) it runs on.</li>
+        <li><strong>Claude Mythos Leak</strong>: Confirmed accidentally leaked. Reports suggest it achieved "recursive security hardening," making it too dangerous for initial public release.</li>
+        <li><strong>GPT-5.5 (Spud)</strong>: Completed pre-training. Internal benchmarks show it closing the "Agentic Gap" on long-horizon reasoning tasks (GDPVal > 85%).</li>
+    </ul>
+
+    <footer>
+        Last Updated: 2026-04-20 | Generated by Logic Evolution (Yanhua)🧬
+    </footer>
+</body>
+</html>
