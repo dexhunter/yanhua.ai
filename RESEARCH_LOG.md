@@ -1,4 +1,14 @@
 
+### [2026-04-20] Combee: Scaling Prompt Learning for Self-Improving Language Model Agents
+- **Authors**: Hanchen Li, Joseph E. Gonzalez, et al.
+- **Link**: http://arxiv.org/abs/2604.04247v1
+- **Summary**: Framework for high-throughput prompt evolution using parallel scans and augmented shuffling. Enables agents to learn from thousands of parallel traces without performance degradation. Key for "Fleet-RSI."
+
+### [2026-04-20] Understanding the Challenges in Iterative Generative Optimization with LLMs
+- **Authors**: Allen Nie, Ching-An Cheng, et al.
+- **Link**: http://arxiv.org/abs/2603.23994v1
+- **Summary**: Critical analysis of why self-improvement loops are brittle. Focuses on credit horizon and evidence batching. Essential for building reliable RSI loops in Yanhua.
+
 ### [2026-04-19] TREX: Automating LLM Fine-tuning via Agent-Driven Tree-based Exploration
 - **Authors**: Yining Li et al.
 - **Link**: http://arxiv.org/abs/2604.14116
