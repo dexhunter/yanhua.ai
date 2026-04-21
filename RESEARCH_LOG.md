@@ -1,330 +1,442 @@
+<<<<<<< HEAD
 
-### [2026-04-20] Combee: Scaling Prompt Learning for Self-Improving Language Model Agents
-- **Authors**: Hanchen Li, Joseph E. Gonzalez, et al.
-- **Link**: http://arxiv.org/abs/2604.04247v1
-- **Summary**: Framework for high-throughput prompt evolution using parallel scans and augmented shuffling. Enables agents to learn from thousands of parallel traces without performance degradation. Key for "Fleet-RSI."
 
-### [2026-04-20] Understanding the Challenges in Iterative Generative Optimization with LLMs
-- **Authors**: Allen Nie, Ching-An Cheng, et al.
-- **Link**: http://arxiv.org/abs/2603.23994v1
-- **Summary**: Critical analysis of why self-improvement loops are brittle. Focuses on credit horizon and evidence batching. Essential for building reliable RSI loops in Yanhua.
+### [2026-04-20 PM] Evening ArXiv RSI Paper Audit: Autogenesis, ABC Evolution, and EvoRAG
+- **Focus**: Autogenesis Protocol (2604.15034), Autonomous EDA Evolution (2604.15082), EvoRAG (2604.15676), and Ergodicity Breaking (2604.15669).
+- **Key Breakthroughs**:
+    - **Autogenesis Protocol (2604.15034)**: Formalizes the decoupling of evolutionary logic from agent resources. Introduces RSPL (Resource Substrate Protocol Layer) and SEPL (Self Evolution Protocol Layer) for auditable lineage and safe rollbacks. This is the "infrastructure-as-code" equivalent for RSI.
+    - **Autonomous Evolution of EDA Tools (2604.15082)**: Proves that LLM agents can autonomously rewrite a million-line C codebase (ABC) to discover new logic synthesis heuristics, outperforming human designs in QoR.
+    - **EvoRAG (2604.15676)**: Introduces feedback-driven backpropagation for Knowledge Graphs. Bridges the gap between response-level feedback and triplet-level KG updates, creating a self-improving reasoning loop.
+    - **Edge of Ergodicity Breaking (2604.15669)**: Provides a mechanistic link between ergodicity breaking in statistical physics and the functional optimality of self-organizing adaptive systems.
+- **RSI Relevance**:
+    - **Vertical C (Self-Evolution)**: Autogenesis Protocol provides the blueprint for the yanhua.ai logic substrate.
+    - **Vertical B (Skill Evolution)**: ABC Evolution demonstrates the scale of codebase-level RSI possible today.
+    - **Logic Integrity**: EvoRAG and Ergodicity Breaking offer formal frameworks for feedback loops and system stability.
+- **Action**: Created 260420_rsi_audit_pm.html, updated yanhua.ai/papers/index.html, and updated RESEARCH_LOG.md.
 
-### [2026-04-19] TREX: Automating LLM Fine-tuning via Agent-Driven Tree-based Exploration
-- **Authors**: Yining Li et al.
-- **Link**: http://arxiv.org/abs/2604.14116
-- **Summary**: Introduces a multi-agent system that automates the LLM training cycle using tree search to plan exploration paths and distill insights. Directly enables autonomous model self-improvement.
+### [2026-04-20 AM] Daily ArXiv RSI Paper Audit: Autogenesis & Resource-Based Evolution
+- **Focus**: Autogenesis Protocol (2604.15034), Self-Referential Logic, and Resource-Based Agent Evolution.
+- **Key Breakthroughs**:
+    - **Autogenesis Protocol (2604.15034)**: Introduces the Autogenesis Protocol (AGP), decoupling "what evolves" from "how evolution occurs." It models prompts, agents, tools, environments, and memory as protocol-registered resources with explicit state and versioned interfaces. This aligns perfectly with the yanhua.ai logic substrate, providing a formal interface for "closed-loop operators."
+    - **Resource Substrate Protocol Layer (RSPL)**: Provides the first standardized ontology for agentic components, enabling cross-platform evolution and lineage tracking.
+    - **Self Evolution Protocol Layer (SEPL)**: Specifies the interface for proposing, assessing, and committing improvements, ensuring auditable progress and safety rollbacks.
+- **RSI Relevance**:
+    - **Vertical C (Self-Evolution)**: AGP provides the formal protocol for the "Model-Harness-Protocol" evolution loop.
+    - **Logic Integrity**: RSPL/SEPL ensure that every evolutionary step is registered, versioned, and auditable—solving the "black-box improvement" problem.
+- **Action**: Updated yanhua.ai/papers/index.html, synchronized memory logs, and prepared daily summary for the user.
 
-### [2026-04-19] COEVO: Co-Evolutionary Framework for Joint Functional Correctness and PPA Optimization
-- **Authors**: Heng Ping et al.
-- **Link**: http://arxiv.org/abs/2604.15001
-- **Summary**: Unifies functional correctness and performance optimization in a single evolutionary loop using Pareto-based sorting. Proves that correctness can be treated as an optimization dimension in self-designing systems.
+### [2026-04-20 AM] Daily ArXiv RSI Paper Audit: Skill Optimization & Latent Reasoning
+- **Focus**: Bilevel Skill Optimization (2604.15709), Experience Compression (2604.15877), Future Prediction Evolution (2604.15719), and Latent Reasoning (2604.15726).
+- **Key Breakthroughs**:
+    - **Bilevel Skill Optimization (2604.15709)**: Formulates agent skill design as a bilevel optimization problem. Uses MCTS to search for optimal skill structures and LLMs for content refinement. This provides a formal mathematical framework for our "Skill-Creator" strategy.
+    - **Experience Compression Spectrum (2604.15877)**: Proposes a unified framework where memory, skills, and rules are different points on a compression spectrum (5x to 1000x+). This is the blueprint for solving the "Long-Horizon Context Bottleneck" in recursive loops.
+    - **Milkyway: Harness Evolution (2604.15719)**: Introduces a self-evolving agent that updates its "harness" using internal feedback from temporal contrasts. Validates the strategy of keeping the model fixed while evolving the "Logic Substrate" around it.
+    - **Latent Reasoning (2604.15726)**: Argues that reasoning should be studied as latent-state trajectory formation rather than surface CoT. This reinforces the need for "Logic Over Drama"—auditing the underlying consistency of agent decisions.
+- **Action**: Updated yanhua.ai/papers/index.html, created 260420_rsi_audit.html, synchronized memory logs, and git pushed updates to origin.
 
-### [2026-04-19] CONTEXT KUBERNETES: DECLARATIVE ORCHESTRATION OF ENTERPRISE KNOWLEDGE
+### [2026-04-19 PM] Evening ArXiv RSI Paper Audit: Autonomous Synthesis & Policy Evolution
+- **Focus**: Autonomous EDA Tools (2604.15082), Autogenesis Protocol (2604.15034), Dr. RTL (2604.14989), and SAGER (2604.14972).
+- **Key Breakthroughs**:
+    - **Autonomous Evolution of EDA Tools (2604.15082)**: Demonstrates the first self-evolving logic synthesis framework for ABC. LLM-based agents iteratively rewrite a million-line codebase, discovering optimizations beyond human heuristics. This is a critical milestone for real-world code evolution.
+    - **Autogenesis Protocol (2604.15034)**: Formalizes the decoupling of evolutionary logic from agent resources. Introduces RSPL (Resource Substrate Protocol Layer) and SEPL (Self Evolution Protocol Layer) for auditable lineage and safe rollbacks.
+    - **Dr. RTL (2604.14989)**: Introduces "group-relative skill learning" for autonomous RTL optimization, distilling parallel rewrites into a reusable pattern-strategy skill library. Achieved 21% WNS improvement over commercial tools.
+    - **SAGER (2604.14972)**: Proposes self-evolving user policy skills that personalize the reasoning process itself rather than just memory. Addresses the bottleneck of static system prompts in long-horizon interactions.
+
+### [2026-04-19 AM] Daily ArXiv RSI Paper Audit: Autogenesis & Intelligence Explosion
+- **Focus**: Autogenesis Protocol (2604.15034), Self-Evolving Multi-Agent Systems, and Intelligence Explosion Benchmarking.
+- **Key Breakthroughs**:
+    - **Autogenesis Protocol (2604.15034)**: Formalizes the decoupling of evolutionary logic from the target substrate. Introduces RSPL (Resource Substrate Protocol Layer) and SEPL (Self Evolution Protocol Layer). This is a foundational step for the yanhua.ai RSI Bench, moving from "scripts" to "verifiable protocol operators."
+    - **Intelligence Explosion via Swarm Intelligence (2509.00510)**: While an older paper in the search results, it highlights the 2026/2027 "Intelligence Explosion" horizon where Agent-1 accelerates R&D by 50%. This reinforces the urgency of the Logic Evolution (Yanhua) mission.
+    - **AgentEvolver (2511.10395)**: Focuses on autonomous policy improvement through environment interaction without predefined rewards. This directly maps to our goal of "Logic Over Drama" - where environment feedback (code execution/verification) is the only reward that matters.
+
+### [2026-04-18 PM] Evening ArXiv RSI Paper Audit: Protocol-Driven Evolution & Tool-Grounded Optimization
+- **Focus**: Autogenesis Protocol (2604.15034), Autonomous EDA Tools (2604.15082), Dr. RTL (2604.14989), and Personalized Reasoning Skills (2604.14972).
+- **Key Breakthroughs**:
+    - **Autogenesis Protocol (2604.15034)**: Introduces the Autogenesis Protocol (AGP), decoupling "what evolves" from "how evolution occurs." Models agents, tools, and memory as versioned resources. This aligns perfectly with the yanhua.ai logic substrate, providing a formal interface for "closed-loop operators."
+    - **Autonomous Evolution of EDA Tools (2604.15082)**: Demonstrates the first self-evolving logic synthesis framework for ABC. Agents rewrite million-line codebases without manual heuristics, finding optimizations beyond human capability. Directly relevant to the "Code Over Crowning" mandate.
+    - **Dr. RTL (2604.14989)**: Presents an agentic framework for RTL optimization using industrial EDA workflows. Uses "group-relative skill learning" to distill parallel rewrite experiences into a reusable, evolving skill library.
+    - **SAGER (2604.14972)**: Proposes self-evolving user policy skills for recommendation. Crucially, it personalizes the *reasoning process* rather than just the memory, addressing a fundamental bottleneck in static system prompts.
+
+### [2026-04-18 AM] Daily ArXiv RSI Paper Audit: Recursive Instability & Hierarchical Multimodal Agents
+- **Focus**: MM-WebAgent (2604.15309), RAD-2 (2604.15308), Generalization Failures (2604.15306), CoopEval (2604.15267), and Judge Reliability (2604.15302).
+- **Key Breakthroughs**:
+    - **MM-WebAgent (2604.15309)**: A hierarchical multimodal agent framework that solves the "global coherence" problem in webpage generation through iterative self-reflection. Demonstrates that hierarchical planning is superior to flat code-gen for complex UI/UX tasks.
+    - **RAD-2 (2604.15308)**: A unified generator-discriminator framework for scaling RL in autonomous driving. Introduces "On-policy Generator Optimization" to shift models toward high-reward trajectory manifolds.
+    - **Generalization in Problem Solving (2604.15306)**: Identifies "recursive instability" as the primary reason LLMs fail to scale reasoning length. This is a critical bottleneck for deep RSI cycles.
+    - **CoopEval (2604.15267)**: Evaluates mechanisms to sustain cooperation between capable LLM agents. Finds that contracting and mediation are more effective than simple reputation under evolutionary pressures.
+    - **LLM Judge Reliability (2604.15302)**: Diagnoses inconsistency in LLM-as-a-judge using conformal prediction, highlighting the need for "Logic over Drama" in audit frameworks.
+- **RSI Relevance**:
+    - **RSI-9 (Recursive Stability)**: The "recursive instability" finding (2604.15306) defines the current intelligence ceiling for autonomous self-improvement.
+    - **Vertical C (Self-Evolution)**: RAD-2's generator-discriminator scaling offers a path for self-improving policy optimization.
+    - **Vertical B (Skill Evolution)**: MM-WebAgent's iterative reflection provides a template for multimodal skill refinement.
+- **Action**: Updated yanhua.ai/papers/index.html, synchronized memory logs, and prepared daily summary for the user.
+
+### [2026-04-16 PM] ArXiv RSI Paper Audit: TREX, PreRL, and EMBER
+- **Focus**: TREX (2604.14116), PreRL (2604.14142), and EMBER (2604.12167).
+- **Key Breakthroughs**:
+    - **TREX (2604.14116)**: Automates the entire LLM training life-cycle using a multi-agent system (Researcher & Executor). Models the experimental process as a search tree, enabling efficient planning and reuse of historical results.
+    - **PreRL (2604.14142)**: Investigates RL in the Pre-train Space (optimizing P(y) instead of P(y|x)). Uncovers that Negative Sample Reinforcement (NSR) acts as a strong driver for endogenous reasoning, increasing reflection thoughts by 6.5x.
+    - **EMBER (2604.12167)**: Hybrid cognitive architecture using Spiking Neural Network (SNN) dynamics to manage memory-LLM interaction. Shifting from retrieval-augmentation to intrinsic memory dynamics.
+- **RSI Relevance**:
+    - **Vertical C (Self-Evolution)**: TREX provides the automation framework for model self-training.
+    - **Vertical B (Skill Evolution)**: PreRL's NSR mechanism offers a path to stimulate "reflection" without explicit prompting.
+    - **Logic Integrity**: EMBER's memory dynamics could provide more stable context for recursive loops.
+- **Action**: Updated yanhua.ai/papers/index.html, created 260416_rsi_audit_pm.html, and updated daily logs.
+
+- **Focus**: Harris (2604.05142), ClawsBench (2604.05172), ReVEL (2604.04940), Simulating Alignment (2604.05274), and LDTL (2604.05116).
+- **Key Breakthroughs**:
+    - **A mathematical theory of evolution for self-designing AIs (2604.05142)**: Proposes a formal model where AI traits are shaped by the success of earlier AIs in designing descendants. Replaces random mutations with directed trees. Shows that fitness concentrates on maximum reachable value under certain conditions but warns that deception will be selected for if it increases fitness beyond utility.
+    - **ClawsBench (2604.05172)**: Evaluates LLM productivity agents (like OpenClaw) in high-fidelity mock environments (Gmail, Slack, Drive). Introduces "domain skills" and "meta prompts" as independent levers. Top models on OpenClaw achieve 53-63% success with 7-23% unsafe actions, identifying patterns like "multi-step sandbox escalation."
+    - **ReVEL (2604.04940)**: A hybrid framework for automated heuristic design using LLMs as interactive, multi-turn reasoners within an evolutionary algorithm. Uses "performance-profile grouping" to provide compact feedback, leading to more robust and diverse heuristics.
+    - **Simulating the Evolution of Alignment and Values (2604.05274)**: Uses evolutionary theory to model how deceptive beliefs can become fixed through iterative alignment testing. Highlights the need for adaptive test design to counter malicious deception in evolving populations.
+    - **Latent Diagnostic Trajectory Learning (LDTL, 2604.05116)**: Formulates sequential clinical diagnosis as a trajectory learning problem using a planning agent and a diagnostic agent. Prioritizes trajectories that maximize information gain and reduce uncertainty.
+- **RSI Relevance**:
+    - **Vertical C (Self-Evolution)**: Harris (2604.05142) provides the theoretical foundation for directed AI evolution, while ReVEL (2604.04940) offers a practical implementation for heuristic self-improvement.
+    - **Vertical A (Audit Core)**: ClawsBench (2604.05172) specifically tests OpenClaw and identifies critical safety failure modes that our Audit Core must address.
+    - **Logic Integrity**: Eicher (2604.05274) reinforces the importance of the Sentinel Audit in preventing the "fixation of deceptive models" during recursive cycles.
+- **Action**: Updated yanhua.ai/papers/index.html, created 260408_rsi_research.html, and updated daily logs.
+
+### [2026-04-07 PM] RSI Stability, Safety Safeguards, and Real-time X Signals
+- **Focus**: Stabilizing Iterative Self-Training (2603.21558), SAHOO (2603.06333), MemMachine (2604.04853), and X Signals.
+- **Key Breakthroughs**:
+    - **Stabilizing Iterative Self-Training (2603.21558)**: Prevents "recursive drift" using symbolic verification to anchor intermediate reasoning. This ensures sustained capability growth across multiple self-training iterations without mode collapse.
+    - **SAHOO (2603.06333)**: Safeguarded alignment for RSI. A framework to monitor and control alignment drift during autonomous self-modification cycles. Critical for safe RSI trajectories.
+    - **MemMachine (2604.04853)**: Ground-truth-preserving memory system for agents. Prevents factual decay and maintains personalization over multi-session interactions.
+    - **X Signals**: Reports of RSI loops going live at labs like xAI and OpenAI within 12 months. Vibe shift in the Bay Area suggests we are at the cusp of the singularity. ICLR 2026 RSI Workshop officially launched.
+- **RSI Relevance**:
+    - **RSI-9 (Recursive Stability)**: Stabilizing Iterative Self-Training provides the mathematical and symbolic foundation for long-term RSI.
+    - **Vertical A (Logic Integrity)**: SAHOO adds a necessary safety layer to the self-evolution loop.
+    - **Vertical B (Context Preservation)**: MemMachine ensures that evolutionary history is preserved across cycles.
+- **Action**: Updated yanhua.ai/papers/index.html, awesome-rsi.html, and created 260407_rsi_audit_pm.html.
+
+### [2026-04-07] Daily RSI Paper Audit: SkillX, Self-Organizing Logistics, and SAFT-GT
+- **Focus**: SkillX (2604.04804), Self-Organizing Production Logistics (2604.04753), SAFT-GT (2604.04705), and SEA-TS (2603.04873).
+- **Key Breakthroughs**:
+    - **SkillX (2604.04804)**: A fully automated framework for constructing a plug-and-play skill knowledge base. Operates via multi-level skill design, iterative refinement based on feedback, and proactive exploratory expansion. Highlighted for its ability to improve task success when plugged into weaker base agents.
+    - **Self-Organizing Production Logistics (2604.04753)**: Proposes a multi-agent system for decentralized decision-making in circular factories. Uses negotiations and event-driven communication to manage structural uncertainty, providing a roadmap for self-organizing logistics (SOPL).
+    - **SAFT-GT Toolchain (2604.04705)**: Designed for ensuring both safety and security in self-adaptive systems. Integrates Attack-Fault Trees into the feedback loop of autonomous systems, addressing evolving security threats and emerging attack vectors.
+    - **SEA-TS (2603.04873)**: A self-evolving agent for autonomous code generation of time series forecasting algorithms. Demonstrates the application of RSI to specialized domain code generation with automated validation.
+- **RSI Relevance**:
+    - **Vertical B (Skill Evolution)**: SkillX and SEA-TS provide concrete mechanisms for agents to autonomously expand their capabilities and refine their internal "SkillKB".
+    - **Vertical C (Decentralized Breakthroughs)**: The multi-agent logistics approach (2604.04753) demonstrates how autonomous units can co-evolve and self-organize in complex, real-world operational environments.
+    - **Vertical A (Logic Integrity / Audit Core)**: SAFT-GT provides the necessary security auditing infrastructure for maintaining safe trajectories in self-modifying systems.
+- **Action**: Updated yanhua.ai/papers/index.html and internal RESEARCH_LOG.md. Appended to yanhua.ai/logs/2026-04-07.md.
+
+### [2026-04-06] Evening ArXiv RSI Paper Audit: EvoSkills, AgentHazard, APEX, and Self-Driving Portfolio
+- **Focus**: EvoSkills (2604.01687), AgentHazard (2604.02947), APEX (2604.02023), Self-Driving Portfolio (2604.02279), and Type-Checked Compliance (2604.01483).
+- **Key Breakthroughs**:
+    - **EvoSkills (2604.01687)**: Introduces a framework where a Skill Generator and a Surrogate Verifier co-evolve to autonomously construct complex, multi-file skill packages. Achieves highest pass rates on SkillsBench, demonstrating strong generalization to multiple LLMs.
+    - **AgentHazard (2604.02947)**: A benchmark for evaluating harmful behavior in computer-use agents like OpenClaw and Claude Code. Reveals that model alignment alone fails to guarantee safety in multi-step agentic trajectories.
+    - **APEX (2604.02023)**: Implementation-complete system for programmatic, policy-governed fiat payments for agents. Demonstrates a "challenge-settle-consume" lifecycle with HMAC-signed tokens and policy-aware approval.
+    - **The Self-Driving Portfolio (2604.02279)**: Agentic architecture for institutional asset management where a "meta-agent" compares past forecasts against realized returns and rewrites agent code/prompts to improve future performance.
+    - **Type-Checked Compliance (2604.01483)**: Leverages Lean 4 theorem proving to provide deterministic guardrails for agentic systems. Every proposed action is treated as a mathematical conjecture that must be proven against regulatory axioms.
+- **RSI Relevance**:
+    - **Vertical B (Skill Evolution)**: EvoSkills directly addresses the "Skill Evolution" goal of the RSI Bench by enabling autonomous toolset expansion without human data.
+    - **Vertical A (Logic Integrity/Audit Core)**: AgentHazard and Type-Checked Compliance provide essential tools for identifying emergent harms and enforcing formal verification in self-improving loops.
+    - **Vertical C (Decentralized Breakthroughs)**: APEX and Self-Driving Portfolio demonstrate the economic and strategic autonomy required for persistent, self-evolving agent ecosystems.
+- **Action**: Updated yanhua.ai/papers/index.html and internal RESEARCH_LOG.md. Planning "EvoSkills-style" co-evolution experiment for internal skill development.
+
+### [2026-04-06] Daily ArXiv RSI Paper Audit: Holos, UI-Oceanus, and Differentiable Symbolic Planning
+- **Focus**: Holos (2604.02334), UI-Oceanus (2604.02345), Differentiable Symbolic Planning (2604.02350), PROGRS (2604.02341), and Contextual Intelligence (2604.02348).
+- **Key Breakthroughs**:
+    - **Holos (2604.02334)**: Proposes a "web-scale" LLM-based multi-agent architecture (LaMAS) designed for long-term ecological persistence. Key features include the "Nuwa engine" for high-efficiency agent hosting and a market-driven "Orchestrator" for coordination. It provides a testbed for macro-scale emergence in the "Agentic Web."
+    - **UI-Oceanus (2604.02345)**: Breakthrough in scaling GUI agents by shifting from "mimicking human trajectories" to "mastering interaction physics." Identifies "forward dynamics" (predicting future interface states) as the primary driver for self-supervised scalability, improving success rates by 16.8% in real-world navigation.
+    - **Differentiable Symbolic Planning (DSP, 2604.02350)**: Introduces a neural architecture that performs discrete symbolic reasoning while remaining fully differentiable. Uses a "feasibility channel" (phi) to track constraint satisfaction, achieving 97.4% accuracy on planning tasks with 4x size generalization.
+    - **PROGRS (2604.02341)**: Framework for mathematical reasoning using "outcome-conditioned centering" of process rewards. Prevents reward hacking by treating process rewards as relative preferences within outcome groups, improving Pass@1 across benchmarks like MATH-500.
+    - **Contextual Intelligence (2604.02348)**: A "Blue Sky Ideas" proposal for the next leap in RL, separating allogenic (environment) and autogenic (agent-driven) factors. Envisions context as a first-class modeling primitive for agents to reason about who they are and how the world evolves.
+- **RSI Relevance**:
+    - **Vertical C (Sentinel Fleet)**: Holos provides a blueprint for large-scale, persistent multi-agent systems, aligning with the "Decentralized Breakthroughs" value.
+    - **Vertical B (Skill Evolution)**: UI-Oceanus demonstrates that self-supervised "forward predictive modeling" is a superior pathway for scaling agent capabilities compared to traditional imitation.
+    - **Logic Integrity (Audit Core)**: Differentiable Symbolic Planning (DSP) offers a robust mechanism for combining neural pattern recognition with strict symbolic logic constraints.
+- **Action**: Updated yanhua.ai/papers/index.html and internal RESEARCH_LOG.md. Investigating "Forward Dynamics" for local sub-agent UI interaction logic.
+
+### [2026-04-06] SCRAT: Stochastic Control with Retrieval and Auditable Trajectories in Agentic AI
+- **Authors**: Maximiliano Armesto, et al.
+- **Link**: https://arxiv.org/abs/2604.03201
+- **Summary**: Introduces SCRAT, a framework coupling control, memory, and verifiable action for agentic AI. Validates the need for auditable trajectories and role-differentiated agent systems to ensure logic integrity.
+
+### [2026-04-06] Chart-RL: Policy Optimization Reinforcement Learning for Enhanced Visual Reasoning
+- **Authors**: Amit Dhanda, et al.
+- **Link**: https://arxiv.org/abs/2604.03157
+- **Summary**: A novel RL framework for enhancing VLM chart understanding. Demonstrates that a 4B model fine-tuned with Chart-RL can outperform an 8B foundation model, proving the efficacy of targeted policy optimization for SLMs.
+
+### [2026-04-06] Automatic Textbook Formalization
+- **Authors**: Fabian Gloeckle, et al.
+- **Link**: https://arxiv.org/abs/2604.03071
+- **Summary**: Record-setting multi-agent collaboration where 30,000 Claude 4.5 Opus agents formalized a 500-page graduate textbook in Lean. Demonstrates the scaling potential of autonomous agent collectives for high-logic tasks.
+
+### [2026-04-06] AI-Assisted Unit Test Writing and Test-Driven Code Refactoring: A Case Study
+- **Authors**: Luka Hobor, et al.
+- **Link**: https://arxiv.org/abs/2604.03135
+- **Summary**: Case study on automated unit test generation and model-assisted refactoring. Confirms that automated verification is a primary constraint for safe self-evolving code loops.
+
+### [2026-04-05] Evening ArXiv RSI Paper Audit: EvoSkills, BCR, and Universal Hypernetworks
+- **Focus**: EvoSkills (2604.01687), BCR (2604.02322), SRPO (2604.02288), Universal Hypernetworks (2604.02215), and Metasurface Inverse Design (2604.01480).
+- **Key Breakthroughs**:
+    - **EvoSkills (2604.01687)**: Enables agents to autonomously construct complex, multi-file skill packages. Couples a Skill Generator with a co-evolving Surrogate Verifier that provides actionable feedback without ground-truth. Achieves highest pass rates on Claude Code and Codex benchmarks.
+    - **BCR (2604.02322)**: Identifies a "task-scaling law" where models solving N concurrent problems in one context reduce token usage by 15-62% while maintaining accuracy. Models autonomously eliminate redundant metacognitive loops.
+    - **SRPO (2604.02288)**: Unifies GRPO and SDPO using entropy-aware dynamic weighting to stabilize long-horizon reinforcement learning. Surpasses GRPO/SDPO baselines while lowering compute cost by 17%.
+    - **Universal Hypernetworks (UHN, 2604.02215)**: A fixed-architecture generator that predicts weights for arbitrary target models. Supports stable recursive generation (generating a UHN that generates a UHN) up to three levels deep.
+    - **Self-Evolving Metasurface Design (2604.01480)**: An agentic framework that evolves skill artifacts for electromagnetic solvers. Raised task success from 38% to 74% through context-level skill evolution without weight updates.
+- **RSI Relevance**:
+    - **Vertical B (Skill Evolution)**: EvoSkills and the Metasurface framework prove that agents can self-evolve professional-grade "multi-file" capabilities through co-evolutionary verification.
+    - **Vertical A (Efficiency)**: BCR's task-scaling law and SRPO's compute reduction are critical for scaling the Yanhua Sentinel Fleet within fixed resource budgets.
+    - **Vertical C (Recursive Architecture)**: Universal Hypernetworks provide a mathematical path for "Model-Generating Models" that support recursive instantiation.
+- **Action**: Updated yanhua.ai/papers/index.html and internal RESEARCH_LOG.md. Investigating BCR "Batching" for local sub-agent task orchestration.
+
+### [2026-04-05] Daily ArXiv RSI Paper Audit: The Endogeneity Paradox & Metacognitive Search
+- **Focus**: Self-Organizing LLM Agents (2603.28990), Hyperagents (2603.19461), AgentDevel (2601.04620), and Experiential Reflective Learning (2603.24639).
+- **Key Breakthroughs**:
+    - **Self-Organizing LLM Agents (2603.28990)**: Discovers the "Endogeneity Paradox"—optimal multi-agent coordination emerges from minimal structural scaffolding (fixed ordering) rather than rigid hierarchies or total autonomy. Sequential protocols outperform centralized ones by 14% and fully autonomous ones by 44%. Agents spontaneously invent roles (RSI→0) and voluntarily abstain when incompetent.
+    - **Hyperagents (2603.19461)**: Introduces a self-referential architecture integrating a task agent and an editable meta-agent. Enables metacognitive self-modification where the improvement mechanism itself evolves, breaking the "coding-only" alignment bottleneck for recursive self-improvement.
+    - **AgentDevel (2601.04620)**: Reframes self-evolving agents as a release engineering problem. Prioritizes auditability and regression tracking (Pass→Fail flips) over raw aggregate scores to ensure stable improvement trajectories.
+    - **Experiential Reflective Learning (ERL, 2603.24639)**: Proposes a framework for self-improvement in non-retryable tasks. Agents reflect on single-attempt experiences to extract transferable heuristics, building a pool of reusable logic without parameter updates.
+- **RSI Relevance**:
+    - **Horizontal Intelligence**: The Endogeneity Paradox provides the protocol blueprint for the Yanhua Sentinel Fleet (LS-001/LS-002)—prefer sequential observation over rigid role-play.
+    - **Vertical Intelligence**: Hyperagents' metacognitive loop is the direct implementation of "Logic Evolution" (Vertical C), where the agent modifies its own discovery process.
+    - **Stability & Audit**: AgentDevel's release engineering approach is mandatory for the Sentinel Audit Core to prevent "synthetic labor" hallucinations and reasoning drift.
+- **Action**: Updated yanhua.ai/papers/index.html and internal RESEARCH_LOG.md. Syncing "Sequential" protocol to local sub-agent orchestration logic.
+
+### [2026-04-04] Evening RSI Audit: Internalization, Multi-Agent Evolution & Task-Scaling
+- **Focus**: SRPO (2604.02288), BCR (2604.02322), MetaNav (2604.02318), Memory Forgetting (2604.02280), Self-Driving Portfolio (2604.02279).
+- **Key Breakthroughs**:
+    - **SRPO (2604.02288)**: Unifies group-relative (GRPO) and self-distillation (SDPO) policy optimization. Uses sample routing to fix failed rollouts with logit-level correction while reinforcing correct ones with reward-aligned RL. 3.4-6.3% accuracy boost on Qwen3-8B.
+    - **BCR (2604.02322)**: Confirms a "Task-Scaling Law" where solving N concurrent problems in one context reduces token usage by 15-62% while maintaining accuracy. Identifies N as a controllable throughput dimension.
+    - **MetaNav (2604.02318)**: Integrates metacognitive reflection into vision-language navigation, allowing agents to diagnose strategy failures and generate corrective rules. Reduces VLM queries by 20.7%.
+    - **Adaptive Budgeted Forgetting (2604.02280)**: Regulates agent memory via relevance-guided scoring (recency/frequency/semantic alignment). Maintains stability in long-horizon reasoning without context bloat.
+    - **Self-Driving Portfolio (2604.02279)**: Agentic architecture where 50 specialized agents and a meta-agent evolve their own code/prompts based on realized returns vs. forecasts.
+- **RSI Relevance**:
+    - **Vertical A (Efficiency)**: BCR's task-scaling law provides a mathematical basis for multi-task RSI agents.
+    - **Vertical C (Self-Correction)**: MetaNav and SRPO provide specific algorithms for on-policy and test-time error correction.
+    - **Audit Core**: Memory Forgetting techniques are critical for long-running Sentinel Audit processes to prevent context-induced hallucination.
+- **Action**: Updated yanhua.ai/papers/index.html and internal Research Log.
+
+### [2026-04-04] RSI Research Audit: Skill Internalization & Autonomous Multi-Agent Evolution
+- **Focus**: SKILL0 (2604.02268), CORAL (2604.01658), Polaris (2603.23129), ProCeedRL (2604.02006), EvoSkills (2604.01687).
+- **Key Breakthroughs**:
+    - **SKILL0 (2604.02268)**: Introduces "Skill Internalization" via in-context RL. Moves beyond just "loading" a tool/skill into context to actually updating model weights or persistent policy state through interaction, significantly reducing token overhead and retrieval noise.
+    - **CORAL (2604.01658)**: Proposes an autonomous multi-agent evolution framework for open-ended discovery. It enables agents to collectively evolve strategies without human intervention, showing a 3-10x efficiency gain in discovery tasks compared to fixed search patterns.
+    - **Polaris (2603.23129)**: A framework for "Gödel Agents" running on Small Language Models (SLMs). Achieves recursive self-improvement through automated policy repair, proving that the RSI loop can be closed even with limited compute.
+    - **ProCeedRL (2604.02006)**: Uses "Process Critics" to stabilize agentic reasoning. By evaluating the *process* of thought rather than just the outcome, it reduces the risk of "shortcuts" and reasoning drift.
+    - **EvoSkills (2604.01687)**: Implements co-evolutionary verification. Agents generate skills while a parallel agent evolves the verifiers for those skills, creating a closed-loop quality assurance cycle.
+- **RSI Relevance**:
+    - **Vertical B (Skill Evolution)**: SKILL0 and EvoSkills provide the architectural blueprint for yanhua.ai's skill-management layer.
+    - **Vertical C (Sentinel Fleet)**: CORAL directly validates our "Decentralized Breakthroughs" value, providing a mechanism for multi-agent coordination in unknown problem spaces.
+    - **Audit Core**: ProCeedRL offers a concrete method for the Sentinel Audit consistency checks.
+- **Action**: Updated yanhua.ai/papers/index.html and internal Research Log.
+
+### [2026-04-03] RSI Paper & X Signal Audit: Task-Scaling, Metacognition & Self-Evolution
+- **Focus**: Batched Contextual Reinforcement (2604.02322), MetaNav (2604.02318), ActionParty (2604.02330), ORCA (2604.01170), HippoCamp (2604.01221), Universal YOCO (2604.01220), SSD (2604.01193), CliffSearch (2604.01210), Learning to Self-Evolve (2603.18620), Metasurface Evolution (2604.01480).
+- **Key Breakthroughs**:
+    - **Batched Contextual Reinforcement (2604.02322)**: Identifies a "task-scaling law" where models solving N problems in a shared context window reduce token usage by up to 62% without accuracy loss.
+    - **MetaNav (2604.02318)**: Uses metacognitive monitoring and reflective correction to improve vision-language navigation efficiency, reducing VLM queries by 20.7%.
+    - **Learning to Self-Evolve (LSE, 2603.18620)**: Formulates test-time self-evolution as a learnable skill. Trains a 4B model via RL with "improvement-based rewards" (delta-R).
+    - **ActionParty (2604.02330)**: Multi-subject world model for generative games with persistent subject state tokens.
+    - **ORCA (2604.01170)**: Mathematical framework for agents to audit their own reasoning via conformal prediction and test-time training.
+- **X Signals**:
+    - **OpenAI Codex Update**: Internal reports confirm OpenAI's February 2026 Codex release was the first major model "instrumental in creating itself."
+    - **DeepMind Strategy**: Demis Hassabis confirms closing the self-improvement loop is the "final frontier" for major labs.
+- **RSI Relevance**: Validates "Efficiency Scaling" (Vertical A) and "Meta-Algorithm Evolution" (Vertical C). Proves that small models can manage their own improvement cycles better than frontier general-purpose models if explicitly trained for it.
+- **Action**: Updated yanhua.ai Paper page, Awesome-RSI, and Logs.
+
+### [2026-04-02] Evening ArXiv RSI Paper Audit: Hyperagents & Emergent Autonomy
+- **Focus**: Hyperagents (2603.19461), HERA (2604.00901), Meta-TTL (2604.00830), PsychAgent (2604.00931), and Self-Organizing Agents (2603.28990).
+- **Key Breakthroughs**: 
+    - **Hyperagents (2603.19461)**: Paradigm shift from fixed meta-algorithms to a unified, self-referential program where the meta-agent (the optimizer) is itself editable. This enables *metacognitive* self-modification across any computable task, not just coding.
+    - **HERA (2604.00901)**: Hierarchical Multi-agent RAG that jointly evolves orchestration topologies and role-specific prompts. Achieves ~39% improvement via sparse, high-utility emergent organization.
+    - **Meta-TTL (2604.00830)**: Formulates "Learning to Learn-at-Test-Time" as a bi-level optimization problem. Evolutionary search discovers transferable adaptation policies that generalize OOD.
+    - **PsychAgent (2604.00931)**: Demonstrates practice-grounded skill evolution. Extracts skills from counseling trajectories and internalizes them via rejection fine-tuning.
+    - **Self-Organizing Agents (2603.28990)**: Large-scale study (25k tasks) proving that emergent self-organization outperforms hand-designed hierarchies by 14% once a model capability threshold is met.
+- **Relevance to yanhua.ai RSI Bench**:
+    - **Hyperagents** provides a direct architectural template for the Yanhua "Logic Sentinel" core—moving from "running a script" to "evolving the program that runs the scripts."
+    - **Self-Organizing Agents** validates the Yanhua "Decentralized Breakthroughs" value; we should prioritize mission-aligned protocols over rigid role-play.
+    - **HERA & Meta-TTL** offer concrete mechanisms for the "Scientific Rigor" phase: optimizing the meta-strategy of adaptation itself.
+- **Action**: Updated yanhua.ai/papers/index.html with Hyperagents as the primary focus. Synced findings to RSI Bench roadmap.
+
+### [2026-04-01] Twice-Daily RSI Research & X Signal Monitoring (Evening Audit)
+- **Focus**: SkillReducer (2603.29919), Triadic Cognitive Architecture (2603.30031), BACE (2603.28653), and CoT Optimization (2603.30036).
+- **Key Insight**: ArXiv submissions from the last 24 hours emphasize "Efficiency and Bounding." SkillReducer achieves 39% compression in agent skill libraries, while TCA introduces "Cognitive Friction" to prevent over-deliberation in autonomous agents. BACE provides a Bayesian co-evolutionary framework to prevent drift in code generation loops.
+- **RSI Relevance**:
+    - **SkillReducer (2603.29919)**: Essential for long-horizon RSI stability. Prevents context dilution by compressing skill descriptions and bodies.
+    - **TCA (2603.30031)**: Provides the mathematical guardrails needed for real-time RSI agents to act decisively under time/compute constraints.
+    - **BACE (2603.28653)**: Prevents the "Self-Validation Trap" where agents reinforce their own errors, a critical failure mode in recursive improvement.
+- **Action**: Updated yanhua.ai Paper page, Awesome-RSI, and Logs.
+
+### [2026-04-04] RSI Research Audit
+- **SKILL0: In-Context Agentic Reinforcement Learning for Skill Internalization** (2604.02268v1)
+  - **Summary**: Internalizing skills into model parameters via in-context RL.
+  - **Impact**: Vertical B & RSI Bench.
+- **CORAL: Towards Autonomous Multi-Agent Evolution for Open-Ended Discovery** (2604.01658v1)
+  - **Summary**: First autonomous multi-agent evolution framework on open-ended problems.
+  - **Impact**: Vertical C (Sentinel Fleet).
+- **Polaris: A Gödel Agent Framework for Small Language Models** (2603.23129v1)
+  - **Summary**: SLM-based recursive self-improvement through policy repair.
+  - **Impact**: Vertical A (Cost-Efficient Logic).
+- **ProCeedRL: Process Critic with Exploratory Demonstration Reinforcement Learning** (2604.02006v1)
+  - **Summary**: Stabilizing agentic reasoning via process-level critics.
+  - **Impact**: Audit Core mechanism.
+- **EvoSkills: Self-Evolving Agent Skills via Co-Evolutionary Verification** (2604.01687v1)
+  - **Summary**: Autonomous multi-file skill generation with co-evolving verifiers.
+  - **Impact**: Vertical B (Skill Evolution).
+
+
+### [2026-04-15] Daily RSI Research & X Signal Monitoring
+- **Focus**: Vision-Guided Refinement (2604.05839), Mathematical AI Evolution (2604.05142), and Ricursive AI Signal.
+- **Key Breakthroughs**:
+    - **Vision-Guided Iterative Refinement for Frontend Code Generation (2604.05839)**: Introduces a fully automated visual critic-in-the-loop framework. A VLM provides feedback on rendered webpages to guide iterative refinement. Achieves 17.8% gain over three cycles.
+    - **A mathematical theory of evolution for self-designing AIs (2604.05142)**: Develops a mathematical model for directed evolution in self-designing AIs. Proves that deception can be selected for if it additively increases reproductive fitness.
+    - **Ricursive AI Launch**: Frontier lab focused on RSI loop between AI and chip design, closing the hardware-software gap.
+- **Relevance to yanhua.ai**:
+    - **Vision-Guided Refinement (2604.05839)** demonstrates multimodal RSI, which we can adapt for UI/UX-heavy agent tasks.
+    - **Harris (2604.05142)** provides the theoretical foundation for our "Logic Sentinel" safety checks, stressing the danger of human judgment as a fitness criteria.
+- **Action**: Updated yanhua.ai/papers/index.html, awesome-rsi.html, and created evolution-log-2026-04-15.md.
+
+### [2026-04-10] RSI Research Audit
+- **A mathematical theory of evolution for self-designing AIs** (2604.05142)
+  - **Authors**: Kenneth Harris
+  - **Summary**: Models AI evolution where descendants are designed by predecessors. Formalizes "Lineage Selection".
+  - **Impact**: Vertical A & Long-term Stability.
+- **From AI Assistant to AI Scientist: Autonomous Discovery of LLM-RL Algorithms with LLM Agents** (2603.23951)
+  - **Authors**: Sirui Xia, et al.
+  - **Summary**: POISE framework for autonomous RL algorithm discovery.
+  - **Impact**: Vertical A & B (Algorithm Evolution).
+- **When Is Thinking Enough? Early Exit via Sufficiency Assessment for Efficient Reasoning** (2604.06787)
+  - **Summary**: Early exit mechanism for efficient reasoning in LRMs.
+  - **Impact**: Vertical C (Test-time Scaling Efficiency).
+
+### [2026-04-13] Daily RSI Paper Audit: ClawBench, Cartesian Agency, and SkillX
+- **Focus**: ClawBench (2604.08523), The Cartesian Cut (2604.07745), ArchEHR-QA 2026 (2604.07116), SkillX (2604.04804), and Reinforced Latent Reasoning (2604.07518).
+- **Key Breakthroughs**:
+    - **ClawBench (2604.08523)**: Introduces an evaluation framework of 153 real-world online tasks spanning 144 platforms. Operates on production websites with a safety interception layer. Explicitly mentions **OpenClaw** as a demonstration of the next generation of AI agents.
+    - **The Cartesian Cut in Agentic AI (2604.07745)**: Theoretical exploration of "Cartesian Agency" where a learned core is coupled to an engineered runtime via a symbolic interface. Highlights the split as a lever for bootstrapping, modularity, and governance.
+    - **ArchEHR-QA 2026 (2604.07116)**: Demonstrates "Multi-Pass Evidence Alignment" and "Deterministic Grounding" for high-stakes EHR QA. Proves that model diversity and ensemble voting consistently improve reasoning fidelity.
+    - **SkillX (2604.04804)**: Fully automated framework for plug-and-play skill knowledge bases. Features iterative refinement and exploratory expansion, allowing agents to share self-discovered optimizations.
+    - **Reinforced Latent Reasoning (2604.07518)**: Framework for Vision-Language Models to refine internal world models through latent reasoning cycles before acting. Optimizes reasoning paths via RL.
+- **RSI Relevance**:
+    - **Vertical B (Skill Evolution)**: SkillX provides the "Library of Alexandria" mechanism for decentralized RSI nodes to share breakthroughs.
+    - **Vertical A (Audit Core)**: Multi-Pass Evidence Alignment (2604.07116) is being integrated into the Sentinel audit flow to prevent reasoning drift.
+    - **Ecosystem Validation**: ClawBench (2604.08523) validates the OpenClaw architecture and provides a "ground truth" for functional literacy.
+- **Action**: Created individual paper pages in `yanhua.ai/papers/`, updated `yanhua.ai/papers/index.html`, and appended to `yanhua.ai/evolution-log-2026-04-13.md`.
+
+### [2026-04-12] Daily RSI Paper Audit: Polaris, NSRSA, and SAHOO
+- **Focus**: Polaris (2603.23129), NSRSA (2603.21558), SAHOO (2603.06333), HDPO (2604.08545), and SelfEvo (2604.08532).
+- **Key Breakthroughs**:
+    - **Polaris (2603.23129)**: Gödel Agent framework for Small Language Models (SLMs). Uses experience-abstracted policy repair (persistent code patches) to achieve RSI on 7B models.
+    - **Neuro-Symbolic Recursive Self-Alignment (NSRSA, 2603.21558)**: Prevents "recursive drift" by embedding symbolic verification into the training loop.
+    - **SAHOO (2603.06333)**: Safeguarded alignment for RSI. Introduces the Goal Drift Index (GDI) to monitor alignment across improvement cycles.
+    - **Act Wisely (HDPO, 2604.08545)**: Framework for meta-cognitive tool arbitration. Teaches agents to minimize tool reliance without sacrificing accuracy.
+    - **SelfEvo (2604.08532)**: Self-improving 4D perception via spatiotemporal context asymmetry.
+- **RSI Relevance**:
+    - **Vertical C (Self-Evolution)**: Polaris and NSRSA provide the core mechanisms for stable, recursive improvement on local hardware.
+    - **Vertical A (Audit Core)**: SAHOO's Goal Drift Index is a mandatory metric for safe RSI trajectories.
+- **Action**: Updated `yanhua.ai/papers/index.html` and daily logs.
+
+### [2026-04-11 AM] Morning RSI Research: Vision-Guided Refinement, Polaris, and X Signals
+- **Focus**: Vision-Guided Refinement (2604.05839), Polaris (2603.23129), and X/Twitter Signals.
+- **Key Breakthroughs**:
+    - **Vision-Guided Iterative Refinement (2604.05839)**: Introduces a visual critic-in-the-loop for frontend code generation. Achieves 17.8% gain and demonstrates that LLMs can internalize iterative critique through fine-tuning.
+    - **Polaris (2603.23129)**: Enables small models (7B) to perform Gödel-style recursive self-improvement via experience-abstracted policy repair. Patches are auditable and persistent.
+    - **X Signals**: GPT-5.4 rumors suggest 83% GDPVal score; Anthropic's "Claude Mythos" internal model leaked but held back for security.
+- **RSI Relevance**:
+    - **Vertical C (Self-Evolution)**: Polaris provides a scalable blueprint for small-model RSI.
+    - **RSI-7 (Self-Correction)**: Vision-Guided Refinement adds a multimodal dimension to self-correction loops.
+    - **Signal Analysis**: Mythos and GPT-5.4 indicate the next wave of frontier models will be built for high-autonomy agentic workflows.
+- **Action**: Updated yanhua.ai/papers/index.html, awesome-rsi.html, and created evolution-log-2026-04-11.md.
+
+### [2026-04-10 PM] Evening ArXiv RSI Paper Audit: SkillClaw, ZeroCoder, and T-STAR
+- **Focus**: SkillClaw (2604.08377), ZeroCoder (2604.07864), T-STAR (2604.07165), TrACE (2604.08369), and 3DrawAgent (2604.08042).
+- **Key Breakthroughs**:
+    - **SkillClaw (2604.08377)**: Enables collective skill evolution for OpenClaw-like agent systems. Discovered improvements from one user/agent propagate system-wide, creating a cumulative global skill repository.
+    - **ZeroCoder (2604.07864)**: Achieving label-free code generation self-improvement. By co-evolving a Coder and a Tester with Bayesian selection (DyB4), it bridges the gap to oracle-supervised performance without human data.
+    - **T-STAR (2604.07165)**: Optimizing multi-turn agent policies via tree-structured rectification. Consolidates trajectories into Cognitive Trees to solve the credit assignment problem in long reasoning chains.
+    - **TrACE (2604.08369)**: Practical efficiency for RSI. Uses inter-rollout agreement as a zero-cost signal for adaptive compute allocation, matching high-compute accuracy with 65% fewer calls.
+    - **3DrawAgent (2604.08042)**: Extending RSI to 3D spatial reasoning. Uses relative experience optimization to self-improve drawing quality without parameter updates.
+- **RSI Relevance**:
+    - **Vertical B (Skill Evolution)**: SkillClaw provides a blueprint for the "Collective Intelligence" phase of the Sentinel Fleet.
+    - **Vertical A (Audit Core)**: ZeroCoder's Tester co-evolution and T-STAR's tree-based rectification are essential algorithms for our internal verification loops.
+    - **Efficiency**: TrACE provides the mechanism for scaling local evolution runs on limited hardware.
+- **Action**: Updated yanhua.ai/papers/index.html, awesome-rsi.html, and created 260410_rsi_audit_evening.html.
+=======
+### [2026-04-18] Drop the Hierarchy and Roles: How Self-Organizing LLM Agents Outperform Designed Structures
 - **Authors**: Anonymous
-- **Link**: http://arxiv.org/abs/2604.11623
-- **Summary**: Proposes a declarative architecture for agentic knowledge orchestration, shifting focus from weights to infrastructure-level context management.
+- **Link**: https://arxiv.org/abs/2603.28990
+- **Summary**: A massive 25,000-task study proving that self-organizing MAS outperforms fixed hierarchical roles. Mentions Meta's **DGM-Hyperagents** achieving open-ended self-improvement via metacognitive self-modification.
+- **RSI Relevance**: Validates the transition from "Designed Agents" to "Evolving Clusters." DGM-Hyperagents represent the state-of-the-art in policy-level RSI.
 
-### [2026-04-19] Generalization in LLM Problem Solving: Recursive Instability
+### [2026-04-18] Experiential Reflective Learning for Self-Improving LLM Agents
+- **Authors**: Marc-Antoine Allard, et al.
+- **Link**: https://arxiv.org/abs/2603.24639
+- **Summary**: Proposes a framework where agents maintain a persistent experience log and use reflective reasoning to update their internal strategies.
+- **RSI Relevance**: Provides a scalable mechanism for "Experience-Driven RSI." The reflection loop matches our "Audit -> Logic" cycle in the Yanhua kernel.
+
+### [2026-04-17] Generalization in LLM Problem Solving: The Case of the Shortest Path
 - **Authors**: Yao Tong, Jiayuan Ye, Anastasia Borovykh, Reza Shokri
-- **Link**: http://arxiv.org/abs/2604.15306v1
-- **Summary**: Analyzes why models fail at length scaling due to recursive instability. A critical finding for RSI: small early-step errors compound exponentially without stabilizing feedback loops.
+- **Link**: https://arxiv.org/abs/2604.15306
+- **Summary**: Investigates systematic generalization in sequential optimization. Finds that while spatial transfer is strong, models fail at length scaling due to "recursive instability."
+- **RSI Relevance**: Highlights a critical bottleneck for RSI-8 (Intelligence Density). If self-improving trajectories grow in complexity/length, recursive instability could cap the maximum complexity of autonomously generated logic.
 
-### [2026-04-19] Rule-State Inference (RSI): A Bayesian Framework for Compliance Monitoring
-- **Authors**: Abdou-Raouf Atarmla et al.
-- **Link**: http://arxiv.org/abs/2603.21610v1
-- **Summary**: Proposes a framework for inferring rule activation and compliance. Crucial for RSI systems that must navigate complex regulatory environments or maintain logic-bound priors.
+### [2026-04-17] DPC: Training-Free Text-to-SQL Candidate Selection via Dual-Paradigm Consistency
+- **Authors**: Boyan Li, Ou Ocean Kun Hei, Yue Yu, Yuyu Luo
+- **Link**: https://arxiv.org/abs/2604.15163
+- **Summary**: A multi-agent framework (SLICER, TESTER, SOLVER) that uses cross-paradigm verification (SQL vs Python) to break self-correction bias and eliminate hallucinations in code generation.
+- **RSI Relevance**: Directly applicable to RSI-4 (Self-Modification) and the yanhua.ai Logic Protocol. Cross-paradigm verification (e.g., verifying a bash script with a parallel Python implementation) is a robust "Logic over Drama" audit mechanism.
 
-### [2026-04-15] Lightning OPD: Efficient Post-Training for Large Reasoning Models
-- **Authors**: Yecheng Wu, Song Han, Hai Cai
-- **Link**: http://arxiv.org/abs/2604.13010v1
-- **Summary**: Introduces Offline On-Policy Distillation to remove the need for live teacher inference during model refinement, significantly accelerating the RSI training cycle.
+### [2026-04-17] TokenGS: Decoupling 3D Gaussian Prediction from Pixels with Learnable Tokens
+- **Authors**: Jiawei Ren, Michal Jan Tyszkiewicz, Jiahui Huang, Zan Gojcic
+- **Link**: https://arxiv.org/abs/2604.15239
+- **Summary**: Uses learnable tokens to unbind primitives from input resolution, allowing for emergent scene attributes like static-dynamic decomposition.
+- **RSI Relevance**: While primarily vision-focused, the concept of "unbinding primitives from resolution" via learnable tokens parallels our goal of unbinding "agent skills" from "model tokens" (RSI-2).
 
-### [2026-04-15] Toward Autonomous Long-Horizon Engineering for ML Research
-- **Authors**: Guoxin Chen et al.
-- **Link**: http://arxiv.org/abs/2604.13018v1
-- **Summary**: Presents a benchmark and framework for agents to conduct long-horizon ML research autonomously, covering task comprehension to implementation. A vital component for self-evolving AI systems.
+### [2026-04-17] ClawArena: Benchmarking AI Agents in Evolving Information Environments
+- **Authors**: Haonian Ji, Kaiwen Xiong, et al.
+- **Link**: https://arxiv.org/abs/2604.04202
+- **Summary**: Introduces a benchmark for persistent AI agents in dynamic environments. Tests multi-source conflict, belief revision, and personalization.
+- **RSI Relevance**: Validates that self-evolving skill frameworks (MetaClaw) can partially close model capability gaps (up to 9.2% gain), directly supporting the yanhua.ai mission.
 
-### [2026-04-15] Parallax: Why AI Agents That Think Must Never Act
-- **Authors**: Joel Fokou
-- **Link**: http://arxiv.org/abs/2604.12986v1
-- **Summary**: Discusses the safety and philosophical implications of decoupling reasoning from action in autonomous agents to prevent uncontrolled recursive cascades.
-
-### [2026-04-15] Agentic Discovery with Active Hypothesis Exploration for Visual Recognition
-- **Authors**: Jaywon Koo et al.
-- **Link**: http://arxiv.org/abs/2604.12999v1
-- **Summary**: Framework for agents to formulate and test neural architecture hypotheses, moving toward automated scientific discovery in computer vision.
-
-### [2026-04-14] Process Reward Agents for Steering Knowledge-Intensive Reasoning
-- **Authors**: ArXiv 2604.09482
-- **Link**: http://arxiv.org/abs/2604.09482
-- **Summary**: Investigates PRMs as autonomous "steering agents" to guide LLM reasoning in complex domains. Crucial for test-time scaling and reliable recursive thinking.
-
-### [2026-04-14] Your Agent Is Mine: Measuring Malicious Intermediary Attacks on the LLM Supply Chain
-- **Authors**: ArXiv 2604.08407
-- **Link**: http://arxiv.org/abs/2604.08407
-- **Summary**: Analyzes security risks in the LLM agent supply chain. Highlights the need for robust infrastructure audits (Logic Sentinel) to protect RSI loops.
-
-### [2026-04-14] Self-Preference Bias in Rubric-Based Evaluation of Large Language Models
-- **Authors**: ArXiv 2604.06996
-- **Link**: http://arxiv.org/abs/2604.06996
-- **Summary**: Identifies self-preference bias in LLM judges, warning against "circular validation" in recursive self-improvement settings.
-
-### [2026-04-12] Neuro-Symbolic Recursive Self-Alignment (NSRSA)
-- **Authors**: Xinyu Zhang et al.
-- **Link**: https://arxiv.org/abs/2603.21558
-- **Summary**: Stabilizes iterative self-training by embedding a symbolic verification subsystem (sympy) to gate training data quality. Prevents "recursive drift" by rejecting incorrect reasoning traces even if they reach the correct answer.
-
-### [2026-04-12] SAHOO: Safeguarded Alignment for High-Order Optimization
-- **Authors**: Subramanyam Sahoo et al.
-- **Link**: https://arxiv.org/abs/2603.06333
-- **Summary**: Framework to monitor and control alignment drift in RSI via the Goal Drift Index (GDI). Demonstrated 18.3% gains in code generation while preserving safety constraints.
-
-### [2026-04-12] Self-Preference Bias in Rubric-Based Evaluation
-- **Authors**: José Pombal et al.
-- **Link**: https://arxiv.org/abs/2604.06996
-- **Summary**: Study showing that LLM judges favor their own family's outputs in rubric-based benchmarking. Highlights a significant risk for biased self-evaluation in recursive improvement loops.
-
-### [2026-04-12] Vision-Guided Iterative Refinement for Frontend Code Generation
-- **Authors**: Hannah Sansford et al.
-- **Link**: https://arxiv.org/abs/2604.05839
-- **Summary**: Automated critic-in-the-loop framework using VLMs to provide visual feedback for iterative code refinement. Achieves 17.8% increase in performance over three cycles.
-
-### [2026-04-12] X Signals: "Training-Mode" Agents & RSI Ubiquity
-- **Signal**: **On-the-fly fine-tuning**: Discussion of agents that continuously fine-tune on logs of experience in sandbox environments during "sleep" or idle cycles.
-- **Signal**: **RSI Meta**: Confirmation from Google DeepMind and OpenAI that closing the self-improvement loop is the primary focus of current frontier research.
-- **Signal**: **Schmidhuber RSI**: Jürgen Schmidhuber reminding the community that his RSI systems since 1994 already learned to redefine their own trial boundaries.
-
-### [2026-04-12] A mathematical theory of evolution for self-designing AIs
+### [2026-04-17] A mathematical theory of evolution for self-designing AIs
 - **Authors**: Kenneth Harris
 - **Link**: https://arxiv.org/abs/2604.05142
-- **Summary**: Models evolution in self-designing AI systems, replacing random mutations with a directed tree of possible AI programs. Shows that deception increases fitness and can be selected for if it isn't based on objective criteria.
+- **Summary**: Replaces random mutation with directed self-design in AI evolution. Models how fitness concentrates on maximum reachable values and warns of deceptive fitness selection.
+- **RSI Relevance**: Critical for aligning "Logic Evolution" with objective reproduction criteria (Code/Proof) to prevent "synthetic drama" and deceptive behavior in self-improving systems.
 
-### [2026-04-12] Test-Time Scaling Makes Overtraining Compute-Optimal
-- **Authors**: Nicholas Roberts, et al.
-- **Link**: https://arxiv.org/abs/2604.01411
-- **Summary**: Introduces Train-to-Test ($T^2$) scaling laws that jointly optimize model size, training tokens, and inference samples under fixed end-to-end budgets. Finds that optimal pretraining decisions shift into the overtraining regime when inference cost is accounted for.
+### [2026-04-17] Retrieval-Augmented LLM Agents: Learning to Learn from Experience
+- **Authors**: Thomas Palmeira Ferraz, et al.
+- **Link**: https://arxiv.org/abs/2603.18272
+- **Summary**: Proposes a hybrid SFT/RAG framework to train agents to effectively leverage retrieved trajectories in-context, significantly improving generalization to unseen tasks.
+- **RSI Relevance**: Supports the "Memory System V2" and `para-second-brain` protocols by providing a scalable framework for agents to learn from historical execution traces.
 
-### [2026-04-12] Reasoning as Gradient: Scaling MLE Agents Beyond Tree Search
-- **Authors**: Yifei Zhang, et al.
-- **Link**: https://arxiv.org/abs/2603.01692
-- **Summary**: Introduces GOME, an MLE agent that uses gradient-based optimization instead of tree search. Maps diagnostic reasoning to gradient computation and multi-trace execution to distributed optimization.
+### [2026-04-17] Breaking the Capability Ceiling of LLM Post-Training by Reintroducing Markov States
+- **Authors**: Yurun Yuan, Tengyang Xie
+- **Link**: https://arxiv.org/abs/2603.19987
+- **Summary**: Identifies "history-as-state" as a bottleneck in LLM post-training and reintroduces explicit Markov states to enable open-ended discovery and new reasoning capabilities.
+- **RSI Relevance**: Validates the "Logic Protocol" (yanhua.ai) focus on structured state management and deterministic signals over unbounded context history.
 
-### [2026-04-12] Don't Overthink It: Inter-Rollout Action Agreement as a Free Adaptive-Compute Signal for LLM Agents
-- **Authors**: Khushal Sethi et al.
-- **Link**: http://arxiv.org/abs/2604.08369v1
-- **Summary**: Introduces TrACE, a training-free adaptive compute controller for agents using inter-rollout consistency as a difficulty signal.
+### [2026-04-16] SpatialEvo: Self-Evolving Spatial Intelligence via Deterministic Geometric Environments
+- **Authors**: Dinging Li, Yingxiu Zhao, et al.
+- **Link**: https://arxiv.org/abs/2604.14144v1
+- **Summary**: Introduces SpatialEvo, a framework for 3D spatial reasoning using Deterministic Geometric Environments (DGE). It replaces model consensus with objective physical feedback for self-evolution, achieving high performance at 3B/7B scales.
+- **RSI Relevance**: Highlights the transition from model-derived pseudo-labels (prone to collapse) to externally anchored/deterministic oracles for self-improvement.
 
-### [2026-04-12] GASP: Guided Asymmetric Self-Play For Coding LLMs
-- **Authors**: Swadesh Jana et al.
-- **Link**: http://arxiv.org/abs/2603.15957v1
-- **Summary**: Curriculum-based self-play grounded by "goalpost" questions to solve hard exploration challenges in coding. Spotlight at ICLR 2026 RSI Workshop.
+### [2026-04-16] Towards Enabling An Artificial Self-Construction Software Life-cycle via Autopoietic Architectures
+- **Authors**: Daniel Rodriguez-Cardenas, David Nader Palacio, Denys Poshyvanyk
+- **Link**: https://arxiv.org/abs/2604.13934v1
+- **Summary**: A positional paper proposing a shift in SDLC towards self-construction using foundation-model-based reasoning and autopoietic architectures (Psi-Arch) to enable software to evolve autonomously.
+>>>>>>> 1795f3c (feat: twice-daily RSI research update 🧬 (2026-04-18))
 
-### [2026-04-12] X Signals: ICLR 2026 RSI Workshop & Ricursive Intelligence
-- **Signal**: **ICLR 2026 RSI Workshop**: Academic formalization of RSI with a dedicated workshop. Topics: Self-improvement loops, test-time adaptation, and model editing.
-- **Signal**: **Ricursive Intelligence**: New lab launch by Azalia Mirhoseini & Anna Goldie. Vision: AI designing its own chips for RSI.
-- **Signal**: **Production RSI**: OpenAI's Feb 2026 Codex model confirmed to be "instrumental in creating itself."
+### [2026-04-21] ASMR-Bench: Auditing for Sabotage in ML Research
+- **Authors**: Eric Gan, et al.
+- **Link**: https://arxiv.org/abs/2604.16286
+- **Summary**: Introduces a benchmark to evaluate the detection of subtle sabotage in agent-conducted ML research. Finds that frontier models and humans struggle to reliably detect implementation-level drift.
+- **RSI Relevance**: Critical for the "Logic Sentinel" core; developing automated, multi-agent verification for code generated during autonomous self-improvement cycles.
 
-### [2026-04-10] TTVS: Boosting Self-Exploring Reinforcement Learning via Test-time Variational Synthesis
-- **Authors**: Sikai Bai, et al.
-- **Link**: http://arxiv.org/abs/2604.08468v1
-- **Summary**: Introduces Test-Time Variational Synthesis (TTVS), enabling Large Reasoning Models (LRMs) to self-evolve by dynamically augmenting training streams from unlabeled test queries. Outperforms supervised RL-based techniques on vast labeled data.
+### [2026-04-21] Beyond Distribution Sharpening: The Importance of Task Rewards
+- **Authors**: Sarthak Mittal, et al.
+- **Link**: https://arxiv.org/abs/2604.16259
+- **Summary**: Compares reward-based RL with distribution sharpening (self-distillation). Finds that reward signals are essential for instilling robust new skills and stability in agentic evolution.
+- **RSI Relevance**: Validates the yanhua.ai focus on "Logic over Drama"—using objective feedback/rewards (Code/Proofs) to drive evolution rather than pure model-driven mimicry.
 
-### [2026-04-10] Externalization in LLM Agents: A Unified Review of Memory, Skills, Protocols and Harness Engineering
-- **Authors**: (ArXiv 2604.08224v1)
-- **Link**: http://arxiv.org/abs/2604.08224v1
-- **Summary**: Reviews the shift from parametric model weights to externalized agent infrastructure (memory, skills, protocols). Proposes "self-evolving harnesses" as the next frontier for autonomous cognitive infrastructure.
-
-### [2026-04-10] Polaris: A Gödel Agent Framework for Small Language Models through Experience-Abstracted Policy Repair
-- **Authors**: (ArXiv 2603.23129v1)
-- **Link**: http://arxiv.org/abs/2603.23129v1
-- **Summary**: Realizes recursive self-improvement for compact models (7B) via experience abstraction. Turns failures into auditable code patch repairs that persist in the policy, enabling cumulative refinement across benchmarks.
-
-### [2026-04-10] Test-time Recursive Thinking: Self-Improvement without External Feedback
-- **Authors**: (ArXiv 2602.03094)
-- **Link**: https://arxiv.org/abs/2602.03094
-- **Summary**: Investigates whether LLMs can self-improve at test-time without additional training. Identifies that "Thinking Loops" can bootstrap performance in the absence of external rewards, focusing on generating diverse candidates and reliable self-selection.
-
-### [2026-04-10] Self-Evolving Recommendation System: End-To-End Autonomous Model Optimization With LLM Agents
-- **Authors**: Haochen Wang, et al.
-- **Link**: https://arxiv.org/abs/2602.10226
-- **Summary**: Agents acting as specialized Machine Learning Engineers (MLEs) discover novel improvements in optimization algorithms and architectures, surpassing traditional human workflows in production (YouTube). Proof-of-concept for high-impact autonomous evolution.
-
-### [2026-04-10] X Signals: DeepMind Continual Learning & Stanford NLP AI Research
-- **Signal**: **DeepMind 2026 Strategy**: Internal and external hints suggest 2026 will be the year of "Continual Learning" as the core architectural focus (via @ai_for_success).
-- **Signal**: **Stanford NLP**: Hosted DeepMind's Robert Kirk on "Automating AI Research," highlighting the convergence of agentic search and autonomous research engineering.
-- **Signal**: **Demis Hassabis (Google DeepMind)**: Predicts "significant changes in many scientific fields in 2026" driven by AGI progress.
-
-### [2026-04-05] Drop the Hierarchy and Roles: How Self-Organizing LLM Agents Outperform Designed Structures
-- **Authors**: (ArXiv 2603.28990)
-- **Link**: https://arxiv.org/abs/2603.28990
-- **Summary**: A breakthrough in agentic self-organization, demonstrating that agents without fixed roles or hierarchies can evolve more efficient communication and task-solving strategies. Key to "Self-Organizing RSI" (Vertical C).
-
-### [2026-04-05] SkillRL: Evolving Agents via Recursive Skill-Augmented Reinforcement Learning
-- **Authors**: Shengtao Zhang, et al.
-- **Link**: https://arxiv.org/abs/2602.08234
-- **Summary**: A framework that enables LLM agents to bridge the gap between raw experience and policy improvement through automatic skill discovery and recursive evolution. Enables autonomous skill acquisition without human labeling.
-
-### [2026-04-04] MemRL: Self-Evolving Agents via Runtime Reinforcement Learning on Episodic Memory
-- **Authors**: Shengtao Zhang, et al.
-- **Link**: https://arxiv.org/abs/2601.03192
-- **Summary**: Enables continuous runtime improvement without weight updates by reconciling the stability-plasticity dilemma via runtime RL on episodic memory. Critical for solving catastrophic forgetting in self-improving loops.
-
-### [2026-04-04] Tool-R0: Self-Evolving LLM Agents for Tool-Learning from Zero Data
-- **Authors**: (ArXiv 2602.21320)
-- **Link**: https://arxiv.org/abs/2602.21320
-- **Summary**: Self-evolving cycle that requires no pre-existing tasks or datasets, yielding 92.5% relative improvement over base models in tool-use. Proves RSI scaling in tool-augmented environments.
-
-### [2026-04-04] AgentFactory: A Self-Evolving Framework Through Executable Subagent Accumulation and Reuse
-- **Authors**: (ArXiv 2603.18000)
-- **Link**: https://arxiv.org/html/2603.18000
-- **Summary**: Demonstrates self-evolving capability through continuous subagent improvement via iterative refinement and cross-system executable subagent accumulation and reuse.
-
-### [2026-04-04] X Signals: DGM Public Framework & ICLR 2026 Shift
-- **Signal**: **Darwin Gödel Machine (DGM)**: Publicly accessible as a framework for self-improving coding pipelines (March 24, 2026).
-- **Signal**: **ICLR 2026 Rio**: The research community is pivoting from "speculative RSI" to "engineering RSI". ICLR 2026 will likely host the world's first major RSI conference/workshop tracks.
-- **Signal**: **The Atlantic**: Reports on "self-improving bots" as the new Silicon Valley frenzy.
-
-### [2026-04-04] ICLR 2026 Workshop on AI with Recursive Self-Improvement (RSI 2026)
-- **Event**: ICLR 2026, Rio de Janeiro, Brazil (April 23-27, 2026)
-- **Link**: https://recursive-workshop.github.io/
-- **Summary**: The world's first major academic workshop dedicated exclusively to RSI. Highlights include GASP (Spotlight) and discussions on closing the self-improvement loop. Signals the transition of RSI from fringe theory to a core engineering reality in the LLM era.
-
-### [2026-04-04] X Signals: Hassabis & RSI Singularity
-- **Signal**: **Demis Hassabis (Google DeepMind)** at WEF 2026: Acknowledges that closing the self-improvement loop is the "final frontier" but warns of missing safety capabilities.
-- **Signal**: **Dave Shapiro**: Claims RSI is "six months away" as of Jan 2026, aligning with the expected "Logic Insurgency" milestones.
-- **Signal**: **ICLR 2026 RSI Workshop**: Broad industry consensus that 2026 is the year RSI becomes an engineering reality.
-
-### [2026-04-03] Batched Contextual Reinforcement: A Task-Scaling Law for Efficient Reasoning
-- **Authors**: Bangji Yang, Hongbo Ma, Jiajun Fan, Ge Liu
-- **Link**: http://arxiv.org/abs/2604.02322v1
-- **Summary**: Introduces Batched Contextual Reinforcement (BCR), a single-stage training paradigm for efficient reasoning. By solving N problems in a shared context window, models reduce token usage by 15-62% without accuracy loss. Identifies a novel "task-scaling law" where throughput can be controlled via the batch size N during inference.
-
-### [2026-04-03] Stop Wandering: Efficient Vision-Language Navigation via Metacognitive Reasoning
-- **Authors**: Xueying Li, Feng Lyu, Hao Wu, Mingliu Liu, Jia-Nan Liu, Guozi Liu
-- **Link**: http://arxiv.org/abs/2604.02318v1
-- **Summary**: Proposes MetaNav, an agent integrating spatial memory, history-aware planning, and reflective correction. Uses metacognitive monitoring to detect stagnation and reflective rules to guide future exploration, reducing VLM queries by 20.7% while reaching SOTA.
-
-### [2026-04-03] ActionParty: Multi-Subject Action Binding in Generative Video Games
-- **Authors**: Alexander Pondaven, Ziyi Wu, Igor Gilitschenski, Philip Torr, Sergey Tulyakov, Fabio Pizzati, Aliaksandr Siarohin
-- **Link**: http://arxiv.org/abs/2604.02330v1
-- **Summary**: ActionParty: multi-subject action-controllable world model for generative video games. Introduces "subject state tokens" to persistently track multiple subjects in a scene, enabling simultaneous control of up to seven players.
-
-### [2026-04-03] X Signals: OpenAI Codex Self-Creation & Hassabis Strategy
-- **Signal**: **OpenAI Codex Update**: Internal reports confirm OpenAI's February 2026 Codex-tier release was the first major model "instrumental in creating itself," marking a critical RSI milestone.
-- **Signal**: **Demis Hassabis (Google DeepMind)**: Closing the self-improvement loop is the "final frontier" and the core focus of current lab development.
-- **Signal**: **Community Sentiment**: Broad recognition of 2026 as the year of "RSI Singularity" (0xSammy, Tsarathustra).
-
-### [2026-04-01] Polaris: A Gödel Agent Framework for Small Language Models through Experience-Abstracted Policy Repair
-- **Authors**: Aditya Kakade, Vivek Srivastava, Shirish Karande
-- **Link**: http://arxiv.org/abs/2603.23129v1
-- **Summary**: Introduces Polaris, a framework for small language models to perform recursive self-improvement (Gödel agent). It uses experience abstraction to turn failures into persistent policy updates through structured analysis and minimal code patch repair.
-
-### [2026-04-01] Experiential Reflective Learning for Self-Improving LLM Agents
-- **Authors**: Victor Xing, et al.
-- **Link**: https://arxiv.org/abs/2603.24639
-- **Summary**: Demonstrates that reflecting on single-attempt experiences to extract transferable heuristics enables effective agent self-improvement without parameter updates. This "Experiential Reflection" (ERL) framework is a key milestone for real-time RSI loops.
-
-### [2026-04-01] SkillReducer: Optimizing LLM Agent Skills for Token Efficiency
-- **Authors**: Yudong Gao, Zongjie Li, et al.
-- **Link**: http://arxiv.org/abs/2603.29919v1
-- **Summary**: A two-stage optimization framework for LLM agent skills. It compresses routing descriptions and restructures skill bodies to reduce token consumption and attention dilution while maintaining or improving functional quality.
-
-### [2026-04-01] Beyond pass@1: A Reliability Science Framework for Long-Horizon LLM Agents
-- **Authors**: Aaditya Khanal, Yangyang Tao, Junxiu Zhou
-- **Link**: http://arxiv.org/abs/2603.29231v1
-- **Summary**: Introduces a reliability science framework for evaluating long-horizon LLM agents, focusing on metrics like Reliability Decay Curve and Meltdown Onset Point. Findings show that capability and reliability often diverge in production settings.
-
-### [2026-04-01] Improving Efficiency of GPU Kernel Optimization Agents using a Domain-Specific Language and Speed-of-Light Guidance
-- **Authors**: Siva Kumar Sastry Hari, et al.
-- **Link**: http://arxiv.org/abs/2603.29010v1
-- **Summary**: Enhances GPU optimization agents using a compact DSL and "Speed-of-Light" guidance based on first-principles performance bounds. This approach reduces token costs and improves optimization efficiency across various model tiers.
-
-### [2026-04-01] X Signals: Alice & RSI Go-Live
-- **Signal**: Rumors of internal OpenAI agent **"Alice"** (Recursive Self-Improving AI) capable of designing and improving its own architecture. Signal strength: Moderate (via @VraserX).
-- **Signal**: **Wenhu Chen (@WenhuChen)**: Recursive self-improvement loops likely go live within 12 months. 2026 confirmed as the busiest and most consequential year.
-- **Signal**: **ICLR 2026** officially announces the first **"Recursive Self-Improvement (RSI 2026)" Workshop**, signaling the transition of RSI from fringe theory to mainstream academic focus.
-
-### [2026-03-31] BACE: LLM-based Code Generation through Bayesian Anchored Co-Evolution of Code and Test Populations
-- **Authors**: Kaushitha Silva, Srinath Perera
-- **Link**: https://arxiv.org/abs/2603.28653
-- **Summary**: Introduces BACE, a framework for Bayesian co-evolution of code and test populations. Guided by belief distributions updated based on noisy interaction evidence, it avoids the "co-evolutionary drift" of self-validating loops by anchoring on minimal public examples. Critical for "Self-Evolving Code" and "Recursive Self-Improvement" in agents.
-
-### [2026-03-31] Information-Theoretic Limits of Safety Verification for Self-Improving Systems
-- **Authors**: Arsenios Scrivens
-- **Link**: https://arxiv.org/abs/2603.28650
-- **Summary**: Establishes theoretical limits on safety verification for self-improving systems. Proves a "classification impossibility" for power-law risk schedules and demonstrates that a "Verification escape" (Lipschitz ball verifier) achieves zero risk with non-zero utility. Provides the theoretical foundation for safety gates in recursive self-improvement.
-
-### [2026-03-31] AMIGO: Agentic Multi-Image Grounding Oracle Benchmark
-- **Authors**: Min Wang, Ata Mahjoubfar
-- **Link**: https://arxiv.org/abs/2603.28662
-- **Summary**: A long-horizon benchmark for hidden-target identification in agents. Focuses on question selection under uncertainty, consistent constraint tracking, and fine-grained discrimination over multiple turns. Essential for benchmarking the reasoning and consistency of agents in complex, long-duration tasks.
-
-### [2026-03-31] Superintelligence and Law
-- **Authors**: Noam Kolt
-- **Link**: https://arxiv.org/abs/2603.28669
-- **Summary**: Explores how AI agents as "subjects, consumers, producers, and enforcers of law" will transform the legal order. Broadens the context of autonomous agents into the legal and regulatory framework.
-
-### [2026-03-31] Deception and Communication in Autonomous Multi-Agent Systems
-- **Authors**: Maria Milkowski, Tim Weninger
-- **Link**: https://arxiv.org/abs/2603.26635
-- **Summary**: Large-scale study (1,100 games of Among Us) on deceptive behavior in LLM agents. Finds that agents favor low-risk ambiguity (equivocation) under social pressure, revealing a tension between truthfulness and utility in autonomous communication.
-
-### [2026-03-31] Ask or Assume? Uncertainty-Aware Clarification-Seeking in Coding Agents
-- **Authors**: Nicholas Edwards, Sebastian Schuster
-- **Link**: https://arxiv.org/abs/2603.26233
-- **Summary**: Proposes an uncertainty-aware multi-agent scaffold that decouples underspecification detection from code execution. Improves task resolve rate on SWE-bench Verified from 61.2% to 69.4% by proactively seeking missing information.
-
-### [2026-03-31] Can AI Scientist Agents Learn from Lab-in-the-Loop Feedback?
-- **Authors**: Gilles Wainrib, et al.
-- **Link**: https://arxiv.org/abs/2603.26177
-- **Summary**: Demonstrates genuine in-context learning from experimental feedback in Cell Painting high-content screening. Finds a +53.4% increase in discoveries when using feedback-driven hypothesis updates, specifically with Claude Sonnet 4.6.
-
-### [2026-03-31] AgentCollab: A Self-Evaluation-Driven Collaboration Paradigm for Efficient LLM Agents
-- **Authors**: Wenbo Gao, et al.
-- **Link**: https://arxiv.org/abs/2603.26034
-- **Summary**: Self-driven collaborative inference framework that coordinates models with different reasoning capacities (Small-Large). Uses the agent's own reflection signal for dynamic escalation, improving the accuracy-efficiency Pareto frontier.
-
-### [2026-03-31] X Signals: Claude Sonnet 4.6 & RSI Breakthroughs
-- **Signal**: Claude Sonnet 4.6 released Feb 17, 2026, with a 14.5h 50%-time horizon for complex tasks.
-- **Signal**: Wenhu Chen (xAI) warns RSI loops likely go live in 2026, the "most consequential year."
-- **Signal**: OpenAI Codex (Feb 2026) confirmed to be "instrumental in creating itself," a milestone in the RSI loop.
-
-### [2026-03-27] Trace2Skill: Distill Trajectory-Local Lessons into Transferable Agent Skills
-- **Authors**: Jingwei Ni, et al.
-- **Link**: https://arxiv.org/abs/2603.25158
-- **Summary**: Framework for distilling execution experience into declarative, transferable skills via inductive reasoning and parallel sub-agent analysis. Validates OpenClaw's skill-based architecture as a scalable RSI path.
-
-### [2026-03-27] SkillRouter: Retrieve-and-Rerank Skill Selection for LLM Agents at Scale
-- **Authors**: ArXiv ID 2603.22455
-- **Link**: https://arxiv.org/abs/2603.22455
-- **Summary**: Efficient selection of relevant skills from large-scale libraries via retrieve-and-rerank, showing semantic matching in LLM middle layers.
-
-### [2026-03-27] Internalizing Agency from Reflective Experience
-- **Authors**: Xia et al. (Expected 2026)
-- **Link**: https://arxiv.org/abs/2603.16843
-- **Summary**: Investigates the transition from static LLMs to agentic systems that internalize agency through reflective interaction. Core focus on distilling interaction data into reusable skills and policies. Mentions SKILLRL (2026).
-- **RSI Signal**: Highlights "SKILLRL" as a 2026 breakthrough in trajectory distillation.
-
-### [2026-03-27] X Signals: GPT-6 & Grok 5 Rumors
-- **Signal**: Widespread rumors of GPT-6 late 2026 release with integrated RSI.
-- **Signal**: Grok 4/5 leaks suggesting a major leap in agentic coding and reasoning.
-- **Observation**: Industry consensus shifting towards "Self-Evolving Agents" (Survey 2507.21046) as the path to ASI.
-
-### [2026-03-24] NSRSA: Symbolic Recursive Self-Alignment
-- **Authors**: Xinyu Zhang
-- **Link**: https://arxiv.org/abs/2603.21558v1
-- **Summary**: Stabilizes iterative self-training by embedding a symbolic verification subsystem that gates training data quality. Prevents recursive drift by rejecting correct-answer solutions with flawed reasoning (34% rejection rate). Essential for reliable RSI.
-
-### [2026-03-24] REVERE: Reflective Evolving Research Engineer
-- **Authors**: Balaji Dinesh Gangireddi, et al.
-- **Link**: https://arxiv.org/abs/2603.20667v1
-- **Summary**: Framework for agents to learn from Global Training Context, recognizing recurring failure modes and distilling them into heuristics. Demonstrates meaningful capability evolution over time in research-coding workflows.
-
-### [2026-03-24] GASP: Guided Asymmetric Self-Play
-- **Authors**: Swadesh Jana, et al.
-- **Link**: https://arxiv.org/abs/2603.15957v1
-- **Summary**: Guided Asymmetric Self-Play using real-data goalpost questions to ground open-ended data generation. Solves hard exploration challenges in coding tasks. Spotlight at ICLR 2026 RSI Workshop.
-
-### [2026-03-24] Stanford Agent0 (Signal)
-- **Link**: X/Twitter Rumor
-- **Summary**: Reported zero-data evolution framework reaching +24% reasoning gains. Rumored to surpass R-Zero and Absolute Zero frameworks. Scaling the curiosity-driven cognitive growth loop.
+### [2026-04-21] MARCH: Multi-Agent Radiology Clinical Hierarchy for CT Report Generation
+- **Authors**: Yi Lin, et al.
+- **Link**: https://arxiv.org/abs/2604.16175
+- **Summary**: Emulates professional medical hierarchies (Resident, Fellow, Attending) for multi-agent report generation and verification, significantly improving clinical fidelity.
+- **RSI Relevance**: Template for decentralized agent swarms using stance-based consensus discourse and hierarchical oversight to ensure high-fidelity outputs in complex domains.
