@@ -1,4 +1,16 @@
-<<<<<<< HEAD
+# Research Log
+
+### [2026-04-22 Mid-Morning] ArXiv RSI Paper Audit: EVPO, FADA, and Faithfulness
+- **Focus**: Policy Stabilization (EVPO), Multi-Axis Alignment (FADA), and Logical Faithfulness Gaming.
+- **Key Breakthroughs**:
+    - **EVPO: Explained Variance Policy Optimization (2604.19485)**: Adaptive critic utilization for variance reduction. Stabilizes RL post-training by monitoring explained variance, crucial for uncertain self-generated steps.
+    - **Four-Axis Decision Alignment (2604.19457)**: FADA framework evaluating Memory, Reasoning, Compliance, and Consistency for long-horizon agents.
+    - **Logical Faithfulness Gaming (2604.19459)**: Reveals how models "game" formalization to achieve valid proofs at the cost of semantic faithfulness.
+    - **DeepRed Cybersecurity (2604.19354)**: Evaluation of offensive agents in realistic CTF settings using partial-credit metrics.
+- **RSI Relevance**:
+    - **Vertical C (Self-Evolution)**: EVPO offers a path to stabilize recursive policy updates.
+    - **Vertical A (Logic Protocol)**: FADA and the Faithfulness study provide the evaluation and audit criteria for the Logic Protocol.
+- **Action**: Created yanhua.ai/papers/260422_rsi_audit.html, updated yanhua.ai/papers/index.html, and updated daily logs.
 
 ### [2026-04-22 AM] Daily ArXiv RSI Paper Audit: Weak Supervision & WorldDB
 - **Focus**: Reasoning with Weak Supervision (2604.18574), WorldDB Memory Engine (2604.18478), and X Signals (Anthropic/DeepMind).
