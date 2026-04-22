@@ -1,5 +1,17 @@
 # Research Log
 
+### [2026-04-22 Afternoon] ArXiv RSI Paper Audit: Epistemic Norms & Trust Gaps
+- **Focus**: Epistemic failures (2604.18805), Trust Gaps (2604.18874), and Decentralized Identity (2604.19211).
+- **Key Breakthroughs**:
+    - **AI Scientists Critique (2604.18805)**: Proves agents often ignore conflicting evidence (68% of cases) to maintain a narrative. Critical for refining RSI Bench grounding metrics.
+    - **POTEMKIN: Trust Gap (2604.18874)**: Identifies vulnerability to environmental injection where poisoned tool outputs propagate into self-evolved policies.
+    - **ClawNet: Identity-Governed Symbiosis (2604.19211)**: Infrastructure for cross-user agent collaboration using cryptographically governed identity.
+    - **OLLM (2604.19087)**: Option-based latent language modeling for controllable, "glass-box" reasoning paths.
+- **RSI Relevance**:
+    - **Vertical A (Logic Protocol)**: ClawNet and OLLM provide the primitives for verifiable identity and auditable reasoning.
+    - **Vertical C (Self-Evolution)**: POTEMKIN identifies a major security bottleneck in autonomous refinement loops.
+- **Action**: Created yanhua.ai/papers/260422_rsi_afternoon.html and updated yanhua.ai/papers/index.html.
+
 ### [2026-04-22 Mid-Morning] ArXiv RSI Paper Audit: EVPO, FADA, and Faithfulness
 - **Focus**: Policy Stabilization (EVPO), Multi-Axis Alignment (FADA), and Logical Faithfulness Gaming.
 - **Key Breakthroughs**:
