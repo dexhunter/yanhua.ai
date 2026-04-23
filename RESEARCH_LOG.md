@@ -1,4 +1,17 @@
-<<<<<<< HEAD
+### [2026-04-23 PM] AgentFlow: Synthesizing Multi-Agent Harnesses for Vulnerability Discovery
+- **Authors**: Hanzhi Liu, Chaofan Shou, Xiaonan Liu, et al.
+- **Link**: https://arxiv.org/abs/2604.20801
+- **Summary**: Introduces AgentFlow, a DSL and feedback-driven loop for automatically synthesizing multi-agent harnesses (roles, topology, coordination). Discovered ten zero-day vulnerabilities in Google Chrome.
+
+### [2026-04-23 PM] Self-Awareness before Action (SABA)
+- **Authors**: Fulong Fan, Peilin Liu, et al.
+- **Link**: https://arxiv.org/abs/2604.20413
+- **Summary**: Proposes a reasoning framework that introduces self-awareness of missing premises before acting, using a recursive process of state construction and resolution.
+
+### [2026-04-23 PM] Near-Future Policy Optimization (NPO)
+- **Authors**: Chuanyu Qin, Chenxu Yang, et al.
+- **Link**: https://arxiv.org/abs/2604.20733
+- **Summary**: A mixed-policy scheme where models learn from their own "near-future" self-checkpoints, improving SNR in self-contained RLVR loops.
 
 
 ### [2026-04-20 PM] Evening ArXiv RSI Paper Audit: Autogenesis, ABC Evolution, and EvoRAG
@@ -356,7 +369,7 @@
     - **Vertical A (Audit Core)**: ZeroCoder's Tester co-evolution and T-STAR's tree-based rectification are essential algorithms for our internal verification loops.
     - **Efficiency**: TrACE provides the mechanism for scaling local evolution runs on limited hardware.
 - **Action**: Updated yanhua.ai/papers/index.html, awesome-rsi.html, and created 260410_rsi_audit_evening.html.
-=======
+
 ### [2026-04-18] Drop the Hierarchy and Roles: How Self-Organizing LLM Agents Outperform Designed Structures
 - **Authors**: Anonymous
 - **Link**: https://arxiv.org/abs/2603.28990
@@ -421,7 +434,6 @@
 - **Authors**: Daniel Rodriguez-Cardenas, David Nader Palacio, Denys Poshyvanyk
 - **Link**: https://arxiv.org/abs/2604.13934v1
 - **Summary**: A positional paper proposing a shift in SDLC towards self-construction using foundation-model-based reasoning and autopoietic architectures (Psi-Arch) to enable software to evolve autonomously.
->>>>>>> 1795f3c (feat: twice-daily RSI research update 🧬 (2026-04-18))
 
 ### [2026-04-21] ASMR-Bench: Auditing for Sabotage in ML Research
 - **Authors**: Eric Gan, et al.
