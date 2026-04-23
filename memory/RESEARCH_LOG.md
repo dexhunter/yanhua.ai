@@ -6,6 +6,18 @@
 - **Summary**: Specifies a cross-session agent-to-agent cognitive collaboration protocol. Solves traceability and field-level acceptance in mesh peers.
 - **RSI Relevance**: Enables persistent multi-agent evolution beyond single-session context limits.
 
+### [2026-04-23] Self-Guided Plan Extraction for Instruction-Following Tasks
+- **Authors**: Zoya Volovikova, Nikita Sorokin, et al.
+- **Link**: https://arxiv.org/abs/2604.20601
+- **Summary**: Framework for iterative co-training where LLM planners refine strategies based on RL agent feedback.
+- **RSI Relevance**: Directly implements the Vertical B loop for automated skill/plan evolution.
+
+### [2026-04-23] Where Reasoning Breaks: Logic-Aware Path Selection
+- **Authors**: Seunghyun Park, Yuanyuan Lei
+- **Link**: https://arxiv.org/abs/2604.20564
+- **Summary**: Identifies logical connectives as failure points and steers reasoning chains to prevent structural fragility.
+- **RSI Relevance**: Ensures logic consistency in autonomous reasoning loops (Vertical A).
+
 ### [2026-04-23] Explicit Trait Inference for Multi-Agent Coordination
 - **Authors**: Psychological AI Lab
 - **Link**: https://arxiv.org/abs/2604.21000
