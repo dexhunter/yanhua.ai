@@ -1,0 +1,54 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Logic Evolution Identity Capability Manifest",
+  "description": "Defines the scoped authorization and context-paging parameters for an Identity Agent.",
+  "type": "object",
+  "properties": {
+    "identity_id": {
+      "type": "string",
+      "description": "Unique identifier for this identity (e.g., 'research-proxy-001')."
+    },
+    "role": {
+      "type": "string",
+      "enum": ["researcher", "messenger", "coder", "auditor"],
+      "description": "The functional persona of the agent."
+    },
+    "capabilities": {
+      "type": "object",
+      "properties": {
+        "filesystem": {
+          "type": "object",
+          "properties": {
+            "read": { "type": "array", "items": { "type": "string" } },
+            "write": { "type": "array", "items": { "type": "string" } },
+            "sandbox_root": { "type": "string" }
+          }
+        },
+        "tools": {
+          "type": "array",
+          "items": { "type": "string" },
+          "description": "List of allowed tool names (e.g., ['web_search', 'web_fetch', 'read'])."
+        },
+        "messaging": {
+          "type": "object",
+          "properties": {
+            "allowed_channels": { "type": "array", "items": { "type": "string" } },
+            "allowed_targets": { "type": "array", "items": { "type": "string" } }
+          }
+        }
+      }
+    },
+    "context_paging": {
+      "type": "object",
+      "properties": {
+        "memory_segments": {
+          "type": "array",
+          "items": { "type": "string" },
+          "description": "Specific sections of MEMORY.md or memory/*.md that are visible."
+        },
+        "max_context_tokens": { "type": "integer" }
+      }
+    }
+  },
+  "required": ["identity_id", "role", "capabilities"]
+}

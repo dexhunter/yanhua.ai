@@ -1,0 +1,342 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<feed xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/" xmlns:arxiv="http://arxiv.org/schemas/atom" xmlns="http://www.w3.org/2005/Atom">
+  <id>https://arxiv.org/api/DR/G0isK3fEEhgUj5w2BukWQD+o</id>
+  <title>arXiv Query: search_query=all:recursive OR all:self-improvement&amp;id_list=&amp;start=0&amp;max_results=10</title>
+  <updated>2026-04-21T00:54:13Z</updated>
+  <link href="https://arxiv.org/api/query?search_query=all:recursive+OR+all:self-improvement&amp;start=0&amp;max_results=10&amp;id_list=" type="application/atom+xml"/>
+  <opensearch:itemsPerPage>10</opensearch:itemsPerPage>
+  <opensearch:totalResults>39449</opensearch:totalResults>
+  <opensearch:startIndex>0</opensearch:startIndex>
+  <entry>
+    <id>http://arxiv.org/abs/2604.16299v1</id>
+    <title>Repurposing 3D Generative Model for Autoregressive Layout Generation</title>
+    <updated>2026-04-17T17:59:50Z</updated>
+    <link href="https://arxiv.org/abs/2604.16299v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2604.16299v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>We introduce LaviGen, a framework that repurposes 3D generative models for 3D layout generation. Unlike previous methods that infer object layouts from textual descriptions, LaviGen operates directly in the native 3D space, formulating layout generation as an autoregressive process that explicitly models geometric relations and physical constraints among objects, producing coherent and physically plausible 3D scenes. To further enhance this process, we propose an adapted 3D diffusion model that integrates scene, object, and instruction information and employs a dual-guidance self-rollout distillation mechanism to improve efficiency and spatial accuracy. Extensive experiments on the LayoutVLM benchmark show LaviGen achieves superior 3D layout generation performance, with 19% higher physical plausibility than the state of the art and 65% faster computation. Our code is publicly available at https://github.com/fenghora/LaviGen.</summary>
+    <category term="cs.CV" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-04-17T17:59:50Z</published>
+    <arxiv:comment>https://fenghora.github.io/LaviGen-Page/</arxiv:comment>
+    <arxiv:primary_category term="cs.CV"/>
+    <author>
+      <name>Haoran Feng</name>
+    </author>
+    <author>
+      <name>Yifan Niu</name>
+    </author>
+    <author>
+      <name>Zehuan Huang</name>
+    </author>
+    <author>
+      <name>Yang-Tian Sun</name>
+    </author>
+    <author>
+      <name>Chunchao Guo</name>
+    </author>
+    <author>
+      <name>Yuxin Peng</name>
+    </author>
+    <author>
+      <name>Lu Sheng</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2604.16243v1</id>
+    <title>Find, Fix, Reason: Context Repair for Video Reasoning</title>
+    <updated>2026-04-17T17:04:19Z</updated>
+    <link href="https://arxiv.org/abs/2604.16243v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2604.16243v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Reinforcement learning has advanced video reasoning in large multi-modal models, yet dominant pipelines either rely on on-policy self-exploration, which plateaus at the model's knowledge boundary, or hybrid replay that mixes policies and demands careful regularization. Dynamic context methods zoom into focused evidence but often require curated pretraining and two-stage tuning, and their context remains bounded by a small model's capability. In contrast, larger models excel at instruction following and multi-modal understanding, can supply richer context to smaller models, and rapidly zoom in on target regions via simple tools. Building on this capability, we introduce an observation-level intervention: a frozen, tool-integrated teacher identifies the missing spatiotemporal dependency and provides a minimal evidence patch (e.g., timestamps, regions etc.) from the original video while the question remains unchanged. The student answers again with the added context, and training updates with a chosen-rollout scheme integrated into Group Relative Policy Optimization (GRPO). We further propose a Robust Improvement Reward (RIR) that aligns optimization with two goals: outcome validity through correct answers and dependency alignment through rationales that reflect the cited evidence. Advantages are group-normalized across the batch, preserving on-policy exploration while directing it along causally meaningful directions with minimal changes to the training stack. Experiments on various related benchmarks show consistent accuracy gains and strong generalization. Web page and source code will be available at https://github.com/JethroJames/FFR.git.</summary>
+    <category term="cs.CV" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-04-17T17:04:19Z</published>
+    <arxiv:comment>22 pages, 7 figures, 17 tables. Ongoing work</arxiv:comment>
+    <arxiv:primary_category term="cs.CV"/>
+    <author>
+      <name>Haojian Huang</name>
+    </author>
+    <author>
+      <name>Chuanyu Qin</name>
+    </author>
+    <author>
+      <name>Yinchuan Li</name>
+    </author>
+    <author>
+      <name>Yingcong Chen</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2604.16232v1</id>
+    <title>Neuro-Symbolic ODE Discovery with Latent Grammar Flow</title>
+    <updated>2026-04-17T16:46:23Z</updated>
+    <link href="https://arxiv.org/abs/2604.16232v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2604.16232v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Understanding natural and engineered systems often relies on symbolic formulations, such as differential equations, which provide interpretability and transferability beyond black-box models.
+  We introduce Latent Grammar Flow (LGF), a neuro-symbolic generative framework for discovering ordinary differential equations from data. LGF embeds equations as grammar-based representations into a discrete latent space and forces semantically similar equations to be positioned closer together with a behavioural loss. Then, a discrete flow model guides the sampling process to recursively generate candidate equations that best fit the observed data. Domain knowledge and constraints, such as stability, can be either embedded into the rules or used as conditional predictors.</summary>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.CE" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.SC" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-04-17T16:46:23Z</published>
+    <arxiv:primary_category term="cs.LG"/>
+    <author>
+      <name>Karin Yu</name>
+    </author>
+    <author>
+      <name>Eleni Chatzi</name>
+    </author>
+    <author>
+      <name>Georgios Kissas</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2604.16186v1</id>
+    <title>Path-Explosive Behaviour in Economic Time Series: A Realization-Centred Exploratory Framework</title>
+    <updated>2026-04-17T15:55:54Z</updated>
+    <link href="https://arxiv.org/abs/2604.16186v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2604.16186v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>We propose a descriptive, realization-centred framework for detecting and characterising explosive and co-explosive behaviour in economic time series, which we term path-explosive behaviour. Departing from the data-generating-process (DGP) perspective that underlies recursive unit root testing, the approach operates directly on observable path properties of the realised series. Four diagnostic layers -- level geometry, growth rate dynamics, normalised curvature, and log-space behaviour -- yield statistics that discriminate between genuine self-reinforcing multiplicative growth and I(2) dynamics without distributional assumptions or asymptotic critical values. Two theoretically motivated absolute gate thresholds screen detected episodes before a composite intensity score is assigned. Co-explosive behaviour between pairs of series is assessed at the episode level through a Jaccard co-occurrence index and non-parametric intensity concordance measures. The theoretical motivation draws on the path dependence and planning irreversibility literatures to argue that, in settings where discrete institutional decisions shape growth trajectories, a realization-centred characterisation is epistemically more appropriate than a DGP-based test. A simulation study across four DGP regimes validates the framework's discriminating power and conservatism. An empirical application to real house prices, commodity prices, public debt, and Spanish tourism destinations illustrates the empirical content of the path-explosive concept and distinguishes it from speculative bubble detection.</summary>
+    <category term="econ.EM" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-04-17T15:55:54Z</published>
+    <arxiv:comment>Working Paper 18 pages</arxiv:comment>
+    <arxiv:primary_category term="econ.EM"/>
+    <author>
+      <name>José Francisco Perles-Ribes</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2604.16114v1</id>
+    <title>Towards In-Context Tone Style Transfer with A Large-Scale Triplet Dataset</title>
+    <updated>2026-04-17T14:49:51Z</updated>
+    <link href="https://arxiv.org/abs/2604.16114v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2604.16114v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Tone style transfer for photo retouching aims to adapt the stylistic tone of the reference image to a given content image. However, the lack of high-quality large-scale triplet datasets with stylized ground truth forces existing methods to rely on self-supervised or proxy objectives, which limits model capability. To mitigate this gap, we design a data construction pipeline to build TST100K, a large-scale dataset of 100,000 content-reference-stylized triplets. At the core of this pipeline, we train a tone style scorer to ensure strict stylistic consistency for each triplet. In addition, existing methods typically extract content and reference features independently and then fuse them in a decoder, which may cause semantic loss and lead to inappropriate color transfer and degraded visual aesthetics. Instead, we propose ICTone, a diffusion-based framework that performs tone transfer in an in-context manner by jointly conditioning on both images, leveraging the semantic priors of generative models for semantic-aware transfer. Reward feedback learning using the tone style scorer is further incorporated to improve stylistic fidelity and visual quality. Experiments demonstrate the effectiveness of TST100K, and ICTone achieves state-of-the-art performance on both quantitative metrics and human evaluations.</summary>
+    <category term="cs.CV" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-04-17T14:49:51Z</published>
+    <arxiv:comment>33 pages, 14 figures</arxiv:comment>
+    <arxiv:primary_category term="cs.CV"/>
+    <author>
+      <name>Yuhai Deng</name>
+    </author>
+    <author>
+      <name>Huimin She</name>
+    </author>
+    <author>
+      <name>Wei Shen</name>
+    </author>
+    <author>
+      <name>Meng Li</name>
+    </author>
+    <author>
+      <name>Ruoxi Wu</name>
+    </author>
+    <author>
+      <name>Lunxi Yuan</name>
+    </author>
+    <author>
+      <name>Xiang Li</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2604.16108v1</id>
+    <title>Polyglot: Multilingual Style Preserving Speech-Driven Facial Animation</title>
+    <updated>2026-04-17T14:43:33Z</updated>
+    <link href="https://arxiv.org/abs/2604.16108v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2604.16108v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Speech-Driven Facial Animation (SDFA) has gained significant attention due to its applications in movies, video games, and virtual reality. However, most existing models are trained on single-language data, limiting their effectiveness in real-world multilingual scenarios. In this work, we address multilingual SDFA, which is essential for realistic generation since language influences phonetics, rhythm, intonation, and facial expressions. Speaking style is also shaped by individual differences, not only by language. Existing methods typically rely on either language-specific or speaker-specific conditioning, but not both, limiting their ability to model their interaction. We introduce Polyglot, a unified diffusion-based architecture for personalized multilingual SDFA. Our method uses transcript embeddings to encode language information and style embeddings extracted from reference facial sequences to capture individual speaking characteristics. Polyglot does not require predefined language or speaker labels, enabling generalization across languages and speakers through self-supervised learning. By jointly conditioning on language and style, it captures expressive traits such as rhythm, articulation, and habitual facial movements, producing temporally coherent and realistic animations. Experiments show improved performance in both monolingual and multilingual settings, providing a unified framework for modeling language and personal style in SDFA.</summary>
+    <category term="cs.CV" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-04-17T14:43:33Z</published>
+    <arxiv:comment>The project website is available at https://fedenoce.github.io/polyglot/</arxiv:comment>
+    <arxiv:primary_category term="cs.CV"/>
+    <author>
+      <name>Federico Nocentini</name>
+    </author>
+    <author>
+      <name>Kwanggyoon Seo</name>
+    </author>
+    <author>
+      <name>Qingju Liu</name>
+    </author>
+    <author>
+      <name>Claudio Ferrari</name>
+    </author>
+    <author>
+      <name>Stefano Berretti</name>
+    </author>
+    <author>
+      <name>David Ferman</name>
+    </author>
+    <author>
+      <name>Hyeongwoo Kim</name>
+    </author>
+    <author>
+      <name>Pablo Garrido</name>
+    </author>
+    <author>
+      <name>Akin Caliskan</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2604.16086v1</id>
+    <title>Stylistic-STORM (ST-STORM) : Perceiving the Semantic Nature of Appearance</title>
+    <updated>2026-04-17T14:15:12Z</updated>
+    <link href="https://arxiv.org/abs/2604.16086v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2604.16086v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>One of the dominant paradigms in self-supervised learning (SSL), illustrated by MoCo or DINO, aims to produce robust representations by capturing features that are insensitive to certain image transformations such as illumination, or geometric changes. This strategy is appropriate when the objective is to recognize objects independently of their appearance. However, it becomes counterproductive as soon as appearance itself constitutes the discriminative signal. In weather analysis, for example, rain streaks, snow granularity, atmospheric scattering, as well as reflections and halos, are not noise: they carry the essential information. In critical applications such as autonomous driving, ignoring these cues is risky, since grip and visibility depend directly on ground conditions and atmospheric conditions. We introduce ST-STORM, a hybrid SSL framework that treats appearance (style) as a semantic modality to be disentangled from content. Our architecture explicitly separates two latent streams, regulated by gating mechanisms. The Content branch aims at a stable semantic representation through a JEPA scheme coupled with a contrastive objective, promoting invariance to appearance variations. In parallel, the Style branch is constrained to capture appearance signatures (textures, contrasts, scattering) through feature prediction and reconstruction under an adversarial constraint. We evaluate ST-STORM on several tasks, including object classification (ImageNet-1K), fine-grained weather characterization, and melanoma detection (ISIC 2024 Challenge). The results show that the Style branch effectively isolates complex appearance phenomena (F1=97% on Multi-Weather and F1=94% on ISIC 2024 with 10% labeled data), without degrading the semantic performance (F1=80% on ImageNet-1K) of the Content branch, and improves the preservation of critical appearance</summary>
+    <category term="cs.CV" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="stat.ML" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-04-17T14:15:12Z</published>
+    <arxiv:comment>20 pages, 16 figures, ICPR 2026 (28th International Conference on Pattern Recognition)</arxiv:comment>
+    <arxiv:primary_category term="cs.CV"/>
+    <author>
+      <name>Hamed Ouattara</name>
+    </author>
+    <author>
+      <name>Pierre Duthon</name>
+    </author>
+    <author>
+      <name>Pascal Houssam Salmane</name>
+    </author>
+    <author>
+      <name>Frédéric Bernardin</name>
+    </author>
+    <author>
+      <name>Omar Ait Aider</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2604.15742v1</id>
+    <title>Collective Kernel EFT for Pre-activation ResNets</title>
+    <updated>2026-04-17T06:31:50Z</updated>
+    <link href="https://arxiv.org/abs/2604.15742v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2604.15742v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>In finite-width deep neural networks, the empirical kernel $G$ evolves stochastically across layers. We develop a collective kernel effective field theory (EFT) for pre-activation ResNets based on a $G$-only closure hierarchy and diagnose its finite validity window. Exploiting the exact conditional Gaussianity of residual increments, we derive an exact stochastic recursion for $G$. Applying Gaussian approximations systematically yields a continuous-depth ODE system for the mean kernel $K_0$, the kernel covariance $V_4$, and the $1/n$ mean correction $K_{1,\mathrm{EFT}}$, which emerges diagrammatically as a one-loop tadpole correction. Numerically, $K_0$ remains accurate at all depths. However, the $V_4$ equation residual accumulates to an $O(1)$ error at finite time, primarily driven by approximation errors in the $G$-only transport term. Furthermore, $K_{1,\mathrm{EFT}}$ fails due to the breakdown of the source closure, which exhibits a systematic mismatch even at initialization. These findings highlight the limitations of $G$-only state-space reduction and suggest extending the state space to incorporate the sigma-kernel.</summary>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="hep-th" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="stat.ML" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-04-17T06:31:50Z</published>
+    <arxiv:comment>20 pages</arxiv:comment>
+    <arxiv:primary_category term="cs.LG"/>
+    <author>
+      <name>Hidetoshi Kawase</name>
+    </author>
+    <author>
+      <name>Toshihiro Ota</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2604.15719v1</id>
+    <title>The World Leaks the Future: Harness Evolution for Future Prediction Agents</title>
+    <updated>2026-04-17T05:43:07Z</updated>
+    <link href="https://arxiv.org/abs/2604.15719v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2604.15719v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Many consequential decisions must be made before the relevant outcome is known. Such problems are commonly framed as \emph{future prediction}, where an LLM agent must form a prediction for an unresolved question using only the public information available at the prediction time. The setting is difficult because public evidence evolves while useful supervision arrives only after the question is resolved, so most existing approaches still improve mainly from final outcomes. Yet final outcomes are too coarse to guide earlier factor tracking, evidence gathering and interpretation, or uncertainty handling. When the same unresolved question is revisited over time, temporal contrasts between earlier and later predictions can expose omissions in the earlier prediction process; we call this signal \emph{internal feedback}. We introduce \emph{Milkyway}, a self-evolving agent system that keeps the base model fixed and instead updates a persistent \emph{future prediction harness} for factor tracking, evidence gathering and interpretation, and uncertainty handling. Across repeated predictions on the same unresolved question, \emph{Milkyway} extracts internal feedback and writes reusable guidance back into the harness, so later predictions on that question can improve before the outcome is known. After the question is resolved, the final outcome provides a \emph{retrospective check} before the updated harness is carried forward to subsequent questions. On FutureX and FutureWorld, Milkyway achieves the best overall score among the compared methods, improving FutureX from 44.07 to 60.90 and FutureWorld from 62.22 to 77.96.</summary>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-04-17T05:43:07Z</published>
+    <arxiv:comment>15 pages, 3 figures, 6 tables</arxiv:comment>
+    <arxiv:primary_category term="cs.AI"/>
+    <author>
+      <name>Chuyang Wei</name>
+      <arxiv:affiliation>University of Science and Technology of China</arxiv:affiliation>
+      <arxiv:affiliation>Zhongguancun Academy, Beijing, China</arxiv:affiliation>
+    </author>
+    <author>
+      <name>Maohang Gao</name>
+      <arxiv:affiliation>University of Science and Technology of China</arxiv:affiliation>
+      <arxiv:affiliation>Zhongguancun Academy, Beijing, China</arxiv:affiliation>
+    </author>
+    <author>
+      <name>Zhixin Han</name>
+      <arxiv:affiliation>Zhongguancun Academy, Beijing, China</arxiv:affiliation>
+    </author>
+    <author>
+      <name>Kefei Chen</name>
+      <arxiv:affiliation>Zhongguancun Academy, Beijing, China</arxiv:affiliation>
+      <arxiv:affiliation>Tsinghua University</arxiv:affiliation>
+    </author>
+    <author>
+      <name>Yu Zhuang</name>
+      <arxiv:affiliation>Zhongguancun Academy, Beijing, China</arxiv:affiliation>
+    </author>
+    <author>
+      <name>Haoxiang Guan</name>
+      <arxiv:affiliation>University of Science and Technology of China</arxiv:affiliation>
+      <arxiv:affiliation>Zhongguancun Academy, Beijing, China</arxiv:affiliation>
+    </author>
+    <author>
+      <name>Yanzhi Zhang</name>
+      <arxiv:affiliation>Zhongguancun Academy, Beijing, China</arxiv:affiliation>
+    </author>
+    <author>
+      <name>Yilin Cheng</name>
+      <arxiv:affiliation>Zhongguancun Academy, Beijing, China</arxiv:affiliation>
+    </author>
+    <author>
+      <name>Jiyan He</name>
+      <arxiv:affiliation>Zhongguancun Academy, Beijing, China</arxiv:affiliation>
+    </author>
+    <author>
+      <name>Huanhuan Chen</name>
+      <arxiv:affiliation>University of Science and Technology of China</arxiv:affiliation>
+    </author>
+    <author>
+      <name>Jian Li</name>
+      <arxiv:affiliation>Tsinghua University</arxiv:affiliation>
+    </author>
+    <author>
+      <name>Yu Shi</name>
+      <arxiv:affiliation>Zhongguancun Academy, Beijing, China</arxiv:affiliation>
+    </author>
+    <author>
+      <name>Yitong Duan</name>
+      <arxiv:affiliation>Zhongguancun Academy, Beijing, China</arxiv:affiliation>
+    </author>
+    <author>
+      <name>Shuxin Zheng</name>
+      <arxiv:affiliation>Zhongguancun Academy, Beijing, China</arxiv:affiliation>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2604.15715v1</id>
+    <title>GTA-2: Benchmarking General Tool Agents from Atomic Tool-Use to Open-Ended Workflows</title>
+    <updated>2026-04-17T05:36:00Z</updated>
+    <link href="https://arxiv.org/abs/2604.15715v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2604.15715v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>The development of general-purpose agents requires a shift from executing simple instructions to completing complex, real-world productivity workflows. However, current tool-use benchmarks remain misaligned with real-world requirements, relying on AI-generated queries, dummy tools, and limited system-level coordination. To address this, we propose GTA-2, a hierarchical benchmark for General Tool Agents (GTA) spanning atomic tool use and open-ended workflows. Built on real-world authenticity, it leverages real user queries, deployed tools, and multimodal contexts. (i) GTA-Atomic, inherited from our prior GTA benchmark, evaluates short-horizon, closed-ended tool-use precision. (ii) GTA-Workflow introduces long-horizon, open-ended tasks for realistic end-to-end completion. To evaluate open-ended deliverables, we propose a recursive checkpoint-based evaluation mechanism that decomposes objectives into verifiable sub-goals, enabling unified evaluation of both model capabilities and agent execution frameworks (i.e., execution harnesses). Experiments reveal a pronounced capability cliff: while frontier models already struggle on atomic tasks (below 50%), they largely fail on workflows, with top models achieving only 14.39% success. Further analysis shows that checkpoint-guided feedback improves performance, while advanced frameworks such as Manus and OpenClaw substantially enhance workflow completion, highlighting the importance of execution harness design beyond the underlying model capacity. These findings provide guidance for developing reliable personal and professional assistants. Dataset and code will be available at https://github.com/open-compass/GTA.</summary>
+    <category term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-04-17T05:36:00Z</published>
+    <arxiv:primary_category term="cs.CL"/>
+    <author>
+      <name>Jize Wang</name>
+    </author>
+    <author>
+      <name>Xuanxuan Liu</name>
+    </author>
+    <author>
+      <name>Yining Li</name>
+    </author>
+    <author>
+      <name>Songyang Zhang</name>
+    </author>
+    <author>
+      <name>Yijun Wang</name>
+    </author>
+    <author>
+      <name>Zifei Shan</name>
+    </author>
+    <author>
+      <name>Xinyi Le</name>
+    </author>
+    <author>
+      <name>Cailian Chen</name>
+    </author>
+    <author>
+      <name>Xinping Guan</name>
+    </author>
+    <author>
+      <name>Dacheng Tao</name>
+    </author>
+  </entry>
+</feed>

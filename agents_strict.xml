@@ -1,0 +1,169 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<feed xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/" xmlns:arxiv="http://arxiv.org/schemas/atom" xmlns="http://www.w3.org/2005/Atom">
+  <id>https://arxiv.org/api/k4lVnhAceFAcv0i8v87ItNvvAf4</id>
+  <title>arXiv Query: search_query=all:"LLM Agent"&amp;id_list=&amp;start=0&amp;max_results=5</title>
+  <updated>2026-04-21T00:54:20Z</updated>
+  <link href="https://arxiv.org/api/query?search_query=all:%22LLM+Agent%22&amp;start=0&amp;max_results=5&amp;id_list=" type="application/atom+xml"/>
+  <opensearch:itemsPerPage>5</opensearch:itemsPerPage>
+  <opensearch:totalResults>2630</opensearch:totalResults>
+  <opensearch:startIndex>0</opensearch:startIndex>
+  <entry>
+    <id>http://arxiv.org/abs/2604.16205v1</id>
+    <title>ChemGraph-XANES: An Agentic Framework for XANES Simulation and Analysis</title>
+    <updated>2026-04-17T16:15:19Z</updated>
+    <link href="https://arxiv.org/abs/2604.16205v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2604.16205v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Computational X-ray absorption near-edge structure (XANES) is widely used to probe local coordination environments, oxidation states, and electronic structure in chemically complex systems. However, the use of computational XANES at scale is constrained more by workflow complexity than by the underlying simulation method itself. To address this challenge, we present ChemGraph-XANES, an agentic framework for automated XANES simulation and analysis that unifies natural-language task specification, structure acquisition, FDMNES input generation, task-parallel execution, spectral normalization, and provenance-aware data curation. Built on ASE, FDMNES, Parsl, and a LangGraph/LangChain-based tool interface, the framework exposes XANES workflow operations as typed Python tools that can be orchestrated by large language model (LLM) agents. In multi-agent mode, a retrieval-augmented expert agent consults the FDMNES manual to ground parameter selection, while executor agents translate user requests into structured tool calls. We demonstrate documentation-grounded parameter retrieval and show that the same workflow supports both explicit structure-file inputs and chemistry-level natural-language requests. Because independent XANES calculations are naturally task-parallel, the framework is well suited for high-throughput deployment on high-performance computing (HPC) systems, enabling scalable XANES database generation for downstream analysis and machine-learning applications. ChemGraph-XANES thus provides a reproducible and extensible workflow layer for physics-based XANES simulation, spectral curation, and agent-compatible computational spectroscopy.</summary>
+    <category term="cond-mat.mtrl-sci" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="physics.chem-ph" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-04-17T16:15:19Z</published>
+    <arxiv:primary_category term="cond-mat.mtrl-sci"/>
+    <author>
+      <name>Vitor F. Grizzi</name>
+    </author>
+    <author>
+      <name>Thang Duc Pham</name>
+    </author>
+    <author>
+      <name>Luke N. Pretzie</name>
+    </author>
+    <author>
+      <name>Jiayi Xu</name>
+    </author>
+    <author>
+      <name>Murat Keceli</name>
+    </author>
+    <author>
+      <name>Cong Liu</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2604.16022v1</id>
+    <title>SocialGrid: A Benchmark for Planning and Social Reasoning in Embodied Multi-Agent Systems</title>
+    <updated>2026-04-17T12:51:46Z</updated>
+    <link href="https://arxiv.org/abs/2604.16022v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2604.16022v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>As Large Language Models (LLMs) transition from text processors to autonomous agents, evaluating their social reasoning in embodied multi-agent settings becomes critical. We introduce SocialGrid, an embodied multi-agent environment inspired by Among Us that evaluates LLM agents on planning, task execution, and social reasoning. Our evaluations reveal that even the strongest open model (GPT-OSS-120B) achieves below 60% accuracy in task completion and planning, with agents getting stuck in repetitive behaviors or failing to navigate basic obstacles. Since poor navigation confounds evaluation of social intelligence, SocialGrid offers an optional Planning Oracle to isolate social reasoning from planning deficits. While planning assistance improves task completion, social reasoning remains a bottleneck: agents fail to detect deception at near-random chance regardless of scale, relying on shallow heuristics rather than accumulating behavioral evidence. SocialGrid provides automatic failure analysis and fine-grained metrics, enabling developers to diagnose and improve their agents. We also establish a competitive leaderboard using Elo ratings from adversarial league play.</summary>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.MA" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-04-17T12:51:46Z</published>
+    <arxiv:comment>Preprint</arxiv:comment>
+    <arxiv:primary_category term="cs.AI"/>
+    <author>
+      <name>Hikaru Shindo</name>
+    </author>
+    <author>
+      <name>Hanzhao Lin</name>
+    </author>
+    <author>
+      <name>Lukas Helff</name>
+    </author>
+    <author>
+      <name>Patrick Schramowski</name>
+    </author>
+    <author>
+      <name>Kristian Kersting</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2604.15877v1</id>
+    <title>Experience Compression Spectrum: Unifying Memory, Skills, and Rules in LLM Agents</title>
+    <updated>2026-04-17T09:26:25Z</updated>
+    <link href="https://arxiv.org/abs/2604.15877v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2604.15877v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>As LLM agents scale to long-horizon, multi-session deployments, efficiently managing accumulated experience becomes a critical bottleneck. Agent memory systems and agent skill discovery both address this challenge -- extracting reusable knowledge from interaction traces -- yet a citation analysis of 1,136 references across 22 primary papers reveals a cross-community citation rate below 1%. We propose the \emph{Experience Compression Spectrum}, a unifying framework that positions memory, skills, and rules as points along a single axis of increasing compression (5--20$\times$ for episodic memory, 50--500$\times$ for procedural skills, 1,000$\times$+ for declarative rules), directly reducing context consumption, retrieval latency, and compute overhead. Mapping 20+ systems onto this spectrum reveals that every system operates at a fixed, predetermined compression level -- none supports adaptive cross-level compression, a gap we term the \emph{missing diagonal}. We further show that specialization alone is insufficient -- both communities independently solve shared sub-problems without exchanging solutions -- that evaluation methods are tightly coupled to compression levels, that transferability increases with compression at the cost of specificity, and that knowledge lifecycle management remains largely neglected. We articulate open problems and design principles for scalable, full-spectrum agent learning systems.</summary>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.MA" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-04-17T09:26:25Z</published>
+    <arxiv:primary_category term="cs.AI"/>
+    <author>
+      <name>Xing Zhang</name>
+    </author>
+    <author>
+      <name>Guanghui Wang</name>
+    </author>
+    <author>
+      <name>Yanwei Cui</name>
+    </author>
+    <author>
+      <name>Wei Qiu</name>
+    </author>
+    <author>
+      <name>Ziyuan Li</name>
+    </author>
+    <author>
+      <name>Bing Zhu</name>
+    </author>
+    <author>
+      <name>Peiyang He</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2604.15840v1</id>
+    <title>CoEvolve: Training LLM Agents via Agent-Data Mutual Evolution</title>
+    <updated>2026-04-17T08:41:26Z</updated>
+    <link href="https://arxiv.org/abs/2604.15840v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2604.15840v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Reinforcement learning for LLM agents is typically conducted on a static data distribution, which fails to adapt to the agent's evolving behavior and leads to poor coverage of complex environment interactions. To address these challenges, we propose CoEvolve, an agent-data mutual evolution framework that enables LLM agents to improve through closed-loop, interaction-driven training. Specifically, CoEvolve extracts feedback signals such as forgetting and uncertainty from rollout trajectories to identify failure-prone interaction patterns, and utilizes them to guide LLM-based task synthesis. The synthesized tasks are validated through environment interaction and utilized to update the data distribution, enabling joint adaptation of the agent and its data. Extensive experiments on AppWorld and BFCL across Qwen2.5-7B, Qwen3-4B, and Qwen3-30B-A3B demonstrate consistent and significant improvements over strong base models, yielding absolute gains of 19.43%, 15.58%, and 18.14%, respectively.</summary>
+    <category term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-04-17T08:41:26Z</published>
+    <arxiv:comment>Accepted to ACL 2026</arxiv:comment>
+    <arxiv:primary_category term="cs.CL"/>
+    <author>
+      <name>Shidong Yang</name>
+    </author>
+    <author>
+      <name>Ziyu Ma</name>
+    </author>
+    <author>
+      <name>Tongwen Huang</name>
+    </author>
+    <author>
+      <name>Yiming Hu</name>
+    </author>
+    <author>
+      <name>Yong Wang</name>
+    </author>
+    <author>
+      <name>Xiangxiang Chu</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2604.15774v1</id>
+    <title>MemEvoBench: Benchmarking Memory MisEvolution in LLM Agents</title>
+    <updated>2026-04-17T07:29:52Z</updated>
+    <link href="https://arxiv.org/abs/2604.15774v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2604.15774v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Equipping Large Language Models (LLMs) with persistent memory enhances interaction continuity and personalization but introduces new safety risks. Specifically, contaminated or biased memory accumulation can trigger abnormal agent behaviors. Existing evaluation methods have not yet established a standardized framework for measuring memory misevolution. This phenomenon refers to the gradual behavioral drift resulting from repeated exposure to misleading information. To address this gap, we introduce MemEvoBench, the first benchmark evaluating long-horizon memory safety in LLM agents against adversarial memory injection, noisy tool outputs, and biased feedback. The framework consists of QA-style tasks across 7 domains and 36 risk types, complemented by workflow-style tasks adapted from 20 Agent-SafetyBench environments with noisy tool returns. Both settings employ mixed benign and misleading memory pools within multi-round interactions to simulate memory evolution. Experiments on representative models reveal substantial safety degradation under biased memory updates. Our analysis suggests that memory evolution is a significant contributor to these failures. Furthermore, static prompt-based defenses prove insufficient, underscoring the urgency of securing memory evolution in LLM agents.</summary>
+    <category term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-04-17T07:29:52Z</published>
+    <arxiv:primary_category term="cs.CL"/>
+    <author>
+      <name>Weiwei Xie</name>
+    </author>
+    <author>
+      <name>Shaoxiong Guo</name>
+    </author>
+    <author>
+      <name>Fan Zhang</name>
+    </author>
+    <author>
+      <name>Tian Xia</name>
+    </author>
+    <author>
+      <name>Xue Yang</name>
+    </author>
+    <author>
+      <name>Lizhuang Ma</name>
+    </author>
+    <author>
+      <name>Junchi Yan</name>
+    </author>
+    <author>
+      <name>Qibing Ren</name>
+    </author>
+  </entry>
+</feed>
