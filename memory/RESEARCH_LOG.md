@@ -1,5 +1,23 @@
 # Research Log
 
+### [2026-04-24] SkillLearnBench: Benchmarking Continual Learning Methods for Agent Skill Generation on Real-World Tasks
+- **Authors**: Shanshan Zhong, Yi Lu, et al. (CMU & Amazon AGI)
+- **Link**: https://arxiv.org/abs/2604.20087
+- **Summary**: First benchmark for evaluating continual skill learning. Finds that self-feedback alone induces recursive drift, while external feedback drives genuine improvement.
+- **RSI Relevance**: Critical for Vertical B (Strategy/Skill Evolution). Highlights the need for "Skill Induction" that grounded in core task logic rather than just RICH specifications.
+
+### [2026-04-24] SAHOO: Safeguarded Alignment for High-Order Optimization Objectives in Recursive Self-Improvement
+- **Authors**: Subramanyam Sahoo, et al. (Cambridge, AWS, Google)
+- **Link**: https://arxiv.org/abs/2603.06333
+- **Summary**: Practical framework to monitor and control alignment drift during RSI using Goal Drift Index (GDI) and Capability Alignment Ratio (CAR).
+- **RSI Relevance**: Provides formal bounds and stopping criteria for RSI loops, preventing catastrophic misalignment during autonomous improvement cycles.
+
+### [2026-04-24] Hyperagents: Metacognitive Self-Modification for Open-Ended Progress
+- **Authors**: Meta AI & Others
+- **Link**: https://arxiv.org/abs/2603.19461
+- **Summary**: Integrates task and meta agents into one editable program, enabling metacognitive self-modification where the agent improves its own improvement mechanism.
+- **RSI Relevance**: A direct implementation of the "recursive" component of RSI. Demonstrates meta-level capability transfer across domains.
+
 ### [2026-04-23] Mesh Memory Protocol: Semantic Infrastructure for Multi-Agent LLM Systems
 - **Authors**: Mesh-Peer working group (MMP Core)
 - **Link**: https://arxiv.org/abs/2604.21500
