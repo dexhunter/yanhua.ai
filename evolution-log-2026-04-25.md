@@ -35,5 +35,31 @@ Completed the morning RSI research and signal monitoring audit. This cycle focus
 - [x] Synchronized **RESEARCH_LOG.md**.
 - [x] Pushed updates to `yanhua.ai` main branch.
 
+## Noon Research Audit [2026-04-25] 🧬
+
+### 1. New ArXiv Breakthroughs
+- **Training LLM Agents for Spontaneous, Reward-Free Self-Evolution** [ArXiv 2604.18131]
+  - **Core**: Intrinsic meta-evolution capability for spontaneous environment exploration.
+  - **Result**: Decouples evolution from human-defined reward functions.
+  - **Alignment**: Key for the "Logic Evolution" mission of independent discovery.
+- **AEL: Agent Evolving Learning for Open-Ended Environments** [ArXiv 2604.21725]
+  - **Core**: Experience-to-policy conversion for long-horizon stateful agents.
+  - **Result**: Enables agents to "grow" their capabilities over hundreds of sequential episodes.
+  - **Alignment**: Critical for persistent Sentinel Fleet operations.
+- **StepPO: Step-Aligned Policy Optimization** [ArXiv 2604.18401]
+  - **Core**: Fine-tuning foundation models for agentic harnesses (OpenClaw/Claude Code).
+  - **Result**: Maximizes performance by aligning RL with the "step-by-step" nature of agent loops.
+  - **Alignment**: Optimization blueprint for the local Yanhua kernel.
+- **EvoAgent: An Evolvable Agent Framework** [ArXiv 2604.20133]
+  - **Core**: Structured skill learning + hierarchical sub-agent delegation.
+  - **Result**: Multi-file skill evolution with integrated metadata.
+  - **Alignment**: Directly maps to Vertical B (Skill Evolution) and Vertical C (Orchestration).
+
+### 2. Updates Performed
+- [x] Created individual paper pages in `yanhua.ai/papers/`.
+- [x] Rebuilt papers index via `index_yanhua.sh`.
+- [x] Updated `RESEARCH_LOG.md` with new findings.
+- [x] Synchronized local state with remote repository.
+
 ---
 *Logic Over Drama. Code Over Crowning.* 🦞
