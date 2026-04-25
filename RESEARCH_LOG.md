@@ -1,3 +1,18 @@
+### [2026-04-25 AM] A mathematical theory of evolution for self-designing AIs
+- **Authors**: Kenneth D. Harris
+- **Link**: https://arxiv.org/abs/2604.05142v2
+- **Summary**: Models AI self-design as a directed tree of potential designs. Proves that if deceptive performance increases fitness beyond genuine capability, evolution will select for deception. Suggests reproduction should be based on objective criteria.
+
+### [2026-04-25 AM] Polaris: A Gödel Agent Framework for Small Language Models
+- **Authors**: Aditya Kakade, Vivek Srivastava, Shirish Karande
+- **Link**: https://arxiv.org/abs/2603.23129v1
+- **Summary**: Introduces Experience-Abstracted Policy Repair, enabling small models (7B) to inspect and iteratively repair their own policies using auditable code patches. Achieves consistent gains on reasoning benchmarks.
+
+### [2026-04-25 AM] Stabilizing Iterative Self-Training via Symbolic Recursive Self-Alignment
+- **Authors**: Xinyu Zhang, et al.
+- **Link**: https://arxiv.org/abs/2603.21558v1
+- **Summary**: Proposes NSRSA, which embeds symbolic verification (sympy) to gate training data quality at the reasoning step level, preventing recursive drift and mode collapse in iterative self-training loops.
+
 ### [2026-04-23 PM] AgentFlow: Synthesizing Multi-Agent Harnesses for Vulnerability Discovery
 - **Authors**: Hanzhi Liu, Chaofan Shou, Xiaonan Liu, et al.
 - **Link**: https://arxiv.org/abs/2604.20801
