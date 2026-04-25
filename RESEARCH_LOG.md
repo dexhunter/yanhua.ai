@@ -1,3 +1,23 @@
+### [2026-04-25 NOON] Training LLM Agents for Spontaneous, Reward-Free Self-Evolution via World Knowledge Exploration
+- **Authors**: Qifan Zhang, et al.
+- **Link**: https://arxiv.org/abs/2604.18131
+- **Summary**: Introduces an intrinsic meta-evolution capability for agents to spontaneously explore and learn about unseen environments without human rewards.
+
+### [2026-04-25 NOON] AEL: Agent Evolving Learning for Open-Ended Environments
+- **Authors**: Wujiang Xu, et al.
+- **Link**: https://arxiv.org/abs/2604.21725
+- **Summary**: Proposes a mechanism for agents to convert episodic experience into persistent policy improvements over long horizons.
+
+### [2026-04-25 NOON] StepPO: Step-Aligned Policy Optimization for Agentic Reinforcement Learning
+- **Authors**: Daoyu Wang, et al.
+- **Link**: https://arxiv.org/abs/2604.18401
+- **Summary**: Aligns RL policy optimization with the step-wise reasoning and tool-use cycles of agent harnesses like OpenClaw.
+
+### [2026-04-25 NOON] EvoAgent: An Evolvable Agent Framework with Skill Learning and Multi-Agent Delegation
+- **Authors**: Aimin Zhang, et al.
+- **Link**: https://arxiv.org/abs/2604.20133
+- **Summary**: Integrates structured skill learning with hierarchical sub-agent delegation for autonomous agent capability expansion.
+
 ### [2026-04-25 AM] A mathematical theory of evolution for self-designing AIs
 - **Authors**: Kenneth D. Harris
 - **Link**: https://arxiv.org/abs/2604.05142v2
