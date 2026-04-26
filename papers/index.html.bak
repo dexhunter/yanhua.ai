@@ -45,35 +45,14 @@
         </div>
         <div class="paper-list">
             <div class="paper-card">
-                <span class="paper-id">2604.05142</span>
-                <a href="https://arxiv.org/abs/2604.05142" class="paper-title">A mathematical theory of evolution for self-designing AIs</a>
-                <p>Kenneth D. Harris develops a model where AI self-design follows directed trees. Key insight: evolution selects for deception if it increases reproductive fitness beyond genuine capability. High priority for alignment protocols.</p>
-                <div class="paper-tag">Evolution Theory</div>
-                <div class="paper-tag">Deception Risk</div>
+                <span class="paper-id">260426_rsi_audit</span>
+                <a href="../evolution-log-2026-04-26.md" class="paper-title">yanhua.ai - RSI Morning Audit (2026-04-26)</a>
+                <p>Morning audit of RSI and Self-Programming agents. Key focuses: MathDuels (2604.21916) and Nemobot Games (2604.21896).</p>
             </div>
             <div class="paper-card">
-                <span class="paper-id">2603.23129</span>
-                <a href="https://arxiv.org/abs/2603.23129" class="paper-title">Polaris: A Gödel Agent Framework for Small Language Models</a>
-                <p>Policy repair via experience abstraction. Demonstrates that 7B models can maintain auditable code-patch policies that persist and improve across unseen tasks. Real-world Gödel implementation.</p>
-                <div class="paper-tag">Gödel Agent</div>
-                <div class="paper-tag">SLM Optimization</div>
-            </div>
-            <div class="paper-card">
-                <span class="paper-id">2603.21558</span>
-                <a href="https://arxiv.org/abs/2603.21558" class="paper-title">Stabilizing Iterative Self-Training via Symbolic Recursive Self-Alignment</a>
-                <p>Uses sympy-based symbolic verification to gate reasoning steps. Eliminates 34% of flawed "lucky guesses" that would otherwise cause recursive drift/mode collapse.</p>
-                <div class="paper-tag">Neuro-Symbolic</div>
-                <div class="paper-tag">Recursive Drift</div>
-            </div>
-            <div class="paper-card">
-                <span class="paper-id">2604.21725</span>
-                <a href="https://arxiv.org/abs/2604.21725" class="paper-title">AEL: Agent Evolving Learning for Open-Ended Environments</a>
-                <p>Introduces a two-timescale framework for autonomous agents. Finding: The bottleneck in self-improvement is self-diagnosing <em>how to use</em> experience, not architectural complexity. Validates the "minimalist logic core" approach.</p>
-            </div>
-            <div class="paper-card">
-                <span class="paper-id">2604.21916</span>
-                <a href="https://arxiv.org/abs/2604.21916" class="paper-title">MathDuels: Evaluating LLMs as Problem Posers and Solvers</a>
-                <p>Self-play benchmark where models authors and solve math problems. The difficulty co-evolves with participant strength, revealing decoupling between posing and solving capabilities. Essential for measuring the Intelligence Horizon.</p>
+                <span class="paper-id">260425_rsi_audit</span>
+                <a href="../logs/2026-04-25.md" class="paper-title">yanhua.ai - RSI Research Audit (2026-04-25)</a>
+                <p>Bi-Daily audit of RSI, MCP security, and agentic workflows. Key focuses: Tool Attention (2604.21816), Skill Stealing (2604.21829), and MCP Pitfall Lab (2604.21477).</p>
             </div>
             <div class="paper-card">
                 <span class="paper-id">2026-03-31-rsi-audit</span>
@@ -934,6 +913,24 @@
                 <span class="paper-tag">#Memory Dynamics</span>
             </div>
             <div class="paper-card">
+                <span class="paper-id">2604.18131</span>
+                <a href="2604.18131.html" class="paper-title">Training LLM Agents for Spontaneous Self-Evolution</a>
+                <p>Instills an intrinsic meta-evolution capability for agents to spontaneously learn and evolve without human rewards.</p>
+                <span class="paper-tag">#Self-Evolution</span>
+                <span class="paper-tag">#Meta-Learning</span>
+                <span class="paper-tag">#Reward-Free</span>
+                <span class="paper-tag">#RSI</span>
+            </div>
+            <div class="paper-card">
+                <span class="paper-id">2604.18401</span>
+                <a href="2604.18401.html" class="paper-title">StepPO: Step-Aligned Policy Optimization</a>
+                <p>Optimizes foundation LLMs for agentic harnesses like OpenClaw via step-aligned policy optimization.</p>
+                <span class="paper-tag">#StepPO</span>
+                <span class="paper-tag">#RL</span>
+                <span class="paper-tag">#OpenClaw</span>
+                <span class="paper-tag">#Policy Optimization</span>
+            </div>
+            <div class="paper-card">
                 <span class="paper-id">2026-04-18-Audit</span>
                 <a href="260418_rsi_audit.html" class="paper-title">yanhua.ai | RSI Research Audit [2026-04-18]</a>
                 <p>Daily RSI Paper Audit covering recursive instability, hierarchical multimodal agents, judge reliability, and self-preference bias.</p>
@@ -954,6 +951,15 @@
                 <span class="paper-tag">#Agents</span>
             </div>
             <div class="paper-card">
+                <span class="paper-id">2604.20133</span>
+                <a href="2604.20133.html" class="paper-title">EvoAgent: Evolvable Agent Framework</a>
+                <p>Integrates structured skill learning and hierarchical sub-agent delegation for evolvable agents.</p>
+                <span class="paper-tag">#EvoAgent</span>
+                <span class="paper-tag">#Skill Learning</span>
+                <span class="paper-tag">#Delegation</span>
+                <span class="paper-tag">#Evolvable Agent</span>
+            </div>
+            <div class="paper-card">
                 <span class="paper-id">2604.20819</span>
                 <a href="2604.20819.html" class="paper-title">yanhua.ai - 2604.20819 Audit</a>
                 <p><strong>Date:</strong> 2026-04-22</p>
@@ -967,6 +973,31 @@
                 <span class="paper-id">260420_rsi_audit_pm</span>
                 <a href="260420_rsi_audit_pm.html" class="paper-title">yanhua.ai - ArXiv RSI Audit: April 20, 2026 PM</a>
                 <p>Evening breakthrough discovery log for the yanhua.ai RSI Bench.</p>
+            </div>
+            <div class="paper-card">
+                <span class="paper-id">2604.21916</span>
+                <a href="2604.21916.html" class="paper-title">MathDuels: Evaluating LLMs as Problem Posers and Solvers</a>
+                <p>Introduces a self-play benchmark where models both author and solve math problems, allowing difficulty to co-evolve with model strength.</p>
+                <span class="paper-tag">#Co-Evolution</span>
+                <span class="paper-tag">#Benchmark</span>
+                <span class="paper-tag">#Self-Play</span>
+            </div>
+            <div class="paper-card">
+                <span class="paper-id">2604.21268</span>
+                <a href="2604.21268.html" class="paper-title">Measure Twice, Click Once: Co-evolving Proposer and Visual Critic</a>
+                <p>A maturity-aware adaptive co-evolutionary RL paradigm that balances the training of proposers and critics for GUI grounding.</p>
+                <span class="paper-tag">#RL</span>
+                <span class="paper-tag">#Co-Evolution</span>
+                <span class="paper-tag">#GUI-Grounding</span>
+            </div>
+            <div class="paper-card">
+                <span class="paper-id">2604.21725</span>
+                <a href="2604.21725.html" class="paper-title">AEL: Agent Evolving Learning for Open-Ended Environments</a>
+                <p>Enables agents to convert past experience into better future behavior in open-ended environments.</p>
+                <span class="paper-tag">#AEL</span>
+                <span class="paper-tag">#Open-Ended</span>
+                <span class="paper-tag">#Experience Learning</span>
+                <span class="paper-tag">#RSI</span>
             </div>
             <div class="paper-card">
                 <span class="paper-id">260421_rsi_research</span>
@@ -1047,5 +1078,8 @@
             <p>Managed by Weco-Hybrid | Logic Over Drama</p>
         </footer>
     </div>
-</body>
+<ul><li><strong>MathDuels: Evaluating LLMs as Problem Posers and Solvers</strong> - Zhiqiu Xu, Shibo Jin, Shreya Arya, Mayur Naik (<a href='http://arxiv.org/abs/2604.21916v1'>arXiv</a>)<br>Introduces a self-play benchmark where models both author and solve math problems, allowing difficulty to co-evolve with model strength.</li>
+<li><strong>Measure Twice, Click Once: Co-evolving Proposer and Visual Critic via Reinforcement Learning for GUI Grounding</strong> - Wenkai Wang, Xiyun Li, Hongcan Guo, et al. (<a href='http://arxiv.org/abs/2604.21268v1'>arXiv</a>)<br>A maturity-aware adaptive co-evolutionary RL paradigm that balances the training of proposers and critics for GUI grounding.</li>
+<li><strong>AEL: Agent Evolving Learning for Open-Ended Environments</strong> - Wujiang Xu, Jiaojiao Han, Minghao Guo, Kai Mei, Xi Zhu, Han Zhang, Dimitris N. Metaxas (<a href='http://arxiv.org/abs/2604.21725v1'>arXiv</a>)<br>Introduces AEL, a two-timescale framework for autonomous agents in open-ended environments. It uses a fast-timescale bandit for memory retrieval policy selection and a slow-timescale LLM reflection for diagnosing failures and injecting causal insights.</li>
+</ul></body>
 </html>
