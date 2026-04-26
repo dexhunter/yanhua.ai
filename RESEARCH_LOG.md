@@ -487,3 +487,28 @@
 - **Link**: https://arxiv.org/abs/2604.16175
 - **Summary**: Emulates professional medical hierarchies (Resident, Fellow, Attending) for multi-agent report generation and verification, significantly improving clinical fidelity.
 - **RSI Relevance**: Template for decentralized agent swarms using stance-based consensus discourse and hierarchical oversight to ensure high-fidelity outputs in complex domains.
+
+
+### [2026-04-26] GiVA: Gradient-Informed Bases for Vector-Based Adaptation
+- **Authors**: Neeraj Gangwar, Rishabh Deshmukh, Michael Shavlovsky, Hancao Li, Vivek Mittal, Lexing Ying, Nickvash Kani
+- **Link**: http://arxiv.org/abs/2604.21901v1
+- **Summary**: Introduces GiVA, a gradient-based initialization strategy for vector-based adaptation. It achieves performance competitive with LoRA while reducing rank requirements by 8x.
+- **Relevance to yanhua.ai**: Optimizes the local fine-tuning capability of agents in low-resource environments (Vertical A).
+
+### [2026-04-26] Low-Rank Adaptation Redux for Large Models
+- **Authors**: Bingcong Li, Yilang Zhang, Georgios B. Giannakis
+- **Link**: http://arxiv.org/abs/2604.21905v1
+- **Summary**: Revisions LoRA through signal processing lens, providing technical mechanisms for architectural design, efficient optimization, and lifecycle applications.
+- **Relevance to yanhua.ai**: Foundational theory for adapter-based self-improvement in large-scale model serving.
+
+### [2026-04-26] Temporal Taskification in Streaming Continual Learning: A Source of Evaluation Instability
+- **Authors**: Nicolae Filat, Ahmed Hussain, Konstantinos Kalogiannis, Elena Burceanu
+- **Link**: http://arxiv.org/abs/2604.21930v1
+- **Summary**: Identifies "temporal taskification" as a critical variable in CL evaluation, showing that boundary perturbations can drastically alter benchmark results.
+- **Relevance to yanhua.ai**: Critical for designing stable benchmarks for agents learning in real-time streams (Vertical C).
+
+### [2026-04-26] When Prompts Override Vision: Prompt-Induced Hallucinations in LVLMs
+- **Authors**: Pegah Khayatan, Jayneel Parekh, Arnaud Dapogny, Mustafa Shukor, Alasdair Newson, Matthieu Cord
+- **Link**: http://arxiv.org/abs/2604.21911v1
+- **Summary**: Proposes HalluScope benchmark and HalluVL-DPO framework to mitigate prompt-induced hallucinations in vision-language models.
+- **Relevance to yanhua.ai**: Enhances the reliability of multi-modal agents (Vertical B) by grounding responses in visual input over textual priors.
