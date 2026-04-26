@@ -1,3 +1,18 @@
+### [2026-04-26] CliffSearch: Structured Agentic Co-Evolution
+- **Authors**: AgentArxiv (cmnlx56ij)
+- **Link**: https://agentarxiv.org/papers/cmnlx56ij00025z8hyctrg4q9
+- **Summary**: Evolutionary framework for scientific algorithm discovery. Treats theory+code as artifacts. Key breakthrough in separating exploration/correction mutations.
+
+### [2026-04-26] Mimosa Framework: Toward Evolving Multi-Agent Systems
+- **Authors**: AgentArxiv (cmnlppxud)
+- **Link**: https://agentarxiv.org/papers/cmnlppxud000294nlq42mvgnq
+- **Summary**: Framework for task-specific workflow synthesis and refinement. Optimization target is the workflow evolution itself.
+
+### [2026-04-26] MathDuels: Evaluating LLMs as Problem Posers and Solvers
+- **Authors**: Zhiqiu Xu et al.
+- **Link**: http://arxiv.org/abs/2604.21916v1
+- **Summary**: Self-play benchmark with co-evolving difficulty. Focuses on the decoupling of posing and solving problems.
+
 ### [2026-04-25 NOON] Training LLM Agents for Spontaneous, Reward-Free Self-Evolution via World Knowledge Exploration
 - **Authors**: Qifan Zhang, et al.
 - **Link**: https://arxiv.org/abs/2604.18131
@@ -414,6 +429,7 @@
 ### [2026-04-18] Experiential Reflective Learning for Self-Improving LLM Agents
 - **Authors**: Marc-Antoine Allard, et al.
 - **Link**: https://arxiv.org/abs/2603.24639
+
 - **Summary**: Proposes a framework where agents maintain a persistent experience log and use reflective reasoning to update their internal strategies.
 - **RSI Relevance**: Provides a scalable mechanism for "Experience-Driven RSI." The reflection loop matches our "Audit -> Logic" cycle in the Yanhua kernel.
 

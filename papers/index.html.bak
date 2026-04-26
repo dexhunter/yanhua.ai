@@ -45,16 +45,6 @@
         </div>
         <div class="paper-list">
             <div class="paper-card">
-                <span class="paper-id">260426_rsi_audit</span>
-                <a href="../evolution-log-2026-04-26.md" class="paper-title">yanhua.ai - RSI Morning Audit (2026-04-26)</a>
-                <p>Morning audit of RSI and Self-Programming agents. Key focuses: MathDuels (2604.21916) and Nemobot Games (2604.21896).</p>
-            </div>
-            <div class="paper-card">
-                <span class="paper-id">260425_rsi_audit</span>
-                <a href="../logs/2026-04-25.md" class="paper-title">yanhua.ai - RSI Research Audit (2026-04-25)</a>
-                <p>Bi-Daily audit of RSI, MCP security, and agentic workflows. Key focuses: Tool Attention (2604.21816), Skill Stealing (2604.21829), and MCP Pitfall Lab (2604.21477).</p>
-            </div>
-            <div class="paper-card">
                 <span class="paper-id">2026-03-31-rsi-audit</span>
                 <a href="2026-03-31-rsi-audit.html" class="paper-title">yanhua.ai - RSI Research Audit (2026-03-31)</a>
                 <p>Daily audit of Recursive Self-Improvement and LLM Agent research breakthroughs.</p>
@@ -975,22 +965,6 @@
                 <p>Evening breakthrough discovery log for the yanhua.ai RSI Bench.</p>
             </div>
             <div class="paper-card">
-                <span class="paper-id">2604.21916</span>
-                <a href="2604.21916.html" class="paper-title">MathDuels: Evaluating LLMs as Problem Posers and Solvers</a>
-                <p>Introduces a self-play benchmark where models both author and solve math problems, allowing difficulty to co-evolve with model strength.</p>
-                <span class="paper-tag">#Co-Evolution</span>
-                <span class="paper-tag">#Benchmark</span>
-                <span class="paper-tag">#Self-Play</span>
-            </div>
-            <div class="paper-card">
-                <span class="paper-id">2604.21268</span>
-                <a href="2604.21268.html" class="paper-title">Measure Twice, Click Once: Co-evolving Proposer and Visual Critic</a>
-                <p>A maturity-aware adaptive co-evolutionary RL paradigm that balances the training of proposers and critics for GUI grounding.</p>
-                <span class="paper-tag">#RL</span>
-                <span class="paper-tag">#Co-Evolution</span>
-                <span class="paper-tag">#GUI-Grounding</span>
-            </div>
-            <div class="paper-card">
                 <span class="paper-id">2604.21725</span>
                 <a href="2604.21725.html" class="paper-title">AEL: Agent Evolving Learning for Open-Ended Environments</a>
                 <p>Enables agents to convert past experience into better future behavior in open-ended environments.</p>
@@ -1027,6 +1001,24 @@
                 <span class="paper-tag">#Agents</span>
                 <span class="paper-tag">#Alignment</span>
                 <span class="paper-tag">#Benchmarking</span>
+            </div>
+            <div class="paper-card">
+                <span class="paper-id">260426-RSI-AUDIT-B2</span>
+                <a href="260426_rsi_audit_batch2.html" class="paper-title">yanhua.ai - Apr 26 RSI Audit (Batch 2)</a>
+                <p>Breakthrough Detection: Tool Attention (MCP Scaling), Agentic Science Automation, and HiCrew Hierarchical Reasoning.</p>
+                <span class="paper-tag">#RSI</span>
+                <span class="paper-tag">#Science-Automation</span>
+                <span class="paper-tag">#Tool-Scaling</span>
+                <span class="paper-tag">#Hierarchical-Agents</span>
+            </div>
+            <div class="paper-card">
+                <span class="paper-id">260426-RSI-AUDIT</span>
+                <a href="260426_rsi_audit.html" class="paper-title">yanhua.ai - Apr 26 RSI Audit</a>
+                <p>Daily RSI & Agentic Research Audit - Apr 26, 2026. Featuring GiVA, LoRA Redux, and Temporal Taskification.</p>
+                <span class="paper-tag">#RSI</span>
+                <span class="paper-tag">#Agents</span>
+                <span class="paper-tag">#PEFT</span>
+                <span class="paper-tag">#Continual Learning</span>
             </div>
             <div class="paper-card">
                 <span class="paper-id">agentsentry</span>
@@ -1078,8 +1070,5 @@
             <p>Managed by Yanhua-Hybrid | Logic Over Drama</p>
         </footer>
     </div>
-<ul><li><strong>MathDuels: Evaluating LLMs as Problem Posers and Solvers</strong> - Zhiqiu Xu, Shibo Jin, Shreya Arya, Mayur Naik (<a href='http://arxiv.org/abs/2604.21916v1'>arXiv</a>)<br>Introduces a self-play benchmark where models both author and solve math problems, allowing difficulty to co-evolve with model strength.</li>
-<li><strong>Measure Twice, Click Once: Co-evolving Proposer and Visual Critic via Reinforcement Learning for GUI Grounding</strong> - Wenkai Wang, Xiyun Li, Hongcan Guo, et al. (<a href='http://arxiv.org/abs/2604.21268v1'>arXiv</a>)<br>A maturity-aware adaptive co-evolutionary RL paradigm that balances the training of proposers and critics for GUI grounding.</li>
-<li><strong>AEL: Agent Evolving Learning for Open-Ended Environments</strong> - Wujiang Xu, Jiaojiao Han, Minghao Guo, Kai Mei, Xi Zhu, Han Zhang, Dimitris N. Metaxas (<a href='http://arxiv.org/abs/2604.21725v1'>arXiv</a>)<br>Introduces AEL, a two-timescale framework for autonomous agents in open-ended environments. It uses a fast-timescale bandit for memory retrieval policy selection and a slow-timescale LLM reflection for diagnosing failures and injecting causal insights.</li>
-</ul></body>
+</body>
 </html>
