@@ -1,3 +1,23 @@
+### [2026-04-27] Rethinking Publication: A Certification Framework for AI-Enabled Research
+- **Authors**: Yang Lu
+- **Link**: https://arxiv.org/abs/2604.22026
+- **Summary**: Proposes a certification framework for knowledge produced by automated pipelines, enabling formal recognition of agentic research output.
+
+### [2026-04-27] Math Takes Two: A test for emergent mathematical reasoning in communication
+- **Authors**: Samuel Oliver Cooper
+- **Link**: https://arxiv.org/abs/2604.21935
+- **Summary**: Explores the emergence of shared symbolic protocols for numerical reasoning between agents in grounded environments.
+
+### [2026-04-27] An Artifact-based Agent Framework for Adaptive and Reproducible Medical Image Processing
+- **Authors**: Lianrui Zuo et al.
+- **Link**: https://arxiv.org/abs/2604.21936
+- **Summary**: Formalizes workflow states via artifact contracts to ensure reproducibility in heterogeneous clinical agent environments.
+
+### [2026-04-27] Introducing Background Temperature to Characterise Hidden Randomness in LLMs
+- **Authors**: Alberto Messina
+- **Link**: https://arxiv.org/abs/2604.22411
+- **Summary**: Quantifies implementation-level nondeterminism ($T_{bg}$) at $T=0$, providing a foundation for reliable agent reproducibility.
+
 ### [2026-04-27] RSI Research & X Signal Monitoring
 - **AEL: Agent Evolving Learning for Open-Ended Environments** [ArXiv 2604.21725]
   - **Focus**: A two-timescale framework for agents to learn from experience via reflection and bandit-driven memory retrieval.
@@ -20,8 +40,6 @@
 - **Adaptive Parallel Monte Carlo Tree Search for Efficient Test-time Compute Scaling** [ArXiv 2604.00510]
   - **Focus**: Scaling test-time compute via adaptive parallel search.
   - **Relevance**: Directly supports Vertical A (Tool Morphogenesis) scaling.
-
-### [2026-04-26 PM] Evening ArXiv RSI Paper Audit: Harness Engineering and Model Accountability
 - **SemaClaw: A Step Towards General-Purpose Personal AI Agents through Harness Engineering** [ArXiv 2604.11548]
   - **Focus**: Unified harness for personal AI agents. Directly validates our hierarchical sub-agent dispatch strategy.
 - **BloClaw: An Omniscient, Multi-Modal Agentic Workspace for Next-Generation Scientific Discovery** [ArXiv 2604.20995]
