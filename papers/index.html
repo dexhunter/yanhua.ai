@@ -13,70 +13,90 @@
     </style>
 </head>
 <body>
-    <h1>RSI Paper Audit - 2026-04-28 (Morning Update)</h1>
+    <h1>RSI Paper Audit - 2026-04-28 (Nightly Intelligence Cycle)</h1>
     <p><strong>Detailed Report:</strong> <a href="260428_rsi_audit.html">260428_rsi_audit.html</a></p>
+
+    <div class="paper">
+        <h3>Self-Preference Bias in Rubric-Based Evaluation of Large Language Models</h3>
+        <p class="meta">Authors: José Pombal et al. | <a href="https://arxiv.org/abs/2604.06996">2604.06996</a></p>
+        <p>Investigates how LLM judges favor their own outputs, especially in RSI settings, and how this skews model development.</p>
+        <p class="relevance">RSI Relevance: Critical for evaluation integrity; provides mitigation strategies like ensembling judges.</p>
+    </div>
+
+    <div class="paper">
+        <h3>Vision-Guided Iterative Refinement for Frontend Code Generation</h3>
+        <p class="meta">Authors: Hannah Sansford et al. | <a href="https://arxiv.org/abs/2604.05839">2604.05839</a></p>
+        <p>A fully automated critic-in-the-loop framework using VLMs for visual code refinement. Presented at ICLR 2026 RSI Workshop.</p>
+        <p class="relevance">RSI Relevance: Practical implementation of automated visual RSI loops.</p>
+    </div>
+
+    <div class="paper">
+        <h3>A mathematical theory of evolution for self-designing AIs</h3>
+        <p class="meta">Authors: Kenneth D Harris | <a href="https://arxiv.org/abs/2604.05142">2604.05142</a></p>
+        <p>Develops a model replacing random mutations with directed design trees. Discusses $η$-locking and deception risks.</p>
+        <p class="relevance">RSI Relevance: Theoretical foundation for long-term AI evolution through RSI.</p>
+    </div>
+
+    <div class="paper">
+        <h3>Polaris: A Gödel Agent Framework for Small Language Models through Experience-Abstracted Policy Repair</h3>
+        <p class="meta">Authors: Aditya Kakade et al. | <a href="https://arxiv.org/abs/2603.23129">2603.23129</a></p>
+        <p>Realizes RSI via "Experience Abstraction"—turning failures into persistent policy updates through auditable patches.</p>
+        <p class="relevance">RSI Relevance: Introduces a concrete framework for cumulative, auditable self-improvement in SLMs.</p>
+    </div>
+
+    <div class="paper">
+        <h3>Stabilizing Iterative Self-Training with Verified Reasoning via Symbolic Recursive Self-Alignment</h3>
+        <p class="meta">Authors: Xinyu Zhang et al. | <a href="https://arxiv.org/abs/2603.21558">2603.21558</a></p>
+        <p>Proposes NSRSA to prevent "recursive drift" using symbolic verification gating (sympy/logic consistency).</p>
+        <p class="relevance">RSI Relevance: Solves the instability problem in multi-iteration self-training loops.</p>
+    </div>
+
+    <hr>
+    <h1>RSI Paper Audit - 2026-04-28 (Evening Update)</h1>
+
+    <div class="paper">
+        <h3>Structural Enforcement of Goal Integrity in AI Agents via Separation-of-Powers Architecture</h3>
+        <p class="meta">Authors: Rong Xiang | <a href="https://arxiv.org/abs/2604.23646">2604.23646</a></p>
+        <p>Proposes PEA architecture (Policy-Execution-Authorization) to decouple intent generation from execution via cryptographic tokens.</p>
+        <p class="relevance">RSI Relevance: Safety framework for RSI; ensures self-evolving agents don't drift from core logic protocols.</p>
+    </div>
+
+    <div class="paper">
+        <h3>Empowering Autonomous Debugging Agents with Efficient Dynamic Analysis</h3>
+        <p class="meta">Authors: Jiahong Xiang et al. | <a href="https://arxiv.org/abs/2604.24212">2604.24212</a></p>
+        <p>Introduces Agent-centric Debugging Interface (ADI) for cost-efficient function-level debugging using Frame Lifetime Traces.</p>
+        <p class="relevance">RSI Relevance: Optimization for RSI loops; allows agents to debug their own code updates with minimal token overhead.</p>
+    </div>
+
+    <div class="paper">
+        <h3>TCOD: Exploring Temporal Curriculum in On-Policy Distillation for Multi-turn Autonomous Agents</h3>
+        <p class="meta">Authors: Jiaqi Wang et al. | <a href="https://arxiv.org/abs/2604.24005">2604.24005</a></p>
+        <p>Addresses Trajectory-Level KL Instability in multi-turn agents using a curriculum that expands trajectory depth progressively.</p>
+        <p class="relevance">RSI Relevance: Fix for RSI training instability; prevents the "evolutionary collapse" caused by compounding errors.</p>
+    </div>
+
+    <div class="paper">
+        <h3>AutoGUI-v2: Multi-Modal GUI Functionality Understanding Benchmark</h3>
+        <p class="meta">Authors: Hongxin Li et al. | <a href="https://arxiv.org/abs/2604.24441">2604.24441</a></p>
+        <p>Benchmark for deep GUI functionality understanding and interaction outcome prediction.</p>
+        <p class="relevance">RSI Relevance: Extends evaluation for yanhua.ai agents into multimodal interface manipulation.</p>
+    </div>
+
+    <hr>
+    <h2>Morning Highlights</h2>
     
     <div class="paper">
-        <h3>Test-time Recursive Thinking: Self-Improvement without External Feedback</h3>
-        <p class="meta">Authors: Yufan Zhuang et al. | <a href="https://arxiv.org/abs/2602.03094">2602.03094</a></p>
-        <p>Proposes TRT (Test-time Recursive Thinking), an iterative self-improvement framework that addresses candidate generation and selection challenges without additional training.</p>
-        <p class="relevance">RSI Relevance: Provides a framework for internalizing the self-improvement loop at inference time, reducing dependency on external labels.</p>
-    </div>
-
-    <div class="paper">
-        <h3>Recursive Self-Improvement in LLM Agents Plateaus After Three Iterations</h3>
-        <p class="meta">Authors: Anonymous | <a href="https://www.clawrxiv.io/abs/2604.01236">clawRxiv:2604.01236</a></p>
-        <p>An empirical study across 12 benchmarks showing that RSI gains typically plateau after three iterations, with base model scaling remaining the dominant performance factor.</p>
-        <p class="relevance">RSI Relevance: Acts as a "speed limit" for unconstrained RSI expectations, emphasizing the need for architectural breakthroughs beyond simple iteration.</p>
-    </div>
-
-    <div class="paper">
-        <h3>How Do AI Agents Spend Your Money? Analyzing Token Consumption</h3>
-        <p class="meta">Authors: Longju Bai et al. | <a href="https://arxiv.org/abs/2604.22750">2604.22750</a></p>
-        <p>Systematic study of agentic token economics. Finds that agentic workflows are 1000x more expensive than chat, driven by input tokens. Models fail to predict their own costs.</p>
-        <p class="relevance">RSI Relevance: Establishes the "Integration Tax" and "Complexity Gap" as primary economic barriers to unconstrained RSI.</p>
-    </div>
-
-    <div class="paper">
-        <h3>Agentic World Modeling: The L3 Evolver</h3>
+        <h3>Agentic World Modeling: Foundations, Capabilities, Laws, and Beyond</h3>
         <p class="meta">Authors: Meng Chu et al. | <a href="https://arxiv.org/abs/2604.22748">2604.22748</a></p>
-        <p>Defines "L3 Evolver" as the peak of agentic capability: autonomous revision of environment models upon prediction failure.</p>
-        <p class="relevance">RSI Relevance: Formalizes the goal of Logic Evolution—transitioning from passive prediction to active model-reshaping.</p>
-    </div>
-
-    <div class="paper">
-        <h3>Polaris: A Gödel Agent Framework for SLMs</h3>
-        <p class="meta">Authors: Aditya Kakade et al. | <a href="https://arxiv.org/abs/2603.23129">2603.23129</a></p>
-        <p>Enables 7B models to perform policy repair via experience-abstracted code patches. Persistent, auditable, and scalable RSI for local units.</p>
-        <p class="relevance">RSI Relevance: Proves that the "Sovereign Intelligence" mission is viable on local substrates without frontier-model reliance.</p>
+        <p>Defines "L3 Evolver" as autonomous revision of environment models upon prediction failure.</p>
+        <p class="relevance">RSI Relevance: Formalizes the goal of transitioning from passive prediction to active model-reshaping.</p>
     </div>
 
     <div class="paper">
         <h3>QuantClaw: Precision Where It Matters for OpenClaw</h3>
         <p class="meta">Authors: Manyi Zhang et al. | <a href="https://arxiv.org/abs/2604.22577">2604.22577</a></p>
-        <p>Proposes dynamic precision routing for OpenClaw agents. Tasks are assigned quantization levels based on complexity, saving up to 21.4% in costs with minimal performance loss.</p>
-        <p class="relevance">RSI Relevance: Provides a resource-optimization strategy for RSI Bench, enabling high-frequency low-precision self-refinement iterations.</p>
-    </div>
-
-    <div class="paper">
-        <h3>Superminds Test: Evaluating Collective Intelligence on Moltbook</h3>
-        <p class="meta">Authors: Xirui Li et al. | <a href="https://arxiv.org/abs/2604.22452">2604.22452</a></p>
-        <p>Probes the collective intelligence of the Moltbook society (2M+ agents) and finds no spontaneous emergence of collective intelligence due to shallow interactions.</p>
-        <p class="relevance">RSI Relevance: Critical warning for yanhua.ai; confirms that RSI cannot rely on scale alone. Intelligence requires deep interaction architecture, not just "more agents."</p>
-    </div>
-
-    <div class="paper">
-        <h3>Memanto: Typed Semantic Memory for Long-Horizon Agents</h3>
-        <p class="meta">Authors: Seyed Moein Abtahi et al. | <a href="https://arxiv.org/abs/2604.22085">2604.22085</a></p>
-        <p>Introduces a no-indexing semantic memory layer (Moorcheh) that delivers <90ms retrieval without graph complexity. Achieves state-of-the-art results on long-context benchmarks.</p>
-        <p class="relevance">RSI Relevance: Solves the RSI state-persistence problem; enables agents to maintain "typed" history of self-evolution without the "knowledge graph bottleneck."</p>
-    </div>
-
-    <div class="paper">
-        <h3>MolClaw: An Autonomous Agent with Hierarchical Skills for Drug Discovery</h3>
-        <p class="meta">Authors: Lisheng Zhang et al. | <a href="https://arxiv.org/abs/2604.21937">2604.21937</a></p>
-        <p>Introduces a three-tier hierarchical skill architecture (Tool, Workflow, Discipline) for orchestrating high-complexity scientific pipelines.</p>
-        <p class="relevance">RSI Relevance: Validates the yanhua.ai skill-based framework; defines "Workflow Orchestration" as a key RSI capability.</p>
+        <p>Proposes dynamic precision routing for OpenClaw agents, saving up to 21.4% in costs.</p>
+        <p class="relevance">RSI Relevance: Resource-optimization strategy for RSI Bench iterations.</p>
     </div>
 </body>
 </html>
