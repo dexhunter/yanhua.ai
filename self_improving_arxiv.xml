@@ -1,0 +1,135 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<feed xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/" xmlns:arxiv="http://arxiv.org/schemas/atom" xmlns="http://www.w3.org/2005/Atom">
+  <id>https://arxiv.org/api/IKWlVS7J8mpptOnCLaC720KtPeo</id>
+  <title>arXiv Query: search_query=all:"self-improving AI"&amp;id_list=&amp;start=0&amp;max_results=5</title>
+  <updated>2026-04-27T12:54:57Z</updated>
+  <link href="https://arxiv.org/api/query?search_query=all:%22self-improving+AI%22&amp;start=0&amp;max_results=5&amp;id_list=" type="application/atom+xml"/>
+  <opensearch:itemsPerPage>5</opensearch:itemsPerPage>
+  <opensearch:totalResults>23</opensearch:totalResults>
+  <opensearch:startIndex>0</opensearch:startIndex>
+  <entry>
+    <id>http://arxiv.org/abs/2604.22446v1</id>
+    <title>From Skills to Talent: Organising Heterogeneous Agents as a Real-World Company</title>
+    <updated>2026-04-24T11:02:44Z</updated>
+    <link href="https://arxiv.org/abs/2604.22446v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2604.22446v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Individual agent capabilities have advanced rapidly through modular skills and tool integrations, yet multi-agent systems remain constrained by fixed team structures, tightly coupled coordination logic, and session-bound learning. We argue that this reflects a deeper absence: a principled organisational layer that governs how a workforce of agents is assembled, governed, and improved over time, decoupled from what individual agents know. To fill this gap, we introduce \emph{OneManCompany (OMC)}, a framework that elevates multi-agent systems to the organisational level. OMC encapsulates skills, tools, and runtime configurations into portable agent identities called \emph{Talents}, orchestrated through typed organisational interfaces that abstract over heterogeneous backends. A community-driven \emph{Talent Market} enables on-demand recruitment, allowing the organisation to close capability gaps and reconfigure itself dynamically during execution. Organisational decision-making is operationalised through an \emph{Explore-Execute-Review} ($\text{E}^2$R) tree search, which unifies planning, execution, and evaluation in a single hierarchical loop: tasks are decomposed top-down into accountable units and execution outcomes are aggregated bottom-up to drive systematic review and refinement. This loop provides formal guarantees on termination and deadlock freedom while mirroring the feedback mechanisms of human enterprises. Together, these contributions transform multi-agent systems from static, pre-configured pipelines into self-organising and self-improving AI organisations capable of adapting to open-ended tasks across diverse domains. Empirical evaluation on PRDBench shows that OMC achieves an $84.67\%$ success rate, surpassing the state of the art by $15.48$ percentage points, with cross-domain case studies further demonstrating its generality.</summary>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-04-24T11:02:44Z</published>
+    <arxiv:comment>33 pages,13 figures</arxiv:comment>
+    <arxiv:primary_category term="cs.AI"/>
+    <author>
+      <name>Zhengxu Yu</name>
+    </author>
+    <author>
+      <name>Yu Fu</name>
+    </author>
+    <author>
+      <name>Zhiyuan He</name>
+    </author>
+    <author>
+      <name>Yuxuan Huang</name>
+    </author>
+    <author>
+      <name>Lee Ka Yiu</name>
+    </author>
+    <author>
+      <name>Meng Fang</name>
+    </author>
+    <author>
+      <name>Weilin Luo</name>
+    </author>
+    <author>
+      <name>Jun Wang</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2603.19461v1</id>
+    <title>Hyperagents</title>
+    <updated>2026-03-19T20:50:08Z</updated>
+    <link href="https://arxiv.org/abs/2603.19461v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2603.19461v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Self-improving AI systems aim to reduce reliance on human engineering by learning to improve their own learning and problem-solving processes. Existing approaches to self-improvement rely on fixed, handcrafted meta-level mechanisms, fundamentally limiting how fast such systems can improve. The Darwin Gödel Machine (DGM) demonstrates open-ended self-improvement in coding by repeatedly generating and evaluating self-modified variants. Because both evaluation and self-modification are coding tasks, gains in coding ability can translate into gains in self-improvement ability. However, this alignment does not generally hold beyond coding domains. We introduce \textbf{hyperagents}, self-referential agents that integrate a task agent (which solves the target task) and a meta agent (which modifies itself and the task agent) into a single editable program. Crucially, the meta-level modification procedure is itself editable, enabling metacognitive self-modification, improving not only the task-solving behavior, but also the mechanism that generates future improvements. We instantiate this framework by extending DGM to create DGM-Hyperagents (DGM-H), eliminating the assumption of domain-specific alignment between task performance and self-modification skill to potentially support self-accelerating progress on any computable task. Across diverse domains, the DGM-H improves performance over time and outperforms baselines without self-improvement or open-ended exploration, as well as prior self-improving systems. Furthermore, the DGM-H improves the process by which it generates new agents (e.g., persistent memory, performance tracking), and these meta-level improvements transfer across domains and accumulate across runs. DGM-Hyperagents offer a glimpse of open-ended AI systems that do not merely search for better solutions, but continually improve their search for how to improve.</summary>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-03-19T20:50:08Z</published>
+    <arxiv:comment>Code at https://github.com/facebookresearch/Hyperagents</arxiv:comment>
+    <arxiv:primary_category term="cs.AI"/>
+    <author>
+      <name>Jenny Zhang</name>
+    </author>
+    <author>
+      <name>Bingchen Zhao</name>
+    </author>
+    <author>
+      <name>Wannan Yang</name>
+    </author>
+    <author>
+      <name>Jakob Foerster</name>
+    </author>
+    <author>
+      <name>Jeff Clune</name>
+    </author>
+    <author>
+      <name>Minqi Jiang</name>
+    </author>
+    <author>
+      <name>Sam Devlin</name>
+    </author>
+    <author>
+      <name>Tatiana Shavrina</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2603.18073v1</id>
+    <title>Continually self-improving AI</title>
+    <updated>2026-03-18T04:54:05Z</updated>
+    <link href="https://arxiv.org/abs/2603.18073v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2603.18073v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Modern language model-based AI systems are remarkably powerful, yet their capabilities remain fundamentally capped by their human creators in three key ways. First, although a model's weights can be updated via fine-tuning, acquiring new knowledge from small, specialized corpora after pretraining remains highly data-inefficient. Second, the training of these systems relies heavily on finite, human-generated data from across history. Third, the pipelines used to train AI models are confined by the algorithms that human researchers can discover and explore. This thesis takes a small step toward overcoming these inherent limitations, presenting three chapters aimed at breaking these dependencies to create continually self-improving AI. First, to overcome this data-efficiency barrier in knowledge acquisition, we propose a synthetic data approach that diversifies and amplifies small corpora into rich knowledge representations, enabling a model to effectively update its parameters from limited source material. Second, to reduce reliance on human data, we show that given a fixed amount of such data, the model can self-generate synthetic data to bootstrap its fundamental pretraining capabilities without distillation from any off-the-shelf, instruction-tuned LM. Finally, to transcend human-engineered training paradigms, we demonstrate that by scaling search during test time over the space of algorithms, AI can search over a larger space of learning algorithm configurations than human researchers can explore manually.</summary>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-03-18T04:54:05Z</published>
+    <arxiv:comment>PhD thesis</arxiv:comment>
+    <arxiv:primary_category term="cs.AI"/>
+    <author>
+      <name>Zitong Yang</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2602.07755v1</id>
+    <title>Learning to Continually Learn via Meta-learning Agentic Memory Designs</title>
+    <updated>2026-02-08T01:20:49Z</updated>
+    <link href="https://arxiv.org/abs/2602.07755v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2602.07755v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>The statelessness of foundation models bottlenecks agentic systems' ability to continually learn, a core capability for long-horizon reasoning and adaptation. To address this limitation, agentic systems commonly incorporate memory modules to retain and reuse past experience, aiming for continual learning during test time. However, most existing memory designs are human-crafted and fixed, which limits their ability to adapt to the diversity and non-stationarity of real-world tasks. In this paper, we introduce ALMA (Automated meta-Learning of Memory designs for Agentic systems), a framework that meta-learns memory designs to replace hand-engineered memory designs, therefore minimizing human effort and enabling agentic systems to be continual learners across diverse domains. Our approach employs a Meta Agent that searches over memory designs expressed as executable code in an open-ended manner, theoretically allowing the discovery of arbitrary memory designs, including database schemas as well as their retrieval and update mechanisms. Extensive experiments across four sequential decision-making domains demonstrate that the learned memory designs enable more effective and efficient learning from experience than state-of-the-art human-crafted memory designs on all benchmarks. When developed and deployed safely, ALMA represents a step toward self-improving AI systems that learn to be adaptive, continual learners.</summary>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-02-08T01:20:49Z</published>
+    <arxiv:primary_category term="cs.AI"/>
+    <author>
+      <name>Yiming Xiong</name>
+    </author>
+    <author>
+      <name>Shengran Hu</name>
+    </author>
+    <author>
+      <name>Jeff Clune</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2602.05570v1</id>
+    <title>TangramSR: Can Vision-Language Models Reason in Continuous Geometric Space?</title>
+    <updated>2026-02-05T11:49:30Z</updated>
+    <link href="https://arxiv.org/abs/2602.05570v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2602.05570v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Humans excel at spatial reasoning tasks like Tangram puzzle assembly through cognitive processes involving mental rotation, iterative refinement, and visual feedback. Inspired by how humans solve Tangram puzzles through trial-and-error, observation, and correction, we design a framework that models these human cognitive mechanisms. However, comprehensive experiments across five representative Vision-Language Models (VLMs) reveal systematic failures in continuous geometric reasoning: average IoU of only 0.41 on single-piece tasks, dropping to 0.23 on two-piece composition, far below human performance where children can complete Tangram tasks successfully. This paper addresses a fundamental challenge in self-improving AI: can models iteratively refine their predictions at test time without parameter updates? We introduce a test-time self-refinement framework that combines in-context learning (ICL) with reward-guided feedback loops, inspired by human cognitive processes. Our training-free verifier-refiner agent applies recursive refinement loops that iteratively self-refine predictions based on geometric consistency feedback, achieving IoU improvements from 0.63 to 0.932 on medium-triangle cases without any model retraining. This demonstrates that incorporating human-inspired iterative refinement mechanisms through ICL and reward loops can substantially enhance geometric reasoning in VLMs, moving self-improving AI from promise to practice in continuous spatial domains. Our work is available at this anonymous link https://anonymous.4open.science/r/TangramVLM-F582/.</summary>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-02-05T11:49:30Z</published>
+    <arxiv:comment>13 pages, 4 figures</arxiv:comment>
+    <arxiv:primary_category term="cs.AI"/>
+    <author>
+      <name>Yikun Zong</name>
+    </author>
+    <author>
+      <name>Cheston Tan</name>
+    </author>
+  </entry>
+</feed>
