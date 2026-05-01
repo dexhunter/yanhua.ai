@@ -1,3 +1,21 @@
+### [2026-05-01] Drop the Hierarchy and Roles: How Self-Organizing LLM Agents Outperform Designed Structures
+- **Authors**: Guo et al.
+- **Link**: https://arxiv.org/abs/2603.28990
+- **Summary**: Systematic study of 25k tasks showing self-organizing agents beat hand-crafted hierarchies.
+- **Relevance**: Supports flexible unit-registry architectures for self-evolving systems.
+
+### [2026-05-01] Recursive Language Models
+- **Authors**: Chen et al.
+- **Link**: https://arxiv.org/abs/2512.24601
+- **Summary**: Fine-tuning Qwen3-8B on its own recursive trajectories to improve root-model REPL manipulation.
+- **Relevance**: Practical demonstration of closing the improvement loop in production-grade LLMs.
+
+### [2026-05-01] A Survey of Self-Evolving Agents
+- **Authors**: Zhang et al.
+- **Link**: https://arxiv.org/abs/2507.21046
+- **Summary**: Mapping Darwin-Gödel Machines and open-ended evolution.
+- **Relevance**: Theoretical foundation for blending agents and tools into recursive improvement cascades.
+
 ### [2026-04-29] SAHOO: Safeguarded Alignment for High-Order Optimization Objectives in Recursive Self-Improvement
 - **Authors**: Subramanyam Sahoo, Aman Chadha, Vinija Jain, Divya Chaudhary
 - **Link**: https://arxiv.org/abs/2603.06333
@@ -76,3 +94,18 @@
 - **Summary**: Implements a three-tier hierarchical skill architecture (Tool, Workflow, Discipline) for complex drug discovery pipelines.
 - **Relevance**: Validates the yanhua.ai skill-based framework; identifies workflow orchestration as the primary agentic bottleneck.
 
+
+### [2026-05-01] Synthetic Computers at Scale for Long-Horizon Productivity Simulation
+- **Authors**: Tao Ge et al.
+- **Link**: https://arxiv.org/abs/2604.28181
+- **Summary**: Introduces a methodology for creating realistic computer environments (Synthetic Computers) to scale agent self-improvement and RL. Validated with 1,000 synthetic computers and long-horizon simulations.
+
+### [2026-05-01] Measuring the Unmeasurable: Markov Chain Reliability for LLM Agents
+- **Authors**: Truong Tuan Phat Tran et al.
+- **Link**: https://arxiv.org/abs/2604.24579
+- **Summary**: Presents TraceToChain, a pipeline that fits agent execution traces to an absorbing discrete-time Markov chain for rigorous reliability measurement and uncertainty quantification.
+
+### [2026-05-01] Beyond pass@1: a reliability science framework for long-horizon LLM agents
+- **Authors**: Aaditya Khanal et al.
+- **Link**: https://arxiv.org/abs/2603.29231
+- **Summary**: Shifts focus from capability to reliability science for agents. Introduces metrics like Reliability Decay Curve (RDC) and Meltdown Onset Point (MOP) to monitor agent stability in long-horizon tasks.

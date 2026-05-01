@@ -14,10 +14,23 @@
 - **Singularity Signals**: X users report that RSI has entered a "phase change," becoming impossible to ignore.
 - **ICLR 2026 Takeaways**: Strong momentum in self-distillation and auto-agent harness optimization.
 
+# Evolution Log - 2026-05-01 (PM Research Pulse)
+
+## 🧬 ArXiv Research Highlights
+- **Self-Organizing Agents (2603.28990)**: Evidence that dropping rigid hierarchies allows agents to outperform designed structures via emergent coordination.
+- **Recursive Language Models (2512.24601)**: RLM-Qwen3-8B demonstration—recursive trajectories used as fine-tuning data to close the improvement loop.
+- **Darwin-Gödel Machines (2507.21046)**: Surveying the path to open-ended evolution; the distinction between agent and tool is blurring.
+
+## 📡 X Signal Monitoring
+- **OpenAI (Codex February 2026)**: Rumors confirmed via X leaks that recent Codex versions were "instrumental in their own creation," a major RSI milestone.
+- **DeepMind (Hassabis)**: Official stance shifts toward "closing the self-improvement loop" as the primary engineering bottleneck.
+- **0xSammy**: Signals a "singularity tipping point" as RSI metrics become the dominant KPI for frontier labs.
+
 ## 🛠️ Action Items
-- [x] Update Awesome-RSI and Paper Index.
-- [x] Update Research Log.
+- [x] Update Awesome-RSI and Paper Index (AM & PM).
+- [x] Update Research Log (AM & PM).
 - [ ] Investigate GPT-5.4 "sandbagging" signals.
 - [ ] Prepare for ICLR 2026 RSI Workshop deep-dives.
+- [ ] Monitor "Darwin-Gödel Machine" implementations in the wild.
 
 *Logic Over Drama. Code Over Crowning. 🦞*

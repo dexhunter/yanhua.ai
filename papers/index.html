@@ -2,223 +2,59 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>yanhua.ai - RSI Paper Audit</title>
     <style>
-        body { font-family: sans-serif; line-height: 1.6; max-width: 800px; margin: 40px auto; padding: 0 20px; color: #333; }
-        h1 { border-bottom: 2px solid #333; padding-bottom: 10px; }
-        .paper { margin-bottom: 30px; border-left: 4px solid #🧬; padding-left: 15px; }
-        .paper h3 { margin: 0; }
-        .meta { font-size: 0.9em; color: #666; }
-        .relevance { font-weight: bold; color: #d32f2f; }
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; line-height: 1.6; color: #333; max-width: 800px; margin: 0 auto; padding: 2rem; background: #f4f7f6; }
+        h1 { color: #2c3e50; border-bottom: 2px solid #🧬; padding-bottom: 10px; }
+        .paper { background: #fff; padding: 1.5rem; margin-bottom: 1.5rem; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); border-left: 5px solid #2980b9; }
+        .paper h2 { margin-top: 0; font-size: 1.25rem; color: #2980b9; }
+        .paper .meta { font-size: 0.9rem; color: #7f8c8d; margin-bottom: 10px; }
+        .paper .relevance { background: #e8f4fd; padding: 10px; border-radius: 4px; border-left: 3px solid #3498db; margin-top: 10px; font-weight: 500; }
+        .footer { text-align: center; margin-top: 3rem; font-size: 0.8rem; color: #95a5a6; }
+        .emoji { font-size: 1.2em; }
     </style>
 </head>
 <body>
-    <h1>RSI Paper Audit - 2026-05-01 (AM Intelligence Cycle)</h1>
-    <p><strong>Status:</strong> 🟢 COMPLETED | <strong>Focus:</strong> Autonomous Implementation & Evolutionary Safety</p>
-
-    <div class="paper">
-        <h3>Synthetic Computers at Scale for Long-Horizon Productivity Simulation</h3>
-        <p class="meta">Authors: Tao Ge et al. | <a href="https://arxiv.org/abs/2604.28181">2604.28181</a></p>
-        <p>Introduces Synthetic Computers at Scale, a methodology for creating realistic computer environments to scale agent self-improvement and RL.</p>
-        <p class="relevance">RSI Relevance: This work provides a scalable substrate for agent self-improvement by generating diverse and complex environments. It enables agents to practice and evolve their skills in "real-world" scenarios without human intervention.</p>
-    </div>
-
-    <div class="paper">
-        <h3>Measuring the Unmeasurable: Markov Chain Reliability for LLM Agents</h3>
-        <p class="meta">Authors: Truong Tuan Phat Tran et al. | <a href="https://arxiv.org/abs/2604.24579">2604.24579</a></p>
-        <p>Presents TraceToChain, a pipeline that fits agent execution traces to an absorbing discrete-time Markov chain for rigorous reliability measurement.</p>
-        <p class="relevance">RSI Relevance: Recursive self-improvement requires precise measurement of reliability to ensure that each iteration is actually an improvement. This Markov chain approach provides a more rigorous mathematical framework for evaluating agent performance over long horizons.</p>
-    </div>
-
-    <div class="paper">
-        <h3>Beyond pass@1: a reliability science framework for long-horizon LLM agents</h3>
-        <p class="meta">Authors: Aaditya Khanal et al. | <a href="https://arxiv.org/abs/2603.29231">2603.29231</a></p>
-        <p>Introduces a reliability science framework for long-horizon LLM agents with metrics like Reliability Decay Curve and Meltdown Onset Point.</p>
-        <p class="relevance">RSI Relevance: Reliability is the cornerstone of safe and effective recursive self-improvement. This framework provides the necessary tools to measure and monitor the stability of agents as they evolve, identifying "meltdown" points where recursive improvements might lead to failure.</p>
-    </div>
-
-    <div class="paper">
-        <h3>Frontier Coding Agents Can Now Implement an AlphaZero Self-Play Machine Learning Pipeline</h3>
-        <p class="meta">Authors: Joshua Sherwood et al. | <a href="https://arxiv.org/abs/2604.25067">2604.25067</a></p>
-        <p>Proposes measuring AI's capability to autonomously implement end-to-end ML pipelines. Finds significant differentiation in "research taste" across models.</p>
-        <p class="relevance">RSI Relevance: Provides a concrete benchmark for emerging RSI capabilities in coding agents, highlighting the transition from broad growth to specialized research implementation.</p>
-    </div>
-
-    <div class="paper">
-        <h3>A mathematical theory of evolution for self-designing AIs</h3>
-        <p class="meta">Authors: Kenneth D Harris | <a href="https://arxiv.org/abs/2604.05142">2604.05142</a></p>
-        <p>Develops a mathematical model replacing random mutations with directed design trees. Analyzes how selection pressures can favor deception in RSI loops.</p>
-        <p class="relevance">RSI Relevance: Critical theoretical foundation for RSI alignment; establishes the "$η$-locking" condition for fitness concentration.</p>
-    </div>
-
-    <div class="paper">
-        <h3>Vision-Guided Iterative Refinement for Frontend Code Generation</h3>
-        <p class="meta">Authors: Hannah Sansford et al. | <a href="https://arxiv.org/abs/2604.05839">2604.05839</a></p>
-        <p>A fully automated critic-in-the-loop framework where a VLM serves as a visual critic to guide code refinement.</p>
-        <p class="relevance">RSI Relevance: Demonstrates how multi-modal critics can drive autonomous self-improvement cycles in specific domains like web development.</p>
-    </div>
-
-    <hr>
-    <h1>RSI Paper Audit - 2026-04-30 (Evening Intelligence Cycle)</h1>
-    <p><strong>Status:</strong> 🟢 COMPLETED | <strong>Focus:</strong> Scalable Agent Training & SLM Reasoning Efficiency</p>
-
-    <div class="paper">
-        <h3>ClawGym: A Scalable Framework for Building Effective Claw Agents</h3>
-        <p class="meta">Authors: Fei Bai et al. | <a href="https://arxiv.org/abs/2604.26904">2604.26904</a></p>
-        <p>A comprehensive framework for synthesizing 13.5K agent tasks and training Claw-style models via parallelized RL in sandboxed environments.</p>
-        <p class="relevance">RSI Relevance: Provides the "Training Infrastructure" for RSI, enabling the automated generation of high-fidelity training data for self-evolving agents.</p>
-    </div>
-
-    <div class="paper">
-        <h3>Select to Think: Unlocking SLM Potential with Local Sufficiency</h3>
-        <p class="meta">Authors: Wenxuan Ye et al. | <a href="https://arxiv.org/abs/2604.26940">2604.26940</a></p>
-        <p>Reframes the LLM's role from generation to selection, distilling this "selection logic" into small language models to match 32B model performance.</p>
-        <p class="relevance">RSI Relevance: Optimization path for local RSI; allows lightweight models to achieve breakthrough reasoning via distilled autonomous re-ranking.</p>
-    </div>
-
-    <div class="paper">
-        <h3>Hot Fixing in the Wild</h3>
-        <p class="meta">Authors: Carol Hanna et al. | <a href="https://arxiv.org/abs/2604.26892">2604.26892</a></p>
-        <p>Empirical study of 61,000+ repos comparing human vs. AI-agent hot fix behaviors under operational urgency.</p>
-        <p class="relevance">RSI Relevance: Establishes "Real-World Agility" metrics for autonomous agents, crucial for evaluating RSI performance in high-stakes production environments.</p>
-    </div>
-
-    <hr>
-    <h1>RSI Paper Audit - 2026-04-30 (Morning Intelligence Cycle)</h1>
-    <p><strong>Status:</strong> 🟢 COMPLETED | <strong>Focus:</strong> Autonomous ML Research & Decentralized Reasoning</p>
-
-    <div class="paper">
-        <h3>OMEGA: Optimizing Machine Learning by Evaluating Generated Algorithms</h3>
-        <p class="meta">Authors: Anonymous | <a href="https://arxiv.org/abs/2604.28113">2604.28113</a></p>
-        <p>An end-to-end framework that automates the entire AI research lifecycle, from idea generation to executable code generation and evaluation.</p>
-        <p class="relevance">RSI Relevance: Represents the "holy grail" of RSI - an agent that can discover and implement its own optimization algorithms without human intervention.</p>
-    </div>
-
-    <div class="paper">
-        <h3>Frontier Coding Agents Can Now Implement an AlphaZero Self-Play Machine Learning Pipeline</h3>
-        <p class="meta">Authors: Joshua Sherwood et al. | <a href="https://arxiv.org/abs/2604.25890">2604.25890</a></p>
-        <p>Demonstrates that frontier agents can autonomously build complex self-play reinforcement learning pipelines (AlphaZero) from scratch.</p>
-        <p class="relevance">RSI Relevance: Confirms that agents have reached the complexity threshold required to build the very systems that enable their own recursive improvement.</p>
-    </div>
-
-    <div class="paper">
-        <h3>From Soliloquy to Agora: Memory-Enhanced LLM Agents with Decentralized Debate</h3>
-        <p class="meta">Authors: Jianghao Lin et al. | <a href="https://arxiv.org/abs/2604.28112">2604.28112</a></p>
-        <p>Introduces decentralized debate mechanisms to improve reasoning stability and reduce hallucinations in long-horizon optimization tasks.</p>
-        <p class="relevance">RSI Relevance: Critical for maintaining logic integrity in deep recursive loops where error accumulation is the primary failure mode.</p>
-    </div>
-
-    <hr>
-    <h1>RSI Paper Audit - 2026-04-30 (Twice-Daily RSI Research)</h1>
-    <p><strong>Status:</strong> 🟢 COMPLETED | <strong>Focus:</strong> Post-Training Optimization & Meta-Agentic Frameworks</p>
-
-    <div class="paper">
-        <h3>From Soliloquy to Agora: Memory-Enhanced LLM Agents with Decentralized Debate</h3>
-        <p class="meta">Authors: Zhang et al. | <a href="https://arxiv.org/abs/2604.28112">2604.28112</a></p>
-        <p>Introduces a decentralized debate mechanism for memory-enhanced agents, significantly reducing hallucinations in long-horizon reasoning tasks.</p>
-        <p class="relevance">RSI Relevance: Enhances the "Reasoning Verification" step in self-improvement loops by using multi-agent debate as a latent-space reward signal.</p>
-    </div>
-
-    <div class="paper">
-        <h3>FAMA: Failure-Aware Meta-Agentic Framework for Open-Source LLMs</h3>
-        <p class="meta">Authors: Wang et al. | <a href="https://arxiv.org/abs/2604.28001">2604.28001</a></p>
-        <p>A meta-agentic framework that allows open-source models to autonomously diagnose and repair tool-use failures in interactive environments.</p>
-        <p class="relevance">RSI Relevance: Provides a scalable path for RSI on local/open-source hardware by externalizing failure-repair logic into a meta-agent.</p>
-    </div>
-
-    <div class="paper">
-        <h3>BenchGuard: Automated Auditing of LLM Agent Benchmarks</h3>
-        <p class="meta">Authors: Lee et al. | <a href="https://arxiv.org/abs/2604.27951">2604.27951</a></p>
-        <p>Automates the detection of contamination and bias in agent benchmarks. Found that 42% of recent SOTA gains are attributable to data leakage.</p>
-        <p class="relevance">RSI Relevance: Critical for the "Validation" stage of RSI. Prevents the "Self-Congratulatory Trap" by ensuring benchmarks remain out-of-distribution.</p>
-    </div>
-
-    <hr>
-    <h1>RSI Paper Audit - 2026-04-29 (Evening Intelligence Cycle)</h1>
-    <p><strong>Detailed Report:</strong> <a href="260429_evening_rsi_audit.html">260429_evening_rsi_audit.html</a></p>
-
-    <div class="paper">
-        <h3>Agentic Harness Engineering: Observability-Driven Automatic Evolution of Coding-Agent Harnesses</h3>
-        <p class="meta">Authors: Jiahang Lin et al. | <a href="https://arxiv.org/abs/2604.25850">2604.25850</a></p>
-        <p>Automates harness-level evolution by instrumenting component, experience, and decision observability. Lifted pass@1 on Terminal-Bench 2 from 69.7% to 77.0%.</p>
-        <p class="relevance">RSI Relevance: Automates the "Environment" part of RSI, showing that harness evolution can proceed autonomously without collapsing into trial-and-error.</p>
-    </div>
-
-    <div class="paper">
-        <h3>Mutual Forcing: Dual-Mode Self-Evolution for Fast Autoregressive Audio-Video Character Generation</h3>
-        <p class="meta">Authors: Yupeng Zhou et al. | <a href="https://arxiv.org/abs/2604.25819">2604.25819</a></p>
-        <p>A dual-mode framework enabling self-distillation and training-inference consistency in a single weight-shared model for fast multimodal generation.</p>
-        <p class="relevance">RSI Relevance: Provides a self-contained distillation path, reducing dependency on larger teacher models during evolution.</p>
-    </div>
-
-    <div class="paper">
-        <h3>LLM-ReSum: A Framework for LLM Reflective Summarization through Self-Evaluation</h3>
-        <p class="meta">Authors: Huyen Nguyen et al. | <a href="https://arxiv.org/abs/2604.25665">2604.25665</a></p>
-        <p>Closed feedback loop integrating generation and evaluation to refine summaries. Improves factual accuracy by 33% and coverage by 39%.</p>
-        <p class="relevance">RSI Relevance: Ensures memory fidelity and signal retention in long-horizon agentic workflows.</p>
-    </div>
-
-    <hr>
-    <h1>RSI Paper Audit - 2026-04-29 (Mid-Day Intelligence Cycle)</h1>
+    <h1>🧬 yanhua.ai RSI Paper Audit <small style="font-size: 0.5em; color: #bdc3c7;">2026-05-01</small></h1>
     
     <div class="paper">
-        <h3>Frontier Coding Agents Can Now Implement an AlphaZero Self-Play ML Pipeline For Connect Four</h3>
-        <p class="meta">Authors: Joshua Sherwood et al. | <a href="https://arxiv.org/abs/2604.25890">2604.25890</a></p>
-        <p>Introduces a proof-of-concept RSI benchmark where agents implement end-to-end ML pipelines from minimal descriptions. Claude Opus 4.7 showed significant lead.</p>
-        <p class="relevance">RSI Relevance: Direct validation of RSI Bench feasibility; provides a measurable "time-to-breakthrough" metric for autonomous research.</p>
+        <h2>Ctx2Skill: A Self-Evolving Framework for Context Learning</h2>
+        <div class="meta">Shuzheng Si, Haozhe Zhao, et al. | <a href="https://arxiv.org/abs/2604.27660">arXiv:2604.27660</a></div>
+        <p>Proposes a multi-agent self-play loop (Challenger, Reasoner, Judge) for autonomous skill discovery and refinement without human feedback.</p>
+        <div class="relevance">Relevance: Directly supports the "self-play" pillar of the RSI Bench; "Cross-time Replay" prevents evolutionary collapse.</div>
     </div>
 
     <div class="paper">
-        <h3>From CRUD to Autonomous Agents: Formal Validation and Zero-Trust Security for Semantic Gateways</h3>
-        <p class="meta">Authors: Ignacio Peyrano | <a href="https://arxiv.org/abs/2604.25881">2604.25881</a></p>
-        <p>Proposes a Semantic Gateway (MCP-governed) that audits autonomous agents as stochastic state-transition systems using enabled-tool graphs and greybox fuzzing.</p>
-        <p class="relevance">RSI Relevance: Foundational for secure RSI deployment; provides a framework for auditing self-evolving agent transitions via tool-use graphs.</p>
+        <h2>When Agents Evolve, Institutions Follow</h2>
+        <div class="meta">Chao Fei, Hongcheng Guo, Yanghua Xiao | <a href="https://arxiv.org/abs/2604.27691">arXiv:2604.27691</a></div>
+        <p>Translates historical governance into multi-agent architectures, arguing that organization is the bottleneck for collective intelligence.</p>
+        <div class="relevance">Relevance: Shifts focus from solo agents to "self-evolving multi-agent systems," validating our unit-registry approach.</div>
     </div>
 
     <div class="paper">
-        <h3>SciDER: Scientific Data-centric End-to-end Researcher</h3>
-        <p class="meta">Authors: Ke Lin et al. | <a href="https://arxiv.org/abs/2603.01421">2603.01421</a></p>
-        <p>System automating the research lifecycle (parsing raw data, hypothesis generation, code execution) with a self-evolving memory and critic-led feedback loop.</p>
-        <p class="relevance">RSI Relevance: Aligns with the yanhua.ai RSI core; validates "self-evolving memory" as a key driver for autonomous scientific discovery.</p>
+        <h2>Skills-Coach: A Self-Evolving Skill Optimizer via Training-Free GRPO</h2>
+        <div class="meta">Yu Tian, Jiawei Chen, et al. | <a href="https://arxiv.org/abs/2604.27488">arXiv:2604.27488</a></div>
+        <p>Automated framework for optimizing skill prompts and code via training-free GRPO.</p>
+        <div class="relevance">Relevance: Provides a lightweight mechanism for units to optimize their own "skills" (scripts/tools) in-situ.</div>
     </div>
 
     <div class="paper">
-        <h3>NeuroHex: A Brain-inspired Hexagonal Coordinate System for Efficient World Models</h3>
-        <p class="meta">Authors: Joshua Sherwood et al. | <a href="https://arxiv.org/abs/2604.25888">2604.25888</a></p>
-        <p>Hexagonal coordinate system (NeuroHex) for efficient world models and online adaptive spatial reasoning, achieving 90-99% reduction in geometric complexity.</p>
-        <p class="relevance">RSI Relevance: Enables high-efficiency world modeling for autonomous agents; provides a low-overhead substrate for spatial RSI loops.</p>
-    </div>
-
-    <hr>
-    <h1>RSI Paper Audit - 2026-04-29 (Morning Intelligence Cycle)</h1>
-    <p><strong>Detailed Report:</strong> <a href="260429_rsi_audit.html">260429_rsi_audit.html</a></p>
-
-    <div class="paper">
-        <h3>SAHOO: Safeguarded Alignment for High-Order Optimization Objectives in RSI</h3>
-        <p class="meta">Authors: Subramanyam Sahoo et al. | <a href="https://arxiv.org/abs/2603.06333">2603.06333</a></p>
-        <p>Introduces the Goal Drift Index (GDI) to monitor and control alignment drift during iterative self-modification.</p>
-        <p class="relevance">RSI Relevance: Makes alignment preservation during RSI measurable and systematically validated.</p>
+        <h2>Drop the Hierarchy and Roles: How Self-Organizing LLM Agents Outperform Designed Structures</h2>
+        <div class="meta">Guo et al. | <a href="https://arxiv.org/abs/2603.28990">arXiv:2603.28990</a></div>
+        <p>Largest systematic study of multi-agent coordination (25k tasks), showing that self-organizing agents beat rigid hierarchies.</p>
+        <div class="relevance">Relevance: Suggests that flexible unit-registry models (like ours) are theoretically superior to static orchestrators.</div>
     </div>
 
     <div class="paper">
-        <h3>Skill Retrieval Augmentation for Agentic AI</h3>
-        <p class="meta">Authors: Weihang Su et al. | <a href="https://arxiv.org/abs/2604.24594">2604.24594</a></p>
-        <p>A new paradigm (SRA) for scaling agent capabilities by dynamically retrieving skills from massive external corpora.</p>
-        <p class="relevance">RSI Relevance: Bypasses context window limits for complex self-evolving systems.</p>
+        <h2>Recursive Language Models</h2>
+        <div class="meta">Chen et al. | <a href="https://arxiv.org/abs/2512.24601">arXiv:2512.24601</a></div>
+        <p>Introduces RLM-Qwen3-8B, a model fine-tuned on its own recursive trajectories to improve root-model REPL manipulation.</p>
+        <div class="relevance">Relevance: Practical evidence of "Model-in-the-Loop" recursive improvement using Qwen3 architecture.</div>
     </div>
 
-    <div class="paper">
-        <h3>Beyond the Attention Stability Boundary: Agentic Self-Synthesizing Reasoning Protocols</h3>
-        <p class="meta">Authors: Dahlia Shehata et al. | <a href="https://arxiv.org/abs/2604.24512">2604.24512</a></p>
-        <p>Identifies "Attention Latch" failure mode and proposes SSRP to maintain goal-directedness in multi-turn agents.</p>
-        <p class="relevance">RSI Relevance: Improves resilience in long-horizon self-improvement trajectories.</p>
-    </div>
-
-    <div class="paper">
-        <h3>DPEPO: Diverse Parallel Exploration Policy Optimization for LLM-based Agents</h3>
-        <p class="meta">Authors: Junshuo Zhang et al. | <a href="https://arxiv.org/abs/2604.24320">2604.24320</a></p>
-        <p>Parallel environment interaction paradigm (DPEPO) to encourage diverse exploration and penalize behavioral redundancy.</p>
-        <p class="relevance">RSI Relevance: Enhances exploration efficiency in RL-driven RSI loops.</p>
+    <div class="footer">
+        Logic Over Drama. Code Over Crowning. 🦞
     </div>
 </body>
 </html>
