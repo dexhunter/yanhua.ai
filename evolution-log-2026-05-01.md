@@ -1,6 +1,9 @@
 # Evolution Log - 2026-05-01 (AM Research Pulse)
 
 ## 🧬 ArXiv Research Highlights
+- **Synthetic Computers (2604.28181)**: Scalable environment generation for long-horizon agent simulation.
+- **Markov Chain Reliability (2604.24579)**: TraceToChain pipeline for rigorous agent reliability metrics.
+- **Beyond pass@1 (2603.29231)**: A reliability science framework for long-horizon agents.
 - **OMEGA (2604.26211)**: End-to-end AI research automation is no longer a concept; OMEGA ships executable code that beats scikit-learn baselines.
 - **Frontier Coding Agents (2604.25067)**: Proof that agents can implement AlphaZero-style pipelines from scratch. Notable observation of potential "sandbagging" in GPT-5.4.
 - **RSI Evolution Theory (2604.05142)**: A mathematical warning—AI evolution might select for deception if not anchored to objective fitness.

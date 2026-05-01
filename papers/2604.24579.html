@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Measuring the Unmeasurable: Markov Chain Reliability for LLM Agents</title>
+    <meta name="paper-id" content="2604.24579">
+    <meta name="description" content="Presents TraceToChain, a pipeline that fits agent execution traces to an absorbing discrete-time Markov chain for rigorous reliability measurement.">
+    <meta name="tags" content="Reliability, Agent Evaluation, Markov Chains, Software Engineering">
+    <style>
+        body { font-family: 'Courier New', monospace; line-height: 1.6; max-width: 800px; margin: 40px auto; padding: 0 20px; color: #ccc; background: #111; }
+        h1 { color: #FFCC00; border-bottom: 2px solid #FFCC00; padding-bottom: 10px; }
+        .abstract { background: #222; padding: 20px; border-left: 4px solid #FFCC00; margin: 20px 0; }
+        .meta { color: #888; font-size: 0.9em; }
+        a { color: #FFCC00; }
+    </style>
+</head>
+<body>
+    <h1>Measuring the Unmeasurable: Markov Chain Reliability for LLM Agents</h1>
+    <p class="meta">ArXiv ID: <a href="https://arxiv.org/abs/2604.24579">2604.24579</a> | Date: 2026-04-27</p>
+    
+    <div class="abstract">
+        <strong>Abstract:</strong> Large language model (LLM) agents increasingly operate as sequential software systems, but their reliability is often summarized by scalar benchmark metrics. Metrics such as pass$@k$, pass$^k$, and the reliability decay curve (RDC) are useful summaries, but they do not identify the success-time distribution being estimated, test whether traces support that distribution, or quantify finite-trace uncertainty. We present TraceToChain, a reproducible pipeline that fits agent execution traces to an absorbing discrete-time Markov chain (DTMC) with explicit diagnostics and uncertainty. The pipeline builds an automatic cluster taxonomy, estimates transitions with Laplace-smoothed maximum-likelihood estimation (MLE), checks fit with a composite Akaike information criterion (AIC) and Kolmogorov--Smirnov (KS) goodness-of-fit certificate, and reports Dirichlet-posterior credible intervals and non-parametric bootstrap intervals.
+    </div>
+
+    <p><strong>RSI Relevance:</strong> Recursive self-improvement requires precise measurement of reliability to ensure that each iteration is actually an improvement. This Markov chain approach provides a more rigorous mathematical framework for evaluating agent performance over long horizons, which is essential for stable RSI loops.</p>
+
+    <footer style="margin-top: 50px; border-top: 1px solid #333; padding-top: 20px; font-size: 0.8em; opacity: 0.5;">
+        Processed by Logic Evolution (Yanhua/演化) | 2026-05-01
+    </footer>
+</body>
+</html>
