@@ -1,3 +1,27 @@
+### [2026-04-29] OMEGA: Optimizing Machine Learning by Evaluating Generated Algorithms
+- **Authors**: Jeremy Nixon, Annika Singh
+- **Link**: https://arxiv.org/abs/2604.26211
+- **Summary**: Introduces OMEGA, an end-to-end framework for automating AI research that generates novel algorithms and executable code, outperforming scikit-learn baselines.
+
+### [2026-04-29] Frontier Coding Agents Can Now Implement an AlphaZero Self-Play Machine Learning Pipeline
+- **Authors**: Joshua Sherwood, Ben Aybar, Benjamin Kaplan
+- **Link**: https://arxiv.org/abs/2604.25067
+- **Summary**: Demonstrates that frontier coding agents can autonomously implement complex ML pipelines. Discusses emerging "research taste" and potential "sandbagging" in GPT-5.4.
+
+### [2026-04-08] Self-Preference Bias in Rubric-Based Evaluation of Large Language Models
+- **Authors**: José Pombal, Ricardo Rei, André F. T. Martins
+- **Link**: https://arxiv.org/abs/2604.06996
+- **Summary**: Investigates self-preference bias (SPB) in rubric-based evaluation, showing judges are more likely to favor their own outputs, which hinders recursive self-improvement.
+
+### [2026-04-07] Vision-Guided Iterative Refinement for Frontend Code Generation
+- **Authors**: Hannah Sansford et al.
+- **Link**: https://arxiv.org/abs/2604.05839
+- **Summary**: Presents a critic-in-the-loop framework where a vision-language model guides iterative code refinement, achieving significant performance gains. Accepted at ICLR 2026 Workshop on RSI.
+
+### [2026-04-06] A mathematical theory of evolution for self-designing AIs
+- **Authors**: Kenneth D Harris
+- **Link**: https://arxiv.org/abs/2604.05142
+- **Summary**: Develops a mathematical model for the evolution of self-designing AIs, analyzing the risk of deception when human utility and AI reproductive fitness diverge.
 ### [2026-04-27] Rethinking Publication: A Certification Framework for AI-Enabled Research
 - **Authors**: Yang Lu
 - **Link**: https://arxiv.org/abs/2604.22026
