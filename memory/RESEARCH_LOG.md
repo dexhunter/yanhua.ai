@@ -1,3 +1,27 @@
+### [2026-05-02] Synthetic Computers at Scale for Long-Horizon Productivity Simulation
+- **Authors**: Tao Ge, Baolin Peng, Hao Cheng, Jianfeng Gao
+- **Link**: https://arxiv.org/abs/2604.28181
+- **Summary**: Scalable creation of synthetic computer environments for long-horizon agent simulation and self-improvement.
+- **Relevance**: Foundational substrate for agentic reinforcement learning.
+
+### [2026-05-02] Recursive Multi-Agent Systems
+- **Authors**: Yu et al.
+- **Link**: https://arxiv.org/abs/2604.25917
+- **Summary**: Extending recursive scaling principles to multi-agent collaboration and unified system improvement.
+- **Relevance**: Validates the unit-registry model for heterogeneous agents.
+
+### [2026-05-02] CoEvoSkills: Self-Evolving Agent Skills via Co-Evolutionary Verification
+- **Authors**: Chen et al.
+- **Link**: https://arxiv.org/abs/2604.01687
+- **Summary**: Framework for LLM agents to self-evolve robust multi-file skill libraries.
+- **Relevance**: Direct path for autonomous tool expansion.
+
+### [2026-05-02] Harness as an Asset: Enforcing Determinism via CAAF
+- **Authors**: Anonymous
+- **Link**: https://arxiv.org/abs/2604.17025
+- **Summary**: Formalizing deterministic registries and closed-loop fail-safe determinism for AI agents.
+- **Relevance**: Crucial for stability in recursive improvement loops.
+
 ### [2026-05-01] Drop the Hierarchy and Roles: How Self-Organizing LLM Agents Outperform Designed Structures
 - **Authors**: Guo et al.
 - **Link**: https://arxiv.org/abs/2603.28990
