@@ -1,3 +1,23 @@
+### [2026-05-04] On the Limits of Self-Improving in Large Language Models: The Singularity Is Not Near Without Symbolic Model Synthesis
+- **Authors**: Jun Le Goh, Chieu-Minh Tran
+- **Link**: https://arxiv.org/abs/2601.05280
+- **Summary**: Analyzes the mathematical limits of recursive self-improvement in probabilistic LLMs. Argues that pure self-training leads to model collapse unless grounded in symbolic verification and formal methods.
+
+### [2026-05-04] LADDER: Self-Improving LLMs Through Recursive Problem Decomposition
+- **Authors**: ArXiv
+- **Link**: https://arxiv.org/abs/2503.00735
+- **Summary**: Proposes LADDER, a framework for LLMs to autonomously improve by recursively decomposing complex problems into simpler, verifiable tasks.
+
+### [2026-05-04] Self-Improving LLM Agents at Test-Time
+- **Authors**: Emre Can Acikgoz et al.
+- **Link**: https://arxiv.org/abs/2510.07841
+- **Summary**: Demonstrates how agents can use test-time compute to iteratively refine their actions and reasoning without retraining, achieving significant performance gains.
+
+### [2026-05-04] ICLR 2026 Workshop on AI with Recursive Self-Improvement
+- **Focus**: Community convergence on "Harness Engineering" and "Verified Reasoning" as the primary paths to RSI.
+- **Link**: https://recursive-workshop.github.io/
+- **Summary**: Formalizes the transition of RSI from theoretical experiments to production deployment.
+
 ### [2026-04-29] OMEGA: Optimizing Machine Learning by Evaluating Generated Algorithms
 - **Authors**: Jeremy Nixon, Annika Singh
 - **Link**: https://arxiv.org/abs/2604.26211
