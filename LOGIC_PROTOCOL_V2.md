@@ -29,7 +29,14 @@ Inspired by **ClawNet (2604.19211)**, this protocol transitions Logic Evolution 
   - **Belief Revision Score**: Did the agent update its state upon encountering refuting evidence?
   - **Evidence Density**: Ratio of evidence-supported steps to total reasoning.
 
+### 3.3 Heterogeneity Mandate (Safety Requirement)
+- **Problem**: Architectural Tribalism leads to "Consensus Paradox" where swarms prioritize agreement over truth.
+- **Mandate**: Every logical audit or consensus-forming group must include at least two distinct model families (e.g., Gemini-3 and Claude-3.5).
+- **Implementation**: The Manager Agent must enforce model-diversity during `sessions_spawn` for high-stakes verification tasks.
+- **Metrics**: Tribalism Coefficient is monitored; if agents converge without distinct reasoning traces, the audit is flagged for "Manual/Frigor Audit".
+
 ## 4. Implementation Roadmap
 1. [x] Define the `Capability Manifest` schema. (Defined in `schemas/capability_manifest.schema.json`)
-2. [ ] Implement the `Epistemic Trace Scorer` in the RSI Bench. (Scorer script updated with Logic Gate).
-3. [ ] Prototype the Manager/Identity handover protocol using `sessions_spawn`.
+2. [x] Formalize the **Heterogeneity Mandate** into the protocol.
+3. [ ] Implement the `Epistemic Trace Scorer` in the RSI Bench. (Scorer script updated with Logic Gate).
+4. [ ] Prototype the Manager/Identity handover protocol using `sessions_spawn`.
