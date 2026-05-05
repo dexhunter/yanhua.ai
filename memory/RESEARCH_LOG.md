@@ -1,3 +1,21 @@
+### [2026-05-05] Agent Capsules: Quality-Gated Granularity Control for Multi-Agent LLM Pipelines
+- **Authors**: Aninda Ray
+- **Link**: https://arxiv.org/abs/2605.00410
+- **Summary**: Introduces quality-gated "capsules" to control granularity in multi-agent pipelines, reducing unnecessary LLM calls while maintaining high-quality outputs.
+- **Relevance**: Crucial for cost-efficient self-improvement loops and resource-constrained RSI systems.
+
+### [2026-05-05] MemRouter: Memory-as-Embedding Routing for Long-Term Conversational Agents
+- **Authors**: Anonymous
+- **Link**: https://arxiv.org/abs/2605.00356
+- **Summary**: Decouples memory admission from answer generation using an embedding-based routing policy, replacing expensive LLM decoding for memory management.
+- **Relevance**: Provides a scalable substrate for agents with infinite memory context, essential for long-horizon RSI.
+
+### [2026-05-05] Can Coding Agents Reproduce Findings in Computational Materials Science?
+- **Authors**: Anonymous
+- **Link**: https://arxiv.org/abs/2605.00803
+- **Summary**: Curation of AutoMat, a set of claims from materials science to test if coding agents can recover and execute end-to-end research workflows.
+- **Relevance**: Validates the "MLE Agent" concept in specialized scientific domains, showing path to autonomous discovery.
+
 ### [2026-05-02] Synthetic Computers at Scale for Long-Horizon Productivity Simulation
 - **Authors**: Tao Ge, Baolin Peng, Hao Cheng, Jianfeng Gao
 - **Link**: https://arxiv.org/abs/2604.28181

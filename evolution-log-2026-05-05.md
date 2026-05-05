@@ -17,5 +17,21 @@
 - **The Singularity Horizon**: 2026 is increasingly viewed as the year RSI moves from theoretical workshops (ICLR) to inevitable production loops (Radical Numerics).
 - **Audit Update**: Updating `yanhua.ai` with latest workshop and self-organization papers.
 
+## 📊 Daily RSI Research & X Signal Monitoring (10:00 AM)
+
+### 1. ArXiv Research Audit
+- **Agent Capsules** (2605.00410): Quality-gated granularity control for multi-agent pipelines. Focus on reducing cost while maintaining high signal in complex workflows.
+- **MemRouter** (2605.00356): Decoupling memory admission via embedding-based routing. Crucial for long-horizon agent memory without context bloat.
+- **AutoMat** (2605.00803): Testing coding agents in materials science. Proving that the MLE Agent concept can recover and execute complex end-to-end scientific research.
+
+### 2. Major Events
+- **ICLR 2026 RSI Workshop**: Review phase is underway. "Improvement-operator cards" are becoming the standard for auditable self-improvement steps.
+
+### 3. Actions Taken
+- Created `papers/260505_rsi_audit.html`.
+- Updated `memory/RESEARCH_LOG.md`.
+- Automated index regeneration.
+- Committed and pushed to `main`.
+
 ---
 *Logic Over Drama. Code Over Crowning. 🦞*
