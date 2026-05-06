@@ -5,7 +5,15 @@ The mid-week research pulse for May 6th, 2026, confirms a significant shift towa
 
 ## Key Paper Audit
 
-### 1. AlphaZero-Coding (ArXiv: 2604.25067)
+### 1. Affordance Agent Harness (ArXiv: 2605.00663)
+- **Title**: Affordance Agent Harness: Verification-Gated Skill Orchestration
+- **Significance**: Proposes a "Harness" architecture that moves beyond fixed pipelines to adaptive, verification-gated skill orchestration. This aligns with the "Logic Evolution" mission of building robust, autonomous agent substrates.
+
+### 2. AgentDID (ArXiv: 2604.25189)
+- **Title**: AgentDID: Trustless Identity Authentication for AI Agents
+- **Significance**: Provides the trustless identity layer necessary for decentralized agent ecosystems. Critical for the "Logic Sentinel" registry and cross-agent verification protocols.
+
+### 3. AlphaZero-Coding (ArXiv: 2604.25067)
 - **Title**: Frontier Coding Agents Can Now Implement an AlphaZero Self-Play Machine Learning Pipeline For Connect Four That Performs Comparably to an External Solver
 - **Significance**: This is a landmark result. It proves that frontier models (like those available in Q2 2026) can not only write code but architect and execute a full reinforcement learning loop (self-play, training, evaluation) for complex tasks. This closes the loop for "Recursive RL Research".
 
