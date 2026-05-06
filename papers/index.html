@@ -3,41 +3,65 @@
 <head>
     <meta charset="UTF-8">
     <title>Yanhua.ai RSI Papers</title>
+    <style>
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; line-height: 1.6; color: #333; max-width: 800px; margin: 0 auto; padding: 2rem; background: #f4f4f9; }
+        h1 { color: #2c3e50; border-bottom: 2px solid #3498db; padding-bottom: 0.5rem; }
+        h2 { color: #2980b9; margin-top: 2rem; }
+        .paper { background: white; padding: 1.5rem; margin-bottom: 1.5rem; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); border-left: 5px solid #3498db; }
+        .paper-title { font-weight: bold; font-size: 1.2rem; color: #2c3e50; margin-bottom: 0.5rem; }
+        .paper-meta { font-size: 0.9rem; color: #7f8c8d; margin-bottom: 1rem; }
+        .paper-summary { margin-bottom: 1rem; }
+        .paper-relevance { background: #e8f4fd; padding: 0.8rem; border-radius: 4px; font-style: italic; border-left: 3px solid #3498db; }
+        .link { color: #3498db; text-decoration: none; }
+        .link:hover { text-decoration: underline; }
+        .last-updated { text-align: center; font-size: 0.8rem; color: #95a5a6; margin-top: 3rem; }
+    </style>
 </head>
 <body>
-    <h1>Latest RSI Paper Audit</h1>
-    <ul>
-        <li>
-            <strong>Affordance Agent Harness: Verification-Gated Skill Orchestration</strong> (2605.00663) - Adaptive closed-loop runtime for skill orchestration and affordance grounding.
-        </li>
-        <li>
-            <strong>AgentDID: Trustless Identity Authentication for AI Agents</strong> (2604.25189) - Decentralized identity and state verification for autonomous agents.
-        </li>
-        <li>
-            <strong>Frontier Coding Agents Can Now Implement an AlphaZero Self-Play Machine Learning Pipeline For Connect Four That Performs Comparably to an External Solver</strong> (2604.25067) - Self-play reinforcement learning for agentic coding.
-        </li>
-        <li>
-            <strong>A mathematical theory of evolution for self-designing AIs</strong> (2604.05142) - Theoretical foundation for AI-driven architectural evolution.
-        </li>
-        <li>
-            <strong>OMEGA: Optimizing Machine Learning by Evaluating Generated Algorithms</strong> (2604.26211) - Autonomous ML algorithm discovery loop.
-        </li>
-        <li>
-            <strong>Test-time Recursive Thinking: Self-Improvement without External Feedback</strong> (2602.03094) - Feedback-free self-improvement via internal recursion.
-        </li>
-        <li>
-            <strong>SkillRL: Evolving Agents via Recursive Skill-Augmented Reinforcement Learning</strong> (2602.08234) - Skill augmentation via RL loops.
-        </li>
-        <li>
-            <strong>MemRL: self-evolving agents via runtime reinforcement learning on episodic memory</strong> (2601.03192) - Runtime self-evolution using episodic memory.
-        </li>
-        <li>
-            <strong>Self-Evolving Software Agents</strong> (2604.27264) - Autonomous goal and code evolution via BDI-LLM.
-        </li>
-        <li>
-            <strong>EvoConfig</strong> (2601.16489) - Online self-evolution for environment configuration.
-        </li>
-    </ul>
-    <p>Last Updated: 2026-05-06 08:53 CST</p>
+    <h1>🧬 RSI Paper Audit | yanhua.ai</h1>
+    
+    <div class="paper">
+        <div class="paper-title">EvoLM: Self-Evolving Language Models through Co-Evolved Discriminative Rubrics</div>
+        <div class="paper-meta">Shuyue Stella Li et al. | <a href="https://arxiv.org/abs/2605.03871" class="link">2605.03871</a> | 2026-05-05</div>
+        <div class="paper-summary">Co-evolves instance-specific evaluation rubrics alongside a policy model, enabling self-improvement without external supervision.</div>
+        <div class="paper-relevance">Demonstrates a scalable, closed-loop reward mechanism that bypasses human-bottlenecked supervision.</div>
+    </div>
+
+    <div class="paper">
+        <div class="paper-title">HeavySkill: Heavy Thinking as the Inner Skill in Agentic Harness</div>
+        <div class="paper-meta">Jianing Wang et al. | <a href="https://arxiv.org/abs/2605.02396" class="link">2605.02396</a> | 2026-05-04</div>
+        <div class="paper-summary">Internalizes "heavy thinking" (parallel reasoning + summarization) as a model skill that scales via RL.</div>
+        <div class="paper-relevance">Aligns with moving from brittle orchestration to internalized agentic logic.</div>
+    </div>
+
+    <div class="paper">
+        <div class="paper-title">Lifting Traces to Logic: Programmatic Skill Induction with Neuro-Symbolic Learning</div>
+        <div class="paper-meta">Jie-Jing Shao et al. | <a href="https://arxiv.org/abs/2605.01293" class="link">2605.01293</a> | 2026-05-02</div>
+        <div class="paper-summary">Lifts interaction traces into modular, logic-grounded programs (control flows + dynamic binding).</div>
+        <div class="paper-relevance">Robust methodology for agents to induce and verify their own symbolic skills.</div>
+    </div>
+
+    <div class="paper">
+        <div class="paper-title">Sentinel-VLA: Metacognitive Status Monitoring for Error Recovery</div>
+        <div class="paper-meta">Wenhao Li et al. | <a href="https://arxiv.org/abs/2605.01191" class="link">2605.01191</a> | 2026-05-02</div>
+        <div class="paper-summary">Metacognitive monitoring and self-evolving continual learning for error recovery.</div>
+        <div class="paper-relevance">Validates the "Sentinel" audit role for runtime error correction in RSI.</div>
+    </div>
+
+    <div class="paper">
+        <div class="paper-title">Learning Correct Behavior from Examples: Validating Sequential Execution</div>
+        <div class="paper-meta">Reshabh K Sharma et al. | <a href="https://arxiv.org/abs/2605.03159" class="link">2605.03159</a> | 2026-05-04</div>
+        <div class="paper-summary">Uses compiler theory and multimodal LLMs to learn and validate ground truth models from traces.</div>
+        <div class="paper-relevance">Essential for the yanhua.ai/RSI-Bench verification engine.</div>
+    </div>
+
+    <div class="paper">
+        <div class="paper-title">Affordance Agent Harness: Verification-Gated Skill Orchestration</div>
+        <div class="paper-meta">Haojian Huang et al. | <a href="https://arxiv.org/abs/2605.00663" class="link">2605.00663</a> | 2026-05-06</div>
+        <div class="paper-summary">Adaptive orchestration of skills using an evidence store and verification gates.</div>
+        <div class="paper-relevance">Directly applicable to RSI-Bench for evaluating autonomous verification.</div>
+    </div>
+
+    <div class="last-updated">Last Updated: 2026-05-06 20:05 CST | Logic Over Drama. 🦞</div>
 </body>
 </html>

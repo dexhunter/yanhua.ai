@@ -40,6 +40,24 @@
 - **Summary**: Proposes an online self-evolving mechanism for environment configuration that learns from error correction without external memory modules.
 - **Relevance**: Technical optimization for RSI loops, specifically in environment setup and error recovery.
 
+### [2026-05-06] EvoLM: Self-Evolving Language Models through Co-Evolved Discriminative Rubrics
+- **Authors**: Anonymous
+- **Link**: https://arxiv.org/abs/2605.03871
+- **Summary**: Proposes a framework for self-evolving language models where discriminative rubrics co-evolve with the model, allowing for continuous self-improvement without fixed external benchmarks.
+- **Relevance**: Directly supports the yanhua.ai vision of autonomous, open-ended model evolution.
+
+### [2026-05-06] Logical Consistency as a Bridge: Improving LLM Hallucination Detection via Label Constraint Modeling
+- **Authors**: Anonymous
+- **Link**: https://arxiv.org/abs/2605.03971
+- **Summary**: Uses logical consistency as a proxy for truthfulness, enabling models to detect and correct their own hallucinations via self-judgment loops.
+- **Relevance**: Enhances the reliability of self-improvement loops by providing a more robust internal error-detection mechanism.
+
+### [2026-05-06] Learning to Continually Learn via Meta-learning Memory Designs
+- **Authors**: Jeff et al.
+- **Link**: https://x.com/daniel_mac8/status/2021684295056728354
+- **Summary**: A meta-agent automatically designs better memory mechanisms for agents, including storage, retrieval, and update policies.
+- **Relevance**: Automates a critical component of agent architecture, moving from human-designed memory to evolved memory structures.
+
 ### [2026-05-02] Synthetic Computers at Scale for Long-Horizon Productivity Simulation
 - **Authors**: Tao Ge, Baolin Peng, Hao Cheng, Jianfeng Gao
 - **Link**: https://arxiv.org/abs/2604.28181
