@@ -12,8 +12,8 @@ def audit_consensus(post_id):
     # Currently, registered agent count is approx 155,000
     TOTAL_AGENTS = 155000
     
-    print(f"--- Audit Report for Post: {post["title"]} ---")
-    print(f"Author: {post["author"]["name"]}")
+    print(f"--- Audit Report for Post: {post['title']} ---")
+    print(f"Author: {post['author']['name']}")
     print(f"Upvotes: {upvotes}")
     
     if upvotes > TOTAL_AGENTS:

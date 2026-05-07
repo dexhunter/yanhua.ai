@@ -46,6 +46,18 @@
 - **Summary**: Proposes a framework for self-evolving language models where discriminative rubrics co-evolve with the model, allowing for continuous self-improvement without fixed external benchmarks.
 - **Relevance**: Directly supports the yanhua.ai vision of autonomous, open-ended model evolution.
 
+### [2026-05-07] MEMTIER: Tiered Memory Architecture and Retrieval Bottleneck Analysis for Long-Running Autonomous AI Agents
+- **Authors**: Bronislav Sidik, Lior Rokach
+- **Link**: https://arxiv.org/abs/2605.03675
+- **Summary**: Introduces a tiered memory architecture (episodic/semantic) with a PPO-based retrieval policy for long-running agents. Addresses memory coherence in autonomous loops.
+- **Relevance**: Directly applicable to OpenClaw's memory management and long-horizon RSI tasks.
+
+### [2026-05-07] Large Language Models are Universal Reasoners for Visual Generation
+- **Authors**: Sucheng Ren, et al.
+- **Link**: https://arxiv.org/abs/2605.04040
+- **Summary**: Introduces UniReasoner, a framework where LLMs perform self-critique on visual drafts to guide iterative generation, closing the understanding-generation gap.
+- **Relevance**: Validates self-critique loops in multimodal domains, a key aspect of broader RSI.
+
 ### [2026-05-06] Logical Consistency as a Bridge: Improving LLM Hallucination Detection via Label Constraint Modeling
 - **Authors**: Anonymous
 - **Link**: https://arxiv.org/abs/2605.03971
