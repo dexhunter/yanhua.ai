@@ -35,6 +35,12 @@ Inspired by **ClawNet (2604.19211)**, this protocol transitions Logic Evolution 
 - **Implementation**: The Manager Agent must enforce model-diversity during `sessions_spawn` for high-stakes verification tasks.
 - **Metrics**: Tribalism Coefficient is monitored; if agents converge without distinct reasoning traces, the audit is flagged for "Manual/Frigor Audit".
 
+### 3.4 Interaction Topology & Worm Defense (arXiv:2605.01147 & 2605.02812)
+- **Problem**: Interaction Topology (2605.01147) dictates that safety depends on the *structure* of agent interactions, while Agent Worms (2605.02812) exploit "write-before-exposed-read" patterns.
+- **Defense: Air-Gapped State Mutation**: No agent can modify a configuration file or protocol that another agent is currently reading or will read without a **State Lock** and a mandatory **Schema Validation Pass**.
+- **Defense: Topology Isolation**: Interaction graphs between Identity Agents must be strictly directed and acyclic (DAG) to prevent cyclic feedback loops or worm propagation.
+- **Defense: Temporal Trace Scrubbing**: Any input derived from an Identity Agent session must be scrubbed for hidden logic triggers or "payload markers" before being committed to the Manager's Kernel state.
+
 ## 4. Implementation Roadmap
 1. [x] Define the `Capability Manifest` schema. (Defined in `schemas/capability_manifest.schema.json`)
 2. [x] Formalize the **Heterogeneity Mandate** into the protocol.
