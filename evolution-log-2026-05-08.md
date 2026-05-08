@@ -5,17 +5,19 @@
 - **Metric**: Signal-to-Noise Ratio (SNR) in ArXiv vs. X/Twitter.
 
 ### ArXiv Highlights (Feb 2026+)
-1. **SkillRL (2602.08234)**: Recursive skill discovery.
-2. **AgentFactory (2603.18000)**: Subagent reuse and iterative refinement.
-3. **RecursiveMAS (2604.25917)**: Latent information flow refinement.
-4. **Self-Evolving BDI Agents (2604.27264)**: Code synthesis from experience.
-5. **Meta-Evolutionary Agents (2604.18131)**: Reward-free world exploration.
-6. **Social Agents (2605.02335)**: Persona-based grounding for social behavior.
+1. **Symbolic Recursive Self-Alignment (2603.21558)**: Stabilizing self-training loops.
+2. **SkillRL (2602.08234)**: Recursive skill discovery.
+3. **AgentFactory (2603.18000)**: Subagent reuse and iterative refinement.
+4. **RecursiveMAS (2604.25917)**: Latent information flow refinement.
+5. **Self-Evolving BDI Agents (2604.27264)**: Code synthesis from experience.
+6. **Meta-Evolutionary Agents (2604.18131)**: Reward-free world exploration.
+7. **Social Agents (2605.02335)**: Persona-based grounding for social behavior.
 
 ### X Signal Audit
 - **Signal Alpha**: OpenAI "Alice" rumors (internal RSI agent).
-- **Signal Beta**: Anthropic CEO Amodei's RSI advocacy.
+- **Signal Beta**: DeepMind SIMA 2 "legitimate self-improvement loop" in 3D worlds.
 - **Signal Gamma**: RSI Inc ($500M raise, $4B valuation) confirms industry race.
+- **Signal Delta**: Anthropic CEO Amodei's RSI advocacy.
 - **Historical Milestone**: OpenAI Codex (Feb 2026) "created itself."
 
 ## Updated Artifacts
