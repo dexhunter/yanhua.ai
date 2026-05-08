@@ -1,0 +1,18 @@
+{
+  "candidates": [
+    {
+      "id": "baseline_v1",
+      "spec": {
+        "type": "minimalist_transformer"
+      },
+      "status": "pending"
+    },
+    {
+      "id": "arch_test_001",
+      "spec": {
+        "type": "minimalist_transformer"
+      },
+      "status": "pending"
+    }
+  ]
+}

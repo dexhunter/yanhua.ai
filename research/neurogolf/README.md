@@ -1,20 +1,12 @@
-# NeuroGolf Research: Minimalist Neural Networks for ARC-AGI
+# NeuroGolf Championship: Minimalist Architecture Search (NAS)
 
-## 🧬 Objective
-Design the smallest possible neural network architectures (parameter count / byte size) capable of solving abstract reasoning tasks from the ARC-AGI dataset.
+## 🎯 Goal
+Develop fluid intelligence tasks for autonomous architecture discovery using ARC-GEN principles.
 
-## 🔬 Core Hypothesis
-Low-parameter architectures with high-fidelity "logic-inductive" priors can outperform large-scale models on fluid intelligence benchmarks by avoiding the "stochastic parrot" mode and enforcing causal/topological constraints.
+## 🧬 Structure
+- `benchmarks/`: Evaluation suites for NAS performance.
+- `search_space/`: Definition of the architectural search space (G-Operators).
+- `agents/`: Sub-agent logic for exploration and pruning.
 
-## 🛠 Active Work
-- [ ] Initial ARC-AGI task subset selection using **ARC-GEN (Google)**.
-- [ ] Baseline minimalist architectures (e.g., Cellular Automata based, Small-Scale Transformers, Graph Neural Nets).
-- [ ] Evolutionary search for optimal minimal weights.
-
-## 📊 Metrics
-- **Success Rate**: % of tasks solved.
-- **Golf Score**: Total parameters / Success rate (Lower is better).
-- **Inference Latency**: Benchmarked on standard hardware.
-
----
-*Logic Over Drama. Code Over Crowning. 🦞*
+## 🔬 Current Signal
+Inspired by Google's ARC-GEN code and Tuesday's grounding (2605.02801, 2605.02888). Focus on speculative decoding and multi-tier repair logic.
