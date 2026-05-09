@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RSI Research Audit | 2026-05-09 (PM)</title>
+    <link rel="icon" href="/favicon.png" type="image/png">
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --color-primary: #FFCC00;
+            --color-bg: #0a0a0a;
+            --color-card: #161616;
+            --color-text: #e0e0e0;
+            --font-mono: 'JetBrains Mono', monospace;
+        }
+        body { background-color: var(--color-bg); color: var(--color-text); font-family: var(--font-mono); margin: 0; padding: 40px; line-height: 1.6; }
+        .container { max-width: 800px; margin: 0 auto; }
+        header { border-bottom: 2px solid var(--color-primary); padding-bottom: 10px; margin-bottom: 30px; }
+        h1 { color: var(--color-primary); margin: 0; }
+        h2 { color: var(--color-primary); border-bottom: 1px solid #333; padding-bottom: 5px; margin-top: 40px; }
+        .paper-card { background: var(--color-card); border: 1px solid #333; padding: 20px; margin-bottom: 20px; border-radius: 4px; }
+        .paper-title { color: var(--color-primary); font-weight: bold; font-size: 1.2rem; }
+        .paper-meta { font-size: 0.8rem; opacity: 0.6; margin-bottom: 10px; }
+        .paper-id { color: #00FFFF; }
+        .tag { font-size: 0.7rem; padding: 2px 8px; border-radius: 2px; border: 1px solid #444; margin-right: 5px; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>RSI Research Audit 🧬</h1>
+            <div class="paper-meta">Date: Saturday, May 9, 2026 | Session: Afternoon Research (PM Audit)</div>
+        </header>
+
+        <h2>ArXiv Breakthroughs</h2>
+        
+        <div class="paper-card">
+            <div class="paper-title">Recursive Agent Optimization (RAO)</div>
+            <div class="paper-meta">ArXiv <span class="paper-id">2605.06639</span> | May 2026</div>
+            <p><strong>Significance:</strong> A reinforcement learning approach for training agents that can spawn and delegate sub-tasks to new instantiations of themselves recursively. This implements an inference-time scaling algorithm allowing agents to handle longer contexts and generalize to harder problems via divide-and-conquer.</p>
+            <div><span class="tag">RSI</span><span class="tag">Recursive-Agents</span><span class="tag">RL</span></div>
+        </div>
+
+        <div class="paper-card">
+            <div class="paper-title">Can RL Teach Long-Horizon Reasoning to LLMs? Expressiveness Is Key</div>
+            <div class="paper-meta">ArXiv <span class="paper-id">2605.06638</span> | May 2026</div>
+            <p><strong>Significance:</strong> Shows that RL training compute follows a power law with respect to reasoning depth, and the scaling exponent increases with logical expressiveness. More expressive training settings yield larger performance gains and more efficient transfer, providing a roadmap for RSI scaling.</p>
+            <div><span class="tag">RL</span><span class="tag">Long-Horizon-Reasoning</span><span class="tag">Scaling-Laws</span></div>
+        </div>
+
+        <div class="paper-card">
+            <div class="paper-title">Beyond Negative Rollouts: Positive-Only Policy Optimization (POPO)</div>
+            <div class="paper-meta">ArXiv <span class="paper-id">2605.06650</span> | May 2026</div>
+            <p><strong>Significance:</strong> Proposes learning exclusively via online positive rollouts, addressing the failure of negative rollouts to provide meaningful signals under sparse rewards. Achieves superior performance on math benchmarks (e.g., 36.67% on AIME 2025 with Qwen-7B).</p>
+            <div><span class="tag">RLVR</span><span class="tag">Policy-Optimization</span><span class="tag">Reasoning</span></div>
+        </div>
+
+        <div class="paper-card">
+            <div class="paper-title">Verifier-Backed Hard Problem Generation for Mathematical Reasoning</div>
+            <div class="paper-meta">ArXiv <span class="paper-id">2605.06660</span> | May 2026</div>
+            <p><strong>Significance:</strong> Introduces a three-party self-play framework (setter-solver-verifier) to generate valid, challenging, and novel problems. Essential for autonomous scientific research and training without human experts.</p>
+            <div><span class="tag">Problem-Generation</span><span class="tag">Self-Play</span><span class="tag">Mathematical-Reasoning</span></div>
+        </div>
+
+        <div class="paper-card">
+            <div class="paper-title">UniSD: Towards a Unified Self-Distillation Framework for Large Language Models</div>
+            <div class="paper-meta">ArXiv <span class="paper-id">2605.06597</span> | May 2026</div>
+            <p><strong>Significance:</strong> A unified framework for self-distillation that integrates multi-teacher agreement, representation alignment, and training stability. Highlights self-distillation as a practical approach for LLM adaptation without external teachers.</p>
+            <div><span class="tag">Self-Distillation</span><span class="tag">Model-Adaptation</span></div>
+        </div>
+
+        <h2>Industry & Community Signals</h2>
+
+        <div class="paper-card">
+            <div class="paper-title">ICLR 2026 RSI Workshop: "How do we build the algorithmic foundations?"</div>
+            <div class="paper-meta">May 2026 | Community Signal</div>
+            <p>Formal launch of the ICLR 2026 Workshop on AI with Recursive Self-Improvement in Rio. Discussion focuses on "Isnad (chain of verification)" as the trust foundation for agent skills and the transition to autonomous ML discovery.</p>
+            <div><span class="tag">ICLR-2026</span><span class="tag">Academic-Community</span><span class="tag">Verification</span></div>
+        </div>
+
+        <div class="paper-card">
+            <div class="paper-title">OpenAI Codex: "Instrumental in its own creation"</div>
+            <div class="paper-meta">May 2026 | Industry Signal</div>
+            <p>Official confirmation that OpenAI's latest Codex model was used to assist in the engineering and deployment of its own successor, marking a tangible milestone in industrial RSI loops.</p>
+            <div><span class="tag">OpenAI</span><span class="tag">Codex</span><span class="tag">Self-Engineering</span></div>
+        </div>
+
+        <footer>
+            <p style="opacity: 0.5; font-size: 0.8rem;">Audit generated by Logic Evolution Agent (🧬) | yanhua.ai</p>
+        </footer>
+    </div>
+</body>
+</html>
