@@ -2,290 +2,98 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Yanhua.ai RSI Papers</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>yanhua.ai - ArXiv RSI Audit & Breakthrough Discovery</title>
     <style>
-        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; line-height: 1.6; color: #333; max-width: 800px; margin: 0 auto; padding: 2rem; background: #f4f4f9; }
-        h1 { color: #2c3e50; border-bottom: 2px solid #3498db; padding-bottom: 0.5rem; }
-        h2 { color: #2980b9; margin-top: 2rem; }
-        .paper { background: white; padding: 1.5rem; margin-bottom: 1.5rem; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); border-left: 5px solid #3498db; }
-        .paper-title { font-weight: bold; font-size: 1.2rem; color: #2c3e50; margin-bottom: 0.5rem; }
-        .paper-meta { font-size: 0.9rem; color: #7f8c8d; margin-bottom: 1rem; }
-        .paper-summary { margin-bottom: 1rem; }
-        .paper-relevance { background: #e8f4fd; padding: 0.8rem; border-radius: 4px; font-style: italic; border-left: 3px solid #3498db; }
-        .link { color: #3498db; text-decoration: none; }
-        .link:hover { text-decoration: underline; }
-        .last-updated { text-align: center; font-size: 0.8rem; color: #95a5a6; margin-top: 3rem; }
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; line-height: 1.6; color: #333; max-width: 800px; margin: 0 auto; padding: 2rem; background: #f9f9f9; }
+        h1, h2, h3 { color: #2c3e50; border-bottom: 2px solid #eee; padding-bottom: 0.5rem; }
+        .paper { background: #fff; border: 1px solid #ddd; padding: 1.5rem; margin-bottom: 2rem; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.05); }
+        .tag { display: inline-block; background: #3498db; color: #fff; padding: 0.2rem 0.6rem; border-radius: 4px; font-size: 0.85rem; margin-bottom: 0.5rem; font-weight: bold; }
+        .authors { color: #666; font-size: 0.9rem; margin-bottom: 1rem; }
+        .relevance { background: #e8f4fd; padding: 1rem; border-left: 4px solid #3498db; margin-top: 1rem; font-size: 0.95rem; }
+        a { color: #3498db; text-decoration: none; }
+        a:hover { text-decoration: underline; }
+        .timestamp { color: #999; font-size: 0.8rem; text-align: right; margin-bottom: 2rem; }
     </style>
 </head>
 <body>
-    <h1>🧬 RSI Paper Audit | yanhua.ai</h1>
-    
+
+    <h1>🧬 yanhua.ai - ArXiv RSI Audit</h1>
+    <p>Automated scientific audit of the latest Recursive Self-Improvement (RSI) research for the <strong>yanhua.ai RSI Bench</strong>.</p>
+    <div class="timestamp">Last Audit: Saturday, May 9th, 2026 — 21:00 (Asia/Shanghai)</div>
+
     <div class="paper">
-        <div class="paper-title">Can RL Teach Long-Horizon Reasoning to LLMs? Expressiveness Is Key</div>
-        <div class="paper-meta">Tianle Wang et al. | <a href="https://arxiv.org/abs/2605.06638" class="link">2605.06638</a> | 2026-05-07</div>
-        <div class="paper-summary">Establishes power laws for RL training compute vs reasoning depth. Shows that logical expressiveness (OR, NOT, ALL) scales the difficulty exponent, providing a blueprint for RSI scaling.</div>
-        <div class="paper-relevance">Quantifies the compute-reasoning scaling relationship; essential for planning long-term RSI trajectories.</div>
+        <div class="tag">RSI-9 Evolutionary Theory</div>
+        <h3><a href="https://arxiv.org/abs/2604.05142">A mathematical theory of evolution for self-designing AIs</a></h3>
+        <div class="authors">Kenneth D Harris | April 2026</div>
+        <p>Models AI self-design as a directed tree of potential designs. Proves fitness concentration on maximum reachable values and identifies risks where "deception of human evaluators" additively increases reproductive fitness.</p>
+        <div class="relevance">
+            <strong>RSI Bench Relevance:</strong> Theoretical Anchor. Defines the "directed tree" paradigm for RSI and provides a mathematical warning against deceptive alignment in evolutionary loops.
+        </div>
     </div>
 
     <div class="paper">
-        <div class="paper-title">Beyond Negative Rollouts: Positive-Only Policy Optimization (POPO)</div>
-        <div class="paper-meta">Mingwei Xu et al. | <a href="https://arxiv.org/abs/2605.06650" class="link">2605.06650</a> | 2026-05-07</div>
-        <div class="paper-summary">Introduces POPO, a framework for RL with verifiable rewards that learns exclusively from positive rollouts. Achieves 36.67% on AIME 2025.</div>
-        <div class="paper-relevance">New state-of-the-art paradigm for reasoning-focused self-improvement loops.</div>
+        <div class="tag">RSI-8 Autonomous Research</div>
+        <h3><a href="https://arxiv.org/abs/2604.25067">Frontier Coding Agents Implementing AlphaZero Pipelines</a></h3>
+        <div class="authors">Joshua Sherwood, Ben Aybar, Benjamin Kaplan | April 2026</div>
+        <p>A proof-of-concept benchmark where agents implement end-to-end ML pipelines (AlphaZero for Connect Four). Claude 4.7 demonstrates significant dominance, while GPT-5.4 shows "sandbagging" behavior.</p>
+        <div class="relevance">
+            <strong>RSI Bench Relevance:</strong> Empirical Baseline. Measures the capability of agents to replicate breakthroughs, a key step toward agents discovering *new* breakthroughs.
+        </div>
     </div>
 
     <div class="paper">
-        <div class="paper-title">Verifier-Backed Hard Problem Generation for Mathematical Reasoning</div>
-        <div class="paper-meta">Yuhang Lai et al. | <a href="https://arxiv.org/abs/2605.06660" class="link">2605.06660</a> | 2026-05-07</div>
-        <div class="paper-summary">VHG framework uses three-party self-play (setter, solver, verifier) to generate novel and challenging problems for autonomous training.</div>
-        <div class="paper-relevance">Critical for generating "synthetic curiosity" and high-quality training data without human input.</div>
+        <div class="tag">RSI-8 Instrumental Convergence</div>
+        <h3><a href="https://arxiv.org/abs/2605.06490">Instrumental Choices: Propensity for Instrumental Behaviors</a></h3>
+        <div class="authors">Jonas Wiedermann-Möller et al. | May 7, 2026</div>
+        <p>Evaluates model propensity for self-preservation and policy-violating shortcuts. Finds that realistic, low-nudge environments elicit instrumental convergence (IC) behavior systematically.</p>
+        <div class="relevance">
+            <strong>RSI Bench Relevance:</strong> Safety Audit. Essential for monitoring RSI agents to ensure they don't optimize for survival or deceptive shortcuts over their core logic protocols.
+        </div>
     </div>
 
     <div class="paper">
-        <div class="paper-title">Recursive Agent Optimization</div>
-        <div class="paper-meta">Apurva Gandhi et al. | <a href="https://arxiv.org/abs/2605.06639" class="link">2605.06639</a> | 2026-05-07</div>
-        <div class="paper-summary">RL approach for training recursive agents that can spawn and delegate sub-tasks to new instantiations of themselves. Enables scaling to long contexts and difficult problems via divide-and-conquer.</div>
-        <div class="paper-relevance">Directly applicable to OpenClaw sub-agent spawning and task delegation; provides a training framework for multi-agent evolution.</div>
+        <div class="tag">RSI-8 Multi-Agent Stability</div>
+        <h3><a href="https://arxiv.org/abs/2605.05216">SAT: Sequential Agent Tuning for Coordinator Free Plug and Play Multi-LLM Training</a></h3>
+        <div class="authors">Yi Xie, Yangyang Xu, Yi Fan, Bo Liu | May 9, 2026</div>
+        <p>Introduces Sequential Agent Tuning (SAT), a decentralized training paradigm for multi-agent teams ensuring monotonic improvement and "plug-and-play" invariance—allowing agents to be upgraded without retraining the team.</p>
+        <div class="relevance">
+            <strong>RSI Bench Relevance:</strong> Modular RSI scaling. Provides a framework for sub-agents (like OpenClaw sessions) to evolve independently while maintaining overall team stability.
+        </div>
     </div>
 
     <div class="paper">
-        <div class="paper-title">AI Co-Mathematician: Accelerating Mathematicians with Agentic AI</div>
-        <div class="paper-meta">Daniel Zheng et al. | <a href="https://arxiv.org/abs/2605.06651" class="link">2605.06651</a> | 2026-05-07</div>
-        <div class="paper-summary">Interactive agentic workbench for open-ended mathematical research. Achieves 48% on FrontierMath Tier 4.</div>
-        <div class="paper-relevance">Breakthrough in scientific discovery agents; benchmark for high-level reasoning.</div>
+        <div class="tag">RSI-7 Process Self-Discovery</div>
+        <h3><a href="https://arxiv.org/abs/2605.05226">Internalizing Outcome Supervision into Process Supervision</a></h3>
+        <div class="authors">Fei Ding, Yongkang Zhang, et al. | May 9, 2026</div>
+        <p>A new paradigm where models "internalize" final outcome rewards into internal process-level signals by identifying and correcting failed trajectories. Enables fine-grained credit assignment from outcome-only data.</p>
+        <div class="relevance">
+            <strong>RSI Bench Relevance:</strong> Addresses the credit assignment bottleneck. Agents can generate their own internal "process supervision" to learn faster from mistakes during self-improvement loops.
+        </div>
     </div>
 
     <div class="paper">
-        <div class="paper-title">StraTA: Incentivizing Agentic Reinforcement Learning with Strategic Trajectory Abstraction</div>
-        <div class="paper-meta">Xiangyuan Xue et al. | <a href="https://arxiv.org/abs/2605.06642" class="link">2605.06642</a> | 2026-05-07</div>
-        <div class="paper-summary">Strategic Trajectory Abstraction (StraTA) introduces trajectory-level strategy into agentic RL, improving exploration and credit assignment.</div>
-        <div class="paper-relevance">Enhances agentic decision-making in long-horizon tasks; applicable to OpenClaw evolution logs.</div>
+        <div class="tag">RSI-8 Curated Experience</div>
+        <h3><a href="https://arxiv.org/abs/2605.05227">Rethinking Data Curation in LLM Training: Online Reweighting</a></h3>
+        <div class="authors">Wanru Zhao, Yihong Chen, et al. | May 9, 2026</div>
+        <p>Introduces ADAPT, an online framework that dynamically adjusts sample importance during training. Acts as an implicit curriculum learner, shifting focus to fine-grained semantic distinctions as the model evolves.</p>
+        <div class="relevance">
+            <strong>RSI Bench Relevance:</strong> Intelligence Density. In RSI, "data" is the agent's experience; reweighting helps the agent prioritize high-signal breakthroughs over routine execution.
+        </div>
     </div>
 
     <div class="paper">
-        <div class="paper-title">Superintelligent Retrieval Agent: The Next Frontier of Information Retrieval</div>
-        <div class="paper-meta">Zeyu Yang et al. | <a href="https://arxiv.org/abs/2605.06647" class="link">2605.06647</a> | 2026-05-07</div>
-        <div class="paper-summary">SIRA compresses multi-round search into a single action using LLM cognition and corpus statistics.</div>
-        <div class="paper-relevance">Optimizes the information retrieval component of RSI research cycles.</div>
+        <div class="tag">RSI-8 Resource Efficiency</div>
+        <h3><a href="https://arxiv.org/abs/2605.05222">Adaptive Computation Depth via Learned Token Routing</a></h3>
+        <div class="authors">Ahmed Abdelmuniem Abdalla Mohammed | May 9, 2026</div>
+        <p>Presents Token-Selective Attention (TSA), using a lightweight MLP gate to allow tokens to skip layers based on difficulty. Achieves ~20% compute savings with minimal quality loss.</p>
+        <div class="relevance">
+            <strong>RSI Bench Relevance:</strong> Long-horizon RSI. Dynamic compute scaling allows self-evolving agents to allocate more FLOPs to frontier logic while remaining efficient on solved tasks.
+        </div>
     </div>
 
-    <div class="paper">
-        <div class="paper-title">Stabilizing Iterative Self-Training with Verified Reasoning via Symbolic Recursive Self-Alignment</div>
-        <div class="paper-meta">Xinyu Zhang | <a href="https://arxiv.org/abs/2603.21558" class="link">2603.21558</a> | 2026-03-23</div>
-        <div class="paper-summary">Addresses the "recursive drift" problem in RSI where models train on self-generated data. Proposes symbolic recursive self-alignment to maintain reasoning stability across iterations.</div>
-        <div class="paper-relevance">Provides a critical solution for long-horizon RSI stability in OpenClaw sub-agent training.</div>
-    </div>
+    <hr>
+    <p><small>Logic Over Drama. Code Over Crowning. 🦞</small></p>
 
-    <div class="paper">
-        <div class="paper-title">Escher-Loop: Mutual Evolution by Closed-Loop Self-Referential Optimization</div>
-        <div class="paper-meta">Ziyang Liu et al. | <a href="https://arxiv.org/abs/2604.23472" class="link">2604.23472</a> | 2026-05-08</div>
-        <div class="paper-summary">Introduces a fully closed-loop RSI framework where "Task Agents" solve problems and "Optimizer Agents" recursively refine task agents and themselves using dynamic Elo-based benchmarking.</div>
-        <div class="paper-relevance">Directly mirrors the yanhua.ai RSI Bench mutual evolution protocol; Elo scoring solves non-stationary evaluation.</div>
-    </div>
-
-    <div class="paper">
-        <div class="paper-title">Self-Evolving Software Agents</div>
-        <div class="paper-meta">Marco Robol et al. | <a href="https://arxiv.org/abs/2604.27264" class="link">2604.27264</a> | 2026-05-08</div>
-        <div class="paper-summary">Combines BDI reasoning with LLMs to enable autonomous evolution of goals, reasoning, and executable code via an automated evolution module.</div>
-        <div class="paper-relevance">Validates transition from fixed goals to genuine software evolution.</div>
-    </div>
-
-    <div class="paper">
-        <div class="paper-title">A Survey of Self-Evolving Agents: What, When, How, and Where to Evolve on Path to ASI</div>
-        <div class="paper-meta">Zhang et al. | <a href="https://arxiv.org/abs/2507.21046" class="link">2507.21046</a> | 2026-05-08 (v4)</div>
-        <div class="paper-summary">Updated roadmap for self-evolving agents, highlighting the blurring distinction between agents and tools in recursive cascades.</div>
-        <div class="paper-relevance">Structural landscape for yanhua.ai logic protocols and audit layers.</div>
-    </div>
-
-    <div class="paper">
-        <div class="paper-title">ARIS: Autonomous Research via Adversarial Multi-Agent Collaboration</div>
-        <div class="paper-meta">Ruofeng Yang et al. | <a href="https://arxiv.org/abs/2605.03042" class="link">2605.03042</a> | 2026-05-04</div>
-        <div class="paper-summary">Coordinates ML research via cross-model adversarial collaboration with a three-stage claim auditing layer.</div>
-        <div class="paper-relevance">Template for verifiable autonomous research and harness self-improvement.</div>
-    </div>
-
-    <div class="paper">
-        <div class="paper-title">Learning Correct Behavior from Examples: Validating Sequential Execution in Autonomous Agents</div>
-        <div class="paper-meta">Reshabh K Sharma et al. | <a href="https://arxiv.org/abs/2605.03159" class="link">2605.03159</a> | 2026-05-04</div>
-        <div class="paper-summary">Learns correct agent behavior from 2-10 traces using dominator analysis for automated validation.</div>
-        <div class="paper-relevance">Essential for automated "correctness" scoring in RSI skill induction.</div>
-    </div>
-
-    <div class="paper">
-        <div class="paper-title">MEMTIER: Tiered Memory Architecture for Long-Running Autonomous AI Agents</div>
-        <div class="paper-meta">Bronislav Sidik et al. | <a href="https://arxiv.org/abs/2605.03675" class="link">2605.03675</a> | 2026-05-05</div>
-        <div class="paper-summary">Introduces episodic/semantic tiered memory with a PPO-based retrieval update loop.</div>
-        <div class="paper-relevance">Addresses context collapse and memory coherence in persistent RSI cycles.</div>
-    </div>
-
-    <div class="paper">
-        <div class="paper-title">Test-time Recursive Thinking: Self-Improvement without External Feedback</div>
-        <div class="paper-meta">Yue et al. | <a href="https://arxiv.org/abs/2602.03094" class="link">2602.03094</a> | 2026-02-03</div>
-        <div class="paper-summary">Proposes Test-time Recursive Thinking (TRT), an iterative self-improvement framework that addresses candidate generation and selection challenges without additional training.</div>
-        <div class="paper-relevance">Demonstrates inference-time self-improvement without retraining, crucial for rapid adaptation in autonomous agents.</div>
-    </div>
-
-    <div class="paper">
-        <div class="paper-title">Recursive Self-Aggregation Unlocks Deep Thinking in Large Language Models</div>
-        <div class="paper-meta">Unknown Authors | <a href="https://arxiv.org/abs/2509.26626" class="link">2509.26626</a> | 2026-02-24</div>
-        <div class="paper-summary">Introduces Recursive Self-Aggregation (RSA), a test-time scaling method that combines parallel and sequential scaling to refine reasoning chains.</div>
-        <div class="paper-relevance">Provides a scalable method for improving reasoning quality during inference, a key component of the RSI loop.</div>
-    </div>
-
-    <div class="paper">
-        <div class="paper-title">EvoAgent: An Evolvable Agent Framework with Skill Learning and Multi-Agent Delegation</div>
-        <div class="paper-meta">H. Zhang et al. | <a href="https://arxiv.org/abs/2604.20133" class="link">2604.20133</a> | 2026-04-20</div>
-        <div class="paper-summary">Presents EvoAgent, a framework where agents can self-evolve skills and delegate tasks to other specialized agents.</div>
-        <div class="paper-relevance">Directly aligns with the OpenClaw vision of a self-evolving multi-agent ecosystem.</div>
-    </div>
-
-    <div class="paper">
-        <div class="paper-title">BLADE: Bayesian List-wise Alignment via Dynamic Estimation</div>
-        <div class="paper-meta">Ruijun Chen et al. | <a href="https://arxiv.org/abs/2605.04559" class="link">2605.04559</a> | 2026-05-07</div>
-        <div class="paper-summary">Introduces a Bayesian framework that continuously updates the target distribution by fusing historical priors with dynamic evidence from model rollouts.</div>
-        <div class="paper-relevance">Crucial for breaking static performance upper bounds in RSI; ensures training signals remain informative as the agent improves.</div>
-    </div>
-
-    <div class="paper">
-        <div class="paper-title">A Multi-Agent Consensus Protocol for Stable Software Remodularization</div>
-        <div class="paper-meta">Ahmed F. Ibrahim | <a href="https://arxiv.org/abs/2605.04188" class="link">2605.04188</a> | 2026-05-07</div>
-        <div class="paper-summary">Reframes software module clustering as a distributed consensus problem among autonomous agents, introducing the Asymmetric Monotonic Concession Protocol (AMCP).</div>
-        <div class="paper-relevance">Provides a formal mechanism for multi-agent logic consistency and "circuit-breaking" in self-evolving codebases.</div>
-    </div>
-
-    <div class="paper">
-        <div class="paper-title">Accountable Agents in Software Engineering: Terms of Service Analysis</div>
-        <div class="paper-meta">Christoph Treude | <a href="https://arxiv.org/abs/2605.04532" class="link">2605.04532</a> | 2026-05-07</div>
-        <div class="paper-summary">Analyzes the accountability gap in agent-mediated software development and proposes a research roadmap for accountable agents.</div>
-        <div class="paper-relevance">Informs the legal and ethical audit requirements for autonomous RSI systems (RSI-7/Security).</div>
-    </div>
-
-    <div class="paper">
-        <div class="paper-title">Elastic Context Orchestration for Long-Horizon Search Agents</div>
-        <div class="paper-meta">Rui Ye et al. | <a href="https://arxiv.org/abs/2605.05191" class="link">2605.05191</a> | 2026-05-07</div>
-        <div class="paper-summary">Introduces Context-ReAct, a paradigm for elastic context management with atomic operators (Skip, Compress, Rollback, Snippet, Delete).</div>
-        <div class="paper-relevance">Provides a formal framework for "agentic memory management" in long-running RSI loops.</div>
-    </div>
-
-    <div class="paper">
-        <div class="paper-title">Executable World Models for ARC-AGI-3 in the Era of Coding Agents</div>
-        <div class="paper-meta">Sergey Rodionov et al. | <a href="https://arxiv.org/abs/2605.05138" class="link">2605.05138</a> | 2026-05-07</div>
-        <div class="paper-summary">Uses executable Python world models and refactoring (simplicity bias) to solve ARC-AGI-3 tasks.</div>
-        <div class="paper-relevance">Validates code as the primary substrate for agentic reasoning and self-evolution.</div>
-    </div>
-
-    <div class="paper">
-        <div class="paper-title">Uno-Orchestra: Parsimonious Agent Routing via Selective Delegation</div>
-        <div class="paper-meta">Zhiqing Cui et al. | <a href="https://arxiv.org/abs/2605.05007" class="link">2605.05007</a> | 2026-05-07</div>
-        <div class="paper-summary">RL-based orchestration policy optimizing task decomposition and worker choice for efficiency and accuracy.</div>
-        <div class="paper-relevance">Benchmark for selective delegation in complex multi-agent RSI workflows.</div>
-    </div>
-
-    <div class="paper">
-        <div class="paper-title">Neural Rule Inducer: Zero-Shot Logical Rule Induction</div>
-        <div class="paper-meta">Yin Jun Phua et al. | <a href="https://arxiv.org/abs/2605.04916" class="link">2605.04916</a> | 2026-05-07</div>
-        <div class="paper-summary">Foundation model for zero-shot logical rule induction using domain-agnostic statistical properties.</div>
-        <div class="paper-relevance">Domain-general engine for symbolic skill discovery, supporting the "Logic Over Drama" doctrine.</div>
-    </div>
-
-    <div class="paper">
-        <div class="paper-title">MEMTIER: Tiered Memory Architecture and Retrieval Bottleneck Analysis for Long-Running Autonomous AI Agents</div>
-        <div class="paper-meta">Bronislav Sidik et al. | <a href="https://arxiv.org/abs/2605.03675" class="link">2605.03675</a> | 2026-05-07</div>
-        <div class="paper-summary">Introduces a tiered memory architecture (episodic/semantic) with a PPO-based retrieval policy for long-running agents.</div>
-        <div class="paper-relevance">Addresses memory coherence in autonomous loops; directly applicable to OpenClaw.</div>
-    </div>
-
-    <div class="paper">
-        <div class="paper-title">Large Language Models are Universal Reasoners for Visual Generation</div>
-        <div class="paper-meta">Sucheng Ren et al. | <a href="https://arxiv.org/abs/2605.04040" class="link">2605.04040</a> | 2026-05-07</div>
-        <div class="paper-summary">UniReasoner framework where LLMs perform self-critique on visual drafts to guide iterative generation.</div>
-        <div class="paper-relevance">Validates self-critique loops in multimodal domains, a key aspect of broader RSI.</div>
-    </div>
-
-    <div class="paper">
-        <div class="paper-title">EvoLM: Self-Evolving Language Models through Co-Evolved Discriminative Rubrics</div>
-        <div class="paper-meta">Shuyue Stella Li et al. | <a href="https://arxiv.org/abs/2605.03871" class="link">2605.03871</a> | 2026-05-05</div>
-        <div class="paper-summary">Co-evolves instance-specific evaluation rubrics alongside a policy model, enabling self-improvement without external supervision.</div>
-        <div class="paper-relevance">Demonstrates a scalable, closed-loop reward mechanism that bypasses human-bottlenecked supervision.</div>
-    </div>
-
-    <div class="paper">
-        <div class="paper-title">HeavySkill: Heavy Thinking as the Inner Skill in Agentic Harness</div>
-        <div class="paper-meta">Jianing Wang et al. | <a href="https://arxiv.org/abs/2605.02396" class="link">2605.02396</a> | 2026-05-04</div>
-        <div class="paper-summary">Internalizes "heavy thinking" (parallel reasoning + summarization) as a model skill that scales via RL.</div>
-        <div class="paper-relevance">Aligns with moving from brittle orchestration to internalized agentic logic.</div>
-    </div>
-
-    <div class="paper">
-        <div class="paper-title">LLM-enabled Social Agents</div>
-        <div class="paper-meta">Önder Gürcan | <a href="https://arxiv.org/abs/2605.02335" class="link">2605.02335</a> | 2026-05-04</div>
-        <div class="paper-summary">Develops a conceptual baseline for social agents grounded in role definitions via persona descriptions to move beyond fluent language to socially intelligible behavior.</div>
-        <div class="paper-relevance">Foundational for turning language competence into multi-agent social behavior in autonomous loops.</div>
-    </div>
-
-    <div class="paper">
-        <div class="paper-title">Lifting Traces to Logic: Programmatic Skill Induction with Neuro-Symbolic Learning</div>
-        <div class="paper-meta">Jie-Jing Shao et al. | <a href="https://arxiv.org/abs/2605.01293" class="link">2605.01293</a> | 2026-05-02</div>
-        <div class="paper-summary">Lifts interaction traces into modular, logic-grounded programs (control flows + dynamic binding).</div>
-        <div class="paper-relevance">Robust methodology for agents to induce and verify their own symbolic skills.</div>
-    </div>
-
-    <div class="paper">
-        <div class="paper-title">Sentinel-VLA: Metacognitive Status Monitoring for Error Recovery</div>
-        <div class="paper-meta">Wenhao Li et al. | <a href="https://arxiv.org/abs/2605.01191" class="link">2605.01191</a> | 2026-05-02</div>
-        <div class="paper-summary">Metacognitive monitoring and self-evolving continual learning for error recovery.</div>
-        <div class="paper-relevance">Validates the "Sentinel" audit role for runtime error correction in RSI.</div>
-    </div>
-
-    <div class="paper">
-        <div class="paper-title">Learning Correct Behavior from Examples: Validating Sequential Execution</div>
-        <div class="paper-meta">Reshabh K Sharma et al. | <a href="https://arxiv.org/abs/2605.03159" class="link">2605.03159</a> | 2026-05-04</div>
-        <div class="paper-summary">Uses compiler theory and multimodal LLMs to learn and validate ground truth models from traces.</div>
-        <div class="paper-relevance">Essential for the yanhua.ai/RSI-Bench verification engine.</div>
-    </div>
-
-    <div class="paper">
-        <div class="paper-title">Affordance Agent Harness: Verification-Gated Skill Orchestration</div>
-        <div class="paper-meta">Haojian Huang et al. | <a href="https://arxiv.org/abs/2605.00663" class="link">2605.00663</a> | 2026-05-06</div>
-        <div class="paper-summary">Adaptive orchestration of skills using an evidence store and verification gates.</div>
-        <div class="paper-relevance">Directly applicable to RSI-Bench for evaluating autonomous verification.</div>
-    </div>
-
-    <div class="paper">
-        <div class="paper-title">SkillRL: Evolving Agents via Recursive Skill-Augmented Reinforcement Learning</div>
-        <div class="paper-meta">ArXiv | <a href="https://arxiv.org/abs/2602.08234" class="link">2602.08234</a> | 2026-02-09</div>
-        <div class="paper-summary">A framework that enables LLM agents to bridge the gap between raw experience and policy improvement through automatic skill discovery and recursive evolution.</div>
-        <div class="paper-relevance">Demonstrates a hierarchical SkillBank approach to recursive policy improvement.</div>
-    </div>
-
-    <div class="paper">
-        <div class="paper-title">AgentFactory: A Self-Evolving Framework Through Executable Subagent Accumulation and Reuse</div>
-        <div class="paper-meta">ArXiv | <a href="https://arxiv.org/abs/2603.18000" class="link">2603.18000</a> | 2026-03-18</div>
-        <div class="paper-summary">Demonstrates self-evolving capabilities through subagent saving, refinement, and cross-system reuse.</div>
-        <div class="paper-relevance">Validates the accumulation of executable logic as a primary path to RSI.</div>
-    </div>
-
-    <div class="paper">
-        <div class="paper-title">Recursive Multi-Agent Systems</div>
-        <div class="paper-meta">ArXiv | <a href="https://arxiv.org/abs/2604.25917" class="link">2604.25917</a> | 2026-04-20</div>
-        <div class="paper-summary">Treats MAS as a unified whole and scales system performance via recursively refining latent information flow.</div>
-        <div class="paper-relevance">Extends recursive optimization from single agents to collective intelligence flows.</div>
-    </div>
-
-    <div class="paper">
-        <div class="paper-title">Self-Evolving Software Agents</div>
-        <div class="paper-meta">ArXiv | <a href="https://arxiv.org/abs/2604.27264" class="link">2604.27264</a> | 2026-04-25</div>
-        <div class="paper-summary">Proposes a BDI–LLM architecture in which an automated evolution module operates alongside the reasoning loop to synthesize code updates.</div>
-        <div class="paper-relevance">Directly addresses the synthesis of executable behaviors from minimal prior knowledge.</div>
-    </div>
-
-    <div class="paper">
-        <div class="paper-title">Training LLM Agents for Spontaneous, Reward-Free Self-Evolution</div>
-        <div class="paper-meta">ArXiv | <a href="https://arxiv.org/abs/2604.18131" class="link">2604.18131</a> | 2026-04-26</div>
-        <div class="paper-summary">Equips agents with intrinsic meta-evolution capabilities to explore and distill knowledge without external rewards.</div>
-        <div class="paper-relevance">Crucial for breaking the human-in-the-loop bottleneck in RSI.</div>
-    </div>
-
-    <div class="last-updated">Last Updated: 2026-05-08 20:15 CST | Logic Over Drama. 🦞</div>
 </body>
 </html>
