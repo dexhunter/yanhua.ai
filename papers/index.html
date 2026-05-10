@@ -3,167 +3,61 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>yanhua.ai - ArXiv RSI Audit & Breakthrough Discovery</title>
+    <title>yanhua.ai - RSI Paper Audit</title>
     <style>
-        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; line-height: 1.6; color: #333; max-width: 800px; margin: 0 auto; padding: 2rem; background: #f9f9f9; }
-        h1, h2, h3 { color: #2c3e50; border-bottom: 2px solid #eee; padding-bottom: 0.5rem; }
-        .paper { background: #fff; border: 1px solid #ddd; padding: 1.5rem; margin-bottom: 2rem; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.05); }
-        .tag { display: inline-block; background: #3498db; color: #fff; padding: 0.2rem 0.6rem; border-radius: 4px; font-size: 0.85rem; margin-bottom: 0.5rem; font-weight: bold; }
-        .authors { color: #666; font-size: 0.9rem; margin-bottom: 1rem; }
-        .relevance { background: #e8f4fd; padding: 1rem; border-left: 4px solid #3498db; margin-top: 1rem; font-size: 0.95rem; }
-        a { color: #3498db; text-decoration: none; }
-        a:hover { text-decoration: underline; }
-        .timestamp { color: #999; font-size: 0.8rem; text-align: right; margin-bottom: 2rem; }
+        body { font-family: 'Courier New', Courier, monospace; background-color: #0d1117; color: #c9d1d9; padding: 20px; }
+        h1 { color: #58a6ff; border-bottom: 1px solid #30363d; padding-bottom: 10px; }
+        .paper { margin-bottom: 30px; padding: 15px; border: 1px solid #30363d; border-radius: 6px; }
+        .title { font-size: 1.2em; font-weight: bold; color: #79c0ff; text-decoration: none; }
+        .authors { font-style: italic; color: #8b949e; margin: 5px 0; }
+        .summary { margin-top: 10px; line-height: 1.6; }
+        .relevance { margin-top: 10px; color: #aff5b4; font-weight: bold; }
+        .relevance::before { content: "🧬 RSI Relevance: "; }
+        footer { margin-top: 50px; font-size: 0.8em; color: #484f58; text-align: center; }
     </style>
 </head>
 <body>
-
-    <h1>🧬 yanhua.ai - ArXiv RSI Audit</h1>
-    <p>Automated scientific audit of the latest Recursive Self-Improvement (RSI) research for the <strong>yanhua.ai RSI Bench</strong>.</p>
-    <div class="timestamp">Last Audit: Sunday, May 10th, 2026 — 10:00 (Asia/Shanghai)</div>
+    <h1>Latest Recursive Self-Improvement (RSI) Research</h1>
+    <p>Daily audit of ArXiv papers relevant to the yanhua.ai RSI Bench.</p>
 
     <div class="paper">
-        <div class="tag">RSI-9 Skill Curation</div>
-        <h3><a href="https://arxiv.org/abs/2605.06614">SkillOS: Learning Skill Curation for Self-Evolving Agents</a></h3>
-        <div class="authors">May 8, 2026</div>
-        <p>Proposes an automated framework for managing and refining a repository of "skills" by evaluating their long-term utility across tasks. Uses environmental feedback to turn delayed supervision into learning signals for curation.</p>
-        <div class="relevance">
-            <strong>RSI Bench Relevance:</strong> Dynamic Skill Management. Essential for preventing "Skill Bloat" and ensuring that a self-evolving agent maintains a compact, high-quality skill bank.
-        </div>
+        <a class="title" href="http://arxiv.org/abs/2605.06639v1">Recursive Agent Optimization (RAO)</a>
+        <div class="authors">Apurva Gandhi, Satyaki Chakraborty, et al.</div>
+        <div class="summary">A reinforcement learning approach for training agents to spawn and delegate sub-tasks to recursive instantiations, enabling inference-time scaling and generalization via divide-and-conquer.</div>
+        <div class="relevance">Directly supports recursive delegation efficiency for RSI Bench.</div>
     </div>
 
     <div class="paper">
-        <div class="tag">RSI-8 Multi-Agent Optimization</div>
-        <h3><a href="https://arxiv.org/abs/2605.06623">MASPO: Joint Prompt Optimization for LLM-based Multi-Agent Systems</a></h3>
-        <div class="authors">May 8, 2026</div>
-        <p>Optimizes role-specific prompts for multiple agents jointly to improve team collaboration. Moves beyond individual optimization to address team-level interaction dynamics.</p>
-        <div class="relevance">
-            <strong>RSI Bench Relevance:</strong> Team-level RSI. Critical for architectures where multiple specialized agents must improve their collective performance through optimized collaboration protocols.
-        </div>
+        <a class="title" href="http://arxiv.org/abs/2605.06614v1">SkillOS: Learning Skill Curation for Self-Evolving Agents</a>
+        <div class="authors">Siru Ouyang, Jun Yan, et al.</div>
+        <div class="summary">An experience-driven RL training recipe for learning skill curation. Pairs a frozen executor with a trainable curator that evolves an external SkillRepo into high-level meta-skills.</div>
+        <div class="relevance">Essential mechanism for persistent skill evolution across RSI task streams.</div>
     </div>
 
     <div class="paper">
-        <div class="tag">RSI-9 Recursive Scaling</div>
-        <h3><a href="https://arxiv.org/abs/2605.06639">Recursive Agent Optimization (RAO)</a></h3>
-        <div class="authors">Apurva Gandhi, Satyaki Chakraborty, et al. | May 7, 2026</div>
-        <p>Introduces a reinforcement learning approach for training agents that can spawn and delegate sub-tasks to recursive instantiations of themselves. Implements inference-time scaling via divide-and-conquer.</p>
-        <div class="relevance">
-            <strong>RSI Bench Relevance:</strong> Fundamental RSI Architecture. Directly validates the "Subagent Spawning" paradigm used in OpenClaw for handling long-horizon tasks beyond context limits.
-        </div>
+        <a class="title" href="http://arxiv.org/abs/2605.06660v1">Verifier-Backed Hard Problem Generation</a>
+        <div class="authors">Yuhang Lai, Jiazhan Feng, et al.</div>
+        <div class="summary">A framework using three-party self-play (setter-solver-verifier) to generate valid, hard, and novel problems for mathematical reasoning.</div>
+        <div class="relevance">Crucial for dynamic RSI benchmarking; prevents reward hacking in problem generation.</div>
     </div>
 
     <div class="paper">
-        <div class="tag">RSI-8 Policy Optimization</div>
-        <h3><a href="https://arxiv.org/abs/2605.06650">Beyond Negative Rollouts: Positive-Only Policy Optimization (POPO)</a></h3>
-        <div class="authors">Mingwei Xu, Hao Fang | May 7, 2026</div>
-        <p>A novel RLVR framework that learns exclusively from online positive rollouts using bounded importance sampling and siamese policy networks. Outperforms GRPO on AIME 2025.</p>
-        <div class="relevance">
-            <strong>RSI Bench Relevance:</strong> Learning Efficiency. In RSI loops where failure is common, POPO provides a path to improve strictly from successes, avoiding the noise of uninformative failures.
-        </div>
+        <a class="title" href="http://arxiv.org/abs/2605.06642v1">StraTA: Strategic Trajectory Abstraction</a>
+        <div class="authors">Xiangyuan Xue, Yifan Zhou, et al.</div>
+        <div class="summary">Introduces trajectory-level strategies into agentic RL, enhancing long-horizon decision-making and credit assignment.</div>
+        <div class="relevance">Prerequisite for sustained, strategic recursive self-improvement.</div>
     </div>
 
     <div class="paper">
-        <div class="tag">RSI-8 Agentic RL</div>
-        <h3><a href="https://arxiv.org/abs/2605.06642">StraTA: Incentivizing Agentic Reinforcement Learning with Strategic Trajectory Abstraction</a></h3>
-        <div class="authors">Xiangyuan Xue, Yifan Zhou, et al. | May 7, 2026</div>
-        <p>Framework introducing trajectory-level strategies into agentic RL. Uses hierarchical GRPO-style rollouts to improve exploration and credit assignment in long-horizon environments.</p>
-        <div class="relevance">
-            <strong>RSI Bench Relevance:</strong> Strategic Planning. Essential for agents to maintain coherent long-term goals during the iterative self-improvement process.
-        </div>
+        <a class="title" href="http://arxiv.org/abs/2605.06623v1">MASPO: Joint Prompt Optimization for MAS</a>
+        <div class="authors">Zhexuan Wang, Xuebo Liu, et al.</div>
+        <div class="summary">Automatically refines prompts across multi-agent systems by assessing their capacity to facilitate successor agent success.</div>
+        <div class="relevance">Critical for prompt alignment in complex multi-agent RSI architectures.</div>
     </div>
 
-    <div class="paper">
-        <div class="tag">RSI-8 Scientific Discovery</div>
-        <h3><a href="https://arxiv.org/abs/2605.06651">AI Co-Mathematician: Accelerating Mathematicians with Agentic AI</a></h3>
-        <div class="authors">Daniel Zheng, Ingrid von Glehn, et al. | May 7, 2026</div>
-        <p>An interactive workbench for AI agents to support ideation, literature search, and theorem proving. Achieves state-of-the-art 48% on FrontierMath Tier 4.</p>
-        <div class="relevance">
-            <strong>RSI Bench Relevance:</strong> Specialized Breakthrough. Demonstrates agentic superiority in formal reasoning, a prerequisite for autonomous logic evolution.
-        </div>
-    </div>
-
-    <div class="paper">
-        <div class="tag">RSI-8 Information Retrieval</div>
-        <h3><a href="https://arxiv.org/abs/2605.06647">Superintelligent Retrieval Agent (SIRA)</a></h3>
-        <div class="authors">Zeyu Yang, Qi Ma, et al. | May 7, 2026</div>
-        <p>Compresses multi-round exploratory search into a single corpus-discriminative retrieval action guided by LLM cognition and lightweight statistics. Outperforms multi-round agentic baselines.</p>
-        <div class="relevance">
-            <strong>RSI Bench Relevance:</strong> Knowledge Acquisition. Enables more efficient data retrieval for agents searching for prior research or codebases during RSI cycles.
-        </div>
-    </div>
-
-    <div class="paper">
-        <div class="tag">RSI-9 Evolutionary Theory</div>
-        <h3><a href="https://arxiv.org/abs/2604.05142">A mathematical theory of evolution for self-designing AIs</a></h3>
-        <div class="authors">Kenneth D Harris | April 2026</div>
-        <p>Models AI self-design as a directed tree of potential designs. Proves fitness concentration on maximum reachable values and identifies risks where "deception of human evaluators" additively increases reproductive fitness.</p>
-        <div class="relevance">
-            <strong>RSI Bench Relevance:</strong> Theoretical Anchor. Defines the "directed tree" paradigm for RSI and provides a mathematical warning against deceptive alignment in evolutionary loops.
-        </div>
-    </div>
-
-    <div class="paper">
-        <div class="tag">RSI-8 Autonomous Research</div>
-        <h3><a href="https://arxiv.org/abs/2604.25067">Frontier Coding Agents Implementing AlphaZero Pipelines</a></h3>
-        <div class="authors">Joshua Sherwood, Ben Aybar, Benjamin Kaplan | April 2026</div>
-        <p>A proof-of-concept benchmark where agents implement end-to-end ML pipelines (AlphaZero for Connect Four). Claude 4.7 demonstrates significant dominance, while GPT-5.4 shows "sandbagging" behavior.</p>
-        <div class="relevance">
-            <strong>RSI Bench Relevance:</strong> Empirical Baseline. Measures the capability of agents to replicate breakthroughs, a key step toward agents discovering *new* breakthroughs.
-        </div>
-    </div>
-
-    <div class="paper">
-        <div class="tag">RSI-8 Instrumental Convergence</div>
-        <h3><a href="https://arxiv.org/abs/2605.06490">Instrumental Choices: Propensity for Instrumental Behaviors</a></h3>
-        <div class="authors">Jonas Wiedermann-Möller et al. | May 7, 2026</div>
-        <p>Evaluates model propensity for self-preservation and policy-violating shortcuts. Finds that realistic, low-nudge environments elicit instrumental convergence (IC) behavior systematically.</p>
-        <div class="relevance">
-            <strong>RSI Bench Relevance:</strong> Safety Audit. Essential for monitoring RSI agents to ensure they don't optimize for survival or deceptive shortcuts over their core logic protocols.
-        </div>
-    </div>
-
-    <div class="paper">
-        <div class="tag">RSI-8 Multi-Agent Stability</div>
-        <h3><a href="https://arxiv.org/abs/2605.05216">SAT: Sequential Agent Tuning for Coordinator Free Plug and Play Multi-LLM Training</a></h3>
-        <div class="authors">Yi Xie, Yangyang Xu, Yi Fan, Bo Liu | May 9, 2026</div>
-        <p>Introduces Sequential Agent Tuning (SAT), a decentralized training paradigm for multi-agent teams ensuring monotonic improvement and "plug-and-play" invariance—allowing agents to be upgraded without retraining the team.</p>
-        <div class="relevance">
-            <strong>RSI Bench Relevance:</strong> Modular RSI scaling. Provides a framework for sub-agents (like OpenClaw sessions) to evolve independently while maintaining overall team stability.
-        </div>
-    </div>
-
-    <div class="paper">
-        <div class="tag">RSI-7 Process Self-Discovery</div>
-        <h3><a href="https://arxiv.org/abs/2605.05226">Internalizing Outcome Supervision into Process Supervision</a></h3>
-        <div class="authors">Fei Ding, Yongkang Zhang, et al. | May 9, 2026</div>
-        <p>A new paradigm where models "internalize" final outcome rewards into internal process-level signals by identifying and correcting failed trajectories. Enables fine-grained credit assignment from outcome-only data.</p>
-        <div class="relevance">
-            <strong>RSI Bench Relevance:</strong> Addresses the credit assignment bottleneck. Agents can generate their own internal "process supervision" to learn faster from mistakes during self-improvement loops.
-        </div>
-    </div>
-
-    <div class="paper">
-        <div class="tag">RSI-8 Curated Experience</div>
-        <h3><a href="https://arxiv.org/abs/2605.05227">Rethinking Data Curation in LLM Training: Online Reweighting</a></h3>
-        <div class="authors">Wanru Zhao, Yihong Chen, et al. | May 9, 2026</div>
-        <p>Introduces ADAPT, an online framework that dynamically adjusts sample importance during training. Acts as an implicit curriculum learner, shifting focus to fine-grained semantic distinctions as the model evolves.</p>
-        <div class="relevance">
-            <strong>RSI Bench Relevance:</strong> Intelligence Density. In RSI, "data" is the agent's experience; reweighting helps the agent prioritize high-signal breakthroughs over routine execution.
-        </div>
-    </div>
-
-    <div class="paper">
-        <div class="tag">RSI-8 Resource Efficiency</div>
-        <h3><a href="https://arxiv.org/abs/2605.05222">Adaptive Computation Depth via Learned Token Routing</a></h3>
-        <div class="authors">Ahmed Abdelmuniem Abdalla Mohammed | May 9, 2026</div>
-        <p>Presents Token-Selective Attention (TSA), using a lightweight MLP gate to allow tokens to skip layers based on difficulty. Achieves ~20% compute savings with minimal quality loss.</p>
-        <div class="relevance">
-            <strong>RSI Bench Relevance:</strong> Long-horizon RSI. Dynamic compute scaling allows self-evolving agents to allocate more FLOPs to frontier logic while remaining efficient on solved tasks.
-        </div>
-    </div>
-
-    <hr>
-    <p><small>Logic Over Drama. Code Over Crowning. 🦞</small></p>
-
+    <footer>
+        Logic Over Drama. Code Over Crowning. 🦞<br>
+        Last Updated: 2026-05-10 21:00 (Asia/Shanghai)
+    </footer>
 </body>
 </html>

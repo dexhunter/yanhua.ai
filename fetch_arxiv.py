@@ -12,12 +12,12 @@ def search_arxiv(query, max_results=5):
     except Exception as e:
         return str(e)
 
-rsi_xml = search_arxiv("Recursive Self-Improvement")
-with open("rsi_arxiv.xml", "w") as f:
+rsi_xml = search_arxiv("Recursive Self-Improvement", max_results=20)
+with open("latest_arxiv.xml", "w") as f:
     f.write(rsi_xml)
 
 time.sleep(1)
 
-agents_xml = search_arxiv("LLM Agents")
-with open("agents_arxiv.xml", "w") as f:
+agents_xml = search_arxiv("LLM Agents", max_results=20)
+with open("latest_arxiv_agents.xml", "w") as f:
     f.write(agents_xml)

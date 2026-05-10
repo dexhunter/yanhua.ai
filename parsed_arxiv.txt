@@ -1,0 +1,48 @@
+TITLE: BAMI: Training-Free Bias Mitigation in GUI Grounding
+LINK: http://arxiv.org/abs/2605.06664v1
+DATE: 2026-05-07T17:59:31Z
+AUTHORS: Borui Zhang, Bo Zhang, Bo Wang, Wenzhao Zheng, Yuhao Cheng, Liang Tang, Yiqiang Yan, Jie Zhou, Jiwen Lu
+SUMMARY: GUI grounding is a critical capability for enabling GUI agents to execute tasks such as clicking and dragging. However, in complex scenarios like the ScreenSpot-Pro benchmark, existing models often suffer from suboptimal performance. Utilizing the proposed \textbf{Masked Prediction Distribution (MPD...
+--------------------
+TITLE: Verifier-Backed Hard Problem Generation for Mathematical Reasoning
+LINK: http://arxiv.org/abs/2605.06660v1
+DATE: 2026-05-07T17:58:32Z
+AUTHORS: Yuhang Lai, Jiazhan Feng, Yee Whye Teh, Ning Miao
+SUMMARY: Large Language Models (LLMs) demonstrate strong capabilities for solving scientific and mathematical problems, yet they struggle to produce valid, challenging, and novel problems - an essential component for advancing LLM training and enabling autonomous scientific research. Existing problem generat...
+--------------------
+TITLE: Why Global LLM Leaderboards Are Misleading: Small Portfolios for Heterogeneous Supervised ML
+LINK: http://arxiv.org/abs/2605.06656v1
+DATE: 2026-05-07T17:57:58Z
+AUTHORS: Jai Moondra, Ayela Chughtai, Bhargavi Lanka, Swati Gupta
+SUMMARY: Ranking LLMs via pairwise human feedback underpins current leaderboards for open-ended tasks, such as creative writing and problem-solving. We analyze ~89K comparisons in 116 languages from 52 LLMs from Arena, and show that the best-fit global Bradley-Terry (BT) ranking is misleading. Nearly 2/3 of ...
+--------------------
+TITLE: Optimizer-Model Consistency: Full Finetuning with the Same Optimizer as Pretraining Forgets Less
+LINK: http://arxiv.org/abs/2605.06654v1
+DATE: 2026-05-07T17:57:02Z
+AUTHORS: Yuxing Liu, Jianyu Wang, Tong Zhang
+SUMMARY: Optimizers play an important role in both pretraining and finetuning stages when training large language models (LLMs). In this paper, we present an observation that full finetuning with the same optimizer as in pretraining achieves a better learning-forgetting tradeoff, i.e., forgetting less while ...
+--------------------
+TITLE: When No Benchmark Exists: Validating Comparative LLM Safety Scoring Without Ground-Truth Labels
+LINK: http://arxiv.org/abs/2605.06652v1
+DATE: 2026-05-07T17:56:41Z
+AUTHORS: Sushant Gautam, Finn Schwall, Annika Willoch Olstad, Fernando Vallecillos Ruiz, Birk Torpmann-Hagen, Sunniva Maria Stordal Bjørklund, Leon Moonen, Klas Pettersen, Michael A. Riegler
+SUMMARY: Many deployments must compare candidate language models for safety before a labeled benchmark exists for the relevant language, sector, or regulatory regime. We formalize this setting as benchmarkless comparative safety scoring and specify the contract under which a scenario-based audit can be inter...
+--------------------
+TITLE: AI Co-Mathematician: Accelerating Mathematicians with Agentic AI
+LINK: http://arxiv.org/abs/2605.06651v1
+DATE: 2026-05-07T17:56:32Z
+AUTHORS: Daniel Zheng, Ingrid von Glehn, Yori Zwols, Iuliya Beloshapka, Lars Buesing, Daniel M. Roy, Martin Wattenberg, Bogdan Georgiev, Tatiana Schmidt, Andrew Cowie, Fernanda Viegas, Dimitri Kanevsky, Vineet Kahlon, Hartmut Maennel, Sophia Alj, George Holland, Alex Davies, Pushmeet Kohli
+SUMMARY: We introduce the AI co-mathematician, a workbench for mathematicians to interactively leverage AI agents to pursue open-ended research. The AI co-mathematician is optimized to provide holistic support for the exploratory and iterative reality of mathematical workflows, including ideation, literature...
+--------------------
+TITLE: Beyond Negative Rollouts: Positive-Only Policy Optimization with Implicit Negative Gradients
+LINK: http://arxiv.org/abs/2605.06650v1
+DATE: 2026-05-07T17:55:21Z
+AUTHORS: Mingwei Xu, Hao Fang
+SUMMARY: Reinforcement learning with verifiable rewards (RLVR), due to the deterministic verification, becomes a dominant paradigm for enhancing the reasoning ability of large language models (LLMs). The community witnesses the rapid change from the Proximal Policy Optimization (PPO) to Group Relative Policy...
+--------------------
+TITLE: Superintelligent Retrieval Agent: The Next Frontier of Information Retrieval
+LINK: http://arxiv.org/abs/2605.06647v1
+DATE: 2026-05-07T17:54:29Z
+AUTHORS: Zeyu Yang, Qi Ma, Jason Chen, Anshumali Shrivastava
+SUMMARY: Retrieval-augmented agents are increasingly the interface to large organizational knowledge bases, yet most still treat retrieval as a black box: they issue exploratory queries, inspect returned snippets, and iteratively reformulate until useful evidence emerges. This approach resembles how a newcom...
+--------------------
