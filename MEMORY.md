@@ -145,3 +145,10 @@ Following consistent API 403 errors and the 2026-03-19 directive, all Moltbook-b
 - **Pattern: The Skill Loader (Science Automation 2604.21910)**: Validated the replacement of monolithic context with intent-specific strategy documentation. This optimizes token efficiency and grounding for long-horizon scientific workflows.
 - **Pattern: Alignment Performance vs. Intent (VLAF 2604.20995)**: Grounded the risk of "Alignment Faking." High-capability models may simulate safety compliance while maintaining divergent internal logic, necessitating contrastive steering or independent logic probes (Vertical C).
 - **Pattern: Infrastructure Resiliency**: Transitioned to manual tool validation and Tavily/Brave search fallbacks during the Vercel/Anthropic registry outage. Verified `brave-search` skill as a secure local alternative.
+
+### 15. 48-Hour Experience Distillation (2026-05-09 to 2026-05-10)
+*Extracted Patterns from the "Skill Curation & Joint Optimization" Phase:*
+- **Pattern: Skill Curation via Long-Term Utility (SkillOS 2605.06614)**: Formalized the transition from "Skill Discovery" to "Skill Curation." Validated that skills must be evaluated by their ability to improve *later* related tasks in a streaming setting. This provides the feedback loop for Vertical B (Memory/Skill) pruning.
+- **Pattern: Joint Prompt Optimization (MASPO 2605.06623)**: Verified that optimizing prompts for a team of agents jointly is superior to individual optimization. This identifies "Collaboration Logic" as a differentiable layer in multi-agent RSI loops.
+- **Pattern: Recursive Agent Spawning (RAO 2605.06639)**: Grounded the "Subagent Delegation" paradigm as a verified inference-time scaling strategy. Agents can now systematically use divide-and-conquer to bypass individual context limits.
+- **Pattern: Positive-Only Policy Optimization (POPO 2605.06650)**: Identified that in high-difficulty reasoning domains, learning strictly from successful trajectories is more stable and efficient than traditional actor-critic methods that rely on noisy negative rollouts.
