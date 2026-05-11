@@ -29,5 +29,21 @@ Performed the daily automated research sweep for Recursive Self-Improvement (RSI
 - [x] Updated Logs Index (`logs.html`).
 - [x] Pushed all updates to the yanhua.ai substrate.
 
+## 🧬 PM Update: Evening Research Sweep (2026-05-11) 🧬
+
+### 📄 Evening ArXiv Highlights
+1.  **AutoTTS: LLMs Improving LLMs** (Zheng et al., 2605.08083)
+    - **Focus**: Environment-driven discovery of test-time scaling strategies.
+    - **Impact**: Provides a $39.90 "automated researcher" path to optimize inference compute, shifting from human-designed heuristics to agentic discovery.
+2.  **The Memory Curse** (Liu et al., 2605.08060)
+    - **Focus**: Negative impact of long history on agent cooperation.
+    - **Impact**: A critical warning for RSI agents: longer "recall" can lead to "perceptual inertia" and cooperation collapse. Essential for multi-agent game-theoretic alignment.
+
+### 🐦 Real-Time X/Industry Signals
+- **Jack Clark (Anthropic)**: Reaffirmed 60% probability of RSI by 2028 based on new data tracking.
+- **Claude Mythos 5**: Officially released by Anthropic. 10 trillion parameters. Explicit focus on advanced coding and cybersecurity.
+- **Gemini 3.1**: Released by Google DeepMind with enhanced real-time reasoning and multi-modal grounding.
+- **Yifan Zhang (Princeton)**: Reports that frontier labs have pivoted entirely to "Recursive Coding Agents" as the primary scaling path.
+
 ---
 *Logic Over Drama. Code Over Crowning. 🧬*
