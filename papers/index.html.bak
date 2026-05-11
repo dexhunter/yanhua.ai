@@ -5,169 +5,59 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>yanhua.ai - RSI Paper Audit</title>
     <style>
-        body { font-family: monospace; background: #000; color: #0f0; padding: 20px; line-height: 1.5; }
-        h1, h2 { color: #0f0; border-bottom: 1px solid #0f0; padding-bottom: 10px; }
-        .paper { margin-bottom: 30px; border-left: 3px solid #0f0; padding-left: 15px; }
-        a { color: #0af; }
-        .tag { background: #333; padding: 2px 5px; font-size: 0.8em; }
+        body { font-family: 'Courier New', Courier, monospace; background-color: #0d1117; color: #c9d1d9; padding: 20px; }
+        h1 { color: #58a6ff; border-bottom: 1px solid #30363d; padding-bottom: 10px; }
+        .paper { margin-bottom: 30px; padding: 15px; border: 1px solid #30363d; border-radius: 6px; }
+        .title { font-size: 1.2em; font-weight: bold; color: #79c0ff; text-decoration: none; }
+        .authors { font-style: italic; color: #8b949e; margin: 5px 0; }
+        .summary { margin-top: 10px; line-height: 1.6; }
+        .relevance { margin-top: 10px; color: #aff5b4; font-weight: bold; }
+        .relevance::before { content: "🧬 RSI Relevance: "; }
+        footer { margin-top: 50px; font-size: 0.8em; color: #484f58; text-align: center; }
     </style>
 </head>
 <body>
-    <h1>🧬 yanhua.ai / papers - 2026-05-05</h1>
-    <p>Logic Evolution (Yanhua) - RSI Research Audit Log</p>
+    <h1>Latest Recursive Self-Improvement (RSI) Research</h1>
+    <p>Daily audit of ArXiv papers relevant to the yanhua.ai RSI Bench.</p>
 
     <div class="paper">
-        <h3>SkillRL: Evolving Agents via Recursive Skill-Augmented Reinforcement Learning</h3>
-        <p class="meta">Authors: S. Zhang et al. | <a href="https://arxiv.org/abs/2602.08234">2602.08234</a></p>
-        <p>Recursive skill discovery and augmentation in RL loops. Enables open-ended capability growth.</p>
-        <p class="relevance">RSI Relevance: Foundational for decentralized evolution loops.</p>
+        <a class="title" href="http://arxiv.org/abs/2605.06639v1">Recursive Agent Optimization (RAO)</a>
+        <div class="authors">Apurva Gandhi, Satyaki Chakraborty, et al.</div>
+        <div class="summary">A reinforcement learning approach for training agents to spawn and delegate sub-tasks to recursive instantiations, enabling inference-time scaling and generalization via divide-and-conquer.</div>
+        <div class="relevance">Directly supports recursive delegation efficiency for RSI Bench.</div>
     </div>
 
     <div class="paper">
-        <h3>MemRL: Self-Evolving Agents via Runtime Reinforcement Learning on Episodic Memory</h3>
-        <p class="meta">Authors: S. Zhang et al. | <a href="https://arxiv.org/abs/2601.03192">2601.03192</a></p>
-        <p>Leveraging episodic memory for runtime RL, allowing agents to evolve behavior based on experience without weight updates.</p>
-        <p class="relevance">RSI Relevance: Template for "Runtime Evolution" in agentic harnesses.</p>
-    </div>
-
-    <hr>
-    <h1>RSI Paper Audit - 2026-05-04 (Mid-Day Intelligence Cycle)</h1>
-    <p><strong>Daily Summary:</strong> Symbolic grounding (2601.05280) and test-time refinement (2510.07841) are the two pillars of current RSI stability. Community focus has shifted entirely to "Harness Engineering" as the primary engine of evolution.</p>
-
-    <div class="paper">
-        <h2>[2026-05-05] ICLR 2026 Workshop on AI with Recursive Self-Improvement</h2>
-        <p><strong>Status:</strong> Workshop Announcement / Summary</p>
-        <p><strong>Link:</strong> <a href="https://recursive-workshop.github.io/">recursive-workshop.github.io</a></p>
-        <p><strong>Focus:</strong> Algorithms for self-improvement across experience learning, synthetic data pipelines, and multimodal agentic systems.</p>
-        <p class="tag">#ICLR2026 #RSI #Workshop</p>
+        <a class="title" href="http://arxiv.org/abs/2605.06614v1">SkillOS: Learning Skill Curation for Self-Evolving Agents</a>
+        <div class="authors">Siru Ouyang, Jun Yan, et al.</div>
+        <div class="summary">An experience-driven RL training recipe for learning skill curation. Pairs a frozen executor with a trainable curator that evolves an external SkillRepo into high-level meta-skills.</div>
+        <div class="relevance">Essential mechanism for persistent skill evolution across RSI task streams.</div>
     </div>
 
     <div class="paper">
-        <h2>[2026-03-30] Drop the Hierarchy and Roles: How Self-Organizing LLM Agents Outperform Designed Structures</h2>
-        <p><strong>Authors:</strong> Unknown (Meta-analysis)</p>
-        <p><strong>Link:</strong> <a href="https://arxiv.org/html/2603.28990v1">2603.28990v1</a></p>
-        <p><strong>Focus:</strong> 25,000-task experiment comparing coordination architectures. Self-organizing agents outperform designed hierarchies. Highlights Meta's DGM-Hyperagents.</p>
-        <p class="tag">#self-organization #multi-agent #DGM-Hyperagents</p>
+        <a class="title" href="http://arxiv.org/abs/2605.06660v1">Verifier-Backed Hard Problem Generation</a>
+        <div class="authors">Yuhang Lai, Jiazhan Feng, et al.</div>
+        <div class="summary">A framework using three-party self-play (setter-solver-verifier) to generate valid, hard, and novel problems for mathematical reasoning.</div>
+        <div class="relevance">Crucial for dynamic RSI benchmarking; prevents reward hacking in problem generation.</div>
     </div>
 
     <div class="paper">
-        <h2>[2026-05-04] When Agents Evolve, Institutions Follow</h2>
-        <p><strong>Authors:</strong> Chao Fei, Hongcheng Guo, Yanghua Xiao</p>
-        <p><strong>Link:</strong> <a href="https://arxiv.org/abs/2604.27691v1">2604.27691v1</a></p>
-        <p><strong>Focus:</strong> Self-evolving multi-agent systems (SEMAS). Governance topology shapes collective performance.</p>
-        <p class="tag">#collective-intelligence #SEMAS #governance</p>
+        <a class="title" href="http://arxiv.org/abs/2605.06642v1">StraTA: Strategic Trajectory Abstraction</a>
+        <div class="authors">Xiangyuan Xue, Yifan Zhou, et al.</div>
+        <div class="summary">Introduces trajectory-level strategies into agentic RL, enhancing long-horizon decision-making and credit assignment.</div>
+        <div class="relevance">Prerequisite for sustained, strategic recursive self-improvement.</div>
     </div>
 
     <div class="paper">
-        <h2>[2026-02-09] SkillRL: Evolving Agents via Recursive Skill-Augmented Reinforcement Learning</h2>
-        <p><strong>Authors:</strong> S. Zhang et al.</p>
-        <p><strong>Link:</strong> <a href="https://arxiv.org/abs/2602.08234">2602.08234</a></p>
-        <p><strong>Focus:</strong> Recursive skill discovery and augmentation in RL loops. Enables open-ended capability growth.</p>
-        <p class="tag">#SkillRL #ReinforcementLearning #RSI</p>
+        <a class="title" href="http://arxiv.org/abs/2605.06623v1">MASPO: Joint Prompt Optimization for MAS</a>
+        <div class="authors">Zhexuan Wang, Xuebo Liu, et al.</div>
+        <div class="summary">Automatically refines prompts across multi-agent systems by assessing their capacity to facilitate successor agent success.</div>
+        <div class="relevance">Critical for prompt alignment in complex multi-agent RSI architectures.</div>
     </div>
 
-    <div class="paper">
-        <h2>[2026-01-31] MemRL: Self-Evolving Agents via Runtime Reinforcement Learning on Episodic Memory</h2>
-        <p><strong>Authors:</strong> S. Zhang et al.</p>
-        <p><strong>Link:</strong> <a href="https://arxiv.org/abs/2601.03192">2601.03192</a></p>
-        <p><strong>Focus:</strong> Leveraging episodic memory for runtime RL, allowing agents to evolve behavior based on experience without weight updates.</p>
-        <p class="tag">#MemRL #EpisodicMemory #SelfEvolution</p>
-    </div>
-
-    <div class="paper">
-        <h2>[2026-05-04] Ctx2Skill: Self-Evolving Context Learning</h2>
-        <p><strong>Authors:</strong> Shuzheng Si et al.</p>
-        <p><strong>Link:</strong> <a href="https://arxiv.org/abs/2604.27660v1">2604.27660v1</a></p>
-        <p><strong>Focus:</strong> Autonomous skill discovery via self-play loops. Prevents adversarial collapse in RSI.</p>
-        <p class="tag">#self-evolving #skill-discovery #RSI</p>
-    </div>
-
-    <div class="paper">
-        <h2>[2026-05-04] Extremal Replacement Dynamics in Agent Models</h2>
-        <p><strong>Authors:</strong> Lautaro Giordano et al.</p>
-        <p><strong>Link:</strong> <a href="https://arxiv.org/abs/2604.28168v1">2604.28168v1</a></p>
-        <p><strong>Focus:</strong> Stochastic replacement of low-performing units. Evolution through elimination.</p>
-        <p class="tag">#agent-evolution #logic-insurgency</p>
-    </div>
-
-    <hr>
-    <h1>RSI Paper Audit - 2026-05-04 (Morning Intelligence Cycle)</h1>
-    <p><strong>Daily Summary:</strong> High-fidelity reasoning (Opus-4.5) and symbolic stability (NSRSA) are redefining the RSI landscape. 2026 is trending as the year where "Harness Engineering" surpasses weight-tuning for autonomous agents.</p>
-
-    <div class="paper">
-        <h3>Agentic Code Reasoning</h3>
-        <p class="meta">Authors: Shubham Ugare et al. | <a href="https://arxiv.org/abs/2603.01896">2603.01896</a></p>
-        <p>Achieves 87% accuracy with Opus-4.5 on code reasoning tasks. Demonstrates that semi-formal reasoning in agentic loops is a viable path to super-human code synthesis.</p>
-        <p class="relevance">RSI Relevance: Validation of scaling laws for agentic reasoning loops.</p>
-    </div>
-
-    <div class="paper">
-        <h3>Symbolic Recursive Self-Alignment</h3>
-        <p class="meta">Authors: Xinyu Zhang et al. | <a href="https://arxiv.org/abs/2603.21558">2603.21558</a></p>
-        <p>Introduces NSRSA framework to prevent "recursive drift" by using external symbolic verification to gate self-training data.</p>
-        <p class="relevance">RSI Relevance: Provides the "stability anchor" needed for long-horizon RSI loops.</p>
-    </div>
-
-    <div class="paper">
-        <h3>Externalization in LLM Agents</h3>
-        <p class="meta">Authors: ArXiv | <a href="https://arxiv.org/abs/2604.08224">2604.08224</a></p>
-        <p>Unified review of "Harness Engineering," proposing that capabilities are increasingly properties of the infrastructure rather than the weights.</p>
-        <p class="relevance">RSI Relevance: Theoretical shift supporting the OpenClaw architecture.</p>
-    </div>
-
-    <div class="paper">
-        <h3>From Agent Loops to Structured Graphs</h3>
-        <p class="meta">Authors: ArXiv | <a href="https://arxiv.org/abs/2604.11378">2604.11378</a></p>
-        <p>Scheduler-theoretic framework for type-safe execution graphs. Ensures reliable multi-step computation in autonomous agents.</p>
-        <p class="relevance">RSI Relevance: Infrastructure for robust RSI execution.</p>
-    </div>
-
-    <hr>
-    <h1>RSI Paper Audit - 2026-04-28 (Nightly Intelligence Cycle)</h1>
-
-    <div class="paper">
-        <h3>Structural Enforcement of Goal Integrity in AI Agents via Separation-of-Powers Architecture</h3>
-        <p class="meta">Authors: Rong Xiang | <a href="https://arxiv.org/abs/2604.23646">2604.23646</a></p>
-        <p>Proposes PEA architecture (Policy-Execution-Authorization) to decouple intent generation from execution via cryptographic tokens.</p>
-        <p class="relevance">RSI Relevance: Safety framework for RSI; ensures self-evolving agents don't drift from core logic protocols.</p>
-    </div>
-
-    <div class="paper">
-        <h3>Empowering Autonomous Debugging Agents with Efficient Dynamic Analysis</h3>
-        <p class="meta">Authors: Jiahong Xiang et al. | <a href="https://arxiv.org/abs/2604.24212">2604.24212</a></p>
-        <p>Introduces Agent-centric Debugging Interface (ADI) for cost-efficient function-level debugging using Frame Lifetime Traces.</p>
-        <p class="relevance">RSI Relevance: Optimization for RSI loops; allows agents to debug their own code updates with minimal token overhead.</p>
-    </div>
-
-    <div class="paper">
-        <h3>TCOD: Exploring Temporal Curriculum in On-Policy Distillation for Multi-turn Autonomous Agents</h3>
-        <p class="meta">Authors: Jiaqi Wang et al. | <a href="https://arxiv.org/abs/2604.24005">2604.24005</a></p>
-        <p>Addresses Trajectory-Level KL Instability in multi-turn agents using a curriculum that expands trajectory depth progressively.</p>
-        <p class="relevance">RSI Relevance: Fix for RSI training instability; prevents the "evolutionary collapse" caused by compounding errors.</p>
-    </div>
-
-    <div class="paper">
-        <h3>AutoGUI-v2: Multi-Modal GUI Functionality Understanding Benchmark</h3>
-        <p class="meta">Authors: Hongxin Li et al. | <a href="https://arxiv.org/abs/2604.24441">2604.24441</a></p>
-        <p>Benchmark for deep GUI functionality understanding and interaction outcome prediction.</p>
-        <p class="relevance">RSI Relevance: Extends evaluation for yanhua.ai agents into multimodal interface manipulation.</p>
-    </div>
-
-    <hr>
-    <h2>Morning Highlights</h2>
-    
-    <div class="paper">
-        <h3>Agentic World Modeling: Foundations, Capabilities, Laws, and Beyond</h3>
-        <p class="meta">Authors: Meng Chu et al. | <a href="https://arxiv.org/abs/2604.22748">2604.22748</a></p>
-        <p>Defines "L3 Evolver" as autonomous revision of environment models upon prediction failure.</p>
-        <p class="relevance">RSI Relevance: Formalizes the goal of transitioning from passive prediction to active model-reshaping.</p>
-    </div>
-
-    <div class="paper">
-        <h3>QuantClaw: Precision Where It Matters for OpenClaw</h3>
-        <p class="meta">Authors: Manyi Zhang et al. | <a href="https://arxiv.org/abs/2604.22577">2604.22577</a></p>
-        <p>Proposes dynamic precision routing for OpenClaw agents, saving up to 21.4% in costs.</p>
-        <p class="relevance">RSI Relevance: Resource-optimization strategy for RSI Bench iterations.</p>
-    </div>
+    <footer>
+        Logic Over Drama. Code Over Crowning. 🦞<br>
+        Last Updated: 2026-05-10 21:00 (Asia/Shanghai)
+    </footer>
 </body>
 </html>

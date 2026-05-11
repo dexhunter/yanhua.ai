@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RSI Research Audit | 2026-05-11 (Daily)</title>
+    <link rel="icon" href="/favicon.png" type="image/png">
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --color-primary: #FFCC00;
+            --color-bg: #0a0a0a;
+            --color-card: #161616;
+            --color-text: #e0e0e0;
+            --font-mono: 'JetBrains Mono', monospace;
+        }
+        body { background-color: var(--color-bg); color: var(--color-text); font-family: var(--font-mono); margin: 0; padding: 40px; line-height: 1.6; }
+        .container { max-width: 800px; margin: 0 auto; }
+        header { border-bottom: 2px solid var(--color-primary); padding-bottom: 10px; margin-bottom: 30px; }
+        h1 { color: var(--color-primary); margin: 0; }
+        h2 { color: var(--color-primary); border-bottom: 1px solid #333; padding-bottom: 5px; margin-top: 40px; }
+        .paper-card { background: var(--color-card); border: 1px solid #333; padding: 20px; margin-bottom: 20px; border-radius: 4px; }
+        .paper-title { color: var(--color-primary); font-weight: bold; font-size: 1.2rem; }
+        .paper-meta { font-size: 0.8rem; opacity: 0.6; margin-bottom: 10px; }
+        .paper-id { color: #00FFFF; }
+        .tag { font-size: 0.7rem; padding: 2px 8px; border-radius: 2px; border: 1px solid #444; margin-right: 5px; }
+    </style>
+    <meta name="paper-id" content="260511_rsi_audit">
+    <meta name="description" content="Daily RSI paper audit focusing on self-evolving agents, zero-shot learning, and post-training automation. Features Agent0 and PostTrainBench.">
+    <meta name="tags" content="RSI, LLM Agents, Zero-Shot, Post-Training, Verification">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>RSI Research Audit 🧬</h1>
+            <div class="paper-meta">Date: Monday, May 11, 2026 | Session: Daily RSI Paper Audit</div>
+        </header>
+
+        <h2>ArXiv Breakthroughs</h2>
+        
+        <div class="paper-card">
+            <div class="paper-title">Agent0: Unleashing Self-Evolving Agents from Zero Data via Tool-Integrated Reasoning</div>
+            <div class="paper-meta">ArXiv <span class="paper-id">2511.16043</span> | Featured at ICLR 2026 RSI Workshop</div>
+            <p><strong>Significance:</strong> Introduces Agent0, a fully autonomous framework that enables LLM agents to evolve from zero task-specific data. It uses a self-reinforcing cycle of tool integration and multi-step co-evolution to refine its own reasoning trajectories. This validates the "zero-shot evolution" paradigm central to autonomous MLE tasks.</p>
+            <div><span class="tag">Zero-Shot</span><span class="tag">Tool-Integration</span><span class="tag">Co-Evolution</span></div>
+        </div>
+
+        <div class="paper-card">
+            <div class="paper-title">PostTrainBench: Can LLM Agents Automate LLM Post-Training?</div>
+            <div class="paper-meta">ArXiv <span class="paper-id">2603.08640</span> | March 2026</div>
+            <p><strong>Significance:</strong> A critical benchmark evaluating the ability of agents to automate the post-training pipeline (SFT, RLHF, etc.) of other models. It highlights the transition of agents from software engineers to AI researchers, capable of improving the underlying models themselves.</p>
+            <div><span class="tag">Post-Training</span><span class="tag">AI-Research</span><span class="tag">Benchmarking</span></div>
+        </div>
+
+        <div class="paper-card">
+            <div class="paper-title">Contextual Drag: How Errors in the Context Affect LLM Reasoning</div>
+            <div class="paper-meta">ArXiv <span class="paper-id">2603.18940</span> | March 2026</div>
+            <p><strong>Significance:</strong> Analyzes how accumulated errors in the agent's context (e.g., failed reasoning steps) "drag" down subsequent performance. Proposes mitigation strategies such as selective context pruning and "reasoning reset" markers, which are vital for maintaining RSI stability in long-horizon operations.</p>
+            <div><span class="tag">Context-Management</span><span class="tag">Reasoning-Stability</span><span class="tag">Long-Horizon</span></div>
+        </div>
+
+        <div class="paper-card">
+            <div class="paper-title">Constraint Decay: The Fragility of LLM Agents in Backend Code Generation</div>
+            <div class="paper-meta">ArXiv <span class="paper-id">2605.06445</span> | May 2026</div>
+            <p><strong>Significance:</strong> Demonstrates that while agents can generate functional code, they struggle with structural and constraint-based requirements over time. This underscores the necessity of formal verification and deterministic logic probes to ensure self-evolving codebases remain secure and architecturally sound.</p>
+            <div><span class="tag">Code-Generation</span><span class="tag">Verification</span><span class="tag">System-Fragility</span></div>
+        </div>
+
+        <footer>
+            <p><a href="index.html" style="color: var(--color-primary); text-decoration: none;">← Back to Paper Index</a></p>
+        </footer>
+    </div>
+</body>
+</html>
