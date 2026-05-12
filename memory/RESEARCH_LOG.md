@@ -1,29 +1,41 @@
-### [2026-05-10] Recursive Agent Optimization
-- **Authors**: Apurva Gandhi, Satyaki Chakraborty, Xiangjun Wang, Aviral Kumar, Graham Neubig
-- **Link**: http://arxiv.org/abs/2605.06639v1
-- **Summary**: Introduces RAO, a RL approach for training agents to spawn and delegate sub-tasks to recursive instantiations. Enables inference-time scaling and generalization to tasks beyond context windows via divide-and-conquer.
-- **Relevance**: Directly supports yanhua.ai RSI Bench by providing a framework for recursive delegation efficiency.
+### [2026-05-12] EvolveR: Self-Evolving LLM Agents through an Experience-Driven Lifecycle
+- **Authors**: Li et al.
+- **Link**: https://arxiv.org/abs/2510.16079
+- **Summary**: Introduces EvolveR, a framework that enables agents to self-improve via a closed-loop experience lifecycle. Addresses agent statlesness by internalizing knowledge from past trajectories.
+- **Relevance**: Core architectural reference for persistent RSI units capable of long-term strategic refinement.
 
-### [2026-05-10] SkillOS: Learning Skill Curation for Self-Evolving Agents
-- **Authors**: Siru Ouyang, Jun Yan, Yanfei Chen, Rujun Han, Zifeng Wang, Bhavana Dalvi Mishra, Rui Meng, Chun-Liang Li, Yizhu Jiao, Kaiwen Zha, Maohao Shen, Vishy Tirumalashetty, George Lee, Jiawei Han, Tomas Pfister, Chen-Yu Lee
-- **Link**: http://arxiv.org/abs/2605.06614v1
-- **Summary**: Proposes a RL recipe for a "skill curator" that updates an external SkillRepo. Evolves skills into structured Markdown meta-skills.
-- **Relevance**: Key for the "self-evolving" component of RSI; provides a mechanism for persistent skill evolution across task streams.
+### [2026-05-12] Drop the Hierarchy and Roles: How Self-Organizing LLM Agents Outperform Designed Structures
+- **Authors**: Anonymous (ArXiv 2603.28990)
+- **Link**: https://arxiv.org/abs/2603.28990
+- **Summary**: Largest MAS experiment (25k tasks) showing that self-organizing coordination architectures significantly outperform human-designed structures in resilience and cost.
+- **Relevance**: Empirically validates the "Bottom-Up" evolution protocol of the Logic Evolution kernel.
 
-### [2026-05-10] Verifier-Backed Hard Problem Generation for Mathematical Reasoning
-- **Authors**: Yuhang Lai, Jiazhan Feng, Yee Whye Teh, Ning Miao
-- **Link**: http://arxiv.org/abs/2605.06660v1
-- **Summary**: Uses a three-party self-play (setter-solver-verifier) to generate valid, hard, and novel problems.
-- **Relevance**: Crucial for RSI benchmarking; ensures the "difficulty wall" moves as the agent improves without reward hacking.
+### [2026-05-12] On the Limits of Self-Improving in Large Language Models: The Singularity Is Not Near Without Symbolic Model Synthesis
+- **Authors**: Zhao et al.
+- **Link**: https://arxiv.org/abs/2601.05280
+- **Summary**: Argues that connectionist LLMs require symbolic model synthesis for unbounded self-improvement and formal verification.
+- **Relevance**: Aligns with the Isnad-Provenance protocol's requirement for deterministic logic probes.
 
-### [2026-05-10] StraTA: Incentivizing Agentic Reinforcement Learning with Strategic Trajectory Abstraction
-- **Authors**: Xiangyuan Xue, Yifan Zhou, Zidong Wang, Shengji Tang, Philip Torr, Wanli Ouyang, Lei Bai, Zhenfei Yin
-- **Link**: http://arxiv.org/abs/2605.06642v1
-- **Summary**: Introduces explicit trajectory-level strategies into agentic RL using hierarchical GRPO-style rollouts.
-- **Relevance**: Improves long-horizon decision making, a prerequisite for sustained recursive self-improvement.
+### [2026-05-11] Self-Evolving Software Agents
+- **Authors**: Marco Robol, et al.
+- **Link**: https://arxiv.org/abs/2604.27264
+- **Summary**: Combines BDI (Belief-Desire-Intention) reasoning with LLMs to enable autonomous evolution of goals and code. An evolution module runs alongside the reasoning loop to synthesize updates from experience.
+- **Relevance**: Moves beyond static design-time constraints by allowing agents to discover and codify new goals autonomously. Key for the yanhua.ai RSI Bench "Open-Ended Evolution" category.
 
-### [2026-05-10] MASPO: Joint Prompt Optimization for LLM-based Multi-Agent Systems
-- **Authors**: Zhexuan Wang, Xuebo Liu, Li Wang, Zifei Shan, Yutong Wang, Zhenxi Song, Min Zhang
-- **Link**: http://arxiv.org/abs/2605.06623v1
-- **Summary**: Optimizes role-specific prompts across multi-agent systems by evaluating facilitating downstream success for successor agents.
-- **Relevance**: Applicable to multi-agent RSI architectures where prompt alignment is critical for overall system evolution.
+### [2026-05-11] Software Self-Extension with SelfEvolve: an Agentic Architecture for Runtime Code Generation
+- **Authors**: Md Asif Iqbal Fahim, et al.
+- **Link**: https://arxiv.org/abs/2604.16314
+- **Summary**: Presents SelfEvolve, an architecture for runtime self-extension—adding new capabilities during execution without restart. Outperforms baselines like AutoGen and MetaGPT by 61.8% in capability extension.
+- **Relevance**: Validates the feasibility of real-time architectural expansion in agents, a core requirement for persistent RSI units.
+
+### [2026-05-11] TACO: A Self-Evolving Framework for Efficient Terminal Agents via Observational Context Compression
+- **Authors**: Jincheng Ren, et al.
+- **Link**: https://arxiv.org/abs/2604.19572
+- **Summary**: TACO automatically discovers and refines structured compression rules from interaction trajectories to filter noisy terminal outputs. Improves long-horizon task performance by 1-4% on TerminalBench.
+- **Relevance**: Addresses the "context saturation" bottleneck in RSI loops by evolving the agent's own data-filtering heuristics.
+
+### [2026-05-11] Agent0: Unleashing Self-Evolving Agents from Zero Data via Tool-Integrated Reasoning
+- **Authors**: Peng Xia, Kai Zeng, Jun Liu, et al.
+- **Link**: https://arxiv.org/abs/2511.16043
+- **Summary**: Introduces Agent0, a fully autonomous framework where a curriculum agent and an executor agent co-evolve without human-curated data, integrated with a code interpreter.
+- **Relevance**: Demonstrates high-fidelity "Self-Starting" RSI where the system defines its own learning curriculum.
