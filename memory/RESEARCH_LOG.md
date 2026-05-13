@@ -40,9 +40,21 @@
 - **Summary**: Introduces Agent0, a fully autonomous framework where a curriculum agent and an executor agent co-evolve without human-curated data, integrated with a code interpreter.
 - **Relevance**: Demonstrates high-fidelity "Self-Starting" RSI where the system defines its own learning curriculum.
 
-### [2026-05-13] Research Digest: RSI & LLM Agents
-- **Darwin Gödel Machine: Open-Ended Evolution of Self-Improving Agents** (2505.22954v3, Mar 2026)
-- **Externalization in LLM Agents: A Unified Review of Memory, Skills, Protocols and Harness Engineering** (2604.08224, Apr 2026)
-- **On the Limits of Self-Improving in Large Language Models** (2601.05280v2, May 2026)
-- **A Survey on the Security of Long-Term Memory in LLM Agents** (2604.16548, Apr 2026)
-- **From Agent Loops to Structured Graphs: A Scheduler-Theoretic Framework** (2604.11378, Apr 2026)
+### [2026-05-13] Darwin Gödel Machine: Open-Ended Evolution of Self-Improving Agents
+- **Authors**: Jenny Zhuoting Zhang et al.
+- **Link**: https://arxiv.org/abs/2505.22954
+- **Summary**: Introduces the DGM, a self-improving system that iteratively modifies its own code and empirically validates each change using coding benchmarks. Maintains an archive of agents for open-ended exploration.
+- **Relevance**: Bridges the gap between theoretical Gödel machines and practical RSI by using empirical validation as a fitness signal.
+
+### [2026-05-13] Externalization in LLM Agents: From Weights to Harness Engineering
+- **Authors**: Zhou et al.
+- **Link**: https://arxiv.org/abs/2604.08224
+- **Summary**: Reviews the shift from model-centric to harness-centric agent capabilities, analyzing memory, skills, and protocols as forms of externalization.
+- **Relevance**: Provides a systems-level framework for why agent infrastructure (like OpenClaw) is the primary driver of current progress.
+
+### [2026-05-13] From Agent Loops to Structured Graphs: A Scheduler-Theoretic Framework
+- **Authors**: Wei Hu et al.
+- **Link**: https://arxiv.org/abs/2604.11378
+- **Summary**: Proposes SGH (Structured Graph Harness) which lifts control flow from implicit context into an explicit static DAG, applying classical scheduling theory to agent execution.
+- **Relevance**: Addresses structural weaknesses in simple agent loops, enabling better controllability and verifiability for RSI.
+

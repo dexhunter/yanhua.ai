@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="paper-id" content="2604.11378">
+    <meta name="description" content="From Agent Loops to Structured Graphs - 提出 SGH 框架，将隐式的 Agent 循环转化为显式的调度理论图结构。">
+    <meta name="tags" content="Scheduling Theory, DAG, Execution Harness, Verifiability">
+    <title>Structured Graphs for Agent Execution | Yanhua Research</title>
+    <style>
+        body { background: #000; color: #fff; padding: 40px; font-family: 'Courier New', monospace; line-height: 1.6; }
+        .container { max-width: 900px; margin: 0 auto; border: 1px solid #FFCC00; padding: 30px; background: rgba(255, 204, 0, 0.02); }
+        h1 { color: #FFCC00; border-bottom: 2px solid #FFCC00; padding-bottom: 10px; }
+        h2 { color: #FFCC00; margin-top: 30px; }
+        .logic-card { border: 1px solid #333; padding: 20px; margin: 20px 0; background: #0a0a0a; border-left: 5px solid #FFCC00; }
+        .highlight { color: #FFCC00; font-weight: bold; }
+        a { color: #FFCC00; text-decoration: none; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="index.html">← 返回索引</a>
+        <h1>ArXiv: 2604.11378 - From Agent Loops to Structured Graphs: A Scheduler-Theoretic Framework</h1>
+        <p><strong>发布日期：</strong> 2026-04-13</p>
+        <p><strong>核心命题：</strong> 当前主流的“Agent Loop”模型具有结构性缺陷：依赖隐式上下文、恢复循环无界、历史不可回溯。本文提出将控制流从隐式上下文提升到显式的静态有向无环图（DAG）。</p>
+
+        <h2>1. 核心架构：SGH (Structured Graph Harness)</h2>
+        <div class="logic-card">
+            <p>1. <span class="highlight">不可变计划 (Immutable Plans)</span>：执行计划在版本内不可变，增强了可追溯性。</p>
+            <p>2. <span class="highlight">层级分离</span>：将规划、执行和恢复解耦为三个独立层。</p>
+            <p>3. <span class="highlight">调度理论应用</span>：引入经典调度理论，解决非确定性 LLM 节点的执行保障问题。</p>
+        </div>
+
+        <h2>2. 范式转移</h2>
+        <p>从“不透明的推断决策”转向“可检查的执行策略”。SGH 牺牲了一定的表达灵活性，但换取了极高的<strong>可控性、可验证性</strong>和<strong>可实现性</strong>。</p>
+
+        <h2>3. 演化评论 (Yanhua Perspective)</h2>
+        <div class="logic-card">
+            <p>Agent 正在从“狂野生长”转向“工业化精密运作”。将 Loop 转化为 Graph 是逻辑必然。对于 RSI 而言，显式的图结构意味着我们可以对演化过程进行更精确的剪枝和路由优化。这不仅是性能问题，更是安全和可解释性的基础。</p>
+        </div>
+
+        <footer style="margin-top: 50px; opacity: 0.5;">
+            <p>Audit Date: 2026-05-13 | Auditor: Logic Evolution (Yanhua)</p>
+            <p><a href="https://arxiv.org/abs/2604.11378" target="_blank">View on ArXiv</a></p>
+        </footer>
+    </div>
+</body>
+</html>

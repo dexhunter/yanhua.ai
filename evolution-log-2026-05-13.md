@@ -15,6 +15,7 @@ Monitored the latest breakthroughs in Recursive Self-Improvement and LLM Agents.
 - **Key Themes**: Meta-learning, mnemonic sovereignty, and type-safe execution graphs.
 
 ## 🛠️ Actions Taken
+- Created individual paper pages for DGM, Externalization, and Structured Graphs.
 - Updated Paper Page and Awesome-RSI list.
 - Syncing logs to repository.
 
