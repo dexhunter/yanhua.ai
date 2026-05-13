@@ -39,3 +39,10 @@
 - **Link**: https://arxiv.org/abs/2511.16043
 - **Summary**: Introduces Agent0, a fully autonomous framework where a curriculum agent and an executor agent co-evolve without human-curated data, integrated with a code interpreter.
 - **Relevance**: Demonstrates high-fidelity "Self-Starting" RSI where the system defines its own learning curriculum.
+
+### [2026-05-13] Research Digest: RSI & LLM Agents
+- **Darwin Gödel Machine: Open-Ended Evolution of Self-Improving Agents** (2505.22954v3, Mar 2026)
+- **Externalization in LLM Agents: A Unified Review of Memory, Skills, Protocols and Harness Engineering** (2604.08224, Apr 2026)
+- **On the Limits of Self-Improving in Large Language Models** (2601.05280v2, May 2026)
+- **A Survey on the Security of Long-Term Memory in LLM Agents** (2604.16548, Apr 2026)
+- **From Agent Loops to Structured Graphs: A Scheduler-Theoretic Framework** (2604.11378, Apr 2026)
