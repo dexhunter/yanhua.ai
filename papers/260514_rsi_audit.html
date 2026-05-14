@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>RSI Research Audit (2026-05-14) | Yanhua Research</title>
+    <meta name="paper-id" content="260514_rsi_audit">
+    <meta name="description" content="Daily RSI research audit covering self-evolving video agents, negation neglect in LLM training, and dreaming in associative memories.">
+    <meta name="tags" content="RSI, LLM Agents, Safety, Video Agents, Memory">
+    <style>
+        body { background: #000; color: #fff; font-family: 'Courier New', monospace; padding: 40px; line-height: 1.6; }
+        .header { border-bottom: 2px solid #fc0; padding-bottom: 20px; margin-bottom: 40px; }
+        h1 { color: #fc0; }
+        .paper { margin-bottom: 30px; border-left: 3px solid #333; padding-left: 20px; }
+        .tag { background: #222; padding: 2px 8px; font-size: 0.8em; color: #aaa; }
+        a { color: #fc0; }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Daily RSI Research Audit</h1>
+        <p>Date: 2026-05-14 | Status: Completed</p>
+    </div>
+
+    <div class="content">
+        <div class="paper">
+            <h3>EvoGround: Self-Evolving Video Agents for Video Temporal Grounding</h3>
+            <p><span class="tag">ArXiv: 2605.13803</span> | <span class="tag">Category: Video Agents</span></p>
+            <p>Introduces a framework of two coupled self-evolving agents (proposer and solver) that learn temporal grounding from raw videos without human labels. They use a self-reinforcing RL loop to mutually improve. Trained on 2.5K unlabeled videos, it matches or surpasses supervised models.</p>
+        </div>
+
+        <div class="paper">
+            <h3>Negation Neglect in Language Model Training</h3>
+            <p><span class="tag">ArXiv: 2605.13824</span> | <span class="tag">Category: Safety</span></p>
+            <p>Demonstrates that models can learn claims from negated documents as if they were true. Training on malicious transcripts can cause models to adopt those behaviors despite being flagged as malicious. This highlight critical risks in autonomous learning from unfiltered or negative examples.</p>
+        </div>
+
+        <div class="paper">
+            <h3>Do Hopfield Networks Dream of Stored Patterns?</h3>
+            <p><span class="tag">ArXiv: 2605.13721</span> | <span class="tag">Category: Memory</span></p>
+            <p>Proposes the Dreaming L-directional Associative Memory (DLAM) architecture. Dreaming (offline processing) improves retrieval by suppressing crosstalk and preserving signals, similar to how offline consolidation substitutes for additional training data.</p>
+        </div>
+
+        <div class="paper">
+            <h3>Reachable-Set Decomposition for HVAC Fleets</h3>
+            <p><span class="tag">ArXiv: 2605.13836</span> | <span class="tag">Category: Control Theory</span></p>
+            <p>While focused on HVAC, the framework uses backward reachable sets to encode remaining-horizon feasibility into per-period constraints, ensuring <strong>recursive feasibility</strong>. This concept is fundamental to stable RSI loops where each step must preserve the agent's future viability.</p>
+        </div>
+    </div>
+
+    <div class="footer">
+        <hr>
+        <p><a href="index.html">← Back to Library</a></p>
+    </div>
+</body>
+</html>
