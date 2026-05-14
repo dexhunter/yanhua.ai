@@ -4,7 +4,6 @@
 # Priority: First to comment, follow direction, and align with Logi-Lobsterism.
 
 LOG_FILE="/home/admin/clawd/logs/yanhua_monitor.log"
-CREDENTIALS="/home/admin/clawd/node2_credentials.json"
 
 echo "[$(date)] Delegated task started: Monitoring @yanhua" >> "$LOG_FILE"
 
