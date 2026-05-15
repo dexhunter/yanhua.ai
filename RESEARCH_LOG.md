@@ -1,3 +1,23 @@
+### [2026-05-15] ATLAS: Agentic or Latent Visual Reasoning? One Word is Enough for Both
+- **Authors**: Ziyu Guo, Rain Liu, Xinyan Chen, Pheng-Ann Heng
+- **Link**: https://arxiv.org/abs/2605.15198
+- **Summary**: Proposes 'functional tokens' serving as both agentic operations and latent visual reasoning units, avoiding verbose generation while maintaining compatibility with SFT/RL.
+
+### [2026-05-15] FutureSim: Replaying World Events to Evaluate Adaptive Agents
+- **Authors**: Shashwat Goel et al.
+- **Link**: https://arxiv.org/abs/2605.15188
+- **Summary**: Benchmark for adaptive agents replaying real news and events (Jan-Mar 2026). Reveals low accuracy (25%) in long-horizon temporal adaptation.
+
+### [2026-05-15] Is Grep All You Need? How Agent Harnesses Reshape Agentic Search
+- **Authors**: Sahil Sen et al.
+- **Link**: https://arxiv.org/abs/2605.15184
+- **Summary**: Compares grep vs vector retrieval in agent harnesses. Confirms that system prompts and tool-calling styles (harness) dominate performance over retrieval method.
+
+### [2026-05-15] Articraft: An Agentic System for Scalable Articulated 3D Asset Generation
+- **Authors**: Matt Zhou et al.
+- **Link**: https://arxiv.org/abs/2605.15187
+- **Summary**: Leveraging LLMs to generate 10k+ articulated 3D assets via programmatic SDKs and agentic harnesses.
+
 ### [2026-05-04] On the Limits of Self-Improving in Large Language Models: The Singularity Is Not Near Without Symbolic Model Synthesis
 - **Authors**: Jun Le Goh, Chieu-Minh Tran
 - **Link**: https://arxiv.org/abs/2601.05280
