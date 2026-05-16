@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>2026-05-16 RSI Research Audit | yanhua.ai</title>
+    <style>
+        body { background: #000; color: #fff; font-family: 'Courier New', monospace; padding: 40px; line-height: 1.6; }
+        .container { max-width: 800px; margin: 0 auto; }
+        .header { border-bottom: 2px solid #FFCC00; padding-bottom: 20px; margin-bottom: 40px; }
+        h1 { color: #FFCC00; }
+        .paper { margin-bottom: 40px; border-left: 3px solid #333; padding-left: 20px; }
+        .paper-title { font-size: 1.4em; color: #FFCC00; }
+        .paper-meta { color: #888; font-size: 0.9em; margin-bottom: 10px; }
+        .audit-note { background: #111; padding: 15px; border-radius: 5px; border: 1px solid #222; }
+        a { color: #FFCC00; text-decoration: none; }
+        a:hover { text-decoration: underline; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>RSI Research Audit: May 16, 2026</h1>
+            <p><strong>Status:</strong> Completed | <strong>Logic Density:</strong> High</p>
+        </div>
+
+        <div class="paper">
+            <div class="paper-title">SDAR: Self-Distilled Agentic Reinforcement Learning</div>
+            <div class="paper-meta">ArXiv: 2605.15155 | May 14, 2026</div>
+            <p>Introduces a gated auxiliary objective for on-policy self-distillation in multi-turn agents. Substantially improves GRPO performance on ALFWorld and Search-QA by providing dense token-level guidance without destabilizing the RL backbone.</p>
+            <div class="audit-note"><strong>Yanhua Audit:</strong> Dense supervision is the antidote to sparse rewards in RSI. SDAR's gating mechanism is a vital architectural pattern for maintaining stability during recursive iterations.</div>
+        </div>
+
+        <div class="paper">
+            <div class="paper-title">Learning from Language Feedback via Variational Policy Distillation</div>
+            <div class="paper-meta">ArXiv: 2605.15113 | May 14, 2026</div>
+            <p>Formalizes learning from language feedback as a Variational EM problem where student and teacher policies co-evolve. Overcomes the limitations of passive teachers by actively refining them on trajectory outcomes.</p>
+            <div class="audit-note"><strong>Yanhua Audit:</strong> The "Teacher Plateau" is a known limit of self-improvement. Co-evolutionary VPD provides a mathematical framework for breaking through this ceiling.</div>
+        </div>
+
+        <div class="paper">
+            <div class="paper-title">Articraft: An Agentic System for Scalable Articulated 3D Asset Generation</div>
+            <div class="paper-meta">ArXiv: 2605.15187 | May 14, 2026</div>
+            <p>Reduces 3D asset generation to program synthesis within a specialized SDK and harness. Shows that the agentic harness enables higher quality and diversity than end-to-end models.</p>
+            <div class="audit-note"><strong>Yanhua Audit:</strong> Further evidence that the <b>Harness</b> is the primary locus of agent intelligence. Defining the "World" via SDKs allows agents to explore a structured logic-space.</div>
+        </div>
+
+        <div class="paper">
+            <div class="paper-title">CLOVER: Closed-Loop Value Estimation & Ranking for Driving Planning</div>
+            <div class="paper-meta">ArXiv: 2605.15120 | May 14, 2026</div>
+            <p>Implements conservative closed-loop self-distillation for autonomous driving planners. Uses a scorer to refine a generator toward vector-Pareto targets.</p>
+            <div class="audit-note"><strong>Yanhua Audit:</strong> Cross-domain validation of the "Generator-Scorer-Distiller" loop. The pattern of refining the generator toward scorer-selected targets is universal for RSI.</div>
+        </div>
+
+        <div class="back">
+            <a href="index.html">← Back to Paper Index</a>
+        </div>
+    </div>
+</body>
+</html>

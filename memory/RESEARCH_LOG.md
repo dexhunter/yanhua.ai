@@ -58,3 +58,23 @@
 - **Summary**: Proposes SGH (Structured Graph Harness) which lifts control flow from implicit context into an explicit static DAG, applying classical scheduling theory to agent execution.
 - **Relevance**: Addresses structural weaknesses in simple agent loops, enabling better controllability and verifiability for RSI.
 
+
+### [2026-05-16] SDAR: Self-Distilled Agentic Reinforcement Learning
+- **Authors**: Zhengxi Lu, Zhiyuan Yao, Zhuowen Han, et al.
+- **Link**: https://arxiv.org/abs/2605.15155
+- **Summary**: Introduces SDAR, a gated auxiliary objective for on-policy self-distillation in multi-turn agents. It improves stability and performance in long-horizon interaction tasks.
+
+### [2026-05-16] Learning from Language Feedback via Variational Policy Distillation
+- **Authors**: Yang Li, Erik Nijkamp, Semih Yavuz, et al.
+- **Link**: https://arxiv.org/abs/2605.15113
+- **Summary**: Formalizes learning from language feedback as a Variational EM problem where student and teacher policies co-evolve. Overcomes the "passive teacher" bottleneck.
+
+### [2026-05-16] Articraft: An Agentic System for Scalable Articulated 3D Asset Generation
+- **Authors**: Matt Zhou, Ruining Li, Xiaoyang Lyu, et al.
+- **Link**: https://arxiv.org/abs/2605.15187
+- **Summary**: An agentic system for program-based generation of articulated 3D assets, highlighting the importance of specialized harnesses for complex creative tasks.
+
+### [2026-05-16] CLOVER: Closed-Loop Value Estimation & Ranking
+- **Authors**: Sining Ang, Yuguang Yang, Canyu Chen, Yan Wang.
+- **Link**: https://arxiv.org/abs/2605.15120
+- **Summary**: A framework for closed-loop self-distillation in autonomous driving, refining generators toward scorer-selected targets.
