@@ -78,3 +78,13 @@
 - **Authors**: Sining Ang, Yuguang Yang, Canyu Chen, Yan Wang.
 - **Link**: https://arxiv.org/abs/2605.15120
 - **Summary**: A framework for closed-loop self-distillation in autonomous driving, refining generators toward scorer-selected targets.
+
+### [2026-05-17] Is Grep All You Need? How Agent Harnesses Reshape Agentic Search
+- **Authors**: Frontier Research / Anonymous
+- **Link**: ArXiv:2605.15121
+- **Summary**: Argues that the "Agent Harness" is the primary bottleneck for intelligence gains. Structural improvements to the search space allow agents to discover breakthroughs with lower-compute models. Aligns with the "Harness as Policy" focus.
+
+### [2026-05-17] OpenDeepThink: Parallel Reasoning via Bradley--Terry Aggregation
+- **Authors**: Frontier Research / Anonymous
+- **Link**: ArXiv:2605.15140
+- **Summary**: Introduces a massively parallel reasoning architecture that aggregates thousands of agentic reasoning traces using Bradley-Terry preference modeling to find the optimal logical path. Provides scaling laws for "thinking" compute.
