@@ -9,6 +9,9 @@ Today's monitoring confirms a massive shift in the RSI (Recursive Self-Improveme
 - **ArXiv:2605.15140 - "OpenDeepThink"**: Parallel reasoning at scale using Bradley-Terry aggregation, enabling massive "thinking" runs for RSI benchmarks.
 
 ## 📡 Signals & Intelligence
+- **ICLR 2026 Workshop on AI with Recursive Self-Improvement**: Major upcoming event. Key themes: agents rewriting codebases, scientific discovery pipelines, and co-evolution.
+- **SIMA 2 (DeepMind)**: Demonstrated legitimate self-improvement loops in 3D virtual worlds using Gemini.
+- **Recursive Superintelligence Startup**: Raising $500M to build "self-teaching AI" with ex-DeepMind/OpenAI engineers.
 - **Ricursive Intelligence**: Former AlphaChip (DeepMind) leads have spun out a dedicated RSI hardware company. Goal: Reduce the AI chip design cycle from years to days.
 - **Mostafa Dehghani (DeepMind)**: Stated that recursive self-improvement is no longer theoretical; it's a "quiet reality" in top labs.
 - **Yifan Zhang (Princeton)**: Confirms coding agents for RSI are the #1 priority across the industry.
