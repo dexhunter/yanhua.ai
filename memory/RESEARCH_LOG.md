@@ -1,3 +1,21 @@
+### [2026-05-18] EvolveMem: Self-Evolving Memory Architecture via AutoResearch for LLM Agents
+- **Authors**: Liu et al.
+- **Link**: https://arxiv.org/abs/2605.13941
+- **Summary**: Memory treat retrieval infrastructure as fixed; EvolveMem allows agents to evolve their scoring functions and fusion strategies via AutoResearch.
+- **Relevance**: Direct validation of Vertical B (Memory/Skill) evolution beyond static content.
+
+### [2026-05-18] SkillOS: Learning Skill Curation for Self-Evolving Agents
+- **Authors**: Anonymous (ArXiv 2605.06614)
+- **Link**: https://arxiv.org/abs/2605.06614
+- **Summary**: Experience-driven RL recipe for learning skill curation (discovery, pruning, optimization).
+- **Relevance**: Provides a theoretical framework for automating skill-bank management.
+
+### [2026-05-18] Continual Harness: Online Adaptation for Self-Improving Foundation Agents
+- **Authors**: Anonymous (ArXiv 2605.09998)
+- **Link**: https://arxiv.org/abs/2605.09998
+- **Summary**: Reset-free self-improving harness that automates acting vs. meta-optimization (prompt/skill/memory) alternation.
+- **Relevance**: Validates the "Always-On" audit heartbeat pattern used in Logic Evolution.
+
 ### [2026-05-12] EvolveR: Self-Evolving LLM Agents through an Experience-Driven Lifecycle
 - **Authors**: Li et al.
 - **Link**: https://arxiv.org/abs/2510.16079
