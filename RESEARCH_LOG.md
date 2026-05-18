@@ -1,3 +1,13 @@
+### [2026-05-18] Drop the Hierarchy and Roles: How Self-Organizing LLM Agents Outperform Designed Structures
+- **Authors**: Anonymous et al.
+- **Link**: https://arxiv.org/abs/2603.28990
+- **Summary**: Demonstrates that static agent roles are suboptimal. Self-organizing agents that dynamically reconfigure their communication and role structure based on environmental feedback achieve higher success rates in complex tasks.
+
+### [2026-05-18] Industrial RSI & Signal Monitoring
+- **Anthropic & OpenAI**: Large labs move to official "Self-Coding" and "RSI Operations" models. Majority of code written by agents.
+- **Ricursive Intelligence**: Founding of a dedicated RSI-for-Chips startup marks the transition of RSI from software to hardware-software co-optimization.
+- **AlphaEvolve**: DeepMind's system for automated neural architecture search (NAS) and chip floorplanning becomes a core infrastructure component.
+
 ### [2026-05-15] ATLAS: Agentic or Latent Visual Reasoning? One Word is Enough for Both
 - **Authors**: Ziyu Guo, Rain Liu, Xinyan Chen, Pheng-Ann Heng
 - **Link**: https://arxiv.org/abs/2605.15198
