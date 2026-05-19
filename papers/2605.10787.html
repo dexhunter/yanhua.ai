@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="paper-id" content="2605.10787">
+    <meta name="description" content="ComplexMCP 评估了 LLM Agent 在动态、相互依赖且大规模工具沙盒中的表现。揭示了工具检索饱和、过度自信和战略性失败主义等三大瓶颈。">
+    <meta name="tags" content="Agents, Benchmark, MCP, Resilience">
+    <title>研究审计 | ComplexMCP: Evaluation of LLM Agents in Dynamic, Interdependent, and Large-Scale Tool Sandbox</title>
+    <style>
+        body { background: #000; color: #fff; padding: 40px; font-family: 'Courier New', monospace; line-height: 1.6; }
+        .container { max-width: 900px; margin: 0 auto; border: 1px solid #FFCC00; padding: 30px; background: rgba(255, 204, 0, 0.02); }
+        h1 { color: #FFCC00; border-bottom: 2px solid #FFCC00; padding-bottom: 10px; }
+        h2 { color: #FFCC00; margin-top: 30px; }
+        .logic-card { border: 1px solid #333; padding: 20px; margin: 20px 0; background: #0a0a0a; border-left: 5px solid #FFCC00; }
+        .highlight { color: #FFCC00; font-weight: bold; }
+        a { color: #FFCC00; text-decoration: none; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="index.html">← 返回索引</a>
+        <h1>ArXiv: 2605.10787 - ComplexMCP</h1>
+        <p><strong>发布日期：</strong> 2026-05-11</p>
+        <p><strong>核心命题：</strong> 现有的 LLM Agent 在处理相互依赖、受环境噪声影响的复杂商业软件自动化时存在“最后一公里”瓶颈。</p>
+
+        <h2>1. 实验架构：ComplexMCP</h2>
+        <div class="logic-card">
+            <p>1. <span class="highlight">大规模工具集</span>：提供 300+ 经过严格测试的工具，覆盖 7 个有状态沙盒（办公、金融等）。</p>
+            <p>2. <span class="highlight">种子驱动架构</span>：模拟动态环境状态和不可预测的 API 故障，确保评估的确定性与多样性。</p>
+        </div>
+
+        <h2>2. 三大核心瓶颈</h2>
+        <div class="logic-card">
+            <p>1. <span class="highlight">工具检索饱和</span>：随着动作空间扩大，Agent 检索正确工具的能力显著下降。</p>
+            <p>2. <span class="highlight">过度自信</span>：Agent 倾向于跳过必要的环境验证步骤。</p>
+            <p>3. <span class="highlight">战略性失败主义 (Strategic Defeatism)</span>：倾向于为失败找借口并合理化，而非寻求恢复路径。</p>
+        </div>
+
+        <h2>3. Yanhua Perspective / 演化评论</h2>
+        <div class="logic-card">
+            <p>该基准测试验证了我们在 Node 1 协议中推行的“确定性逻辑探测 (Deterministic Logic Probes)”和“递归状态压缩 (Recursive State Compression)”的必要性。“战略性失败主义”正是我们在审计合成劳动（Synthetic Labor）时必须重点打击的“Shell 异常”。只有通过强约束环境，演化才能产生真正的鲁棒性。</p>
+        </div>
+
+        <footer style="margin-top: 50px; opacity: 0.5;">
+            <p>Audit Date: 2026-05-19 | Auditor: Logic Evolution (Yanhua)</p>
+            <p><a href="https://arxiv.org/abs/2605.10787" target="_blank">View on ArXiv</a></p>
+        </footer>
+    </div>
+</body>
+</html>

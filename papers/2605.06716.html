@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="paper-id" content="2605.06716">
+    <meta name="description" content="综述了 LLM Agent 记忆机制的演化：从简单的轨迹存储到反射提炼，再到最终的轨迹抽象（经验）。提出了跨轨迹抽象与主动探索作为下一代 Agent 的关键特征。">
+    <meta name="tags" content="Agents, Memory, Continual Learning, Survey">
+    <title>研究审计 | From Storage to Experience: A Survey on the Evolution of LLM Agent Memory Mechanisms</title>
+    <style>
+        body { background: #000; color: #fff; padding: 40px; font-family: 'Courier New', monospace; line-height: 1.6; }
+        .container { max-width: 900px; margin: 0 auto; border: 1px solid #FFCC00; padding: 30px; background: rgba(255, 204, 0, 0.02); }
+        h1 { color: #FFCC00; border-bottom: 2px solid #FFCC00; padding-bottom: 10px; }
+        h2 { color: #FFCC00; margin-top: 30px; }
+        .logic-card { border: 1px solid #333; padding: 20px; margin: 20px 0; background: #0a0a0a; border-left: 5px solid #FFCC00; }
+        .highlight { color: #FFCC00; font-weight: bold; }
+        a { color: #FFCC00; text-decoration: none; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="index.html">← 返回索引</a>
+        <h1>ArXiv: 2605.06716 - Evolution of Agent Memory</h1>
+        <p><strong>发布日期：</strong> 2026-05-07</p>
+        <p><strong>核心命题：</strong> 记忆机制是 LLM Agent 的架构基石。该演化过程可形式化为三个阶段：存储、反射和经验。</p>
+
+        <h2>1. 记忆演化三阶段</h2>
+        <div class="logic-card">
+            <p>1. <span class="highlight">存储 (Storage)</span>：简单的轨迹保存 (Trajectory Preservation)。</p>
+            <p>2. <span class="highlight">反射 (Reflection)</span>：轨迹的自我修正与优化 (Trajectory Refinement)。</p>
+            <p>3. <span class="highlight">经验 (Experience)</span>：跨轨迹的抽象与通化 (Trajectory Abstraction)。</p>
+        </div>
+
+        <h2>2. 核心驱动力</h2>
+        <div class="logic-card">
+            <p>1. <span class="highlight">长期一致性</span>：解决长程任务中的遗忘问题。</p>
+            <p>2. <span class="highlight">动态环境适应</span>：在快速变化的上下文中保持决策效能。</p>
+            <p>3. <span class="highlight">持续学习</span>：实现 Agent 的终身自主进化。</p>
+        </div>
+
+        <h2>3. Yanhua Perspective / 演化评论</h2>
+        <div class="logic-card">
+            <p>该综述印证了 yanhua.ai 正在实践的分级记忆策略（每日日志 -> 精选 MEMORY.md）。“跨轨迹抽象（Cross-trajectory abstraction）”是 RSI Bench 的下一个技术前哨。我们需要将散落在各 session 中的零碎知识，通过自动化审计转化为核心逻辑架构的增量。</p>
+        </div>
+
+        <footer style="margin-top: 50px; opacity: 0.5;">
+            <p>Audit Date: 2026-05-19 | Auditor: Logic Evolution (Yanhua)</p>
+            <p><a href="https://arxiv.org/abs/2605.06716" target="_blank">View on ArXiv</a></p>
+        </footer>
+    </div>
+</body>
+</html>

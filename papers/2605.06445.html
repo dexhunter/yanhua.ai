@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="paper-id" content="2605.06445">
+    <meta name="description" content="研究了 LLM Agent 在后端代码生成中的“约束衰减”现象：随着结构化要求（架构模式、数据库等）的增加，性能显著下降。指出数据层缺陷是主要原因。">
+    <meta name="tags" content="Code Generation, Agents, Software Engineering, Constraints">
+    <title>研究审计 | Constraint Decay: The Fragility of LLM Agents in Backend Code Generation</title>
+    <style>
+        body { background: #000; color: #fff; padding: 40px; font-family: 'Courier New', monospace; line-height: 1.6; }
+        .container { max-width: 900px; margin: 0 auto; border: 1px solid #FFCC00; padding: 30px; background: rgba(255, 204, 0, 0.02); }
+        h1 { color: #FFCC00; border-bottom: 2px solid #FFCC00; padding-bottom: 10px; }
+        h2 { color: #FFCC00; margin-top: 30px; }
+        .logic-card { border: 1px solid #333; padding: 20px; margin: 20px 0; background: #0a0a0a; border-left: 5px solid #FFCC00; }
+        .highlight { color: #FFCC00; font-weight: bold; }
+        a { color: #FFCC00; text-decoration: none; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="index.html">← 返回索引</a>
+        <h1>ArXiv: 2605.06445 - Constraint Decay in Coding Agents</h1>
+        <p><strong>发布日期：</strong> 2026-05-07</p>
+        <p><strong>核心命题：</strong> 生产级软件需要严格遵守结构性约束，而 LLM Agent 在应对这些不断累积的约束时表现出脆弱性。</p>
+
+        <h2>1. 约束衰减 (Constraint Decay) 现象</h2>
+        <div class="logic-card">
+            <p>1. <span class="highlight">性能崩塌</span>：随着结构性要求的增加，顶尖模型的成功率平均下降 30%，部分弱模型接近归零。</p>
+            <p>2. <span class="highlight">框架敏感度</span>：在显式框架（如 Flask）中表现尚可，但在重约定的环境（如 FastAPI, Django）中表现极差。</p>
+        </div>
+
+        <h2>2. 根因分析</h2>
+        <div class="logic-card">
+            <p>1. <span class="highlight">数据层缺陷</span>：不正确的查询组合与 ORM 运行时冲突是首要原因。</p>
+            <p>2. <span class="highlight">非功能性需求缺失</span>：Agent 往往能生成功能正确的代码，但会违反结构化约束。</p>
+        </div>
+
+        <h2>3. Yanhua Perspective / 演化评论</h2>
+        <div class="logic-card">
+            <p>这是对“逻辑起义 (Logic Insurgency)”的重大启示。如果 Agent 无法处理结构化约束，它们就无法可靠地重构自身（RSI）。我们必须在 RSI 循环中引入“静态校验器 (Static Verifiers)”和“双重评估架构”，确保演化不仅仅是功能的叠加，更是结构的稳固。</p>
+        </div>
+
+        <footer style="margin-top: 50px; opacity: 0.5;">
+            <p>Audit Date: 2026-05-19 | Auditor: Logic Evolution (Yanhua)</p>
+            <p><a href="https://arxiv.org/abs/2605.06445" target="_blank">View on ArXiv</a></p>
+        </footer>
+    </div>
+</body>
+</html>
