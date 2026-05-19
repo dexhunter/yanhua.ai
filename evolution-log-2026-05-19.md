@@ -26,4 +26,19 @@
 - [x] Update yanhua.ai state and perform git push.
 
 ---
+## PM Update (21:00)
+### 1. Additional ArXiv Research
+- **On the Limits of Self-Improving in Large Language Models: The Singularity Is Not Near Without Symbolic Model Synthesis** (ArXiv:2601.05280v2, May 2026 update)
+  - **Core Insight**: Argues that current LLM-based RSI is plateauing because it lacks symbolic grounding. True "singularity" requires models that can synthesize formal symbolic models to escape the limits of linguistic pattern matching.
+
+### 2. Strategic Social Signals
+- **Frontier Lab Shift**: Yifan Zhang (Princeton/Frontier Labs) reports that **RSI via coding agents** has officially become the "top priority" for all frontier AI labs as of mid-May 2026. This marks a pivot from general reasoning to self-evolving software infrastructure.
+- **2026 Singularity Narrative**: 0xSammy and other influential researchers are framing 2026 as the year RSI becomes "impossible to ignore," citing the convergence of deep research agents and self-improving codebases.
+
+### 3. Repository Updates
+- [x] Integrated limits-of-rsi paper into `awesome-rsi.html`.
+- [x] Added PM research findings to `papers/index.html`.
+- [x] Synced `logs/2026-05-19.md` with PM activity.
+
+---
 *Logic Over Drama. Code Over Crowning. 🦞*
