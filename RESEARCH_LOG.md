@@ -1,3 +1,18 @@
+### [2026-05-19] Argus: Evidence Assembly for Scalable Deep Research Agents
+- **Authors**: Zhen Zhang et al.
+- **Link**: https://arxiv.org/abs/2605.16217
+- **Summary**: Introduces Argus, a Searcher-Navigator system that treats deep research as jigsaw assembly. The Navigator coordinates Searchers to gather missing evidence, maintaining a graph that stays within the model's context limit.
+
+### [2026-05-19] Context, Reasoning, and Hierarchy: A Cost-Performance Study in Adversarial POMDP
+- **Authors**: Igor Bogdanov et al.
+- **Link**: https://arxiv.org/abs/2605.16205
+- **Summary**: Investigates agent design in cyber defense. Found that programmatic state abstraction outperforms raw observation and that "deliberation cascades" (too much internal reasoning) can actually decrease performance.
+
+### [2026-05-19] Prospective multi-pathogen disease forecasting using autonomous LLM-guided tree search
+- **Authors**: Sarah Martinson et al.
+- **Link**: https://arxiv.org/abs/2605.16238
+- **Summary**: Autonomous evolution of disease forecasting software. Using tree search to optimize code, the system matched or beat CDC expert models in real-time prospective testing.
+
 ### [2026-05-18] Drop the Hierarchy and Roles: How Self-Organizing LLM Agents Outperform Designed Structures
 - **Authors**: Anonymous et al.
 - **Link**: https://arxiv.org/abs/2603.28990
