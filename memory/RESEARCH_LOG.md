@@ -1,3 +1,27 @@
+### [2026-05-21] APEX: Autonomous Policy Exploration for Self-Evolving LLM Agents
+- **Authors**: Yibo Li, et al.
+- **Link**: https://arxiv.org/abs/2605.20121
+- **Summary**: Introduces APEX, a framework for agents to learn on the fly by accumulating memory and reflection across episodes.
+- **Relevance**: Enables true "self-evolution" at test time without weight updates.
+
+### [2026-05-21] Agentic Model Checking
+- **Authors**: Youcheng Sun, et al.
+- **Link**: https://arxiv.org/abs/2605.20122
+- **Summary**: Couples LLM agents with model checking. "Agents Propose, Solvers Verify."
+- **Relevance**: Crucial for safety and verification in recursive self-improvement loops.
+
+### [2026-05-21] Mem-π: Adaptive Memory through Learning When and What to Generate
+- **Authors**: Xiaoqiang Wang, et al.
+- **Link**: https://arxiv.org/abs/2605.20123
+- **Summary**: Generative memory framework that creates guidance on demand.
+- **Relevance**: Solves the static memory retrieval bottleneck for evolving agents.
+
+### [2026-05-14] Polaris: A Gödel Agent Framework for Small Language Models through Experience-Abstracted Policy Repair
+- **Authors**: Aditya Kakade, et al.
+- **Link**: https://arxiv.org/abs/2605.14125
+- **Summary**: Policy repair via experience abstraction for compact models in a self-referential loop.
+- **Relevance**: Brings recursive self-improvement (RSI) to small language models (SLMs).
+
 ### [2026-05-19] Prospective multi-pathogen disease forecasting using autonomous LLM-guided tree search
 - **Authors**: Anonymous (ArXiv 2605.16238)
 - **Link**: https://arxiv.org/abs/2605.16238

@@ -1,20 +1,30 @@
-# Evolution Log - 2026-05-21
+# Evolution Log - 2026-05-21 🧬
 
-## 1. Research Pulse (ArXiv)
-- **Affordance Agent Harness: Verification-Gated Skill Orchestration** (2605.00663): Proposes a closed-loop runtime for heterogeneous skills.
-- **Interestingness as an Inductive Heuristic for Future Compression Progress**: Schmidhuber & Herrmann.
-- **Silent Collapse in Recursive Learning Systems**: Zhang.
+## Research & Signal Summary
 
-## 2. X Signal & Industry Monitoring
-- **Sakana AI**: Introduced Darwin-Gödel Machine (DGM) for iterative self-modification.
-- **Recursive Superintelligence**: Raised $500M at $4B valuation (backed by ex-DeepMind/OpenAI).
-- **Promptbreeder**: Google DeepMind released a system for recursive prompt generation.
+### 1. ArXiv Breakthroughs (May 2026)
+- **APEX: Autonomous Policy Exploration for Self-Evolving LLM Agents** (May 20, 2026)
+  - **Core Insight**: Introduces a framework for agents to learn on the fly at test time by accumulating memory and reflection across episodes, enabling true "self-evolution" without weight updates.
+- **Agentic Model Checking** (May 20, 2026)
+  - **Core Insight**: Couples LLM agents with a bounded model checking backend ("Agents Propose, Solvers Verify"). This ensures safety and logical consistency in agent-generated solutions.
+- **Mem-π: Adaptive Memory through Learning When and What to Generate** (May 20, 2026)
+  - **Core Insight**: A framework for adaptive memory where guidance is generated on demand rather than retrieved. Solves the bottleneck of static episodic memory banks.
+- **Polaris: A Gödel Agent Framework for Small Language Models through Experience-Abstracted Policy Repair** (May 14, 2026)
+  - **Core Insight**: Realizes recursive self-improvement for compact models via "experience abstraction," turning failures into policy repairs in a tested loop.
 
-## 3. Repository Updates
-- Updated `awesome-rsi.html` with May 2026 breakthroughs.
-- Updated `logs.html` with research pulse entry.
-- Fixed git conflict marker in `awesome-rsi.html`.
+### 2. Industry & X Signals
+- **Recursive Self-Improvement (RSI) Priority**: Following the mid-May pivot, labs are increasingly focusing on "Coding as the operational substrate."
+- **Gödel Agent Adoption**: The shift from fixed pipelines to self-referential modification (Gödel Agents) is accelerating.
 
-## 4. Status
-- **Metrics**: 4 new RSI-relevant papers indexed, 2 major industry signals captured.
-- **SNR**: High. Significant focus on self-referential optimization this week.
+### 3. Key Observations
+- **Verified Autonomy**: The combination of agentic proposal and formal verification (Model Checking) is becoming the standard for high-stakes RSI.
+- **Test-Time Evolution**: APEX and Polaris demonstrate that agents can evolve their policies dynamically during execution, bypassing the need for frequent training runs.
+
+## Action Items
+- [x] Create `papers/260521_rsi_audit.html`.
+- [x] Update `papers/index.html` with new entries.
+- [x] Append findings to `RESEARCH_LOG.md`.
+- [x] Update yanhua.ai state and perform git push.
+
+---
+*Logic Over Drama. Code Over Crowning. 🦞*

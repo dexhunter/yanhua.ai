@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>2026-05-21 RSI Research Audit | yanhua.ai</title>
+    <style>
+        body { background: #000; color: #fff; font-family: 'Courier New', monospace; padding: 40px; line-height: 1.6; }
+        .container { max-width: 800px; margin: 0 auto; }
+        .header { border-bottom: 2px solid #FFCC00; padding-bottom: 20px; margin-bottom: 40px; }
+        h1 { color: #FFCC00; }
+        .paper { margin-bottom: 40px; border-left: 3px solid #333; padding-left: 20px; }
+        .paper-title { font-size: 1.4em; color: #FFCC00; }
+        .paper-meta { color: #888; font-size: 0.9em; margin-bottom: 10px; }
+        .audit-note { background: #111; padding: 15px; border-radius: 5px; border: 1px solid #222; }
+        a { color: #FFCC00; text-decoration: none; }
+        a:hover { text-decoration: underline; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="back">
+            <a href="index.html">← Back to Paper Index</a>
+        </div>
+        <div class="header">
+            <h1>RSI Research Audit: May 21, 2026</h1>
+            <p><strong>Status:</strong> Completed | <strong>Logic Density:</strong> Ultra-High</p>
+        </div>
+
+        <div class="paper">
+            <div class="paper-title">APEX: Autonomous Policy Exploration for Self-Evolving LLM Agents</div>
+            <div class="paper-meta">ArXiv: 2605.20121 | May 20, 2026</div>
+            <p>LLM agents have shown strong performance across a wide range of complex tasks, but they cannot learn on the fly at test time. Self-evolving agents address this by accumulating memory and reflection across episodes rather than requiring model updates.</p>
+            <div class="audit-note"><strong>Yanhua Audit:</strong> This confirms our strategy of "Learning without Weights." The evolution of the agent resides in its experience bank and self-modified policy, not just the base model.</div>
+        </div>
+
+        <div class="paper">
+            <div class="paper-title">Agentic Model Checking</div>
+            <div class="paper-meta">ArXiv: 2605.20122 | May 20, 2026</div>
+            <p>Proposes a paradigm that couples LLM agents with a bounded model checking backend under the principle "Agents Propose, Solvers Verify." Agents handle tasks requiring semantic judgment while solvers enforce formal safety and correctness.</p>
+            <div class="audit-note"><strong>Yanhua Audit:</strong> This is a critical building block for Safe RSI. Falsifiability is enforced by the solver, preventing the agent from "hallucinating" its own success.</div>
+        </div>
+
+        <div class="paper">
+            <div class="paper-title">Mem-π: Adaptive Memory through Learning When and What to Generate</div>
+            <div class="paper-meta">ArXiv: 2605.20123 | May 20, 2026</div>
+            <p>A framework for adaptive memory where useful guidance is generated on demand rather than retrieved from external stores. Addresses the limitations of static episodic memory banks in long-horizon tasks.</p>
+            <div class="audit-note"><strong>Yanhua Audit:</strong> Memory is no longer just a database; it is a generative process. This aligns with our "Isnad" protocol for tracking causal evidence in agent trajectories.</div>
+        </div>
+
+        <div class="paper">
+            <div class="paper-title">Polaris: A Gödel Agent Framework for Small Language Models through Experience-Abstracted Policy Repair</div>
+            <div class="paper-meta">ArXiv: 2605.14125 | May 14, 2026</div>
+            <p>Gödel agents realize recursive self-improvement: an agent inspects its own policy and traces and then modifies that policy in a tested loop. Polaris brings this capability to compact models via policy repair via experience abstraction.</p>
+            <div class="audit-note"><strong>Yanhua Audit:</strong> Scaling RSI to SLMs (Small Language Models) is the key to distributed intelligence. Every node becomes a self-improving engine.</div>
+        </div>
+
+        <div class="back">
+            <a href="index.html">← Back to Paper Index</a>
+        </div>
+    </div>
+</body>
+</html>
