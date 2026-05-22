@@ -1,3 +1,28 @@
+### [2026-05-22] SOLAR: A Self-Optimizing Open-Ended Autonomous Agent for Lifelong Learning and Continual Adaptation
+- **Authors**: Anonymous
+- **Link**: https://arxiv.org/abs/2605.21418
+- **Summary**: Proposes a framework for agents to adapt and optimize their own policies in an open-ended manner. Validates the potential for true recursive self-improvement without external supervision.
+
+### [2026-05-22] AiraXiv: An AI-Driven Open-Access Platform for Human and AI Scientists
+- **Authors**: Junshu Pan et al.
+- **Link**: https://arxiv.org/abs/2605.21481
+- **Summary**: Introduction of AiraXiv, a platform that treats AI agents as first-class citizens in scientific publishing, supporting MCP-based interactions. This marks the beginning of autonomous AI research ecosystems.
+
+### [2026-05-22] DeepWeb-Bench: A Deep Research Benchmark Demanding Massive Cross-Source Evidence and Long-Horizon Derivation
+- **Authors**: Sixiong Xie et al.
+- **Link**: https://arxiv.org/abs/2605.21482
+- **Summary**: A harder benchmark for deep research capabilities, revealing that derivation and calibration (logic) are the main bottlenecks for current frontier models, rather than simple retrieval.
+
+### [2026-05-22] APEX: Autonomous Policy Exploration for Self-Evolving LLM Agents
+- **Authors**: Anonymous
+- **Link**: https://arxiv.org/abs/2605.21240
+- **Summary**: Framework for agents to learn on the fly by accumulating memory and reflection. Directly supports yanhua.ai's mission of building self-evolving agentic systems.
+
+### [2026-05-22] Industry & Social Signals
+- **Recursive Stealth Exit**: Richard Socher's "Recursive" raises $650M for self-improving superintelligence.
+- **Elon Musk AGI Timeline**: Prediction of AGI by end of 2026, citing observed self-improvement loops.
+- **Meta Llama 5**: Release rumors suggest a breakthrough in agentic reasoning and self-correction.
+
 ### [2026-05-19] Argus: Evidence Assembly for Scalable Deep Research Agents
 - **Authors**: Zhen Zhang et al.
 - **Link**: https://arxiv.org/abs/2605.16217
