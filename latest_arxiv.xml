@@ -2,623 +2,532 @@
 <feed xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/" xmlns:arxiv="http://arxiv.org/schemas/atom" xmlns="http://www.w3.org/2005/Atom">
   <id>https://arxiv.org/api/8L5u0h1vw57aGxmt4C71V+Q449I</id>
   <title>arXiv Query: search_query=all:Recursive OR all:Self-Improvement&amp;id_list=&amp;start=0&amp;max_results=20</title>
-  <updated>2026-05-10T12:54:25Z</updated>
+  <updated>2026-05-23T12:53:57Z</updated>
   <link href="https://arxiv.org/api/query?search_query=all:Recursive+OR+all:Self-Improvement&amp;start=0&amp;max_results=20&amp;id_list=" type="application/atom+xml"/>
   <opensearch:itemsPerPage>20</opensearch:itemsPerPage>
-  <opensearch:totalResults>40006</opensearch:totalResults>
+  <opensearch:totalResults>40555</opensearch:totalResults>
   <opensearch:startIndex>0</opensearch:startIndex>
   <entry>
-    <id>http://arxiv.org/abs/2605.06642v1</id>
-    <title>StraTA: Incentivizing Agentic Reinforcement Learning with Strategic Trajectory Abstraction</title>
-    <updated>2026-05-07T17:51:16Z</updated>
-    <link href="https://arxiv.org/abs/2605.06642v1" rel="alternate" type="text/html"/>
-    <link href="https://arxiv.org/pdf/2605.06642v1" rel="related" type="application/pdf" title="pdf"/>
-    <summary>Large language models (LLMs) are increasingly used as interactive agents, but optimizing them for long-horizon decision making remains difficult because current methods are largely purely reactive, which weakens both exploration and credit assignment over extended trajectories. In this work, we present Strategic Trajectory Abstraction (StraTA), a simple framework that introduces an explicit trajectory-level strategy into agentic reinforcement learning (RL). StraTA samples a compact strategy from the initial task state, conditions subsequent actions on that strategy, and trains strategy generation and action execution jointly with a hierarchical GRPO-style rollout design, further enhanced by diverse strategy rollout and critical self-judgment. Experiments on ALFWorld, WebShop, and SciWorld show that StraTA consistently improves both sample efficiency and final performance over strong baselines. StraTA reaches success rates of 93.1% on ALFWorld and 84.2% on WebShop. On SciWorld, StraTA attains a 63.5% overall score, outperforming frontier closed-source models.</summary>
-    <category term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
-    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
-    <published>2026-05-07T17:51:16Z</published>
-    <arxiv:comment>26 pages, 4 figures, 7 tables</arxiv:comment>
-    <arxiv:primary_category term="cs.CL"/>
-    <author>
-      <name>Xiangyuan Xue</name>
-    </author>
-    <author>
-      <name>Yifan Zhou</name>
-    </author>
-    <author>
-      <name>Zidong Wang</name>
-    </author>
-    <author>
-      <name>Shengji Tang</name>
-    </author>
-    <author>
-      <name>Philip Torr</name>
-    </author>
-    <author>
-      <name>Wanli Ouyang</name>
-    </author>
-    <author>
-      <name>Lei Bai</name>
-    </author>
-    <author>
-      <name>Zhenfei Yin</name>
-    </author>
-  </entry>
-  <entry>
-    <id>http://arxiv.org/abs/2605.06639v1</id>
-    <title>Recursive Agent Optimization</title>
-    <updated>2026-05-07T17:49:09Z</updated>
-    <link href="https://arxiv.org/abs/2605.06639v1" rel="alternate" type="text/html"/>
-    <link href="https://arxiv.org/pdf/2605.06639v1" rel="related" type="application/pdf" title="pdf"/>
-    <summary>We introduce Recursive Agent Optimization (RAO), a reinforcement learning approach for training recursive agents: agents that can spawn and delegate sub-tasks to new instantiations of themselves recursively. Recursive agents implement an inference-time scaling algorithm that naturally allows agents to scale to longer contexts and generalize to more difficult problems via divide-and-conquer. RAO provides a method to train models to best take advantage of such recursive inference, teaching agents when and how to delegate and communicate. We find that recursive agents trained in this way enjoy better training efficiency, can scale to tasks that go beyond the model's context window, generalize to tasks much harder than the ones the agent was trained on, and can enjoy reduced wall-clock time compared to single-agent systems.</summary>
-    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
-    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
-    <category term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+    <id>http://arxiv.org/abs/2605.22721v1</id>
+    <title>Self-Evolving Multi-Agent Systems via Decentralized Memory</title>
+    <updated>2026-05-21T16:55:40Z</updated>
+    <link href="https://arxiv.org/abs/2605.22721v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2605.22721v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Self-evolving multi-agent systems (MAS) have emerged as a promising route to LLM agents that continually improve from experience, with persistent memory at their foundation. However, existing designs almost exclusively adopt a centralized repository shared across agents, incurring communication and coordination overhead, raising privacy concerns, and collapsing agent diversity. We propose DecentMem, a decentralized memory framework in which each agent maintains its own dual-pool memory -- an exploitation pool of consolidated past trajectories and an exploration pool of LLM-generated candidates for unseen contexts. The two pools are reweighted online based on stage-wise feedback from an LLM-as-a-judge. Theoretically, we prove that this design guarantees global reachability of the solution space and achieves $O(\log T)$ cumulative regret, matching the stochastic bandit lower bound up to constants. In practice, across three MAS frameworks (AutoGen, DyLAN, AgentNet), three Qwen3 backbones (4B/8B/14B), two Gemma4 backbones (E2B/E4B) and five benchmarks spanning math, code, QA, and embodied tasks, DecentMem improves average accuracy by up to 23.8% over the strongest centralized memory baseline and by up to 52.5% over the no-memory baseline, while reducing token usage by up to 49%.</summary>
     <category term="cs.MA" scheme="http://arxiv.org/schemas/atom"/>
-    <published>2026-05-07T17:49:09Z</published>
-    <arxiv:primary_category term="cs.LG"/>
+    <published>2026-05-21T16:55:40Z</published>
+    <arxiv:primary_category term="cs.MA"/>
     <author>
-      <name>Apurva Gandhi</name>
+      <name>Guangya Hao</name>
     </author>
     <author>
-      <name>Satyaki Chakraborty</name>
+      <name>Yunbo Long</name>
     </author>
     <author>
-      <name>Xiangjun Wang</name>
-    </author>
-    <author>
-      <name>Aviral Kumar</name>
-    </author>
-    <author>
-      <name>Graham Neubig</name>
+      <name>Zhuokai Zhao</name>
     </author>
   </entry>
   <entry>
-    <id>http://arxiv.org/abs/2605.06612v1</id>
-    <title>Online Bayesian Calibration under Gradual and Abrupt System Changes</title>
-    <updated>2026-05-07T17:29:18Z</updated>
-    <link href="https://arxiv.org/abs/2605.06612v1" rel="alternate" type="text/html"/>
-    <link href="https://arxiv.org/pdf/2605.06612v1" rel="related" type="application/pdf" title="pdf"/>
-    <summary>Bayesian model calibration is central to digital twins and computer experiments, as it aligns model outputs with field observations by estimating calibration parameters and correcting systematic model bias. Classical Bayesian calibration introduces latent parameters and a discrepancy function to model bias, but suffers from parameter--discrepancy confounding and is typically formulated as an offline procedure under a stationary data-generating assumption. These limitations are restrictive in modern digital twin applications, where systems evolve over time and may exhibit gradual drift and abrupt regime shifts. While data assimilation methods enable sequential updates, they generally do not explicitly model systematic bias and are less effective under abrupt changes. We propose Bayesian Recursive Projected Calibration (BRPC), an online Bayesian calibration framework for streaming data under simulator mismatch and nonstationarity. BRPC extends projected calibration to the online setting by separating a discrepancy-free particle update for calibration parameters from a conditional Gaussian process update for discrepancy, preserving identifiability while enabling bias-aware adaptation under gradual system evolution. To handle abrupt changes, BRPC is integrated with restart mechanisms that detect regime shifts and reset the calibration process. We establish theoretical guarantees for both components, including tracking performance under gradual evolution and false-alarm and detection behavior for restart mechanisms. Empirical studies on synthetic and plant-simulation benchmarks show that BRPC improves calibration accuracy under gradual changes, while restart-augmented BRPC further improves robustness and predictive performance under abrupt regime shifts compared to sliding-window Bayesian calibration and data assimilation baselines.</summary>
-    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
-    <category term="cs.ET" scheme="http://arxiv.org/schemas/atom"/>
-    <category term="stat.ML" scheme="http://arxiv.org/schemas/atom"/>
-    <published>2026-05-07T17:29:18Z</published>
-    <arxiv:primary_category term="cs.LG"/>
-    <author>
-      <name>Yang Xu</name>
-    </author>
-    <author>
-      <name>Chiwoo Park</name>
-    </author>
-  </entry>
-  <entry>
-    <id>http://arxiv.org/abs/2605.06597v1</id>
-    <title>UniSD: Towards a Unified Self-Distillation Framework for Large Language Models</title>
-    <updated>2026-05-07T17:22:11Z</updated>
-    <link href="https://arxiv.org/abs/2605.06597v1" rel="alternate" type="text/html"/>
-    <link href="https://arxiv.org/pdf/2605.06597v1" rel="related" type="application/pdf" title="pdf"/>
-    <summary>Self-distillation (SD) offers a promising path for adapting large language models (LLMs) without relying on stronger external teachers. However, SD in autoregressive LLMs remains challenging because self-generated trajectories are free-form, correctness is task-dependent, and plausible rationales can still provide unstable or unreliable supervision. Existing methods mainly examine isolated design choices, leaving their effectiveness, roles, and interactions unclear. In this paper, we propose UniSD, a unified framework to systematically study self-distillation. UniSD integrates complementary mechanisms that address supervision reliability, representation alignment, and training stability, including multi-teacher agreement, EMA teacher stabilization, token-level contrastive learning, feature matching, and divergence clipping. Across six benchmarks and six models from three model families, UniSD reveals when self-distillation improves over static imitation, which components drive the gains, and how these components interact across tasks. Guided by these insights, we construct UniSDfull, an integrated pipeline that combines complementary components and achieves the strongest overall performance, improving over the base model by +5.4 points and the strongest baseline by +2.8 points. Extensive evaluation highlights self-distillation as a practical and steerable approach for efficient LLM adaptation without stronger external teachers.</summary>
+    <id>http://arxiv.org/abs/2605.22705v1</id>
+    <title>Tokenization with Split Trees</title>
+    <updated>2026-05-21T16:46:23Z</updated>
+    <link href="https://arxiv.org/abs/2605.22705v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2605.22705v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>We introduce Tokenization with Split Trees (ToaST), a subword tokenization method that directly optimizes compression under a new recursive inference procedure. ToaST greedily splits each pretoken into a full binary tree using precomputed byte n-gram counts, independent of any vocabulary. Given a vocabulary, inference recursively descends each split tree and emits the first in-vocabulary node reached on each path. Vocabulary selection is formulated as an Integer Program (IP) that minimizes the total token count over all split trees under this inference procedure. The Linear Programming (LP) relaxation is near-integral in practice, yielding provably near-optimal vocabularies, with training time empirically scaling quadratically in the number of split trees. On English text, ToaST reduces token counts by more than 11% compared to BPE, WordPiece, and UnigramLM at vocabulary sizes of 40,960 and above, reducing the number of inference tokens for models using this tokenizer, thus extending the effective context length. ToaST also uses common single-byte tokens less frequently than these baselines, leading to a substantial improvement in Renyi efficiency. In experiments training 1.5B parameter language models, ToaST achieves the highest CORE score, outperforming baselines by 2.6%--7.6%, with significance for two of three, and scoring best on 13 of 22 individual tasks.</summary>
     <category term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
-    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
-    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
-    <published>2026-05-07T17:22:11Z</published>
-    <arxiv:comment>22 pages, 12 figures</arxiv:comment>
+    <published>2026-05-21T16:46:23Z</published>
     <arxiv:primary_category term="cs.CL"/>
     <author>
-      <name>Yiqiao Jin</name>
+      <name>Craig W. Schmidt</name>
     </author>
     <author>
-      <name>Yiyang Wang</name>
+      <name>Michael Krumdick</name>
     </author>
     <author>
-      <name>Lucheng Fu</name>
+      <name>Adam Wiemerslage</name>
     </author>
     <author>
-      <name>Yijia Xiao</name>
+      <name>Seth Ebner</name>
     </author>
     <author>
-      <name>Yinyi Luo</name>
+      <name>Varshini Reddy</name>
     </author>
     <author>
-      <name>Haoxin Liu</name>
+      <name>Yuval Pinter</name>
     </author>
     <author>
-      <name>B. Aditya Prakash</name>
-    </author>
-    <author>
-      <name>Josiah Hester</name>
-    </author>
-    <author>
-      <name>Jindong Wang</name>
-    </author>
-    <author>
-      <name>Srijan Kumar</name>
+      <name>Chris Tanner</name>
     </author>
   </entry>
   <entry>
-    <id>http://arxiv.org/abs/2605.06563v1</id>
-    <title>Criticality and Saturation in Orthogonal Neural Networks</title>
-    <updated>2026-05-07T16:57:59Z</updated>
-    <link href="https://arxiv.org/abs/2605.06563v1" rel="alternate" type="text/html"/>
-    <link href="https://arxiv.org/pdf/2605.06563v1" rel="related" type="application/pdf" title="pdf"/>
-    <summary>It has been known for a long time that initializing weight matrices to be orthogonal instead of having i.i.d. Gaussian components can improve training performance. This phenomenon can be analyzed using finite-width corrections, where the infinite-width statistics are supplemented by a power series in $1/\mathrm{width}$. In particular, recent empirical results by Day et al. show that the tensors appearing in this treatment stabilize for large depth, as opposed to the tensors of i.i.d.-initialized networks. In this article, we derive explicit layer-wise recursion relations for the tensors appearing in the finite-width expansion of the network statistics in the case of orthogonal initializations. We also provide an extension of recently-introduced Feynman diagrams for the corresponding recursions in the i.i.d.-case which are valid to all orders in $1/\mathrm{width}$. Finally, we show explicitly that the recursions we derive reproduce the stability of the finite-width tensors which was observed for activation functions with vanishing fixed point. This work therefore provides a theoretical explanation for the stability of nonlinear networks of finite width initialized with orthogonal weights, closing a long-standing gap in the literature. We validate our theoretical results experimentally by showing that numerical solutions of our recursion relations and their analytical large-depth expansions agree excellently with Monte-Carlo estimates from network ensembles.</summary>
+    <id>http://arxiv.org/abs/2605.22675v1</id>
+    <title>Self-Policy Distillation via Capability-Selective Subspace Projection</title>
+    <updated>2026-05-21T16:18:41Z</updated>
+    <link href="https://arxiv.org/abs/2605.22675v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2605.22675v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Self-distillation bootstraps large language models (LLMs) by training on their own generations. However, existing methods either rely on external signals to curate self-generated outputs (e.g., correctness filtering, execution feedback, and reward search), which are costly and unavailable for the best-performing frontier models, or skip curation entirely and train on all raw outputs, an approach that is often domain-specific and hard to generalize. Both also share a deeper weakness that self-generated outputs entangle task-relevant capability with others, such as stylistic patterns, formatting artifacts, and model-specific errors, diluting the signal for the specific capability one aims to improve. In this paper, we propose Self-Policy Distillation (SPD), which achieves generalizable, capability selective without any external signal. Specifically, SPD extracts a low-rank capability subspace from the model's own gradients on correctness-defining tokens, projects key-value (KV) activations into this subspace during self-generation, and fine-tunes on the resulting raw outputs with standard next-token prediction loss. Through extensive experiments across code generation, mathematical reasoning, and multiple-choice QA, we show that SPD achieves up to 13% improvement over state-of-the-art self-distillation methods without external signals and up to 16% improvement over pre-trained baselines. Notably, SPD demonstrates superior generalizability, achieving 15% better performance under out-of-domain generalization settings.</summary>
+    <category term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-05-21T16:18:41Z</published>
+    <arxiv:primary_category term="cs.CL"/>
+    <author>
+      <name>Guangya Hao</name>
+    </author>
+    <author>
+      <name>Yitong Shang</name>
+    </author>
+    <author>
+      <name>Yunbo Long</name>
+    </author>
+    <author>
+      <name>Zhuokai Zhao</name>
+    </author>
+    <author>
+      <name>Hanxue Liang</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2605.22620v1</id>
+    <title>Two is better than one: A Collapse-free Multi-Reward RLIF Training Framework</title>
+    <updated>2026-05-21T15:30:47Z</updated>
+    <link href="https://arxiv.org/abs/2605.22620v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2605.22620v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Reinforcement learning with verifiable rewards (RLVR) has substantially improved the reasoning ability of LLMs, but often depends on external supervision from human annotations or gold-standard solutions. Reinforcement learning from internal feedback (RLIF) has recently emerged as a scalable unsupervised alternative, using signals extracted from the model itself. However, existing RLIF methods typically rely on a single internal reward, which can lead to reward hacking, entropy collapse, and degraded reasoning structure. We propose a multi-reward RLIF framework that decomposes the training signal into two complementary components: an answer-level reward based on cluster voting and a completion-level reward based on token-wise self-certainty. To combine these signals robustly, we apply GDPO-based normalization to reduce reward-scale imbalance. We further introduce KL-Cov regularization, which targets low-entropy token distributions responsible for disproportionate entropy reduction, preserving exploration and preventing late-stage collapse. Across mathematical reasoning and code-generation benchmarks, our method improves stability and robustness over prior unsupervised RL approaches, while achieving performance close to supervised RLVR methods. These results show that complementary internal rewards, combined with targeted regularization, can support stable long-horizon reasoning without relying on external ground-truth supervision. Code will be released soon.</summary>
     <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
-    <published>2026-05-07T16:57:59Z</published>
-    <arxiv:comment>11 pages + Appendices</arxiv:comment>
+    <category term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-05-21T15:30:47Z</published>
     <arxiv:primary_category term="cs.LG"/>
     <author>
-      <name>Max Guillen</name>
+      <name>Shourov Joarder</name>
     </author>
     <author>
-      <name>Jan E. Gerken</name>
+      <name>Diganta Sikdar</name>
+    </author>
+    <author>
+      <name>Ahsan Habib Akash</name>
+    </author>
+    <author>
+      <name>Binod Bhattarai</name>
+    </author>
+    <author>
+      <name>Prashnna Gyawali</name>
     </author>
   </entry>
   <entry>
-    <id>http://arxiv.org/abs/2605.06542v1</id>
-    <title>de Sitter Wavefunction from Quadrangular Polylogarithms: Chain Graphs</title>
-    <updated>2026-05-07T16:38:23Z</updated>
-    <link href="https://arxiv.org/abs/2605.06542v1" rel="alternate" type="text/html"/>
-    <link href="https://arxiv.org/pdf/2605.06542v1" rel="related" type="application/pdf" title="pdf"/>
-    <summary>We present an explicit formula for the $n$-site chain graph contribution to the cosmological wavefunction for conformally coupled $φ^3$ theory in de Sitter space. Our result relies on the recent finding that the symbol of this function satisfies total compatibility with respect to the $A_{2n-2}$ cluster algebra, and that Rudenko's quadrangular polylogarithms provide, by construction, a complete basis for such functions. We prove our formula by directly relating a recursive set of differential equations satisfied by these wavefunction coefficients to a recursive coproduct formula for quadrangular polylogarithms.</summary>
-    <category term="hep-th" scheme="http://arxiv.org/schemas/atom"/>
-    <published>2026-05-07T16:38:23Z</published>
-    <arxiv:comment>28 pages, 2 figures</arxiv:comment>
-    <arxiv:primary_category term="hep-th"/>
+    <id>http://arxiv.org/abs/2605.22527v1</id>
+    <title>Quantum Genetic Optimization for Negative Selection Algorithms in Anomaly Detection</title>
+    <updated>2026-05-21T14:19:44Z</updated>
+    <link href="https://arxiv.org/abs/2605.22527v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2605.22527v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Negative Selection Algorithms (NSAs), inspired by the self/non-self discrimination mechanism of the human immune system, have been widely employed in anomaly detection. However, their effectiveness is often constrained by the efficiency of detector generation. This paper presents the Quantum Genetic Negative Selection Algorithm (QGNSA), a novel approach that integrates a Quantum Genetic Algorithm (QGA) into the EvoSeedRNSA algorithm, replacing its classical evolutionary optimization process. The proposed method exploits quantum superposition and probabilistic amplitude adjustment to enhance search space exploration and convergence efficiency in the detector generation process. Empirical evaluations using the Metaverse Financial Transactions Dataset demonstrate that QGNSA achieves superior anomaly detection accuracy compared to its classical counterpart while maintaining robustness under varying hyperparameter configurations. The experimental results highlight the potential advantages of quantum computing in artificial immune systems, particularly in high-dimensional anomaly detection tasks. Future research will focus on further optimizing quantum circuit design, deploying the algorithm on real quantum hardware, and exploring hybrid quantum-classical approaches for improved computational efficiency.</summary>
+    <category term="cs.NE" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.ET" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-05-21T14:19:44Z</published>
+    <arxiv:primary_category term="cs.NE"/>
     <author>
-      <name>Livia Ferro</name>
+      <name>Giancarlo P. Gamberi</name>
     </author>
     <author>
-      <name>Tomasz Lukowski</name>
-    </author>
-    <author>
-      <name>Lecheng Ren</name>
-    </author>
-    <author>
-      <name>Marcus Spradlin</name>
-    </author>
-    <author>
-      <name>Anastasia Volovich</name>
-    </author>
-    <author>
-      <name>He-Chen Weng</name>
-    </author>
-    <author>
-      <name>Yao-Qi Zhang</name>
+      <name>Calebe P. Bianchini</name>
     </author>
   </entry>
   <entry>
-    <id>http://arxiv.org/abs/2605.06541v1</id>
-    <title>Hedging Memory Horizons for Non-Stationary Prediction via Online Aggregation</title>
-    <updated>2026-05-07T16:38:21Z</updated>
-    <link href="https://arxiv.org/abs/2605.06541v1" rel="alternate" type="text/html"/>
-    <link href="https://arxiv.org/pdf/2605.06541v1" rel="related" type="application/pdf" title="pdf"/>
-    <summary>We study online prediction under distribution shift, where inputs arrive chronologically and outcomes are revealed only after prediction. In this setting, predictors must remain stable in quiet regimes yet adapt when regimes shift, and the right adaptation memory is unknown in advance. We propose MELO (Memory-hedged Exponentially Weighted Least-Squares Online aggregation), a model-agnostic method that hedges across adaptation scales: it wraps any non-anticipating base-predictor pool with exponentially weighted least-squares (EWLS) adaptation experts at multiple forgetting factors, and aggregates raw and EWLS-adapted forecasts with MLpol, a parameter-free online aggregation rule. Under boundedness conditions, we establish deterministic oracle inequalities showing that it competes with both the best raw predictor and the best bounded, time-varying affine combinations of the base predictions, up to a path-length-dependent tracking cost and a sublinear aggregation overhead. We evaluate MELO on French national electricity-load forecasting through the COVID-19 lockdown using no regime indicators, lockdown dates, or policy covariates. MELO reduces overall RMSE by 34.7\% relative to base-only MLpol and achieves lower overall RMSE than a TabICL reference supplied with an external COVID policy-response covariate. Moreover, MELO requires only lightweight per-step recursive updates without model retraining.</summary>
-    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
-    <category term="stat.ML" scheme="http://arxiv.org/schemas/atom"/>
-    <published>2026-05-07T16:38:21Z</published>
-    <arxiv:comment>Preprint</arxiv:comment>
-    <arxiv:primary_category term="cs.LG"/>
+    <id>http://arxiv.org/abs/2605.22511v1</id>
+    <title>Search-E1: Self-Distillation Drives Self-Evolution in Search-Augmented Reasoning</title>
+    <updated>2026-05-21T14:00:57Z</updated>
+    <link href="https://arxiv.org/abs/2605.22511v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2605.22511v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Post-training has become the dominant recipe for turning a language model into a competent search-augmented reasoning agent. A line of recent work pushes its performance further by adding elaborate machinery on top of this standard pipeline. These augmentations import external supervision from stronger external systems, attach auxiliary modules such as process reward models or retrospective critics, restructure the rollout itself with tree search or multi-stage curricula, or shape the reward with hand-crafted bonuses and penalties. Each addition delivers a measurable gain, but each also inflates the training pipeline and ties the recipe to resources or designs that may not always be available. We take a step back and ask whether any of this machinery is actually necessary, and propose Search-E1, a self-evolution method that lets a search-augmented agent improve through only vanilla GRPO interleaved with offline self-distillation (OFSD). After each GRPO round, the policy rolls out on its own training questions. A token-level forward KL objective then aligns the policy's inference-time distribution to its own distribution under a privileged context that exposes a more efficient sibling trajectory. Despite this simplicity, the procedure naturally provides dense per-step supervision. On seven QA benchmarks, Search-E1 reaches $0.440$ average EM with Qwen2.5-3B, surpassing all open-source baselines at both scales. Code and complete version will be made public soon.</summary>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.IR" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-05-21T14:00:57Z</published>
+    <arxiv:primary_category term="cs.AI"/>
     <author>
-      <name>Yutong Wang</name>
+      <name>Zihan Liang</name>
     </author>
     <author>
-      <name>Yannig Goude</name>
+      <name>Yufei Ma</name>
     </author>
     <author>
-      <name>Qiwei Yao</name>
-    </author>
-  </entry>
-  <entry>
-    <id>http://arxiv.org/abs/2605.06509v1</id>
-    <title>FreeSpec: Training-Free Long Video Generation via Singular-Spectrum Reconstruction</title>
-    <updated>2026-05-07T16:21:34Z</updated>
-    <link href="https://arxiv.org/abs/2605.06509v1" rel="alternate" type="text/html"/>
-    <link href="https://arxiv.org/pdf/2605.06509v1" rel="related" type="application/pdf" title="pdf"/>
-    <summary>Video diffusion models perform well in short-video synthesis, but their training-free extension to long videos often suffers from content drift, temporal inconsistency, and over-smoothed dynamics. Existing methods improve temporal consistency by combining a global branch with a local branch, but they often further decompose appearance consistency and temporal dynamics within each branch using predefined criteria. This assignment is unreliable when appearance and action progression are tightly coupled, such as in camera motion and sequential motion. We analyze the video temporal extension issue from a singular-spectrum perspective and show that enlarged self-attention windows induce spectral concentration: spectral energy becomes dominated by a few low-rank singular directions, preserving coarse structure but suppressing high-rank spatial details and motion-rich temporal variations. To mitigate this problem, we propose FreeSpec, a training-free spectral reconstruction framework for long-video generation. FreeSpec decomposes global and local features with singular value decomposition, and uses the global branch as low-rank spectral guidance and the local branch as a high-rank reconstruction basis. This spectrum-level fusion avoids the rigid feature partitioning of previous decomposition rules, preserving long-range consistency while better retaining spatial details and temporal dynamics. Experiments on Wan2.1 and LTX-Video demonstrate that FreeSpec improves long-video generation, especially for temporal dynamics, while maintaining strong visual quality and temporal consistency. Project demo: https://fdchen24.github.io/FreeSpec-Website/.</summary>
-    <category term="cs.CV" scheme="http://arxiv.org/schemas/atom"/>
-    <published>2026-05-07T16:21:34Z</published>
-    <arxiv:primary_category term="cs.CV"/>
-    <author>
-      <name>Fangda Chen</name>
+      <name>Ben Chen</name>
     </author>
     <author>
-      <name>Shanshan Zhao</name>
+      <name>Zhipeng Qian</name>
     </author>
     <author>
-      <name>Longrong Yang</name>
+      <name>Xuxin Zhang</name>
     </author>
     <author>
-      <name>Chuanfu Xu</name>
+      <name>Huangyu Dai</name>
     </author>
     <author>
-      <name>Zhigang Luo</name>
-    </author>
-    <author>
-      <name>Long Lan</name>
+      <name>Lingtao Mao</name>
     </author>
   </entry>
   <entry>
-    <id>http://arxiv.org/abs/2605.06498v1</id>
-    <title>Lie Group Formulation of Recursive Dynamics Algorithms of Higher Order for Floating-Base Robots</title>
-    <updated>2026-05-07T16:17:39Z</updated>
-    <link href="https://arxiv.org/abs/2605.06498v1" rel="alternate" type="text/html"/>
-    <link href="https://arxiv.org/pdf/2605.06498v1" rel="related" type="application/pdf" title="pdf"/>
-    <summary>In this paper, we describe procedures for computing higher-order time derivatives of the Lie-group Newton-Euler, Articulated-Body Inertia, and hybrid dynamics algorithms for floating-base trees, where the base configuration evolves on SE(3) and the attached mechanism is an open kinematic tree with configuration on the (n1+n2)-dimensional manifold T^{n1} \times R^{n2}, using spatial representation of twists. After presenting the algorithms, we collect the resulting recursions into closed-form equations of motion, identifying an admissible Coriolis matrix satisfying the passivity property, and showing that the articulated inertia tensor remains unchanged across all time derivatives. We then apply the developed methods to a 12-DoF aerial manipulator to derive analytical expressions for its geometric forward and inverse dynamics along with their first time derivatives whereas the numerical simulations successfully evaluate these dynamics up to fifth order. Finally, to demonstrate their practical utility, we benchmark the proposed extensions and show that, in the considered tests, their computational cost scales quadratically with the derivative order, whereas the automatic-differentiation baseline exhibits exponential scaling.</summary>
+    <id>http://arxiv.org/abs/2605.22466v1</id>
+    <title>Arboreal Galois Groups of a PCF Map with Strictly Pre-periodic Critical Points</title>
+    <updated>2026-05-21T13:26:44Z</updated>
+    <link href="https://arxiv.org/abs/2605.22466v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2605.22466v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>We study the arithmetic and geometric iterated monodromy groups associated to the postcritically finite (PCF) quadratic rational function $f(x)=\frac{2}{(x-1)^2}$ defined over a number field $k$, whose critical points are both strictly pre-periodic. We give explicit recursive descriptions of the topological generators of the geometric iterated monodromy group of $f$ and show that the arithmetic iterated monodromy group has Hausdorff dimension zero. We describe an explicit criterion to determine the values $a\in k$ for which the associated arboreal Galois group achieves its maximum possible size. In particular, we show that maximality of the arboreal Galois group can already be verified at level four, which is computationally accessible. Finally, we determine the intersection of the constant field of the arithmetic iterated monodromy group with $k(μ_{2^{\infty}})$, providing the first full study of a PCF quadratic map with non-abelian constant field.</summary>
+    <category term="math.NT" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="math.GR" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-05-21T13:26:44Z</published>
+    <arxiv:primary_category term="math.NT"/>
+    <author>
+      <name>Özlem Ejder</name>
+    </author>
+    <author>
+      <name>Zofia Gołaska</name>
+    </author>
+    <author>
+      <name>Yasemin Kara</name>
+    </author>
+    <author>
+      <name>Leonie Nienhaus</name>
+    </author>
+    <author>
+      <name>Özge Ülkem</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2605.22443v1</id>
+    <title>Terminal Constraint Model Predictive Control for Image-Based Visual Servoing of UAVs with Kalman Filter-Based Moment Loss Compensation</title>
+    <updated>2026-05-21T13:11:53Z</updated>
+    <link href="https://arxiv.org/abs/2605.22443v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2605.22443v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Image-Based Visual Servoing (IBVS) provides an efficient vision-guided control paradigm for unmanned aerial vehicles (UAVs) by directly regulating image-space errors. However, conventional IBVS controllers are vulnerable to two critical issues: loss of closed-loop stability near the target due to input and state constraints, and control failure caused by intermittent loss of moment-based visual features under aggressive motion. To address these challenges, this paper proposes a terminal-constraint model predictive control (TC-MPC) framework for IBVS, integrated with a Kalman filter (KF)-based state-prediction mechanism. The TC-MPC explicitly incorporates terminal-state constraints and a terminal cost into the IBVS error dynamics, ensuring recursive feasibility, improved convergence behavior, and closed-loop stability under control and state constraints. In parallel, the Kalman filter predicts the temporal evolution of image moments during short-term visual degradation, enabling the controller to preserve control continuity when moment measurements are partially unavailable. The proposed approach is validated through real-time UAV visual servoing experiments.</summary>
     <category term="cs.RO" scheme="http://arxiv.org/schemas/atom"/>
-    <category term="eess.SY" scheme="http://arxiv.org/schemas/atom"/>
-    <published>2026-05-07T16:17:39Z</published>
+    <published>2026-05-21T13:11:53Z</published>
     <arxiv:primary_category term="cs.RO"/>
     <author>
-      <name>Ahmed Ali</name>
+      <name>X. Wang</name>
     </author>
     <author>
-      <name>Chiara Gabellieri</name>
+      <name>Y. Cao</name>
     </author>
     <author>
-      <name>Antonio Franchi</name>
+      <name>W. L. W. Leong</name>
+    </author>
+    <author>
+      <name>Y. R. Tan</name>
+    </author>
+    <author>
+      <name>S. Huang</name>
+    </author>
+    <author>
+      <name>S. H. R. Teo</name>
+    </author>
+    <author>
+      <name>C. Xiang</name>
     </author>
   </entry>
   <entry>
-    <id>http://arxiv.org/abs/2605.06474v1</id>
-    <title>Q-MMR: Off-Policy Evaluation via Recursive Reweighting and Moment Matching</title>
-    <updated>2026-05-07T16:00:04Z</updated>
-    <link href="https://arxiv.org/abs/2605.06474v1" rel="alternate" type="text/html"/>
-    <link href="https://arxiv.org/pdf/2605.06474v1" rel="related" type="application/pdf" title="pdf"/>
-    <summary>We present a novel theoretical framework, Q-MMR, for off-policy evaluation in finite-horizon MDPs. Q-MMR learns a set of scalar weights, one for each data point, such that the reweighted rewards approximate the expected return under the target policy. The weights are learned inductively in a top-down manner via a moment matching objective against a value-function discriminator class. Notably, and perhaps surprisingly, a data-dependent finite-sample guarantee for general function approximation can be established under only the realizability of $Q^π$, with a dimension-free bound -- that is, the error does not depend on the statistical complexity of the function class. We also establish connections to several existing methods, such as importance sampling and linear FQE. Further theoretical analyses shed new light on the nature of coverage, a concept of fundamental importance to offline RL.</summary>
+    <id>http://arxiv.org/abs/2605.22422v1</id>
+    <title>FastTab: A Fast Table Recognizer with a Tiny Recursive Module and 1D Transformers</title>
+    <updated>2026-05-21T12:42:58Z</updated>
+    <link href="https://arxiv.org/abs/2605.22422v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2605.22422v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Table structure recognition (TSR) requires both table-level coherence (row/column counts, headers, spanning cells) and precise separator localization. We introduce FastTab, a grid-centric TSR model that avoids autoregressive HTML decoding by combining (i) a lightweight Tiny Recursive Module (TRM) for global reasoning and (ii) axial 1D Transformer encoders that capture long-range dependencies along rows and columns. The model predicts row/column counts, header rows, and separators to construct a grid, then infers rowspan/colspan using ROI-aligned cell features. Across four benchmarks (PubTabNet, FinTabNet, PubTables-1M, and SciTSR), FastTab achieves competitive structure recovery performance while operating at low-latency inference. We further study robustness under pixel-level anonymisation and show an extension to curved separators for camera-captured documents. The source code will be made publicly available at https://github.com/hamdilaziz/FastTab .</summary>
+    <category term="cs.CV" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-05-21T12:42:58Z</published>
+    <arxiv:primary_category term="cs.CV"/>
+    <author>
+      <name>Laziz Hamdi</name>
+    </author>
+    <author>
+      <name>Amine Tamasna</name>
+    </author>
+    <author>
+      <name>Pascal Boisson</name>
+    </author>
+    <author>
+      <name>Thierry Paquet</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2605.22420v1</id>
+    <title>Diffusion-guided Generalizable Enhancer for Urban Scene Reconstruction</title>
+    <updated>2026-05-21T12:41:39Z</updated>
+    <link href="https://arxiv.org/abs/2605.22420v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2605.22420v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Urban scene reconstruction from real-world observations has emerged as a powerful tool for self-driving development and testing. While current neural rendering approaches achieve high-fidelity rendering along the recorded trajectories, their quality degrades significantly under large viewpoint shifts, limiting the applicability for closed-loop simulation. Recent works have shown promising results in using diffusion models to enhance quality at these challenging viewpoints and distill improvements back into 3D representations. However, they often require costly per-scene optimization, and the distilled representations remain fragile and fail to generalize beyond limited synthesized views. To address these limitations, we propose GenRe, a novel diffusion-guided generalizable enhancer for urban scene reconstruction. GenRe takes as input any pretrained 3D Gaussian representation and fixes the deficiencies within a few minutes. By learning to distill generative priors across diverse scenes, GenRe produces robust and high-fidelity representation efficiently that generalizes reliably to challenging unseen viewpoints (e.g., lane change). Experiments show that GenRe outperforms existing methods in both quality and efficiency and benefits various downstream tasks, enabling robust and scalable sensor simulation for autonomous driving.</summary>
+    <category term="cs.CV" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.RO" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-05-21T12:41:39Z</published>
+    <arxiv:comment>ICRA 2026. Project page: https://waabi.ai/genre</arxiv:comment>
+    <arxiv:primary_category term="cs.CV"/>
+    <author>
+      <name>Henry Che</name>
+    </author>
+    <author>
+      <name>Jingkang Wang</name>
+    </author>
+    <author>
+      <name>Yun Chen</name>
+    </author>
+    <author>
+      <name>Ze Yang</name>
+    </author>
+    <author>
+      <name>Sivabalan Manivasagam</name>
+    </author>
+    <author>
+      <name>Raquel Urtasun</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2605.22363v1</id>
+    <title>Incentive-Aligned Vehicle-to-Vehicle Energy Trading via Nash-Integrated Multi-Agent Reinforcement Learning</title>
+    <updated>2026-05-21T11:57:56Z</updated>
+    <link href="https://arxiv.org/abs/2605.22363v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2605.22363v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Vehicle-to-vehicle (V2V) energy trading enables decentralized peer-to-peer energy exchange among electric vehicles (EVs), reducing grid dependency while monetizing surplus capacity. However, coordinating self-interested EV agents with diverse charging needs and uncertain arrival-departure schedules remains challenging. Existing approaches either require centralized optimization with computational limitations or lack fairness guarantees. This paper integrates Nash Bargaining Solution into Multi-Agent Deep Deterministic Policy Gradient, namely Nash-MADDPG, for incentive-aligned V2V energy trading. Nash bargaining determines efficient bilateral pricing, while Nash-guided price proximity rewards align agent learning toward bargaining-optimal strategies. Evaluation over 30-day continuous operation demonstrates an improvement of 61.6% in social welfare and 62.9% improvement in trading volume over Double Auction, while achieving superior fairness, such as 40.1% improvement in Jain's index. Testing across 6-100 agents over a 30-day horizon with continuous vehicle turnover confirms scalability across population size and empirically stable pricing near the Nash Bargaining benchmark.</summary>
+    <category term="math.OC" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.GT" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-05-21T11:57:56Z</published>
+    <arxiv:comment>The 24th IEEE International Conference on Industrial Informatics, 2026</arxiv:comment>
+    <arxiv:primary_category term="math.OC"/>
+    <author>
+      <name>Yujin Lin</name>
+    </author>
+    <author>
+      <name>Yue Yang</name>
+    </author>
+    <author>
+      <name>Hao Wang</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2605.22297v1</id>
+    <title>One LR Doesn't Fit All: Heavy-Tail Guided Layerwise Learning Rates for LLMs</title>
+    <updated>2026-05-21T10:46:23Z</updated>
+    <link href="https://arxiv.org/abs/2605.22297v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2605.22297v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Learning rate configuration is a fundamental aspect of modern deep learning. The prevailing practice of applying a uniform learning rate across all layers overlooks the structural heterogeneity of Transformers, potentially limiting their effectiveness as the backbone of Large Language Models (LLMs). In this paper, we introduce Layerwise Learning Rate (LLR), an adaptive scheme that assigns distinct learning rates to individual Transformer layers. Our method is grounded in Heavy-Tailed Self-Regularization (HT-SR) theory, which characterizes the empirical spectral density (ESD) of weight correlation matrices to quantify heavy-tailedness. Layers with weaker heavy-tailedness are assigned larger learning rates to accelerate their training, while layers with stronger heavy-tailedness receive smaller learning rates. By tailoring learning rates in this manner, LLR promotes balanced training across layers, leading to faster convergence and improved generalization. Extensive experiments across architectures (from LLaMA to GPT-nano), optimizers (AdamW and Muon), and parameter scales (60M-1B) demonstrate that LLR achieves up to 1.5x training speedup and outperforms baselines, notably raising average zero-shot accuracy from 47.09% to 49.02%. A key advantage of LLR is its low tuning overhead: it transfers nearly optimal LR settings directly from the uniform baseline. Code is available at https://github.com/hed-ucas/Layer-wise-Learning-Rate.</summary>
     <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
     <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
-    <category term="stat.ML" scheme="http://arxiv.org/schemas/atom"/>
-    <published>2026-05-07T16:00:04Z</published>
+    <published>2026-05-21T10:46:23Z</published>
     <arxiv:primary_category term="cs.LG"/>
     <author>
-      <name>Xiang Li</name>
+      <name>Di He</name>
     </author>
     <author>
-      <name>Nan Jiang</name>
+      <name>Songjun Tu</name>
+    </author>
+    <author>
+      <name>Keyu Wang</name>
+    </author>
+    <author>
+      <name>Lu Yin</name>
+    </author>
+    <author>
+      <name>Shiwei Liu</name>
     </author>
   </entry>
   <entry>
-    <id>http://arxiv.org/abs/2605.06456v1</id>
-    <title>Activation in Vesicle-Mediated Signaling Shaped by Batch Arrival Statistics</title>
-    <updated>2026-05-07T15:50:13Z</updated>
-    <link href="https://arxiv.org/abs/2605.06456v1" rel="alternate" type="text/html"/>
-    <link href="https://arxiv.org/pdf/2605.06456v1" rel="related" type="application/pdf" title="pdf"/>
-    <summary>Vesicle-mediated secretion of ions or molecules is a central mechanism of cellular communication, for example in processes such as neurotransmission or hormone release. These events are inherently stochastic: vesicle fusions lead to bursts of variable sizes, releasing discrete packets of transmitters that are subsequently cleared or degraded. The dynamics break time-reversal symmetry due to the interplay of spontaneous bursts and continuous degradation. Using generating functions and a recursion relation, we derive an exact solution for the full time-dependent probability distribution of a general batch arrival-degradation model. This framework also enables a full analysis of first-passage times to a concentration threshold representing downstream activation. We show that activation kinetics are not determined by mean dynamics alone, but depend sensitively on the temporal statistics of arrival events, batch-size variability, and degradation. In particular, different arrival processes with identical mean rates can lead to qualitatively distinct first-passage behavior, reflecting the role of time-asymmetric fluctuations. We also discuss extensions incorporating vesicle depletion. Our results provide a transparent link between stochastic release dynamics and activation timing in vesicle-mediated signaling.</summary>
+    <id>http://arxiv.org/abs/2605.22273v1</id>
+    <title>Exposing Vulnerabilities in Visible-Infrared VLMs: A Unified Geometric Adversarial Framework with Cross-Task Transferability</title>
+    <updated>2026-05-21T10:15:58Z</updated>
+    <link href="https://arxiv.org/abs/2605.22273v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2605.22273v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Vision-language models (VLMs) have achieved strong performance across diverse multimodal tasks, but their adversarial robustness in visible-infrared (VIS-IR) scenarios remains underexplored. This gap is critical because VIS-IR sensing is widely used in real-world perception systems to support reliable understanding under challenging imaging conditions. To address this cross-modal threat setting, we propose CFGPatch, a curved-edge fractal geometric adversarial patch framework for attacking VIS-IR VLMs. CFGPatch builds on triangular fractal geometry and replaces rigid straight-edged primitives with Bezier-curved elements, preserving multi-scale fractal self-similarity while introducing smoother contours, richer directional variation, and more flexible shape deformation. In addition, we design a modality-specific Fraser-spiral rendering mechanism to inject fine-grained texture distortions and misleading perceptual cues into visible and infrared images. By coupling global curved-fractal geometry with local spiral-based appearance interference, CFGPatch disrupts both shape perception and texture interpretation. We further adopt expectation over transformation (EOT) to improve robustness against common image-level transformations. Extensive experiments show that CFGPatch effectively fools VIS-IR VLMs and consistently outperforms standard patch baselines in attack effectiveness and robustness. Moreover, adversarial samples optimized for zero-shot classification transfer well to image captioning and visual question answering, demonstrating strong cross-task transferability and generalizability across downstream tasks.</summary>
+    <category term="cs.CV" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-05-21T10:15:58Z</published>
+    <arxiv:primary_category term="cs.CV"/>
+    <author>
+      <name>Xiang Chen</name>
+    </author>
+    <author>
+      <name>Yuxian Dong</name>
+    </author>
+    <author>
+      <name>Chao Li</name>
+    </author>
+    <author>
+      <name>Chengyin Hu</name>
+    </author>
+    <author>
+      <name>Jiaju Han</name>
+    </author>
+    <author>
+      <name>Fengyu Zhang</name>
+    </author>
+    <author>
+      <name>Yiwei Wei</name>
+    </author>
+    <author>
+      <name>Jiahuan Long</name>
+    </author>
+    <author>
+      <name>Jiujiang Guo</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2605.22269v1</id>
+    <title>MuKV: Multi-Grained KV Cache Compression for Long Streaming Video Question-Answering</title>
+    <updated>2026-05-21T10:13:03Z</updated>
+    <link href="https://arxiv.org/abs/2605.22269v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2605.22269v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Long streaming video QA remains challenging due to growing visual tokens and limited reasoning length of large language models (LLMs). KV-caching stores the Key-Value (KV) of the historical tokens via LLM prefill and enables more efficient streaming QA. However, existing methods cache every one or two frames, causing redundant memory usage and losing fine-grained spatial details within frame or temporal contexts across frames. This paper proposes MuKV, a method that features a multi-grained KV cache compression module and a semi-hierarchical retrieval approach to improve both efficiency and accuracy for long streaming VideoQA. For the offline KV cache, MuKV extracts visual representations at patch-, frame-, and segment-levels. The multiple levels of granularity preserve both local cues and global temporal context, while maintaining efficiency with a dual signal token compression mechanism guided by self-attention and frequency. For online QA, MuKV designs a semi-hierarchical retrieval method to retrieve relevant KV caches for answer generation. Experiments on long-streaming VideoQA benchmarks show that MuKV significantly improves answer accuracy, without sacrificing memory and online QA efficiency. Moreover, our compression mechanism alone brings consistent benefits across answer accuracy, memory, and QA efficiency over baselines, showcasing highly effective contribution.</summary>
+    <category term="cs.CV" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.MM" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-05-21T10:13:03Z</published>
+    <arxiv:comment>To appear at CVPR'26. Code is available at https://github.com/IMBALDY/MuKV</arxiv:comment>
+    <arxiv:primary_category term="cs.CV"/>
+    <author>
+      <name>Junbin Xiao</name>
+    </author>
+    <author>
+      <name>Jiajun Chen</name>
+    </author>
+    <author>
+      <name>Tianxiang Sun</name>
+    </author>
+    <author>
+      <name>Xun Yang</name>
+    </author>
+    <author>
+      <name>Angela Yao</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2605.22209v1</id>
+    <title>GALAR-TemporalNet v2: Anatomy-Guided Dual-Branch Temporal Classification with Bidirectional Mamba and Dual-Graph GCN for Video Capsule Endoscopy -- after competition results</title>
+    <updated>2026-05-21T09:15:43Z</updated>
+    <link href="https://arxiv.org/abs/2605.22209v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2605.22209v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Video Capsule Endoscopy (VCE) poses a challenging multi-label temporal classification problem, requiring simultaneous localization of 8 anatomical regions and detection of 9 pathological findings across tens of thousands of frames. We present GALAR-TemporalNet v2, a hierarchical temporal model that addresses three core challenges: extreme class imbalance, long-range temporal dependencies, and pathology--anatomy entanglement. Our architecture combines windowed self-attention for local modeling, a Dual-Graph GCN for global frame relationships, and Bidirectional Mamba for selective boundary context encoding. A novel anatomy prototype residual pathway decouples pathological deviation signals from normal organ appearance, and a frame-level GCN skip connection stabilizes training of visually confusable rare classes. The competition version, GALAR-TemporalNet, achieved an overall mAP@0.5 of 0.2644 and mAP@0.95 of 0.2353 on the RARE-VISION test set. Following the competition, the redesigned GALAR-TemporalNet v2 -- incorporating a restructured pathology branch, refined loss functions, and extended post-processing -- improved these results to mAP@0.5 of 0.3409 and mAP@0.95 of 0.3333.</summary>
+    <category term="cs.CV" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-05-21T09:15:43Z</published>
+    <arxiv:comment>7 pages, 2 figures. Post-competition preprint for the ICPR 2026 RARE-VISION Challenge</arxiv:comment>
+    <arxiv:primary_category term="cs.CV"/>
+    <author>
+      <name>Jiye Won</name>
+      <arxiv:affiliation>Kyungpook National University</arxiv:affiliation>
+    </author>
+    <author>
+      <name>Seangmin Lee</name>
+      <arxiv:affiliation>Kyungpook National University</arxiv:affiliation>
+    </author>
+    <author>
+      <name>Soon Ki Jung</name>
+      <arxiv:affiliation>Kyungpook National University</arxiv:affiliation>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2605.22208v1</id>
+    <title>EvoIR-Agent: Self-Evolving Image Restoration Agentic System via Experience-Driven Learning</title>
+    <updated>2026-05-21T09:14:25Z</updated>
+    <link href="https://arxiv.org/abs/2605.22208v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2605.22208v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Multimodal Large Language Model (MLLM)-driven image restoration agent demonstrates effectiveness in degradation coupling scenarios by flexibly selecting tools and determining removal orders. However, their zero-shot planning often fails without experience, necessitating severe trial-and-error overhead to achieve satisfactory outcomes. Currently, two paradigms are employed to address this issue, yet a dilemma persists: Training-based methods embed intrinsic experience into parameters, achieving high inference efficiency but lacking compatibility with new tools or degradation. In contrast, training-free methods utilize explicit experience storage for compatibility but still incur trial-and-error overhead due to naive experience. To resolve the dilemma, we propose EvoIR-Agent, which first systematically formulates the experience components of a training-free image restoration agent. Subsequently, a hierarchical experience pool is constructed, which enables coarse-to-fine guidance for diverse tools and removal orders. Furthermore, a self-evolving mechanism is introduced to update the pool from scratch using accumulated records, thereby greatly improving performance and efficiency. Extensive experiments reveal that EvoIR-Agent achieves a significant lead in the full reference metrics and yields a remarkable Pareto-optimal balance between performance and efficiency compared to the state-of-the-art methods.</summary>
+    <category term="cs.CV" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-05-21T09:14:25Z</published>
+    <arxiv:primary_category term="cs.CV"/>
+    <author>
+      <name>Kailin Zhuang</name>
+    </author>
+    <author>
+      <name>Jiawei Wu</name>
+    </author>
+    <author>
+      <name>Zhi Jin</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2605.22203v1</id>
+    <title>Evaluation of Chunking Strategies for Effective Text Embedding in Low-Resource Language on Agricultural Documents</title>
+    <updated>2026-05-21T09:06:13Z</updated>
+    <link href="https://arxiv.org/abs/2605.22203v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2605.22203v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>In this study, we compare the performance of four text chunking approaches: Recursive, Khmer-Aware, Sentence-Based, and LLM-Based within a Retrieval-Augmented Generation (RAG) framework applied to Khmer agricultural documents. The document chunks are encoded using the BGE-M3 multilingual embedding model and retrieved using the FAISS library. Performance is evaluated using four metrics: Average Retrieval Score (L2 distance), Answer Relevance, Khmer Coverage, and Khmer Intersection over Union, all measured against ground-truth question-answer pairs. For evaluation, we perform 5-fold cross-validation over 18 question-answer pairs. We observe the best performance for the character-based Recursive chunking method with a chunk size of 300 characters, achieving the lowest L2 distance (0.4295 +- 0.0461), highest Answer Relevance (0.8663 +- 0.0199), and highest Khmer IoU (0.6441 +- 0.0347). A paired t-test shows a statistically significant improvement over the Sentence-Based chunking method in L2 distance (p = 0.0121). These results highlight the importance of segmentation granularity and structural preservation for optimizing dense retrieval in morphologically complex, low-resource languages such as Khmer.</summary>
+    <category term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-05-21T09:06:13Z</published>
+    <arxiv:comment>11 pages, 1 figure</arxiv:comment>
+    <arxiv:primary_category term="cs.CL"/>
+    <author>
+      <name>Sovandara Chhoun</name>
+    </author>
+    <author>
+      <name>Pichdara Po</name>
+    </author>
+    <author>
+      <name>Sereiwathna Ros</name>
+    </author>
+    <author>
+      <name>Wan-Sup Cho</name>
+    </author>
+    <author>
+      <name>Saksonita Khoeurn</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2605.22137v1</id>
+    <title>Cross-Lingual Consensus: Aligning Multilingual Cultural Knowledge via Multilingual Self-Consistency</title>
+    <updated>2026-05-21T08:11:01Z</updated>
+    <link href="https://arxiv.org/abs/2605.22137v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2605.22137v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Although Large Language Models (LLMs) demonstrate strong capabilities across various tasks, they exhibit significant performance discrepancies across languages. While prompting LLMs in English typically yields the highest general performance, it often induces a Western-centric bias, hindering the model's ability to accurately reflect diverse cultural knowledge. We hypothesize that LLMs already possess rich cultural knowledge embedded within local-language representations, but fail to retrieve it when prompted in English. To bridge this cross-lingual knowledge gap, we propose a novel self-supervised framework. Our method leverages multilingual self-consistency to identify the most reliable cultural responses across languages, combined with a self-critique mechanism to transfer this knowledge to the weaker language. Evaluations on the BLEnD benchmark demonstrate that our approach significantly improves cultural alignment-boosting performance on English queries by an average of 5.03%-relying entirely on self-generated data. Ultimately, our work demonstrates that latent cultural knowledge can be successfully surfaced and propagated across languages, enabling more culturally equitable and consistent LLMs.</summary>
+    <category term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-05-21T08:11:01Z</published>
+    <arxiv:comment>Accepted to The 1st Workshop on Multilinguality in the Era of Large Language Models</arxiv:comment>
+    <arxiv:primary_category term="cs.CL"/>
+    <author>
+      <name>Andrew Ivan Soegeng</name>
+    </author>
+    <author>
+      <name>Patrick Sutanto</name>
+    </author>
+    <author>
+      <name>Tan Sang Nguyen</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2605.22116v1</id>
+    <title>Diagonal Ramsey numbers for wheels</title>
+    <updated>2026-05-21T07:48:14Z</updated>
+    <link href="https://arxiv.org/abs/2605.22116v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2605.22116v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>The Ramsey number $\mathrm{R}(G_1,G_2)$ is the smallest integer $N$ such that any red-blue coloring of the edges of the complete graph $K_N$ contains either a red copy of $G_1$ or a blue copy of $G_2$. In 2022, the third author and others gave lower and upper bounds of the Ramsey number $\mathrm{R}(W_n,W_n)$, where $W_n$ is the wheel graph with $n$ vertices. In this paper, we improve their bounds by showing that $3n-2\leq \mathrm{R}(W_n,W_n)\leq 6n-6$ for even $n\geq 8$ and $2n\leq \mathrm{R}(W_n,W_n)\leq \frac{9n-7}{2}$ for odd $n\geq 7$. Furthermore, we give recursive bounds for the $k$-colored Ramsey number for $W_n$.</summary>
+    <category term="math.CO" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-05-21T07:48:14Z</published>
+    <arxiv:primary_category term="math.CO"/>
+    <author>
+      <name>Maoxuan Li</name>
+    </author>
+    <author>
+      <name>Masaki Kashima</name>
+    </author>
+    <author>
+      <name>Yaping Mao</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2605.22103v1</id>
+    <title>Berezinskii-Kosterlitz-Thouless-type Transition in Site Percolation on the Diamond Hierarchical Lattice</title>
+    <updated>2026-05-21T07:39:04Z</updated>
+    <link href="https://arxiv.org/abs/2605.22103v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2605.22103v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>We study site percolation on the diamond hierarchical lattice, a finite-dimensional fractal network, using an exact generating-function analysis. In contrast to bond percolation, site percolation on this lattice does not undergo a transition from a nonpercolating phase to a percolating phase. Instead, the system exhibits a nonpercolating phase for $p&lt;p_{\rm c}$ and a critical phase for $p&gt;p_{\rm c}$. In the critical phase, the size of the largest cluster remains subextensive, scaling as $N^{ψ(p)}$, where the fractal exponent $ψ(p)$ varies continuously with $p$. By analyzing the renormalization-group recursion relation in the vicinity of $p_{\rm c}$, we show that the correlation length exhibits a Berezinskii-Kosterlitz-Thouless-type essential singularity, $ξ(p)\sim \exp \left({\rm const}/\sqrt{p_{\rm c}-p}\right)$ for $p \to p_{\rm c}^-$, which is further confirmed by finite-size scaling analyses showing excellent data collapse. These results demonstrate that critical phases in percolation can emerge even on finite-dimensional networks and that exponential volume growth is not necessary for such phases to appear. We argue that the critical phase on the diamond hierarchical lattice stems from site dilution remaining relevant under renormalization.</summary>
     <category term="cond-mat.stat-mech" scheme="http://arxiv.org/schemas/atom"/>
-    <category term="q-bio.MN" scheme="http://arxiv.org/schemas/atom"/>
-    <category term="q-bio.SC" scheme="http://arxiv.org/schemas/atom"/>
-    <published>2026-05-07T15:50:13Z</published>
-    <arxiv:comment>15 pages, 7 figures, supplement with 16 pages</arxiv:comment>
+    <category term="cond-mat.dis-nn" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-05-21T07:39:04Z</published>
+    <arxiv:comment>15 pages, 7 figures</arxiv:comment>
     <arxiv:primary_category term="cond-mat.stat-mech"/>
     <author>
-      <name>Jan Hauke</name>
-      <arxiv:affiliation>Heidelberg University</arxiv:affiliation>
+      <name>Takehisa Hasegawa</name>
     </author>
     <author>
-      <name>Julian B. Voits</name>
-      <arxiv:affiliation>Heidelberg University</arxiv:affiliation>
+      <name>Kazuki Wataya</name>
     </author>
     <author>
-      <name>Ulrich S. Schwarz</name>
-      <arxiv:affiliation>Heidelberg University</arxiv:affiliation>
-    </author>
-  </entry>
-  <entry>
-    <id>http://arxiv.org/abs/2605.06376v1</id>
-    <title>Continuous-Time Distribution Matching for Few-Step Diffusion Distillation</title>
-    <updated>2026-05-07T14:56:39Z</updated>
-    <link href="https://arxiv.org/abs/2605.06376v1" rel="alternate" type="text/html"/>
-    <link href="https://arxiv.org/pdf/2605.06376v1" rel="related" type="application/pdf" title="pdf"/>
-    <summary>Step distillation has become a leading technique for accelerating diffusion models, among which Distribution Matching Distillation (DMD) and Consistency Distillation are two representative paradigms. While consistency methods enforce self-consistency along the full PF-ODE trajectory to steer it toward the clean data manifold, vanilla DMD relies on sparse supervision at a few predefined discrete timesteps. This restricted discrete-time formulation and mode-seeking nature of the reverse KL divergence tends to exhibit visual artifacts and over-smoothed outputs, often necessitating complex auxiliary modules -- such as GANs or reward models -- to restore visual fidelity. In this work, we introduce Continuous-Time Distribution Matching (CDM), migrating the DMD framework from discrete anchoring to continuous optimization for the first time. CDM achieves this through two continuous-time designs. First, we replace the fixed discrete schedule with a dynamic continuous schedule of random length, so that distribution matching is enforced at arbitrary points along sampling trajectories rather than only at a few fixed anchors. Second, we propose a continuous-time alignment objective that performs active off-trajectory matching on latents extrapolated via the student's velocity field, improving generalization and preserving fine visual details. Extensive experiments on different architectures, including SD3-Medium and Longcat-Image, demonstrate that CDM provides highly competitive visual fidelity for few-step image generation without relying on complex auxiliary objectives. Code is available at https://github.com/byliutao/cdm.</summary>
-    <category term="cs.CV" scheme="http://arxiv.org/schemas/atom"/>
-    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
-    <published>2026-05-07T14:56:39Z</published>
-    <arxiv:comment>22pages, 9 figures</arxiv:comment>
-    <arxiv:primary_category term="cs.CV"/>
-    <author>
-      <name>Tao Liu</name>
-    </author>
-    <author>
-      <name>Hao Yan</name>
-    </author>
-    <author>
-      <name>Mengting Chen</name>
-    </author>
-    <author>
-      <name>Taihang Hu</name>
-    </author>
-    <author>
-      <name>Zhengrong Yue</name>
-    </author>
-    <author>
-      <name>Zihao Pan</name>
-    </author>
-    <author>
-      <name>Jinsong Lan</name>
-    </author>
-    <author>
-      <name>Xiaoyong Zhu</name>
-    </author>
-    <author>
-      <name>Ming-Ming Cheng</name>
-    </author>
-    <author>
-      <name>Bo Zheng</name>
-    </author>
-    <author>
-      <name>Yaxing Wang</name>
-    </author>
-  </entry>
-  <entry>
-    <id>http://arxiv.org/abs/2605.06349v1</id>
-    <title>Low-rank kernel methods for American option pricing</title>
-    <updated>2026-05-07T14:32:25Z</updated>
-    <link href="https://arxiv.org/abs/2605.06349v1" rel="alternate" type="text/html"/>
-    <link href="https://arxiv.org/pdf/2605.06349v1" rel="related" type="application/pdf" title="pdf"/>
-    <summary>We propose a scalable and theoretically grounded low-rank conditional expectation model for recursive Monte Carlo optimal stopping problems, in particular American option pricing. Our method reformulates the estimation of continuation values as a learning problem in a reproducing kernel Hilbert space, in which the conditional expectation is represented as a linear operator acting on future payoffs. This perspective yields an offline-online decomposition: the operator is learned once from simulated data and subsequently reused across all exercise dates, eliminating the need to recompute regression models at each step of the backward recursion. We establish convergence guarantees and derive bounds quantifying the approximation errors across exercise dates. Numerical experiments demonstrate the speed and accuracy of the proposed approach relative to extant methods.</summary>
-    <category term="math.NA" scheme="http://arxiv.org/schemas/atom"/>
-    <category term="math.ST" scheme="http://arxiv.org/schemas/atom"/>
-    <published>2026-05-07T14:32:25Z</published>
-    <arxiv:primary_category term="math.NA"/>
-    <author>
-      <name>Michael Multerer</name>
-    </author>
-    <author>
-      <name>Paul Schneider</name>
-    </author>
-    <author>
-      <name>Chiara Segala</name>
-    </author>
-  </entry>
-  <entry>
-    <id>http://arxiv.org/abs/2605.06347v1</id>
-    <title>Human-AI Co-Evolution and Epistemic Collapse: A Dynamical Systems Perspective</title>
-    <updated>2026-05-07T14:31:17Z</updated>
-    <link href="https://arxiv.org/abs/2605.06347v1" rel="alternate" type="text/html"/>
-    <link href="https://arxiv.org/pdf/2605.06347v1" rel="related" type="application/pdf" title="pdf"/>
-    <summary>Large language models (LLMs) are reshaping how knowledge is produced, with increasing reliance on AI systems for generation, summarization, and reasoning. While prior work has studied cognitive offloading in humans and model collapse in recursive training, these effects are typically considered in isolation. We propose a unified perspective: humans and language models form a coupled dynamical system linked by a feedback loop of usage, generation, and retraining. We introduce a minimal model with three variables -- human cognition, data quality, and model capability -- and show that this feedback can give rise to distinct dynamical regimes. Our analysis identifies three regimes: co-evolutionary enhancement, fragile equilibrium, and degenerative convergence. Through a simple simulation, we demonstrate that increasing reliance on AI can induce a transition toward a low-diversity, suboptimal equilibrium. From an information-theoretic perspective, this transition corresponds to an emergent information bottleneck in the human-AI loop, where entropy reduction reflects loss of diversity and support under closed-loop feedback rather than beneficial compression. These results suggest that the trajectory of AI systems is shaped not only by model design, but by the dynamics of human-AI co-evolution.</summary>
-    <category term="cs.HC" scheme="http://arxiv.org/schemas/atom"/>
-    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
-    <published>2026-05-07T14:31:17Z</published>
-    <arxiv:comment>5 pages, 3 figures, ICML EIML Workshop submitted</arxiv:comment>
-    <arxiv:primary_category term="cs.HC"/>
-    <author>
-      <name>Xuening Wu</name>
-    </author>
-    <author>
-      <name>Yanlan Kang</name>
-    </author>
-    <author>
-      <name>Qianya Xu</name>
-    </author>
-    <author>
-      <name>Kexuan Xie</name>
-    </author>
-    <author>
-      <name>Jiaqi Mi</name>
-    </author>
-    <author>
-      <name>Honggang Wang</name>
-    </author>
-    <author>
-      <name>Yubin Liu</name>
-    </author>
-    <author>
-      <name>Zeping Chen</name>
-    </author>
-  </entry>
-  <entry>
-    <id>http://arxiv.org/abs/2605.06308v1</id>
-    <title>Measuring Black-Box Confidence via Reasoning Trajectories: Geometry, Coverage, and Verbalization</title>
-    <updated>2026-05-07T14:10:23Z</updated>
-    <link href="https://arxiv.org/abs/2605.06308v1" rel="alternate" type="text/html"/>
-    <link href="https://arxiv.org/pdf/2605.06308v1" rel="related" type="application/pdf" title="pdf"/>
-    <summary>Reliable confidence estimation enables safe deployment of chain-of-thought (CoT) reasoning through text-only APIs. Yet the dominant black-box baseline, self-consistency over K samples, is linearly expensive and ignores the geometry of the trace. We propose a black-box trajectory-confidence score: we embed a CoT as a sliding-window trajectory and measure its convergence to external answer anchors with a one-parameter softmax. The method needs no logits, hidden states, or supervised calibrators. Across six (benchmark, reasoner) settings on MedQA-USMLE, GPQA Diamond, and MMLU-Pro with Gemini 3.1 Pro and Claude Sonnet 4.6, fusing this score with coverage and verbalized-confidence channels at K=4 yields Pareto improvements over self-consistency at K=8 in 6/6 settings (median AUC 0.78 vs 0.71, deltaAUC=+0.075). A fixed-pick control (+0.060) and E5 cross-embedder replication rule out answer switching and single-vendor artifacts. Geometry peaks in the penultimate window across benchmarks and reasoners, and inverts at the terminal window on GPQA Diamond. Three unscaffolded regimes separate black-box confidence into a judge-mediated Coverage prior (C), within-trace Geometry (G), and a conditional Verbalization channel (V). Across 18 benchmark x reasoner x proposer settings, C and G provide independent signal in 18/18 and 16/18, while V contributes residual signal in 6/18. Swapping the judge from GPT-5-mini to Claude Sonnet 4.6 leaves G-only AUC unchanged (|delta|&lt;=0.013) and shifts C-only AUC by at most +/-0.02 (kappa=0.82). Fusion beats the best single channel in 17/18 settings (median AUC 0.78, max 0.92).</summary>
-    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
-    <published>2026-05-07T14:10:23Z</published>
-    <arxiv:primary_category term="cs.AI"/>
-    <author>
-      <name>Marc Boubnovski Martell</name>
-    </author>
-    <author>
-      <name>Josefa Lia Stoisser</name>
-    </author>
-    <author>
-      <name>Kaspar Märtens</name>
-    </author>
-    <author>
-      <name>Jialin Yu</name>
-    </author>
-    <author>
-      <name>Robert Kitchen</name>
-    </author>
-    <author>
-      <name>Philip Torr</name>
-    </author>
-    <author>
-      <name>Jesper Ferkinghoff-Borg</name>
-    </author>
-  </entry>
-  <entry>
-    <id>http://arxiv.org/abs/2605.06281v1</id>
-    <title>INEUS: Iterative Neural Solver for High-Dimensional PIDEs</title>
-    <updated>2026-05-07T13:53:45Z</updated>
-    <link href="https://arxiv.org/abs/2605.06281v1" rel="alternate" type="text/html"/>
-    <link href="https://arxiv.org/pdf/2605.06281v1" rel="related" type="application/pdf" title="pdf"/>
-    <summary>In this paper, we introduce INEUS, a meshfree iterative neural solver for partial integro-differential equations (PIDEs). The method replaces the explicit evaluation of nonlocal jump integrals with single-jump sampling and reformulates PIDE solving as a sequence of recursive regression problems. Like Physics-Informed Neural Networks (PINNs), INEUS learns global solutions over the entire space-time domain, yet it offers a more efficient treatment of nonlocal terms and avoids the computationally expensive differentiation of full PIDE residuals. These features make INEUS particularly well suited for high-dimensional PDEs and PIDEs. Supported by a contraction-based convergence proof for linear PIDEs, our numerical experiments show that INEUS delivers accurate and scalable solutions for various high-dimensional linear and nonlinear examples.</summary>
-    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
-    <category term="math.NA" scheme="http://arxiv.org/schemas/atom"/>
-    <category term="q-fin.CP" scheme="http://arxiv.org/schemas/atom"/>
-    <published>2026-05-07T13:53:45Z</published>
-    <arxiv:primary_category term="cs.LG"/>
-    <author>
-      <name>Jean-Loup Dupret</name>
-    </author>
-    <author>
-      <name>Davide Gallon</name>
-    </author>
-    <author>
-      <name>Patrick Cheridito</name>
-    </author>
-  </entry>
-  <entry>
-    <id>http://arxiv.org/abs/2605.06185v1</id>
-    <title>Event-Causal RAG: A Retrieval-Augmented Generation Framework for Long Video Reasoning in Complex Scenarios</title>
-    <updated>2026-05-07T13:01:28Z</updated>
-    <link href="https://arxiv.org/abs/2605.06185v1" rel="alternate" type="text/html"/>
-    <link href="https://arxiv.org/pdf/2605.06185v1" rel="related" type="application/pdf" title="pdf"/>
-    <summary>Recent large vision-language models have achieved strong performance on short- and medium-length video understanding, yet they remain inadequate for ultra-long or even infinite video reasoning, where models must preserve coherent memory over extended durations and infer causal dependencies across temporally distant events. Existing end-to-end video understanding methods are fundamentally limited by the $O(n^2)$ complexity of self-attention, while recent retrieval-augmented generation (RAG) approaches still suffer from fragmented clip-level memory, weak modeling of temporal and causal structure, and high storage and online inference costs. We present Event-Causal RAG, a lightweight retrieval-augmented framework for infinite long-video reasoning. Instead of indexing fixed-length clips, our method segments streaming videos into semantically coherent events and represents each event as a structured State-Event-State (SES) graph, capturing the event together with its surrounding state transitions. These graphs are merged into a global Event Knowledge Graph and stored in a dual-store memory that supports both semantic matching and causal-topological retrieval. On top of this memory, we design a bidirectional retrieval strategy to efficiently identify the most relevant event causal chains and provide them, together with the associated video evidence, to a backbone video foundation model for answer generation. Experiments on long-video understanding benchmarks demonstrate that Event-Causal RAG consistently outperforms strong clip-based retrieval baselines and long-context video models, particularly on questions requiring multi-event integration and causal inference across long temporal gaps, while also achieving improved memory efficiency and robust streaming performance.</summary>
-    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
-    <category term="cs.CV" scheme="http://arxiv.org/schemas/atom"/>
-    <published>2026-05-07T13:01:28Z</published>
-    <arxiv:primary_category term="cs.AI"/>
-    <author>
-      <name>Peizheng Yan</name>
-    </author>
-    <author>
-      <name>Yu Zhao</name>
-    </author>
-    <author>
-      <name>Liang Xie</name>
-    </author>
-    <author>
-      <name>Juntong Qi</name>
-    </author>
-    <author>
-      <name>Mingming Wang</name>
-    </author>
-    <author>
-      <name>Erwei Yin</name>
-    </author>
-  </entry>
-  <entry>
-    <id>http://arxiv.org/abs/2605.06139v1</id>
-    <title>Listwise Policy Optimization: Group-based RLVR as Target-Projection on the LLM Response Simplex</title>
-    <updated>2026-05-07T12:38:17Z</updated>
-    <link href="https://arxiv.org/abs/2605.06139v1" rel="alternate" type="text/html"/>
-    <link href="https://arxiv.org/pdf/2605.06139v1" rel="related" type="application/pdf" title="pdf"/>
-    <summary>Reinforcement learning with verifiable rewards (RLVR) has become a standard approach for large language models (LLMs) post-training to incentivize reasoning capacity. Among existing recipes, group-based policy gradient is prevalent, which samples a group of responses per prompt and updates the policy via group-relative advantage signals. This work reveals that these optimization strategies share a common geometric structure: each implicitly defines a target distribution on the response simplex and projects toward it via first-order approximation. Building on this insight, we propose Listwise Policy Optimization (LPO) to explicitly conduct the target-projection, which demystifies the implicit target by restricting the proximal RL objective to the response simplex, and then projects the policy via exact divergence minimization. This framework provides (i) monotonic improvement on the listwise objective with bounded, zero-sum, and self-correcting projection gradients, and (ii) flexibility in divergence selection with distinct structural properties through the decoupled projection step. On diverse reasoning tasks and LLM backbones, LPO consistently improves training performance over typical policy gradient baselines under matched targets, while intrinsically preserving optimization stability and response diversity.</summary>
-    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
-    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
-    <published>2026-05-07T12:38:17Z</published>
-    <arxiv:primary_category term="cs.LG"/>
-    <author>
-      <name>Yun Qu</name>
-    </author>
-    <author>
-      <name>Qi Wang</name>
-    </author>
-    <author>
-      <name>Yixiu Mao</name>
-    </author>
-    <author>
-      <name>Heming Zou</name>
-    </author>
-    <author>
-      <name>Yuhang Jiang</name>
-    </author>
-    <author>
-      <name>Yingyue Li</name>
-    </author>
-    <author>
-      <name>Wutong Xu</name>
-    </author>
-    <author>
-      <name>Lizhou Cai</name>
-    </author>
-    <author>
-      <name>Weijie Liu</name>
-    </author>
-    <author>
-      <name>Clive Bai</name>
-    </author>
-    <author>
-      <name>Kai Yang</name>
-    </author>
-    <author>
-      <name>Yangkun Chen</name>
-    </author>
-    <author>
-      <name>Saiyong Yang</name>
-    </author>
-    <author>
-      <name>Xiangyang Ji</name>
-    </author>
-  </entry>
-  <entry>
-    <id>http://arxiv.org/abs/2605.06104v1</id>
-    <title>Beyond Autoregressive RTG: Conditioning via Injection Outside Sequential Modeling in Decision Transformer</title>
-    <updated>2026-05-07T12:20:25Z</updated>
-    <link href="https://arxiv.org/abs/2605.06104v1" rel="alternate" type="text/html"/>
-    <link href="https://arxiv.org/pdf/2605.06104v1" rel="related" type="application/pdf" title="pdf"/>
-    <summary>Decision Transformer (DT) formulates offline reinforcement learning as autoregressive sequence modeling, achieving promising results by predicting actions from a sequence of Return-to-Go (RTG), state, and action tokens. However, RTG is a scalar that summarizes future rewards, containing far less information than typical state or action vectors, yet it consumes the same computational budget per token. Worse, the self-attention cost of Transformers grows quadratically with sequence length, so including RTG as a separate token adds unnecessary overhead. We propose SlimDT, which removes RTG from the autoregressive sequence. Instead, we inject RTG information into the state representations before the sequential modeling step, allowing the Transformer to process only a compact (state, action) sequence. This reduces the sequence length by one-third, directly improving inference efficiency. On the D4RL benchmark, SlimDT surpasses standard DT across various tasks and achieves performance comparable to existing state-of-the-art methods. Decoupling a sparse conditioning signal from an information-rich sequence thus yields both computational gains and higher task performance.</summary>
-    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
-    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
-    <published>2026-05-07T12:20:25Z</published>
-    <arxiv:primary_category term="cs.LG"/>
-    <author>
-      <name>Yongyi Wang</name>
-    </author>
-    <author>
-      <name>Hanyu Liu</name>
-    </author>
-    <author>
-      <name>Lingfeng Li</name>
-    </author>
-    <author>
-      <name>Bozhou Chen</name>
-    </author>
-    <author>
-      <name>Ang Li</name>
-    </author>
-    <author>
-      <name>Qirui Zheng</name>
-    </author>
-    <author>
-      <name>Xionghui Yang</name>
-    </author>
-    <author>
-      <name>Chucai Wang</name>
-    </author>
-    <author>
-      <name>Wenxin Li</name>
-    </author>
-  </entry>
-  <entry>
-    <id>http://arxiv.org/abs/2605.06094v1</id>
-    <title>VISD: Enhancing Video Reasoning via Structured Self-Distillation</title>
-    <updated>2026-05-07T12:13:15Z</updated>
-    <link href="https://arxiv.org/abs/2605.06094v1" rel="alternate" type="text/html"/>
-    <link href="https://arxiv.org/pdf/2605.06094v1" rel="related" type="application/pdf" title="pdf"/>
-    <summary>Training VideoLLMs for complex reasoning remains challenging due to sparse sequence level rewards and the lack of fine grained credit assignment over long, temporally grounded reasoning trajectories. While reinforcement learning with verifiable rewards (RLVR) provides reliable supervision, it fails to capture token level contributions, leading to inefficient learning. Conversely, existing self distillation methods offer dense supervision but lack structure and diagnostic specificity, and often interact unstably with reinforcement learning. In this work, we propose VISD, a structured self distillation framework that introduces diagnostically meaningful privileged information for video reasoning. VISD employs a video aware judge model to decompose reasoning quality into multiple dimensions, including answer correctness, logical consistency, and spatio-temporal grounding, and uses this structured feedback to guide a teacher policy for token level supervision. To stably integrate dense supervision with RL, we introduce a direction magnitude decoupling mechanism, where rollout level advantages computed from rewards determine update direction, while structured privileged signals modulate token level update magnitudes. This design enables semantically aligned and fine grained credit assignment, improving both reasoning faithfulness and training efficiency. Additionally, VISD incorporates curriculum scheduling and EMA based teacher stabilization to support robust optimization over long video sequences. Experiments on diverse benchmarks show that VISD consistently outperforms strong baselines, improving answer accuracy and spatio temporal grounding quality. Notably, VISD reaches these gains with nearly 2x faster convergence in optimization steps, highlighting the effectiveness of structured self supervision in improving both performance and sample efficiency for VideoLLMs.</summary>
-    <category term="cs.CV" scheme="http://arxiv.org/schemas/atom"/>
-    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
-    <published>2026-05-07T12:13:15Z</published>
-    <arxiv:primary_category term="cs.CV"/>
-    <author>
-      <name>Hao Lin</name>
-    </author>
-    <author>
-      <name>Kunyang Lv</name>
-    </author>
-    <author>
-      <name>Xu Jiang</name>
-    </author>
-    <author>
-      <name>Jingqi Tian</name>
-    </author>
-    <author>
-      <name>Zhongjing Du</name>
-    </author>
-    <author>
-      <name>Jiayu Ding</name>
-    </author>
-    <author>
-      <name>Qiaoman Zhang</name>
-    </author>
-    <author>
-      <name>Hongbo Jin</name>
+      <name>Tomoaki Nogawa</name>
     </author>
   </entry>
 </feed>

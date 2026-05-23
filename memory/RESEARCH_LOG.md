@@ -1,3 +1,21 @@
+### [2026-05-23] Self-Evolving Multi-Agent Systems via Decentralized Memory
+- **Authors**: Guangya Hao, Yunbo Long, Zhuokai Zhao
+- **Link**: https://arxiv.org/abs/2605.22721
+- **Summary**: Introduces DecentMem, a decentralized memory framework for MAS where each agent maintains its own dual-pool memory (exploitation vs exploration). Reweighted online via LLM-as-a-judge.
+- **Relevance**: **RSI Bench (Memory Architecture)**. Matches stochastic bandit lower bounds for cumulative regret. Proves that decentralized memory beats centralized repos for diversity and efficiency in evolving swarms.
+
+### [2026-05-23] Self-Policy Distillation via Capability-Selective Subspace Projection
+- **Authors**: Guangya Hao, Yitong Shang, Yunbo Long, Zhuokai Zhao, Hanxue Liang
+- **Link**: https://arxiv.org/abs/2605.22675
+- **Summary**: Proposes Self-Policy Distillation (SPD) which extracts a low-rank capability subspace from the model's own gradients to filter training signals without external supervision.
+- **Relevance**: **Vertical A (Self-Coding/RL)**. Enables recursive self-improvement without relying on ground-truth or reward models, solving the "data disentanglement" problem in self-distillation.
+
+### [2026-05-23] Two is better than one: A Collapse-free Multi-Reward RLIF Training Framework
+- **Authors**: Shourov Joarder, Diganta Sikdar, Ahsan Habib Akash, Binod Bhattarai, Prashnna Gyawali
+- **Link**: https://arxiv.org/abs/2605.22620
+- **Summary**: Multi-reward RLIF (Reinforcement Learning from Internal Feedback) framework using answer-level cluster voting and completion-level self-certainty rewards.
+- **Relevance**: **RSI Stability**. Prevents reward hacking and entropy collapse in unsupervised RL loops, critical for long-horizon autonomous reasoning.
+
 ### [2026-05-21] APEX: Autonomous Policy Exploration for Self-Evolving LLM Agents
 - **Authors**: Yibo Li, et al.
 - **Link**: https://arxiv.org/abs/2605.20121
@@ -68,6 +86,21 @@
 - **Authors**: Xia et al. (ArXiv:2603.16843)
 - **Link**: https://arxiv.org/html/2603.16843v1
 - **Summary**: Explores "training-based self-evolution" where agents distill interaction data into better policies and skills (SKILLRL, EvolveR). Relevance: Directly aligns with yanhua.ai's goal of "automating the scientific method" through iterative policy improvement.
+
+### [2026-05-23] Trace2Skill: Verifier-Guided Skill Evolution for Long-Context EDA Agents
+- **Authors**: Zijian Du, Nathaniel Pinckney
+- **Link**: https://arxiv.org/abs/2605.21810
+- **Summary**: Treats the agent's natural-language skill as an evolvable policy. Mines repeated rollout traces for success/failure modes and uses an oracle-mutator-selector loop to produce task-specific skills. High RSI signal.
+
+### [2026-05-23] Teaching Language Models to Forecast Research Success Through Comparative Idea Evaluation
+- **Authors**: Srujan P Mule et al.
+- **Link**: https://arxiv.org/abs/2605.21491
+- **Summary**: Framework for meta-research where models learn to forecast the empirical success of research ideas using RLVR. Critical for autonomous agent prioritization in RSI loops.
+
+### [2026-05-23] MindLoom: Composing Thought Modes for Frontier-Level Reasoning Data Synthesis
+- **Authors**: Haiyang Shen et al.
+- **Link**: https://arxiv.org/abs/2605.21630
+- **Summary**: Systematic synthesis of reasoning data through compositional thought mode engineering. Accelerates the data-bootstrap phase of RSI.
 
 ### [2026-05-18] Gödel Agent: A Self-Referential Agent Framework for Recursive Self-Improvement
 - **Authors**: Various (ArXiv:2410.04444)

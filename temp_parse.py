@@ -1,5 +1,5 @@
 import xml.etree.ElementTree as ET
-import os
+import sys
 
 def parse(filename):
     try:
@@ -38,11 +38,10 @@ def parse(filename):
     return entries
 
 if __name__ == '__main__':
-    all_entries = parse('latest_arxiv.xml') + parse('latest_arxiv_agents.xml')
+    all_entries = parse('rsi_raw.xml') + parse('agents_raw.xml')
     
     unique_entries = {}
     for e in all_entries:
-        # Check if the date is Feb 2026 or later
         if e['published'] >= '2026-02-01':
             unique_entries[e['link']] = e
             
