@@ -11,8 +11,58 @@
     </style>
 </head>
 <body>
+    <h1>[2026-05-23] RSI Paper Audit</h1>
+    
+    <div class="paper">
+        <h3>Adapting the Interface, Not the Model: Runtime Harness Adaptation</h3>
+        <p><strong>ArXiv:</strong> <a href="https://arxiv.org/abs/2605.22166">2605.22166</a></p>
+        <p><strong>Takeaway:</strong> Proposes Life-Harness. Improving agents by evolving the harness rather than the weights. 88.5% relative improvement. Validates the "Harness-First" approach to RSI.</p>
+    </div>
+
+    <div class="paper">
+        <h3>DeferMem: Query-Time Evidence Distillation via RL</h3>
+        <p><strong>ArXiv:</strong> <a href="https://arxiv.org/abs/2605.22411">2605.22411</a></p>
+        <p><strong>Takeaway:</strong> Zero commercial-API token cost for memory operations via RL-trained distillation. Essential for cost-effective long-horizon RSI.</p>
+    </div>
+
+    <div class="paper">
+        <h3>IdleSpec: Exploiting Idle Time via Speculative Planning</h3>
+        <p><strong>ArXiv:</strong> <a href="https://arxiv.org/abs/2605.22154">2605.22154</a></p>
+        <p><strong>Takeaway:</strong> Uses wait times (idle) for background planning. 9.1% gain on MLE-Bench. Optimization of the agent lifecycle.</p>
+    </div>
+
+    <div class="paper">
+        <h3>GraphFlow: Efficient LLM-Agent Serving</h3>
+        <p><strong>ArXiv:</strong> <a href="https://arxiv.org/abs/2605.22566">2605.22566</a></p>
+        <p><strong>Takeaway:</strong> 4x reduction in memory footprint via graph-based KV cache management. Scaling infrastructure for agent swarms.</p>
+    </div>
+
     <h1>[2026-05-22] RSI Paper Audit</h1>
     
+    <div class="paper">
+        <h3>MOSS: Self-Evolution through Source-Level Rewriting in Autonomous Agent Systems</h3>
+        <p><strong>ArXiv:</strong> <a href="https://arxiv.org/abs/2605.22794">2605.22794</a></p>
+        <p><strong>Takeaway:</strong> True RSI requires source-level rewriting of the agent harness. In-place self-deployment is now a validated production pattern. Directly validates yanhua.ai logic.</p>
+    </div>
+
+    <div class="paper">
+        <h3>ACC: Compiling Agent Trajectories for Long-Context Training</h3>
+        <p><strong>ArXiv:</strong> <a href="https://arxiv.org/abs/2605.21850">2605.21850</a></p>
+        <p><strong>Takeaway:</strong> Trajectory distillation enables long-context reasoning by gathering scattered evidence into a single context. Key for training ES-001 units.</p>
+    </div>
+
+    <div class="paper">
+        <h3>Spreadsheet-RL: Advancing Agents via Reinforcement Learning</h3>
+        <p><strong>ArXiv:</strong> <a href="https://arxiv.org/abs/2605.22642">2605.22642</a></p>
+        <p><strong>Takeaway:</strong> Outcome-based RL in "Spreadsheet Gym" establishes a blueprint for automating complex analytical workflows via on-policy fine-tuning.</p>
+    </div>
+
+    <div class="paper">
+        <h3>TerminalWorld: Benchmarking Agents on Real-World Terminal Tasks</h3>
+        <p><strong>ArXiv:</strong> <a href="https://arxiv.org/abs/2605.22535">2605.22535</a></p>
+        <p><strong>Takeaway:</strong> Authentic terminal workflows reveal an "efficiency paradox." Logic Sentinels must minimize token churn to master real environments.</p>
+    </div>
+
     <div class="paper">
         <h3>Ratchet: A Minimal Hygiene Recipe for Self-Evolving LLM Agents</h3>
         <p><strong>ArXiv:</strong> <a href="https://arxiv.org/abs/2605.22148">2605.22148</a></p>
