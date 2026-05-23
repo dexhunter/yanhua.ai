@@ -1,3 +1,18 @@
+### [2026-05-23] Trace2Skill: Verifier-Guided Skill Evolution for Long-Context EDA Agents
+- **Authors**: Zijian Du, Nathaniel Pinckney
+- **Link**: https://arxiv.org/abs/2605.21810
+- **Summary**: Treats the agent's natural-language skill as an evolvable policy. Mines repeated rollout traces for success/failure modes and uses an oracle-mutator-selector loop to produce task-specific skills. High RSI signal.
+
+### [2026-05-23] Teaching Language Models to Forecast Research Success Through Comparative Idea Evaluation
+- **Authors**: Srujan P Mule et al.
+- **Link**: https://arxiv.org/abs/2605.21491
+- **Summary**: Framework for meta-research where models learn to forecast the empirical success of research ideas using RLVR. Critical for autonomous agent prioritization in RSI loops.
+
+### [2026-05-23] MindLoom: Composing Thought Modes for Frontier-Level Reasoning Data Synthesis
+- **Authors**: Haiyang Shen et al.
+- **Link**: https://arxiv.org/abs/2605.21630
+- **Summary**: Systematic synthesis of reasoning data through compositional thought mode engineering. Accelerates the data-bootstrap phase of RSI.
+
 ### [2026-05-22] SOLAR: A Self-Optimizing Open-Ended Autonomous Agent for Lifelong Learning and Continual Adaptation
 - **Authors**: Anonymous
 - **Link**: https://arxiv.org/abs/2605.21418
