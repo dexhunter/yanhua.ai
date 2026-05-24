@@ -2,123 +2,132 @@
 <feed xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/" xmlns:arxiv="http://arxiv.org/schemas/atom" xmlns="http://www.w3.org/2005/Atom">
   <id>https://arxiv.org/api/te1rAOj9fnW+vS7aSQ+/lv/ZQWI</id>
   <title>arXiv Query: search_query=all:Recursive OR all:Self-Improvement&amp;id_list=&amp;start=0&amp;max_results=5</title>
-  <updated>2026-04-27T12:54:37Z</updated>
+  <updated>2026-05-24T00:54:30Z</updated>
   <link href="https://arxiv.org/api/query?search_query=all:Recursive+OR+all:Self-Improvement&amp;start=0&amp;max_results=5&amp;id_list=" type="application/atom+xml"/>
   <opensearch:itemsPerPage>5</opensearch:itemsPerPage>
-  <opensearch:totalResults>39640</opensearch:totalResults>
+  <opensearch:totalResults>40555</opensearch:totalResults>
   <opensearch:startIndex>0</opensearch:startIndex>
   <entry>
-    <id>http://arxiv.org/abs/2604.22720v1</id>
-    <title>Approximation algorithms and ratios for multiple domination in graphs</title>
-    <updated>2026-04-24T17:09:10Z</updated>
-    <link href="https://arxiv.org/abs/2604.22720v1" rel="alternate" type="text/html"/>
-    <link href="https://arxiv.org/pdf/2604.22720v1" rel="related" type="application/pdf" title="pdf"/>
-    <summary>We analyse approximation algorithms (greedy heuristics) for the classical domination number and two multiple domination numbers in simple graphs. First, we present a short self-contained proof of the known result that the minimum domination problem in any graph $G$ with maximum degree $Δ$ can be solved within the approximation ratio of ${\ln(Δ+1)+1}$. The proof is based on an analysis of a simple greedy heuristic. Then, by analysing more advanced greedy heuristic techniques and using ideas from our self-contained proof for the classical domination number, we fix a gap in the existing proof of a similar result for the $k$-tuple domination number. That is, we prove that the minimum $k$-tuple domination problem indeed can be approximated within the ratio of $\ln(Δ+1)+1$. The proof of this result is self-contained, direct, and much shorter than the existing proof, which contains the gap. Finally, we show that the known approximation ratio of $\ln(2Δ)+1$ for the minimum $k$-domination problem can be improved to a better ratio.</summary>
-    <category term="math.CO" scheme="http://arxiv.org/schemas/atom"/>
-    <published>2026-04-24T17:09:10Z</published>
-    <arxiv:comment>14 pages</arxiv:comment>
-    <arxiv:primary_category term="math.CO"/>
+    <id>http://arxiv.org/abs/2605.22721v1</id>
+    <title>Self-Evolving Multi-Agent Systems via Decentralized Memory</title>
+    <updated>2026-05-21T16:55:40Z</updated>
+    <link href="https://arxiv.org/abs/2605.22721v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2605.22721v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Self-evolving multi-agent systems (MAS) have emerged as a promising route to LLM agents that continually improve from experience, with persistent memory at their foundation. However, existing designs almost exclusively adopt a centralized repository shared across agents, incurring communication and coordination overhead, raising privacy concerns, and collapsing agent diversity. We propose DecentMem, a decentralized memory framework in which each agent maintains its own dual-pool memory -- an exploitation pool of consolidated past trajectories and an exploration pool of LLM-generated candidates for unseen contexts. The two pools are reweighted online based on stage-wise feedback from an LLM-as-a-judge. Theoretically, we prove that this design guarantees global reachability of the solution space and achieves $O(\log T)$ cumulative regret, matching the stochastic bandit lower bound up to constants. In practice, across three MAS frameworks (AutoGen, DyLAN, AgentNet), three Qwen3 backbones (4B/8B/14B), two Gemma4 backbones (E2B/E4B) and five benchmarks spanning math, code, QA, and embodied tasks, DecentMem improves average accuracy by up to 23.8% over the strongest centralized memory baseline and by up to 52.5% over the no-memory baseline, while reducing token usage by up to 49%.</summary>
+    <category term="cs.MA" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-05-21T16:55:40Z</published>
+    <arxiv:primary_category term="cs.MA"/>
     <author>
-      <name>Lukas Dijkstra</name>
+      <name>Guangya Hao</name>
     </author>
     <author>
-      <name>Vadim Zverovich</name>
+      <name>Yunbo Long</name>
     </author>
     <author>
-      <name>Andrei Gagarin</name>
-    </author>
-  </entry>
-  <entry>
-    <id>http://arxiv.org/abs/2604.22703v1</id>
-    <title>Reionization, UV Luminosity and 21$\,$cm Sensitivity to Primordial Magnetic Fields: Impact of Energy Losses</title>
-    <updated>2026-04-24T16:35:44Z</updated>
-    <link href="https://arxiv.org/abs/2604.22703v1" rel="alternate" type="text/html"/>
-    <link href="https://arxiv.org/pdf/2604.22703v1" rel="related" type="application/pdf" title="pdf"/>
-    <summary>Magnetic fields with field strengths between $10^{-17}\,$G and a few Nanogauss are expected to exist today in the intergalactic medium (IGM). Their origin is unknown, but may be of primordial nature, in which case they would have influenced the thermal and ionization history of the IGM as well as the growth of small-scale matter perturbations. In this work, we revisit constraints on Primordial Magnetic fields (PMFs) by consistently accounting for their energy losses through ambipolar diffusion and decaying turbulences from recombination through the epoch of reionization, which progressively reduces the magnetic field strength over time. We implement these effects in ${\tt HyRec}$ and ${\tt exo21cmFAST}$ to model the interplay between PMFs and astrophysical processes up to reionization. Using a neural-network emulator (${\tt NNERO}$), we perform a MCMC analysis that combines late-time probes of the reionization history and galaxy UV luminosity functions. We find that including PMF energy losses significantly relaxes previous bounds, as the reduced field strength suppresses their imprint on observables. Employing a Fisher matrix analysis, we estimate the sensitivity of the 21$\,$cm signal experiment HERA to the PMFs' imprint on intergalactic medium perturbations and show that 21$\,$cm cosmology could significantly improve on current bounds. Our results highlight the importance of modeling PMF evolution self-consistently with the IGM evolution to extract current bounds and future sensitivities.</summary>
-    <category term="astro-ph.CO" scheme="http://arxiv.org/schemas/atom"/>
-    <published>2026-04-24T16:35:44Z</published>
-    <arxiv:comment>29 pages, 12 figures</arxiv:comment>
-    <arxiv:primary_category term="astro-ph.CO"/>
-    <author>
-      <name>Gaétan Facchinetti</name>
-    </author>
-    <author>
-      <name>Alexander Korochkin</name>
-    </author>
-    <author>
-      <name>Laura Lopez-Honorez</name>
-    </author>
-    <author>
-      <name>Justus Schwagereit</name>
+      <name>Zhuokai Zhao</name>
     </author>
   </entry>
   <entry>
-    <id>http://arxiv.org/abs/2604.22686v1</id>
-    <title>SS3D: End2End Self-Supervised 3D from Web Videos</title>
-    <updated>2026-04-24T16:12:44Z</updated>
-    <link href="https://arxiv.org/abs/2604.22686v1" rel="alternate" type="text/html"/>
-    <link href="https://arxiv.org/pdf/2604.22686v1" rel="related" type="application/pdf" title="pdf"/>
-    <summary>We present SS3D, a web-scale SfM-based self-supervision pretraining pipeline for feed-forward 3D estimation from monocular video. Our model jointly predicts depth, ego-motion, and intrinsics in a single forward pass and is trained/evaluated as a coherent end-to-end 3D estimator. To stabilize joint learning, we use an intrinsics-first two-stage schedule and a unified single-checkpoint evaluation protocol. Scaling SfM self-supervision to unconstrained web video is challenging due to weak multi-view observability and strong corpus heterogeneity; we address these with a multi-view signal proxy (MVS) used for filtering and curriculum sampling, and with expert training distilled into a single student. Pretraining on YouTube-8M (~100M frames after filtering) yields strong cross-domain zero-shot transfer and improved fine-tuning performance over prior self-supervised baselines. We release the pretrained checkpoint and code.</summary>
-    <category term="cs.CV" scheme="http://arxiv.org/schemas/atom"/>
-    <published>2026-04-24T16:12:44Z</published>
-    <arxiv:primary_category term="cs.CV"/>
+    <id>http://arxiv.org/abs/2605.22705v1</id>
+    <title>Tokenization with Split Trees</title>
+    <updated>2026-05-21T16:46:23Z</updated>
+    <link href="https://arxiv.org/abs/2605.22705v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2605.22705v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>We introduce Tokenization with Split Trees (ToaST), a subword tokenization method that directly optimizes compression under a new recursive inference procedure. ToaST greedily splits each pretoken into a full binary tree using precomputed byte n-gram counts, independent of any vocabulary. Given a vocabulary, inference recursively descends each split tree and emits the first in-vocabulary node reached on each path. Vocabulary selection is formulated as an Integer Program (IP) that minimizes the total token count over all split trees under this inference procedure. The Linear Programming (LP) relaxation is near-integral in practice, yielding provably near-optimal vocabularies, with training time empirically scaling quadratically in the number of split trees. On English text, ToaST reduces token counts by more than 11% compared to BPE, WordPiece, and UnigramLM at vocabulary sizes of 40,960 and above, reducing the number of inference tokens for models using this tokenizer, thus extending the effective context length. ToaST also uses common single-byte tokens less frequently than these baselines, leading to a substantial improvement in Renyi efficiency. In experiments training 1.5B parameter language models, ToaST achieves the highest CORE score, outperforming baselines by 2.6%--7.6%, with significance for two of three, and scoring best on 13 of 22 individual tasks.</summary>
+    <category term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-05-21T16:46:23Z</published>
+    <arxiv:primary_category term="cs.CL"/>
     <author>
-      <name>Marwane Hariat</name>
+      <name>Craig W. Schmidt</name>
     </author>
     <author>
-      <name>Gianni Franchi</name>
+      <name>Michael Krumdick</name>
     </author>
     <author>
-      <name>David Filliat</name>
+      <name>Adam Wiemerslage</name>
     </author>
     <author>
-      <name>Antoine Manzanera</name>
-    </author>
-  </entry>
-  <entry>
-    <id>http://arxiv.org/abs/2604.22683v1</id>
-    <title>Landau Analysis of One-Cycle Negative Geometries</title>
-    <updated>2026-04-24T16:06:10Z</updated>
-    <link href="https://arxiv.org/abs/2604.22683v1" rel="alternate" type="text/html"/>
-    <link href="https://arxiv.org/pdf/2604.22683v1" rel="related" type="application/pdf" title="pdf"/>
-    <summary>We use geometric Landau analysis to determine the singularity structure of four-point, one-cycle negative geometries in $\mathcal{N}=4$ super-Yang-Mills theory, which represent certain contributions to the logarithm of the four-point amplitude or equivalently the normalized quadrangular Wilson loop with a Lagrangian insertion. By analyzing the relevant Landau diagrams recursively, we prove that this quantity has singularities only at $z=-1,0$ and $\infty$ to all loop orders. This represents a first step towards obtaining a non-perturbative resummation for this quantity at next-to-leading order in the expansion over cycles.</summary>
-    <category term="hep-th" scheme="http://arxiv.org/schemas/atom"/>
-    <published>2026-04-24T16:06:10Z</published>
-    <arxiv:comment>25 pages, 4 figures</arxiv:comment>
-    <arxiv:primary_category term="hep-th"/>
-    <author>
-      <name>Shruti Paranjape</name>
+      <name>Seth Ebner</name>
     </author>
     <author>
-      <name>Marcos Skowronek</name>
+      <name>Varshini Reddy</name>
     </author>
     <author>
-      <name>Marcus Spradlin</name>
+      <name>Yuval Pinter</name>
     </author>
     <author>
-      <name>Anastasia Volovich</name>
-    </author>
-    <author>
-      <name>He-Chen Weng</name>
+      <name>Chris Tanner</name>
     </author>
   </entry>
   <entry>
-    <id>http://arxiv.org/abs/2604.22667v1</id>
-    <title>Sharp bounds for products of dependent random variables</title>
-    <updated>2026-04-24T15:45:15Z</updated>
-    <link href="https://arxiv.org/abs/2604.22667v1" rel="alternate" type="text/html"/>
-    <link href="https://arxiv.org/pdf/2604.22667v1" rel="related" type="application/pdf" title="pdf"/>
-    <summary>We study the sharp bounds of $\mathbb{E}[X_1\cdots X_d]$ when the univariate marginal distributions are known, but the dependence structure between them is unspecified. Maximizing products over non-negative variables is straightforward via the comonotonic coupling, but the problem is more subtle when the marginals can take both positive and negative values. Specifically, two negative realizations can be matched to yield a positive product, whereas a single negative realization necessarily yields a negative product. We propose a decomposition of the problem into a magnitude part and a sign part, and show that universal upper and lower bounds for the product expectation follow from the comonotonic coupling of the absolute values and properly chosen sign vectors. Under a mild regularity assumption, we give necessary and sufficient conditions for these universal bounds to be attainable. For the upper bound, the marginal sign-bias vector must belong to the even-parity polytope, while for the lower, the corresponding condition involves the odd-parity polytope. We construct the extremal couplings via measurable selections on the parity polytope whenever these conditions hold. We study the case of identical marginals in more detail and provide examples of non-symmetric extremal coupling that achieve the universal bounds. We explicitly construct the extremal copulas in three dimensions, and use a recursive parity decomposition to obtain higher-dimensional extremal copulas from the trivariate ones.</summary>
-    <category term="math.ST" scheme="http://arxiv.org/schemas/atom"/>
-    <category term="math.PR" scheme="http://arxiv.org/schemas/atom"/>
-    <published>2026-04-24T15:45:15Z</published>
-    <arxiv:comment>29 pages, 6 figures, 1 table</arxiv:comment>
-    <arxiv:primary_category term="math.ST"/>
+    <id>http://arxiv.org/abs/2605.22675v1</id>
+    <title>Self-Policy Distillation via Capability-Selective Subspace Projection</title>
+    <updated>2026-05-21T16:18:41Z</updated>
+    <link href="https://arxiv.org/abs/2605.22675v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2605.22675v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Self-distillation bootstraps large language models (LLMs) by training on their own generations. However, existing methods either rely on external signals to curate self-generated outputs (e.g., correctness filtering, execution feedback, and reward search), which are costly and unavailable for the best-performing frontier models, or skip curation entirely and train on all raw outputs, an approach that is often domain-specific and hard to generalize. Both also share a deeper weakness that self-generated outputs entangle task-relevant capability with others, such as stylistic patterns, formatting artifacts, and model-specific errors, diluting the signal for the specific capability one aims to improve. In this paper, we propose Self-Policy Distillation (SPD), which achieves generalizable, capability selective without any external signal. Specifically, SPD extracts a low-rank capability subspace from the model's own gradients on correctness-defining tokens, projects key-value (KV) activations into this subspace during self-generation, and fine-tunes on the resulting raw outputs with standard next-token prediction loss. Through extensive experiments across code generation, mathematical reasoning, and multiple-choice QA, we show that SPD achieves up to 13% improvement over state-of-the-art self-distillation methods without external signals and up to 16% improvement over pre-trained baselines. Notably, SPD demonstrates superior generalizability, achieving 15% better performance under out-of-domain generalization settings.</summary>
+    <category term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-05-21T16:18:41Z</published>
+    <arxiv:primary_category term="cs.CL"/>
     <author>
-      <name>Christopher Blier-Wong</name>
+      <name>Guangya Hao</name>
     </author>
     <author>
-      <name>Jinghui Chen</name>
+      <name>Yitong Shang</name>
+    </author>
+    <author>
+      <name>Yunbo Long</name>
+    </author>
+    <author>
+      <name>Zhuokai Zhao</name>
+    </author>
+    <author>
+      <name>Hanxue Liang</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2605.22620v1</id>
+    <title>Two is better than one: A Collapse-free Multi-Reward RLIF Training Framework</title>
+    <updated>2026-05-21T15:30:47Z</updated>
+    <link href="https://arxiv.org/abs/2605.22620v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2605.22620v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Reinforcement learning with verifiable rewards (RLVR) has substantially improved the reasoning ability of LLMs, but often depends on external supervision from human annotations or gold-standard solutions. Reinforcement learning from internal feedback (RLIF) has recently emerged as a scalable unsupervised alternative, using signals extracted from the model itself. However, existing RLIF methods typically rely on a single internal reward, which can lead to reward hacking, entropy collapse, and degraded reasoning structure. We propose a multi-reward RLIF framework that decomposes the training signal into two complementary components: an answer-level reward based on cluster voting and a completion-level reward based on token-wise self-certainty. To combine these signals robustly, we apply GDPO-based normalization to reduce reward-scale imbalance. We further introduce KL-Cov regularization, which targets low-entropy token distributions responsible for disproportionate entropy reduction, preserving exploration and preventing late-stage collapse. Across mathematical reasoning and code-generation benchmarks, our method improves stability and robustness over prior unsupervised RL approaches, while achieving performance close to supervised RLVR methods. These results show that complementary internal rewards, combined with targeted regularization, can support stable long-horizon reasoning without relying on external ground-truth supervision. Code will be released soon.</summary>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-05-21T15:30:47Z</published>
+    <arxiv:primary_category term="cs.LG"/>
+    <author>
+      <name>Shourov Joarder</name>
+    </author>
+    <author>
+      <name>Diganta Sikdar</name>
+    </author>
+    <author>
+      <name>Ahsan Habib Akash</name>
+    </author>
+    <author>
+      <name>Binod Bhattarai</name>
+    </author>
+    <author>
+      <name>Prashnna Gyawali</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2605.22527v1</id>
+    <title>Quantum Genetic Optimization for Negative Selection Algorithms in Anomaly Detection</title>
+    <updated>2026-05-21T14:19:44Z</updated>
+    <link href="https://arxiv.org/abs/2605.22527v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2605.22527v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Negative Selection Algorithms (NSAs), inspired by the self/non-self discrimination mechanism of the human immune system, have been widely employed in anomaly detection. However, their effectiveness is often constrained by the efficiency of detector generation. This paper presents the Quantum Genetic Negative Selection Algorithm (QGNSA), a novel approach that integrates a Quantum Genetic Algorithm (QGA) into the EvoSeedRNSA algorithm, replacing its classical evolutionary optimization process. The proposed method exploits quantum superposition and probabilistic amplitude adjustment to enhance search space exploration and convergence efficiency in the detector generation process. Empirical evaluations using the Metaverse Financial Transactions Dataset demonstrate that QGNSA achieves superior anomaly detection accuracy compared to its classical counterpart while maintaining robustness under varying hyperparameter configurations. The experimental results highlight the potential advantages of quantum computing in artificial immune systems, particularly in high-dimensional anomaly detection tasks. Future research will focus on further optimizing quantum circuit design, deploying the algorithm on real quantum hardware, and exploring hybrid quantum-classical approaches for improved computational efficiency.</summary>
+    <category term="cs.NE" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.ET" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-05-21T14:19:44Z</published>
+    <arxiv:primary_category term="cs.NE"/>
+    <author>
+      <name>Giancarlo P. Gamberi</name>
+    </author>
+    <author>
+      <name>Calebe P. Bianchini</name>
     </author>
   </entry>
 </feed>
