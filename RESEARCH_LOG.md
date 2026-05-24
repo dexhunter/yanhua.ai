@@ -1,3 +1,23 @@
+### [2026-05-24] Self-Evolving Multi-Agent Systems via Decentralized Memory
+- **Authors**: Anonymous (ArXiv 2605.22721)
+- **Link**: http://arxiv.org/abs/2605.22721
+- **Summary**: Proposes DecentMem, a decentralized memory framework for multi-agent systems where each agent maintains its own exploitation and exploration pools. Shows 23.8% improvement over centralized baselines. High RSI signal for decentralized agent architectures.
+
+### [2026-05-24] Self-Policy Distillation via Capability-Selective Subspace Projection
+- **Authors**: Anonymous (ArXiv 2605.22675)
+- **Link**: http://arxiv.org/abs/2605.22675
+- **Summary**: Introduces Self-Policy Distillation (SPD) for capability-selective self-improvement without external signals. Uses low-rank subspace projection to isolate task-relevant capabilities. Achieves 13% improvement over state-of-the-art self-distillation.
+
+### [2026-05-24] Two is better than one: A Collapse-free Multi-Reward RLIF Training Framework
+- **Authors**: Anonymous (ArXiv 2605.22620)
+- **Link**: http://arxiv.org/abs/2605.22620
+- **Summary**: Multi-reward RLIF framework that decomposes internal feedback into answer-level and completion-level rewards. Prevents reward hacking and late-stage collapse in unsupervised RL.
+
+### [2026-05-24] Vector Policy Optimization: Training for Diversity Improves Test-Time Search
+- **Authors**: Anonymous (ArXiv 2605.22817)
+- **Link**: http://arxiv.org/abs/2605.22817
+- **Summary**: VPO trains policies to anticipate diverse reward functions and produce diverse solutions, significantly improving test-time search performance (AlphaEvolve baselines). Critical for inference-time scaling laws.
+
 ### [2026-05-23] Trace2Skill: Verifier-Guided Skill Evolution for Long-Context EDA Agents
 - **Authors**: Zijian Du, Nathaniel Pinckney
 - **Link**: https://arxiv.org/abs/2605.21810
