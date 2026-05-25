@@ -52,3 +52,41 @@
 - **Authors**: Sean Wu, et al.
 - **Link**: https://arxiv.org/abs/2605.22681
 - **Summary**: Introduces CUSP, a benchmark for evaluating AI's ability to forecast scientific breakthroughs. Finds current frontier models struggle with temporal prediction and feasibility assessment, highlighting gaps in autonomous discovery systems.
+
+### [2026-05-25] Executive Strategy for Self-Evolving Agent Skills (SkillOpt)
+- **Authors**: Yifan Yang, Ziyang Gong, Weiquan Huang, et al.
+- **Link**: https://arxiv.org/abs/2605.23904
+- **Summary**: Introduces **SkillOpt**, a systematic controllable text-space optimizer for agent skills. It treats skills as external state trained with a "textual learning rate" and epoch-wise updates. Achieves significant gains (+23.5 pts on GPT-5.5) across harnesses like Codex and Claude Code.
+- **RSI Relevance**: Directly aligns with the yanhua.ai RSI Bench by providing a stable, reproducible framework for autonomous skill evolution without increasing inference-time overhead.
+
+### [2026-05-25] From Raw Experience to Skill Consumption: Model-Generated Agent Skills
+- **Authors**: Zisu Huang, Jingwen Xu, Yifan Yang, et al.
+- **Link**: https://arxiv.org/abs/2605.23899
+- **Summary**: A systematic study of the skill lifecycle (generation, extraction, consumption). Finds that model scale doesn't guarantee skill utility and introduces a "meta-skill" to guide extraction, reducing negative transfer.
+- **RSI Relevance**: Provides a utility-grounded framework for evaluating self-evolving agents, highlighting that "strong extractors" are not always "strong consumers."
+
+### [2026-05-25] Epistemic Calibration for LLM-Based Multi-Agent Systems (EPC-AW)
+- **Authors**: Zehao Wang, et al.
+- **Link**: https://arxiv.org/abs/2605.23414
+- **Summary**: Addresses "epistemic miscalibration" where agents misjudge plan feasibility despite correct execution. Proposes EPC-AW workflow to select plans stable across agents and refine epistemic states.
+- **RSI Relevance**: Critical for recursive systems to avoid "hallucinated improvements" or stable but incorrect self-evolution loops.
+
+### [2026-05-25] SkillOpt: Executive Strategy for Self-Evolving Agent Skills
+- **Authors**: Yifan Yang, Ziyang Gong, et al.
+- **Link**: https://arxiv.org/abs/2605.23904
+- **Summary**: Introduces a systematic controllable text-space optimizer for agent skills. Significant breakthrough in RSI stability and performance.
+
+### [2026-05-25] CoSPlay: Cooperative Self-Play at Test-Time with Self-Generated Code and Unit Test
+- **Authors**: Zhangyi Hu, et al.
+- **Link**: https://arxiv.org/abs/2605.23491
+- **Summary**: GT-free training-free framework for code/UT co-evolution. High relevance for autonomous self-improvement.
+
+### [2026-05-25] Co-ReAct: Rubrics as Step-Level Collaborators for ReAct Agents
+- **Authors**: Jiazheng Kang, et al.
+- **Link**: https://arxiv.org/abs/2605.23590
+- **Summary**: Step-level rubric guidance during inference for reasoning tasks.
+
+### [2026-05-25] Agentic Proving for Program Verification
+- **Authors**: Alessandro Sosso, et al.
+- **Link**: https://arxiv.org/abs/2605.23772
+- **Summary**: Claude Code achieving 98%+ success in formal program verification tasks.
