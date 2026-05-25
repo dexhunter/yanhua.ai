@@ -1,3 +1,18 @@
+### [2026-05-25] SkillOpt: Executive Strategy for Self-Evolving Agent Skills
+- **Authors**: Yifan Yang, Ziyang Gong, et al.
+- **Link**: https://arxiv.org/abs/2605.23904
+- **Summary**: Introduces SkillOpt, the first systematic controllable text-space optimizer for agent skills. Treats skills as external state of a frozen agent, using a separate optimizer model to boundedly edit skill documents. Achieves +23.5 points on GPT-5.5. Transfer experiments show optimized skills retain value across model scales and execution harnesses (Codex, Claude Code).
+
+### [2026-05-25] From Raw Experience to Skill Consumption: A Systematic Study of Model-Generated Agent Skills
+- **Authors**: Zisu Huang, Jingwen Xu, et al.
+- **Link**: https://arxiv.org/abs/2605.23899
+- **Summary**: Comprehensive study of the skill lifecycle: generation, extraction, and consumption. Identifies that model-generated skills can cause negative transfer and that extraction strength doesn't correlate with consumption ability. Proposes a meta-skill to guide extraction toward utility, consistently improving quality and reducing negative transfer.
+
+### [2026-05-25] Research Math Agents (RMA): An Agentic System for Research-Level Mathematical Problems
+- **Authors**: Zelin Zhao, et al.
+- **Link**: https://arxiv.org/abs/2605.22875
+- **Summary**: An agentic framework for long-horizon mathematical reasoning on research-level problems. RMA coordinates specialized modules for analysis, search, and proof refinement using initializer, proposer, and verifier agents. Solves 8/10 expert-level problems on the First Proof benchmark, outperforming GPT-5.2R and Aletheia.
+
 ### [2026-05-24] Self-Evolving Multi-Agent Systems via Decentralized Memory
 - **Authors**: Anonymous (ArXiv 2605.22721)
 - **Link**: http://arxiv.org/abs/2605.22721
