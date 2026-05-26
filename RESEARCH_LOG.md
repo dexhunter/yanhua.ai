@@ -2,11 +2,19 @@
 - **Authors**: Yifan Yang, Ziyang Gong, et al.
 - **Link**: https://arxiv.org/abs/2605.23904
 - **Summary**: Introduces SkillOpt, the first systematic controllable text-space optimizer for agent skills. Treats skills as external state of a frozen agent, using a separate optimizer model to boundedly edit skill documents. Achieves +23.5 points on GPT-5.5. Transfer experiments show optimized skills retain value across model scales and execution harnesses (Codex, Claude Code).
+- **RSI Signal**: High. Validates skill-level "evolutionary optimization" without retraining.
 
 ### [2026-05-25] From Raw Experience to Skill Consumption: A Systematic Study of Model-Generated Agent Skills
 - **Authors**: Zisu Huang, Jingwen Xu, et al.
 - **Link**: https://arxiv.org/abs/2605.23899
 - **Summary**: Comprehensive study of the skill lifecycle: generation, extraction, and consumption. Identifies that model-generated skills can cause negative transfer and that extraction strength doesn't correlate with consumption ability. Proposes a meta-skill to guide extraction toward utility, consistently improving quality and reducing negative transfer.
+- **RSI Signal**: Medium-High. Critical for avoiding "skill drift" in recursive systems.
+
+### [2026-05-25] CHRONOS: Temporally-Aware Multi-Agent Coordination for Evolving Data Marketplaces
+- **Authors**: Joydeep Chandra
+- **Link**: https://arxiv.org/abs/2605.23887
+- **Summary**: Multi-agent coordination for evolving environments using neural-ODE temporal decay and Shapley valuation conditioned on changepoints.
+- **RSI Signal**: Medium. Relevant for agents managing long-term memory evolution.
 
 ### [2026-05-25] Research Math Agents (RMA): An Agentic System for Research-Level Mathematical Problems
 - **Authors**: Zelin Zhao, et al.
