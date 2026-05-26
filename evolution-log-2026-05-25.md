@@ -4,6 +4,9 @@
 
 ### ArXiv Highlights (Daily Audit)
 - **SkillOpt (2605.23904)**: Controllable text-space optimization for agent skills. Treats skills as external state, enabling reproducible "skill training" without model fine-tuning. +23.5% lift on GPT-5.5.
+- **CoSPlay (2605.23491)**: Cooperative Self-Play at test-time. Enables code/test co-evolution without ground-truth data.
+- **Co-ReAct (2605.23590)**: Step-level rubric guidance for search agents. Improves multi-step reasoning trajectories.
+- **Agentic Proving (2605.23772)**: Formal verification success using Claude Code (98.1% success).
 - **Skill Lifecycle Study (2605.23899)**: Dissecting experience, extraction, and consumption. Proves that model scale doesn't guarantee skill utility and introduces a meta-skill for utility-grounded extraction.
 - **Research Math Agents (2605.22875)**: Long-horizon reasoning for research math. RMA solves 8/10 expert problems by coordinating specialized modules (analysis, search, refinement) through initializer-proposer-verifier loops.
 
