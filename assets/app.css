@@ -467,8 +467,26 @@ html[data-flipped="true"] .brand-mark { transform: rotate(80deg); }
   min-height: 24rem;
 }
 .deck-kicker {
+  margin: 0.45rem 0 0;
   font-family: var(--mono);
   font-size: 0.75rem;
+  color: var(--muted);
+}
+.metric-line {
+  margin: 0.85rem 0 0;
+  font-family: var(--mono);
+  font-size: 1.15rem;
+  font-weight: 600;
+  letter-spacing: -0.03em;
+  color: var(--lacquer-ink);
+}
+.rail > label {
+  display: block;
+  margin: 0 0 0.4rem;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
   color: var(--muted);
 }
 .deck-sheet h2 {
@@ -541,5 +559,6 @@ dialog .lede { font-size: 1rem; }
 @media (max-width: 640px) {
   .brand-domain { display: none; }
   .nav-sub { display: none; }
+  #theme-btn span { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0, 0, 0, 0); }
   .entry, .deck-sheet, .slip { padding-left: 0.9rem; padding-right: 0.9rem; }
 }

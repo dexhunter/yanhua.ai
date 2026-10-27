@@ -42,9 +42,9 @@
       topics: "主题",
       allTopics: "全部主题",
       savedOnly: "只看收藏",
-      what: "01  问题与定位",
-      how: "02  核心机制",
-      why: "03  核心结论与深层原因",
+      what: "01 · 问题与定位",
+      how: "02 · 核心机制",
+      why: "03 · 核心结论与深层原因",
       read: "标为已读",
       unread: "标为未读",
       readMark: "已读",
@@ -103,9 +103,9 @@
       topics: "Topics",
       allTopics: "All topics",
       savedOnly: "Bookmarks",
-      what: "01  Problem",
-      how: "02  Mechanism",
-      why: "03  Conclusion and why",
+      what: "01 · Problem",
+      how: "02 · Mechanism",
+      why: "03 · Conclusion",
       read: "Mark read",
       unread: "Mark unread",
       readMark: "Read",
@@ -389,15 +389,16 @@
       '<div class="deck-stage' + (state.flipped ? " is-flipped" : "") + '" id="deck-stage">' +
         '<div class="deck-spin">' +
           '<article class="face face-front deck-sheet" id="' + esc(item.id) + '"' + frontHidden + '>' +
-            '<p class="deck-kicker">' + esc(tx(item.metric)) + '</p>' +
             '<h2>' + esc(tx(item.title)) + '</h2>' +
-            byline(item) + pills(item) +
+            byline(item) +
+            '<p class="metric-line">' + esc(tx(item.metric)) + '</p>' +
+            pills(item) +
             '<section class="beat"><h4>' + esc(t("what")) + '</h4>' + paragraphs(tx(item.what)) + '</section>' +
             '<p class="hint">' + esc(t("frontHint")) + '</p>' +
           '</article>' +
           '<article class="face face-back deck-sheet"' + backHidden + '>' +
-            '<p class="deck-kicker">' + esc(tx(edition.label)) + '</p>' +
             '<h2>' + esc(tx(item.title)) + '</h2>' +
+            '<p class="deck-kicker">' + esc(tx(edition.label)) + '</p>' +
             '<section class="beat"><h4>' + esc(t("how")) + '</h4>' + paragraphs(tx(item.how)) + '</section>' +
             '<section class="beat why"><h4>' + esc(t("why")) + '</h4>' + paragraphs(tx(item.why)) + '</section>' +
             '<p class="hint">' + esc(t("backHint")) + '</p>' +
