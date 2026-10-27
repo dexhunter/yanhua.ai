@@ -17,12 +17,9 @@
       reader: "阅读流",
       subscribe: "订阅",
       subscribeTitle: "订阅演化日报",
-      subscribeLead: "留下邮箱。日报用中文写成，也可以只收英文，或两份都收。",
       toastTitle: "订阅演化日报",
       toastLead: "觉得有用？留下邮箱，每日更新直达收件箱。",
       dismiss: "关闭",
-      slipTitle: "订阅日报",
-      slipBody: "每天一版。中文为主，可选英文或双语。RSS 同样开放。",
       email: "邮箱",
       emailPh: "you@lab.edu",
       langPref: "语言偏好",
@@ -30,16 +27,13 @@
       en: "English",
       both: "双语",
       invalid: "请输入有效的邮箱地址。",
-      saved: "已记下。这台浏览器会记住你的订阅。",
       sent: "订阅请求已送达。这台浏览器也记住了你的选择。",
-      fallback: "在线名册还没有接上。地址已经保存在这台设备上，也可以从这里送出。",
       github: "通过 GitHub Issue 送出",
-      mailto: "用邮件送出",
       close: "关闭",
       themeDark: "切换到深色",
       themeLight: "切换到浅色",
-      searchLabel: "搜索",
       searchPh: "搜索标题、arXiv、作者",
+      mastSub: "递归自我改进与智能体框架搜索 · 每日双语精读闪卡",
       editions: "期次",
       allEditions: "全部期次",
       topics: "主题",
@@ -50,8 +44,6 @@
       prev: "上一张",
       next: "下一张",
       flip: "翻转卡片",
-      frontHint: "按 Space 或 Enter，或点击卡片，翻到问题与机制。",
-      backHint: "按 Space 或 Enter，返回结论与指标。",
       keys: "Space / Enter 翻转卡片 · J / K 或 ← / → 上一张 / 下一张",
       emptyTitle: "没有匹配的卡片",
       emptyBody: "换一个关键词，或清除筛选。",
@@ -87,12 +79,9 @@
       reader: "Reader",
       subscribe: "Subscribe",
       subscribeTitle: "Subscribe to Yanhua Daily",
-      subscribeLead: "Leave an email. The daily is written in Chinese. You can take English only, or both.",
       toastTitle: "Subscribe to Yanhua Daily",
       toastLead: "Enjoying the cards? Get new editions by email.",
       dismiss: "Dismiss",
-      slipTitle: "Subscribe",
-      slipBody: "One edition a day. Chinese by default, English or bilingual if you prefer. RSS is open too.",
       email: "Email",
       emailPh: "you@lab.edu",
       langPref: "Language preference",
@@ -100,16 +89,13 @@
       en: "English",
       both: "Bilingual",
       invalid: "Enter a valid email address.",
-      saved: "Saved. This browser will remember your subscription.",
       sent: "The subscription request was delivered. This browser remembers your choice too.",
-      fallback: "The online list is not connected yet. The address is saved on this device, and you can send it from here.",
       github: "Send via GitHub Issue",
-      mailto: "Send by email",
       close: "Close",
       themeDark: "Switch to dark",
       themeLight: "Switch to light",
-      searchLabel: "Search",
       searchPh: "Search titles, arXiv ids, authors",
+      mastSub: "Recursive self-improvement & agent harness search · Daily bilingual flash cards",
       editions: "Editions",
       allEditions: "All editions",
       topics: "Topics",
@@ -120,8 +106,6 @@
       prev: "Previous",
       next: "Next",
       flip: "Flip card",
-      frontHint: "Press Space or Enter, or click the card, for the problem and the mechanism.",
-      backHint: "Press Space or Enter to return to the conclusion and the numbers.",
       keys: "Space / Enter flips the card · J / K or ← / → previous / next",
       emptyTitle: "No cards match",
       emptyBody: "Try another query, or clear the filters.",
@@ -360,9 +344,11 @@
   }
   function byline(item) {
     const bits = [];
-    if (item.arxiv) bits.push('<a href="https://arxiv.org/abs/' + esc(item.arxiv) + '" target="_blank" rel="noopener noreferrer">' + esc(item.arxiv) + '</a>');
     if (item.authors) bits.push(esc(item.authors));
-    if (item.handle) bits.push(linkify(item.handle, item));
+    (item.tags || []).forEach(function (id) {
+      const tag = tagById(id);
+      if (tag) bits.push('<span class="byline-tag">' + esc(tx(tag.label)) + '</span>');
+    });
     return bits.length ? '<p class="byline">' + bits.join(" · ") + "</p>" : "";
   }
   function deckActions(item) {
@@ -398,8 +384,6 @@
         seg("lang", "zh", "中文", state.lang === "zh") +
         seg("lang", "en", "EN", state.lang === "en");
     }
-    const openSub = document.getElementById("open-sub");
-    if (openSub) openSub.textContent = t("subscribe");
     paintThemeButton();
     const url = new URL(location.href);
     url.searchParams.set("lang", state.lang);
@@ -433,8 +417,7 @@
       return '<button type="button" class="chip" data-tag="' + esc(tag.id) + '" aria-pressed="' + (state.tag === tag.id) + '">' + esc(tx(tag.label)) + '</button>';
     }).join("");
     rail.innerHTML =
-      '<label for="q">' + esc(t("searchLabel")) + '</label>' +
-      '<input class="search" id="q" type="search" placeholder="' + esc(t("searchPh")) + '" value="' + esc(state.q) + '">' +
+      '<input class="search" id="q" type="search" placeholder="' + esc(t("searchPh")) + '" aria-label="' + esc(t("searchPh")) + '" value="' + esc(state.q) + '">' +
       '<h2>' + esc(t("editions")) + '</h2>' +
       '<div class="rail-list"><a href="#content" data-edition="all"' + (state.edition === "all" ? ' aria-current="page"' : "") + '>' + esc(t("allEditions")) + '</a>' + editions + '</div>' +
       '<h2>' + esc(t("topics")) + '</h2>' +
@@ -477,12 +460,11 @@
   }
   function renderMast() {
     if (!mast) return;
-    const list = visible();
-    const latest = data.editions[0];
     mast.innerHTML =
-      '<h1>' + esc(tx(data.site.title)) + '</h1>' +
-      '<p class="lede">' + esc(tx(data.site.tagline)) + (state.lang === "zh" ? "。" : ". ") + esc(tx(data.site.description)) + '</p>' +
-      '<p class="meta-line"><span>' + esc(tx(latest.label)) + '  ·  ' + esc(t("count")(list.length)) + '</span>' + statsStrip() + '</p>';
+      '<div class="mast-bar">' +
+        '<p class="mast-sub">' + esc(t("mastSub")) + '</p>' +
+        statsStrip() +
+      '</div>';
   }
 
   function renderReader(list) {
@@ -497,8 +479,8 @@
       if (!rows.length) return;
       groups.push(
         '<section class="edition-block" id="edition-' + esc(edition.id) + '">' +
-          '<h2>' + esc(tx(edition.label)) + '</h2>' +
-          '<div class="edition-count">' + esc(t("count")(rows.length)) + '</div>' +
+          '<div class="edition-head"><h2>' + esc(tx(edition.label)) + '</h2>' +
+          '<div class="edition-count">' + esc(t("count")(rows.length)) + '</div></div>' +
           rows.map(article).join("") +
         '</section>'
       );
@@ -535,14 +517,11 @@
             byline(item) +
             verdict(item) +
             pills(item) +
-            '<p class="hint">' + esc(t("frontHint")) + '</p>' +
             deckActions(item) +
           '</article>' +
           '<article class="face face-back deck-sheet"' + backHidden + '>' +
             '<h2>' + esc(tx(item.title)) + '</h2>' +
-            '<p class="deck-kicker">' + esc(tx(edition.label)) + '</p>' +
             contextGrid(item) +
-            '<p class="hint">' + esc(t("backHint")) + '</p>' +
             deckActions(item) +
           '</article>' +
         '</div>' +
@@ -555,7 +534,7 @@
 
   function renderFoot() {
     if (!foot) return;
-    foot.innerHTML = '<div class="colophon-inner"><p>' + esc(t("footer")) + '</p><div class="foot-stats">' + statsStrip() + '</div><p class="feed-row"><a href="/feed.xml">' + esc(t("rss")) + '</a><a href="/feed.json">' + esc(t("json")) + '</a></p></div>';
+    foot.innerHTML = '<div class="colophon-inner"><p>' + esc(t("footer")) + '</p><p class="feed-row"><a href="/feed.xml">' + esc(t("rss")) + '</a><span aria-hidden="true">·</span><a href="/feed.json">' + esc(t("json")) + '</a></p></div>';
   }
   function renderSubWindow() {
     if (!subDialog) return;
@@ -676,10 +655,6 @@
     }
     if (event.target.closest("#theme-btn")) {
       setScheme(scheme() === "dark" ? "light" : "dark");
-      return;
-    }
-    if (event.target.closest("#open-sub")) {
-      openSubWindow();
       return;
     }
     if (event.target.closest("#close-sub")) {
