@@ -15,15 +15,15 @@ An edition file looks like:
 
 {
   "edition": {
-    "id": "2026-10-28-evening",
+    "id": "2026-10-28",
     "date": "2026-10-28",
-    "slot": "evening",
-    "label": {"zh": "2026-10-28 晚间版", "en": "28 Oct 2026 · Evening"}
+    "slot": "",
+    "label": {"zh": "2026-10-28", "en": "28 Oct 2026"}
   },
   "items": [
     {
       "id": "unique-slug",
-      "edition": "2026-10-28-evening",
+      "edition": "2026-10-28",
       "tags": ["harness-search"],
       "title": {"zh": "……", "en": "……"},
       "what": {"zh": "一句问题。", "en": "One sentence on the problem."},
@@ -39,9 +39,15 @@ An edition file looks like:
   ]
 }
 
-slot is "morning", "evening", or "" for a single daily edition.
-New editions are inserted at the front. Re-appending an existing edition
-id replaces that edition's items.
+Each calendar date is one edition. append canonicalizes the id to that
+date, clears slot, and strips 早间版 / 晚间版 / Morning / Evening from
+the label. A new date is inserted at the front. Appending the same date
+prepends the new cards and keeps cards from earlier that day. Matching
+item ids are updated in place, so a re-run is idempotent. Pass
+--replace-edition to overwrite the whole date instead.
+
+  python3 scripts/update_digest.py append path/to/edition.json
+  python3 scripts/update_digest.py append path/to/edition.json --replace-edition
 """
 
 from __future__ import annotations
@@ -68,6 +74,9 @@ ASSET_RE = re.compile(
 REQUIRED_I18N = ("title", "what", "how", "why", "metric")
 SENTENCE_BOUNDS = {"what": (1, 1), "how": (1, 2), "why": (1, 1)}
 SLOTS = {"morning": (9, 0), "evening": (18, 0), "": (12, 0)}
+MONTHS = ("Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec")
+DATE_RE = re.compile(r"^\d{4}-\d{2}-\d{2}$")
+SLOT_LABEL_RE = re.compile(r"早间版|晚间版|\bMorning\b|\bEvening\b")
 # A real @mention: not glued to a metric or email (PR@1, pass@1, user@domain.com),
 # not a bare @1, and not followed by .tld.
 HANDLE_RE = re.compile(
@@ -374,17 +383,113 @@ def build() -> int:
     return 0
 
 
-def append(path: Path) -> int:
+def english_date(iso: str) -> str:
+    year, month, day = (int(part) for part in iso.split("-"))
+    return f"{day} {MONTHS[month - 1]} {year}"
+
+
+def canonical_edition(raw: dict) -> dict:
+    if not isinstance(raw, dict):
+        raise SystemExit("edition must be an object")
+    edition = dict(raw)
+    raw_id = str(edition.get("id") or "").strip()
+    date = str(edition.get("date") or "").strip()
+    if not date:
+        match = DATE_RE.match(raw_id)
+        date = match.group(0) if match else ""
+    if not DATE_RE.fullmatch(date):
+        raise SystemExit(f"edition date must be YYYY-MM-DD, got {date or raw_id!r}")
+    label = edition.get("label") if isinstance(edition.get("label"), dict) else {}
+    zh = str(label.get("zh") or "").strip()
+    en = str(label.get("en") or "").strip()
+    if not zh or not en or SLOT_LABEL_RE.search(zh) or SLOT_LABEL_RE.search(en):
+        label = {"zh": date, "en": english_date(date)}
+    else:
+        label = {"zh": zh, "en": en}
+    edition["id"] = date
+    edition["date"] = date
+    edition["slot"] = ""
+    edition["label"] = label
+    return edition
+
+
+def edition_matches(existing: dict, edition: dict) -> bool:
+    existing_id = str(existing.get("id") or "")
+    existing_date = str(existing.get("date") or "")
+    date = edition["date"]
+    return existing_id == edition["id"] or existing_date == date or existing_id.startswith(date + "-")
+
+
+def merge_items(doc: dict, edition: dict, incoming: list[dict], replace: bool) -> None:
+    old_ids = {str(existing.get("id") or "") for existing in doc.get("editions") or [] if edition_matches(existing, edition)}
+    old_ids.add(edition["id"])
+    seen: set[str] = set()
+    prepared: list[dict] = []
+    for item in incoming:
+        if not isinstance(item, dict) or not str(item.get("id") or "").strip():
+            raise SystemExit("every appended item needs an id")
+        item_id = str(item["id"])
+        if item_id in seen:
+            raise SystemExit(f"duplicate id in append file: {item_id}")
+        seen.add(item_id)
+        item["edition"] = edition["id"]
+        prepared.append(item)
+
+    editions: list[dict] = []
+    placed = False
+    for existing in doc.get("editions") or []:
+        if edition_matches(existing, edition):
+            if not placed:
+                editions.append(edition)
+                placed = True
+            continue
+        editions.append(existing)
+    if not placed:
+        editions.insert(0, edition)
+    doc["editions"] = editions
+
+    remaining = [item for item in doc.get("items") or [] if str(item.get("id") or "") not in seen]
+    result: list[dict] = []
+    pending: list[dict] = []
+    inserted = False
+
+    def flush() -> None:
+        nonlocal inserted
+        if inserted:
+            return
+        result.extend(prepared)
+        if not replace:
+            result.extend(pending)
+        inserted = True
+
+    for item in remaining:
+        belongs = str(item.get("edition") or "") in old_ids
+        if belongs and replace:
+            flush()
+            continue
+        if belongs:
+            item["edition"] = edition["id"]
+            pending.append(item)
+            continue
+        if pending and not inserted:
+            flush()
+        result.append(item)
+    if not inserted:
+        if pending:
+            flush()
+        else:
+            result = prepared + result
+    doc["items"] = result
+
+
+def append(path: Path, replace: bool = False) -> int:
     doc = load()
     patch = json.loads(path.read_text(encoding="utf-8"))
-    edition = patch["edition"]
-    items = patch["items"]
-    for item in items:
-        item["edition"] = edition["id"]
-    doc["editions"] = [e for e in doc["editions"] if e["id"] != edition["id"]]
-    doc["editions"].insert(0, edition)
-    doc["items"] = [item for item in doc["items"] if item.get("edition") != edition["id"]]
-    doc["items"] = list(items) + doc["items"]
+    edition = canonical_edition(patch["edition"])
+    items = patch.get("items")
+    if not isinstance(items, list):
+        raise SystemExit("append file needs an items array")
+    merge_items(doc, edition, items, replace)
     found = problems(doc)
     if found:
         print("\n".join(found), file=sys.stderr)
@@ -394,22 +499,25 @@ def append(path: Path) -> int:
 
 
 def main(argv: list[str]) -> int:
-    if len(argv) < 2 or argv[1] not in {"build", "check", "append"}:
+    args = list(argv[1:])
+    replace = "--replace-edition" in args
+    args = [arg for arg in args if arg != "--replace-edition"]
+    if not args or args[0] not in {"build", "check", "append"}:
         print(__doc__)
         return 2
-    if argv[1] == "check":
+    if args[0] == "check":
         found = problems(load())
         if found:
             print("\n".join(found), file=sys.stderr)
             return 1
         print("ok")
         return 0
-    if argv[1] == "build":
+    if args[0] == "build":
         return build()
-    if len(argv) < 3:
+    if len(args) != 2:
         print("append needs a path to an edition json file", file=sys.stderr)
         return 2
-    return append(Path(argv[2]))
+    return append(Path(args[1]), replace=replace)
 
 
 if __name__ == "__main__":

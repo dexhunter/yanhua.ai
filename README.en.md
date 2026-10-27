@@ -70,7 +70,7 @@ Switch the header to **Deck**. The card flips on the Y axis. The front is the ti
 
 ### ❯ Evening Combined Email
 
-Each evening, that day's morning and evening editions go out as one message through Resend. The sender is `演化日报 · Yanhua Daily <digest@yanhua.ai>`. There is no permanent subscribe button. Near the end of the page, a small dialog opens with `dialog.show()` in the bottom-right corner and does not cover the reading. The form `POST`s `{email, lang, source}` to [https://subscribe.yanhua.ai](https://subscribe.yanhua.ai). `RESEND_API_KEY` lives only on the Worker and in GitHub Actions.
+Each evening, that day's edition goes out as one message through Resend. The page keeps one edition per date and prepends to it at 09:00 and 18:00 UTC+0. The sender is `演化日报 · Yanhua Daily <digest@yanhua.ai>`. There is no permanent subscribe button. Near the end of the page, a small dialog opens with `dialog.show()` in the bottom-right corner and does not cover the reading. The form `POST`s `{email, lang, source}` to [https://subscribe.yanhua.ai](https://subscribe.yanhua.ai). `RESEND_API_KEY` lives only on the Worker and in GitHub Actions.
 
 A normal Pages deploy only syncs GitHub issues labeled `subscribe`. To send mail, run the workflow by hand and check “Email the latest edition through Resend”.
 
@@ -91,7 +91,7 @@ The canonical dataset is `data/digests.json`. The page reads the same document a
 | `data/digests.json` | Bilingual source of editions and cards |
 | `data/digests.js` | The same document for the page |
 | `scripts/update_digest.py` | Validate, rebuild `digests.js`, RSS, and the JSON Feed, and stamp `?v=` cache tokens on assets in `index.html` |
-| `scripts/send_newsletter_resend.py` | Render the morning-plus-evening HTML and broadcast it with Resend |
+| `scripts/send_newsletter_resend.py` | Render that day's edition as HTML and broadcast it with Resend |
 | `scripts/cloudflare-resend-worker.js` | Cloudflare Worker behind the corner subscribe dialog |
 | `feed.xml` / `feed.json` | Public feeds |
 | `index.html` · `assets/` · `data/config.js` | Page, styles, and subscribe endpoint config |
@@ -102,13 +102,13 @@ Validate, then build:
 python3 scripts/update_digest.py check && python3 scripts/update_digest.py build
 ```
 
-`check` only validates. `build` validates again, then writes the page data and the feeds. Append an edition with `slot` set to `morning`, `evening`, or `""` for a single edition that day:
+`check` only validates. `build` validates again, then writes the page data and the feeds. Each date is one edition, and its `id` is the date. An id like `2026-10-28-morning` or `2026-10-28-evening` is folded into `2026-10-28`. The 09:00 append creates the edition. The 18:00 append prepends new cards and keeps the cards already filed that morning. Appending an existing card `id` updates that card. `--replace-edition` overwrites the whole date.
 
 ```bash
-python3 scripts/update_digest.py append editions/2026-10-28-evening.json
+python3 scripts/update_digest.py append editions/2026-10-28.json
 ```
 
-Appending the same `id` replaces that edition. New editions are inserted at the front.
+A new date is inserted at the front.
 
 Mail:
 
@@ -119,7 +119,7 @@ python3 scripts/send_newsletter_resend.py --sync-only
 python3 scripts/send_newsletter_resend.py --send --date 2026-10-27
 ```
 
-`--preview` writes the HTML locally, does not call Resend, and does not need a key. Without `--date`, the date is the newest edition's date. `--send` syncs the list, then broadcasts that day's morning and evening editions as one message. `--sync-only` syncs and does not send. Until the domain is verified, the sender falls back to `onboarding@resend.dev`.
+`--preview` writes the HTML locally, does not call Resend, and does not need a key. Without `--date`, the date is the newest edition's date. `--send` syncs the list, then broadcasts that day's edition. `--sync-only` syncs and does not send. Until the domain is verified, the sender falls back to `onboarding@resend.dev`.
 
 <p align="center">
   <a href="#readme-top"><img src="https://img.shields.io/badge/-Back_to_top-1b1714?style=flat-square" alt="Back to top"></a>

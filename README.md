@@ -70,7 +70,7 @@ GitHub Pages 从仓库根目录发布这些静态文件。`CNAME` 是 `yanhua.ai
 
 ### ❯ 每日晚间合辑 · Evening Combined Email
 
-晚上把当天的早间版和晚间版合成一封信，经 Resend 发出。发件人是 `演化日报 · Yanhua Daily <digest@yanhua.ai>`。页面上没有常驻订阅按钮。滚到靠近页尾时，右下角用 `dialog.show()` 打开一扇不挡阅读的小窗。表单 `POST` 到 [https://subscribe.yanhua.ai](https://subscribe.yanhua.ai)，正文是 `{email, lang, source}`。`RESEND_API_KEY` 只放在 Worker 和 GitHub Actions 里。
+晚上把当天这一版经 Resend 寄出。页面上每天只有一期，09:00 与 18:00（UTC+0）各往这一期前面追加一次。发件人是 `演化日报 · Yanhua Daily <digest@yanhua.ai>`。页面上没有常驻订阅按钮。滚到靠近页尾时，右下角用 `dialog.show()` 打开一扇不挡阅读的小窗。表单 `POST` 到 [https://subscribe.yanhua.ai](https://subscribe.yanhua.ai)，正文是 `{email, lang, source}`。`RESEND_API_KEY` 只放在 Worker 和 GitHub Actions 里。
 
 普通的 Pages 部署只同步带 `subscribe` 标签的 Issue。要发信，在 Actions 里手动运行 workflow，并勾上 “Email the latest edition through Resend”。
 
@@ -91,7 +91,7 @@ GitHub Pages 从仓库根目录发布这些静态文件。`CNAME` 是 `yanhua.ai
 | `data/digests.json` | 期次与卡片的双语源数据 |
 | `data/digests.js` | 给页面用的同一份数据 |
 | `scripts/update_digest.py` | 校验，重建 `digests.js`、RSS 和 JSON Feed，并给 `index.html` 里的资源盖上 `?v=` 缓存戳 |
-| `scripts/send_newsletter_resend.py` | 生成早间加晚间的合辑 HTML，并用 Resend 广播 |
+| `scripts/send_newsletter_resend.py` | 生成当天这一版的 HTML，并用 Resend 广播 |
 | `scripts/cloudflare-resend-worker.js` | 右下角订阅窗背后的 Cloudflare Worker |
 | `feed.xml` / `feed.json` | 公开订阅源 |
 | `index.html` · `assets/` · `data/config.js` | 页面、样式，以及订阅接口配置 |
@@ -102,13 +102,13 @@ GitHub Pages 从仓库根目录发布这些静态文件。`CNAME` 是 `yanhua.ai
 python3 scripts/update_digest.py check && python3 scripts/update_digest.py build
 ```
 
-`check` 只校验。`build` 会再校验一次，然后写出前端数据和订阅源。追加一期时，`slot` 取 `morning`、`evening`，或 `""`（当天只有一版）：
+`check` 只校验。`build` 会再校验一次，然后写出前端数据和订阅源。每一天只有一期，`id` 就是日期。传入 `2026-10-28-morning` 或 `2026-10-28-evening` 也会收成 `2026-10-28`。09:00 的追加新建这一期；18:00 的追加把新卡片插到这一期最前，并保留上午已经在册的卡片。同一张卡的 `id` 再追加会更新那一张。`--replace-edition` 会整期覆盖。
 
 ```bash
-python3 scripts/update_digest.py append editions/2026-10-28-evening.json
+python3 scripts/update_digest.py append editions/2026-10-28.json
 ```
 
-同一个 `id` 再追加会替换那一期。新的一期插到最前。
+新的日期插到最前。
 
 邮件：
 
@@ -119,7 +119,7 @@ python3 scripts/send_newsletter_resend.py --sync-only
 python3 scripts/send_newsletter_resend.py --send --date 2026-10-27
 ```
 
-`--preview` 只把 HTML 写到本地，不调用 Resend，也不需要密钥。省略 `--date` 时，用最新一期的日期。`--send` 先同步名单，再把该日的早间版和晚间版合成一封广播。`--sync-only` 只同步，不发信。域名还没验证时，发件人会退回 `onboarding@resend.dev`。
+`--preview` 只把 HTML 写到本地，不调用 Resend，也不需要密钥。省略 `--date` 时，用最新一期的日期。`--send` 先同步名单，再把该日这一版发出。`--sync-only` 只同步，不发信。域名还没验证时，发件人会退回 `onboarding@resend.dev`。
 
 <p align="center">
   <a href="#readme-top"><img src="https://img.shields.io/badge/-返回顶部-1b1714?style=flat-square" alt="返回顶部"></a>
