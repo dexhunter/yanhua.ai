@@ -7,7 +7,7 @@ The site is a bilingual daily on recursive self-improvement and agent harness se
 ## 阅读
 
 - **阅读流**：按期次排列。每张卡先给一句结论，下面是指标，再以两列放问题背景和机制。文中的 `@handle` 可以点开，卡片底部有论文、仓库或帖子链接。
-- **闪卡**：正面是标题、一句结论和指标，背面是问题与机制。`←` `→` 换卡，`空格`或点击翻面。已读和收藏记在这台浏览器的 `localStorage`。
+- **闪卡**：正面是标题、一句结论和指标，背面是问题与机制。`←` `→` 或 `J` `K` 换卡，`空格` / `Enter` 或点击翻面。站点没有账号，也不在浏览器里记已读或收藏。
 - 地址栏 `?lang=en` 或 `?lang=zh` 指定语言。
 - 筛选期次、主题，或搜索标题、arXiv 编号、作者、账号。
 
@@ -43,7 +43,7 @@ Worker 接受之后，这台浏览器才记住订阅。请求失败时窗口里�
 
 ## 访问与订阅统计
 
-页眉和页脚的统计条用 [vercount](https://events.vercount.one/api/v2/log) 记录 `https://yanhua.ai/` 的访客（UV）和阅读（PV）。订阅数是 `https://subscribe.yanhua.ai/stats` 返回的 Resend 名册人数。点统计条，或打开 `?stats=1`，可以看到这三项、本机已读和收藏。
+页眉和页脚的统计条显示刊载指标：卡片总数、期数、收录论文（带 arXiv 或论文链接的条目）。点统计条，或打开 `?stats=1`，还可以看到 [vercount](https://events.vercount.one/api/v2/log) 记下的 `https://yanhua.ai/` 访客（UV）和阅读（PV），以及 `https://subscribe.yanhua.ai/stats` 返回的 Resend 订阅人数。站点每天伦敦时间 09:00 与 18:00 各更新一次，两版合入当晚的邮件摘要。
 
 可选的外部统计写在 `data/config.js`。留空则只用上面的内置计数：
 

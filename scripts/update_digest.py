@@ -79,6 +79,23 @@ X_URL_RE = re.compile(
 )
 ARXIV_RE = re.compile(r"arxiv\.org/(?:abs|pdf)/(\d{4}\.\d{4,5})(?:v\d+)?", re.IGNORECASE)
 GITHUB_RE = re.compile(r"^https?://(?:www\.)?github\.com/([^/#?\s]+)/([^/#?\s]+)", re.IGNORECASE)
+PAPER_ICON = (
+    '<svg class="source-ico" width="14" height="14" viewBox="0 0 14 14" aria-hidden="true" focusable="false">'
+    '<path d="M3.2 1.7h5l2.6 2.6v8H3.2z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>'
+    '<path d="M8.1 1.8v2.6h2.6M5 7.2h4M5 9.3h3.2" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>'
+    "</svg>"
+)
+REPO_ICON = (
+    '<svg class="source-ico" width="14" height="14" viewBox="0 0 14 14" aria-hidden="true" focusable="false">'
+    '<path d="M5 4.1 2.5 7 5 9.9M9 4.1 11.5 7 9 9.9" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>'
+    "</svg>"
+)
+X_ICON = (
+    '<svg class="source-ico" width="14" height="14" viewBox="0 0 24 24" aria-hidden="true" focusable="false">'
+    '<path fill="currentColor" d="M14.06 3h3.16l-6.9 7.89L18.4 21h-3.2l-5.02-6.56L5.3 21H2.13l7.38-8.44L2.7 3h3.28l4.54 6.01L14.06 3Zm-1.11 16.2h1.75L7.16 4.68H5.3l7.65 14.52Z"/>'
+    "</svg>"
+)
+SOURCE_ICONS = {"paper": PAPER_ICON, "repo": REPO_ICON, "x": X_ICON}
 # A sentence end is CJK terminal punctuation, or . ! ? that is not the dot inside a decimal.
 SENT_RE = re.compile(r"(?<!\d)[.!?](?!\d)|[。！？]|(?<=\d)[.!?](?!\d)(?=\s|$)")
 
@@ -199,21 +216,27 @@ def source_entries(item: dict) -> list[dict]:
         gh = GITHUB_RE.match(url)
         if ax:
             ident = ax.group(1)
-            label = f"📄 论文 arXiv:{ident} ↗"
+            label = f"论文 arXiv:{ident}"
+            kind = "paper"
         elif gh:
             slug = f"{gh.group(1)}/{gh.group(2).removesuffix('.git')}"
-            label = f"💻 GitHub: {slug} ↗"
+            label = f"GitHub: {slug}"
+            kind = "repo"
         else:
-            label = f"📄 {link.get('zh') or link.get('en') or '原文'} ↗"
-        entries.append({"url": url, "label": label})
+            label = str(link.get("zh") or link.get("en") or "原文")
+            kind = "paper"
+        entries.append({"url": url, "label": label, "icon": kind})
     for post in posts.values():
-        entries.append({"url": post["url"], "label": f"𝕏 @{post['handle']} ↗"})
+        entries.append({"url": post["url"], "label": f"@{post['handle']}", "icon": "x"})
     return entries
 
 
 def source_html(item: dict) -> str:
     parts = [
-        f'<a href="{escape(entry["url"])}" target="_blank" rel="noopener noreferrer">{escape(entry["label"])}</a>'
+        (
+            f'<a class="source-link" href="{escape(entry["url"])}" target="_blank" rel="noopener noreferrer">'
+            f'{SOURCE_ICONS[entry["icon"]]}{escape(entry["label"])}</a>'
+        )
         for entry in source_entries(item)
     ]
     if not parts:

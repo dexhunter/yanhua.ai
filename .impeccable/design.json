@@ -1,0 +1,223 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-10-27T22:05:00Z",
+  "title": "Design System: 演化日报",
+  "extensions": {
+    "colorMeta": {
+      "paper": {
+        "role": "neutral",
+        "displayName": "Warm paper",
+        "canonical": "#f4efe6",
+        "tonalRamp": ["#14110c", "#2c2823", "#46423b", "#615d55", "#7e7a72", "#a29e95", "#c8c3bb", "#edebe6"]
+      },
+      "raised": {
+        "role": "neutral",
+        "displayName": "Raised sheet",
+        "canonical": "#fbf7f0",
+        "tonalRamp": ["#14110d", "#2b2924", "#45423c", "#605d57", "#7d7a74", "#a29e97", "#c7c4bd", "#edebe7"]
+      },
+      "ink": {
+        "role": "neutral",
+        "displayName": "Ink",
+        "canonical": "#1b1714",
+        "tonalRamp": ["#14110e", "#2c2825", "#46413e", "#615c59", "#7e7975", "#a39d99", "#c9c3bf", "#eeeae8"]
+      },
+      "muted": {
+        "role": "neutral",
+        "displayName": "Muted ink",
+        "canonical": "#5c5348",
+        "tonalRamp": ["#161009", "#2e281f", "#494136", "#655c51", "#82796d", "#a79d90", "#cdc2b6", "#f0eae3"]
+      },
+      "line": {
+        "role": "neutral",
+        "displayName": "Hairline",
+        "canonical": "#ddd4c6",
+        "tonalRamp": ["#161108", "#2e281f", "#494136", "#645c50", "#81796c", "#a69d90", "#ccc3b5", "#efeae3"]
+      },
+      "lacquer": {
+        "role": "primary",
+        "displayName": "Lacquer",
+        "canonical": "#8e2f27",
+        "tonalRamp": ["#340000", "#530303", "#791a15", "#9a3a31", "#bb584d", "#e47c70", "#ffa294", "#ffdad0"]
+      },
+      "lacquer-ink": {
+        "role": "primary",
+        "displayName": "Lacquer ink",
+        "canonical": "#7a241e",
+        "tonalRamp": ["#320000", "#500907", "#75201a", "#963e35", "#b75b51", "#df8074", "#ffa598", "#ffdbd3"]
+      },
+      "wash": {
+        "role": "neutral",
+        "displayName": "Conclusion wash",
+        "canonical": "#f6e6e1",
+        "tonalRamp": ["#180f0c", "#302623", "#4c3f3b", "#685a56", "#857772", "#aa9b96", "#d0c0bb", "#f2e9e6"]
+      },
+      "good": {
+        "role": "secondary",
+        "displayName": "Verified green",
+        "canonical": "#14633c",
+        "tonalRamp": ["#001b02", "#003416", "#00512b", "#226e46", "#438c62", "#68b185", "#8ed7aa", "#cff7dd"]
+      },
+      "on-lacquer": {
+        "role": "neutral",
+        "displayName": "On lacquer",
+        "canonical": "#fffaf6",
+        "tonalRamp": ["#14110f", "#2b2826", "#45413e", "#615d59", "#7e7976", "#a29d9a", "#c8c3bf", "#edeae8"]
+      }
+    },
+    "typographyMeta": {
+      "display": { "displayName": "Display", "purpose": "Masthead title only." },
+      "headline": { "displayName": "Headline", "purpose": "Card titles." },
+      "title": { "displayName": "Title", "purpose": "The serif conclusion." },
+      "body": { "displayName": "Body", "purpose": "Default UI and mechanism copy." },
+      "label": { "displayName": "Label", "purpose": "Rail headings, the seal, and ledger labels. Never below 0.72rem." },
+      "mono": { "displayName": "Mono", "purpose": "arXiv ids, counts, and source links. JetBrains Mono." }
+    },
+    "shadows": [
+      {
+        "name": "card-in-hand",
+        "value": "0 1px 0 rgb(28 23 18 / 5%), 0 24px 44px -28px rgb(28 23 18 / 48%)",
+        "purpose": "Flash-card sheet and modal dialogs."
+      },
+      {
+        "name": "window",
+        "value": "0 22px 54px -12px rgb(0 0 0 / 42%), 0 4px 14px -2px rgb(0 0 0 / 18%)",
+        "purpose": "Subscribe window only."
+      }
+    ],
+    "motion": [
+      {
+        "name": "source-hover",
+        "value": "150ms cubic-bezier(0.22, 1, 0.36, 1)",
+        "purpose": "Source-link color, border, and ground."
+      },
+      {
+        "name": "card-flip",
+        "value": "560ms cubic-bezier(0.16, 1, 0.3, 1)",
+        "purpose": "The one authored motion: turning a flash card."
+      }
+    ],
+    "breakpoints": [
+      { "name": "rail-stack", "value": "900px" },
+      { "name": "compact-mast", "value": "640px" }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Ink button for the flip control and subscribe submit.",
+      "html": "<button class=\"ds-btn-primary\">翻转卡片</button>",
+      "css": ".ds-btn-primary { appearance: none; border: 1px solid #1b1714; background: #1b1714; color: #f4efe6; padding: 0.42rem 0.7rem; font-family: \"Noto Sans SC\", sans-serif; font-size: 0.86rem; cursor: pointer; transition: background-color 150ms cubic-bezier(0.22, 1, 0.36, 1), color 150ms cubic-bezier(0.22, 1, 0.36, 1), border-color 150ms cubic-bezier(0.22, 1, 0.36, 1); } .ds-btn-primary:hover { background: #8e2f27; border-color: #8e2f27; color: #fffaf6; } .ds-btn-primary:focus-visible { outline: 2px solid #8e2f27; outline-offset: 2px; }"
+    },
+    {
+      "name": "Secondary Button",
+      "kind": "button",
+      "refersTo": "button-secondary",
+      "description": "Hairline button for previous and next on the deck.",
+      "html": "<button class=\"ds-btn-secondary\">下一张</button>",
+      "css": ".ds-btn-secondary { appearance: none; border: 1px solid #ddd4c6; background: #fbf7f0; color: #1b1714; padding: 0.42rem 0.7rem; font-family: \"Noto Sans SC\", sans-serif; font-size: 0.86rem; cursor: pointer; transition: background-color 150ms cubic-bezier(0.22, 1, 0.36, 1), color 150ms cubic-bezier(0.22, 1, 0.36, 1), border-color 150ms cubic-bezier(0.22, 1, 0.36, 1); } .ds-btn-secondary:hover { background: #8e2f27; border-color: #8e2f27; color: #fffaf6; } .ds-btn-secondary:focus-visible { outline: 2px solid #8e2f27; outline-offset: 2px; } .ds-btn-secondary:disabled { opacity: 0.45; cursor: not-allowed; }"
+    },
+    {
+      "name": "Source Link",
+      "kind": "custom",
+      "refersTo": "source-link",
+      "description": "Paper, repository, or post link that ends a card.",
+      "html": "<a class=\"ds-source\" href=\"#\"><svg width=\"14\" height=\"14\" viewBox=\"0 0 14 14\" aria-hidden=\"true\"><path d=\"M3.2 1.7h5l2.6 2.6v8H3.2z\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\" stroke-linejoin=\"round\"/><path d=\"M8.1 1.8v2.6h2.6M5 7.2h4M5 9.3h3.2\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg><span>论文 arXiv:2610.35579</span></a>",
+      "css": ".ds-source { display: inline-flex; align-items: center; gap: 0.38rem; border: 1px solid #ddd4c6; border-radius: 0.3rem; background: #fbf7f0; color: #1b1714; padding: 0.38rem 0.65rem; font-family: \"JetBrains Mono\", ui-monospace, monospace; font-size: 0.8rem; line-height: 1.35; text-decoration: none; transition: color 150ms cubic-bezier(0.22, 1, 0.36, 1), border-color 150ms cubic-bezier(0.22, 1, 0.36, 1), background-color 150ms cubic-bezier(0.22, 1, 0.36, 1); } .ds-source svg { width: 14px; height: 14px; flex: none; display: block; } .ds-source:hover { border-color: #8e2f27; color: #7a241e; background: #f6e6e1; } .ds-source:focus-visible { outline: 2px solid #8e2f27; outline-offset: 2px; }"
+    },
+    {
+      "name": "Conclusion",
+      "kind": "custom",
+      "refersTo": "verdict",
+      "description": "Serif lead on a warm wash, with an inline lacquer seal.",
+      "html": "<aside class=\"ds-verdict\"><p class=\"ds-verdict-text\"><span class=\"ds-seal\">一句话结论</span> 只要把验证器与提议智能体严格隔离，推理预算也能搜出可核对的结果。</p></aside>",
+      "css": ".ds-verdict { background: #f6e6e1; border: 1px solid color-mix(in srgb, #8e2f27 24%, #ddd4c6); border-radius: 0.375rem; padding: 0.95rem 1.05rem 1.05rem; } .ds-verdict-text { margin: 0; font-family: \"Noto Serif SC\", serif; font-size: 1.15rem; font-weight: 500; line-height: 1.65; color: #1b1714; } .ds-seal { display: inline-block; margin: 0 0.5rem 0 0; padding: 0.1rem 0.48rem 0.14rem; border-radius: 999px; background: #8e2f27; color: #fffaf6; font-family: \"Noto Sans SC\", sans-serif; font-size: 0.72rem; font-weight: 600; letter-spacing: 0.02em; line-height: 1.45; vertical-align: 0.14em; }"
+    },
+    {
+      "name": "Search",
+      "kind": "input",
+      "refersTo": "search",
+      "description": "Rail search for title, arXiv id, author, or handle.",
+      "html": "<input class=\"ds-search\" type=\"search\" placeholder=\"搜索标题、arXiv、作者\" aria-label=\"搜索\">",
+      "css": ".ds-search { width: 16rem; background: #fbf7f0; border: 1px solid #ddd4c6; color: #1b1714; padding: 0.55rem 0.65rem; font-family: \"Noto Sans SC\", sans-serif; font-size: 1rem; caret-color: #8e2f27; } .ds-search::placeholder { color: #5c5348; } .ds-search:focus-visible { outline: 2px solid #8e2f27; outline-offset: 2px; }"
+    },
+    {
+      "name": "Topic Chip",
+      "kind": "chip",
+      "refersTo": "chip",
+      "description": "A rail topic. Pressed state adds a lacquer dot.",
+      "html": "<button class=\"ds-chip\" aria-pressed=\"true\">框架搜索</button>",
+      "css": ".ds-chip { display: inline-flex; align-items: center; gap: 0.45rem; border: 0; background: transparent; color: #1b1714; padding: 0.28rem 0.1rem; font-family: \"Noto Sans SC\", sans-serif; font-size: 0.92rem; cursor: pointer; } .ds-chip[aria-pressed=\"true\"]::before { content: \"\"; width: 0.38rem; height: 0.38rem; border-radius: 50%; background: #8e2f27; } .ds-chip:focus-visible { outline: 2px solid #8e2f27; outline-offset: 2px; }"
+    },
+    {
+      "name": "Stats Strip",
+      "kind": "custom",
+      "refersTo": "stats-strip",
+      "description": "Publication counts from the digest: cards, editions, papers.",
+      "html": "<button class=\"ds-stats\" type=\"button\"><span>卡片总数 <b>54</b></span><span>期数 <b>8</b></span><span>收录论文 <b>31</b></span></button>",
+      "css": ".ds-stats { display: inline-flex; flex-wrap: wrap; gap: 0.35rem 0.7rem; border: 1px solid #ddd4c6; background: #fbf7f0; padding: 0.32rem 0.65rem; font-family: \"JetBrains Mono\", ui-monospace, monospace; font-size: 0.75rem; font-variant-numeric: tabular-nums; color: #5c5348; cursor: pointer; } .ds-stats b { font-weight: 600; color: #7a241e; } .ds-stats:hover { border-color: #8e2f27; } .ds-stats:focus-visible { outline: 2px solid #8e2f27; outline-offset: 2px; }"
+    },
+    {
+      "name": "Segmented Control",
+      "kind": "nav",
+      "refersTo": "button-secondary",
+      "description": "Mode and language switch in the masthead.",
+      "html": "<div class=\"ds-seg\" role=\"group\" aria-label=\"语言\"><button type=\"button\" aria-pressed=\"true\">中文</button><button type=\"button\" aria-pressed=\"false\">EN</button></div>",
+      "css": ".ds-seg { display: inline-flex; border: 1px solid #ddd4c6; background: #fbf7f0; } .ds-seg button { appearance: none; border: 0; background: transparent; color: #5c5348; padding: 0.42rem 0.7rem; font-family: \"Noto Sans SC\", sans-serif; font-size: 0.86rem; cursor: pointer; } .ds-seg button + button { border-left: 1px solid #ddd4c6; } .ds-seg button[aria-pressed=\"true\"] { background: #1b1714; color: #f4efe6; } .ds-seg button:focus-visible { outline: 2px solid #8e2f27; outline-offset: 2px; }"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Lacquer Gazette",
+    "overview": "演化日报 is a research daily printed on warm paper. The frame — masthead, rail, ground, and the vermilion seal — belongs to that gazette. The column inside it stays a document: a serif lead, a sans body, a measure near 68 characters, and headings that can be scanned. Vermilion is rare. It marks the seal on a conclusion, the current item in the rail, and a link the reader is about to follow.\n\nThe north star is read from the shipped interface: paper #f4efe6, lacquer #8e2f27, Noto Serif SC for the lead, Noto Sans SC for the UI. Dark scheme swaps the same roles rather than inventing a second palette. The name \"The Lacquer Gazette\" was not chosen in a separate interview.\n\nDensity is editorial, not dashboard. A card is one study. Metrics sit in a ledger row. Source links are the last line of the card. Flash cards use one turn, the flip, and otherwise stay still.",
+    "keyCharacteristics": [
+      "Warm paper ground, ink text, one vermilion used as a seal.",
+      "Serif for the masthead, the card title, and the conclusion. Sans for the rail, labels, and body of the mechanism.",
+      "A 1px hairline is the divider. Metrics are a row, not a stack of boxes.",
+      "Icons are drawn at 14px. The page does not use emoji as icons.",
+      "Nothing set smaller than 0.72rem (11.52px at a 16px root)."
+    ],
+    "rules": [
+      {
+        "name": "The Seal Rule",
+        "body": "Lacquer is a seal, a word, or a 1px hairline. It is not a stripe down the side of a card. A border-left or border-right thicker than 1px is not part of this system.",
+        "section": "colors"
+      },
+      {
+        "name": "The One Voice Rule",
+        "body": "On a card, lacquer shows up on the seal, the section labels, and the source the pointer is on. The rest of the card is ink on paper.",
+        "section": "colors"
+      },
+      {
+        "name": "The Floor Rule",
+        "body": "No font-size on this site is below 0.72rem. At a 16px root that is 11.52px. The seal, the ledger label, and the rail heading sit on that floor and do not go under it.",
+        "section": "typography"
+      },
+      {
+        "name": "The Serif Lead Rule",
+        "body": "The conclusion is the serif. UI labels beside it stay sans, small, and inline, so the sentence remains the heading of that block.",
+        "section": "typography"
+      },
+      {
+        "name": "The Flat Column Rule",
+        "body": "A card in the reader does not wear a shadow. If a surface needs to lift, it is the card being held (the flash card) or a window over the page.",
+        "section": "elevation"
+      }
+    ],
+    "dos": [
+      "Do set the conclusion as a serif lead on the wash, with the seal inline at 0.72rem.",
+      "Do separate the problem and the mechanism from the conclusion with a 1px hairline and more space above the headings than below them.",
+      "Do end the card on the source links, with a 14px drawn icon and a 150ms hover.",
+      "Do keep mono for ids, counts, and source labels, and tabular figures in the ledger and the stats strip.",
+      "Do keep every font size at or above 0.72rem."
+    ],
+    "donts": [
+      "Don't put a lacquer stripe thicker than 1px on the left or right of a card, a callout, or a list row.",
+      "Don't wrap a metric in its own bordered card inside the study card.",
+      "Don't use an emoji or a Unicode dingbat as an icon. Draw the mark.",
+      "Don't set a label above the card title. The title is the heading. The seal belongs inside the conclusion.",
+      "Don't add a shadow to every card in the reader. Lift only the flash card and the windows."
+    ]
+  }
+}
