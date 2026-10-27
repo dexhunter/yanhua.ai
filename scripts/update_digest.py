@@ -3,6 +3,7 @@
 
 Source of truth: data/digests.json
 Regenerates:     data/digests.js, feed.xml, feed.json
+                 and the ?v= cache token on local assets in index.html
 
 Usage
 -----
@@ -58,12 +59,20 @@ DATA = ROOT / "data" / "digests.json"
 JS = ROOT / "data" / "digests.js"
 RSS = ROOT / "feed.xml"
 JSON_FEED = ROOT / "feed.json"
+INDEX = ROOT / "index.html"
 SITE = "https://yanhua.ai"
+ASSET_RE = re.compile(
+    r'(?P<prefix>(?:href|src)=")/(?P<path>assets/app\.css|assets/app\.js|data/config\.js|data/digests\.js)(?:\?v=[^"]*)?"'
+)
 
 REQUIRED_I18N = ("title", "what", "how", "why", "metric")
 SENTENCE_BOUNDS = {"what": (1, 1), "how": (1, 2), "why": (1, 1)}
 SLOTS = {"morning": (9, 0), "evening": (18, 0), "": (12, 0)}
-HANDLE_RE = re.compile(r"@([A-Za-z0-9_]{1,15})")
+# A real @mention: not glued to a metric or email (PR@1, pass@1, user@domain.com),
+# not a bare @1, and not followed by .tld.
+HANDLE_RE = re.compile(
+    r"(?<![A-Za-z0-9_.-])@(?=[A-Za-z0-9_]*[A-Za-z_])([A-Za-z0-9_]{1,15})(?![A-Za-z0-9_])(?!\.[A-Za-z0-9_])"
+)
 X_URL_RE = re.compile(
     r"^https?://(?:www\.)?(?:x|twitter)\.com/([A-Za-z0-9_]{1,15})(?:/status/(\d+))?/?(?:[?#].*)?$",
     re.IGNORECASE,
@@ -227,9 +236,33 @@ def item_html(item: dict) -> str:
     return zh + en + source_html(item)
 
 
+def cache_token(doc: dict) -> str:
+    edition = ""
+    editions = doc.get("editions") or []
+    if editions and isinstance(editions[0], dict):
+        edition = re.sub(r"[^A-Za-z0-9._-]", "", str(editions[0].get("id") or ""))
+    stamp = datetime.now(timezone.utc).strftime("%Y%m%dT%H%M%SZ")
+    return f"{edition}-{stamp}" if edition else stamp
+
+
+def bust_asset_urls(doc: dict) -> None:
+    if not INDEX.is_file():
+        return
+    token = cache_token(doc)
+    html = INDEX.read_text(encoding="utf-8")
+
+    def repl(match: re.Match[str]) -> str:
+        return f'{match.group("prefix")}/{match.group("path")}?v={token}"'
+
+    updated, count = ASSET_RE.subn(repl, html)
+    if count and updated != html:
+        INDEX.write_text(updated, encoding="utf-8")
+
+
 def write_js(doc: dict) -> None:
     payload = json.dumps(doc, ensure_ascii=False, indent=2)
     JS.write_text(f"window.YANHUA_DIGESTS = {payload};\n", encoding="utf-8")
+    bust_asset_urls(doc)
 
 
 def write_feeds(doc: dict) -> None:
