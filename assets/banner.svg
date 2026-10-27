@@ -40,7 +40,7 @@
   <text class="mono" x="48" y="544" fill="#1b1714" font-size="22" font-weight="500">09:00</text>
   <text class="serif" x="126" y="542" fill="#8e2f27" font-size="18">&amp;</text>
   <text class="mono" x="152" y="544" fill="#1b1714" font-size="22" font-weight="500">18:00</text>
-  <text class="sans" x="234" y="542" fill="#1b1714" font-size="18">London · 每日晚间合辑邮件</text>
+  <text class="sans" x="234" y="542" fill="#1b1714" font-size="18">UTC+0 · 每日晚间合辑邮件</text>
   <rect x="648" y="44" width="588" height="552" fill="#fbf7f0"/>
   <rect x="648" y="44" width="588" height="1" fill="#d5cbbd"/>
   <rect x="648" y="595" width="588" height="1" fill="#d5cbbd"/>

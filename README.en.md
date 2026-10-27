@@ -4,7 +4,7 @@
 
 <p align="center">
   <a href="https://yanhua.ai"><img src="https://img.shields.io/badge/Live_Site-yanhua.ai-8e2f27?style=for-the-badge" alt="Live Site"></a>
-  <a href="https://yanhua.ai"><img src="https://img.shields.io/badge/Cadence-09%3A00%20%26%2018%3A00%20London-1b1714?style=for-the-badge" alt="09:00 &amp; 18:00 London"></a>
+  <a href="https://yanhua.ai"><img src="https://img.shields.io/badge/Cadence-09%3A00%20%26%2018%3A00%20UTC%2B0-1b1714?style=for-the-badge" alt="09:00 &amp; 18:00 UTC+0"></a>
   <a href="https://yanhua.ai"><img src="https://img.shields.io/badge/Daily_Email-Resend%20%C2%B7%20%E6%AF%8F%E6%97%A5%E5%90%88%E8%BE%91-14633c?style=for-the-badge" alt="Resend · 每日合辑"></a>
   <a href="https://yanhua.ai/feed.xml"><img src="https://img.shields.io/badge/RSS_/_Atom-feed.xml-b85d19?style=for-the-badge" alt="RSS / Atom"></a>
   <a href="https://yanhua.ai/data/digests.json"><img src="https://img.shields.io/badge/JSON_Feed-digests.json-1e4e79?style=for-the-badge" alt="JSON Feed"></a>
@@ -18,7 +18,7 @@
 
 ## ❯❯ What is Yanhua Daily
 
-**Yanhua Daily** (演化日报) is a bilingual research daily at [yanhua.ai](https://yanhua.ai). It follows agents that rewrite their own harnesses, with an edition at 09:00 and another at 18:00 Europe/London. The site defaults to Simplified Chinese. English is the same edition behind one toggle.
+**Yanhua Daily** (演化日报) is a bilingual research daily at [yanhua.ai](https://yanhua.ai). It follows agents that rewrite their own harnesses, with an edition at 09:00 and another at 18:00 UTC+0. The site defaults to Simplified Chinese. English is the same edition behind one toggle.
 
 Each card opens with one sentence you can finish: what improved, by how much, and why the mechanism holds. The problem, the method, and the checkable numbers come after that. Sources resolve to the paper, the repository, or the original post.
 

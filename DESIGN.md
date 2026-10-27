@@ -254,7 +254,7 @@ Corners are mostly square, like a newspaper. The exceptions are small and named:
 - **Mobile:** the rail becomes a wrapping row under the masthead. The theme control keeps its icon and hides the word.
 
 ### Stats
-- **Style:** a mono strip of three publication counts — cards, editions, papers indexed. The dialog adds visitors, views, and subscribers, then repeats the publication counts, then one sentence on the 09:00 and 18:00 London cadence.
+- **Style:** a mono strip of three publication counts — cards, editions, papers indexed. The dialog adds visitors, views, and subscribers, then repeats the publication counts, then one sentence on the 09:00 and 18:00 UTC+0 cadence.
 
 ## Do's and Don'ts
 
