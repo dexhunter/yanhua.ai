@@ -1,0 +1,81 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 640" width="1280" height="640" role="img" aria-labelledby="bannerTitle">
+  <title id="bannerTitle">演化 · yanhua.ai — Recursive Self-Improvement &amp; Agent Harness Search Daily Digest</title>
+  <style>
+    .serif { font-family: "Noto Serif CJK SC", "Noto Serif SC", serif; }
+    .sans { font-family: "Noto Sans CJK SC", "Noto Sans SC", sans-serif; }
+    .mono { font-family: "JetBrains Mono", "Noto Sans CJK SC", ui-monospace, monospace; font-variant-numeric: tabular-nums; }
+  </style>
+  <rect width="1280" height="640" fill="#f4efe6"/>
+  <rect x="44" y="28" width="1192" height="1" fill="#c9bfb0"/>
+  <rect x="44" y="611" width="1192" height="1" fill="#c9bfb0"/>
+  <g transform="translate(48 50) scale(1.6875)">
+    <rect x="3" y="3" width="58" height="58" rx="14" fill="#fbf7f0" stroke="#c9bfb0" stroke-width="1.15"/>
+    <path d="M12.5 21V14.5a2 2 0 0 1 2-2H21M51.5 21V14.5a2 2 0 0 0-2-2H43M12.5 43v6.5a2 2 0 0 0 2 2H21M51.5 43v6.5a2 2 0 0 1-2 2H43" fill="none" stroke="#1b1714" stroke-opacity="0.82" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M 24.72 45.69 A 15.5 15.5 0 0 1 36.79 17.26" fill="none" stroke="#1b1714" stroke-width="5" stroke-linecap="round"/>
+    <path d="M 30.70 19.24 L 36.79 17.26 L 33.03 12.08" fill="none" stroke="#1b1714" stroke-width="4.4" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M 39.28 18.31 A 15.5 15.5 0 0 1 27.21 46.74" fill="none" stroke="#8e2f27" stroke-width="5" stroke-linecap="round"/>
+    <path d="M 33.30 44.76 L 27.21 46.74 L 30.97 51.92" fill="none" stroke="#8e2f27" stroke-width="4.4" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M32 23.2L35.2 28.8L40.8 32L35.2 35.2L32 40.8L28.8 35.2L23.2 32L28.8 28.8Z" fill="#8e2f27"/>
+    <circle cx="32" cy="32" r="2.3" fill="#fbf7f0"/>
+  </g>
+  <text class="serif" x="176" y="147" fill="#1b1714" font-size="86" font-weight="600" letter-spacing="-0.02em">演化</text>
+  <text class="serif" x="362.3" y="139" fill="#8e2f27" font-size="34" font-weight="500">·</text>
+  <text class="serif" x="387.5" y="147" fill="#1b1714" font-size="34" font-weight="500">yanhua.ai</text>
+  <rect x="570.7" y="116" width="45.5" height="22" rx="3" fill="#e5d2c9" stroke="#d0aca3" stroke-width="1"/>
+  <text class="mono" x="593.5" y="131" fill="#7a241e" font-size="13" font-weight="600" letter-spacing="0.08em" text-anchor="middle">RSI</text>
+  <text class="sans" x="48" y="214" fill="#1b1714" font-size="22" font-weight="500">递归自我改进与智能体框架搜索 · 每日双语研究闪卡</text>
+  <text class="sans" x="48" y="250" fill="#1b1714" font-size="18">Recursive Self-Improvement &amp; Agent Harness Search</text>
+  <text class="sans" x="48" y="276" fill="#1b1714" font-size="18">· Daily Bilingual Research Flash-Cards</text>
+  <rect x="48" y="312" width="540" height="1" fill="#c9bfb0"/>
+  <text class="sans" x="48" y="340" fill="#1b1714" font-size="18" font-weight="500">递归自我改进</text>
+  <text class="sans" x="308" y="340" fill="#1b1714" font-size="18" font-weight="500">测试时计算扩展</text>
+  <text class="sans" x="48" y="362" fill="#5c5348" font-size="15">Recursive Self-Improvement</text>
+  <text class="sans" x="308" y="362" fill="#5c5348" font-size="15">Test-Time Compute Scaling</text>
+  <rect x="48" y="382" width="540" height="1" fill="#c9bfb0"/>
+  <text class="sans" x="48" y="410" fill="#1b1714" font-size="18" font-weight="500">智能体框架搜索</text>
+  <text class="sans" x="308" y="410" fill="#1b1714" font-size="18" font-weight="500">自演化代码与具身智能体</text>
+  <text class="sans" x="48" y="432" fill="#5c5348" font-size="15">Agent Harness Search</text>
+  <text class="sans" x="308" y="432" fill="#5c5348" font-size="15">Self-Evolving Code &amp; Embodied Agents</text>
+  <rect x="48" y="508" width="540" height="1" fill="#c9bfb0"/>
+  <text class="mono" x="48" y="544" fill="#1b1714" font-size="22" font-weight="500">09:00</text>
+  <text class="serif" x="126" y="542" fill="#8e2f27" font-size="18">&amp;</text>
+  <text class="mono" x="152" y="544" fill="#1b1714" font-size="22" font-weight="500">18:00</text>
+  <text class="sans" x="234" y="542" fill="#1b1714" font-size="18">London · 每日晚间合辑邮件</text>
+  <rect x="648" y="44" width="588" height="552" fill="#fbf7f0"/>
+  <rect x="648" y="44" width="588" height="1" fill="#d5cbbd"/>
+  <rect x="648" y="595" width="588" height="1" fill="#d5cbbd"/>
+  <rect x="648" y="44" width="1" height="552" fill="#d5cbbd"/>
+  <rect x="1235" y="44" width="1" height="552" fill="#d5cbbd"/>
+  <rect x="654" y="50" width="576" height="1" fill="#e4dcd0"/>
+  <rect x="654" y="589" width="576" height="1" fill="#e4dcd0"/>
+  <rect x="654" y="50" width="1" height="540" fill="#e4dcd0"/>
+  <rect x="1229" y="50" width="1" height="540" fill="#e4dcd0"/>
+  <text class="serif" x="676" y="100" fill="#1b1714" font-size="28" font-weight="600" letter-spacing="-0.02em">Prime Agent</text>
+  <text class="mono" x="1208" y="98" fill="#5c5348" font-size="13" font-weight="500" letter-spacing="0.04em" text-anchor="end">26 Oct 2026 · 晚间</text>
+  <text class="sans" x="676" y="128" fill="#1b1714" font-size="16">持续存在的 RLM harness</text>
+  <rect x="676" y="148" width="532" height="1" fill="#e4dcd0"/>
+  <rect x="655" y="156" width="574" height="172" fill="#f6e6e1"/>
+  <text class="sans" x="676" y="182" fill="#7a241e" font-size="15" font-weight="600">一句话结论 · 1-Sentence Takeaway</text>
+  <text class="serif" x="676" y="216" fill="#1b1714" font-size="22">这层低摩擦的执行膜把 ARC-AGI-3 的</text>
+  <text class="serif" x="676" y="246" fill="#1b1714" font-size="22">RHAE Best@1 从 30% 抬到 95.5%，</text>
+  <text class="serif" x="676" y="276" fill="#1b1714" font-size="22">因为 harness 故障不再被记成模型故障，</text>
+  <text class="serif" x="676" y="306" fill="#1b1714" font-size="22">测量才靠近模型真实的上限。</text>
+  <text class="sans" x="676" y="356" fill="#7a241e" font-size="15" font-weight="600">关键指标 · Tabular Metrics</text>
+  <text class="mono" x="676" y="384" fill="#5c5348" font-size="13" font-weight="500" letter-spacing="0.06em">指标 · METRIC</text>
+  <text class="mono" x="1208" y="384" fill="#5c5348" font-size="13" font-weight="500" letter-spacing="0.06em" text-anchor="end">数值 · VALUE</text>
+  <rect x="676" y="396" width="532" height="1" fill="#e4dcd0"/>
+  <text class="sans" x="676" y="424" fill="#1b1714" font-size="17">ARC-AGI-3 RHAE Best@1</text>
+  <text class="mono" x="1208" y="426" fill="#14633c" font-size="22" font-weight="500" text-anchor="end">30% → 95.5%</text>
+  <rect x="676" y="440" width="532" height="1" fill="#e4dcd0"/>
+  <text class="sans" x="676" y="470" fill="#7a241e" font-size="15" font-weight="600">问题与核心机制 · Problem &amp; Mechanism</text>
+  <text class="sans" x="676" y="498" fill="#1b1714" font-size="17">长程行动需要的信息与计算，超出权重与当前上下文。</text>
+  <text class="sans" x="676" y="524" fill="#1b1714" font-size="17">持久的 REPL 做测试时计算，harness 负责执行、恢复与验证。</text>
+  <rect x="676" y="540" width="532" height="1" fill="#e4dcd0"/>
+  <text class="sans" x="676" y="562" fill="#7a241e" font-size="15" font-weight="600">来源 · Sources</text>
+  <text class="mono" x="676" y="584" fill="#7a241e" font-size="14" font-weight="500">arXiv</text>
+  <text class="mono" x="726.0" y="584" fill="#1b1714" font-size="14" font-weight="500">2608.23552</text>
+  <text class="mono" x="846.0" y="584" fill="#7a241e" font-size="14" font-weight="500">GitHub</text>
+  <text class="mono" x="904.4" y="584" fill="#1b1714" font-size="14" font-weight="500">prime-agent</text>
+  <text class="mono" x="1032.8" y="584" fill="#7a241e" font-size="14" font-weight="500">X</text>
+  <text class="mono" x="1049.2" y="584" fill="#1b1714" font-size="14" font-weight="500">@primeintellect</text>
+</svg>
