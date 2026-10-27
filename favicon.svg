@@ -1,7 +1,14 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="">
-  <rect width="64" height="64" rx="14" fill="#1b1714"/>
-  <path d="M32 44.5c-7.4 0-12.5-4.2-12.5-10.2 0-4.6 3-7.8 7.2-8.6" fill="none" stroke="#f4efe6" stroke-width="3.2" stroke-linecap="round"/>
-  <path d="M32 19.5c7.4 0 12.5 4.2 12.5 10.2 0 4.6-3 7.8-7.2 8.6" fill="none" stroke="#e07a68" stroke-width="3.2" stroke-linecap="round"/>
-  <path d="M26.7 25.7c2.2-3.4 5.3-5.2 8.8-5.2 6.2 0 10.2 4.4 10.2 10.1 0 7.4-5.4 13.9-13.7 13.9-6.2 0-10.2-4.4-10.2-10.1 0-2.2.6-4.2 1.7-5.9" fill="none" stroke="#e07a68" stroke-width="3.2" stroke-linecap="round"/>
-  <circle cx="44.2" cy="18.2" r="2.3" fill="#e07a68"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64" role="img" aria-label="演化日报 · Yanhua.ai">
+  <rect width="64" height="64" rx="14" fill="#181412"/>
+  <path d="M 21.14 49.38 A 20.5 20.5 0 0 1 36.96 12.11"
+        fill="none" stroke="#f7f2e8" stroke-width="6.8" stroke-linecap="round"/>
+  <path d="M 28.99 15.33 L 36.96 12.11 L 31.43 5.52"
+        fill="none" stroke="#f7f2e8" stroke-width="6.2" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M 42.86 14.62 A 20.5 20.5 0 0 1 27.04 51.89"
+        fill="none" stroke="#ef644c" stroke-width="6.8" stroke-linecap="round"/>
+  <path d="M 35.01 48.67 L 27.04 51.89 L 32.57 58.48"
+        fill="none" stroke="#ef644c" stroke-width="6.2" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M32 20.5L36.2 27.8L43.5 32L36.2 36.2L32 43.5L27.8 36.2L20.5 32L27.8 27.8Z"
+        fill="#ef644c"/>
+  <circle cx="32" cy="32" r="3.4" fill="#f7f2e8"/>
 </svg>

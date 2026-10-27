@@ -18,6 +18,9 @@
       subscribe: "订阅",
       subscribeTitle: "订阅演化日报",
       subscribeLead: "留下邮箱。日报用中文写成，也可以只收英文，或两份都收。",
+      toastTitle: "订阅演化日报",
+      toastLead: "觉得有用？留下邮箱，每日更新直达收件箱。",
+      dismiss: "关闭",
       slipTitle: "订阅日报",
       slipBody: "每天一版。中文为主，可选英文或双语。RSS 同样开放。",
       email: "邮箱",
@@ -42,9 +45,9 @@
       topics: "主题",
       allTopics: "全部主题",
       savedOnly: "只看收藏",
-      what: "01 · 问题与定位",
-      how: "02 · 核心机制",
-      why: "03 · 核心结论与深层原因",
+      what: "问题背景 · Problem",
+      how: "核心机制与实证 · How & Evidence",
+      why: "核心结论 · TAKEAWAY",
       read: "标为已读",
       unread: "标为未读",
       readMark: "已读",
@@ -53,8 +56,8 @@
       prev: "上一张",
       next: "下一张",
       flip: "翻面",
-      frontHint: "空格或点击卡片，翻到机制与结论。",
-      backHint: "空格返回问题与指标。",
+      frontHint: "空格或点击卡片，翻到问题与机制。",
+      backHint: "空格返回结论与指标。",
       keys: "← → 换卡   空格翻面",
       emptyTitle: "没有匹配的卡片",
       emptyBody: "换一个关键词，或清除筛选。",
@@ -66,7 +69,17 @@
       rss: "RSS",
       json: "JSON",
       paper: "论文",
-      source: "来源"
+      source: "来源",
+      visitors: "访客",
+      views: "阅读",
+      subscribers: "订阅",
+      statsTitle: "站点统计",
+      statsLead: "访客和阅读来自公开计数器。订阅数是 Resend 名册里的人数。",
+      failed: "没有送出。请再试一次。",
+      issueList: "在 GitHub 查看订阅",
+      analyticsConfig: "配置外部统计",
+      localRead: "本机已读",
+      localSaved: "本机收藏"
     },
     en: {
       docTitle: "Yanhua Daily · RSI & Harness Search",
@@ -79,6 +92,9 @@
       subscribe: "Subscribe",
       subscribeTitle: "Subscribe to Yanhua Daily",
       subscribeLead: "Leave an email. The daily is written in Chinese. You can take English only, or both.",
+      toastTitle: "Subscribe to Yanhua Daily",
+      toastLead: "Enjoying the cards? Get new editions by email.",
+      dismiss: "Dismiss",
       slipTitle: "Subscribe",
       slipBody: "One edition a day. Chinese by default, English or bilingual if you prefer. RSS is open too.",
       email: "Email",
@@ -103,9 +119,9 @@
       topics: "Topics",
       allTopics: "All topics",
       savedOnly: "Bookmarks",
-      what: "01 · Problem",
-      how: "02 · Mechanism",
-      why: "03 · Conclusion",
+      what: "Problem",
+      how: "How & Evidence",
+      why: "TAKEAWAY",
       read: "Mark read",
       unread: "Mark unread",
       readMark: "Read",
@@ -114,8 +130,8 @@
       prev: "Previous",
       next: "Next",
       flip: "Flip",
-      frontHint: "Press space or click the card for the mechanism and the conclusion.",
-      backHint: "Press space to return to the problem and the numbers.",
+      frontHint: "Press space or click the card for the problem and the mechanism.",
+      backHint: "Press space to return to the conclusion and the numbers.",
       keys: "← → next card    Space flip",
       emptyTitle: "No cards match",
       emptyBody: "Try another query, or clear the filters.",
@@ -127,7 +143,17 @@
       rss: "RSS",
       json: "JSON",
       paper: "Paper",
-      source: "Source"
+      source: "Source",
+      visitors: "Visitors",
+      views: "Views",
+      subscribers: "Subscribers",
+      statsTitle: "Site analytics",
+      statsLead: "Visitors and views come from a public counter. Subscribers is the Resend audience count.",
+      failed: "That did not go through. Try again.",
+      issueList: "View subscriptions on GitHub",
+      analyticsConfig: "Configure external analytics",
+      localRead: "Read on this device",
+      localSaved: "Bookmarked on this device"
     }
   };
 
@@ -150,7 +176,11 @@
   const mast = document.getElementById("mast");
   const rail = document.getElementById("rail");
   const foot = document.getElementById("foot");
-  const dialog = document.getElementById("sub-dialog");
+  const statsDialog = document.getElementById("stats-dialog");
+  const subDialog = document.getElementById("sub-dialog");
+  const VERCOUNT = "https://events.vercount.one/api/v2/log";
+  const SITE = String(config.siteUrl || "https://yanhua.ai").replace(/\/$/, "");
+  const stats = { uv: null, pv: null, subscribers: null };
   let pointer = null;
 
   function loadSet(key) {
@@ -175,10 +205,101 @@
       return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[ch];
     });
   }
-  function paragraphs(text) {
+  const X_URL = /^https?:\/\/(?:www\.)?(?:x|twitter)\.com\/([A-Za-z0-9_]{1,15})(?:\/status\/(\d+))?\/?(?:[?#].*)?$/i;
+  function handleUrlMap(item) {
+    const map = {};
+    (item && item.links || []).forEach(function (link) {
+      const match = X_URL.exec(link.url || "");
+      if (!match) return;
+      const key = match[1].toLowerCase();
+      const prev = map[key];
+      if (!prev || (match[2] && prev.indexOf("/status/") === -1)) map[key] = link.url;
+    });
+    return map;
+  }
+  function linkify(text, item) {
+    const map = handleUrlMap(item || {});
+    return esc(text).replace(/@([A-Za-z0-9_]{1,15})/g, function (_, name) {
+      const href = map[name.toLowerCase()] || ("https://x.com/" + name);
+      return '<a href="' + esc(href) + '" target="_blank" rel="noopener noreferrer">@' + esc(name) + "</a>";
+    });
+  }
+  function paragraphs(text, item) {
     return String(text).split(/\n\n+/).filter(Boolean).map(function (part) {
-      return "<p>" + esc(part.trim()) + "</p>";
+      return "<p>" + linkify(part.trim(), item) + "</p>";
     }).join("");
+  }
+  function arxivIdFrom(url) {
+    const match = String(url).match(/arxiv\.org\/(?:abs|pdf)\/(\d{4}\.\d{4,5})(?:v\d+)?/i);
+    return match ? match[1] : "";
+  }
+  function githubSlug(url) {
+    const match = String(url).match(/^https?:\/\/(?:www\.)?github\.com\/([^/#?\s]+)\/([^/#?\s]+)/i);
+    if (!match) return "";
+    return match[1] + "/" + match[2].replace(/\.git$/, "");
+  }
+  function sourceBag(item) {
+    const raw = (item.links || []).slice();
+    const seen = {};
+    raw.forEach(function (link) { if (link && link.url) seen[link.url] = true; });
+    if (item.arxiv) {
+      const url = "https://arxiv.org/abs/" + item.arxiv;
+      if (!seen[url]) {
+        raw.unshift({ zh: "论文", en: "Paper", url: url });
+        seen[url] = true;
+      }
+    }
+    if (item.repo) {
+      const url = /^https?:\/\//i.test(item.repo) ? item.repo : "https://github.com/" + String(item.repo).replace(/^\//, "");
+      if (!seen[url]) raw.push({ zh: "仓库", en: "Repo", url: url });
+    }
+    const docs = [];
+    const posts = {};
+    raw.forEach(function (link) {
+      if (!link || !link.url) return;
+      const match = X_URL.exec(link.url);
+      if (match) {
+        const key = match[1].toLowerCase();
+        const prev = posts[key];
+        if (!prev || (match[2] && String(prev.url).indexOf("/status/") === -1)) {
+          posts[key] = { handle: match[1], url: link.url };
+        }
+        return;
+      }
+      docs.push(link);
+    });
+    String(item.handle || "").replace(/@([A-Za-z0-9_]{1,15})/g, function (_, name) {
+      const key = name.toLowerCase();
+      if (!posts[key]) posts[key] = { handle: name, url: "https://x.com/" + name };
+      return "";
+    });
+    return { docs: docs, posts: Object.keys(posts).map(function (key) { return posts[key]; }) };
+  }
+  function sourceLabel(link) {
+    const ax = arxivIdFrom(link.url);
+    if (ax) return (state.lang === "zh" ? "📄 论文 arXiv:" : "Paper: arXiv:") + ax + " ↗";
+    const slug = githubSlug(link.url);
+    if (slug) return "💻 GitHub: " + slug + " ↗";
+    const name = tx(link) || (state.lang === "zh" ? "原文" : "Source");
+    return "📄 " + name + " ↗";
+  }
+  function sources(item) {
+    const bag = sourceBag(item);
+    const parts = bag.docs.map(function (link) {
+      return '<a class="source-link" href="' + esc(link.url) + '" target="_blank" rel="noopener noreferrer">' + esc(sourceLabel(link)) + "</a>";
+    }).concat(bag.posts.map(function (post) {
+      return '<a class="source-link" href="' + esc(post.url) + '" target="_blank" rel="noopener noreferrer">𝕏 @' + esc(post.handle) + " ↗</a>";
+    }));
+    return parts.length ? '<div class="source-row">' + parts.join("") + "</div>" : "";
+  }
+  function verdict(item) {
+    return '<aside class="verdict-box"><p class="verdict-kicker">' + esc(t("why")) + '</p><p class="verdict-text">' + linkify(tx(item.why), item) + "</p></aside>";
+  }
+  function contextGrid(item) {
+    return '<div class="context-grid">' +
+      '<section class="context-col"><h4>' + esc(t("what")) + "</h4>" + paragraphs(tx(item.what), item) + "</section>" +
+      '<section class="context-col"><h4>' + esc(t("how")) + "</h4>" + paragraphs(tx(item.how), item) + "</section>" +
+      "</div>";
   }
   function scheme() {
     const meta = document.querySelector('meta[name="color-scheme"]').content;
@@ -234,15 +355,8 @@
     const bits = [];
     if (item.arxiv) bits.push('<a href="https://arxiv.org/abs/' + esc(item.arxiv) + '" target="_blank" rel="noopener noreferrer">' + esc(item.arxiv) + '</a>');
     if (item.authors) bits.push(esc(item.authors));
-    if (item.handle) bits.push(esc(item.handle));
+    if (item.handle) bits.push(linkify(item.handle, item));
     return bits.length ? '<p class="byline">' + bits.join(" · ") + "</p>" : "";
-  }
-  function beats(item) {
-    return '<div class="beats">' +
-      '<section class="beat"><h4>' + esc(t("what")) + '</h4>' + paragraphs(tx(item.what)) + '</section>' +
-      '<section class="beat"><h4>' + esc(t("how")) + '</h4>' + paragraphs(tx(item.how)) + '</section>' +
-      '<section class="beat why"><h4>' + esc(t("why")) + '</h4>' + paragraphs(tx(item.why)) + '</section>' +
-      '</div>';
   }
   function actions(item) {
     const read = state.read.has(item.id);
@@ -254,26 +368,6 @@
       '</div>';
   }
 
-  function slip(idPrefix) {
-    const sub = state.sub;
-    const status = sub ? '<p class="status" role="status">' + esc(t("saved")) + '</p>' : '<p class="status" role="status"></p>';
-    return '<form class="slip subscribe-form" data-prefix="' + idPrefix + '">' +
-      '<div class="slip-copy"><strong>' + esc(t("slipTitle")) + '</strong><p>' + esc(t("slipBody")) + '</p></div>' +
-      '<div class="slip-row">' +
-        '<label class="vh" for="' + idPrefix + '-email">' + esc(t("email")) + '</label>' +
-        '<input id="' + idPrefix + '-email" name="email" type="email" required autocomplete="email" inputmode="email" placeholder="' + esc(t("emailPh")) + '" value="' + esc(sub ? sub.email : "") + '">' +
-        '<button class="btn-primary" type="submit">' + esc(t("subscribe")) + '</button>' +
-      '</div>' +
-      '<p class="field-error">' + esc(t("invalid")) + '</p>' +
-      '<fieldset class="lang-picks"><legend class="vh">' + esc(t("langPref")) + '</legend>' +
-        radio(idPrefix, "zh", t("zh"), !sub || sub.lang === "zh") +
-        radio(idPrefix, "en", t("en"), sub && sub.lang === "en") +
-        radio(idPrefix, "both", t("both"), sub && sub.lang === "both") +
-      '</fieldset>' +
-      status +
-      '<div class="feed-row"><span>' + esc(t("feeds")) + '</span><a href="/feed.xml">' + esc(t("rss")) + '</a><a href="/feed.json">' + esc(t("json")) + '</a></div>' +
-      '</form>';
-  }
   function radio(prefix, value, label, checked) {
     return '<label><input type="radio" name="' + prefix + '-lang" value="' + value + '"' + (checked ? " checked" : "") + '> ' + esc(label) + '</label>';
   }
@@ -293,7 +387,6 @@
     document.getElementById("lang-switch").innerHTML =
       seg("lang", "zh", "中文", state.lang === "zh") +
       seg("lang", "en", "EN", state.lang === "en");
-    document.getElementById("open-sub").textContent = t("subscribe");
     paintThemeButton();
     const url = new URL(location.href);
     url.searchParams.set("lang", state.lang);
@@ -335,14 +428,31 @@
       '<button type="button" class="chip" id="saved-only" aria-pressed="' + state.savedOnly + '">' + esc(t("savedOnly")) + '</button>';
   }
 
+  function statText(key) {
+    const value = stats[key];
+    return value == null ? "—" : String(value);
+  }
+  function statsStrip() {
+    return '<button type="button" class="stats-strip" data-open-stats aria-haspopup="dialog">' +
+      '<span>' + esc(t("visitors")) + ' <b data-stat="uv">' + esc(statText("uv")) + '</b></span>' +
+      '<span>' + esc(t("views")) + ' <b data-stat="pv">' + esc(statText("pv")) + '</b></span>' +
+      '<span>' + esc(t("subscribers")) + ' <b data-stat="subscribers">' + esc(statText("subscribers")) + '</b></span>' +
+      '</button>';
+  }
+  function paintStats() {
+    document.querySelectorAll("[data-stat]").forEach(function (node) {
+      const key = node.getAttribute("data-stat");
+      if (!Object.prototype.hasOwnProperty.call(stats, key)) return;
+      node.textContent = statText(key);
+    });
+  }
   function renderMast() {
     const list = visible();
     const latest = data.editions[0];
     mast.innerHTML =
       '<h1>' + esc(tx(data.site.title)) + '</h1>' +
       '<p class="lede">' + esc(tx(data.site.tagline)) + (state.lang === "zh" ? "。" : ". ") + esc(tx(data.site.description)) + '</p>' +
-      '<p class="meta-line">' + esc(tx(latest.label)) + '  ·  ' + esc(t("count")(list.length)) + '</p>' +
-      slip("hero");
+      '<p class="meta-line"><span>' + esc(tx(latest.label)) + '  ·  ' + esc(t("count")(list.length)) + '</span>' + statsStrip() + '</p>';
   }
 
   function renderReader(list) {
@@ -367,7 +477,7 @@
   function article(item) {
     return '<article class="entry" id="' + esc(item.id) + '">' +
       '<div class="entry-top"><div><h3><a href="#' + esc(item.id) + '">' + esc(tx(item.title)) + '</a></h3>' + byline(item) + '</div></div>' +
-      pills(item) + beats(item) + actions(item) +
+      verdict(item) + pills(item) + contextGrid(item) + actions(item) + sources(item) +
       '</article>';
   }
   function empty() {
@@ -391,17 +501,17 @@
           '<article class="face face-front deck-sheet" id="' + esc(item.id) + '"' + frontHidden + '>' +
             '<h2>' + esc(tx(item.title)) + '</h2>' +
             byline(item) +
-            '<p class="metric-line">' + esc(tx(item.metric)) + '</p>' +
+            verdict(item) +
             pills(item) +
-            '<section class="beat"><h4>' + esc(t("what")) + '</h4>' + paragraphs(tx(item.what)) + '</section>' +
             '<p class="hint">' + esc(t("frontHint")) + '</p>' +
+            sources(item) +
           '</article>' +
           '<article class="face face-back deck-sheet"' + backHidden + '>' +
             '<h2>' + esc(tx(item.title)) + '</h2>' +
             '<p class="deck-kicker">' + esc(tx(edition.label)) + '</p>' +
-            '<section class="beat"><h4>' + esc(t("how")) + '</h4>' + paragraphs(tx(item.how)) + '</section>' +
-            '<section class="beat why"><h4>' + esc(t("why")) + '</h4>' + paragraphs(tx(item.why)) + '</section>' +
+            contextGrid(item) +
             '<p class="hint">' + esc(t("backHint")) + '</p>' +
+            sources(item) +
           '</article>' +
         '</div>' +
       '</div>' +
@@ -414,13 +524,74 @@
   }
 
   function renderFoot() {
-    foot.innerHTML = '<div class="colophon-inner"><p>' + esc(t("footer")) + '</p>' + slip("foot") + '</div>';
+    foot.innerHTML = '<div class="colophon-inner"><p>' + esc(t("footer")) + '</p><div class="foot-stats">' + statsStrip() + '</div><p class="feed-row"><a href="/feed.xml">' + esc(t("rss")) + '</a><a href="/feed.json">' + esc(t("json")) + '</a></p></div>';
   }
-  function renderDialog() {
-    dialog.innerHTML =
-      '<div class="dialog-head"><h2 id="sub-title">' + esc(t("subscribeTitle")) + '</h2><button type="button" class="icon-btn" id="close-sub">' + esc(t("close")) + '</button></div>' +
-      '<p class="lede">' + esc(t("subscribeLead")) + '</p>' +
-      slip("dlg");
+  function renderSubWindow() {
+    if (!subDialog) return;
+    const current = subDialog.querySelector("input[type=email]");
+    const draft = current ? current.value : (state.sub ? state.sub.email : "");
+    const focused = current && document.activeElement === current;
+    const sub = state.sub;
+    const statusHtml = sub ? '<p class="status" role="status">' + esc(t("sent")) + '</p>' : '<p class="status" role="status"></p>';
+    subDialog.innerHTML =
+      '<div class="sub-win-titlebar">' +
+        '<div class="sub-win-brand"><span class="sub-win-dot" aria-hidden="true"></span><h2 id="sub-title">订阅演化日报 · Subscribe</h2></div>' +
+        '<button type="button" id="close-sub" aria-label="关闭">×</button>' +
+      '</div>' +
+      '<div class="sub-win-body">' +
+        '<form class="subscribe-form">' +
+          '<p>' + esc(t("toastLead")) + '</p>' +
+          '<div class="slip-row">' +
+            '<label class="vh" for="sub-email">' + esc(t("email")) + '</label>' +
+            '<input id="sub-email" name="email" type="email" required autocomplete="email" inputmode="email" placeholder="' + esc(t("emailPh")) + '" value="' + esc(draft) + '">' +
+            '<button class="btn-primary" type="submit">' + esc(t("subscribe")) + '</button>' +
+          '</div>' +
+          '<p class="field-error">' + esc(t("invalid")) + '</p>' +
+          '<fieldset class="lang-picks"><legend class="vh">' + esc(t("langPref")) + '</legend>' +
+            radio("sub", "zh", "中文", !sub || sub.lang === "zh") +
+            radio("sub", "en", "English", sub && sub.lang === "en") +
+            radio("sub", "both", "双语", sub && sub.lang === "both") +
+          '</fieldset>' +
+          statusHtml +
+          '<div class="feed-row"><a href="/feed.xml">' + esc(t("rss")) + '</a><span aria-hidden="true">·</span><a href="/feed.json">' + esc(t("json")) + '</a></div>' +
+        '</form>' +
+      '</div>';
+    if (focused) {
+      const input = subDialog.querySelector("input[type=email]");
+      if (input) input.focus();
+    }
+  }
+  function subDismissed() {
+    try { return sessionStorage.getItem("yanhua-sub-dismissed") === "1"; }
+    catch (err) { return false; }
+  }
+  function closeSubWindow() {
+    try { sessionStorage.setItem("yanhua-sub-dismissed", "1"); } catch (err) {}
+    if (subDialog && subDialog.open) subDialog.close();
+  }
+  function maybeOpenSub() {
+    if (!subDialog || subDialog.open || state.sub || subDismissed()) return;
+    if (typeof subDialog.show !== "function") return;
+    subDialog.show();
+  }
+  function renderStats() {
+    if (!statsDialog) return;
+    statsDialog.innerHTML =
+      '<div class="dialog-head"><h2 id="stats-title">' + esc(t("statsTitle")) + '</h2><button type="button" class="icon-btn" id="close-stats">' + esc(t("close")) + '</button></div>' +
+      '<p class="lede">' + esc(t("statsLead")) + '</p>' +
+      '<div class="stats-grid">' +
+        '<div class="stats-cell"><b data-stat="uv">' + esc(statText("uv")) + '</b><span>' + esc(t("visitors")) + ' UV</span></div>' +
+        '<div class="stats-cell"><b data-stat="pv">' + esc(statText("pv")) + '</b><span>' + esc(t("views")) + ' PV</span></div>' +
+        '<div class="stats-cell"><b data-stat="subscribers">' + esc(statText("subscribers")) + '</b><span>' + esc(t("subscribers")) + '</span></div>' +
+      '</div>' +
+      '<div class="stats-grid">' +
+        '<div class="stats-cell"><b>' + esc(String(state.read.size)) + '</b><span>' + esc(t("localRead")) + '</span></div>' +
+        '<div class="stats-cell"><b>' + esc(String(state.saved.size)) + '</b><span>' + esc(t("localSaved")) + '</span></div>' +
+      '</div>' +
+      '<p class="stats-links">' +
+        '<a href="https://github.com/dexhunter/yanhua.ai/issues?q=label%3Asubscribe" target="_blank" rel="noopener noreferrer">' + esc(t("issueList")) + '</a>' +
+        '<a href="https://github.com/dexhunter/yanhua.ai/blob/main/data/config.js" target="_blank" rel="noopener noreferrer">' + esc(t("analyticsConfig")) + '</a>' +
+      '</p>';
   }
 
   function render() {
@@ -431,7 +602,8 @@
     if (state.mode === "deck") renderDeck(list);
     else renderReader(list);
     renderFoot();
-    renderDialog();
+    renderSubWindow();
+    renderStats();
   }
 
   function step(delta) {
@@ -465,15 +637,16 @@
       setScheme(scheme() === "dark" ? "light" : "dark");
       return;
     }
-    if (event.target.closest("#open-sub")) {
-      renderDialog();
-      dialog.showModal();
-      const input = dialog.querySelector("input[type=email]");
-      if (input) input.focus();
+    if (event.target.closest("#close-sub")) {
+      closeSubWindow();
       return;
     }
-    if (event.target.closest("#close-sub")) {
-      dialog.close();
+    if (event.target.closest("[data-open-stats]")) {
+      openStats();
+      return;
+    }
+    if (event.target.closest("#close-stats")) {
+      closeStats();
       return;
     }
     const editionLink = event.target.closest("[data-edition]");
@@ -590,12 +763,14 @@
   });
 
   if (!("closedBy" in HTMLDialogElement.prototype)) {
-    dialog.addEventListener("click", function (event) {
-      if (event.target !== dialog) return;
-      const rect = dialog.getBoundingClientRect();
-      const inside = rect.top <= event.clientY && event.clientY <= rect.bottom && rect.left <= event.clientX && event.clientX <= rect.right;
-      if (!inside) dialog.close();
-    });
+    if (statsDialog) {
+      statsDialog.addEventListener("click", function (event) {
+        if (event.target !== statsDialog) return;
+        const rect = statsDialog.getBoundingClientRect();
+        const inside = rect.top <= event.clientY && event.clientY <= rect.bottom && rect.left <= event.clientX && event.clientX <= rect.right;
+        if (!inside) statsDialog.close();
+      });
+    }
   }
 
   window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change", function () {
@@ -624,36 +799,30 @@
     if (node) node.scrollIntoView({ block: "start" });
   }
 
-  async function subscribe(email, pref, form) {
-    const record = { email: email, lang: pref, at: new Date().toISOString() };
-    state.sub = record;
-    localStorage.setItem("yanhua-subscription", JSON.stringify(record));
-    const list = JSON.parse(localStorage.getItem("yanhua-subscriptions") || "[]");
-    list.push(record);
-    localStorage.setItem("yanhua-subscriptions", JSON.stringify(list));
-
+  async function subscribe(email, pref) {
     const endpoint = (config.subscribeEndpoint || "").trim();
     let delivered = false;
     if (endpoint) {
       try {
-        const format = config.subscribeFormat === "form" ? "form" : "json";
-        const payload = Object.assign({ email: email, lang: pref, source: "yanhua.ai" }, config.extraFields || {});
-        const headers = Object.assign({}, config.subscribeHeaders || {});
-        let body;
-        if (format === "form") body = new URLSearchParams(payload);
-        else {
-          headers["Content-Type"] = "application/json";
-          body = JSON.stringify(payload);
-        }
         const response = await fetch(endpoint, {
-          method: config.subscribeMethod || "POST",
-          headers: headers,
-          body: body
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ email: email, lang: pref, source: "yanhua.ai" })
         });
-        delivered = response.ok;
+        const body = await response.json().catch(function () { return {}; });
+        delivered = response.ok && body.ok !== false;
       } catch (err) {
         delivered = false;
       }
+    }
+    if (delivered) {
+      const record = { email: email, lang: pref, at: new Date().toISOString() };
+      state.sub = record;
+      localStorage.setItem("yanhua-subscription", JSON.stringify(record));
+      const list = JSON.parse(localStorage.getItem("yanhua-subscriptions") || "[]");
+      list.push(record);
+      localStorage.setItem("yanhua-subscriptions", JSON.stringify(list));
+      loadResendStats();
     }
     paintStatus(delivered, email, pref);
   }
@@ -663,7 +832,100 @@
     const title = "Subscribe: " + email;
     const body = "email: " + email + "\nlang: " + pref + "\nsource: yanhua.ai\n";
     const join = base.indexOf("?") === -1 ? "?" : "&";
-    return base + join + "title=" + encodeURIComponent(title) + "&body=" + encodeURIComponent(body);
+    return base + join + "title=" + encodeURIComponent(title) + "&body=" + encodeURIComponent(body) + "&labels=subscribe";
+  }
+
+  function safeHost(value) {
+    const text = String(value || "").trim().replace(/^https?:\/\//, "").split("/")[0];
+    return /^[A-Za-z0-9.-]+$/.test(text) ? text : "";
+  }
+  function mountExternalAnalytics() {
+    const token = String(config.cloudflareBeaconToken || "").trim();
+    if (token && !document.querySelector("script[data-cf-beacon]")) {
+      const script = document.createElement("script");
+      script.defer = true;
+      script.src = "https://static.cloudflareinsights.com/beacon.min.js";
+      script.setAttribute("data-cf-beacon", JSON.stringify({ token: token }));
+      document.head.appendChild(script);
+    }
+    const goatRaw = String(config.goatcounterCode || "").trim();
+    if (goatRaw && !document.querySelector("script[data-goatcounter]")) {
+      let host = goatRaw.replace(/^https?:\/\//, "").split("/")[0];
+      if (host && host.indexOf(".") === -1) host = host + ".goatcounter.com";
+      host = safeHost(host);
+      if (host) {
+        const script = document.createElement("script");
+        script.async = true;
+        script.src = "https://gc.zgo.at/count.js";
+        script.setAttribute("data-goatcounter", "https://" + host + "/count");
+        document.head.appendChild(script);
+      }
+    }
+    const domain = safeHost(config.plausibleDomain);
+    if (domain && !document.querySelector("script[data-domain='" + domain + "']")) {
+      const script = document.createElement("script");
+      script.defer = true;
+      script.src = "https://plausible.io/js/script.js";
+      script.setAttribute("data-domain", domain);
+      document.head.appendChild(script);
+    }
+  }
+  async function readCounter(url, increment) {
+    const response = await fetch(increment ? VERCOUNT : VERCOUNT + "?url=" + encodeURIComponent(url), increment ? {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ url: url })
+    } : { method: "GET" });
+    if (!response.ok) throw new Error("counter");
+    const body = await response.json();
+    return body && body.data ? body.data : null;
+  }
+  async function loadResendStats() {
+    const endpoint = (config.statsEndpoint || "").trim();
+    if (!endpoint) return;
+    const response = await fetch(endpoint);
+    if (!response.ok) return;
+    const body = await response.json();
+    if (body && typeof body.subscribers === "number") stats.subscribers = body.subscribers;
+    paintStats();
+  }
+  async function loadStats() {
+    const visitUrl = SITE + "/";
+    try {
+      const visit = await readCounter(visitUrl, true);
+      if (visit) {
+        if (typeof visit.site_uv === "number") stats.uv = visit.site_uv;
+        if (typeof visit.site_pv === "number") stats.pv = visit.site_pv;
+      }
+    } catch (err) {
+      try {
+        const visit = await readCounter(visitUrl, false);
+        if (visit) {
+          if (typeof visit.site_uv === "number") stats.uv = visit.site_uv;
+          if (typeof visit.site_pv === "number") stats.pv = visit.site_pv;
+        }
+      } catch (again) {}
+    }
+    try {
+      await loadResendStats();
+    } catch (err) {}
+    paintStats();
+  }
+  function setStatsParam(on) {
+    const url = new URL(location.href);
+    if (on) url.searchParams.set("stats", "1");
+    else url.searchParams.delete("stats");
+    history.replaceState(null, "", url.pathname + url.search + url.hash);
+  }
+  function openStats() {
+    if (!statsDialog) return;
+    renderStats();
+    if (!statsDialog.open) statsDialog.showModal();
+    setStatsParam(true);
+  }
+  function closeStats() {
+    if (statsDialog && statsDialog.open) statsDialog.close();
+    setStatsParam(false);
   }
 
   function paintStatus(delivered, email, pref) {
@@ -672,21 +934,41 @@
         node.textContent = t("sent");
         return;
       }
-      const bits = ['<span>' + esc(endpointMissing() ? t("fallback") : t("saved")) + '</span>'];
-      if (!delivered) {
-        bits.push('<a href="' + esc(issueUrl(email, pref)) + '" target="_blank" rel="noopener noreferrer">' + esc(t("github")) + '</a>');
-        if (config.mailto) {
-          bits.push('<a href="mailto:' + esc(config.mailto) + '?subject=' + encodeURIComponent("Subscribe " + email) + '&body=' + encodeURIComponent(email + "\n" + pref) + '">' + esc(t("mailto")) + '</a>');
-        }
-        if (config.substackUrl) bits.push('<a href="' + esc(config.substackUrl) + '" target="_blank" rel="noopener noreferrer">Substack</a>');
-      }
+      const bits = ['<span>' + esc(t("failed")) + '</span>'];
+      bits.push('<a href="' + esc(issueUrl(email, pref)) + '" target="_blank" rel="noopener noreferrer">' + esc(t("github")) + '</a>');
       node.innerHTML = bits.join(" ");
     });
   }
-  function endpointMissing() {
-    return !(config.subscribeEndpoint || "").trim();
-  }
 
+  if (statsDialog) {
+    statsDialog.addEventListener("close", function () {
+      const url = new URL(location.href);
+      if (url.searchParams.get("stats") !== "1") return;
+      url.searchParams.delete("stats");
+      history.replaceState(null, "", url.pathname + url.search + url.hash);
+    });
+  }
+  if (subDialog) {
+    subDialog.addEventListener("close", function () {
+      try { sessionStorage.setItem("yanhua-sub-dismissed", "1"); } catch (err) {}
+    });
+  }
+  mountExternalAnalytics();
   render();
+  loadStats();
+  if (subDialog && "IntersectionObserver" in window) {
+    const footer = document.getElementById("foot");
+    if (footer) {
+      const subObserver = new IntersectionObserver(function (entries) {
+        if (entries.some(function (entry) { return entry.isIntersecting; })) maybeOpenSub();
+      }, { rootMargin: "0px 0px 260px 0px" });
+      subObserver.observe(footer);
+    }
+  } else {
+    window.addEventListener("scroll", function () {
+      if (window.scrollY + window.innerHeight >= document.documentElement.scrollHeight - 260) maybeOpenSub();
+    }, { passive: true });
+  }
+  if (new URLSearchParams(location.search).get("stats") === "1") openStats();
   focusHash();
 })();

@@ -4,9 +4,14 @@ on:
   push:
     branches: [main]
   workflow_dispatch:
+    inputs:
+      send_newsletter:
+        description: Email the latest edition through Resend
+        type: boolean
+        default: false
 
 permissions:
-  contents: read
+  contents: write
   pages: write
   id-token: write
 
@@ -34,3 +39,109 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
+      - name: Delete leftover merged or closed branches
+        if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          python3 << 'PY'
+          import json
+          import os
+          import re
+          import subprocess
+          import urllib.parse
+
+          repo = os.environ["GITHUB_REPOSITORY"]
+          pattern = re.compile(r"^(cursor/.+|build-trigger-.+)$")
+
+          def gh_list(path):
+              rows = []
+              page = 1
+              while True:
+                  joiner = "&" if "?" in path else "?"
+                  raw = subprocess.check_output(
+                      ["gh", "api", f"{path}{joiner}per_page=100&page={page}"],
+                      text=True,
+                  )
+                  batch = json.loads(raw)
+                  if not isinstance(batch, list) or not batch:
+                      break
+                  rows.extend(batch)
+                  if len(batch) < 100:
+                      break
+                  page += 1
+              return rows
+
+          def head_ref(pull):
+              head = pull.get("head") or {}
+              full = (head.get("repo") or {}).get("full_name")
+              ref = head.get("ref") or ""
+              if full != repo or not pattern.match(ref):
+                  return ""
+              return ref
+
+          branches = [
+              row["name"]
+              for row in gh_list(f"repos/{repo}/branches")
+              if pattern.match(row.get("name") or "")
+          ]
+          open_heads = {head_ref(pull) for pull in gh_list(f"repos/{repo}/pulls?state=open")}
+          open_heads.discard("")
+          closed_heads = {head_ref(pull) for pull in gh_list(f"repos/{repo}/pulls?state=closed")}
+          closed_heads.discard("")
+
+          def contained(name):
+              quoted = urllib.parse.quote(name, safe="")
+              proc = subprocess.run(
+                  ["gh", "api", f"repos/{repo}/compare/main...{quoted}"],
+                  text=True,
+                  capture_output=True,
+              )
+              if proc.returncode != 0:
+                  print(f"::warning::compare failed for {name}: {proc.stderr.strip()}")
+                  return False
+              status = json.loads(proc.stdout).get("status")
+              return status in {"behind", "identical"}
+
+          deleted = []
+          for name in branches:
+              if name in open_heads:
+                  print(f"keep {name}: open pull request")
+                  continue
+              if name in closed_heads:
+                  reason = "closed or merged pull request"
+              elif contained(name):
+                  reason = "commits already contained in main"
+              else:
+                  print(f"keep {name}: not merged and no closed pull request")
+                  continue
+              proc = subprocess.run(
+                  ["git", "push", "origin", "--delete", name],
+                  text=True,
+                  capture_output=True,
+              )
+              if proc.returncode == 0:
+                  deleted.append(name)
+                  print(f"deleted {name} ({reason})")
+              else:
+                  detail = (proc.stderr or proc.stdout).strip()
+                  print(f"::warning::could not delete {name}: {detail}")
+          print("deleted " + (", ".join(deleted) if deleted else "none"))
+          PY
+      - name: Sync subscribers to Resend
+        if: github.event_name != 'workflow_dispatch' || inputs.send_newsletter == false
+        env:
+          RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}
+          RESEND_AUDIENCE_ID: ${{ secrets.RESEND_AUDIENCE_ID }}
+          GH_TOKEN: ${{ github.token }}
+          GITHUB_REPOSITORY: ${{ github.repository }}
+        run: python3 scripts/send_newsletter_resend.py --sync-only
+      - name: Send the latest edition with Resend
+        if: github.event_name == 'workflow_dispatch' && inputs.send_newsletter
+        env:
+          RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}
+          RESEND_AUDIENCE_ID: ${{ secrets.RESEND_AUDIENCE_ID }}
+          RESEND_FROM: "演化日报 · Yanhua Daily <digest@yanhua.ai>"
+          GH_TOKEN: ${{ github.token }}
+          GITHUB_REPOSITORY: ${{ github.repository }}
+        run: python3 scripts/send_newsletter_resend.py --send

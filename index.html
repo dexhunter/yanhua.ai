@@ -7,7 +7,8 @@
   <title>演化日报 · 递归自我改进与框架搜索</title>
   <meta name="description" content="演化日报：递归自我改进与智能体框架搜索。中文为主，可切换英文。每张研究闪卡分问题、机制与结论。">
   <meta name="theme-color" content="#f4efe6">
-  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="/favicon.svg?v=3" type="image/svg+xml" sizes="any">
+  <link rel="shortcut icon" href="/favicon.svg?v=3" type="image/svg+xml">
   <link rel="alternate" type="application/rss+xml" title="演化日报 RSS" href="/feed.xml">
   <link rel="alternate" type="application/feed+json" title="演化日报 JSON Feed" href="/feed.json">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -31,19 +32,23 @@
   <header class="nav">
     <a class="brand" href="/">
       <svg class="brand-mark" viewBox="0 0 64 64" aria-hidden="true">
-        <path d="M32 45c-7.6 0-13-4.4-13-10.6 0-4.8 3.1-8.1 7.4-9" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round"/>
-        <path d="M32 19c7.6 0 13 4.4 13 10.6 0 4.8-3.1 8.1-7.4 9" fill="none" stroke="var(--lacquer)" stroke-width="3.2" stroke-linecap="round"/>
-        <path d="M26.4 26c2.3-3.6 5.6-5.5 9.2-5.5 6.4 0 10.6 4.6 10.6 10.5 0 7.7-5.6 14.5-14.2 14.5-6.4 0-10.6-4.6-10.6-10.5 0-2.3.6-4.4 1.8-6.2" fill="none" stroke="var(--lacquer)" stroke-width="3.2" stroke-linecap="round"/>
-        <circle cx="45" cy="17.5" r="2.4" fill="var(--lacquer)"/>
+        <rect x="3" y="3" width="58" height="58" rx="14" fill="var(--raised)" stroke="var(--line)" stroke-width="2"/>
+        <path d="M12.5 21V14.5a2 2 0 0 1 2-2H21M51.5 21V14.5a2 2 0 0 0-2-2H43M12.5 43v6.5a2 2 0 0 0 2 2H21M51.5 43v6.5a2 2 0 0 1-2 2H43" fill="none" stroke="currentColor" stroke-opacity="0.38" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M 24.72 45.69 A 15.5 15.5 0 0 1 36.79 17.26" fill="none" stroke="currentColor" stroke-width="5" stroke-linecap="round"/>
+        <path d="M 30.70 19.24 L 36.79 17.26 L 33.03 12.08" fill="none" stroke="currentColor" stroke-width="4.4" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M 39.28 18.31 A 15.5 15.5 0 0 1 27.21 46.74" fill="none" stroke="var(--lacquer)" stroke-width="5" stroke-linecap="round"/>
+        <path d="M 33.30 44.76 L 27.21 46.74 L 30.97 51.92" fill="none" stroke="var(--lacquer)" stroke-width="4.4" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M32 23.2L35.2 28.8L40.8 32L35.2 35.2L32 40.8L28.8 35.2L23.2 32L28.8 28.8Z" fill="var(--lacquer)"/>
+        <circle cx="32" cy="32" r="2.3" fill="var(--raised)"/>
       </svg>
-      <span class="brand-name">演化</span>
-      <span class="brand-domain">Yanhua.ai</span>
+      <span class="brand-name">演化日报</span>
+      <span class="brand-badge">RSI</span>
+      <span class="brand-domain">yanhua.ai</span>
     </a>
     <div class="nav-controls">
       <div class="seg" role="group" id="mode-switch" aria-label="阅读方式"></div>
       <div class="seg" role="group" id="lang-switch" aria-label="语言"></div>
       <button type="button" class="icon-btn" id="theme-btn"></button>
-      <button type="button" class="btn-primary nav-sub" id="open-sub"></button>
     </div>
   </header>
   <div class="shell">
@@ -54,7 +59,8 @@
     </main>
   </div>
   <footer class="colophon" id="foot"></footer>
-  <dialog id="sub-dialog" closedby="any" aria-labelledby="sub-title"></dialog>
+  <dialog id="sub-dialog" class="sub-window" aria-labelledby="sub-title"></dialog>
+  <dialog id="stats-dialog" closedby="any" aria-labelledby="stats-title"></dialog>
   <noscript>
     <p class="noscript">演化日报需要 JavaScript 来翻阅闪卡。你仍可以直接订阅 <a href="/feed.xml">RSS</a> 或 <a href="/feed.json">JSON Feed</a>。</p>
   </noscript>

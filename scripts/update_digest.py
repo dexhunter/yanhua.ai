@@ -25,9 +25,9 @@ An edition file looks like:
       "edition": "2026-10-28-evening",
       "tags": ["harness-search"],
       "title": {"zh": "……", "en": "……"},
-      "what": {"zh": "……", "en": "……"},
-      "how": {"zh": "……", "en": "……"},
-      "why": {"zh": "……", "en": "……"},
+      "what": {"zh": "一句问题。", "en": "One sentence on the problem."},
+      "how": {"zh": "一两句机制，关键数字放这里。", "en": "One or two sentences on the mechanism and the key numbers."},
+      "why": {"zh": "一句人话结论。", "en": "One human-readable sentence stating the conclusion."},
       "metric": {"zh": "……", "en": "……"},
       "pills": [{"zh": "指标", "en": "Metric", "value": "1.0", "tone": "up"}],
       "arxiv": "2610.00000",
@@ -46,6 +46,7 @@ id replaces that edition's items.
 from __future__ import annotations
 
 import json
+import re
 import sys
 from datetime import datetime, timezone
 from email.utils import format_datetime
@@ -60,7 +61,17 @@ JSON_FEED = ROOT / "feed.json"
 SITE = "https://yanhua.ai"
 
 REQUIRED_I18N = ("title", "what", "how", "why", "metric")
+SENTENCE_BOUNDS = {"what": (1, 1), "how": (1, 2), "why": (1, 1)}
 SLOTS = {"morning": (9, 0), "evening": (18, 0), "": (12, 0)}
+HANDLE_RE = re.compile(r"@([A-Za-z0-9_]{1,15})")
+X_URL_RE = re.compile(
+    r"^https?://(?:www\.)?(?:x|twitter)\.com/([A-Za-z0-9_]{1,15})(?:/status/(\d+))?/?(?:[?#].*)?$",
+    re.IGNORECASE,
+)
+ARXIV_RE = re.compile(r"arxiv\.org/(?:abs|pdf)/(\d{4}\.\d{4,5})(?:v\d+)?", re.IGNORECASE)
+GITHUB_RE = re.compile(r"^https?://(?:www\.)?github\.com/([^/#?\s]+)/([^/#?\s]+)", re.IGNORECASE)
+# A sentence end is CJK terminal punctuation, or . ! ? that is not the dot inside a decimal.
+SENT_RE = re.compile(r"(?<!\d)[.!?](?!\d)|[。！？]|(?<=\d)[.!?](?!\d)(?=\s|$)")
 
 
 def load() -> dict:
@@ -70,6 +81,10 @@ def load() -> dict:
 
 def save_json(doc: dict) -> None:
     DATA.write_text(json.dumps(doc, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+
+
+def sentence_count(text: str) -> int:
+    return len(SENT_RE.findall(text.strip()))
 
 
 def problems(doc: dict) -> list[str]:
@@ -92,8 +107,19 @@ def problems(doc: dict) -> list[str]:
             block = item.get(key)
             if not isinstance(block, dict) or not str(block.get("zh", "")).strip() or not str(block.get("en", "")).strip():
                 errors.append(f"{ident}: missing zh/en for {key}")
+                continue
+            bounds = SENTENCE_BOUNDS.get(key)
+            if not bounds:
+                continue
+            lo, hi = bounds
+            for lang in ("zh", "en"):
+                count = sentence_count(str(block[lang]))
+                if not lo <= count <= hi:
+                    errors.append(f"{ident}: {key}.{lang} has {count} sentences, want {lo}-{hi}")
         if not item.get("tags"):
             errors.append(f"{ident}: no tags")
+        if not source_entries(item):
+            errors.append(f"{ident}: no paper, repo, post, or other source link")
     return errors
 
 
@@ -103,20 +129,102 @@ def edition_stamp(edition: dict, index: int) -> datetime:
     return datetime(year, month, day, hour, minute + index, tzinfo=timezone.utc)
 
 
-def item_html(item: dict) -> str:
-    def para(text: str) -> str:
-        return "".join(f"<p>{escape(part.strip())}</p>" for part in text.split("\n\n") if part.strip())
+def handle_url_map(item: dict) -> dict[str, str]:
+    found: dict[str, str] = {}
+    for link in item.get("links") or []:
+        match = X_URL_RE.match(str(link.get("url") or ""))
+        if not match:
+            continue
+        key = match.group(1).lower()
+        url = str(link["url"])
+        prev = found.get(key)
+        if prev is None or (match.group(2) and "/status/" not in prev):
+            found[key] = url
+    return found
 
+
+def linkify(text: str, item: dict) -> str:
+    urls = handle_url_map(item)
+
+    def repl(match: re.Match[str]) -> str:
+        name = match.group(1)
+        href = urls.get(name.lower()) or f"https://x.com/{name}"
+        return f'<a href="{escape(href)}" target="_blank" rel="noopener noreferrer">@{escape(name)}</a>'
+
+    return HANDLE_RE.sub(repl, escape(text))
+
+
+def source_entries(item: dict) -> list[dict]:
+    raw = [dict(link) for link in (item.get("links") or []) if link.get("url")]
+    seen = {str(link["url"]) for link in raw}
+    arxiv = str(item.get("arxiv") or "").strip()
+    if arxiv:
+        url = f"https://arxiv.org/abs/{arxiv}"
+        if url not in seen:
+            raw.insert(0, {"zh": "论文", "en": "Paper", "url": url})
+            seen.add(url)
+    repo = str(item.get("repo") or "").strip()
+    if repo:
+        url = repo if repo.startswith("http") else f"https://github.com/{repo.lstrip('/')}"
+        if url not in seen:
+            raw.append({"zh": "仓库", "en": "Repo", "url": url})
+    docs: list[dict] = []
+    posts: dict[str, dict] = {}
+    for link in raw:
+        match = X_URL_RE.match(str(link["url"]))
+        if match:
+            key = match.group(1).lower()
+            prev = posts.get(key)
+            if prev is None or (match.group(2) and "/status/" not in str(prev["url"])):
+                posts[key] = {"handle": match.group(1), "url": link["url"]}
+            continue
+        docs.append(link)
+    for match in HANDLE_RE.finditer(str(item.get("handle") or "")):
+        key = match.group(1).lower()
+        if key not in posts:
+            posts[key] = {"handle": match.group(1), "url": f"https://x.com/{match.group(1)}"}
+    entries: list[dict] = []
+    for link in docs:
+        url = str(link["url"])
+        ax = ARXIV_RE.search(url)
+        gh = GITHUB_RE.match(url)
+        if ax:
+            ident = ax.group(1)
+            label = f"📄 论文 arXiv:{ident} ↗"
+        elif gh:
+            slug = f"{gh.group(1)}/{gh.group(2).removesuffix('.git')}"
+            label = f"💻 GitHub: {slug} ↗"
+        else:
+            label = f"📄 {link.get('zh') or link.get('en') or '原文'} ↗"
+        entries.append({"url": url, "label": label})
+    for post in posts.values():
+        entries.append({"url": post["url"], "label": f"𝕏 @{post['handle']} ↗"})
+    return entries
+
+
+def source_html(item: dict) -> str:
+    parts = [
+        f'<a href="{escape(entry["url"])}" target="_blank" rel="noopener noreferrer">{escape(entry["label"])}</a>'
+        for entry in source_entries(item)
+    ]
+    if not parts:
+        return ""
+    return "<p>" + " ".join(parts) + "</p>"
+
+
+def item_html(item: dict) -> str:
     zh = (
-        f"<p><strong>问题与定位</strong> {escape(item['what']['zh'])}</p>"
-        f"<p><strong>核心机制</strong> {escape(item['how']['zh'])}</p>"
-        f"<p><strong>结论</strong> {escape(item['why']['zh'])}</p>"
+        f"<p><strong>核心结论</strong> {linkify(item['why']['zh'], item)}</p>"
+        f"<p><strong>问题背景</strong> {linkify(item['what']['zh'], item)}</p>"
+        f"<p><strong>核心机制与实证</strong> {linkify(item['how']['zh'], item)}</p>"
     )
     en = (
         "<hr/>"
-        f"{para(item['what']['en'])}{para(item['how']['en'])}{para(item['why']['en'])}"
+        f"<p><strong>Takeaway</strong> {linkify(item['why']['en'], item)}</p>"
+        f"<p><strong>Problem</strong> {linkify(item['what']['en'], item)}</p>"
+        f"<p><strong>How &amp; Evidence</strong> {linkify(item['how']['en'], item)}</p>"
     )
-    return zh + en
+    return zh + en + source_html(item)
 
 
 def write_js(doc: dict) -> None:
@@ -139,9 +247,7 @@ def write_feeds(doc: dict) -> None:
         newest = stamp if newest is None or stamp > newest else newest
         link = f"{SITE}/#{item['id']}"
         title = f"{item['title']['zh']} / {item['title']['en']}"
-        description = " ".join(
-            [item["what"]["zh"], item["how"]["zh"], item["why"]["zh"]]
-        )
+        description = item["why"]["zh"]
         content = item_html(item)
         rss_items.append(
             "\n".join(
