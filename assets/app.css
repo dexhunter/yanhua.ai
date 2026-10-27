@@ -172,7 +172,7 @@ html[data-flipped="true"] .brand-mark { transform: rotate(80deg); }
 }
 .brand-badge {
   font-family: var(--mono);
-  font-size: 0.68rem;
+  font-size: 0.75rem;
   font-weight: 600;
   line-height: 1.2;
   padding: 0.12rem 0.38rem;
@@ -518,16 +518,25 @@ dialog.sub-window h2 {
 }
 .byline a { font-family: var(--mono); font-size: 0.78rem; }
 
-.pills { display: flex; flex-wrap: wrap; gap: 0.4rem; margin: 0.9rem 0 0.2rem; }
-.pill {
+.pills {
   display: flex;
-  flex-direction: column;
-  gap: 0.12rem;
-  min-width: 5.4rem;
-  padding: 0.38rem 0.55rem 0.42rem;
-  border: 1px solid var(--line);
-  background: var(--raised);
+  flex-wrap: wrap;
+  align-items: baseline;
+  margin: 0.85rem 0 0;
+  font-variant-numeric: tabular-nums;
 }
+.pill {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 0.4rem;
+  min-width: 0;
+  padding: 0.2rem 0.85rem;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+}
+.pill:first-child { padding-left: 0; }
+.pill + .pill { border-left: 1px solid var(--line); }
 .pill b {
   font-family: var(--mono);
   font-weight: 600;
@@ -535,29 +544,36 @@ dialog.sub-window h2 {
   letter-spacing: -0.03em;
   font-variant-numeric: tabular-nums;
 }
-.pill span { font-size: 0.68rem; color: var(--muted); letter-spacing: 0.01em; }
+.pill span { font-size: 0.72rem; color: var(--muted); letter-spacing: 0.01em; }
 .pill.up b { color: var(--good); }
 .pill.down b { color: var(--lacquer-ink); }
 
 .verdict-box {
-  margin-top: 0.95rem;
-  padding: 0.85rem 1rem 0.95rem 1.05rem;
+  margin-top: 1rem;
+  padding: 0.95rem 1.05rem 1.05rem;
   background: var(--wash);
-  border-left: 3.5px solid var(--lacquer);
+  border: 1px solid color-mix(in srgb, var(--lacquer) 24%, var(--line));
+  border-radius: 0.375rem;
 }
 .verdict-kicker {
-  margin: 0 0 0.35rem;
-  font-family: var(--mono);
-  font-size: 0.68rem;
+  display: inline-block;
+  margin: 0 0.5rem 0 0;
+  padding: 0.1rem 0.48rem 0.14rem;
+  border-radius: 999px;
+  background: var(--lacquer);
+  color: var(--on-lacquer);
+  font-family: var(--sans);
+  font-size: 0.72rem;
   font-weight: 600;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  color: var(--lacquer-ink);
+  letter-spacing: 0.02em;
+  line-height: 1.45;
+  vertical-align: 0.14em;
 }
 .verdict-text {
   margin: 0;
   font-family: var(--serif);
-  font-size: 1.14rem;
+  font-size: 1.15rem;
+  font-weight: 500;
   line-height: 1.65;
   color: var(--ink);
   text-wrap: pretty;
@@ -565,13 +581,15 @@ dialog.sub-window h2 {
 .context-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 0.9rem 1.35rem;
-  margin-top: 1rem;
+  gap: 0.9rem 1.5rem;
+  margin-top: 1.15rem;
+  padding-top: 1.05rem;
+  border-top: 1px solid var(--line);
 }
 .context-col h4 {
-  margin: 0 0 0.3rem;
+  margin: 0 0 0.4rem;
   font-family: var(--sans);
-  font-size: 0.72rem;
+  font-size: 0.75rem;
   font-weight: 600;
   letter-spacing: 0.04em;
   color: var(--lacquer-ink);
@@ -592,24 +610,36 @@ dialog.sub-window h2 {
 .source-link {
   display: inline-flex;
   align-items: center;
+  gap: 0.38rem;
   border: 1px solid var(--line);
+  border-radius: 0.3rem;
   background: var(--raised);
-  padding: 0.32rem 0.65rem;
+  padding: 0.38rem 0.65rem;
   font-family: var(--mono);
   font-size: 0.8rem;
   line-height: 1.35;
   color: var(--ink);
   text-decoration: none;
+  transition: color 150ms cubic-bezier(0.22, 1, 0.36, 1), border-color 150ms cubic-bezier(0.22, 1, 0.36, 1), background-color 150ms cubic-bezier(0.22, 1, 0.36, 1);
 }
-.source-link:hover { border-color: var(--lacquer); color: var(--lacquer-ink); }
-.entry-actions, .deck-actions {
+.source-link svg,
+.source-ico {
+  width: 14px;
+  height: 14px;
+  flex: none;
+  display: block;
+}
+.source-link:hover { border-color: var(--lacquer); color: var(--lacquer-ink); background: var(--wash); }
+.deck-actions {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.4rem;
-  margin-top: 1rem;
+  gap: 0.55rem 0.75rem;
+  margin-top: 1.15rem;
+  padding-top: 0.95rem;
+  border-top: 1px solid var(--line);
   align-items: center;
 }
-.links { display: flex; flex-wrap: wrap; gap: 0.75rem; margin-right: auto; font-size: 0.88rem; }
+.deck-actions .source-row { margin-top: 0; flex: 1 1 16rem; }
 
 .deck-toolbar, .deck-nav {
   display: flex;

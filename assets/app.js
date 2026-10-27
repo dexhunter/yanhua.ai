@@ -44,21 +44,15 @@
       allEditions: "全部期次",
       topics: "主题",
       allTopics: "全部主题",
-      savedOnly: "只看收藏",
-      what: "问题背景 · Problem",
-      how: "核心机制与实证 · How & Evidence",
-      why: "核心结论 · TAKEAWAY",
-      read: "标为已读",
-      unread: "标为未读",
-      readMark: "已读",
-      save: "收藏",
-      savedMark: "已收藏",
+      what: "问题与背景",
+      how: "核心机制",
+      why: "一句话结论",
       prev: "上一张",
       next: "下一张",
-      flip: "翻面",
-      frontHint: "空格或点击卡片，翻到问题与机制。",
-      backHint: "空格返回结论与指标。",
-      keys: "← → 换卡   空格翻面",
+      flip: "翻转卡片",
+      frontHint: "按 Space 或 Enter，或点击卡片，翻到问题与机制。",
+      backHint: "按 Space 或 Enter，返回结论与指标。",
+      keys: "Space / Enter 翻转卡片 · J / K 或 ← / → 上一张 / 下一张",
       emptyTitle: "没有匹配的卡片",
       emptyBody: "换一个关键词，或清除筛选。",
       clear: "清除筛选",
@@ -75,11 +69,13 @@
       subscribers: "订阅",
       statsTitle: "站点统计",
       statsLead: "访客和阅读来自公开计数器。订阅数是 Resend 名册里的人数。",
+      totalCards: "卡片总数",
+      editionCount: "期数",
+      papersIndexed: "收录论文",
+      cadence: "yanhua.ai 每天更新两次，伦敦时间 09:00 与 18:00。早晚两版合在当晚的每日邮件摘要里寄出。",
       failed: "没有送出。请再试一次。",
       issueList: "在 GitHub 查看订阅",
-      analyticsConfig: "配置外部统计",
-      localRead: "本机已读",
-      localSaved: "本机收藏"
+      analyticsConfig: "配置外部统计"
     },
     en: {
       docTitle: "Yanhua Daily · RSI & Harness Search",
@@ -118,21 +114,15 @@
       allEditions: "All editions",
       topics: "Topics",
       allTopics: "All topics",
-      savedOnly: "Bookmarks",
-      what: "Problem",
-      how: "How & Evidence",
-      why: "TAKEAWAY",
-      read: "Mark read",
-      unread: "Mark unread",
-      readMark: "Read",
-      save: "Bookmark",
-      savedMark: "Bookmarked",
+      what: "Problem & context",
+      how: "Core mechanism",
+      why: "Key Takeaway",
       prev: "Previous",
       next: "Next",
-      flip: "Flip",
-      frontHint: "Press space or click the card for the problem and the mechanism.",
-      backHint: "Press space to return to the conclusion and the numbers.",
-      keys: "← → next card    Space flip",
+      flip: "Flip card",
+      frontHint: "Press Space or Enter, or click the card, for the problem and the mechanism.",
+      backHint: "Press Space or Enter to return to the conclusion and the numbers.",
+      keys: "Space / Enter flips the card · J / K or ← / → previous / next",
       emptyTitle: "No cards match",
       emptyBody: "Try another query, or clear the filters.",
       clear: "Clear filters",
@@ -149,11 +139,13 @@
       subscribers: "Subscribers",
       statsTitle: "Site analytics",
       statsLead: "Visitors and views come from a public counter. Subscribers is the Resend audience count.",
+      totalCards: "Total cards",
+      editionCount: "Editions",
+      papersIndexed: "Papers indexed",
+      cadence: "yanhua.ai updates twice a day, at 09:00 and 18:00 London time. Both editions are combined into the evening daily email digest.",
       failed: "That did not go through. Try again.",
       issueList: "View subscriptions on GitHub",
-      analyticsConfig: "Configure external analytics",
-      localRead: "Read on this device",
-      localSaved: "Bookmarked on this device"
+      analyticsConfig: "Configure external analytics"
     }
   };
 
@@ -163,11 +155,8 @@
     edition: "all",
     tag: "all",
     q: "",
-    savedOnly: false,
     index: 0,
     flipped: false,
-    read: loadSet("yanhua-read"),
-    saved: loadSet("yanhua-bookmarks"),
     sub: loadSub()
   };
 
@@ -180,16 +169,15 @@
   const subDialog = document.getElementById("sub-dialog");
   const VERCOUNT = "https://events.vercount.one/api/v2/log";
   const SITE = String(config.siteUrl || "https://yanhua.ai").replace(/\/$/, "");
-  const stats = { uv: null, pv: null, subscribers: null };
+  const stats = { uv: null, pv: null, subscribers: null, cards: null, editions: null, papers: null };
+  (function seedPublication() {
+    const counts = publicationCounts();
+    stats.cards = counts.cards;
+    stats.editions = counts.editions;
+    stats.papers = counts.papers;
+  })();
   let pointer = null;
 
-  function loadSet(key) {
-    try { return new Set(JSON.parse(localStorage.getItem(key) || "[]")); }
-    catch (err) { return new Set(); }
-  }
-  function storeSet(key, set) {
-    localStorage.setItem(key, JSON.stringify(Array.from(set)));
-  }
   function loadSub() {
     try { return JSON.parse(localStorage.getItem("yanhua-subscription") || "null"); }
     catch (err) { return null; }
@@ -284,25 +272,41 @@
     });
     return { docs: docs, posts: Object.keys(posts).map(function (key) { return posts[key]; }) };
   }
-  function sourceLabel(link) {
+  function sourceIcon(kind) {
+    if (kind === "repo") {
+      return '<svg class="source-ico" width="14" height="14" viewBox="0 0 14 14" aria-hidden="true" focusable="false"><path d="M5 4.1 2.5 7 5 9.9M9 4.1 11.5 7 9 9.9" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+    }
+    if (kind === "x") {
+      return '<svg class="source-ico" width="14" height="14" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M14.06 3h3.16l-6.9 7.89L18.4 21h-3.2l-5.02-6.56L5.3 21H2.13l7.38-8.44L2.7 3h3.28l4.54 6.01L14.06 3Zm-1.11 16.2h1.75L7.16 4.68H5.3l7.65 14.52Z"/></svg>';
+    }
+    return '<svg class="source-ico" width="14" height="14" viewBox="0 0 14 14" aria-hidden="true" focusable="false"><path d="M3.2 1.7h5l2.6 2.6v8H3.2z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M8.1 1.8v2.6h2.6M5 7.2h4M5 9.3h3.2" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+  }
+  function sourceText(link) {
     const ax = arxivIdFrom(link.url);
-    if (ax) return (state.lang === "zh" ? "📄 论文 arXiv:" : "Paper: arXiv:") + ax + " ↗";
+    if (ax) return (state.lang === "zh" ? "论文 arXiv:" : "Paper arXiv:") + ax;
     const slug = githubSlug(link.url);
-    if (slug) return "💻 GitHub: " + slug + " ↗";
-    const name = tx(link) || (state.lang === "zh" ? "原文" : "Source");
-    return "📄 " + name + " ↗";
+    if (slug) return "GitHub: " + slug;
+    return tx(link) || (state.lang === "zh" ? "原文" : "Source");
+  }
+  function sourceKind(link) {
+    if (arxivIdFrom(link.url)) return "paper";
+    if (githubSlug(link.url)) return "repo";
+    return "paper";
+  }
+  function sourceAnchor(url, kind, label) {
+    return '<a class="source-link" href="' + esc(url) + '" target="_blank" rel="noopener noreferrer">' + sourceIcon(kind) + "<span>" + esc(label) + "</span></a>";
   }
   function sources(item) {
     const bag = sourceBag(item);
     const parts = bag.docs.map(function (link) {
-      return '<a class="source-link" href="' + esc(link.url) + '" target="_blank" rel="noopener noreferrer">' + esc(sourceLabel(link)) + "</a>";
+      return sourceAnchor(link.url, sourceKind(link), sourceText(link));
     }).concat(bag.posts.map(function (post) {
-      return '<a class="source-link" href="' + esc(post.url) + '" target="_blank" rel="noopener noreferrer">𝕏 @' + esc(post.handle) + " ↗</a>";
+      return sourceAnchor(post.url, "x", "@" + post.handle);
     }));
     return parts.length ? '<div class="source-row">' + parts.join("") + "</div>" : "";
   }
   function verdict(item) {
-    return '<aside class="verdict-box"><p class="verdict-kicker">' + esc(t("why")) + '</p><p class="verdict-text">' + linkify(tx(item.why), item) + "</p></aside>";
+    return '<aside class="verdict-box"><p class="verdict-text"><span class="verdict-kicker">' + esc(t("why")) + "</span> " + linkify(tx(item.why), item) + "</p></aside>";
   }
   function contextGrid(item) {
     return '<div class="context-grid">' +
@@ -331,7 +335,6 @@
   function matches(item) {
     if (state.edition !== "all" && item.edition !== state.edition) return false;
     if (state.tag !== "all" && item.tags.indexOf(state.tag) === -1) return false;
-    if (state.savedOnly && !state.saved.has(item.id)) return false;
     const q = state.q.trim().toLowerCase();
     if (!q) return true;
     const edition = editionById(item.edition);
@@ -355,11 +358,6 @@
       return '<span class="pill ' + esc(pill.tone || "") + '"><b>' + esc(tx(pill.value)) + '</b><span>' + esc(tx(pill)) + '</span></span>';
     }).join("") + "</div>";
   }
-  function links(item) {
-    return (item.links || []).map(function (itemLink) {
-      return '<a href="' + esc(itemLink.url) + '" target="_blank" rel="noopener noreferrer">' + esc(tx(itemLink)) + '</a>';
-    }).join("");
-  }
   function byline(item) {
     const bits = [];
     if (item.arxiv) bits.push('<a href="https://arxiv.org/abs/' + esc(item.arxiv) + '" target="_blank" rel="noopener noreferrer">' + esc(item.arxiv) + '</a>');
@@ -367,14 +365,11 @@
     if (item.handle) bits.push(linkify(item.handle, item));
     return bits.length ? '<p class="byline">' + bits.join(" · ") + "</p>" : "";
   }
-  function actions(item) {
-    const read = state.read.has(item.id);
-    const saved = state.saved.has(item.id);
-    return '<div class="entry-actions">' +
-      '<div class="links">' + links(item) + '</div>' +
-      '<button type="button" class="text-btn" data-act="read" data-id="' + esc(item.id) + '" aria-pressed="' + read + '">' + esc(read ? t("readMark") : t("read")) + '</button>' +
-      '<button type="button" class="text-btn" data-act="save" data-id="' + esc(item.id) + '" aria-pressed="' + saved + '">' + esc(saved ? t("savedMark") : t("save")) + '</button>' +
-      '</div>';
+  function deckActions(item) {
+    return '<div class="deck-actions">' +
+      '<button type="button" class="btn-primary js-deck-flip">' + esc(t("flip")) + "</button>" +
+      sources(item) +
+      "</div>";
   }
 
   function radio(prefix, value, label, checked) {
@@ -443,20 +438,34 @@
       '<h2>' + esc(t("editions")) + '</h2>' +
       '<div class="rail-list"><a href="#content" data-edition="all"' + (state.edition === "all" ? ' aria-current="page"' : "") + '>' + esc(t("allEditions")) + '</a>' + editions + '</div>' +
       '<h2>' + esc(t("topics")) + '</h2>' +
-      '<div class="rail-list"><button type="button" class="chip" data-tag="all" aria-pressed="' + (state.tag === "all") + '">' + esc(t("allTopics")) + '</button>' + tags + '</div>' +
-      '<h2>' + esc(t("save")) + '</h2>' +
-      '<button type="button" class="chip" id="saved-only" aria-pressed="' + state.savedOnly + '">' + esc(t("savedOnly")) + '</button>';
+      '<div class="rail-list"><button type="button" class="chip" data-tag="all" aria-pressed="' + (state.tag === "all") + '">' + esc(t("allTopics")) + '</button>' + tags + '</div>';
   }
 
+  function isPaperItem(item) {
+    if (item.arxiv && String(item.arxiv).trim()) return true;
+    return (item.links || []).some(function (link) {
+      const url = String(link && link.url || "");
+      if (/arxiv\.org\/(?:abs|pdf)\//i.test(url)) return true;
+      const label = String((link && (link.en || link.zh)) || "").trim().toLowerCase();
+      return label === "paper" || label === "论文";
+    });
+  }
+  function publicationCounts() {
+    return {
+      cards: data.items.length,
+      editions: data.editions.length,
+      papers: data.items.filter(isPaperItem).length
+    };
+  }
   function statText(key) {
     const value = stats[key];
     return value == null ? "—" : String(value);
   }
   function statsStrip() {
     return '<button type="button" class="stats-strip" data-open-stats aria-haspopup="dialog">' +
-      '<span>' + esc(t("visitors")) + ' <b data-stat="uv">' + esc(statText("uv")) + '</b></span>' +
-      '<span>' + esc(t("views")) + ' <b data-stat="pv">' + esc(statText("pv")) + '</b></span>' +
-      '<span>' + esc(t("subscribers")) + ' <b data-stat="subscribers">' + esc(statText("subscribers")) + '</b></span>' +
+      '<span>' + esc(t("totalCards")) + ' <b data-stat="cards">' + esc(statText("cards")) + '</b></span>' +
+      '<span>' + esc(t("editionCount")) + ' <b data-stat="editions">' + esc(statText("editions")) + '</b></span>' +
+      '<span>' + esc(t("papersIndexed")) + ' <b data-stat="papers">' + esc(statText("papers")) + '</b></span>' +
       '</button>';
   }
   function paintStats() {
@@ -499,7 +508,7 @@
   function article(item) {
     return '<article class="entry" id="' + esc(item.id) + '">' +
       '<div class="entry-top"><div><h3><a href="#' + esc(item.id) + '">' + esc(tx(item.title)) + '</a></h3>' + byline(item) + '</div></div>' +
-      verdict(item) + pills(item) + contextGrid(item) + actions(item) + sources(item) +
+      verdict(item) + pills(item) + contextGrid(item) + sources(item) +
       '</article>';
   }
   function empty() {
@@ -527,23 +536,21 @@
             verdict(item) +
             pills(item) +
             '<p class="hint">' + esc(t("frontHint")) + '</p>' +
-            sources(item) +
+            deckActions(item) +
           '</article>' +
           '<article class="face face-back deck-sheet"' + backHidden + '>' +
             '<h2>' + esc(tx(item.title)) + '</h2>' +
             '<p class="deck-kicker">' + esc(tx(edition.label)) + '</p>' +
             contextGrid(item) +
             '<p class="hint">' + esc(t("backHint")) + '</p>' +
-            sources(item) +
+            deckActions(item) +
           '</article>' +
         '</div>' +
       '</div>' +
       '<div class="deck-nav">' +
         '<button type="button" class="btn" id="deck-prev"' + (state.index === 0 ? " disabled" : "") + '>' + esc(t("prev")) + '</button>' +
-        '<button type="button" class="btn-primary" id="deck-flip">' + esc(t("flip")) + '</button>' +
         '<button type="button" class="btn" id="deck-next"' + (state.index === list.length - 1 ? " disabled" : "") + '>' + esc(t("next")) + '</button>' +
-      '</div>' +
-      actions(item);
+      '</div>';
   }
 
   function renderFoot() {
@@ -612,9 +619,11 @@
         '<div class="stats-cell"><b data-stat="subscribers">' + esc(statText("subscribers")) + '</b><span>' + esc(t("subscribers")) + '</span></div>' +
       '</div>' +
       '<div class="stats-grid">' +
-        '<div class="stats-cell"><b>' + esc(String(state.read.size)) + '</b><span>' + esc(t("localRead")) + '</span></div>' +
-        '<div class="stats-cell"><b>' + esc(String(state.saved.size)) + '</b><span>' + esc(t("localSaved")) + '</span></div>' +
+        '<div class="stats-cell"><b data-stat="cards">' + esc(statText("cards")) + '</b><span>' + esc(t("totalCards")) + '</span></div>' +
+        '<div class="stats-cell"><b data-stat="editions">' + esc(statText("editions")) + '</b><span>' + esc(t("editionCount")) + '</span></div>' +
+        '<div class="stats-cell"><b data-stat="papers">' + esc(statText("papers")) + '</b><span>' + esc(t("papersIndexed")) + '</span></div>' +
       '</div>' +
+      '<p class="stats-note">' + esc(t("cadence")) + '</p>' +
       '<p class="stats-links">' +
         '<a href="https://github.com/dexhunter/yanhua.ai/issues?q=label%3Asubscribe" target="_blank" rel="noopener noreferrer">' + esc(t("issueList")) + '</a>' +
         '<a href="https://github.com/dexhunter/yanhua.ai/blob/main/data/config.js" target="_blank" rel="noopener noreferrer">' + esc(t("analyticsConfig")) + '</a>' +
@@ -701,34 +710,17 @@
       render();
       return;
     }
-    if (event.target.closest("#saved-only")) {
-      state.savedOnly = !state.savedOnly;
-      state.index = 0;
-      render();
-      return;
-    }
     if (event.target.closest("#clear-filters")) {
       state.q = "";
       state.tag = "all";
       state.edition = "all";
-      state.savedOnly = false;
       state.index = 0;
-      render();
-      return;
-    }
-    const act = event.target.closest("[data-act]");
-    if (act) {
-      const set = act.dataset.act === "read" ? state.read : state.saved;
-      const key = act.dataset.act === "read" ? "yanhua-read" : "yanhua-bookmarks";
-      if (set.has(act.dataset.id)) set.delete(act.dataset.id);
-      else set.add(act.dataset.id);
-      storeSet(key, set);
       render();
       return;
     }
     if (event.target.closest("#deck-prev")) { step(-1); return; }
     if (event.target.closest("#deck-next")) { step(1); return; }
-    if (event.target.closest("#deck-flip")) {
+    if (event.target.closest(".js-deck-flip")) {
       state.flipped = !state.flipped;
       render();
       return;
@@ -779,9 +771,16 @@
     const typing = event.target.closest("input, textarea, select");
     if (typing) return;
     if (state.mode !== "deck") return;
-    if (event.key === "ArrowRight") { event.preventDefault(); step(1); }
-    else if (event.key === "ArrowLeft") { event.preventDefault(); step(-1); }
-    else if (event.key === " " || event.code === "Space") { event.preventDefault(); state.flipped = !state.flipped; render(); }
+    if (event.metaKey || event.ctrlKey || event.altKey) return;
+    const key = event.key;
+    if (key === "ArrowRight" || key === "j" || key === "J") { event.preventDefault(); step(1); }
+    else if (key === "ArrowLeft" || key === "k" || key === "K") { event.preventDefault(); step(-1); }
+    else if (key === " " || event.code === "Space" || key === "Enter") {
+      if (event.target.closest("button, a")) return;
+      event.preventDefault();
+      state.flipped = !state.flipped;
+      render();
+    }
   });
 
   stage.addEventListener("pointerdown", function (event) {
