@@ -13,19 +13,18 @@ The site is a bilingual daily on recursive self-improvement and agent harness se
 
 ## 订阅
 
-页眉只有一个细的「订阅」按钮。邮箱表单不占开头，滚到页尾附近时，右下角才滑出一张小卡片；关掉之后这一次浏览不再自动出现。已经订阅过的浏览器也不会再自动弹出。
+页眉没有订阅按钮。滚到页尾附近时，右下角用 `dialog.show()` 打开一扇不挡页面的小窗；关掉之后这一次浏览不再自动出现。已经订阅过的浏览器也不会再自动弹出。
 
-表单会立刻在本地确认。真正寄出邮件要经过一个你自己持有密钥的服务：静态页面不能保存 `RESEND_API_KEY`，Resend 也不接受浏览器直接调用。
+表单 `POST` 到 `https://subscribe.yanhua.ai`，正文是 `{email, lang, source}`。订阅数来自 `GET https://subscribe.yanhua.ai/stats`。密钥 `RESEND_API_KEY` 只放在 Worker 上。名单进 Resend 的 General segment（`0f2fbb4e-3333-43c1-a0d2-16c69a7c3003`）。
 
-- **Cloudflare Worker**：部署 `scripts/cloudflare-resend-worker.js`，把 `subscribeEndpoint` 设成它的地址。只需要密钥 `RESEND_API_KEY`。名单默认进 Resend 的 General segment（`0f2fbb4e-3333-43c1-a0d2-16c69a7c3003`，与 `data/config.js` 的 `resendAudienceId` 相同）。可选 `SEND_WELCOME=1` 发一封确认信。`yanhua.ai` 的域名验证完成前，确认信从 `onboarding@resend.dev` 发出；验证之后用 `演化日报 · Yanhua Daily <digest@yanhua.ai>`。
-- **Buttondown / Formspree**：同样把地址填进 `subscribeEndpoint`。
-- **每日寄出**：`scripts/send_newsletter_resend.py` 在 GitHub Actions 里用仓库密钥 `RESEND_API_KEY` 同步带 `subscribe` 标签的 Issue，并在手动运行 workflow 且勾上 “Email the latest edition through Resend” 时，把最新一期做成 Resend broadcast。发信人同样先用 `digest@yanhua.ai`，域名未验证时改用 `onboarding@resend.dev`。普通的 Pages 部署只同步名单，不发信。
+- **每日寄出**：`scripts/send_newsletter_resend.py` 在 GitHub Actions 里用仓库密钥 `RESEND_API_KEY` 同步带 `subscribe` 标签的 Issue，并在手动运行 workflow 且勾上 “Email the latest edition through Resend” 时，把最新一期做成 Resend broadcast。发信人是 `演化日报 · Yanhua Daily <digest@yanhua.ai>`，域名未验证时改用 `onboarding@resend.dev`。普通的 Pages 部署只同步名单，不发信。
 
 编辑 `data/config.js`：
 
 ```js
 window.YANHUA_CONFIG = {
-  subscribeEndpoint: "https://example.com/subscribe",
+  subscribeEndpoint: "https://subscribe.yanhua.ai",
+  statsEndpoint: "https://subscribe.yanhua.ai/stats",
   resendAudienceId: "0f2fbb4e-3333-43c1-a0d2-16c69a7c3003",
   subscribeMethod: "POST",
   subscribeFormat: "json", // Formspree 用 "form"
@@ -40,11 +39,11 @@ window.YANHUA_CONFIG = {
 };
 ```
 
-接口为空，或请求失败时，表单仍然确认成功，并给出 GitHub Issue（以及可选的 mailto / Substack）作为备用投递。Issue 会带上 `subscribe` 标签。不会因为没有后端而报错。
+Worker 接受之后，这台浏览器才记住订阅。请求失败时窗口里会说明没有送出，并给出一个带 `subscribe` 标签的 GitHub Issue 作为备用。
 
 ## 访问与订阅统计
 
-页眉和页脚的统计条用 [vercount](https://events.vercount.one/api/v2/log) 记录 `https://yanhua.ai/` 的访客（UV）和阅读（PV），不需要先注册第三方账号。订阅数是两处相加：表单提交记在 `https://yanhua.ai/subscribers` 的 `page_pv` 上（同一浏览器里的同一个邮箱只记一次），再加上 [带 subscribe 标签的 GitHub Issue](https://github.com/dexhunter/yanhua.ai/issues?q=label%3Asubscribe)。点统计条，或打开 `?stats=1`，可以看到这两项、本机已读和收藏，以及配置入口。
+页眉和页脚的统计条用 [vercount](https://events.vercount.one/api/v2/log) 记录 `https://yanhua.ai/` 的访客（UV）和阅读（PV）。订阅数是 `https://subscribe.yanhua.ai/stats` 返回的 Resend 名册人数。点统计条，或打开 `?stats=1`，可以看到这三项、本机已读和收藏。
 
 可选的外部统计写在 `data/config.js`。留空则只用上面的内置计数：
 

@@ -7,7 +7,8 @@
   <title>演化日报 · 递归自我改进与框架搜索</title>
   <meta name="description" content="演化日报：递归自我改进与智能体框架搜索。中文为主，可切换英文。每张研究闪卡分问题、机制与结论。">
   <meta name="theme-color" content="#f4efe6">
-  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="/favicon.svg?v=3" type="image/svg+xml" sizes="any">
+  <link rel="shortcut icon" href="/favicon.svg?v=3" type="image/svg+xml">
   <link rel="alternate" type="application/rss+xml" title="演化日报 RSS" href="/feed.xml">
   <link rel="alternate" type="application/feed+json" title="演化日报 JSON Feed" href="/feed.json">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -48,7 +49,6 @@
       <div class="seg" role="group" id="mode-switch" aria-label="阅读方式"></div>
       <div class="seg" role="group" id="lang-switch" aria-label="语言"></div>
       <button type="button" class="icon-btn" id="theme-btn"></button>
-      <button type="button" class="nav-sub" id="open-sub"></button>
     </div>
   </header>
   <div class="shell">
@@ -59,7 +59,7 @@
     </main>
   </div>
   <footer class="colophon" id="foot"></footer>
-  <aside id="sub-toast" class="sub-toast" aria-hidden="true"></aside>
+  <dialog id="sub-dialog" class="sub-window" aria-labelledby="sub-title"></dialog>
   <dialog id="stats-dialog" closedby="any" aria-labelledby="stats-title"></dialog>
   <noscript>
     <p class="noscript">演化日报需要 JavaScript 来翻阅闪卡。你仍可以直接订阅 <a href="/feed.xml">RSS</a> 或 <a href="/feed.json">JSON Feed</a>。</p>

@@ -74,10 +74,8 @@
       views: "阅读",
       subscribers: "订阅",
       statsTitle: "站点统计",
-      statsLead: "访客和阅读来自公开计数器。订阅数是表单计数加上带 subscribe 标签的 GitHub Issue。",
-      formSubs: "表单计数",
-      issueSubs: "GitHub Issue",
-      statsSumNote: "同一个人如果表单和 Issue 都留下了，会算两次。",
+      statsLead: "访客和阅读来自公开计数器。订阅数是 Resend 名册里的人数。",
+      failed: "没有送出。请再试一次。",
       issueList: "在 GitHub 查看订阅",
       analyticsConfig: "配置外部统计",
       localRead: "本机已读",
@@ -150,10 +148,8 @@
       views: "Views",
       subscribers: "Subscribers",
       statsTitle: "Site analytics",
-      statsLead: "Visitors and views come from a public counter. Subscribers add the form counter to GitHub Issues labeled subscribe.",
-      formSubs: "Form counter",
-      issueSubs: "GitHub Issues",
-      statsSumNote: "A person who uses both the form and a GitHub Issue is counted twice.",
+      statsLead: "Visitors and views come from a public counter. Subscribers is the Resend audience count.",
+      failed: "That did not go through. Try again.",
       issueList: "View subscriptions on GitHub",
       analyticsConfig: "Configure external analytics",
       localRead: "Read on this device",
@@ -170,7 +166,6 @@
     savedOnly: false,
     index: 0,
     flipped: false,
-    toastOpen: false,
     read: loadSet("yanhua-read"),
     saved: loadSet("yanhua-bookmarks"),
     sub: loadSub()
@@ -182,10 +177,10 @@
   const rail = document.getElementById("rail");
   const foot = document.getElementById("foot");
   const statsDialog = document.getElementById("stats-dialog");
-  const toast = document.getElementById("sub-toast");
+  const subDialog = document.getElementById("sub-dialog");
   const VERCOUNT = "https://events.vercount.one/api/v2/log";
   const SITE = String(config.siteUrl || "https://yanhua.ai").replace(/\/$/, "");
-  const stats = { uv: null, pv: null, subscribers: null, formSubs: null, issueSubs: null };
+  const stats = { uv: null, pv: null, subscribers: null };
   let pointer = null;
 
   function loadSet(key) {
@@ -392,7 +387,6 @@
     document.getElementById("lang-switch").innerHTML =
       seg("lang", "zh", "中文", state.lang === "zh") +
       seg("lang", "en", "EN", state.lang === "en");
-    document.getElementById("open-sub").textContent = t("subscribe");
     paintThemeButton();
     const url = new URL(location.href);
     url.searchParams.set("lang", state.lang);
@@ -445,16 +439,7 @@
       '<span>' + esc(t("subscribers")) + ' <b data-stat="subscribers">' + esc(statText("subscribers")) + '</b></span>' +
       '</button>';
   }
-  function combineSubscribers(formCount, issueCount) {
-    const formOk = typeof formCount === "number" && isFinite(formCount);
-    const issueOk = typeof issueCount === "number" && isFinite(issueCount);
-    if (formOk && issueOk) return formCount + issueCount;
-    if (formOk) return formCount;
-    if (issueOk) return issueCount;
-    return null;
-  }
   function paintStats() {
-    stats.subscribers = combineSubscribers(stats.formSubs, stats.issueSubs);
     document.querySelectorAll("[data-stat]").forEach(function (node) {
       const key = node.getAttribute("data-stat");
       if (!Object.prototype.hasOwnProperty.call(stats, key)) return;
@@ -541,58 +526,53 @@
   function renderFoot() {
     foot.innerHTML = '<div class="colophon-inner"><p>' + esc(t("footer")) + '</p><div class="foot-stats">' + statsStrip() + '</div><p class="feed-row"><a href="/feed.xml">' + esc(t("rss")) + '</a><a href="/feed.json">' + esc(t("json")) + '</a></p></div>';
   }
-  function renderToast() {
-    if (!toast) return;
-    const current = toast.querySelector("input[type=email]");
+  function renderSubWindow() {
+    if (!subDialog) return;
+    const current = subDialog.querySelector("input[type=email]");
     const draft = current ? current.value : (state.sub ? state.sub.email : "");
     const focused = current && document.activeElement === current;
     const sub = state.sub;
-    const statusHtml = sub ? '<p class="status" role="status">' + esc(t("saved")) + '</p>' : '<p class="status" role="status"></p>';
-    toast.innerHTML =
-      '<button type="button" class="toast-x" data-dismiss-toast aria-label="' + esc(t("dismiss")) + '">×</button>' +
-      '<form class="subscribe-form" data-prefix="toast">' +
-        '<h2 id="toast-title">' + esc(t("toastTitle")) + '</h2>' +
-        '<p>' + esc(t("toastLead")) + '</p>' +
-        '<div class="slip-row">' +
-          '<label class="vh" for="toast-email">' + esc(t("email")) + '</label>' +
-          '<input id="toast-email" name="email" type="email" required autocomplete="email" inputmode="email" placeholder="' + esc(t("emailPh")) + '" value="' + esc(draft) + '">' +
-          '<button class="btn-primary" type="submit">' + esc(t("subscribe")) + '</button>' +
-        '</div>' +
-        '<p class="field-error">' + esc(t("invalid")) + '</p>' +
-        '<fieldset class="lang-picks"><legend class="vh">' + esc(t("langPref")) + '</legend>' +
-          radio("toast", "zh", t("zh"), !sub || sub.lang === "zh") +
-          radio("toast", "en", "EN", sub && sub.lang === "en") +
-          radio("toast", "both", t("both"), sub && sub.lang === "both") +
-        '</fieldset>' +
-        statusHtml +
-        '<div class="feed-row"><a href="/feed.xml">' + esc(t("rss")) + '</a><span aria-hidden="true">·</span><a href="/feed.json">' + esc(t("json")) + '</a></div>' +
-      '</form>';
-    toast.classList.toggle("is-open", state.toastOpen);
-    toast.setAttribute("aria-hidden", state.toastOpen ? "false" : "true");
+    const statusHtml = sub ? '<p class="status" role="status">' + esc(t("sent")) + '</p>' : '<p class="status" role="status"></p>';
+    subDialog.innerHTML =
+      '<div class="sub-win-titlebar">' +
+        '<div class="sub-win-brand"><span class="sub-win-dot" aria-hidden="true"></span><h2 id="sub-title">订阅演化日报 · Subscribe</h2></div>' +
+        '<button type="button" id="close-sub" aria-label="关闭">×</button>' +
+      '</div>' +
+      '<div class="sub-win-body">' +
+        '<form class="subscribe-form">' +
+          '<p>' + esc(t("toastLead")) + '</p>' +
+          '<div class="slip-row">' +
+            '<label class="vh" for="sub-email">' + esc(t("email")) + '</label>' +
+            '<input id="sub-email" name="email" type="email" required autocomplete="email" inputmode="email" placeholder="' + esc(t("emailPh")) + '" value="' + esc(draft) + '">' +
+            '<button class="btn-primary" type="submit">' + esc(t("subscribe")) + '</button>' +
+          '</div>' +
+          '<p class="field-error">' + esc(t("invalid")) + '</p>' +
+          '<fieldset class="lang-picks"><legend class="vh">' + esc(t("langPref")) + '</legend>' +
+            radio("sub", "zh", "中文", !sub || sub.lang === "zh") +
+            radio("sub", "en", "English", sub && sub.lang === "en") +
+            radio("sub", "both", "双语", sub && sub.lang === "both") +
+          '</fieldset>' +
+          statusHtml +
+          '<div class="feed-row"><a href="/feed.xml">' + esc(t("rss")) + '</a><span aria-hidden="true">·</span><a href="/feed.json">' + esc(t("json")) + '</a></div>' +
+        '</form>' +
+      '</div>';
     if (focused) {
-      const input = toast.querySelector("input[type=email]");
+      const input = subDialog.querySelector("input[type=email]");
       if (input) input.focus();
     }
   }
-  function toastDismissed() {
+  function subDismissed() {
     try { return sessionStorage.getItem("yanhua-sub-dismissed") === "1"; }
     catch (err) { return false; }
   }
-  function openToast(focus) {
-    state.toastOpen = true;
-    renderToast();
-    if (!focus || !toast) return;
-    const input = toast.querySelector("input[type=email]");
-    if (input) input.focus();
-  }
-  function dismissToast() {
+  function closeSubWindow() {
     try { sessionStorage.setItem("yanhua-sub-dismissed", "1"); } catch (err) {}
-    state.toastOpen = false;
-    renderToast();
+    if (subDialog && subDialog.open) subDialog.close();
   }
-  function maybeAutoToast() {
-    if (state.sub || toastDismissed() || state.toastOpen) return;
-    openToast(false);
+  function maybeOpenSub() {
+    if (!subDialog || subDialog.open || state.sub || subDismissed()) return;
+    if (typeof subDialog.show !== "function") return;
+    subDialog.show();
   }
   function renderStats() {
     if (!statsDialog) return;
@@ -604,7 +584,6 @@
         '<div class="stats-cell"><b data-stat="pv">' + esc(statText("pv")) + '</b><span>' + esc(t("views")) + ' PV</span></div>' +
         '<div class="stats-cell"><b data-stat="subscribers">' + esc(statText("subscribers")) + '</b><span>' + esc(t("subscribers")) + '</span></div>' +
       '</div>' +
-      '<p class="stats-note">' + esc(t("formSubs")) + ' <b data-stat="formSubs">' + esc(statText("formSubs")) + '</b> · ' + esc(t("issueSubs")) + ' <b data-stat="issueSubs">' + esc(statText("issueSubs")) + '</b>. ' + esc(t("statsSumNote")) + '</p>' +
       '<div class="stats-grid">' +
         '<div class="stats-cell"><b>' + esc(String(state.read.size)) + '</b><span>' + esc(t("localRead")) + '</span></div>' +
         '<div class="stats-cell"><b>' + esc(String(state.saved.size)) + '</b><span>' + esc(t("localSaved")) + '</span></div>' +
@@ -623,7 +602,7 @@
     if (state.mode === "deck") renderDeck(list);
     else renderReader(list);
     renderFoot();
-    renderToast();
+    renderSubWindow();
     renderStats();
   }
 
@@ -658,12 +637,8 @@
       setScheme(scheme() === "dark" ? "light" : "dark");
       return;
     }
-    if (event.target.closest("#open-sub")) {
-      openToast(true);
-      return;
-    }
-    if (event.target.closest("[data-dismiss-toast]")) {
-      dismissToast();
+    if (event.target.closest("#close-sub")) {
+      closeSubWindow();
       return;
     }
     if (event.target.closest("[data-open-stats]")) {
@@ -824,37 +799,30 @@
     if (node) node.scrollIntoView({ block: "start" });
   }
 
-  async function subscribe(email, pref, form) {
-    const record = { email: email, lang: pref, at: new Date().toISOString() };
-    state.sub = record;
-    localStorage.setItem("yanhua-subscription", JSON.stringify(record));
-    const list = JSON.parse(localStorage.getItem("yanhua-subscriptions") || "[]");
-    list.push(record);
-    localStorage.setItem("yanhua-subscriptions", JSON.stringify(list));
-    countSubscriber(email);
-
+  async function subscribe(email, pref) {
     const endpoint = (config.subscribeEndpoint || "").trim();
     let delivered = false;
     if (endpoint) {
       try {
-        const format = config.subscribeFormat === "form" ? "form" : "json";
-        const payload = Object.assign({ email: email, lang: pref, source: "yanhua.ai" }, config.extraFields || {});
-        const headers = Object.assign({}, config.subscribeHeaders || {});
-        let body;
-        if (format === "form") body = new URLSearchParams(payload);
-        else {
-          headers["Content-Type"] = "application/json";
-          body = JSON.stringify(payload);
-        }
         const response = await fetch(endpoint, {
-          method: config.subscribeMethod || "POST",
-          headers: headers,
-          body: body
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ email: email, lang: pref, source: "yanhua.ai" })
         });
-        delivered = response.ok;
+        const body = await response.json().catch(function () { return {}; });
+        delivered = response.ok && body.ok !== false;
       } catch (err) {
         delivered = false;
       }
+    }
+    if (delivered) {
+      const record = { email: email, lang: pref, at: new Date().toISOString() };
+      state.sub = record;
+      localStorage.setItem("yanhua-subscription", JSON.stringify(record));
+      const list = JSON.parse(localStorage.getItem("yanhua-subscriptions") || "[]");
+      list.push(record);
+      localStorage.setItem("yanhua-subscriptions", JSON.stringify(list));
+      loadResendStats();
     }
     paintStatus(delivered, email, pref);
   }
@@ -912,25 +880,17 @@
     const body = await response.json();
     return body && body.data ? body.data : null;
   }
-  async function githubSubscriberCount() {
-    let page = 1;
-    let total = 0;
-    while (page <= 5) {
-      const response = await fetch("https://api.github.com/repos/dexhunter/yanhua.ai/issues?labels=subscribe&state=all&per_page=100&page=" + page, {
-        headers: { Accept: "application/vnd.github+json" }
-      });
-      if (!response.ok) throw new Error("issues");
-      const rows = await response.json();
-      if (!Array.isArray(rows) || !rows.length) break;
-      total += rows.length;
-      if (rows.length < 100) break;
-      page += 1;
-    }
-    return total;
+  async function loadResendStats() {
+    const endpoint = (config.statsEndpoint || "").trim();
+    if (!endpoint) return;
+    const response = await fetch(endpoint);
+    if (!response.ok) return;
+    const body = await response.json();
+    if (body && typeof body.subscribers === "number") stats.subscribers = body.subscribers;
+    paintStats();
   }
   async function loadStats() {
     const visitUrl = SITE + "/";
-    const subUrl = SITE + "/subscribers";
     try {
       const visit = await readCounter(visitUrl, true);
       if (visit) {
@@ -947,31 +907,9 @@
       } catch (again) {}
     }
     try {
-      const subs = await readCounter(subUrl, false);
-      if (subs && typeof subs.page_pv === "number") stats.formSubs = subs.page_pv;
-    } catch (err) {}
-    try {
-      stats.issueSubs = await githubSubscriberCount();
+      await loadResendStats();
     } catch (err) {}
     paintStats();
-  }
-  function countedSubscribers() {
-    try { return new Set(JSON.parse(localStorage.getItem("yanhua-counted-subscribers") || "[]")); }
-    catch (err) { return new Set(); }
-  }
-  function countSubscriber(email) {
-    const id = String(email || "").trim().toLowerCase();
-    if (!id) return;
-    const seen = countedSubscribers();
-    if (seen.has(id)) return;
-    seen.add(id);
-    localStorage.setItem("yanhua-counted-subscribers", JSON.stringify(Array.from(seen)));
-    stats.formSubs = (typeof stats.formSubs === "number" ? stats.formSubs : 0) + 1;
-    paintStats();
-    readCounter(SITE + "/subscribers", true).then(function (data) {
-      if (data && typeof data.page_pv === "number") stats.formSubs = data.page_pv;
-      paintStats();
-    }).catch(function () {});
   }
   function setStatsParam(on) {
     const url = new URL(location.href);
@@ -996,19 +934,10 @@
         node.textContent = t("sent");
         return;
       }
-      const bits = ['<span>' + esc(endpointMissing() ? t("fallback") : t("saved")) + '</span>'];
-      if (!delivered) {
-        bits.push('<a href="' + esc(issueUrl(email, pref)) + '" target="_blank" rel="noopener noreferrer">' + esc(t("github")) + '</a>');
-        if (config.mailto) {
-          bits.push('<a href="mailto:' + esc(config.mailto) + '?subject=' + encodeURIComponent("Subscribe " + email) + '&body=' + encodeURIComponent(email + "\n" + pref) + '">' + esc(t("mailto")) + '</a>');
-        }
-        if (config.substackUrl) bits.push('<a href="' + esc(config.substackUrl) + '" target="_blank" rel="noopener noreferrer">Substack</a>');
-      }
+      const bits = ['<span>' + esc(t("failed")) + '</span>'];
+      bits.push('<a href="' + esc(issueUrl(email, pref)) + '" target="_blank" rel="noopener noreferrer">' + esc(t("github")) + '</a>');
       node.innerHTML = bits.join(" ");
     });
-  }
-  function endpointMissing() {
-    return !(config.subscribeEndpoint || "").trim();
   }
 
   if (statsDialog) {
@@ -1019,20 +948,25 @@
       history.replaceState(null, "", url.pathname + url.search + url.hash);
     });
   }
+  if (subDialog) {
+    subDialog.addEventListener("close", function () {
+      try { sessionStorage.setItem("yanhua-sub-dismissed", "1"); } catch (err) {}
+    });
+  }
   mountExternalAnalytics();
   render();
   loadStats();
-  if (toast && "IntersectionObserver" in window) {
+  if (subDialog && "IntersectionObserver" in window) {
     const footer = document.getElementById("foot");
     if (footer) {
-      const toastObserver = new IntersectionObserver(function (entries) {
-        if (entries.some(function (entry) { return entry.isIntersecting; })) maybeAutoToast();
-      }, { rootMargin: "0px 0px 360px 0px" });
-      toastObserver.observe(footer);
+      const subObserver = new IntersectionObserver(function (entries) {
+        if (entries.some(function (entry) { return entry.isIntersecting; })) maybeOpenSub();
+      }, { rootMargin: "0px 0px 260px 0px" });
+      subObserver.observe(footer);
     }
   } else {
     window.addEventListener("scroll", function () {
-      if (window.scrollY + window.innerHeight >= document.documentElement.scrollHeight - 360) maybeAutoToast();
+      if (window.scrollY + window.innerHeight >= document.documentElement.scrollHeight - 260) maybeOpenSub();
     }, { passive: true });
   }
   if (new URLSearchParams(location.search).get("stats") === "1") openStats();
