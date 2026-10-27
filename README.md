@@ -1,128 +1,130 @@
-# 演化日报 · Yanhua Daily
+<div align="center" id="readme-top">
 
-[yanhua.ai](https://yanhua.ai) 是一份递归自我改进（RSI）与智能体框架搜索（harness search）的双语日报。默认简体中文，可切换 English。站点是静态文件，由 GitHub Pages 从仓库根目录发布。
+<a href="https://yanhua.ai"><img src="assets/banner.png" alt="演化日报 · yanhua.ai — Where agents rewrite their own harnesses" width="100%"></a>
 
-The site is a bilingual daily on recursive self-improvement and agent harness search. Simplified Chinese is the default. English is one toggle away. GitHub Pages serves the repository root. `CNAME` stays `yanhua.ai`, and `.nojekyll` keeps Pages from running Jekyll.
+<p align="center">
+  <a href="https://yanhua.ai"><img src="https://img.shields.io/badge/Live_Site-yanhua.ai-8e2f27?style=for-the-badge" alt="Live Site"></a>
+  <a href="https://yanhua.ai"><img src="https://img.shields.io/badge/Cadence-09%3A00%20%26%2018%3A00%20London-1b1714?style=for-the-badge" alt="09:00 &amp; 18:00 London"></a>
+  <a href="https://yanhua.ai"><img src="https://img.shields.io/badge/Daily_Email-Resend%20%C2%B7%20%E6%AF%8F%E6%97%A5%E5%90%88%E8%BE%91-14633c?style=for-the-badge" alt="Resend · 每日合辑"></a>
+  <a href="https://yanhua.ai/feed.xml"><img src="https://img.shields.io/badge/RSS_/_Atom-feed.xml-b85d19?style=for-the-badge" alt="RSS / Atom"></a>
+  <a href="https://yanhua.ai/data/digests.json"><img src="https://img.shields.io/badge/JSON_Feed-digests.json-1e4e79?style=for-the-badge" alt="JSON Feed"></a>
+</p>
 
-## 阅读
+[Live Reader · 在线阅读](https://yanhua.ai) · [Flash-Card Deck · 闪卡模式](https://yanhua.ai/#deck) · [RSS Feed](https://yanhua.ai/feed.xml) · [JSON API](https://yanhua.ai/data/digests.json)
 
-- **阅读流**：按期次排列。每张卡先给一句结论，下面是指标，再以两列放问题背景和机制。文中的 `@handle` 可以点开，卡片底部有论文、仓库或帖子链接。
-- **闪卡**：正面是标题、一句结论和指标，背面是问题与机制。`←` `→` 或 `J` `K` 换卡，`空格` / `Enter` 或点击翻面。站点没有账号，也不在浏览器里记已读或收藏。
-- 地址栏 `?lang=en` 或 `?lang=zh` 指定语言。
-- 筛选期次、主题，或搜索标题、arXiv 编号、作者、账号。
+</div>
 
-## 订阅
+<br>
 
-页眉没有订阅按钮。滚到页尾附近时，右下角用 `dialog.show()` 打开一扇不挡页面的小窗；关掉之后这一次浏览不再自动出现。已经订阅过的浏览器也不会再自动弹出。
+## ❯❯ What is 演化日报 · yanhua.ai
 
-表单 `POST` 到 `https://subscribe.yanhua.ai`，正文是 `{email, lang, source}`。订阅数来自 `GET https://subscribe.yanhua.ai/stats`。密钥 `RESEND_API_KEY` 只放在 Worker 上。名单进 Resend 的 General segment（`0f2fbb4e-3333-43c1-a0d2-16c69a7c3003`）。
+<p align="center">
+  <img src="assets/banner.svg" alt="Card anatomy specimen: one-sentence takeaway, tabular metrics, problem and mechanism, then arXiv, GitHub, and X" width="100%">
+</p>
 
-- **每日寄出**：`scripts/send_newsletter_resend.py` 在 GitHub Actions 里用仓库密钥 `RESEND_API_KEY` 同步带 `subscribe` 标签的 Issue，并在手动运行 workflow 且勾上 “Email the latest edition through Resend” 时，把最新一期做成 Resend broadcast。发信人是 `演化日报 · Yanhua Daily <digest@yanhua.ai>`，域名未验证时改用 `onboarding@resend.dev`。普通的 Pages 部署只同步名单，不发信。
+<p align="center"><em>一张闪卡的读法：一句话结论，一张指标表，然后才是问题与机制。来源落到 arXiv、GitHub 与 X。</em></p>
 
-编辑 `data/config.js`：
+**演化日报**是一份给研究者的双语日报，站点在 [yanhua.ai](https://yanhua.ai)。它每天两次追踪智能体如何改写自己的 harness：早上 09:00 与晚上 18:00（Europe/London）各出一版。默认简体中文，English 是同一期内容上的一个开关。每张卡先给一句能读完的结论，说明改进了什么、改进了多少、机制为什么成立，再把问题、做法和可核对的数字放在下面。
 
-```js
-window.YANHUA_CONFIG = {
-  subscribeEndpoint: "https://subscribe.yanhua.ai",
-  statsEndpoint: "https://subscribe.yanhua.ai/stats",
-  resendAudienceId: "0f2fbb4e-3333-43c1-a0d2-16c69a7c3003",
-  subscribeMethod: "POST",
-  subscribeFormat: "json", // Formspree 用 "form"
-  subscribeHeaders: {},
-  extraFields: {},
-  mailto: "",
-  githubIssueUrl: "https://github.com/dexhunter/yanhua.ai/issues/new",
-  substackUrl: "",
-  cloudflareBeaconToken: "",
-  goatcounterCode: "",
-  plausibleDomain: ""
-};
+**Yanhua Daily** is a bilingual research daily for people who read papers, repositories, and posts about agents that rewrite their own harnesses. It publishes at 09:00 and 18:00 Europe/London. Simplified Chinese is the default; English is the same edition behind one toggle. A card opens with one sentence you can finish — what improved, by how much, and why the mechanism holds — then sets the problem, the method, and the checkable numbers underneath.
+
+GitHub Pages 从仓库根目录发布静态站点。`CNAME` 是 `yanhua.ai`，`.nojekyll` 让 Pages 按原样提供文件。
+
+## ❯❯ Core Coverage · 核心追踪方向
+
+日报围着四条线读文献、仓库和帖子。筛选器里的标签比这四格更细（`harness-search`、`co-evolution`、`verification`、`agentic-rl`、`embodied`、`memory-skills`），读的时候仍落在这张表上。
+
+| **Agent Harness Search · 智能体框架搜索** | **Recursive Self-Improvement · 递归自我改进** |
+| --- | --- |
+| 搜索、改写、迁移 harness 本身：提示、工具、技能、执行膜、可回滚的适配器。权重可以不动。 | 系统用自己的运行结果改下一轮的做法。演化发生在循环上，而不只发生在一次训练里。 |
+| **Verification & Anti-Reward-Hacking · 验证与防作弊** | **Self-Evolving Code & Embodied Agents · 自演化代码与具身** |
+| 验证器必须和提议者隔开。评分器上的漏洞会被立刻钻穿，所以核对不能交给正在被优化的那一方。 | 代码代理与机器人把当天的失败写成下一次还能用的计划、技能或恢复规则，而不必为每个场景重训权重。 |
+
+The same four lines, in English: harness search over prompts, tools, skills, and rollbackable adapters; recursive self-improvement of the loop rather than one training run; verification that stays outside the proposer, because a scorer with a gap gets gamed; and self-evolving code or embodied agents that turn today's failures into the next plan without retraining the weights.
+
+## ❯❯ Three-Part Card Anatomy · 三段式精读闪卡
+
+卡不是一条推文的转述。`why`、`what`、`how` 都来自对论文或仓库的阅读。`why` 必须是一句，`what` 必须是一句，`how` 至多两句。
+
+### ❯ 一句话结论 · 1-Sentence Takeaway
+
+结论放在最上面（`why`）。它用人话写明结果和原因，而不是把摘要再压短一截。指标表（`pills`）紧跟在结论后面，数字用等宽、等宽数字排列，涨跌用站点自己的绿色与漆红，而不是另做一套徽章。
+
+The takeaway is one sentence at the top of the card. The table under it is the same fact in numbers: label, value, and a tone of `up`, `down`, or `flat`. A value may be a string or `{ "zh", "en" }`.
+
+### ❯ 问题与机制 · Problem & Mechanism
+
+`what` 是问题与设置，`how` 是机制与实证。两段都要能回到原文，而不是停在转发语上。列表模式里它们分成两列；闪卡的背面是这两段，正面仍是结论和指标。
+
+### ❯ 来源 · arXiv / GitHub / X
+
+每张卡都要能点到论文、仓库、文章或原帖。`arxiv` 打开 `https://arxiv.org/abs/…`，`repo` 打开 GitHub，`handle` 和帖子链接打开 X。
+
+正文里的 `@handle` 会变成指向 `https://x.com/<handle>` 的链接。指标记号保持原样，不会被当成提及：`PR@1`、`pass@1`、`Best@1` 仍是文本。邮箱和裸 `@1` 也不会被链走。
+
+## ❯❯ Reading Surfaces & Feeds · 阅读方式与订阅
+
+### ❯ Reader Stream · 列表
+
+按期次往下读。页眉可以切期次、主题，也可以搜标题、arXiv 编号、作者和账号。`?lang=zh` 或 `?lang=en` 指定语言。纸色主题在浅色 `#f4efe6` 与深色之间切换。
+
+### ❯ 3D Flip Flash-Cards · 闪卡
+
+页眉切到 **闪卡 / Deck**。卡片沿 Y 轴翻转：正面是标题、一句结论和指标，背面是问题与机制。`Space` 或 `Enter` 翻面，`J` / `K` 或 `←` / `→` 换卡。站点没有账号，也不在浏览器里记已读或收藏。
+
+### ❯ Evening Combined Email · 每日晚间合辑
+
+晚上把当天的早间版和晚间版合成一封信，经 Resend 发出。发件人是 `演化日报 · Yanhua Daily <digest@yanhua.ai>`。页面上没有常驻订阅按钮：滚到靠近页尾时，右下角用 `dialog.show()` 打开一扇不挡阅读的小窗。表单 `POST` 到 [https://subscribe.yanhua.ai](https://subscribe.yanhua.ai)，正文是 `{email, lang, source}`。`RESEND_API_KEY` 只放在 Worker 和 GitHub Actions 里。
+
+Pages 的普通部署只同步带 `subscribe` 标签的 Issue 名单。要发信，在 Actions 里手动运行 workflow，并勾上 “Email the latest edition through Resend”。
+
+### ❯ RSS / JSON
+
+- RSS / Atom：<https://yanhua.ai/feed.xml>
+- JSON Feed：<https://yanhua.ai/feed.json>
+- 原始数据集：<https://yanhua.ai/data/digests.json>
+
+订阅源把一句结论放在条目最前，并把安全的 `@handle` 写成链接。
+
+## ❯❯ Repository & CLI Workflow · 仓库结构与发布流程
+
+规范数据集是 `data/digests.json`（页面通过 `data/digests.js` 读取同一份文档）。仓库里没有单独的根级 `digest.json`。订阅 Worker 是 `scripts/cloudflare-resend-worker.js`，部署在 `https://subscribe.yanhua.ai`。
+
+| Path | Role |
+| --- | --- |
+| `data/digests.json` | 期次与卡片的双语源数据 |
+| `data/digests.js` | 给页面用的同一份数据 |
+| `scripts/update_digest.py` | 校验、重建 `digests.js` / RSS / JSON Feed，并给 `index.html` 里的资源盖上 `?v=` 缓存戳 |
+| `scripts/send_newsletter_resend.py` | 生成早间 + 晚间合辑 HTML，并用 Resend 广播 |
+| `scripts/cloudflare-resend-worker.js` | 右下角订阅窗背后的 Cloudflare Worker |
+| `feed.xml` / `feed.json` | 公开订阅源 |
+| `index.html` · `assets/` · `data/config.js` | 页面、样式与订阅接口配置 |
+
+校验然后构建：
+
+```bash
+python3 scripts/update_digest.py check && python3 scripts/update_digest.py build
 ```
 
-Worker 接受之后，这台浏览器才记住订阅。请求失败时窗口里会说明没有送出，并给出一个带 `subscribe` 标签的 GitHub Issue 作为备用。
-
-## 访问与订阅统计
-
-页眉和页脚的统计条显示刊载指标：卡片总数、期数、收录论文（带 arXiv 或论文链接的条目）。点统计条，或打开 `?stats=1`，还可以看到 [vercount](https://events.vercount.one/api/v2/log) 记下的 `https://yanhua.ai/` 访客（UV）和阅读（PV），以及 `https://subscribe.yanhua.ai/stats` 返回的 Resend 订阅人数。站点每天伦敦时间 09:00 与 18:00 各更新一次，两版合入当晚的邮件摘要。
-
-可选的外部统计写在 `data/config.js`。留空则只用上面的内置计数：
-
-```js
-cloudflareBeaconToken: "", // Cloudflare Web Analytics token
-goatcounterCode: "",       // "yanhua" 或 "yanhua.goatcounter.com"
-plausibleDomain: ""        // "yanhua.ai"
-```
-
-RSS：<https://yanhua.ai/feed.xml>  
-JSON Feed：<https://yanhua.ai/feed.json>
-
-## 追加一期
-
-源数据是 `data/digests.json`。新增一期写成一个 JSON 文件，例如 `editions/2026-10-28-evening.json`：
-
-```json
-{
-  "edition": {
-    "id": "2026-10-28-evening",
-    "date": "2026-10-28",
-    "slot": "evening",
-    "label": { "zh": "2026-10-28 晚间版", "en": "28 Oct 2026 · Evening" }
-  },
-  "items": [
-    {
-      "id": "unique-slug",
-      "edition": "2026-10-28-evening",
-      "tags": ["harness-search"],
-      "title": { "zh": "标题", "en": "Title" },
-      "what": { "zh": "一句问题。", "en": "One sentence on the problem." },
-      "how": { "zh": "一两句机制，关键数字放这里。", "en": "One or two sentences on the mechanism, with the key numbers." },
-      "why": { "zh": "一句人话结论，说明结果以及为什么。", "en": "One sentence stating the conclusion and why it holds." },
-      "metric": { "zh": "一句话指标", "en": "One-line metric" },
-      "pills": [{ "zh": "指标", "en": "Metric", "value": "1.0", "tone": "up" }],
-      "arxiv": "2610.00000",
-      "authors": "Name et al.",
-      "handle": "@someone",
-      "links": [{ "zh": "论文", "en": "Paper", "url": "https://arxiv.org/abs/2610.00000" }]
-    }
-  ]
-}
-```
-
-`slot` 取 `morning`、`evening`，或 `""`（一天一期）。`tags` 用：`harness-search`、`co-evolution`、`verification`、`agentic-rl`、`embodied`、`memory-skills`。`tone` 取 `up`、`down`、`flat`。`value` 可以是字符串，或 `{ "zh": "……", "en": "……" }`。
-
-然后：
+`check` 只校验。`build` 会再校验一次，然后写出前端数据和订阅源。追加一期（`slot` 取 `morning`、`evening`，或 `""` 表示当天只有一版）：
 
 ```bash
 python3 scripts/update_digest.py append editions/2026-10-28-evening.json
 ```
 
-这条命令把新一期插到最前，替换同 id 的旧一期，并重新写出：
+同 `id` 再追加会替换那一期。新期插到最前。
 
-- `data/digests.json`
-- `data/digests.js`
-- `feed.xml`
-- `feed.json`
-
-只重算前端数据和订阅源、不改内容时：
+邮件：
 
 ```bash
-python3 scripts/update_digest.py build
-python3 scripts/update_digest.py check
+python3 scripts/send_newsletter_resend.py --preview /tmp/daily_email_preview.html
+python3 scripts/send_newsletter_resend.py --preview /tmp/daily_email_preview.html --date 2026-10-27
+python3 scripts/send_newsletter_resend.py --sync-only
+python3 scripts/send_newsletter_resend.py --send --date 2026-10-27
 ```
 
-`check` 会确认每张卡的标题、问题、机制、结论和指标都有中文和英文，`what` 与 `why` 各是一句，`how` 不超过两句，并且每张卡都能落到论文、仓库、文章或帖子链接。订阅源把这句结论放在条目最前，并把 `@handle` 写成可点击的链接。
+`--preview` 只写 HTML，不调用 Resend，也不需要密钥。`--date` 缺省时用最新一期的日期。`--send` 会先同步名单，再把该日的早间版和晚间版合成一封广播。`--sync-only` 只同步，不发信。域名尚未验证时，发件人会退回 `onboarding@resend.dev`。
 
-## 文件
-
-| 路径 | 作用 |
-| --- | --- |
-| `index.html` | 页面 |
-| `CNAME` | `yanhua.ai` |
-| `.nojekyll` | 让 GitHub Pages 按原样发布 |
-| `favicon.svg` | 标志 |
-| `assets/` | 样式与交互 |
-| `data/digests.json` | 日报源数据 |
-| `data/digests.js` | 给页面用的同一份数据 |
-| `data/config.js` | 订阅接口 |
-| `feed.xml` / `feed.json` | 订阅源 |
-| `scripts/update_digest.py` | 追加一期并重建订阅源 |
+<p align="center">
+  <a href="#readme-top"><img src="https://img.shields.io/badge/-Back_to_top-1b1714?style=flat-square" alt="Back to top"></a>
+</p>
