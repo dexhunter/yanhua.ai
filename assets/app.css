@@ -246,7 +246,7 @@ html[data-flipped="true"] .brand-mark { transform: rotate(80deg); }
   grid-template-columns: minmax(12rem, 16rem) minmax(0, var(--measure));
   gap: 2.5rem 3rem;
   justify-content: center;
-  padding: 1.75rem 1.5rem 4rem;
+  padding: 1.15rem 1.5rem 4rem;
 }
 
 .rail {
@@ -299,31 +299,29 @@ html[data-flipped="true"] .brand-mark { transform: rotate(80deg); }
 .search::placeholder { color: var(--muted); }
 .search:user-invalid { border-color: var(--lacquer); }
 
-.masthead h1 {
-  margin: 0.2rem 0 0;
-  font-family: var(--serif);
-  font-weight: 600;
-  font-size: clamp(2.4rem, 5vw, 3.6rem);
-  letter-spacing: -0.03em;
-  line-height: 1.12;
-  text-wrap: balance;
+.masthead { padding: 0.85rem 1.25rem 0; }
+.mast-bar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0.45rem 1.5rem;
 }
+.mast-sub {
+  margin: 0;
+  min-width: 0;
+  font-family: var(--serif);
+  font-size: 0.95rem;
+  line-height: 1.45;
+  color: var(--muted);
+}
+.mast-bar .stats-strip { flex: none; }
 .lede {
   max-width: var(--measure);
   margin: 0.9rem 0 0;
   font-family: var(--serif);
   font-size: 1.12rem;
   line-height: var(--reading);
-}
-.meta-line {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 0.45rem 0.75rem;
-  margin: 0.85rem 0 0;
-  font-family: var(--mono);
-  font-size: 0.78rem;
-  color: var(--muted);
 }
 .stats-strip {
   display: inline-flex;
@@ -373,7 +371,6 @@ html[data-flipped="true"] .brand-mark { transform: rotate(80deg); }
 }
 .stats-note { margin: 0.35rem 0 0; line-height: 1.55; }
 .stats-links { display: flex; flex-wrap: wrap; gap: 0.75rem 1rem; margin: 0.9rem 0 0; font-size: 0.9rem; }
-.foot-stats { margin: 0.9rem 0 0.2rem; }
 dialog.sub-window {
   position: fixed;
   inset: auto 1.5rem 1.5rem auto;
@@ -440,33 +437,20 @@ dialog.sub-window h2 {
 .sub-win-body .feed-row { margin-top: 0.75rem; align-items: center; }
 .sub-win-body .feed-row span { color: var(--muted); }
 
-.slip, .entry, .deck-sheet, dialog {
+.entry, .deck-sheet, dialog {
   border: 1px solid var(--line);
   background: var(--raised);
 }
-.slip {
-  margin-top: 1.6rem;
-  padding: 1rem 1.05rem 1.05rem;
-  display: grid;
-  gap: 0.75rem;
-}
-.slip-copy strong {
-  display: block;
-  font-family: var(--serif);
-  font-size: 1.2rem;
-  font-weight: 600;
-}
-.slip-copy p { margin: 0.25rem 0 0; color: var(--muted); line-height: 1.6; }
 .slip-row, .lang-picks { display: flex; flex-wrap: wrap; gap: 0.5rem; align-items: center; }
-.slip input[type="email"] {
-  flex: 1 1 14rem;
+.subscribe-form input[type="email"] {
+  flex: 1 1 8rem;
   min-width: 0;
   background: var(--paper);
   border: 1px solid var(--line);
   padding: 0.65rem 0.7rem;
   caret-color: var(--lacquer);
 }
-.slip input[type="email"]:user-invalid { border-color: var(--lacquer); }
+.subscribe-form input[type="email"]:user-invalid { border-color: var(--lacquer); }
 .field-error { display: none; margin: 0; color: var(--lacquer-ink); font-size: 0.88rem; }
 .slip:has(input:user-invalid) .field-error,
 .subscribe-form:has(input:user-invalid) .field-error { display: block; }
@@ -482,15 +466,24 @@ dialog.sub-window h2 {
 .status a { margin-right: 0.8rem; }
 .feed-row { display: flex; gap: 0.9rem; font-family: var(--mono); font-size: 0.78rem; }
 
-.edition-block { margin-top: 2.6rem; }
+.edition-block { margin-top: 2.4rem; }
+.edition-block:first-child { margin-top: 0.35rem; }
+.edition-head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1rem;
+  border-bottom: 1px solid var(--line);
+  padding-bottom: 0.45rem;
+}
 .edition-block h2 {
-  margin: 0 0 0.35rem;
+  margin: 0;
   font-family: var(--serif);
   font-size: 1.45rem;
   font-weight: 600;
   letter-spacing: -0.02em;
 }
-.edition-count { font-family: var(--mono); font-size: 0.75rem; color: var(--muted); }
+.edition-count { margin: 0; font-family: var(--mono); font-size: 0.75rem; color: var(--muted); font-variant-numeric: tabular-nums; }
 
 .entry {
   content-visibility: auto;
@@ -512,11 +505,12 @@ dialog.sub-window h2 {
 .entry h3 a { color: inherit; text-decoration: none; }
 .entry h3 a:hover { color: var(--lacquer-ink); }
 .byline {
-  margin: 0.45rem 0 0;
+  margin: 0.4rem 0 0;
   color: var(--muted);
-  font-size: 0.88rem;
+  font-size: 0.95rem;
+  line-height: 1.45;
 }
-.byline a { font-family: var(--mono); font-size: 0.78rem; }
+.byline-tag { font-family: var(--mono); font-size: 0.75rem; }
 
 .pills {
   display: flex;
@@ -668,31 +662,8 @@ dialog.sub-window h2 {
   padding: 1.35rem 1.3rem 1.25rem;
   min-height: 24rem;
 }
-.deck-kicker {
-  margin: 0.45rem 0 0;
-  font-family: var(--mono);
-  font-size: 0.75rem;
-  color: var(--muted);
-}
-.metric-line {
-  margin: 0.85rem 0 0;
-  font-family: var(--mono);
-  font-size: 1.15rem;
-  font-weight: 600;
-  letter-spacing: -0.03em;
-  color: var(--lacquer-ink);
-}
-.rail > label {
-  display: block;
-  margin: 0 0 0.4rem;
-  font-size: 0.72rem;
-  font-weight: 600;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: var(--muted);
-}
 .deck-sheet h2 {
-  margin: 0.55rem 0 0;
+  margin: 0;
   font-family: var(--serif);
   font-size: clamp(1.6rem, 3vw, 2.05rem);
   font-weight: 600;
@@ -700,7 +671,6 @@ dialog.sub-window h2 {
   line-height: 1.25;
   text-wrap: balance;
 }
-.hint { margin: 0.8rem 0 0; color: var(--muted); font-size: 0.85rem; }
 .keys { font-family: var(--mono); font-size: 0.75rem; color: var(--muted); }
 
 .empty {
@@ -712,12 +682,22 @@ dialog.sub-window h2 {
 
 .colophon {
   border-top: 1px solid var(--line);
-  padding: 2rem 1.5rem 3rem;
-  display: grid;
-  justify-content: center;
+  padding: 0.9rem 1.25rem 1.15rem;
 }
-.colophon-inner { width: min(100%, 68ch); }
-.colophon p { font-family: var(--serif); line-height: var(--reading); max-width: 62ch; }
+.colophon-inner {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0.75rem 1.5rem;
+}
+.colophon p {
+  margin: 0;
+  font-family: var(--serif);
+  font-size: 0.95rem;
+  line-height: 1.45;
+  color: var(--muted);
+}
+.colophon .feed-row { flex: none; align-items: center; color: var(--muted); }
 
 dialog {
   color: var(--ink);
@@ -749,7 +729,7 @@ dialog .lede { font-size: 1rem; }
   .shell {
     grid-template-columns: minmax(0, 1fr);
     justify-content: stretch;
-    padding-top: 1.1rem;
+    padding-top: 1rem;
   }
   .rail, #content { min-width: 0; }
   .search { min-width: 0; }
@@ -768,6 +748,7 @@ dialog .lede { font-size: 1rem; }
 @media (max-width: 640px) {
   .brand-domain { display: none; }
   #theme-btn span { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0, 0, 0, 0); }
-  .entry, .deck-sheet, .slip { padding-left: 0.9rem; padding-right: 0.9rem; }
+  .entry, .deck-sheet { padding-left: 0.9rem; padding-right: 0.9rem; }
+  .colophon-inner { flex-wrap: wrap; }
   .stats-grid { grid-template-columns: 1fr; }
 }

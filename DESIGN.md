@@ -143,7 +143,7 @@ Density is editorial, not dashboard. A card is one study. Metrics sit in a ledge
 **Key Characteristics:**
 
 - Warm paper ground, ink text, one vermilion used as a seal.
-- Serif for the masthead, the card title, and the conclusion. Sans for the rail, labels, and body of the mechanism.
+- Serif for the editorial subtitle, the card title, and the conclusion. Sans for the rail, labels, and body of the mechanism.
 - A 1px hairline is the divider. Metrics are a row, not a stack of boxes.
 - Icons are drawn at 14px. The page does not use emoji as icons.
 - Nothing set smaller than 0.72rem (11.52px at a 16px root).
@@ -182,8 +182,8 @@ The light scheme is the paper the daily is set on. The dark scheme reassigns the
 **Character:** The serif carries the sentence a person reads. The sans carries the chrome. Mono is for identifiers and numbers, not for the conclusion.
 
 ### Hierarchy
-- **Display** (600, `clamp(2.4rem, 5vw, 3.6rem)`, line-height 1.12): the masthead title only.
-- **Headline** (600, 1.48rem, line-height 1.28): the card title. Edition titles sit just under that, at 1.45rem.
+- **Brand** (600, 1.35rem): the site name in the nav. It is the only title. The editorial bar under it is one muted serif line at 0.95rem, with the stats strip on the same baseline. There is no second page title.
+- **Headline** (600, 1.48rem, line-height 1.28): the card title. Edition titles sit just under that, at 1.45rem, on one baseline with the edition count.
 - **Title** (500, 1.15rem, line-height 1.65): the conclusion, set as a serif lead inside the wash.
 - **Body** (400, 1rem, line-height 1.5, measure 68ch): the page default. Mechanism copy is 0.95rem at line-height 1.65. English reading line-height drops from 1.75 to 1.65.
 - **Label** (600, 0.75rem): rail headings, context labels, and the seal. The seal is 0.72rem, which is the floor. Rail headings may use 0.08em tracking and uppercase Latin; Chinese labels stay in the same size without forced caps.
@@ -195,7 +195,7 @@ The light scheme is the paper the daily is set on. The dark scheme reassigns the
 
 ## Layout
 
-The page is a sticky masthead, then a two-column shell: a rail at `minmax(12rem, 16rem)` and a reading column at `var(--measure)` (68ch), separated by 3rem. The shell is centered. Below 900px the rail stacks above the column and its lists wrap. Below 640px the domain in the masthead hides and the stats grid becomes one column.
+The page is a sticky nav, then a two-column shell: a rail at `minmax(12rem, 16rem)` and a reading column at `var(--measure)` (68ch), separated by 3rem. The shell is centered. The column opens with one editorial line and the stats strip; the latest edition name is only the first edition heading. The footer is one line: the tagline on the left, RSS and JSON on the right. Below 900px the rail stacks above the column and its lists wrap. Below 640px the domain in the nav hides and the stats grid becomes one column.
 
 Inside a card the order is fixed: title and byline, conclusion, ledger, then the two-column problem and mechanism, then the source links. The context block is separated from the conclusion by a 1px `var(--line)` rule, with more space above that rule than between a context heading and its paragraph. Flash cards keep the same order, split across the two faces, and end on the flip control plus the source links.
 
@@ -251,7 +251,7 @@ Corners are mostly square, like a newspaper. The exceptions are small and named:
 
 ### Navigation
 - **Style:** a sticky bar on paper with a 1px bottom rule. The wordmark is serif. RSI is a mono badge. Mode and language are a segmented control: pressed segment is ink on paper.
-- **Mobile:** the rail becomes a wrapping row under the masthead. The theme control keeps its icon and hides the word.
+- **Mobile:** the rail becomes a wrapping row under the nav. The theme control keeps its icon and hides the word.
 
 ### Stats
 - **Style:** a mono strip of three publication counts — cards, editions, papers indexed. The dialog adds visitors, views, and subscribers, then repeats the publication counts, then one sentence on the 09:00 and 18:00 UTC+0 cadence.
