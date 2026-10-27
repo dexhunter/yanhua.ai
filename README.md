@@ -6,29 +6,53 @@ The site is a bilingual daily on recursive self-improvement and agent harness se
 
 ## 阅读
 
-- **阅读流**：按期次排列。每张卡是三块：问题与定位、核心机制、核心结论与深层原因。
-- **闪卡**：`←` `→` 换卡，`空格`或点击翻面。已读和收藏记在这台浏览器的 `localStorage`。
+- **阅读流**：按期次排列。每张卡先给一句结论，下面是指标，再以两列放问题背景和机制。文中的 `@handle` 可以点开，卡片底部有论文、仓库或帖子链接。
+- **闪卡**：正面是标题、一句结论和指标，背面是问题与机制。`←` `→` 换卡，`空格`或点击翻面。已读和收藏记在这台浏览器的 `localStorage`。
 - 地址栏 `?lang=en` 或 `?lang=zh` 指定语言。
 - 筛选期次、主题，或搜索标题、arXiv 编号、作者、账号。
 
 ## 订阅
 
-页面上的邮箱表单会立刻确认，并把订阅记在本地。把投递接到 Buttondown、Loops、Formspree 或 Cloudflare Worker 时，编辑 `data/config.js`：
+页眉只有一个细的「订阅」按钮。邮箱表单不占开头，滚到页尾附近时，右下角才滑出一张小卡片；关掉之后这一次浏览不再自动出现。已经订阅过的浏览器也不会再自动弹出。
+
+表单会立刻在本地确认。真正寄出邮件要经过一个你自己持有密钥的服务：静态页面不能保存 `RESEND_API_KEY`，Resend 也不接受浏览器直接调用。
+
+- **Cloudflare Worker**：部署 `scripts/cloudflare-resend-worker.js`，把 `subscribeEndpoint` 设成它的地址。只需要密钥 `RESEND_API_KEY`。名单默认进 Resend 的 General segment（`0f2fbb4e-3333-43c1-a0d2-16c69a7c3003`，与 `data/config.js` 的 `resendAudienceId` 相同）。可选 `SEND_WELCOME=1` 发一封确认信。`yanhua.ai` 的域名验证完成前，确认信从 `onboarding@resend.dev` 发出；验证之后用 `演化日报 · Yanhua Daily <digest@yanhua.ai>`。
+- **Buttondown / Formspree**：同样把地址填进 `subscribeEndpoint`。
+- **每日寄出**：`scripts/send_newsletter_resend.py` 在 GitHub Actions 里用仓库密钥 `RESEND_API_KEY` 同步带 `subscribe` 标签的 Issue，并在手动运行 workflow 且勾上 “Email the latest edition through Resend” 时，把最新一期做成 Resend broadcast。发信人同样先用 `digest@yanhua.ai`，域名未验证时改用 `onboarding@resend.dev`。普通的 Pages 部署只同步名单，不发信。
+
+编辑 `data/config.js`：
 
 ```js
 window.YANHUA_CONFIG = {
   subscribeEndpoint: "https://example.com/subscribe",
+  resendAudienceId: "0f2fbb4e-3333-43c1-a0d2-16c69a7c3003",
   subscribeMethod: "POST",
   subscribeFormat: "json", // Formspree 用 "form"
   subscribeHeaders: {},
   extraFields: {},
   mailto: "",
   githubIssueUrl: "https://github.com/dexhunter/yanhua.ai/issues/new",
-  substackUrl: ""
+  substackUrl: "",
+  cloudflareBeaconToken: "",
+  goatcounterCode: "",
+  plausibleDomain: ""
 };
 ```
 
-接口为空，或请求失败时，表单仍然确认成功，并给出 GitHub Issue（以及可选的 mailto / Substack）作为备用投递。不会因为没有后端而报错。
+接口为空，或请求失败时，表单仍然确认成功，并给出 GitHub Issue（以及可选的 mailto / Substack）作为备用投递。Issue 会带上 `subscribe` 标签。不会因为没有后端而报错。
+
+## 访问与订阅统计
+
+页眉和页脚的统计条用 [vercount](https://events.vercount.one/api/v2/log) 记录 `https://yanhua.ai/` 的访客（UV）和阅读（PV），不需要先注册第三方账号。订阅数是两处相加：表单提交记在 `https://yanhua.ai/subscribers` 的 `page_pv` 上（同一浏览器里的同一个邮箱只记一次），再加上 [带 subscribe 标签的 GitHub Issue](https://github.com/dexhunter/yanhua.ai/issues?q=label%3Asubscribe)。点统计条，或打开 `?stats=1`，可以看到这两项、本机已读和收藏，以及配置入口。
+
+可选的外部统计写在 `data/config.js`。留空则只用上面的内置计数：
+
+```js
+cloudflareBeaconToken: "", // Cloudflare Web Analytics token
+goatcounterCode: "",       // "yanhua" 或 "yanhua.goatcounter.com"
+plausibleDomain: ""        // "yanhua.ai"
+```
 
 RSS：<https://yanhua.ai/feed.xml>  
 JSON Feed：<https://yanhua.ai/feed.json>
@@ -51,9 +75,9 @@ JSON Feed：<https://yanhua.ai/feed.json>
       "edition": "2026-10-28-evening",
       "tags": ["harness-search"],
       "title": { "zh": "标题", "en": "Title" },
-      "what": { "zh": "问题与定位。", "en": "What it is and which bottleneck it attacks." },
-      "how": { "zh": "机制如何运作。", "en": "How the loop works." },
-      "why": { "zh": "结论里的因果，以及限制。", "en": "The causal finding, the numbers, and the caveat." },
+      "what": { "zh": "一句问题。", "en": "One sentence on the problem." },
+      "how": { "zh": "一两句机制，关键数字放这里。", "en": "One or two sentences on the mechanism, with the key numbers." },
+      "why": { "zh": "一句人话结论，说明结果以及为什么。", "en": "One sentence stating the conclusion and why it holds." },
       "metric": { "zh": "一句话指标", "en": "One-line metric" },
       "pills": [{ "zh": "指标", "en": "Metric", "value": "1.0", "tone": "up" }],
       "arxiv": "2610.00000",
@@ -87,7 +111,7 @@ python3 scripts/update_digest.py build
 python3 scripts/update_digest.py check
 ```
 
-`check` 会确认每张卡的标题、问题、机制、结论和指标都有中文和英文。
+`check` 会确认每张卡的标题、问题、机制、结论和指标都有中文和英文，`what` 与 `why` 各是一句，`how` 不超过两句，并且每张卡都能落到论文、仓库、文章或帖子链接。订阅源把这句结论放在条目最前，并把 `@handle` 写成可点击的链接。
 
 ## 文件
 

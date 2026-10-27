@@ -1,7 +1,37 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="">
-  <rect width="64" height="64" rx="14" fill="#1b1714"/>
-  <path d="M32 44.5c-7.4 0-12.5-4.2-12.5-10.2 0-4.6 3-7.8 7.2-8.6" fill="none" stroke="#f4efe6" stroke-width="3.2" stroke-linecap="round"/>
-  <path d="M32 19.5c7.4 0 12.5 4.2 12.5 10.2 0 4.6-3 7.8-7.2 8.6" fill="none" stroke="#e07a68" stroke-width="3.2" stroke-linecap="round"/>
-  <path d="M26.7 25.7c2.2-3.4 5.3-5.2 8.8-5.2 6.2 0 10.2 4.4 10.2 10.1 0 7.4-5.4 13.9-13.7 13.9-6.2 0-10.2-4.4-10.2-10.1 0-2.2.6-4.2 1.7-5.9" fill="none" stroke="#e07a68" stroke-width="3.2" stroke-linecap="round"/>
-  <circle cx="44.2" cy="18.2" r="2.3" fill="#e07a68"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="演化日报 · Yanhua.ai">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="64" y2="64" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#1f1a17"/>
+      <stop offset="100%" stop-color="#120f0d"/>
+    </linearGradient>
+    <linearGradient id="lacquer" x1="14" y1="50" x2="50" y2="14" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#c94432"/>
+      <stop offset="100%" stop-color="#ed7b66"/>
+    </linearGradient>
+  </defs>
+  <!-- Dark obsidian-ink seal base -->
+  <rect width="64" height="64" rx="15" fill="url(#bg)"/>
+  <!-- Inner seal hairline -->
+  <rect x="4.5" y="4.5" width="55" height="55" rx="11" fill="none" stroke="#f4efe6" stroke-opacity="0.14" stroke-width="1.25"/>
+
+  <!-- Agent Harness corner brackets (search-space scaffolding) -->
+  <path d="M12.5 21V14.5a2 2 0 0 1 2-2H21M51.5 21V14.5a2 2 0 0 0-2-2H43M12.5 43v6.5a2 2 0 0 0 2 2H21M51.5 43v6.5a2 2 0 0 1-2 2H43"
+        fill="none" stroke="#f4efe6" stroke-opacity="0.45" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <!-- Recursive loop — Policy arc (Warm Paper) -->
+  <path d="M 24.72 45.69 A 15.5 15.5 0 0 1 36.79 17.26"
+        fill="none" stroke="#f4efe6" stroke-width="4.8" stroke-linecap="round"/>
+  <path d="M 30.70 19.24 L 36.79 17.26 L 33.03 12.08"
+        fill="none" stroke="#f4efe6" stroke-width="4.2" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <!-- Recursive loop — Harness evolution arc (Vermilion Lacquer) -->
+  <path d="M 39.28 18.31 A 15.5 15.5 0 0 1 27.21 46.74"
+        fill="none" stroke="url(#lacquer)" stroke-width="4.8" stroke-linecap="round"/>
+  <path d="M 33.30 44.76 L 27.21 46.74 L 30.97 51.92"
+        fill="none" stroke="url(#lacquer)" stroke-width="4.2" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <!-- Central self-improving spark / node -->
+  <path d="M32 23.2L35.2 28.8L40.8 32L35.2 35.2L32 40.8L28.8 35.2L23.2 32L28.8 28.8Z"
+        fill="url(#lacquer)"/>
+  <circle cx="32" cy="32" r="2.4" fill="#f4efe6"/>
 </svg>
