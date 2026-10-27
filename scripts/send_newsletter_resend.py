@@ -15,7 +15,7 @@ segment call fails.
 
 --sync-only adds label:subscribe issue emails to the segment and does
 not send mail. --send does that sync, then creates a Resend broadcast
-for every edition on the target date (morning, then evening). The date
+for that day's single edition. The date
 defaults to the newest edition's date. --preview writes that same HTML
 and does not call Resend. The sender is
 演化日报 · Yanhua Daily <digest@yanhua.ai> once domain
@@ -382,7 +382,7 @@ def render_daily_email(requested_date: str | None = None) -> tuple[str, str]:
                 ·
                 <a href="{{{{{{RESEND_UNSUBSCRIBE_URL}}}}}}" style="color:#b02a24;text-decoration:underline;">退订 / Unsubscribe</a>
               </p>
-              <p style="margin:0;">递归自我改进与智能体框架搜索。这封信汇总同一天的早间版与晚间版。</p>
+              <p style="margin:0;">递归自我改进与智能体框架搜索。这封信是当天的一版，09:00 与 18:00（UTC+0）各更新一次。</p>
             </td>
           </tr>
         </table>

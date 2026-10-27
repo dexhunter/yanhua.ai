@@ -19,39 +19,21 @@ window.YANHUA_DIGESTS = {
   },
   "editions": [
     {
-      "id": "2026-10-27-evening",
+      "id": "2026-10-27",
       "date": "2026-10-27",
-      "slot": "evening",
+      "slot": "",
       "label": {
-        "zh": "2026-10-27 晚间版",
-        "en": "27 Oct 2026 · Evening"
+        "zh": "2026-10-27",
+        "en": "27 Oct 2026"
       }
     },
     {
-      "id": "2026-10-27-morning",
-      "date": "2026-10-27",
-      "slot": "morning",
-      "label": {
-        "zh": "2026-10-27 早间版",
-        "en": "27 Oct 2026 · Morning"
-      }
-    },
-    {
-      "id": "2026-10-26-evening",
+      "id": "2026-10-26",
       "date": "2026-10-26",
-      "slot": "evening",
+      "slot": "",
       "label": {
-        "zh": "2026-10-26 晚间版",
-        "en": "26 Oct 2026 · Evening"
-      }
-    },
-    {
-      "id": "2026-10-26-morning",
-      "date": "2026-10-26",
-      "slot": "morning",
-      "label": {
-        "zh": "2026-10-26 早间版",
-        "en": "26 Oct 2026 · Morning"
+        "zh": "2026-10-26",
+        "en": "26 Oct 2026"
       }
     },
     {
@@ -138,7 +120,7 @@ window.YANHUA_DIGESTS = {
   "items": [
     {
       "id": "infinity-machine",
-      "edition": "2026-10-27-evening",
+      "edition": "2026-10-27",
       "tags": [
         "harness-search",
         "verification"
@@ -201,7 +183,7 @@ window.YANHUA_DIGESTS = {
     },
     {
       "id": "genie-master",
-      "edition": "2026-10-27-evening",
+      "edition": "2026-10-27",
       "tags": [
         "embodied",
         "memory-skills",
@@ -255,7 +237,7 @@ window.YANHUA_DIGESTS = {
     },
     {
       "id": "rethinking-verification",
-      "edition": "2026-10-27-evening",
+      "edition": "2026-10-27",
       "tags": [
         "verification",
         "harness-search"
@@ -318,7 +300,7 @@ window.YANHUA_DIGESTS = {
     },
     {
       "id": "simple-rca-harnesses",
-      "edition": "2026-10-27-evening",
+      "edition": "2026-10-27",
       "tags": [
         "harness-search",
         "verification"
@@ -381,7 +363,7 @@ window.YANHUA_DIGESTS = {
     },
     {
       "id": "arex-2",
-      "edition": "2026-10-27-evening",
+      "edition": "2026-10-27",
       "tags": [
         "harness-search",
         "agentic-rl"
@@ -450,7 +432,7 @@ window.YANHUA_DIGESTS = {
     },
     {
       "id": "oo-harness",
-      "edition": "2026-10-27-morning",
+      "edition": "2026-10-27",
       "tags": [
         "harness-search"
       ],
@@ -508,7 +490,7 @@ window.YANHUA_DIGESTS = {
     },
     {
       "id": "vista",
-      "edition": "2026-10-27-morning",
+      "edition": "2026-10-27",
       "tags": [
         "embodied",
         "harness-search"
@@ -559,7 +541,7 @@ window.YANHUA_DIGESTS = {
     },
     {
       "id": "rsi-opt",
-      "edition": "2026-10-27-morning",
+      "edition": "2026-10-27",
       "tags": [
         "co-evolution",
         "harness-search"
@@ -625,7 +607,7 @@ window.YANHUA_DIGESTS = {
     },
     {
       "id": "kaop-sre",
-      "edition": "2026-10-27-morning",
+      "edition": "2026-10-27",
       "tags": [
         "harness-search",
         "verification"
@@ -680,7 +662,7 @@ window.YANHUA_DIGESTS = {
     },
     {
       "id": "self-hpo",
-      "edition": "2026-10-26-evening",
+      "edition": "2026-10-26",
       "tags": [
         "co-evolution",
         "agentic-rl",
@@ -738,7 +720,7 @@ window.YANHUA_DIGESTS = {
     },
     {
       "id": "hermit",
-      "edition": "2026-10-26-evening",
+      "edition": "2026-10-26",
       "tags": [
         "harness-search",
         "memory-skills"
@@ -799,7 +781,7 @@ window.YANHUA_DIGESTS = {
     },
     {
       "id": "rsihub",
-      "edition": "2026-10-26-evening",
+      "edition": "2026-10-26",
       "tags": [
         "harness-search",
         "verification"
@@ -859,7 +841,7 @@ window.YANHUA_DIGESTS = {
     },
     {
       "id": "softskill",
-      "edition": "2026-10-26-evening",
+      "edition": "2026-10-26",
       "tags": [
         "memory-skills"
       ],
@@ -921,7 +903,7 @@ window.YANHUA_DIGESTS = {
     },
     {
       "id": "prime-agent",
-      "edition": "2026-10-26-evening",
+      "edition": "2026-10-26",
       "tags": [
         "harness-search",
         "memory-skills"
@@ -978,7 +960,7 @@ window.YANHUA_DIGESTS = {
     },
     {
       "id": "harnessmm",
-      "edition": "2026-10-26-morning",
+      "edition": "2026-10-26",
       "tags": [
         "harness-search"
       ],
@@ -1040,7 +1022,7 @@ window.YANHUA_DIGESTS = {
     },
     {
       "id": "harnessdev",
-      "edition": "2026-10-26-morning",
+      "edition": "2026-10-26",
       "tags": [
         "harness-search",
         "verification"
@@ -1097,7 +1079,7 @@ window.YANHUA_DIGESTS = {
     },
     {
       "id": "doc2harness",
-      "edition": "2026-10-26-morning",
+      "edition": "2026-10-26",
       "tags": [
         "harness-search",
         "verification"
@@ -1160,7 +1142,7 @@ window.YANHUA_DIGESTS = {
     },
     {
       "id": "harness-scaling",
-      "edition": "2026-10-26-morning",
+      "edition": "2026-10-26",
       "tags": [
         "agentic-rl",
         "harness-search"
@@ -1228,7 +1210,7 @@ window.YANHUA_DIGESTS = {
     },
     {
       "id": "frontiercs-swap",
-      "edition": "2026-10-26-morning",
+      "edition": "2026-10-26",
       "tags": [
         "harness-search",
         "verification"

@@ -195,7 +195,7 @@ The light scheme is the paper the daily is set on. The dark scheme reassigns the
 
 ## Layout
 
-The page is a sticky nav, then a two-column shell: a rail at `minmax(12rem, 16rem)` and a reading column at `var(--measure)` (68ch), separated by 3rem. The shell is centered. The column opens with one editorial line and the stats strip; the latest edition name is only the first edition heading. The footer is one line: the tagline on the left, RSS and JSON on the right. Below 900px the rail stacks above the column and its lists wrap. Below 640px the domain in the nav hides and the stats grid becomes one column.
+The page is a sticky nav, then a two-column shell: a rail at `minmax(12rem, 16rem)` and a reading column at `var(--measure)` (68ch), separated by 3rem. The shell is centered. The rail lists one edition per date, updated at 09:00 and 18:00 UTC+0. The column opens with one editorial line and the stats strip; the latest edition name is only the first edition heading. The footer is one line: the tagline on the left, RSS and JSON on the right. Below 900px the rail stacks above the column and its lists wrap. Below 640px the domain in the nav hides and the stats grid becomes one column.
 
 Inside a card the order is fixed: title and byline, conclusion, ledger, then the two-column problem and mechanism, then the source links. The context block is separated from the conclusion by a 1px `var(--line)` rule, with more space above that rule than between a context heading and its paragraph. Flash cards keep the same order, split across the two faces, and end on the flip control plus the source links.
 
