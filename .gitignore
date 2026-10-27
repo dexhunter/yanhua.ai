@@ -1,6 +1,6 @@
-.env
 .DS_Store
+.env
+*.log
 node_modules
-serpapi_cache.json
-*_credentials.json
 credentials*.json
+*_credentials.json
