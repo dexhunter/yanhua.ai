@@ -217,9 +217,17 @@
     });
     return map;
   }
+  function isHandleMention(text, offset, name) {
+    if (offset > 0 && /[A-Za-z0-9_.-]/.test(text.charAt(offset - 1))) return false;
+    if (!name || !/[A-Za-z_]/.test(name) || /^\d+$/.test(name)) return false;
+    const rest = text.slice(offset + 1 + name.length);
+    if (/^[A-Za-z0-9_]/.test(rest) || /^\.[A-Za-z0-9_]/.test(rest)) return false;
+    return true;
+  }
   function linkify(text, item) {
     const map = handleUrlMap(item || {});
-    return esc(text).replace(/@([A-Za-z0-9_]{1,15})/g, function (_, name) {
+    return esc(text).replace(/@([A-Za-z0-9_]{1,15})/g, function (full, name, offset, whole) {
+      if (!isHandleMention(whole, offset, name)) return full;
       const href = map[name.toLowerCase()] || ("https://x.com/" + name);
       return '<a href="' + esc(href) + '" target="_blank" rel="noopener noreferrer">@' + esc(name) + "</a>";
     });
@@ -268,7 +276,8 @@
       }
       docs.push(link);
     });
-    String(item.handle || "").replace(/@([A-Za-z0-9_]{1,15})/g, function (_, name) {
+    String(item.handle || "").replace(/@([A-Za-z0-9_]{1,15})/g, function (full, name, offset, whole) {
+      if (!isHandleMention(whole, offset, name)) return full;
       const key = name.toLowerCase();
       if (!posts[key]) posts[key] = { handle: name, url: "https://x.com/" + name };
       return "";
@@ -378,15 +387,24 @@
     document.title = t("docTitle");
     const desc = document.querySelector('meta[name="description"]');
     if (desc) desc.content = t("description");
-    document.getElementById("skip-link").textContent = t("skip");
-    document.getElementById("mode-switch").setAttribute("aria-label", t("modeLabel"));
-    document.getElementById("lang-switch").setAttribute("aria-label", t("langLabel"));
-    document.getElementById("mode-switch").innerHTML =
-      seg("mode", "reader", t("reader"), state.mode === "reader") +
-      seg("mode", "deck", t("deck"), state.mode === "deck");
-    document.getElementById("lang-switch").innerHTML =
-      seg("lang", "zh", "中文", state.lang === "zh") +
-      seg("lang", "en", "EN", state.lang === "en");
+    const skip = document.getElementById("skip-link");
+    if (skip) skip.textContent = t("skip");
+    const mode = document.getElementById("mode-switch");
+    if (mode) {
+      mode.setAttribute("aria-label", t("modeLabel"));
+      mode.innerHTML =
+        seg("mode", "reader", t("reader"), state.mode === "reader") +
+        seg("mode", "deck", t("deck"), state.mode === "deck");
+    }
+    const lang = document.getElementById("lang-switch");
+    if (lang) {
+      lang.setAttribute("aria-label", t("langLabel"));
+      lang.innerHTML =
+        seg("lang", "zh", "中文", state.lang === "zh") +
+        seg("lang", "en", "EN", state.lang === "en");
+    }
+    const openSub = document.getElementById("open-sub");
+    if (openSub) openSub.textContent = t("subscribe");
     paintThemeButton();
     const url = new URL(location.href);
     url.searchParams.set("lang", state.lang);
@@ -398,6 +416,7 @@
   function paintThemeButton() {
     const dark = scheme() === "dark";
     const btn = document.getElementById("theme-btn");
+    if (!btn) return;
     const label = dark ? t("themeLight") : t("themeDark");
     btn.setAttribute("aria-label", label);
     btn.innerHTML = (dark ? sun() : moon()) + '<span>' + esc(label) + '</span>';
@@ -410,6 +429,7 @@
   }
 
   function renderRail() {
+    if (!rail) return;
     const editions = data.editions.map(function (edition) {
       const current = state.edition === edition.id ? ' aria-current="page"' : "";
       return '<a href="#edition-' + esc(edition.id) + '" data-edition="' + esc(edition.id) + '"' + current + '>' + esc(tx(edition.label)) + '</a>';
@@ -447,6 +467,7 @@
     });
   }
   function renderMast() {
+    if (!mast) return;
     const list = visible();
     const latest = data.editions[0];
     mast.innerHTML =
@@ -456,6 +477,7 @@
   }
 
   function renderReader(list) {
+    if (!stage) return;
     if (!list.length) {
       stage.innerHTML = empty();
       return;
@@ -485,6 +507,7 @@
   }
 
   function renderDeck(list) {
+    if (!stage) return;
     if (!list.length) {
       stage.innerHTML = empty();
       return;
@@ -524,6 +547,7 @@
   }
 
   function renderFoot() {
+    if (!foot) return;
     foot.innerHTML = '<div class="colophon-inner"><p>' + esc(t("footer")) + '</p><div class="foot-stats">' + statsStrip() + '</div><p class="feed-row"><a href="/feed.xml">' + esc(t("rss")) + '</a><a href="/feed.json">' + esc(t("json")) + '</a></p></div>';
   }
   function renderSubWindow() {
@@ -569,10 +593,13 @@
     try { sessionStorage.setItem("yanhua-sub-dismissed", "1"); } catch (err) {}
     if (subDialog && subDialog.open) subDialog.close();
   }
-  function maybeOpenSub() {
-    if (!subDialog || subDialog.open || state.sub || subDismissed()) return;
-    if (typeof subDialog.show !== "function") return;
+  function openSubWindow() {
+    if (!subDialog || subDialog.open || typeof subDialog.show !== "function") return;
     subDialog.show();
+  }
+  function maybeOpenSub() {
+    if (state.sub || subDismissed()) return;
+    openSubWindow();
   }
   function renderStats() {
     if (!statsDialog) return;
@@ -595,15 +622,20 @@
   }
 
   function render() {
-    paintChrome();
-    renderRail();
-    renderMast();
-    const list = visible();
-    if (state.mode === "deck") renderDeck(list);
-    else renderReader(list);
-    renderFoot();
-    renderSubWindow();
-    renderStats();
+    try {
+      paintChrome();
+      renderRail();
+      renderMast();
+      const list = visible();
+      if (state.mode === "deck") renderDeck(list);
+      else renderReader(list);
+      renderFoot();
+      renderSubWindow();
+      renderStats();
+    } catch (err) {
+      const fallback = document.getElementById("boot-fallback");
+      if (fallback) fallback.hidden = false;
+    }
   }
 
   function step(delta) {
@@ -635,6 +667,10 @@
     }
     if (event.target.closest("#theme-btn")) {
       setScheme(scheme() === "dark" ? "light" : "dark");
+      return;
+    }
+    if (event.target.closest("#open-sub")) {
+      openSubWindow();
       return;
     }
     if (event.target.closest("#close-sub")) {
