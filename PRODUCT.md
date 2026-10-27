@@ -24,7 +24,7 @@ The card leads with one human-readable conclusion, then sets the problem, the me
 
 The site is static files. GitHub Pages serves the repository root. `CNAME` is `yanhua.ai`. Source of an edition is `data/digests.json`, rebuilt by `scripts/update_digest.py` into `data/digests.js`, `feed.xml`, and `feed.json`.
 
-The site updates twice a day, at 09:00 and 18:00 London time. The morning and evening editions are combined into the evening daily email. Mail goes out from the newsletter script in GitHub Actions. The in-page subscribe form posts `{email, lang, source}` to `https://subscribe.yanhua.ai`. There is no user account.
+The site updates twice a day, at 09:00 and 18:00 UTC+0. The morning and evening editions are combined into the evening daily email. Mail goes out from the newsletter script in GitHub Actions. The in-page subscribe form posts `{email, lang, source}` to `https://subscribe.yanhua.ai`. There is no user account.
 
 Reading has two modes. The reader lists editions as a column. Flash cards show the conclusion and the numbers on the front and the problem and mechanism on the back. `Space` or `Enter` flips a card. `J` / `K` or `←` / `→` move between cards.
 
@@ -55,7 +55,7 @@ Do not invent subscriber quotes, benchmarks, or a second product name.
 - The conclusion comes first, and it stays checkable against a paper, a repository, or a post.
 - Chinese is the default reading. English is the same card, not a second publication.
 - There is no account, so there is no private reading state on the card.
-- Two London editions a day fold into one evening email. The page and the digest tell the same schedule.
+- Two UTC editions a day fold into one evening email. The page and the digest tell the same schedule.
 - A card that cannot point at a source does not ship.
 
 ## Accessibility & Inclusion

@@ -72,7 +72,7 @@
       totalCards: "卡片总数",
       editionCount: "期数",
       papersIndexed: "收录论文",
-      cadence: "yanhua.ai 每天更新两次，伦敦时间 09:00 与 18:00。早晚两版合在当晚的每日邮件摘要里寄出。",
+      cadence: "yanhua.ai 每天更新两次，09:00 与 18:00（UTC+0）。早晚两版合在当晚的每日邮件摘要里寄出。",
       failed: "没有送出。请再试一次。",
       issueList: "在 GitHub 查看订阅",
       analyticsConfig: "配置外部统计"
@@ -142,7 +142,7 @@
       totalCards: "Total cards",
       editionCount: "Editions",
       papersIndexed: "Papers indexed",
-      cadence: "yanhua.ai updates twice a day, at 09:00 and 18:00 London time. Both editions are combined into the evening daily email digest.",
+      cadence: "yanhua.ai updates twice a day, at 09:00 and 18:00 UTC+0. Both editions are combined into the evening daily email digest.",
       failed: "That did not go through. Try again.",
       issueList: "View subscriptions on GitHub",
       analyticsConfig: "Configure external analytics"

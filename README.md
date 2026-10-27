@@ -4,7 +4,7 @@
 
 <p align="center">
   <a href="https://yanhua.ai"><img src="https://img.shields.io/badge/Live_Site-yanhua.ai-8e2f27?style=for-the-badge" alt="Live Site"></a>
-  <a href="https://yanhua.ai"><img src="https://img.shields.io/badge/Cadence-09%3A00%20%26%2018%3A00%20London-1b1714?style=for-the-badge" alt="09:00 &amp; 18:00 London"></a>
+  <a href="https://yanhua.ai"><img src="https://img.shields.io/badge/Cadence-09%3A00%20%26%2018%3A00%20UTC%2B0-1b1714?style=for-the-badge" alt="09:00 &amp; 18:00 UTC+0"></a>
   <a href="https://yanhua.ai"><img src="https://img.shields.io/badge/Daily_Email-Resend%20%C2%B7%20%E6%AF%8F%E6%97%A5%E5%90%88%E8%BE%91-14633c?style=for-the-badge" alt="Resend · 每日合辑"></a>
   <a href="https://yanhua.ai/feed.xml"><img src="https://img.shields.io/badge/RSS_/_Atom-feed.xml-b85d19?style=for-the-badge" alt="RSS / Atom"></a>
   <a href="https://yanhua.ai/data/digests.json"><img src="https://img.shields.io/badge/JSON_Feed-digests.json-1e4e79?style=for-the-badge" alt="JSON Feed"></a>
@@ -18,7 +18,7 @@
 
 ## ❯❯ 演化日报是什么 · What is Yanhua Daily
 
-**演化日报**是一份给研究者的双语日报，站点在 [yanhua.ai](https://yanhua.ai)。它追踪智能体如何改写自己的 harness：每天 09:00 与 18:00（Europe/London）各出一版。站点默认简体中文，同一期内容可以切到 English。
+**演化日报**是一份给研究者的双语日报，站点在 [yanhua.ai](https://yanhua.ai)。它追踪智能体如何改写自己的 harness：每天 09:00 与 18:00（UTC+0）各出一版。站点默认简体中文，同一期内容可以切到 English。
 
 每张卡先给一句能读完的结论，说明改进了什么、改进了多少、机制为什么成立，再把问题、做法和可核对的数字放在下面。来源只落到论文、仓库和原帖。
 
