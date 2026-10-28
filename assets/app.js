@@ -66,6 +66,12 @@
       totalCards: "卡片总数",
       editionCount: "期数",
       papersIndexed: "收录论文",
+      mostRead: "读者最关注的研究卡片",
+      mostReadNote: "按阅读时长、卡片翻阅、原文点击与分享综合排序",
+      mostReadEmpty: "暂无卡片阅读明细，浏览或点击卡片后自动统计。",
+      rankMeta: function (views, seconds, actions) {
+        return "阅读 " + views + " 次 · 停留 " + seconds + "s · 点击/翻转 " + actions + " 次";
+      },
       cadence: "每日 09:00 与 18:00（UTC+0）更新当期内容，晚间更新后发送每日汇总邮件。",
       failed: "提交失败，请稍后重试。",
       issueList: "在 GitHub 查看订阅",
@@ -130,6 +136,14 @@
       totalCards: "Total cards",
       editionCount: "Editions",
       papersIndexed: "Papers indexed",
+      mostRead: "Most-Read Research Cards",
+      mostReadNote: "Ranked by dwell time, card flips, source clicks, and link shares",
+      mostReadEmpty: "Card engagement will appear here as readers browse and click cards.",
+      rankMeta: function (views, seconds, actions) {
+        const viewLabel = views === 1 ? "1 view" : views + " views";
+        const actionLabel = actions === 1 ? "1 click/flip" : actions + " clicks/flips";
+        return viewLabel + " · " + seconds + "s read · " + actionLabel;
+      },
       cadence: "Updated daily at 09:00 and 18:00 UTC+0, with a combined daily digest email sent after the evening update.",
       failed: "Submission failed. Please try again.",
       issueList: "View subscriptions on GitHub",
@@ -137,9 +151,14 @@
     }
   };
 
+  function modeFromLocation() {
+    const mode = new URLSearchParams(location.search).get("mode");
+    if (mode === "deck" || mode === "reader") return mode;
+    return localStorage.getItem("yanhua-mode") === "deck" ? "deck" : "reader";
+  }
   const state = {
     lang: document.documentElement.lang === "en" ? "en" : "zh",
-    mode: localStorage.getItem("yanhua-mode") === "deck" ? "deck" : "reader",
+    mode: modeFromLocation(),
     edition: "all",
     tag: "all",
     q: "",
@@ -157,7 +176,13 @@
   const subDialog = document.getElementById("sub-dialog");
   const VERCOUNT = "https://events.vercount.one/api/v2/log";
   const SITE = String(config.siteUrl || "https://yanhua.ai").replace(/\/$/, "");
-  const stats = { uv: null, pv: null, subscribers: null, cards: null, editions: null, papers: null };
+  const stats = { uv: null, pv: null, subscribers: null, cards: null, editions: null, papers: null, engagement: [] };
+  const sessionDelta = {};
+  const viewedOnce = {};
+  const activeSince = {};
+  let eventQueue = [];
+  let flushTimer = null;
+  let readerObserver = null;
   (function seedPublication() {
     const counts = publicationCounts();
     stats.cards = counts.cards;
@@ -238,27 +263,44 @@
       if (!seen[url]) raw.push({ zh: "仓库", en: "Repo", url: url });
     }
     const docs = [];
-    const posts = {};
+    const posts = [];
+    const seenStatus = {};
     raw.forEach(function (link) {
       if (!link || !link.url) return;
       const match = X_URL.exec(link.url);
-      if (match) {
-        const key = match[1].toLowerCase();
-        const prev = posts[key];
-        if (!prev || (match[2] && String(prev.url).indexOf("/status/") === -1)) {
-          posts[key] = { handle: match[1], url: link.url };
+      if (match && match[2]) {
+        if (!seenStatus[link.url]) {
+          seenStatus[link.url] = true;
+          posts.push({ handle: match[1], url: link.url, zh: link.zh, en: link.en });
         }
         return;
       }
+      if (match) return;
       docs.push(link);
     });
-    String(item.handle || "").replace(/@([A-Za-z0-9_]{1,15})/g, function (full, name, offset, whole) {
+    return { docs: docs, posts: posts };
+  }
+  function genericPostLabel(text, handle, lang) {
+    const value = String(text || "").trim();
+    if (!value) return true;
+    if (value.replace(/^@/, "").toLowerCase() === String(handle || "").toLowerCase()) return true;
+    const folded = value.toLowerCase();
+    if (lang === "zh") return folded === "分享" || folded === "原文" || folded === "帖子" || folded === "推文" || folded === "x" || folded === "x 原帖";
+    return folded === "post" || folded === "source" || folded === "thread" || folded === "x" || folded === "x post";
+  }
+  function postLabel(post) {
+    const label = state.lang === "zh" ? post.zh : post.en;
+    if (!genericPostLabel(label, post.handle, state.lang)) return String(label);
+    return (state.lang === "zh" ? "X 原帖 · @" : "X Post · @") + post.handle;
+  }
+  function profileLinks(handle) {
+    const html = [];
+    String(handle || "").replace(/@([A-Za-z0-9_]{1,15})/g, function (full, name, offset, whole) {
       if (!isHandleMention(whole, offset, name)) return full;
-      const key = name.toLowerCase();
-      if (!posts[key]) posts[key] = { handle: name, url: "https://x.com/" + name };
+      html.push('<a class="byline-handle" href="https://x.com/' + encodeURIComponent(name) + '" target="_blank" rel="noopener noreferrer">@' + esc(name) + "</a>");
       return "";
     });
-    return { docs: docs, posts: Object.keys(posts).map(function (key) { return posts[key]; }) };
+    return html.join(" · ");
   }
   function sourceIcon(kind) {
     if (kind === "repo") {
@@ -287,16 +329,19 @@
   function linkIcon() {
     return '<svg class="source-ico" width="14" height="14" viewBox="0 0 14 14" aria-hidden="true" focusable="false"><path d="M5.55 8.45 8.45 5.55" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><path d="M7.9 9.7 6.55 11.05a2.05 2.05 0 1 1-2.9-2.9L5.05 6.75" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/><path d="M6.1 4.3 7.45 2.95a2.05 2.05 0 1 1 2.9 2.9L8.95 7.25" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>';
   }
+  function cardPermalink(item) {
+    const query = state.lang === "en" ? "?mode=deck&lang=en" : "?mode=deck";
+    return SITE + "/" + query + "#" + encodeURIComponent(item.id);
+  }
   function copyLinkButton(item) {
-    const url = SITE + "/#" + item.id;
-    return '<button type="button" class="source-link copy-link" data-copy-link="' + esc(url) + '">' + linkIcon() + '<span>' + esc(t("copyLink")) + "</span></button>";
+    return '<button type="button" class="source-link copy-link" data-copy-link="' + esc(cardPermalink(item)) + '" data-copy-id="' + esc(item.id) + '">' + linkIcon() + '<span>' + esc(t("copyLink")) + "</span></button>";
   }
   function sources(item) {
     const bag = sourceBag(item);
     const parts = bag.docs.map(function (link) {
       return sourceAnchor(link.url, sourceKind(link), sourceText(link));
     }).concat(bag.posts.map(function (post) {
-      return sourceAnchor(post.url, "x", "@" + post.handle);
+      return sourceAnchor(post.url, "x", postLabel(post));
     }));
     return '<div class="source-row">' + parts.join("") + copyLinkButton(item) + "</div>";
   }
@@ -356,6 +401,8 @@
   function byline(item) {
     const bits = [];
     if (item.authors) bits.push(esc(item.authors));
+    const profiles = profileLinks(item.handle);
+    if (profiles) bits.push(profiles);
     (item.tags || []).forEach(function (id) {
       const tag = tagById(id);
       if (!tag) return;
@@ -644,10 +691,208 @@
         '<div class="stats-cell"><b data-stat="papers">' + esc(statText("papers")) + '</b><span>' + esc(t("papersIndexed")) + '</span></div>' +
       '</div>' +
       '<p class="stats-note">' + esc(t("cadence")) + '</p>' +
+      engagementHtml() +
       '<p class="stats-links">' +
         '<a href="https://github.com/dexhunter/yanhua.ai/issues?q=label%3Asubscribe" target="_blank" rel="noopener noreferrer">' + esc(t("issueList")) + '</a>' +
         '<a href="https://github.com/dexhunter/yanhua.ai/blob/main/data/config.js" target="_blank" rel="noopener noreferrer">' + esc(t("analyticsConfig")) + '</a>' +
       '</p>';
+  }
+
+  function round1(value) {
+    return Math.round(value * 10) / 10;
+  }
+  function scoreOf(row) {
+    return round1((row.dwellMs || 0) / 1000 * 0.25) + (row.views || 0) * 2 + (row.flips || 0) * 3 + (row.clicks || 0) * 5 + (row.copies || 0) * 6;
+  }
+  function finalizeRow(row) {
+    row.totalDwellSec = Math.floor((row.dwellMs || 0) / 1000);
+    row.avgDwellSec = row.views > 0 ? round1(row.dwellMs / row.views / 1000) : 0;
+    row.score = scoreOf(row);
+    return row;
+  }
+  function emptyDelta() {
+    return { views: 0, dwellMs: 0, flips: 0, clicks: 0, copies: 0 };
+  }
+  function touchDelta(id, type, ms) {
+    const row = sessionDelta[id] || (sessionDelta[id] = emptyDelta());
+    if (type === "view") row.views += 1;
+    else if (type === "flip") row.flips += 1;
+    else if (type === "click") row.clicks += 1;
+    else if (type === "copy") row.copies += 1;
+    else if (type === "dwell") row.dwellMs += ms || 0;
+  }
+  function queueEvent(event) {
+    if (!event || !event.id || !event.type) return;
+    touchDelta(event.id, event.type, event.ms);
+    eventQueue.push(event);
+    if (!flushTimer) flushTimer = setTimeout(flushEvents, 3000);
+  }
+  function flushEvents() {
+    if (flushTimer) {
+      clearTimeout(flushTimer);
+      flushTimer = null;
+    }
+    if (!eventQueue.length) return Promise.resolve(true);
+    const batch = eventQueue.slice();
+    eventQueue = [];
+    const endpoint = String(config.eventsEndpoint || "").trim();
+    if (!endpoint) return Promise.resolve(false);
+    return fetch(endpoint, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ events: batch }),
+      keepalive: true
+    }).then(function (response) {
+      if (!response.ok) throw new Error("event");
+      return true;
+    }).catch(function () {
+      eventQueue = batch.concat(eventQueue);
+      return false;
+    });
+  }
+  function snapshotDelta() {
+    const copy = {};
+    Object.keys(sessionDelta).forEach(function (id) {
+      copy[id] = {
+        views: sessionDelta[id].views,
+        dwellMs: sessionDelta[id].dwellMs,
+        flips: sessionDelta[id].flips,
+        clicks: sessionDelta[id].clicks,
+        copies: sessionDelta[id].copies
+      };
+    });
+    return copy;
+  }
+  function subtractDelta(base) {
+    Object.keys(base).forEach(function (id) {
+      const row = sessionDelta[id];
+      if (!row) return;
+      ["views", "dwellMs", "flips", "clicks", "copies"].forEach(function (key) {
+        row[key] = Math.max(0, (row[key] || 0) - (base[id][key] || 0));
+      });
+      if (!row.views && !row.dwellMs && !row.flips && !row.clicks && !row.copies) delete sessionDelta[id];
+    });
+  }
+  function refreshEngagement() {
+    return flushEvents().then(function (ok) {
+      const accounted = ok ? snapshotDelta() : null;
+      return loadResendStats().then(function () {
+        if (accounted) subtractDelta(accounted);
+        if (statsDialog && statsDialog.open) renderStats();
+      });
+    }).catch(function () {});
+  }
+  function mergedEngagement() {
+    const known = {};
+    data.items.forEach(function (item) { known[item.id] = true; });
+    const map = {};
+    (stats.engagement || []).forEach(function (row) {
+      if (!row || !known[row.id]) return;
+      map[row.id] = {
+        id: row.id,
+        views: row.views || 0,
+        dwellMs: row.dwellMs || 0,
+        flips: row.flips || 0,
+        clicks: row.clicks || 0,
+        copies: row.copies || 0
+      };
+    });
+    Object.keys(sessionDelta).forEach(function (id) {
+      if (!known[id]) return;
+      if (!map[id]) map[id] = { id: id, views: 0, dwellMs: 0, flips: 0, clicks: 0, copies: 0 };
+      const delta = sessionDelta[id];
+      map[id].views += delta.views || 0;
+      map[id].dwellMs += delta.dwellMs || 0;
+      map[id].flips += delta.flips || 0;
+      map[id].clicks += delta.clicks || 0;
+      map[id].copies += delta.copies || 0;
+    });
+    return Object.keys(map).map(function (id) { return finalizeRow(map[id]); }).filter(function (row) {
+      return row.views || row.dwellMs || row.flips || row.clicks || row.copies;
+    }).sort(function (a, b) {
+      return b.score - a.score || b.dwellMs - a.dwellMs;
+    }).slice(0, 8);
+  }
+  function engagementHtml() {
+    const rows = mergedEngagement();
+    const body = rows.length ? '<ol class="rank-list">' + rows.map(function (row) {
+      const item = data.items.find(function (candidate) { return candidate.id === row.id; });
+      const edition = item ? editionById(item.edition) : null;
+      const actions = (row.clicks || 0) + (row.flips || 0);
+      return '<li class="rank-row"><div><button type="button" data-open-card="' + esc(row.id) + '">' + esc(item ? tx(item.title) : row.id) + '</button><div class="rank-edition">' + esc(edition ? tx(edition.label) : "") + '</div></div><div class="rank-meta">' + esc(t("rankMeta")(row.views || 0, row.totalDwellSec || 0, actions)) + "</div></li>";
+    }).join("") + "</ol>" : '<p class="rank-empty">' + esc(t("mostReadEmpty")) + "</p>";
+    return '<section class="card-rank"><h3>' + esc(t("mostRead")) + '</h3><p class="rank-note">' + esc(t("mostReadNote")) + "</p>" + body + "</section>";
+  }
+  function noteEnter(id) {
+    if (!id || document.visibilityState !== "visible" || activeSince[id]) return;
+    activeSince[id] = Date.now();
+  }
+  function noteLeave(id, minMs) {
+    const start = activeSince[id];
+    if (!start) return;
+    delete activeSince[id];
+    const elapsed = Date.now() - start;
+    if (elapsed < minMs) return;
+    if (!viewedOnce[id]) {
+      viewedOnce[id] = true;
+      queueEvent({ id: id, type: "view" });
+    }
+    queueEvent({ id: id, type: "dwell", ms: Math.min(180000, elapsed) });
+  }
+  function leaveAll(minMs) {
+    Object.keys(activeSince).forEach(function (id) { noteLeave(id, minMs); });
+  }
+  function noteFlip() {
+    if (state.mode !== "deck") return;
+    const list = visible();
+    const item = list[state.index];
+    if (item) queueEvent({ id: item.id, type: "flip" });
+  }
+  function cardIdFrom(node) {
+    const entry = node.closest(".entry");
+    if (entry && entry.id) return entry.id;
+    if (node.closest("#deck-stage") || node.closest(".deck-sheet")) {
+      const list = visible();
+      const item = list[state.index];
+      return item ? item.id : "";
+    }
+    return "";
+  }
+  function bindReaderWatch() {
+    if (readerObserver) readerObserver.disconnect();
+    if (!("IntersectionObserver" in window)) return;
+    readerObserver = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        const id = entry.target.id;
+        if (!id) return;
+        if (entry.isIntersecting && entry.intersectionRatio >= 0.55 && document.visibilityState === "visible") noteEnter(id);
+        else noteLeave(id, 1800);
+      });
+    }, { threshold: [0, 0.55, 1] });
+    document.querySelectorAll(".entry").forEach(function (node) { readerObserver.observe(node); });
+  }
+  function syncReading() {
+    if (document.visibilityState !== "visible") {
+      leaveAll(state.mode === "deck" ? 1500 : 1800);
+      return;
+    }
+    if (state.mode === "deck") {
+      if (readerObserver) {
+        readerObserver.disconnect();
+        readerObserver = null;
+      }
+      const list = visible();
+      const current = list[state.index] ? list[state.index].id : "";
+      Object.keys(activeSince).forEach(function (id) {
+        if (id !== current) noteLeave(id, 1500);
+      });
+      if (current) noteEnter(current);
+      return;
+    }
+    Object.keys(activeSince).forEach(function (id) {
+      if (!document.getElementById(id)) noteLeave(id, 1800);
+    });
+    bindReaderWatch();
   }
 
   function render() {
@@ -661,6 +906,7 @@
       renderFoot();
       renderSubWindow();
       renderStats();
+      syncReading();
     } catch (err) {
       const fallback = document.getElementById("boot-fallback");
       if (fallback) fallback.hidden = false;
@@ -758,9 +1004,13 @@
         state.lang = value;
         localStorage.setItem("yanhua-lang", value);
       } else if (key === "mode") {
+        leaveAll(state.mode === "deck" ? 1500 : 1800);
         state.mode = value;
         state.flipped = false;
         localStorage.setItem("yanhua-mode", value);
+        const modeUrl = new URL(location.href);
+        modeUrl.searchParams.set("mode", value);
+        history.replaceState(null, "", modeUrl.pathname + modeUrl.search + modeUrl.hash);
       }
       render();
       return;
@@ -781,10 +1031,34 @@
       closeStats();
       return;
     }
+    const sourceLink = event.target.closest("a.source-link");
+    if (sourceLink) {
+      const sourceId = cardIdFrom(sourceLink);
+      if (sourceId) queueEvent({ id: sourceId, type: "click" });
+    }
+    const rankBtn = event.target.closest("[data-open-card]");
+    if (rankBtn) {
+      const rankId = rankBtn.getAttribute("data-open-card");
+      closeStats();
+      if (rankId && ensureCardVisible(rankId)) {
+        render();
+        if (state.mode === "reader") {
+          const node = document.getElementById(rankId);
+          if (node) node.scrollIntoView({ block: "start", behavior: reduced ? "auto" : "smooth" });
+        }
+      }
+      return;
+    }
     const copyBtn = event.target.closest("[data-copy-link]");
     if (copyBtn) {
       event.preventDefault();
       const url = copyBtn.getAttribute("data-copy-link");
+      const copyId = copyBtn.getAttribute("data-copy-id");
+      if (copyId) queueEvent({ id: copyId, type: "copy" });
+      try {
+        const parsed = new URL(url);
+        history.replaceState(null, "", parsed.pathname + parsed.search + parsed.hash);
+      } catch (err) {}
       const label = copyBtn.querySelector("span");
       copyText(url).then(function () {
         if (!label || !copyBtn.isConnected) return;
@@ -833,6 +1107,7 @@
     if (event.target.closest("#deck-next")) { step(1); return; }
     if (event.target.closest(".js-deck-flip")) {
       state.flipped = !state.flipped;
+      noteFlip();
       render();
       return;
     }
@@ -843,6 +1118,7 @@
         return;
       }
       state.flipped = !state.flipped;
+      noteFlip();
       render();
     }
   });
@@ -915,6 +1191,7 @@
       if (event.target.closest("button, a")) return;
       event.preventDefault();
       state.flipped = !state.flipped;
+      noteFlip();
       render();
     }
   });
@@ -955,19 +1232,43 @@
   });
   window.addEventListener("hashchange", focusHash);
 
-  function focusHash() {
-    const id = decodeURIComponent(location.hash.replace("#", ""));
-    if (!id || id === "content") return;
+  function hashCardId() {
+    const id = decodeURIComponent(String(location.hash || "").replace(/^#/, ""));
+    if (!id || id === "content") return "";
+    return data.items.some(function (row) { return row.id === id; }) ? id : "";
+  }
+  function ensureCardVisible(id) {
     const item = data.items.find(function (row) { return row.id === id; });
-    if (!item) return;
-    if (state.mode === "deck") {
-      const list = visible();
-      const at = list.findIndex(function (row) { return row.id === id; });
-      if (at >= 0) state.index = at;
-      render();
+    if (!item) return false;
+    const shown = visible().some(function (row) { return row.id === id; });
+    if (!shown) {
+      state.edition = "all";
+      state.tag = "all";
+      state.q = "";
     }
-    const node = document.getElementById(id);
-    if (node) node.scrollIntoView({ block: "start" });
+    const at = visible().findIndex(function (row) { return row.id === id; });
+    if (at >= 0) state.index = at;
+    state.flipped = false;
+    return at >= 0;
+  }
+  function revealCard(id) {
+    if (!ensureCardVisible(id)) return false;
+    if (new URLSearchParams(location.search).get("mode") !== "reader") {
+      state.mode = "deck";
+      localStorage.setItem("yanhua-mode", "deck");
+    }
+    return true;
+  }
+  function focusHash() {
+    const id = hashCardId();
+    if (!id) return;
+    const explicitReader = new URLSearchParams(location.search).get("mode") === "reader";
+    revealCard(id);
+    render();
+    if (explicitReader || state.mode === "reader") {
+      const node = document.getElementById(id);
+      if (node) node.scrollIntoView({ block: "start", behavior: reduced ? "auto" : "smooth" });
+    }
   }
 
   async function subscribe(email, pref) {
@@ -1058,6 +1359,7 @@
     if (!response.ok) return;
     const body = await response.json();
     if (body && typeof body.subscribers === "number") stats.subscribers = body.subscribers;
+    if (body && Array.isArray(body.cards)) stats.engagement = body.cards;
     paintStats();
   }
   function applyVisit(visit) {
@@ -1100,6 +1402,7 @@
     renderStats();
     if (!statsDialog.open) statsDialog.showModal();
     setStatsParam(true);
+    refreshEngagement();
   }
   function closeStats() {
     if (statsDialog && statsDialog.open) statsDialog.close();
@@ -1132,8 +1435,21 @@
     });
   }
   mountExternalAnalytics();
+  if (hashCardId()) revealCard(hashCardId());
   render();
   loadStats();
+  document.addEventListener("visibilitychange", function () {
+    if (document.visibilityState === "hidden") {
+      leaveAll(state.mode === "deck" ? 1500 : 1800);
+      flushEvents();
+    } else {
+      syncReading();
+    }
+  });
+  window.addEventListener("pagehide", function () {
+    leaveAll(state.mode === "deck" ? 1500 : 1800);
+    flushEvents();
+  });
   if (subDialog && "IntersectionObserver" in window) {
     const footer = document.getElementById("foot");
     if (footer) {

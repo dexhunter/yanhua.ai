@@ -239,8 +239,9 @@ def byline_html(item: dict) -> str:
     if authors:
         bits.append(escape(authors))
     handle = str(item.get("handle") or "").strip()
-    if handle:
-        bits.append(linked(handle, item))
+    profiles = profile_html(handle)
+    if profiles:
+        bits.append(profiles)
     if not bits:
         return ""
     return (
@@ -257,6 +258,17 @@ def prose_block(kicker: str, zh_html: str, en_html: str) -> str:
         f'<p style="margin:0 0 6px;font-family:{SANS};font-size:15px;line-height:1.65;color:#181412;">{zh_html}</p>'
         f'<p style="margin:0;font-family:{SANS};font-size:14px;line-height:1.6;color:#5e564c;">{en_html}</p>'
     )
+
+
+def profile_html(handle: str) -> str:
+    parts: list[str] = []
+    for match in update_digest.HANDLE_RE.finditer(handle):
+        name = match.group(1)
+        href = escape(f"https://x.com/{name}", quote=True)
+        parts.append(
+            f'<a href="{href}" style="color:#b02a24;text-decoration:underline;">@{escape(name)}</a>'
+        )
+    return " · ".join(parts)
 
 
 def source_html(item: dict) -> str:
@@ -291,7 +303,7 @@ def card_html(item: dict) -> str:
   <tr>
     <td style="padding:20px 22px 18px;font-family:{SANS};color:#181412;">
       <h2 style="margin:0;font-family:{SERIF};font-size:22px;line-height:1.35;font-weight:600;color:#181412;">
-        <a href="{SITE}#{item_id}" style="color:#181412;text-decoration:none;">{title_zh}</a>
+        <a href="{SITE}/?mode=deck#{item_id}" style="color:#181412;text-decoration:none;">{title_zh}</a>
       </h2>
       <p style="margin:4px 0 0;font-family:{SERIF};font-size:15px;line-height:1.45;font-style:italic;color:#5e564c;">{title_en}</p>
       {byline_html(item)}

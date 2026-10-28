@@ -86,6 +86,11 @@ X_URL_RE = re.compile(
     r"^https?://(?:www\.)?(?:x|twitter)\.com/([A-Za-z0-9_]{1,15})(?:/status/(\d+))?/?(?:[?#].*)?$",
     re.IGNORECASE,
 )
+STATUS_POST_RE = re.compile(
+    r"https?://(?:www\.)?(?:x|twitter)\.com/[A-Za-z0-9_]{1,15}/status/\d+",
+    re.IGNORECASE,
+)
+GENERIC_POST_LABELS = {"分享", "原文", "帖子", "推文", "x", "x 原帖", "post", "source", "thread", "x post"}
 ARXIV_RE = re.compile(r"arxiv\.org/(?:abs|pdf)/(\d{4}\.\d{4,5})(?:v\d+)?", re.IGNORECASE)
 GITHUB_RE = re.compile(r"^https?://(?:www\.)?github\.com/([^/#?\s]+)/([^/#?\s]+)", re.IGNORECASE)
 PAPER_ICON = (
@@ -155,6 +160,8 @@ def problems(doc: dict) -> list[str]:
             errors.append(f"{ident}: no tags")
         if not source_entries(item):
             errors.append(f"{ident}: no paper, repo, post, or other source link")
+        if not any(STATUS_POST_RE.search(str(link.get("url") or "")) for link in (item.get("links") or [])):
+            errors.append(f"{ident}: missing an X post URL (https://x.com/<handle>/status/<id>)")
     return errors
 
 
@@ -204,20 +211,19 @@ def source_entries(item: dict) -> list[dict]:
         if url not in seen:
             raw.append({"zh": "仓库", "en": "Repo", "url": url})
     docs: list[dict] = []
-    posts: dict[str, dict] = {}
+    posts: list[dict] = []
+    seen_status: set[str] = set()
     for link in raw:
         match = X_URL_RE.match(str(link["url"]))
+        if match and match.group(2):
+            url = str(link["url"])
+            if url not in seen_status:
+                seen_status.add(url)
+                posts.append({"handle": match.group(1), "url": url, "zh": link.get("zh"), "en": link.get("en")})
+            continue
         if match:
-            key = match.group(1).lower()
-            prev = posts.get(key)
-            if prev is None or (match.group(2) and "/status/" not in str(prev["url"])):
-                posts[key] = {"handle": match.group(1), "url": link["url"]}
             continue
         docs.append(link)
-    for match in HANDLE_RE.finditer(str(item.get("handle") or "")):
-        key = match.group(1).lower()
-        if key not in posts:
-            posts[key] = {"handle": match.group(1), "url": f"https://x.com/{match.group(1)}"}
     entries: list[dict] = []
     for link in docs:
         url = str(link["url"])
@@ -235,9 +241,18 @@ def source_entries(item: dict) -> list[dict]:
             label = str(link.get("zh") or link.get("en") or "原文")
             kind = "paper"
         entries.append({"url": url, "label": label, "icon": kind})
-    for post in posts.values():
-        entries.append({"url": post["url"], "label": f"@{post['handle']}", "icon": "x"})
+    for post in posts:
+        entries.append({"url": post["url"], "label": x_post_label(post), "icon": "x"})
     return entries
+
+
+def x_post_label(post: dict) -> str:
+    zh = str(post.get("zh") or "").strip()
+    handle = str(post.get("handle") or "")
+    bare = zh.lstrip("@").casefold() == handle.casefold()
+    if zh and not bare and zh.casefold() not in GENERIC_POST_LABELS:
+        return zh
+    return f"X 原帖 · @{handle}"
 
 
 def source_html(item: dict) -> str:

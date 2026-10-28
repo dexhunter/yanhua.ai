@@ -2,12 +2,14 @@
    bottom-right dialog. subscribe.yanhua.ai is the Cloudflare Worker
    in front of Resend audience 0f2fbb4e-3333-43c1-a0d2-16c69a7c3003.
    The browser posts {email, lang, source} and reads
-   {"ok":true,"subscribers":N} from statsEndpoint. RESEND_API_KEY
-   stays on the worker. */
+   {"ok":true,"subscribers":N,"cards":[...]} from statsEndpoint.
+   Card views, dwell, flips, clicks, and copies post to eventsEndpoint.
+   RESEND_API_KEY stays on the worker. */
 window.YANHUA_CONFIG = {
   siteUrl: "https://yanhua.ai",
   subscribeEndpoint: "https://subscribe.yanhua.ai",
   statsEndpoint: "https://subscribe.yanhua.ai/stats",
+  eventsEndpoint: "https://subscribe.yanhua.ai/event",
   resendAudienceId: "0f2fbb4e-3333-43c1-a0d2-16c69a7c3003",
   subscribeMethod: "POST",
   /* "json" sends {email, lang, source}. "form" sends URL-encoded fields

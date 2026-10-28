@@ -572,6 +572,13 @@ dialog.sub-window h2 {
   color: var(--lacquer-ink);
   text-decoration: underline;
 }
+.byline-handle {
+  font-family: var(--mono);
+  font-size: 0.75rem;
+  color: var(--lacquer-ink);
+  text-decoration: none;
+}
+.byline-handle:hover { text-decoration: underline; }
 
 .pills {
   display: flex;
@@ -769,9 +776,55 @@ button.source-link { appearance: none; cursor: pointer; }
 dialog {
   color: var(--ink);
   width: min(36rem, calc(100% - 2rem));
+  max-height: min(85vh, 48rem);
+  overflow: auto;
   padding: 1.3rem 1.25rem 1.2rem;
   box-shadow: var(--shadow);
 }
+.card-rank { margin-top: 1.2rem; }
+.card-rank h3 {
+  margin: 0;
+  font-family: var(--serif);
+  font-size: 1.2rem;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}
+.rank-note, .rank-empty {
+  margin: 0.35rem 0 0;
+  color: var(--muted);
+  font-size: 0.92rem;
+  line-height: 1.5;
+}
+.rank-list { list-style: none; margin: 0.7rem 0 0; padding: 0; }
+.rank-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 0.75rem 1rem;
+  padding: 0.55rem 0;
+  border-top: 1px solid var(--line);
+}
+.rank-row button {
+  appearance: none;
+  border: 0;
+  background: transparent;
+  padding: 0;
+  color: inherit;
+  font-family: var(--serif);
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 1.35;
+  text-align: left;
+  cursor: pointer;
+}
+.rank-row button:hover { color: var(--lacquer-ink); }
+.rank-edition, .rank-meta {
+  font-family: var(--mono);
+  font-size: 0.75rem;
+  color: var(--muted);
+  font-variant-numeric: tabular-nums;
+}
+.rank-meta { flex: none; text-align: right; }
 dialog::backdrop { background: color-mix(in srgb, var(--ink) 42%, transparent); }
 .dialog-head { display: flex; justify-content: space-between; gap: 1rem; align-items: flex-start; }
 dialog h2 { margin: 0; font-family: var(--serif); font-size: 1.6rem; font-weight: 600; letter-spacing: -0.02em; }

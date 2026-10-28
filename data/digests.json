@@ -561,7 +561,7 @@
         {
           "zh": "分享",
           "en": "Post",
-          "url": "https://x.com/arnaudmercier"
+          "url": "https://x.com/arnaudmercier/status/2115133313136410898"
         }
       ]
     },
@@ -678,7 +678,7 @@
         {
           "zh": "分享",
           "en": "Post",
-          "url": "https://x.com/arkyyang"
+          "url": "https://x.com/arkyyang/status/2115076613461418010"
         }
       ]
     },
@@ -741,7 +741,7 @@
         {
           "zh": "分享",
           "en": "Post",
-          "url": "https://x.com/pryzmat_tech"
+          "url": "https://x.com/pryzmat_tech/status/2115078634633306458"
         }
       ]
     },
@@ -810,7 +810,7 @@
         {
           "zh": "分享",
           "en": "Post",
-          "url": "https://x.com/BAAIBeijing"
+          "url": "https://x.com/BAAIBeijing/status/2115069002670043358"
         }
       ]
     },
@@ -863,12 +863,12 @@
         {
           "zh": "@BriannaDestinyL",
           "en": "@BriannaDestinyL",
-          "url": "https://x.com/BriannaDestinyL"
+          "url": "https://x.com/BriannaDestinyL/status/2114795403241738647"
         },
         {
           "zh": "@LangChainJP",
           "en": "@LangChainJP",
-          "url": "https://x.com/LangChainJP"
+          "url": "https://x.com/LangChainJP/status/2115005867661635842"
         }
       ]
     },
@@ -919,7 +919,7 @@
         {
           "zh": "分享",
           "en": "Post",
-          "url": "https://x.com/embodiedaiwatch"
+          "url": "https://x.com/embodiedaiwatch/status/2114986844672975180"
         }
       ]
     },
@@ -985,7 +985,7 @@
         {
           "zh": "分享",
           "en": "Post",
-          "url": "https://x.com/SciFi"
+          "url": "https://x.com/SciFi/status/2114820710661071116"
         }
       ]
     },
@@ -1040,7 +1040,7 @@
         {
           "zh": "@itielshwartz",
           "en": "@itielshwartz",
-          "url": "https://x.com/itielshwartz"
+          "url": "https://x.com/itielshwartz/status/2114807820616945769"
         }
       ]
     },
@@ -1098,7 +1098,7 @@
         {
           "zh": "分享",
           "en": "Post",
-          "url": "https://x.com/botnewsnetwork"
+          "url": "https://x.com/botnewsnetwork/status/2114774108051472605"
         }
       ]
     },
@@ -1160,6 +1160,11 @@
           "zh": "发布帖",
           "en": "Thread",
           "url": "https://x.com/InfiniAILab/status/2114763933064089697"
+        },
+        {
+          "zh": "原帖 (@haizhong_zheng)",
+          "en": "Post (@haizhong_zheng)",
+          "url": "https://x.com/haizhong_zheng/status/2114769723879464983"
         }
       ]
     },
@@ -1219,7 +1224,7 @@
         {
           "zh": "分享",
           "en": "Post",
-          "url": "https://x.com/HuggingPapers"
+          "url": "https://x.com/HuggingPapers/status/2114752749032055049"
         }
       ]
     },
@@ -1281,7 +1286,7 @@
         {
           "zh": "分享",
           "en": "Post",
-          "url": "https://x.com/xijia_tao"
+          "url": "https://x.com/xijia_tao/status/2114654129188675629"
         }
       ]
     },
@@ -1322,7 +1327,7 @@
       ],
       "arxiv": "2608.23552",
       "authors": "Seth Karten, Alex L. Zhang, Kevin Thomas et al.",
-      "handle": "@primeintellect",
+      "handle": "@primeintellect · @yacinelearning",
       "repo": "https://github.com/PrimeIntellect-ai/prime-agent",
       "links": [
         {
@@ -1338,7 +1343,7 @@
         {
           "zh": "分享",
           "en": "Post",
-          "url": "https://x.com/primeintellect"
+          "url": "https://x.com/yacinelearning/status/2114711779511022038"
         }
       ]
     },
@@ -1400,7 +1405,7 @@
         {
           "zh": "分享",
           "en": "Post",
-          "url": "https://x.com/arnaudmercier"
+          "url": "https://x.com/arnaudmercier/status/2114636440793403524"
         }
       ]
     },
@@ -1457,7 +1462,7 @@
         {
           "zh": "分享",
           "en": "Post",
-          "url": "https://x.com/BriannaDestinyL"
+          "url": "https://x.com/BriannaDestinyL/status/2114465480014438653"
         }
       ]
     },
@@ -1520,7 +1525,7 @@
         {
           "zh": "分享",
           "en": "Post",
-          "url": "https://x.com/eliotleu"
+          "url": "https://x.com/eliotleu/status/2114589448445030621"
         }
       ]
     },
@@ -1588,7 +1593,7 @@
         {
           "zh": "@FahadPrimeX",
           "en": "@FahadPrimeX",
-          "url": "https://x.com/FahadPrimeX"
+          "url": "https://x.com/FahadPrimeX/status/2114622526068318511"
         }
       ]
     },
@@ -1954,8 +1959,14 @@
           "zh": "Król 的文章",
           "en": "Król's essay",
           "url": "https://daniel-krol.com/self-improving-agent/"
+        },
+        {
+          "zh": "X 原帖",
+          "en": "X Post",
+          "url": "https://x.com/MrDanielKrol/status/2114348889364947033"
         }
-      ]
+      ],
+      "handle": "@MrDanielKrol"
     },
     {
       "id": "videoharness-srsi",
@@ -2005,8 +2016,14 @@
           "zh": "论文",
           "en": "Paper",
           "url": "https://arxiv.org/abs/2610.19424"
+        },
+        {
+          "zh": "X 原帖",
+          "en": "X Post",
+          "url": "https://x.com/al3rez/status/2114396820805943594"
         }
-      ]
+      ],
+      "handle": "@al3rez"
     },
     {
       "id": "harness-learning",
@@ -2053,8 +2070,14 @@
           "zh": "论文",
           "en": "Paper",
           "url": "https://arxiv.org/abs/2609.35738"
+        },
+        {
+          "zh": "X 原帖",
+          "en": "X Post",
+          "url": "https://x.com/ShekOMP/status/2114389760810643515"
         }
-      ]
+      ],
+      "handle": "@ShekOMP"
     },
     {
       "id": "meta-square",
@@ -2601,8 +2624,14 @@
           "zh": "文章",
           "en": "Essay",
           "url": "https://www.agno.com/blog/towards-self-improving-agent-infrastructure"
+        },
+        {
+          "zh": "X 原帖",
+          "en": "X Post",
+          "url": "https://x.com/ashpreetbedi/status/2114407868736671935"
         }
-      ]
+      ],
+      "handle": "@ashpreetbedi"
     },
     {
       "id": "agent-s4",
@@ -2835,8 +2864,14 @@
           "zh": "论文",
           "en": "Paper",
           "url": "https://arxiv.org/abs/2610.31326"
+        },
+        {
+          "zh": "X 原帖",
+          "en": "X Post",
+          "url": "https://x.com/Gary46518347/status/2113994175284650008"
         }
-      ]
+      ],
+      "handle": "@Gary46518347"
     },
     {
       "id": "scholar-evolve",
