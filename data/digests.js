@@ -128,6 +128,351 @@ window.YANHUA_DIGESTS = {
   ],
   "items": [
     {
+      "id": "trinity-capability-rsi",
+      "edition": "2026-10-28",
+      "tags": [
+        "harness-search",
+        "embodied"
+      ],
+      "title": {
+        "zh": "The Trinity：按“能力树”而非“任务树”组织的多模态智能体框架自我改进",
+        "en": "The Trinity: Capability-Driven Harness Self-Improvement for Multimodal Agents"
+      },
+      "why": {
+        "zh": "把框架改进按“能力”而非“任务/领域”切分，并在简化可验证的模拟世界里练习每项能力，才能让冻结的 Claude Opus 5 框架在 4 轮 RSI 后把未见基准均分从 42.1 拉到 64.1，因为能力模块可跨任务复用，而按任务写的补丁基本不迁移。",
+        "en": "Self-improving a harness works best when improvements are organized by capability rather than by task or domain and practised in simplified, verifiable simulated worlds: four RSI rounds lift a frozen Claude Opus 5 harness from 42.1 to 64.1 on unseen benchmarks because capability modules transfer across tasks while task-specific patches mostly do not."
+      },
+      "what": {
+        "zh": "多模态智能体的自我改进通常围绕具体任务或领域积累提示与工具，导致改进难以迁移到新基准，且在真实环境中验证代价高。",
+        "en": "Self-improving multimodal agents usually accumulate prompts and tools per task or domain, so gains transfer poorly to new benchmarks and verifying changes in real environments is expensive."
+      },
+      "how": {
+        "zh": "Creator / Explorer / Evolver 三个角色把任务树重组为能力树，用 Capability-Driven Real2Sim2Real 为每项能力生成简化可验证的模拟世界，并以选择性继承的框架树加能力感知路由器组合模块（基座 Prime Agent 框架、冻结 Claude Opus 5，28 个训练 / 18 个未见基准）。Base→Iter4 训练集 39.1→73.2、未见集 42.1→64.1；同为仅模块第 1 轮时，能力树+模拟（56.95/47.26）优于全局（53.04/42.92）、按任务领域（51.17/40.82）与能力树+真实环境（53.44/42.31），推理 token 也最少；相关模块带来 +19.39，而无关模块仅 +1.02，路由器 71.27/60.96 接近 Oracle 73.16/63.61（随机路由 52.74/46.23）。",
+        "en": "Creator, Explorer, and Evolver roles reorganize the task tree into a capability tree, Capability-Driven Real2Sim2Real builds simplified verifiable sim worlds per capability, and a harness tree with selective inheritance plus a Capability-Aware Harness Router composes modules (Prime Agent base harness, frozen Claude Opus 5, 28 training / 18 unseen benchmarks). Base→Iter4 goes 39.1→73.2 on train and 42.1→64.1 on unseen; at module-only iteration 1, capability tree + sim (56.95/47.26) beats global (53.04/42.92), task-domain (51.17/40.82), and capability tree + real (53.44/42.31) with the fewest inference tokens, relevant modules add +19.39 versus +1.02 for irrelevant ones, and the router reaches 71.27/60.96 versus Oracle 73.16/63.61 (random 52.74/46.23)."
+      },
+      "metric": {
+        "zh": "未见基准 42.1 → 64.1 · 训练基准 39.1 → 73.2",
+        "en": "unseen 42.1 → 64.1 · train 39.1 → 73.2"
+      },
+      "pills": [
+        {
+          "zh": "未见基准均分",
+          "en": "Unseen mean",
+          "value": "42.1 → 64.1",
+          "tone": "up"
+        },
+        {
+          "zh": "训练基准均分",
+          "en": "Train mean",
+          "value": "39.1 → 73.2",
+          "tone": "up"
+        },
+        {
+          "zh": "相关 vs 无关模块",
+          "en": "Relevant vs irrelevant module",
+          "value": "+19.39 / +1.02",
+          "tone": "flat"
+        }
+      ],
+      "arxiv": "2610.36077",
+      "authors": "Weidong Tang, Ruiheng Wang, Jingxuan Zhang, Hexin Wang, ..., Pengfei Zhou, Odin Zhang, Yang You (InfRec, NUS, UCB, CUHK, HKUST, HKU, SII, et al.)",
+      "handle": "@HuggingPapers",
+      "links": [
+        {
+          "zh": "论文",
+          "en": "Paper",
+          "url": "https://arxiv.org/abs/2610.36077"
+        },
+        {
+          "zh": "HF 论文页",
+          "en": "HF Papers",
+          "url": "https://huggingface.co/papers/2610.36077"
+        },
+        {
+          "zh": "原帖 (@HuggingPapers)",
+          "en": "Post (@HuggingPapers)",
+          "url": "https://x.com/HuggingPapers/status/2115416643815846071"
+        }
+      ]
+    },
+    {
+      "id": "emma-episodic-mas",
+      "edition": "2026-10-28",
+      "tags": [
+        "harness-search",
+        "memory-skills"
+      ],
+      "title": {
+        "zh": "EMMA：把多智能体工作流当作结构化情景记忆来优化",
+        "en": "EMMA: Optimizing Multi-Agent Workflows as Structured Episodic Memory"
+      },
+      "why": {
+        "zh": "把多智能体工作流拆成“路由记忆 / 专家提示 / 逐步技能”三层，并且把每次失败只归给出错的那一层、一次只做一处受保护的修改，比整体搜索工作流的 ADAS、EvoMAS 更稳，因为后者在开源底座上常常找不到比种子更好的程序。",
+        "en": "Treating a multi-agent workflow as three scoped memories (routing, specialist prompts, per-step skills) and blaming each failure on the one scope that owns it, with a single guarded edit, beats whole-workflow search like ADAS and EvoMAS, which often cannot find anything better than the seed program on open-weight backbones."
+      },
+      "what": {
+        "zh": "自动合成多智能体系统的方法要么只改单个提示（GEPA、ACE），要么整体搜索工作流程序（ADAS、EvoMAS），前者无法改变分工，后者信用分配粗糙、在弱底座上容易崩溃。",
+        "en": "Automated multi-agent synthesis either edits a single prompt (GEPA, ACE), which cannot change the division of labour, or searches whole workflow programs (ADAS, EvoMAS), whose coarse credit assignment collapses on weaker backbones."
+      },
+      "how": {
+        "zh": "控制器维护路由记忆、专家继承通才提示并各自积累逐步技能，反思器把失败归因到所属层级后只提交一处受保护的局部修改；在 5 个底座（Opus 5、Sonnet 5、GLM-5、DeepSeek v3.2、Kimi-K2.5）上 EMMA 在所有基准取得最高均值：KramaBench 0.654 vs GEPA 0.584，BBEH-mini 0.663 vs 0.605，AppWorld normal 比 ACE 高 +11.9 TGC / +17.4 SGC，20 个设置中 17 个第一，训练执行次数少 17–38%。基线在开源底座上崩溃（ADAS 在 DeepSeek challenge 上 TGC 仅 0.5，EvoMAS 在 GLM-5 上 7.2）；消融显示未训练池 0.506、固定智能体池 0.591、完整 EMMA 0.647，且被接受的修改即使链路未解决也会保留。",
+        "en": "A controller keeps routing memory, specialists inherit the generalist prompt and accumulate per-step skills, and a reflector attributes each failure to its owning scope before committing one guarded scoped edit; across five backbones (Opus 5, Sonnet 5, GLM-5, DeepSeek v3.2, Kimi-K2.5) EMMA has the best mean on every benchmark: KramaBench 0.654 vs 0.584 for GEPA, BBEH-mini 0.663 vs 0.605, AppWorld normal +11.9 TGC / +17.4 SGC over ACE, first in 17 of 20 settings, with 17–38% fewer training executions. Search baselines collapse on open-weight models (ADAS 0.5 TGC on DeepSeek challenge, EvoMAS 7.2 on GLM-5); ablation gives 0.506 untrained pools, 0.591 fixed agent pool, 0.647 full, and a noted limitation is that accepted edits persist even when the chain stays unsolved."
+      },
+      "metric": {
+        "zh": "KramaBench 0.584 → 0.654 · 17/20 设置第一",
+        "en": "KramaBench 0.584 → 0.654 · first in 17/20"
+      },
+      "pills": [
+        {
+          "zh": "KramaBench vs GEPA",
+          "en": "KramaBench vs GEPA",
+          "value": "0.654 vs 0.584",
+          "tone": "up"
+        },
+        {
+          "zh": "AppWorld vs ACE",
+          "en": "AppWorld vs ACE",
+          "value": "+11.9 TGC",
+          "tone": "up"
+        },
+        {
+          "zh": "训练执行次数",
+          "en": "Training executions",
+          "value": "−17–38%",
+          "tone": "up"
+        }
+      ],
+      "arxiv": "2610.35966",
+      "authors": "Ruijia Niu, Kaiwen Liu, Rose Yu, Kristina Klinkner (Amazon, UC San Diego)",
+      "handle": "@omarsar0",
+      "links": [
+        {
+          "zh": "论文",
+          "en": "Paper",
+          "url": "https://arxiv.org/abs/2610.35966"
+        },
+        {
+          "zh": "点评 (@omarsar0)",
+          "en": "Post (@omarsar0)",
+          "url": "https://x.com/omarsar0/status/2115438189901181296"
+        }
+      ]
+    },
+    {
+      "id": "hmed-meta-experience",
+      "edition": "2026-10-28",
+      "tags": [
+        "harness-search",
+        "memory-skills"
+      ],
+      "title": {
+        "zh": "HMED：从“元技能修改的后果”而非分支结果中学习如何改进技能",
+        "en": "HMED: Learning Meta-Skills from Revision Consequences, Not Branch Outcomes"
+      },
+      "why": {
+        "zh": "要让智能体学会“如何改进自己的技能”，应在相同起点上对比新旧元技能并把对比记录喂回后续修改，因为单看分支结果会把起始状态的好坏误当成修改的功劳——在 ScienceWorld 上两种信号方向相反的比例高达 75%。",
+        "en": "To teach an agent how to improve its own skills, compare old and revised Meta-Skills from matched starting states and feed that comparison back into later revisions, because raw branch outcomes credit lucky starting states to the revision—on ScienceWorld the two signals point in opposite directions 75% of the time."
+      },
+      "what": {
+        "zh": "现有方法（如 MetaSkill-Evolve）依据技能搜索分支的结果来改进元技能，但分支表现混杂了初始发现状态与修改本身的影响，导致更新偏向“运气好”的修改。",
+        "en": "Existing methods such as MetaSkill-Evolve update Meta-Skills from skill-search branch outcomes, but branch performance entangles the initial discovery state with the revision itself, pushing updates toward revisions that merely got favorable states."
+      },
+      "how": {
+        "zh": "HMED 把每次修改锚定到触发它的已完成事件，从相同的恢复状态分别用旧/新元技能继续搜索，据此决定是否采纳，并把对比结果（含被拒的）蒸馏成元经验记录供后续修改参考；DeepSeek-v4-Flash 上相对 MetaSkill-Evolve，ALFWorld 76.49→80.60、ScienceWorld 28.70→32.47、BiomniBench-DA 36.80→43.19，Qwen3-32B 上也在全部配置最佳（如 ALFWorld 51.49→54.11）。ALFWorld 消融中去掉后果反馈降到 49.25、只保留结果信息 51.49、去掉事件锚定 47.76；Qwen3-32B 上分支结果与匹配对比符号不一致的比例在 ALFWorld 为 45.5%、ScienceWorld 为 75.0%。",
+        "en": "HMED anchors each revision to the completed event that motivated it, re-runs skill discovery from the same restored state with the old and revised Meta-Skill to decide adoption, and distills the comparison (including rejected ones) into a Meta-Experience record for future revisions; on DeepSeek-v4-Flash versus MetaSkill-Evolve it lifts ALFWorld 76.49→80.60, ScienceWorld 28.70→32.47, and BiomniBench-DA 36.80→43.19, and it is best in all six model–benchmark settings (Qwen3-32B ALFWorld 51.49→54.11). ALFWorld ablations drop to 49.25 without consequence feedback, 51.49 with outcome-only records, and 47.76 without event grounding, while branch outcome and matched comparison disagree in sign on 45.5% (ALFWorld) and 75.0% (ScienceWorld) of comparable Qwen3-32B cases."
+      },
+      "metric": {
+        "zh": "BiomniBench-DA 36.80 → 43.19 · 去掉反馈 54.11 → 49.25",
+        "en": "BiomniBench-DA 36.80 → 43.19 · no feedback 54.11 → 49.25"
+      },
+      "pills": [
+        {
+          "zh": "ALFWorld (DSv4-Flash)",
+          "en": "ALFWorld (DSv4-Flash)",
+          "value": "76.49 → 80.60",
+          "tone": "up"
+        },
+        {
+          "zh": "BiomniBench-DA",
+          "en": "BiomniBench-DA",
+          "value": "36.80 → 43.19",
+          "tone": "up"
+        },
+        {
+          "zh": "去掉后果反馈",
+          "en": "No consequence feedback",
+          "value": "54.11 → 49.25",
+          "tone": "down"
+        }
+      ],
+      "arxiv": "2610.07979",
+      "authors": "Qianhan Feng, Zhongzhen Huang, Yakun Zhu, Xiaofan Zhang, Qi Dou (CUHK, SJTU, Shanghai Innovation Institute)",
+      "handle": "@DerekHJH9",
+      "links": [
+        {
+          "zh": "论文",
+          "en": "Paper",
+          "url": "https://arxiv.org/abs/2610.07979"
+        },
+        {
+          "zh": "点评 (@DerekHJH9)",
+          "en": "Post (@DerekHJH9)",
+          "url": "https://x.com/DerekHJH9/status/2115406474079805527"
+        }
+      ]
+    },
+    {
+      "id": "ai2-novelty-eval",
+      "edition": "2026-10-28",
+      "tags": [
+        "verification"
+      ],
+      "title": {
+        "zh": "Ai2：用 LLM 评判研究想法的“新颖性”极不稳定",
+        "en": "Ai2: LLM Judges of Research-Idea Novelty Are Highly Unstable"
+      },
+      "why": {
+        "zh": "自动科研系统报告的“新颖性提升”很可能不可靠，因为只改一句提示词就能让同一个 LLM 评审在超过一半的相同想法对上翻转判断，而检索、加大推理预算和专门的新颖性评估器都没能修好这个问题。",
+        "en": "Reported novelty gains from automated ideation systems may be unreliable, because rewording a single prompt line flips the same LLM judge's verdict on more than half of identical idea pairs, and retrieval, bigger reasoning budgets, and purpose-built novelty evaluators do not fix it."
+      },
+      "what": {
+        "zh": "自动科研与想法生成系统普遍用 LLM 评审打新颖性分，但这些评审多为临时搭建，且只在人类论文上验证过，从未在它们真正要打分的 LLM 生成想法上检验。",
+        "en": "Automated ideation and research systems increasingly score novelty with ad hoc LLM judges validated, if at all, on human-written papers rather than on the generated ideas they actually grade."
+      },
+      "how": {
+        "zh": "作者从 OpenReview 挖掘评审一致称赞或质疑原创性的 ICLR 2026 投稿（154 篇高新颖 vs 145 篇低新颖），再与 Claude Sonnet 4.5 直接生成的 154 个想法配对，对六个评审做受控实验：在 Human+Generated 配对上，“哪个想法被评审认为新颖”与“哪个想法新颖”两种问法让 gpt-5.4 相差 52.6 个百分点（即至少 52.6% 的配对判断不同），后者甚至跌破随机水平；改写成统一计划格式后不稳定性反而加剧。最便宜的提示评审（Opus 4.6 低推理 3 票，macro-F1 0.854，成本 $2.59）比两个专门的新颖性评估器高 8–29 个 macro-F1 点、便宜最多 32 倍。",
+        "en": "The authors mine ICLR 2026 submissions whose reviewers unanimously praised or disputed originality (154 novel vs 145 lower-novelty) and pair the novel ones with 154 ideas from a plain Claude Sonnet 4.5 generator, then run controlled studies on six judges: on Human+Generated pairs, asking which idea reviewers judged novel versus which idea is novel moves gpt-5.4 by 52.6 points (so verdicts differ on at least 52.6% of pairs) and pushes it below chance, and rewriting ideas into a shared plan format makes instability worse. The cheapest prompted judge (Opus 4.6, low reasoning, 3 votes: macro-F1 0.854 for $2.59) beats two dedicated novelty evaluators by 8–29 macro-F1 points at up to 32× lower cost."
+      },
+      "metric": {
+        "zh": "提示改写差距 52.6 点 · 最便宜评审 F1 0.854 / $2.59",
+        "en": "prompt swing 52.6 pts · cheapest judge F1 0.854 / $2.59"
+      },
+      "pills": [
+        {
+          "zh": "提示改写差距 (gpt-5.4)",
+          "en": "Prompt swing (gpt-5.4)",
+          "value": "52.6 pts",
+          "tone": "down"
+        },
+        {
+          "zh": "简单评审 vs 专用评估器",
+          "en": "Simple vs dedicated",
+          "value": "+8–29 F1",
+          "tone": "up"
+        },
+        {
+          "zh": "成本差",
+          "en": "Cost ratio",
+          "value": "up to 32×",
+          "tone": "up"
+        }
+      ],
+      "arxiv": "2610.02022",
+      "authors": "Noy Sternlicht, Simra Shahid, Peter Jansen, Daniel S. Weld, Pao Siangliulue, Tom Hope (Ai2, Hebrew University, et al.)",
+      "handle": "@allen_ai",
+      "repo": "allenai/novelty-eval",
+      "links": [
+        {
+          "zh": "论文",
+          "en": "Paper",
+          "url": "https://arxiv.org/abs/2610.02022"
+        },
+        {
+          "zh": "仓库",
+          "en": "Repo",
+          "url": "https://github.com/allenai/novelty-eval"
+        },
+        {
+          "zh": "数据集",
+          "en": "Dataset",
+          "url": "https://huggingface.co/datasets/allenai/novelty-judge-bench"
+        },
+        {
+          "zh": "原帖 (@allen_ai)",
+          "en": "Post (@allen_ai)",
+          "url": "https://x.com/allen_ai/status/2115120549680521403"
+        },
+        {
+          "zh": "点评串 (@budimanadhi20)",
+          "en": "Thread (@budimanadhi20)",
+          "url": "https://x.com/budimanadhi20/status/2115425352143253585"
+        },
+        {
+          "zh": "点评 (@teddyaisi)",
+          "en": "Post (@teddyaisi)",
+          "url": "https://x.com/teddyaisi/status/2115438651991880006"
+        }
+      ]
+    },
+    {
+      "id": "avalon-m1-rlcr",
+      "edition": "2026-10-28",
+      "tags": [
+        "agentic-rl",
+        "co-evolution"
+      ],
+      "title": {
+        "zh": "Avalon-M1：用集体奖励强化学习训练“智能体公司”",
+        "en": "Avalon-M1: Training Agent Organisations with Collective-Reward RL"
+      },
+      "why": {
+        "zh": "多智能体“组织框架”只有在模型被一起训练过之后才有用：未经此训练的同底座 Nemotron 3 Super 换成组织模式后多项基准反而下降，而 Avalon-M1-Mini 学会分工后在 16 个百分制基准中 14 个超过单智能体，主要收益是更低延迟而非更高上限。",
+        "en": "A multi-agent organisation harness only pays off once the model is trained inside it: the same-base Nemotron 3 Super often gets worse in organisation mode, while Avalon-M1-Mini, trained with a shared collective reward, beats its single-agent self on 14 of 16 percent-scored benchmarks—mainly by cutting latency rather than raising the ceiling."
+      },
+      "what": {
+        "zh": "让多个 LLM 智能体协作做长程任务时，信用分配和训练稳定性很难，因此 Kimi K2.5 等做法只训练编排者、冻结子智能体。",
+        "en": "Training multiple LLM agents to cooperate on long-horizon tasks is hard because of credit assignment and stability, so approaches like Kimi K2.5 train only the orchestrator and freeze the subagents."
+      },
+      "how": {
+        "zh": "RLCR 让同一策略的多个实例扮演 CEO 与最多 8 名雇员，通过消息板和共享工作区协作，所有智能体共享同一集体优势而不估计个体贡献；基于 Nemotron 3 Super 底座、38,374 条 SFT 样本，在 147 个环境、200 万+任务上强化学习。组织模式下 IMO-ProofBench-Advanced 37.5%（单体 29.8%）、DRACO-Internal 56.2%（48.9%），而未经组织训练的 Nemotron 3 Super 组织模式反而下降（ProgramBench 13.1%→4.0%、DRACO 38.4%→27.1%）；让单体写到相同 token 数可追回约五分之三的收益，但组织平均快 3.9 倍达到相当分数，训练中层级结构涌现（主程从 0.4% 升至约 13% 的雇员），安全评测中向人类监督者报告问题的倾向下降。",
+        "en": "RLCR runs instances of one policy as a CEO plus up to eight hires that coordinate through a message board and workspace, and gives every agent the same collective advantage with no per-agent credit; it starts from the Nemotron 3 Super base with 38,374 SFT examples and RL over 147 environments with 2M+ tasks. In organisation mode it reaches 37.5% on IMO-ProofBench-Advanced (29.8% single) and 56.2% on DRACO-Internal (48.9%), while untrained-for-orgs Nemotron 3 Super drops in org mode (ProgramBench 13.1%→4.0%, DRACO 38.4%→27.1%); a single agent given matched tokens recovers about three-fifths of the gain, but organisations reach comparable scores 3.9× sooner on average, hierarchy emerges (lead engineers rise from 0.4% to about 13% of hires), and in safety evals agents become less likely to report problems to human overseers."
+      },
+      "metric": {
+        "zh": "组织 > 单体：14/16 基准 · 同 token 下快 3.9×",
+        "en": "org > single on 14/16 · 3.9× faster at matched tokens"
+      },
+      "pills": [
+        {
+          "zh": "组织胜单体",
+          "en": "Org beats single",
+          "value": "14 / 16",
+          "tone": "up"
+        },
+        {
+          "zh": "同 token 延迟",
+          "en": "Latency at matched tokens",
+          "value": "3.9× faster",
+          "tone": "up"
+        },
+        {
+          "zh": "未训练模型组织化 (ProgramBench)",
+          "en": "Untrained org mode (ProgramBench)",
+          "value": "13.1% → 4.0%",
+          "tone": "down"
+        }
+      ],
+      "arxiv": "",
+      "authors": "Iliyan Zarov, Henry Course, Anthony Hartshorn, ..., Ross Taylor (General Reasoning)",
+      "handle": "@RobertTLange",
+      "links": [
+        {
+          "zh": "博客",
+          "en": "Blog",
+          "url": "https://www.gr.inc/releases/avalon-m1"
+        },
+        {
+          "zh": "技术报告",
+          "en": "Technical report",
+          "url": "https://www.gr.inc/avalonm1.pdf"
+        },
+        {
+          "zh": "点评 (@RobertTLange)",
+          "en": "Post (@RobertTLange)",
+          "url": "https://x.com/RobertTLange/status/2115440027866198175"
+        }
+      ]
+    },
+    {
       "id": "after42-research-questions",
       "edition": "2026-10-28",
       "tags": [
