@@ -128,6 +128,80 @@
   ],
   "items": [
     {
+      "id": "after42-research-questions",
+      "edition": "2026-10-28",
+      "tags": [
+        "harness-search",
+        "verification"
+      ],
+      "title": {
+        "zh": "After42：通过“先试着解、再改问题”的智能体工作流提出专家认可的研究问题",
+        "en": "After42: Proposing Expert-Grade Research Questions by Trying to Solve Them"
+      },
+      "why": {
+        "zh": "单次采样虽能让 90% 的候选问题通过新颖性检查，但专家认为真正有趣的只有 3%；只有把“尝试求解—暴露阻碍—重构问题—全票评审”做成多轮工作流，才能把专家认可率拉升到 33%，不过 97% 的初始提案（及 87% 的终选问题）仍是组合已有概念，极少创造全新的数学对象。",
+        "en": "Asking a frontier model for research questions in a single pass passes automated novelty checks 90% of the time yet yields only 3% expert-interesting questions, whereas refining candidates through multi-round solution attempts lifts expert interest to 33%—though 97% of initial proposals (and 87% of final questions) remain compositional rather than inventing new mathematical objects."
+      },
+      "what": {
+        "zh": "随着 AI 加速解决人类已提出的公开难题，研究瓶颈转向“提出值得探索的新问题”与“判断哪些问题真正有趣”；After42 检验智能体工作流能否在数学、统计、理论计算机与物理中提出令领域专家真正感兴趣的问题，以及模型评审能否替代人类学术品味。",
+        "en": "As AI accelerates solving posed problems, the bottleneck shifts to formulating new questions worth pursuing; After42 tests whether an agentic workflow can propose questions across mathematics, statistics, theoretical CS, and physics that domain experts judge genuinely interesting, and whether model judges can stand in for human research taste."
+      },
+      "how": {
+        "zh": "工作流从研究者给定的方向目标与文献包出发，超采样候选问题后，在每一轮让求解智能体尝试证明或计算以暴露盲点与关键局部结构，再由演化智能体改写问题，且仅当全部模型评审一致偏爱新版本时才采纳（GPT-6 Astra 跑一轮数学约耗 260 智能体小时、26.2 亿 token）。在 29 位专家（每题至少一位教授，平均审阅 35 分钟）对 135 道终选题的评估中，45 道（33%）被判真正有趣（随机结构相变达 47%，等离子体物理为 0%）；四模型评审集成在 top-20 上能召回 80% 的专家共识题，但对单一专家独具慧眼的题目召回不足（仅 3/16），且以历史题目的专家反馈做条件化可将与专家排序的相关系数从 0.26 提至 0.42。",
+        "en": "Starting from a researcher-defined subfield goal and literature pack, After42 oversamples seed questions and runs iterative solve–refine–critique rounds where solver agents attempt proofs or calculations to expose blind spots and local structure, development subagents revise the question, and a revision passes only when all model judges prefer it (a math run with GPT-6 Astra uses ~260 agent-hours and 2.62B tokens for 70 final questions). Across 135 final questions evaluated by 29 experts (at least one professor per question, ~35 minutes each), 45 (33%) were judged genuinely interesting (47% in random-structure phase transitions versus 0% in plasma physics); a 4-model judge ensemble recovers 80% of the top-20 expert consensus set but only 3 of 16 single-expert picks, while conditioning on concrete expert feedback raises rank correlation from 0.26 to 0.42."
+      },
+      "metric": {
+        "zh": "专家认可率 3% → 33%（45/135） · 97% 为组合式创新",
+        "en": "expert interest 3% → 33% (45/135) · 97% compositional"
+      },
+      "pills": [
+        {
+          "zh": "演化前后有趣率",
+          "en": "Interesting rate",
+          "value": "3% → 33%",
+          "tone": "up"
+        },
+        {
+          "zh": "专家认可终选题",
+          "en": "Expert-interesting",
+          "value": "45 / 135",
+          "tone": "up"
+        },
+        {
+          "zh": "初始/终选组合占比",
+          "en": "Compositional share",
+          "value": "97% / 87%",
+          "tone": "flat"
+        }
+      ],
+      "arxiv": "",
+      "authors": "Fan Nie, Zihao Wang, Kaiyue Wen, ..., James Zou, Andrea Montanari, Percy Liang (Stanford, Yale, NYU, Caltech, Oxford)",
+      "handle": "@hxiao",
+      "repo": "after42/After42",
+      "links": [
+        {
+          "zh": "研究博客",
+          "en": "Blog",
+          "url": "https://after42.org/research/can-ai-propose-interesting-research-questions/"
+        },
+        {
+          "zh": "仓库",
+          "en": "Repo",
+          "url": "https://github.com/after42/After42"
+        },
+        {
+          "zh": "点评 (@hxiao)",
+          "en": "Post (@hxiao)",
+          "url": "https://x.com/hxiao/status/2115247299941093408"
+        },
+        {
+          "zh": "原帖 (@FanNie1208)",
+          "en": "Thread (@FanNie1208)",
+          "url": "https://x.com/FanNie1208/status/2115113813620211818"
+        }
+      ]
+    },
+    {
       "id": "skill-adaptation",
       "edition": "2026-10-28",
       "tags": [
