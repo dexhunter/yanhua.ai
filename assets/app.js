@@ -48,6 +48,8 @@
       emptyTitle: "没有匹配的卡片",
       emptyBody: "换一个关键词，或清除筛选。",
       clear: "清除筛选",
+      copyLink: "复制链接",
+      copied: "已复制链接",
       count: function (n) { return n + " 篇"; },
       progress: function (i, n) { return i + " / " + n; },
       footer: "演化日报记录递归自我改进与智能体框架搜索。权重可以冻结，核对不能交给正在被优化的那一方。",
@@ -110,6 +112,8 @@
       emptyTitle: "No cards match",
       emptyBody: "Try another query, or clear the filters.",
       clear: "Clear filters",
+      copyLink: "Copy link",
+      copied: "Link copied",
       count: function (n) { return n === 1 ? "1 card" : n + " cards"; },
       progress: function (i, n) { return i + " / " + n; },
       footer: "Yanhua Daily records recursive self-improvement and agent harness search. Weights may stay frozen. The check must not belong to the thing being optimized.",
@@ -280,6 +284,13 @@
   function sourceAnchor(url, kind, label) {
     return '<a class="source-link" href="' + esc(url) + '" target="_blank" rel="noopener noreferrer">' + sourceIcon(kind) + "<span>" + esc(label) + "</span></a>";
   }
+  function linkIcon() {
+    return '<svg class="source-ico" width="14" height="14" viewBox="0 0 14 14" aria-hidden="true" focusable="false"><path d="M5.55 8.45 8.45 5.55" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><path d="M7.9 9.7 6.55 11.05a2.05 2.05 0 1 1-2.9-2.9L5.05 6.75" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/><path d="M6.1 4.3 7.45 2.95a2.05 2.05 0 1 1 2.9 2.9L8.95 7.25" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+  }
+  function copyLinkButton(item) {
+    const url = SITE + "/#" + item.id;
+    return '<button type="button" class="source-link copy-link" data-copy-link="' + esc(url) + '">' + linkIcon() + '<span>' + esc(t("copyLink")) + "</span></button>";
+  }
   function sources(item) {
     const bag = sourceBag(item);
     const parts = bag.docs.map(function (link) {
@@ -287,7 +298,7 @@
     }).concat(bag.posts.map(function (post) {
       return sourceAnchor(post.url, "x", "@" + post.handle);
     }));
-    return parts.length ? '<div class="source-row">' + parts.join("") + "</div>" : "";
+    return '<div class="source-row">' + parts.join("") + copyLinkButton(item) + "</div>";
   }
   function verdict(item) {
     return '<aside class="verdict-box"><p class="verdict-text"><span class="verdict-kicker">' + esc(t("why")) + "</span> " + linkify(tx(item.why), item) + "</p></aside>";
@@ -347,7 +358,9 @@
     if (item.authors) bits.push(esc(item.authors));
     (item.tags || []).forEach(function (id) {
       const tag = tagById(id);
-      if (tag) bits.push('<span class="byline-tag">' + esc(tx(tag.label)) + '</span>');
+      if (!tag) return;
+      const pressed = state.tag === id ? ' aria-pressed="true"' : "";
+      bits.push('<button type="button" class="byline-tag" data-tag="' + esc(id) + '"' + pressed + '>' + esc(tx(tag.label)) + '</button>');
     });
     return bits.length ? '<p class="byline">' + bits.join(" · ") + "</p>" : "";
   }
@@ -407,11 +420,17 @@
     return '<svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="12" cy="12" r="3.2"/><path d="M12 3.5v2.2M12 18.3v2.2M3.5 12h2.2M18.3 12h2.2M6 6l1.6 1.6M16.4 16.4 18 18M18 6l-1.6 1.6M7.6 16.4 6 18"/></svg>';
   }
 
+  function editionSize(id) {
+    return data.items.filter(function (item) { return item.edition === id; }).length;
+  }
+  function railCount(n) {
+    return '<span class="rail-count">' + esc(String(n)) + "</span>";
+  }
   function renderRail() {
     if (!rail) return;
     const editions = data.editions.map(function (edition) {
       const current = state.edition === edition.id ? ' aria-current="page"' : "";
-      return '<a href="#edition-' + esc(edition.id) + '" data-edition="' + esc(edition.id) + '"' + current + '>' + esc(tx(edition.label)) + '</a>';
+      return '<a href="#edition-' + esc(edition.id) + '" data-edition="' + esc(edition.id) + '"' + current + '><span>' + esc(tx(edition.label)) + "</span>" + railCount(editionSize(edition.id)) + "</a>";
     }).join("");
     const tags = data.tags.map(function (tag) {
       return '<button type="button" class="chip" data-tag="' + esc(tag.id) + '" aria-pressed="' + (state.tag === tag.id) + '">' + esc(tx(tag.label)) + '</button>';
@@ -419,7 +438,7 @@
     rail.innerHTML =
       '<input class="search" id="q" type="search" placeholder="' + esc(t("searchPh")) + '" aria-label="' + esc(t("searchPh")) + '" value="' + esc(state.q) + '">' +
       '<h2>' + esc(t("editions")) + '</h2>' +
-      '<div class="rail-list"><a href="#content" data-edition="all"' + (state.edition === "all" ? ' aria-current="page"' : "") + '>' + esc(t("allEditions")) + '</a>' + editions + '</div>' +
+      '<div class="rail-list"><a href="#content" data-edition="all"' + (state.edition === "all" ? ' aria-current="page"' : "") + '><span>' + esc(t("allEditions")) + "</span>" + railCount(data.items.length) + "</a>" + editions + '</div>' +
       '<h2>' + esc(t("topics")) + '</h2>' +
       '<div class="rail-list"><button type="button" class="chip" data-tag="all" aria-pressed="' + (state.tag === "all") + '">' + esc(t("allTopics")) + '</button>' + tags + '</div>';
   }
@@ -467,10 +486,30 @@
       '</div>';
   }
 
+  function filtersActive() {
+    return state.edition !== "all" || state.tag !== "all" || state.q.trim() !== "";
+  }
+  function filterBar(list) {
+    if (!filtersActive()) return "";
+    const bits = [];
+    if (state.edition !== "all") {
+      const edition = editionById(state.edition);
+      if (edition) bits.push(esc(tx(edition.label)));
+    }
+    if (state.tag !== "all") {
+      const tag = tagById(state.tag);
+      if (tag) bits.push(esc(tx(tag.label)));
+    }
+    if (state.q.trim()) bits.push(esc(state.q.trim()));
+    return '<div class="active-filters" role="status">' +
+      '<p><span>' + bits.join(" · ") + '</span> <span class="active-count">' + esc(t("count")(list.length)) + "</span></p>" +
+      '<button type="button" class="btn" id="clear-filters">' + esc(t("clear")) + "</button></div>";
+  }
   function renderReader(list) {
     if (!stage) return;
+    const bar = filterBar(list);
     if (!list.length) {
-      stage.innerHTML = empty();
+      stage.innerHTML = bar + empty(bar !== "");
       return;
     }
     const groups = [];
@@ -485,7 +524,7 @@
         '</section>'
       );
     });
-    stage.innerHTML = groups.join("");
+    stage.innerHTML = bar + groups.join("");
   }
   function article(item) {
     return '<article class="entry" id="' + esc(item.id) + '">' +
@@ -493,14 +532,16 @@
       verdict(item) + pills(item) + contextGrid(item) + sources(item) +
       '</article>';
   }
-  function empty() {
-    return '<div class="empty"><p>' + esc(t("emptyTitle")) + '</p><p>' + esc(t("emptyBody")) + '</p><button type="button" class="btn" id="clear-filters">' + esc(t("clear")) + '</button></div>';
+  function empty(withBar) {
+    const button = withBar ? "" : '<button type="button" class="btn" id="clear-filters">' + esc(t("clear")) + "</button>";
+    return '<div class="empty"><p>' + esc(t("emptyTitle")) + '</p><p>' + esc(t("emptyBody")) + "</p>" + button + "</div>";
   }
 
   function renderDeck(list) {
     if (!stage) return;
+    const bar = filterBar(list);
     if (!list.length) {
-      stage.innerHTML = empty();
+      stage.innerHTML = bar + empty(bar !== "");
       return;
     }
     if (state.index >= list.length) state.index = 0;
@@ -508,7 +549,7 @@
     const edition = editionById(item.edition);
     const frontHidden = state.flipped ? " inert" : "";
     const backHidden = state.flipped ? "" : " inert";
-    stage.innerHTML =
+    stage.innerHTML = bar +
       '<div class="deck-toolbar"><p class="deck-progress">' + esc(tx(edition.label)) + '  ·  ' + esc(t("progress")(state.index + 1, list.length)) + '</p><p class="keys">' + esc(t("keys")) + '</p></div>' +
       '<div class="deck-stage' + (state.flipped ? " is-flipped" : "") + '" id="deck-stage">' +
         '<div class="deck-spin">' +
@@ -636,6 +677,77 @@
     const stageEl = document.getElementById("deck-stage");
     if (stageEl) stageEl.scrollIntoView({ block: "nearest", behavior: reduced ? "auto" : "smooth" });
   }
+  function scrolledPastContent() {
+    const content = document.getElementById("content");
+    if (!content) return false;
+    return window.scrollY > content.getBoundingClientRect().top + window.scrollY + 4;
+  }
+  function scrollAfterFilter() {
+    if (!scrolledPastContent()) return;
+    const bar = document.querySelector(".active-filters");
+    const edition = state.edition !== "all" ? document.getElementById("edition-" + state.edition) : null;
+    const target = bar || edition || document.getElementById("content");
+    if (!target) return;
+    target.scrollIntoView({ block: "start", behavior: reduced ? "auto" : "smooth" });
+  }
+  function stepReader(delta) {
+    const entries = Array.prototype.slice.call(document.querySelectorAll(".entry"));
+    if (!entries.length) return;
+    const nav = document.querySelector(".nav");
+    const anchor = (nav ? nav.getBoundingClientRect().height : 0) + 20;
+    let current = entries.findIndex(function (el) {
+      return el.classList.contains("is-current") || el === document.activeElement || el.contains(document.activeElement);
+    });
+    if (current < 0) {
+      let best = Infinity;
+      entries.forEach(function (el, i) {
+        const distance = Math.abs(el.getBoundingClientRect().top - anchor);
+        if (distance < best) {
+          best = distance;
+          current = i;
+        }
+      });
+      if (Math.abs(entries[current].getBoundingClientRect().top - anchor) > 24) {
+        markEntry(entries, current);
+        return;
+      }
+    }
+    const next = current + delta;
+    if (next < 0 || next >= entries.length) return;
+    markEntry(entries, next);
+  }
+  function markEntry(entries, index) {
+    entries.forEach(function (el) { el.classList.remove("is-current"); });
+    const node = entries[index];
+    node.classList.add("is-current");
+    node.tabIndex = -1;
+    node.focus({ preventScroll: true });
+    node.scrollIntoView({ block: "start", behavior: reduced ? "auto" : "smooth" });
+  }
+  function dialogOpen() {
+    return (statsDialog && statsDialog.open) || (subDialog && subDialog.open);
+  }
+  function copyText(text) {
+    const fallback = function () {
+      return new Promise(function (resolve, reject) {
+        const area = document.createElement("textarea");
+        area.value = text;
+        area.setAttribute("readonly", "");
+        area.style.position = "fixed";
+        area.style.left = "-9999px";
+        document.body.appendChild(area);
+        area.select();
+        const ok = document.execCommand("copy");
+        area.remove();
+        if (ok) resolve();
+        else reject(new Error("copy"));
+      });
+    };
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      return navigator.clipboard.writeText(text).catch(fallback);
+    }
+    return fallback();
+  }
 
   document.body.addEventListener("click", function (event) {
     const setBtn = event.target.closest("[data-set]");
@@ -669,28 +781,52 @@
       closeStats();
       return;
     }
+    const copyBtn = event.target.closest("[data-copy-link]");
+    if (copyBtn) {
+      event.preventDefault();
+      const url = copyBtn.getAttribute("data-copy-link");
+      const label = copyBtn.querySelector("span");
+      copyText(url).then(function () {
+        if (!label || !copyBtn.isConnected) return;
+        label.textContent = t("copied");
+        copyBtn.classList.add("is-copied");
+        window.setTimeout(function () {
+          if (!copyBtn.isConnected) return;
+          label.textContent = t("copyLink");
+          copyBtn.classList.remove("is-copied");
+        }, 1600);
+      }).catch(function () {});
+      return;
+    }
     const editionLink = event.target.closest("[data-edition]");
     if (editionLink) {
+      event.preventDefault();
+      const past = scrolledPastContent();
       state.edition = editionLink.dataset.edition;
       state.index = 0;
       state.flipped = false;
       render();
+      if (past) scrollAfterFilter();
       return;
     }
     const tagBtn = event.target.closest("[data-tag]");
     if (tagBtn) {
+      const past = scrolledPastContent();
       state.tag = tagBtn.dataset.tag;
       state.index = 0;
       state.flipped = false;
       render();
+      if (past) scrollAfterFilter();
       return;
     }
     if (event.target.closest("#clear-filters")) {
+      const past = scrolledPastContent();
       state.q = "";
       state.tag = "all";
       state.edition = "all";
       state.index = 0;
       render();
+      if (past) scrollAfterFilter();
       return;
     }
     if (event.target.closest("#deck-prev")) { step(-1); return; }
@@ -743,11 +879,36 @@
   });
 
   document.addEventListener("keydown", function (event) {
-    const typing = event.target.closest("input, textarea, select");
-    if (typing) return;
-    if (state.mode !== "deck") return;
-    if (event.metaKey || event.ctrlKey || event.altKey) return;
+    if (event.isComposing || event.key === "Process") return;
     const key = event.key;
+    const typing = event.target && event.target.closest && event.target.closest("input, textarea, select");
+    if (key === "Escape" && event.target && event.target.id === "q") {
+      if (!dialogOpen()) event.preventDefault();
+      event.target.blur();
+      if (!dialogOpen() && filtersActive() && state.q) {
+        state.q = "";
+        state.index = 0;
+        state.flipped = false;
+        render();
+      }
+      return;
+    }
+    if (typing || dialogOpen()) return;
+    if (event.metaKey || event.ctrlKey || event.altKey) return;
+    if (key === "/") {
+      event.preventDefault();
+      const q = document.getElementById("q");
+      if (!q) return;
+      q.focus();
+      q.select();
+      return;
+    }
+    if (state.mode === "reader") {
+      if (key === "j" || key === "J") { event.preventDefault(); stepReader(1); }
+      else if (key === "k" || key === "K") { event.preventDefault(); stepReader(-1); }
+      return;
+    }
+    if (state.mode !== "deck") return;
     if (key === "ArrowRight" || key === "j" || key === "J") { event.preventDefault(); step(1); }
     else if (key === "ArrowLeft" || key === "k" || key === "K") { event.preventDefault(); step(-1); }
     else if (key === " " || event.code === "Space" || key === "Enter") {
@@ -899,21 +1060,28 @@
     if (body && typeof body.subscribers === "number") stats.subscribers = body.subscribers;
     paintStats();
   }
+  function applyVisit(visit) {
+    if (!visit) return;
+    const pagePv = typeof visit.page_pv === "number" ? visit.page_pv : 0;
+    const sitePv = typeof visit.site_pv === "number" ? visit.site_pv : 0;
+    if (typeof visit.site_pv === "number") stats.pv = visit.site_pv;
+    if (typeof visit.site_uv !== "number") return;
+    if (visit.site_uv === 0 && (pagePv > 0 || sitePv > 0)) {
+      const basis = pagePv || sitePv;
+      stats.uv = sitePv > 0 ? Math.min(basis, sitePv) : basis;
+      return;
+    }
+    stats.uv = visit.site_uv;
+  }
   async function loadStats() {
     const visitUrl = SITE + "/";
     try {
       const visit = await readCounter(visitUrl, true);
-      if (visit) {
-        if (typeof visit.site_uv === "number") stats.uv = visit.site_uv;
-        if (typeof visit.site_pv === "number") stats.pv = visit.site_pv;
-      }
+      applyVisit(visit);
     } catch (err) {
       try {
         const visit = await readCounter(visitUrl, false);
-        if (visit) {
-          if (typeof visit.site_uv === "number") stats.uv = visit.site_uv;
-          if (typeof visit.site_pv === "number") stats.pv = visit.site_pv;
-        }
+        applyVisit(visit);
       } catch (again) {}
     }
     try {

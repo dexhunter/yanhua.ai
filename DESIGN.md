@@ -147,6 +147,7 @@ Density is editorial, not dashboard. A card is one study. Metrics sit in a ledge
 - A 1px hairline is the divider. Metrics are a row, not a stack of boxes.
 - Icons are drawn at 14px. The page does not use emoji as icons.
 - Nothing set smaller than 0.72rem (11.52px at a 16px root).
+- The nav frame, editorial bar, rail, reading column, and colophon share one centered width. Below 900px, editions and topics are two swipeable hairline strips.
 
 ## Colors
 
@@ -195,7 +196,7 @@ The light scheme is the paper the daily is set on. The dark scheme reassigns the
 
 ## Layout
 
-The page is a sticky nav, then a two-column shell: a rail at `minmax(12rem, 16rem)` and a reading column at `var(--measure)` (68ch), separated by 3rem. The shell is centered. The rail lists one edition per date, updated at 09:00 and 18:00 UTC+0. The column opens with one editorial line and the stats strip; the latest edition name is only the first edition heading. The footer is one line: the tagline on the left, RSS and JSON on the right. Below 900px the rail stacks above the column and its lists wrap. Below 640px the domain in the nav hides and the stats grid becomes one column.
+The page is a sticky nav, then a two-column shell: a rail at `minmax(12rem, 16rem)` and a reading column at `var(--measure)` (68ch), separated by 3rem. On a wide screen the nav's inner frame, the editorial bar, the shell, and the colophon share one centered width: `16rem + 3rem + 68ch`, with `1.5rem` of horizontal padding. The 1px rules on the nav and the colophon stay full-bleed. The rail lists one edition per date, with a tabular mono count on the right, updated at 09:00 and 18:00 UTC+0. The column opens with one editorial line and the stats strip; the latest edition name is only the first edition heading. When an edition, a topic, or a search query is active, a compact bar at the top of the column names that criteria, the matched count, and a control that clears the filter. Edition blocks, cards, and `#content` keep a `scroll-margin-top` of the nav height plus 1.25rem, so a jump does not sit under the sticky bar. In the reader, J and K step between visible cards. `/` focuses search. Escape leaves the field and, when a query is active, clears it. The footer is one line: the tagline on the left, RSS and JSON on the right. Below 900px the rail stacks above the column. Edition and topic lists become two single-row horizontal strips the reader can swipe, so the first card stays near the top of the screen. Below 640px the domain in the nav hides and the stats grid becomes one column.
 
 Inside a card the order is fixed: title and byline, conclusion, ledger, then the two-column problem and mechanism, then the source links. The context block is separated from the conclusion by a 1px `var(--line)` rule, with more space above that rule than between a context heading and its paragraph. Flash cards keep the same order, split across the two faces, and end on the flip control plus the source links.
 
@@ -223,8 +224,9 @@ Corners are mostly square, like a newspaper. The exceptions are small and named:
 - **Secondary:** raised sheet, ink text, 1px hairline. Prev and next on the deck. Disabled drops to 45% opacity.
 
 ### Chips
-- **Style:** text in the rail, no box. The pressed topic adds a 0.38rem lacquer dot before the label.
-- **State:** muted when idle, ink when pressed.
+- **Style:** text in the rail, no box, on a wide screen. The pressed topic adds a 0.38rem lacquer dot before the label. Below 900px each edition and topic is a nowrap hairline chip in a single scrolling row: 1px `var(--line)` border, raised ground, `0.32rem 0.6rem` padding.
+- **State:** muted when idle, ink when pressed. An edition row also carries its card count in tabular mono at 0.75rem.
+- **On a card:** the byline topic is a button with no border and no fill. Hover, and the topic that is already filtering, shift to lacquer ink and underline. Activating it filters the column to that topic.
 
 ### Cards / Containers
 - **Corner Style:** square on the reader card. The conclusion inside it is the only rounded block (0.375rem).
@@ -243,6 +245,7 @@ Corners are mostly square, like a newspaper. The exceptions are small and named:
 ### Source links
 - **Style:** inline row at the end of the card. 14×14 icon, 0.38rem gap, 0.3rem radius, mono label. Paper and repository icons are stroked at 1.6. The X mark is a filled path.
 - **Hover / Focus:** border and text shift to lacquer over 150ms, `cubic-bezier(0.22, 1, 0.36, 1)`, and the ground tints to the wash.
+- **Permalink:** a card can copy `https://yanhua.ai/#<id>` from a mono button in the source row, with a 14px drawn link icon. The label switches to 已复制链接 / Link copied for a moment.
 
 ### Inputs / Fields
 - **Style:** search and email fields are a 1px hairline on the raised sheet, square corners, lacquer caret.
@@ -251,7 +254,11 @@ Corners are mostly square, like a newspaper. The exceptions are small and named:
 
 ### Navigation
 - **Style:** a sticky bar on paper with a 1px bottom rule. The wordmark is serif. RSI is a mono badge. Mode and language are a segmented control: pressed segment is ink on paper.
-- **Mobile:** the rail becomes a wrapping row under the nav. The theme control keeps its icon and hides the word.
+- **Mobile:** below 900px the rail stacks above the column. Editions and topics are two single-row hairline strips, not a wrapping block. The theme control keeps its icon and hides the word.
+
+### Filter bar
+- **Style:** one hairline under a row at the top of the column, only while a filter is on. Muted text names the edition, topic, or query. The matched count is tabular mono. Clear uses the square secondary button.
+- **State:** absent when every edition, every topic, and an empty query are showing. It does not sit inside a card.
 
 ### Stats
 - **Style:** a mono strip of three publication counts — cards, editions, papers indexed. The dialog adds visitors, views, and subscribers, then repeats the publication counts, then one sentence on the 09:00 and 18:00 UTC+0 cadence.
@@ -264,6 +271,7 @@ Corners are mostly square, like a newspaper. The exceptions are small and named:
 - **Do** end the card on the source links, with a 14px drawn icon and a 150ms hover.
 - **Do** keep mono for ids, counts, and source labels, and tabular figures in the ledger and the stats strip.
 - **Do** keep every font size at or above 0.72rem.
+- **Do** keep the nav frame, editorial bar, shell, and colophon on one centered width, with the nav and colophon rules full-bleed.
 
 ### Don't:
 - **Don't** put a lacquer stripe thicker than 1px on the left or right of a card, a callout, or a list row.

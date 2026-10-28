@@ -1,6 +1,6 @@
 {
   "schemaVersion": 2,
-  "generatedAt": "2026-10-27T22:05:00Z",
+  "generatedAt": "2026-10-28T13:22:18Z",
   "title": "Design System: 演化日报",
   "extensions": {
     "colorMeta": {
@@ -147,7 +147,7 @@
       "name": "Topic Chip",
       "kind": "chip",
       "refersTo": "chip",
-      "description": "A rail topic. Pressed state adds a lacquer dot.",
+      "description": "A rail topic. On a wide screen it is text with a lacquer dot when pressed. Below 900px it is a hairline chip in a scrolling row. A byline topic is the same filter, drawn as a transparent mono button.",
       "html": "<button class=\"ds-chip\" aria-pressed=\"true\">框架搜索</button>",
       "css": ".ds-chip { display: inline-flex; align-items: center; gap: 0.45rem; border: 0; background: transparent; color: #1b1714; padding: 0.28rem 0.1rem; font-family: \"Noto Sans SC\", sans-serif; font-size: 0.92rem; cursor: pointer; } .ds-chip[aria-pressed=\"true\"]::before { content: \"\"; width: 0.38rem; height: 0.38rem; border-radius: 50%; background: #8e2f27; } .ds-chip:focus-visible { outline: 2px solid #8e2f27; outline-offset: 2px; }"
     },
@@ -170,18 +170,19 @@
   ],
   "narrative": {
     "northStar": "The Lacquer Gazette",
-    "overview": "演化日报 is a research daily printed on warm paper. The frame — masthead, rail, ground, and the vermilion seal — belongs to that gazette. The column inside it stays a document: a serif lead, a sans body, a measure near 68 characters, and headings that can be scanned. Vermilion is rare. It marks the seal on a conclusion, the current item in the rail, and a link the reader is about to follow.\n\nThe north star is read from the shipped interface: paper #f4efe6, lacquer #8e2f27, Noto Serif SC for the lead, Noto Sans SC for the UI. Dark scheme swaps the same roles rather than inventing a second palette. The name \"The Lacquer Gazette\" was not chosen in a separate interview.\n\nDensity is editorial, not dashboard. A card is one study. Metrics sit in a ledger row. Source links are the last line of the card. Flash cards use one turn, the flip, and otherwise stay still.",
+    "overview": "演化日报 is a research daily printed on warm paper. The frame — masthead, rail, ground, and the vermilion seal — belongs to that gazette. The column inside it stays a document: a serif lead, a sans body, a measure near 68 characters, and headings that can be scanned. Vermilion is rare. It marks the seal on a conclusion, the current item in the rail, and a link the reader is about to follow.\n\nThe north star is read from the shipped interface: paper `#f4efe6`, lacquer `#8e2f27`, Noto Serif SC for the lead, Noto Sans SC for the UI. Dark scheme swaps the same roles rather than inventing a second palette. The name \"The Lacquer Gazette\" was not chosen in a separate interview.\n\nDensity is editorial, not dashboard. A card is one study. Metrics sit in a ledger row. Source links are the last line of the card. Flash cards use one turn, the flip, and otherwise stay still.",
     "keyCharacteristics": [
       "Warm paper ground, ink text, one vermilion used as a seal.",
-      "Serif for the masthead, the card title, and the conclusion. Sans for the rail, labels, and body of the mechanism.",
+      "Serif for the editorial subtitle, the card title, and the conclusion. Sans for the rail, labels, and body of the mechanism.",
       "A 1px hairline is the divider. Metrics are a row, not a stack of boxes.",
       "Icons are drawn at 14px. The page does not use emoji as icons.",
-      "Nothing set smaller than 0.72rem (11.52px at a 16px root)."
+      "Nothing set smaller than 0.72rem (11.52px at a 16px root).",
+      "The nav frame, editorial bar, rail, reading column, and colophon share one centered width. Below 900px, editions and topics are two swipeable hairline strips."
     ],
     "rules": [
       {
         "name": "The Seal Rule",
-        "body": "Lacquer is a seal, a word, or a 1px hairline. It is not a stripe down the side of a card. A border-left or border-right thicker than 1px is not part of this system.",
+        "body": "Lacquer is a seal, a word, or a 1px hairline. It is not a stripe down the side of a card. A `border-left` or `border-right` thicker than 1px is not part of this system.",
         "section": "colors"
       },
       {
@@ -191,7 +192,7 @@
       },
       {
         "name": "The Floor Rule",
-        "body": "No font-size on this site is below 0.72rem. At a 16px root that is 11.52px. The seal, the ledger label, and the rail heading sit on that floor and do not go under it.",
+        "body": "No `font-size` on this site is below 0.72rem. At a 16px root that is 11.52px. The seal, the ledger label, and the rail heading sit on that floor and do not go under it.",
         "section": "typography"
       },
       {
@@ -210,7 +211,8 @@
       "Do separate the problem and the mechanism from the conclusion with a 1px hairline and more space above the headings than below them.",
       "Do end the card on the source links, with a 14px drawn icon and a 150ms hover.",
       "Do keep mono for ids, counts, and source labels, and tabular figures in the ledger and the stats strip.",
-      "Do keep every font size at or above 0.72rem."
+      "Do keep every font size at or above 0.72rem.",
+      "Do keep the nav frame, editorial bar, shell, and colophon on one centered width, with the nav and colophon rules full-bleed."
     ],
     "donts": [
       "Don't put a lacquer stripe thicker than 1px on the left or right of a card, a callout, or a list row.",
