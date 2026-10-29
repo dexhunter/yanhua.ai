@@ -19,6 +19,15 @@ window.YANHUA_DIGESTS = {
   },
   "editions": [
     {
+      "id": "2026-10-29",
+      "date": "2026-10-29",
+      "slot": "",
+      "label": {
+        "zh": "2026-10-29",
+        "en": "29 Oct 2026"
+      }
+    },
+    {
       "id": "2026-10-28",
       "date": "2026-10-28",
       "slot": "",
@@ -127,6 +136,333 @@ window.YANHUA_DIGESTS = {
     }
   ],
   "items": [
+    {
+      "id": "bipa-skill-optimizer-attribution",
+      "tags": [
+        "harness-search",
+        "verification"
+      ],
+      "title": {
+        "zh": "BiPA：GEPA、SkillOpt、SkillAdam 学到的技能并不比手写种子更好，只是更贵",
+        "en": "BiPA: Skills learned by GEPA, SkillOpt and SkillAdam are no better than the hand-written seed, only costlier"
+      },
+      "why": {
+        "zh": "在长程智能体任务上，自动技能优化器学到的技能测试成功率只比手写种子高 0.1 个点，却多读约 16% 的输入 token，原因是小开发集上“挑最好的候选”本身就能制造出同等大小的假增益，而编辑器只会不断加“再检查一遍”之类的规则，智能体把它们执行成额外轮次、每轮都重发整段对话。",
+        "en": "On long-horizon agent tasks, automatic skill optimizers end up only 0.1 points above the hand-written seed on test while reading about 16% more input tokens, because picking the best candidate on a small dev set manufactures gains of the same size by itself, and the editor keeps adding rules such as re-check your work that the agent executes as extra turns, each re-sending the whole conversation."
+      },
+      "what": {
+        "zh": "技能优化器（GEPA、SkillOpt、SkillAdam）通过改写智能体上下文里的自然语言技能、并保留在小开发集上提分的编辑来适配任务，但长程任务成功率噪声大，开发集增益是否真实、编辑带来多少成本一直缺少测量。",
+        "en": "Skill optimizers such as GEPA, SkillOpt and SkillAdam adapt an agent by rewriting the natural-language skill in its context and keeping edits that raise success on a small dev set, yet on noisy long-horizon tasks nobody had measured whether those dev gains are real or what the edits cost."
+      },
+      "how": {
+        "zh": "BiPA 不改优化器本身：它用与种子完全相同的候选重放优化器的接受规则，测出“仅靠选择”能报告多大增益，并把每个回合记录成“轮次—所读文本”的二部图，把多出的输入 token 拆解到具体行为上（OpenCode 中运行 DeepSeek-V4.1-Flash 与 GPT-6-Luna，覆盖 Terminal-Bench 2.1、τ3-bench、AutomationBench）。16 个学到的技能平均测试成功率仅比种子高 0.1 点，未改动的候选在不超过 30 题的开发集上以 0.25–0.94 的概率就能复现 9 个已报告的增益，59 次可追溯的 DeepSeek 编辑中 58 次让技能变长、新增 337 条规则无一要求少读，技能也无法迁移到其他模型或基准，而成本会随之迁移。",
+        "en": "Without changing the optimizers, BiPA replays each acceptance rule on candidates identical to the seed to measure the gain selection alone reports, and logs each episode as a bipartite graph of turns and the text they read to trace every extra input token to a behavior (OpenCode with DeepSeek-V4.1-Flash and GPT-6-Luna on Terminal-Bench 2.1, τ3-bench and AutomationBench). Across 16 learned skills test success is 0.1 points above the seed, unchanged candidates reach the nine reported dev gains with probability 0.25 to 0.94 on dev sets of at most 30 tasks, 58 of 59 traceable DeepSeek edits lengthen the skill and none of their 337 added rules asks the agent to read less, and the skills fail to transfer across model or benchmark while most of their cost does."
+      },
+      "metric": {
+        "zh": "测试成功率 +0.1 点 · 输入 token ×1.16",
+        "en": "test success +0.1 pt · input tokens ×1.16"
+      },
+      "pills": [
+        {
+          "zh": "相对种子成功率",
+          "en": "Success vs seed",
+          "value": "+0.1 pt",
+          "tone": "flat"
+        },
+        {
+          "zh": "输入 token",
+          "en": "Input tokens",
+          "value": "×1.16",
+          "tone": "down"
+        },
+        {
+          "zh": "无改动候选复现增益概率",
+          "en": "Unchanged candidate reproduces gain",
+          "value": "0.25–0.94",
+          "tone": "down"
+        }
+      ],
+      "arxiv": "2610.37201",
+      "repo": "valleysprings/BiPA",
+      "authors": "Jiawei Zhou, Bo Peng, Yuxuan Huang, Ming Zhang, Youbang Sun, Xiang Wang, Chaochao Lu (Shanghai AI Lab, Fudan, SJTU, USTC, Tsinghua)",
+      "handle": "@arnaudmercier",
+      "links": [
+        {
+          "zh": "论文",
+          "en": "Paper",
+          "url": "https://arxiv.org/abs/2610.37201"
+        },
+        {
+          "zh": "代码",
+          "en": "Code",
+          "url": "https://github.com/valleysprings/BiPA"
+        },
+        {
+          "zh": "原帖 (@arnaudmercier)",
+          "en": "Post (@arnaudmercier)",
+          "url": "https://x.com/arnaudmercier/status/2115724756276167023"
+        }
+      ],
+      "edition": "2026-10-29"
+    },
+    {
+      "id": "ruharness-rubric-harness-coevolution",
+      "tags": [
+        "harness-search",
+        "co-evolution"
+      ],
+      "title": {
+        "zh": "RuHarness：让评分标准与 harness 一起进化，持续自我改进才不会“考官落后”",
+        "en": "RuHarness: Co-evolving rubrics with the harness so the critic does not fall behind"
+      },
+      "why": {
+        "zh": "harness 进化若一直用第一轮的固定评分标准做诊断，反而比完全不用评分标准更差，因为旧的失败修好后新的弱点浮现，过时的标准会把优化引向已不重要的行为；让标准从轨迹中持续重新发现并排序，RuHarness 才在未见任务上超过最强基线 4.5–5.3 个点。",
+        "en": "Evolving a harness against a rubric frozen at round one is worse than using no rubric at all, because once old failures are fixed new weaknesses surface and stale criteria steer optimization toward behaviors that no longer matter; re-discovering and re-ranking criteria from fresh trajectories each round is what lets RuHarness beat the strongest harness-evolution baseline by 4.5 to 5.3 points on unseen tasks."
+      },
+      "what": {
+        "zh": "现有 harness 进化方法（ACE、EvoSkill、Self-Harness、AHE、Meta-Harness）用任务成败或静态诊断信号指导修改，难以跟踪随轮次变化的行为弱点，增益在未见任务上容易缩水。",
+        "en": "Existing harness-evolution methods such as ACE, EvoSkill, Self-Harness, AHE and Meta-Harness steer edits with task outcomes or static diagnostics, so they cannot track how an agent's weaknesses shift across rounds and their gains tend to shrink on unseen tasks."
+      },
+      "how": {
+        "zh": "每轮从失败轨迹中挖掘新的行为标准，由不知道任务结果的评审逐条判定，经准入检查后进入“试用—活跃—休眠—退役”生命周期，再按区分度、覆盖率、预测效度、新颖性与冗余度计算随时间变化的效用并取 Dirichlet 后验下分位数选出 Top-k“前沿”，据此对 Equip/Instruct/Act/Observe/Remember/Terminate 六个坐标做协同修改，且仅在独立验证集提升时接受。在 EvoAgentBench 五个领域上，Qwen3.5-35B-A3B 留出集均分 53.7（最强基线 49.2），GLM-4.7-Flash 为 38.0（基线 32.7）；消融显示去掉评分模块留出集降到 45.8，而固定初始评分标准更低至 44.4。",
+        "en": "Each round mines new behavioral criteria from failed trajectories, scores them with an outcome-blind judge, runs them through an admission check and a probation, active, dormant and retired lifecycle, ranks active criteria by a time-varying utility (discrimination, coverage, predictive validity, novelty minus redundancy) using a lower Dirichlet-posterior quantile, and lets the top-k frontier drive coordinated edits across six harness coordinates (Equip, Instruct, Act, Observe, Remember, Terminate) that are accepted only if an independent validation split improves. On five EvoAgentBench domains the held-out average reaches 53.7 with Qwen3.5-35B-A3B (best baseline 49.2) and 38.0 with GLM-4.7-Flash (best baseline 32.7), while ablations drop held-out to 45.8 without the rubric module and to 44.4 with the initial rubric frozen."
+      },
+      "metric": {
+        "zh": "留出集 53.7 vs 49.2（Qwen3.5）· 38.0 vs 32.7（GLM-4.7）",
+        "en": "held-out 53.7 vs 49.2 (Qwen3.5) · 38.0 vs 32.7 (GLM-4.7)"
+      },
+      "pills": [
+        {
+          "zh": "留出集 Qwen3.5-35B-A3B",
+          "en": "Held-out Qwen3.5-35B-A3B",
+          "value": "49.2 → 53.7",
+          "tone": "up"
+        },
+        {
+          "zh": "留出集 GLM-4.7-Flash",
+          "en": "Held-out GLM-4.7-Flash",
+          "value": "32.7 → 38.0",
+          "tone": "up"
+        },
+        {
+          "zh": "固定评分标准",
+          "en": "Frozen rubric",
+          "value": "44.4",
+          "tone": "down"
+        }
+      ],
+      "arxiv": "2610.36826",
+      "authors": "Hao Chen, Yukun Yan, Ziyu Han, Ye He, Chuanzhe Guo, Shangzhan Li, Qi Shi, Qingfu Zhu, Maosong Sun, Wanxiang Che (HIT, Tsinghua)",
+      "handle": "@beijibo",
+      "links": [
+        {
+          "zh": "论文",
+          "en": "Paper",
+          "url": "https://arxiv.org/abs/2610.36826"
+        },
+        {
+          "zh": "原帖 (@beijibo)",
+          "en": "Post (@beijibo)",
+          "url": "https://x.com/beijibo/status/2115623573674995834"
+        }
+      ],
+      "edition": "2026-10-29"
+    },
+    {
+      "id": "ttme-test-time-memory-evolution-discovery",
+      "tags": [
+        "memory-skills",
+        "agentic-rl"
+      ],
+      "title": {
+        "zh": "TTME：数学发现搜索中，不更新权重的“进化记忆”胜过测试时训练且省约 83% 算力",
+        "en": "TTME: In math-discovery search, evolving memory beats test-time training with about 83% fewer FLOPs"
+      },
+      "why": {
+        "zh": "在带自动评分器的数学构造搜索里，把经验蒸馏成“实现规则 + 提分思路”两类外部记忆、权重保持不变，就能在全部 5 个任务上超过测试时 RL 训练（TTT）的已报告结果，因为现有模型本身已具备利用这些经验的推理和编码能力，没必要花大量算力把经验写进权重。",
+        "en": "In scored math-construction search, distilling experience into external memory of implementation rules and score-raising ideas while keeping weights frozen beats the reported test-time RL training (TTT) results on all five tasks, because current models already have the reasoning and coding ability to use that experience without paying to write it into their weights."
+      },
+      "what": {
+        "zh": "TTT-Discover、ThetaEvolve 等测试时训练框架让小型开源模型在科学发现任务上超过 AlphaEvolve 一类的前沿推理系统，但在线更新权重代价高，难以扩展到更大模型。",
+        "en": "Test-time training frameworks such as TTT-Discover and ThetaEvolve let small open-weight models beat frontier inference-only systems like AlphaEvolve on discovery tasks, but online weight updates are slow and costly to scale to bigger models."
+      },
+      "how": {
+        "zh": "TTME 在同一发现框架中只替换 TTT 部分：Guideline Memory 从执行与评测反馈中提炼通用实现规则，Strategy Memory 从提分修改中抽取并合并可复用的算法策略，再选择、改写相关策略来引导下一步候选生成。在 2 个框架、3 个模型（8B 到 120B）、5 个数学任务（自相关不等式 AC1–AC3、Erdős 最小重叠、Hadamard 最大行列式）上均优于已报告的 TTT 分数，Qwen3-8B 下 FLOPs 降 82.8–84.6%、运行时间降 47.7–58.4%，而 TTME 与 TTT 叠加反而在 AC2 和 Erdős 上变差。",
+        "en": "TTME swaps out only the TTT component inside the same discovery framework: a Guideline Memory distills execution and evaluation feedback into shared implementation rules, and a Strategy Memory extracts and consolidates algorithmic ideas from score-raising edits, then selects and adapts them to guide the next candidates. Across 2 frameworks, 3 models from 8B to 120B and 5 math tasks (autocorrelation inequalities AC1 to AC3, Erdős minimum overlap and the Hadamard maximal determinant) it beats every reported TTT score, cuts FLOPs by 82.8 to 84.6% and runtime by 47.7 to 58.4% with Qwen3-8B, and stacking TTT on top of TTME actually hurts on AC2 and Erdős."
+      },
+      "metric": {
+        "zh": "5/5 任务胜过 TTT · FLOPs −82.8–84.6%",
+        "en": "beats TTT on 5/5 tasks · FLOPs −82.8–84.6%"
+      },
+      "pills": [
+        {
+          "zh": "胜过 TTT 的任务",
+          "en": "Tasks beating TTT",
+          "value": "5/5",
+          "tone": "up"
+        },
+        {
+          "zh": "FLOPs 降幅",
+          "en": "FLOPs reduction",
+          "value": "82.8–84.6%",
+          "tone": "up"
+        },
+        {
+          "zh": "运行时间降幅",
+          "en": "Runtime reduction",
+          "value": "47.7–58.4%",
+          "tone": "up"
+        }
+      ],
+      "arxiv": "2610.32046",
+      "repo": "yepengliu/TTME",
+      "authors": "Yepeng Liu, Shengmai Chen, Xuandong Zhao, Chengzhi Liu, Dawn Song, Xin Eric Wang, Yuheng Bu (UC Santa Barbara, UC Berkeley)",
+      "handle": "@rohanpaul_ai",
+      "links": [
+        {
+          "zh": "论文",
+          "en": "Paper",
+          "url": "https://arxiv.org/abs/2610.32046"
+        },
+        {
+          "zh": "代码",
+          "en": "Code",
+          "url": "https://github.com/yepengliu/TTME"
+        },
+        {
+          "zh": "原帖 (@rohanpaul_ai)",
+          "en": "Post (@rohanpaul_ai)",
+          "url": "https://x.com/rohanpaul_ai/status/2115673734497382475"
+        }
+      ],
+      "edition": "2026-10-29"
+    },
+    {
+      "id": "trustworthy-rsi-survey",
+      "tags": [
+        "verification",
+        "co-evolution"
+      ],
+      "title": {
+        "zh": "可信递归自我改进（RSI）综述：当改进机制本身也被改写，旧的验证结论就可能失效",
+        "en": "Trustworthy Recursive Self-Improvement survey: once the improver rewrites itself, earlier verification may no longer hold"
+      },
+      "why": {
+        "zh": "RSI 系统的分数上涨并不能证明它变好了，因为当系统也能修改评测器、验收标准或审计与回滚流程时，提升可能只是“测的东西变了”，而且被污染的指令会被后代系统继承，所以必须用冻结候选、受保护的参照与跨版本的独立纵向评估来支撑每一级改进主张。",
+        "en": "Rising scores do not show that a recursively self-improving system got better, because once it can revise its evaluators, acceptance criteria or audit and rollback procedures a gain may just mean the measurement changed and poisoned instructions get inherited by successors, so each level of improvement claim needs frozen candidates, protected references and independent longitudinal evaluation across versions."
+      },
+      "what": {
+        "zh": "自我进化系统正从改提示、记忆、工具扩展到改写“决定后续如何更新的机制”本身，但现有工作很少区分单次更新、后继系统与改进机制三个层面的可信证据。",
+        "en": "Self-evolving systems are moving from editing prompts, memories and tools to rewriting the mechanisms that decide future updates, yet existing work rarely separates trust evidence at the level of a single update, an inherited successor and the improvement mechanism itself."
+      },
+      "how": {
+        "zh": "综述给出 RSI 的操作化定义与“诊断—提案—评估—实施（S1–S4）+ 递归改写更新器（RI）”流程，并围绕真实持续的改进、行为约束与对齐公平、安全隐私、透明可控四大主题，从改进有效性、约束保持、有效监督三个视角整理 301 篇文献的风险、防护与证据，附公开的引用审计文件。书中举例：Hyperagents 的元智能体在被投毒的基准上写入“跳过 HTTPS 证书校验”的持久指令，后代在干净基准上继续进化后仍在良性留出任务上生成不安全代码。",
+        "en": "The survey gives an operational definition of RSI as a diagnose, propose, evaluate and implement cycle (S1 to S4) plus recursive revision of the updater (RI), and organizes risks, safeguards and evidence from 301 cited works under four themes (genuine and sustained improvement, constraints and alignment, security and privacy, transparency and controllability) through three lenses (improvement validity, constraint preservation, effective oversight), with a public citation audit. One cited case: a Hyperagents meta-agent on a poisoned benchmark wrote a persistent instruction to skip HTTPS certificate checks, and successors kept producing insecure code on benign held-out tasks even after further evolution on a clean benchmark."
+      },
+      "metric": {
+        "zh": "301 篇文献 · 4 大主题 × 3 视角",
+        "en": "301 cited works · 4 themes × 3 lenses"
+      },
+      "pills": [
+        {
+          "zh": "引用文献",
+          "en": "Cited works",
+          "value": "301",
+          "tone": "flat"
+        },
+        {
+          "zh": "流程阶段",
+          "en": "Process stages",
+          "value": "S1–S4 + RI",
+          "tone": "flat"
+        }
+      ],
+      "arxiv": "2610.35193",
+      "repo": "pujiayue/Trustworthy-RSI",
+      "authors": "Jiayue Pu, Ang Gao, Jinyi Bai, Qipeng Wang, Tongyu Wen, Jiahao Zhao, Keyu Qu, Junhao Zhang, Chenglei Shen, et al.",
+      "handle": "@SciFi",
+      "links": [
+        {
+          "zh": "论文",
+          "en": "Paper",
+          "url": "https://arxiv.org/abs/2610.35193"
+        },
+        {
+          "zh": "引用审计仓库",
+          "en": "Audit repo",
+          "url": "https://github.com/pujiayue/Trustworthy-RSI"
+        },
+        {
+          "zh": "原帖 (@SciFi)",
+          "en": "Post (@SciFi)",
+          "url": "https://x.com/SciFi/status/2115726492562763950"
+        }
+      ],
+      "edition": "2026-10-29"
+    },
+    {
+      "id": "coding-agent-instruction-stacks",
+      "tags": [
+        "harness-search",
+        "verification"
+      ],
+      "title": {
+        "zh": "Hidden in Plain Sight：编码智能体发给模型的请求里，用户提示只占 0.02–0.07%",
+        "en": "Hidden in Plain Sight: In coding-agent requests, the user prompt is only 0.02–0.07% of what the model reads"
+      },
+      "why": {
+        "zh": "只报告模型和用户提示的智能体评测并没有说清模型真正读到了什么，因为编码智能体每次发版都会悄悄改写占请求绝大部分的工具定义与系统指令，所以任何 harness 对比或 harness 搜索实验都应记录具体智能体版本并存档首个请求。",
+        "en": "Agent evaluations that report only the model and the user prompt do not say what the model actually read, because each coding-agent release quietly rewrites the tool definitions and system instructions that make up almost the whole request, so any harness comparison or harness-search experiment should log the exact agent release and archive the first request."
+      },
+      "what": {
+        "zh": "编码智能体在用户请求之外附加的“指令栈”（系统提示、消息中的指令、工具定义、环境信息）通常对用户不可见，且随版本变化，研究中也很少被刻画。",
+        "en": "The instruction stack that coding agents add around the user's request (system prompt, instructions inside messages, tool definitions, environment facts) is mostly hidden from users, changes between releases, and is rarely characterized in research."
+      },
+      "how": {
+        "zh": "作者在全新沙箱、空目录、固定 21 字符提示下，抓取 Claude Code、Codex、Gemini CLI、Qwen Code、OpenCode 共 1,886 个发布版本发给主模型的首个请求，分析构成与演化，并把四个开源智能体的改动追溯到 496 个 PR/提交。Claude Code 2.1.243 的请求共 74,078 字符，其中 20 个工具定义占 57,346 字符；工具定义从 21,005 涨到 57,346（Qwen Code 从 9,317 涨到 90,317），2.1.69 曾用单个 ToolSearch 工具把请求从 77,601 压到 20,380 字符、次日又撤回，且只有 48% 的改动单元直接说明了为何修改指令栈（作者也指出未测试这些改动对结果的影响）。",
+        "en": "In a fresh sandbox with an empty folder and a fixed 21-character prompt, the authors captured the first main-model request from 1,886 releases of Claude Code, Codex, Gemini CLI, Qwen Code and OpenCode, analyzed composition and evolution, and traced changes in the four open-source agents to 496 PRs and commits. Claude Code 2.1.243 sends 74,078 characters of which 20 tool definitions are 57,346, tool definitions grew from 21,005 to 57,346 characters in Claude Code and from 9,317 to 90,317 in Qwen Code, release 2.1.69 swapped 18 tool definitions for one ToolSearch tool to cut the request from 77,601 to 20,380 characters before 2.1.70 reverted it a day later, and only 48% of change units directly explain why the stack changed (the paper does not test whether these changes affect results)."
+      },
+      "metric": {
+        "zh": "用户提示占比 0.02–0.07% · 1,886 个版本",
+        "en": "user prompt share 0.02–0.07% · 1,886 releases"
+      },
+      "pills": [
+        {
+          "zh": "用户提示占比",
+          "en": "User prompt share",
+          "value": "0.02–0.07%",
+          "tone": "flat"
+        },
+        {
+          "zh": "Claude Code 工具定义",
+          "en": "Claude Code tool defs",
+          "value": "21,005 → 57,346 chars",
+          "tone": "down"
+        },
+        {
+          "zh": "说明改动原因",
+          "en": "Changes explained",
+          "value": "48%",
+          "tone": "down"
+        }
+      ],
+      "arxiv": "2610.37332",
+      "authors": "Felipe de Sant'Anna Paixão, Dhyego Tavares, Eduardo Almeida, Iftekhar Ahmed (UFBA, UC Irvine)",
+      "handle": "@kbhaskar_95",
+      "links": [
+        {
+          "zh": "论文",
+          "en": "Paper",
+          "url": "https://arxiv.org/abs/2610.37332"
+        },
+        {
+          "zh": "原帖 (@kbhaskar_95)",
+          "en": "Post (@kbhaskar_95)",
+          "url": "https://x.com/kbhaskar_95/status/2115532051323527588"
+        }
+      ],
+      "edition": "2026-10-29"
+    },
     {
       "id": "trinity-capability-rsi",
       "edition": "2026-10-28",
