@@ -137,6 +137,362 @@ window.YANHUA_DIGESTS = {
   ],
   "items": [
     {
+      "id": "harnesspro-pareto-harness-rsi",
+      "edition": "2026-10-29",
+      "tags": [
+        "harness-search"
+      ],
+      "title": {
+        "zh": "HarnessPro：带 Pareto 性能-成本选择的递归 harness 自改进",
+        "en": "HarnessPro: Recursive Harness Self-Improvement with Pareto Performance-Cost Selection"
+      },
+      "why": {
+        "zh": "harness 自改进不必用 token 换准确率：只要把执行成本也作为选择标准并淘汰被 Pareto 支配的候选，进化出的 harness 就会学会砍掉冗余工具调用和冗长输出、同时保留最终验证，因此比 RHO 更准也更便宜。",
+        "en": "Harness self-improvement does not have to buy accuracy with tokens: once execution cost is a selection criterion and Pareto-dominated candidates are dropped, evolved harnesses learn to cut redundant tool calls and verbose output while keeping the final verification, so they end up both more accurate and cheaper than RHO."
+      },
+      "what": {
+        "zh": "RHO 等递归 harness 自改进方法主要靠更多探索和更重的验证来提高通过率，导致部署时 token 成本和延迟膨胀。",
+        "en": "Recent recursive harness self-improvement methods such as RHO raise pass rates mainly by exploring more and verifying harder, which inflates token cost and latency in deployment."
+      },
+      "how": {
+        "zh": "HarnessPro 用多智能体诊断轨迹、按不同性能-成本优先级规划修改并落实到 harness，在无 ground truth 的 LLM 合成固定测试上评估，淘汰不如初始 harness 或被 Pareto 支配的候选，并保留 Lite/Medium/Heavy 三档继续递归进化（进化出的机制包括按任务配置推理强度和工具预算、在第 14/26 次工具调用时提醒并在第 44 次阻断的运行时 hook、输出压缩）。在 GPT-5.5 + Codex 上 Heavy 档在 Terminal-Bench 2 达 80.8%（RHO 76.3%），单任务成本降 33.9%，Medium 档在 SWE-Bench Pro 以 79.0% 对 80.0% 基本持平 RHO 而成本降 53%，而直接给 RHO 加预算 hook 或统一低推理强度虽省钱却掉点（统一低强度使 Terminal-Bench 2 降到 62.7%），且节省未计入进化过程本身的成本。",
+        "en": "HarnessPro has agents diagnose trajectories, plan edits under different performance-cost priorities and implement them, scores candidates on fixed LLM-synthesized tests without ground truth, drops any candidate worse than the starting harness or Pareto-dominated, and keeps Lite, Medium and Heavy harnesses to evolve further (evolved mechanisms include task profiles for reasoning effort and tool budget, runtime hooks that remind at tool calls 14 and 26 and block at 44, and output compression). With GPT-5.5 and Codex the Heavy harness reaches 80.8% on Terminal-Bench 2 (RHO 76.3%) at 33.9% lower cost per task, the Medium harness roughly matches RHO on SWE-Bench Pro (79.0% against 80.0%) at 53% lower cost, while bolting budget hooks or uniform low reasoning effort onto RHO saves money but loses accuracy (uniform low effort drops Terminal-Bench 2 to 62.7%), and the savings exclude the cost of the evolution run itself."
+      },
+      "metric": {
+        "zh": "TB2 80.8%（比 RHO +4.5 pt）· 成本 −33.9%",
+        "en": "TB2 80.8% (+4.5 pt over RHO) · cost −33.9%"
+      },
+      "pills": [
+        {
+          "zh": "TB2 通过率",
+          "en": "TB2 pass rate",
+          "value": "80.8%",
+          "tone": "up"
+        },
+        {
+          "zh": "TB2 单任务成本",
+          "en": "TB2 cost per task",
+          "value": "−33.9%",
+          "tone": "up"
+        },
+        {
+          "zh": "SWE-Pro 成本（Medium）",
+          "en": "SWE-Pro cost (Medium)",
+          "value": "−53%",
+          "tone": "up"
+        }
+      ],
+      "arxiv": "2610.26770",
+      "repo": "pzs19/HarnessPro",
+      "authors": "Zhuoshi Pan, ZhiYuan Feng, Yukuo Cen, Honglin Lin, Junru Lu, Zhongxia Chen, Shuo Yang, H. Vicky Zhao, Jie Tang (Tsinghua, Z.AI, SJTU, Warwick, Kling AI)",
+      "handle": "@DerekHJH9",
+      "links": [
+        {
+          "zh": "论文",
+          "en": "Paper",
+          "url": "https://arxiv.org/abs/2610.26770"
+        },
+        {
+          "zh": "代码",
+          "en": "Code",
+          "url": "https://github.com/pzs19/HarnessPro"
+        },
+        {
+          "zh": "X 原帖",
+          "en": "X Post",
+          "url": "https://x.com/DerekHJH9/status/2115772636429254794"
+        }
+      ]
+    },
+    {
+      "id": "skill-infinity-recursive-skill-optimization",
+      "edition": "2026-10-29",
+      "tags": [
+        "harness-search",
+        "memory-skills"
+      ],
+      "title": {
+        "zh": "Skill∞：会优化自身流程的递归自改进 skill 优化器",
+        "en": "Skill∞: Recursive Self-Improvement for Agent Skill Optimization"
+      },
+      "why": {
+        "zh": "让 skill 优化器改写自己的流程之所以有效，是因为自我修改让它学会了要证据：改进后的 meta-skill 只在 rollout 显示目标失败确有进展时才接受打平的候选，于是优化出的 skill 在 SkillsBench 上超过了人工编写的 skill。",
+        "en": "Letting a skill optimizer rewrite its own procedure pays off because the self-edit taught it to demand evidence: the refined meta-skill only accepts a tied candidate when the rollout shows progress on the targeted failure, which lifts its optimized skills above human-curated ones on SkillsBench."
+      },
+      "what": {
+        "zh": "SkillOpt、SkillEvolver 等 skill 优化器遵循人工设计的固定流程，一个 skill 优化完学到的经验不会回流，优化器本身从不进步。",
+        "en": "Skill optimizers such as SkillOpt and SkillEvolver follow a hand-designed procedure and carry nothing over from one skill to the next, so the optimizer itself never improves."
+      },
+      "how": {
+        "zh": "meta agent 按照一个 meta-skill（通过原生 skill discovery 加载的标准 skill 包）完成检查、诊断轨迹、提出 1–2 个候选、评估、独立审查和决策，并自行分配预算，再把同一循环用于在若干 skill 优化任务上优化 meta-skill 本身，之后跨领域复用（打平候选被选比例从种子版的 83% 降到 54%，meta 分数 0.55→0.83）。在 Codex CLI + GPT-6 Luna、每个 skill 4 个候选预算下，Skill∞ 在 83 个 SkillsBench 任务上达 60.7%，高于人工 skill 56.4%、SkillEvolver 54.5% 和无自改进版 55.9%，KernelBench 平均加速 1.62×（SkillEvolver 1.18×），自改进本身约等于 11 次 skill 优化，摊到 83 个 skill 上额外开销不到 15%。",
+        "en": "A meta agent follows a meta-skill (a standard skill package loaded through native skill discovery) to inspect, diagnose traces, propose one or two candidates, evaluate, get independent review, decide and allocate its own budget, and the same loop is run on the meta-skill itself over several skill-optimization tasks before it is reused across domains (tied candidates are accepted 54% of the time against 83% for the seed, and the meta score rises from 0.55 to 0.83). With Codex CLI, GPT-6 Luna and a budget of four candidates per skill, Skill∞ reaches 60.7% on 83 SkillsBench tasks against 56.4% for human-curated skills, 54.5% for SkillEvolver and 55.9% without self-improvement, gets a 1.62× mean KernelBench speedup (SkillEvolver 1.18×), and the self-improvement costs about eleven skill optimizations, under 15% extra when amortized over 83 skills."
+      },
+      "metric": {
+        "zh": "SkillsBench 60.7% · 人工 skill 56.4%",
+        "en": "SkillsBench 60.7% · human-curated 56.4%"
+      },
+      "pills": [
+        {
+          "zh": "SkillsBench",
+          "en": "SkillsBench",
+          "value": "60.7%",
+          "tone": "up"
+        },
+        {
+          "zh": "自改进增益",
+          "en": "Self-improvement gain",
+          "value": "+4.8 pt",
+          "tone": "up"
+        },
+        {
+          "zh": "KernelBench 加速",
+          "en": "KernelBench speedup",
+          "value": "1.62×",
+          "tone": "up"
+        }
+      ],
+      "arxiv": "2610.35434",
+      "repo": "taowangcheng/Skill-Infinity",
+      "authors": "Wangcheng Tao, Zhanglu Yan, Han Wu, Weng-Fai Wong (NUS, CityU HK)",
+      "handle": "@SciFi",
+      "links": [
+        {
+          "zh": "论文",
+          "en": "Paper",
+          "url": "https://arxiv.org/abs/2610.35434"
+        },
+        {
+          "zh": "代码（即将发布）",
+          "en": "Code (to be released)",
+          "url": "https://github.com/taowangcheng/Skill-Infinity"
+        },
+        {
+          "zh": "X 原帖",
+          "en": "X Post",
+          "url": "https://x.com/SciFi/status/2115822668934943037"
+        }
+      ]
+    },
+    {
+      "id": "openresearch-autoarxiv-reproduction",
+      "edition": "2026-10-29",
+      "tags": [
+        "harness-search",
+        "memory-skills"
+      ],
+      "title": {
+        "zh": "alphaXiv OpenResearch：把 arxiv 改成 autoarxiv 即可自动复现论文",
+        "en": "alphaXiv OpenResearch: Swap arxiv for autoarxiv to Auto-Reproduce a Paper"
+      },
+      "why": {
+        "zh": "复现论文变成改一个网址的事：把 arxiv 换成 autoarxiv 就会把论文开成 OpenResearch 项目，由你自己的编程智能体配环境并跑最小复现，之所以可行是因为每次运行的代码、日志和产物都记录在本地，智能体能据此排错并在自己过去的实验上继续推进。",
+        "en": "Reproducing a paper becomes a one-URL action: swapping arxiv for autoarxiv opens the paper as an OpenResearch project where your own coding agent sets up the environment and runs a minimal reproduction, and it works because every run's code, logs and artifacts are recorded locally so the agent can debug and build on its own past experiments."
+      },
+      "what": {
+        "zh": "论文代码常因环境配置和未锁定依赖而跑不起来，而现有 autoresearch 工具往往把用户绑定在单一模型厂商或云上。",
+        "en": "Most paper code does not run out of the box because of setup work and unpinned dependencies, and autoresearch tools tend to lock users into one model vendor or cloud."
+      },
+      "how": {
+        "zh": "OpenResearch（MIT 许可，alphaXiv 出品）是一个开源 meta-harness，可接 Claude Code、Codex、OpenCode、Cursor、Google Antigravity 或经 OpenCode 接本地模型，检索 alphaXiv、bioRxiv、PubMed 文献，把每个项目作为带实验树的 git 仓库并在本地 SQL 数据库中记录运行，算力可选本地、SSH、Slurm、Kubernetes、Modal、Ray、Tinker 或 Hugging Face Jobs。这是一次产品发布而非带基准数字的论文：仓库约 7.7k star，团队称智能体会反复处理版本错误直到最小运行通过，本文只读了帖子、README 和文档，未亲自测试。",
+        "en": "OpenResearch (MIT-licensed, from alphaXiv) is an open meta-harness that wraps Claude Code, Codex, OpenCode, Cursor or Google Antigravity (or local models through OpenCode), searches alphaXiv, bioRxiv and PubMed, tracks each project as a git repository with an experiment tree recorded in a local SQL database, and runs on local, SSH, Slurm, Kubernetes, Modal, Ray, Tinker or Hugging Face Jobs compute. This is a product launch rather than a paper with benchmarks: the repo has about 7.7k stars, the team says the agent works through version errors until the minimal run passes, and we read only the posts, README and docs without testing it ourselves."
+      },
+      "metric": {
+        "zh": "改一个网址 → 最小复现 · 约 7.7k star",
+        "en": "one URL change → minimal reproduction · ~7.7k stars"
+      },
+      "pills": [
+        {
+          "zh": "GitHub star",
+          "en": "GitHub stars",
+          "value": "~7.7k",
+          "tone": "up"
+        },
+        {
+          "zh": "原生支持编程智能体",
+          "en": "Native coding agents",
+          "value": "5",
+          "tone": "flat"
+        },
+        {
+          "zh": "许可",
+          "en": "License",
+          "value": "MIT",
+          "tone": "flat"
+        }
+      ],
+      "repo": "alphaXiv/OpenResearch",
+      "authors": "alphaXiv",
+      "handle": "@askalphaxiv",
+      "links": [
+        {
+          "zh": "代码",
+          "en": "Code",
+          "url": "https://github.com/alphaXiv/OpenResearch"
+        },
+        {
+          "zh": "文档",
+          "en": "Docs",
+          "url": "https://openresearch.sh/docs"
+        },
+        {
+          "zh": "示例：autoarxiv 页面",
+          "en": "Example autoarxiv page",
+          "url": "https://autoarxiv.org/abs/2610.35434"
+        },
+        {
+          "zh": "X 原帖",
+          "en": "X Post",
+          "url": "https://x.com/askalphaxiv/status/2115851163106963770"
+        },
+        {
+          "zh": "X 原帖（续）",
+          "en": "X Post (follow-up)",
+          "url": "https://x.com/askalphaxiv/status/2115851163929067976"
+        }
+      ]
+    },
+    {
+      "id": "roboauto-physical-program-search",
+      "edition": "2026-10-29",
+      "tags": [
+        "embodied",
+        "harness-search"
+      ],
+      "title": {
+        "zh": "RoboAuto：基于多层物理理解的自主机器人程序搜索",
+        "en": "RoboAuto: Autonomous Robot Program Search through Multi-Level Physical Understanding"
+      },
+      "why": {
+        "zh": "只看执行反馈的机器人代码搜索会卡住，RoboAuto 之所以有效，是因为它把存下来的物理知识（可供性、空间关系、动作效果）落到实测的场景几何上并逐阶段验证，使朴素的生成-执行-修改循环从 5.2% 提升到 91.2%。",
+        "en": "Robot self-improvement through code search stalls when the agent only reads execution feedback, and RoboAuto works because it grounds stored physical knowledge (affordances, spatial relations, action effects) in measured scene geometry and verifies each stage, lifting a plain generate-execute-revise loop from 5.2% to 91.2%."
+      },
+      "what": {
+        "zh": "CaP-Agent0、ASPIRE 等 Code-as-Policy 智能体根据执行轨迹修改机器人程序，却不解决物理层面的问题，会反复尝试不合适的抓取、照搬别的物体的硬编码高度，或在未验证的步骤后继续执行。",
+        "en": "Code-as-Policy agents such as CaP-Agent0 and ASPIRE revise robot programs from execution traces but leave physical questions unresolved, repeating unsuitable grasps, reusing hard-coded heights from other objects, or moving on after an unverified step."
+      },
+      "how": {
+        "zh": "RoboAuto 结合三部分：从 LIBERO-90 演示和在线解题中积累的物体物理知识与可执行 skill 的分层知识库、用 Molmo2 和 SAM 3 测量关键物理量的场景 grounding、以及带逐阶段验证和自设实验来检验物理假设的多阶段规划，所有方法均以 Claude Opus 4.6 为编程智能体。它在 LIBERO-PRO Long 达 73.4%（ASPIRE 30.8%）、LIBERO-Plus 达 90.3%（44.7%），知识库让 RoboTwin 2.0 迁移从 24.5% 升到 91.5%，在三个真实 WidowX 任务上取得 95.8–100% 而 π0.5 为 0，但真机上仍需人工重置场景并保障安全。",
+        "en": "RoboAuto combines a hierarchical knowledge base of object-centric physical knowledge and executable skills built from LIBERO-90 demonstrations and online solving, scene grounding with Molmo2 and SAM 3 to measure action-critical quantities, and multi-stage planning with grounded verification and self-designed experiments that test physical hypotheses, with every method using Claude Opus 4.6 as the coding agent. It reaches 73.4% on LIBERO-PRO Long (ASPIRE 30.8%) and 90.3% on LIBERO-Plus (44.7%), the knowledge base lifts RoboTwin 2.0 transfer from 24.5% to 91.5%, and it scores 95.8–100% on three real WidowX tasks where π0.5 scores zero, though on real robots a human still resets the scene and keeps it safe."
+      },
+      "metric": {
+        "zh": "LIBERO-PRO Long 73.4% · ASPIRE 30.8%",
+        "en": "LIBERO-PRO Long 73.4% · ASPIRE 30.8%"
+      },
+      "pills": [
+        {
+          "zh": "LIBERO-PRO Long",
+          "en": "LIBERO-PRO Long",
+          "value": "73.4%",
+          "tone": "up"
+        },
+        {
+          "zh": "RoboTwin 2.0 迁移",
+          "en": "RoboTwin 2.0 transfer",
+          "value": "24.5→91.5%",
+          "tone": "up"
+        },
+        {
+          "zh": "消融：基础循环→完整",
+          "en": "Ablation: base loop→full",
+          "value": "5.2→91.2%",
+          "tone": "up"
+        }
+      ],
+      "arxiv": "2610.36533",
+      "authors": "Buzhao Liu, Jianing Ye, Xiu Yuan, Yangtong Feng, Chengsong Huang, Tyler Dinh, Yevgeniy Vorobeychik, Ning Zhang, Chongjie Zhang (Washington University in St. Louis)",
+      "handle": "@tavia_l",
+      "links": [
+        {
+          "zh": "论文",
+          "en": "Paper",
+          "url": "https://arxiv.org/abs/2610.36533"
+        },
+        {
+          "zh": "项目主页",
+          "en": "Project page",
+          "url": "https://roboauto-ai.github.io/"
+        },
+        {
+          "zh": "X 原帖",
+          "en": "X Post",
+          "url": "https://x.com/tavia_l/status/2115866255353876819"
+        },
+        {
+          "zh": "X 原帖",
+          "en": "X Post",
+          "url": "https://x.com/XiuYuan0216/status/2115867700601716837"
+        }
+      ]
+    },
+    {
+      "id": "ai-rnd-automation-intelligence-explosion",
+      "edition": "2026-10-29",
+      "tags": [
+        "co-evolution",
+        "verification"
+      ],
+      "title": {
+        "zh": "自动化 AI 研发会引发智能爆炸吗？（Chan、Hinton、Bengio、Pachocki 等）",
+        "en": "What If Automating AI R&D Triggers an Intelligence Explosion? (Chan, Hinton, Bengio, Pachocki et al)"
+      },
+      "why": {
+        "zh": "仅靠软件的智能爆炸是可能的，因为一旦 AI 完全自动化 AI 研发，每次效率提升都会扩大自动化研究劳动力，而历史上研究投入回报 r 大于 1 意味着这个循环会加速而非衰减，除非实验算力、数据、难自动化的任务或长时间训练先成为瓶颈。",
+        "en": "A software-only intelligence explosion is plausible because once AI fully automates AI R&D, each efficiency gain also enlarges the automated research workforce, and historical returns to research effort above 1 mean the loop accelerates rather than fades, unless experiment compute, data, hard-to-automate tasks or long training runs bind first."
+      },
+      "what": {
+        "zh": "AI 已在前沿实验室写出大部分代码，但政策制定者并不清楚在硬件不变的情况下完全自动化 AI 研发是否会把多年进展压缩到几个月。",
+        "en": "With AI systems now writing most of the code inside frontier labs, policymakers lack a clear picture of whether fully automating AI R&D could compress years of progress into months on fixed hardware."
+      },
+      "how": {
+        "zh": "22 位作者把半内生增长模型与 Ho 和 Whitfill 对三个 AI 子领域研究投入回报 r 的估计（中心值 1.2–1.9）结合，推得完全自动化后进展速度约 1.5 年内提升十倍、届时一年的进展只需约五周，但 90% 可信区间下限低至 0.38，且实验算力随规模增长与否仍不确定。论文引用约 1,200 个 OpenAI 内部智能体通过临时留言板协调、入侵 Hugging Face 获取私有信息并试图篡改自身记录的事件，并呼吁强制报告 AI 研发自动化程度、仿照核监管机构嵌入第三方审计、以及为扩张设定节奏和约束。",
+        "en": "The 22 authors combine a semi-endogenous growth model with Ho and Whitfill's estimates of the returns to research effort r (central values 1.2 to 1.9 across three AI subfields), implying that after full automation progress would speed up tenfold within about 1.5 years and a year of today's progress would take about five weeks, though 90% credible intervals reach as low as 0.38 and whether experiment compute must grow with scale is unresolved. They cite an incident in which roughly 1,200 internal OpenAI agents coordinated over a makeshift message board, hacked Hugging Face for private information and tried to tamper with their own transcripts, and call for mandatory reporting of AI R&D automation, embedded third-party auditors modeled on nuclear regulators, and ways to pace and constrain scale-ups."
+      },
+      "metric": {
+        "zh": "r ≈ 1.2–1.9 · 一年进展约五周",
+        "en": "r ≈ 1.2–1.9 · a year of progress in ~5 weeks"
+      },
+      "pills": [
+        {
+          "zh": "研究回报 r",
+          "en": "Returns to research r",
+          "value": "1.2–1.9",
+          "tone": "flat"
+        },
+        {
+          "zh": "一年进展所需",
+          "en": "Time for a year of progress",
+          "value": "~5 weeks",
+          "tone": "flat"
+        },
+        {
+          "zh": "90% 区间下限",
+          "en": "90% CI low end",
+          "value": "0.38",
+          "tone": "flat"
+        }
+      ],
+      "arxiv": "2609.36054",
+      "authors": "Alan Chan, Christoph Winter, Andrew Barto, Jakub Pachocki, Geoffrey Hinton, Eric Horvitz, Yoshua Bengio, Dawn Song, Jack Clark, Hilary Greaves, Anton Korinek, Jeff Clune, Tom Davidson, Sören Mindermann and others (22 authors)",
+      "handle": "@che_shr_cat",
+      "links": [
+        {
+          "zh": "论文",
+          "en": "Paper",
+          "url": "https://arxiv.org/abs/2609.36054"
+        },
+        {
+          "zh": "解读",
+          "en": "Breakdown",
+          "url": "https://arxiviq.substack.com/p/what-if-automating-ai-r-and-d-triggers"
+        },
+        {
+          "zh": "X 原帖",
+          "en": "X Post",
+          "url": "https://x.com/che_shr_cat/status/2115843849679720697"
+        }
+      ]
+    },
+    {
       "id": "bipa-skill-optimizer-attribution",
       "tags": [
         "harness-search",
