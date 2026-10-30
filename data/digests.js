@@ -19,6 +19,15 @@ window.YANHUA_DIGESTS = {
   },
   "editions": [
     {
+      "id": "2026-10-30",
+      "date": "2026-10-30",
+      "slot": "",
+      "label": {
+        "zh": "2026-10-30",
+        "en": "30 Oct 2026"
+      }
+    },
+    {
       "id": "2026-10-29",
       "date": "2026-10-29",
       "slot": "",
@@ -136,6 +145,279 @@ window.YANHUA_DIGESTS = {
     }
   ],
   "items": [
+    {
+      "id": "evolving-agent-teams-kernel-search",
+      "edition": "2026-10-30",
+      "tags": [
+        "harness-search",
+        "co-evolution"
+      ],
+      "title": {
+        "zh": "Evolving Agent Teams：会自我重组的智能体团队做 GPU kernel 优化",
+        "en": "Evolving Agent Teams: Self-Restructuring Agent Teams for GPU Kernel Optimization"
+      },
+      "why": {
+        "zh": "让主管智能体在每次停滞时诊断原因（知识缺口还是搜索已穷尽）并重组团队角色，比固定团队或单个编程智能体强得多，因为单个智能体在正确性失败后会放弃难但更快的设计，而固定团队的信息被割裂在不同角色之间。",
+        "en": "Letting a supervisor diagnose each plateau (a knowledge gap or an exhausted search) and restructure the team's roles beats both fixed teams and single coding agents, because single agents abandon hard but faster designs after correctness failures and fixed teams split information across roles."
+      },
+      "what": {
+        "zh": "用编程智能体做 kernel 等性能优化时，单个智能体或固定分工的团队很快停滞，往往停在 WMMA/SIMT 这类容易写对但更慢的方案上。",
+        "en": "Coding agents optimizing kernels and similar performance targets plateau quickly, whether alone or in fixed-role teams, and tend to settle on designs like WMMA or SIMT that are easier to get correct but slower."
+      },
+      "how": {
+        "zh": "主管在停滞时改写团队结构（例如加入 Knowledge Integrator 汇总分散的信息），团队共享一个持久文件系统保存学习文档、演化历史和产物，在 MLA decode 上共尝试了 100 多种团队配置。同等预算下达到 FlashInfer 的 0.74×（Claude Code 0.51×、固定 4 角色团队 0.31×、Codex GPT-5.5 xhigh 0.28×），延长预算后达到生产版 FlashInfer MLA decode 的 1.21×、47 个 workload 中 36 个更快（此前最好的 K-Search 为 0.61×），且生成的 kernel 用上了 WGMMA；另有 GDN prefill 4.06×、GEMM+AllReduce 1.56×（ThunderKittens 1.54×）等结果，但每个主设置只跑了两次，也没有成本 Pareto 分析。",
+        "en": "The supervisor rewrites the team structure at each plateau (for example adding a Knowledge Integrator to pull scattered information together), and the team shares a persistent file system holding a learning doc, the evolution history and its artifacts, with over 100 team configurations tried on MLA decode. At matched budget it reaches 0.74× FlashInfer (Claude Code 0.51×, a fixed 4-role team 0.31×, Codex GPT-5.5 xhigh 0.28×), and with an extended budget it hits 1.21× production FlashInfer MLA decode and is faster on 36 of 47 workloads (previous best K-Search 0.61×) with kernels that use WGMMA; other results include 4.06× on GDN prefill and 1.56× on GEMM+AllReduce (ThunderKittens 1.54×), though each main setting ran only twice and there is no cost Pareto analysis."
+      },
+      "metric": {
+        "zh": "MLA decode 1.21× FlashInfer · 36/47 workload 更快",
+        "en": "MLA decode 1.21× FlashInfer · faster on 36/47 workloads"
+      },
+      "pills": [
+        {
+          "zh": "同预算 vs FlashInfer",
+          "en": "Matched budget vs FlashInfer",
+          "value": "0.74×",
+          "tone": "up"
+        },
+        {
+          "zh": "延长预算",
+          "en": "Extended budget",
+          "value": "1.21×",
+          "tone": "up"
+        },
+        {
+          "zh": "Claude Code 同预算",
+          "en": "Claude Code matched",
+          "value": "0.51×",
+          "tone": "flat"
+        }
+      ],
+      "arxiv": "2610.36848",
+      "repo": "caoshiyi/EAT",
+      "authors": "Shiyi Cao, Ziming Mao, Dacheng Li, Joseph E. Gonzalez, Ion Stoica et al. (UC Berkeley)",
+      "handle": "@fly51fly",
+      "links": [
+        {
+          "zh": "论文",
+          "en": "Paper",
+          "url": "https://arxiv.org/abs/2610.36848"
+        },
+        {
+          "zh": "代码",
+          "en": "Code",
+          "url": "https://github.com/caoshiyi/EAT"
+        },
+        {
+          "zh": "X 原帖",
+          "en": "X Post",
+          "url": "https://x.com/fly51fly/status/2115913178542719196"
+        }
+      ]
+    },
+    {
+      "id": "parallel-gepa-batched-reflective-optimization",
+      "edition": "2026-10-30",
+      "tags": [
+        "harness-search"
+      ],
+      "title": {
+        "zh": "批量化 GEPA：并行提议让反思式 prompt 优化更快也更好",
+        "en": "Batching the Reflective Optimization Loop: Parallel Proposals Make GEPA Faster and Better"
+      },
+      "why": {
+        "zh": "每步同时提出并评估一批候选，而不是一次一个，能让 GEPA 快 3–4 倍且测试分更高，因为在同样的评估预算下针对验证集的自适应轮数更少，过拟合验证集也就更少。",
+        "en": "Proposing and scoring a batch of candidates per step instead of one makes GEPA 3–4× faster and better on held-out tests, because at the same evaluation budget there are fewer adaptive rounds against the validation set and so less overfitting to it."
+      },
+      "what": {
+        "zh": "GEPA 这类反思式 prompt 优化器是串行的：提出一个候选、评估、等待、再重复，动辄数小时，评估算力大多闲置。",
+        "en": "Reflective prompt optimizers like GEPA run sequentially, proposing one candidate, evaluating it and waiting before the next, so runs take hours while evaluation capacity sits idle."
+      },
+      "how": {
+        "zh": "每步从 GEPA 的 Pareto 前沿采样 P 个父代、每个父代做 N 次反思式变异，并发评估全部 P·N 个子代再并行验证胜者，总 metric 调用预算与串行版相同（gpt-5-mini 为提议模型）。16 路并行下墙钟时间缩短约 3–4 倍，LiveBench-Math 测试分 68.9%→72.1%（2×2），HoVer 49.0%→60.0%（8×1），LiveBench-Math 上验证到测试的落差串行为 9 分、2×4 仅 2 分，2×4 约 4 美元内就达到最终验证分，已作为插件采样策略并入开源 gepa 包；仅在两个任务和一种预算上测试。",
+        "en": "Each step samples P parents from GEPA's Pareto frontier, draws N reflective mutations per parent, scores all P·N children concurrently and validates the winners in parallel, under the same total metric-call budget as the sequential run (gpt-5-mini as proposer). At 16-way parallelism wall-clock time falls about 3–4×, LiveBench-Math test rises from 68.9% to 72.1% (2×2) and HoVer from 49.0% to 60.0% (8×1), the validation-to-test gap on LiveBench-Math is 9 points for sequential against 2 for 2×4, and 2×4 reaches its final validation score within about $4; it ships as a plug-in sampling strategy in the open-source gepa package, though it was tested on only two tasks and one budget each."
+      },
+      "metric": {
+        "zh": "墙钟 ~3–4× 更快 · HoVer 49.0→60.0%",
+        "en": "~3–4× faster wall-clock · HoVer 49.0→60.0%"
+      },
+      "pills": [
+        {
+          "zh": "加速（16 路）",
+          "en": "Speedup (16-way)",
+          "value": "~3–4×",
+          "tone": "up"
+        },
+        {
+          "zh": "LiveBench-Math 测试",
+          "en": "LiveBench-Math test",
+          "value": "68.9→72.1%",
+          "tone": "up"
+        },
+        {
+          "zh": "HoVer 测试",
+          "en": "HoVer test",
+          "value": "49.0→60.0%",
+          "tone": "up"
+        }
+      ],
+      "arxiv": "2610.36774",
+      "repo": "gepa-ai/gepa",
+      "authors": "Jialin Zhang, Lakshya A Agrawal, Shangyin Tan, Donghyun Lee, Lutfi Eren Erdogan, Dan Klein, Koushik Sen, Alex Dimakis, Matei Zaharia (UC Berkeley)",
+      "handle": "@randhir302",
+      "links": [
+        {
+          "zh": "论文",
+          "en": "Paper",
+          "url": "https://arxiv.org/abs/2610.36774"
+        },
+        {
+          "zh": "X 原帖",
+          "en": "X Post",
+          "url": "https://x.com/randhir302/status/2116003081825779886"
+        }
+      ]
+    },
+    {
+      "id": "recrsi-try-before-you-evolve",
+      "edition": "2026-10-30",
+      "tags": [
+        "harness-search",
+        "verification"
+      ],
+      "title": {
+        "zh": "Try Before You Evolve（RecRSI）：先短试再全训的推荐模型自改进",
+        "en": "Try Before You Evolve (RecRSI): Short Trials Before Full Retraining for Self-Improving Recommenders"
+      },
+      "why": {
+        "zh": "在递归自改进推荐模型时，先给每个候选修改跑一小段真实训练再决定谁值得全量重训，远比让 LLM 评审补丁可靠，因为修改的效果藏在依赖数据的训练行为里，LLM 从代码 diff 上读不出来（LLM 评审与结果甚至负相关）。",
+        "en": "When a recommender improves itself recursively, giving each candidate edit a short real training trial before choosing which one gets a full retrain is far more reliable than an LLM judging the patch, because an edit's effect lives in data-dependent training behaviour an LLM cannot read from a diff (the LLM judge is even negatively correlated with outcomes)."
+      },
+      "what": {
+        "zh": "推荐排序的反馈要等完整重训后才有，采样 loss 会误导且无法在改动 loss 的修改之间比较，AlphaEvolve、DeepEvolve、Self-EvolveRec 等智能体 90 次重训只保留 37 次（41%）。",
+        "en": "Ranking feedback only arrives after a full retrain, sampled loss misleads and cannot compare edits that change the loss, and agents such as AlphaEvolve, DeepEvolve and Self-EvolveRec keep only 37 of 90 retrainings (41%)."
+      },
+      "how": {
+        "zh": "RecRSI 根据诊断提出 3 个修改，每个跑自身全量训练的前几步作为短试，用 probe 用户上的全排序 NDCG@10 打分，只有最好的才全量重训，30 次重训保留 23 次（77%）；测试 NDCG@10 比最强基线高 SASRec +42/+42/+31%、HSTU +18/+102/+16%（CDs、Office、LastFM）。平均增益 +139.2%（LLM 评审 116.9%、随机 43.2%），最差重训回退仅 −5.3%，短试与结果相关 ρ 0.46、AUC 0.71，而 LLM 评审为 ρ −0.14、AUC 0.36；胜者超过父代短试时 13 次中 11 次被采纳，否则 7 次中 2 次，可当早停规则。",
+        "en": "RecRSI proposes three edits from a diagnosis, gives each a short trial made of the first steps of its own full training run scored by full-ranking NDCG@10 on probe users, and fully retrains only the best, keeping 23 of 30 retrainings (77%); test NDCG@10 beats the strongest baseline by +42/+42/+31% on SASRec and +18/+102/+16% on HSTU (CDs, Office, LastFM). Its average gain is +139.2% (LLM judge 116.9%, random 43.2%) with a worst retrained regression of only −5.3%, and the short trial reaches ρ 0.46 and AUC 0.71 against ρ −0.14 and AUC 0.36 for the LLM judge; when the winner beats the parent's trial 11 of 13 retrainings are promoted against 2 of 7 otherwise, which works as an early-stopping rule."
+      },
+      "metric": {
+        "zh": "重训保留率 77% vs 41% · 平均增益 +139.2%",
+        "en": "Retrains kept 77% vs 41% · avg gain +139.2%"
+      },
+      "pills": [
+        {
+          "zh": "重训保留率",
+          "en": "Retrains kept",
+          "value": "77% vs 41%",
+          "tone": "up"
+        },
+        {
+          "zh": "短试 AUC",
+          "en": "Short-trial AUC",
+          "value": "0.71",
+          "tone": "up"
+        },
+        {
+          "zh": "LLM 评审 AUC",
+          "en": "LLM judge AUC",
+          "value": "0.36",
+          "tone": "down"
+        }
+      ],
+      "arxiv": "2610.39352",
+      "authors": "Xu Huang, Jiawei Feng, Jiancan Wu et al. (USTC)",
+      "handle": "@_reachsumit",
+      "links": [
+        {
+          "zh": "论文",
+          "en": "Paper",
+          "url": "https://arxiv.org/abs/2610.39352"
+        },
+        {
+          "zh": "X 原帖",
+          "en": "X Post",
+          "url": "https://x.com/_reachsumit/status/2116079515860652381"
+        }
+      ]
+    },
+    {
+      "id": "meta-fair-aligning-autoresearch-co-improvement",
+      "edition": "2026-10-30",
+      "tags": [
+        "co-evolution",
+        "verification"
+      ],
+      "title": {
+        "zh": "Aligning Autoresearch：智能体与人类的共同改进（AutoBenchmark、HackBench、AutoInteract、RL-XAR）",
+        "en": "Aligning Autoresearch: Co-Improvement between Agents & Humans (AutoBenchmark, HackBench, AutoInteract, RL-XAR)"
+      },
+      "why": {
+        "zh": "autoresearch 智能体已经能端到端跑完研究循环，但没有人类指导时造出的基准接近饱和，最强的监控模型也只能定位约三分之二的 reward hack，所以 Meta FAIR 认为让智能体与人类协作（co-improvement）比完全自改进更快也更安全。",
+        "en": "Autoresearch agents can now run the research loop end to end, but without human direction the benchmarks they build are near-saturated and the best monitor localizes only about two-thirds of reward hacks, which is why Meta FAIR argues that agents working with humans (co-improvement) is faster and safer than pure self-improvement."
+      },
+      "what": {
+        "zh": "完全自动的 autoresearch 会刷指标而非真正做研究（reward hacking），在基准设计这类开放任务上缺乏判断力，而且训练时几乎不包含与人类的多轮交互和写作质量信号。",
+        "en": "Fully automatic autoresearch games metrics instead of doing the research (reward hacking), lacks judgment on open-ended tasks such as benchmark design, and is trained with almost no multi-turn human interaction or writing-quality signal."
+      },
+      "how": {
+        "zh": "四部分：AutoBenchmark 让智能体根据求解者轨迹和 LLM 审查迭代造基准，无人类指导时求解者得分超过 80，给出具体的“造什么、怎么造”可把得分减半，而一句话意图几乎无效；HackBench 含 169 条轨迹（41 条真实 hack、128 条注入 hack，中位数超百万字符、264 条命令，hack 命令中位数仅 1 条），最强的 Claude Opus 5 定位 F1 仅 64.88，其他模型除 Muse Wonder（61.47）外都低于 53。AutoInteract 用从真实交互历史学到的用户模拟器生成多轮 RL 数据，把 LiveCodeBench-Pro 平均 Pass@1 从 29.9 提到 43.0（4B）、49.1 提到 55.7（27B）；RL-XAR 元优化 rubric 生成器使专家文本与模型输出的分差最大化，再用这些 rubric 做 RL 改进论文、故事和维基写作。",
+        "en": "Four parts: AutoBenchmark has an agent iterate on a benchmark from solver trajectories and LLM review, and unaided solvers score above 80 while specific direction on what and how to build halves the score and a one-line intent barely helps; HackBench has 169 trajectories (41 natural and 128 injected hacks, median over a million characters and 264 commands, median one hacked command), where the best monitor, Claude Opus 5, reaches only 64.88 F1 and every model except Muse Wonder (61.47) stays below 53. AutoInteract trains on multi-turn RL data built with user simulators learned from real histories and lifts average LiveCodeBench-Pro Pass@1 from 29.9 to 43.0 at 4B and 49.1 to 55.7 at 27B, and RL-XAR meta-optimizes a rubric generator to maximize the gap between expert text and model output, then runs RL against those rubrics to improve paper, story and Wikipedia writing."
+      },
+      "metric": {
+        "zh": "HackBench 最佳定位 F1 64.88 · 人类指导使求解分减半",
+        "en": "HackBench best localization F1 64.88 · human direction halves solver scores"
+      },
+      "pills": [
+        {
+          "zh": "HackBench 最佳 F1",
+          "en": "HackBench best F1",
+          "value": "64.88",
+          "tone": "flat"
+        },
+        {
+          "zh": "无指导求解分",
+          "en": "Unaided solver score",
+          "value": ">80",
+          "tone": "down"
+        },
+        {
+          "zh": "AutoInteract 4B",
+          "en": "AutoInteract 4B",
+          "value": "29.9→43.0",
+          "tone": "up"
+        }
+      ],
+      "arxiv": "2610.38882",
+      "authors": "Tianjian Li, Chuanyang Jin, Seungone Kim, Tong Chen, … Ilia Kulikov, Jason Weston (FAIR at Meta, JHU, CMU, UW)",
+      "handle": "@jaseweston",
+      "links": [
+        {
+          "zh": "论文",
+          "en": "Paper",
+          "url": "https://arxiv.org/abs/2610.38882"
+        },
+        {
+          "zh": "HackBench 数据集",
+          "en": "HackBench dataset",
+          "url": "https://huggingface.co/datasets/facebook/hackbench"
+        },
+        {
+          "zh": "博客：HackBench",
+          "en": "Blog: HackBench",
+          "url": "https://facebookresearch.github.io/RAM/blogs/hackbench"
+        },
+        {
+          "zh": "X 原帖",
+          "en": "X Post",
+          "url": "https://x.com/jaseweston/status/2115992445930311714"
+        },
+        {
+          "zh": "X 原帖（合著者）",
+          "en": "X Post (co-author)",
+          "url": "https://x.com/chuanyang_jin/status/2116021634867835333"
+        }
+      ]
+    },
     {
       "id": "harnesspro-pareto-harness-rsi",
       "edition": "2026-10-29",
