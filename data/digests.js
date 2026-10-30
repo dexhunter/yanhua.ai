@@ -146,6 +146,362 @@ window.YANHUA_DIGESTS = {
   ],
   "items": [
     {
+      "id": "gepa-curator-curated-self-improvement",
+      "edition": "2026-10-30",
+      "tags": [
+        "harness-search",
+        "verification"
+      ],
+      "title": {
+        "zh": "GEPA-Curator：先挑选该从哪些失败中学习，再做反思式 prompt / harness 优化",
+        "en": "GEPA-Curator: Choosing Which Failures to Learn From Before Reflective Prompt and Harness Optimization"
+      },
+      "why": {
+        "zh": "让一个 Curator 智能体先剔除“不可能完成”或评测不稳定的任务、并给 Reflector 配上同一任务过去的成功轨迹，能让 GEPA 式自改进稳定变好，因为很多失败源于 harness 缺工具、环境故障或评审噪声，直接从中反思会写出过度泛化、反而伤害可解任务的规则。",
+        "en": "Having a Curator agent drop impossible or flaky tasks and hand the Reflector a past success on the same task makes GEPA-style self-improvement reliably better, because many failures come from missing harness tools, broken environments or noisy judges, and reflecting on them writes over-general rules that hurt solvable tasks."
+      },
+      "what": {
+        "zh": "GEPA、ACE 这类反思式优化器默认每个失败都是 prompt 的问题，但智能体任务中的失败常常来自 harness 限制、执行随机性或 LLM 评审噪声，验证集门控也挡不住这些坏信号。",
+        "en": "Reflective optimizers such as GEPA and ACE treat every failed rollout as a prompt problem, yet agentic failures often come from harness limits, stochastic execution or noisy LLM judges, and validation gating does not filter that bad signal out."
+      },
+      "how": {
+        "zh": "Curator 读取每个任务的历史轨迹，决定本轮 minibatch 跑哪些任务（暂时跳过稳定成功、harness 导致的重复失败和评审不一致的任务），并在同一次调用中挑选一条可信的过往成功轨迹作为对照；以 gpt-oss-120b 为执行者，在 GoBrowse/WebArena 四个站点上平均成功率从 GEPA 的 78.7% 提到 82.1%（Gemini 3.1 Pro 优化）和 79.5%→84.5%（Claude Opus 5），AppWorld Test-N 用 Opus 时 52.9%→68.8%，论文中一个例子显示两条不可能任务让 GEPA 学到“到处搜索”，minibatch 分 8→9 被接受，却让一个原本 5 步解决的任务 30 步也没完成。扩展到 Meta-Harness 代码搜索后（Meta-Harness-Curator），Math-RAG 准确率 45.33→46.33、文本分类 48.06→51.04，收益不大；高效版成本约为 GEPA 的 1.31 倍，非 WebArena 基准上 173.98 美元，比 ACE 便宜 4.42 倍。",
+        "en": "The Curator reads each task's history and decides which tasks enter the next minibatch (temporarily skipping stable successes, harness-caused repeat failures and inconsistently judged tasks), and in the same call picks one trusted past success as a contrastive reference; with gpt-oss-120b acting, mean success on the four GoBrowse/WebArena sites rises from GEPA's 78.7% to 82.1% (Gemini 3.1 Pro optimizer) and from 79.5% to 84.5% (Claude Opus 5), AppWorld Test-N with Opus goes from 52.9% to 68.8%, and one traced case shows two impossible tasks teaching GEPA to search everywhere, lifting the minibatch score from 8 to 9 so the edit was kept while a task once solved in 5 steps then failed after 30. Applied to Meta-Harness code search (Meta-Harness-Curator) the gains are modest, Math-RAG accuracy 45.33 to 46.33 and text classification 48.06 to 51.04, and the efficient variant costs about 1.31× GEPA and $173.98 on the non-WebArena benchmarks, 4.42× cheaper than ACE."
+      },
+      "metric": {
+        "zh": "WebArena 均值 82.1% vs GEPA 78.7%（Gemini）· 84.5% vs 79.5%（Opus）",
+        "en": "WebArena mean 82.1% vs GEPA 78.7% (Gemini) · 84.5% vs 79.5% (Opus)"
+      },
+      "pills": [
+        {
+          "zh": "WebArena（Opus 优化）",
+          "en": "WebArena (Opus optimizer)",
+          "value": "79.5→84.5%",
+          "tone": "up"
+        },
+        {
+          "zh": "AppWorld Test-N（Opus）",
+          "en": "AppWorld Test-N (Opus)",
+          "value": "52.9→68.8%",
+          "tone": "up"
+        },
+        {
+          "zh": "相对 GEPA 成本",
+          "en": "Cost vs GEPA",
+          "value": "1.31×",
+          "tone": "flat"
+        }
+      ],
+      "arxiv": "2610.37651",
+      "authors": "Zack Yu, Nicholas Lee, Minjae Lee, Lakshya A Agrawal, Matei Zaharia, Michael W. Mahoney, Kurt Keutzer, Sehoon Kim, Amir Gholami et al. (UC Berkeley, ICSI, LBNL, Furiosa AI, KAIST)",
+      "handle": "@YevMur",
+      "links": [
+        {
+          "zh": "论文",
+          "en": "Paper",
+          "url": "https://arxiv.org/abs/2610.37651"
+        },
+        {
+          "zh": "X 原帖",
+          "en": "X Post",
+          "url": "https://x.com/YevMur/status/2116175627187347851"
+        },
+        {
+          "zh": "X 原帖（含论文链接）",
+          "en": "X Post (with paper link)",
+          "url": "https://x.com/YevMur/status/2116175814278713419"
+        },
+        {
+          "zh": "X 原帖（论文串）",
+          "en": "X Post (paper thread)",
+          "url": "https://x.com/pryzmat_tech/status/2116155543643381893"
+        }
+      ]
+    },
+    {
+      "id": "rtaste-do-research-agents-have-taste",
+      "edition": "2026-10-30",
+      "tags": [
+        "verification"
+      ],
+      "title": {
+        "zh": "rTaste：研究智能体有“品味”吗？把 415 个提议实验全部跑一遍来检验",
+        "en": "rTaste: Do Research Agents Have Taste? Running All 415 Proposed Experiments to Find Out"
+      },
+      "why": {
+        "zh": "前沿模型做研究智能体时能提出不少可靠又有价值的小实验，但它们的排序和预测几乎没有帮上忙，因为它们先写、也优先选的往往是最显而易见、最可能“通过”的后续实验，而真正超出原论文的方向很少。",
+        "en": "Frontier models acting as research agents propose plenty of sound and valuable small experiments, but their rankings and forecasts add little, because they write first and rank first the most obvious follow-ups that are likely to pass, while experiments that genuinely go beyond the paper are rare."
+      },
+      "what": {
+        "zh": "autoresearch 能执行实验，但还没被托付最关键的“品味”判断：在结果出来之前决定哪些实验值得做。",
+        "en": "Autoresearch agents can execute experiments, but they have not been trusted with taste, the judgment of which experiments are worth running before the outcome is known."
+      },
+      "how": {
+        "zh": "六个前沿模型（单人或团队）各读一篇 2026 年 8–9 月的新 NLP 论文，提出 5 个最小可行实验（MVE）、预注册阈值、预测是否通过并排序，再由独立执行者把全部 MVE（包括排最后的）都实现，三个模型审稿人评判；415 个 MVE 中 194 个被判为合理、有价值且新，但其中只有 73 个超出原论文且不显而易见。智能体首选是审稿人最看重实验的比例为 38%（随机 20%），但并不优于“第一个写下的实验”（首选有 47% 就是第一个写的），预测的 Brier 分 0.192 优于基线 0.240，却不比只读原论文和 5 条注册内容的同模型裁判更准（差 0.006）；团队每个条件花费 23.93 美元、单人 15.31 美元，但提案质量没有显著提升，且全部标签来自模型、每种条件只跑一次。",
+        "en": "Six frontier models, alone or as teams, each read a new NLP paper from August–September 2026, propose five minimum viable experiments (MVEs) with pre-registered thresholds, forecast whether each passes and rank them, after which a separate executor implements every MVE (including the last-ranked) and three model auditors judge the results; of 415 MVEs, 194 are judged sound, valuable and new, but only 73 of those also go beyond the seed paper and are non-obvious. The agent's first choice is the auditors' most valued MVE 38% of the time against 20% for a random pick, yet it is not shown to beat the MVE written first (which it picks 47% of the time), its forecasts reach a Brier score of 0.192 against a 0.240 base rate but are no better than a same-model judge that saw only the seed paper and the five registrations (a 0.006 difference), and teams cost $23.93 per condition against $15.31 for a single researcher without a significant quality gain, with all labels model-made and each condition run once."
+      },
+      "metric": {
+        "zh": "415 个 MVE → 194 个合格 → 仅 73 个超出原论文",
+        "en": "415 MVEs → 194 sound/valuable/new → only 73 beyond the paper"
+      },
+      "pills": [
+        {
+          "zh": "合格 MVE",
+          "en": "Sound, valuable, new",
+          "value": "194/415",
+          "tone": "flat"
+        },
+        {
+          "zh": "超出原论文且不显然",
+          "en": "Beyond paper & non-obvious",
+          "value": "73",
+          "tone": "down"
+        },
+        {
+          "zh": "首选命中（随机 20%）",
+          "en": "First choice hit (random 20%)",
+          "value": "38%",
+          "tone": "flat"
+        }
+      ],
+      "arxiv": "2610.40488",
+      "repo": "ArtKanke/rTaste",
+      "authors": "Art Kanke (University of Minnesota)",
+      "handle": "@omarsar0",
+      "links": [
+        {
+          "zh": "论文",
+          "en": "Paper",
+          "url": "https://arxiv.org/abs/2610.40488"
+        },
+        {
+          "zh": "代码与数据",
+          "en": "Code & data",
+          "url": "https://github.com/ArtKanke/rTaste"
+        },
+        {
+          "zh": "X 原帖",
+          "en": "X Post",
+          "url": "https://x.com/omarsar0/status/2116204488562528713"
+        }
+      ]
+    },
+    {
+      "id": "a-rsi-adaptive-task-refresh-zero-data",
+      "edition": "2026-10-30",
+      "tags": [
+        "agentic-rl",
+        "co-evolution"
+      ],
+      "title": {
+        "zh": "A-RSI：根据训练日志判断何时换题的零数据多模态自改进",
+        "en": "A-RSI: Training Logs Decide When to Refresh Tasks in Zero-Data Multimodal Self-Improvement"
+      },
+      "why": {
+        "zh": "零数据自改进循环最先卡在“题用完了”，只看训练日志里还在产生学习信号的题目数来决定何时整池换新、再随机抽取答案由程序计算的新题，就能持续提分，而且精心挑难度的选题规则并不比随机更好。",
+        "en": "A zero-data self-improvement loop stalls first when its tasks run dry, and refreshing the whole pool only when training logs show fewer prompts still giving learning signal, then drawing random new tasks with program-computed answers, keeps scores rising, while carefully difficulty-targeted selection does no better than random."
+      },
+      "what": {
+        "zh": "递归自改进方法多关注下一步生成什么经验，却很少问何时该换上新经验，而且常用自洽或多数投票造标签，让模型自己的错误变成下一轮的监督。",
+        "en": "Recursive self-improvement methods mostly ask what experience to generate next rather than when fresh experience is needed, and they often build labels by self-consistency or majority vote, so the model's own errors become the next round's supervision."
+      },
+      "how": {
+        "zh": "一个固定的模型编写程序库生成几何、图表、表格、计数等多模态题并计算参考答案，Solver 用 GRPO 训练（每窗口 100 次更新），控制器只读训练日志中组内奖励有差异的 prompt 数和训练准确率，判断池子饱和后整池替换为 400 道未用过的随机题，不看验证或测试分；Qwen3-VL-8B 在 11 个基准上的均值从 57.77 升到 61.05，只用 800 道新题，而每窗口都换题要 3,200 道题才到 60.64，在第六窗口对比中为 60.40 vs 继续用旧池的 58.35。作者也指出部分零数据增益只是学会在输出长度限制内答完（包括已发布的 MM-Zero 权重），MiMo-VL-7B 仅从 59.08 到 60.71，且每个配置只训练一次。",
+        "en": "A fixed library of model-written programs generates multimodal geometry, chart, table and counting tasks with computed reference answers, the Solver trains with GRPO in windows of 100 updates, and a controller reads only training-log counts of prompts with within-group reward variation plus training accuracy, swapping in 400 unused random tasks when the pool saturates without consulting validation or test scores; Qwen3-VL-8B's eleven-benchmark average rises from 57.77 to 61.05 with only 800 fresh tasks, whereas refreshing every window needs 3,200 tasks to reach 60.64, and at the sixth window it scores 60.40 against 58.35 for continuing on the old pool. The authors note that part of any zero-data gain is just learning to finish within the output limit (including for released MM-Zero weights), MiMo-VL-7B moves only from 59.08 to 60.71, and each arm was trained once."
+      },
+      "metric": {
+        "zh": "Macro11 57.77→61.05 · 仅 800 道新题",
+        "en": "Macro11 57.77→61.05 · only 800 fresh tasks"
+      },
+      "pills": [
+        {
+          "zh": "Qwen3-VL-8B Macro11",
+          "en": "Qwen3-VL-8B Macro11",
+          "value": "57.77→61.05",
+          "tone": "up"
+        },
+        {
+          "zh": "每窗口换题",
+          "en": "Refresh every window",
+          "value": "60.64 / 3,200 题",
+          "tone": "flat"
+        },
+        {
+          "zh": "MiMo-VL-7B",
+          "en": "MiMo-VL-7B",
+          "value": "59.08→60.71",
+          "tone": "flat"
+        }
+      ],
+      "arxiv": "2610.38568",
+      "authors": "Yu Liu, Youxing Li, Yuedong Tan, … Pei Fu, Radu Timofte, Nicu Sebe, Barnabas Poczos, Jian Luan (Xiaomi, SeerRay Lab et al.)",
+      "handle": "@HuggingPapers",
+      "links": [
+        {
+          "zh": "论文",
+          "en": "Paper",
+          "url": "https://arxiv.org/abs/2610.38568"
+        },
+        {
+          "zh": "项目页",
+          "en": "Project page",
+          "url": "https://seerray-lab.github.io/A-RSI/"
+        },
+        {
+          "zh": "X 原帖",
+          "en": "X Post",
+          "url": "https://x.com/HuggingPapers/status/2116200788129427555"
+        },
+        {
+          "zh": "X 原帖（AK）",
+          "en": "X Post (AK)",
+          "url": "https://x.com/_akhaliq/status/2116226251941642405"
+        }
+      ]
+    },
+    {
+      "id": "benchmarks-compaction-friendly",
+      "edition": "2026-10-30",
+      "tags": [
+        "memory-skills",
+        "verification"
+      ],
+      "title": {
+        "zh": "Benchmarks Are Surprisingly Compaction-Friendly：上下文压缩几乎不影响长程基准分数，却会悄悄丢掉规则",
+        "en": "Benchmarks Are Surprisingly Compaction-Friendly: Context Compaction Barely Moves Long-Horizon Scores but Silently Drops Rules"
+      },
+      "why": {
+        "zh": "在 PaperBench、ProgramBench、PostTrainBench 这类自主长程基准上，上下文压缩（compaction）几乎不影响 1M 上下文模型的分数，因为目标只给一次、进度都在磁盘上可以重读，但只存在于上下文中的约束（如防作弊规则、用户的“别碰这里”）会被逐次丢掉。",
+        "en": "On autonomous long-horizon benchmarks like PaperBench, ProgramBench and PostTrainBench, context compaction barely changes scores for 1M-context models because the goal is given once and progress lives on disk to be re-read, but constraints that exist only in the context, such as anti-cheating rules or a user's do-not-touch instructions, are lost compaction by compaction."
+      },
+      "what": {
+        "zh": "压缩是所有编程智能体 scaffold 的标配且天然有损，但此前从未在前沿模型和真实长程智能体任务上系统测过它会不会伤害任务表现或违反规则。",
+        "en": "Compaction is standard in every coding-agent scaffold and lossy by design, yet it had never been tested systematically with frontier models on realistic long-horizon agent tasks to see whether it hurts performance or breaks rules."
+      },
+      "how": {
+        "zh": "固定 OpenCode scaffold，实现五种压缩策略，在三个长程基准上测试 Claude Opus 4.6、GPT-5.4、GPT-5.3-Codex、Gemini 3.1 Pro：160K–380K 的压缩阈值对 1M 上下文模型基本无影响，只有 400K 窗口的 GPT-5.3-Codex 在 PaperBench 上从 160K 的 0.38 到 260K 以上约 0.60；没有策略胜过默认自摘要，而去掉推理块或用小模型摘要会让部分模型掉最多 20 分（GPT-5.4 PaperBench 0.59→0.43）。ProgramBench 上第一次压缩平均就丢掉 3 条防作弊规则中的 0.92 条，第 10 次 1.93 条、第 30 次 2.65 条（GPT-5.3-Codex 每次丢 2.73 条，Opus 4.6 仅 0.51 条）；在 SWE-chat 真实会话的 269 条用户约束中整体保留 81%，但流程指令（35.9%）和范围排除（36.8%）的丢失率约为功能需求（6.2%）的 6 倍。",
+        "en": "With the OpenCode scaffold fixed and five compaction strategies implemented, Claude Opus 4.6, GPT-5.4, GPT-5.3-Codex and Gemini 3.1 Pro are tested on three long-horizon benchmarks: compaction thresholds of 160K–380K barely matter for 1M-context models, and only 400K-window GPT-5.3-Codex moves on PaperBench, from 0.38 at 160K to about 0.60 at 260K and above; no strategy beats default self-summarization, while dropping reasoning blocks or summarizing with a smaller model costs some models up to 20 points (GPT-5.4 on PaperBench 0.59 to 0.43). On ProgramBench the first compaction already drops 0.92 of 3 anti-cheating rules on average, rising to 1.93 by the 10th and 2.65 by the 30th (GPT-5.3-Codex drops 2.73 per compaction, Opus 4.6 only 0.51), and across 269 user constraints in real SWE-chat sessions 81% survive overall but process instructions (35.9% dropped) and scope exclusions (36.8%) are lost about 6× as often as feature requirements (6.2%)."
+      },
+      "metric": {
+        "zh": "阈值对 1M 模型无显著影响 · 首次压缩即丢 0.92/3 条规则",
+        "en": "Threshold no effect on 1M models · first compaction drops 0.92/3 rules"
+      },
+      "pills": [
+        {
+          "zh": "首次压缩丢规则",
+          "en": "Rules dropped at 1st compaction",
+          "value": "0.92/3",
+          "tone": "down"
+        },
+        {
+          "zh": "第 30 次",
+          "en": "By 30th compaction",
+          "value": "2.65/3",
+          "tone": "down"
+        },
+        {
+          "zh": "流程指令丢失率",
+          "en": "Process instructions dropped",
+          "value": "35.9% vs 6.2%",
+          "tone": "down"
+        }
+      ],
+      "arxiv": "2610.31778",
+      "repo": "aisa-group/compaction",
+      "authors": "Jeanne Salle, Hardik Bhatnagar, Matthias Bethge, Sahar Abdelnabi, Maksym Andriushchenko (ELLIS Institute Tübingen, MPI-IS, Tübingen AI Center)",
+      "handle": "@maksym_andr",
+      "links": [
+        {
+          "zh": "论文",
+          "en": "Paper",
+          "url": "https://arxiv.org/abs/2610.31778"
+        },
+        {
+          "zh": "代码",
+          "en": "Code",
+          "url": "https://github.com/aisa-group/compaction"
+        },
+        {
+          "zh": "X 原帖",
+          "en": "X Post",
+          "url": "https://x.com/maksym_andr/status/2116225757861036166"
+        },
+        {
+          "zh": "X 原帖（合著者）",
+          "en": "X Post (co-author)",
+          "url": "https://x.com/hrdkbhatnagar/status/2116224141896630275"
+        }
+      ]
+    },
+    {
+      "id": "context-is-a-pipeline-harness-attrition",
+      "edition": "2026-10-30",
+      "tags": [
+        "harness-search",
+        "memory-skills"
+      ],
+      "title": {
+        "zh": "Context Is a Pipeline, Not a Window：agent harness 在模型读到之前就丢掉三分之一的工具输出",
+        "en": "Context Is a Pipeline, Not a Window: Agent Harnesses Lose a Third of Tool Output Before the Model Reads It"
+      },
+      "why": {
+        "zh": "智能体的上下文窗口几乎空着，却仍有三分之一的工具结果在送达模型前被截断，因为 harness 按固定字符数截 JSON、删掉的是靠后的字段而不是不重要的字段，而代价首先体现为多花的工具调用和算力，准确率和延迟面板都看不出来。",
+        "en": "An agent's context window sat nearly empty while a third of tool results were still cut before reaching the model, because the harness sliced JSON at a fixed character count and so deleted late fields rather than unimportant ones, and the cost shows up first as extra tool calls and compute that accuracy and latency dashboards never reveal."
+      },
+      "what": {
+        "zh": "评价智能体通常只看上下文窗口大小和最终准确率，但没人测量工具输出在 harness 各环节（交付、执行、保留、交接）中丢了多少。",
+        "en": "Agents are usually judged by context-window size and final accuracy, but nobody measures how much tool output is lost across the harness stages of delivery, action, retention and hand-off."
+      },
+      "how": {
+        "zh": "在一个读 Linux 内核 trace 定位注入故障的根因智能体中，720 次运行、11,189 个工具结果里有 3,827 个被前缀截断且全部变成坏 JSON，窗口最高只用到 5.75%，同一载荷里一个容器列表只有 4.7% 的调用能送达，相邻列表却有 99.3%，另有 51% 的 worker 正好停在步数上限。在 145 次受控实验中，截断后仍 15/15 找对元凶（修复后 14/15），但工具调用 53→68→76（最多多 43%）、计算量约翻倍、产出率 0.61→0.34→0.31；生产 trace 重放中截断让靠后列表的 128 条记录 0 条送达（元凶证据全在其中），作者调查的 7 个框架里 langchain-core 和 smolagents 也用同类不安全截断，但只测了一个 harness、一个领域、一个模型，因果性仍未定论。",
+        "en": "In a root-cause agent that reads Linux kernel traces to find injected faults, 3,827 of 11,189 tool results across 720 runs were prefix-truncated and every one became broken JSON while the largest prompt used only 5.75% of the window, one container list reached the model in 4.7% of calls while its neighbour in the same payload got through 99.3%, and 51% of workers stopped exactly at their step limit. In 145 controlled runs the truncated agent still named the culprit 15/15 (repaired 14/15) but tool calls rose 53 to 68 to 76 (up to 43% more), computations roughly doubled and yield fell 0.61 to 0.34 to 0.31, a production-trace replay delivered 0 of 128 late-list records holding the culprit's evidence, and a survey of seven frameworks found langchain-core and smolagents cut output the same unsafe way, though the study covers one harness, one domain and one model and causality for accuracy is still open."
+      },
+      "metric": {
+        "zh": "3,827/11,189 工具结果被截断 · 窗口最高仅用 5.75%",
+        "en": "3,827/11,189 tool results truncated · window peak only 5.75%"
+      },
+      "pills": [
+        {
+          "zh": "被截断结果",
+          "en": "Results truncated",
+          "value": "3,827/11,189",
+          "tone": "down"
+        },
+        {
+          "zh": "工具调用",
+          "en": "Tool calls",
+          "value": "53→76",
+          "tone": "down"
+        },
+        {
+          "zh": "产出率",
+          "en": "Yield",
+          "value": "0.61→0.31",
+          "tone": "down"
+        }
+      ],
+      "arxiv": "2610.36114",
+      "authors": "Yuvraj Sehgal, Mahsa Panahandeh, Naser Ezzati-Jivan (Brock University, University of Ottawa)",
+      "handle": "@arkyyang",
+      "links": [
+        {
+          "zh": "论文",
+          "en": "Paper",
+          "url": "https://arxiv.org/abs/2610.36114"
+        },
+        {
+          "zh": "复现包",
+          "en": "Replication package",
+          "url": "https://doi.org/10.5281/zenodo.23614755"
+        },
+        {
+          "zh": "X 原帖",
+          "en": "X Post",
+          "url": "https://x.com/arkyyang/status/2116164524479045760"
+        }
+      ]
+    },
+    {
       "id": "evolving-agent-teams-kernel-search",
       "edition": "2026-10-30",
       "tags": [
