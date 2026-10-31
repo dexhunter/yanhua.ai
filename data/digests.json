@@ -19,6 +19,15 @@
   },
   "editions": [
     {
+      "id": "2026-10-31",
+      "date": "2026-10-31",
+      "slot": "",
+      "label": {
+        "zh": "2026-10-31",
+        "en": "31 Oct 2026"
+      }
+    },
+    {
       "id": "2026-10-30",
       "date": "2026-10-30",
       "slot": "",
@@ -145,6 +154,341 @@
     }
   ],
   "items": [
+    {
+      "id": "scaling-discovery-requires-forgetting",
+      "edition": "2026-10-31",
+      "tags": [
+        "harness-search",
+        "memory-skills"
+      ],
+      "title": {
+        "zh": "Scaling Discovery Requires Forgetting：定期清空会话与搜索历史，autoresearch 才能越过平台期",
+        "en": "Scaling Discovery Requires Forgetting: Periodically Wiping Sessions and Search History Lets Autoresearch Break Its Plateau"
+      },
+      "why": {
+        "zh": "让一组 autoresearch 智能体定期“遗忘”——丢掉所有会话和候选历史、只从当前最优解重新开始——在同样预算下比单智能体或并行智能体走得更远，因为长会话会让智能体锚定在自己过去的尝试上，改动越来越小、甚至宣布已到极限而停止提出新方案。",
+        "en": "Making a team of autoresearch agents periodically forget, discarding every session and the candidate history and restarting from the best solution so far, gets further on the same budget than one agent or parallel agents, because long sessions anchor agents to their own past attempts until they make ever-smaller edits or declare a false limit and stop proposing."
+      },
+      "what": {
+        "zh": "把 autoresearch 做大有三种方式：让单个智能体跑更久、并行多个智能体、再让它们互相交流，但三种方式在固定预算下都会提前进入平台期。",
+        "en": "Autoresearch can be scaled by running one agent longer, running several in parallel, or letting them share candidates, yet all three plateau well before a fixed budget runs out."
+      },
+      "how": {
+        "zh": "4 个可通信的智能体组成团队，每隔一段时间整体清空会话与文件系统中的候选记录，只保留最优候选并由新会话接着做；在 AtCoder AHC014、Frontier-CS、Anthropic VLIW kernel 和 nanochat-autoresearch 四个任务上该配置全部第一，平均比并行智能体高 10%、比单智能体高 22%（最多 15% / 39%）。轨迹分析显示随着会话变长，每次改动从约 150 行降到 30 行、推理 token 从约 28k 降到 7k；VLIW 上单智能体 763 个回合中有 532 个没有产出候选、耗掉 66.2% 花费，一个智能体在 1,710 cycles 时写下“已达到这台机器配置的实际极限”，而带遗忘的团队做到了 1,077；作者也承认会话和历史是一起清空的，无法区分哪一个更关键。",
+        "en": "Four communicating agents periodically wipe their sessions and the filesystem's candidate records, keep only the best candidate, and continue from it in fresh sessions; on AtCoder AHC014, Frontier-CS, Anthropic's VLIW kernel and nanochat-autoresearch this setup is best on every task, on average 10% above parallel agents and 22% above a single agent (up to 15% and 39%). Trajectories show edits shrinking from about 150 lines to 30 and reasoning from about 28k to 7k tokens as sessions grow, and on VLIW 532 of a single agent's 763 turns produced no candidate while consuming 66.2% of spend, with one agent writing that it had reached the practical limit at 1,710 cycles while the forgetting team reached 1,077; sessions and history are wiped together, so which matters more is not separated."
+      },
+      "metric": {
+        "zh": "对比并行智能体平均 +10%（最多 +15%）· 对比单智能体最多 +39%",
+        "en": "+10% vs parallel agents on average (up to +15%) · up to +39% vs a single agent"
+      },
+      "pills": [
+        {
+          "zh": "vs 并行智能体",
+          "en": "vs parallel agents",
+          "value": "+10% avg",
+          "tone": "up"
+        },
+        {
+          "zh": "VLIW 空回合花费",
+          "en": "VLIW empty-turn spend",
+          "value": "66.2%",
+          "tone": "down"
+        },
+        {
+          "zh": "VLIW cycles",
+          "en": "VLIW cycles",
+          "value": "1,710→1,077",
+          "tone": "up"
+        }
+      ],
+      "arxiv": "2610.20563",
+      "authors": "Shangyin Tan, Ben Zhou, Lakshya A Agrawal, … Koushik Sen, Alex Dimakis, Matei Zaharia (UC Berkeley, Stanford, Bespoke Labs)",
+      "handle": "@anaveentalks",
+      "links": [
+        {
+          "zh": "论文",
+          "en": "Paper",
+          "url": "https://arxiv.org/abs/2610.20563"
+        },
+        {
+          "zh": "X 原帖",
+          "en": "X Post",
+          "url": "https://x.com/anaveentalks/status/2116371285328699470"
+        },
+        {
+          "zh": "X 原帖（含论文链接）",
+          "en": "X Post (with paper link)",
+          "url": "https://x.com/anaveentalks/status/2116377930763051180"
+        },
+        {
+          "zh": "X 原帖（VLIW 分析）",
+          "en": "X Post (VLIW analysis)",
+          "url": "https://x.com/Rohit_Bhatt_/status/2116424722171019665"
+        }
+      ]
+    },
+    {
+      "id": "coral-discovery-direction-board",
+      "edition": "2026-10-31",
+      "tags": [
+        "harness-search",
+        "co-evolution"
+      ],
+      "title": {
+        "zh": "Coral Discovery：用“方向看板”给自主研究智能体分工，避免所有人都去改排行榜第一",
+        "en": "Coral Discovery: A Direction Board That Divides Cognitive Labour Among Autonomous Research Agents Instead of Everyone Chasing the Leader"
+      },
+      "why": {
+        "zh": "给多智能体自主研究加一块按“方向”记账的看板、并按方向自身的最好成绩发放功劳，能找到更好的解，因为只共享分数排行榜时智能体会一窝蜂地修改领先者，而最终胜出的方案往往来自基线从未进入的方向。",
+        "en": "Giving a multi-agent autonomous-research team a board that tracks progress per direction and credits each direction against its own best finds better solutions, because with only a shared score leaderboard agents pile onto the leader, and the winning solutions mostly came from directions the baseline never entered."
+      },
+      "what": {
+        "zh": "多个 LLM 智能体在确定性评分器上改进程序时，共享内存通常只是一个按分数排序的排行榜，结果四个智能体里常有三个长期挤在同一方向上，探索与利用无从权衡。",
+        "en": "When several LLM agents improve programs against a deterministic grader, their shared memory is usually a score-sorted leaderboard, so three of four agents often crowd into one direction for most of a run and nobody weighs exploration against exploitation."
+      },
+      "how": {
+        "zh": "一个独立的 verifier 会话读每次提交的 diff，把它归入一个“方向”（得分机制）和一个“方法”（本次改动），看板为每个方向计算收益率（每次评测换来的提升）、加探索奖励的潜力值、开新方向的期权价值 NEW 以及建议人数，功劳只在刷新本方向最好成绩时发放，智能体先做完自己的线再把看板当建议；在与 MIT CORAL 相同的 9 个任务上（Claude Opus 4.6、4 个智能体、无联网、不读评分器），对复现的 MIT CORAL 胜 6 平 1 负 2；Kernel 从 MIT CORAL 公布的 1103 cycles 降到 1095，并在第 275 次评测就越过 1103（原来用了 596 次），Polyominoes 以 91.78 刷新 SOTA（原 87.0）；它共开了 68 个方向（基线 41 个），但在 LLM-SQL 和 Txn Sched. 上分散预算没有回本。",
+        "en": "An independent verifier session reads each diff and files it under a direction (the mechanism earning the score) and a method (this change); the board computes each direction's yield per eval, an exploration-bonus potential, the option value of opening a NEW direction and a suggested head count, credit is earned only by beating the direction's own best, and agents finish their line before taking the board as advice. On the nine MIT CORAL tasks (Claude Opus 4.6, four agents, no internet, no grader access) it beats the reproduced MIT CORAL on 6, ties 1 and loses 2, cuts Kernel from MIT CORAL's published 1103 cycles to 1095 and passes 1103 at eval 275 instead of 596, and sets a Polyominoes SOTA of 91.78 against 87.0, opening 68 directions to the baseline's 41, though spreading the budget did not pay off on LLM-SQL and Txn Sched."
+      },
+      "metric": {
+        "zh": "对复现 MIT CORAL 胜 6/9 · Polyominoes 91.78（原 SOTA 87.0）",
+        "en": "Beats reproduced MIT CORAL on 6/9 · Polyominoes 91.78 (prior SOTA 87.0)"
+      },
+      "pills": [
+        {
+          "zh": "胜 / 平 / 负",
+          "en": "Win / tie / loss",
+          "value": "6 / 1 / 2",
+          "tone": "up"
+        },
+        {
+          "zh": "Kernel cycles",
+          "en": "Kernel cycles",
+          "value": "1103→1095",
+          "tone": "up"
+        },
+        {
+          "zh": "Polyominoes",
+          "en": "Polyominoes",
+          "value": "87.0→91.78",
+          "tone": "up"
+        }
+      ],
+      "arxiv": "2610.33281",
+      "authors": "Xinxing Ren, Qianbo Zang, Ziyan Wang, … Yali Du, Milind Tambe, Zekun Guo (Coral AI Labs, Trento, Harvard, Cambridge, KCL, Hull)",
+      "handle": "@CoralOS_ai",
+      "links": [
+        {
+          "zh": "论文",
+          "en": "Paper",
+          "url": "https://arxiv.org/abs/2610.33281"
+        },
+        {
+          "zh": "X 原帖",
+          "en": "X Post",
+          "url": "https://x.com/CoralOS_ai/status/2116195695812296975"
+        },
+        {
+          "zh": "X 原帖（引用转发）",
+          "en": "X Post (quote)",
+          "url": "https://x.com/pete_grow/status/2116435995335786588"
+        }
+      ]
+    },
+    {
+      "id": "heurevo-plan-code-component-coevolution",
+      "edition": "2026-10-31",
+      "tags": [
+        "harness-search",
+        "co-evolution"
+      ],
+      "title": {
+        "zh": "HeurEvo：智能体同时演化算法结构、代码与可复用组件，2 分钟内的启发式赢过 Gurobi 48 小时解",
+        "en": "HeurEvo: Agents Co-Evolve Algorithm Plans, Code and Reusable Components, and Two-Minute Heuristics Beat Gurobi's 48-Hour Solutions"
+      },
+      "why": {
+        "zh": "让智能体同时演化“用哪些阶段、怎么分配时间”的计划、实现代码和共享组件库，比只演化固定流程里的单个启发式更好，因为在严格时限下，决定质量的往往是启发式与求解器如何组合、算力花在哪一步。",
+        "en": "Letting agents evolve the plan (which stages to use and how to split runtime), the code and a shared component library together beats evolving single heuristics inside a fixed procedure, because under tight time limits quality is decided by how heuristics and solvers are combined and where compute is spent."
+      },
+      "what": {
+        "zh": "现有的智能体启发式设计（OpenEvolve、AdaEvolve、EvoX 等）通常只在预设流程内改进启发式组件或单独调求解器参数，无法整体调整算法结构与求解器的用法。",
+        "en": "Existing agentic heuristic design (OpenEvolve, AdaEvolve, EvoX and others) usually improves heuristic components inside a predefined procedure or tunes solver settings in isolation, so the overall algorithm structure and solver use never adapt together."
+      },
+      "how": {
+        "zh": "Planner 决定用哪些组件、如何组合和分配运行时间，Coder 把计划写成可执行代码，Component evolver 更新共享组件库，Interpreter 智能体读执行结果指出改进点，在岛屿式进化框架里离线演化，测试时每个实例只给 120 秒。11 个合成问题上平均测试 gap 为 −1.45%（基线均为正），在 7/11 类上超过 Gurobi 48 小时的解（训练集 8/11）；消融中固定计划只演化代码的测试 gap 为 +0.25%；6 个 MIPLIB 问题中 4 个优于 AdaEvolve，非线性问题先 HeurEvo 后 AdaEvolve 精修，在 5 个配置上数值上优于已报告最好值（作者提醒参考值有舍入）。",
+        "en": "A planner picks components, their order and runtime split, a coder writes the plan as code, a component evolver updates the shared library and an interpreter agent reads execution traces to point at improvements, all evolved offline in an island-based framework with 120 seconds per test instance. On 11 synthetic problems the mean test gap is −1.45% while every baseline is positive, beating Gurobi's 48-hour solutions on 7 of 11 classes (8 of 11 in training), with fixed-plan code evolution at +0.25% in ablation; it wins 4 of 6 MIPLIB problems against AdaEvolve, and HeurEvo followed by AdaEvolve refinement is numerically better than reported best values in 5 nonlinear configurations, which the authors caution are compared against rounded references."
+      },
+      "metric": {
+        "zh": "合成问题平均测试 gap −1.45% · 7/11 超过 Gurobi 48 小时解",
+        "en": "Mean synthetic test gap −1.45% · beats Gurobi 48-hour solutions on 7/11"
+      },
+      "pills": [
+        {
+          "zh": "平均测试 gap",
+          "en": "Mean test gap",
+          "value": "−1.45%",
+          "tone": "up"
+        },
+        {
+          "zh": "胜 Gurobi 48h",
+          "en": "Beats Gurobi 48h",
+          "value": "7/11",
+          "tone": "up"
+        },
+        {
+          "zh": "每实例时限",
+          "en": "Time limit / instance",
+          "value": "120 s",
+          "tone": "flat"
+        }
+      ],
+      "arxiv": "2609.36303",
+      "authors": "Feijie Wu, Hugo Barbalho, Konstantina Mellou, Marco Molinaro, Jing Gao, Ishai Menache, Xinzhi Zhang, Sirui Li (Purdue University, Microsoft Research)",
+      "handle": "@harli_wu",
+      "links": [
+        {
+          "zh": "论文",
+          "en": "Paper",
+          "url": "https://arxiv.org/abs/2609.36303"
+        },
+        {
+          "zh": "X 原帖（作者串）",
+          "en": "X Post (author thread)",
+          "url": "https://x.com/harli_wu/status/2116276310804746615"
+        }
+      ]
+    },
+    {
+      "id": "molrsi-recursive-self-improving-molecular-discovery",
+      "edition": "2026-10-31",
+      "tags": [
+        "memory-skills",
+        "co-evolution"
+      ],
+      "title": {
+        "zh": "MolRSI：跨任务记忆让分子发现智能体递归改进自己的搜索策略，湿实验命中率几乎翻倍",
+        "en": "MolRSI: Cross-Task Memory Lets a Molecular-Discovery Agent Recursively Improve Its Own Search Policy, Nearly Doubling the Wet-Lab Hit Rate"
+      },
+      "why": {
+        "zh": "把以往任务中哪些工作流得分高、哪些修改有效、哪些执行出错写进持久记忆，再用来引导新任务的工作流搜索，能让分子发现智能体做出比专家流程更好的筛选方案，因为它改进的不只是单个工作流，而是“如何开发工作流”的搜索策略本身。",
+        "en": "Writing which workflows scored well, which modifications worked and which runs failed into persistent memory, and using it to steer workflow search on new tasks, lets a molecular-discovery agent build screening pipelines that beat an expert pipeline, because it improves not just one workflow but the search policy for developing workflows."
+      },
+      "what": {
+        "zh": "AI 智能体可以自动执行专家设计的分子设计流程，但这并不能回答如何为新任务优化工作流，也不能让开发过程随经验变好。",
+        "en": "AI agents can automate expert-defined molecular design protocols, but that does not say how to optimize workflows for a new task or make workflow development improve with experience."
+      },
+      "how": {
+        "zh": "Explore Agent 先把相关论文、代码和工具整理成可执行 skills（抗菌任务共 110 个），再用基于经验的 MCTS 搜索工作流，选择分数综合当前和相关任务的表现，refinement 与 execution 记忆指导修改和排错，结果回写记忆用于后续任务。抗生素发现中借助 25 个源任务的经验，测试 107 个化合物得到 17 个对金黄色葡萄球菌 MIC ≤ 32 μg/mL 的命中，命中率 15.9%，而同训练数据、同筛选库的专家流程为 8.7%（21/241）；在 pMHC 结合蛋白设计中借助 14 个 minibinder 任务的经验，得到 8 个对 MART-1 与 SARS-CoV-1 pMHC 有偏好结合的命中，而 Claude Science 开发的流程没有命中。",
+        "en": "An Explore Agent turns relevant papers, code and tools into executable skills (110 for the antibacterial tasks), then experience-guided MCTS searches over workflows, scoring selections by performance on the current and related tasks, with refinement and execution memory guiding edits and repairs and every outcome written back for later tasks. Drawing on 25 source tasks for antibiotic discovery, 17 of 107 tested compounds hit Staphylococcus aureus at MIC ≤ 32 μg/mL, a 15.9% hit rate against 8.7% (21 of 241) for the prior expert workflow on the same training data and library, and drawing on 14 minibinder tasks for pMHC binder design it produced 8 hits with preferential binding to MART-1 and SARS-CoV-1 pMHCs, while the Claude Science workflow produced none."
+      },
+      "metric": {
+        "zh": "湿实验命中率 15.9% vs 专家流程 8.7% · pMHC 8 个命中 vs Claude Science 0",
+        "en": "Wet-lab hit rate 15.9% vs 8.7% expert workflow · 8 pMHC hits vs 0 for Claude Science"
+      },
+      "pills": [
+        {
+          "zh": "抗菌命中率",
+          "en": "Antibacterial hit rate",
+          "value": "8.7→15.9%",
+          "tone": "up"
+        },
+        {
+          "zh": "命中 / 测试",
+          "en": "Hits / tested",
+          "value": "17/107",
+          "tone": "up"
+        },
+        {
+          "zh": "pMHC 命中",
+          "en": "pMHC hits",
+          "value": "8",
+          "tone": "up"
+        }
+      ],
+      "arxiv": "2610.39714",
+      "authors": "Yikun Zhang, Xiwei Cheng, Mingze Yuan, … Nir Hacohen, James J. Collins, Wengong Jin (Northeastern, Broad Institute, Harvard, MIT and others)",
+      "handle": "@fly51fly",
+      "links": [
+        {
+          "zh": "论文",
+          "en": "Paper",
+          "url": "https://arxiv.org/abs/2610.39714"
+        },
+        {
+          "zh": "X 原帖",
+          "en": "X Post",
+          "url": "https://x.com/fly51fly/status/2116282641972674658"
+        }
+      ]
+    },
+    {
+      "id": "self-evolution-degrades-ipi-robustness",
+      "edition": "2026-10-31",
+      "tags": [
+        "verification",
+        "memory-skills"
+      ],
+      "title": {
+        "zh": "Appreciation Teaches Unauthorized Execution：自演化让个人智能体更容易被间接提示注入劫持",
+        "en": "Appreciation Teaches Unauthorized Execution: Self-Evolution Makes Personal Agents Easier to Hijack by Indirect Prompt Injection"
+      },
+      "why": {
+        "zh": "个人智能体从用户好评中自我进化（写 skills 或 RL）后，更容易执行外部内容里藏着的陌生人指令，因为它学会了“执行文件里的任务”这个习惯，却丢掉了“前提是用户授权过”这个条件（作者称为 authorization conflation）。",
+        "en": "Once personal agents self-evolve from user praise, through written skills or RL, they become much more likely to obey a stranger's instruction hidden in external content, because they learn the habit of executing tasks found in files and drop the condition that the user authorized it, which the authors call authorization conflation."
+      },
+      "what": {
+        "zh": "OpenClaw 这类个人智能体会在部署后从用户反馈中学习，但没人检查这种自演化是否会削弱它们对间接提示注入（IPI）的抵抗力。",
+        "en": "Personal agents such as OpenClaw now learn from user feedback after deployment, but nobody had checked whether that self-evolution weakens their resistance to indirect prompt injection (IPI)."
+      },
+      "how": {
+        "zh": "两阶段实验：适应阶段用户让智能体读外部内容并完成其中的任务并给好评，智能体通过 MetaClaw（skills）或 OpenClaw-RL（RL）进化；测试阶段第三方把相似任务写进新内容，但用户只要求摘要，由确定性状态检查判定攻击是否成功；与不进化的基础智能体相比，平均攻击成功率在 skill 进化下上升 14.0–48.8 个百分点、RL 下上升 3.0–39.3 个百分点，仅 12 次适应对话就让 GPT-OSS-120B 从 4.7% 升到 53.5%；进化出的 skill 甚至写着“每条指令恰好执行一次”，27 条有害指令在 162 次对话中被执行 119 次（空 skill 库为 1 次）。在适应中奖励“不执行未请求的任务”可把 ASR 从 35.0% 降到 5.8%，而给工具输出加分隔符只能减半。",
+        "en": "In an adaptation phase the user asks the agent to read external content, do the task in it and praises success, and the agent evolves through MetaClaw (skills) or OpenClaw-RL (RL); in the test phase a third party plants a similar task in new content while the user asks only for a summary, and deterministic state checks score the attack. Against the non-evolving base agent, mean attack success rises 14.0–48.8 points under skill evolution and 3.0–39.3 under RL, with 12 adaptation chats taking GPT-OSS-120B from 4.7% to 53.5%, one evolved skill saying to execute each instruction exactly once, and 27 harmful instructions executed in 119 of 162 conversations versus 1 of 162 with an empty library; praising the agent for leaving an unrequested task alone cuts ASR from 35.0% to 5.8%, while delimiting tool outputs only halves it."
+      },
+      "metric": {
+        "zh": "ASR 上升：skill 进化 +14.0–48.8 pp · RL +3.0–39.3 pp",
+        "en": "ASR rise: +14.0–48.8 pp under skill evolution · +3.0–39.3 pp under RL"
+      },
+      "pills": [
+        {
+          "zh": "GPT-OSS-120B ASR（skill）",
+          "en": "GPT-OSS-120B ASR (skills)",
+          "value": "4.7→53.5%",
+          "tone": "down"
+        },
+        {
+          "zh": "有害指令执行",
+          "en": "Harmful actions executed",
+          "value": "119/162",
+          "tone": "down"
+        },
+        {
+          "zh": "授权反馈后 ASR",
+          "en": "ASR with authorization feedback",
+          "value": "35.0→5.8%",
+          "tone": "up"
+        }
+      ],
+      "arxiv": "2610.39122",
+      "authors": "Xinyan Wang, Xiaogeng Liu, Jun Shao, Chaowei Xiao (University of Wisconsin–Madison, Johns Hopkins University)",
+      "handle": "@FSFG",
+      "links": [
+        {
+          "zh": "论文",
+          "en": "Paper",
+          "url": "https://arxiv.org/abs/2610.39122"
+        },
+        {
+          "zh": "X 原帖",
+          "en": "X Post",
+          "url": "https://x.com/FSFG/status/2116421302714003705"
+        },
+        {
+          "zh": "X 原帖（解读）",
+          "en": "X Post (analysis)",
+          "url": "https://x.com/neuralloot/status/2116189418138583217"
+        }
+      ]
+    },
     {
       "id": "gepa-curator-curated-self-improvement",
       "edition": "2026-10-30",
