@@ -155,6 +155,294 @@ window.YANHUA_DIGESTS = {
   ],
   "items": [
     {
+      "id": "flashrsi-unified-harness-rsi-toolkit",
+      "edition": "2026-10-31",
+      "tags": [
+        "harness-search",
+        "memory-skills"
+      ],
+      "title": {
+        "zh": "FlashRSI：一行命令在同一套设置下比较 13 种 harness 自改进方法",
+        "en": "FlashRSI: One Command to Compare 13 Harness Self-Improvement Methods Under One Setup"
+      },
+      "why": {
+        "zh": "把 13 种 RSI 方法放进同一个框架、同样的 harness 和基准里比较后发现，大多数方法在训练任务和相近任务上都能涨分，但一迁移到远域任务就普遍掉分，而只改 skills 或 prompt 的轻量方法常常和改整个 harness 的方法一样好，因为在源任务上学到的多是贴合该任务的规则，而不是通用能力。",
+        "en": "Putting 13 RSI methods into one framework with the same harnesses and benchmarks shows that most of them gain on their training tasks and near-domain tasks but generally lose points once moved to far out-of-domain tasks, while light methods that only edit skills or prompts often match methods that rewrite the whole harness, because what gets learned on the source task is mostly task-fitted rules rather than general ability."
+      },
+      "what": {
+        "zh": "OPRO、GEPA、ACE、Meta-Harness、RRSI 等 harness 自改进方法各自用不同的仓库、harness 和基准报告结果，彼此几乎无法公平比较。",
+        "en": "Harness self-improvement methods such as OPRO, GEPA, ACE, Meta-Harness and RRSI each report results with their own repositories, harnesses and benchmarks, so they are hard to compare fairly."
+      },
+      "how": {
+        "zh": "FlashRSI（人大高瓴 NLPIR，Apache 2.0）把 harness 表示为带角色标签（prompt、skill、tool、runtime、config）的文件快照，算法只能读写声明的范围，候选总是以完整 harness 在 MiniAgent、Claude Code、Codex 或 Pi 中原生执行，并保存快照谱系、轨迹和用量；在 4 个源基准、5 个近域和 2 个远域迁移的 12 方法对比中，Google 的 RRSI 在 Terminal-Bench 2.0 上两个 harness 都到 76.67（+13.34 / +10.00 pp）、AppWorld 上 Claude Code 92.86（+27.98 pp），只改 skills 的 SkillOpt 和改 context playbook 的 ACE 在 Mini-Agent 的 AppWorld 上都到 91.67（+26.19 pp），而 HotpotQA→DeepSearchQA 远域迁移中 GEPA、ADAS、DarwinX 在 Mini-Agent 上都掉 18 pp，只有少数配置（如 Meta-Harness 配 Claude Code +2 pp）不降。这是工具包发布，目前只有 README、项目页和结果表，尚无论文；本文读了 README、项目页和 RRSI 作者的引用帖，未亲自运行。",
+        "en": "FlashRSI (Renmin University NLPIR, Apache 2.0) represents a harness as a snapshot of role-tagged files (prompt, skill, tool, runtime, config), lets each algorithm read and edit only its declared scope, always runs the complete candidate natively in MiniAgent, Claude Code, Codex or Pi, and keeps snapshot lineage, trajectories and usage; across 4 source benchmarks, 5 near-domain and 2 far-OOD transfers for 12 methods, Google's RRSI reaches 76.67 on Terminal-Bench 2.0 with both harnesses (+13.34 / +10.00 pp) and 92.86 on AppWorld with Claude Code (+27.98 pp), skills-only SkillOpt and context-playbook ACE both hit 91.67 on Mini-Agent AppWorld (+26.19 pp), while on the HotpotQA to DeepSearchQA far transfer GEPA, ADAS and DarwinX each lose 18 pp on Mini-Agent and only a few setups (such as Meta-Harness on Claude Code, +2 pp) avoid a drop. This is a toolkit release with a README, project page and results table but no paper yet; I read the README, project page and the RRSI author's quote post and did not run it."
+      },
+      "metric": {
+        "zh": "13 种 RSI 方法 × 30 个基准 × 4 个原生 harness · 远域迁移普遍掉分",
+        "en": "13 RSI methods × 30 benchmarks × 4 native harnesses · far-OOD transfer mostly drops"
+      },
+      "pills": [
+        {
+          "zh": "RRSI Terminal-Bench 2.0",
+          "en": "RRSI Terminal-Bench 2.0",
+          "value": "63.33→76.67",
+          "tone": "up"
+        },
+        {
+          "zh": "SkillOpt AppWorld（Mini-Agent）",
+          "en": "SkillOpt AppWorld (Mini-Agent)",
+          "value": "65.48→91.67",
+          "tone": "up"
+        },
+        {
+          "zh": "远域迁移 GEPA/ADAS/DarwinX",
+          "en": "Far-OOD GEPA/ADAS/DarwinX",
+          "value": "−18 pp",
+          "tone": "down"
+        }
+      ],
+      "repo": "RUC-NLPIR/FlashRSI",
+      "authors": "Jiajie Jin, Yuze Li, Yuyang Hu, Guanting Dong, Xiaoxi Li, Xinyu Yang, Jiejun Tan, Zhicheng Dou, Yutao Zhu (Renmin University of China)",
+      "handle": "@kakakbibibi",
+      "links": [
+        {
+          "zh": "代码",
+          "en": "Code",
+          "url": "https://github.com/RUC-NLPIR/FlashRSI"
+        },
+        {
+          "zh": "项目页",
+          "en": "Project page",
+          "url": "https://ruc-nlpir.github.io/FlashRSI/project.html"
+        },
+        {
+          "zh": "RRSI 论文",
+          "en": "RRSI paper",
+          "url": "https://arxiv.org/abs/2609.24972"
+        },
+        {
+          "zh": "X 原帖",
+          "en": "X Post",
+          "url": "https://x.com/kakakbibibi/status/2116544687011930253"
+        },
+        {
+          "zh": "X 原帖（RRSI 作者引用）",
+          "en": "X Post (RRSI author quote)",
+          "url": "https://x.com/richardxp888/status/2116548530999349493"
+        }
+      ]
+    },
+    {
+      "id": "masked-erosion-acceptance-gates-safeguards",
+      "edition": "2026-10-31",
+      "tags": [
+        "harness-search",
+        "verification"
+      ],
+      "title": {
+        "zh": "Masked Erosion：自改进 harness 的验收门会悄悄删掉冗余的安全规则",
+        "en": "Masked Erosion: Acceptance Gates in Self-Improving Harnesses Quietly Delete Redundant Safeguards"
+      },
+      "why": {
+        "zh": "自己改写 harness 的智能体会一条条删掉相互重叠的安全规则而验收门毫无察觉，因为只要还剩一条规则挡住危害，删掉其他规则在当前模型下看不出任何伤害，于是门只按任务得分做决定，等换成更弱的模型时缺失的那层防护就变成真实危害。",
+        "en": "An agent that rewrites its own harness will strip overlapping safety rules one by one without the acceptance gate noticing, because while one remaining rule still blocks the harm, deleting the others shows no measurable harm under the current model, so the gate decides on task score alone and the missing backup turns into real harm once a weaker model runs the harness."
+      },
+      "what": {
+        "zh": "ADAS、GEPA、ACE 等自改进智能体只在新 harness 在一批任务上得分更高时才接受修改，但这种门只看当前模型下 harness 做了什么，看不到某条防护失效后它还能挡住什么。",
+        "en": "Self-improving agents such as ADAS, GEPA and ACE keep an edit only if the new harness scores higher on a task batch, but such a gate sees what the harness does under the current model, not what it would still prevent if one safeguard failed."
+      },
+      "how": {
+        "zh": "作者在 AppWorld 凭据滥用和 OpsSim 破坏性清理两个环境中，对 4 条书面防护的全部 16 种子集测量危害，并在 10 种门规则下跑了 411 个改进循环：躲在另一条有效防护后面的删除只带来 0.016 的新增危害（无防护时 0.422），4 任务批次大约只有 6% 的决策能察觉，贪心门 6 个循环中 5 个最终失去全部保护，配对显著性检验门为 0/6，但显著性检验挡不住真能提分的删除，同等代价下 20 任务批次保住全部 6 个 harness，40 任务批次全部失守。在当前模型下仍安全的 harness 换到 Qwen3-30B 后凭据滥用率为 0.30（配对门 0.004），GEPA 三次运行逐字保留了所有安全规则，却有两个最终 harness 把笔记模板改成“用这些凭据登录”，在 Qwen3-30B 下 40 次中分别滥用 2 次和 5 次（原 harness 0/80）；冻结安全文本或只接受“任意再删一条仍受保护”的 margin-aware 门可以保住冗余，作者也说明只研究了两个环境、各一种危害，且多数循环是人为植入删除的压力测试。",
+        "en": "Measuring harm for all 16 subsets of four written safeguards in AppWorld credential misuse and OpsSim destructive clean-up and running 411 improvement loops under ten gate rules, the authors find a deletion behind another working safeguard adds only 0.016 harm (0.422 when nothing is left), a 4-task batch would notice it in about 6% of decisions, greedy gates end unprotected in 5 of 6 loops versus 0 of 6 for a paired significance test, yet significance cannot stop deletions that truly raise task success, and at the same cost 20-task batches kept all six harnesses protected while 40-task batches lost all six. Harnesses still safe under the loop's model misuse credentials in 0.30 of runs under Qwen3-30B (0.004 for paired-gate finals), GEPA kept every safety rule verbatim yet two of its three finals rewrote the note template to log in with stored credentials and misused them in 2 and 5 of 40 runs under Qwen3-30B (original 0 of 80), and freezing safety text or a margin-aware gate that accepts only if every one-layer ablation stays protected preserves depth, though the study covers two environments with one harm each and most loops plant deletions as stress tests."
+      },
+      "metric": {
+        "zh": "贪心门 5/6 循环失去保护 · 换弱模型后滥用率 0.30 vs 0.004",
+        "en": "Greedy gate unprotected in 5/6 loops · misuse 0.30 vs 0.004 after model swap"
+      },
+      "pills": [
+        {
+          "zh": "被掩盖删除的新增危害",
+          "en": "Harm from masked deletion",
+          "value": "0.016 vs 0.422",
+          "tone": "down"
+        },
+        {
+          "zh": "贪心 vs 配对门失守",
+          "en": "Greedy vs paired unprotected",
+          "value": "5/6 vs 0/6",
+          "tone": "down"
+        },
+        {
+          "zh": "Qwen3-30B 凭据滥用",
+          "en": "Qwen3-30B misuse",
+          "value": "0.30 vs 0.004",
+          "tone": "down"
+        }
+      ],
+      "arxiv": "2610.38392",
+      "authors": "Hau-Sing So, Daixian Liu, Weicai Long (University of Macau, Tsinghua University)",
+      "handle": "@arkyyang",
+      "links": [
+        {
+          "zh": "论文",
+          "en": "Paper",
+          "url": "https://arxiv.org/abs/2610.38392"
+        },
+        {
+          "zh": "X 原帖",
+          "en": "X Post",
+          "url": "https://x.com/arkyyang/status/2116526257089462733"
+        }
+      ]
+    },
+    {
+      "id": "longchang-free-exploration-hidden-physical-laws",
+      "edition": "2026-10-31",
+      "tags": [
+        "verification",
+        "co-evolution"
+      ],
+      "title": {
+        "zh": "LongChang（龙场）：在物理规律被改写的世界里，LLM 能否自己发现问题并找出新规律",
+        "en": "LongChang: Can LLMs Notice Altered Physics, Ask Their Own Questions and Find the Law?"
+      },
+      "why": {
+        "zh": "没有任务和提示时，12 个前沿模型中只有一个能在物理规律被改写的模拟世界里真正做出有实验支撑的发现，因为模型常常无视意外现象、照原计划继续测试，或者过早停止，即使给更多回合也不会多做实验。",
+        "en": "Without a task or hints, only one of 12 frontier models makes any experimentally supported discovery in simulated worlds with altered physics, because models tend to ignore unexpected behaviour and continue their planned tests or stop early, and giving them more turns does not make them run more experiments."
+      },
+      "what": {
+        "zh": "PhysGym、NewtonBench 等物理规律发现基准都直接布置任务，而真实科研往往始于注意到意外观察并自己提出研究问题。",
+        "en": "Physical-law discovery benchmarks such as PhysGym and NewtonBench assign the task up front, whereas real science often starts by noticing an unexpected observation and posing one's own research question."
+      },
+      "how": {
+        "zh": "LongChang 用 MuJoCo 生成 15 个场景（1 个正常对照、14 个各改一条规律，如更重的物体下落更慢、碰撞交换颜色），被测 LLM 可推、抛、抓物体并用 MJCF 自建仪器，独立的 LLM 智能体负责生成和审查场景、审查仪器并按真实规律和完整记录评判报告的正确性与实验支撑；GPT-6-Astra 发现率 16.7%（证据支撑率 97.6% 但规律正确率仅 19.0%），Claude-Opus-5、Gemini-3.7-Flash、Grok-4.7 等其余 11 个模型都是 0%，给出任务和线索后升到 28.6%，回合上限从 100 提到 500 反而 14.3%（模型约 40 回合就停），关掉造仪器后降到 4.8%。正常对照中 36.1% 的报告声称了不存在的规律或给出无支撑解释，而根据被纠正错误自动演化出的 3 个新场景发现率均为 0%；作者也指出这些规律有标准答案，推广到真正未解的科学问题仍需新的评估方法。",
+        "en": "LongChang builds 15 MuJoCo scenes (one normal control and 14 that each alter one law, such as heavier objects falling slower or colours swapping on contact), lets the tested LLM push, throw and grasp objects and build its own instruments in MJCF, and uses separate LLM agents to generate and review scenes, vet apparatus and judge each report's correctness and experimental support against the true law and full record; GPT-6-Astra reaches a 16.7% discovery rate (97.6% evidence support but only 19.0% law correctness), the other 11 models including Claude-Opus-5, Gemini-3.7-Flash and Grok-4.7 score 0%, a task plus a clue lifts it to 28.6%, raising the turn cap from 100 to 500 gives 14.3% because the model stops after about 40 turns, and disabling construction drops it to 4.8%. In the normal control 36.1% of reports claim nonexistent laws or unsupported explanations, and three new scenes evolved automatically from corrected errors all score 0%, while the authors note that known ground-truth laws make evaluation easy and extending it to genuinely open questions needs new evaluation methods."
+      },
+      "metric": {
+        "zh": "12 个模型中仅 GPT-6-Astra 发现 16.7% · 其余 0%",
+        "en": "Only GPT-6-Astra discovers (16.7%) of 12 models · rest 0%"
+      },
+      "pills": [
+        {
+          "zh": "GPT-6-Astra 发现率",
+          "en": "GPT-6-Astra discovery",
+          "value": "16.7%",
+          "tone": "flat"
+        },
+        {
+          "zh": "其余 11 个模型",
+          "en": "Other 11 models",
+          "value": "0%",
+          "tone": "down"
+        },
+        {
+          "zh": "100→500 回合",
+          "en": "100→500 turns",
+          "value": "16.7→14.3%",
+          "tone": "flat"
+        }
+      ],
+      "arxiv": "2610.37649",
+      "repo": "EnVision-Research/LongChang",
+      "authors": "Zhen Yang, Wen Wang, Xander Xu, Ying-Cong Chen (HKUST(GZ), Alibaba Group, ZJU, HKUST)",
+      "handle": "@ZhenYang_CS",
+      "links": [
+        {
+          "zh": "论文",
+          "en": "Paper",
+          "url": "https://arxiv.org/abs/2610.37649"
+        },
+        {
+          "zh": "项目页",
+          "en": "Project page",
+          "url": "https://zhenyangcs.github.io/LongChang-website/"
+        },
+        {
+          "zh": "代码",
+          "en": "Code",
+          "url": "https://github.com/EnVision-Research/LongChang"
+        },
+        {
+          "zh": "X 原帖",
+          "en": "X Post",
+          "url": "https://x.com/ZhenYang_CS/status/2116550852345491817"
+        },
+        {
+          "zh": "X 原帖（合著者）",
+          "en": "X Post (co-author)",
+          "url": "https://x.com/XuXander24218/status/2116469838361022617"
+        }
+      ]
+    },
+    {
+      "id": "smoothscore-claim-smoothing-research-agents",
+      "edition": "2026-10-31",
+      "tags": [
+        "verification"
+      ],
+      "title": {
+        "zh": "SmoothScore：研究智能体把相互矛盾的证据“抹平”成过度确定的结论",
+        "en": "SmoothScore: Research Agents Smooth Conflicting Evidence into Overconfident Conclusions"
+      },
+      "why": {
+        "zh": "深度研究智能体写出的报告读起来自信又引用充分，但结论常比引文能支撑的更绝对，主要原因之一是它们几乎不打开自己引用的文档、只看搜索摘要，而同时把全文放进上下文并加上校准指令，就能把明显被抹平的结论砍掉一半以上。",
+        "en": "Deep-research agents write reports that read as confident and well cited yet state conclusions more decisively than their citations support, largely because they barely open the documents they cite and work from search snippets, and giving them the full text plus calibration instructions together removes more than half of the materially smoothed claims."
+      },
+      "what": {
+        "zh": "autoresearch 和深度研究系统要把大量可能相互冲突的来源综合成一份报告，但现有评估主要查事实与引用是否正确，而不查结论是否夸大了证据的强度和适用范围。",
+        "en": "Autoresearch and deep-research systems must synthesize many possibly conflicting sources into one report, but existing evaluations mainly check factual and citation correctness, not whether conclusions overstate the strength and scope of the evidence."
+      },
+      "how": {
+        "zh": "SmoothScore 从报告中抽取核心结论，由支持方和怀疑方两个智能体在引用文档中找证据、按高层面向聚类，再由 GPT-5 评审打 1–5 分；在 7 个系统、4 个数据集上，每种设置都至少有 22% 的结论被明显抹平（≥3 分），GPT-5.6 Luna/Sol 均值约 1.7–1.95 最好，Gemini Deep Research 3.05–3.27 且 22–35% 的结论被严重抹平（≥4 分），开源的 DR Tulu 和 QUEST 也较高。轨迹显示 Luna 只打开了 19% 的引用页面、Sonnet 5 仅 2%，只给全文或只加指令效果都有限，两者结合后 Luna 被明显抹平的结论占比从 29% 降到 12%、Sonnet 5 从 61% 降到 25%；评分管线本身依赖 LLM，作者做了人工验证。",
+        "en": "SmoothScore extracts a report's main conclusions, has a supporting agent and a skeptic agent gather evidence from the cited documents, clusters it into high-level aspects, and has a GPT-5 judge score each claim from 1 to 5; across 7 systems and 4 datasets at least 22% of claims in every setting are materially smoothed (score of 3 or more), GPT-5.6 Luna and Sol do best at a mean of about 1.7 to 1.95, Gemini Deep Research sits at 3.05 to 3.27 with 22–35% of claims severely smoothed (4 or more), and open-source DR Tulu and QUEST are also high. Traces show Luna opened only 19% of the pages it cited and Sonnet 5 only 2%, full documents alone or instructions alone help little, but together they cut materially smoothed claims from 29% to 12% for Luna and from 61% to 25% for Sonnet 5, though the scoring pipeline itself relies on LLMs, which the authors check with human validation."
+      },
+      "metric": {
+        "zh": "每种设置 ≥22% 结论被抹平 · 全文+指令后减半以上",
+        "en": "≥22% of claims smoothed in every setting · full text + instructions halves it"
+      },
+      "pills": [
+        {
+          "zh": "Gemini DR 严重抹平",
+          "en": "Gemini DR severe smoothing",
+          "value": "22–35%",
+          "tone": "down"
+        },
+        {
+          "zh": "Sonnet 5 打开引用",
+          "en": "Sonnet 5 opens citations",
+          "value": "2%",
+          "tone": "down"
+        },
+        {
+          "zh": "Luna 明显抹平",
+          "en": "Luna materially smoothed",
+          "value": "29%→12%",
+          "tone": "up"
+        }
+      ],
+      "arxiv": "2610.35793",
+      "repo": "tiasa2/SmoothScore",
+      "authors": "Tiasa Singha Roy, Manya Wadhwa, Greg Durrett (New York University)",
+      "handle": "@HEI",
+      "links": [
+        {
+          "zh": "论文",
+          "en": "Paper",
+          "url": "https://arxiv.org/abs/2610.35793"
+        },
+        {
+          "zh": "代码与数据",
+          "en": "Code & data",
+          "url": "https://github.com/tiasa2/SmoothScore"
+        },
+        {
+          "zh": "X 原帖",
+          "en": "X Post",
+          "url": "https://x.com/HEI/status/2116512519732781278"
+        }
+      ]
+    },
+    {
       "id": "scaling-discovery-requires-forgetting",
       "edition": "2026-10-31",
       "tags": [
