@@ -164,6 +164,285 @@ window.YANHUA_DIGESTS = {
   ],
   "items": [
     {
+      "id": "outerloop-trustworthy-multi-agent-autoresearch",
+      "edition": "2026-11-01",
+      "tags": [
+        "verification",
+        "harness-search"
+      ],
+      "title": {
+        "zh": "Outerloop：autoresearch 系统报告的提升里有一截是运气，把测量搬到 agent 沙盒之外才算数",
+        "en": "Outerloop: Part of Every Autoresearch Gain Is Luck Until Measurement Moves Outside the Agent's Sandbox"
+      },
+      "why": {
+        "zh": "让 agent 自己给自己的实验打分的 autoresearch 系统会系统性地夸大提升，因为它们从许多单种子的噪声运行里挑出最好的一次，报告的分数里就包含了那次的运气；而由内核在 agent 看不到的新种子上重新测量后，记入的提升与独立审计基本一致。",
+        "en": "Autoresearch systems that let agents grade their own experiments systematically overstate their gains, because they pick the best of many noisy single-seed runs and the reported number carries that run's luck, while a kernel that re-measures on seeds the agent never sees credits gains that match an independent audit."
+      },
+      "what": {
+        "zh": "现有开源 autoresearch 系统（如 Karpathy 的 autoresearch、AIDE、ShinkaEvolve）里，agent 既写改动又评估改动，于是选择偏差、篡改评测代码、以及“分数是真的但改法不可接受”这三类问题都没人把关，而且搜索越大越容易出现。",
+        "en": "In current open autoresearch systems such as Karpathy's autoresearch, AIDE and ShinkaEvolve, the agent both writes and evaluates its changes, leaving selection bias, tampering with evaluation code and real-but-unacceptable gains unchecked, and larger searches make all three more likely."
+      },
+      "how": {
+        "zh": "Outerloop（纽约大学 Mengye Ren）像操作系统内核一样把 agent 当作不可信程序放进沙盒：只能改约定的文件，内核用自己抽取的隐藏种子背靠背测量基线和候选、超过噪声下限（这里 64 步，约 3%）才记功，再由两个只读评审 agent 检查作弊和改动归因，只有内核能推送；在 nanoGPT 训练提速基准、GLM 5.2、48 GPU 小时的对比中，ShinkaEvolve、AIDE、autoresearch 平均多报 83、45、45 步，而 Outerloop 为 −4，关掉内核测量让自家 agent 自报时也多报 36 步，120 个记功结果中 118 个（98%）被三种子审计确认。作者也指出，各系统用同一模型时最终分数相近，差距几乎都来自是否想起 Muon 优化器，所以这更多衡量的是“回忆已知技巧”而非新发现，验证约占研究 GPU 时间的五分之一，且只用了一个高噪声的小基准。",
+        "en": "Outerloop (Mengye Ren, NYU) runs agents as untrusted sandboxed programs like an operating-system kernel: they may edit only contracted files, the kernel measures base and candidate back to back on its own hidden seed and credits only gains above a noise floor (64 steps, about 3%), two read-only judge agents check for gaming and attribution, and only the kernel can push; on a nanoGPT training-speed benchmark with GLM 5.2 and 48 GPU-hours, ShinkaEvolve, AIDE and autoresearch over-claimed by 83, 45 and 45 steps on average versus −4 for Outerloop, its own agents over-claimed by 36 steps when the kernel measurement was switched off, and 118 of 120 credited results (98%) were confirmed by a three-seed audit. The authors note that with the same model the systems reach similar final scores and the difference comes almost entirely from recalling the Muon optimizer, so the benchmark measures recall of known tricks more than discovery, verification took about a fifth of the GPU-hours, and only one small, noisy benchmark was used."
+      },
+      "metric": {
+        "zh": "多报：ShinkaEvolve +83 步 vs Outerloop −4 · 审计确认 118/120",
+        "en": "Over-claim: ShinkaEvolve +83 steps vs Outerloop −4 · audit confirms 118/120"
+      },
+      "pills": [
+        {
+          "zh": "内核测量多报",
+          "en": "Over-claim, kernel measures",
+          "value": "−4 步 / steps",
+          "tone": "up"
+        },
+        {
+          "zh": "自评时多报",
+          "en": "Over-claim, self-reported",
+          "value": "+36 步 / steps",
+          "tone": "down"
+        },
+        {
+          "zh": "审计确认记功",
+          "en": "Credits confirmed by audit",
+          "value": "118/120",
+          "tone": "up"
+        }
+      ],
+      "repo": "outerloop-science/outerloop",
+      "authors": "Mengye Ren (Agentic Learning AI Lab, New York University)",
+      "handle": "@outerloop_sci",
+      "links": [
+        {
+          "zh": "论文",
+          "en": "Paper",
+          "url": "https://outerloop.science/papers/outerloop-2026.pdf"
+        },
+        {
+          "zh": "代码",
+          "en": "Code",
+          "url": "https://github.com/outerloop-science/outerloop"
+        },
+        {
+          "zh": "项目页",
+          "en": "Project page",
+          "url": "https://outerloop.science"
+        },
+        {
+          "zh": "X 原帖",
+          "en": "X Post",
+          "url": "https://x.com/outerloop_sci/status/2116907291282665506"
+        },
+        {
+          "zh": "X 帖子（论文链接）",
+          "en": "X Post (paper links)",
+          "url": "https://x.com/outerloop_sci/status/2116907303438008338"
+        }
+      ]
+    },
+    {
+      "id": "policy-secretly-a-harness-ceiling-mismatch",
+      "edition": "2026-11-01",
+      "tags": [
+        "harness-search",
+        "agentic-rl"
+      ],
+      "title": {
+        "zh": "Your Policy Is Secretly a Harness：用冻结模型比较 harness 会错杀更好的 harness",
+        "en": "Your Policy Is Secretly a Harness: Comparing Harnesses with a Frozen Model Rejects Better Ones"
+      },
+      "why": {
+        "zh": "用同一个已训练好的模型给候选 harness 打分会系统性地错杀更好的 harness，因为后训练把模型的动作偏好绑死在训练时的 harness 上，换个 harness 时它先损失的“失配”在继续训练后大多能消掉，而新 harness 抬高的“上限”才是长期收益。",
+        "en": "Scoring candidate harnesses with one already-trained model systematically rejects better harnesses, because post-training ties the model's action preferences to its training harness, so the mismatch it suffers after a switch mostly disappears with further training while the higher ceiling the new harness offers is the lasting gain."
+      },
+      "what": {
+        "zh": "自动 harness 设计通常用固定模型在每个候选 harness 下的表现来打分，这默认模型在旧 harness 下学到的东西能直接迁移到新 harness。",
+        "en": "Automated harness design usually scores each candidate by how a fixed model performs under it, which assumes what the model learned under earlier harnesses carries over to the new one."
+      },
+      "how": {
+        "zh": "作者（香港科技大学（广州））在 KL 正则控制下证明部署回报恰好等于 harness 的上限减去策略的失配（沿自身轨迹累积的与最优策略的 KL），训练只改失配、换 harness 两者都改：在 MiniWoB++ 上用 Qwen3.5-2B 做实验，只是把观测 JSON 的字段顺序反过来、所有最优决策都不变，训练好的模型成功率就从 85.0% 掉到 19.2%；冻结比较否决、但抬高上限的 7 个 harness 换法在同等预算继续训练后全部超过原 agent，事先测得的“上限减失配”预测收益的 Spearman ρ=0.95（冻结回报变化只有 0.17）。在 5 个编码 agent harness（DeepAgents、Pi、DeepSeek Harness、Terminus-2、mini-SWE-agent）上，同一个冻结 Qwen3.5-9B 的 Terminal-Bench Lite 准确率在 47.9%–64.1% 之间，用更强的教师模型代替最优策略估计的“上限减失配”能把 5 个 harness 的顺序全部排对，而任一单项都会排错；不过机制实验都在小模型和可求解的小任务上。",
+        "en": "The authors (HKUST Guangzhou) prove under KL-regularized control that deployed return equals the harness's ceiling minus the policy's mismatch (its KL from the optimal policy accumulated along its own trajectories), so training moves only the mismatch while a harness change moves both: on MiniWoB++ with Qwen3.5-2B, just reversing the order of the observation JSON fields, which leaves every optimal decision unchanged, drops a trained model's success from 85.0% to 19.2%, and all 7 harness swaps that a frozen comparison rejects but that raise the ceiling beat the original agent after equal further training, with ceiling minus mismatch measured beforehand predicting the gains at Spearman ρ=0.95 against 0.17 for the frozen return change. Across five coding-agent harnesses (DeepAgents, Pi, DeepSeek Harness, Terminus-2, mini-SWE-agent) a frozen Qwen3.5-9B ranges from 47.9% to 64.1% on Terminal-Bench Lite, and ceiling minus mismatch estimated with a stronger teacher in place of the optimum orders all five correctly while either term alone misorders them, although the mechanism experiments use small models and small solvable tasks."
+      },
+      "metric": {
+        "zh": "字段顺序反转 85.0%→19.2% · 预测收益 ρ=0.95 vs 0.17",
+        "en": "Field reversal 85.0%→19.2% · gain prediction ρ=0.95 vs 0.17"
+      },
+      "pills": [
+        {
+          "zh": "仅反转观测字段",
+          "en": "Observation fields reversed",
+          "value": "85.0%→19.2%",
+          "tone": "down"
+        },
+        {
+          "zh": "被否决但抬高上限的换法",
+          "en": "Rejected swaps that raise the ceiling",
+          "value": "7/7 胜出 / win",
+          "tone": "up"
+        },
+        {
+          "zh": "上限减失配预测",
+          "en": "Ceiling-minus-mismatch prediction",
+          "value": "ρ=0.95",
+          "tone": "up"
+        }
+      ],
+      "arxiv": "2610.37255",
+      "repo": "2020-qqtcg/HRP",
+      "authors": "Jian Mu, Ruibo Shen, Yao Shu (HKUST Guangzhou, HKUST)",
+      "handle": "@Memoirs",
+      "links": [
+        {
+          "zh": "论文",
+          "en": "Paper",
+          "url": "https://arxiv.org/abs/2610.37255"
+        },
+        {
+          "zh": "代码",
+          "en": "Code",
+          "url": "https://github.com/2020-qqtcg/HRP"
+        },
+        {
+          "zh": "X 原帖",
+          "en": "X Post",
+          "url": "https://x.com/Memoirs/status/2116952083576373428"
+        }
+      ]
+    },
+    {
+      "id": "karma-knowledge-atomic-harness-evolution",
+      "edition": "2026-11-01",
+      "tags": [
+        "harness-search",
+        "memory-skills"
+      ],
+      "title": {
+        "zh": "KARMA：只进化带编号的知识规则、不动代码，广告 agent 留出集提升 +8.96 分",
+        "en": "KARMA: Evolving Only Numbered Knowledge Rules, Not Code, Lifts Ad-Agent Hold-Out Scores by 8.96 Points"
+      },
+      "why": {
+        "zh": "把 agent 的可改部分限制在六类带编号的知识规则上、每轮最多三条原子修改且验证集提升不足 1 分就整体回滚，同时让 Critic 对比成功和失败轨迹，能在不改权重和代码的情况下稳定提分，因为只看失败的修补容易把原本做对的决策也改坏，成功案例告诉它哪些规则该保留。",
+        "en": "Restricting what an agent may change to six typed modules of numbered knowledge rules, allowing at most three atomic edits per round and rolling everything back when the validation gain is under one point, while a Critic compares successful and failed trajectories, reliably raises scores without touching weights or code, because repairs driven only by failures tend to break decisions that were already right and the successes show which rules to keep."
+      },
+      "what": {
+        "zh": "工业广告 agent 的预算、出价和商品决策规则会随商品、流量和政策变化而过时，整段重写 prompt 难以追溯每处改动，大范围改 harness 代码又难以验证和回滚。",
+        "en": "Budget, bid and item rules for industrial advertising agents go stale as products, traffic and policies change, whole-prompt rewrites make individual changes hard to trace, and broad harness-code edits are hard to validate and roll back."
+      },
+      "how": {
+        "zh": "KARMA（阿里巴巴国际数字商业集团）用确定性的 Trace Verifier 把错误映射到候选知识模块，Critic 对比成败轨迹提出修改，受工具约束的 Evolver 写入带出处的原子编辑，在约 50 万条真实 AliExpress 运营日志抽样的 6 个领域、3 个模型家族（Qwen3.8-Max、GLM-5.3、Kimi-K3）共 18 种设置上把平均留出分从 30.19 提到 39.15（+8.96，+29.7%），16 种设置提升；去掉成功或失败任一证据都会让平均留出提升减半以上（+16.67 降到 +8.23 / +6.56），同一门控下也胜过 GEPA、AHE 和 Self-Harness。冻结后的知识跨领域迁移平均 +8.54 分，但汽车领域进化出的知识会拉低所有其他领域，Kimi-K3 在两个领域退步；评测是离线与历史操作的一致率，不代表收入等真实业务效果，每个主设置只跑一次。",
+        "en": "KARMA (Alibaba International Digital Commerce Group) uses a deterministic Trace Verifier to map errors to candidate knowledge modules, a Critic that contrasts successful and failed trajectories to propose changes, and a tool-constrained Evolver that writes atomic edits with provenance, raising the average hold-out score across 18 settings (6 domains sampled from about half a million real AliExpress operation logs × 3 model families: Qwen3.8-Max, GLM-5.3, Kimi-K3) from 30.19 to 39.15 (+8.96, +29.7%) and improving 16 of them; removing either successes or failures more than halves the average hold-out gain (+16.67 down to +8.23 or +6.56), and under the same gate it beats GEPA, AHE and Self-Harness. Frozen knowledge transfers across domains for an average +8.54, but knowledge evolved on Automotive lowers every other domain and Kimi-K3 regresses in two domains, and evaluation is offline agreement with logged actions rather than revenue, with each main setting run once."
+      },
+      "metric": {
+        "zh": "留出 30.19→39.15（+29.7%）· 18 种设置中 16 种提升",
+        "en": "Hold-out 30.19→39.15 (+29.7%) · 16 of 18 settings improve"
+      },
+      "pills": [
+        {
+          "zh": "平均留出分",
+          "en": "Average hold-out score",
+          "value": "30.19→39.15",
+          "tone": "up"
+        },
+        {
+          "zh": "只用失败或成功证据",
+          "en": "Failures-only or successes-only",
+          "value": "+16.67→+8.23/+6.56",
+          "tone": "down"
+        },
+        {
+          "zh": "跨领域迁移",
+          "en": "Cross-domain transfer",
+          "value": "+8.54",
+          "tone": "up"
+        }
+      ],
+      "arxiv": "2610.39884",
+      "authors": "Xinhua Miao, Yuanzhen Rong, Weiru Zhang, Xiaoyi Zeng (Alibaba International Digital Commerce Group)",
+      "handle": "@SciFi",
+      "links": [
+        {
+          "zh": "论文",
+          "en": "Paper",
+          "url": "https://arxiv.org/abs/2610.39884"
+        },
+        {
+          "zh": "X 原帖",
+          "en": "X Post",
+          "url": "https://x.com/SciFi/status/2116923508768805133"
+        }
+      ]
+    },
+    {
+      "id": "letting-ai-formulate-research-question",
+      "edition": "2026-11-01",
+      "tags": [
+        "verification",
+        "co-evolution"
+      ],
+      "title": {
+        "zh": "让 AI 自己提出研究问题：5 次连续运行全部写出可复算论文，但新颖性仍是短板",
+        "en": "Letting AI Formulate the Research Question: Five Straight Runs Produce Re-Computable Papers, but Novelty Stays Weak"
+      },
+      "why": {
+        "zh": "只给一个普通编码 agent 一份说明文档和两个技能、人类只用一两句话划定研究领域，它就能自己提出问题并做成经过复核、可复算的论文，但领域那一两句话基本决定了它研究什么，而真正卡住的是挑出“答案重要且不由设计决定”的问题，而不是执行实验。",
+        "en": "Given only an instruction document and two skills, with a human setting the research area in one or two sentences, an off-the-shelf coding agent can pose its own question and carry it to a reviewed, re-computable paper, but those one or two sentences largely decide what it studies, and the real bottleneck is choosing a question whose answer matters and is not fixed by the design, not running the experiments."
+      },
+      "what": {
+        "zh": "The AI Scientist 等演示中，研究领域和最后展示哪些产出仍由人选，于是 AI 自己选题的能力和问题一直看不到。",
+        "en": "In demonstrations like The AI Scientist, humans still chose the research area and which outputs to show, so how well AI chooses its own questions stayed invisible."
+      },
+      "how": {
+        "zh": "作者（大妻女子大学 Ko Fujimura）让 Codex CLI（gpt-6.1-sol）按选题技能先从 2024 年后的新技术发散到其他领域写出至少 12 个候选、按 6 项检查筛掉“装饰性用技术”“答案由定义决定”“无公开真值”等问题，再请另一模型批评前 5 名，并由 Claude Code（Opus 5.5）根据记录复跑研究后审稿；冻结系统后连续 5 次运行全部在笔记本电脑上从选题走到修订稿，无人类研究输入，共写出 77 个候选问题（全是社会或环境议题），评审复跑了每份初稿并复现了数字，40 条意见全部采纳或部分采纳，批评者每次都改变了比较和测量方式但从未改变选中的问题。外部 AI 评审（Gemini 4 Argon、Muse Wonder）认为论文在研讨会水平或边缘、低于主会，新颖性 3.0/2.2、通用性 2.6/2.0 偏低，20 份评审中 19 份认为主要答案“部分可由设计预测”，5 份中 2 份结论为阴性或无效；样本小、无消融，评价全部来自 AI。",
+        "en": "The author (Ko Fujimura, Otsuma Women's University) has Codex CLI (gpt-6.1-sol) follow a question skill that diverges from post-2024 technologies into other fields to write at least 12 candidates, screens them with six checks against decorative technology use, answers fixed by definitions and missing public ground truth, asks a different model to critique the top five, and has Claude Code (Opus 5.5) re-run the study from its records before reviewing; after freezing the system, all five consecutive runs went from question to revised paper on a laptop with no human research input, writing 77 candidate questions (all societal or environmental), the reviewer re-ran every first draft and reproduced the numbers, all 40 findings were adopted or partly adopted, and the critic changed how the chosen question was compared or measured every time but never changed which question was chosen. External AI reviewers (Gemini 4 Argon, Muse Wonder) judged the papers workshop-level or borderline and below main track, with low novelty (3.0 and 2.2) and generality (2.6 and 2.0), 19 of 20 reviews found the main answer partly predictable from the design, and 2 of 5 results are negative or null, with a small sample, no ablations and only AI evaluations."
+      },
+      "metric": {
+        "zh": "5/5 运行完成无人干预 · 77 个候选问题 · 外部评审：研讨会水平",
+        "en": "5/5 runs complete with no human input · 77 candidate questions · external review: workshop level"
+      },
+      "pills": [
+        {
+          "zh": "连续运行完成",
+          "en": "Consecutive runs completed",
+          "value": "5/5",
+          "tone": "up"
+        },
+        {
+          "zh": "评审意见采纳",
+          "en": "Review findings adopted",
+          "value": "40/40",
+          "tone": "up"
+        },
+        {
+          "zh": "答案部分可预测",
+          "en": "Answer partly predictable",
+          "value": "19/20",
+          "tone": "down"
+        }
+      ],
+      "arxiv": "2610.39620",
+      "repo": "kofujimura/autonomous-research-agents",
+      "authors": "Ko Fujimura (Otsuma Women's University)",
+      "handle": "@SciFi",
+      "links": [
+        {
+          "zh": "论文",
+          "en": "Paper",
+          "url": "https://arxiv.org/abs/2610.39620"
+        },
+        {
+          "zh": "代码与记录",
+          "en": "Code & records",
+          "url": "https://github.com/kofujimura/autonomous-research-agents"
+        },
+        {
+          "zh": "X 原帖",
+          "en": "X Post",
+          "url": "https://x.com/SciFi/status/2116852204577366187"
+        }
+      ]
+    },
+    {
       "id": "verse-verified-self-evolving-harness-optimizer",
       "edition": "2026-11-01",
       "tags": [
