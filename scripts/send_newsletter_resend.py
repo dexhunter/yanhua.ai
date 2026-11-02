@@ -58,6 +58,9 @@ SERIF = "Georgia,'Iowan Old Style','Palatino Linotype','Songti SC','Noto Serif S
 SANS = "-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Hiragino Sans GB','Noto Sans SC','Microsoft YaHei',sans-serif"
 MONO = "ui-monospace,SFMono-Regular,Menlo,Consolas,monospace"
 SITE = "https://yanhua.ai/"
+REPLY_TO = "digest@yanhua.ai"
+UNSUBSCRIBE_URL = "{{{RESEND_UNSUBSCRIBE_URL}}}"
+_MONTHS = ("Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec")
 
 
 def env(name: str) -> str:
@@ -195,8 +198,19 @@ def day_summary(target_date: str, editions: list[dict], total: int) -> str:
     return f"{target_date} 每日合辑（{inner}）"
 
 
+def subject_date(target_date: str) -> str:
+    year, month, day = target_date.split("-")
+    return f"{int(day)} {_MONTHS[int(month) - 1]} {year}"
+
+
 def subject_for(target_date: str, total: int) -> str:
-    return f"演化日报 · {target_date} 每日合辑 ({total} 篇) | Yanhua Daily Digest"
+    noun = "paper" if total == 1 else "papers"
+    return f"Yanhua Daily · {subject_date(target_date)} · {total} {noun}"
+
+
+def preview_text_for(total: int) -> str:
+    noun = "paper" if total == 1 else "papers"
+    return f"{total} {noun} on recursive self-improvement and agent harness search."
 
 
 def pill_html(pill: dict) -> str:
@@ -290,6 +304,95 @@ def source_html(item: dict) -> str:
     )
 
 
+def bilingual_links(item: dict) -> list[tuple[str, str, str]]:
+    raw = [dict(link) for link in (item.get("links") or []) if link.get("url")]
+    seen = {str(link["url"]) for link in raw}
+    arxiv = str(item.get("arxiv") or "").strip()
+    if arxiv:
+        url = f"https://arxiv.org/abs/{arxiv}"
+        if url not in seen:
+            raw.insert(0, {"zh": "论文", "en": "Paper", "url": url})
+            seen.add(url)
+    repo = str(item.get("repo") or "").strip()
+    if repo:
+        url = repo if repo.startswith("http") else f"https://github.com/{repo.lstrip('/')}"
+        if url not in seen:
+            raw.append({"zh": "仓库", "en": "Repo", "url": url})
+    pairs: list[tuple[str, str, str]] = []
+    emitted: set[str] = set()
+    for link in raw:
+        url = str(link["url"])
+        match = update_digest.X_URL_RE.match(url)
+        if match and not match.group(2):
+            continue
+        if url in emitted:
+            continue
+        emitted.add(url)
+        zh = str(link.get("zh") or "").strip()
+        en = str(link.get("en") or "").strip()
+        if match and match.group(2):
+            handle = match.group(1)
+            if not zh or zh.casefold() in update_digest.GENERIC_POST_LABELS:
+                zh = f"X 原帖 · @{handle}"
+            if not en or en.casefold() in update_digest.GENERIC_POST_LABELS:
+                en = f"X post · @{handle}"
+        if not zh and not en:
+            zh, en = "链接", "Link"
+        pairs.append((zh, en, url))
+    return pairs
+
+
+def card_plain(item: dict) -> str:
+    title_zh = text_of(item.get("title"), "zh").strip()
+    title_en = text_of(item.get("title"), "en").strip()
+    why_zh = text_of(item.get("why"), "zh").strip()
+    why_en = text_of(item.get("why"), "en").strip()
+    item_id = str(item.get("id") or "").strip()
+    lines = [title_zh]
+    if title_en and title_en != title_zh:
+        lines.append(title_en)
+    if item_id:
+        lines.append(f"{SITE}?mode=deck#{item_id}")
+    lines.extend(["", "核心结论 / Conclusion", why_zh, "", why_en])
+    links = bilingual_links(item)
+    if links:
+        lines.append("")
+        for zh, en, url in links:
+            if zh and en and zh != en:
+                lines.append(f"{zh} / {en}: {url}")
+            else:
+                lines.append(f"{zh or en}: {url}")
+    return "\n".join(lines).strip()
+
+
+def plain_daily_email(subject: str, preview: str, editions: list[tuple[dict, list[dict]]], show_heading: bool) -> str:
+    blocks: list[str] = []
+    for edition, items in editions:
+        if show_heading:
+            slot = edition.get("slot") or ""
+            heading = SLOT_HEADING.get(slot, SLOT_HEADING[""])
+            blocks.append(f"{heading} · {len(items)}")
+            blocks.append("")
+        blocks.append("\n\n".join(card_plain(item) for item in items))
+    body = "\n\n".join(block for block in blocks if block).strip()
+    return "\n".join([
+        subject,
+        "",
+        preview,
+        "",
+        SITE,
+        "",
+        body,
+        "",
+        "----",
+        "",
+        "Yanhua Daily · yanhua.ai",
+        SITE,
+        f"退订 / Unsubscribe: {UNSUBSCRIBE_URL}",
+        "",
+    ])
+
+
 def card_html(item: dict) -> str:
     item_id = escape(str(item.get("id") or ""), quote=True)
     title_zh = escape(text_of(item.get("title"), "zh"))
@@ -341,7 +444,7 @@ def section_html(edition: dict, items: list[dict], show_heading: bool) -> str:
 """.strip()
 
 
-def render_daily_email(requested_date: str | None = None) -> tuple[str, str]:
+def render_daily_email(requested_date: str | None = None) -> tuple[str, str, str, str]:
     doc = load_doc()
     target_date = resolve_date(doc, requested_date)
     editions = editions_for_date(doc, target_date)
@@ -351,18 +454,20 @@ def render_daily_email(requested_date: str | None = None) -> tuple[str, str]:
         raise SystemExit(f"no items for {target_date}")
     total = sum(len(items) for _, items in grouped)
     subject = subject_for(target_date, total)
+    preview = preview_text_for(total)
     summary = day_summary(target_date, [edition for edition, _ in grouped], total)
     show_heading = len(grouped) > 1 or any((edition.get("slot") or "") in {"morning", "evening"} for edition, _ in grouped)
     sections = "\n".join(section_html(edition, items, show_heading) for edition, items in grouped)
+    text = plain_daily_email(subject, preview, grouped, show_heading)
     html = f"""<!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="en">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>{escape(subject)}</title>
 </head>
 <body style="margin:0;padding:0;background:#f4efe6;color:#181412;">
-  <div style="display:none;max-height:0;overflow:hidden;opacity:0;color:#f4efe6;">{escape(summary)} · Yanhua Daily Digest</div>
+  <div style="display:none;max-height:0;overflow:hidden;opacity:0;color:#f4efe6;">{escape(preview)}</div>
   <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#f4efe6" style="background:#f4efe6;">
     <tr>
       <td align="center" style="padding:28px 12px 36px;">
@@ -386,7 +491,8 @@ def render_daily_email(requested_date: str | None = None) -> tuple[str, str]:
           </tr>
           <tr>
             <td style="padding:22px 0 0;border-top:1px solid #e3dacb;font-family:{SANS};font-size:13px;line-height:1.7;color:#5e564c;">
-              <p style="margin:0 0 8px;">演化日报 · Yanhua Daily · <a href="{SITE}" style="color:#b02a24;text-decoration:underline;">yanhua.ai</a></p>
+              <p style="margin:0 0 8px;">Yanhua Daily · <a href="{SITE}" style="color:#b02a24;text-decoration:underline;">yanhua.ai</a></p>
+              <p style="margin:0 0 8px;">演化日报 · Yanhua Daily</p>
               <p style="margin:0 0 8px;">
                 <a href="https://yanhua.ai/feed.xml" style="color:#b02a24;text-decoration:underline;">RSS</a>
                 ·
@@ -404,11 +510,11 @@ def render_daily_email(requested_date: str | None = None) -> tuple[str, str]:
 </body>
 </html>
 """
-    return subject, html
+    return subject, html, text, preview
 
 
 def write_preview(path: str, requested_date: str | None) -> None:
-    subject, html = render_daily_email(requested_date)
+    subject, html, _text, _preview = render_daily_email(requested_date)
     out = Path(path)
     out.parent.mkdir(parents=True, exist_ok=True)
     out.write_text(html, encoding="utf-8")
@@ -432,31 +538,38 @@ def domain_rejected(status: int, body: dict | list | str) -> bool:
     return "domain" in lowered or "verif" in lowered or "from" in lowered
 
 
+def broadcast_body(segment_key: str, segment: str, sender: str, subject: str, html: str, text: str, preview: str) -> dict:
+    # Create Broadcast accepts text, preview_text, and reply_to.
+    # It has no headers field. Broadcasts add List-Unsubscribe and
+    # List-Unsubscribe-Post on their own.
+    return {
+        segment_key: segment,
+        "from": sender,
+        "reply_to": [REPLY_TO],
+        "subject": subject,
+        "preview_text": preview,
+        "html": html,
+        "text": text,
+        "name": subject,
+        "send": True,
+    }
+
+
 def send(key: str, segment: str, requested_date: str | None) -> None:
-    subject, html = render_daily_email(requested_date)
+    subject, html, text, preview = render_daily_email(requested_date)
     last_status = 0
     last_body: dict | list | str = ""
     addresses = from_addresses()
     for index, sender in enumerate(addresses):
-        status, body = request("POST", f"{API}/broadcasts", {
-            "segment_id": segment,
-            "from": sender,
-            "subject": subject,
-            "html": html,
-            "name": subject,
-            "send": True,
-        }, token=key)
+        status, body = request("POST", f"{API}/broadcasts", broadcast_body(
+            "segment_id", segment, sender, subject, html, text, preview,
+        ), token=key)
         if status in {200, 201}:
             print(f"sent broadcast {subject} from {sender}")
             return
-        legacy, legacy_body = request("POST", f"{API}/broadcasts", {
-            "audience_id": segment,
-            "from": sender,
-            "subject": subject,
-            "html": html,
-            "name": subject,
-            "send": True,
-        }, token=key)
+        legacy, legacy_body = request("POST", f"{API}/broadcasts", broadcast_body(
+            "audience_id", segment, sender, subject, html, text, preview,
+        ), token=key)
         if legacy in {200, 201}:
             print(f"sent broadcast {subject} from {sender}")
             return
