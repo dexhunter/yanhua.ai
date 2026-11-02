@@ -19,6 +19,15 @@
   },
   "editions": [
     {
+      "id": "2026-11-02",
+      "date": "2026-11-02",
+      "slot": "",
+      "label": {
+        "zh": "2026-11-02",
+        "en": "2 Nov 2026"
+      }
+    },
+    {
       "id": "2026-11-01",
       "date": "2026-11-01",
       "slot": "",
@@ -163,6 +172,336 @@
     }
   ],
   "items": [
+    {
+      "id": "r2orch-recursive-self-play-orchestration",
+      "edition": "2026-11-02",
+      "tags": [
+        "harness-search",
+        "memory-skills"
+      ],
+      "title": {
+        "zh": "R²Orch：编排器在自博弈中内化手写技能，部署时零技能仍胜过 PATS 与 FlowSteer",
+        "en": "R²Orch: An Orchestrator That Internalizes Hand-Written Skills Through Self-Play Beats PATS and FlowSteer With Zero Skills at Deployment"
+      },
+      "why": {
+        "zh": "学会设计多智能体工作流的编排器可以把手写技能内化、部署时完全不用它们，因为只有成对对照证明某个技能已不再有帮助时才会撤掉它，而自博弈课程会持续生成撤掉该技能后仍然可学的任务。",
+        "en": "An orchestrator that learns to design multi-agent workflows can internalize hand-written skills and drop them entirely at deployment, because a skill is retired only once a paired test shows it no longer helps, and the self-play curriculum keeps generating tasks that are still learnable without it."
+      },
+      "what": {
+        "zh": "现有智能体编排方法要么在测试时依赖固定的手写技能和 scaffold，要么在静态任务集上训练，rollout 很快全对或全错，GRPO 的 advantage 信号随之塌缩。",
+        "en": "Agent-orchestration methods either depend on fixed hand-written skills and scaffolds at test time or train on static task sets whose rollouts quickly all succeed or all fail, collapsing the GRPO advantage signal."
+      },
+      "how": {
+        "zh": "R²Orch 让 Proposer 为 Director 出题，Director 编辑由冻结的 Qwen3.5-9B Worker 执行的智能体图；外层 Skill Withdrawal 在每个 rollout 组的一部分里隐藏一个技能，并在贝叶斯成对对比显示该技能不再有帮助时将其撤除，Recursive Learnability 则奖励那些撤掉该技能后 rollout 结果仍有分歧的任务。在零技能测试下（五次平均），Director 的 IID 平均准确率 89.79（PATS 86.00、FlowSteer 82.34、直接用 Qwen3.5-9B 61.35），OOD 78.79（PATS 76.13），AIME 2026 81.33（PATS 74.00）；固定 scaffold 时 ALFWorld 从 90.63 降到 77.81，按当前 scaffold 计算可学性则 AIME 降到 70.67，12 次撤除的后验均 ≤0.019，Director 不加修改迁移到另外 6 个 backbone 后 IID 差距从 25.7 分缩小到 6.4 分；不过初始技能仍需为每个数据集手工定制。",
+        "en": "R²Orch has a Proposer generate tasks for a Director that edits agent graphs executed by frozen Qwen3.5-9B Workers; an outer Skill Withdrawal step hides one skill from part of each rollout group and retires it once a Bayesian paired contrast shows it no longer helps, while Recursive Learnability rewards the Proposer for tasks whose rollouts still disagree with that skill withheld. Tested with zero skills (five-run mean), the Director reaches 89.79 average IID accuracy (PATS 86.00, FlowSteer 82.34, direct Qwen3.5-9B 61.35), 78.79 OOD (PATS 76.13) and 81.33 on AIME 2026 (PATS 74.00); fixing the scaffold drops ALFWorld from 90.63 to 77.81, scoring learnability on the current scaffold drops AIME to 70.67, all 12 withdrawals had posterior ≤0.019, and the Director transfers unchanged to 6 other backbones, narrowing their IID spread from 25.7 to 6.4 points, although initial skills are still hand-customized per dataset."
+      },
+      "metric": {
+        "zh": "零技能 IID 89.79 · OOD 78.79 · AIME 2026 81.33",
+        "en": "Zero-skill IID 89.79 · OOD 78.79 · AIME 2026 81.33"
+      },
+      "pills": [
+        {
+          "zh": "IID 平均（PATS→R²Orch）",
+          "en": "IID avg (PATS→R²Orch)",
+          "value": "86.00→89.79",
+          "tone": "up"
+        },
+        {
+          "zh": "AIME 2026（PATS→R²Orch）",
+          "en": "AIME 2026 (PATS→R²Orch)",
+          "value": "74.00→81.33",
+          "tone": "up"
+        },
+        {
+          "zh": "固定 scaffold 消融（ALFWorld）",
+          "en": "Fixed-scaffold ablation (ALFWorld)",
+          "value": "90.63→77.81",
+          "tone": "down"
+        }
+      ],
+      "arxiv": "2610.22740",
+      "repo": "beita6969/R2Orch",
+      "authors": "Mingda Zhang, Yun Huang, Qiang Huang, Yanjin Li, Rui Qian, Qichao Zhao, Tiesunlong Shen, Na Zhao, Jian Wang, Xiaoying Tang (CUHK-Shenzhen, Fudan, UIUC, Tsinghua, NUS)",
+      "handle": "@HuggingPapers",
+      "links": [
+        {
+          "zh": "论文",
+          "en": "Paper",
+          "url": "https://arxiv.org/abs/2610.22740"
+        },
+        {
+          "zh": "代码",
+          "en": "Code",
+          "url": "https://github.com/beita6969/R2Orch"
+        },
+        {
+          "zh": "X 原帖",
+          "en": "X Post",
+          "url": "https://x.com/HuggingPapers/status/2117167579651518892"
+        }
+      ]
+    },
+    {
+      "id": "rsi-builds-rsi-two-loops",
+      "edition": "2026-11-02",
+      "tags": [
+        "harness-search",
+        "co-evolution"
+      ],
+      "title": {
+        "zh": "RSI That Builds RSI：让改进者本身在研究者评判的外层循环里变强",
+        "en": "RSI That Builds RSI: Let the Improver Itself Get Better in an Outer Loop Judged by the Researcher"
+      },
+      "why": {
+        "zh": "Xi Zhang 认为当前多数“RSI”系统的改进者其实固定不变，改进者应当在由研究者评判的外层循环中变强，并提出用“新项目的循环是否起点更高、收敛更快”来检验这一点。",
+        "en": "Xi Zhang argues that most current “RSI” systems keep the improver fixed, that the improver should instead get better in an outer loop judged by the researcher, and that this can be tested by whether each new project's loop starts higher and converges faster."
+      },
+      "what": {
+        "zh": "harness 演化循环会改进 Target 智能体的 recipe 和权重，但负责改进的 Conductor 本身不变，而且在同一份数据上搜索和打分时，“多试了几次”很容易被当成“学到了东西”。",
+        "en": "Harness-evolution loops improve a Target agent's recipe and weights while the Conductor doing the improving stays the same, and searching and scoring on the same data lets extra attempts pass for learning."
+      },
+      "how": {
+        "zh": "该设计（面向 EvoScientist²）在每个项目内运行 EvoMachine：Conductor 根据 Judge 打分和运行日志改写 Target 的 recipe（system prompt、工具、子智能体），每隔几个版本由 Trainer 返回一个 LoRA adapter 和一个 Jev 风格的小型选择模型，且只有在 Conductor 从未见过的留出集上成立的版本才算进步；在所有项目之上，Super Session 从研究者的批准和纠正中学习如何设置、初始化和停止各个循环。这是一篇观点与设计文章，没有新实验：文中引用了一项重新评估（Terminal-Bench 2.1 上演化出的 harness 在同等预算下并不优于简单的 test-time scaling）、AIDE² 未定论的“点火测试”（0.780 对 0.782，各三个种子）以及 Sakana 的 MASS，并把外层循环的点火测试列为第一个要做的实验。",
+        "en": "The design (for EvoScientist²) runs an EvoMachine inside each project, where a Conductor rewrites the Target's recipe (system prompt, tools, sub-agents) from Judge scores and run logs, every few versions a Trainer returns a LoRA adapter plus a small Jev-style choice model, and a version counts as progress only if it holds on a held-out split the Conductor never sees; above all projects a Super Session learns from the researcher's approvals and corrections how to set up, seed and stop loops. It is a position and design essay with no new experiments: it cites a re-evaluation finding an evolved harness no better than matched-budget test-time scaling on Terminal-Bench 2.1, AIDE²'s inconclusive ignition test (0.780 vs 0.782, three seeds each) and Sakana's MASS, and names an outer-loop ignition test as its first planned experiment."
+      },
+      "metric": {
+        "zh": "观点文章 · 无新实验 · 计划做外层循环点火测试",
+        "en": "Essay · no new experiments · outer-loop ignition test planned"
+      },
+      "pills": [
+        {
+          "zh": "引用：AIDE² 点火测试",
+          "en": "Cited: AIDE² ignition test",
+          "value": "0.780 vs 0.782",
+          "tone": "down"
+        }
+      ],
+      "repo": "EvoScientist/EvoScientist",
+      "authors": "Xi Zhang",
+      "handle": "@_xizhang",
+      "links": [
+        {
+          "zh": "博客",
+          "en": "Blog",
+          "url": "https://xizhang.ai/blog/rsi-builds-rsi/"
+        },
+        {
+          "zh": "代码",
+          "en": "Code",
+          "url": "https://github.com/EvoScientist/EvoScientist"
+        },
+        {
+          "zh": "X 原帖",
+          "en": "X Post",
+          "url": "https://x.com/_xizhang/status/2116955250422649334"
+        }
+      ]
+    },
+    {
+      "id": "auctopus-autonomous-quantum-spin-lab",
+      "edition": "2026-11-02",
+      "tags": [
+        "verification",
+        "co-evolution"
+      ],
+      "title": {
+        "zh": "协作 AI 智能体自主完成固态量子自旋实验：PI 智能体拒绝“通过但对照失败”的结果",
+        "en": "Collaborative AI Agents Run a Solid-State Quantum Spin Lab, With a PI Agent That Refused a Passing Run Whose Controls Failed"
+      },
+      "why": {
+        "zh": "一组 LLM 智能体能端到端地完成真实的量子自旋实验，因为 PI 智能体持续否决弱想法，并拒绝接受对照失败的“通过”结果，从而揪出了开灯造成的信号漂移，最终实验才证实了推导出的定律。",
+        "en": "A team of LLM agents could run a real quantum-spin experiment end to end because a PI agent kept rejecting weak ideas and refused to accept a passing run whose controls failed, which exposed light-induced signal drift before the final run confirmed the derived law."
+      },
+      "what": {
+        "zh": "自主科研系统大多停留在仿真或窄范围的优化上，尚不清楚智能体能否自己挑出值得做的问题、推导理论、在物理设备上做实验并给出诚实的结论。",
+        "en": "Autonomous-science systems mostly work in simulation or on narrow optimization, and it is unclear whether agents can choose a worthwhile question, derive theory and run a physical experiment while reporting honest verdicts."
+      },
+      "how": {
+        "zh": "六类智能体角色（proposers、PI、计算研究员、实验员、manager、reviewers）加一个安全智能体操作 NV 色心金刚石自旋系综：约 30 小时内 PI 否决了 75 个提案，前 17 批一个都没接受，直到 manager 排除反复出现的想法家族（此前 56 个提案中的 52 个），新的 9 个提案打开了 7 个新方向；PI 随后推导出精确的标定定律，证明最多 L 个脉冲的序列需要且只需要 L²+1 次标定（L=3 时从提案给出的上界 91 降到 10）。第一次实验通过了全部 10 条预先承诺的精度标准，却没通过全局相位和参考对照，原因是信号漂移（上午累计 +7.6%，开灯时还有一次 2.9% 的跳变），PI 维持“无定论”并在不放宽标准的前提下修订了方案；最终 6 小时实验（21,600 条一秒记录）通过全部标准和对照，测得目标对比度 (40.0±0.4)×10⁻³，与定律预测的 (39.7±1.3)×10⁻³ 一致，而插值方案预测为零；装置由人类搭建，安全上限也由人类设定。",
+        "en": "Six agent roles (proposers, PI, computational researcher, experimentalist, manager, reviewers) plus a safety agent operated an NV-centre diamond spin ensemble: over about 30 hours the PI rejected 75 proposals, accepting none in the first 17 batches until the manager excluded recurring idea families (52 of 56 earlier proposals) and 9 new proposals opened 7 new directions, after which the PI derived an exact calibration law showing that L²+1 calibrations are necessary and sufficient for sequences of up to L pulses (10 instead of the proposed bound of 91 for L=3). The first run passed all 10 precommitted accuracy criteria but failed global-phase and reference controls because of signal drift (+7.6% over the morning plus a 2.9% step when room lights were switched on), so the PI kept the verdict inconclusive and revised the protocol without relaxing the criteria; the final 6-hour run (21,600 one-second records) passed all criteria and controls, measuring a target contrast of (40.0±0.4)×10⁻³ against the law's predicted (39.7±1.3)×10⁻³ where interpolation rivals predicted zero, while humans built the apparatus and set the safety limits."
+      },
+      "metric": {
+        "zh": "否决 75 个提案 · 标定 91→10 · 最终实验通过全部标准与对照",
+        "en": "75 proposals rejected · calibrations 91→10 · final run passed all criteria and controls"
+      },
+      "pills": [
+        {
+          "zh": "所需标定次数（L=3）",
+          "en": "Calibrations needed (L=3)",
+          "value": "91→10",
+          "tone": "up"
+        },
+        {
+          "zh": "首轮实验漂移",
+          "en": "First-run drift",
+          "value": "+7.6%",
+          "tone": "down"
+        },
+        {
+          "zh": "测量 vs 预测对比度（×10⁻³）",
+          "en": "Measured vs predicted contrast (×10⁻³)",
+          "value": "40.0 vs 39.7",
+          "tone": "up"
+        }
+      ],
+      "arxiv": "2610.40589",
+      "repo": "E-zClap/auctopus",
+      "authors": "El Mustapha Mansouri, Eikichi Kimura, Masato Koga, Keigo Arai (Institute of Science Tokyo)",
+      "handle": "@SciFi",
+      "links": [
+        {
+          "zh": "论文",
+          "en": "Paper",
+          "url": "https://arxiv.org/abs/2610.40589"
+        },
+        {
+          "zh": "代码",
+          "en": "Code",
+          "url": "https://github.com/E-zClap/auctopus"
+        },
+        {
+          "zh": "X 原帖",
+          "en": "X Post",
+          "url": "https://x.com/SciFi/status/2117127541571899519"
+        }
+      ]
+    },
+    {
+      "id": "distributed-agents-whole-brain-perturb-seq",
+      "edition": "2026-11-02",
+      "tags": [
+        "verification",
+        "memory-skills"
+      ],
+      "title": {
+        "zh": "分布式 AI 智能体：一个扰动一个智能体，32 分钟解读全脑 Perturb-seq 图谱",
+        "en": "Distributed AI Agents: One Agent per Perturbation Interprets a Whole-Brain Perturb-seq Atlas in 32 Minutes"
+      },
+      "why": {
+        "zh": "给每个扰动分配一个智能体，可以在 32 分钟内解读整套全脑 Perturb-seq 筛选，文献支撑不会随工作量增加而变薄，盲评专家也更偏好这些报告而不是单智能体的解读。",
+        "en": "Assigning one agent to each perturbation lets AI interpret a whole-brain Perturb-seq screen in 32 minutes with literature grounding that does not thin out as the workload grows, and blinded experts preferred these reports over a single agent's."
+      },
+      "what": {
+        "zh": "体内 Perturb-seq 筛选会产生成千上万个“扰动 × 细胞类型”的响应，结合机制与文献去解读它们受限于专家时间，而单个智能体面对大工作量时文献覆盖会下降。",
+        "en": "In vivo Perturb-seq screens produce tens of thousands of perturbation-by-cell-type responses, interpreting them against mechanism and literature is limited by expert time, and a single agent's literature coverage drops as the workload grows."
+      },
+      "how": {
+        "zh": "团队并行运行 1,946 个 GPT-Rosalind-5.5 智能体，每个负责一个扰动，提供细胞类型分辨的 DEG 谱、工具和文献访问，但隐藏原始论文（模型知识截止 2025 年 12 月，论文 2026 年 3 月发布）；32 分钟内共阅读 39,185 篇论文、保留 16,445 条引用，在 55 个可直接检验的原研究结论中复现或细化了 48 个，并对 272 个留出扰动预测 DEG 数量。1,519 条高置信发现中 27.6% 与文献一致、41.9% 为推断、6.6% 与文献冲突、23.8% 无先例；在 20 对报告、每对三位专家的盲评中，分布式报告赢下 60 次判断中的 45 次（单智能体 10 次，平局 5 次），智能体与人类的新颖性评分相关（rho = 0.61），作者也指出仍需配对比较和独立数据集来验证其泛化性。",
+        "en": "The team ran 1,946 GPT-Rosalind-5.5 agents in parallel, one per perturbation, with cell-type-resolved DEG profiles, tools and literature access but the source manuscript withheld (model knowledge cutoff December 2025, manuscript released March 2026); in 32 minutes they made 39,185 paper reads and kept 16,445 citations, matched or refined 48 of 55 directly testable source-study findings, and were also asked to predict DEG counts for 272 held-out perturbations. Of 1,519 high-confidence findings, 27.6% agreed with literature, 41.9% were inferred, 6.6% disagreed and 23.8% had no precedent; across 20 matched report pairs each rated by three experts, distributed reports won 45 of 60 judgments (single agent 10, ties 5), agent and human novelty ratings correlated (rho = 0.61), and the authors say matched comparisons and independent datasets are still needed to show how far this generalizes."
+      },
+      "metric": {
+        "zh": "1,946 个智能体 · 32 分钟 · 盲评 45/60 偏好分布式",
+        "en": "1,946 agents · 32 minutes · 45/60 blinded judgments prefer distributed"
+      },
+      "pills": [
+        {
+          "zh": "盲评偏好（分布式 vs 单智能体）",
+          "en": "Blinded preference (distributed vs single)",
+          "value": "45 vs 10",
+          "tone": "up"
+        },
+        {
+          "zh": "可检验原结论复现/细化",
+          "en": "Testable source findings matched/refined",
+          "value": "48/55",
+          "tone": "up"
+        },
+        {
+          "zh": "与文献冲突的发现",
+          "en": "Findings disagreeing with literature",
+          "value": "6.6%",
+          "tone": "down"
+        }
+      ],
+      "repo": "jinlabneurogenomics/distributed_agent",
+      "authors": "Alexander Sun, Joshua J. Park, David DeTomaso, Seoyeon Kim, Amelia Liu, Suyash Shringarpure, Kenny Kim, Patrick C. Thompson, Tuo Shi, Yunyun Wang, Eran A. Mukamel, Grace X. Y. Zheng, Y. Joy Jiao, Xin Jin (Scripps Research, OpenAI, PerturbAI, UC San Diego, HHMI)",
+      "handle": "@jiqizhixin",
+      "links": [
+        {
+          "zh": "论文",
+          "en": "Paper",
+          "url": "https://www.biorxiv.org/content/10.64898/2026.10.15.759436v1"
+        },
+        {
+          "zh": "代码",
+          "en": "Code",
+          "url": "https://github.com/jinlabneurogenomics/distributed_agent"
+        },
+        {
+          "zh": "X 原帖",
+          "en": "X Post",
+          "url": "https://x.com/jiqizhixin/status/2117125551286784434"
+        }
+      ]
+    },
+    {
+      "id": "farms-verifiable-computational-science",
+      "edition": "2026-11-02",
+      "tags": [
+        "verification",
+        "memory-skills"
+      ],
+      "title": {
+        "zh": "FARMS：把数值数学教材变成保留适用条件的 Lean 陈述，每个目标约 1–2 美元",
+        "en": "FARMS: Turning Numerical-Math Textbooks Into Lean Statements That Keep Their Conditions, at About $1–2 per Target"
+      },
+      "why": {
+        "zh": "把数值数学教材转成保留原始适用条件的 Lean 陈述，能以每个目标约 1–2 美元的成本给自动化科学智能体提供可检查的保证，因为每条形式化都要经过忠实性审查，而不只是能编译通过。",
+        "en": "Turning numerical-math textbooks into Lean statements that keep their source conditions gives automated-science agents checkable guarantees for about $1–2 per target, because each formalization is reviewed for faithfulness rather than merely compiling."
+      },
+      "what": {
+        "zh": "自动化计算科学需要 AI 能复用的数学保证，但只看编译是否通过的自动形式化会高估质量，还可能丢掉决定某个保证是否适用的前提（采样方式、边界条件、误差范数）。",
+        "en": "Automated computational science needs mathematical guarantees that AI can reuse, but autoformalization judged by compilation alone overstates quality and can drop the premises (sampling scheme, boundary conditions, error norm) that decide whether a guarantee applies."
+      },
+      "how": {
+        "zh": "FARMS 先为每个目标整理包含定义、假设和算法描述的源材料包，再借助可复用的领域表示做形式化，然后经过编译、语义审查和有限次修复；在随机数值线性代数与数值 PDE 的四个来源（Drineas–Mahoney、Halko–Martinsson–Tropp、Martinsson–Tropp、Larsson–Thomée）共 171 个目标中，157 个被流程接受，各来源平均估算成本为每个目标 0.85–2.29 美元。在随机抽取的 6 个目标上，FARMS 估算每个目标 2.84 美元，而作者对 AutoformBot 的陈述级改编版需 58.02 美元；Lean 检查过的蕴含关系把选定陈述连成计算技能，用于稳态热传导求解和波响应库压缩，不过目前只覆盖四个来源，发现新方法仍是开放问题。",
+        "en": "FARMS first prepares a source package of definitions, assumptions and algorithm descriptions for each target, formalizes it with reusable domain representations, then runs compilation, semantic review and bounded repair; across 171 targets from four sources in randomized numerical linear algebra and numerical PDEs (Drineas–Mahoney, Halko–Martinsson–Tropp, Martinsson–Tropp, Larsson–Thomée), 157 were accepted by the pipeline at mean estimated costs of US$0.85–2.29 per target across sources. On six randomly selected targets FARMS cost an estimated US$2.84 per target against US$58.02 for the authors' statement-level adaptation of AutoformBot, and Lean-checked implications link selected statements into computational skills used in a steady heat-flow solve and wave-response library compression, though coverage is four sources and discovering new methods remains open."
+      },
+      "metric": {
+        "zh": "157/171 被接受 · 每目标 0.85–2.29 美元 · 2.84 vs 58.02 美元",
+        "en": "157/171 accepted · US$0.85–2.29 per target · US$2.84 vs 58.02"
+      },
+      "pills": [
+        {
+          "zh": "流程接受",
+          "en": "Pipeline accepted",
+          "value": "157/171",
+          "tone": "up"
+        },
+        {
+          "zh": "每目标成本（AutoformBot 改编→FARMS）",
+          "en": "Cost per target (AutoformBot adaptation→FARMS)",
+          "value": "$58.02→$2.84",
+          "tone": "up"
+        }
+      ],
+      "arxiv": "2610.40560",
+      "repo": "Woody2357/FARMS-Computational-Science",
+      "authors": "Di Wu, Ling Liang, Haizhao Yang (University of Maryland, University of Tennessee Knoxville)",
+      "handle": "@SciFi",
+      "links": [
+        {
+          "zh": "论文",
+          "en": "Paper",
+          "url": "https://arxiv.org/abs/2610.40560"
+        },
+        {
+          "zh": "代码",
+          "en": "Code",
+          "url": "https://github.com/Woody2357/FARMS-Computational-Science"
+        },
+        {
+          "zh": "项目页",
+          "en": "Project page",
+          "url": "https://woody2357.github.io/FARMS-Computational-Science/"
+        },
+        {
+          "zh": "X 原帖",
+          "en": "X Post",
+          "url": "https://x.com/SciFi/status/2117104158343876835"
+        }
+      ]
+    },
     {
       "id": "outerloop-trustworthy-multi-agent-autoresearch",
       "edition": "2026-11-01",
