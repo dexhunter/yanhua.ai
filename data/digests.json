@@ -173,6 +173,352 @@
   ],
   "items": [
     {
+      "id": "coharl-co-evolving-policy-and-harness",
+      "edition": "2026-11-02",
+      "tags": [
+        "harness-search",
+        "co-evolution",
+        "agentic-rl"
+      ],
+      "title": {
+        "zh": "CoHARL：在 RL 训练中让策略和一群可执行 harness 一起进化，比只搜 harness 或只练模型都强",
+        "en": "CoHARL: Co-Evolving the Policy and a Population of Executable Harnesses Beats Searching Harnesses or Training Weights Alone"
+      },
+      "why": {
+        "zh": "把 harness 搜索放进 RL 训练循环、让策略和一群 harness 同时进化，比先搜好 harness 再训练、或者固定 harness 只训练模型都好，因为每个 harness 都会改变策略看到的数据和奖励，只有边训练边换，两者才能互相适配。",
+        "en": "Putting harness search inside the RL loop so the policy and a population of harnesses evolve together beats searching a harness first and then training, or training on one fixed harness, because each harness changes the data and reward the policy sees and the two only fit each other when they change together."
+      },
+      "what": {
+        "zh": "给编码 agent 找更好 harness 的方法（如 Meta-Harness）都把模型冻住，而 agentic RL 又都在一个固定 harness 里训练，于是模型和 harness 之间的适配从来没被一起优化过。",
+        "en": "Methods that search for better coding-agent harnesses (such as Meta-Harness) freeze the model, while agentic RL always trains inside one fixed harness, so how well the model and harness fit each other is never optimized jointly."
+      },
+      "how": {
+        "zh": "CoHARL（UNC Chapel Hill、RIKEN、Cisco）在训练 Qwen3.5-35B-A3B（rank-32 LoRA，类 GRPO）时维护最多 8 个可执行 harness：由 Claude Opus 4.7 担任的 proposer 读取成功/失败轨迹和准确率–成本 Pareto 存档，每轮提出最多 2 个新 harness，调度器再在 harness 之间分配 rollout；在 SWE-rebench 110 个留出任务上，基线 17.3%、Meta-Harness 21.2%、普通 GRPO 20.3%，CoHARL 达到 27.6%，不做适配直接迁到 SWE-bench Verified 为 59.8%（对比 44.2/52.0/49.8%），Terminal-Bench 2.0 为 36.8%。在 30 步的对照消融中，完整方法 25.5%，固定 harness 和去掉存档都是 20.0%，先搜索再 RL 为 22.7%，只保留单个 harness 交替替换反而降到 19.1%（换掉唯一的 harness 会突然改变数据和奖励分布）；作者也指出只试了一个策略模型、每个设置只跑一次、没有置信区间，也没有完整的算力对比。",
+        "en": "CoHARL (UNC Chapel Hill, RIKEN, Cisco) trains Qwen3.5-35B-A3B (rank-32 LoRA, GRPO-style) while keeping up to 8 executable harnesses: a Claude Opus 4.7 proposer reads success and failure traces plus a Pareto archive of accuracy and cost, proposes up to 2 new harnesses per round, and a scheduler splits rollouts across harnesses; on 110 held-out SWE-rebench tasks the base model scores 17.3%, Meta-Harness 21.2%, plain GRPO 20.3% and CoHARL 27.6%, and it reaches 59.8% on SWE-bench Verified without adaptation (vs 44.2/52.0/49.8%) and 36.8% on Terminal-Bench 2.0. In a matched 30-step ablation the full method reaches 25.5%, a fixed harness and no archive both drop to 20.0%, search-then-RL gets 22.7%, and keeping a single harness that is swapped out drops to 19.1% (replacing the only harness abruptly shifts the data and reward distribution); the authors note they tried one policy model, ran each setting once, report no confidence intervals and give no full compute comparison."
+      },
+      "metric": {
+        "zh": "SWE-rebench 17.3% → 27.6%（Meta-Harness 21.2%）",
+        "en": "SWE-rebench 17.3% → 27.6% (Meta-Harness 21.2%)"
+      },
+      "pills": [
+        {
+          "zh": "SWE-rebench 留出集",
+          "en": "SWE-rebench held-out",
+          "value": "27.6%",
+          "tone": "up"
+        },
+        {
+          "zh": "SWE-bench Verified",
+          "en": "SWE-bench Verified",
+          "value": "59.8%",
+          "tone": "up"
+        },
+        {
+          "zh": "单 harness 交替替换",
+          "en": "Single swapped harness",
+          "value": "19.1%",
+          "tone": "down"
+        }
+      ],
+      "arxiv": "2610.36469",
+      "repo": "",
+      "authors": "Jianwen Chen, Peng Xia, … Huaxiu Yao (UNC Chapel Hill, RIKEN, Cisco)",
+      "handle": "@lokiscripter",
+      "links": [
+        {
+          "zh": "论文",
+          "en": "Paper",
+          "url": "https://arxiv.org/abs/2610.36469"
+        },
+        {
+          "zh": "X 原帖",
+          "en": "X Post",
+          "url": "https://x.com/lokiscripter/status/2117257794042855603"
+        }
+      ]
+    },
+    {
+      "id": "tinyastral-harness-evolution-then-distillation",
+      "edition": "2026-11-02",
+      "tags": [
+        "harness-search",
+        "embodied"
+      ],
+      "title": {
+        "zh": "TinyAstral：先让冻结的大模型把机器人 harness 进化好，再蒸馏给 4B 小模型，效果几乎不掉",
+        "en": "TinyAstral: Evolve a Frozen Teacher's Robot Harness First, Then Distill It into a 4B Model with Almost No Loss"
+      },
+      "why": {
+        "zh": "在冻结的 180B 教师上进化出来的机器人 harness 可以几乎无损地转给 4B 小模型，因为感知、抓取几何和运动规划都由 harness 负责，小模型只需学会教师的“做什么”和出错后怎么恢复。",
+        "en": "A robot harness evolved around a frozen 180B teacher carries over almost losslessly to a 4B student, because the harness handles perception, grasp geometry and motion planning, so the small model only has to learn the teacher's decisions about what to do and how to recover from failures."
+      },
+      "what": {
+        "zh": "用大视觉语言模型通过 harness 操作机器人效果好，但部署太贵；而 harness 自我改进（RSI）的收益以前都绑在那个大模型上，不清楚能不能带到便宜的小模型里。",
+        "en": "Large vision-language planners driving robots through a harness work well but are expensive to deploy, and past harness self-improvement (RSI) gains were tied to the large model, leaving it unclear whether they carry into a cheap small one."
+      },
+      "how": {
+        "zh": "TinyAstral（华为诺亚等）第一阶段冻结 Qwen3.8-Flash-Next（180B）教师，由前沿 LLM agent 读失败轨迹、按十类失败归因并提出工具、反馈、记忆和恢复逻辑的修改，只有通过预先登记的配对统计检验才接受，RoboTwin 成功率从 33.4% 升到 63.6%，且对 DeepSeek-V4.1-Flash 等其他冻结规划器也有效；第二阶段冻结最终 harness，收集含推理和恢复分支的教师轨迹，加上离线真机监督，蒸馏 0.8B–4B 学生。TinyAstral-4B 在 RoboTwin、Guava、LIBERO-PRO 上为 62.8/93.6/78.3%（教师 63.6/94.7/80.0%），在四个 harness 版本上训练的学生（36.2→62.8%）都贴近对应教师，在三个未见基准上接近同一 harness 里的 552B 规划器，每回合加速器时间约为教师的五分之一（25.3 对 123.8 加速器·秒），并在真实 SO-ARM101 机械臂上闭环运行；同 harness 下未训练的 4B 模型失败时，63% 是把调用预算耗尽。",
+        "en": "TinyAstral (Huawei Noah's Ark and others) first freezes a Qwen3.8-Flash-Next (180B) teacher while frontier LLM agents read its failure trajectories, assign them to ten failure classes and propose changes to tools, feedback, memory and recovery logic, accepting an edit only if it passes a pre-registered paired statistical test; RoboTwin success rises from 33.4% to 63.6%, and the evolved harness also helps other frozen planners such as DeepSeek-V4.1-Flash. It then freezes the final harness, collects teacher trajectories with reasoning and recovery branches plus offline real-robot supervision, and distills 0.8B–4B students: TinyAstral-4B scores 62.8/93.6/78.3% on RoboTwin, Guava and LIBERO-PRO (teacher 63.6/94.7/80.0%), students trained at four harness versions (36.2→62.8%) track their teachers, it comes close to a 552B planner in the same harness on three unseen benchmarks, uses about one fifth of the teacher's accelerator time per episode (25.3 vs 123.8 accelerator-seconds), and runs closed-loop on a real SO-ARM101 arm; when the untrained 4B model fails in the same harness, 63% of the time it has run out of its call budget."
+      },
+      "metric": {
+        "zh": "RoboTwin 教师 33.4% → 63.6%，4B 学生 62.8%",
+        "en": "RoboTwin teacher 33.4% → 63.6%, 4B student 62.8%"
+      },
+      "pills": [
+        {
+          "zh": "4B 学生 RoboTwin",
+          "en": "4B student RoboTwin",
+          "value": "62.8%",
+          "tone": "up"
+        },
+        {
+          "zh": "相对教师加速器时间",
+          "en": "Accelerator time vs teacher",
+          "value": "~1/5",
+          "tone": "up"
+        },
+        {
+          "zh": "harness 版本 → 学生",
+          "en": "Harness versions → student",
+          "value": "36.2→62.8%",
+          "tone": "up"
+        }
+      ],
+      "arxiv": "2610.41216",
+      "repo": "Garfield-kh/TinyAstral",
+      "authors": "Kehong Gong et al. (Huawei Technologies, Huawei Noah Research Institute)",
+      "handle": "@GKehong",
+      "links": [
+        {
+          "zh": "论文",
+          "en": "Paper",
+          "url": "https://arxiv.org/abs/2610.41216"
+        },
+        {
+          "zh": "代码",
+          "en": "Code",
+          "url": "https://github.com/Garfield-kh/TinyAstral"
+        },
+        {
+          "zh": "X 原帖",
+          "en": "X Post",
+          "url": "https://x.com/GKehong/status/2117273544031932756"
+        }
+      ]
+    },
+    {
+      "id": "selm-self-evolving-skill-library-management",
+      "edition": "2026-11-02",
+      "tags": [
+        "harness-search",
+        "memory-skills"
+      ],
+      "title": {
+        "zh": "Selm：把技能进化当成“管理技能库”，验证门槛和退役机制比写出新技能更重要",
+        "en": "Selm: Treat Skill Evolution as Library Management, Where the Validation Gate and Retirement Matter More Than Writing New Skills"
+      },
+      "why": {
+        "zh": "把 agent 技能当成一个有效用分、验证门槛和“墓地”的长期库来管理，比每轮直接改写技能效果好，因为逐轮改写会覆盖以后还有用的技能，也会让失败的技能继续被加载。",
+        "en": "Managing agent skills as a long-lived library with utility scores, a validation gate and a graveyard works better than rewriting skills each round, because round-by-round edits overwrite skills that would help later tasks and let failed skills keep being loaded."
+      },
+      "what": {
+        "zh": "现有技能进化方法（GEPA、SkillEvolver、Memento-Skills、Trace2Skill 等）把每次更新当作孤立的一轮编辑，不决定哪些技能该检索、该改、该留，跨任务的经验冲突时很容易互相覆盖。",
+        "en": "Existing skill-evolution methods such as GEPA, SkillEvolver, Memento-Skills and Trace2Skill treat each update as an isolated edit and never decide which skills to retrieve, change or keep, so conflicting experience from different tasks easily overwrites itself."
+      },
+      "how": {
+        "zh": "Selm（中国人民大学等）给每个技能维护置信度和效用分（EMA），按相关性和历史效用检索技能，用按类别的 Map-Reduce 从轨迹生成增删改操作，新库只有在选择集上提分才被接受，并把反复失败的技能名放进 graveyard 防止被重新加回；在 SkillsBench、OfficeQA、SpreadsheetBench、LiveMath 上，以 Claude Opus 4.6 不加 harness 为例，SpreadsheetBench 从无技能 44.3% 升到 56.8%，SkillsBench soft 从 40.4% 升到 69.8%，在 DeepSeek-V4-Pro 和 Qwen3-30B-A3B 上也领先。消融中去掉验证门槛下降最多（56.5%→42.5%），去掉效用检索为 49.2%，去掉 graveyard 为 50.4%；但它并非处处最好（Claude Code harness 下 OfficeQA 73.1% 低于 EvoSkill 的 75.4%），graveyard 只按名字精确匹配，最多只测了 30 个技能。",
+        "en": "Selm (Renmin University of China and others) keeps a confidence and an EMA utility score for every skill, retrieves skills by relevance and past utility, turns trajectories into add, edit and downvote operations with a per-category Map-Reduce, accepts a new library only if it raises the selection-set score, and puts repeatedly failing skill names in a graveyard so they are not re-added; across SkillsBench, OfficeQA, SpreadsheetBench and LiveMath with Claude Opus 4.6 and no harness, SpreadsheetBench rises from 44.3% with no skills to 56.8% and SkillsBench soft accuracy from 40.4% to 69.8%, and it also leads on DeepSeek-V4-Pro and Qwen3-30B-A3B. In ablations, removing the validation gate costs the most (56.5% → 42.5%), removing utility-aware retrieval gives 49.2% and removing the graveyard 50.4%; it is not best everywhere (73.1% vs EvoSkill's 75.4% on OfficeQA in the Claude Code harness), the graveyard only matches exact names, and it was tested with at most 30 skills."
+      },
+      "metric": {
+        "zh": "SpreadsheetBench（Claude Opus 4.6）44.3% → 56.8%",
+        "en": "SpreadsheetBench (Claude Opus 4.6) 44.3% → 56.8%"
+      },
+      "pills": [
+        {
+          "zh": "SkillsBench soft",
+          "en": "SkillsBench soft",
+          "value": "40.4→69.8%",
+          "tone": "up"
+        },
+        {
+          "zh": "去掉验证门槛",
+          "en": "No validation gate",
+          "value": "42.5%",
+          "tone": "down"
+        },
+        {
+          "zh": "最多技能数",
+          "en": "Max skills tested",
+          "value": "30",
+          "tone": "up"
+        }
+      ],
+      "arxiv": "2610.24630",
+      "repo": "",
+      "authors": "Mengxi Hu, Yuxuan Hu, Jinbo Su et al. (Renmin University of China)",
+      "handle": "@DerekHJH9",
+      "links": [
+        {
+          "zh": "论文",
+          "en": "Paper",
+          "url": "https://arxiv.org/abs/2610.24630"
+        },
+        {
+          "zh": "X 原帖",
+          "en": "X Post",
+          "url": "https://x.com/DerekHJH9/status/2117275791088402570"
+        }
+      ]
+    },
+    {
+      "id": "epi-persistent-self-improving-research-agent",
+      "edition": "2026-11-02",
+      "tags": [
+        "verification",
+        "memory-skills"
+      ],
+      "title": {
+        "zh": "Épi：跨会话持久记忆加固定验证尺子，自动科研拿下 120 项纪录，但对比 Codex 的优势主要来自速度",
+        "en": "Épi: Persistent Memory Plus a Fixed Verifier Yields 120 Autoresearch Records, Though Its Edge over Codex Comes Mostly from Speed"
+      },
+      "why": {
+        "zh": "能跨多个模型会话持续推进、并把经验和死路记下来的科研 agent，能在一把预先固定的验证尺子下稳定刷新数学和优化纪录；但在算法编码对比中，它胜过 Codex 主要是程序跑得更快，而不是解更好。",
+        "en": "A research agent that keeps going across many model sessions and records its lessons and dead ends can reliably set new math and optimization records under a verifier fixed in advance, but in the coding comparison it beats Codex mainly because its programs run faster, not because its solutions are better."
+      },
+      "what": {
+        "zh": "一次研究常常超过单个模型会话能承载的工作量，agent 需要在会话之间保持状态、回到旧分支，并防止自己挑选证据、把刷分误当成进展。",
+        "en": "A research investigation often needs more work than one model session can hold, so the agent must keep state between sessions, return to earlier branches, and avoid choosing its own evidence or mistaking score gaming for progress."
+      },
+      "how": {
+        "zh": "Épi（Bake AI 等）把代码、产物和笔记存在持久文件系统里，在模型上下文之外保存分层记忆（经验与死路），用版本化分支保存各条方法路线，由另一个模型独立评审进展，并由隔离的验证器按预先固定的容差和最小增益判定是否算新纪录；它报告了 120 项纪录（12 类 20 个数值界、8 类 100 个构造），包括 n 皇后常数区间收窄约 84 倍、四次 Feigenbaum 吸引子维数的严格区间收窄 360 多万倍，以及 Tuza 猜想一个新情形的计算机辅助证明。在 30 个对双方都是新题的 FrontierOR 任务上，Épi-turbo 与 Codex 用同一模型 GPT-6-Astra、每题 20 美元预算，总分 53.96 对 51.21，成本为 64%，但平均质量项几乎相同（1.030 对 1.032），差距来自速度项（0.784 对 0.675），在 119 个可比实例中 Codex 解更好的有 61 个、Épi-turbo 只有 18 个，且每题只跑一次、没有显著性检验。",
+        "en": "Épi (Bake AI and others) keeps code, artifacts and notes in a persistent filesystem, stores hierarchical memory of lessons and dead ends outside the model context, keeps each method line on a versioned branch, has a different model review progress independently, and lets an isolated verifier decide records under tolerances and a minimum gain fixed in advance; it reports 120 records (20 numerical bounds in 12 families, 100 constructions in 8), including an about 84-fold narrower interval for the n-queens constant, a more than 3.6-million-fold narrower rigorous interval for the quartic Feigenbaum attractor dimension, and a computer-assisted proof of a new case of Tuza's conjecture. On 30 FrontierOR tasks new to both systems, Épi-turbo and Codex use the same model (GPT-6-Astra) and a $20 budget per task, and Épi-turbo scores 53.96 vs 51.21 at 64% of the cost, but the mean quality term is nearly equal (1.030 vs 1.032) and the gap comes from the speed term (0.784 vs 0.675); of 119 comparable instances Codex has the better solution on 61 and Épi-turbo on 18, with one run per task and no significance test."
+      },
+      "metric": {
+        "zh": "120 项纪录 · FrontierOR 53.96 对 Codex 51.21，成本 64%",
+        "en": "120 records · FrontierOR 53.96 vs Codex 51.21 at 64% cost"
+      },
+      "pills": [
+        {
+          "zh": "纪录数",
+          "en": "Records",
+          "value": "120",
+          "tone": "up"
+        },
+        {
+          "zh": "n 皇后常数区间收窄",
+          "en": "n-queens interval narrower",
+          "value": "~84×",
+          "tone": "up"
+        },
+        {
+          "zh": "解更好的实例（对 Codex）",
+          "en": "Better-solution instances (vs Codex)",
+          "value": "18 vs 61",
+          "tone": "down"
+        }
+      ],
+      "arxiv": "2610.24944",
+      "repo": "BakeLab/Epi-results",
+      "authors": "Yue Huang, Zhangchen Xu, … Zichen Chen (Bake AI et al.)",
+      "handle": "@Arindam_1729",
+      "links": [
+        {
+          "zh": "论文",
+          "en": "Paper",
+          "url": "https://arxiv.org/abs/2610.24944"
+        },
+        {
+          "zh": "博客",
+          "en": "Blog",
+          "url": "https://www.bakeai.inc/research/blogs/epi/"
+        },
+        {
+          "zh": "结果仓库",
+          "en": "Results repo",
+          "url": "https://github.com/BakeLab/Epi-results"
+        },
+        {
+          "zh": "X 原帖",
+          "en": "X Post",
+          "url": "https://x.com/Arindam_1729/status/2117279597268197745"
+        }
+      ]
+    },
+    {
+      "id": "hyra2-agents-build-scientific-tools",
+      "edition": "2026-11-02",
+      "tags": [
+        "verification",
+        "memory-skills"
+      ],
+      "title": {
+        "zh": "Hyra 2.0：腾讯混元让自动科研从“刷题”转向“造工具”，agent 从头训练科学模型、升级芯片和量子码工具",
+        "en": "Hyra 2.0: Tencent Hunyuan Shifts Autoresearch from Solving Problems to Building Tools, with Agents Training Science Models from Scratch"
+      },
+      "why": {
+        "zh": "让自动科研 agent 去造和升级可复用的工具（科学模型、证明工作流、验证器），比一道道刷开放问题更有复利，因为升级一件工具，所有用到它的下游任务都会受益。",
+        "en": "Pointing autoresearch agents at building and upgrading reusable tools (science models, proof workflows, verifiers) compounds more than solving open problems one at a time, because upgrading one tool benefits every downstream task that uses it."
+      },
+      "what": {
+        "zh": "Hyra 1.0 之类“给 agent 一道有明确评判的难题、循环尝试”的路线已经能刷新纪录，但每次突破并不会让下一次研究更强；而研发工具需要持续数天到数周的设计、训练、评估和返工，单个越拉越长的 agent 会话很难管理。",
+        "en": "Loops like Hyra 1.0 that hand an agent a well-scored hard problem and keep trying can already set records, but each breakthrough does not make the next study stronger, and building tools takes days to weeks of design, training, evaluation and rework that one ever-longer agent session cannot manage."
+      },
+      "how": {
+        "zh": "Hyra 2.0 接入团队真实研发环境（企业微信、计算平台、代码仓库，大额算力需人工审批），分 Overall、Mission、Worker 三层，配持久化任务队列、Research Board、看不到执行者结论就先看原始证据的独立 Review Worker，以及按“观察 / 已验证 / 约定”分级的共享知识库 Books 和可复用 skill；腾讯自报的成果包括从头训练的 196 万参数逆折叠模型 HyInv（比 ProteinMPNN 快 57 倍、结构吻合更好）和 6.5 亿参数的 HyPLM-Flash（训练 token 为 ESM-2 650M 的 0.73 倍，12 个模型中推理最快、35 个任务平均排名第 3），量子码 [[488,123,22]]（kd²/n=122.0，比 qLDPC Challenge 原榜首高约 48%，并为 187 个条目中 178 个认证精确码距），香山处理器 SPEC CPU2006 每 GHz 得分 +5.79%、发现 10 个未上报 bug，以及与数学家核验的五维 Petty 等距点猜想证明。这些数字都来自腾讯自己的博客，HyInv/HyPLM 技术报告尚未发布，旋梯灵巧手 28.6% 的提速只在仿真中验证。",
+        "en": "Hyra 2.0 plugs into the team's real R&D environment (WeCom, the compute platform and code repos, with human approval for large compute), splits work across Overall, Mission and Worker layers, and adds a persistent task queue, a Research Board, an independent Review Worker that sees raw evidence before the executor's conclusion, and a shared knowledge base, Books, graded as observation, verified or convention, plus reusable skills; Tencent's own reported results include HyInv, a 1.96M-parameter inverse-folding model trained from scratch that is 57x faster than ProteinMPNN with better structural fit, HyPLM-Flash (650M parameters, 0.73x ESM-2 650M's training tokens, fastest of 12 protein language models and 3rd on average across 35 tasks), the quantum code [[488,123,22]] (kd²/n = 122.0, about 48% above the previous qLDPC Challenge leader, plus exact distances certified for 178 of 187 leaderboard entries), +5.79% SPEC CPU2006 score per GHz and 10 unreported bugs on the XiangShan processor, and a mathematician-checked proof of Petty's equilateral-set conjecture in dimension 5. All numbers come from Tencent's own blog, the HyInv and HyPLM technical reports are not out yet, and the spiral-staircase hand's 28.6% speedup is simulation-only."
+      },
+      "metric": {
+        "zh": "HyInv 比 ProteinMPNN 快 57 倍 · 量子码效率比原榜首高约 48%",
+        "en": "HyInv 57x faster than ProteinMPNN · quantum code ~48% above prior leader"
+      },
+      "pills": [
+        {
+          "zh": "HyInv 速度",
+          "en": "HyInv speed",
+          "value": "57×",
+          "tone": "up"
+        },
+        {
+          "zh": "香山 SPEC/GHz",
+          "en": "XiangShan SPEC/GHz",
+          "value": "+5.79%",
+          "tone": "up"
+        },
+        {
+          "zh": "码距认证",
+          "en": "Distances certified",
+          "value": "178/187",
+          "tone": "up"
+        }
+      ],
+      "arxiv": "",
+      "repo": "Tencent-Hunyuan/hyra-results",
+      "authors": "Hyra Team (Tencent Hunyuan)",
+      "handle": "@TencentHunyuan",
+      "links": [
+        {
+          "zh": "博客",
+          "en": "Blog",
+          "url": "https://hy.tencent.com/research/hyra2"
+        },
+        {
+          "zh": "结果仓库",
+          "en": "Results repo",
+          "url": "https://github.com/Tencent-Hunyuan/hyra-results"
+        },
+        {
+          "zh": "X 原帖",
+          "en": "X Post",
+          "url": "https://x.com/TencentHunyuan/status/2117198622022619399"
+        },
+        {
+          "zh": "X 原帖（评论）",
+          "en": "X Post (commentary)",
+          "url": "https://x.com/AndyLin2001/status/2117200182748348426"
+        }
+      ]
+    },
+    {
       "id": "r2orch-recursive-self-play-orchestration",
       "edition": "2026-11-02",
       "tags": [
