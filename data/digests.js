@@ -182,6 +182,287 @@ window.YANHUA_DIGESTS = {
   ],
   "items": [
     {
+      "id": "continual-harness-evolution-forgetting",
+      "edition": "2026-11-03",
+      "tags": [
+        "harness-search",
+        "verification"
+      ],
+      "title": {
+        "zh": "编码 agent 的 harness 连续进化会严重遗忘：换一个任务类型再进化 5 轮，旧任务成绩可以掉光",
+        "en": "Coding-Agent Harnesses Forget Badly Under Continual Evolution: Five Rounds on a New Task Type Can Wipe Out the Old One"
+      },
+      "why": {
+        "zh": "让编码 agent 的 harness 先在一类任务上自我进化、再换到另一类任务继续进化，会把前一类任务学到的东西大量抹掉，主要原因是进化器会把只适合当前数据集的产物检查和提交门槛写进 harness，这些规则随后会挡住旧任务上本来正确的提交。",
+        "en": "Evolving a coding agent's harness on one task type and then continuing on another wipes out much of what it learned on the first, mainly because the evolver writes dataset-specific artifact checks and submission gates into the harness that later block correct submissions on the old tasks."
+      },
+      "what": {
+        "zh": "AHE、Meta-Harness 这类 harness 自我进化方法都只在单一任务类型上评测，而真实的编码 agent 要在修 issue、写测试、加功能之间来回切换，没人检查过进化后的 harness 能否持续进化而不遗忘。",
+        "en": "Harness self-evolution methods such as AHE and Meta-Harness are only evaluated on one task type at a time, while real coding agents switch between fixing issues, writing tests and adding features, so nobody had checked whether an evolved harness can keep evolving without forgetting."
+      },
+      "how": {
+        "zh": "清华团队用 DeepSeek-V4-Flash-0731 在 Mini-SWE-Agent 上运行 AHE 和 Meta-Harness，覆盖 SWE-Bench、SWT-Bench、FeatureBench 三个数据集共 6 个跨任务方向：单任务进化有效（SWE-Bench 82%→96%（AHE）/94%（Meta-Harness），SWT-Bench 两者都到 100%，FeatureBench 提升超过 10 分），但从 SWE 转到 SWT 再进化 5 轮后，SWE-Bench 成绩下降 100%（AHE）和 98%（Meta-Harness），从 SWE 转到 Feature 时下降 29%（AHE）和 66%（Meta-Harness，94.0%→32.0%），任务越不相关遗忘越严重。作者分析了 520 条轨迹中由通过变失败的案例：87.1% 是验证冲突（为某个数据集定制的产物与提交门槛），8.2% 是工作流冲突，0.6% 是预算冲突。",
+        "en": "A Tsinghua team runs AHE and Meta-Harness on Mini-SWE-Agent with DeepSeek-V4-Flash-0731 across SWE-Bench, SWT-Bench and FeatureBench in six cross-task directions: single-task evolution works (SWE-Bench 82% → 96% with AHE and 94% with Meta-Harness, both reach 100% on SWT-Bench, and FeatureBench gains over 10 points), but after five rounds of continuing from SWE to SWT, SWE-Bench performance drops 100% (AHE) and 98% (Meta-Harness), and going from SWE to Feature it drops 29% (AHE) and 66% (Meta-Harness, 94.0% → 32.0%), with forgetting worse between less related tasks. Analyzing pass-to-fail cases across 520 trajectories, 87.1% are verification conflicts (artifact and submission-gate rules tailored to one dataset), 8.2% workflow conflicts and 0.6% budget conflicts."
+      },
+      "metric": {
+        "zh": "Meta-Harness 的 SWE-Bench 94.0% → 32.0%（转到 FeatureBench 进化 5 轮后）",
+        "en": "Meta-Harness SWE-Bench 94.0% → 32.0% after 5 rounds on FeatureBench"
+      },
+      "pills": [
+        {
+          "zh": "SWE→SWT 遗忘（AHE）",
+          "en": "SWE→SWT forgetting (AHE)",
+          "value": "−100%",
+          "tone": "down"
+        },
+        {
+          "zh": "SWE→Feature 遗忘（Meta-Harness）",
+          "en": "SWE→Feature forgetting (Meta-Harness)",
+          "value": "−66%",
+          "tone": "down"
+        },
+        {
+          "zh": "验证冲突占比",
+          "en": "Verification-conflict share",
+          "value": "87.1%",
+          "tone": "flat"
+        }
+      ],
+      "arxiv": "2611.03219",
+      "repo": "THU-Agent/continual-harness-evolution",
+      "authors": "Shangziqi Zhao, Yitong Zhang, Jia Li (Tsinghua University)",
+      "handle": "@pryzmat_tech",
+      "links": [
+        {
+          "zh": "论文",
+          "en": "Paper",
+          "url": "https://arxiv.org/abs/2611.03219"
+        },
+        {
+          "zh": "代码",
+          "en": "Code",
+          "url": "https://github.com/THU-Agent/continual-harness-evolution"
+        },
+        {
+          "zh": "X 原帖",
+          "en": "X Post",
+          "url": "https://x.com/pryzmat_tech/status/2117605676813889645"
+        }
+      ]
+    },
+    {
+      "id": "strategist-evolving-inference-strategies",
+      "edition": "2026-11-03",
+      "tags": [
+        "harness-search",
+        "memory-skills"
+      ],
+      "title": {
+        "zh": "Strategist：把推理策略写成可复用的代码蓝图并存进共享库，策略设计从此可以跨任务积累",
+        "en": "Strategist: Writing Inference Strategies as Reusable Code Blueprints in a Shared Library Makes Strategy Design Cumulative Across Tasks"
+      },
+      "why": {
+        "zh": "让元 agent 把推理策略写成可互相调用的代码、并把每个候选都存进跨任务共享的库，可以在更低成本下追平人工挑选的最佳基线，而起作用的主要是这个库：去掉库后 BBH 从 85.0 掉到 31.0。",
+        "en": "Having a meta-agent write inference strategies as code that other strategies can call, and keeping every candidate in a library shared across tasks, matches the best hand-picked baseline at much lower cost, and the library is what does the work: without it BBH falls from 85.0 to 31.0."
+      },
+      "what": {
+        "zh": "把模型调用变成答案的推理策略（prompt、推理流程、多 agent 工作流）至今仍是逐个任务手写的；ADAS、AFlow 等自动搜索方法也只针对单个任务优化，一个任务上学到的东西不会带到下一个任务。",
+        "en": "The inference strategy that turns model calls into an answer (prompts, reasoning procedures, multi-agent workflows) is still hand-written per task, and automated search methods such as ADAS and AFlow also optimize one task at a time, so nothing learned on one task carries to the next."
+      },
+      "how": {
+        "zh": "Strategist（Princeton、Meta）用冻结的 GPT-6（通过 Codex CLI）当策略设计者，任务模型是冻结的 Qwen3-0.6B/1.7B/4B（开或关思考）；每个策略是共享同一接口的可执行“Strategy Blueprint”，在 10 轮迭代中每轮检索相关和多样的蓝图、写 5 个候选、在开发集上跑并读轨迹，再把所有候选连同准确率和成本存回库。在 30 个基准上对比 18 种基线（108 个单元），它在 24 个上胜出，平均准确率 74.0%→74.7%、成本低 39%；在 10 个留出基准上只靠检索、不再搜索，就在 8 个上胜过最强基线（77.8%→81.4%），策略不改一行迁到 GPT-5 和 Gemini-2.5 仍有效；需要注意平均准确率只高 0.7 分，部分“胜出”是同准确率更省成本，而且最终选出的策略在隐藏集上比基线高 4.3 分、到测试集只剩 0.7 分，说明挑选有运气成分。",
+        "en": "Strategist (Princeton, Meta) uses a frozen GPT-6 through the Codex CLI as the strategy designer over frozen Qwen3-0.6B/1.7B/4B task models (thinking on or off); each strategy is an executable Strategy Blueprint with one shared interface, and over 10 iterations it retrieves related and diverse blueprints, writes 5 candidates, runs them on a dev set, reads the traces and stores every candidate with its accuracy and cost. Against 18 baselines (108 cells) on 30 benchmarks it wins 24, moving average accuracy from 74.0% to 74.7% at 39% lower cost; on 10 held-out benchmarks retrieval alone with no search beats the strongest baseline on 8 (77.8% → 81.4%), and strategies moved unchanged to GPT-5 and Gemini-2.5 still beat the baselines; caveats are that the average gain is only 0.7 points, some wins are equal accuracy at lower cost, and the chosen strategy was 4.3 points above baseline on the hidden split but only 0.7 on test, so selection involves luck."
+      },
+      "metric": {
+        "zh": "30 个基准中胜 24 个 · 74.0%→74.7%，成本低 39%",
+        "en": "Wins 24 of 30 benchmarks · 74.0% → 74.7% at 39% lower cost"
+      },
+      "pills": [
+        {
+          "zh": "平均准确率",
+          "en": "Average accuracy",
+          "value": "74.7%",
+          "tone": "up"
+        },
+        {
+          "zh": "推理成本",
+          "en": "Inference cost",
+          "value": "−39%",
+          "tone": "up"
+        },
+        {
+          "zh": "去掉库后 BBH",
+          "en": "BBH without library",
+          "value": "85.0→31.0",
+          "tone": "down"
+        }
+      ],
+      "arxiv": "2611.03618",
+      "repo": "",
+      "authors": "Taiming Lu, Qi Xu, Zhigang Hua, Zhuang Liu (Princeton University, Meta)",
+      "handle": "@Zen_with_AI",
+      "links": [
+        {
+          "zh": "论文",
+          "en": "Paper",
+          "url": "https://arxiv.org/abs/2611.03618"
+        },
+        {
+          "zh": "X 原帖",
+          "en": "X Post",
+          "url": "https://x.com/Zen_with_AI/status/2117671833059328039"
+        },
+        {
+          "zh": "X 原帖（结果）",
+          "en": "X Post (results)",
+          "url": "https://x.com/pryzmat_tech/status/2117605758623719650"
+        }
+      ]
+    },
+    {
+      "id": "rsigym-recursive-self-improvement-mode",
+      "edition": "2026-11-03",
+      "tags": [
+        "co-evolution",
+        "harness-search",
+        "agentic-rl"
+      ],
+      "title": {
+        "zh": "RSIGym 递归模式：让模型自己当研究员改进自己，目前还滚不起来",
+        "en": "RSIGym Recursive Mode: Letting a Model Act as Its Own Researcher Doesn't Compound Yet"
+      },
+      "why": {
+        "zh": "让模型自己当研究员、训练自己的权重和 harness 目前还不能形成复利：Qwen3.8-27B 在 6 个开发任务上看着有提升，但它选出的系统在全部 37 个 SkillsBench 任务上从 56.66% 变成 56.26%，因为小开发集上的提升没有泛化；相比之下，前沿模型当研究员改进另一个目标模型能补上约 48% 的差距。",
+        "en": "Having a model act as its own researcher, training its own weights and harness, does not compound yet: Qwen3.8-27B looked better on a six-task dev probe, but the system it selected went from 56.66% to 56.26% on all 37 SkillsBench tasks because the small dev-set gain didn't generalize, whereas frontier models acting as researchers on a separate target close about 48% of the gap."
+      },
+      "what": {
+        "zh": "大多数 RSI 实验都是固定的研究员 agent 去改进另一个目标系统，而真正的递归自我改进要求改进后的系统成为下一轮的研究员。",
+        "en": "Most RSI experiments have a fixed researcher agent improve a separate target system, while true recursive self-improvement needs the improved system to become the next round's researcher."
+      },
+      "how": {
+        "zh": "RSIGym（Evolvent AI）把数据生成、LoRA 训练（Tinker）、评测（Harbor/E2B）和沙盒都做成带预算的服务，新加的 recurse 脚本 让每轮提交的 harness 和 checkpoint 成为下一轮的研究员，从继承的状态继续训练，rollout 只来自自己这条谱系，/workspace/memory 跨轮保留。主实验中每次运行 500 美元预算、从 Qwen3.5-35B-A3B-Base 出发，Opus 5 的 RSI-Index 为 0.4809，30 次 Joint 运行中 29 次有提升，只改 harness 时 Opus 5 把 Terminal-Bench 从 30.34% 提到 40.82%；但每个配置只跑一次，最终评测复用了开发期能接触到的任务。",
+        "en": "RSIGym (Evolvent AI) exposes data generation, LoRA training (Tinker), evaluation (Harbor/E2B) and sandboxes as budgeted services, and its new recurse script makes each round's submitted harness and checkpoint the next round's researcher, continuing training from the inherited state with rollouts only from its own lineage and /workspace/memory carried between rounds. In the main study ($500 per run, starting from Qwen3.5-35B-A3B-Base), Opus 5 leads with an RSI-Index of 0.4809, 29 of 30 Joint runs improve, and in a harness-only run Opus 5 lifts Terminal-Bench from 30.34% to 40.82%; each configuration ran once and final evaluations reuse tasks seen during development."
+      },
+      "metric": {
+        "zh": "自我递归 SkillsBench 56.66% → 56.26%；Opus 5 RSI-Index 0.4809",
+        "en": "Self-recursion SkillsBench 56.66% → 56.26%; Opus 5 RSI-Index 0.4809"
+      },
+      "pills": [
+        {
+          "zh": "自我递归 SkillsBench",
+          "en": "Self-recursion SkillsBench",
+          "value": "56.66→56.26%",
+          "tone": "down"
+        },
+        {
+          "zh": "Opus 5 RSI-Index",
+          "en": "Opus 5 RSI-Index",
+          "value": "0.4809",
+          "tone": "up"
+        },
+        {
+          "zh": "Joint 运行有提升",
+          "en": "Joint runs improved",
+          "value": "29/30",
+          "tone": "up"
+        }
+      ],
+      "arxiv": "2610.10310",
+      "repo": "evolvent-ai/RSIGym",
+      "authors": "Fanqing Meng, Lingxiao Du, … Michael Qizhe Shieh (Evolvent AI)",
+      "handle": "@FanqingMengAI",
+      "links": [
+        {
+          "zh": "代码",
+          "en": "Code",
+          "url": "https://github.com/evolvent-ai/RSIGym"
+        },
+        {
+          "zh": "论文",
+          "en": "Paper",
+          "url": "https://arxiv.org/abs/2610.10310"
+        },
+        {
+          "zh": "X 原帖",
+          "en": "X Post",
+          "url": "https://x.com/FanqingMengAI/status/2117544852422606885"
+        },
+        {
+          "zh": "X 原帖（发布）",
+          "en": "X Post (launch)",
+          "url": "https://x.com/FanqingMengAI/status/2108030344322789563"
+        }
+      ]
+    },
+    {
+      "id": "autoresearch-agent-af3-msa-design",
+      "edition": "2026-11-03",
+      "tags": [
+        "verification"
+      ],
+      "title": {
+        "zh": "自动科研 agent 把 AlphaFold 3 当实验仪器，为每个复合物重新设计 MSA，比统一配方更准",
+        "en": "An Autoresearch Agent Treats AlphaFold 3 as an Instrument and Redesigns Each Complex's MSA, Beating Fixed Recipes"
+      },
+      "why": {
+        "zh": "把冻结的 AlphaFold 3 当作黑箱实验仪器、只靠它自己的置信度信号为每个目标重新设计 MSA 的自动科研 agent，能胜过统一的 MSA 配方，因为最佳的序列深度和跨链配对确实因目标而异；但置信度不是完美的裁判，最后挑选时会还回约 41% 已找到的提升。",
+        "en": "An autoresearch agent that treats a frozen AlphaFold 3 as a black-box instrument and redesigns each target's MSA using only AF3's own confidence signals beats uniform MSA recipes, because the best depth and cross-chain pairing really differ per target, but confidence is an imperfect judge, so the final pick gives back about 41% of the improvement it found."
+      },
+      "what": {
+        "zh": "AF3 预测蛋白复合物的效果取决于 MSA 的内容、深度和跨链配对，但现有流程对所有目标套用同一配方（尽量加深、按物种配对），连跨链配对对 AF3 是否有帮助都有争议。",
+        "en": "AF3's protein-complex predictions depend on MSA content, depth and cross-chain pairing, yet current pipelines apply one recipe to every target (maximize depth, pair by species), and even whether cross-chain pairing helps AF3 is disputed."
+      },
+      "how": {
+        "zh": "上海交大团队的 agent 针对每个目标提出生物学假设、分析并重组 MSA 的行与配对（包括刻意不配对），只用 ipTM、PAE 等无标签置信度反复迭代；在 AF3 训练截止后发布的 FoldBench-v1、FoldBench-v2、HD439 共 1,015 个界面上，它在每个基准上都胜过 AF3 默认流程和固定配方，跨物种异源复合物 DockQ 从 0.465 升到 0.612（FoldBench）、0.482 升到 0.562（HD439），平均少用 60% 的 MSA 序列。在 278 个 FBv1 界面上，最好的测试方案平均比默认高 0.035 DockQ，但按置信度挑选后只剩 0.020（还回 41.0%），而用真实 DockQ 反馈时这个挑选损失几乎为零，说明反馈质量是主要瓶颈。",
+        "en": "The Shanghai Jiao Tong team's agent forms biological hypotheses for each target, analyzes and reorganizes MSA rows and pairing (including deliberate non-pairing), and iterates using only label-free confidence such as ipTM and PAE; on 1,015 interfaces from FoldBench-v1, FoldBench-v2 and HD439, all released after AF3's training cutoff, it beats AF3's default pipeline and fixed recipes on every benchmark, lifts inter-species heteromer DockQ from 0.465 to 0.612 (FoldBench) and 0.482 to 0.562 (HD439), and uses about 60% fewer MSA sequences. On 278 FBv1 interfaces the best tested proposal averages 0.035 DockQ above default but the confidence-based pick keeps only 0.020 (giving back 41.0%), while with ground-truth DockQ feedback that selection loss is near zero, so feedback quality is the main bottleneck."
+      },
+      "metric": {
+        "zh": "跨物种异源复合物 DockQ 0.465 → 0.612（FoldBench）",
+        "en": "Inter-species heteromer DockQ 0.465 → 0.612 (FoldBench)"
+      },
+      "pills": [
+        {
+          "zh": "跨物种 DockQ（FoldBench）",
+          "en": "Inter-species DockQ (FoldBench)",
+          "value": "0.465→0.612",
+          "tone": "up"
+        },
+        {
+          "zh": "MSA 序列数",
+          "en": "MSA sequences",
+          "value": "−60%",
+          "tone": "up"
+        },
+        {
+          "zh": "挑选损失",
+          "en": "Nomination loss",
+          "value": "41.0%",
+          "tone": "down"
+        }
+      ],
+      "arxiv": "2611.03183",
+      "repo": "",
+      "authors": "Zilu Zhang, Jing Bao, … Siqi Sun, Yang Yang (Shanghai Jiao Tong University)",
+      "handle": "@BiologyAIDaily",
+      "links": [
+        {
+          "zh": "论文",
+          "en": "Paper",
+          "url": "https://arxiv.org/abs/2611.03183"
+        },
+        {
+          "zh": "项目页",
+          "en": "Project page",
+          "url": "https://sjtusaicaar.github.io/msa-pairing-agent/"
+        },
+        {
+          "zh": "X 原帖",
+          "en": "X Post",
+          "url": "https://x.com/BiologyAIDaily/status/2117605156183560285"
+        }
+      ]
+    },
+    {
       "id": "lineage-is-memory-reflective-optimizers",
       "edition": "2026-11-03",
       "tags": [
