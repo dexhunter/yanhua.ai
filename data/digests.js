@@ -19,6 +19,15 @@ window.YANHUA_DIGESTS = {
   },
   "editions": [
     {
+      "id": "2026-11-03",
+      "date": "2026-11-03",
+      "slot": "",
+      "label": {
+        "zh": "2026-11-03",
+        "en": "3 Nov 2026"
+      }
+    },
+    {
       "id": "2026-11-02",
       "date": "2026-11-02",
       "slot": "",
@@ -172,6 +181,354 @@ window.YANHUA_DIGESTS = {
     }
   ],
   "items": [
+    {
+      "id": "lineage-is-memory-reflective-optimizers",
+      "edition": "2026-11-03",
+      "tags": [
+        "harness-search",
+        "memory-skills"
+      ],
+      "title": {
+        "zh": "Lineage Is Memory：反思式优化器的收益主要来自“继承父代”，而不是更宽的反馈",
+        "en": "Lineage Is Memory: reflective optimizers gain mostly from inheriting the parent, not from wider feedback"
+      },
+      "why": {
+        "zh": "在 GEPA 这类反思式 prompt/代码优化器里，大部分提升只是因为每轮都在“当前最优存活候选”上继续改、而不是从 seed 重来：保留下来的版本记住了已学到的规则，并把已解决的样例挤出下一轮失败列表；给 proposer 看更多失败或换更大的 proposer 几乎没有额外收益。",
+        "en": "In reflective prompt and code optimizers like GEPA, most of the gain comes simply from editing the best surviving candidate instead of restarting from the seed, because each kept revision stores the rules already learned and pushes solved cases out of the next failure list; showing the proposer more failures or using a bigger proposer adds little on top."
+      },
+      "what": {
+        "zh": "近期反思式优化器都在扩大 proposer 每轮看到的反馈（聚类全部错误、定向 minibatch、更大的 proposer 模型），但这些方法只在保留谱系（lineage）的搜索里测试过，因此无法区分收益来自更宽的反馈还是来自继承父代。",
+        "en": "Recent reflective optimizers widen what the proposer sees each round (clustering all errors, targeted minibatches, larger proposer models), but they are only ever tested inside lineage-preserving search, so nobody can tell whether the gain comes from wider feedback or from inheriting the parent."
+      },
+      "how": {
+        "zh": "作者在 9 个 prompt 与程序合成任务上做了 1,750 次预注册运行，交叉比较“继承父代 vs 重置为 seed”与五种反馈披露方式：继承在 gpt-4.1-mini 上带来 +23.8 分、在 claude-haiku-5-5 上 +22.2 分，只给父代看 4 条原始失败就胜过“重置 + 全部失败的聚类摘要”（领先 15.7 分），把 proposer 升级到 gpt-4.1 在重置条件下没有明显增益，而 gpt-4.1 下继承带来 +38.0 分。在 Banking77 上，只加一句“把反馈里的领域事实写进 prompt”的指令，就让 parent-first 从 37.2% 升到 85.6%，token 成本仅为 GEPA 的 43%，而在 GEPA 自身中反思只占 2–15% 的 token，验证与 minibatch 门控占了其余 85–98%；局限是 7 个主任务中有 5 个是通过隐藏规则构造的（偏向累积），且同一句指令让 BBH-STE 下降 6.1 分。",
+        "en": "Across 1,750 pre-registered runs on nine prompt and program-synthesis tasks, the authors cross parent inheritance against seed reset with five feedback-disclosure schemes: inheritance adds +23.8 points on gpt-4.1-mini and +22.2 on claude-haiku-5-5, showing just four raw failures to the parent beats seed reset with a clustered summary of every failure by +15.7 points, and upgrading the proposer to gpt-4.1 gives no clear gain under reset while inheritance under gpt-4.1 adds +38.0 points. On Banking77 one added sentence telling the proposer to carry domain facts from feedback into the prompt lifts parent-first from 37.2% to 85.6% at 43% of GEPA's token cost, while in GEPA itself reflection is only 2–15% of tokens and validation plus minibatch gating burn the other 85–98%; caveats: five of seven primary tasks are built by withholding rules, which favors accumulation, and the same sentence costs 6.1 points on BBH-STE."
+      },
+      "metric": {
+        "zh": "继承父代 +23.8 分（gpt-4.1-mini）；Banking77 37.2% → 85.6%",
+        "en": "Parent inheritance +23.8 pts (gpt-4.1-mini); Banking77 37.2% → 85.6%"
+      },
+      "pills": [
+        {
+          "zh": "继承父代增益",
+          "en": "Parent-inheritance gain",
+          "value": "+23.8",
+          "tone": "up"
+        },
+        {
+          "zh": "Banking77（一句指令）",
+          "en": "Banking77 (one sentence)",
+          "value": "85.6%",
+          "tone": "up"
+        },
+        {
+          "zh": "GEPA 中反思 token 占比",
+          "en": "GEPA reflection token share",
+          "value": "2–15%",
+          "tone": "flat"
+        }
+      ],
+      "arxiv": "2610.41157",
+      "repo": "",
+      "authors": "Shanglin Yang, Zhan Shi",
+      "handle": "@Aria_086",
+      "links": [
+        {
+          "zh": "论文",
+          "en": "Paper",
+          "url": "https://arxiv.org/abs/2610.41157"
+        },
+        {
+          "zh": "X 原帖",
+          "en": "X Post",
+          "url": "https://x.com/Aria_086/status/2117340996510076948"
+        }
+      ]
+    },
+    {
+      "id": "h1-bitter-lesson-theorem-proving",
+      "edition": "2026-11-03",
+      "tags": [
+        "harness-search",
+        "verification"
+      ],
+      "title": {
+        "zh": "h1：自动定理证明里的“苦涩教训”——简单 ReAct 循环 + 高效 Lean 接口追平或超过专用工作流",
+        "en": "h1: a taste of the bitter lesson in theorem proving, where a simple ReAct loop with an efficient Lean interface matches or beats specialized workflows"
+      },
+      "why": {
+        "zh": "在形式化定理证明中，只给前沿模型一个高效的 Lean 接口、靠验证器反馈让它持续迭代的简单循环，在同模型、相近成本下追平或超过手工设计的分解与多智能体工作流，因为模型自身推理会随测试时算力扩展，而决定算力能否便宜地变成证明的是接口，不是工作流。",
+        "en": "For formal theorem proving, a simple loop that gives a frontier model an efficient Lean interface and keeps it going on verifier feedback matches or beats hand-designed decomposition and multi-agent workflows at the same model and similar cost, because the model's own reasoning scales with test-time compute while the interface, not the workflow, decides how cheaply that compute turns into proofs."
+      },
+      "what": {
+        "zh": "形式化证明 harness 越来越多地在模型外层规定规划、分解与编排，但其增益常与更强模型或更多算力混在一起，因此不清楚在同等预算下它们是否真的优于一个高效的简单循环。",
+        "en": "Formal-proving harnesses increasingly prescribe planning, decomposition and orchestration around the model, but their gains are often confounded with stronger models or more compute, so it is unclear whether they beat an efficient simple loop under the same budget."
+      },
+      "how": {
+        "zh": "h1 让模型在 ReAct 循环里编辑一个持久的 Lean 文件，配有编译器反馈、搜索工具和外部验证器（SafeVerify），失败时由反思 LLM 压缩上下文进入下一轮：用 GPT-5.6 Sol 在 FATE-X 上 90/100、FC100-solved 78/100、IMO 2026 六题全解，GPT-5.5 解出 PutnamBench 672 题中的 670 题，并解决了 8 个 Formal Conjectures 开放问题（含 Erdős 138 与 337 的变体）。消融说明接口细节仍然关键：同为 Gemini 3 Flash、$20 预算，AxProverBase 在 Putnam100 上解 18 题而 h1 解 69 题；原生 Claude Code（Opus 4.8）在 FATE-X 上 63 题，接入 h1 的 prompt 与 Lean 工具（MCP）后 73 题，h1 本身 83 题；去掉搜索工具、REPL 与语言服务器则 Putnam100 从 69 降到 49；作者团队表示他们最初做的非对称 self-play 在基线 harness 调好后增益消失，707 道对比题中只有 2 题是专用工作流解出而 h1 没解出。",
+        "en": "h1 lets the model edit a persistent Lean file in a ReAct loop with compiler feedback, search tools and an external validator (SafeVerify), and on rejection a reflection LLM compacts the transcript for the next round: with GPT-5.6 Sol it scores 90/100 on FATE-X, 78/100 on FC100-solved and solves all six IMO 2026 problems, GPT-5.5 solves 670 of 672 PutnamBench problems, and it settled eight open Formal Conjectures problems including variants of Erdős 138 and 337. Ablations show the interface still matters: with the same Gemini 3 Flash and a $20 budget AxProverBase solves 18 Putnam100 problems against 69 for h1, native Claude Code with Opus 4.8 solves 63 FATE-X problems, 73 with h1's prompt and Lean tools via MCP and 83 inside h1, and removing the search tools, REPL and language server drops Putnam100 from 69 to 49; the team says the asymmetric self-play they started with lost its gains once baseline harnesses were tuned, and in only 2 of 707 compared problems did a specialized workflow solve something h1 did not."
+      },
+      "metric": {
+        "zh": "PutnamBench 670/672；FATE-X 90/100；707 题中仅 2 题被专用流程反超",
+        "en": "PutnamBench 670/672; FATE-X 90/100; specialized workflows win only 2 of 707"
+      },
+      "pills": [
+        {
+          "zh": "PutnamBench（GPT-5.5）",
+          "en": "PutnamBench (GPT-5.5)",
+          "value": "670/672",
+          "tone": "up"
+        },
+        {
+          "zh": "Putnam100：h1 对 AxProverBase",
+          "en": "Putnam100: h1 vs AxProverBase",
+          "value": "69 vs 18",
+          "tone": "up"
+        },
+        {
+          "zh": "去掉搜索/REPL/LSP",
+          "en": "No search/REPL/LSP",
+          "value": "69 → 49",
+          "tone": "down"
+        }
+      ],
+      "arxiv": "2610.35962",
+      "repo": "",
+      "authors": "Skander Moalla, Ahmad Rammal, Niket Patel, Rémi Munos, Julia Kempe",
+      "handle": "@KempeLab",
+      "links": [
+        {
+          "zh": "论文",
+          "en": "Paper",
+          "url": "https://arxiv.org/abs/2610.35962"
+        },
+        {
+          "zh": "X 原帖",
+          "en": "X Post",
+          "url": "https://x.com/KempeLab/status/2117301273225466100"
+        },
+        {
+          "zh": "作者主帖 @SkanderMoalla",
+          "en": "Author thread @SkanderMoalla",
+          "url": "https://x.com/SkanderMoalla/status/2117284434453946743"
+        }
+      ]
+    },
+    {
+      "id": "weight-space-programming-llms-edit-weights",
+      "edition": "2026-11-03",
+      "tags": [
+        "co-evolution"
+      ],
+      "title": {
+        "zh": "Weight-Space Programming：前沿 LLM 不用梯度直接读写神经网络权重",
+        "en": "Weight-Space Programming: frontier LLMs read and write neural network weights without gradients"
+      },
+      "why": {
+        "zh": "前沿模型已经能通过推理“各部分在算什么”来直接修改另一个网络的权重，但最强的演示是在移除障碍而非增加能力：删掉一个导致循环的方向，让 Qwen3.5-0.8B 能把本来会做的题做完，而同样方法对一个不循环的小模型几乎无效。",
+        "en": "Frontier models can now edit another network's weights directly by reasoning about what its parts compute, but the strongest demo removed an obstacle rather than adding skill: deleting one looping direction let Qwen3.5-0.8B finish answers it could already work out, and the same approach barely moved a small model that does not loop."
+      },
+      "what": {
+        "zh": "LLM 已被用来优化 prompt、harness 和训练代码，但权重一直交给基于梯度的优化器，因为人类无法手改权重；问题是一个原样使用的通用模型能否不靠梯度和训练循环直接读写权重。",
+        "en": "LLMs already optimize prompts, harnesses and training code, but weights have stayed with gradient-based optimizers because humans cannot hand-edit them, so the question is whether a general-purpose model, used as is, can read and write weights without gradients or training loops."
+      },
+      "how": {
+        "zh": "在 MIT CSAIL 博客的实验中，GPT-6 Astra 仅凭原始权重说出四个同结构 PPO 策略各自训练的游戏，一次回复改动 3.5% 权重就让卡住的 Kinetix 小车策略从 0% 到 1,024 局全部成功，并在 Python kernel + 50 次前向的预算下，从 Qwen3.5-0.8B 第 15 和 19 层 MLP 的 131,072 个权重（0.016%）中减去一个循环方向，使 MATH-500 从 7.9% 升到 48.1%、GSM8K 从 13.8% 到 67.1%、IFEval 从 21.0% 到 62.3%，触达 token 上限的比例从 93% 降到 33%。作者自述对很少循环的 Gemma 3 270M 最多只提升约 1 分；后续讨论中 @AlexKrentsel 称已复现，@JustinAngel 则指出在一个新物理任务上 Claude 先在思维链里做了 20 多分钟数学推导再写权重，因此这是推理而非对权重的“天生理解”。",
+        "en": "In MIT CSAIL blog experiments GPT-6 Astra named which game each of four identically shaped PPO policies was trained on from raw weights, edited 3.5% of a stuck Kinetix car policy in one reply to go from 0% to success in all 1,024 episodes, and, with a Python kernel and 50 forward passes, subtracted a looping direction from 131,072 MLP weights (0.016%) in layers 15 and 19 of Qwen3.5-0.8B, raising MATH-500 from 7.9% to 48.1%, GSM8K from 13.8% to 67.1% and IFEval from 21.0% to 62.3% while token-limit hits fell from 93% to 33%. The authors report that Gemma 3 270M, which rarely loops, moved by about a point at most, and in follow-ups @AlexKrentsel says he reproduced the results while @JustinAngel argues that on a new physics task Claude spent 20+ minutes of chain-of-thought math before writing weights, so it is reasoning rather than an innate grasp of weights."
+      },
+      "metric": {
+        "zh": "Qwen3.5-0.8B MATH-500 7.9% → 48.1%（仅改 0.016% 权重）",
+        "en": "Qwen3.5-0.8B MATH-500 7.9% → 48.1% (0.016% of weights edited)"
+      },
+      "pills": [
+        {
+          "zh": "MATH-500",
+          "en": "MATH-500",
+          "value": "48.1%",
+          "tone": "up"
+        },
+        {
+          "zh": "IFEval",
+          "en": "IFEval",
+          "value": "62.3%",
+          "tone": "up"
+        },
+        {
+          "zh": "Gemma 3 270M（不循环）",
+          "en": "Gemma 3 270M (no loops)",
+          "value": "≈+1",
+          "tone": "flat"
+        }
+      ],
+      "arxiv": "",
+      "repo": "",
+      "authors": "Rikiya Takehi, Jayden Teoh, Alex Zhang, Omar Khattab (MIT CSAIL)",
+      "handle": "@rikiyatakehi",
+      "links": [
+        {
+          "zh": "博客",
+          "en": "Blog",
+          "url": "https://rikiyat.github.io/blog/weight-space-programming/"
+        },
+        {
+          "zh": "实验日志 GitHub",
+          "en": "Logs on GitHub",
+          "url": "https://github.com/RikiyaT/lm_understand-logs"
+        },
+        {
+          "zh": "X 原帖",
+          "en": "X Post",
+          "url": "https://x.com/rikiyatakehi/status/2117313742891327994"
+        },
+        {
+          "zh": "复现帖 @AlexKrentsel",
+          "en": "Reproduction @AlexKrentsel",
+          "url": "https://x.com/AlexKrentsel/status/2117376683724660898"
+        },
+        {
+          "zh": "质疑帖 @JustinAngel",
+          "en": "Critique @JustinAngel",
+          "url": "https://x.com/JustinAngel/status/2117392093287268688"
+        }
+      ]
+    },
+    {
+      "id": "discern-ai-scientist-evidence-benchmark",
+      "edition": "2026-11-03",
+      "tags": [
+        "verification"
+      ],
+      "title": {
+        "zh": "DISCERN：AI 科学家能否从可信证据走到有效、新颖的假设",
+        "en": "DISCERN: can AI scientists get from trustworthy evidence to valid, novel hypotheses"
+      },
+      "why": {
+        "zh": "研究智能体总分看起来不错，但几乎从不能把假设生成完整做对，原因是它们判断不了该信哪些证据：会拒绝可靠数据、在结论里丢掉已知局限，并在证据与先验冲突时要么全部放弃、要么硬给假设。",
+        "en": "Research agents look strong in aggregate but almost never get hypothesis generation fully right, because they misjudge which evidence to trust: they reject sound data, drop known limitations from conclusions, and either always abstain or always press on when evidence conflicts with their priors."
+      },
+      "what": {
+        "zh": "自动化科研的基准通常分开评测分析完成度或假设生成，并不检验可信证据是否真正支撑了有效且新颖的结论。",
+        "en": "Benchmarks for automated research usually score analysis completion or hypothesis generation separately, so they do not test whether trustworthy evidence actually supports valid and novel claims."
+      },
+      "how": {
+        "zh": "DISCERN 基于真实公开数据构建 8 个生命科学方向的 203 个任务，分三级（数据完整性；带混杂和工具陷阱的分析验证；对抗审查下的假设生成与修订，含证据与既有预期冲突的反事实案例），8 个模型的满分率从 Level 1 的 60.8% 降到 Level 2 的 34.2% 和 Level 3 的 0.6%。GPT-6 Astra 总分最高（78.1），GPT-5.6 Sol 75.8、Claude Opus 5 75.6，但干净对照中只有 64 次里的 19 次正确接受了可靠数据，Astra 在所有反事实案例上弃权而 Kimi 在 92.3% 的案例中硬给假设，Sol 以约三分之一的 token（14.06M 对 42.24M）追平 Opus。",
+        "en": "DISCERN builds 203 tasks over eight life-science tracks on real public datasets in three levels (data integrity, analysis verification under confounds and tool traps, and hypothesis generation and revision under adversarial review, including counterfactual cases where evidence conflicts with established expectations), and across eight models perfect scores fall from 60.8% at Level 1 to 34.2% at Level 2 and 0.6% at Level 3. GPT-6 Astra tops the aggregate (78.1) ahead of GPT-5.6 Sol (75.8) and Claude Opus 5 (75.6), yet only 19 of 64 clean-control evaluations correctly accept sound data, Astra abstains on every eligible counterfactual case while Kimi submits a hypothesis in 92.3% of them, and Sol matches Opus with about a third of the tokens (14.06M against 42.24M)."
+      },
+      "metric": {
+        "zh": "满分率 L1 60.8% → L3 0.6%；干净对照接受率 29.7%",
+        "en": "Perfect-score rate L1 60.8% → L3 0.6%; clean-control acceptance 29.7%"
+      },
+      "pills": [
+        {
+          "zh": "Level 3 满分率",
+          "en": "Level 3 perfect rate",
+          "value": "0.6%",
+          "tone": "down"
+        },
+        {
+          "zh": "干净对照正确接受",
+          "en": "Clean controls accepted",
+          "value": "29.7%",
+          "tone": "down"
+        },
+        {
+          "zh": "最高总分（GPT-6 Astra）",
+          "en": "Top aggregate (GPT-6 Astra)",
+          "value": "78.1",
+          "tone": "flat"
+        }
+      ],
+      "arxiv": "2609.33357",
+      "repo": "",
+      "authors": "Nan Huang, … Jingbo Shang",
+      "handle": "@NanHuang99",
+      "links": [
+        {
+          "zh": "论文",
+          "en": "Paper",
+          "url": "https://arxiv.org/abs/2609.33357"
+        },
+        {
+          "zh": "项目主页",
+          "en": "Website",
+          "url": "https://discern-benchmark.github.io/discern-website/"
+        },
+        {
+          "zh": "X 原帖",
+          "en": "X Post",
+          "url": "https://x.com/NanHuang99/status/2117328653956899000"
+        }
+      ]
+    },
+    {
+      "id": "embodied-turing-machines-code-only-policy",
+      "edition": "2026-11-03",
+      "tags": [
+        "embodied",
+        "memory-skills"
+      ],
+      "title": {
+        "zh": "Embodied Turing Machines：纯代码机器人策略 + 编码智能体闭环自我改进",
+        "en": "Embodied Turing Machines: code-only robot policies improved by coding agents in a closed loop"
+      },
+      "why": {
+        "zh": "把机器人策略完全写成基于显式测量状态的代码，再让编码智能体离线持续改进共享代码库，在 42 个双臂任务上大幅超过模型在环的策略，因为每次修改都可检查、可并行测试、可跨任务复用，不过论文结果全部来自仿真。",
+        "en": "Writing a robot policy entirely as code over explicitly measured state, and letting coding agents keep improving a shared library offline, far outperforms model-in-the-loop policies on 42 bimanual tasks because every change is inspectable, testable in parallel and reusable across tasks, although the paper's results are all in simulation."
+      },
+      "what": {
+        "zh": "机器人策略通常把 VLA 或 VLM 驱动的智能体 harness 放在控制环里，状态是隐式的、失败难以追踪和修复，这并不是递归自我改进的好载体。",
+        "en": "Robot policies usually keep a VLA or a VLM-driven agent harness in the control loop, which leaves state implicit and failures hard to trace or fix, a poor substrate for recursive self-improvement."
+      },
+      "how": {
+        "zh": "COAP 用代码变量从 RGB 相机和本体感知中追踪机器人、物体、关系和任务状态，由 Opus 5.5 Max 编码智能体在固定规则下（禁止针对单局的 hack、测试时不用 oracle 状态）闭环开发共享代码库，并像广度优先搜索一样在并行分支中探索决策变体；在 RoboDojo 的 42 个双臂任务上成功率 70.24%，此前最佳为 31.38%，新任务 83% 的代码来自代码库。论文说明全部结果在仿真中、依赖基准提供的相机参数与物体尺寸，失败中 62% 来自感知与接触状态错误、37% 来自代码逻辑不完整，随机布局下成功率为 54.1%（标准布局 77.3%）；该工作 10 月发布，今日被再次转发。",
+        "en": "COAP tracks robot, object, relation and task state as code variables from RGB cameras and proprioception, and an Opus 5.5 Max coding agent develops a shared library in a closed loop under fixed rules (no single-episode hacks, no oracle state at test time), exploring decision variants in parallel branches like a breadth-first search; on RoboDojo's 42 bimanual tasks it reaches 70.24% success against 31.38% for the best prior method, with 83% of new-task code coming from the library. The paper notes that all results are in simulation and use the benchmark's camera parameters and object sizes, that 62% of failures come from perception and contact-state errors and 37% from incomplete code logic, and that randomized layouts reach 54.1% against 77.3% on standard ones; the work came out in October and resurfaced today."
+      },
+      "metric": {
+        "zh": "RoboDojo 42 任务 70.24%（此前最佳 31.38%）",
+        "en": "RoboDojo 42 tasks 70.24% (prior best 31.38%)"
+      },
+      "pills": [
+        {
+          "zh": "RoboDojo 成功率",
+          "en": "RoboDojo success",
+          "value": "70.24%",
+          "tone": "up"
+        },
+        {
+          "zh": "新任务代码复用",
+          "en": "New-task code reuse",
+          "value": "83%",
+          "tone": "up"
+        },
+        {
+          "zh": "随机布局",
+          "en": "Randomized layouts",
+          "value": "54.1%",
+          "tone": "down"
+        }
+      ],
+      "arxiv": "2610.12369",
+      "repo": "",
+      "authors": "Kairui Hu, Siyuan Hu, Fangzhou Hong, Zhaoxi Chen, Ziwei Liu (NTU, Ropedia)",
+      "handle": "@ropedia_ai",
+      "links": [
+        {
+          "zh": "论文",
+          "en": "Paper",
+          "url": "https://arxiv.org/abs/2610.12369"
+        },
+        {
+          "zh": "X 原帖",
+          "en": "X Post",
+          "url": "https://x.com/ropedia_ai/status/2113652533260583109"
+        },
+        {
+          "zh": "今日转发 @VisiveAI",
+          "en": "Resurfaced by @VisiveAI",
+          "url": "https://x.com/VisiveAI/status/2117406793710387378"
+        }
+      ]
+    },
     {
       "id": "coharl-co-evolving-policy-and-harness",
       "edition": "2026-11-02",
