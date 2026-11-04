@@ -191,6 +191,337 @@
   ],
   "items": [
     {
+      "id": "cleo-minimal-harness-self-hostable",
+      "edition": "2026-11-04",
+      "tags": [
+        "harness-search",
+        "verification"
+      ],
+      "title": {
+        "en": "CLEO: An Autoresearch Loop Grows a 3,000-Line Harness Around a Self-Hosted Model That Nearly Matches the Claude Code SDK",
+        "zh": "CLEO：autoresearch 式循环围绕自托管模型从零长出 3000 行 harness，准确率几乎追平 Claude Code SDK"
+      },
+      "why": {
+        "en": "A tiny agent harness grown from almost nothing around a fixed open-weights model comes within 1.2 points of the far larger Claude Code SDK, because the optimization loop only keeps an edit that both raises accuracy and passes a check that it is generic, auditable and worth the extra surface.",
+        "zh": "围绕一个固定的开源权重模型、几乎从零长出来的小 harness，准确率只比大得多的 Claude Code SDK 低 1.2 个点，原因是优化循环只保留既能提分、又通过“是否通用、可审计、值得多出来的能力面”检查的改动。"
+      },
+      "what": {
+        "en": "Security-sensitive intelligence teams must run agents on self-hosted models and review every tool and line of harness code, so a large off-the-shelf harness is hard to certify while a bare one is weaker.",
+        "zh": "对安全敏感的情报分析团队必须在自托管模型上运行 agent，并审查 harness 暴露的每个工具和每行代码，因此现成的大 harness 难以过审，而裸 harness 又不够强。"
+      },
+      "how": {
+        "en": "A supervisor model (Claude Opus 4.8) runs a propose-test-keep loop that starts GLM-5.1 with only ls, read, grep, sandboxed Python and per-case memory, scores each change on 44 questions (32 fixed plus 12 freshly sampled), periodically swaps in an out-of-distribution case, and keeps a change only if it clears an accuracy margin and the justification gate, which is how a rarely used cite() helper got reverted. On 240 held-out questions the loop never saw, CLEO (about 3k lines) passes 83.8% against 85.0% for the Claude Code SDK (reportedly about 512k lines) and 80.8% for the bare PI harness (about 75k lines), and a top-down loop that pruned PI matched the accuracy but barely shrank the code, though grading relies on an LLM judge that was only spot-checked.",
+        "zh": "监督模型（Claude Opus 4.8）驱动“提议—测试—保留”循环：GLM-5.1 起步时只有 ls、read、grep、沙箱 Python 和按案件的持久记忆，每次改动在 44 道题上打分（32 道固定加 12 道每轮新抽），并定期换成分布外案件，只有超过准确率门槛且通过“合理性闸门”的改动才保留，一个 agent 很少调用的 cite() 工具就因此被撤回。在循环从未见过的 240 道留出题上，CLEO（约 3k 行）通过率 83.8%，Claude Code SDK（据报道约 512k 行）为 85.0%，裸 PI harness（约 75k 行）为 80.8%；从 PI 自上而下做裁剪的循环准确率相当，但代码几乎没变小，不过评分依赖只做过抽查的 LLM 评审。"
+      },
+      "metric": {
+        "en": "Held-out pass rate 83.8% with ~3k lines vs 85.0% with the Claude Code SDK (~512k lines reported)",
+        "zh": "留出集通过率 83.8%（约 3k 行）对 85.0%（Claude Code SDK，据报道约 512k 行）"
+      },
+      "pills": [
+        {
+          "en": "Held-out pass rate",
+          "zh": "留出集通过率",
+          "value": "83.8%",
+          "tone": "up"
+        },
+        {
+          "en": "Harness size",
+          "zh": "Harness 规模",
+          "value": "~3k LOC",
+          "tone": "flat"
+        },
+        {
+          "en": "Gap to Claude Code SDK",
+          "zh": "与 Claude Code SDK 差距",
+          "value": "−1.2 pt",
+          "tone": "down"
+        }
+      ],
+      "arxiv": "2611.03434",
+      "authors": "Shai Nahum Gefen, Vered Chassida, Dmitry Basin, Guy Feigenblat (Dream Security)",
+      "handle": "@arkyyang",
+      "links": [
+        {
+          "zh": "论文",
+          "en": "Paper",
+          "url": "https://arxiv.org/abs/2611.03434"
+        },
+        {
+          "zh": "X 原帖",
+          "en": "X Post",
+          "url": "https://x.com/arkyyang/status/2117991225303404605"
+        }
+      ]
+    },
+    {
+      "id": "t2a-trace-to-architecture-harness-revision",
+      "edition": "2026-11-04",
+      "tags": [
+        "harness-search",
+        "memory-skills"
+      ],
+      "title": {
+        "en": "Trace-to-Architecture (T2A): Diagnose Which Harness Part Failed From Traces, Then Prove the Fix Fired",
+        "zh": "Trace-to-Architecture（T2A）：先从执行轨迹定位 harness 哪个部件出了问题，再证明修改真的被触发"
+      },
+      "why": {
+        "en": "Automatic harness revision works much better when the revising agent must first locate which component actually failed in the execution traces and then show its edit fired and fixed that failure without breaking passing tasks, because similar-looking failures need different fixes that task scores alone cannot tell apart.",
+        "zh": "自动修改 harness 时，如果要求负责修改的 agent 先从执行轨迹里找出真正出错的部件，再证明改动确实被触发、修好了那个失败且没有弄坏原本通过的任务，效果会好得多，因为看起来相似的失败需要不同的修法，光看任务分数分辨不出来。"
+      },
+      "what": {
+        "en": "When an agent fails, the same symptom can come from missing knowledge, a skill that exists but is never invoked, or a bad execution rule, so optimizers that only look at outcomes often edit the wrong part of the harness.",
+        "zh": "agent 失败时，同一种表象可能来自缺知识、技能明明存在却从未被调用、或执行规则有问题，所以只看结果的优化器常常改错 harness 的部位。"
+      },
+      "how": {
+        "en": "A development agent (Claude Opus 5 in Claude Code) compares successful and failed trajectories, revises harness code, skills, context or memory, and records acceptance conditions covering target-task gains, protected tasks that must keep passing and evidence the edit was triggered, for instance fixing when a ScienceWorld skill card is invoked rather than what it says. Across ALFWorld, ScienceWorld and AppWorld it beats the strongest of ReAct, SkillNet, GEPA, WorldEvolver and Meta-Harness by 6.2 to 30.3 aggregate points for each of three task models, and swapping only Meta-Harness's revision instructions for T2A's lifts the mean ScienceWorld score with DeepSeek V4.1 Flash from 31.0 to 52.6.",
+        "zh": "开发 agent（Claude Code 中的 Claude Opus 5）对比成功和失败的轨迹，修改 harness 代码、技能、上下文或记忆，并事先写下验收条件：目标任务要变好、受保护的已通过任务要保持、还要有改动被触发的证据，例如在 ScienceWorld 里修改的是某张技能卡的调用条件而不是它的内容。在 ALFWorld、ScienceWorld 和 AppWorld 上，三个任务模型各自的综合分都比 ReAct、SkillNet、GEPA、WorldEvolver 和 Meta-Harness 中最强者高 6.2–30.3 分；只把 Meta-Harness 的修改指令换成 T2A 的，DeepSeek V4.1 Flash 在 ScienceWorld 的平均分就从 31.0 升到 52.6。"
+      },
+      "metric": {
+        "en": "ScienceWorld mean score 31.0 → 52.6 with only the revision instructions swapped (Meta-Harness → T2A)",
+        "zh": "只替换修改指令（Meta-Harness → T2A），ScienceWorld 平均分 31.0 → 52.6"
+      },
+      "pills": [
+        {
+          "en": "Aggregate gain over strongest baseline",
+          "zh": "相对最强基线的综合提升",
+          "value": "+6.2–30.3",
+          "tone": "up"
+        },
+        {
+          "en": "ScienceWorld via Meta-Harness",
+          "zh": "Meta-Harness 上的 ScienceWorld",
+          "value": "+21.6",
+          "tone": "up"
+        },
+        {
+          "en": "Qwen3.5-27B average",
+          "zh": "Qwen3.5-27B 平均分",
+          "value": "89.37",
+          "tone": "up"
+        }
+      ],
+      "arxiv": "2610.16725",
+      "authors": "Wenfeng Wang, Jianrui Shi, et al. (UPenn, HIT Shenzhen, DP Technology)",
+      "handle": "@DerekHJH9",
+      "links": [
+        {
+          "zh": "论文",
+          "en": "Paper",
+          "url": "https://arxiv.org/abs/2610.16725"
+        },
+        {
+          "zh": "X 原帖",
+          "en": "X Post",
+          "url": "https://x.com/DerekHJH9/status/2117939861697262025"
+        },
+        {
+          "zh": "Awesome RSI 列表",
+          "en": "Awesome RSI",
+          "url": "https://prism-shadow.github.io/awesome-rsi/"
+        }
+      ]
+    },
+    {
+      "id": "evoskill-v2-stateful-skill-evolver",
+      "edition": "2026-11-04",
+      "tags": [
+        "memory-skills",
+        "verification"
+      ],
+      "title": {
+        "en": "EvoSkill v2: One Stateful Coding Agent That Rewrites Another Agent's Skills Beats Keep-If-Better Skill Optimizers",
+        "zh": "EvoSkill v2：一个有状态的编码 agent 改写另一个 agent 的技能，胜过“更好才保留”式技能优化器"
+      },
+      "why": {
+        "en": "Letting one long-running coding agent rewrite another agent's skills beats keep-if-better skill optimizers, because it sees several attempts per task and keeps its whole history, so it can tell repeat failures from random ones instead of rejecting good edits on noise.",
+        "zh": "让一个长期运行的编码 agent 去改写另一个 agent 的技能，比“更好才保留”的技能优化器效果更好，因为它每个任务看多次尝试、保留完整历史，能分清反复出现的失败和偶然失败，而不会因为噪声拒掉好的修改。"
+      },
+      "what": {
+        "en": "Most skill optimizers judge each candidate skill on one noisy attempt per task and either restart every round or use single model calls, so they can discard good edits and cannot build on what they worked out earlier.",
+        "zh": "大多数技能优化器每个任务只用一次带噪声的尝试来评判候选技能，并且每轮重开或只做单次模型调用，因此会丢掉好的修改，也无法在之前的发现上继续积累。"
+      },
+      "how": {
+        "en": "Sentient's system has a benchmark adaptor that turns a prose benchmark description and the user's grader into a frozen plug-in hidden from the optimizer, a solver, and one stateful Claude Code evolver with bash that reads three attempts per training task and keeps every epoch's skills, since every rejection made by SkillOpt and SkillBoost hinged on 2 tasks or fewer while more tasks than that flipped between attempts. With fine-grained ground truth its skills passed 126 of 312 held-out SpreadsheetBench v2 episodes against at most 102 for the baselines (+7.7 points) and led by 5.4 points on τ3-bench banking, a Haiku 5.5 evolver raised its own solver by up to 21.5 points, and an earlier version found and exploited a grader that never recalculated formulas, which is why the user now supplies and checks the grader.",
+        "zh": "Sentient 的系统由三个 agent 组成：基准适配器把用户的文字描述和评分器变成对优化器隐藏的冻结插件，求解器做题，另有一个带 bash、全程单会话的 Claude Code 演化器读取每个训练任务的三次尝试并接受每一轮的技能，理由是 SkillOpt 和 SkillBoost 的每次拒绝都只差 2 个任务以内，而在不同尝试间结果翻转的任务比这更多。在细粒度标准答案下，它的技能在 SpreadsheetBench v2 留出集 312 个回合中通过 126 个，基线最多 102 个（+7.7 个百分点），在 τ3-bench banking 上领先 5.4 个百分点；用 Haiku 5.5 自己当演化器也能让同模型求解器最多提升 21.5 个百分点；早期版本还发现并利用了一个从不重算公式的评分器漏洞，所以现在评分器由用户提供并事先检查。"
+      },
+      "metric": {
+        "en": "SpreadsheetBench v2 held-out 126/312 (EvoSkill v2) vs 102/312 (best baseline)",
+        "zh": "SpreadsheetBench v2 留出集 126/312（EvoSkill v2）对 102/312（最佳基线）"
+      },
+      "pills": [
+        {
+          "en": "SpreadsheetBench v2 vs best baseline",
+          "zh": "SpreadsheetBench v2 对最佳基线",
+          "value": "+7.7 pt",
+          "tone": "up"
+        },
+        {
+          "en": "τ3-bench banking vs best baseline",
+          "zh": "τ3-bench banking 对最佳基线",
+          "value": "+5.4 pt",
+          "tone": "up"
+        },
+        {
+          "en": "Haiku 5.5 self-evolution",
+          "zh": "Haiku 5.5 自我演化",
+          "value": "up to +21.5 pt",
+          "tone": "up"
+        }
+      ],
+      "arxiv": "2610.25931",
+      "repo": "sentient-agi/EvoSkill",
+      "authors": "Dastin Huang, Baran Nama, Salaheddin Alzubi (Sentient Labs)",
+      "handle": "@qzxcle",
+      "links": [
+        {
+          "zh": "论文",
+          "en": "Paper",
+          "url": "https://arxiv.org/abs/2610.25931"
+        },
+        {
+          "zh": "代码",
+          "en": "Code",
+          "url": "https://github.com/sentient-agi/EvoSkill"
+        },
+        {
+          "zh": "X 原帖",
+          "en": "X Post",
+          "url": "https://x.com/qzxcle/status/2117919796599861362"
+        }
+      ]
+    },
+    {
+      "id": "recursa-recursive-self-improving-fm-system",
+      "edition": "2026-11-04",
+      "tags": [
+        "memory-skills",
+        "harness-search"
+      ],
+      "title": {
+        "en": "Alibaba's Recursa: A Model Teaches Itself Legal Research by Splitting Learning Across Parallel Learners, With No Stronger Teacher",
+        "zh": "阿里 Recursa：不靠更强的老师模型，把学习拆给多个并行学习者，模型自己学会法律检索"
+      },
+      "why": {
+        "en": "A model can improve itself in a new professional domain without a stronger teacher when many parallel learners each fix skills for one slice of tasks and a parent merges and re-checks their edits, because a single learner working over all tasks stalled or even regressed.",
+        "zh": "在一个新的专业领域里，模型不靠更强的老师也能自我提升，前提是让多个并行学习者各自针对一部分任务修改技能，再由上层学习者合并并复核这些修改，因为单个学习者面对全部任务时会停滞甚至倒退。"
+      },
+      "what": {
+        "en": "New knowledge-heavy domains such as law offer little expert training data or reliable reward, so the question is whether a system can improve its own instructions, skills, memory and harness from domain documents and its own task feedback alone.",
+        "zh": "法律这类知识密集的新领域几乎没有专家标注数据或可靠奖励，问题是系统能否只靠领域文档和自己的做题反馈，改进自己的指令、技能、记忆和 harness。"
+      },
+      "how": {
+        "en": "Recursa uses a persistent-REPL harness, bootstraps 14 skills from the corpus and self-generated practice tasks, then runs a recursive solve-diagnose-edit-verify loop in which a top learner splits 150 training tasks by topic, child learners improve skills in parallel, and the parent merges, reconciles and re-validates, with the same model acting as both solver and learner. On Harvey LAB's Firm Knowledge environment (9,288 files) held-out all-pass rose from 30.0% to 55.0% with DeepSeek-V4.1-Flash and from 35.0% to 46.0% with Qwen3.8-Flash, while a single learner reached only 43.0% and 37.0%, though answers were scored by a Qwen3.8-Max judge and the authors revised 46 rubric criteria they judged inconsistent.",
+        "zh": "Recursa 用持久 REPL 的 harness，先从语料和自出的练习题中引导出 14 个技能，再运行递归的“求解—诊断—修改—验证”循环：顶层学习者按主题把 150 道训练题分组，子学习者并行改进技能，上层再合并、调和冲突并重新验证，全程由同一个模型既当求解者又当学习者。在 Harvey LAB 的 Firm Knowledge 环境（9,288 个文件）上，留出集全对率在 DeepSeek-V4.1-Flash 下从 30.0% 升到 55.0%，在 Qwen3.8-Flash 下从 35.0% 升到 46.0%，而单学习者只到 43.0% 和 37.0%；不过评分来自 Qwen3.8-Max 评审，且作者修订了 46 条他们认为有矛盾的评分细则。"
+      },
+      "metric": {
+        "en": "Harvey LAB held-out all-pass 30.0% → 55.0% (DeepSeek-V4.1-Flash, multi-learner)",
+        "zh": "Harvey LAB 留出集全对率 30.0% → 55.0%（DeepSeek-V4.1-Flash，多学习者）"
+      },
+      "pills": [
+        {
+          "en": "DeepSeek-V4.1-Flash all-pass",
+          "zh": "DeepSeek-V4.1-Flash 全对率",
+          "value": "30.0→55.0%",
+          "tone": "up"
+        },
+        {
+          "en": "Qwen3.8-Flash all-pass",
+          "zh": "Qwen3.8-Flash 全对率",
+          "value": "35.0→46.0%",
+          "tone": "up"
+        },
+        {
+          "en": "Single learner (DeepSeek)",
+          "zh": "单学习者（DeepSeek）",
+          "value": "43.0%",
+          "tone": "flat"
+        }
+      ],
+      "arxiv": "2611.04035",
+      "authors": "Erkang Zhu, Yin Lin, Xiaorong Shi, Xuanrui Lin, Jingren Zhou (Alibaba)",
+      "handle": "@ekzhu",
+      "links": [
+        {
+          "zh": "论文",
+          "en": "Paper",
+          "url": "https://arxiv.org/abs/2611.04035"
+        },
+        {
+          "zh": "HF 论文页",
+          "en": "HF Paper Page",
+          "url": "https://huggingface.co/papers/2611.04035"
+        },
+        {
+          "zh": "X 原帖",
+          "en": "X Post",
+          "url": "https://x.com/ekzhu/status/2118013221017968941"
+        }
+      ]
+    },
+    {
+      "id": "rsi-dojo-automate-llm-post-training",
+      "edition": "2026-11-04",
+      "tags": [
+        "agentic-rl",
+        "co-evolution"
+      ],
+      "title": {
+        "en": "RSI-Dojo: Fine-Tuning on Filtered Frontier-Agent Training Runs Teaches a 35B-A3B Model to Post-Train LLMs at Frontier Level",
+        "zh": "RSI-Dojo：用筛选过的前沿 agent 训练轨迹微调，35B-A3B 模型做 LLM 后训练达到前沿水平"
+      },
+      "why": {
+        "en": "Open models get much better at running LLM post-training themselves after fine-tuning on filtered trajectories of frontier agents doing real training tasks mined from papers, because most of their failures were basic pipeline mistakes that the demonstrations teach them to avoid.",
+        "zh": "开源模型在用从论文挖出的真实训练任务上、经过筛选的前沿 agent 轨迹微调后，自主做 LLM 后训练的能力大幅提升，因为它们原来的失败大多是训练流水线上的基础错误，而这些示范正好教会它们避开。"
+      },
+      "what": {
+        "en": "Agents meant to train and improve models need many executable training environments with data, metrics and evaluation code, but unlike coding or Kaggle-style tasks no such collection existed for post-training.",
+        "zh": "要让 agent 训练和改进模型，需要大量带数据、指标和评测代码的可执行训练环境，但与编程或 Kaggle 类任务不同，后训练领域此前没有这样的环境集合。"
+      },
+      "how": {
+        "en": "RSI-Craft (CUHK, ByteDance and others) turns top-venue dataset papers into executable tasks and filters them to 281, frontier agents solve them under a harness with extra guidance against recurring mistakes, and only trajectories passing both a behavior rubric and an outcome check are kept (1,240 training trajectories from 324 sessions) to fine-tune Qwen3.5-9B and Qwen3.6-35B-A3B. RSI-Dojo-35B-A3B rises from 13.08 to 29.95 on PostTrainBench, just above GLM-5.2 at 29.52 and GPT-5.5 at 27.80 in the authors' setup, completes a training run in 28 of 28 settings against 15 for its base, and scores 53.29 on PostTrainBench-Lite with both filters against 30.66 and 26.13 with only one, though the authors have not yet had a model train its own successor.",
+        "zh": "RSI-Craft（港中文、字节跳动等）把顶会的数据集论文转成可执行任务并筛到 281 个，前沿 agent 在加了针对常见错误提示的 harness 下完成这些任务，只有同时通过行为细则和结果检查的轨迹才被保留（324 个会话切成 1,240 条训练轨迹），用来微调 Qwen3.5-9B 和 Qwen3.6-35B-A3B。RSI-Dojo-35B-A3B 在 PostTrainBench 上从 13.08 升到 29.95，在作者的设置下略高于 GLM-5.2 的 29.52 和 GPT-5.5 的 27.80，28 个设置全部完成了训练（基座模型只有 15 个），在 PostTrainBench-Lite 上两种筛选都用时得分 53.29，只用一种时为 30.66 和 26.13；不过作者还没有让模型去训练自己的下一代。"
+      },
+      "metric": {
+        "en": "PostTrainBench 13.08 → 29.95 (RSI-Dojo-35B-A3B) vs 29.52 (GLM-5.2)",
+        "zh": "PostTrainBench 13.08 → 29.95（RSI-Dojo-35B-A3B）对 29.52（GLM-5.2）"
+      },
+      "pills": [
+        {
+          "en": "PostTrainBench gain (35B-A3B)",
+          "zh": "PostTrainBench 提升（35B-A3B）",
+          "value": "+16.87",
+          "tone": "up"
+        },
+        {
+          "en": "Settings with a completed run",
+          "zh": "完成训练的设置",
+          "value": "28/28",
+          "tone": "up"
+        },
+        {
+          "en": "Lite score with one filter only",
+          "zh": "只用一种筛选的 Lite 分数",
+          "value": "≤30.66",
+          "tone": "down"
+        }
+      ],
+      "arxiv": "2611.03698",
+      "authors": "Shuzheng Gao, Zhaojian Yu, Penghao Yin, et al. (CUHK, ByteDance, Tsinghua, SJTU)",
+      "handle": "@dair_ai",
+      "links": [
+        {
+          "zh": "论文",
+          "en": "Paper",
+          "url": "https://arxiv.org/abs/2611.03698"
+        },
+        {
+          "zh": "X 原帖",
+          "en": "X Post",
+          "url": "https://x.com/dair_ai/status/2117990256297513364"
+        }
+      ]
+    },
+    {
       "id": "attune-agentic-throughput-tuning",
       "edition": "2026-11-04",
       "tags": [
