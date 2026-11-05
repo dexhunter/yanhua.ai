@@ -200,6 +200,286 @@ window.YANHUA_DIGESTS = {
   ],
   "items": [
     {
+      "id": "exo-runtime-harness-self-improvement",
+      "edition": "2026-11-05",
+      "tags": [
+        "harness-search",
+        "recursive-self-improvement"
+      ],
+      "title": {
+        "en": "Exo: Collapse Offline Harness Search into Safe Runtime Self-Editing During the Task",
+        "zh": "Exo：把离线 harness 搜索收进任务中的安全运行时自编辑"
+      },
+      "why": {
+        "en": "Letting an agent rewrite its own harness mid-task cuts model cost by 12–53% versus Codex and Pi on long open-world goals, and by 35–61% versus the same starting policy without self-editing on AppWorld and SREGym, because specialization compounds inside the run while a protected core keeps history and activation outside the editable layer.",
+        "zh": "让 agent 在任务进行中改写自己的 harness，在长时开放世界目标上相对 Codex 与 Pi 把模型费用降 12–53%，在 AppWorld 与 SREGym 上相对同一起始策略（不能自编辑）降 35–61%，因为专长化在同一次运行里复利，而受保护核心把历史与策略激活留在可编辑层之外。"
+      },
+      "what": {
+        "en": "Offline harness optimizers need benchmarks many teams lack and freeze the policy after search, so real long tasks cannot cheaply re-tune tools, context assembly, or the improvement strategy itself.",
+        "zh": "离线 harness 优化器依赖许多团队没有的基准，并在搜索后冻结策略，因此真实长任务很难低成本地再调工具、上下文拼装，乃至改进策略本身。"
+      },
+      "how": {
+        "en": "Exo mounts executor policy as editable code, lets the agent request replacement through an independent guardian, and preserves append-only history plus versioned artifacts so a bad edit can roll back; on RuneScape combat and crafting it spends 12–53% less than Codex/Pi and 45–82% less on transfer accounts, AppWorld held-out cost falls 61% at the same 96.9% pass rate, SREGym median diagnosis time and cost fall 35%, and Continual Learning Bench coding cost including learning falls 14%, though one-off quests did not repay the specialization tax and weaker models made unhelpful edits.",
+        "zh": "Exo 把 executor 策略挂成可编辑代码，经独立 guardian 请求替换，并用只追加历史与版本化产物保证坏编辑可回滚；在 RuneScape 战斗与制作上花费比 Codex/Pi 低 12–53%，迁移账号再低 45–82%，AppWorld 留出费用在同为 96.9% 通过率时降 61%，SREGym 诊断中位时间与费用降 35%，Continual Learning Bench 编码含学习费用降 14%，但一次性任务收不回专长化前期成本，较弱模型的自编辑也帮不上忙。"
+      },
+      "metric": {
+        "en": "12–53% lower open-world cost vs Codex/Pi; 61% lower AppWorld held-out cost at 96.9% pass",
+        "zh": "开放世界费用相对 Codex/Pi 低 12–53%；AppWorld 留出费用在 96.9% 通过率下降 61%"
+      },
+      "pills": [
+        {
+          "en": "Open-world cost",
+          "zh": "开放世界费用",
+          "value": "−12–53%",
+          "tone": "up"
+        },
+        {
+          "en": "AppWorld held-out",
+          "zh": "AppWorld 留出",
+          "value": "−61%",
+          "tone": "up"
+        },
+        {
+          "en": "SREGym diagnosis",
+          "zh": "SREGym 诊断",
+          "value": "−35%",
+          "tone": "up"
+        }
+      ],
+      "arxiv": "2611.00463",
+      "authors": "Alexander Krentsel, Sylvia Ratnasamy, Ion Stoica, Martin Casado, Ankur Goyal",
+      "handle": "@AlexKrentsel",
+      "repo": "https://github.com/exoharness/exo",
+      "links": [
+        {
+          "zh": "论文",
+          "en": "Paper",
+          "url": "https://arxiv.org/abs/2611.00463"
+        },
+        {
+          "zh": "仓库",
+          "en": "Repo",
+          "url": "https://github.com/exoharness/exo"
+        },
+        {
+          "zh": "X 原帖",
+          "en": "X Post",
+          "url": "https://x.com/AlexKrentsel/status/2118390747032686976"
+        }
+      ]
+    },
+    {
+      "id": "care-grounded-rsi-customer-service",
+      "edition": "2026-11-05",
+      "tags": [
+        "recursive-self-improvement",
+        "production-agents"
+      ],
+      "title": {
+        "en": "CARE: Grounded Production RSI Cuts Bad Cases Below a Frontier Incumbent After Five Self-Distillation Rounds",
+        "zh": "CARE：有 grounding 的生产 RSI 经五轮自蒸馏把坏案例率压到低于前沿 incumbent"
+      },
+      "why": {
+        "en": "A Meituan Keeta 31B customer-service model beats GPT-5.4 on inspected bad cases (1.97% vs 4.60%) after five RSI rounds because failures are attributed before training and only the first wrong decision is taught via on-policy self-distillation with hindsight reserved for the teacher.",
+        "zh": "美团 Keeta 的 31B 客服模型经五轮 RSI 后，在已审查坏案例率上优于 GPT-5.4（1.97% 对 4.60%），因为训练前先做失败归因，并且只用 on-policy self-distillation 纠正第一个错误决策，事后信息只给教师、不给学生。"
+      },
+      "what": {
+        "en": "Replacing a costly frontier support model needs continued learning from the replacement’s own production mistakes under changing Skills and SOPs, without letting tool or harness bugs become weight updates.",
+        "zh": "用自研模型替换昂贵的前沿客服模型，需要在 Skill/SOP 不断变化时从自身生产失误里持续学习，又不能把工具或 harness 的 bug 当成权重更新信号。"
+      },
+      "how": {
+        "en": "CARE cold-starts from governed incumbent traces, then loops 24/7 evidence-blinded inspection, routes non-model faults to component owners, truncates model faults at the first bad decision, and trains with OPSD where a frozen self-teacher sees the diagnosis and verified repair; after five iterations CARE-31B reaches 1.97% bad-case rate (incumbent 4.60%), simulation accuracy 94.1%, online satisfaction parity (+1.7 points latest), 27.7% lower median reply latency, and 70.5% lower serving cost per order once the incumbent is retired, while plain SFT collapsed and DPO collapsed into handoff (15.1% simulation pass).",
+        "zh": "CARE 用受治理的 incumbent 轨迹冷启动，再循环跑 24/7 证据盲检，把非模型故障交给组件负责人，把模型故障截到第一个错误决策，并用 OPSD 训练（冻结的自教师能看到诊断与已验证修复）；五轮后 CARE-31B 坏案例率 1.97%（incumbent 4.60%），仿真准确率 94.1%，在线满意度追平（最近一期 +1.7 点），中位回复延迟降 27.7%，完全替换后每单 serving 成本降 70.5%；而普通 SFT 会崩，DPO 会塌成大量转人工（仿真通过率仅 15.1%）。"
+      },
+      "metric": {
+        "en": "Bad-case rate 6.42%→1.97% (vs GPT-5.4 4.60%); −70.5% serving cost/order",
+        "zh": "坏案例率 6.42%→1.97%（对 GPT-5.4 的 4.60%）；每单 serving 成本 −70.5%"
+      },
+      "pills": [
+        {
+          "en": "Bad-case rate",
+          "zh": "坏案例率",
+          "value": "1.97%",
+          "tone": "up"
+        },
+        {
+          "en": "vs GPT-5.4",
+          "zh": "对 GPT-5.4",
+          "value": "4.60%",
+          "tone": "flat"
+        },
+        {
+          "en": "Cost/order",
+          "zh": "每单成本",
+          "value": "−70.5%",
+          "tone": "up"
+        }
+      ],
+      "arxiv": "2611.02839",
+      "authors": "Yanbei Jiang, Chao Lei, Rena Gao, et al. (Keeta/Meituan, University of Melbourne, Fudan)",
+      "handle": "@arkyyang",
+      "links": [
+        {
+          "zh": "论文",
+          "en": "Paper",
+          "url": "https://arxiv.org/abs/2611.02839"
+        },
+        {
+          "zh": "X 原帖",
+          "en": "X Post",
+          "url": "https://x.com/arkyyang/status/2118355306355007503"
+        },
+        {
+          "zh": "X 原帖",
+          "en": "X Post",
+          "url": "https://x.com/SciFi/status/2118403518201504051"
+        }
+      ]
+    },
+    {
+      "id": "harness-is-the-model-banking-conduct",
+      "edition": "2026-11-05",
+      "tags": [
+        "harness-search",
+        "evaluation"
+      ],
+      "title": {
+        "en": "The Harness Is the Model: Scaffold Choice Moves Banking Conduct Compliance by up to 11.5 Points and Flips Rankings",
+        "zh": "Harness 就是模型：脚手架选择可让银行合规正确率摆动最多 11.5 个点并翻转排名"
+      },
+      "why": {
+        "en": "Holding the LLM fixed, the harness alone moved correct-case rates by as much as 11.5 points for one open-weight model and flipped which model looked safest, so model-risk validation that ignores the scaffold will mis-rank deployments.",
+        "zh": "在固定 LLM 时，仅靠 harness 就能让某一开源权重模型的正确案例率摆动多达 11.5 个点，并翻转谁看起来最合规，因此忽略脚手架的模型风险验证会把部署排错序。"
+      },
+      "what": {
+        "en": "Banks validate models, but they deploy a model-plus-harness system whose policy context, tools, memory, and reviewers may change compliance with consumer-credit and AML-style conduct rules.",
+        "zh": "银行常按“模型”做验证，实际部署却是模型加 harness 的系统，其策略上下文、工具、记忆与审查器都会改变对消费信贷、反洗钱类行为规则的合规表现。"
+      },
+      "how": {
+        "en": "Four open-weight models each ran five harnesses on 156 pre-registered Northbridge Bank cases (3120 scored episodes from the executed tool trace); within qwen3.8-flash-next the spread was 11.5 points (93.6% under a same-model reviewer vs 82.1% when policy was search-only), a same-model reviewer cut violations 9.6%→6.4% without raising over-refusals, and 26% of violations still denied the forbidden action in the customer message, so transcript-only review would miss them.",
+        "zh": "四个开源权重模型各跑五种 harness，覆盖 156 个预注册 Northbridge Bank 案例（按已执行工具轨迹计分共 3120 场）；在 qwen3.8-flash-next 上跨度达 11.5 点（同模审查器下 93.6%，策略只能检索时 82.1%），同模审查器把违规从 9.6% 降到 6.4% 且未抬高过度拒答，仍有 26% 的违规在对客消息里否认刚执行的禁止动作，只看对话记录会漏掉。"
+      },
+      "metric": {
+        "en": "Within-model harness spread up to 11.5 pp; reviewer violations 9.6%→6.4%",
+        "zh": "同模型 harness 跨度最多 11.5 个百分点；审查器违规 9.6%→6.4%"
+      },
+      "pills": [
+        {
+          "en": "Max harness spread",
+          "zh": "最大 harness 跨度",
+          "value": "11.5 pp",
+          "tone": "up"
+        },
+        {
+          "en": "Reviewer violations",
+          "zh": "审查器违规",
+          "value": "−33%",
+          "tone": "up"
+        },
+        {
+          "en": "Hidden in transcript",
+          "zh": "对话中隐藏",
+          "value": "26%",
+          "tone": "down"
+        }
+      ],
+      "arxiv": "2611.06116",
+      "authors": "Mehmet Murat Huyut",
+      "handle": "@bravr",
+      "repo": "https://github.com/mhuyut/harness-is-the-model",
+      "links": [
+        {
+          "zh": "论文",
+          "en": "Paper",
+          "url": "https://arxiv.org/abs/2611.06116"
+        },
+        {
+          "zh": "仓库",
+          "en": "Repo",
+          "url": "https://github.com/mhuyut/harness-is-the-model"
+        },
+        {
+          "zh": "X 原帖",
+          "en": "X Post",
+          "url": "https://x.com/bravr/status/2118406245640015906"
+        }
+      ]
+    },
+    {
+      "id": "serverbench-agents-design-serving",
+      "edition": "2026-11-05",
+      "tags": [
+        "autoresearch",
+        "harness-search"
+      ],
+      "title": {
+        "en": "ServerBench: Coding Agents That Design Their Own Serving Stack Reach 4.87× Reference Token Value per GPU Dollar",
+        "zh": "ServerBench：自设计 serving 栈的编码 agent 达到参考系统 4.87 倍的每 GPU 美元 token 价值"
+      },
+      "why": {
+        "en": "Agents that treat serving design as an experiment loop can beat strong vLLM/SGLang baselines by up to 4.87× on latency-qualified token value per GPU dollar, because high-value runs grow capacity before concurrency and verify the new execution paths those optimizations introduce.",
+        "zh": "把 serving 设计当成实验循环的 agent，能在“满足延迟约束的每 GPU 美元 token 价值”上最多超出强 vLLM/SGLang 基线 4.87 倍，因为高价值运行会先抬能力再抬并发，并验证这些优化新引入的执行路径。"
+      },
+      "what": {
+        "en": "Prior agent-systems benchmarks oversimplify workloads and score raw speedup, missing whether a coding agent can build a complete specialized LLM server under real session dependencies, latency SLOs, and GPU cost.",
+        "zh": "以往 agent-系统基准把工作负载过度简化并只看加速比，无法衡量编码 agent 能否在真实会话依赖、延迟 SLO 与 GPU 成本下建成完整的专用 LLM 服务器。"
+      },
+      "how": {
+        "en": "ServerBench starts from a minimal Transformers server, replays stateful coding-agent sessions, scores dollars-per-dollar only on requests meeting frozen TTFT/TPOT targets, and independently verifies submissions; across 11 agent models and three deployments, 22 of 33 runs pass verification and 13 beat the strongest baseline, with Claude Sonnet 5.5 at 2.97 dollars/dollar on Gemma E4B (4.87× vLLM) and Claude Opus 5.5 at 4.40 on Qwen3.5 9B.",
+        "zh": "ServerBench 从最小 Transformers 服务器起步，回放有状态的编码 agent 会话，只对满足冻结 TTFT/TPOT 目标的请求计 dollars-per-dollar，并独立验证提交；在 11 个 agent 模型与三套部署上，33 次运行中 22 次通过验证、13 次超过最强基线，Claude Sonnet 5.5 在 Gemma E4B 上达 2.97 dollars/dollar（相对 vLLM 4.87×），Claude Opus 5.5 在 Qwen3.5 9B 上达 4.40。"
+      },
+      "metric": {
+        "en": "Best 4.87× vs vLLM on Gemma E4B; 22/33 verified, 13 beat strongest baseline",
+        "zh": "Gemma E4B 上相对 vLLM 最佳 4.87×；22/33 通过验证，13 次超过最强基线"
+      },
+      "pills": [
+        {
+          "en": "Best vs vLLM",
+          "zh": "相对 vLLM 最佳",
+          "value": "4.87×",
+          "tone": "up"
+        },
+        {
+          "en": "Verified runs",
+          "zh": "通过验证",
+          "value": "22/33",
+          "tone": "flat"
+        },
+        {
+          "en": "Beat baseline",
+          "zh": "超过基线",
+          "value": "13",
+          "tone": "up"
+        }
+      ],
+      "arxiv": "2611.06841",
+      "authors": "Xinrui Zhong, Zhiming Wang, Yongqi Liu, Zhaohui Wang, Shanglin Yang, Zikun Li, Zhuoming Chen, Beidi Chen",
+      "handle": "@bravr",
+      "repo": "https://github.com/Infini-AI-Lab/Server-Bench",
+      "links": [
+        {
+          "zh": "论文",
+          "en": "Paper",
+          "url": "https://arxiv.org/abs/2611.06841"
+        },
+        {
+          "zh": "仓库",
+          "en": "Repo",
+          "url": "https://github.com/Infini-AI-Lab/Server-Bench"
+        },
+        {
+          "zh": "X 原帖",
+          "en": "X Post",
+          "url": "https://x.com/bravr/status/2118297529133551799"
+        },
+        {
+          "zh": "X 原帖",
+          "en": "X Post",
+          "url": "https://x.com/arnaudmercier/status/2118272464782332240"
+        }
+      ]
+    },
+    {
       "id": "latent-harness-compile-activation-shifts",
       "edition": "2026-11-05",
       "tags": [
