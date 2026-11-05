@@ -19,6 +19,15 @@ window.YANHUA_DIGESTS = {
   },
   "editions": [
     {
+      "id": "2026-11-05",
+      "date": "2026-11-05",
+      "slot": "",
+      "label": {
+        "zh": "2026-11-05",
+        "en": "5 Nov 2026"
+      }
+    },
+    {
       "id": "2026-11-04",
       "date": "2026-11-04",
       "slot": "",
@@ -190,6 +199,342 @@ window.YANHUA_DIGESTS = {
     }
   ],
   "items": [
+    {
+      "id": "latent-harness-compile-activation-shifts",
+      "edition": "2026-11-05",
+      "tags": [
+        "harness-search",
+        "activation-steering"
+      ],
+      "title": {
+        "en": "Latent Harness: Compile External Harness Behaviors into Rank-8 Activation Shifts That Need No Prompt Tokens",
+        "zh": "Latent Harness：把外部 harness 行为编译成无需提示词 token 的 rank-8 激活偏移"
+      },
+      "why": {
+        "en": "Harness gains can live inside a frozen model as tiny post-block activation shifts instead of per-call prompt text or weight updates, recovering the source harness in 8 of 10 settings and lifting budget-matched harness search by 1.45× because the behavior is paid once at compile time and then reused as a composable bundle.",
+        "zh": "Harness 的收益可以住进冻结模型里的微小 post-block 激活偏移，而不必每轮重发提示词或改权重：在 10 个预注册设定中有 8 个能恢复源 harness 增益，并把同等评估预算下的 harness 搜索抬高 1.45 倍，因为行为只在编译时付一次代价，之后作为可组合的 bundle 复用。"
+      },
+      "what": {
+        "en": "Text harnesses are re-sent and re-paid on every call, while internalizing them with LoRA-style weight updates is expensive to iterate and locks strength at merge time.",
+        "zh": "文本 harness 每轮调用都要重发并付费，而用类 LoRA 的权重更新把行为内化又迭代昂贵，且合并时就锁死干预强度。"
+      },
+      "how": {
+        "en": "Latent Harness trains a rank-8 shift (0.03–0.05% of parameters) at every decoder-block output from teacher traces or success-filtered harness trajectories, then injects it at inference with strength, phase, and shift-space mixing controls and no harness text; on ToolHop it reaches 60.00% at matched capacity versus 54.74% for same-capacity LoRA (full LoRA needs 11.1× parameters to match), and a compiled library alone accounts for the 1.45× search multiplier over text mutation at T=1300 evaluations.",
+        "zh": "Latent Harness 用教师轨迹或严格过滤的成功 harness 轨迹，在每个 decoder block 输出处训练 rank-8 偏移（约占参数 0.03–0.05%），推理时注入并暴露强度、相位与 shift-space 混合控制且不再附带 harness 文本；在 ToolHop 上同等容量达 60.00%，同容量 LoRA 为 54.74%（全容量 LoRA 需约 11.1 倍参数才到同档），在 T=1300 次评估预算下仅编译库搜索就相对文本改写给出 1.45 倍增益。"
+      },
+      "metric": {
+        "en": "8/10 recovery; 1.45× harness-search lift; ToolHop 60.00% vs same-capacity LoRA 54.74%",
+        "zh": "8/10 恢复；harness 搜索 1.45×；ToolHop 60.00% 对同容量 LoRA 54.74%"
+      },
+      "pills": [
+        {
+          "en": "Source recovery",
+          "zh": "源增益恢复",
+          "value": "8/10",
+          "tone": "up"
+        },
+        {
+          "en": "Search lift",
+          "zh": "搜索增益",
+          "value": "1.45×",
+          "tone": "up"
+        },
+        {
+          "en": "Trainable share",
+          "zh": "可训练占比",
+          "value": "0.03–0.05%",
+          "tone": "flat"
+        }
+      ],
+      "arxiv": "2611.01415",
+      "authors": "Ran Li, Shimin Di, Zeyu Ren, Ling Yue, Jiachuan Wang, Lei Chen",
+      "handle": "@HEI",
+      "repo": "https://github.com/rlisml/latentharness",
+      "links": [
+        {
+          "zh": "论文",
+          "en": "Paper",
+          "url": "https://arxiv.org/abs/2611.01415"
+        },
+        {
+          "zh": "仓库",
+          "en": "Repo",
+          "url": "https://github.com/rlisml/latentharness"
+        },
+        {
+          "zh": "X 原帖",
+          "en": "X Post",
+          "url": "https://x.com/HEI/status/2118262980160733531"
+        }
+      ]
+    },
+    {
+      "id": "paretosaddler-quality-cost-harness-search",
+      "edition": "2026-11-05",
+      "tags": [
+        "harness-search",
+        "multi-objective"
+      ],
+      "title": {
+        "en": "ParetoSaddler: Keep Credible Quality–Cost Harness Patches Alive During Search, Apply Deployment Preference Only at the End",
+        "zh": "ParetoSaddler：搜索中保留可信的质量–成本 harness 补丁，部署偏好留到最后再选"
+      },
+      "why": {
+        "en": "Joint quality–cost harness search works better when intermediate promotion only asks whether a patch makes credible progress on either objective, because early cost preference can kill fixes that unlock later savings, and Bayesian bootstrap screening filters noise from stochastic rollouts.",
+        "zh": "联合优化质量与成本的 harness 搜索，中间晋升只问补丁是否在任一目标上有可信进展会更好：过早套用成本偏好会杀掉那些先修失败、稍后才能省钱的改动，而贝叶斯 bootstrap 筛选又能滤掉随机 rollout 带来的噪声。"
+      },
+      "what": {
+        "en": "Automatic harness optimization usually optimizes quality alone, and applying a final quality–cost deployment preference at every intermediate screen can reject patches that look expensive now but enable stronger later solutions.",
+        "zh": "自动 harness 优化通常只盯质量，若在每轮中间筛选就套用最终的质量–成本部署偏好，会拒绝当下显得更贵、却能为后续改进铺路的补丁。"
+      },
+      "how": {
+        "en": "ParetoSaddler separates promotion from deployment: candidates and parents are repeatedly executed, Bayesian bootstrap Pareto support promotes updates that improve quality or cost without already matching the final preference, then the preference selects after the budget ends; on held-out ClawMark the quality-extreme harness moves from 70.86% at $1.17/task to 81.35% at $1.01, and on GAIA2 from 56.22% at $0.78 to 62.89% at $0.45, beating quality-only AutoSaddler while staying cheaper.",
+        "zh": "ParetoSaddler 把晋升与部署分开：候选与父 harness 反复执行，用贝叶斯 bootstrap 的 Pareto 支持度晋升在质量或成本任一方向有可信进展但未必已满足最终偏好的更新，预算耗尽后再按偏好选型；在留出 ClawMark 上质量极端点从 70.86%、$1.17/任务升到 81.35%、$1.01，在 GAIA2 上从 56.22%、$0.78 升到 62.89%、$0.45，且优于只优化质量的 AutoSaddler 并更便宜。"
+      },
+      "metric": {
+        "en": "ClawMark 70.86%→81.35% at $1.17→$1.01; GAIA2 56.22%→62.89% at $0.78→$0.45",
+        "zh": "ClawMark 70.86%→81.35%（$1.17→$1.01）；GAIA2 56.22%→62.89%（$0.78→$0.45）"
+      },
+      "pills": [
+        {
+          "en": "ClawMark quality",
+          "zh": "ClawMark 质量",
+          "value": "81.35%",
+          "tone": "up"
+        },
+        {
+          "en": "GAIA2 quality",
+          "zh": "GAIA2 质量",
+          "value": "62.89%",
+          "tone": "up"
+        },
+        {
+          "en": "GAIA2 cost",
+          "zh": "GAIA2 成本",
+          "value": "$0.45",
+          "tone": "down"
+        }
+      ],
+      "arxiv": "2611.02079",
+      "authors": "Xingzhi Qian, Sungho Park, Rongyuan Tan, Jianbo Yu, Jue Zhang, et al. (Microsoft)",
+      "handle": "@bvsbharat",
+      "links": [
+        {
+          "zh": "论文",
+          "en": "Paper",
+          "url": "https://arxiv.org/abs/2611.02079"
+        },
+        {
+          "zh": "项目页",
+          "en": "Project",
+          "url": "https://aka.ms/ParetoSaddler-website"
+        },
+        {
+          "zh": "X 原帖",
+          "en": "X Post",
+          "url": "https://x.com/bvsbharat/status/2118029069317198045"
+        },
+        {
+          "zh": "X 原帖",
+          "en": "X Post",
+          "url": "https://x.com/yaelkroy/status/2118070780156072073"
+        }
+      ]
+    },
+    {
+      "id": "pyrua-real-embodied-rsi",
+      "edition": "2026-11-05",
+      "tags": [
+        "rsi",
+        "embodied"
+      ],
+      "title": {
+        "en": "PyRUA-REAL: Embodied RSI Turns Physical Exploration into Persistent Memory and Deployable Robot Skills",
+        "zh": "PyRUA-REAL：具身 RSI 把物理探索变成持久记忆与可部署机器人技能"
+      },
+      "why": {
+        "en": "Coding agents can keep improving real robots after the first success when they retain physical rollouts as memory and reusable skills and freeze the result into agent-free programs, reaching 91.1% average success on eight Franka tasks and 84.4% on RoboDojo because exploration experience is written into code rather than discarded after one trial.",
+        "zh": "当编码 agent 把物理 rollout 留成记忆与可复用技能、并把结果冻成无在线 agent 的程序时，真实机器人能在首次成功后继续改进：在 8 个 Franka 任务上平均成功率 91.1%，在 RoboDojo 上 84.4%，因为探索经验被写进代码，而不是试一次就丢掉。"
+      },
+      "what": {
+        "en": "LLM coding agents can write robot programs, but it is unclear how physical interaction should become lasting capability when model weights stay fixed and each teleop or online agent call is expensive.",
+        "zh": "LLM 编码 agent 能写机器人程序，但在模型权重固定、遥操作或在线 agent 调用又昂贵时，物理交互如何变成持久能力仍不清楚。"
+      },
+      "how": {
+        "en": "PyRUA-REAL pairs a researcher that sets experiment goals with an engineer that implements, runs, and diagnoses, storing facts, memories, and skill code in a persistent repository while model parameters stay frozen; frozen offline programs then run without LM calls. Across eight dual-arm Franka tasks recorded development success averages 91.1%, and frozen programs score 84.4% capability-averaged on 42 RoboDojo tasks versus 50.35% for PyRUA-Lean; Ethernet insertion still needed online assistance, showing offline code is not yet enough for every contact-rich case.",
+        "zh": "PyRUA-REAL 让 researcher 设定实验目标、engineer 实现并诊断，在模型参数冻结下把事实、记忆与技能代码写入持久仓库；冻结核心程序后可无 LM 调用运行。8 个双臂 Franka 任务的开发记录平均成功率 91.1%；在 42 个 RoboDojo 任务上冻结核心程序能力平均 84.4%，对比 PyRUA-Lean 的 50.35%；以太网插接仍需在线协助，说明并非所有接触丰富任务都能纯离线。"
+      },
+      "metric": {
+        "en": "8 real tasks 91.1%; RoboDojo 84.4% vs PyRUA-Lean 50.35%",
+        "zh": "8 个真实任务 91.1%；RoboDojo 84.4% 对 PyRUA-Lean 50.35%"
+      },
+      "pills": [
+        {
+          "en": "Real-world SR",
+          "zh": "真实成功率",
+          "value": "91.1%",
+          "tone": "up"
+        },
+        {
+          "en": "RoboDojo SR",
+          "zh": "RoboDojo 成功率",
+          "value": "84.4%",
+          "tone": "up"
+        },
+        {
+          "en": "vs PyRUA-Lean",
+          "zh": "相对 PyRUA-Lean",
+          "value": "+34.05 pt",
+          "tone": "up"
+        }
+      ],
+      "arxiv": "2611.06768",
+      "authors": "Qiang Wang, Jianxin Bi, Shulong Jiang, et al. (Peking University / EngineAI / NUS)",
+      "handle": "@embodiedaiwatch",
+      "links": [
+        {
+          "zh": "论文",
+          "en": "Paper",
+          "url": "https://arxiv.org/abs/2611.06768"
+        },
+        {
+          "zh": "项目页",
+          "en": "Project",
+          "url": "https://dagroup-pku.github.io/PyRUA-Lean/real/"
+        },
+        {
+          "zh": "X 原帖",
+          "en": "X Post",
+          "url": "https://x.com/embodiedaiwatch/status/2118256821219758087"
+        }
+      ]
+    },
+    {
+      "id": "dim-event-timeline-harness-release",
+      "edition": "2026-11-05",
+      "tags": [
+        "harness",
+        "open-source"
+      ],
+      "title": {
+        "en": "dim: An Open-Source Event-Timeline Agent Harness for Environment Sensing, History Recall, and Branching Focus",
+        "zh": "dim：开源事件时间线 agent harness，支持环境感知、历史召回与分支“分神”"
+      },
+      "why": {
+        "en": "An agent harness centered on an append-only event timeline, rather than a chat message list, lets one agent sense its environment, recall structured history, and branch into parallel focus without treating every thread as a separate subagent identity.",
+        "zh": "以只追加的事件时间线、而不是聊天消息列表为中心的 agent harness，能让同一个 agent 感知环境、结构化召回历史，并分支并行“分神”，而不必把每条线都当成另一个 subagent 身份。"
+      },
+      "what": {
+        "en": "Most agent harnesses still organize work around turn-based message lists and model requests, which under-serve long-running agents that need environment events, durable history, and parallel exploration.",
+        "zh": "多数 agent harness 仍按回合制消息列表与模型请求组织工作，难以支撑需要环境事件、持久历史与并行探索的长跑 agent。"
+      },
+      "how": {
+        "en": "dim (MIT) makes immutable events the core substrate—user input, judgments, actions, tool results, and harness work become timeline events consumed by capability state machines—while meta-prompts, structured history recall, timeline branches that keep a shared “I” across parallel focus, and a rutis-based plugin body spanning TypeScript, Go, Python, Swift, and Kotlin extend that body; [@ashfold](https://x.com/ashfold) announced the release in a long X Article detailing the design.",
+        "zh": "dim（MIT）把不可变事件当作核心基底——用户输入、判断、行动、工具结果与 harness 自身工作都成为时间线事件并由 capability 状态机消费——同时用元提示、结构化历史召回、在并行分神中保持统一“我”的时间线分支，以及基于 rutis、可用 TypeScript/Go/Python/Swift/Kotlin 扩展的插件躯体来扩展能力；[@ashfold](https://x.com/ashfold) 以长文 X Article 发布并解释了设计。"
+      },
+      "metric": {
+        "en": "Open-source MIT release; event timeline + branching focus + multi-language plugins",
+        "zh": "MIT 开源发布；事件时间线 + 分神分支 + 多语言插件"
+      },
+      "pills": [
+        {
+          "en": "License",
+          "zh": "协议",
+          "value": "MIT",
+          "tone": "flat"
+        },
+        {
+          "en": "Core",
+          "zh": "核心",
+          "value": "Event timeline",
+          "tone": "up"
+        },
+        {
+          "en": "X engagement",
+          "zh": "X 互动",
+          "value": "57 likes",
+          "tone": "up"
+        }
+      ],
+      "authors": "arcships / Han Cheng (@ashfold)",
+      "handle": "@ashfold",
+      "repo": "https://github.com/arcships/dim",
+      "links": [
+        {
+          "zh": "仓库",
+          "en": "Repo",
+          "url": "https://github.com/arcships/dim"
+        },
+        {
+          "zh": "X 原帖",
+          "en": "X Post",
+          "url": "https://x.com/ashfold/status/2118247562838933827"
+        }
+      ]
+    },
+    {
+      "id": "freeform-harness-mobile-open-extensions",
+      "edition": "2026-11-05",
+      "tags": [
+        "harness",
+        "mobile"
+      ],
+      "title": {
+        "en": "FreeForm Harness: A Mobile-Native Open Extension Substrate Where Device-Local Admission Keeps Trust On-Phone",
+        "zh": "FreeForm Harness：移动原生开放扩展基底，设备本地准入把信任留在手机上"
+      },
+      "why": {
+        "en": "Mobile agent openness needs a permanence-aware harness that absorbs location, proactive triggers, and scarce channels into always-present roles, so third parties and end users can publish or commission plugins while final admission stays device-local—closing 44 of 50 daily-life cases on an Android prototype without widening the declared composition space.",
+        "zh": "移动端 agent 的开放性需要一个有“永久层”意识的 harness：把定位、主动触发与稀缺通道吸收进始终在场的角色，让第三方与终端用户能发布或委托生成插件，而最终准入仍在设备本地——Android 原型在不扩大声明组合空间的前提下闭合了 50 个日常案例中的 44 个。"
+      },
+      "what": {
+        "en": "Phones already have the pieces for everyday agent tasks, but current mobile agents fuse them into monolithic pipelines with no open recombination point for users or third parties.",
+        "zh": "手机已具备日常 agent 任务所需能力碎片，但现有移动 agent 把它们融进单体流水线，用户与第三方没有可安装的重组入口。"
+      },
+      "how": {
+        "en": "FreeForm Harness (Amap / Alibaba) splits a frozen base L0, a replaceable-but-permanent required layer L1, and an open L2 under one plugin contract, with retrieval-first marketplace hits and tiered commissioned authoring on misses. On a Xiaomi 14 Pro Android 16 prototype it enforced the claimed boundaries, represented all 50 benchmark cases in a five-dimensional composition space, closed 44/50 end-to-end (17 retrieval, 27 commissioned; 6 honest non-closures), and beat a recipe-style automation baseline that closed only 17/50.",
+        "zh": "FreeForm Harness（高德 / 阿里）划分冻结基座 L0、可替换但永久的必需层 L1 与开放层 L2，统一插件契约；先检索市场，未命中再按层级委托生成。在小米 14 Pro、Android 16 原型上强制执行了声明边界，50 个基准案例全部落入五维组合空间，端到端闭合 44/50（检索 17、委托生成 27；诚实非闭合 6），优于仅闭合 17/50 的配方式自动化基线。"
+      },
+      "metric": {
+        "en": "44/50 end-to-end closures; automation baseline 17/50; all 50 cases fit composition space",
+        "zh": "端到端闭合 44/50；自动化基线 17/50；50 案例均落入组合空间"
+      },
+      "pills": [
+        {
+          "en": "E2E closure",
+          "zh": "端到端闭合",
+          "value": "44/50",
+          "tone": "up"
+        },
+        {
+          "en": "vs automation",
+          "zh": "对自动化基线",
+          "value": "17/50",
+          "tone": "down"
+        },
+        {
+          "en": "Composition fit",
+          "zh": "组合空间覆盖",
+          "value": "50/50",
+          "tone": "up"
+        }
+      ],
+      "arxiv": "2611.04579",
+      "authors": "Bo Zhang, Pengbo Zhang, Jiaxin Jiao, Yue Liu (Amap, Alibaba)",
+      "handle": "@ComputerPapers",
+      "links": [
+        {
+          "zh": "论文",
+          "en": "Paper",
+          "url": "https://arxiv.org/abs/2611.04579"
+        },
+        {
+          "zh": "X 原帖",
+          "en": "X Post",
+          "url": "https://x.com/ComputerPapers/status/2118100127667658855"
+        }
+      ]
+    },
     {
       "id": "cleo-minimal-harness-self-hostable",
       "edition": "2026-11-04",
