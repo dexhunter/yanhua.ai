@@ -209,6 +209,368 @@ window.YANHUA_DIGESTS = {
   ],
   "items": [
     {
+      "id": "molrsi-recursive-molecular-discovery",
+      "edition": "2026-11-06",
+      "tags": [
+        "harness-search",
+        "autoresearch",
+        "co-evolution"
+      ],
+      "title": {
+        "zh": "MoLRSI：递归改进分子发现搜索策略，抗生素湿实验命中率 15.9% vs 专家流程 8.7%，pMHC 设计 8 个选择性 binder vs Claude Science 0",
+        "en": "MoLRSI: Recursively Improving the Molecular-Discovery Search Policy Hits 15.9% Wet-Lab Antibiotics vs 8.7% Expert Workflow, and 8 Selective pMHC Binders vs 0 for Claude Science"
+      },
+      "why": {
+        "zh": "递归改进的是搜索策略本身，而不只是跑固定专家流程：同样数据与 1210 万化合物库，MoLRSI 把抗生素湿实验命中率做到 15.9%（专家非 agent 流程 8.7%），共享测试集 AUPRC 0.090→0.300，并用经验记忆在 pMHC 设计上打出 8 个选择性 binder（Claude Science 为 0）。",
+        "en": "Improving the search policy itself—not just running a fixed expert workflow—works: on the same data and 12.1M-compound library, MoLRSI raised wet-lab antibiotic hit rate to 15.9% vs 8.7% for an expert non-agentic workflow, lifted shared-test AUPRC from 0.090 to 0.300, and produced 8 selective pMHC binders where Claude Science got 0."
+      },
+      "what": {
+        "zh": "分子发现要在巨大组合空间里权衡活性、毒性与特异性；只自动化专家流程，无法学会如何为新任务改工作流、也无法把跨任务经验写进下一次搜索。",
+        "en": "Molecular discovery must trade off activity, toxicity, and specificity in a huge combinatorial space; automating an expert protocol alone does not teach how to rewrite workflows for new tasks or carry experience into the next search."
+      },
+      "how": {
+        "zh": "[@WengongJin](https://x.com/WengongJin) 等提出的 MoLRSI（arXiv:2610.39714；项目页 MolRSI）用资源库 + 持久跨任务记忆 + 工作流/架构的系统优化，让执行反馈驱动下一次搜索；抗生素侧共享测试 AUPRC 0.090→0.300、MSSA 命中 8.7%→15.9%（C3/C32 MRSA MIC 1 与 8 µg/mL），pMHC 侧两轮噬菌体展示+测序得到 MART-1 与 SARS-CoV-1 共 8 个选择性 binder，且扩大源任务池（2→25）可把六项抗菌任务平均测试 AUPRC 从约 0.32 提到约 0.37。",
+        "en": "[@WengongJin](https://x.com/WengongJin) and coauthors introduce MoLRSI (arXiv:2610.39714; MolRSI project page), which couples a resource library, persistent cross-task memory, and systematic workflow/architecture search so execution feedback steers the next search; on antibiotics, shared-test AUPRC rose 0.090→0.300 and MSSA hit rate 8.7%→15.9% (C3/C32 MRSA MICs 1 and 8 µg/mL), while two rounds of phage display + sequencing yielded 8 selective binders across MART-1 and SARS-CoV-1, and growing the source-task pool from 2→25 lifted mean test AUPRC across six antibacterial tasks from ~0.32 to ~0.37."
+      },
+      "metric": {
+        "zh": "湿实验命中 15.9% vs 8.7%；AUPRC 0.090→0.300；pMHC 选择性 binder 8 vs 0",
+        "en": "Wet-lab hit 15.9% vs 8.7%; AUPRC 0.090→0.300; pMHC selective binders 8 vs 0"
+      },
+      "pills": [
+        {
+          "zh": "抗生素命中",
+          "en": "Abx hit rate",
+          "value": "15.9% vs 8.7%",
+          "tone": "up"
+        },
+        {
+          "zh": "共享测试 AUPRC",
+          "en": "Shared-test AUPRC",
+          "value": "0.090→0.300",
+          "tone": "up"
+        },
+        {
+          "zh": "pMHC binders",
+          "en": "pMHC binders",
+          "value": "8 vs 0",
+          "tone": "up"
+        }
+      ],
+      "arxiv": "2610.39714",
+      "authors": "Yikun Zhang, Wengong Jin et al.",
+      "handle": "@WengongJin",
+      "links": [
+        {
+          "zh": "论文",
+          "en": "Paper",
+          "url": "https://arxiv.org/abs/2610.39714"
+        },
+        {
+          "zh": "项目页",
+          "en": "Project",
+          "url": "https://yikunpku.github.io/MolRSI/"
+        },
+        {
+          "zh": "作者",
+          "en": "Author",
+          "url": "https://x.com/WengongJin"
+        },
+        {
+          "zh": "X 原帖",
+          "en": "X Post",
+          "url": "https://x.com/WengongJin/status/2118763948300218745"
+        }
+      ]
+    },
+    {
+      "id": "harness-s-sibling-harness-rescue",
+      "edition": "2026-11-06",
+      "tags": [
+        "harness-search"
+      ],
+      "title": {
+        "zh": "Harness-S：用互补 sibling harness 救援失败 rollout，再把能力写回原 harness 下的单一策略——Qwen3.5-9B AppWorld Pass@3 64.89→72.52",
+        "en": "Harness-S: Rescue Failed Rollouts with Complementary Sibling Harnesses, Then Transfer the Behaviors into One Policy Under the Original Harness—Qwen3.5-9B AppWorld Pass@3 64.89→72.52"
+      },
+      "why": {
+        "zh": "不要再找“万能 harness”：sibling 变体修的是不同失败，把救援轨迹写进策略后，回到原 harness H0 仍有效——Qwen3.5-9B AppWorld Pass@3 从 GRPO 的 64.89 提到 72.52，Rank-1 路由到 75.19，且测试被堵时改写断言的比例从 13.3% 升到 48.5%。",
+        "en": "Stop hunting one universal harness: sibling variants repair different failures, and after writing rescue trajectories into the policy it still works under the original H0—Qwen3.5-9B AppWorld Pass@3 rises from GRPO's 64.89 to 72.52 (Rank-1 router 75.19), and switching to assertions when tests are blocked jumps from 13.3% to 48.5%."
+      },
+      "what": {
+        "zh": "从同一底座演化出的 harness 具有局部性、互补性与非平稳性：不同变体修不同失败，且随着策略学习，哪个 harness 有用也会变。",
+        "en": "Harnesses evolved from one base show locality, complementarity, and nonstationarity: variants fix different failures, and which harness helps shifts as the policy learns."
+      },
+      "how": {
+        "zh": "[@HuggingPapers](https://x.com/HuggingPapers) 与 @bvsbharat 分享的 Harness-S（SJTU / 小红书 / CMU；arXiv:2611.04277）先用 Directional Harness Evolution 建固定 Sibling Harness Pool，仅在 H0 全部尝试失败时才用 Adaptive Harness Router 调 sibling 生成救援轨迹替换失败组做 RL；AppWorld/SWE-Gym/DBBench 上策略回到 H0 仍显著优于纯策略训练，9B Pass@3：AppWorld 72.52 vs GRPO 64.89，SWE-Gym 40.00 vs 28.13。",
+        "en": "[@HuggingPapers](https://x.com/HuggingPapers) and @bvsbharat share Harness-S (SJTU / Xiaohongshu / CMU; arXiv:2611.04277): Directional Harness Evolution builds a fixed Sibling Harness Pool, and only when every H0 attempt fails does an Adaptive Harness Router call siblings so fresh rescue rollouts replace the failed group for RL; returned to H0 the policy beats policy-only training on AppWorld/SWE-Gym/DBBench, with 9B Pass@3 AppWorld 72.52 vs GRPO 64.89 and SWE-Gym 40.00 vs 28.13."
+      },
+      "metric": {
+        "zh": "AppWorld Pass@3 64.89→72.52（Rank-1 75.19）；断言切换 13.3%→48.5%",
+        "en": "AppWorld Pass@3 64.89→72.52 (Rank-1 75.19); assertion switch 13.3%→48.5%"
+      },
+      "pills": [
+        {
+          "zh": "AppWorld Pass@3",
+          "en": "AppWorld Pass@3",
+          "value": "64.89→72.52",
+          "tone": "up"
+        },
+        {
+          "zh": "Rank-1",
+          "en": "Rank-1",
+          "value": "75.19",
+          "tone": "up"
+        },
+        {
+          "zh": "断言切换",
+          "en": "Assertion switch",
+          "value": "13.3%→48.5%",
+          "tone": "up"
+        }
+      ],
+      "arxiv": "2611.04277",
+      "authors": "Kangning Zhang, Wenxiang Jiao, Weiwen Liu, Weinan Zhang et al.",
+      "handle": "@HuggingPapers",
+      "links": [
+        {
+          "zh": "论文",
+          "en": "Paper",
+          "url": "https://arxiv.org/abs/2611.04277"
+        },
+        {
+          "zh": "作者",
+          "en": "Author",
+          "url": "https://x.com/HuggingPapers"
+        },
+        {
+          "zh": "作者",
+          "en": "Author",
+          "url": "https://x.com/bvsbharat"
+        },
+        {
+          "zh": "X 原帖",
+          "en": "X Post",
+          "url": "https://x.com/HuggingPapers/status/2118677343942459538"
+        },
+        {
+          "zh": "X 原帖",
+          "en": "X Post",
+          "url": "https://x.com/bvsbharat/status/2118753631360929862"
+        }
+      ]
+    },
+    {
+      "id": "envopt-optimize-stationary-environments",
+      "edition": "2026-11-06",
+      "tags": [
+        "harness-search"
+      ],
+      "title": {
+        "zh": "EnvOpt：在模型与 harness 之外，把共享工作区当作第三优化轴——Haiku 4.5 成本降 72.7%、通过率 +14.34%，叠 Meta-Harness 后再降成本 83.4%",
+        "en": "EnvOpt: Treat the Shared Workspace as a Third Optimization Axis Beside Model and Harness—Haiku 4.5 Cost −72.7% and Pass +14.34%, Then Another −83.4% Cost on Top of Meta-Harness"
+      },
+      "why": {
+        "zh": "同样模型与 harness，只改共享环境（文档、工单、工具呈现）就能大幅降本提质：AutomationBench 上 Claude Haiku 4.5 成本 −72.7%、通过率 +14.34%，环境可迁移到 Opus 5（成本 −68.1%），叠在 Meta-Harness 优化后的 harness 上还能再降成本 83.4% 并 +11.17% 准确率。",
+        "en": "With model and harness fixed, rewriting the shared environment (docs, tickets, how tools are presented) still cuts cost and lifts success: on AutomationBench Claude Haiku 4.5 drops cost 72.7% with +14.34% pass, the same environment transfers to Opus 5 (−68.1% cost), and on top of Meta-Harness it cuts another 83.4% cost with +11.17% accuracy."
+      },
+      "what": {
+        "zh": "Agent 成本与成功率依赖模型、harness 和环境；多数工作只调前两者，却忽略 Slack/文档/工单这类多任务共享的“静止环境”如何被改写。",
+        "en": "An agent's cost and success depend on model, harness, and environment; most work tunes the first two and ignores how multi-task shared “stationary” workspaces like Slack, docs, and tickets are represented."
+      },
+      "how": {
+        "zh": "[@dair_ai](https://x.com/dair_ai) 介绍的 EnvOpt（Mingxuan Li、Joseph E Gonzalez、Alex Dimakis 等；arXiv:2611.07372）用编码 agent 在无评分器/无参考答案的训练任务上跑目标 agent、编辑环境并用验证集停机；跨 5 个基准显著降本并维持或提升通过率，也可迁移到不同模型与不同 harness，论文还归纳了成功与被拒绝的环境优化策略（如过度塞单文件会增加探索）。",
+        "en": "[@dair_ai](https://x.com/dair_ai) highlights EnvOpt (Mingxuan Li, Joseph E Gonzalez, Alex Dimakis and coauthors; arXiv:2611.07372): a coding agent runs the target agent on training tasks without graders or reference answers, edits the environment, and stops on a validation set; across 5 benchmarks it cuts cost while holding or raising pass rate and transfers across models and harnesses, and the paper catalogs successful vs rejected environment edits (such as stuffing one file increases exploration)."
+      },
+      "metric": {
+        "zh": "Haiku 成本 −72.7%、通过率 +14.34%；叠 Meta-Harness 后再 −83.4% 成本、+11.17% 准确率",
+        "en": "Haiku cost −72.7%, pass +14.34%; on Meta-Harness another −83.4% cost, +11.17% accuracy"
+      },
+      "pills": [
+        {
+          "zh": "Haiku 成本",
+          "en": "Haiku cost",
+          "value": "−72.7%",
+          "tone": "up"
+        },
+        {
+          "zh": "通过率",
+          "en": "Pass rate",
+          "value": "+14.34%",
+          "tone": "up"
+        },
+        {
+          "zh": "叠 Meta-Harness",
+          "en": "On Meta-Harness",
+          "value": "−83.4% cost",
+          "tone": "up"
+        }
+      ],
+      "arxiv": "2611.07372",
+      "authors": "Mingxuan Li, Joseph E. Gonzalez, Alex Dimakis et al.",
+      "handle": "@dair_ai",
+      "links": [
+        {
+          "zh": "论文",
+          "en": "Paper",
+          "url": "https://arxiv.org/abs/2611.07372"
+        },
+        {
+          "zh": "作者",
+          "en": "Author",
+          "url": "https://x.com/dair_ai"
+        },
+        {
+          "zh": "X 原帖",
+          "en": "X Post",
+          "url": "https://x.com/dair_ai/status/2118711759792144408"
+        }
+      ]
+    },
+    {
+      "id": "ari-amortized-reasoning-index",
+      "edition": "2026-11-06",
+      "tags": [
+        "autoresearch",
+        "harness-search"
+      ],
+      "title": {
+        "zh": "ARI：用推理模型在搜索时的排序偏好做测试时训练，400M cross-encoder 的 Recall@100 最高提升约 7× 并超过 Qwen3-Embedding-8B",
+        "en": "ARI: Test-Time Training from a Reasoning Model's Ranking Preferences Lets a 400M Cross-Encoder Grow Recall@100 up to ~7× and Beat Qwen3-Embedding-8B"
+      },
+      "why": {
+        "zh": "Agent 每次推理哪些检索结果重要，一压缩上下文就把判断扔掉；ARI 把这些无标注偏好摊销进小检索器权重，使 400M cross-encoder 在 held-out 查询上 Recall@100 最高约 7× 增长，并在 Twitter-Conflict / Writing / BRIGHT AoPS 上超过 Qwen3-Embedding-8B。",
+        "en": "Agents spend reasoning deciding which search hits matter, then throw that judgment away on compaction; ARI amortizes those unlabeled preferences into a small retriever's weights so a 400M cross-encoder grows Recall@100 by up to ~7× on held-out queries and ends above Qwen3-Embedding-8B on Twitter-Conflict, Writing, and BRIGHT AoPS."
+      },
+      "what": {
+        "zh": "大规模语料上，即便前沿推理 agent 反复查询最好的检索器，困难查询仍常卡在低召回；如何把推理模型的判断扩展到整库文档？",
+        "en": "On large corpora, even frontier reasoning agents that repeatedly query the best retrievers still hit a recall bottleneck on hard queries—how do you scale a reasoning model's judgment across the whole document pool?"
+      },
+      "how": {
+        "zh": "[@dianetc_](https://x.com/dianetc_)（与 Devavrat Shah、@lateinteraction）提出 Amortized Reasoning Index：小检索器取 top-K → 推理模型重排 → 对比奖励的测试时梯度更新权重 → 同一查询立刻再搜，权重跨查询保留；无相关性标签时，Recall@100 在 Twitter-Conflict / Writing / BRIGHT AoPS 分别约 3.2× / 6.7× / 7× 增长（博客 preliminary results）。",
+        "en": "[@dianetc_](https://x.com/dianetc_) (with Devavrat Shah and @lateinteraction) introduce the Amortized Reasoning Index: a small retriever returns top-K → a reasoning model re-ranks → contrastive-reward test-time gradients update weights → search again on the same query, with weights kept across queries; with no relevance labels, Recall@100 grows about 3.2× / 6.7× / 7× on Twitter-Conflict / Writing / BRIGHT AoPS (blog preliminary results)."
+      },
+      "metric": {
+        "zh": "Recall@100 最高约 7×；400M 超过 Qwen3-Embedding-8B（三项任务）",
+        "en": "Recall@100 up to ~7×; 400M beats Qwen3-Embedding-8B on three tasks"
+      },
+      "pills": [
+        {
+          "zh": "Recall@100",
+          "en": "Recall@100",
+          "value": "up to ~7×",
+          "tone": "up"
+        },
+        {
+          "zh": "检索器",
+          "en": "Retriever",
+          "value": "400M CE",
+          "tone": "neutral"
+        },
+        {
+          "zh": "vs 8B embed",
+          "en": "vs 8B embed",
+          "value": "above",
+          "tone": "up"
+        }
+      ],
+      "authors": "Diane Tchuindjo, Devavrat Shah, Omar Khattab",
+      "handle": "@dianetc_",
+      "links": [
+        {
+          "zh": "博客",
+          "en": "Blog",
+          "url": "https://dianetc.com/musings/ari/"
+        },
+        {
+          "zh": "作者",
+          "en": "Author",
+          "url": "https://x.com/dianetc_"
+        },
+        {
+          "zh": "作者",
+          "en": "Author",
+          "url": "https://x.com/lateinteraction"
+        },
+        {
+          "zh": "X 原帖",
+          "en": "X Post",
+          "url": "https://x.com/dianetc_/status/2118738862583271504"
+        },
+        {
+          "zh": "X 原帖",
+          "en": "X Post",
+          "url": "https://x.com/lateinteraction/status/2118742007438852125"
+        }
+      ]
+    },
+    {
+      "id": "token-waste-harness-bill",
+      "edition": "2026-11-06",
+      "tags": [
+        "harness-search"
+      ],
+      "title": {
+        "zh": "How Do AI Agents Waste Your Money：约 18% 输出 token 可删；在线剪枝可砍掉 41% 推理且成功率不掉，同模型不同 harness 账单差很大",
+        "en": "How Do AI Agents Waste Your Money: ~18% of Output Tokens Are Removable; Online Pruning Cuts 41% of Reasoning Without Hurting Success, and Same-Model Harnesses Bill Very Differently"
+      },
+      "why": {
+        "zh": "Agent 烧 token 的主因往往不是模型太贵，而是可删的重复/绕路与 harness 差异：跨运行约 18% 输出 token 是浪费，在线剪掉法官标出的重复与填充可删 41% 推理且 SWE-bench Verified 成功率 89.0%→89.5%，而同模型五套 harness 的 token 与动作模式差异显著。",
+        "en": "Agents burn tokens less because the model is pricey than because removable repeats/detours and harness choice pile up: ~18% of output tokens were waste across runs, online pruning of judge-flagged repeats/filler cut 41% of reasoning with SWE-bench Verified success 89.0%→89.5%, and five harnesses with the same model showed markedly different token use and action patterns."
+      },
+      "what": {
+        "zh": "大家知道 agent 很费 token，但缺少跨异构系统统一度量“哪些 token 其实可删”的方法，也就难决定该剪推理、换模型，还是换 harness。",
+        "en": "Everyone knows agents spend tokens, but we lacked a unified way across heterogeneous systems to measure which tokens were actually removable—so it is hard to decide whether to prune reasoning, switch models, or switch harnesses."
+      },
+      "how": {
+        "zh": "[@arkyyang](https://x.com/arkyyang) 分享的工作（arXiv:2611.07238）用轨迹记录 + LLM-as-a-Judge 标出 Restate / Duplicate-Fetch / Padding / Detour，再通过删除后续跑验证；任务与工具比模型更能驱动浪费，High→Max 推理档几乎白烧（任务双解时 Max 贵 1.62×），建议默认 High 并按 harness 测浪费而非只看总 token。",
+        "en": "[@arkyyang](https://x.com/arkyyang) shares the work (arXiv:2611.07238): trajectory logging plus an LLM-as-a-Judge labels Restate / Duplicate-Fetch / Padding / Detour, then deletion-and-resume validates them; task and tools drive waste more than model choice, High→Max reasoning effort mostly buys nothing (Max costs 1.62× on jointly solved tasks), so default to High and measure waste per harness rather than only total tokens."
+      },
+      "metric": {
+        "zh": "约 18% 输出浪费；剪枝删 41% 推理、成功率 89.0%→89.5%",
+        "en": "~18% output waste; prune 41% reasoning, success 89.0%→89.5%"
+      },
+      "pills": [
+        {
+          "zh": "输出浪费",
+          "en": "Output waste",
+          "value": "~18%",
+          "tone": "down"
+        },
+        {
+          "zh": "剪枝推理",
+          "en": "Pruned reasoning",
+          "value": "−41%",
+          "tone": "up"
+        },
+        {
+          "zh": "SWE 成功率",
+          "en": "SWE success",
+          "value": "89.0→89.5%",
+          "tone": "up"
+        }
+      ],
+      "arxiv": "2611.07238",
+      "authors": "arXiv:2611.07238",
+      "handle": "@arkyyang",
+      "links": [
+        {
+          "zh": "论文",
+          "en": "Paper",
+          "url": "https://arxiv.org/abs/2611.07238"
+        },
+        {
+          "zh": "作者",
+          "en": "Author",
+          "url": "https://x.com/arkyyang"
+        },
+        {
+          "zh": "X 原帖",
+          "en": "X Post",
+          "url": "https://x.com/arkyyang/status/2118717789422911567"
+        }
+      ]
+    },
+    {
       "id": "enzyme-rsi-harness-proteingym",
       "edition": "2026-11-06",
       "tags": [
