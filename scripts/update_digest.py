@@ -82,6 +82,12 @@ SLOT_LABEL_RE = re.compile(r"早间版|晚间版|\bMorning\b|\bEvening\b")
 HANDLE_RE = re.compile(
     r"(?<![A-Za-z0-9_.-])@(?=[A-Za-z0-9_]*[A-Za-z_])([A-Za-z0-9_]{1,15})(?![A-Za-z0-9_])(?!\.[A-Za-z0-9_])"
 )
+# Prose may store [@handle](https://x.com/handle). Collapse that to @handle before
+# linkify so the page and feeds show the handle, not the raw markdown URL.
+MD_HANDLE_RE = re.compile(
+    r"\[@([A-Za-z0-9_]{1,15})\]\(https?://(?:www\.)?(?:x|twitter)\.com/\1(?:/status/\d+)?/?\)",
+    re.IGNORECASE,
+)
 X_URL_RE = re.compile(
     r"^https?://(?:www\.)?(?:x|twitter)\.com/([A-Za-z0-9_]{1,15})(?:/status/(\d+))?/?(?:[?#].*)?$",
     re.IGNORECASE,
@@ -187,6 +193,7 @@ def handle_url_map(item: dict) -> dict[str, str]:
 
 def linkify(text: str, item: dict) -> str:
     urls = handle_url_map(item)
+    text = MD_HANDLE_RE.sub(lambda match: f"@{match.group(1)}", text)
 
     def repl(match: re.Match[str]) -> str:
         name = match.group(1)

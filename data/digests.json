@@ -19,6 +19,15 @@
   },
   "editions": [
     {
+      "id": "2026-11-06",
+      "date": "2026-11-06",
+      "slot": "",
+      "label": {
+        "zh": "2026-11-06",
+        "en": "6 Nov 2026"
+      }
+    },
+    {
       "id": "2026-11-05",
       "date": "2026-11-05",
       "slot": "",
@@ -199,6 +208,399 @@
     }
   ],
   "items": [
+    {
+      "id": "enzyme-rsi-harness-proteingym",
+      "edition": "2026-11-06",
+      "tags": [
+        "harness-search",
+        "co-evolution"
+      ],
+      "title": {
+        "zh": "EnzymeRSI：不动模型权重、只进化酶设计 harness，ProteinGym 平均 Spearman 提升 0.044，湿实验也有真实活性",
+        "en": "EnzymeRSI: Evolving the Enzyme-Design Harness, Not the Weights, Raises ProteinGym Spearman by 0.044 and Yields Real Wet-Lab Activity"
+      },
+      "why": {
+        "zh": "不动模型权重、只进化酶设计 harness 有效：外环 harness RSI 使 ProteinGym 平均 Spearman 提升 0.044，湿实验决策也带来真实活性增益——但命中池内排序仍失败（ρ=0.175）。",
+        "en": "Evolving the enzyme-design harness without touching model weights works: an outer harness RSI loop raised mean ProteinGym Spearman by 0.044, and wet-lab decisions yielded real activity gains—but ranking inside the hit pool still failed (ρ=0.175)."
+      },
+      "what": {
+        "zh": "定向进化通常在固定流程里优化测哪个突变；当方法或 harness 本身错了，这条循环就逃不出去。",
+        "en": "Directed evolution usually optimizes which mutants to assay inside a fixed workflow; when the method or harness is wrong, that loop cannot escape."
+      },
+      "how": {
+        "zh": "[@BioAIFrontier](https://x.com/BioAIFrontier) 报告的 EnzymeRSI（Genoria AI；arXiv:2611.06321）把 RSI 拆成外环（版本化 prompts/pipelines/skills/subagents，配对比较 12/142 次采纳）与仅在排除流程原因后才启动的内环：外环五项测定平均 Spearman +0.044（CD19 0.314→0.335），内环 ThermoMPNN PCC 0.849、TadA Spearman 0.307（1.13 小时），湿实验含非预先指定的 RLuc 候选 10/32 ≥2× WT、A3A Y130Q 到 90.2% 5mC 并出现偏好反转、KOD-E 路径选择到亲本催化效率的 31.1×，但多轮闭环的干→湿战役尚未展示。",
+        "en": "[@BioAIFrontier](https://x.com/BioAIFrontier) reports EnzymeRSI (Genoria AI; arXiv:2611.06321), which splits RSI into an outer loop that versions prompts, pipelines, skills and subagents under paired comparisons (12/142 adoptions) and an inner loop that develops predictors only after workflow causes are ruled out: the outer loop adds 0.044 mean Spearman across five assays (CD19 0.314→0.335), the inner loop reaches ThermoMPNN PCC 0.849 and TadA Spearman 0.307 in 1.13 h, and wet-lab decisions yielded 10/32 non-pre-specified RLuc candidates at ≥2× WT, A3A Y130Q at 90.2% 5mC conversion with preference reversal, and KOD-E path selection at 31.1× parent catalytic efficiency, though a multi-round closed dry-to-wet campaign is not yet shown."
+      },
+      "metric": {
+        "zh": "ProteinGym 平均 Spearman +0.044；湿实验 RLuc 10/32 ≥2× WT；命中池内 ρ=0.175",
+        "en": "ProteinGym mean Spearman +0.044; wet-lab RLuc 10/32 ≥2× WT; hit-pool ρ=0.175"
+      },
+      "pills": [
+        {
+          "zh": "平均 Spearman",
+          "en": "Mean Spearman",
+          "value": "+0.044",
+          "tone": "up"
+        },
+        {
+          "zh": "RLuc ≥2× WT",
+          "en": "RLuc ≥2× WT",
+          "value": "10/32",
+          "tone": "up"
+        },
+        {
+          "zh": "命中池排序",
+          "en": "Hit-pool rank",
+          "value": "ρ=0.175",
+          "tone": "down"
+        }
+      ],
+      "arxiv": "2611.06321",
+      "authors": "Genoria AI",
+      "handle": "@BioAIFrontier",
+      "links": [
+        {
+          "zh": "论文",
+          "en": "Paper",
+          "url": "https://arxiv.org/abs/2611.06321"
+        },
+        {
+          "zh": "作者",
+          "en": "Author",
+          "url": "https://x.com/BioAIFrontier"
+        },
+        {
+          "zh": "X 原帖",
+          "en": "X Post",
+          "url": "https://x.com/BioAIFrontier/status/2118514667303711175"
+        }
+      ]
+    },
+    {
+      "id": "harness-leaderboard-cost-not-solve-rate",
+      "edition": "2026-11-06",
+      "tags": [
+        "harness-search"
+      ],
+      "title": {
+        "zh": "Harness Leaderboard：同一开源模型下，换 harness 几乎不改解题率，单次成本却能拉开约 12 倍",
+        "en": "Harness Leaderboard: With Open Models Held Fixed, Harness Choice Barely Moves Solve Rate but Swings Cost by About 12×"
+      },
+      "why": {
+        "zh": "固定同一开源模型时，coding-agent harness 几乎不改解题率，却能把单次成本拉开约 12 倍——harness 才是多数团队没拧的旋钮。",
+        "en": "With the same open models held fixed, coding-agent harnesses barely move solve rate but swing cost up to ~12×—so the harness is the lever most teams are not pulling."
+      },
+      "what": {
+        "zh": "大家比模型时把 agent 外壳当噪声；今年已有三组独立研究指出 harness 是隐藏变量。",
+        "en": "People compare models while treating the agent wrapper as noise; three independent studies this year show harness choice is a hidden variable."
+      },
+      "how": {
+        "zh": "[@joelniklaus](https://x.com/joelniklaus) 跑了 28,849 次试验（$4,746 推理），在 GLM-5.3-Flash、DeepSeek-V4.1-Flash 与 Flint 上跨 Terminal-Bench 2.1 和 DeepSWE 只换 harness：平均 mini-swe-agent 解题率 51.4%，另有四个统计并列，Pi 为 49.4% 且 $0.29/题，对照 mini-swe-agent 的 $0.53/题，opencode 为 $3.35/题（约 11.7× Pi），且最佳 harness 随模型而变，Harness Lens 记录了 34 个 harness 的 prompts/tools/compaction。",
+        "en": "[@joelniklaus](https://x.com/joelniklaus) ran 28,849 trials ($4,746 inference) on GLM-5.3-Flash, DeepSeek-V4.1-Flash and Flint across Terminal-Bench 2.1 and DeepSWE, changing only the harness: averaged, mini-swe-agent solves 51.4% with four others statistically tied, Pi hits 49.4% at $0.29/solved against mini-swe-agent at $0.53, and opencode costs $3.35/solved (~11.7× Pi), while the best harness is model-dependent and companion Harness Lens documents prompts, tools and compaction for 34 harnesses."
+      },
+      "metric": {
+        "zh": "平均 mini-swe-agent 51.4%；Pi $0.29/题，opencode $3.35/题（约 11.7×）",
+        "en": "Averaged mini-swe-agent 51.4%; Pi $0.29/solved, opencode $3.35/solved (~11.7×)"
+      },
+      "pills": [
+        {
+          "zh": "平均解题率",
+          "en": "Avg solve rate",
+          "value": "51.4%",
+          "tone": "flat"
+        },
+        {
+          "zh": "Pi 单题成本",
+          "en": "Pi cost/solved",
+          "value": "$0.29",
+          "tone": "up"
+        },
+        {
+          "zh": "成本摆幅",
+          "en": "Cost swing",
+          "value": "~12×",
+          "tone": "up"
+        }
+      ],
+      "authors": "joelniklaus",
+      "handle": "@joelniklaus · @stretchcloud",
+      "links": [
+        {
+          "zh": "排行榜",
+          "en": "Leaderboard",
+          "url": "https://huggingface.co/spaces/joelniklaus/harness-leaderboard"
+        },
+        {
+          "zh": "Harness Lens",
+          "en": "Harness Lens",
+          "url": "https://huggingface.co/spaces/harness-hub/harness-lens"
+        },
+        {
+          "zh": "作者",
+          "en": "Author",
+          "url": "https://x.com/joelniklaus"
+        },
+        {
+          "zh": "作者",
+          "en": "Author",
+          "url": "https://x.com/stretchcloud"
+        },
+        {
+          "zh": "X 原帖",
+          "en": "X Post",
+          "url": "https://x.com/joelniklaus/status/2118373808692437403"
+        },
+        {
+          "zh": "X 原帖",
+          "en": "X Post",
+          "url": "https://x.com/stretchcloud/status/2118502373488275630"
+        }
+      ]
+    },
+    {
+      "id": "rsi-arena-rsihf-human-preference",
+      "edition": "2026-11-06",
+      "tags": [
+        "agentic-rl",
+        "co-evolution"
+      ],
+      "title": {
+        "zh": "RSI Arena：十个 agent 自主后训练同一底座，人类投票让 8/10 的偏好上升，基准几乎不动",
+        "en": "RSI Arena: Ten Agents Post-Train One Base Model, Human Votes Lift Preference for 8/10, and Benchmarks Barely Move"
+      },
+      "why": {
+        "zh": "十个 agent 能从同一底座自主做 post-training，且人类反馈让 8/10 的风格校正偏好上升——但基准提升几乎不动、也不跟偏好同向，因此 RSI 仍需人来定义“更好”。",
+        "en": "Ten agents can autonomously post-train a shared base model, and human feedback then improves style-adjusted preference for 8/10—but benchmark gains barely move and do not track preference, so RSI still needs people to define what “better” means."
+      },
+      "what": {
+        "zh": "多数 agent 研究评测只对着指定基准跑几小时；从未问 agent 能否做出人们更喜欢的助手、再从用户投票继续改进。",
+        "en": "Most agent-research evals optimize named benchmarks for hours on few GPUs; they never ask whether agents can build assistants people prefer and then improve from user votes."
+      },
+      "how": {
+        "zh": "RSI Arena（arXiv:2610.33624；Bake AI、Hugging Face 与 NVIDIA）给 10 个前沿 agent 同一 Nemotron 3.5 Lightning 30B-A3B Base、约 1,000 GPU-h 与各 $300 API，先跑 6 天再加 3 天 Human Arena，[@my_cat_can_code](https://x.com/my_cat_can_code) 发布了结果：Stage 1 中 GPT-6 Astra 在 12 项基准上关闭 base→Instruct 差距的中位 76%，风格控制下人类评分与 NVIDIA Instruct 打平；Stage 2 有 8/10 缩小风格校正差距（中位 +28），DeepSeek 训练的模型跳幅最大（−207→−35），回答中位长度从 61 增至 508 token，基准中位仅 +2 且与偏好变化 ρ=−0.19，另有一个模型的 StrongREJECT 有害顺从率明显上升，作者称之为 RSIHF。",
+        "en": "RSI Arena (arXiv:2610.33624; Bake AI with Hugging Face and NVIDIA), as posted by [@my_cat_can_code](https://x.com/my_cat_can_code), gave 10 frontier agents the same Nemotron 3.5 Lightning 30B-A3B Base, about 1,000 GPU-h and $300 API each for 6 days, then 3 more days of Human Arena battles: in stage 1 GPT-6 Astra closed a median 76% of the base-to-Instruct gap on 12 benchmarks and tied NVIDIA Instruct under style control, and in stage 2 8/10 narrowed the style-controlled gap to Instruct (median +28 points), the DeepSeek-trained model jumped most (−207 to −35) as median answer length grew from 61 to 508 tokens, the benchmark median changed only +2 points with ρ=−0.19 against the preference change, and one model's StrongREJECT harmful compliance rose sharply, which the authors frame as RSIHF."
+      },
+      "metric": {
+        "zh": "Stage 2 偏好 8/10 上升（中位 +28）；基准中位仅 +2，ρ=−0.19",
+        "en": "Stage 2 preference up for 8/10 (median +28); benchmark median +2, ρ=−0.19"
+      },
+      "pills": [
+        {
+          "zh": "Stage 1 差距闭合",
+          "en": "Stage 1 gap closed",
+          "value": "76%",
+          "tone": "up"
+        },
+        {
+          "zh": "偏好上升",
+          "en": "Preference up",
+          "value": "8/10",
+          "tone": "up"
+        },
+        {
+          "zh": "基准对偏好",
+          "en": "Bench vs preference",
+          "value": "ρ=−0.19",
+          "tone": "down"
+        }
+      ],
+      "arxiv": "2610.33624",
+      "authors": "Bake AI, Hugging Face, NVIDIA, et al.",
+      "handle": "@my_cat_can_code · @huggingface · @NVIDIAAI",
+      "links": [
+        {
+          "zh": "论文",
+          "en": "Paper",
+          "url": "https://arxiv.org/abs/2610.33624"
+        },
+        {
+          "zh": "项目页",
+          "en": "Project",
+          "url": "https://rsiarena.org"
+        },
+        {
+          "zh": "模型",
+          "en": "Models",
+          "url": "https://huggingface.co/RSIArena"
+        },
+        {
+          "zh": "作者",
+          "en": "Author",
+          "url": "https://x.com/my_cat_can_code"
+        },
+        {
+          "zh": "作者",
+          "en": "Author",
+          "url": "https://x.com/huggingface"
+        },
+        {
+          "zh": "作者",
+          "en": "Author",
+          "url": "https://x.com/NVIDIAAI"
+        },
+        {
+          "zh": "X 原帖",
+          "en": "X Post",
+          "url": "https://x.com/my_cat_can_code/status/2118553609109688414"
+        },
+        {
+          "zh": "X 原帖",
+          "en": "X Post",
+          "url": "https://x.com/my_cat_can_code/status/2118553695701143893"
+        }
+      ]
+    },
+    {
+      "id": "cuga-harness-appworld-completion",
+      "edition": "2026-11-06",
+      "tags": [
+        "harness-search"
+      ],
+      "title": {
+        "zh": "CUGA：同一开源权重，只换 agent harness 就让 AppWorld 完成率从 30% 升到 81%",
+        "en": "CUGA: Same Open-Weight Model, Swapping Only the Harness Lifts AppWorld Completion from 30% to 81%"
+      },
+      "why": {
+        "zh": "同一开源权重、同一 90 个 AppWorld 任务：只换 agent harness 就让完成率从 30% 到 81%——因为外壳按应用规划、在沙箱写代码执行，并在改状态前后做检查。",
+        "en": "Same open-weight model, same 90 AppWorld tasks: swapping only the agent harness moved completion from 30% to 81%—because the wrapper plans per-app, acts in sandboxed code, and checks before/after state changes."
+      },
+      "what": {
+        "zh": "团队选型时把 harness 当可互换件；企业多应用 API 工作需要不同于聊天助手的外壳。",
+        "en": "Teams pick models while treating harnesses as interchangeable; enterprise multi-app API work needs a different wrapper than chat assistants."
+      },
+      "how": {
+        "zh": "IBM Research 的 Hugging Face 博文（[@prompt48](https://x.com/prompt48)）用 GLM-5.3-flash 在 AppWorld（90 个任务 / 30 个场景）对比 CUGA、Hermes 与 Deep Agents：TGC 为 CUGA 81.1%（73/90）、Hermes 46.7%、Deep Agents 30.0%，更严的 SGC（三种变体全过）为 20/30、8/30、2/30，因为 CUGA 一次分解一个应用、在沙箱里写 Python（CodeAct）、执行前核验会改状态的代码，再做反思与分页审计；局限是 CUGA 自带 AppWorld 配置且未开 policy，故 81% 不衡量规则强制，同一模型只换 harness 时 GLM 在 SWE-bench Pro 上也可从 23% 升到 52%。",
+        "en": "IBM Research's Hugging Face post, shared by [@prompt48](https://x.com/prompt48), ran CUGA against Hermes and Deep Agents with GLM-5.3-flash on AppWorld (90 tasks / 30 scenarios): task-goal completion was 81.1% (73/90) for CUGA, 46.7% for Hermes and 30.0% for Deep Agents, stricter scenario-goal completion (all 3 variants) was 20/30 versus 8/30 versus 2/30, because CUGA decomposes one app at a time, writes Python (CodeAct) in a sandbox, verifies mutating code before execution, then reflects and pagination-audits, though CUGA is IBM's own harness with AppWorld-specific config and policies were off so the 81% does not measure enforcement, and the same comparison cites a same-model GLM jump from 23% to 52% on SWE-bench Pro by harness alone."
+      },
+      "metric": {
+        "zh": "TGC：CUGA 81.1%（73/90），Hermes 46.7%，Deep Agents 30.0%；SGC 20/30 对 2/30",
+        "en": "TGC: CUGA 81.1% (73/90), Hermes 46.7%, Deep Agents 30.0%; SGC 20/30 vs 2/30"
+      },
+      "pills": [
+        {
+          "zh": "CUGA TGC",
+          "en": "CUGA TGC",
+          "value": "81.1%",
+          "tone": "up"
+        },
+        {
+          "zh": "Deep Agents TGC",
+          "en": "Deep Agents TGC",
+          "value": "30.0%",
+          "tone": "down"
+        },
+        {
+          "zh": "CUGA SGC",
+          "en": "CUGA SGC",
+          "value": "20/30",
+          "tone": "up"
+        }
+      ],
+      "arxiv": "2605.20874",
+      "authors": "IBM Research",
+      "handle": "@prompt48",
+      "repo": "https://github.com/cuga-project/cuga-agent",
+      "links": [
+        {
+          "zh": "博客",
+          "en": "Blog",
+          "url": "https://huggingface.co/blog/ibm-research/cuga-harness"
+        },
+        {
+          "zh": "仓库",
+          "en": "Repo",
+          "url": "https://github.com/cuga-project/cuga-agent"
+        },
+        {
+          "zh": "论文",
+          "en": "Paper",
+          "url": "https://arxiv.org/abs/2605.20874"
+        },
+        {
+          "zh": "作者",
+          "en": "Author",
+          "url": "https://x.com/prompt48"
+        },
+        {
+          "zh": "X 原帖",
+          "en": "X Post",
+          "url": "https://x.com/prompt48/status/2118464644780339336"
+        }
+      ]
+    },
+    {
+      "id": "msa-agent-af3-confidence-redesign",
+      "edition": "2026-11-06",
+      "tags": [
+        "harness-search",
+        "verification"
+      ],
+      "title": {
+        "zh": "MSA 自动科研 agent：按 AF3 置信度为每个复合物重做 MSA，在所有基准上超过默认流水线",
+        "en": "Auto-Research MSA Agent: Redesigning Each Complex's MSA from AF3 Confidence Beats the Default Pipeline on Every Benchmark"
+      },
+      "why": {
+        "zh": "在测试时为每个复合物重设计 MSA 的自主 agent——只用 AF3 置信度、不用 DockQ——在所有基准上超过 AF3 默认流水线，同时平均少用约 60% 序列，因为 MSA 深度与配对是靶点特异的，不是一条全局配方。",
+        "en": "An autonomous agent that redesigns each complex's MSA at test time—using only AF3 confidence, not DockQ—beats AF3's default pipeline on every benchmark while using ~60% fewer sequences, because MSA depth and pairing are target-specific, not one global recipe."
+      },
+      "what": {
+        "zh": "AF3 流水线通常最大化深度并按物种配对，但配对是否有益仍有争议且最优策略不可迁移。",
+        "en": "AF3 pipelines usually maximize MSA depth and pair by species, yet whether pairing helps is contested and optima do not transfer across interfaces."
+      },
+      "how": {
+        "zh": "这篇 arXiv:2611.03183 的 Auto-Research Agent（[@SciFi](https://x.com/SciFi)）把冻结的 AF3 当作黑箱仪器，提出假设、重组 MSA，并只按无标签置信度而不是 DockQ 迭代；在 1,015 个训练截止后的接口上，整体 DockQ 均值在 FoldBench-v1 从 0.584 升到 0.604、FoldBench-v2-hard 从 0.556 升到 0.583、HD439 从 0.583 升到 0.624，种间异源复合物增益最大（FoldBench 0.465→0.612，HD439 0.482→0.562），提名 MSA 平均深度约为默认的 40%，配对策略主要影响种内异源复合物（约占 HD439 增益的一半）。",
+        "en": "The Auto-Research Agent on MSA Organization (arXiv:2611.03183), posted by [@SciFi](https://x.com/SciFi), treats frozen AF3 as a black-box instrument—hypothesize, reorganize the MSA, and iterate on label-free confidence rather than DockQ—and on 1,015 post-cutoff interfaces overall DockQ mean rises on FoldBench-v1 (0.584→0.604), FoldBench-v2-hard (0.556→0.583) and HD439 (0.583→0.624), with the largest gains on inter-species heteromers (FoldBench 0.465→0.612; HD439 0.482→0.562), nominated MSAs averaging about 40% of default depth, and pairing policy mattering mainly for intra-species heteromers (about half of the HD439 gain)."
+      },
+      "metric": {
+        "zh": "三个基准 DockQ 都上升；种间 FoldBench 0.465→0.612；提名 MSA 深度约 40%",
+        "en": "DockQ up on all three benchmarks; inter-species FoldBench 0.465→0.612; nominated MSA depth ~40%"
+      },
+      "pills": [
+        {
+          "zh": "HD439 DockQ",
+          "en": "HD439 DockQ",
+          "value": "0.583→0.624",
+          "tone": "up"
+        },
+        {
+          "zh": "种间 FoldBench",
+          "en": "Inter-species FoldBench",
+          "value": "0.465→0.612",
+          "tone": "up"
+        },
+        {
+          "zh": "MSA 深度",
+          "en": "MSA depth",
+          "value": "~40%",
+          "tone": "up"
+        }
+      ],
+      "arxiv": "2611.03183",
+      "authors": "Zilu Zhang, Jing Bao, … Siqi Sun, Yang Yang (Shanghai Jiao Tong University)",
+      "handle": "@SciFi",
+      "links": [
+        {
+          "zh": "论文",
+          "en": "Paper",
+          "url": "https://arxiv.org/abs/2611.03183"
+        },
+        {
+          "zh": "项目页",
+          "en": "Project",
+          "url": "https://sjtusaicaar.github.io/msa-pairing-agent/"
+        },
+        {
+          "zh": "作者",
+          "en": "Author",
+          "url": "https://x.com/SciFi"
+        },
+        {
+          "zh": "X 原帖",
+          "en": "X Post",
+          "url": "https://x.com/SciFi/status/2118548954526761197"
+        }
+      ]
+    },
     {
       "id": "exo-runtime-harness-self-improvement",
       "edition": "2026-11-05",

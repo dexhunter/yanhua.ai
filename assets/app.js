@@ -227,7 +227,8 @@
   }
   function linkify(text, item) {
     const map = handleUrlMap(item || {});
-    return esc(text).replace(/@([A-Za-z0-9_]{1,15})/g, function (full, name, offset, whole) {
+    const raw = String(text).replace(/\[@([A-Za-z0-9_]{1,15})\]\(https?:\/\/(?:www\.)?(?:x|twitter)\.com\/\1(?:\/status\/\d+)?\/?\)/gi, "@$1");
+    return esc(raw).replace(/@([A-Za-z0-9_]{1,15})/g, function (full, name, offset, whole) {
       if (!isHandleMention(whole, offset, name)) return full;
       const href = map[name.toLowerCase()] || ("https://x.com/" + name);
       return '<a href="' + esc(href) + '" target="_blank" rel="noopener noreferrer">@' + esc(name) + "</a>";
