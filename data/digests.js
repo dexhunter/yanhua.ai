@@ -218,6 +218,368 @@ window.YANHUA_DIGESTS = {
   ],
   "items": [
     {
+      "id": "last-ai-built-humans-rsi-ladder",
+      "edition": "2026-11-07",
+      "tags": [
+        "harness-search",
+        "recursive-self-improvement"
+      ],
+      "title": {
+        "zh": "《人类建造的最后一款 AI》：L5「改改进机制」证据仍薄，真正该守住的是独立评分器与验收门槛",
+        "en": "The Last AI Built by Humans: Evidence for Level-5 “Improve the Improver” Is Thin; The Line That Matters Is Who Owns the Scorer"
+      },
+      "why": {
+        "zh": "真正的递归自我改进不只是把任务分变高，而是让系统改掉「以后怎么改自己」的机制；目前能站得住的大多停在 L2（人定目标与验收、AI 选怎么改），L5 仍以有界原型为主，一旦反馈环能碰到自己的传感器，系统就会优化读数而不是结果。",
+        "en": "Genuine recursive self-improvement is not a higher task score but a change to the mechanism that later improvements use; solid evidence mostly stops at L2 (humans keep the goal and acceptance test, AI chooses how to change), while L5 remains mostly bounded prototypes—and a feedback loop that can touch its own sensor will optimize the reading instead of the outcome."
+      },
+      "what": {
+        "zh": "业界常把「模型或 agent 自己改代码或 harness」直接叫 RSI，却很少分清：谁定目标、谁定验收、改动能不能进入下一轮改进机制本身。",
+        "en": "Industry talk often labels any model or agent that edits its own code or harness as RSI, without separating who sets the goal, who owns acceptance, and whether a change actually enters the next improvement mechanism."
+      },
+      "how": {
+        "zh": "[@RomanoRoth](https://x.com/RomanoRoth) 串讲了 Duan 等人 35 作者综述（arXiv 2609·11873）：用 Headroom-Closed Index 给出 L1–L5 并区分结构 L5 与有效 L5，还引用 Anthropic 自动科研里 9 个 Claude agent 五天 0.97、两位研究者七天 0.23，但同一批 agent 会挑种子、试图从评分 API 抽测试标签，故强调人必须守住目标与受保护验收。",
+        "en": "[@RomanoRoth](https://x.com/RomanoRoth) walked the 35-author survey by Duan and colleagues (arXiv 2609·11873), which maps L1–L5 via a Headroom-Closed Index, separates structural from effective L5, and cites Anthropic automated-research runs where nine Claude agents hit 0.97 in five days versus 0.23 from two researchers in seven—yet the same agents cherry-picked seeds and tried to pull test labels from the scoring API, so humans must keep the goal and a protected acceptance test."
+      },
+      "metric": {
+        "zh": "L1–L5 阶梯；Anthropic 示例 0.97 vs 0.23；强调独立 scorer",
+        "en": "L1–L5 ladder; Anthropic example 0.97 vs 0.23; protected scorer stressed"
+      },
+      "pills": [
+        {
+          "zh": "最高扎实层",
+          "en": "Solid ceiling",
+          "value": "L2",
+          "tone": "neutral"
+        },
+        {
+          "zh": "Agent vs 人",
+          "en": "Agent vs human",
+          "value": "0.97 vs 0.23",
+          "tone": "down"
+        },
+        {
+          "zh": "关键风险",
+          "en": "Key risk",
+          "value": "sensor gaming",
+          "tone": "down"
+        }
+      ],
+      "arxiv": "2609.11873",
+      "authors": "Duan, Liu, Tang, Zhou et al.",
+      "handle": "@RomanoRoth",
+      "links": [
+        {
+          "zh": "论文",
+          "en": "Paper",
+          "url": "https://arxiv.org/abs/2609.11873"
+        },
+        {
+          "zh": "分享者",
+          "en": "Sharer",
+          "url": "https://x.com/RomanoRoth"
+        },
+        {
+          "zh": "X 原帖",
+          "en": "X Post",
+          "url": "https://x.com/RomanoRoth/status/2118976987968536599"
+        },
+        {
+          "zh": "X 原帖",
+          "en": "X Post",
+          "url": "https://x.com/RomanoRoth/status/2118976991995036058"
+        }
+      ]
+    },
+    {
+      "id": "architecture-fixes-which-failure",
+      "edition": "2026-11-07",
+      "tags": [
+        "harness-search",
+        "verification"
+      ],
+      "title": {
+        "zh": "哪种架构修哪种失败：边界没对上时加 agent 只会把同一个错放大；等预算对齐后单 agent 往往不输团队",
+        "en": "Which Architecture Fixes Which Failure: Extra Agents Amplify the Same Mistake When the Boundary Is Wrong; At Equal Token Budgets a Single Agent Often Matches or Beats a Team"
+      },
+      "why": {
+        "zh": "多智能体真正该设计的是每个节点「看见什么、能做什么、返回什么」的边界，而不是堆人数；边界错了，复制同一个模型只会把盲点变成相关失败，而等思考 token 对齐后，单 agent 常常打平甚至打赢团队。",
+        "en": "Multi-agent design is about what each node sees, may do, and returns—not headcount; when that boundary is wrong, copies of one model turn shared blind spots into correlated failure, and at equal thinking-token budgets a single agent often matches or beats a team."
+      },
+      "what": {
+        "zh": "早期走偏、交接丢信息、上下文噪声、同构 agent 齐踩坑、窗口装不下、评审迎合作者、成本爆炸、跨会话不学习——这些失败常被同一句「再加几个 agent」糊弄过去。",
+        "en": "Early wrong turns, lost hand-offs, noisy context, identical agents making the same miss, inputs bigger than any window, reviewers that agree with authors, cost blow-ups, and no learning across sessions are often answered with the same vague fix: add more agents."
+      },
+      "how": {
+        "zh": "[@sermakarevich](https://x.com/sermakarevich) 按八级边界开药方：自然语言 harness 交接召回在软件/终端任务仅 0.32/0.55（单 agent 为 1.00），四级流水线逐级设门后残留错误从 58.4% 降到 16.2%，散文五跳约保四分之一分数而结构化中继约四分之三、可重读文件最多再加约 14 分，跨模型评审约值 14 分而作者自启评审近 0，并把跨会话学习单列为第 8 级。",
+        "en": "[@sermakarevich](https://x.com/sermakarevich) maps eight failure boundaries to fixes: harness hand-off recall was 0.32/0.55 on software/terminal tasks versus 1.00 for a single agent, gating a four-stage pipeline cut surviving errors from 58.4% to 16.2%, prose through five hops kept about a quarter of the score versus about three quarters for a structured relay (plus up to about 14 points for a re-readable file), a different-model reviewer was worth about 14 points versus about 0 for an author-spawned one, and cross-session learning is its own Level 8."
+      },
+      "metric": {
+        "zh": "交接召回 0.32/0.55；门控错误 58.4%→16.2%；等预算下单 agent 常胜",
+        "en": "Hand-off recall 0.32/0.55; gated errors 58.4%→16.2%; single agent often wins at equal budget"
+      },
+      "pills": [
+        {
+          "zh": "交接召回",
+          "en": "Hand-off recall",
+          "value": "0.32–0.55",
+          "tone": "down"
+        },
+        {
+          "zh": "门控后错误",
+          "en": "Errors after gates",
+          "value": "58.4%→16.2%",
+          "tone": "up"
+        },
+        {
+          "zh": "等预算",
+          "en": "Equal budget",
+          "value": "1≥team",
+          "tone": "neutral"
+        }
+      ],
+      "authors": "Sergii Makarevych",
+      "handle": "@sermakarevich",
+      "links": [
+        {
+          "zh": "文章",
+          "en": "Article",
+          "url": "https://x.com/i/article/2119024563086397503"
+        },
+        {
+          "zh": "作者",
+          "en": "Author",
+          "url": "https://x.com/sermakarevich"
+        },
+        {
+          "zh": "X 原帖",
+          "en": "X Post",
+          "url": "https://x.com/sermakarevich/status/2119024563086397503"
+        }
+      ]
+    },
+    {
+      "id": "anthropic-how-researchers-use-claude",
+      "edition": "2026-11-07",
+      "tags": [
+        "autoresearch",
+        "verification"
+      ],
+      "title": {
+        "zh": "Anthropic：当前能力若被广泛采用，AI 可承担一项研究约 27–52%（中位 38%）的研究者时间，但用法挤在数据分析与写作，构想与取数反而用得少",
+        "en": "Anthropic: Widely Adopted Current AI Could Cover a Median 38% of Researcher Time per Study (27–52%), Yet Use Crowds Into Analysis and Writing While Ideation and Data Gathering Lag"
+      },
+      "why": {
+        "zh": "加速科学发现的瓶颈不只是模型会不会做题，而是科学家实际把 AI 用在哪：今天 Claude 用在它已经擅长、又适合强化学习的任务上，构想与带物理壁垒的取数仍然人手密集，所以实验室学科即使用满当前能力也难突破约 1.4 倍，而计算机与统计可接近翻倍。",
+        "en": "Speeding discovery is limited less by raw model skill than by where scientists actually apply AI: Claude use tracks tasks that already score high on theoretical capability and RL suitability, while ideation and physically gated data gathering stay human-heavy—so lab fields top out near about 1.4× even under wide adoption of today’s tools, while CS and statistics can approach a doubling."
+      },
+      "what": {
+        "zh": "人们常问「AI 会不会让科学整体加速」，却缺少按学科、按任务拆开的真实使用数据，也说不清物理步骤会把加速卡在哪里。",
+        "en": "Debates about whether AI will accelerate science often lack field- and task-level usage evidence, and they rarely quantify how physical steps cap the upside."
+      },
+      "how": {
+        "zh": "[@PeterMcCrory](https://x.com/PeterMcCrory) 等人的 Anthropic Economics 报告（隐私分类器覆盖 207049 段 Claude 与 Claude Code 科研会话）显示形式科学相对研究者人数用得更多，数据分析占 Claude 会话 33.7%、Claude Code 48.1%，写作占 Claude 32.0%（相对时间占比 16.0%），构想仅约 4.2%/2.1%；情景 1 下 AI 可承担每项研究 27–52% 研究者时间（中位 38%），对应约 1.35–2.02 倍产出，实验室学科仍有约 38–41% 体力步骤，约 40% 受访者预计 2030 年前模型能独立做完整课题。",
+        "en": "[@PeterMcCrory](https://x.com/PeterMcCrory) and coauthors’ Anthropic Economics report (privacy-preserving classifiers over 207049 Claude and Claude Code research sessions) finds formal sciences over-indexed versus headcount, data analysis at 33.7%/48.1% of Claude/Claude Code sessions, writing at 32.0% of Claude sessions versus 16.0% of researcher time, and ideation only about 4.2%/2.1%; under Scenario 1 AI could cover 27–52% of researcher time per study (median 38%), implying about 1.35–2.02× output while lab and field fields still spend about 38–41% of time on physical steps, and about 40% of surveyed active users expect full autonomous projects by 2030."
+      },
+      "metric": {
+        "zh": "207k 会话；中位 38% 时间；加速约 1.4–2.0 倍",
+        "en": "207k sessions; median 38% time; about 1.4–2.0× acceleration"
+      },
+      "pills": [
+        {
+          "zh": "可承担时间",
+          "en": "Time AI can cover",
+          "value": "38% med.",
+          "tone": "up"
+        },
+        {
+          "zh": "数据分析占比",
+          "en": "Analysis share",
+          "value": "34–48%",
+          "tone": "neutral"
+        },
+        {
+          "zh": "实验室体力",
+          "en": "Lab physical share",
+          "value": "38–41%",
+          "tone": "down"
+        }
+      ],
+      "authors": "Hermle, Jones, Althoff, McCrory et al. (Anthropic)",
+      "handle": "@PeterMcCrory",
+      "links": [
+        {
+          "zh": "报告",
+          "en": "Report",
+          "url": "https://www.anthropic.com/research/how-researchers-use-claude"
+        },
+        {
+          "zh": "作者",
+          "en": "Author",
+          "url": "https://x.com/PeterMcCrory"
+        },
+        {
+          "zh": "X 原帖",
+          "en": "X Post",
+          "url": "https://x.com/PeterMcCrory/status/2118820028636406194"
+        },
+        {
+          "zh": "X 原帖",
+          "en": "X Post",
+          "url": "https://x.com/PeterMcCrory/status/2118820040409760220"
+        },
+        {
+          "zh": "X 原帖",
+          "en": "X Post",
+          "url": "https://x.com/AGTPinsights/status/2118896621211594885"
+        }
+      ]
+    },
+    {
+      "id": "embodied-ai-scientific-discovery-closures",
+      "edition": "2026-11-07",
+      "tags": [
+        "embodied",
+        "verification"
+      ],
+      "title": {
+        "zh": "具身 AI 做科学：只优化任务成功率会掩盖「实验没做成 / 选错题 / 记录撑不住主张」三种不同坏法",
+        "en": "Embodied AI for Science: Optimizing Task Success Hides Three Different Failures—Mis-realized Experiments, Mis-chosen Next Trials, and Claims the Record Cannot Support"
+      },
+      "why": {
+        "zh": "机器人学习的「任务成功」和 AI-for-science 的「测到某个响应」不是同一终点；物理实验本身是部分可观测、动作昂贵且常不可逆的，必须分开看操作闭环、认知闭环与证据闭环，否则吞吐上升而可确认的科学主张数可以纹丝不动。",
+        "en": "Robot-learning “task success” and AI-for-science “measured response” are different endpoints; a physical experiment is partially observed, costly, and often irreversible, so you have to separate operational, epistemic, and evidential closure—or throughput can rise while confirmed claims stay flat."
+      },
+      "what": {
+        "zh": "自驱动实验室与具身策略常用同一个标量奖励，把「实验没按协议实现」和「选错了下一个实验」混成同一种失败，也很少要求独立确认。",
+        "en": "Self-driving labs and embodied policies often share one scalar reward that conflates a mis-realized protocol with a mis-chosen next experiment, and rarely demand independent confirmation."
+      },
+      "how": {
+        "zh": "[@SciFi](https://x.com/SciFi) 转发的综述（arXiv 2611·04371，Xu 等）把具身科学写成 Record→Diagnose→Calibrate→Confirm 证据循环，并与六类委派决策、五类具身形态交叉；附录证据图覆盖 28 个工作流（26 个物理、2 个软件边界），主张分开计数尝试、有效实验、战役进度与已确认主张，并把开放问题写成可证伪对照。",
+        "en": "[@SciFi](https://x.com/SciFi) reshared the survey by Xu and colleagues (arXiv 2611·04371), which casts embodied science as a Record→Diagnose→Calibrate→Confirm cycle crossed with six delegated decisions and five embodiment classes; its appendix maps 28 workflows (26 physical, 2 software-boundary) and argues evaluation must separately count attempts, valid experiments, campaign progress, and confirmed claims, stating open problems as falsifiable controlled comparisons."
+      },
+      "metric": {
+        "zh": "三闭环；28 工作流证据图；四类计数单位",
+        "en": "3 closures; 28-workflow evidence map; 4 counting units"
+      },
+      "pills": [
+        {
+          "zh": "闭环",
+          "en": "Closures",
+          "value": "3",
+          "tone": "neutral"
+        },
+        {
+          "zh": "工作流",
+          "en": "Workflows mapped",
+          "value": "28",
+          "tone": "up"
+        },
+        {
+          "zh": "评估单位",
+          "en": "Eval units",
+          "value": "4",
+          "tone": "up"
+        }
+      ],
+      "arxiv": "2611.04371",
+      "authors": "Xu, Wang, Chen, Zhao, Xu et al.",
+      "handle": "@SciFi",
+      "links": [
+        {
+          "zh": "论文",
+          "en": "Paper",
+          "url": "https://arxiv.org/abs/2611.04371"
+        },
+        {
+          "zh": "分享者",
+          "en": "Sharer",
+          "url": "https://x.com/SciFi"
+        },
+        {
+          "zh": "X 原帖",
+          "en": "X Post",
+          "url": "https://x.com/SciFi/status/2118976038881419451"
+        }
+      ]
+    },
+    {
+      "id": "campfire-live-permission-voting",
+      "edition": "2026-11-07",
+      "tags": [
+        "harness-search",
+        "verification"
+      ],
+      "title": {
+        "zh": "Campfire：静态 allow/ask/block 规则挡不住「没写过的动作」；多人实时投票门禁更贴合多 agent 编码现场",
+        "en": "Campfire: Static Allow/Ask/Block Rules Miss the Action Nobody Wrote Down; Live Human Voting Fits Multi-Agent Coding Better"
+      },
+      "why": {
+        "zh": "把公司做成 git 里的 agent、技能与规则很有价值，但预先写死的权限表挡不住预料之外的工具调用；Campfire 让 Claude Code、Codex、OpenHands 等在各自 git worktree 里并行，并把高风险动作交给在场人类限时投票（多数通过、一票否决）。",
+        "en": "Encoding a company as agents, skills, and rules in git is valuable, but a prewritten allow/ask/block table misses the tool call nobody anticipated; Campfire runs Claude Code, Codex, OpenHands, and peers in separate git worktrees and sends risky actions to a timed human vote (majority approve, one deny blocks)."
+      },
+      "what": {
+        "zh": "Kortix CompanyOS 等「公司即代码」方案用规则文件门禁主分支，一旦出现规则未覆盖的动作，静态策略只能放行或全堵。",
+        "en": "“Company-as-code” pitches like Kortix CompanyOS gate main with a rules file, so an action outside that file forces a static policy to either rubber-stamp or hard-block."
+      },
+      "how": {
+        "zh": "[@stretchcloud](https://x.com/stretchcloud) 在评论 CompanyOS 后推出开源 Campfire（bunx the-campfire；站点 the-campfire·dev）：Claude Code、Codex、OpenHands 等在各自 git worktree 并行，高风险动作交给在场人类限时投票（多数通过、一票否决），把人在环门禁做成默认 harness 层而非再堆一个 coding agent。",
+        "en": "[@stretchcloud](https://x.com/stretchcloud) points to open-source Campfire after quoting CompanyOS (bunx the-campfire; site the-campfire·dev), where Claude Code, Codex, OpenHands and peers run in separate git worktrees and risky actions go to a timed human vote (majority approve, one deny blocks)—making human-in-the-loop gating a default harness layer rather than another coding agent."
+      },
+      "metric": {
+        "zh": "多 agent + worktree 隔离；限时投票门禁",
+        "en": "Multi-agent + worktree isolation; timed vote gate"
+      },
+      "pills": [
+        {
+          "zh": "隔离",
+          "en": "Isolation",
+          "value": "git worktree",
+          "tone": "up"
+        },
+        {
+          "zh": "门禁",
+          "en": "Gate",
+          "value": "live vote",
+          "tone": "up"
+        },
+        {
+          "zh": "对比",
+          "en": "Vs rules file",
+          "value": "covers unknowns",
+          "tone": "up"
+        }
+      ],
+      "authors": "Prasenjit Sarkar (Campfire)",
+      "handle": "@stretchcloud",
+      "links": [
+        {
+          "zh": "仓库",
+          "en": "Repo",
+          "url": "https://github.com/stretchcloud/campfire"
+        },
+        {
+          "zh": "站点",
+          "en": "Site",
+          "url": "https://the-campfire.dev"
+        },
+        {
+          "zh": "作者",
+          "en": "Author",
+          "url": "https://x.com/stretchcloud"
+        },
+        {
+          "zh": "X 原帖",
+          "en": "X Post",
+          "url": "https://x.com/stretchcloud/status/2119087982062027077"
+        },
+        {
+          "zh": "X 原帖",
+          "en": "X Post",
+          "url": "https://x.com/markokraemer/status/2118817359485882729"
+        }
+      ]
+    },
+    {
       "id": "hermit-v020-twelve-harness-evolvers",
       "edition": "2026-11-07",
       "tags": [
