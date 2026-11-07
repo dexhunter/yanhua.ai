@@ -19,6 +19,15 @@ window.YANHUA_DIGESTS = {
   },
   "editions": [
     {
+      "id": "2026-11-07",
+      "date": "2026-11-07",
+      "slot": "",
+      "label": {
+        "zh": "2026-11-07",
+        "en": "7 Nov 2026"
+      }
+    },
+    {
       "id": "2026-11-06",
       "date": "2026-11-06",
       "slot": "",
@@ -208,6 +217,304 @@ window.YANHUA_DIGESTS = {
     }
   ],
   "items": [
+    {
+      "id": "hermit-v020-twelve-harness-evolvers",
+      "edition": "2026-11-07",
+      "tags": [
+        "harness-search",
+        "co-evolution"
+      ],
+      "title": {
+        "zh": "Hermit v0.2.0：12 种 harness 进化方法同台，OfficeQA 上自动进化的 harness 把 GLM 5.3 Flash 从 0.541 推到 0.651，GPT-5.6-Luna 从 0.308 到 0.640",
+        "en": "Hermit v0.2.0: 12 Harness-Evolution Methods on One Bench, With Evolved Harnesses Lifting OfficeQA From 0.541 to 0.651 (GLM 5.3 Flash) and 0.308 to 0.640 (GPT-5.6-Luna)"
+      },
+      "why": {
+        "zh": "在同一任务、同一协议下，自动进化 harness（技能、反思库、整套 adapter）稳定胜过手写技能，但哪种进化器最好取决于底座模型——Harness² 在 GLM 5.3 Flash 上最高（0.651），ACE 在 GPT-5.6-Luna 上最高（0.640），所以要把进化方法当成可搜索的变量，而不是选一个就完事。",
+        "en": "Under one task and one protocol, automatically evolved harnesses (skills, reflection banks, whole adapters) reliably beat a hand-written skill, but the best evolver depends on the base model—Harness² tops GLM 5.3 Flash (0.651) while ACE tops GPT-5.6-Luna (0.640)—so the evolution method itself should be treated as something to search over, not a one-time pick."
+      },
+      "what": {
+        "zh": "Harness 进化方法（GEPA、SkillOpt、Meta-Harness、ACE、Harness² 等）各自用不同代码、协议和数据切分报告结果，难以公平比较，也难以复用到自己的 agent 上。",
+        "en": "Harness-evolution methods (GEPA, SkillOpt, Meta-Harness, ACE, Harness², and others) each report results with their own code, protocol, and splits, making fair comparison and reuse on your own agent hard."
+      },
+      "how": {
+        "zh": "[@InfiniAILab](https://x.com/InfiniAILab) 发布、Beidi Chen 转推的 Hermit v0.2.0 把 agent 拆成 Model → Base Agent → Acting/Evolver 三层，统一 12 种进化方法（新增 ReHarness、Meta-Harness Adapter、ACE、AHE、RRSI、EvoSafeHarness），并可直接用 Codex/ChatGPT 订阅做 acting 与 learning、无需 API key；仓库 OfficeQA（172 道测试题）表格中，无技能 / 初始技能为 0.541 / 0.576（Flash）与 0.308 / 0.360（Luna），进化后 Meta-Harness 0.640、Harness² 0.651（Flash），ACE 0.640、RRSI 与 AHE 0.616、GEPA 0.600（Luna）——注意流式方法（Harness²、Continual Harness）是在测试流上边适应边计分，与训练/测试切分不完全可比。",
+        "en": "Hermit v0.2.0 from [@InfiniAILab](https://x.com/InfiniAILab), reshared by Beidi Chen, splits agents into Model → Base Agent → Acting/Evolver layers, unifies 12 evolution methods (adding ReHarness, Meta-Harness Adapter, ACE, AHE, RRSI, EvoSafeHarness), and can act and learn through a Codex/ChatGPT plan with no API key; in the repo's OfficeQA table (172 test questions), no skill / initial skill score 0.541 / 0.576 (Flash) and 0.308 / 0.360 (Luna), while evolved harnesses reach 0.640 Meta-Harness and 0.651 Harness² (Flash) and 0.640 ACE, 0.616 RRSI and AHE, 0.600 GEPA (Luna)—note the streaming methods (Harness², Continual Harness) score while adapting on the test stream, so they are not strictly comparable to the train/test-split methods."
+      },
+      "metric": {
+        "zh": "OfficeQA：Flash 0.541→0.651；Luna 0.308→0.640；12 种进化方法",
+        "en": "OfficeQA: Flash 0.541→0.651; Luna 0.308→0.640; 12 evolution methods"
+      },
+      "pills": [
+        {
+          "zh": "Flash 最佳",
+          "en": "Flash best",
+          "value": "0.541→0.651",
+          "tone": "up"
+        },
+        {
+          "zh": "Luna 最佳",
+          "en": "Luna best",
+          "value": "0.308→0.640",
+          "tone": "up"
+        },
+        {
+          "zh": "进化方法",
+          "en": "Evolvers",
+          "value": "12",
+          "tone": "neutral"
+        }
+      ],
+      "authors": "Infini-AI-Lab (Hermit)",
+      "handle": "@InfiniAILab",
+      "links": [
+        {
+          "zh": "仓库",
+          "en": "Repo",
+          "url": "https://github.com/Infini-AI-Lab/hermit"
+        },
+        {
+          "zh": "发布说明",
+          "en": "Release notes",
+          "url": "https://github.com/Infini-AI-Lab/hermit/releases/tag/v0.2.0"
+        },
+        {
+          "zh": "作者",
+          "en": "Author",
+          "url": "https://x.com/InfiniAILab"
+        },
+        {
+          "zh": "分享者",
+          "en": "Sharer",
+          "url": "https://x.com/BeidiChen"
+        },
+        {
+          "zh": "X 原帖",
+          "en": "X Post",
+          "url": "https://x.com/BeidiChen/status/2118785214134825204"
+        },
+        {
+          "zh": "X 原帖",
+          "en": "X Post",
+          "url": "https://x.com/InfiniAILab/status/2118418693768069630"
+        }
+      ]
+    },
+    {
+      "id": "scientist-world-papers-as-environments",
+      "edition": "2026-11-07",
+      "tags": [
+        "autoresearch"
+      ],
+      "title": {
+        "zh": "Scientist World：把 1,000 篇论文变成可运行研究环境，AI-Scientist 在 74% 的从零创新尝试中胜过复现的论文方法，8B 小模型构思经训练追平前沿",
+        "en": "Scientist World: 1,000 Papers Turned Into Runnable Research Environments; AI-Scientists Beat the Reproduced Paper in 74% of From-Scratch Attempts, and an 8B Ideator Trained There Reaches the Frontier Anchor"
+      },
+      "why": {
+        "zh": "把论文变成可执行、可打分的环境后，AI-Scientist 的差距来自研究质量而不是多花算力（算力与轮数解释的方差 R²≤0.02，而盲评研究质量与得分相关 ρ=0.89），同一世界的轨迹还能把 Qwen3-8B 的构思训练到前沿水平——但头条胜率只来自 10 个低算力环境。",
+        "en": "Once papers become executable, scored environments, what separates AI-Scientists is research quality rather than spending more (compute hours and turns explain R²≤0.02 of score variance, while blind-judged research quality tracks score at ρ=0.89), and the same world's traces can train Qwen3-8B's ideation up to the frontier anchor—though the headline win rates come from only 10 lower-compute environments."
+      },
+      "what": {
+        "zh": "AI-Scientist 缺的不是会做题的模型，而是能运行、能和人类作者结果对比的研究世界：论文只留下文字，没有可复现的环境。",
+        "en": "AI-Scientists lack not a model that can solve problems but a runnable research world they can be compared in against human authors: papers leave words, not reproducible environments."
+      },
+      "how": {
+        "zh": "Princeton 的 Taiming Lu、Sachin Konan、Zhuang Liu（arXiv:2611.08478，[@AIchanyi](https://x.com/AIchanyi) 等分享）用 Reproducer→Designer→Packager→Verifier 的 agent 流水线把每篇论文的开放问题与方法复现成基线环境，发布 1,000 个验证环境与约 6,400 小时研究轨迹；在 10 环境基准上 AI 在 84%（improve）/ 74%（innovate）尝试中超过复现方法，Qwen3-8B 经 SFT+GRPO 后构思经固定实现器落地的中位 FNI 41→84→106，达到前沿 cohort 锚点。",
+        "en": "Princeton's Taiming Lu, Sachin Konan, and Zhuang Liu (arXiv:2611.08478, shared by [@AIchanyi](https://x.com/AIchanyi) and others) use a Reproducer→Designer→Packager→Verifier agent pipeline to turn each paper's open question and method into a baseline environment, releasing 1,000 verified environments and ~6,400 hours of research traces; on a 10-environment benchmark AI beat the reproduced method in 84% (improve) and 74% (innovate) of attempts, and Qwen3-8B after SFT+GRPO raised the median FNI of its ideas (implemented by a fixed frontier implementer) 41→84→106, reaching the frontier cohort's anchor."
+      },
+      "metric": {
+        "zh": "1,000 环境；胜过论文 84%/74%；8B 构思 FNI 41→106",
+        "en": "1,000 envs; beat paper 84%/74%; 8B ideation FNI 41→106"
+      },
+      "pills": [
+        {
+          "zh": "验证环境",
+          "en": "Verified envs",
+          "value": "1,000",
+          "tone": "neutral"
+        },
+        {
+          "zh": "创新胜率",
+          "en": "Innovate win",
+          "value": "74%",
+          "tone": "up"
+        },
+        {
+          "zh": "8B 构思 FNI",
+          "en": "8B ideation FNI",
+          "value": "41→106",
+          "tone": "up"
+        }
+      ],
+      "arxiv": "2611.08478",
+      "authors": "Taiming Lu, Sachin Konan, Zhuang Liu",
+      "handle": "@AIchanyi",
+      "links": [
+        {
+          "zh": "论文",
+          "en": "Paper",
+          "url": "https://arxiv.org/abs/2611.08478"
+        },
+        {
+          "zh": "分享者",
+          "en": "Sharer",
+          "url": "https://x.com/AIchanyi"
+        },
+        {
+          "zh": "评论者",
+          "en": "Commentary",
+          "url": "https://x.com/EntryStateGod"
+        },
+        {
+          "zh": "X 原帖",
+          "en": "X Post",
+          "url": "https://x.com/AIchanyi/status/2118778442263212359"
+        },
+        {
+          "zh": "X 原帖",
+          "en": "X Post",
+          "url": "https://x.com/EntryStateGod/status/2118960894415691996"
+        }
+      ]
+    },
+    {
+      "id": "heelo-agent-native-primitives-harness",
+      "edition": "2026-11-07",
+      "tags": [
+        "harness-search"
+      ],
+      "title": {
+        "zh": "HEELO：按任务组合 agent-native primitives 搭 harness，Terminal-Bench 2.0 从 60.0% 到 72.2%，真实任务 Claude Code 从 9/46 到 39/46",
+        "en": "HEELO: Composing Agent-Native Primitives Into Per-Task Harnesses Lifts Terminal-Bench 2.0 From 60.0% to 72.2% and Real-World Claude Code From 9/46 to 39/46"
+      },
+      "why": {
+        "zh": "Agent 卡在“最后一公里”，不是够不到工具，而是不会在上下文里正确用它；把“如何使用某资源”的能力绑在资源本身（每个 primitive 自带常驻模型），再按任务组合、只修证据指向的 primitive，就让 Claude Code 在 46 个真实任务上从 9 个完成到 39 个，且更快更省。",
+        "en": "Agents stall on the last mile not because they cannot reach a tool but because they cannot apply it correctly in context; binding the know-how to the resource itself (each primitive carries a resident model), composing per task, and revising only the primitives the evidence implicates took Claude Code from 9 to 39 completed real-world tasks out of 46, faster and cheaper."
+      },
+      "what": {
+        "zh": "固定 harness 的 coding agent 能连上邮箱、API 等资源，却常在真实任务里用错资源、无法端到端完成。",
+        "en": "Coding agents with a fixed harness can connect to mailboxes, APIs, and other resources, yet often misapply them and fail to finish real-world tasks end to end."
+      },
+      "how": {
+        "zh": "UIUC、Georgia Tech 与 HEELO 平台团队的 Haibo Jin 等（arXiv:2611.07461，[@neuralloot](https://x.com/neuralloot) 分享）从 primitive 库检索、组合出每个任务的执行图，用环境证据验证并在预算内只修相关 primitive，验证通过的新 primitive 才入库；Harness Primitives 按任务组合把 SWE-bench Verified（100 题）Pass@1 从 73.0% 提到 80.5%，Dev-Primitives 把 Codex 骨干在 Terminal-Bench 4.0 从 37.3% 提到 55.5%，真实任务上每个完成任务时间降 1.9×/2.3×、成本降 1.55×。",
+        "en": "Haibo Jin and coauthors at UIUC, Georgia Tech, and the HEELO platform team (arXiv:2611.07461, shared by [@neuralloot](https://x.com/neuralloot)) retrieve and compose a per-task graph from a primitive library, verify against environment evidence and revise only implicated primitives within a budget, and admit new primitives only after validation; per-task Harness Primitives lift SWE-bench Verified (100 tasks) Pass@1 from 73.0% to 80.5%, Dev-Primitives lift the Codex backbone on Terminal-Bench 4.0 from 37.3% to 55.5%, and on real tasks time per completed task falls 1.9×/2.3× with 1.55× lower cost."
+      },
+      "metric": {
+        "zh": "TB2.0 60.0%→72.2%；真实任务 9→39/46；TB4.0 Codex 37.3%→55.5%",
+        "en": "TB2.0 60.0%→72.2%; real tasks 9→39/46; TB4.0 Codex 37.3%→55.5%"
+      },
+      "pills": [
+        {
+          "zh": "TB2.0 Pass@1",
+          "en": "TB2.0 Pass@1",
+          "value": "60.0→72.2%",
+          "tone": "up"
+        },
+        {
+          "zh": "真实任务",
+          "en": "Real tasks",
+          "value": "9→39/46",
+          "tone": "up"
+        },
+        {
+          "zh": "成本",
+          "en": "Cost",
+          "value": "1.55× lower",
+          "tone": "up"
+        }
+      ],
+      "arxiv": "2611.07461",
+      "authors": "Haibo Jin, Peng Kuang, Xiaopeng Yuan et al.",
+      "handle": "@neuralloot",
+      "links": [
+        {
+          "zh": "论文",
+          "en": "Paper",
+          "url": "https://arxiv.org/abs/2611.07461"
+        },
+        {
+          "zh": "平台",
+          "en": "Platform",
+          "url": "https://heelo.dev"
+        },
+        {
+          "zh": "分享者",
+          "en": "Sharer",
+          "url": "https://x.com/neuralloot"
+        },
+        {
+          "zh": "X 原帖",
+          "en": "X Post",
+          "url": "https://x.com/neuralloot/status/2118784207056928912"
+        }
+      ]
+    },
+    {
+      "id": "glm-infra-agent-dense-feedback",
+      "edition": "2026-11-07",
+      "tags": [
+        "co-evolution",
+        "autoresearch"
+      ],
+      "title": {
+        "zh": "GLM 自建推理基础设施：GLM-5.3 驱动的 Infra Agent 靠“dense feedback”两周内把 GLM-5.3-Flash 在 10 万国产加速卡上做到约 3× 吞吐",
+        "en": "How GLM Built Its Own Inference Infrastructure: A GLM-5.3 Infra Agent Driven by “Dense Feedback” Took GLM-5.3-Flash to ~3× Throughput on 100,000+ Chinese Accelerators in Under Two Weeks"
+      },
+      "why": {
+        "zh": "让模型优化自己的推理系统真正起作用的，不是更强的写代码能力，而是把稀疏的端到端指标拆成局部、便宜、可客观验证的反馈（kernel 对比、时间线、微基准），让 agent 每次实验都回答一个具体问题。",
+        "en": "What made a model useful at optimizing its own serving stack was not stronger code generation but turning sparse end-to-end metrics into local, cheap, objectively verifiable feedback (kernel comparisons, timelines, microbenchmarks) so every agent experiment answers a specific question."
+      },
+      "what": {
+        "zh": "“TTFT 涨了 30%”这类端到端信号只告诉 agent 变差了，却不告诉它哪一层出了问题、下一步该测什么。",
+        "en": "End-to-end signals like “TTFT rose 30%” tell an agent results got worse but not which layer is responsible or what to test next."
+      },
+      "how": {
+        "zh": "GLM 团队博客（2026-09-17，[@jupiter186](https://x.com/jupiter186) 本轮分享）描述工程师定目标与边界、Infra Agent 提假设并改代码、实验环境给分层反馈的闭环：agent 发现 KDA kernel CP 路径的 TF32 精度累积误差并已合入 Flash Linear Attention（PR #1180），定位 DeepEP 未释放 GIL 导致 KV Transfer 开销从 >20% 降到 <1%，并把既有 kernel 经验提炼成“优化骨架”，在一个 Decode kernel 上再获 1.71× 加速；作者明确说仍未达到 RSI，目标与风险判断仍由人负责。",
+        "en": "The GLM team's blog (17 Sep 2026, surfaced this round by [@jupiter186](https://x.com/jupiter186)) describes a loop where engineers set goals and boundaries, the Infra Agent forms hypotheses and edits code, and the environment returns layered feedback: the agent found accumulated TF32 error in the KDA kernel's context-parallel path (fix merged upstream to Flash Linear Attention, PR #1180), traced an unreleased GIL in DeepEP that cut KV-transfer overhead from >20% to <1%, and distilled existing kernels into “optimization skeletons” that gave a further 1.71× on a Decode kernel; the authors say plainly this is not yet RSI and humans still own objectives and risk."
+      },
+      "metric": {
+        "zh": "端到端约 3× 吞吐；<2 周上线；KV Transfer 开销 >20%→<1%",
+        "en": "~3× end-to-end throughput; <2 weeks to production; KV-transfer gap >20%→<1%"
+      },
+      "pills": [
+        {
+          "zh": "吞吐",
+          "en": "Throughput",
+          "value": "~3×",
+          "tone": "up"
+        },
+        {
+          "zh": "上线周期",
+          "en": "Time to prod",
+          "value": "<2 weeks",
+          "tone": "up"
+        },
+        {
+          "zh": "KV 开销",
+          "en": "KV overhead",
+          "value": ">20%→<1%",
+          "tone": "up"
+        }
+      ],
+      "authors": "Z.ai (GLM team)",
+      "handle": "@jupiter186",
+      "links": [
+        {
+          "zh": "博客",
+          "en": "Blog",
+          "url": "https://z.ai/blog/glm-built-its-inference-infrastructure"
+        },
+        {
+          "zh": "分享者",
+          "en": "Sharer",
+          "url": "https://x.com/jupiter186"
+        },
+        {
+          "zh": "X 原帖",
+          "en": "X Post",
+          "url": "https://x.com/jupiter186/status/2118918085533135283"
+        }
+      ]
+    },
     {
       "id": "molrsi-recursive-molecular-discovery",
       "edition": "2026-11-06",
