@@ -19,6 +19,15 @@
   },
   "editions": [
     {
+      "id": "2026-11-08",
+      "date": "2026-11-08",
+      "slot": "",
+      "label": {
+        "zh": "2026-11-08",
+        "en": "8 Nov 2026"
+      }
+    },
+    {
       "id": "2026-11-07",
       "date": "2026-11-07",
       "slot": "",
@@ -217,6 +226,291 @@
     }
   ],
   "items": [
+    {
+      "id": "alphaevolve-harbor-skill-optimizer",
+      "edition": "2026-11-08",
+      "tags": [
+        "harness-search",
+        "memory-skills"
+      ],
+      "title": {
+        "zh": "Google 用 AlphaEvolve + Harbor 自动进化编程 agent 技能：几轮迭代约 +5%，最佳技能围绕「超时」这一最常见失败来写",
+        "en": "Google Evolves Coding-Agent Skills With AlphaEvolve + Harbor: About +5% in a Few Iterations, With the Best Skill Built Around the Most Common Failure, Timeouts"
+      },
+      "why": {
+        "zh": "把技能文件当成程序让 AlphaEvolve 去改、用真实 agent 在真实任务上与基线同时跑来打分，才能搜出比手写通用建议更有用的技能，而胜出的技能之所以有效，是它专门针对 agent 最常见的失败（跑超时），而不是再加一遍通用最佳实践。",
+        "en": "Treating a skill file as code for AlphaEvolve to rewrite, and scoring each version by running the real agent on real tasks side by side with the baseline, finds skills that beat hand-written general advice—and the winner works because it targets the agent's most common failure (running out of time), not because it adds more best practice."
+      },
+      "what": {
+        "zh": "大多数 agent 技能是手写的，Google 发现其基线技能在 Terminal-Bench 2.0 上对 OpenCode + Gemini 3.8 Flash 几乎没有可测差别（有无技能都约三分之二通过）。",
+        "en": "Most agent skills are written by hand, and Google found its baseline skill made no measurable difference for OpenCode with Gemini 3.8 Flash on Terminal-Bench 2.0 (about two-thirds of attempts passed with or without it)."
+      },
+      "how": {
+        "zh": "@ds_wen_ 转发的 Google Cloud 博客把技能描述与正文放进 AlphaEvolve 的可进化代码块，由 Harbor 在 GKE 上每个试验一个容器、让真实 agent 带候选技能与基线技能同时跑（单次搜索数千次试验），把通过分数和失败/超时备注回传给 Gemini，几轮迭代约提升 5%，最佳技能是「尽早把可用版本写到目标路径」「一旦测试变绿立即停止」这类围绕时间限制的协议。代价与边界也很明确：约三分之一试验撞上时间上限，搜索约 10 小时后因延迟检查和完整日志占满磁盘而不再产出新候选，而直接含答案的技能在开发任务上能加 33 分，说明可挖的空间在具体信息而非通用建议。",
+        "en": "The Google Cloud post shared by @ds_wen_ puts the skill's description and body inside an AlphaEvolve evolve block, while Harbor runs the real agent with each candidate next to the baseline skill in its own GKE container (thousands of trials per search) and feeds pass scores plus failure/timeout notes back to Gemini, yielding about a 5% improvement within a few iterations from a skill built around time-limit protocols like shipping a working baseline to the target path early and a hard stop when tests go green. The limits are explicit: about a third of trials hit the time limit, the search stopped producing new candidates after about 10 hours because latency checks stalled evaluations and full agent logs filled the controller's disk, and a skill holding the answers added 33 points on dev tasks, so the headroom lies in specifics rather than general advice."
+      },
+      "metric": {
+        "zh": "几轮迭代约 +5%；约 1/3 试验超时；含答案技能 +33 分",
+        "en": "About +5% in a few iterations; ~1/3 of trials timed out; answer-holding skill +33 pts"
+      },
+      "pills": [
+        {
+          "zh": "提升",
+          "en": "Gain",
+          "value": "~5%",
+          "tone": "up"
+        },
+        {
+          "zh": "超时试验",
+          "en": "Timed-out trials",
+          "value": "~1/3",
+          "tone": "down"
+        },
+        {
+          "zh": "基线技能",
+          "en": "Baseline skill",
+          "value": "no effect",
+          "tone": "neutral"
+        }
+      ],
+      "authors": "Ivan Nardini, Anant Nawalgaria (Google Cloud)",
+      "handle": "@ds_wen_",
+      "links": [
+        {
+          "zh": "博客",
+          "en": "Blog",
+          "url": "https://cloud.google.com/blog/topics/developers-practitioners/how-to-build-an-agent-skill-optimizer-with-alphaevolve-and-harbor"
+        },
+        {
+          "zh": "分享者",
+          "en": "Sharer",
+          "url": "https://x.com/ds_wen_"
+        },
+        {
+          "zh": "X 原帖",
+          "en": "X Post",
+          "url": "https://x.com/ds_wen_/status/2119224301761229300"
+        }
+      ]
+    },
+    {
+      "id": "continual-autoresearch-persistent-agents",
+      "edition": "2026-11-08",
+      "tags": [
+        "autoresearch",
+        "memory-skills"
+      ],
+      "title": {
+        "zh": "Continual AutoResearch：让科研 agent 跨任务保留状态，五个前沿 agent 都更快找到好解，但截止时领先从 +24.0 缩到 +1.2",
+        "en": "Continual AutoResearch: Persistent Research Agents Find Good Solutions Sooner Across All Five Frontier Agents, but the Lead Shrinks From +24.0 to +1.2 by the Deadline"
+      },
+      "why": {
+        "zh": "让自动科研 agent 在一串相关 ML 任务间保留状态，五个前沿 agent 都能更早拿到好解，但这份先发优势到截止时基本消失，因为「留住经验」和「用好经验」（选择性记忆、重测迁移来的假设、选对最终候选）是两种不同能力。",
+        "en": "Letting an autoresearch agent keep its state across a stream of related ML tasks makes all five frontier agents reach good solutions sooner, but the early lead mostly evaporates by the deadline because retaining experience and using it well (selective memory, re-testing carried-over assumptions, picking the right final candidate) are separate capabilities."
+      },
+      "what": {
+        "zh": "自动科研评测通常每遇到新问题就把 agent 重置，因此没人知道 agent 能否把一个研究任务里的经验真正带到下一个任务。",
+        "en": "Autoresearch evaluations usually reset the agent for every new problem, so it has been unclear whether agents actually carry lessons from one research task to the next."
+      },
+      "how": {
+        "zh": "@SciFi 分享的 RBC Borealis 论文在九个任务族（合成 AutoML、符号回归、时间序列预测、表格 AutoML）上，以相同任务流、数据和每任务 30 分钟预算对比同一 agent 的持久版与重置版：时间收敛增益对五个 agent 全为正（Kimi K3 +21.3、Sonnet 4.6 +20.9、Opus 5 +7.5、GPT-5.6-Sol +6.1、GPT-5.4 +3.0），但平均领先从预算 25% 时的 +24.0 分降到截止时的 +1.2 分。只有 Sonnet 4.6 拿到明显的最终结果增益（+7.6），而「洞察卡片」记忆消融显示相关卡片会改变起点和搜索效率，却不能稳定提升最终表现。",
+        "en": "The RBC Borealis paper shared by @SciFi compares persistent and reset copies of the same agent on matched task streams, data, and 30-minute per-task budgets across nine task families (synthetic AutoML, symbolic regression, time-series forecasting, tabular AutoML): time-convergence gains are positive for all five agents (Kimi K3 +21.3, Sonnet 4.6 +20.9, Opus 5 +7.5, GPT-5.6-Sol +6.1, GPT-5.4 +3.0), yet the mean persistent lead falls from +24.0 points at 25% of the budget to +1.2 at the deadline. Only Sonnet 4.6 gets a substantial final-outcome gain (+7.6), and an insight-card memory ablation shows relevant cards shift initialisation and search speed but do not reliably improve final results."
+      },
+      "metric": {
+        "zh": "5/5 agent 更快；领先 +24.0→+1.2；仅 Sonnet 4.6 最终 +7.6",
+        "en": "5/5 agents faster; lead +24.0→+1.2; only Sonnet 4.6 final +7.6"
+      },
+      "pills": [
+        {
+          "zh": "更快的 agent",
+          "en": "Agents faster",
+          "value": "5/5",
+          "tone": "up"
+        },
+        {
+          "zh": "领先（25%→截止）",
+          "en": "Lead (25%→deadline)",
+          "value": "+24.0→+1.2",
+          "tone": "down"
+        },
+        {
+          "zh": "Sonnet 最终增益",
+          "en": "Sonnet final gain",
+          "value": "+7.6",
+          "tone": "up"
+        }
+      ],
+      "arxiv": "2611.05108",
+      "authors": "Qin, Deng, Ahmed, Tung, Feng (RBC Borealis)",
+      "handle": "@SciFi",
+      "links": [
+        {
+          "zh": "论文",
+          "en": "Paper",
+          "url": "https://arxiv.org/abs/2611.05108"
+        },
+        {
+          "zh": "分享者",
+          "en": "Sharer",
+          "url": "https://x.com/SciFi"
+        },
+        {
+          "zh": "X 原帖",
+          "en": "X Post",
+          "url": "https://x.com/SciFi/status/2119236475992596978"
+        }
+      ]
+    },
+    {
+      "id": "reprobridge-reproducible-research-artifacts",
+      "edition": "2026-11-08",
+      "tags": [
+        "autoresearch",
+        "verification"
+      ],
+      "title": {
+        "zh": "ReproBridge：把第一次成功复现打包成可复用产物，agent 复现 ML 论文成功率 76.4%→92.6%，API 花费降 19.7%",
+        "en": "ReproBridge: Packaging the First Successful Reproduction Lifts Agent Reproduction of ML Papers From 76.4% to 92.6% and Cuts API Spend 19.7%"
+      },
+      "why": {
+        "zh": "把第一次成功复现沉淀成可复用产物（清理后的代码、环境配置、实验启动脚本、复现指南），再由独立审计者核查运行是否真实发生，能让编程 agent 复现 ML 论文可靠得多，效果大到四个模型带上产物后都超过最强模型在原始代码上的成绩。",
+        "en": "Packaging the first successful reproduction into a reusable artifact (cleaned code, environment setup, experiment launchers, a guide) and having a separate auditor confirm the runs really happened makes coding agents reproduce ML papers far more reliably, enough that all four models with the package beat the strongest model working from raw code."
+      },
+      "what": {
+        "zh": "agent 复现 ML 实验常常失败或代价高，因为成功运行中摸索出的配置与决策埋在对话和 shell 历史里，下一个 agent 只能重新摸索。",
+        "en": "Agent reproductions of ML experiments often fail or cost a lot because the setup decisions recovered during a successful run stay buried in chat and shell history, so the next agent has to repeat the investigation."
+      },
+      "how": {
+        "zh": "@omarsar0 推荐的 Google 与滑铁卢大学论文构建四件套产物，并在 ReproBridge-Bench（36 篇论文、387 个实验、1,029 个任务、每任务 5 个人工核验参考分）上让 agent 在全新会话中复现，由独立的 Codex 或 Claude 审计者检查执行证据：四个模型平均成功率从 76.4% 升到 92.6%，下游 API 花费降 19.7%，最好与最差模型差距从 21.6 缩到 3.9 个百分点（Opus 5 原始代码 89.2%，四个模型带产物均超 90%）。构建 36 份产物花了 5,026 美元 API 费用，按论文测算需 8–13 轮完整复用才回本，消融中去掉代码或环境配置损失最大。",
+        "en": "The Google and Waterloo paper highlighted by @omarsar0 builds the four-part artifact and tests it on ReproBridge-Bench (36 papers, 387 experiments, 1,029 tasks, five human-verified reference scores each), with agents reproducing in fresh sessions and a separate Codex or Claude auditor checking execution evidence: mean success rises from 76.4% to 92.6% across four models, downstream API spend falls 19.7%, and the best-to-worst model gap shrinks from 21.6 to 3.9 points (Opus 5 scores 89.2% on raw code, while all four models exceed 90% with the artifact). Building the 36 artifacts cost $5,026 in API usage, which the paper estimates breaks even after 8–13 full reuse rounds, and removing code or environment setup causes the largest ablation losses."
+      },
+      "metric": {
+        "zh": "成功率 76.4%→92.6%；API −19.7%；模型差距 21.6→3.9 pp",
+        "en": "Success 76.4%→92.6%; API −19.7%; model gap 21.6→3.9 pp"
+      },
+      "pills": [
+        {
+          "zh": "复现成功率",
+          "en": "Success",
+          "value": "76.4%→92.6%",
+          "tone": "up"
+        },
+        {
+          "zh": "API 花费",
+          "en": "API spend",
+          "value": "−19.7%",
+          "tone": "up"
+        },
+        {
+          "zh": "模型差距",
+          "en": "Model gap",
+          "value": "21.6→3.9 pp",
+          "tone": "up"
+        }
+      ],
+      "arxiv": "2611.08452",
+      "authors": "Wang, Meng, Nam, Pfister, Yoon (Google, University of Waterloo)",
+      "handle": "@omarsar0",
+      "links": [
+        {
+          "zh": "论文",
+          "en": "Paper",
+          "url": "https://arxiv.org/abs/2611.08452"
+        },
+        {
+          "zh": "项目页",
+          "en": "Project",
+          "url": "https://wyyyb.github.io/reprobridge_website/"
+        },
+        {
+          "zh": "分享者",
+          "en": "Sharer",
+          "url": "https://x.com/omarsar0"
+        },
+        {
+          "zh": "X 原帖",
+          "en": "X Post",
+          "url": "https://x.com/omarsar0/status/2119085975880212842"
+        }
+      ]
+    },
+    {
+      "id": "metr-anthropic-rd-acceleration-spending-axis",
+      "edition": "2026-11-08",
+      "tags": [
+        "recursive-self-improvement",
+        "verification"
+      ],
+      "title": {
+        "zh": "METR 深入 Anthropic：AI 研发提速约 2 倍、约八成归功于 AI；但换成按研发花费来画，每十亿美元的进步在下降",
+        "en": "METR Inside Anthropic: AI R&D Running About 2x Faster, Roughly 80% Credited to AI—but Redrawn Against R&D Spend, Progress per Billion Dollars Is Falling"
+      },
+      "why": {
+        "zh": "METR 对 Anthropic 的高权限评估是迄今最强的公开证据，表明 AI 正在加速 AI 研发（能力增速约 2 倍，主要归因于 AI 协助而非训练算力），但从业者把同一趋势改画到研发花费轴上后发现每美元进步在下降，所以「每年更快」并不等于「每单位进步更便宜」。",
+        "en": "METR's high-access assessment of Anthropic is the strongest public evidence yet that AI is accelerating AI R&D (about 2x faster capability growth, mostly credited to AI assistance rather than training compute), but practitioners who redrew the same trend against R&D spending show progress per dollar falling, so faster per year is not the same as cheaper per unit of progress."
+      },
+      "what": {
+        "zh": "AI 是否已经在加速自身研发，过去大多只能凭轶事争论，因为外界看不到实验室内部的基准、算力和员工工作流。",
+        "en": "Whether AI is already speeding up its own development has mostly been argued from anecdotes, because outsiders cannot see a lab's internal benchmarks, compute, and staff workflows."
+      },
+      "how": {
+        "zh": "@METR_Evals 于 8 月 12 日至 10 月 29 日在 Anthropic 做高权限评估，估计截至 2026 年 10 月其模型在明确任务上的能力增速约为 2024 年 3 月至 2025 年 10 月的 2 倍（AECI 趋势 1.9 倍，95% 置信区间 1.5–2.8 倍），当前加速约 80% 归因于 AI 使用，未来 12 个月未见明显瓶颈，且部分关键证据被 Anthropic 删减。11 月 7 日晚 @michael_wiebe 与 @sebkrier 用 Anthropic S-1 的研发费用把 METR 拟合斜率改画到累计花费轴上：每十亿美元的 AECI 点数从 4.05（2025 上半年）降到 1.49（2026 上半年）和 0.76（2026 第三季度），而每年点数从 15 升到 29，两张图都注明这只是描述性对比，并不说明 AI 没有提升研究效率。",
+        "en": "@METR_Evals spent Aug 12 to Oct 29 with high access inside Anthropic and estimates that, as of October 2026, capability growth on well-specified tasks is about 2x the Mar 2024 to Oct 2025 rate (AECI trend 1.9x, 95% CI 1.5–2.8x), with roughly 80% of the current acceleration attributed to AI use, no clear bottlenecks over the next 12 months, and some key evidence redacted by Anthropic. Late on 7 Nov, @michael_wiebe and @sebkrier put METR's fitted slopes on a cumulative R&D-spending axis using Anthropic's S-1 figures: AECI points per $bn fall from 4.05 (H1 2025) to 1.49 (H1 2026) and 0.76 (Q3 2026) even as points per year rise from 15 to 29, though both charts note this is descriptive and does not show that AI failed to raise research productivity."
+      },
+      "metric": {
+        "zh": "AECI 加速 1.9 倍（1.5–2.8）；约 80% 归因 AI；每十亿美元点数 4.05→1.49→0.76",
+        "en": "AECI acceleration 1.9x (1.5–2.8); ~80% credited to AI; points per $bn 4.05→1.49→0.76"
+      },
+      "pills": [
+        {
+          "zh": "AECI 加速",
+          "en": "AECI acceleration",
+          "value": "1.9x",
+          "tone": "up"
+        },
+        {
+          "zh": "归因于 AI",
+          "en": "Credited to AI",
+          "value": "~80%",
+          "tone": "neutral"
+        },
+        {
+          "zh": "每十亿美元点数",
+          "en": "Points per $bn",
+          "value": "4.05→0.76",
+          "tone": "down"
+        }
+      ],
+      "authors": "METR (Cunningham, Rush, Whitfill, Wijk); charts by Michael Wiebe and Séb Krier",
+      "handle": "@sebkrier",
+      "links": [
+        {
+          "zh": "报告",
+          "en": "Report",
+          "url": "https://metr.org/blog/2026-11-05-anthropic-ai-rd-acceleration-assessment/"
+        },
+        {
+          "zh": "分享者",
+          "en": "Sharer",
+          "url": "https://x.com/sebkrier"
+        },
+        {
+          "zh": "X 原帖",
+          "en": "X Post",
+          "url": "https://x.com/sebkrier/status/2119213426589278648"
+        },
+        {
+          "zh": "X 原帖",
+          "en": "X Post",
+          "url": "https://x.com/michael_wiebe/status/2119207429393220041"
+        },
+        {
+          "zh": "X 原帖",
+          "en": "X Post",
+          "url": "https://x.com/METR_Evals/status/2118412183860351084"
+        }
+      ]
+    },
     {
       "id": "last-ai-built-humans-rsi-ladder",
       "edition": "2026-11-07",
