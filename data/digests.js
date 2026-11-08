@@ -227,6 +227,373 @@ window.YANHUA_DIGESTS = {
   ],
   "items": [
     {
+      "id": "agentpilot-9b-strategy-model-harness-search",
+      "edition": "2026-11-08",
+      "tags": [
+        "harness-search",
+        "memory-skills"
+      ],
+      "title": {
+        "zh": "AgentPilot：让 9B 策略模型决定「下一步试什么」，密封测试集 AIME 28/36 胜过最强基线的 25/36，但在 Terminal-Bench 上只与 ShinkaEvolve 打平",
+        "en": "AgentPilot: A 9B Strategy Model That Picks What to Try Next Reaches 28/36 on Sealed AIME vs 25/36 for the Best Baseline, but Only Ties ShinkaEvolve on Terminal-Bench"
+      },
+      "why": {
+        "zh": "把「下一步试什么」从编程 agent 里拆出来，交给一个记录每次尝试、并从成对结果中学习的 9B 小模型，可以让 harness 搜索少走重复的弯路；但在密封测试任务上，优势在 AIME 上明显、在 Terminal-Bench 上只是打平，因为只用 9–12 个验证任务打分噪声很大，看起来最好的候选往往并不是真正最好的。",
+        "en": "Pulling the \"what to try next\" decision out of the coding agent and handing it to a small 9B model that records every attempt and learns from paired results makes harness search waste fewer tries, but on sealed test tasks the edge is clear on AIME and only a tie on Terminal-Bench, because scoring on 9–12 validation tasks is so noisy that the best-looking candidate often isn't the best one."
+      },
+      "what": {
+        "zh": "让编程 agent 多轮改进 harness 时，它常常反复尝试相似的失败思路，因为同一个模型在一个长会话里既写代码又决定下一步试哪个想法。",
+        "en": "Coding agents that improve a harness over many attempts tend to repeat similar failed ideas, because the same model in one long session both writes the code and decides which idea to try next."
+      },
+      "how": {
+        "zh": "@Ldataengineer 介绍的港大 HKUDS AgentPilot 维护一份共享搜索状态（每个版本、父版本、成败结果、剩余预算），由 Qwen 3.5 9B 提议者用 KL-UCB 统计或可修订的文字经验来选父版本、方向和下一步，DeepSeek V4 Flash 负责改 Terminus 2 harness；每次 20 个动作后冻结的版本在未见过的 AIME 任务上得 28/36（最强基线 ShinkaEvolve 25/36），在未见过的 Terminal-Bench 2.1 任务上得 34/49（ShinkaEvolve 同样 34/49），而宣传的 TB +24.5 分是从 22/49 的起点算的，基线起点是 27/49。",
+        "en": "HKU's AgentPilot (HKUDS), shared by @Ldataengineer, keeps a shared search state of every version, its parent, outcomes and remaining budget, and a Qwen 3.5 9B proposer picks the parent, direction and next action using KL-UCB statistics or revisable textual lessons while DeepSeek V4 Flash edits a Terminus 2 harness; after 20 actions its frozen pick scored 28/36 on unseen AIME tasks (best baseline ShinkaEvolve 25/36) and 34/49 on unseen Terminal-Bench 2.1 tasks (ShinkaEvolve also 34/49), and the headline +24.5-point TB gain is measured from a 22/49 root versus 27/49 for the baselines."
+      },
+      "metric": {
+        "zh": "密封测试：AIME 28/36 对最强基线 25/36；TB2.1 34/49，与 ShinkaEvolve 打平",
+        "en": "Sealed test: AIME 28/36 vs 25/36 best baseline; TB2.1 34/49, tied with ShinkaEvolve"
+      },
+      "pills": [
+        {
+          "zh": "AIME 未见任务",
+          "en": "AIME unseen",
+          "value": "28/36",
+          "tone": "up"
+        },
+        {
+          "zh": "TB2.1 未见任务",
+          "en": "TB2.1 unseen",
+          "value": "34/49 (tie)",
+          "tone": "neutral"
+        },
+        {
+          "zh": "策略模型",
+          "en": "Strategy model",
+          "value": "9B",
+          "tone": "neutral"
+        }
+      ],
+      "authors": "HKU Data Intelligence Lab (HKUDS)",
+      "handle": "@Ldataengineer",
+      "links": [
+        {
+          "zh": "仓库",
+          "en": "Repo",
+          "url": "https://github.com/HKUDS/AgentPilot"
+        },
+        {
+          "zh": "评测文档",
+          "en": "Evaluation",
+          "url": "https://github.com/HKUDS/AgentPilot/blob/main/arena/docs/evaluation.md"
+        },
+        {
+          "zh": "分享者",
+          "en": "Sharer",
+          "url": "https://x.com/Ldataengineer"
+        },
+        {
+          "zh": "X 原帖",
+          "en": "X Post",
+          "url": "https://x.com/Ldataengineer/status/2119425708401344681"
+        }
+      ]
+    },
+    {
+      "id": "evolver-gene-experience-harness-reuse",
+      "edition": "2026-11-08",
+      "tags": [
+        "harness-search",
+        "memory-skills"
+      ],
+      "arxiv": "2611.07595",
+      "title": {
+        "zh": "Evolver：把过往运行沉淀成「Gene」经验再注入，Claude Code 与 Codex 成功率 83.1%→87.5%、token 降 24%——但测的是诊断性任务集，不是随机抽样",
+        "en": "Evolver: Re-Injecting \"Gene\" Notes From Past Runs Lifts Claude Code and Codex From 83.1% to 87.5% and Cuts Tokens 24%—on a Diagnostic, Not Random, Task Set"
+      },
+      "why": {
+        "zh": "把早先运行里学到的做法存成简短的结构化「Gene」笔记、在新会话开头注入匹配的那几条，能让 Claude Code 和 Codex 不改权重就完成更多任务、花更少 token，主要原因是 agent 不再重新摸索之前已经摸清的路；但证据来自笔记正是从这些任务里提炼出来、且部分按「有提升」挑选的任务集，所以它证明的是复用，而不是泛化。",
+        "en": "Saving the lessons from earlier runs as short structured \"Gene\" notes and injecting the matching ones at the start of a new session lets Claude Code and Codex finish more tasks with fewer tokens without touching model weights, mainly because the agent stops re-exploring what an earlier run already worked out—but the evidence comes from tasks the notes were distilled from, partly selected for showing gains, so it shows reuse rather than generalization."
+      },
+      "what": {
+        "zh": "agent 在探索中学到的操作性知识通常随运行结束而丢失，每个新任务都要为同样的试错重新付费。",
+        "en": "Agent runs throw away the procedural knowledge they discover while exploring, so every new task pays again for the same trial and error."
+      },
+      "how": {
+        "zh": "@omarsar0 分享的 EvoMap Evolver 从成功和失败的基线轨迹中提炼 Gene（步骤、适用条件、验证计划）以及 Capsule 和 AntiGene，先隔离待审，再通过 hook/MCP 以最多 12,000 字节注入全新会话；在 Terminal-Bench 2.1、SWE-bench Multilingual、SWE-rebench 和 GAIA 的 320 组配对运行上，成功率 83.13%→87.50%（Codex +6.25，Claude Code +2.50），token 降 24.24%（两种条件都成功的 265 组降 17.57%），16 个配置中 9 个提升、7 个不变，SWE-bench Multilingual 持平在 96.25%。",
+        "en": "EvoMap's Evolver, shared by @omarsar0, distills successful and failed baseline trajectories into Genes (steps, applicability conditions, validation plans) plus Capsules and AntiGenes, quarantines them for review, and injects up to 12,000 bytes into a fresh session via hooks or MCP; on 320 paired runs across Terminal-Bench 2.1, SWE-bench Multilingual, SWE-rebench and GAIA, success rose from 83.13% to 87.50% (Codex +6.25, Claude Code +2.50), tokens fell 24.24% (17.57% on the 265 pairs solved both ways), 9 of 16 configurations improved and 7 were unchanged, and SWE-bench Multilingual stayed flat at 96.25%."
+      },
+      "metric": {
+        "zh": "成功率 +4.38 分；token −24.24%；16 个配置中 9 个提升",
+        "en": "+4.38 pts success; −24.24% tokens; 9 of 16 configs improved"
+      },
+      "pills": [
+        {
+          "zh": "成功率",
+          "en": "Success",
+          "value": "83.1→87.5%",
+          "tone": "up"
+        },
+        {
+          "zh": "Token",
+          "en": "Tokens",
+          "value": "−24.2%",
+          "tone": "up"
+        },
+        {
+          "zh": "提升配置",
+          "en": "Configs improved",
+          "value": "9/16",
+          "tone": "neutral"
+        }
+      ],
+      "authors": "Haoyang Zhang, Qumeng Sun, Xiao Zhang, Xiang Liu, Zhidong Fan, Junjie Wang (EvoMap)",
+      "handle": "@omarsar0",
+      "links": [
+        {
+          "zh": "论文",
+          "en": "Paper",
+          "url": "https://arxiv.org/abs/2611.07595"
+        },
+        {
+          "zh": "仓库",
+          "en": "Repo",
+          "url": "https://github.com/EvoMap/evolver"
+        },
+        {
+          "zh": "分享者",
+          "en": "Sharer",
+          "url": "https://x.com/omarsar0"
+        },
+        {
+          "zh": "X 原帖",
+          "en": "X Post",
+          "url": "https://x.com/omarsar0/status/2119473781689421855"
+        }
+      ]
+    },
+    {
+      "id": "lm2lm-research-world-model-rl-proposer",
+      "edition": "2026-11-08",
+      "tags": [
+        "autoresearch",
+        "agentic-rl"
+      ],
+      "arxiv": "2610.23344",
+      "title": {
+        "zh": "LM2LM：对着持续校准的「研究世界模型」做 RL，Qwen3.8-27B 提出的模型改进想法胜过带 300 条记录的 GPT-6-sol，数据成本低 33%",
+        "en": "LM2LM: RL Against a Continually Calibrated \"Research World Model\" Lets Qwen3.8-27B Propose Better LM Improvements Than GPT-6-sol With 300 Records, at 33% Lower Data Cost"
+      },
+      "why": {
+        "zh": "27B 模型可以通过 RL 学会更好的研究判断（该试哪种训练配方改动），奖励来自一个预测实验收益的冻结 LLM，但前提是不断用真实训练去验证当前策略最看好的提议、把结果补回预测器——不这样做，预测器的排序会跌到比随机还差，RL 就会去追被高估的想法。",
+        "en": "A 27B model can learn better research judgment about which training-recipe change to try by doing RL against a frozen LLM that predicts experimental gains, but only because that predictor keeps getting re-grounded with real runs of the proposals the policy currently likes most—without this, its rankings sink below chance and RL chases overestimated ideas."
+      },
+      "what": {
+        "zh": "用真实反馈训练 AI 提出模型改进，需要上万次训练运行（作者估算一个不大的 RL 设置就要 1600 万美元以上），而廉价代理奖励又会随策略变化被钻空子。",
+        "en": "Training an AI to propose model improvements with real feedback would need tens of thousands of training runs (the authors estimate over $16M for a modest RL setup), while a cheap surrogate reward gets gamed as the policy shifts."
+      },
+      "how": {
+        "zh": "@dhinchcliffe 分享的这篇宾州州立、UCSC、Emory、UCSB 与 Amazon 的论文用 GPT-6-sol 加真实实验记录（in-context）作奖励模型，并在第 16/40/64 步后真实训练当前评分最高的提议、把结果加回记录（共 200 次真实运行）；在 8 个自回归和扩散 LM 家族的留出任务上，LM2LM 的 AR Avg@4 收益为 17.06，带 300 条记录的 GPT-6-sol 为 6.15，负收益提议从 70.4% 降到 39.2%，数据成本 4.01 万美元对 6.0 万美元，而固定记录的预测器两两排序准确率从 0.72 跌到 0.37，校准版保持 0.61。",
+        "en": "In this Penn State, UC Santa Cruz, Emory, UC Santa Barbara and Amazon paper shared by @dhinchcliffe, GPT-6-sol with real experimental records in context serves as the reward model, and after steps 16, 40 and 64 the top-rated current proposals are actually trained and their outcomes added (200 real runs in total); on held-out tasks across 8 autoregressive and diffusion LM families, LM2LM's AR Avg@4 gain is 17.06 vs 6.15 for GPT-6-sol given 300 records, negative-gain proposals drop from 70.4% to 39.2%, data cost is $40.1k vs $60.0k, and a static-record predictor's pairwise accuracy falls from 0.72 to 0.37 while the calibrated one holds 0.61."
+      },
+      "metric": {
+        "zh": "AR Avg@4 17.06 对 6.15（GPT-6-sol-ICL）；数据成本低 33%；静态预测器准确率 0.37",
+        "en": "AR Avg@4 17.06 vs 6.15 (GPT-6-sol-ICL); 33% lower data cost; static predictor accuracy 0.37"
+      },
+      "pills": [
+        {
+          "zh": "AR Avg@4",
+          "en": "AR Avg@4",
+          "value": "17.06 vs 6.15",
+          "tone": "up"
+        },
+        {
+          "zh": "负收益提议",
+          "en": "Negative-gain proposals",
+          "value": "70.4→39.2%",
+          "tone": "up"
+        },
+        {
+          "zh": "静态预测器排序",
+          "en": "Static predictor ranking",
+          "value": "0.37",
+          "tone": "down"
+        }
+      ],
+      "authors": "Minhua Lin et al. (Penn State, UC Santa Cruz, Emory, UC Santa Barbara, Amazon)",
+      "handle": "@dhinchcliffe",
+      "links": [
+        {
+          "zh": "论文",
+          "en": "Paper",
+          "url": "https://arxiv.org/abs/2610.23344"
+        },
+        {
+          "zh": "分享者",
+          "en": "Sharer",
+          "url": "https://x.com/dhinchcliffe"
+        },
+        {
+          "zh": "X 原帖",
+          "en": "X Post",
+          "url": "https://x.com/dhinchcliffe/status/2119427667904581876"
+        }
+      ]
+    },
+    {
+      "id": "nexttransformer-claude-autoresearch-attnres-canon",
+      "edition": "2026-11-08",
+      "tags": [
+        "autoresearch"
+      ],
+      "title": {
+        "zh": "NextTransformer Auto Research：Claude 把两个反复出现在好结果里的改动叠在一起，AttnRes-Canon 以 35.99 CORE 居 36 个算力对齐正式运行之首——但只有一个种子",
+        "en": "NextTransformer Auto Research: Claude Stacks Two Edits That Kept Showing Up in Winning Runs, and AttnRes-Canon Tops 36 Compute-Matched Formal Runs at 35.99 CORE—on One Seed"
+      },
+      "why": {
+        "zh": "做架构研究的 agent 找到最佳模型，靠的不是发明新东西，而是注意到哪两个改动总出现在更好的运行里并把它们组合起来，而且收益在 491.5 亿 token 的算力对齐完整训练中保住了；不过单一种子、领先下一名仅 0.66 分，说明这是有希望的线索，还不是定论。",
+        "en": "The architecture-research agent found its best model not by inventing something new but by noticing which two edits kept appearing in the better runs and stacking them, and the gain held in a full 49B-token compute-matched training run—though one seed and a 0.66-point lead over the next method make it a promising lead, not a settled ranking."
+      },
+      "what": {
+        "zh": "编程 agent 能否在固定算力预算下做真正的架构搜索，并产出在完整规模训练中依然成立、而不只是在短开发运行里好看的结果？",
+        "en": "Can a coding agent run real architecture search under a fixed compute budget and produce a result that survives a full-scale training run, not just short dev runs?"
+      },
+      "how": {
+        "zh": "@Selen7005717917 分享的 NextTransformer Arena 研究中，Claude Opus 5.5 编写插件、在 NextT-Gym 中测试 12 个候选，按开发集 bits-per-byte 选择、CORE-22 留出不参与选择，人类只批准预算和停止点；把逐 block 注意力残差与 Canon 局部通道混合结合，在 2,000 步时达到 0.79651 dev BPB（Block AttnRes 为 0.80031），经审计的正式运行（46,875 次更新、491.5 亿 token、FLOPs 比基准 +0.486%）得到 35.99 CORE，对比 mHC 35.33、Block AttnRes 34.00、Dense 33.10；PR 也披露了只用种子 42、agent 读过已发布结果、gym 无进程隔离，以及 BoolQ 占了领先的一部分。",
+        "en": "In the NextTransformer Arena study shared by @Selen7005717917, Claude Opus 5.5 wrote plugins and tested 12 candidates in NextT-Gym, selecting on dev bits-per-byte with CORE-22 held out while humans only approved budgets and stopping points; combining per-block attention residuals with Canon local channel mixing reached 0.79651 dev BPB vs 0.80031 for Block AttnRes at 2,000 steps, and the audited formal run (46,875 updates, 49.152B tokens, +0.486% FLOPs vs the anchor) scored 35.99 CORE vs 35.33 for mHC, 34.00 for Block AttnRes and 33.10 for Dense, with the PR disclosing a single seed (42), that the agent had read published results, that the gym ran without process isolation, and that BoolQ accounts for part of the lead."
+      },
+      "metric": {
+        "zh": "CORE 35.99，对比 mHC 35.33 / Block AttnRes 34.00 / Dense 33.10；单种子",
+        "en": "CORE 35.99 vs 35.33 (mHC) / 34.00 (Block AttnRes) / 33.10 (Dense); single seed"
+      },
+      "pills": [
+        {
+          "zh": "CORE",
+          "en": "CORE",
+          "value": "35.99",
+          "tone": "up"
+        },
+        {
+          "zh": "领先 mHC",
+          "en": "Lead over mHC",
+          "value": "+0.66",
+          "tone": "neutral"
+        },
+        {
+          "zh": "种子",
+          "en": "Seeds",
+          "value": "1",
+          "tone": "down"
+        }
+      ],
+      "authors": "NextTransformer team (Interactive-Active-AI)",
+      "handle": "@Selen7005717917",
+      "links": [
+        {
+          "zh": "结果 PR",
+          "en": "Results PR",
+          "url": "https://github.com/Interactive-Active-AI/NextTransformer/pull/32"
+        },
+        {
+          "zh": "仓库",
+          "en": "Repo",
+          "url": "https://github.com/Interactive-Active-AI/NextTransformer"
+        },
+        {
+          "zh": "分享者",
+          "en": "Sharer",
+          "url": "https://x.com/Selen7005717917"
+        },
+        {
+          "zh": "X 原帖",
+          "en": "X Post",
+          "url": "https://x.com/Selen7005717917/status/2119355822421516318"
+        }
+      ]
+    },
+    {
+      "id": "terminal-rsi-rewrite-refine-terminal-agents",
+      "edition": "2026-11-08",
+      "tags": [
+        "agentic-rl",
+        "verification"
+      ],
+      "arxiv": "2610.22192",
+      "title": {
+        "zh": "Terminal-RSI：交替「验证轨迹重写」与 PPO，27B 终端 agent 四套件平均成功率 20.68%→50.58%，但循环是固定排好的，不是自我主导的",
+        "en": "Terminal-RSI: Alternating Verified-Trajectory Rewriting With PPO Lifts a 27B Terminal Agent From 20.68% to 50.58% Mean Success, but the Loop Is Fixed, Not Self-Directed"
+      },
+      "why": {
+        "zh": "腾讯这个终端 agent 进步很大，是因为每一轮只用通过受保护验证器的运行来训练，并让 RL 奖励主要奖给「严格完成」而不是「差不多完成」；但它是人工排定的五阶段流程，没有算力对齐的对照，所以它证明的是一套强训练配方，而不是一个越来越会改进自己的 agent。",
+        "en": "Tencent's terminal agent improves a lot because each round trains only on runs that passed the protected verifier and then pays the RL reward mainly for strict completion rather than \"almost finishing\", but it is a hand-scheduled five-stage pipeline with no compute-matched controls, so it demonstrates a strong training recipe rather than an agent that gets better at improving itself."
+      },
+      "what": {
+        "zh": "终端 agent 常常只做了一部分就宣称成功，却过不了最终验证器，而用稠密进度奖励做 RL 会继续奖励这种半成品行为。",
+        "en": "Terminal agents often make partial progress, declare success and still fail the final verifier, and RL with dense progress rewards keeps paying for that half-finished behavior."
+      },
+      "how": {
+        "zh": "从 Qwen3.8-27B 出发，Base→RSR-1→RPR-1→RSR-2→RPR-2 交替进行「在经验证、过泄漏筛查的重写轨迹上微调」和「继承 critic 的 PPO」（turn 边界 GAE + 成功优先奖励 SPR）；四套件平均从 20.68% 升到 50.58%（Terminal-Bench 4.0 0%→19.84%，2.1 51.7%→86.52%），先重写再 RL 在第 20 步比直接 PPO 高最多 30.5 分，对 4,352 条固定轨迹重新打分后失败轨迹所占奖励从 50.09% 降到 28.72%，长程 LHTB 严格完成 0/46→5/46；作者也承认只有三次评测、没有独立种子和算力对齐消融——这正是 @ThorTheUndying 反驳「破解 RSI」说法的要点，@mark_k 也指出关键在于下一轮能否继续找到更好的训练样本。",
+        "en": "Starting from Qwen3.8-27B, Base→RSR-1→RPR-1→RSR-2→RPR-2 alternates fine-tuning on verified, leakage-screened rewritten trajectories with critic-inheriting PPO (turn-boundary GAE plus a Success-Prioritized Reward); the four-suite mean rose from 20.68% to 50.58% (Terminal-Bench 4.0 0%→19.84%, 2.1 51.7%→86.52%), rewriting-first beat direct PPO by up to 30.5 points at step 20, rescoring 4,352 fixed trajectories cut failures' share of reward from 50.09% to 28.72%, and long-horizon LHTB strict completions went from 0/46 to 5/46, while the authors concede three evaluations, no independent seeds and no compute-matched ablations—the point @ThorTheUndying makes against the \"cracked RSI\" framing, and @mark_k notes the real test is whether the next pass keeps finding better training examples."
+      },
+      "metric": {
+        "zh": "平均成功率 20.68%→50.58%；TB4.0 0→19.84%；失败奖励占比 50.09%→28.72%",
+        "en": "Mean success 20.68%→50.58%; TB4.0 0→19.84%; failed reward share 50.09%→28.72%"
+      },
+      "pills": [
+        {
+          "zh": "四套件平均",
+          "en": "4-suite mean",
+          "value": "20.7→50.6%",
+          "tone": "up"
+        },
+        {
+          "zh": "TB 4.0",
+          "en": "TB 4.0",
+          "value": "0→19.84%",
+          "tone": "up"
+        },
+        {
+          "zh": "独立种子",
+          "en": "Independent seeds",
+          "value": "none",
+          "tone": "down"
+        }
+      ],
+      "authors": "Junyao Yang, Zongxia Li, Yucheng Shi et al. (Tencent Hy Frontier, NUS, UMD, UGA, Indiana)",
+      "handle": "@mark_k",
+      "links": [
+        {
+          "zh": "论文",
+          "en": "Paper",
+          "url": "https://arxiv.org/abs/2610.22192"
+        },
+        {
+          "zh": "仓库",
+          "en": "Repo",
+          "url": "https://github.com/jyyang26/Terminal-RSI"
+        },
+        {
+          "zh": "分享者",
+          "en": "Sharer",
+          "url": "https://x.com/mark_k"
+        },
+        {
+          "zh": "X 原帖",
+          "en": "X Post",
+          "url": "https://x.com/mark_k/status/2119487564897988893"
+        },
+        {
+          "zh": "评论者",
+          "en": "Commentary",
+          "url": "https://x.com/ThorTheUndying"
+        },
+        {
+          "zh": "X 原帖（评论）",
+          "en": "X Post (commentary)",
+          "url": "https://x.com/ThorTheUndying/status/2119399549521510505"
+        }
+      ]
+    },
+    {
       "id": "alphaevolve-harbor-skill-optimizer",
       "edition": "2026-11-08",
       "tags": [
