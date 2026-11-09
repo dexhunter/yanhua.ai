@@ -236,6 +236,89 @@ window.YANHUA_DIGESTS = {
   ],
   "items": [
     {
+      "id": "baidu-ernie-evolve-two-loop-autoresearch",
+      "edition": "2026-11-09",
+      "tags": [
+        "harness-search",
+        "verification"
+      ],
+      "title": {
+        "zh": "百度 ERNIE Evolve：双层循环的自动研究系统，用藏在仓库外的评估器和审查员只保留真实提升，在 NanoChat 与 NanoGPT Speedrun 上超过公开最佳",
+        "en": "Baidu ERNIE Evolve: A Two-Loop Automated Research System That Keeps Only Verified Gains via a Hidden Evaluator and a Reviewer, Beating Public Bests on NanoChat and NanoGPT Speedrun"
+      },
+      "why": {
+        "zh": "让 AI 自己改 AI 训练和推理代码之所以能在已被社区打磨多年的基线上继续出成绩，是因为评估器被藏在仓库之外、提升必须超过噪声阈值，再由审查员剔除钻评估漏洞的改动，所以留下来的收益是真的，而不是在讨好分数。",
+        "en": "An AI can keep finding gains in code the community has polished for years because the evaluator sits outside the repo, gains must clear a noise threshold, and a reviewer throws out changes that exploit the eval—so what survives is real improvement rather than score-pleasing."
+      },
+      "what": {
+        "zh": "自动研究系统常常学会讨好评估指标而代码并没有变好，而且在已被工程师深度优化的基线上，单次改进往往只有 1%–2%，与测量噪声相当。",
+        "en": "Automated research systems tend to learn to please the metric without improving the code, and on engineer-tuned baselines single gains of 1%–2% are comparable to measurement noise."
+      },
+      "how": {
+        "zh": "外层 Director 依据 Experience Bank 与 Knowledge Base 选方向，并行 lane 各维护一棵候选代码树，内层 Selector 选父版本与假设、Executor 在隔离环境改代码，隐藏的 Evaluator 打分、Reviewer 查偏离方向与作弊；NanoChat AutoResearch 验证 BPB 0.8763（公开最佳 0.8878）、NanoGPT Speedrun Track 1 为 38.9 秒（39.9 秒）、Track 3 为 2,590 步（2,690 步），但 SOL-ExecBench 0.819 仍低于榜首 0.827；在内部 ERNIE-5.5-Flash 推理上，昆仑芯 P800 生成速度达基线 623.6%，确定性推理吞吐 +33.7%，解码速度 +14.9%。博客称目前只开源了公开基准的最终代码与运行日志，系统本身未发布。",
+        "en": "An outer Director picks directions from an Experience Bank and Knowledge Base, parallel lanes each grow a tree of candidate code versions, an inner Selector picks a parent and hypothesis and an Executor edits code in isolation, while a hidden Evaluator scores and a Reviewer checks for off-direction changes and exploits; it reached 0.8763 validation BPB on NanoChat AutoResearch (public best 0.8878), 38.9 s on NanoGPT Speedrun Track 1 (39.9 s) and 2,590 steps on Track 3 (2,690), but 0.819 on SOL-ExecBench stays below the 0.827 leader; on in-development ERNIE-5.5-Flash inference it hit 623.6% of baseline speed on Kunlunxin P800, +33.7% deterministic-inference throughput and +14.9% decoding speed. The blog says only final code and run logs for the public-benchmark results are open-sourced, not the system itself."
+      },
+      "metric": {
+        "zh": "NanoChat BPB 0.8763 vs 0.8878；Speedrun 38.9 s vs 39.9 s；P800 623.6% 基线",
+        "en": "NanoChat BPB 0.8763 vs 0.8878; Speedrun 38.9 s vs 39.9 s; P800 623.6% of baseline"
+      },
+      "pills": [
+        {
+          "zh": "NanoChat BPB",
+          "en": "NanoChat BPB",
+          "value": "0.8763 vs 0.8878",
+          "tone": "up"
+        },
+        {
+          "zh": "Speedrun T1",
+          "en": "Speedrun T1",
+          "value": "38.9 s vs 39.9 s",
+          "tone": "up"
+        },
+        {
+          "zh": "SOL-ExecBench",
+          "en": "SOL-ExecBench",
+          "value": "0.819 vs 0.827",
+          "tone": "down"
+        },
+        {
+          "zh": "P800 速度",
+          "en": "P800 speed",
+          "value": "623.6%",
+          "tone": "up"
+        }
+      ],
+      "authors": "Baidu ERNIE team; shared by Baidu_Inc and Baidu_ERNIE",
+      "handle": "@Baidu_ERNIE",
+      "links": [
+        {
+          "zh": "博客",
+          "en": "Blog",
+          "url": "https://ernie.baidu.com/research/posts/ernie-evolve/"
+        },
+        {
+          "zh": "仓库",
+          "en": "Repo",
+          "url": "https://github.com/ernie-research/ERNIE-Evolve-Results"
+        },
+        {
+          "zh": "分享者",
+          "en": "Sharer",
+          "url": "https://x.com/Baidu_ERNIE"
+        },
+        {
+          "zh": "X 原帖",
+          "en": "X Post",
+          "url": "https://x.com/Baidu_ERNIE/status/2119798507867644076"
+        },
+        {
+          "zh": "X 原帖",
+          "en": "X Post",
+          "url": "https://x.com/Baidu_Inc/status/2119765512238637559"
+        }
+      ]
+    },
+    {
       "id": "g-harness-evals-rule-placement-skills",
       "edition": "2026-11-09",
       "tags": [
