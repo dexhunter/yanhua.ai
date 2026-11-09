@@ -19,6 +19,15 @@
   },
   "editions": [
     {
+      "id": "2026-11-09",
+      "date": "2026-11-09",
+      "slot": "",
+      "label": {
+        "zh": "2026-11-09",
+        "en": "9 Nov 2026"
+      }
+    },
+    {
       "id": "2026-11-08",
       "date": "2026-11-08",
       "slot": "",
@@ -226,6 +235,135 @@
     }
   ],
   "items": [
+    {
+      "id": "g-harness-evals-rule-placement-skills",
+      "edition": "2026-11-09",
+      "tags": [
+        "harness-search",
+        "memory-skills"
+      ],
+      "title": {
+        "zh": "Garry Tan 的开源 harness 评测：固定模型和任务只换 harness，通过率统计上分不出高下，但成本差一倍，而「规则放在哪里」决定 agent 是否真会照做",
+        "en": "Garry Tan's Open-Source Harness Evals: Hold Model and Tasks Fixed and Swap Only the Harness, and Pass Rates Are Statistically Tied but Cost Differs 2x—Where a Rule Is Placed Decides Whether the Agent Follows It"
+      },
+      "why": {
+        "zh": "在 20 个任务上，换 harness 基本不改变通过率，却能让每道解出题的成本翻倍，因为差别主要来自每次请求重发多大的系统提示和工具结果；而且 agent 并不会主动去用没被点名的 skill，规则只有放在每一轮都可见的位置才会被稳定执行——这正是自动搜索 harness 时最该优化的杠杆。",
+        "en": "On 20 tasks, swapping the harness barely moves the pass rate yet can double the cost per solved task, because the gap comes mostly from how large a system prompt and tool result is re-sent on every request; and agents do not reach for a skill nobody named, following a rule reliably only when it sits where every turn sees it—exactly the levers an automated harness search should be tuning."
+      },
+      "what": {
+        "zh": "人们常在不同 harness 之间比较「哪个更好」，却把模型、任务和 harness 的影响混在一起，也很少测 prompt 里的具体规则是否真的被执行。",
+        "en": "Harnesses are usually compared with model, tasks and harness effects mixed together, and few people test whether specific rules placed in the prompt are actually followed."
+      },
+      "how": {
+        "zh": "这个由 Garry Tan 运营的 GitHub 仓库固定 Opus 5.5 或 GPT-6.1 Sol 与 20 个公开任务，只换 harness：Opus 上 Claude Code 通过率 76.3%、每道解出题 $0.22，OpenClaw 76.3% 但 $0.44（约 81% 的额外成本来自缓存写入），所有配对的通过率区间都重叠；规则放置实验里，「先查 gbrain」的规则放进系统提示或启动文件时 Claude Code 30/30 轮遵守，不写规则只有 18/30，未被点名的 skill 被打开 0 次、写明「使用该 skill」后 30/30；删掉其记忆与 skill 文本可让简单任务成本降 19%，但在较难任务上连同工具说明一起删除会把通过率从 60.4% 打到 0.0%。结果均为仅限公开任务的开发集描述性数据（作者自己披露了利益关系与不完整的单元格），我读了仓库 README 全文，但没有逐个读 findings 子页面。",
+        "en": "The GitHub repo run by Garry Tan fixes Opus 5.5 or GPT-6.1 Sol and 20 public tasks and swaps only the harness: on Opus, Claude Code passes 76.3% at $0.22 per solved task versus OpenClaw's 76.3% at $0.44 (about 81% of the extra cost is cache writes), and every pairwise pass-rate range overlaps; in the rule-placement tests, a \"check gbrain first\" rule in the system prompt or startup file was followed in 30 of 30 Claude Code turns versus 18 of 30 with no rule, an unmentioned skill was opened 0 times but 30 of 30 once the prompt named it, and dropping its memory-and-skills text cut easy-task cost 19% while dropping it together with the tool advice took hard-task pass rate from 60.4% to 0.0%. These are descriptive dev-set numbers on public tasks (the author discloses conflicts of interest and incomplete cells); I read the repo README in full but not each linked findings page."
+      },
+      "metric": {
+        "zh": "Opus：Claude Code $0.22 vs OpenClaw $0.44 每解出题，通过率均 76.3%；难任务删文本 60.4%→0.0%",
+        "en": "Opus: Claude Code $0.22 vs OpenClaw $0.44 per solved task at 76.3% pass; hard-task text cut 60.4%→0.0%"
+      },
+      "pills": [
+        {
+          "zh": "通过率",
+          "en": "Pass rate",
+          "value": "76.3% 同",
+          "tone": "neutral"
+        },
+        {
+          "zh": "每解出题成本",
+          "en": "Cost per solved",
+          "value": "$0.22 vs $0.44",
+          "tone": "down"
+        },
+        {
+          "zh": "未点名 skill",
+          "en": "Unnamed skill",
+          "value": "0/30",
+          "tone": "down"
+        }
+      ],
+      "authors": "Garry Tan (garrytan/g-harness-evals); shared by Shuaige",
+      "handle": "@Shuaige1973",
+      "links": [
+        {
+          "zh": "仓库",
+          "en": "Repo",
+          "url": "https://github.com/garrytan/g-harness-evals"
+        },
+        {
+          "zh": "分享者",
+          "en": "Sharer",
+          "url": "https://x.com/Shuaige1973"
+        },
+        {
+          "zh": "X 原帖",
+          "en": "X Post",
+          "url": "https://x.com/Shuaige1973/status/2119673045140771239"
+        }
+      ]
+    },
+    {
+      "id": "bounded-rsi-role-play-updater-evolution",
+      "edition": "2026-11-09",
+      "tags": [
+        "memory-skills",
+        "verification"
+      ],
+      "title": {
+        "zh": "角色扮演对话的有界 RSI：让「修复规则」本身也可被修订，坏回复率从 14.00% 降到 4.94%，但没有把「改进修复器」的贡献单独量出来",
+        "en": "Bounded RSI for Role-Playing Dialogue: Letting the Repair Rules Themselves Be Revised Cuts Bad Replies From 14.00% to 4.94%, but the Gain From Improving the Updater Is Not Isolated"
+      },
+      "why": {
+        "zh": "把角色记忆、人设指令和每轮提示构造策略都设成可编辑的版本化补丁，再用「修复结果」去改修复器自己的诊断规则，确实能大幅减少长对话里的人设崩坏，但作者自己承认整体收益是整套系统的合并效果，还不能说明「改进修复器」这一递归步骤本身贡献了多少。",
+        "en": "Making character memory, persona instructions and the per-turn prompt-building policy editable versioned patches, then using repair outcomes to revise the repairer's own diagnostic rules, clearly cuts persona breakdowns in long dialogues, but the authors concede the gain is the combined effect of the whole system and does not show how much the recursive step of improving the updater itself contributes."
+      },
+      "what": {
+        "zh": "长对话角色扮演里，AI 角色会忘记已发生的事件、重复情节、替用户做决定，而这些问题很难定位到底是记忆、人设指令还是动态拼出的提示出了错。",
+        "en": "In long role-playing dialogue, characters forget established events, repeat plot beats or decide for the user, and it is hard to tell whether memory, persona instructions or the dynamically assembled prompt is at fault."
+      },
+      "how": {
+        "zh": "论文（Henan Chengxi Technology）让更新器先诊断失败、提出局部修复、在验证场景上验证，再用修复结果提出对更新器自身诊断、路由和候选选择规则的修订；更新器是带明确输入、可编辑字段、接受门槛和停止条件的版本化策略，基础模型权重和不可变的角色设定不在可改范围内，最终测试集与优化和选择隔离。在 50 个原创角色×5 个模型×2 段 100 轮对话上，坏回复率从 14.00%（6,973/49,824）降到 4.94%（2,459/49,793），600 次盲评人类对比中 RSI 294 胜、187 平、119 负（决出胜负中 71.19%），评测用的是 AI 生成的对话者与内部测试分布，作者明确指出需要组件级对比来分离更新器演化的贡献。",
+        "en": "The paper (Henan Chengxi Technology) has an updater diagnose failures, propose localized repairs and validate them on held scenarios, then use repair outcomes to propose revisions to the updater's own diagnostic, routing and candidate-selection rules; the updater is a versioned policy with explicit inputs, editable fields, acceptance gates and stopping conditions, model weights and immutable character canon are off-limits, and a final test set is kept out of optimization and selection. Across 50 original characters x 5 models x two 100-round conversations, the bad-reply rate falls from 14.00% (6,973/49,824) to 4.94% (2,459/49,793), and in 600 blinded human comparisons RSI gets 294 wins, 187 ties and 119 losses (71.19% of decisive ones), using AI-generated interlocutors on an internal test distribution, with the authors noting a component-level comparison is needed to isolate the updater-evolution contribution."
+      },
+      "metric": {
+        "zh": "坏回复率 14.00%→4.94%；盲评 294 胜/187 平/119 负",
+        "en": "Bad-reply rate 14.00%→4.94%; blinded 294 W / 187 T / 119 L"
+      },
+      "pills": [
+        {
+          "zh": "坏回复率",
+          "en": "Bad-reply rate",
+          "value": "14.00→4.94%",
+          "tone": "up"
+        },
+        {
+          "zh": "盲评决出胜负",
+          "en": "Decisive win rate",
+          "value": "71.19%",
+          "tone": "up"
+        }
+      ],
+      "arxiv": "2611.07469",
+      "authors": "Y. L. Li, Y. H. Wu",
+      "handle": "@HEI",
+      "links": [
+        {
+          "zh": "论文",
+          "en": "Paper",
+          "url": "https://arxiv.org/abs/2611.07469"
+        },
+        {
+          "zh": "分享者",
+          "en": "Sharer",
+          "url": "https://x.com/HEI"
+        },
+        {
+          "zh": "X 原帖",
+          "en": "X Post",
+          "url": "https://x.com/HEI/status/2119674372654866542"
+        }
+      ]
+    },
     {
       "id": "agentpilot-9b-strategy-model-harness-search",
       "edition": "2026-11-08",
