@@ -245,6 +245,324 @@ window.YANHUA_DIGESTS = {
   ],
   "items": [
     {
+      "id": "trust-statistical-gate-rsi",
+      "edition": "2026-11-10",
+      "tags": [
+        "harness-search",
+        "verification"
+      ],
+      "title": {
+        "zh": "TRUST：给自改 harness 的智能体加一道统计闸门，接受劣质更新的比例从贪心的 45.59% 降到 2.78%，最终分数反而更高",
+        "en": "TRUST: A Statistical Gate for Harness Self-Improvement Cuts Accepted Bad Updates from 45.59% (Greedy) to 2.78% While Ending With Higher Scores"
+      },
+      "why": {
+        "zh": "自我改进循环出问题往往不在于提不出好改动，而在于“验证分更高就接受”的贪心闸门会把反复使用同一验证集带来的噪声误当成进步，先涨后跌；改用跨轮次控制错误接受率的统计检验后，智能体既保住了涨幅，又几乎不再吞下坏改动。",
+        "en": "Self-improvement loops usually go wrong not because they can't propose good edits but because a greedy 'accept if the validation score went up' gate mistakes noise from reusing the same validation set for progress, so gains rise and then decay; swapping in a statistical test that controls the false-acceptance rate across rounds keeps the gains while almost never swallowing a bad edit."
+      },
+      "what": {
+        "zh": "智能体通过改自己的 prompt、记忆、路由和工作流来自我改进时，需要决定哪些改动值得保留：贪心闸门太松会退化，现有跨轮 FWER 统计闸门又太保守，几乎什么都不接受。",
+        "en": "When an agent self-improves by editing its own prompts, memory, routing and workflow, it must decide which edits to keep: greedy gates are too loose and degrade, while existing cross-round FWER statistical gates are so conservative they accept almost nothing."
+      },
+      "how": {
+        "zh": "TRUST 把每轮候选当成一次非劣效假设检验，用带“重复使用验证数据”乐观偏差修正的 e-value 打分，再借在线 FDR 思路在各轮间分配检验水平（由 LLM 读历史上下文决定本轮要多少证据），证明能限制“虚假演化率”并给出最终增益下界；在 HotpotQA、DROP、APPS × DeepSeek-V4-Flash、Qwen-3.8-Flash 共 6 种设置、30 轮 5 个种子、20 个可编辑 harness 算子上，贪心闸门每种设置都有超过 30% 的接受是不进反退（平均 45.59%），最大回撤可达 8.48 个百分点，TRUST 平均只有 2.78%、最大回撤至多 0.27 个百分点，并在 6 种设置中 4 种取得最高分（如 HotpotQA/Qwen 27.72 vs 贪心 20.66），而 SGM-B 一次更新都没接受。",
+        "en": "TRUST treats each round's candidate as a noninferiority test scored with e-values that are corrected for optimism from reusing validation data, and allocates testing levels across rounds in an online-FDR style (an LLM reads the history to decide how much evidence this round needs), with proofs bounding the false evolution rate and a lower bound on final gain; across 6 settings (HotpotQA, DROP, APPS × DeepSeek-V4-Flash, Qwen-3.8-Flash), 30 rounds, 5 seeds and a harness with 20 editable operators, the greedy gate accepted non-improving updates over 30% of the time in every setting (45.59% on average) with drawdowns up to 8.48 pp, while TRUST averaged 2.78% with drawdown at most 0.27 pp and the top score in 4 of 6 settings (HotpotQA/Qwen: 27.72 vs greedy 20.66), whereas SGM-B never accepted a single update."
+      },
+      "metric": {
+        "zh": "错误接受率 2.78% vs 45.59%（贪心）；最大回撤 ≤0.27 vs 8.48 个百分点",
+        "en": "Accepted bad updates 2.78% vs 45.59% (greedy); max drawdown ≤0.27 vs 8.48 pp"
+      },
+      "pills": [
+        {
+          "zh": "TRUST 错误接受",
+          "en": "TRUST bad accepts",
+          "value": "2.78%",
+          "tone": "up"
+        },
+        {
+          "zh": "贪心错误接受",
+          "en": "Greedy bad accepts",
+          "value": "45.59%",
+          "tone": "down"
+        },
+        {
+          "zh": "最高分设置",
+          "en": "Best-score settings",
+          "value": "4 / 6",
+          "tone": "up"
+        },
+        {
+          "zh": "最大回撤",
+          "en": "Max drawdown",
+          "value": "0.27 vs 8.48 pp",
+          "tone": "up"
+        }
+      ],
+      "arxiv": "2611.10787",
+      "authors": "Zihe Gao, Zhengling Qi, Yifan Cui (Zhejiang University, George Washington University); shared by StatsPapers",
+      "handle": "@StatsPapers",
+      "links": [
+        {
+          "zh": "论文",
+          "en": "Paper",
+          "url": "https://arxiv.org/abs/2611.10787"
+        },
+        {
+          "zh": "分享者",
+          "en": "Sharer",
+          "url": "https://x.com/StatsPapers"
+        },
+        {
+          "zh": "X 原帖",
+          "en": "X Post",
+          "url": "https://x.com/StatsPapers/status/2120193242087960632"
+        }
+      ]
+    },
+    {
+      "id": "longcapharness-capability-guided-auto-harnessing",
+      "edition": "2026-11-10",
+      "tags": [
+        "harness-search"
+      ],
+      "title": {
+        "zh": "LongCapHarness：让强智能体按“能力原语”自改 harness，不训练就让 Llama3-8B 长上下文平均分提升 64.18 分、超过 NExtLong 9.17 分，但小模型自己改就大幅掉分",
+        "en": "LongCapHarness: A Strong Agent Self-Improving a Capability-Primitive Harness Lifts Llama3-8B by 64.18 Long-Context Points With No Training, Beating NExtLong by 9.17, but Small Models Can't Build It Themselves"
+      },
+      "why": {
+        "zh": "不做数据合成和后训练，只要先把长上下文任务拆成“定位证据、跟踪状态、计数、整合”等能力原语，再让强智能体递归改写这些原语和控制逻辑，小模型就能超过专门训练过的长上下文模型，因为能用代码确定执行的步骤不再需要模型把全部状态塞进上下文；而不先拆原语的通用 RSI 只会反复折腾分块和 token 上限。",
+        "en": "Without data synthesis or post-training, first decomposing long-context tasks into capability primitives (locate evidence, track state, count, integrate) and then letting a strong agent recursively rewrite those primitives and the control logic lets small models beat purpose-trained long-context models, because steps that code can execute deterministically no longer require the model to hold the full state in context; generic RSI without that decomposition just keeps fiddling with chunking and token limits."
+      },
+      "what": {
+        "zh": "提升小模型长上下文推理通常要靠合成长文本数据再后训练，成本高、配方靠经验，难以扩展。",
+        "en": "Improving small models' long-context reasoning normally means synthesizing long-context data and post-training, which is costly, recipe-driven and hard to scale."
+      },
+      "how": {
+        "zh": "LongCapHarness 要求 harness 显式由能力原语、能力状态和控制逻辑组成，由 GPT-5.6-Sol 在开发集上多轮递归自我改进，执行模型保持冻结；在 HELMET 与 RULER 上，Llama3-8B 比基座、NExtLong、通用 RSI 基线 RRSI 分别高 64.18、9.17、39.65 分，迁移到 Qwen2.5-3B 后比基座、PolicyLong、RRSI 高 16.82、14.63、40.27 分，Recall 两个模型都拿到 100、RULER 约 94.6/94.3，估计开发成本不到 NExtLong/PolicyLong 训练成本的一半。代价也写明了：开发成本高于 RRSI，Qwen 推理成本更高，LongBench-v2 Long 子集仍落后 PolicyLong，换成 Llama3-8B 或 Qwen2.5-3B 自己当改写智能体时效果骤降；另有评论者（@r4lph_io）指出 +64 分的对照是只有 8K 窗口的基座。",
+        "en": "LongCapHarness requires the harness to be expressed as capability primitives, capability state and control logic, which GPT-5.6-Sol recursively self-improves over many rounds on a development set while the executing model stays frozen; on HELMET and RULER, Llama3-8B beats its base, NExtLong and the generic RSI baseline RRSI by 64.18, 9.17 and 39.65 points, and transferred to Qwen2.5-3B it beats base, PolicyLong and RRSI by 16.82, 14.63 and 40.27, with Recall at 100 for both and RULER around 94.6/94.3, at an estimated development cost under half of NExtLong/PolicyLong training. The paper is explicit about costs: development costs more than RRSI, Qwen inference is pricier, it still trails PolicyLong on the LongBench-v2 Long subset, and performance drops sharply when Llama3-8B or Qwen2.5-3B act as their own harnessing agent; a commenter (@r4lph_io) also notes the +64 baseline is the base model with only an 8K window."
+      },
+      "metric": {
+        "zh": "Llama3-8B +64.18（vs 基座）、+9.17（vs NExtLong）、+39.65（vs RRSI）",
+        "en": "Llama3-8B +64.18 vs base, +9.17 vs NExtLong, +39.65 vs RRSI"
+      },
+      "pills": [
+        {
+          "zh": "vs NExtLong",
+          "en": "vs NExtLong",
+          "value": "+9.17",
+          "tone": "up"
+        },
+        {
+          "zh": "vs 通用 RSI",
+          "en": "vs generic RSI",
+          "value": "+39.65",
+          "tone": "up"
+        },
+        {
+          "zh": "Qwen2.5-3B vs PolicyLong",
+          "en": "Qwen2.5-3B vs PolicyLong",
+          "value": "+14.63",
+          "tone": "up"
+        },
+        {
+          "zh": "小模型自改",
+          "en": "Self-built by small model",
+          "value": "sharp drop",
+          "tone": "down"
+        }
+      ],
+      "arxiv": "2611.10463",
+      "authors": "Tao Zhang, Yuhang He (Microsoft Research Asia); shared by omarsar0",
+      "handle": "@omarsar0",
+      "links": [
+        {
+          "zh": "论文",
+          "en": "Paper",
+          "url": "https://arxiv.org/abs/2611.10463"
+        },
+        {
+          "zh": "分享者",
+          "en": "Sharer",
+          "url": "https://x.com/omarsar0"
+        },
+        {
+          "zh": "X 原帖",
+          "en": "X Post",
+          "url": "https://x.com/omarsar0/status/2120160305347260443"
+        },
+        {
+          "zh": "评论者",
+          "en": "Commentary",
+          "url": "https://x.com/r4lph_io"
+        },
+        {
+          "zh": "X 原帖",
+          "en": "X Post",
+          "url": "https://x.com/r4lph_io/status/2120186746587746566"
+        }
+      ]
+    },
+    {
+      "id": "lms-as-ai-research-world-models",
+      "edition": "2026-11-10",
+      "tags": [
+        "autoresearch"
+      ],
+      "title": {
+        "zh": "语言模型当“研究世界模型”：给 LLM 看过往实验记录就能预判新想法的收益，跨环境经验让 Qwen3 环境的选题遗憾降 78%，自动研究最终最佳增益提升 15.8%",
+        "en": "LMs as AI Research World Models: Past Experiment Records Let LLMs Predict Which Ideas Pay Off, Cutting Qwen3 Selection Regret 78% From Other Environments and Raising Autoresearch Best Gain 15.8%"
+      },
+      "why": {
+        "zh": "自动研究智能体的“研究品味”主要卡在缺乏真实实验经验而不是推理能力：把几百条过往实验结果放进上下文，最弱的模型也能比最强但没有经验的模型更准地排出哪些想法值得跑，而把推理强度从 LOW 调到 MAX 几乎没用；不过排得更准不等于选得更好，Marin 环境就是反例。",
+        "en": "Autoresearch agents' 'research taste' is bottlenecked by missing real experimental experience rather than reasoning: with a few hundred past experiment results in context even the weakest model ranks which ideas are worth running better than the strongest model without them, while raising reasoning effort from LOW to MAX barely helps; but better ranking does not always mean better picks, as the Marin environment shows."
+      },
+      "what": {
+        "zh": "研究智能体提出实验的速度远超能执行的速度，在算力预算有限时，需要在运行前预测哪个干预（学习率、数据配比、架构改动等）会带来收益。",
+        "en": "Research agents propose experiments far faster than they can run them, so under limited compute they need to predict before execution which intervention (learning-rate schedule, data mix, architecture change and so on) will pay off."
+      },
+      "how": {
+        "zh": "作者整理了 9 个研究环境（预训练、后训练、推理优化）的 2,653 条真实实验记录、约 171,862 H100 GPU 小时，让 13 个 LLM 以上下文学习方式预测未见干预的效果：同环境经验让 Spearman 从 0.506 升到 0.774，跨环境经验从 0.628 升到 0.729，只用 OLMo3、Marin、Nanochat 的经验就让 Qwen3 环境的 Regret@3 降 78%；在 OLMo3-100M 上 24 次选题预算的多轮 Autoresearch 中，同/跨环境经验让最终最佳增益提高 15.8%/11.6%；加经验后 Spearman 从 0.609 跳到 0.892，而只加推理强度仅到 0.648。引用评论的 @Guanghan__Wang 指出：在 Marin 上跨环境经验提高了 Spearman（0.42→0.50），但 Regret@3 反而略差（7.4e-4→7.9e-4）、NDCG@3 下降，作者也承认更好的预测不保证更有效的研究。",
+        "en": "The authors compiled 2,653 real experiment records from 9 research environments (pretraining, post-training, inference optimization), about 171,862 H100 GPU-hours, and had 13 LLMs predict unseen interventions in context: in-environment experience raised Spearman from 0.506 to 0.774, cross-environment experience from 0.628 to 0.729, and experience from OLMo3, Marin and Nanochat alone cut Regret@3 in the Qwen3 environment by 78%; in multi-round Autoresearch on OLMo3-100M with a 24-selection budget, in-/cross-env experience raised final best gain by 15.8%/11.6%, and adding experience lifted Spearman from 0.609 to 0.892 versus only 0.648 from maxing reasoning effort. Quote-commenter @Guanghan__Wang flags Marin, where cross-env experience improved Spearman (0.42→0.50) but Regret@3 got slightly worse (7.4e-4→7.9e-4) and NDCG@3 fell, and the authors themselves note better predictions alone do not guarantee more effective research."
+      },
+      "metric": {
+        "zh": "Qwen3 Regret@3 −78%；Autoresearch 最佳增益 +15.8%；Spearman 0.609→0.892（经验）vs 0.648（推理强度）",
+        "en": "Qwen3 Regret@3 −78%; Autoresearch best gain +15.8%; Spearman 0.609→0.892 (experience) vs 0.648 (effort)"
+      },
+      "pills": [
+        {
+          "zh": "跨环境遗憾",
+          "en": "Cross-env regret",
+          "value": "−78%",
+          "tone": "up"
+        },
+        {
+          "zh": "自动研究最佳增益",
+          "en": "Autoresearch best gain",
+          "value": "+15.8%",
+          "tone": "up"
+        },
+        {
+          "zh": "加经验 Spearman",
+          "en": "Spearman w/ experience",
+          "value": "0.892",
+          "tone": "up"
+        },
+        {
+          "zh": "Marin 遗憾",
+          "en": "Marin regret",
+          "value": "slightly worse",
+          "tone": "down"
+        }
+      ],
+      "arxiv": "2610.12235",
+      "authors": "Henry Lu and collaborators (A-Evo Lab); commentary by Guanghan Wang",
+      "handle": "@HenryL_AI",
+      "links": [
+        {
+          "zh": "论文",
+          "en": "Paper",
+          "url": "https://arxiv.org/abs/2610.12235"
+        },
+        {
+          "zh": "项目页",
+          "en": "Project",
+          "url": "https://a-evo-lab.github.io/rwm/"
+        },
+        {
+          "zh": "作者",
+          "en": "Author",
+          "url": "https://x.com/HenryL_AI"
+        },
+        {
+          "zh": "X 原帖",
+          "en": "X Post",
+          "url": "https://x.com/HenryL_AI/status/2120193252909523081"
+        },
+        {
+          "zh": "评论者",
+          "en": "Commentary",
+          "url": "https://x.com/Guanghan__Wang"
+        },
+        {
+          "zh": "X 原帖",
+          "en": "X Post",
+          "url": "https://x.com/Guanghan__Wang/status/2120201731246362704"
+        }
+      ]
+    },
+    {
+      "id": "sage-taiyi-metacognitive-scientific-discovery",
+      "edition": "2026-11-10",
+      "tags": [
+        "autoresearch"
+      ],
+      "title": {
+        "zh": "Sage-Taiyi：用“元认知”状态决定下一步研究什么，在 Taiyi-Bench 上以 54.0 对 47.9 胜过 AI Scientist-v2，并把两个化学反应收率提到 84% 和 69%",
+        "en": "Sage-Taiyi: A Metacognitive State That Decides What to Investigate Next Beats AI Scientist-v2 54.0 vs 47.9 on Taiyi-Bench and Pushes Two Reaction Yields to 84% and 69%"
+      },
+      "why": {
+        "zh": "同一个基座模型下，让 AI 科学家显式记录“哪些证据成立、哪些假设未验证、还有哪些冲突”，再据此挑选下一个研究目标和推理方法，比只靠生成—评估循环的科学 harness 提出的想法更准、更新颖，因为搜索方向由不断修正的理解驱动而不是盲目扩展；但主要评测是作者自建的基准，且只测了想法生成阶段。",
+        "en": "With the same base model, having an AI scientist explicitly track which evidence holds, which assumptions are untested and which conflicts remain, and then pick the next research target and reasoning method from that, yields more accurate and novel ideas than generate-and-evaluate scientific harnesses, because search is steered by continually revised understanding rather than blind expansion; the main evaluation, however, is on the authors' own benchmark and covers only the ideation stage."
+      },
+      "what": {
+        "zh": "现有 AI 科学家系统擅长产出大量假设，但缺乏根据已积累的科学理解调整“接下来研究什么、怎么研究”的机制。",
+        "en": "Existing AI-scientist systems are good at producing many hypotheses but lack a mechanism that uses accumulated scientific understanding to adjust what to investigate next and how."
+      },
+      "how": {
+        "zh": "Sage-Taiyi（上海人工智能实验室）在对象层用目标树分解问题、用想法图做 Merge/Fuse/Diverge/Repair/Evolve 变换、用证据状态做支撑，在元层维护可修订的 Cognitive State 和可复用的 Cognitive Repertoire，由 Monitor/Control 决定搜索焦点；在 265 个任务、50 篇论文、十个学科的 Taiyi-Bench 上，所有系统都用 GPT-5.6-Sol（high），Sage-Taiyi 八项指标全部第一、总分 54.0，AI Scientist-v2 为 47.9，Claude Code 为 44.1，Codex 为 39.4；五个专家合作案例中，钴催化羰基化收率从痕量提到 84%，光催化烯丙基胺化从 13% 提到 69%，压气机 CFD 效率从约 90.0% 提到 91.5%。",
+        "en": "Sage-Taiyi (Shanghai AI Laboratory) decomposes the question into a Target Tree, transforms ideas in an Idea Graph (Merge, Fuse, Diverge, Repair, Evolve) grounded in an Evidence State, and at the meta level keeps a revisable Cognitive State and reusable Cognitive Repertoire whose Monitor/Control steps choose the search focus; on Taiyi-Bench (265 tasks from 50 papers in ten disciplines), with every system on GPT-5.6-Sol (high), it ranks first on all eight metrics with Overall 54.0 versus 47.9 for AI Scientist-v2, 44.1 for Claude Code and 39.4 for Codex, and in five expert collaborations it raised cobalt-catalyzed carbonylation yield from trace to 84%, photocatalytic allylic amination from 13% to 69%, and compressor CFD efficiency from about 90.0% to 91.5%."
+      },
+      "metric": {
+        "zh": "Taiyi-Bench 总分 54.0 vs 47.9（AI Scientist-v2）；收率 痕量→84%、13%→69%",
+        "en": "Taiyi-Bench Overall 54.0 vs 47.9 (AI Scientist-v2); yields trace→84%, 13%→69%"
+      },
+      "pills": [
+        {
+          "zh": "Taiyi-Bench 总分",
+          "en": "Taiyi-Bench Overall",
+          "value": "54.0",
+          "tone": "up"
+        },
+        {
+          "zh": "AI Scientist-v2",
+          "en": "AI Scientist-v2",
+          "value": "47.9",
+          "tone": "flat"
+        },
+        {
+          "zh": "羰基化收率",
+          "en": "Carbonylation yield",
+          "value": "trace→84%",
+          "tone": "up"
+        },
+        {
+          "zh": "烯丙基胺化收率",
+          "en": "Allylic amination yield",
+          "value": "13%→69%",
+          "tone": "up"
+        }
+      ],
+      "arxiv": "2611.12762",
+      "authors": "Sage-Taiyi Team (Shanghai Artificial Intelligence Laboratory); shared by arnaudmercier",
+      "handle": "@arnaudmercier",
+      "links": [
+        {
+          "zh": "论文",
+          "en": "Paper",
+          "url": "https://arxiv.org/abs/2611.12762"
+        },
+        {
+          "zh": "分享者",
+          "en": "Sharer",
+          "url": "https://x.com/arnaudmercier"
+        },
+        {
+          "zh": "X 原帖",
+          "en": "X Post",
+          "url": "https://x.com/arnaudmercier/status/2120204397431140766"
+        }
+      ]
+    },
+    {
       "id": "boxbox-in-task-harness-self-improvement",
       "edition": "2026-11-10",
       "tags": [
