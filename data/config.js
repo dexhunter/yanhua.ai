@@ -1,7 +1,8 @@
 /* Subscription delivery. The email form lives only in the
    bottom-right dialog. subscribe.yanhua.ai is the Cloudflare Worker
    in front of Resend audience 0f2fbb4e-3333-43c1-a0d2-16c69a7c3003.
-   The browser posts {email, lang, source} and reads
+   The browser posts {email, lang, source}; lang is "zh" or "en" and
+   picks the one language the reader's daily email uses. It reads
    {"ok":true,"subscribers":N,"cards":[...]} from statsEndpoint.
    Card views, dwell, flips, clicks, and copies post to eventsEndpoint.
    RESEND_API_KEY stays on the worker. */

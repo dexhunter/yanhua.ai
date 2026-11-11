@@ -22,10 +22,9 @@
       dismiss: "关闭",
       email: "邮箱",
       emailPh: "you@lab.edu",
-      langPref: "语言偏好",
+      langPref: "邮件语言",
       zh: "中文",
       en: "English",
-      both: "双语",
       invalid: "请输入有效的邮箱地址。",
       sent: "订阅成功，每日更新将发送至你的邮箱。",
       github: "通过 GitHub Issue 送出",
@@ -92,10 +91,9 @@
       dismiss: "Dismiss",
       email: "Email",
       emailPh: "you@lab.edu",
-      langPref: "Language preference",
+      langPref: "Email language",
       zh: "中文",
       en: "English",
-      both: "Bilingual",
       invalid: "Enter a valid email address.",
       sent: "Subscribed! Daily updates will be sent to your inbox.",
       github: "Send via GitHub Issue",
@@ -631,11 +629,15 @@
     const draft = current ? current.value : (state.sub ? state.sub.email : "");
     const focused = current && document.activeElement === current;
     const sub = state.sub;
+    /* One email language per reader. Default: what they picked in this
+       dialog, then their saved subscription, then the page language. */
+    const savedLang = sub && (sub.lang === "en" || sub.lang === "zh") ? sub.lang : "";
+    const pick = state.subLangPick || savedLang || (state.lang === "en" ? "en" : "zh");
     const statusHtml = sub ? '<p class="status" role="status">' + esc(t("sent")) + '</p>' : '<p class="status" role="status"></p>';
     subDialog.innerHTML =
       '<div class="sub-win-titlebar">' +
-        '<div class="sub-win-brand"><span class="sub-win-dot" aria-hidden="true"></span><h2 id="sub-title">订阅演化日报 · Subscribe</h2></div>' +
-        '<button type="button" id="close-sub" aria-label="关闭">×</button>' +
+        '<div class="sub-win-brand"><span class="sub-win-dot" aria-hidden="true"></span><h2 id="sub-title">' + esc(t("subscribeTitle")) + '</h2></div>' +
+        '<button type="button" id="close-sub" aria-label="' + esc(t("dismiss")) + '">×</button>' +
       '</div>' +
       '<div class="sub-win-body">' +
         '<form class="subscribe-form">' +
@@ -647,9 +649,9 @@
           '</div>' +
           '<p class="field-error">' + esc(t("invalid")) + '</p>' +
           '<fieldset class="lang-picks"><legend class="vh">' + esc(t("langPref")) + '</legend>' +
-            radio("sub", "zh", "中文", !sub || sub.lang === "zh") +
-            radio("sub", "en", "English", sub && sub.lang === "en") +
-            radio("sub", "both", "双语", sub && sub.lang === "both") +
+            '<span class="lang-picks-label" aria-hidden="true">' + esc(t("langPref")) + '</span>' +
+            radio("sub", "zh", "中文", pick === "zh") +
+            radio("sub", "en", "English", pick === "en") +
           '</fieldset>' +
           statusHtml +
           '<div class="feed-row"><a href="/feed.xml">' + esc(t("rss")) + '</a><span aria-hidden="true">·</span><a href="/feed.json">' + esc(t("json")) + '</a></div>' +
@@ -1140,6 +1142,11 @@
     }
   });
 
+  document.body.addEventListener("change", function (event) {
+    const input = event.target;
+    if (input && input.name === "sub-lang" && (input.value === "en" || input.value === "zh")) state.subLangPick = input.value;
+  });
+
   document.body.addEventListener("submit", function (event) {
     const form = event.target.closest(".subscribe-form");
     if (!form) return;
@@ -1150,8 +1157,8 @@
       input.reportValidity();
       return;
     }
-    const langInput = form.querySelector("input[type=radio]:checked");
-    const pref = langInput ? langInput.value : "zh";
+    const langInput = form.querySelector("input[name=sub-lang]:checked");
+    const pref = langInput && langInput.value === "en" ? "en" : "zh";
     subscribe(email, pref, form);
   });
 

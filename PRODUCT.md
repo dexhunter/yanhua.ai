@@ -24,7 +24,7 @@ The card leads with one human-readable conclusion, then sets the problem, the me
 
 The site is static files. GitHub Pages serves the repository root. `CNAME` is `yanhua.ai`. Source of an edition is `data/digests.json`, rebuilt by `scripts/update_digest.py` into `data/digests.js`, `feed.xml`, and `feed.json`.
 
-The site keeps one edition per date. That edition is updated at 09:00 and 18:00 UTC+0, and the evening email sends that day's cards. Mail goes out from the newsletter script in GitHub Actions. The in-page subscribe form posts `{email, lang, source}` to `https://subscribe.yanhua.ai`. There is no user account.
+The site keeps one edition per date. That edition is updated at 09:00 and 18:00 UTC+0, and the evening email sends that day's cards, one email per reader in the one language they picked (中文 or English). Mail goes out from the newsletter script in GitHub Actions. The in-page subscribe form posts `{email, lang, source}` to `https://subscribe.yanhua.ai`. There is no user account.
 
 Reading has two modes. The reader lists editions as a column. Flash cards show the conclusion and the numbers on the front and the problem and mechanism on the back. `Space` or `Enter` flips a card. `J` / `K` or `←` / `→` move between cards.
 

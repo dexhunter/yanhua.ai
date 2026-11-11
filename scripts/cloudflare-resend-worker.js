@@ -1,263 +1,287 @@
 /**
- * Cloudflare Worker for yanhua.ai subscriptions and card analytics.
+ * Cloudflare Worker yanhua-subscribe (https://subscribe.yanhua.ai):
+ * subscriptions and card analytics for yanhua.ai. This file is what is
+ * deployed; keep it in sync with the live script.
  *
- * Browsers must not hold RESEND_API_KEY. data/config.js points
- * subscribeEndpoint, statsEndpoint, and eventsEndpoint here.
- *   wrangler secret put RESEND_API_KEY
- * Optional: SEND_WELCOME=1
+ * Bindings: CARD_ANALYTICS (Durable Object CardAnalyticsDO, object
+ * name "global", key-value storage key "cards"), secret RESEND_API_KEY,
+ * plain RESEND_AUDIENCE_ID (General segment). Optional plain
+ * RESEND_SEGMENT_EN / RESEND_SEGMENT_ZH override the language segments.
  *
- * Durable Object: bind class CardAnalyticsDO as CARD_ANALYTICS
- * with a SQLite migration (`new_sqlite_classes = ["CardAnalyticsDO"]`).
- * The object name is "yanhua-cards".
+ * GET  /stats            -> { ok, subscribers, cards }
+ * POST /event            -> { ok, updated }
+ * POST / {email, lang}   -> Resend contact, { ok, lang }
  *
- * GET  /stats   -> { ok, subscribers, cards }
- * POST /event   -> { ok, updated }
- * POST / and POST /subscribe -> Resend contact
- * other routes  -> { ok:true, service:"yanhua-subscribe" }
- *
- * Card score matches the live counter:
- *   round1(dwellSeconds * 0.25) + views*2 + flips*3 + clicks*5 + copies*6
- * Each dwell event is capped at 180000 ms.
+ * Email language: lang is "en" or "zh" (anything else -> "zh"). It is
+ * stored as the contact property `lang` and as membership in exactly one
+ * language segment, plus General. scripts/send_newsletter_resend.py
+ * sends one broadcast per language segment, so each reader gets one
+ * email a day in one language. The welcome email is in that language too.
  */
-const DEFAULT_AUDIENCE = "0f2fbb4e-3333-43c1-a0d2-16c69a7c3003";
-const DEFAULT_FROM = "演化日报 · Yanhua Daily <digest@yanhua.ai>";
-const FALLBACK_FROM = "onboarding@resend.dev";
-const DWELL_CAP_MS = 180000;
-
-export default {
-  async fetch(request, env) {
-    const headers = corsHeaders();
-    if (request.method === "OPTIONS") return new Response(null, { status: 204, headers: headers });
-    const url = new URL(request.url);
-    const path = url.pathname.replace(/\/+$/, "") || "/";
-    if (request.method === "GET" && path === "/stats") return statsResponse(env, headers);
-    if (request.method === "POST" && path === "/event") return eventResponse(request, env, headers);
-    if (request.method === "POST" && (path === "/" || path === "/subscribe")) return subscribeResponse(request, env, headers);
-    return json({ ok: true, service: "yanhua-subscribe" }, 200, headers);
-  }
-};
+const SEGMENT_EN = "a1431dc1-2c68-4154-a9c5-db6a941f2b52";
+const SEGMENT_ZH = "a587e8b8-f849-47ae-9e63-e58eca856083";
+const FROM = { en: "Yanhua Daily <digest@yanhua.ai>", zh: "演化日报 <digest@yanhua.ai>" };
 
 export class CardAnalyticsDO {
   constructor(ctx, env) {
     this.ctx = ctx;
     this.env = env;
-    this.sql = ctx.storage.sql;
-    ctx.blockConcurrencyWhile(async () => {
-      this.sql.exec(
-        "CREATE TABLE IF NOT EXISTS cards (" +
-          "id TEXT PRIMARY KEY," +
-          "views INTEGER NOT NULL DEFAULT 0," +
-          "dwell_ms INTEGER NOT NULL DEFAULT 0," +
-          "flips INTEGER NOT NULL DEFAULT 0," +
-          "clicks INTEGER NOT NULL DEFAULT 0," +
-          "copies INTEGER NOT NULL DEFAULT 0," +
-          "updated_at INTEGER NOT NULL DEFAULT 0" +
-        ")"
-      );
-    });
   }
 
   async fetch(request) {
     const url = new URL(request.url);
-    if (url.pathname === "/stats") return json(this.snapshot(), 200, {});
-    if (request.method === "POST") {
+    const cards = (await this.ctx.storage.get("cards")) || {};
+
+    if (request.method === "POST" && url.pathname === "/event") {
       let body = {};
-      try { body = await request.json(); } catch (err) { return json({ ok: false, error: "bad_json" }, 400, {}); }
-      return json({ ok: true, updated: this.ingest(body) }, 200, {});
-    }
-    return json({ ok: false, error: "method" }, 405, {});
-  }
-
-  ingest(body) {
-    const events = Array.isArray(body && body.events) ? body.events : (body && body.id ? [body] : []);
-    let updated = 0;
-    events.forEach((event) => {
-      if (!event || typeof event !== "object") return;
-      const id = String(event.id || "").trim();
-      if (!id || id.length > 160) return;
-      const type = String(event.type || "");
-      const now = Date.now();
-      this.sql.exec(
-        "INSERT INTO cards (id, views, dwell_ms, flips, clicks, copies, updated_at) VALUES (?, 0, 0, 0, 0, 0, ?) " +
-          "ON CONFLICT(id) DO UPDATE SET updated_at = excluded.updated_at",
-        id,
-        now
-      );
-      if (type === "view") this.sql.exec("UPDATE cards SET views = views + 1, updated_at = ? WHERE id = ?", now, id);
-      else if (type === "flip") this.sql.exec("UPDATE cards SET flips = flips + 1, updated_at = ? WHERE id = ?", now, id);
-      else if (type === "click") this.sql.exec("UPDATE cards SET clicks = clicks + 1, updated_at = ? WHERE id = ?", now, id);
-      else if (type === "copy") this.sql.exec("UPDATE cards SET copies = copies + 1, updated_at = ? WHERE id = ?", now, id);
-      else if (type === "dwell") {
-        const ms = Number(event.ms);
-        if (Number.isFinite(ms) && ms > 0) {
-          const capped = Math.min(DWELL_CAP_MS, Math.floor(ms));
-          this.sql.exec("UPDATE cards SET dwell_ms = dwell_ms + ?, updated_at = ? WHERE id = ?", capped, now, id);
-        }
+      try {
+        body = await request.json();
+      } catch (e) {
+        return new Response(JSON.stringify({ ok: false, error: "bad_json" }), { status: 400 });
       }
-      updated += 1;
-    });
-    return updated;
-  }
+      const events = Array.isArray(body.events) ? body.events : [body];
+      let updated = 0;
+      for (const ev of events) {
+        if (!ev || typeof ev.id !== "string") continue;
+        const id = ev.id.trim().slice(0, 96);
+        if (!id || !/^[a-z0-9-]+$/i.test(id)) continue;
+        const row = cards[id] || { id, views: 0, dwellMs: 0, flips: 0, clicks: 0, copies: 0, updatedAt: 0 };
+        const type = String(ev.type || "");
+        if (type === "view") {
+          row.views += 1;
+        } else if (type === "dwell") {
+          const ms = Math.max(0, Math.min(180000, Number(ev.ms) || 0));
+          if (ms >= 500) row.dwellMs += Math.round(ms);
+        } else if (type === "flip") {
+          row.flips += 1;
+        } else if (type === "click") {
+          row.clicks += 1;
+        } else if (type === "copy") {
+          row.copies += 1;
+        }
+        if (typeof ev.dwellMs === "number" && ev.dwellMs > 0) {
+          row.dwellMs += Math.round(Math.min(180000, ev.dwellMs));
+        }
+        row.updatedAt = Date.now();
+        cards[id] = row;
+        updated += 1;
+      }
+      if (updated > 0) {
+        await this.ctx.storage.put("cards", cards);
+      }
+      return new Response(JSON.stringify({ ok: true, updated }), {
+        status: 200,
+        headers: { "Content-Type": "application/json" }
+      });
+    }
 
-  snapshot() {
-    const rows = this.sql.exec(
-      "SELECT id, views, dwell_ms, flips, clicks, copies, updated_at FROM cards ORDER BY updated_at DESC"
-    ).toArray();
-    const cards = rows.map((row) => {
-      const dwellMs = Number(row.dwell_ms) || 0;
-      const views = Number(row.views) || 0;
-      const flips = Number(row.flips) || 0;
-      const clicks = Number(row.clicks) || 0;
-      const copies = Number(row.copies) || 0;
-      const dwellSeconds = dwellMs / 1000;
+    const list = Object.values(cards).map((c) => {
+      const views = c.views || 0;
+      const dwellMs = c.dwellMs || 0;
+      const flips = c.flips || 0;
+      const clicks = c.clicks || 0;
+      const copies = c.copies || 0;
+      const avgDwellSec = views > 0 ? Math.round(dwellMs / views / 100) / 10 : Math.round(dwellMs / 100) / 10;
+      const totalDwellSec = Math.round(dwellMs / 1000);
+      const score = Math.round((views * 2 + (dwellMs / 4000) + flips * 3 + clicks * 5 + copies * 6) * 10) / 10;
       return {
-        id: row.id,
-        views: views,
-        dwellMs: dwellMs,
-        totalDwellSec: Math.floor(dwellSeconds),
-        avgDwellSec: views > 0 ? round1(dwellMs / views / 1000) : 0,
-        flips: flips,
-        clicks: clicks,
-        copies: copies,
-        score: round1(dwellSeconds * 0.25) + views * 2 + flips * 3 + clicks * 5 + copies * 6,
-        updatedAt: Number(row.updated_at) || 0
+        id: c.id,
+        views,
+        dwellMs,
+        totalDwellSec,
+        avgDwellSec,
+        flips,
+        clicks,
+        copies,
+        score,
+        updatedAt: c.updatedAt || 0
       };
     });
-    cards.sort((a, b) => b.score - a.score || b.updatedAt - a.updatedAt);
-    return cards;
-  }
-}
+    list.sort((a, b) => b.score - a.score || b.dwellMs - a.dwellMs || b.views - a.views);
 
-function round1(value) {
-  return Math.round(value * 10) / 10;
-}
-
-function corsHeaders() {
-  return {
-    "Access-Control-Allow-Origin": "*",
-    "Access-Control-Allow-Headers": "Content-Type",
-    "Access-Control-Allow-Methods": "GET, POST, OPTIONS",
-    "Content-Type": "application/json"
-  };
-}
-
-function analytics(env) {
-  if (!env || !env.CARD_ANALYTICS || !env.CARD_ANALYTICS.idFromName) return null;
-  return env.CARD_ANALYTICS.get(env.CARD_ANALYTICS.idFromName("yanhua-cards"));
-}
-
-async function statsResponse(env, headers) {
-  const subscribers = await countSubscribers(env);
-  let cards = [];
-  const stub = analytics(env);
-  if (stub) {
-    const response = await stub.fetch("https://analytics.internal/stats");
-    cards = await response.json();
-  }
-  return json({ ok: true, subscribers: subscribers, cards: cards }, 200, headers);
-}
-
-async function eventResponse(request, env, headers) {
-  let body = {};
-  try { body = await request.json(); }
-  catch (err) { return json({ ok: false, error: "bad_json" }, 400, headers); }
-  const stub = analytics(env);
-  if (!stub) return json({ ok: true, updated: 0 }, 200, headers);
-  const response = await stub.fetch("https://analytics.internal/event", {
-    method: "POST",
-    body: JSON.stringify(body)
-  });
-  const payload = await response.json();
-  return json(payload, response.status, headers);
-}
-
-async function subscribeResponse(request, env, headers) {
-  let body = {};
-  try { body = await request.json(); }
-  catch (err) { return json({ ok: false, error: err && err.message ? err.message : "bad_json" }, 400, headers); }
-  const email = String(body.email || "").trim();
-  const lang = body.lang === "en" || body.lang === "both" ? body.lang : "zh";
-  if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email)) return json({ ok: false, error: "invalid_email" }, 400, headers);
-  const key = setting(env, "RESEND_API_KEY");
-  const audience = setting(env, "RESEND_AUDIENCE_ID") || DEFAULT_AUDIENCE;
-  if (!key) return json({ ok: false, error: "config" }, 500, headers);
-
-  const created = await resend(key, "POST", "https://api.resend.com/contacts", {
-    email: email,
-    unsubscribed: false,
-    segments: [{ id: audience }]
-  });
-  if (!created.ok && created.status !== 409) {
-    const legacy = await resend(key, "POST", "https://api.resend.com/audiences/" + audience + "/contacts", {
-      email: email,
-      unsubscribed: false
-    });
-    if (!legacy.ok && legacy.status !== 409) return json({ ok: false, error: "resend" }, 502, headers);
-  }
-  if (setting(env, "SEND_WELCOME") === "1") await sendWelcome(env, key, email, lang);
-  return json({ ok: true }, 200, headers);
-}
-
-async function countSubscribers(env) {
-  const key = setting(env, "RESEND_API_KEY");
-  const audience = setting(env, "RESEND_AUDIENCE_ID") || DEFAULT_AUDIENCE;
-  if (!key) return 0;
-  let count = 0;
-  let after = "";
-  for (let page = 0; page < 20; page += 1) {
-    const url = "https://api.resend.com/audiences/" + audience + "/contacts?limit=100" + (after ? "&after=" + encodeURIComponent(after) : "");
-    const response = await fetch(url, { headers: { Authorization: "Bearer " + key } });
-    if (!response.ok) return count;
-    const body = await response.json().catch(function () { return {}; });
-    const rows = Array.isArray(body.data) ? body.data : [];
-    count += rows.length;
-    if (!body.has_more || !rows.length) break;
-    after = rows[rows.length - 1] && rows[rows.length - 1].id ? rows[rows.length - 1].id : "";
-    if (!after) break;
-  }
-  return count;
-}
-
-function setting(env, name) {
-  if (env && env[name]) return String(env[name]);
-  if (typeof process !== "undefined" && process.env && process.env[name]) return process.env[name];
-  return "";
-}
-
-async function sendWelcome(env, key, email, lang) {
-  const subject = lang === "en" ? "You are subscribed to Yanhua Daily" : "已订阅演化日报";
-  const html = "<p>" + subject + ".</p><p><a href=\"https://yanhua.ai/\">yanhua.ai</a></p>";
-  const primary = setting(env, "RESEND_FROM") || DEFAULT_FROM;
-  const fallback = setting(env, "RESEND_FROM_FALLBACK") || FALLBACK_FROM;
-  const first = await resend(key, "POST", "https://api.resend.com/emails", {
-    from: primary,
-    to: [email],
-    subject: subject,
-    html: html
-  });
-  if (first.ok || primary === fallback) return;
-  if (first.status === 403 || first.status === 422) {
-    await resend(key, "POST", "https://api.resend.com/emails", {
-      from: fallback,
-      to: [email],
-      subject: subject,
-      html: html
+    return new Response(JSON.stringify({ ok: true, cards: list }), {
+      status: 200,
+      headers: { "Content-Type": "application/json" }
     });
   }
 }
 
-function json(payload, status, headers) {
-  return new Response(JSON.stringify(payload), { status: status, headers: headers });
+export default {
+  async fetch(request, env) {
+    const cors = {
+      "Access-Control-Allow-Origin": "*",
+      "Access-Control-Allow-Methods": "GET, POST, OPTIONS",
+      "Access-Control-Allow-Headers": "Content-Type"
+    };
+    if (request.method === "OPTIONS") {
+      return new Response(null, { status: 204, headers: cors });
+    }
+    const url = new URL(request.url);
+    const audienceId = env.RESEND_AUDIENCE_ID || "0f2fbb4e-3333-43c1-a0d2-16c69a7c3003";
+
+    if (request.method === "POST" && (url.pathname === "/event" || url.pathname === "/api/event")) {
+      try {
+        if (env.CARD_ANALYTICS) {
+          const id = env.CARD_ANALYTICS.idFromName("global");
+          const stub = env.CARD_ANALYTICS.get(id);
+          const res = await stub.fetch("https://do/event", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: await request.text()
+          });
+          const data = await res.json();
+          return new Response(JSON.stringify(data), {
+            status: res.status,
+            headers: { ...cors, "Content-Type": "application/json" }
+          });
+        }
+        return new Response(JSON.stringify({ ok: false, error: "no_do" }), {
+          status: 200,
+          headers: { ...cors, "Content-Type": "application/json" }
+        });
+      } catch (err) {
+        return new Response(JSON.stringify({ ok: false, error: String(err) }), {
+          status: 200,
+          headers: { ...cors, "Content-Type": "application/json" }
+        });
+      }
+    }
+
+    if (request.method === "GET" && (url.pathname === "/stats" || url.pathname === "/api/stats" || url.pathname === "/analytics")) {
+      let subscribers = 0;
+      let cards = [];
+      try {
+        const res = await fetch(`https://api.resend.com/audiences/${audienceId}/contacts`, {
+          headers: { "Authorization": `Bearer ${env.RESEND_API_KEY}` }
+        });
+        const data = await res.json();
+        const contacts = Array.isArray(data.data) ? data.data.filter(c => !c.unsubscribed) : [];
+        subscribers = contacts.length;
+      } catch (err) {}
+
+      try {
+        if (env.CARD_ANALYTICS) {
+          const id = env.CARD_ANALYTICS.idFromName("global");
+          const stub = env.CARD_ANALYTICS.get(id);
+          const doRes = await stub.fetch("https://do/stats");
+          const doData = await doRes.json();
+          if (Array.isArray(doData.cards)) cards = doData.cards;
+        }
+      } catch (err) {}
+
+      return new Response(JSON.stringify({ ok: true, subscribers, cards }), {
+        status: 200,
+        headers: { ...cors, "Content-Type": "application/json" }
+      });
+    }
+
+    if (request.method !== "POST") {
+      return new Response(JSON.stringify({ ok: true, service: "yanhua-subscribe" }), {
+        status: 200,
+        headers: { ...cors, "Content-Type": "application/json" }
+      });
+    }
+
+    try {
+      let email = "";
+      let rawLang = "";
+      const ct = (request.headers.get("content-type") || "").toLowerCase();
+      if (ct.includes("application/json")) {
+        const body = await request.json();
+        email = String(body.email || "").trim().toLowerCase();
+        rawLang = String(body.lang || "");
+      } else {
+        const form = await request.formData();
+        email = String(form.get("email") || "").trim().toLowerCase();
+        rawLang = String(form.get("lang") || "");
+      }
+      const lang = normLang(rawLang);
+
+      if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email)) {
+        return new Response(JSON.stringify({ ok: false, error: "invalid_email" }), {
+          status: 400,
+          headers: { ...cors, "Content-Type": "application/json" }
+        });
+      }
+
+      const segments = {
+        en: env.RESEND_SEGMENT_EN || SEGMENT_EN,
+        zh: env.RESEND_SEGMENT_ZH || SEGMENT_ZH
+      };
+      // Create is an upsert in Resend: an existing contact gets the new
+      // property value and these segments added, and keeps its old ones.
+      const contactRes = await resend(env, "POST", "https://api.resend.com/contacts", {
+        email: email,
+        unsubscribed: false,
+        properties: { lang: lang },
+        segments: [{ id: audienceId }, { id: segments[lang] }]
+      });
+      if (!contactRes.ok) {
+        return new Response(JSON.stringify({ ok: false, error: contactRes.data }), {
+          status: contactRes.status,
+          headers: { ...cors, "Content-Type": "application/json" }
+        });
+      }
+      // One language only: leave the other language segment (404 when not in it).
+      const other = lang === "en" ? segments.zh : segments.en;
+      const left = await resend(env, "DELETE", "https://api.resend.com/contacts/" + encodeURIComponent(email) + "/segments/" + other);
+      if (!left.ok && left.status !== 404) {
+        return new Response(JSON.stringify({ ok: false, error: "segment", detail: left.data }), {
+          status: 502,
+          headers: { ...cors, "Content-Type": "application/json" }
+        });
+      }
+
+      const welcome = WELCOME[lang];
+      await resend(env, "POST", "https://api.resend.com/emails", {
+        from: FROM[lang],
+        to: [email],
+        subject: welcome.subject,
+        html: welcome.html
+      }).catch(() => {});
+
+      return new Response(JSON.stringify({ ok: true, id: contactRes.data && contactRes.data.id, lang: lang }), {
+        status: 200,
+        headers: { ...cors, "Content-Type": "application/json" }
+      });
+    } catch (err) {
+      return new Response(JSON.stringify({ ok: false, error: String(err) }), {
+        status: 500,
+        headers: { ...cors, "Content-Type": "application/json" }
+      });
+    }
+  }
+};
+
+const WELCOME = {
+  en: {
+    subject: "You're subscribed to Yanhua Daily",
+    html: `<div style="font-family:Georgia,serif;max-width:560px;margin:0 auto;padding:24px;color:#1b1714;"><h2 style="margin:0 0 12px;">Welcome to Yanhua Daily</h2><p style="line-height:1.6;">You're subscribed, with English as your email language. Once a day you'll get one email with that day's cards on recursive self-improvement and agent harness search, each opening with a one-sentence takeaway.</p><p><a href="https://yanhua.ai/?lang=en" style="color:#8e2f27;">Read the latest cards on yanhua.ai →</a></p></div>`
+  },
+  zh: {
+    subject: "已订阅演化日报",
+    html: `<div style="font-family:serif;max-width:560px;margin:0 auto;padding:24px;color:#1b1714;"><h2 style="margin:0 0 12px;">欢迎订阅演化日报</h2><p style="line-height:1.7;">订阅成功，邮件语言为中文。每天一封，收录当天关于递归自我改进与智能体框架搜索的全部闪卡，每张都以一句话结论开头。</p><p><a href="https://yanhua.ai" style="color:#8e2f27;">访问 yanhua.ai 阅读最新闪卡 →</a></p></div>`
+  }
+};
+
+function normLang(value) {
+  return String(value || "").trim().toLowerCase().indexOf("en") === 0 ? "en" : "zh";
 }
 
-async function resend(key, method, url, payload) {
-  const response = await fetch(url, {
-    method: method,
-    headers: {
-      Authorization: "Bearer " + key,
-      "Content-Type": "application/json"
-    },
-    body: JSON.stringify(payload)
-  });
-  return { ok: response.ok, status: response.status };
+async function resend(env, method, url, payload) {
+  const init = { method: method, headers: { Authorization: `Bearer ${env.RESEND_API_KEY}` } };
+  if (payload !== undefined) {
+    init.headers["Content-Type"] = "application/json";
+    init.body = JSON.stringify(payload);
+  }
+  for (let attempt = 0; attempt < 4; attempt += 1) {
+    const res = await fetch(url, init);
+    if (res.status === 429 && attempt < 3) {
+      await new Promise((resolve) => setTimeout(resolve, 600 * (attempt + 1)));
+      continue;
+    }
+    const data = await res.json().catch(() => ({}));
+    return { ok: res.ok, status: res.status, data: data };
+  }
+  return { ok: false, status: 429, data: {} };
 }

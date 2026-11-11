@@ -70,7 +70,7 @@ GitHub Pages 从仓库根目录发布这些静态文件。`CNAME` 是 `yanhua.ai
 
 ### ❯ 每日晚间合辑 · Evening Combined Email
 
-晚上把当天这一版经 Resend 寄出。页面上每天只有一期，09:00 与 18:00（UTC+0）各往这一期前面追加一次。发件人是 `演化日报 · Yanhua Daily <digest@yanhua.ai>`。页面上没有常驻订阅按钮。滚到靠近页尾时，右下角用 `dialog.show()` 打开一扇不挡阅读的小窗。表单 `POST` 到 [https://subscribe.yanhua.ai](https://subscribe.yanhua.ai)，正文是 `{email, lang, source}`。`RESEND_API_KEY` 只放在 Worker 和 GitHub Actions 里。
+晚上把当天这一版经 Resend 寄出，每位读者每天只收一封，而且只用一种语言。页面上每天只有一期，09:00 与 18:00（UTC+0）各往这一期前面追加一次。订阅时在小窗里选邮件语言（中文或 English，默认跟随当前页面语言）。中文邮件的发件人是 `演化日报 <digest@yanhua.ai>`，标题形如 `演化日报 · 2026-11-11 · 9 篇`；英文邮件的发件人是 `Yanhua Daily <digest@yanhua.ai>`，标题形如 `Yanhua Daily · 11 Nov 2026 · 9 papers`。正文、链接文字和页脚都只用所选语言。页面上没有常驻订阅按钮。滚到靠近页尾时，右下角用 `dialog.show()` 打开一扇不挡阅读的小窗。表单 `POST` 到 [https://subscribe.yanhua.ai](https://subscribe.yanhua.ai)，正文是 `{email, lang, source}`，`lang` 为 `zh` 或 `en`。Worker 把语言记在 Resend 联系人属性 `lang` 上，并让联系人只留在一个语言分组里（`Email language: 中文` 或 `Email language: English`）；没有语言记录的旧订阅者按中文处理。`RESEND_API_KEY` 只放在 Worker 和 GitHub Actions 里。
 
 普通的 Pages 部署只同步带 `subscribe` 标签的 Issue。要发信，在 Actions 里手动运行 workflow，并勾上 “Email the latest edition through Resend”。
 
@@ -91,7 +91,7 @@ GitHub Pages 从仓库根目录发布这些静态文件。`CNAME` 是 `yanhua.ai
 | `data/digests.json` | 期次与卡片的双语源数据 |
 | `data/digests.js` | 给页面用的同一份数据 |
 | `scripts/update_digest.py` | 校验，重建 `digests.js`、RSS 和 JSON Feed，并给 `index.html` 里的资源盖上 `?v=` 缓存戳 |
-| `scripts/send_newsletter_resend.py` | 生成当天这一版的 HTML，并用 Resend 广播 |
+| `scripts/send_newsletter_resend.py` | 按中文、英文分别生成当天这一版的邮件，并按语言分组用 Resend 广播 |
 | `scripts/cloudflare-resend-worker.js` | 右下角订阅窗背后的 Cloudflare Worker |
 | `feed.xml` / `feed.json` | 公开订阅源 |
 | `index.html` · `assets/` · `data/config.js` | 页面、样式，以及订阅接口配置 |
@@ -115,11 +115,13 @@ python3 scripts/update_digest.py append editions/2026-10-28.json
 ```bash
 python3 scripts/send_newsletter_resend.py --preview /tmp/daily_email_preview.html
 python3 scripts/send_newsletter_resend.py --preview /tmp/daily_email_preview.html --date 2026-10-27
+python3 scripts/send_newsletter_resend.py --preview /tmp/daily_email_en.html --lang en
+python3 scripts/send_newsletter_resend.py --send --dry-run
 python3 scripts/send_newsletter_resend.py --sync-only
 python3 scripts/send_newsletter_resend.py --send --date 2026-10-27
 ```
 
-`--preview` 只把 HTML 写到本地，不调用 Resend，也不需要密钥。省略 `--date` 时，用最新一期的日期。`--send` 先同步名单，再把该日这一版发出。`--sync-only` 只同步，不发信。域名还没验证时，发件人会退回 `onboarding@resend.dev`。
+`--preview` 只把 HTML 写到本地，不调用 Resend，也不需要密钥。省略 `--date` 时，用最新一期的日期。`--preview` 默认生成中文，加 `--lang en` 生成英文。`--send` 先同步名单，再按语言各发一封广播，每封只发给对应语言分组。发之前会检查 Resend：该语言当天已有广播（或当天已有发给全体的旧版广播）就跳过，所以重跑不会多发。`--send --dry-run` 只同步和检查，不发信。`--sync-only` 只同步，不发信。域名还没验证时，发件人会退回 `onboarding@resend.dev`。
 
 <p align="center">
   <a href="#readme-top"><img src="https://img.shields.io/badge/-返回顶部-1b1714?style=flat-square" alt="返回顶部"></a>

@@ -70,7 +70,7 @@ Switch the header to **Deck**. The card flips on the Y axis. The front is the ti
 
 ### ❯ Evening Combined Email
 
-Each evening, that day's edition goes out as one message through Resend. The page keeps one edition per date and prepends to it at 09:00 and 18:00 UTC+0. The sender is `演化日报 · Yanhua Daily <digest@yanhua.ai>`. There is no permanent subscribe button. Near the end of the page, a small dialog opens with `dialog.show()` in the bottom-right corner and does not cover the reading. The form `POST`s `{email, lang, source}` to [https://subscribe.yanhua.ai](https://subscribe.yanhua.ai). `RESEND_API_KEY` lives only on the Worker and in GitHub Actions.
+Each evening, that day's edition goes out through Resend: one email per reader per day, in one language only. The page keeps one edition per date and prepends to it at 09:00 and 18:00 UTC+0. Readers pick their email language (中文 or English, defaulting to the page language) in the subscribe dialog. English mail comes from `Yanhua Daily <digest@yanhua.ai>` with a subject like `Yanhua Daily · 11 Nov 2026 · 9 papers`; Chinese mail comes from `演化日报 <digest@yanhua.ai>` with a subject like `演化日报 · 2026-11-11 · 9 篇`. Body, link labels and footer use only the chosen language. There is no permanent subscribe button. Near the end of the page, a small dialog opens with `dialog.show()` in the bottom-right corner and does not cover the reading. The form `POST`s `{email, lang, source}` to [https://subscribe.yanhua.ai](https://subscribe.yanhua.ai), with `lang` set to `zh` or `en`. The Worker stores it as the Resend contact property `lang` and keeps the contact in exactly one language segment (`Email language: 中文` or `Email language: English`). Older subscribers with no stored language get Chinese. `RESEND_API_KEY` lives only on the Worker and in GitHub Actions.
 
 A normal Pages deploy only syncs GitHub issues labeled `subscribe`. To send mail, run the workflow by hand and check “Email the latest edition through Resend”.
 
@@ -91,7 +91,7 @@ The canonical dataset is `data/digests.json`. The page reads the same document a
 | `data/digests.json` | Bilingual source of editions and cards |
 | `data/digests.js` | The same document for the page |
 | `scripts/update_digest.py` | Validate, rebuild `digests.js`, RSS, and the JSON Feed, and stamp `?v=` cache tokens on assets in `index.html` |
-| `scripts/send_newsletter_resend.py` | Render that day's edition as HTML and broadcast it with Resend |
+| `scripts/send_newsletter_resend.py` | Render that day's edition once in Chinese and once in English, and broadcast each to its language segment with Resend |
 | `scripts/cloudflare-resend-worker.js` | Cloudflare Worker behind the corner subscribe dialog |
 | `feed.xml` / `feed.json` | Public feeds |
 | `index.html` · `assets/` · `data/config.js` | Page, styles, and subscribe endpoint config |
@@ -115,11 +115,13 @@ Mail:
 ```bash
 python3 scripts/send_newsletter_resend.py --preview /tmp/daily_email_preview.html
 python3 scripts/send_newsletter_resend.py --preview /tmp/daily_email_preview.html --date 2026-10-27
+python3 scripts/send_newsletter_resend.py --preview /tmp/daily_email_en.html --lang en
+python3 scripts/send_newsletter_resend.py --send --dry-run
 python3 scripts/send_newsletter_resend.py --sync-only
 python3 scripts/send_newsletter_resend.py --send --date 2026-10-27
 ```
 
-`--preview` writes the HTML locally, does not call Resend, and does not need a key. Without `--date`, the date is the newest edition's date. `--send` syncs the list, then broadcasts that day's edition. `--sync-only` syncs and does not send. Until the domain is verified, the sender falls back to `onboarding@resend.dev`.
+`--preview` writes the HTML locally, does not call Resend, and does not need a key. Without `--date`, the date is the newest edition's date. `--preview` renders Chinese by default; add `--lang en` for English. `--send` syncs the list, then creates one broadcast per language, each sent only to that language's segment. Before sending it checks Resend and skips a language that already has a broadcast for that day (or an older all-readers broadcast from the same day), so a re-run never sends twice. `--send --dry-run` syncs and checks without sending. `--sync-only` syncs and does not send. Until the domain is verified, the sender falls back to `onboarding@resend.dev`.
 
 <p align="center">
   <a href="#readme-top"><img src="https://img.shields.io/badge/-Back_to_top-1b1714?style=flat-square" alt="Back to top"></a>
