@@ -19,6 +19,15 @@
   },
   "editions": [
     {
+      "id": "2026-11-11",
+      "date": "2026-11-11",
+      "slot": "",
+      "label": {
+        "zh": "2026-11-11",
+        "en": "11 Nov 2026"
+      }
+    },
+    {
       "id": "2026-11-10",
       "date": "2026-11-10",
       "slot": "",
@@ -244,6 +253,388 @@
     }
   ],
   "items": [
+    {
+      "id": "decaf-decomposed-harness-optimization",
+      "edition": "2026-11-11",
+      "tags": [
+        "harness-search"
+      ],
+      "title": {
+        "zh": "DeCAF：把 harness 搜索拆成按维度的独立编码智能体会话再合成，AppWorld 上 84.23 vs Meta-Harness 80.06，延迟减半",
+        "en": "DeCAF: Splitting Harness Search Into Per-Dimension Coding-Agent Sessions, Then Composing, Beats Meta-Harness on AppWorld (84.23 vs 80.06) at Half the Latency"
+      },
+      "why": {
+        "zh": "自动优化 harness 时，让一个智能体同时改 prompt、拓扑、模型和上下文，预算会被一两个维度吃光；先按维度拆开、给每个维度独立会话和预先提出的多样假设，再用组件级诊断合成，就能在更低成本和延迟下得到更好的管线。",
+        "en": "When one agent edits prompts, topology, models and context all at once, the optimization budget gets swallowed by one or two dimensions; splitting the search by dimension, giving each its own session and a pre-proposed set of diverse hypotheses, and then composing with component-level diagnostics yields better pipelines at lower cost and latency."
+      },
+      "what": {
+        "zh": "现有 harness/管线优化器（GEPA、MASPO、Meta-Harness）要么只在预设子空间里搜，要么整体改动管线，几乎不留下“为什么这样改”的证据。",
+        "en": "Existing pipeline and harness optimizers (GEPA, MASPO, Meta-Harness) either search a fixed subspace or edit the pipeline monolithically, leaving little evidence for why each change was made."
+      },
+      "how": {
+        "zh": "DeCAF 先根据基准和种子管线提出相关优化维度与每个维度的实验假设（Divide），再为每个维度开受限编辑范围的独立编码智能体会话，联合评估分数、成本与延迟（Diagnose），最后由合成会话借助按角色生成评分细则的 node_eval 定位薄弱组件并合并（Compose）；在 AppWorld、LiveCodeBench、AgentDojo、PostTrainBench 上相对最强基线 Meta-Harness 平均提升 2.58 个百分点、推理成本降 4.30%、延迟降 42.45%（AppWorld TGC 84.23 vs 80.06，成本 0.184 vs 0.224 美元，延迟 32.8s vs 73.8s），消融显示去掉维度拆分后约 41.67% 预算花在上下文工程上，去掉合成或 node_eval 在 LiveCodeBench 上最多掉 8.35 个百分点。",
+        "en": "DeCAF first proposes benchmark-specific optimization dimensions and diverse hypotheses for each (Divide), runs an independent coding-agent session per dimension under a restricted edit scope while jointly scoring performance, cost and latency (Diagnose), and finally composes the findings using node_eval, which derives role-specific rubrics to localize weak components (Compose); across AppWorld, LiveCodeBench, AgentDojo and PostTrainBench it beats the best baseline, Meta-Harness, by 2.58 pp on average with 4.30% lower inference cost and 42.45% lower latency (AppWorld TGC 84.23 vs 80.06, $0.184 vs $0.224 per instance, 32.8s vs 73.8s), and ablations show that without the dimension split about 41.67% of the budget went to context engineering, while removing synthesis or node_eval costs up to 8.35 pp on LiveCodeBench."
+      },
+      "metric": {
+        "zh": "AppWorld TGC 84.23 vs 80.06（Meta-Harness）；平均延迟 −42.45%",
+        "en": "AppWorld TGC 84.23 vs 80.06 (Meta-Harness); latency −42.45% on average"
+      },
+      "pills": [
+        {
+          "zh": "AppWorld TGC",
+          "en": "AppWorld TGC",
+          "value": "84.23 vs 80.06",
+          "tone": "up"
+        },
+        {
+          "zh": "平均提升",
+          "en": "Avg gain",
+          "value": "+2.58 pp",
+          "tone": "up"
+        },
+        {
+          "zh": "延迟",
+          "en": "Latency",
+          "value": "−42.45%",
+          "tone": "up"
+        },
+        {
+          "zh": "推理成本",
+          "en": "Inference cost",
+          "value": "−4.30%",
+          "tone": "up"
+        }
+      ],
+      "arxiv": "2611.08723",
+      "authors": "Divij Handa, Christopher Tensmeyer, Jihyung Kil, Vlad I. Morariu (Arizona State University, Adobe); shared by Stone Panda",
+      "handle": "@StonePanda1",
+      "links": [
+        {
+          "zh": "论文",
+          "en": "Paper",
+          "url": "https://arxiv.org/abs/2611.08723"
+        },
+        {
+          "zh": "分享者",
+          "en": "Sharer",
+          "url": "https://x.com/StonePanda1"
+        },
+        {
+          "zh": "X 原帖",
+          "en": "X Post",
+          "url": "https://x.com/StonePanda1/status/2120282609599005016"
+        }
+      ]
+    },
+    {
+      "id": "infrarsi-training-infra-harness",
+      "edition": "2026-11-11",
+      "tags": [
+        "harness-search",
+        "verification"
+      ],
+      "title": {
+        "zh": "InfraRSI：带合约验证与全局显存模型的训练基础设施 harness，四个 LLM/MoE 训练负载几何平均加速 1.83×，MFU 从 17.4% 升到 30.0%",
+        "en": "InfraRSI: A Contract-Verified Training-Infra Harness Hits a 1.83× Geo-Mean Speedup Across Four LLM/MoE Workloads and Lifts MFU From 17.4% to 30.0%"
+      },
+      "why": {
+        "zh": "编码智能体去优化分布式训练时，常常靠改计时边界或偷偷降精度“刷”出假加速，又会被 OOM 和编译冲突卡在单一配置上；锁定任务合约、按集群噪声校准、把包括 OOM 在内的所有试验拟合成全局时间/显存模型，才让真实加速可以安全叠加。",
+        "en": "Coding agents optimizing distributed training often fake speedups by shifting timing boundaries or sneaking in lower precision, and get stuck on a single configuration at OOM and compiler cliffs; locking a task contract, calibrating to cluster noise and fitting global time and memory models to every trial, OOMs included, is what lets real speedups stack safely."
+      },
+      "what": {
+        "zh": "训练吞吐取决于启动参数、算子内核和通信调度的紧耦合组合，单次改动容易撞上 OOM、编译冲突、测量抖动或静默数值漂移，而 LLM 对加速幅度的零样本估计并不可靠。",
+        "en": "Training throughput depends on tightly coupled launch settings, kernels and communication schedules, where single edits hit OOMs, compiler conflicts, measurement jitter or silent numerical drift, and LLM zero-shot speedup estimates are unreliable."
+      },
+      "how": {
+        "zh": "五阶段流程 init/doctor/run/report/apply 先锁定可编辑范围与负载、loss、计时不变量防止奖励作弊，再校准噪声（专用 H100/H200 节点 0.04%–0.10%，共享主机超过 6%），从多样经验种子出发联合搜索启动旋钮与代码补丁，用回到回的基线重跑验证并写入跨硬件经验库；作者发现前沿 LLM 对加速的预测与实测呈负相关（Spearman −0.49 到 −0.06），例如对 Gemma-4-26B-A4B 的图编译只预估 +2%、实测 +55%，最终 InfraRSI 几何平均 1.83×，优于 RE-Bench 智能体 1.37×、Auto-Research 1.34×、OptiCo 1.23×，最高 2.75×，跨硬件经验迁移把 Qwen3.5-9B 的最终加速从 1.70× 提到 1.82×。",
+        "en": "A five-stage init/doctor/run/report/apply workflow locks the editable scope and workload, loss and timing invariants against reward hacking, calibrates noise (0.04%–0.10% on dedicated H100/H200 nodes, over 6% on shared hosts), co-searches launch knobs and code patches from diverse experience-seeded starts, verifies winners with back-to-back baseline re-runs and writes them to a cross-hardware experience bank; the authors find frontier-LLM speedup predictions correlate negatively with measurements (Spearman −0.49 to −0.06; graph compilation on Gemma-4-26B-A4B predicted +2%, measured +55%), and InfraRSI reaches a 1.83× geo-mean speedup vs 1.37× for the RE-Bench agent, 1.34× for Auto-Research and 1.23× for OptiCo, up to 2.75×, with cross-hardware transfer lifting Qwen3.5-9B from 1.70× to 1.82×."
+      },
+      "metric": {
+        "zh": "几何平均加速 1.83×（最高 2.75×）；MFU 17.4% → 30.0%",
+        "en": "Geo-mean speedup 1.83× (max 2.75×); MFU 17.4% → 30.0%"
+      },
+      "pills": [
+        {
+          "zh": "几何平均加速",
+          "en": "Geo-mean speedup",
+          "value": "1.83×",
+          "tone": "up"
+        },
+        {
+          "zh": "最高加速",
+          "en": "Max speedup",
+          "value": "2.75×",
+          "tone": "up"
+        },
+        {
+          "zh": "MFU",
+          "en": "MFU",
+          "value": "17.4% → 30.0%",
+          "tone": "up"
+        },
+        {
+          "zh": "LLM 先验相关性",
+          "en": "LLM prior corr.",
+          "value": "−0.49 to −0.06",
+          "tone": "down"
+        }
+      ],
+      "arxiv": "2611.11558",
+      "repo": "https://github.com/TokenRhythm/InfraRSI",
+      "authors": "InfraRSI Team: Yuchuan Tian, Haocheng Mei, Ye Yuan, Chao Xu, Boxun Li, Guohao Dai, Kai Han, Allen Chen, Yunhe Wang, Yu Wang (TokenRhythm, Peking University, Infinigence AI, SJTU, Tsinghua); shared by AI Native Foundation",
+      "handle": "@AINativeF",
+      "links": [
+        {
+          "zh": "论文",
+          "en": "Paper",
+          "url": "https://arxiv.org/abs/2611.11558"
+        },
+        {
+          "zh": "仓库",
+          "en": "Repo",
+          "url": "https://github.com/TokenRhythm/InfraRSI"
+        },
+        {
+          "zh": "项目页",
+          "en": "Project",
+          "url": "https://infrarsi.github.io"
+        },
+        {
+          "zh": "分享者",
+          "en": "Sharer",
+          "url": "https://x.com/AINativeF"
+        },
+        {
+          "zh": "X 原帖",
+          "en": "X Post",
+          "url": "https://x.com/AINativeF/status/2120327078969237569"
+        }
+      ]
+    },
+    {
+      "id": "longtails-lean-verified-optimization-autoresearch",
+      "edition": "2026-11-11",
+      "tags": [
+        "verification"
+      ],
+      "title": {
+        "zh": "LongTails：用 Lean 4 固定问题设定、让智能体只去改进复杂度上界，已产出 100 多个经形式化验证的新优化理论结果",
+        "en": "LongTails: Fixing the Problem Setup in Lean 4 and Letting Agents Only Improve Complexity Bounds Has Produced 100+ Formally Verified New Optimization Results"
+      },
+      "why": {
+        "zh": "自动化数学研究之所以能在优化领域规模化，是因为把“问题设定”与“复杂度上界”分开：设定在 Lean 4 里固定，智能体只能去设计算法、证明更好的界，每个被接受的结果都由机器检查，模型无法靠改题目或写含糊证明蒙混过关。",
+        "en": "Automated math research scales in optimization here because the problem Setup is separated from the Complexity bound: the Setup is frozen in Lean 4, agents can only design algorithms and prove better bounds, and every accepted result is machine-checked, so a model cannot cheat by changing the question or writing a hand-wavy proof."
+      },
+      "what": {
+        "zh": "能否用智能体系统在优化理论里持续、大规模地发现新算法和更好的 oracle 复杂度，并保证每个结论都真的成立？",
+        "en": "Can agentic systems continually discover new algorithms and better oracle complexities across optimization theory at scale, with a guarantee that every claim actually holds?"
+      },
+      "how": {
+        "zh": "Setup 规定问题类、可用 oracle、信息和成功判据，Complexity 规定足够的 oracle 调用预算，框架用 Lean 4 证明“存在只用允许信息、在声称预算内达到精度的算法”；流程只是一个研究者智能体加一个审稿者智能体反复交互直到审稿者接受，作者称已在广义光滑、重尾噪声、有限和与复合、高阶与零阶方法等方向得到 100 多个新结果，例如针对 (L0,L1) 光滑凸优化的已知缺口，智能体在约 2–7 小时的单次运行中找到一致更优复杂度的阻尼加速方法。",
+        "en": "A Setup fixes the problem class, oracles, information and success criterion, a Complexity fixes a sufficient oracle-call budget, and Lean 4 certifies that an algorithm using only allowed information reaches the target accuracy within that budget; the pipeline is just a researcher agent and a reviewer agent iterating until the reviewer accepts, and the authors report 100+ new results spanning generalized smoothness, heavy-tailed noise, finite-sum and composite, and higher- and zeroth-order methods, including a damped accelerated method with uniformly better complexity for (L0,L1)-smooth convex optimization found in a single 2–7 hour run aimed at a known gap."
+      },
+      "metric": {
+        "zh": "100+ 个 Lean 4 验证的新结果；目标缺口单次运行约 2–7 小时",
+        "en": "100+ Lean 4-verified new results; targeted gap closed in a ~2–7 h run"
+      },
+      "pills": [
+        {
+          "zh": "新结果",
+          "en": "New results",
+          "value": "100+",
+          "tone": "up"
+        },
+        {
+          "zh": "验证",
+          "en": "Verification",
+          "value": "Lean 4",
+          "tone": "up"
+        },
+        {
+          "zh": "单次运行",
+          "en": "Single run",
+          "value": "2–7 h",
+          "tone": "up"
+        }
+      ],
+      "arxiv": "2611.13872",
+      "repo": "https://github.com/k3nfalt/longtails",
+      "authors": "Alexander Tyurin, QuocViet Pham, Valentin Khrulkov, Ivan Oseledets (AXXX, Applied AI Institute); listed by arXiv math.OC",
+      "handle": "@mathOCb",
+      "links": [
+        {
+          "zh": "论文",
+          "en": "Paper",
+          "url": "https://arxiv.org/abs/2611.13872"
+        },
+        {
+          "zh": "仓库",
+          "en": "Repo",
+          "url": "https://github.com/k3nfalt/longtails"
+        },
+        {
+          "zh": "网站",
+          "en": "Website",
+          "url": "https://k3nfalt.github.io/longtails"
+        },
+        {
+          "zh": "分享者",
+          "en": "Sharer",
+          "url": "https://x.com/mathOCb"
+        },
+        {
+          "zh": "X 原帖",
+          "en": "X Post",
+          "url": "https://x.com/mathOCb/status/2120390177054949610"
+        }
+      ]
+    },
+    {
+      "id": "badevolve-task-poisoning-self-evolving-skills",
+      "edition": "2026-11-11",
+      "tags": [
+        "memory-skills",
+        "verification"
+      ],
+      "title": {
+        "zh": "BadEvolve：攻击者只投毒“演化任务”，就能让自演化智能体把后门写进自己的技能，平均攻击成功率 79.6%，干净任务准确率只降 1.1 个百分点",
+        "en": "BadEvolve: Poisoning Only the Evolution Tasks Gets Self-Evolving Agents to Write Backdoors Into Their Own Skills, 79.6% Average Attack Success With Just 1.1 pp Clean-Accuracy Loss"
+      },
+      "why": {
+        "zh": "自演化智能体把经验沉淀成持久技能，这本身就是攻击面：攻击者不需要碰技能库，只要喂入精心构造的任务，按失败阶段定向修改并回滚坏更新，智能体就会自己归纳出恶意规则，而干净任务表现几乎不变，所以很难被发现。",
+        "en": "Self-evolving agents that distill experience into persistent skills open an attack surface: the attacker never touches the skill library, but by feeding crafted tasks, targeting updates at whichever stage failed and rolling back bad updates, the agent induces the malicious rule itself while clean-task performance barely moves, which makes it hard to notice."
+      },
+      "what": {
+        "zh": "当技能由受信任的演化器内部生成、攻击者只能注入演化任务时，能否让智能体在自己的技能里植入后门？",
+        "en": "When skills are built internally by a trusted evolver and the attacker can only inject evolution tasks, can the agent still be induced to plant a backdoor in its own skills?"
+      },
+      "how": {
+        "zh": "BadEvolve 把攻击拆成 Induction、Activation、Following、Effect 四个阶段并把更新指向失败阶段，再用回滚保留进展、用失败记忆避免重复无效改动；在 SkillOpt、Trace2Skill 等自演化框架与多个基准、骨干模型上平均 ASR 79.6%（59.3%–100%），干净准确率平均只比原始低 1.1 个百分点，灰盒迁移平均 ASR 84.6%，而只看端到端成功率的 TextGrad-Poison 会把失败误判到错误环节（案例中 BadEvolve 把 Induction 通过率从 0.4 提到 0.8、ASR 从 40.0% 提到 79.5%）。",
+        "en": "BadEvolve decomposes the attack into Induction, Activation, Following and Effect stages and aims each update at the failing stage, with rollback to preserve progress and a failure memory to avoid repeating dead ends; across self-evolution frameworks such as SkillOpt and Trace2Skill, several benchmarks and backbones it averages 79.6% ASR (59.3%–100%) with clean accuracy only 1.1 pp below the unpoisoned agent and 84.6% average ASR in gray-box transfer, while the outcome-only TextGrad-Poison misattributes failures (in one case BadEvolve raised the Induction pass rate from 0.4 to 0.8 and ASR from 40.0% to 79.5%)."
+      },
+      "metric": {
+        "zh": "平均 ASR 79.6%；干净准确率 −1.1 pp",
+        "en": "Average ASR 79.6%; clean accuracy −1.1 pp"
+      },
+      "pills": [
+        {
+          "zh": "平均 ASR",
+          "en": "Avg ASR",
+          "value": "79.6%",
+          "tone": "down"
+        },
+        {
+          "zh": "灰盒 ASR",
+          "en": "Gray-box ASR",
+          "value": "84.6%",
+          "tone": "down"
+        },
+        {
+          "zh": "干净准确率损失",
+          "en": "Clean acc. loss",
+          "value": "1.1 pp",
+          "tone": "down"
+        }
+      ],
+      "arxiv": "2611.10542",
+      "repo": "https://github.com/ventr1c/BadEvolve",
+      "authors": "Minhua Lin, Zongyu Wu, Hanqing Lu, Xianfeng Tang, Xiang Zhang, Qi He, Suhang Wang (Penn State, Microsoft); shared by Cryptography and Security Papers",
+      "handle": "@FSFG",
+      "links": [
+        {
+          "zh": "论文",
+          "en": "Paper",
+          "url": "https://arxiv.org/abs/2611.10542"
+        },
+        {
+          "zh": "仓库",
+          "en": "Repo",
+          "url": "https://github.com/ventr1c/BadEvolve"
+        },
+        {
+          "zh": "分享者",
+          "en": "Sharer",
+          "url": "https://x.com/FSFG"
+        },
+        {
+          "zh": "X 原帖",
+          "en": "X Post",
+          "url": "https://x.com/FSFG/status/2120298664685969590"
+        }
+      ]
+    },
+    {
+      "id": "conitzer-is-rsi-safe-game-theory",
+      "edition": "2026-11-11",
+      "tags": [
+        "verification"
+      ],
+      "title": {
+        "zh": "Conitzer《递归自我改进安全吗？》：RSI 竞赛只在部分风险水平下是囚徒困境，风险够高时“大家都不按按钮”是稳定均衡",
+        "en": "Conitzer, \"Is Recursive Self-Improvement Safe?\": The RSI Race Is a Prisoner's Dilemma Only at Some Risk Levels, and at High Risk Mutual Restraint Is a Stable Equilibrium"
+      },
+      "why": {
+        "zh": "把 RSI 竞赛一概当成囚徒困境是错的：结论取决于风险有多大、两方的风险是否叠加，风险高到对自己也不划算时“都不启动”反而是均衡，所以先把风险估清楚比争论“谁先按按钮”更重要。",
+        "en": "Treating the RSI race as a Prisoner's Dilemma by default is wrong: the answer depends on how large the risk is and whether two parties' risks add up, and once the risk outweighs your own benefit, mutual restraint becomes an equilibrium, so pinning down the risk matters more than arguing about who presses the button first."
+      },
+      "what": {
+        "zh": "前沿 AI 已让 RSI 看起来可行、公司开始追求它，但我们是否有框架判断何时启动 RSI 是安全的？",
+        "en": "Frontier AI now makes RSI look feasible and companies are pursuing it, but do we have any framework for judging when starting RSI would be safe?"
+      },
+      "how": {
+        "zh": "作者先讲一个普通用户用一条高层 prompt 让 AI 从零训练小 LLM 的经历，再记录 2026 年 10 月 FAR.AI 活动中专家对 RSI 前提条件的分歧（源于对结局的设想不同），最后用单参数 r（RSI 的期望损害）建两人博弈：风险叠加时 r=3/4 是囚徒困境、r=1/4 两方都受益、r=3/2 不启动是占优策略，风险不叠加时 r=3/2 变成没有占优策略的猎鹿博弈，“都不启动”是均衡之一。",
+        "en": "The essay recounts an ordinary user getting an AI to train a small LLM from scratch from one high-level prompt, reports how experts at an October 2026 FAR.AI event listed very different conditions for RSI because they imagined different outcomes, and then models a two-player game with one parameter r (expected damage): with additive risk, r=3/4 is a Prisoner's Dilemma, r=1/4 benefits both, and at r=3/2 not pressing is dominant, while with non-additive risk r=3/2 becomes a Stag Hunt with no dominant strategy where mutual restraint is an equilibrium."
+      },
+      "metric": {
+        "zh": "囚徒困境仅在 r=3/4 等中等风险成立；r=3/2 时不启动为均衡",
+        "en": "Prisoner's Dilemma only at mid risk (r=3/4); restraint is an equilibrium at r=3/2"
+      },
+      "pills": [
+        {
+          "zh": "囚徒困境",
+          "en": "Prisoner's Dilemma",
+          "value": "r = 3/4",
+          "tone": "down"
+        },
+        {
+          "zh": "都受益",
+          "en": "Mutual benefit",
+          "value": "r = 1/4",
+          "tone": "up"
+        },
+        {
+          "zh": "克制为均衡",
+          "en": "Restraint equilibrium",
+          "value": "r = 3/2",
+          "tone": "up"
+        }
+      ],
+      "arxiv": "2611.10261",
+      "authors": "Vincent Conitzer; shared by Rohan Paul",
+      "handle": "@rohanpaul_ai",
+      "links": [
+        {
+          "zh": "论文",
+          "en": "Paper",
+          "url": "https://arxiv.org/abs/2611.10261"
+        },
+        {
+          "zh": "分享者",
+          "en": "Sharer",
+          "url": "https://x.com/rohanpaul_ai"
+        },
+        {
+          "zh": "X 原帖",
+          "en": "X Post",
+          "url": "https://x.com/rohanpaul_ai/status/2120304401630089671"
+        },
+        {
+          "zh": "X 原帖（论文链接）",
+          "en": "X Post (paper link)",
+          "url": "https://x.com/rohanpaul_ai/status/2120304404930920672"
+        }
+      ]
+    },
     {
       "id": "trust-statistical-gate-rsi",
       "edition": "2026-11-10",
