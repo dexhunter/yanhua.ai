@@ -62,7 +62,7 @@ GitHub Pages 从仓库根目录发布这些静态文件。`CNAME` 是 `yanhua.ai
 
 ### ❯ 列表 · Reader Stream
 
-按期次往下读。页眉可以切期次、主题，也可以搜标题、arXiv 编号、作者和账号。地址栏 `?lang=zh` 或 `?lang=en` 指定语言。纸色主题在浅色 `#f4efe6` 与深色之间切换。
+按期次往下读。页眉可以切期次、主题，也可以搜标题、arXiv 编号、作者和账号。地址栏 `?lang=zh` 或 `?lang=en` 指定语言。配色在浅色（白底冷灰 `#f4f6f9`）与冷调深色之间切换，不用米色或暖纸色。
 
 ### ❯ 闪卡 · 3D Flip Flash-Cards
 

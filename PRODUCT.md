@@ -60,4 +60,4 @@ Do not invent subscriber quotes, benchmarks, or a second product name.
 
 ## Accessibility & Inclusion
 
-The page is a document: a skip link, a real heading order, and keyboard controls for the card deck (`Space` / `Enter` to flip, `J` / `K` or arrow keys to move). Color scheme follows the system and can be pinned. Reduced motion drops the card flip. Body text stays in a reading face on a warm paper ground. No separate conformance target was set beyond those commitments.
+The page is a document: a skip link, a real heading order, and keyboard controls for the card deck (`Space` / `Enter` to flip, `J` / `K` or arrow keys to move). Color scheme follows the system and can be pinned. Reduced motion drops the card flip. Body text stays in a reading face on a white / cool-grey ground (no cream or warm paper tones in any theme). No separate conformance target was set beyond those commitments.

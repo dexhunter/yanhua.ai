@@ -362,7 +362,7 @@
     document.querySelector('meta[name="color-scheme"]').content = next;
     localStorage.setItem("yanhua-color-scheme", next);
     const theme = document.querySelector('meta[name="theme-color"]');
-    if (theme) theme.content = next === "dark" ? "#12110f" : "#f4efe6";
+    if (theme) theme.content = next === "dark" ? "#0f1318" : "#f4f6f9";
     paintThemeButton();
   }
   function editionById(id) {

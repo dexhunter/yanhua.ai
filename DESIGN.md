@@ -1,27 +1,27 @@
 ---
 name: 演化日报
-description: A bilingual research daily on warm paper, with vermilion used as a seal.
+description: A bilingual research daily on a white, cool-grey ground, with vermilion used as a seal.
 colors:
-  paper: "#f4efe6"
-  raised: "#fbf7f0"
-  ink: "#1b1714"
-  muted: "#5c5348"
-  line: "#ddd4c6"
+  paper: "#f4f6f9"
+  raised: "#ffffff"
+  ink: "#141920"
+  muted: "#525c6a"
+  line: "#dce1e8"
   lacquer: "#8e2f27"
   lacquer-ink: "#7a241e"
-  wash: "#f6e6e1"
+  wash: "#fbeceb"
   good: "#14633c"
-  on-lacquer: "#fffaf6"
-  paper-dark: "#12110f"
-  raised-dark: "#1c1b18"
-  ink-dark: "#f3ecdf"
-  muted-dark: "#cbbfae"
-  line-dark: "#3a342c"
+  on-lacquer: "#ffffff"
+  paper-dark: "#0f1318"
+  raised-dark: "#181d25"
+  ink-dark: "#e9edf2"
+  muted-dark: "#aab4c1"
+  line-dark: "#2f3743"
   lacquer-dark: "#e7b2a6"
   lacquer-ink-dark: "#f0c2b8"
-  wash-dark: "#2a1d1a"
+  wash-dark: "#2a1d21"
   good-dark: "#8fd0aa"
-  on-lacquer-dark: "#1b1714"
+  on-lacquer-dark: "#141920"
 typography:
   display:
     fontFamily: "Noto Serif SC, Source Han Serif SC, Songti SC, serif"
@@ -134,15 +134,15 @@ components:
 
 **Creative North Star: "The Lacquer Gazette"**
 
-演化日报 is a research daily printed on warm paper. The frame — masthead, rail, ground, and the vermilion seal — belongs to that gazette. The column inside it stays a document: a serif lead, a sans body, a measure near 68 characters, and headings that can be scanned. Vermilion is rare. It marks the seal on a conclusion, the current item in the rail, and a link the reader is about to follow.
+演化日报 is a research daily set on a clean white and cool-grey ground (no cream, beige, or warm paper tones). The frame — masthead, rail, ground, and the vermilion seal — belongs to that gazette. The column inside it stays a document: a serif lead, a sans body, a measure near 68 characters, and headings that can be scanned. Vermilion is rare. It marks the seal on a conclusion, the current item in the rail, and a link the reader is about to follow.
 
-The north star is read from the shipped interface: paper `#f4efe6`, lacquer `#8e2f27`, Noto Serif SC for the lead, Noto Sans SC for the UI. Dark scheme swaps the same roles rather than inventing a second palette. The name "The Lacquer Gazette" was not chosen in a separate interview.
+The north star is read from the shipped interface: paper `#f4f6f9`, lacquer `#8e2f27`, Noto Serif SC for the lead, Noto Sans SC for the UI. Dark scheme swaps the same roles rather than inventing a second palette. The name "The Lacquer Gazette" was not chosen in a separate interview.
 
 Density is editorial, not dashboard. A card is one study. Metrics sit in a ledger row. Source links are the last line of the card. Flash cards use one turn, the flip, and otherwise stay still.
 
 **Key Characteristics:**
 
-- Warm paper ground, ink text, one vermilion used as a seal.
+- Cool light-grey ground with white sheets, cool ink text, one vermilion used as a seal. No warm paper, cream, or beige in any scheme; the dark scheme is a cool blue-grey.
 - Serif for the editorial subtitle, the card title, and the conclusion. Sans for the rail, labels, and body of the mechanism.
 - A 1px hairline is the divider. Metrics are a row, not a stack of boxes.
 - Icons are drawn at 14px. The page does not use emoji as icons.
@@ -164,7 +164,7 @@ The light scheme is the paper the daily is set on. The dark scheme reassigns the
 - **Paper** (`colors.paper`): the page ground and the card surface. Dark scheme: `colors.paper-dark`.
 - **Raised sheet** (`colors.raised`): nav controls, the search field, source links, and the stats strip. Dark scheme: `colors.raised-dark`.
 - **Ink** (`colors.ink`): text and the primary button. Dark scheme: `colors.ink-dark`.
-- **Muted ink** (`colors.muted`): secondary text, placeholders, and ledger labels. It is a warm brown, not neutral gray. Dark scheme: `colors.muted-dark`.
+- **Muted ink** (`colors.muted`): secondary text, placeholders, and ledger labels. It is a cool slate grey, never a warm brown. Dark scheme: `colors.muted-dark`.
 - **Hairline** (`colors.line`): 1px rules between sections, pills, and days. Dark scheme: `colors.line-dark`.
 - **Wash** (`colors.wash`): the conclusion block only. Dark scheme: `colors.wash-dark`.
 - **On lacquer** (`colors.on-lacquer`): text on a lacquer fill, including the seal and hovered buttons. Dark scheme: `colors.on-lacquer-dark`.
@@ -205,7 +205,7 @@ Inside a card the order is fixed: title and byline, conclusion, ledger, then the
 The reading column is flat. Cards in the reader are paper set off by a 1px hairline, not by a shadow. Depth shows up in two places: the flash card, which lifts with an offset shadow while it is the object in hand, and the subscribe window, which floats over the page.
 
 ### Shadow Vocabulary
-- **Card in hand** (`box-shadow: 0 1px 0 rgb(28 23 18 / 5%), 0 24px 44px -28px rgb(28 23 18 / 48%)`): the flash-card sheet and modal dialogs. The dark scheme deepens the same shape.
+- **Card in hand** (`box-shadow: 0 1px 0 rgb(15 23 42 / 5%), 0 24px 44px -28px rgb(15 23 42 / 48%)`): the flash-card sheet and modal dialogs. The dark scheme deepens the same shape.
 - **Window** (`box-shadow: 0 22px 54px -12px rgb(0 0 0 / 42%), 0 4px 14px -2px rgb(0 0 0 / 18%)`): the subscribe window only.
 
 ### Named Rules

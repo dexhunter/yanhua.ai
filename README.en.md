@@ -62,7 +62,7 @@ An `@handle` in the prose becomes a link to `https://x.com/<handle>`. Metric tok
 
 ### ❯ Reader Stream
 
-Editions run down the page. The header filters by edition and topic, and searches titles, arXiv ids, authors, and handles. `?lang=zh` or `?lang=en` sets the language. The paper theme switches between `#f4efe6` and the dark sheet.
+Editions run down the page. The header filters by edition and topic, and searches titles, arXiv ids, authors, and handles. `?lang=zh` or `?lang=en` sets the language. The theme switches between light (white on cool grey `#f4f6f9`) and a cool dark scheme; no cream or warm paper tones.
 
 ### ❯ 3D Flip Flash-Cards
 
