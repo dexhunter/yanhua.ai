@@ -253,14 +253,34 @@ export default {
   }
 };
 
+// Welcome email, styled like the daily email ("Indigo soft": white card on
+// lavender-grey #f3f3f9, ink #1c1b3a, indigo accent #4f46b8).
+function welcomeHtml(lang, title, body, cta, href) {
+  const serif = "Georgia,'Noto Serif SC','Songti SC',serif";
+  const sans = "-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Noto Sans SC','Microsoft YaHei',sans-serif";
+  const brand = lang === "en" ? "YANHUA DAILY" : "演化日报";
+  return `<!DOCTYPE html><html lang="${lang === "en" ? "en" : "zh-Hans"}"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"></head>` +
+    `<body style="margin:0;padding:0;background:#f3f3f9;color:#1c1b3a;"><table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#f3f3f9" style="background:#f3f3f9;"><tr><td align="center" style="padding:28px 12px 36px;">` +
+    `<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="max-width:560px;width:100%;"><tr><td style="padding:0 0 16px;border-bottom:3px solid #4f46b8;"><p style="margin:0;font-family:${serif};font-size:26px;line-height:1.25;font-weight:600;color:#1c1b3a;">${brand}</p></td></tr>` +
+    `<tr><td style="padding-top:16px;"><table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#ffffff" style="background:#ffffff;border:1px solid #dcdcef;border-radius:8px;"><tr><td style="padding:22px 22px 20px;font-family:${sans};color:#1c1b3a;">` +
+    `<h2 style="margin:0 0 10px;font-family:${serif};font-size:21px;line-height:1.35;font-weight:600;color:#1c1b3a;">${title}</h2>` +
+    `<p style="margin:0 0 18px;font-size:15px;line-height:1.7;color:#55557a;">${body}</p>` +
+    `<a href="${href}" style="display:inline-block;padding:10px 16px;border-radius:8px;background:#4f46b8;color:#ffffff;font-size:14px;line-height:1.4;font-weight:700;text-decoration:none;">${cta}</a>` +
+    `</td></tr></table></td></tr></table></td></tr></table></body></html>`;
+}
+
 const WELCOME = {
   en: {
     subject: "You're subscribed to Yanhua Daily",
-    html: `<div style="font-family:Georgia,serif;max-width:560px;margin:0 auto;padding:24px;color:#1b1714;"><h2 style="margin:0 0 12px;">Welcome to Yanhua Daily</h2><p style="line-height:1.6;">You're subscribed, with English as your email language. Once a day you'll get one email with that day's cards on recursive self-improvement and agent harness search, each opening with a one-sentence takeaway.</p><p><a href="https://yanhua.ai/?lang=en" style="color:#8e2f27;">Read the latest cards on yanhua.ai →</a></p></div>`
+    html: welcomeHtml("en", "Welcome to Yanhua Daily",
+      "You're subscribed, with English as your email language. Once a day you'll get one email with that day's cards on recursive self-improvement and agent harness search, each opening with a one-sentence takeaway.",
+      "Read the latest cards on yanhua.ai", "https://yanhua.ai/?lang=en")
   },
   zh: {
     subject: "已订阅演化日报",
-    html: `<div style="font-family:serif;max-width:560px;margin:0 auto;padding:24px;color:#1b1714;"><h2 style="margin:0 0 12px;">欢迎订阅演化日报</h2><p style="line-height:1.7;">订阅成功，邮件语言为中文。每天一封，收录当天关于递归自我改进与智能体框架搜索的全部闪卡，每张都以一句话结论开头。</p><p><a href="https://yanhua.ai" style="color:#8e2f27;">访问 yanhua.ai 阅读最新闪卡 →</a></p></div>`
+    html: welcomeHtml("zh", "欢迎订阅演化日报",
+      "订阅成功，邮件语言为中文。每天一封，收录当天关于递归自我改进与智能体框架搜索的全部闪卡，每张都以一句话结论开头。",
+      "在 yanhua.ai 阅读最新闪卡", "https://yanhua.ai/")
   }
 };
 

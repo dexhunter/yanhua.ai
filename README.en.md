@@ -46,7 +46,7 @@ A card is not a retelling of a tweet. `why`, `what`, and `how` come from reading
 
 ### ❯ 1-Sentence Takeaway
 
-The conclusion sits at the top, in `why`. It states the result and the reason in ordinary language. The metric table (`pills`) follows immediately. Figures are monospaced tabular numerals. Movement uses the site's own green and lacquer, with a tone of `up`, `down`, or `flat`. A `value` may be a string or `{ "zh", "en" }`.
+The conclusion sits at the top, in `why`. It states the result and the reason in ordinary language. The metric table (`pills`) follows immediately. Figures are monospaced tabular numerals. Movement uses green for gains and red for drops, with a tone of `up`, `down`, or `flat`. A `value` may be a string or `{ "zh", "en" }`.
 
 ### ❯ Problem & Mechanism
 
@@ -62,7 +62,7 @@ An `@handle` in the prose becomes a link to `https://x.com/<handle>`. Metric tok
 
 ### ❯ Reader Stream
 
-Editions run down the page. The header filters by edition and topic, and searches titles, arXiv ids, authors, and handles. `?lang=zh` or `?lang=en` sets the language. The theme switches between light (white on cool grey `#f4f6f9`) and a cool dark scheme; no cream or warm paper tones.
+Editions run down the page. The header filters by edition and topic, and searches titles, arXiv ids, authors, and handles. `?lang=zh` or `?lang=en` sets the language. The palette is "Indigo soft": light is white cards on lavender-grey `#f3f3f9` with an indigo accent `#4f46b8`, dark is a cool indigo-grey; no cream or warm paper tones.
 
 ### ❯ 3D Flip Flash-Cards
 

@@ -1,27 +1,29 @@
 ---
 name: 演化日报
-description: A bilingual research daily on a white, cool-grey ground, with vermilion used as a seal.
+description: A bilingual research daily on a white, cool lavender-grey ground, with indigo used as a seal.
 colors:
-  paper: "#f4f6f9"
+  paper: "#f3f3f9"
   raised: "#ffffff"
-  ink: "#141920"
-  muted: "#525c6a"
-  line: "#dce1e8"
-  lacquer: "#8e2f27"
-  lacquer-ink: "#7a241e"
-  wash: "#fbeceb"
-  good: "#14633c"
+  ink: "#1c1b3a"
+  muted: "#55557a"
+  line: "#dcdcef"
+  lacquer: "#4f46b8"
+  lacquer-ink: "#4038a0"
+  wash: "#efeefc"
+  good: "#1f7a55"
+  bad: "#b83a4b"
   on-lacquer: "#ffffff"
-  paper-dark: "#0f1318"
-  raised-dark: "#181d25"
-  ink-dark: "#e9edf2"
-  muted-dark: "#aab4c1"
-  line-dark: "#2f3743"
-  lacquer-dark: "#e7b2a6"
-  lacquer-ink-dark: "#f0c2b8"
-  wash-dark: "#2a1d21"
+  paper-dark: "#11111c"
+  raised-dark: "#1a1a2a"
+  ink-dark: "#ebeaf7"
+  muted-dark: "#b0afcf"
+  line-dark: "#2f2e48"
+  lacquer-dark: "#a9a3f5"
+  lacquer-ink-dark: "#bdb8ff"
+  wash-dark: "#24223f"
   good-dark: "#8fd0aa"
-  on-lacquer-dark: "#141920"
+  bad-dark: "#f0a3ad"
+  on-lacquer-dark: "#11111c"
 typography:
   display:
     fontFamily: "Noto Serif SC, Source Han Serif SC, Songti SC, serif"
@@ -134,15 +136,15 @@ components:
 
 **Creative North Star: "The Lacquer Gazette"**
 
-演化日报 is a research daily set on a clean white and cool-grey ground (no cream, beige, or warm paper tones). The frame — masthead, rail, ground, and the vermilion seal — belongs to that gazette. The column inside it stays a document: a serif lead, a sans body, a measure near 68 characters, and headings that can be scanned. Vermilion is rare. It marks the seal on a conclusion, the current item in the rail, and a link the reader is about to follow.
+演化日报 is a research daily set on a clean white and cool lavender-grey ground (palette "Indigo soft") (no cream, beige, or warm paper tones). The frame — masthead, rail, ground, and the indigo seal — belongs to that gazette. The column inside it stays a document: a serif lead, a sans body, a measure near 68 characters, and headings that can be scanned. Indigo is rare. It marks the seal on a conclusion, the current item in the rail, and a link the reader is about to follow.
 
-The north star is read from the shipped interface: paper `#f4f6f9`, lacquer `#8e2f27`, Noto Serif SC for the lead, Noto Sans SC for the UI. Dark scheme swaps the same roles rather than inventing a second palette. The name "The Lacquer Gazette" was not chosen in a separate interview.
+The north star is read from the shipped interface: paper `#f3f3f9`, lacquer `#4f46b8`, Noto Serif SC for the lead, Noto Sans SC for the UI. Dark scheme swaps the same roles rather than inventing a second palette. The name "The Lacquer Gazette" was not chosen in a separate interview.
 
 Density is editorial, not dashboard. A card is one study. Metrics sit in a ledger row. Source links are the last line of the card. Flash cards use one turn, the flip, and otherwise stay still.
 
 **Key Characteristics:**
 
-- Cool light-grey ground with white sheets, cool ink text, one vermilion used as a seal. No warm paper, cream, or beige in any scheme; the dark scheme is a cool blue-grey.
+- Cool light-grey ground with white sheets, cool ink text, one indigo used as a seal. No warm paper, cream, or beige in any scheme; the dark scheme is a cool indigo-grey.
 - Serif for the editorial subtitle, the card title, and the conclusion. Sans for the rail, labels, and body of the mechanism.
 - A 1px hairline is the divider. Metrics are a row, not a stack of boxes.
 - Icons are drawn at 14px. The page does not use emoji as icons.
@@ -154,8 +156,9 @@ Density is editorial, not dashboard. A card is one study. Metrics sit in a ledge
 The light scheme is the paper the daily is set on. The dark scheme reassigns the same roles for a dim room. Frontmatter `colors.*` entries without a `-dark` suffix are the light values. `-dark` entries are the dark scheme only.
 
 ### Primary
-- **Lacquer** (`colors.lacquer`): the seal, the focus ring, the hover of a control, and the current-topic dot. In the dark scheme the same role is **Lacquer, night** (`colors.lacquer-dark`), a pale vermilion on near-black paper.
-- **Lacquer ink** (`colors.lacquer-ink`): vermilion used as text and as the figure in a metric. Dark scheme: `colors.lacquer-ink-dark`.
+- **Lacquer** (`colors.lacquer`): the seal, the focus ring, the hover of a control, and the current-topic dot. In the dark scheme the same role is **Lacquer, night** (`colors.lacquer-dark`), a pale indigo on near-black indigo-grey.
+- **Lacquer ink** (`colors.lacquer-ink`): indigo used as text.
+- **Good / Bad** (`colors.good`, `colors.bad`): green for a gain and muted red for a drop in a metric. Dark scheme: `-dark`. Dark scheme: `colors.lacquer-ink-dark`.
 
 ### Secondary
 - **Verified green** (`colors.good`): a metric that moved up. It is not a second brand color and does not appear in the masthead. Dark scheme: `colors.good-dark`.
@@ -205,7 +208,7 @@ Inside a card the order is fixed: title and byline, conclusion, ledger, then the
 The reading column is flat. Cards in the reader are paper set off by a 1px hairline, not by a shadow. Depth shows up in two places: the flash card, which lifts with an offset shadow while it is the object in hand, and the subscribe window, which floats over the page.
 
 ### Shadow Vocabulary
-- **Card in hand** (`box-shadow: 0 1px 0 rgb(15 23 42 / 5%), 0 24px 44px -28px rgb(15 23 42 / 48%)`): the flash-card sheet and modal dialogs. The dark scheme deepens the same shape.
+- **Card in hand** (`box-shadow: 0 1px 0 rgb(28 27 58 / 5%), 0 24px 44px -28px rgb(28 27 58 / 48%)`): the flash-card sheet and modal dialogs. The dark scheme deepens the same shape.
 - **Window** (`box-shadow: 0 22px 54px -12px rgb(0 0 0 / 42%), 0 4px 14px -2px rgb(0 0 0 / 18%)`): the subscribe window only.
 
 ### Named Rules
@@ -240,7 +243,7 @@ Corners are mostly square, like a newspaper. The exceptions are small and named:
 - **State:** the sentence is the content. It does not toggle.
 
 ### The ledger
-- **Style:** one row of value plus label, tabular numbers, mono figures. Items are separated by a 1px hairline, not wrapped in boxes. Up is verified green. Down is lacquer ink.
+- **Style:** one row of value plus label, tabular numbers, mono figures. Items are separated by a 1px hairline, not wrapped in boxes. Up is verified green. Down is a muted red (`colors.bad`), so a drop never reads as the accent.
 
 ### Source links
 - **Style:** inline row at the end of the card. 14×14 icon, 0.38rem gap, 0.3rem radius, mono label. Paper and repository icons are stroked at 1.6. The X mark is a filled path.

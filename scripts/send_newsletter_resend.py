@@ -380,7 +380,7 @@ def text_of(value: object, lang: str) -> str:
 def linked(text: str, item: dict) -> str:
     """linkify() already escapes text and skips PR@1, pass@1, and Best@1."""
     html = update_digest.linkify(text, item)
-    return html.replace("<a ", '<a style="color:#b02a24;text-decoration:underline;" ')
+    return html.replace("<a ", '<a style="color:#4f46b8;text-decoration:underline;" ')
 
 
 def subject_date(target_date: str) -> str:
@@ -425,12 +425,12 @@ def pill_html(pill: dict, lang: str) -> str:
     value = text_of(pill.get("value"), lang)
     label = str(pill.get(lang) or pill.get("label") or pill.get("en" if lang == "zh" else "zh") or "")
     tone = str(pill.get("tone") or "flat")
-    color = {"up": "#2c6b45", "down": "#b02a24"}.get(tone, "#141920")
+    color = {"up": "#1f7a55", "down": "#b83a4b"}.get(tone, "#1c1b3a")
     return (
         '<span style="display:inline-block;margin:0 8px 8px 0;padding:8px 10px;'
-        'border:1px solid #dde2e9;border-radius:8px;background:#f3f5f8;vertical-align:top;">'
+        'border:1px solid #dcdcef;border-radius:8px;background:#f3f3f9;vertical-align:top;">'
         f'<b style="display:block;font-family:{MONO};font-size:14px;line-height:1.35;color:{color};">{escape(value)}</b>'
-        f'<span style="display:block;margin-top:3px;font-family:{SANS};font-size:11px;line-height:1.35;color:#5f6876;">{escape(label)}</span>'
+        f'<span style="display:block;margin-top:3px;font-family:{SANS};font-size:11px;line-height:1.35;color:#64648a;">{escape(label)}</span>'
         "</span>"
     )
 
@@ -440,7 +440,7 @@ def profile_html(handle: str) -> str:
     for match in update_digest.HANDLE_RE.finditer(handle):
         name = match.group(1)
         href = escape(f"https://x.com/{name}", quote=True)
-        parts.append(f'<a href="{href}" style="color:#b02a24;text-decoration:underline;">@{escape(name)}</a>')
+        parts.append(f'<a href="{href}" style="color:#4f46b8;text-decoration:underline;">@{escape(name)}</a>')
     return " · ".join(parts)
 
 
@@ -450,8 +450,8 @@ def byline_html(item: dict, lang: str) -> str:
     if arxiv:
         href = escape(f"https://arxiv.org/abs/{arxiv}", quote=True)
         bits.append(
-            f'<a href="{href}" style="color:#b02a24;text-decoration:none;border:1px solid #dde2e9;'
-            f'border-radius:8px;padding:2px 7px;background:#f3f5f8;">arXiv:{escape(arxiv)}</a>'
+            f'<a href="{href}" style="color:#4f46b8;text-decoration:none;border:1px solid #dcdcef;'
+            f'border-radius:8px;padding:2px 7px;background:#f3f3f9;">arXiv:{escape(arxiv)}</a>'
         )
     authors = str(item.get("authors") or "").strip()
     if authors:
@@ -462,7 +462,7 @@ def byline_html(item: dict, lang: str) -> str:
     if not bits:
         return ""
     return (
-        f'<p style="margin:8px 0 0;font-family:{SANS};font-size:13px;line-height:1.6;color:#525c6a;">'
+        f'<p style="margin:8px 0 0;font-family:{SANS};font-size:13px;line-height:1.6;color:#55557a;">'
         + " · ".join(bits)
         + "</p>"
     )
@@ -514,19 +514,19 @@ def source_html(item: dict, lang: str) -> str:
     for label, url in source_links(item, lang):
         links.append(
             f'<a href="{escape(url, quote=True)}" style="display:inline-block;margin:0 8px 8px 0;padding:6px 10px;'
-            "border:1px solid #dde2e9;border-radius:8px;background:#f3f5f8;color:#141920;"
+            "border:1px solid #dcdcef;border-radius:8px;background:#f3f3f9;color:#1c1b3a;"
             f'text-decoration:none;font-family:{SANS};font-size:13px;line-height:1.4;">{escape(label)}</a>'
         )
     if not links:
         return ""
-    return '<p style="margin:16px 0 0;padding-top:12px;border-top:1px solid #dde2e9;">' + "".join(links) + "</p>"
+    return '<p style="margin:16px 0 0;padding-top:12px;border-top:1px solid #dcdcef;">' + "".join(links) + "</p>"
 
 
 def prose_block(kicker: str, body_html: str) -> str:
     return (
         f'<p style="margin:16px 0 6px;font-family:{SANS};font-size:11px;line-height:1.4;'
-        f'letter-spacing:0.08em;text-transform:uppercase;color:#b02a24;font-weight:700;">{kicker}</p>'
-        f'<p style="margin:0;font-family:{SANS};font-size:15px;line-height:1.65;color:#141920;">{body_html}</p>'
+        f'letter-spacing:0.08em;text-transform:uppercase;color:#4f46b8;font-weight:700;">{kicker}</p>'
+        f'<p style="margin:0;font-family:{SANS};font-size:15px;line-height:1.65;color:#1c1b3a;">{body_html}</p>'
     )
 
 
@@ -541,17 +541,17 @@ def card_html(item: dict, lang: str) -> str:
     pills = "".join(pill_html(pill, lang) for pill in (item.get("pills") or []) if isinstance(pill, dict))
     pills_html = f'<p style="margin:14px 0 0;font-family:{SANS};line-height:1;">{pills}</p>' if pills else ""
     return f"""
-<table role="presentation" id="{item_id}" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#ffffff" style="margin:0 0 16px;background:#ffffff;border:1px solid #dde2e9;border-radius:8px;">
+<table role="presentation" id="{item_id}" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#ffffff" style="margin:0 0 16px;background:#ffffff;border:1px solid #dcdcef;border-radius:8px;">
   <tr>
-    <td style="padding:20px 22px 18px;font-family:{SANS};color:#141920;">
-      <h2 style="margin:0;font-family:{SERIF};font-size:22px;line-height:1.35;font-weight:600;color:#141920;">
-        <a href="{escape(card_url(item), quote=True)}" style="color:#141920;text-decoration:none;">{title}</a>
+    <td style="padding:20px 22px 18px;font-family:{SANS};color:#1c1b3a;">
+      <h2 style="margin:0;font-family:{SERIF};font-size:22px;line-height:1.35;font-weight:600;color:#1c1b3a;">
+        <a href="{escape(card_url(item), quote=True)}" style="color:#1c1b3a;text-decoration:none;">{title}</a>
       </h2>
       {byline_html(item, lang)}
-      <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#fbeeee" style="margin:16px 0 0;background:#fbeeee;border:1px solid #e6c4c1;border-radius:6px;">
+      <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#efeefc" style="margin:16px 0 0;background:#efeefc;border:1px solid #cbc8f0;border-radius:6px;">
         <tr>
           <td style="padding:14px 16px 16px;">
-            <p style="margin:0;font-family:{SERIF};font-size:18px;font-weight:500;line-height:1.65;color:#141920;"><span style="display:inline-block;margin:0 8px 0 0;padding:2px 7px;border-radius:4px;background:#b02a24;color:#ffffff;font-family:{SANS};font-size:12px;font-weight:700;letter-spacing:0.04em;line-height:1.4;vertical-align:2px;">{words["conclusion"]}</span>{linked(text_of(item.get("why"), lang), item)}</p>
+            <p style="margin:0;font-family:{SERIF};font-size:18px;font-weight:500;line-height:1.65;color:#1c1b3a;"><span style="display:inline-block;margin:0 8px 0 0;padding:2px 7px;border-radius:4px;background:#4f46b8;color:#ffffff;font-family:{SANS};font-size:12px;font-weight:700;letter-spacing:0.04em;line-height:1.4;vertical-align:2px;">{words["conclusion"]}</span>{linked(text_of(item.get("why"), lang), item)}</p>
           </td>
         </tr>
       </table>
@@ -578,8 +578,8 @@ def section_html(edition: dict, items: list[dict], show_heading: bool, lang: str
         return cards
     label = escape(text_of(edition.get("label"), lang))
     return f"""
-<h2 style="margin:28px 0 12px;font-family:{SERIF};font-size:18px;line-height:1.4;font-weight:600;color:#141920;">{escape(section_heading(edition, len(items), lang))}</h2>
-<p style="margin:-6px 0 14px;font-family:{SANS};font-size:13px;line-height:1.5;color:#525c6a;">{label}</p>
+<h2 style="margin:28px 0 12px;font-family:{SERIF};font-size:18px;line-height:1.4;font-weight:600;color:#1c1b3a;">{escape(section_heading(edition, len(items), lang))}</h2>
+<p style="margin:-6px 0 14px;font-family:{SANS};font-size:13px;line-height:1.5;color:#55557a;">{label}</p>
 {cards}
 """.strip()
 
@@ -639,21 +639,21 @@ def render_daily_email(requested_date: str | None = None, lang: str = DEFAULT_LA
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>{escape(subject)}</title>
 </head>
-<body style="margin:0;padding:0;background:#f3f5f8;color:#141920;">
-  <div style="display:none;max-height:0;overflow:hidden;opacity:0;color:#f3f5f8;">{escape(preview)}</div>
-  <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#f3f5f8" style="background:#f3f5f8;">
+<body style="margin:0;padding:0;background:#f3f3f9;color:#1c1b3a;">
+  <div style="display:none;max-height:0;overflow:hidden;opacity:0;color:#f3f3f9;">{escape(preview)}</div>
+  <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#f3f3f9" style="background:#f3f3f9;">
     <tr>
       <td align="center" style="padding:28px 12px 36px;">
         <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="max-width:640px;width:100%;">
           <tr>
-            <td style="padding:0 0 18px;border-bottom:3px solid #b02a24;">
-              <p style="margin:0;font-family:{SERIF};font-size:28px;line-height:1.25;font-weight:600;color:#141920;">{words['masthead']}</p>
-              <p style="margin:8px 0 0;font-family:{SANS};font-size:14px;line-height:1.55;color:#525c6a;">{words['tagline']}</p>
+            <td style="padding:0 0 18px;border-bottom:3px solid #4f46b8;">
+              <p style="margin:0;font-family:{SERIF};font-size:28px;line-height:1.25;font-weight:600;color:#1c1b3a;">{words['masthead']}</p>
+              <p style="margin:8px 0 0;font-family:{SANS};font-size:14px;line-height:1.55;color:#55557a;">{words['tagline']}</p>
               <p style="margin:14px 0 0;">
-                <span style="display:inline-block;padding:6px 10px;border:1px solid #dde2e9;border-radius:8px;background:#fbeeee;color:#b02a24;font-family:{SANS};font-size:13px;line-height:1.4;font-weight:700;">{escape(summary)}</span>
+                <span style="display:inline-block;padding:6px 10px;border:1px solid #dcdcef;border-radius:8px;background:#efeefc;color:#4f46b8;font-family:{SANS};font-size:13px;line-height:1.4;font-weight:700;">{escape(summary)}</span>
               </p>
               <p style="margin:14px 0 0;">
-                <a href="{SITE}" style="display:inline-block;padding:10px 16px;border-radius:8px;background:#b02a24;color:#ffffff;font-family:{SANS};font-size:14px;line-height:1.4;font-weight:700;text-decoration:none;">{words['read']}</a>
+                <a href="{SITE}" style="display:inline-block;padding:10px 16px;border-radius:8px;background:#4f46b8;color:#ffffff;font-family:{SANS};font-size:14px;line-height:1.4;font-weight:700;text-decoration:none;">{words['read']}</a>
               </p>
             </td>
           </tr>
@@ -663,14 +663,14 @@ def render_daily_email(requested_date: str | None = None, lang: str = DEFAULT_LA
             </td>
           </tr>
           <tr>
-            <td style="padding:22px 0 0;border-top:1px solid #dde2e9;font-family:{SANS};font-size:13px;line-height:1.7;color:#525c6a;">
-              <p style="margin:0 0 8px;">{words['brand']} · <a href="{SITE}" style="color:#b02a24;text-decoration:underline;">yanhua.ai</a></p>
+            <td style="padding:22px 0 0;border-top:1px solid #dcdcef;font-family:{SANS};font-size:13px;line-height:1.7;color:#55557a;">
+              <p style="margin:0 0 8px;">{words['brand']} · <a href="{SITE}" style="color:#4f46b8;text-decoration:underline;">yanhua.ai</a></p>
               <p style="margin:0 0 8px;">
-                <a href="https://yanhua.ai/feed.xml" style="color:#b02a24;text-decoration:underline;">RSS</a>
+                <a href="https://yanhua.ai/feed.xml" style="color:#4f46b8;text-decoration:underline;">RSS</a>
                 ·
-                <a href="https://yanhua.ai/feed.json" style="color:#b02a24;text-decoration:underline;">{words['feed_json']}</a>
+                <a href="https://yanhua.ai/feed.json" style="color:#4f46b8;text-decoration:underline;">{words['feed_json']}</a>
                 ·
-                <a href="{UNSUBSCRIBE_URL}" style="color:#b02a24;text-decoration:underline;">{words['unsubscribe']}</a>
+                <a href="{UNSUBSCRIBE_URL}" style="color:#4f46b8;text-decoration:underline;">{words['unsubscribe']}</a>
               </p>
               <p style="margin:0;">{words['about']}</p>
             </td>

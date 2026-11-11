@@ -46,7 +46,7 @@ GitHub Pages 从仓库根目录发布这些静态文件。`CNAME` 是 `yanhua.ai
 
 ### ❯ 一句话结论 · 1-Sentence Takeaway
 
-结论放在最上面，字段是 `why`。它用人话写明结果和原因，而不是把摘要再压短一截。指标表（`pills`）紧跟在结论后面。数字用等宽字体、tabular numerals。涨跌只用站点自己的绿色和漆红，取值 `up`、`down` 或 `flat`。`value` 可以是字符串，也可以是 `{ "zh", "en" }`。
+结论放在最上面，字段是 `why`。它用人话写明结果和原因，而不是把摘要再压短一截。指标表（`pills`）紧跟在结论后面。数字用等宽字体、tabular numerals。涨跌只用绿色（上升）和红色（下降），取值 `up`、`down` 或 `flat`。`value` 可以是字符串，也可以是 `{ "zh", "en" }`。
 
 ### ❯ 问题与机制 · Problem & Mechanism
 
@@ -62,7 +62,7 @@ GitHub Pages 从仓库根目录发布这些静态文件。`CNAME` 是 `yanhua.ai
 
 ### ❯ 列表 · Reader Stream
 
-按期次往下读。页眉可以切期次、主题，也可以搜标题、arXiv 编号、作者和账号。地址栏 `?lang=zh` 或 `?lang=en` 指定语言。配色在浅色（白底冷灰 `#f4f6f9`）与冷调深色之间切换，不用米色或暖纸色。
+按期次往下读。页眉可以切期次、主题，也可以搜标题、arXiv 编号、作者和账号。地址栏 `?lang=zh` 或 `?lang=en` 指定语言。配色方案是“Indigo soft”：浅色为白色卡片配淡紫灰底 `#f3f3f9`、靛蓝强调色 `#4f46b8`，深色为冷调靛灰，不用米色或暖纸色。
 
 ### ❯ 闪卡 · 3D Flip Flash-Cards
 
