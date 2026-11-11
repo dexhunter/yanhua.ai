@@ -254,6 +254,327 @@ window.YANHUA_DIGESTS = {
   ],
   "items": [
     {
+      "id": "rsi-tax-self-improvement-cost",
+      "edition": "2026-11-11",
+      "tags": [
+        "harness-search",
+        "memory-skills"
+      ],
+      "title": {
+        "zh": "RSI Tax：把自我改进的 token 也记进账单后，一条 2,048 token 的笔记就追平 Meta-Harness、EvoSkill、RRSI，总 token 少 65.6–71.0%",
+        "en": "The RSI Tax: Once Self-Improvement Tokens Are Counted, a Single 2,048-Token Note Matches Meta-Harness, EvoSkill and RRSI at 65.6–71.0% Fewer Total Tokens"
+      },
+      "why": {
+        "zh": "在线任务流上，harness 搜索和技能进化把大部分 token 花在反复重跑候选做验证上，而且很多被验证的产物后来根本没用到，所以只在失败后改一条有长度上限的笔记，就能拿到同等甚至更高的准确率，成本只有三分之一左右。",
+        "en": "On live task streams, harness search and skill evolution spend most of their tokens re-running candidates to verify them, and much of what they verify is never used again, so simply revising one bounded note after failures reaches the same or better accuracy at roughly a third of the cost."
+      },
+      "what": {
+        "zh": "自我改进（RSI）方法通常只报部署后的准确率，却不算改进过程本身烧掉的 token，这让“改进是否值得”无从判断。",
+        "en": "Self-improvement methods usually report the accuracy of the improved agent but not the tokens burned by the improvement process itself, so nobody can tell whether the improvement was worth paying for."
+      },
+      "how": {
+        "zh": "北大团队在 SWE-Chain-Evo（105 个位置）和 Terminal-Bench 2.1（89 题）上，用 DeepSeek V4.1 Flash 与 GPT-6 Luna 跑 Static、ReasoningBank、Meta-Harness、EvoSkill、RRSI 和自家 SRN 基线，每题先打分再允许其反馈更新状态，并把更新成本拆成验证、探索、写入三部分；SRN 在三个设置里准确率最高、第四个与 EvoSkill 并列，相对 Static 平均 +4.7 个百分点、总 token 只多 3.6%，而 Meta-Harness、EvoSkill、RRSI 的 RSI Tax 在所有设置都超过任务执行本身（税率 109–393%），其中验证占 74.8–93.6%，23.7–63.6% 花在后来从未被使用的状态或产物上（DeepSeek 终端流上 Meta-Harness 执行仅 184.13M token，加上 578.45M 改进成本后总计 762.57M，对比 SRN 的 214.65M；GPT-6 Luna 终端流上 Meta-Harness 65.2% 用 317.99M，不做任何改进的 Static 66.3% 只用 78.86M）。",
+        "en": "A Peking University team ran Static, ReasoningBank, Meta-Harness, EvoSkill, RRSI and their own SRN baseline on SWE-Chain-Evo (105 positions) and Terminal-Bench 2.1 (89 tasks) with DeepSeek V4.1 Flash and GPT-6 Luna, scoring every task before its feedback could change anything and splitting update cost into verification, exploration and writing; SRN has the best accuracy in three settings and ties EvoSkill in the fourth, gaining 4.7 points over Static for only 3.6% more total tokens, while the RSI Tax of Meta-Harness, EvoSkill and RRSI exceeds task execution in every setting (109–393% tax rate), with verification making up 74.8–93.6% of it and 23.7–63.6% spent on states or artifacts no later task used (on the DeepSeek terminal stream Meta-Harness executes for only 184.13M tokens but totals 762.57M after its 578.45M improvement cost, versus SRN's 214.65M, and on the GPT-6 Luna terminal stream Meta-Harness scores 65.2% for 317.99M tokens versus 66.3% for 78.86M with no self-improvement at all)."
+      },
+      "metric": {
+        "zh": "SRN 相对 Meta-Harness / EvoSkill / RRSI 总 token −65.6% / −71.0% / −68.2%",
+        "en": "SRN total tokens −65.6% / −71.0% / −68.2% vs Meta-Harness / EvoSkill / RRSI"
+      },
+      "pills": [
+        {
+          "zh": "总 token",
+          "en": "Total tokens",
+          "value": "−65.6–71.0%",
+          "tone": "up"
+        },
+        {
+          "zh": "验证占 RSI Tax",
+          "en": "Verification share",
+          "value": "74.8–93.6%",
+          "tone": "down"
+        },
+        {
+          "zh": "未被使用的 RSI Tax",
+          "en": "Unused RSI Tax",
+          "value": "23.7–63.6%",
+          "tone": "down"
+        },
+        {
+          "zh": "SRN vs Static",
+          "en": "SRN vs Static",
+          "value": "+4.7 pp",
+          "tone": "up"
+        }
+      ],
+      "arxiv": "2611.13524",
+      "authors": "Yitong Zhang, Ang Li, Yisen Wang (Peking University); shared by AI Quanting, commentary by Shuohao Liao",
+      "handle": "@AIQuanting",
+      "links": [
+        {
+          "zh": "论文",
+          "en": "Paper",
+          "url": "https://arxiv.org/abs/2611.13524"
+        },
+        {
+          "zh": "分享者",
+          "en": "Sharer",
+          "url": "https://x.com/AIQuanting"
+        },
+        {
+          "zh": "X 原帖",
+          "en": "X Post",
+          "url": "https://x.com/AIQuanting/status/2120550723922649219"
+        },
+        {
+          "zh": "X 引用评论",
+          "en": "X Quote",
+          "url": "https://x.com/ShuohaoLiao/status/2120558213695164671"
+        }
+      ]
+    },
+    {
+      "id": "continual-arc-harness-notes-vs-weights",
+      "edition": "2026-11-11",
+      "tags": [
+        "memory-skills",
+        "harness-search"
+      ],
+      "title": {
+        "zh": "Continual-ARC：OpenClaw、Hermes Agent、Prime Agent 的笔记几乎学不到东西，训练 9B 模型权重则在新题上从 19 题解到约 49 题",
+        "en": "Continual-ARC: OpenClaw, Hermes Agent and Prime Agent Barely Learn From Their Notes, While Training a 9B Model's Weights Lifts New-Puzzle Solves From 19 to About 49"
+      },
+      "why": {
+        "zh": "harness 的笔记只是事后总结，模型自己不会决定存下验证过的程序、也不会在题目回来时主动取回，所以按原样运行时连见过的题都省不下钱，而把同样的经验训练进权重，才让模型在见过和没见过的题上都变强。",
+        "en": "Harness notes are hindsight, and the models neither choose to store verified programs nor pull them back when a task returns, so shipped harnesses save nothing even on puzzles they have met, while training the same experience into the weights makes the model better on both seen and unseen puzzles."
+      },
+      "what": {
+        "zh": "智能体 harness 常被说成能“在工作中持续学习”，但现有基准大多单一领域、每题只出现一次，也很少把记忆型和权重型学习者放在同一尺度上比较。",
+        "en": "Agent harnesses are often sold as learning on the job, but existing benchmarks mostly sit in one domain, serve each task once, and rarely put memory-based and weight-based learners on the same scale."
+      },
+      "how": {
+        "zh": "Unify 用 Re-ARC 生成器把 25 个 ARC-AGI-1 规则做成 200 次访问的长流（规则隔一段时间以新输入回归，看示例或答错各花 1、失败花满 16 的预算），结束后冻结学习者，用见过规则的新实例测记忆、用 100 个未见规则测泛化，并与重置版本对比“节省份额”；三个 harness 原样运行都没有可测节省，连只缓存示例的下限都没超过（Prime Agent 600 次会话从未把经验标为全局，OpenClaw 写了 47–84 条笔记却最多只在 1% 的回访中读过），给出“写程序、对示例验证、按题保存”的专家指引后见过题节省 0.62–0.72，但所有笔记型方法在新题上节省都不超过 0.03，而 Qwen3.5-9B 用 DAgger 模仿 GLM-5.3 Flash 训练 LoRA 后，见过题节省 0.57（预算 84%→36%）、新题节省 0.29，100 道新题解出约 49 道（未训练 19 道，只读一页规则 22–33 道）。",
+        "en": "Unify turns 25 ARC-AGI-1 rules into a 200-visit stream using Re-ARC generators (rules recur with fresh inputs after dormant gaps; each demonstration or wrong answer costs 1 and a failure costs the full 16), then freezes the learner and tests memorization on fresh instances of seen rules and generalization on 100 unseen ones, scoring the share saved against a reset copy; the three shipped harnesses saved nothing measurable and none beat a floor that only caches demonstrations (Prime Agent never marked a lesson global in 600 sessions, and OpenClaw wrote 47–84 notes but read one on at most 1% of returns), expert guidance to write, verify and file programs raised seen-task savings to 0.62–0.72, yet no note-based method saved more than 0.03 on new puzzles, whereas Qwen3.5-9B trained via DAgger to imitate GLM-5.3 Flash saved 0.57 on seen puzzles (84% to 36% of budget) and 0.29 on new ones, solving about 49 of 100 unseen puzzles versus 19 untrained and 22–33 with only a page of playing rules."
+      },
+      "metric": {
+        "zh": "DAgger 训练 9B：新题解出 ~49/100（未训练 19）；笔记型方法新题节省 ≤0.03",
+        "en": "DAgger-trained 9B: ~49/100 unseen puzzles solved (19 untrained); note-based methods save ≤0.03 on unseen"
+      },
+      "pills": [
+        {
+          "zh": "新题解出",
+          "en": "Unseen solved",
+          "value": "19 → ~49",
+          "tone": "up"
+        },
+        {
+          "zh": "见过题节省",
+          "en": "Seen-test saved",
+          "value": "0.57",
+          "tone": "up"
+        },
+        {
+          "zh": "笔记型新题节省",
+          "en": "Notes, unseen saved",
+          "value": "≤0.03",
+          "tone": "down"
+        },
+        {
+          "zh": "专家指引后见过题",
+          "en": "With expert guidance, seen",
+          "value": "0.62–0.72",
+          "tone": "up"
+        }
+      ],
+      "arxiv": "2611.14505",
+      "authors": "Daniel Lenton, Yusha Arif, Haris Mahmood (Unify)",
+      "handle": "@DanielLenton1",
+      "links": [
+        {
+          "zh": "论文",
+          "en": "Paper",
+          "url": "https://arxiv.org/abs/2611.14505"
+        },
+        {
+          "zh": "项目页",
+          "en": "Project",
+          "url": "https://continual-arc.unify.ai/"
+        },
+        {
+          "zh": "博客",
+          "en": "Blog",
+          "url": "https://unify.ai/blog/why-we-built-continual-arc"
+        },
+        {
+          "zh": "代码",
+          "en": "Repo",
+          "url": "https://github.com/unifyai/continual-arc"
+        },
+        {
+          "zh": "作者",
+          "en": "Author",
+          "url": "https://x.com/DanielLenton1"
+        },
+        {
+          "zh": "X 原帖",
+          "en": "X Post",
+          "url": "https://x.com/DanielLenton1/status/2120535187587268777"
+        },
+        {
+          "zh": "X 官方帖",
+          "en": "X Post (Unify)",
+          "url": "https://x.com/letsunifyai/status/2120535421746880778"
+        }
+      ]
+    },
+    {
+      "id": "fgse-falsification-gated-self-evolution",
+      "edition": "2026-11-11",
+      "tags": [
+        "memory-skills",
+        "verification"
+      ],
+      "title": {
+        "zh": "FGSE：把每条经验教训当成可证伪假设，先在临时状态里做迁移、反例和回归测试再写入记忆，有害更新降到 3.6%",
+        "en": "FGSE: Treating Each Lesson as a Falsifiable Hypothesis, Tested for Transfer, Counterexamples and Regressions Before It Enters Memory, Cuts Harmful Updates to 3.6%"
+      },
+      "why": {
+        "zh": "单次成功写下的教训常常范围太宽，会在表面相似但本质不同的情况下出错、还会破坏以前做对的任务，所以只有先在临时状态里用迁移、反例和旧任务回归三类探针测过再提交，自我进化才既有收益又不积累错误。",
+        "en": "Lessons written from a single success are often too broad, misfiring on look-alike cases and breaking tasks the agent used to solve, so self-evolution only pays off without piling up errors when each lesson is tested in a temporary state on transfer, counterexample and regression probes before it is committed."
+      },
+      "what": {
+        "zh": "自我改进智能体常把从单个回合里总结的教训直接写进持久记忆，但“在源任务上变好”并不能说明这条教训可复用且安全。",
+        "en": "Self-improving agents often write episode-derived lessons straight into persistent memory, yet improving on the source task says little about whether a lesson is reusable or safe."
+      },
+      "how": {
+        "zh": "FGSE 把每条候选教训写成带前置条件、行为改变、预期效果和验证器的结构化假设，只在临时状态中应用，用目标迁移、证伪（边界反例）和归档回归探针测量收益与风险，再决定提交、收窄范围或拒绝；在 WebArena 上成功率 39.8、AppWorld 平均完成度 78.8、τ-Retail/τ-Airline Pass^1 0.724/0.487，证伪失败率 5.0%、回归损害 1.3%、有害提交 3.6%，消融中去掉结构化假设 WebArena 掉 4.2 点、AppWorld 掉 5.9 点，换成 LLM 评审做门控也掉 3.1 和 4.7 点。",
+        "en": "FGSE writes each candidate lesson as a structured hypothesis with a precondition, behavior change, expected effect and verifier, applies it only in a temporary state, measures gain and risk on target-transfer, falsification (boundary counterexample) and archived-regression probes, and then commits, narrows or rejects it; it reaches 39.8 success on WebArena, 78.8 average completion on AppWorld and 0.724/0.487 Pass^1 on τ-Retail/τ-Airline with 5.0% falsification failures, 1.3% regression damage and 3.6% harmful commits, and ablations show dropping structured hypotheses costs 4.2 points on WebArena and 5.9 on AppWorld while swapping in an LLM-judge gate costs 3.1 and 4.7."
+      },
+      "metric": {
+        "zh": "有害提交 3.6%；WebArena 39.8（LLM 评审门控 36.7）",
+        "en": "Harmful commits 3.6%; WebArena 39.8 (LLM-judge gate 36.7)"
+      },
+      "pills": [
+        {
+          "zh": "WebArena SR",
+          "en": "WebArena SR",
+          "value": "39.8",
+          "tone": "up"
+        },
+        {
+          "zh": "AppWorld 平均",
+          "en": "AppWorld avg",
+          "value": "78.8",
+          "tone": "up"
+        },
+        {
+          "zh": "有害提交",
+          "en": "Harmful commits",
+          "value": "3.6%",
+          "tone": "up"
+        },
+        {
+          "zh": "回归损害",
+          "en": "Regression damage",
+          "value": "1.3%",
+          "tone": "up"
+        }
+      ],
+      "arxiv": "2611.14326",
+      "authors": "Runxuan Tang, Haoyu Gao, Yuyan Ding, Junyi Yao, Zihao Zheng, Zecheng Sheng, Liwei Hou (NTU, Georgia Tech, UW, WashU, Sydney, NUS); shared by pryzmatpl",
+      "handle": "@pryzmat_tech",
+      "links": [
+        {
+          "zh": "论文",
+          "en": "Paper",
+          "url": "https://arxiv.org/abs/2611.14326"
+        },
+        {
+          "zh": "分享者",
+          "en": "Sharer",
+          "url": "https://x.com/pryzmat_tech"
+        },
+        {
+          "zh": "X 原帖",
+          "en": "X Post",
+          "url": "https://x.com/pryzmat_tech/status/2120502688118984911"
+        }
+      ]
+    },
+    {
+      "id": "simplevo-embodied-memory-evolution",
+      "edition": "2026-11-11",
+      "tags": [
+        "embodied",
+        "memory-skills"
+      ],
+      "title": {
+        "zh": "SimplEvo：GPT-6-Astra 直接控制机器人、每回合后重写自己的文本教训，EBench 成功率 46.7%→81.7%，登顶 RoboDojo",
+        "en": "SimplEvo: GPT-6-Astra Controls the Robot Directly and Rewrites Its Own Text Lessons After Each Episode, Lifting EBench SR From 46.7% to 81.7% and Topping RoboDojo"
+      },
+      "why": {
+        "zh": "让多模态大模型直接发出每个末端位姿、并把回合内的纠错写成关于流程、完成判断和恢复的文本教训跨回合保留，比外包给训练过的策略或套一层批评者驱动的 RSI 循环更有效，因为反思能直接改它自己发出的底层动作。",
+        "en": "Letting a frontier multimodal model issue every end-effector waypoint itself and carry its within-episode corrections forward as text lessons about procedure, completion and recovery beats delegating to a post-trained policy or wrapping it in a critic-driven RSI loop, because reflection can then revise the low-level commands the model itself issues."
+      },
+      "what": {
+        "zh": "具身智能体越来越多地在多模态大模型外面加训练过的策略和递归自我改进循环，但这些附加物是否真的超过模型在直接控制下的原生能力从未被检验。",
+        "en": "Embodied agents increasingly wrap frontier multimodal models with post-trained policies and recursive self-improvement loops, but nobody had checked whether these additions beat the model's native capability under direct control."
+      },
+      "how": {
+        "zh": "SimplEvo 只用 RGB 和本体感觉、不更新权重：模型先从一次演示写出不含坐标的任务记忆，再在训练回合中每回合复盘轨迹、重写一份有上限的工作记忆，测试时两份记忆都固定；EBench 成功率从 46.7% 升到 81.7%（最佳训练策略 61.4%），RoboDojo 成功率 69.63%、得分 75.32 居首（零样本 GPT-6-Astra 22.48%），在同一批 90 个测试回合上，批评者驱动 RSI 循环只把带策略的 harness 从 44.4% 提到 46.7%，SimplEvo 为 76.7%，加视觉回放的记忆成功率相同（47.5%）但更费 token，且 GPT-6-Astra 写的工作记忆能原样让 Gemini 3.8 Flash 从 23.8% 升到 53.8%。",
+        "en": "SimplEvo uses only RGB views and proprioception with no weight updates: the model writes a coordinate-free task memory from one demonstration, then reviews each training episode and rewrites a bounded working memory, and both stay fixed at test time; EBench SR rises from 46.7% to 81.7% (best post-trained policy 61.4%), RoboDojo reaches 69.63% SR and a 75.32 score for first place (zero-shot GPT-6-Astra 22.48%), on the same 90 test episodes a critic-driven RSI loop only lifts the policy harness from 44.4% to 46.7% while SimplEvo reaches 76.7%, adding visual replay to memory gives the same SR (47.5%) at more tokens, and GPT-6-Astra's working memory, read as is, lifts Gemini 3.8 Flash from 23.8% to 53.8%."
+      },
+      "metric": {
+        "zh": "EBench SR 46.7%→81.7%；RoboDojo 69.63% SR 第一",
+        "en": "EBench SR 46.7%→81.7%; RoboDojo 69.63% SR, first place"
+      },
+      "pills": [
+        {
+          "zh": "EBench SR",
+          "en": "EBench SR",
+          "value": "46.7→81.7%",
+          "tone": "up"
+        },
+        {
+          "zh": "RoboDojo SR",
+          "en": "RoboDojo SR",
+          "value": "69.63%",
+          "tone": "up"
+        },
+        {
+          "zh": "vs 批评者 RSI 循环",
+          "en": "vs critic RSI loop",
+          "value": "76.7 vs 46.7%",
+          "tone": "up"
+        },
+        {
+          "zh": "记忆迁移 Gemini",
+          "en": "Memory transfer, Gemini",
+          "value": "23.8→53.8%",
+          "tone": "up"
+        }
+      ],
+      "arxiv": "2611.11509",
+      "authors": "Yifei Yao, Yude Zou, Xing Gao, Guanbo Jiao, Yukai Wang, Jianming Ma, Weinan Zhang, Chunhua Shen (Shanghai AI Lab, SJTU, Fudan, Zhejiang University)",
+      "handle": "@yifei_ro",
+      "links": [
+        {
+          "zh": "论文",
+          "en": "Paper",
+          "url": "https://arxiv.org/abs/2611.11509"
+        },
+        {
+          "zh": "作者",
+          "en": "Author",
+          "url": "https://x.com/yifei_ro"
+        },
+        {
+          "zh": "X 原帖",
+          "en": "X Post",
+          "url": "https://x.com/yifei_ro/status/2120457895942963373"
+        }
+      ]
+    },
+    {
       "id": "decaf-decomposed-harness-optimization",
       "edition": "2026-11-11",
       "tags": [
