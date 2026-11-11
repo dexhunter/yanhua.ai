@@ -141,7 +141,6 @@ jobs:
         env:
           RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}
           RESEND_AUDIENCE_ID: ${{ secrets.RESEND_AUDIENCE_ID }}
-          RESEND_FROM: "演化日报 · Yanhua Daily <digest@yanhua.ai>"
           GH_TOKEN: ${{ github.token }}
           GITHUB_REPOSITORY: ${{ github.repository }}
         run: python3 scripts/send_newsletter_resend.py --send
