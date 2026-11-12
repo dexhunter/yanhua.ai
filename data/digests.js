@@ -263,6 +263,234 @@ window.YANHUA_DIGESTS = {
   ],
   "items": [
     {
+      "id": "co-evolving-harnesses-models-on-policy-correction",
+      "edition": "2026-11-12",
+      "tags": [
+        "harness-search",
+        "co-evolution"
+      ],
+      "title": {
+        "zh": "协同进化 Harness 与模型：Harness 进化后再模仿强模型轨迹会让弱模型 7 项任务全部退步（平均 −14.9），只改出错那一步的 on-policy 纠错才能叠加增益",
+        "en": "Co-Evolving Harnesses and Models: After Harness Evolution, Imitating a Stronger Model's Trajectories Makes the Weaker Model Regress on All 7 Tasks (−14.9 Avg), While Correcting Only the Failing Turn Stacks Gains"
+      },
+      "why": {
+        "zh": "一个围绕弱模型进化出来的 harness 会和这个模型的规划习惯绑在一起，所以让弱模型整条模仿强模型的轨迹反而会学到它驾驭不了的规划方式、破坏和 harness 的契合，而只在弱模型自己出错的那一步让专家改写，才能既学到知识又不打乱这种契合。",
+        "en": "A harness evolved around a weak model becomes coupled to that model's own planning style, so making the weak model imitate a stronger model's whole trajectories teaches it a plan it can't execute and breaks the fit, while letting the expert rewrite only the turn where the weak model's own rollout failed adds knowledge without disturbing that fit."
+      },
+      "what": {
+        "zh": "自动 harness 进化已能让小模型在企业任务上接近前沿模型，但 harness 和模型权重这两个杠杆该如何组合、能否一起进化而不互相干扰，此前并不清楚。",
+        "en": "Automated harness evolution already lets small models approach frontier models on enterprise tasks, but it was unclear how the harness and the model weights should be combined and whether they can be co-evolved without interfering."
+      },
+      "how": {
+        "zh": "Salesforce AI 在 7 个企业智能体基准上先用 qwen3-coder-30b-a3b 进化 harness（平均成功率 29.2% 升到 78.0%），gemini-3.1-pro-preview 在同一 harness 下达到 93.6%，但用专家成功轨迹做 LoRA-SFT 后弱模型 7 项全部下降 4 到 30 个点（平均 78.0% 降到 63.1%，Gemma 4 上复现），而同样做法在未进化的基础 harness 下反而 +6.3，失败分析显示规划缺陷占比从 1.1% 涨到 14.6%。",
+        "en": "Salesforce AI evolves a harness with qwen3-coder-30b-a3b on seven enterprise agent benchmarks (mean success 29.2% to 78.0%), where gemini-3.1-pro-preview reaches 93.6%, but LoRA-SFT on the expert's passing trajectories drops the weak model on all seven tasks by 4 to 30 points (78.0% to 63.1%, replicated on Gemma 4) even though the same recipe gives +6.3 under the unevolved harness, with planning-defect failures rising from 1.1% to 14.6%. Their fix is a meta-level MLE agent that localizes the single failing turn in the weak model's own rollouts and has the expert rewrite only that turn (about 500 training rows), which raises mean success to 79.7% (+1.7, gains on five of seven tasks) while planning defects stay at 1.8%."
+      },
+      "metric": {
+        "zh": "专家轨迹模仿 −14.9 pp；on-policy 纠错 +1.7 pp（78.0%→79.7%）",
+        "en": "Expert imitation −14.9 pp; on-policy correction +1.7 pp (78.0%→79.7%)"
+      },
+      "pills": [
+        {
+          "zh": "Harness 进化",
+          "en": "Harness evolution",
+          "value": "29.2%→78.0%",
+          "tone": "up"
+        },
+        {
+          "zh": "专家模仿",
+          "en": "Expert imitation",
+          "value": "−14.9 pp",
+          "tone": "down"
+        },
+        {
+          "zh": "On-policy 纠错",
+          "en": "On-policy correction",
+          "value": "+1.7 pp",
+          "tone": "up"
+        },
+        {
+          "zh": "规划缺陷占比",
+          "en": "Planning defects",
+          "value": "1.1%→14.6%",
+          "tone": "down"
+        }
+      ],
+      "arxiv": "2609.09134",
+      "authors": "Zhou Yu, Bin Bi, Shiva Kumar Pentyala, Shubham Mehrotra, Sougata Chaudhuri, Shilpa Bhagavath, Zeyuan Chen, Ran Xu, Phil Mui, James Zhu, Sitaram Asur (Salesforce AI); NeurIPS 2026",
+      "handle": "@SFResearch",
+      "links": [
+        {
+          "zh": "论文",
+          "en": "Paper",
+          "url": "https://arxiv.org/abs/2609.09134"
+        },
+        {
+          "zh": "分享者",
+          "en": "Sharer",
+          "url": "https://x.com/SFResearch"
+        },
+        {
+          "zh": "X 原帖",
+          "en": "X Post",
+          "url": "https://x.com/SFResearch/status/2120889770029252876"
+        }
+      ]
+    },
+    {
+      "id": "no-second-run-rsi-frontier-pretraining-801",
+      "edition": "2026-11-12",
+      "tags": [
+        "harness-search",
+        "verification"
+      ],
+      "title": {
+        "zh": "No Second Run：把 RSI 拆成能闭合的小循环用于整场前沿预训练，801-30B-A3B 仅轻量 SFT 就在四项智能体基准拿到最高平均 58.43",
+        "en": "No Second Run: Splitting RSI into Small Closable Loops for a Whole Frontier Pre-training Run, 801-30B-A3B Reaches the Top Agentic Average (58.43) After Only Light SFT"
+      },
+      "why": {
+        "zh": "预训练只能跑一次、目标又是给后训练留空间而不是某个分数，所以完整的“提出-运行-测量-更新”自我改进循环无法闭合，但把它拆成可以廉价重跑的调试、留白测量和经验转指标小循环，并用共享上下文记住负面结果，智能体就能在这场唯一的训练里持续改进。",
+        "en": "A pre-training run happens once and its real goal is post-training headroom rather than any score, so the full propose-run-measure-update loop cannot close, but splitting it into cheap-to-rerun debugging, headroom and experience-to-metric loops with a shared memory of negative results lets agents keep improving the one run you get."
+      },
+      "what": {
+        "zh": "公开的 RSI 工作都停在后训练，从零开始的前沿预训练每次要几十万 GPU 小时、无法重复、也没有可直接验证的分数，RSI 能否进入这一阶段尚无答案。",
+        "en": "Public RSI work has stopped at post-training, and it was open whether RSI can reach frontier pre-training from scratch, where a run costs hundreds of thousands of GPU-hours, cannot be repeated and returns no verifiable score."
+      },
+      "how": {
+        "zh": "GAIR-NLP（上海创智学院）团队用基础设施/数据调试循环、用 tiny-SFT 与学习斜率衡量留白的配方循环、以及分类器/站点发现/爬取覆盖三个经验转指标循环训练 30B-A3B MoE（11.8T token、三个月），智能体约一个月解决 5 个跨栈诊断，1T token 处 22 项基准均分从 47.78 升到 51.96 再到 56.83，并把 22 万个可执行 PR 在 9 个 harness 上跑成 100B+ token 智能体轨迹。",
+        "en": "The GAIR-NLP team (Shanghai Innovation Institute) trained a 30B-A3B MoE on 11.8T tokens in three months using infra and data debugging loops, a recipe loop that judges checkpoints by tiny-SFT and learning-aptitude slopes, and three experience-to-metric loops for classifiers, site discovery and crawl coverage, with agents resolving five cross-stack diagnoses in about a month and lifting the 22-benchmark mean at 1T tokens from 47.78 to 51.96 to 56.83, plus 220K executable PRs rolled out across nine harnesses into 100B+ tokens of agentic trajectories. The base model averages 73.13 (second of seven, behind Qwen3.5-35B-A3B at 76.67), and after only 6.33B tokens of SFT and no RL it posts the highest four-benchmark agentic average (58.43 vs 50.23 for Flint-40B-A2.5B and 44.59 for Qwen3.6-35B-A3B), including 77.60% on KernelBench and 48.29% on SWE-bench Pro."
+      },
+      "metric": {
+        "zh": "智能体四项均分 58.43（仅 6.33B SFT、无 RL）",
+        "en": "Agentic 4-benchmark avg 58.43 (6.33B-token SFT, no RL)"
+      },
+      "pills": [
+        {
+          "zh": "1T token 均分",
+          "en": "22-bench @1T",
+          "value": "47.78→56.83",
+          "tone": "up"
+        },
+        {
+          "zh": "基座均分",
+          "en": "Base avg",
+          "value": "73.13",
+          "tone": "up"
+        },
+        {
+          "zh": "智能体均分",
+          "en": "Agentic avg",
+          "value": "58.43",
+          "tone": "up"
+        },
+        {
+          "zh": "KernelBench",
+          "en": "KernelBench",
+          "value": "77.60%",
+          "tone": "up"
+        }
+      ],
+      "arxiv": "2611.10719",
+      "authors": "GAIR-NLP team, Shanghai Innovation Institute & Xinxu AI (authors listed alphabetically: Xiaojie Cai, Jiayi Chen, … Pengfei Liu, … Haoyang Zou); shared by DAIR.AI",
+      "handle": "@dair_ai",
+      "links": [
+        {
+          "zh": "论文",
+          "en": "Paper",
+          "url": "https://arxiv.org/abs/2611.10719"
+        },
+        {
+          "zh": "代码与模型",
+          "en": "Repo",
+          "url": "https://github.com/GAIR-NLP/801-30B"
+        },
+        {
+          "zh": "分享者",
+          "en": "Sharer",
+          "url": "https://x.com/dair_ai"
+        },
+        {
+          "zh": "X 原帖",
+          "en": "X Post",
+          "url": "https://x.com/dair_ai/status/2120898418801525191"
+        }
+      ]
+    },
+    {
+      "id": "pmd-procedural-memory-distillation",
+      "edition": "2026-11-12",
+      "tags": [
+        "memory-skills",
+        "co-evolution",
+        "agentic-rl"
+      ],
+      "title": {
+        "zh": "PMD：把训练中跨轮次积累的程序性记忆蒸馏进权重，推理时无需记忆，LiveCodeBench 比 SDPO 相对提升 7.9%–13.6%",
+        "en": "PMD: Distilling Cross-Episode Procedural Memory into the Weights During Training Gives a Memory-Free Model That Beats SDPO by 7.9–13.6% on LiveCodeBench"
+      },
+      "why": {
+        "zh": "模型在训练里反复碰到相似题目时，哪些策略总能通过验证、哪些错误反复出现的信息会被逐回合更新丢掉，而让记忆随策略一起进化、只用来指导自教师，就能把这些经验内化进参数，且记忆和策略必须一起变：冻结任何一方都会落后 10% 以上。",
+        "en": "When a model keeps meeting related problems in training, episode-by-episode updates throw away which strategies keep passing and which mistakes keep recurring, and letting a memory evolve together with the policy and using it only to guide a self-teacher bakes that experience into the weights, but only if both keep changing, since freezing either one trails by more than 10%."
+      },
+      "what": {
+        "zh": "RLVR 及其自蒸馏变体 SDPO 只用单回合的验证信号更新策略，跨回合、跨 epoch 的程序性经验几乎不被保留和复用。",
+        "en": "RLVR and its self-distillation variant SDPO update the policy from a per-episode verifier signal, so procedural experience across episodes and epochs is rarely kept or reused."
+      },
+      "how": {
+        "zh": "Salesforce AI Research 从模型自己的轨迹在线构建三层记忆（原始经验、按题对比成败提炼的策略与教训、跨题聚类的行为模式），只在教师路径上用这些记忆调节 on-policy 自教师，Qwen3-8B 上 SciKnowEval 均分从 SDPO 的 74.4 升到 77.2、LiveCodeBench 从 47.9 升到 51.7，OLMo3-Instruct-7B 上分别从 69.5 到 73.3、45.0 到 51.1。",
+        "en": "Salesforce AI Research builds three memory levels online from the model's own rollouts (raw experience, per-problem strategies and lessons from contrasting passes and fails, and cross-problem behavior patterns) and uses them only on the teacher path of an on-policy self-teacher, lifting Qwen3-8B from SDPO's 74.4 to 77.2 on SciKnowEval and 47.9 to 51.7 on LiveCodeBench, and OLMo3-Instruct-7B from 69.5 to 73.3 and 45.0 to 51.1. Ablations show persistence drives most of the gain (discarding memory every step gets only 75.7), while evolving memory with a frozen policy scores 54.0 and a frozen memory with an evolving policy 65.0."
+      },
+      "metric": {
+        "zh": "LiveCodeBench vs SDPO 相对 +7.9%–13.6%",
+        "en": "LiveCodeBench vs SDPO +7.9–13.6% relative"
+      },
+      "pills": [
+        {
+          "zh": "SciKnowEval (Qwen3-8B)",
+          "en": "SciKnowEval (Qwen3-8B)",
+          "value": "74.4→77.2",
+          "tone": "up"
+        },
+        {
+          "zh": "LiveCodeBench (OLMo3)",
+          "en": "LiveCodeBench (OLMo3)",
+          "value": "45.0→51.1",
+          "tone": "up"
+        },
+        {
+          "zh": "冻结策略",
+          "en": "Frozen policy",
+          "value": "54.0",
+          "tone": "down"
+        },
+        {
+          "zh": "冻结记忆",
+          "en": "Frozen memory",
+          "value": "65.0",
+          "tone": "down"
+        }
+      ],
+      "arxiv": "2607.01480",
+      "authors": "Ye Liu, Srijan Bansal, Bo Pang, Yang Li, Zeyu Leo Liu, Yifei Ming, Zixuan Ke, Shafiq Joty, Semih Yavuz (Salesforce AI Research); NeurIPS 2026",
+      "handle": "@SFResearch",
+      "links": [
+        {
+          "zh": "论文",
+          "en": "Paper",
+          "url": "https://arxiv.org/abs/2607.01480"
+        },
+        {
+          "zh": "分享者",
+          "en": "Sharer",
+          "url": "https://x.com/SFResearch"
+        },
+        {
+          "zh": "X 原帖",
+          "en": "X Post",
+          "url": "https://x.com/SFResearch/status/2120889740820189401"
+        }
+      ]
+    },
+    {
       "id": "skillduet-model-skill-co-evolution",
       "edition": "2026-11-12",
       "tags": [
