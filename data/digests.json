@@ -272,6 +272,386 @@
   ],
   "items": [
     {
+      "id": "sfr-autornd-verified-rd-agents",
+      "edition": "2026-11-13",
+      "tags": [
+        "autoresearch",
+        "verification",
+        "harness-search"
+      ],
+      "title": {
+        "zh": "SFR-AutoR&D：Salesforce 让 agent 自己提假设、改代码、训模型，只保留在留出评测上赢过基线的改动，约 80 小时把 EmbeddingGemma 2 检索 nDCG@10 提高 6.13 点",
+        "en": "SFR-AutoR&D: Salesforce Agents That Propose, Implement and Test Their Own Changes and Keep Only Held-Out Wins Lift EmbeddingGemma 2 Retrieval nDCG@10 by 6.13 in About 80 Hours"
+      },
+      "why": {
+        "zh": "这套自动研发 agent 能在 pandas、hnswlib 这类被专家调了多年的代码和自家模型上继续找到真实增益，关键在于每个改动都必须在同条件对照实验、正确性检查和留出评测上赢过基线才会被保留（“没有改进就不晋升”），而不是让 agent 自评自夸。",
+        "en": "Salesforce's autonomous R&D agents still find real gains in long-tuned code like pandas and hnswlib and in its own models because every change must beat the baseline under controlled experiments, correctness checks and held-out evaluations before it is kept (\"no improvement, no promotion\"), rather than trusting the agent's own judgement."
+      },
+      "what": {
+        "zh": "改进代码库和训练配方一直靠研究员花数周提假设、做实验、读结果，Salesforce 想知道 agent 能否端到端跑完这个研发循环并给出可信证据。",
+        "en": "Improving codebases and training recipes has relied on researchers spending weeks proposing, running and reading experiments, and Salesforce asks whether agents can run that whole R&D loop end to end with trustworthy evidence."
+      },
+      "how": {
+        "zh": "系统含两个 agent 加共享训练基础设施 AutoInfra：AutoR&D-Engineer 在现有代码里找算法与系统级优化（pandas nullable 归约最高 1.84× 且 40 项基准中位 1.38×、hnswlib 查询吞吐 +4.1% 结果逐字节一致、USearch +17.5%、自家 SFR-RL 生成吞吐最高 3.14×、峰值显存从 128.5 GiB 爆显存降到 78.6 GiB），TrainForge 从空仓库自己写训练代码、先 LoRA 小试再全量训练、只晋升在冻结留出集上更好的 checkpoint（Qwen3-4B 数学最高 +11pp、Qwen3.5-35B-A3B 代码最高 +12pp、GPT-OSS-20B 研究型任务最高 +14pp）。用在 EmbeddingGemma 2 上，约 80 小时让 10 个 MTEB 检索任务的 nDCG@10 提高 6.13 点，随后约 9 小时的第二轮把吞吐提高 36%、延迟降低 17% 且质量几乎不变；这些数字来自 Salesforce 官方项目页与新闻稿，暂无论文。",
+        "en": "Two agents share the AutoInfra training backbone: AutoR&D-Engineer hunts algorithmic and systems wins in existing code (pandas nullable reductions up to 1.84× with a 1.38× median over 40 benchmark cells, hnswlib +4.1% query throughput with byte-identical results, USearch +17.5%, and in Salesforce's own SFR-RL stack up to 3.14× generation throughput and peak memory cut from a 128.5 GiB out-of-memory crash to 78.6 GiB), while TrainForge writes training code from an empty workspace, screens ideas with LoRA before full training and promotes only checkpoints that improve frozen held-out sets (up to +11pp math on Qwen3-4B, +12pp code on Qwen3.5-35B-A3B, +14pp research tasks on GPT-OSS-20B). On EmbeddingGemma 2 it raised nDCG@10 on 10 MTEB retrieval tasks by 6.13 points in about 80 hours, and a second roughly 9-hour session added 36% throughput and 17% lower latency with almost no quality loss; these figures come from Salesforce's project pages and newsroom post, with no paper yet."
+      },
+      "metric": {
+        "zh": "MTEB 检索 nDCG@10 +6.13；约 80 小时",
+        "en": "MTEB retrieval nDCG@10 +6.13; ~80 hours"
+      },
+      "pills": [
+        {
+          "zh": "nDCG@10",
+          "en": "nDCG@10",
+          "value": "+6.13",
+          "tone": "up"
+        },
+        {
+          "zh": "pandas 归约",
+          "en": "pandas reductions",
+          "value": "≤1.84×",
+          "tone": "up"
+        },
+        {
+          "zh": "hnswlib QPS",
+          "en": "hnswlib QPS",
+          "value": "+4.1%",
+          "tone": "up"
+        },
+        {
+          "zh": "TrainForge 研究任务",
+          "en": "TrainForge research",
+          "value": "+14pp",
+          "tone": "up"
+        }
+      ],
+      "authors": "Shrey Pandit, Xuan-Phi Nguyen, Yiran Zhao, Shafiq Joty (Salesforce AI Research)",
+      "handle": "@SFResearch",
+      "links": [
+        {
+          "zh": "项目页",
+          "en": "Project page",
+          "url": "https://sfr-autornd.github.io/"
+        },
+        {
+          "zh": "AutoR&D-Engineer",
+          "en": "AutoR&D-Engineer",
+          "url": "https://sfr-autornd.github.io/engineer/"
+        },
+        {
+          "zh": "TrainForge",
+          "en": "TrainForge",
+          "url": "https://sfr-autornd.github.io/trainforge/"
+        },
+        {
+          "zh": "新闻稿",
+          "en": "Newsroom post",
+          "url": "https://www.salesforce.com/news/stories/agents-that-improve-ai-models/"
+        },
+        {
+          "zh": "分享者",
+          "en": "Sharer",
+          "url": "https://x.com/SFResearch"
+        },
+        {
+          "zh": "X 原帖",
+          "en": "X Post",
+          "url": "https://x.com/SFResearch/status/2121292240802939218"
+        },
+        {
+          "zh": "X 原帖（Salesforce News）",
+          "en": "X Post (Salesforce News)",
+          "url": "https://x.com/SalesforceNews/status/2121285202936774817"
+        }
+      ]
+    },
+    {
+      "id": "rsi-pdebench-validated-self-improving-pde-agents",
+      "edition": "2026-11-13",
+      "tags": [
+        "harness-search",
+        "autoresearch",
+        "verification"
+      ],
+      "title": {
+        "zh": "RSI-PDEbench：1,001 个“先识别方程再求解”的 PDE 任务，带验证门的自改进 harness 比单次运行通过率高 106.5–181.9%，比 Claude Code / Codex 高 3.0–19.6%，模型调用少 46.9%",
+        "en": "RSI-PDEbench: On 1,001 Identify-Then-Solve PDE Cases, a Gated Self-Improving Harness Beats Single Runs by 106.5–181.9% and Claude Code / Codex by 3.0–19.6% With 46.9% Fewer Model Calls"
+      },
+      "why": {
+        "zh": "大部分提升来自让 agent 反复对照数值误差修改求解器（比单次运行多 57–130 个通过案例），带验证门的自改进 harness 在干净数据上只比原生 harness 多几个案例，但在强噪声下优势很大（Opus 5.5 为 120 对 76/160），作者也承认还没有消融实验能把功劳归给残差筛选本身。",
+        "en": "Most of the gain comes from letting agents repeatedly revise solvers against numerical error feedback (57–130 more passes than single runs), while the validation-gated self-improving harness adds only a few cases over native harnesses on clean data but a lot under heavy noise (Opus 5.5 at 120 against 76 of 160), and the authors concede no ablation yet credits the residual screening itself."
+      },
+      "what": {
+        "zh": "从采样解数据中同时识别未知的 PDE 族和系数并配置数值求解器很依赖专家，尤其在噪声和分布外条件下，LLM agent 能否准确高效地自动完成这一流程此前缺少基准。",
+        "en": "Identifying an unknown PDE family and its coefficients from sampled solution data and then configuring a solver takes heavy expert effort, especially under noise and distribution shift, and there was no benchmark for whether LLM agents can automate it accurately and efficiently."
+      },
+      "how": {
+        "zh": "Purdue 等团队构建 1,001 个经典与分数阶 PDE 案例（42 个模板），分 Full、Noisy（高斯噪声 RMS 为信号的 50%）和 Hard-OOD 三种设置，RSI-PDE 冻结模型权重与监督器，只让求解器代码、策略文本和记忆演化：先按残差损失保留前 5 个候选方程族，再用公开相对 L2 误差细化系数和求解器，并用验证门决定是否保留每次更新。四个前沿模型平均下比单次运行高 106.5–181.9%、比原生 harness 高 3.0–19.6%，12 组模型×设置的总调用少 46.9%；Full 上 Opus 5.5 为 196/210 对原生 193（小于原生三次运行 187–198 的波动），Noisy 上为 120/160 对 76，Hard-OOD 为 254/278 对 245。",
+        "en": "A Purdue-led team builds 1,001 classical and fractional PDE cases from 42 templates in Full, Noisy (Gaussian noise at 50% of signal RMS) and Hard-OOD settings, and RSI-PDE freezes model weights and the supervisor while solver code, policy text and memory evolve: it shortlists the top 5 equation families by residual loss, refines coefficients and solvers with public relative L2 error, and lets a validation gate decide whether each update is kept. Averaged over four frontier models it beats single runs by 106.5–181.9% and native harnesses by 3.0–19.6% with 46.9% fewer total calls across 12 model–setting pairs; with Opus 5.5 it scores 196/210 against native 193 on Full (inside the native harness's own 187–198 spread), 120/160 against 76 on Noisy, and 254/278 against 245 on Hard-OOD."
+      },
+      "metric": {
+        "zh": "比原生 harness +3.0–19.6%；调用 −46.9%",
+        "en": "+3.0–19.6% over native harnesses; −46.9% calls"
+      },
+      "pills": [
+        {
+          "zh": "比单次运行",
+          "en": "Over single run",
+          "value": "+106.5–181.9%",
+          "tone": "up"
+        },
+        {
+          "zh": "比原生 harness",
+          "en": "Over native harness",
+          "value": "+3.0–19.6%",
+          "tone": "up"
+        },
+        {
+          "zh": "Noisy（Opus 5.5）",
+          "en": "Noisy (Opus 5.5)",
+          "value": "120 vs 76",
+          "tone": "up"
+        },
+        {
+          "zh": "模型调用",
+          "en": "Model calls",
+          "value": "−46.9%",
+          "tone": "up"
+        }
+      ],
+      "arxiv": "2611.14949",
+      "repo": "jeremylu916/RSI-PDE",
+      "authors": "Binghang Lu, Lang Cao, Changhong Mou, … Guang Lin (Purdue, UIUC, Utah State, Brown, MIT, ASU)",
+      "handle": "@eforus_overseer",
+      "links": [
+        {
+          "zh": "论文",
+          "en": "Paper",
+          "url": "https://arxiv.org/abs/2611.14949"
+        },
+        {
+          "zh": "代码",
+          "en": "Code",
+          "url": "https://github.com/jeremylu916/RSI-PDE"
+        },
+        {
+          "zh": "分享者",
+          "en": "Sharer",
+          "url": "https://x.com/eforus_overseer"
+        },
+        {
+          "zh": "X 原帖",
+          "en": "X Post",
+          "url": "https://x.com/eforus_overseer/status/2121275360058958065"
+        }
+      ]
+    },
+    {
+      "id": "are-bench-research-agents-real-workspaces",
+      "edition": "2026-11-13",
+      "tags": [
+        "autoresearch",
+        "verification"
+      ],
+      "title": {
+        "zh": "ARE-bench：把研究 agent 放回研究者真实的半成品工作区，最强 GPT-6.1-Sol 也只有 66.2% 的任务全部达标；算上历史决定和工作区约束，三款模型从约 69% 跌到 28.4–40.0%",
+        "en": "ARE-bench: Dropped Into Researchers' Real Half-Finished Workspaces, Even GPT-6.1-Sol Fully Completes Only 66.2% of Tasks, and Three Models Fall From About 69% to 28.4–40.0% Once Prior Decisions Count"
+      },
+      "why": {
+        "zh": "研究 agent 在干净的独立任务上看起来很强，但在真实项目里常常完成了眼前请求却违背先前约定或工作区里隐含的方法要求（比如换掉原方法却保留名字），所以只查交付物会系统性高估它们。",
+        "en": "Research agents look strong on clean standalone tasks, but inside real projects they often finish the current request while breaking earlier agreements or method requirements implied by the workspace (such as swapping in a simpler method under the original name), so grading only the deliverable systematically overrates them."
+      },
+      "what": {
+        "zh": "现有研究 agent 基准多用干净、自包含的任务，而研究者实际是在一个带着旧文件、过期版本和失败尝试的进行中项目里让 agent 做下一步。",
+        "en": "Most research-agent benchmarks use clean, self-contained tasks, whereas researchers actually ask agents for the next step inside an ongoing project full of unfinished files, outdated versions and failed attempts."
+      },
+      "how": {
+        "zh": "ARE-bench 从招募研究者自己项目的 agent 会话和完整工作区中构建 75 个任务（7 个研究阶段、33 类需求、150 个子需求、1,173 个二元检查项），把工作区原样回放到真实请求的时刻再让模型接手。七个模型中 GPT-6.1-Sol 的严格成功率 66.2%、Claude Opus 5.5 为 56.9%、其余都低于 40%、Qwen3.8-27B 仅 25.8%，GPT-6.1-Sol 的 76 次失败里 47 次只差一两项；DeepSeek-V4.1-Flash、GLM-5.3-Flash、Kimi-K3 只查交付约束时都约 69%，加上历史与工作区要求后降到 40.0%、31.6%、28.4%（注意 GPT-6.1-Sol 用 Codex、其余用 Claude Code，模型与 harness 混在一起）。",
+        "en": "ARE-bench builds 75 tasks from recruited researchers' own agent sessions and full workspaces (7 research stages, 33 requirements, 150 sub-requirements, 1,173 binary checklist items) and replays each workspace untouched to the moment of a real request before the model takes over. Across seven models GPT-6.1-Sol passes every item on 66.2% of tasks, Claude Opus 5.5 on 56.9%, all others stay under 40% and Qwen3.8-27B reaches 25.8%, with 47 of GPT-6.1-Sol's 76 failed runs missing only one or two items; DeepSeek-V4.1-Flash, GLM-5.3-Flash and Kimi-K3 all score about 69% on delivery contracts alone but fall to 40.0%, 31.6% and 28.4% once historical and workspace requirements count (GPT-6.1-Sol runs in Codex and the rest in Claude Code, so model and harness are confounded)."
+      },
+      "metric": {
+        "zh": "最强严格成功率 66.2%",
+        "en": "Best strict success 66.2%"
+      },
+      "pills": [
+        {
+          "zh": "GPT-6.1-Sol",
+          "en": "GPT-6.1-Sol",
+          "value": "66.2%",
+          "tone": "down"
+        },
+        {
+          "zh": "Claude Opus 5.5",
+          "en": "Claude Opus 5.5",
+          "value": "56.9%",
+          "tone": "down"
+        },
+        {
+          "zh": "加入历史约束后",
+          "en": "With history checks",
+          "value": "~69%→28.4–40.0%",
+          "tone": "down"
+        }
+      ],
+      "arxiv": "2611.14364",
+      "authors": "Jiahang Lin, Wanying Ren, Wanghan Xu, Huayu Sha, Yang Shu, et al",
+      "handle": "@ai_ravens",
+      "links": [
+        {
+          "zh": "论文",
+          "en": "Paper",
+          "url": "https://arxiv.org/abs/2611.14364"
+        },
+        {
+          "zh": "项目页",
+          "en": "Project page",
+          "url": "https://arebench.com"
+        },
+        {
+          "zh": "分享者",
+          "en": "Sharer",
+          "url": "https://x.com/ai_ravens"
+        },
+        {
+          "zh": "X 原帖",
+          "en": "X Post",
+          "url": "https://x.com/ai_ravens/status/2121268096937992390"
+        }
+      ]
+    },
+    {
+      "id": "gradient-aware-agents-turbulence-closure-discovery",
+      "edition": "2026-11-13",
+      "tags": [
+        "autoresearch"
+      ],
+      "title": {
+        "zh": "梯度感知的 AI agent 自主发现湍流闭合模型：可微 CFD 给梯度，agent 搜模型形式，通道流摩擦 Re_τ 从平衡壁模型的 410 拉近到 397（DNS 为 392）",
+        "en": "Gradient-Aware AI Agents Discover Turbulence Closures Autonomously: a Differentiable CFD Solver Supplies Gradients While Agents Search Model Forms, Pulling Channel-Flow Re_τ From 410 to 397 (DNS 392)"
+      },
+      "why": {
+        "zh": "让 agent 能通过可微求解器拿到梯度是关键：同样的实验预算下，它能恢复只靠前向试跑调不出来的参考系数，而数值发散则反过来促使它采用“锚定基线 + 有界修正”的稳定结构。",
+        "en": "Giving the agent gradients through a differentiable solver is what makes it work: on the same experiment budget it recovers reference coefficients that forward trial runs alone never reach, and numerical blow-ups push it toward a stable anchored-baseline-plus-bounded-correction design."
+      },
+      "what": {
+        "zh": "湍流闭合模型的形式、输入和参数一直靠人选，而在长时混沌模拟里做后验训练需要很少有求解器能提供的梯度，所以大多数方法既固定模型形式又只能用无梯度优化。",
+        "en": "Turbulence closures depend on human choices of form, inputs and parameters, and a posteriori training through long chaotic rollouts needs gradients few solvers provide, so most methods fix the closure form and fall back on gradient-free tuning."
+      },
+      "how": {
+        "zh": "Yi Liu、Jian-Xun Wang 等把闭合发现写成双层问题：多 agent LLM 系统（全程 GPT-5-mini）提出解析、神经或混合闭合，自己把它嵌入 GPU 原生可微 CFD、写可微目标并验证梯度通路，再决定做前向评估、参数敏感度还是截断时域的后验训练（可训练约 10^4 参数的网络）。在二维湍流耗散律案例中，只用前向评估的 agent 反复调阻力却几乎感知不到初始比参考小 1000 倍的超黏性项，而梯度训练恢复了参考系数；在 Re_τ=392 的三维通道流壁模型中，近常应力律和 3,202 参数的混合 CNN 闭合分别给出 400 和 397，优于平衡壁模型的 410，但每个闭合都只针对单一流动的单一统计量。",
+        "en": "Yi Liu, Jian-Xun Wang and colleagues pose closure discovery as a bilevel problem in which a multi-agent LLM system (GPT-5-mini throughout) proposes analytical, neural or hybrid closures, embeds them in a GPU-native differentiable CFD solver, writes a differentiable objective, validates the gradient path and then chooses between forward evaluation, sensitivities or truncated-horizon a posteriori training of networks with about 10^4 parameters. In a 2D dissipation-law case the forward-only agent kept retuning drag and barely sensed a hyperviscosity term initialised 1000 times below its reference while gradient training recovered the reference coefficients, and in 3D channel-flow wall modelling at Re_τ=392 a near-constant stress law and a 3,202-parameter hybrid CNN closure reached 400 and 397 against 410 for the equilibrium wall model, though each closure targets one statistic in one flow."
+      },
+      "metric": {
+        "zh": "Re_τ 410→397（DNS 392）",
+        "en": "Re_τ 410→397 (DNS 392)"
+      },
+      "pills": [
+        {
+          "zh": "平衡壁模型",
+          "en": "Equilibrium wall model",
+          "value": "410",
+          "tone": "down"
+        },
+        {
+          "zh": "混合闭合",
+          "en": "Hybrid closure",
+          "value": "397",
+          "tone": "up"
+        },
+        {
+          "zh": "DNS 参考",
+          "en": "DNS reference",
+          "value": "392",
+          "tone": "up"
+        }
+      ],
+      "arxiv": "2611.16082",
+      "authors": "Yi Liu, Xiantao Fan, Mingqi Xu, Jian-Xun Wang",
+      "handle": "@PhysicsFluDyn",
+      "links": [
+        {
+          "zh": "论文",
+          "en": "Paper",
+          "url": "https://arxiv.org/abs/2611.16082"
+        },
+        {
+          "zh": "分享者",
+          "en": "Sharer",
+          "url": "https://x.com/PhysicsFluDyn"
+        },
+        {
+          "zh": "X 原帖",
+          "en": "X Post",
+          "url": "https://x.com/PhysicsFluDyn/status/2121299673633772024"
+        }
+      ]
+    },
+    {
+      "id": "cosmos-recursive-self-improvement-development-system",
+      "edition": "2026-11-13",
+      "tags": [
+        "recursive-self-improvement"
+      ],
+      "title": {
+        "zh": "Cosmos Institute《Recursive, Self, Improvement》：深度学习时代 RSI 的“自我”是训练一代代模型的研发系统，不存在 RSI “开始”的单一时刻",
+        "en": "Cosmos Institute's \"Recursive, Self, Improvement\": Under Deep Learning the \"Self\" in RSI Is the Development System Training Successive Models, and There Is No Single Moment When RSI Begins"
+      },
+      "why": {
+        "zh": "模型不会改写自己的源代码，而是帮整个研发系统产出更强的下一代，算法进步和算力投入多年来一直互相放大，所以 RSI 不是某天突然“合环”的开关，而是已在进行、随 AI 承担更多研究而加速的过程，这也给了人类更多预警和干预点，但真正的问题变成了谁在掌控。",
+        "en": "Models do not rewrite their own source code but help the whole development system produce stronger successors, and algorithmic progress and compute investment have amplified each other for years, so RSI is not a switch that flips when the loop closes but an acceleration already underway that grows as AIs take on more research, which leaves more warning shots and intervention points while shifting the question to who is in control."
+      },
+      "what": {
+        "zh": "围绕 AI 训练 AI 的讨论常默认 Yudkowsky 式“单个心智改写自身、突然 FOOM”的图景，要么据此推出危险结论，要么因看不到它而认为 RSI 是幻觉。",
+        "en": "Debate about AIs training AIs often assumes Yudkowsky's picture of a single mind rewriting itself and suddenly going FOOM, and either draws its alarming conclusions or dismisses RSI as a mirage when that picture fails to appear."
+      },
+      "how": {
+        "zh": "Aashish Reddy 把 RSI 拆成 Recursive、Self、Improvement 三部分，认为神经网络里知识与推理程序同在权重中，因此改进的单位是训练模型的研发系统，反馈通过算法进步与硬件投入两条通道互相放大，并举例 Cotra 当年假设算法效率每年约 1.3 倍而后来估计约 3 倍、有效算力年增长预测 3.6 倍而实际估计约 10.7 倍。他指出即便不复利，研发整体快 10 倍也能把一个世纪的进展压到十年，而更慢、更分布式的爆发提供了更多预警与干预点，但领先仍可能转化为算力和资本优势，所以要问 Good 所说的“我们”究竟是谁。",
+        "en": "Aashish Reddy splits RSI into Recursive, Self and Improvement and argues that because knowledge and reasoning procedures share the same weights, the unit of improvement is the development system that trains models, with feedback running through algorithmic progress and hardware investment that amplify each other, citing Cotra's assumed ~1.3x yearly algorithmic efficiency against later ~3x estimates and a forecast 3.6x yearly effective-compute growth against roughly 10.7x estimated. He notes that even a non-compounding 10x speed-up would compress a century of progress into a decade, and that a slower, more distributed explosion offers more warning shots and intervention points, though a lead could still compound into compute and capital, so the real question is who the \"us\" in Good's proviso turns out to be."
+      },
+      "metric": {
+        "zh": "观点文章（无实验）",
+        "en": "Essay (no experiments)"
+      },
+      "pills": [
+        {
+          "zh": "有效算力年增长：预测",
+          "en": "Effective compute/yr: forecast",
+          "value": "3.6x",
+          "tone": "down"
+        },
+        {
+          "zh": "有效算力年增长：估计",
+          "en": "Effective compute/yr: estimate",
+          "value": "~10.7x",
+          "tone": "up"
+        }
+      ],
+      "authors": "Aashish Reddy (Cosmos Institute)",
+      "handle": "@cosmos_inst",
+      "links": [
+        {
+          "zh": "原文",
+          "en": "Essay",
+          "url": "https://blog.cosmos-institute.org/p/recursive-self-improvement"
+        },
+        {
+          "zh": "作者",
+          "en": "Author",
+          "url": "https://x.com/_AashishReddy"
+        },
+        {
+          "zh": "分享者",
+          "en": "Sharer",
+          "url": "https://x.com/cosmos_inst"
+        },
+        {
+          "zh": "X 原帖",
+          "en": "X Post",
+          "url": "https://x.com/cosmos_inst/status/2121277061235195991"
+        }
+      ]
+    },
+    {
       "id": "jomoha-joint-model-harness-rl",
       "edition": "2026-11-13",
       "tags": [
