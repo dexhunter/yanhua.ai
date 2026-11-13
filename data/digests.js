@@ -19,6 +19,15 @@ window.YANHUA_DIGESTS = {
   },
   "editions": [
     {
+      "id": "2026-11-13",
+      "date": "2026-11-13",
+      "slot": "",
+      "label": {
+        "zh": "2026-11-13",
+        "en": "13 Nov 2026"
+      }
+    },
+    {
       "id": "2026-11-12",
       "date": "2026-11-12",
       "slot": "",
@@ -262,6 +271,356 @@ window.YANHUA_DIGESTS = {
     }
   ],
   "items": [
+    {
+      "id": "jomoha-joint-model-harness-rl",
+      "edition": "2026-11-13",
+      "tags": [
+        "harness-search",
+        "co-evolution",
+        "agentic-rl"
+      ],
+      "title": {
+        "zh": "JoMoHa：用 RL 同时训练「写 harness 的模型」和「在 harness 里做任务的模型」，ALFWorld 达 97.0%，三项平均 70.3%",
+        "en": "JoMoHa: RL-Training Both the Harness Writer and the Task Solver Reaches 97.0% on ALFWorld and 70.3% on Average"
+      },
+      "why": {
+        "zh": "Harness 和模型权重轮流各改各的会越改越不兼容、先涨后跌，而把写 harness 的 Engineer 和执行任务的 Solver 当成两个各自保留历史和价值估计的 RL 策略、用同一个任务结果一起训练，两者才能相互适配并持续变好。",
+        "en": "Letting the model and its harness take turns improving makes them drift out of sync so performance rises then falls, but training the harness writer and the task solver as two RL policies on the same task outcome, each with its own history and value estimate, keeps them compatible and lets both keep improving."
+      },
+      "what": {
+        "zh": "自改进 harness 的工作通常让一个冻结的前沿模型去改 harness，而只训权重或只改 harness 都会被另一半卡住，二者能否一起学习此前没有答案。",
+        "en": "Self-improving harness work usually keeps the harness editor as a frozen frontier model, and optimizing only weights or only the harness gets bottlenecked by the other half, so it was open whether both can be learned together."
+      },
+      "how": {
+        "zh": "HKU 与 Salesforce AI Research 让 Engineer 策略生成可执行 harness 代码、Solver 策略在其中执行任务，两者用同一回报做 RL，并加入 Context、ValueNorm、Peer 和 Schedule 四个协调组件；在 ALFWorld、WebShop、DBBench 上达到 97.0%、45.8%、68.0%（平均 70.3%，比 Agent SFT + Harness-R1 高 6.1 点、比 WHALE 高 7.2 点），冻结 Engineer 只到 90.5%，只做朴素联合训练为 88.5%，Heat 和 Cool 任务分别消除了最强对手约 83.6% 和 89.9% 的错误。",
+        "en": "HKU and Salesforce AI Research have an Engineer policy write executable harness code and a Solver policy act inside it, training both with RL on the same return plus four coordination pieces (Context, ValueNorm, Peer, Schedule); it reaches 97.0%, 45.8% and 68.0% on ALFWorld, WebShop and DBBench (70.3% average, +6.1 over Agent SFT + Harness-R1 and +7.2 over WHALE), versus 90.5% with a frozen Engineer and 88.5% for naive joint training, and removes about 83.6% and 89.9% of the best competitor's errors on Heat and Cool tasks."
+      },
+      "metric": {
+        "zh": "ALFWorld 97.0%；三项平均 70.3%",
+        "en": "ALFWorld 97.0%; 70.3% average"
+      },
+      "pills": [
+        {
+          "zh": "ALFWorld",
+          "en": "ALFWorld",
+          "value": "97.0%",
+          "tone": "up"
+        },
+        {
+          "zh": "三项平均",
+          "en": "3-env average",
+          "value": "70.3%",
+          "tone": "up"
+        },
+        {
+          "zh": "冻结 Engineer",
+          "en": "Frozen Engineer",
+          "value": "90.5%",
+          "tone": "down"
+        },
+        {
+          "zh": "朴素联合训练",
+          "en": "Joint-only",
+          "value": "88.5%",
+          "tone": "down"
+        }
+      ],
+      "arxiv": "2611.11499",
+      "authors": "Xudong Wu, Guangchen Lan, Mingqi Yuan, Jiayu Chen (The University of Hong Kong; Salesforce AI Research)",
+      "handle": "@omarsar0",
+      "links": [
+        {
+          "zh": "论文",
+          "en": "Paper",
+          "url": "https://arxiv.org/abs/2611.11499"
+        },
+        {
+          "zh": "分享者",
+          "en": "Sharer",
+          "url": "https://x.com/omarsar0"
+        },
+        {
+          "zh": "X 原帖",
+          "en": "X Post",
+          "url": "https://x.com/omarsar0/status/2121035321211318565"
+        }
+      ]
+    },
+    {
+      "id": "scimars-multi-agent-rsi-scientific-discovery",
+      "edition": "2026-11-13",
+      "tags": [
+        "harness-search",
+        "memory-skills"
+      ],
+      "title": {
+        "zh": "SciMARS：闭环科学发现中的多智能体 harness 递归自适应，Autonomous Science Bench 从 8/18 提到 12/18",
+        "en": "SciMARS: Recursive Multi-Agent Harness Adaptation for Closed-Loop Science Lifts Autonomous Science Bench From 8/18 to 12/18"
+      },
+      "why": {
+        "zh": "科学多智能体团队失败往往不是模型不够强，而是观察结果没被共享、固定的角色分工和交接方式一再重复错误，所以给团队一个共享证据图，再分别让编辑器改角色、协作和记忆策略并用探针挑选下一版 harness，就能让同一个模型解出更多任务。",
+        "en": "Scientific multi-agent teams mostly fail because observations get lost and fixed role and handoff procedures keep repeating mistakes, so giving the team a shared evidence graph and separate editors that rewrite roles, coordination and memory policy, with probes picking the next harness, lets the same model solve more tasks."
+      },
+      "what": {
+        "zh": "闭环科学发现需要分析、实验设计和验证不断随证据调整，但现有多智能体系统缺少共享记忆、角色流程又是固定的。",
+        "en": "Closed-loop scientific discovery needs analysis, experiment design and verification to adapt as evidence comes in, but current multi-agent systems lack shared memory and use fixed role procedures."
+      },
+      "how": {
+        "zh": "SciMARS 在每轮中先执行当前 harness，再由角色编辑器、协作编辑器（加 Memory 版再加一个记忆策略编辑器）提出候选，用公开探针组合并选出下一版；在实验数据回放和数字孪生评测中，SciMARS + Memory 在 Autonomous Science Bench 上解出 GPT-6-Astra 12/18、GLM-5.3 2/18（基础团队 8/18、1/18），ScienceAgentBench 14/38（基础 11/38），AppWorld 11/20（基础 5/20）；作者说明没有做真实湿实验，只测了部分基准子集。",
+        "en": "Each round SciMARS runs the current harness, then role and coordination editors (plus a memory-policy editor in the Memory variant) propose candidates and public probes compose and select the next harness; with experimental-data replay and a digital twin, SciMARS + Memory solves 12/18 GPT-6-Astra and 2/18 GLM-5.3 attempts on Autonomous Science Bench (base team 8/18 and 1/18), 14/38 on ScienceAgentBench (11/38) and 11/20 on AppWorld (5/20); the authors note no real wet-lab runs and only benchmark subsets."
+      },
+      "metric": {
+        "zh": "Autonomous Science Bench 8/18→12/18；AppWorld 5/20→11/20",
+        "en": "Autonomous Science Bench 8/18→12/18; AppWorld 5/20→11/20"
+      },
+      "pills": [
+        {
+          "zh": "Science Bench",
+          "en": "Science Bench",
+          "value": "8→12/18",
+          "tone": "up"
+        },
+        {
+          "zh": "ScienceAgentBench",
+          "en": "ScienceAgentBench",
+          "value": "11→14/38",
+          "tone": "up"
+        },
+        {
+          "zh": "AppWorld",
+          "en": "AppWorld",
+          "value": "5→11/20",
+          "tone": "up"
+        }
+      ],
+      "arxiv": "2611.12552",
+      "authors": "Weimin Wu, Han Liu",
+      "handle": "@SciFi",
+      "links": [
+        {
+          "zh": "论文",
+          "en": "Paper",
+          "url": "https://arxiv.org/abs/2611.12552"
+        },
+        {
+          "zh": "代码",
+          "en": "Repo",
+          "url": "https://github.com/WeiminWu2000/SciMARS"
+        },
+        {
+          "zh": "分享者",
+          "en": "Sharer",
+          "url": "https://x.com/SciFi"
+        },
+        {
+          "zh": "X 原帖",
+          "en": "X Post",
+          "url": "https://x.com/SciFi/status/2121008560557510905"
+        }
+      ]
+    },
+    {
+      "id": "re-search-llm-ideation-twenty-questions",
+      "edition": "2026-11-13",
+      "tags": [
+        "verification"
+      ],
+      "title": {
+        "zh": "Re-Search：用「二十个问题」游戏拆解 LLM 科研构思，模型能识别好想法却生成不出来，前 30 个问题后基本停滞",
+        "en": "Re-Search: A Twenty-Questions Game Shows LLMs Can Recognize Good Research Ideas but Can't Generate Them, Plateauing After ~30 Questions"
+      },
+      "why": {
+        "zh": "大多数 LLM 做科研构思卡住的原因不是知识不够或判断力差，而是自己想不出好问题和好候选，所以给它们外部提供候选问题或假设空间综述，弱模型就能认出并用上，追回与最强模型的大部分差距。",
+        "en": "Most LLMs stall at research ideation not for lack of knowledge or judgment but because they can't generate good questions and candidates themselves, so feeding them external questions or a survey of the hypothesis space lets weaker models recognize and use them and close much of the gap to the strongest model."
+      },
+      "what": {
+        "zh": "现有科研构思评测只看最终想法，看不到模型是怎样一步步搜索和修正想法的，也就不知道 autoresearch 到底卡在哪。",
+        "en": "Existing ideation evaluations only score the final idea, hiding how models search and refine ideas step by step and where autoresearch actually gets stuck."
+      },
+      "how": {
+        "zh": "Texas A&M 与 JHU 用 200 篇 ICML 2026 论文构造游戏：模型只看研究问题，通过最多 100 个是非题向读过全文的回答者提问，定期写出「idea card」，由三名 LLM 评委打分（与人工一致率 91.2%）；六个模型几乎所有进步都发生在前 30 个问题，之后除 GPT-5.4 外都停滞，闭卷知识探针只能解释约 10% 的差距，失败模式是过度深挖一个方向或过度发散。",
+        "en": "Texas A&M and JHU build the game from 200 ICML 2026 papers: the model sees only the research problem, asks up to 100 yes/no questions to an answerer that read the paper, and periodically writes idea cards scored by three LLM judges (91.2% agreement with humans); across six models nearly all progress happens in the first 30 questions and all but GPT-5.4 plateau after, a closed-book knowledge probe explains only about 10% of the gap, and failures split into over-exploiting one direction or over-exploring too many."
+      },
+      "metric": {
+        "zh": "进步集中在前 30/100 问；知识只解释约 10% 差距",
+        "en": "Progress in first 30/100 questions; knowledge explains ~10% of the gap"
+      },
+      "pills": [
+        {
+          "zh": "论文数",
+          "en": "Papers",
+          "value": "200",
+          "tone": "neutral"
+        },
+        {
+          "zh": "有效提问",
+          "en": "Useful questions",
+          "value": "~30/100",
+          "tone": "down"
+        },
+        {
+          "zh": "知识可解释差距",
+          "en": "Gap from knowledge",
+          "value": "~10%",
+          "tone": "neutral"
+        }
+      ],
+      "arxiv": "2611.14487",
+      "authors": "Muhan Gao, Hangxiao Zhu, Xinqi Su, Yu Zhang, Daniel Khashabi, Kuan-Hao Huang (Texas A&M University; Johns Hopkins University)",
+      "handle": "@arnaudmercier",
+      "links": [
+        {
+          "zh": "论文",
+          "en": "Paper",
+          "url": "https://arxiv.org/abs/2611.14487"
+        },
+        {
+          "zh": "分享者",
+          "en": "Sharer",
+          "url": "https://x.com/arnaudmercier"
+        },
+        {
+          "zh": "X 原帖",
+          "en": "X Post",
+          "url": "https://x.com/arnaudmercier/status/2120969243629961421"
+        }
+      ]
+    },
+    {
+      "id": "who-moved-the-frontier-paying-open-challenges",
+      "edition": "2026-11-13",
+      "tags": [
+        "verification"
+      ],
+      "title": {
+        "zh": "Who Moved the Frontier?：autoresearch 开放挑战的奖金规则在免费身份下可被刷，噪声评分下任何「不追回」的支付都会奖励无效修改",
+        "en": "Who Moved the Frontier?: Open Autoresearch Challenge Payouts Can Be Gamed With Free Identities, and Under Noisy Scores Any No-Clawback Rule Pays for Useless Changes"
+      },
+      "why": {
+        "zh": "当人和 AI 智能体都能用免费身份向开放挑战提交修改时，排名奖、赢家通吃或按步奖励都能靠多开账号、抄领先者或拆步骤来刷，而在评分有噪声时，只要支付从不追回且奖励真实进步，就必然在平均意义上也付钱给什么都没改的提交，因此必须对每次提交收取不低于运气收益的费用。",
+        "en": "When people and AI agents can submit to open challenges under free identities, rank prizes, winner-take-all and per-step bonuses can all be gamed by extra accounts, copying the leader or splitting steps, and with noisy scores any rule that never claws back and pays real gains must on average also pay a change that does nothing, so each submission needs a fee at least as large as what luck pays."
+      },
+      "what": {
+        "zh": "开放前沿挑战（以及 autoresearch 循环）把超过当前最佳分的修改设为新基线并付钱，但身份免费、评分有噪声时，怎样付钱才不被操纵此前没有系统分析。",
+        "en": "Open frontier challenges (and autoresearch loops) accept and pay any change that beats the best score, but how to pay without being gamed when identities are free and scores are noisy had not been analyzed."
+      },
+      "how": {
+        "zh": "作者回放一个近期挑战（QSB）某赛道的真实记录：同一解题者的步骤分到两个身份就能拿下第一和第二，奖金从 6,000 美元变成 9,600 美元；他们证明在精确评分下按每步新增进度、按预定价格曲线付费可抵抗拆分和合并，噪声下提出按次收费，并提出用「去掉早期修改后后续收益下降多少」衡量的版税，但在唯一测试移除的挑战上每一对都无法移除，如何奖励「铺路」型贡献仍未解决。",
+        "en": "Replaying one track of a recent challenge (QSB), they show a single solver's steps split across two identities would have taken first and second prize, $9,600 instead of $6,000; they prove pay-per-progress on a fixed price curve resists splitting and merging with exact scores, propose a per-submission fee under noise, and a royalty measured by how much a later gain falls when the earlier change is removed, though on the one challenge where removal was tested it failed in every pair, so paying for enabling work stays open."
+      },
+      "metric": {
+        "zh": "双身份奖金 $6,000→$9,600",
+        "en": "Two identities: $6,000→$9,600"
+      },
+      "pills": [
+        {
+          "zh": "双身份刷奖",
+          "en": "Two-identity payout",
+          "value": "$6,000→$9,600",
+          "tone": "down"
+        },
+        {
+          "zh": "移除测试",
+          "en": "Removal test",
+          "value": "0 pairs passed",
+          "tone": "down"
+        }
+      ],
+      "arxiv": "2611.14974",
+      "authors": "Luca Zanolini (independent), Duc V. Le (Circle Research)",
+      "handle": "@luca_zanolini",
+      "links": [
+        {
+          "zh": "论文",
+          "en": "Paper",
+          "url": "https://arxiv.org/abs/2611.14974"
+        },
+        {
+          "zh": "作者",
+          "en": "Author",
+          "url": "https://x.com/luca_zanolini"
+        },
+        {
+          "zh": "X 原帖",
+          "en": "X Post",
+          "url": "https://x.com/luca_zanolini/status/2121132497081921724"
+        }
+      ]
+    },
+    {
+      "id": "reins-self-evolving-harness-trajectory-planning",
+      "edition": "2026-11-13",
+      "tags": [
+        "harness-search",
+        "embodied",
+        "memory-skills"
+      ],
+      "title": {
+        "zh": "REINS：把 agent harness 搬到实时轨迹规划，经验证的 LLM 规则沉淀进记忆，合规 98%+、碰撞减少近一半、延迟 1.9–4.6 ms",
+        "en": "REINS: A Self-Evolving Agent Harness for Real-Time Trajectory Planning Hits 98%+ Compliance, ~50% Fewer Collisions and 1.9–4.6 ms Latency"
+      },
+      "why": {
+        "zh": "LLM 太慢放不进毫秒级控制回路，但如果只在遇到新场景时调用 LLM、把它的输出经动力学模型落地和前向推演验证后写进可索引的规则记忆，熟悉场景直接查表，就能在不改权重的情况下让规划器越用越强、LLM 调用越来越少。",
+        "en": "An LLM is too slow for a millisecond control loop, but calling it only on novel scenes, grounding and verifying its output with a learned dynamics model and forward rollouts, and storing the result in an indexed rule memory that familiar scenes just look up lets the planner keep improving without weight updates while LLM calls keep dropping."
+      },
+      "what": {
+        "zh": "轨迹规划中的 LLM 方法要么把 LLM 放在决策回路里超出毫秒级预算，要么离线化后规划器不再进化。",
+        "en": "LLM-based trajectory planners either keep the LLM in the decision loop and blow the millisecond budget, or move it offline and leave the runtime planner non-evolving."
+      },
+      "how": {
+        "zh": "REINS 用三种耦合包裹 LLM：落地到学习到的变量级动力学模型、用校准谓词和前向推演验证、合并进索引规则记忆；在仿真和真实基准的战术决策层达到 98%+ 合规、碰撞减少近 50%、1.9–4.6 ms 延迟，LLM 调用率随记忆成熟单调下降，并在匹配基线、观测噪声和跨域记忆迁移下保持增益；已被 NeurIPS 2026 主会接收。",
+        "en": "REINS wraps the LLM with three couplings: grounding to a learned variable-level dynamics model, verification via calibrated predicates and forward rollout, and consolidation into an indexed rule memory; at the tactical decision layer on simulated and real-world benchmarks it reaches 98%+ compliance, nearly 50% collision reduction and 1.9–4.6 ms latency, with LLM invocation rate falling monotonically as memory matures and gains holding under matched baselines, observation noise and cross-domain memory transfer; accepted at NeurIPS 2026."
+      },
+      "metric": {
+        "zh": "合规 98%+；碰撞约 −50%；1.9–4.6 ms",
+        "en": "98%+ compliance; ~−50% collisions; 1.9–4.6 ms"
+      },
+      "pills": [
+        {
+          "zh": "合规率",
+          "en": "Compliance",
+          "value": "98%+",
+          "tone": "up"
+        },
+        {
+          "zh": "碰撞",
+          "en": "Collisions",
+          "value": "~−50%",
+          "tone": "up"
+        },
+        {
+          "zh": "延迟",
+          "en": "Latency",
+          "value": "1.9–4.6 ms",
+          "tone": "up"
+        }
+      ],
+      "arxiv": "2611.10748",
+      "authors": "Zhihong Cui, Hengyu Liu, Haoran Tang, Shijun Liu, Amir Taherkordi, Tor Skeie (Aalborg University et al.); NeurIPS 2026",
+      "handle": "@OWW",
+      "links": [
+        {
+          "zh": "论文",
+          "en": "Paper",
+          "url": "https://arxiv.org/abs/2611.10748"
+        },
+        {
+          "zh": "代码",
+          "en": "Repo",
+          "url": "https://github.com/ZhihongCui/REINS"
+        },
+        {
+          "zh": "分享者",
+          "en": "Sharer",
+          "url": "https://x.com/OWW"
+        },
+        {
+          "zh": "X 原帖",
+          "en": "X Post",
+          "url": "https://x.com/OWW/status/2121001247008346261"
+        }
+      ]
+    },
     {
       "id": "co-evolving-harnesses-models-on-policy-correction",
       "edition": "2026-11-12",
