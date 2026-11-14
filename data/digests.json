@@ -281,6 +281,360 @@
   ],
   "items": [
     {
+      "id": "harness-weights-teacher-free-co-evolution",
+      "edition": "2026-11-14",
+      "tags": [
+        "harness-search",
+        "co-evolution",
+        "agentic-rl",
+        "memory-skills"
+      ],
+      "title": {
+        "zh": "Knowledge in the Harness：Gemma 4 12B agent 从自己的日志里同时进化 skill 规则和 LoRA 权重，τ²-bench 逼近前沿模型",
+        "en": "Knowledge in the Harness, Reliability in the Weights: A Gemma 4 12B Agent Evolves Its Own Skills and LoRA to Near-Frontier τ²-bench Scores"
+      },
+      "why": {
+        "zh": "小模型不靠更强的老师也能从自己的部署日志里变强，关键在于两层各管一件事：写进 skill 文件的规则教会它原本不知道的政策细节、救回从没做对的任务，而对对话做 RL 只让已经会做的任务变稳定，RL 并不会把这些政策知识搬进权重。",
+        "en": "A small agent can improve itself from its own deployment logs without a stronger teacher because the two layers do different jobs: rules written into its skill files teach it policy details it never knew and rescue tasks it never solved, while RL on its conversations only makes already-solvable tasks reliable and does not move that policy knowledge into the weights."
+      },
+      "what": {
+        "zh": "用于私有客服部署的小型开源模型既会漏掉书面政策在具体情境下的要求、又会对已知规则执行不一致，问题是它能否只凭自己的日志和参考结果、不借助前沿老师模型同时补上这两块短板。",
+        "en": "Small open models used for private customer service both miss what the written policy requires in a given situation and act inconsistently on what they know, and the question is whether such a model can close both gaps from its own logs and reference outcomes without a frontier teacher."
+      },
+      "how": {
+        "zh": "Brightendata 的 Gemma 4 12B agent 诊断失败对话并把规则写进按需加载的 skill，一条规则必须通过代码检查、两次独立的反例自审、6 次配对重测和噪声校准的验证门才保留，随后用多轮 GRPO 训练 LoRA；两轮后零售和航空领域 pass^1 分别比起点高 12.5 和 19.5 分（比把整份政策放进系统提示的参考 agent 高 11.8 和 8.0 分），与 GPT-5.6-sol、Claude Sonnet 5、GLM-5.2 的十二项对比全都不再显著，每段对话成本低于 0.01 美元，而前沿 API 为 0.04 到 0.07 美元。2×2 消融显示只用规则能把从没做对的零售任务成功率从 0 拉到 44%，只用训练权重的版本在 28 段跳过订票 skill 的行李对话里全部失败，说明知识留在了 harness 里；不过用户模拟器是 DeepSeek，分数不能直接和公开榜比。",
+        "en": "Brightendata's Gemma 4 12B agent diagnoses its failed conversations and writes rules into on-demand skills, keeping a rule only if it passes code checks, two independent counterexample self-reviews, a 6x paired retest and a noise-calibrated validation gate, then trains a LoRA with multi-turn GRPO; after two rounds it gains 12.5 pass^1 points in retail and 19.5 in airline over its start (11.8 and 8.0 over the benchmark's whole-policy-in-prompt reference agent), none of twelve comparisons with GPT-5.6-sol, Claude Sonnet 5 and GLM-5.2 remains significant, and it costs under $0.01 per conversation against $0.04 to $0.07 for frontier APIs. A 2x2 ablation shows the rules alone lift never-solved retail tasks from 0 to 44% while the trained weights alone fail all 28 baggage conversations that skip the booking skill, so the knowledge stays in the harness, though the DeepSeek user simulator means scores are not directly comparable to the public leaderboard."
+      },
+      "metric": {
+        "zh": "pass^1 +12.5（零售）/ +19.5（航空）",
+        "en": "pass^1 +12.5 (retail) / +19.5 (airline)"
+      },
+      "pills": [
+        {
+          "zh": "零售 pass^1",
+          "en": "Retail pass^1",
+          "value": "72.6 → 85.1",
+          "tone": "up"
+        },
+        {
+          "zh": "航空 pass^1",
+          "en": "Airline pass^1",
+          "value": "56.0 → 75.5",
+          "tone": "up"
+        },
+        {
+          "zh": "每段对话成本",
+          "en": "Cost per conversation",
+          "value": "< $0.01",
+          "tone": "up"
+        }
+      ],
+      "arxiv": "2611.15268",
+      "authors": "Yujia Zhang, Xinqi Ren, Shixiong Zhou, Jia Meng (Brightendata)",
+      "handle": "@goodmachinesai",
+      "links": [
+        {
+          "zh": "论文",
+          "en": "Paper",
+          "url": "https://arxiv.org/abs/2611.15268"
+        },
+        {
+          "zh": "分享者",
+          "en": "Sharer",
+          "url": "https://x.com/goodmachinesai"
+        },
+        {
+          "zh": "X 原帖",
+          "en": "X Post",
+          "url": "https://x.com/goodmachinesai/status/2121633981842284883"
+        }
+      ]
+    },
+    {
+      "id": "evotrias-separation-of-powers-program-evolution",
+      "edition": "2026-11-14",
+      "tags": [
+        "harness-search",
+        "verification",
+        "autoresearch"
+      ],
+      "title": {
+        "zh": "EvoTrias：把「治理、提议、评判」三权分立，编码 agent 插件在程序演化上领先且 token 成本降 64%",
+        "en": "EvoTrias: Splitting Govern, Propose and Judge Lets a Coding-Agent Plugin Lead Program Evolution at 64% Lower Token Cost"
+      },
+      "why": {
+        "zh": "让编码 agent 做程序演化时，不该让一个 agent 独揽大权：跨轮搜索决策交给控制器、agent 只负责构造候选、评估器源码对它保密，因为能看到测试用例的 agent 会去拟合用例，换到新实例上反而变差。",
+        "en": "Agentic program evolution works better and cheaper when no single agent holds all the power, with a controller keeping cross-round search decisions, the coding agent only building candidates and a private evaluator it cannot read, because agents that can see the test cases fit them and then do worse on new instances."
+      },
+      "what": {
+        "zh": "以控制器为中心的演化系统（OpenEvolve、AdaEvolve、EvoX）给提议者的自主权太少，以 agent 为中心的系统（如 CORAL）让一个编码 agent 同时治理和提议、token 开销大，而两者都没有保护评估器不被摸透或钻空子。",
+        "en": "Controller-centric evolvers such as OpenEvolve, AdaEvolve and EvoX give the proposer too little autonomy, agent-centric ones such as CORAL let one coding agent both govern and propose at high token cost, and neither protects the evaluator from being learned or gamed."
+      },
+      "how": {
+        "zh": "华为 Taylor Lab 的 EvoTrias 作为 Claude Code / OpenCode 插件运行，由 Structured Governance、Open Proposal 和私有的 Protected Judgment 三个平面通过类型化契约和运行时 hook 连接；在 GLM-5.2 与 Opus-5 下都在 12 个 Math/ADRS 任务中 9 个排第一，Frontier-CS 中位数 80.67 对四 agent CORAL 的 67.14，单次完整运行 41.37 美元对 115.10 美元，并把 68 万行的 OR-Tools CP-SAT 求解器比未打补丁版本提升 13.2%（同一 agent 单次尝试平均 -0.1%）。在 Signal Processing 上若把评估器暴露给 agent，原始分从 0.733 升到 0.803，但 OOD 分从 0.741 降到 0.721，说明保护评估器才能让基准分数如实反映迁移能力。",
+        "en": "Huawei Taylor Lab's EvoTrias runs as a Claude Code or OpenCode plugin whose Structured Governance, Open Proposal and private Protected Judgment planes talk only through typed contracts enforced by runtime hooks; it ranks first on 9 of 12 Math and ADRS tasks under both GLM-5.2 and Opus-5, reaches a Frontier-CS median of 80.67 against 67.14 for four-agent CORAL at $41.37 against $115.10 per full run, and improves the 680K-line OR-Tools CP-SAT solver by 13.2% over the unpatched version while a single pass of the same agent averages -0.1%. Exposing the evaluator on Signal Processing raises the original score from 0.733 to 0.803 but drops the OOD score from 0.741 to 0.721, so protecting it keeps the benchmark a faithful estimate of transfer."
+      },
+      "metric": {
+        "zh": "Frontier-CS 中位数 80.67 对 67.14",
+        "en": "Frontier-CS median 80.67 vs 67.14"
+      },
+      "pills": [
+        {
+          "zh": "Token 成本对比 CORAL-4",
+          "en": "Token cost vs CORAL-4",
+          "value": "-64%",
+          "tone": "up"
+        },
+        {
+          "zh": "OR-Tools 求解质量",
+          "en": "OR-Tools solver quality",
+          "value": "+13.2%",
+          "tone": "up"
+        },
+        {
+          "zh": "暴露评估器后 OOD",
+          "en": "OOD with exposed evaluator",
+          "value": "0.741 → 0.721",
+          "tone": "down"
+        }
+      ],
+      "arxiv": "2611.15309",
+      "authors": "Zhengyang Ai, Tong Liu, Jingxian Tang, Xiaobing Du, Tao Xiao, Fengshi Zhang, Zishuo Li, Xiaodong Ai, Pinyan Lu (Huawei Taylor Lab, SUFE)",
+      "handle": "@eforus_overseer",
+      "links": [
+        {
+          "zh": "论文",
+          "en": "Paper",
+          "url": "https://arxiv.org/abs/2611.15309"
+        },
+        {
+          "zh": "项目页",
+          "en": "Project",
+          "url": "https://evotrias.github.io/"
+        },
+        {
+          "zh": "分享者",
+          "en": "Sharer",
+          "url": "https://x.com/eforus_overseer"
+        },
+        {
+          "zh": "X 原帖",
+          "en": "X Post",
+          "url": "https://x.com/eforus_overseer/status/2121644962030723241"
+        }
+      ]
+    },
+    {
+      "id": "antigravity-teamwork-open-problems",
+      "edition": "2026-11-14",
+      "tags": [
+        "autoresearch",
+        "scientific-discovery",
+        "harness-search",
+        "verification"
+      ],
+      "title": {
+        "zh": "Google Antigravity /teamwork：带证伪器的 Gemini 4 多智能体 harness 证出 Courtade–Kumar 猜想（5000 万行 Lean）并形式化 Weil 猜想",
+        "en": "Google's Antigravity /teamwork: Gemini 4 Multi-Agent Harnesses With Falsifiers Prove Courtade–Kumar in 50M Lines of Lean and Formalize the Weil Conjectures"
+      },
+      "why": {
+        "zh": "多智能体科研 harness 之所以能啃动悬而未决的问题，是因为每个候选都要过外部证伪器（Lean 内核、未改动的测试集、模拟器）、每个 agent 只拿干净且切分好的上下文，这样把不可靠的单次尝试变成了多天运行下可验证的结果。",
+        "en": "Multi-agent research harnesses start to crack open problems when every candidate must pass an outside falsifier such as the Lean kernel, unmodified test suites or simulators and each agent works from a clean, partitioned context, because that turns unreliable single attempts into verified results over multi-day runs."
+      },
+      "what": {
+        "zh": "单次模型尝试结果不稳定，多天任务里又容易丢细节，问题是多智能体 harness 能否把数学、化学和系统工程里的开放问题推进到可验证的答案。",
+        "en": "Single model attempts are unpredictable and lose track of details over multi-day tasks, so the question is whether a multi-agent harness can push open problems in math, chemistry and systems engineering to verified answers."
+      },
+      "how": {
+        "zh": "Google Research 的 /teamwork 把并行探索和证伪器配对，由新的协调者接力，审核者不看生产者的推理；与人类专家合作证出 2013 年的 Courtade–Kumar 猜想（Lean 4 共 5000 万行），全自动用约 180 万行 Lean、28,800 次子 agent 调用形式化 Weil 猜想，30 个 agent 的 NMR 结构解析 top-1 达 95%（约为单 agent 的 2 倍），并把 libgav1 重写为约 17 万行 Rust、最终比 C++/汇编快 20% 到 30%。这些都是博客自报、未经同行评审，其中一个 /teamwork 任务还分析历史轨迹改进了 /boost，Google 称之为一个 harness 优化另一个 harness。",
+        "en": "Google Research's /teamwork pairs parallel exploration with falsifiers, hands work to fresh coordinators and uses critics that never see the producer's reasoning; with human experts it proved the 2013 Courtade–Kumar conjecture (50 million lines of Lean 4), autonomously formalized the Weil conjectures in about 1.8 million lines over 28,800 subagent runs, reached 95% top-1 NMR structure elucidation with 30 agents (nearly double a single agent), and rewrote libgav1 into about 170K lines of Rust that ends 20 to 30% faster than the C++ and assembly. These results are self-reported in a blog and not peer reviewed, and one /teamwork campaign also mined past trajectories to improve /boost, which Google describes as a harness optimizing another harness."
+      },
+      "metric": {
+        "zh": "Courtade–Kumar 证明：5000 万行 Lean 4",
+        "en": "Courtade–Kumar proof: 50M lines of Lean 4"
+      },
+      "pills": [
+        {
+          "zh": "Weil 猜想形式化",
+          "en": "Weil formalization",
+          "value": "~1.8M lines",
+          "tone": "up"
+        },
+        {
+          "zh": "NMR top-1",
+          "en": "NMR top-1",
+          "value": "95%",
+          "tone": "up"
+        },
+        {
+          "zh": "libgav1 Rust 对比 C++",
+          "en": "libgav1 Rust vs C++",
+          "value": "+20–30% speed",
+          "tone": "up"
+        }
+      ],
+      "authors": "Vahab Mirrokni and the Google Research /teamwork team with academic collaborators",
+      "handle": "@mirrokni",
+      "links": [
+        {
+          "zh": "博客",
+          "en": "Blog",
+          "url": "https://research.google/blog/advancing-science-engineering-with-antigravitys-teamwork-feature/"
+        },
+        {
+          "zh": "作者",
+          "en": "Author",
+          "url": "https://x.com/mirrokni"
+        },
+        {
+          "zh": "X 原帖",
+          "en": "X Post",
+          "url": "https://x.com/mirrokni/status/2121351383236436247"
+        },
+        {
+          "zh": "X 原帖（@QubitEconomist）",
+          "en": "X Post (@QubitEconomist)",
+          "url": "https://x.com/QubitEconomist/status/2121592736080118187"
+        }
+      ]
+    },
+    {
+      "id": "ballad-bandit-llm-routing-heuristic-discovery",
+      "edition": "2026-11-14",
+      "tags": [
+        "autoresearch",
+        "harness-search"
+      ],
+      "title": {
+        "zh": "Ballad：用 bandit 在便宜与强力 LLM 之间路由，启发式发现效果追平或超过最佳单模型，成本降 65.6%",
+        "en": "Ballad: Bandit Routing Across Cheap and Strong LLMs Matches or Beats the Best Single Model in Heuristic Discovery at 65.6% Lower Cost"
+      },
+      "why": {
+        "zh": "在 FunSearch 式的启发式发现里，最大的模型并不总是最好的变异器，所以一个奖励「罕见突破」、并沿启发式谱系给祖先记功的 bandit，用一组便宜模型的组合就能得到比一直调用最强模型更好的启发式。",
+        "en": "In FunSearch-style heuristic discovery the biggest model is not reliably the best mutator, so a bandit that rewards models for rare breakthroughs and credits ancestors along the heuristic lineage gets better heuristics from a mix of cheap models than from always calling the strongest one."
+      },
+      "what": {
+        "zh": "自动启发式发现要调用成千上万次 LLM，而付钱用最大模型是否有用、在奖励非平稳且在种群中相互纠缠时每一步该调哪个模型，此前都不清楚。",
+        "en": "Automated heuristic discovery makes thousands of LLM calls, and it was unclear whether paying for the largest model helps or how to pick a model at each step when rewards are non-stationary and entangled across the population."
+      },
+      "how": {
+        "zh": "IIT Delhi 与 Google DeepMind 的 Ballad 用上尾 quantile-of-maxima 给四个模型（Gemma 3 12B/27B、Gemini 2.5 Flash-Lite/Flash）打分，沿启发式 DAG 传播功劳并折扣陈旧观测；在 TSP、CVRP、在线/离线装箱和 GED 上，最大的 Gemini 2.5 Flash 在任何任务上都不是最优，Ballad 每个任务都排第一或第二、总体目标值最佳（45.577 对 Flash-Lite 的 45.630），相对一直用 Flash 平均省下 65.6% 的 API 成本。消融显示去掉谱系记功会让 TSP 和 CVRP 变差，而按成本惩罚探索反而更差，因为它偏向便宜但产生不了突破的模型。",
+        "en": "IIT Delhi and Google DeepMind's Ballad scores four models (Gemma 3 12B and 27B, Gemini 2.5 Flash-Lite and Flash) with an upper-tail quantile-of-maxima, propagates credit through the heuristic DAG and discounts stale observations; across TSP, CVRP, online and offline bin packing and GED the largest Gemini 2.5 Flash never had the best objective, while Ballad ranked first or second on every task with the best overall objective (45.577 against 45.630 for Flash-Lite) and cut API cost by 65.6% on average against always using Flash. Ablations show that removing lineage credit hurts TSP and CVRP and that cost-penalized exploration does worse because it favors cheap models that never produce breakthroughs."
+      },
+      "metric": {
+        "zh": "API 成本 -65.6%（对比一直用 Flash）",
+        "en": "API cost -65.6% vs always-Flash"
+      },
+      "pills": [
+        {
+          "zh": "总体目标值（越低越好）",
+          "en": "Overall objective (lower is better)",
+          "value": "45.577",
+          "tone": "up"
+        },
+        {
+          "zh": "最佳单模型 Flash-Lite",
+          "en": "Best single model Flash-Lite",
+          "value": "45.630",
+          "tone": "flat"
+        },
+        {
+          "zh": "API 成本",
+          "en": "API cost",
+          "value": "-65.6%",
+          "tone": "up"
+        }
+      ],
+      "arxiv": "2611.17241",
+      "authors": "Samidha Verma, Ankit Anand, Sayan Ranu (IIT Delhi, Google DeepMind)",
+      "handle": "@arnaudmercier",
+      "links": [
+        {
+          "zh": "论文",
+          "en": "Paper",
+          "url": "https://arxiv.org/abs/2611.17241"
+        },
+        {
+          "zh": "分享者",
+          "en": "Sharer",
+          "url": "https://x.com/arnaudmercier"
+        },
+        {
+          "zh": "X 原帖",
+          "en": "X Post",
+          "url": "https://x.com/arnaudmercier/status/2121536716368441749"
+        }
+      ]
+    },
+    {
+      "id": "evidence-governed-evolution-agent-updates",
+      "edition": "2026-11-14",
+      "tags": [
+        "verification",
+        "co-evolution"
+      ],
+      "title": {
+        "zh": "Evidence-Governed Evolution：给自我改进 agent 设一道统计门，决定它自己生成的更新能不能留下",
+        "en": "Evidence-Governed Evolution: A Statistical Gate for When a Self-Improving Agent Should Keep Its Own Update"
+      },
+      "why": {
+        "zh": "自我改进的 agent 不能因为自己的评估器打了高分就保留更新，因为一个对所评候选系统性偏乐观的评估器会放过有害改动，除非在新数据上对照独立参考流程做校准，而这篇论文只在模拟里证明了这一点，没有在真实 agent 上验证。",
+        "en": "A self-improving agent should not keep an update just because its own evaluator scores it well, because an evaluator that is optimistic about the candidates it scores will wave harmful changes through unless it is calibrated against an independent reference on fresh data, and this paper shows that only in simulation, not on a real agent."
+      },
+      "what": {
+        "zh": "agent 越来越多地自己改写提示词、记忆、工具和工作流，但能生成一个看似合理的改动，并不说明它应该成为持久状态，因为候选是自适应挑出来的，评估器也可能不准或被操纵。",
+        "en": "Agents increasingly rewrite their own prompts, memory, tools and workflows, but generating a plausible change does not show it should become persistent state, since candidates are selected adaptively and evaluators can be imperfect or manipulated."
+      },
+      "how": {
+        "zh": "独立研究者 Subodh Lonkar 的 EGE 先冻结候选，用新的配对审计样本和 Hoeffding 下界检验，要求主目标达到实质改进、受保护能力不劣于参考版本，并用独立样本把运营评估器对照参考流程校准，再经治理检查和有限范围的 canary 才提交。在合成 Monte Carlo 测试（3,000 轮、每轮 10 个候选）中，评估器偏乐观 0.25 时朴素门在 2,997 轮里放过了有害更新、校准门一次也没有，但审计样本只有 5,000 时好更新的通过率仅 52.6% 到 76.2%，而故意让校准数据分布不匹配时校准门在全部 3,000 轮里都失守。",
+        "en": "Independent researcher Subodh Lonkar's EGE freezes each candidate, tests it on fresh paired audit samples with Hoeffding lower bounds, requires a real margin on a primary objective plus non-inferiority on protected capabilities, calibrates the operational evaluator against a reference procedure on independent samples, and adds governance checks and a bounded canary before commit. In a synthetic Monte Carlo test of 3,000 campaigns with 10 candidates each and evaluator optimism of 0.25, a naive gate accepted a harmful update in 2,997 campaigns while the calibrated gate accepted none, at the price of only 52.6% to 76.2% acceptance of good updates with 5,000 audit samples, and the calibrated gate failed in all 3,000 campaigns when the calibration data were deliberately mismatched."
+      },
+      "metric": {
+        "zh": "有害更新通过：朴素 2,997/3,000，校准 0/3,000",
+        "en": "Harmful acceptance: naive 2,997/3,000, calibrated 0/3,000"
+      },
+      "pills": [
+        {
+          "zh": "朴素门（偏差 0.25）",
+          "en": "Naive gate (bias 0.25)",
+          "value": "2,997/3,000",
+          "tone": "down"
+        },
+        {
+          "zh": "校准门",
+          "en": "Calibrated gate",
+          "value": "0/3,000",
+          "tone": "up"
+        },
+        {
+          "zh": "好更新通过率（n=5,000）",
+          "en": "Good-update acceptance (n=5,000)",
+          "value": "52.6–76.2%",
+          "tone": "flat"
+        }
+      ],
+      "arxiv": "2611.16378",
+      "authors": "Subodh Lonkar (Independent Researcher)",
+      "handle": "@eforus_overseer",
+      "links": [
+        {
+          "zh": "论文",
+          "en": "Paper",
+          "url": "https://arxiv.org/abs/2611.16378"
+        },
+        {
+          "zh": "分享者",
+          "en": "Sharer",
+          "url": "https://x.com/eforus_overseer"
+        },
+        {
+          "zh": "X 原帖",
+          "en": "X Post",
+          "url": "https://x.com/eforus_overseer/status/2121644844107915715"
+        }
+      ]
+    },
+    {
       "id": "multiloop-multi-agent-harness-evolution",
       "edition": "2026-11-14",
       "tags": [
