@@ -14,7 +14,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500;600&family=Noto+Sans+SC:wght@400;500;600;700&family=Noto+Serif+SC:wght@500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/assets/app.css?v=2026-11-14-20261114T092154Z">
+  <link rel="stylesheet" href="/assets/app.css?v=2026-11-14-20261114T110655Z">
   <script>
     try {
       var scheme = localStorage.getItem("yanhua-color-scheme");
@@ -47,6 +47,7 @@
       <span class="brand-domain">yanhua.ai</span>
     </a>
     <div class="nav-controls">
+      <button type="button" class="icon-btn rail-toggle" id="rail-toggle" aria-expanded="false" aria-controls="rail"></button>
       <div class="seg" role="group" id="mode-switch" aria-label="阅读方式"></div>
       <div class="seg" role="group" id="lang-switch" aria-label="语言"></div>
       <button type="button" class="icon-btn" id="theme-btn"></button>
@@ -54,8 +55,9 @@
     </div>
   </header>
   <header class="masthead" id="mast"></header>
+  <div class="rail-backdrop" id="rail-backdrop" hidden></div>
+  <aside class="rail" id="rail" aria-hidden="true"></aside>
   <div class="shell">
-    <aside class="rail" id="rail"></aside>
     <main id="content">
       <div id="stage">
         <p id="boot-fallback" class="noscript">演化日报暂时没有载入。请刷新页面，或直接打开 <a href="/feed.xml">RSS</a> 与 <a href="/feed.json">JSON Feed</a>。</p>
@@ -70,6 +72,6 @@
   </noscript>
   <script src="/data/config.js?v=2026-11-14-20261114T092154Z"></script>
   <script src="/data/digests.js?v=2026-11-14-20261114T092154Z"></script>
-  <script src="/assets/app.js?v=2026-11-14-20261114T092154Z"></script>
+  <script src="/assets/app.js?v=2026-11-14-20261114T110655Z"></script>
 </body>
 </html>

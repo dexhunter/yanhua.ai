@@ -20,8 +20,9 @@
   --measure: 68ch;
   --nav-h: 4.25rem;
   --frame-pad: 1.5rem;
-  --frame: calc(16rem + 3rem + var(--measure));
+  --frame: var(--measure);
   --frame-outer: calc(var(--frame) + (var(--frame-pad) * 2));
+  --chrome: 72rem;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -156,7 +157,7 @@ a:hover { color: var(--ink); }
   align-items: center;
   justify-content: space-between;
   gap: 1rem;
-  width: min(100%, var(--frame-outer));
+  width: min(100%, var(--chrome));
   min-height: var(--nav-h);
   margin-inline: auto;
   padding: 0.65rem var(--frame-pad);
@@ -258,22 +259,91 @@ html[data-flipped="true"] .brand-mark { transform: rotate(80deg); }
 
 .shell {
   display: grid;
-  grid-template-columns: minmax(12rem, 16rem) minmax(0, var(--measure));
-  gap: 2.5rem 3rem;
-  justify-content: start;
+  grid-template-columns: minmax(0, var(--measure));
+  justify-content: center;
   width: min(100%, var(--frame-outer));
   margin-inline: auto;
   padding: 1.15rem var(--frame-pad) 4rem;
 }
 
-.rail {
-  position: sticky;
-  top: calc(var(--nav-h) + 1rem);
-  align-self: start;
-  max-height: calc(100vh - var(--nav-h) - 2rem);
-  overflow: auto;
-  padding-right: 0.25rem;
+.rail-toggle {
+  color: var(--muted);
+  padding: 0.32rem 0.55rem;
+  font-size: 0.8rem;
 }
+.rail-toggle[aria-expanded="true"] {
+  color: var(--ink);
+  background: var(--wash);
+  border-color: color-mix(in srgb, var(--lacquer) 40%, var(--line));
+}
+.rail-toggle-kicker { font-weight: 600; }
+.rail-toggle-date {
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  font-variant-numeric: tabular-nums;
+}
+
+.rail-backdrop {
+  position: fixed;
+  inset: 0;
+  top: var(--nav-h);
+  z-index: 24;
+  background: color-mix(in srgb, var(--ink) 32%, transparent);
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity 0.2s ease, visibility 0.2s ease;
+}
+html.rail-open .rail-backdrop {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+.rail {
+  position: fixed;
+  top: var(--nav-h);
+  left: 0;
+  bottom: 0;
+  z-index: 25;
+  width: min(18.5rem, calc(100vw - 2.5rem));
+  overflow: auto;
+  overscroll-behavior: contain;
+  padding: 0.95rem 1rem 1.5rem;
+  background: var(--raised);
+  border-right: 1px solid var(--line);
+  box-shadow: var(--shadow);
+  transform: translateX(-100%);
+  visibility: hidden;
+  pointer-events: none;
+  transition: transform 0.2s ease, visibility 0.2s ease;
+}
+html.rail-open .rail {
+  transform: translateX(0);
+  visibility: visible;
+  pointer-events: auto;
+}
+.rail-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  margin-bottom: 0.7rem;
+}
+.rail-head h2 { margin: 0; }
+#rail-close {
+  appearance: none;
+  border: 0;
+  background: transparent;
+  color: var(--muted);
+  width: 1.7rem;
+  height: 1.7rem;
+  padding: 0;
+  font-size: 1.25rem;
+  line-height: 1;
+  cursor: pointer;
+}
+#rail-close:hover { color: var(--lacquer-ink); }
 .rail h2 {
   margin: 1.25rem 0 0.45rem;
   font-family: var(--sans);
@@ -846,6 +916,7 @@ dialog .lede { font-size: 1rem; }
 }
 
 @media (prefers-reduced-motion: reduce) {
+  .rail, .rail-backdrop { transition: none; }
   .brand-mark, .deck-spin { transition: none; transform: none !important; }
   .face, .face-back { transform: none !important; backface-visibility: visible; }
   .deck-stage.is-flipped .face-front,
@@ -855,37 +926,11 @@ dialog .lede { font-size: 1rem; }
 @media (max-width: 900px) {
   .shell {
     grid-template-columns: minmax(0, 1fr);
-    justify-content: stretch;
+    justify-content: center;
     padding-top: 1rem;
   }
-  .rail, #content { min-width: 0; }
+  #content { min-width: 0; }
   .search { min-width: 0; }
-  .rail {
-    position: static;
-    max-height: none;
-    display: grid;
-    gap: 0.7rem;
-  }
-  .rail-list {
-    flex-direction: row;
-    flex-wrap: nowrap;
-    gap: 0.35rem;
-    min-width: 0;
-    overflow-x: auto;
-    overscroll-behavior-x: contain;
-    scrollbar-width: thin;
-    scrollbar-color: var(--scrollbar-thumb) transparent;
-    padding-bottom: 0.2rem;
-  }
-  .rail a,
-  .chip {
-    white-space: nowrap;
-    flex: none;
-    border: 1px solid var(--line);
-    background: var(--raised);
-    padding: 0.32rem 0.6rem;
-  }
-  .rail-count { margin-left: 0.45rem; }
   .nav-frame { align-items: flex-start; }
   .deck-sheet { min-height: 0; }
   .context-grid { grid-template-columns: 1fr; }
@@ -893,6 +938,7 @@ dialog .lede { font-size: 1rem; }
 
 @media (max-width: 640px) {
   .brand-domain { display: none; }
+  .rail-toggle-date { display: none; }
   #theme-btn span { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0, 0, 0, 0); }
   .entry, .deck-sheet { padding-left: 0.9rem; padding-right: 0.9rem; }
   .colophon-inner { flex-wrap: wrap; }

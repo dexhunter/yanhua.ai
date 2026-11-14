@@ -34,6 +34,9 @@
       searchPh: "搜索标题、arXiv、作者",
       mastSub: "递归自我改进与智能体框架搜索 · 每日双语精读闪卡",
       editions: "期次",
+      pastEditions: "往期",
+      openEditions: "打开往期列表",
+      closeEditions: "关闭往期列表",
       allEditions: "全部期次",
       topics: "主题",
       allTopics: "全部主题",
@@ -103,6 +106,9 @@
       searchPh: "Search titles, arXiv ids, authors",
       mastSub: "Recursive self-improvement & agent harness search · Daily bilingual flash cards",
       editions: "Editions",
+      pastEditions: "Editions",
+      openEditions: "Open editions list",
+      closeEditions: "Close editions list",
       allEditions: "All editions",
       topics: "Topics",
       allTopics: "All topics",
@@ -162,6 +168,7 @@
     q: "",
     index: 0,
     flipped: false,
+    railOpen: loadRailOpen(),
     sub: loadSub()
   };
 
@@ -192,6 +199,10 @@
   function loadSub() {
     try { return JSON.parse(localStorage.getItem("yanhua-subscription") || "null"); }
     catch (err) { return null; }
+  }
+  function loadRailOpen() {
+    try { return localStorage.getItem("yanhua-editions-open") === "1"; }
+    catch (err) { return false; }
   }
   function t(key) { return COPY[state.lang][key]; }
   function tx(block) {
@@ -472,6 +483,62 @@
   function railCount(n) {
     return '<span class="rail-count">' + esc(String(n)) + "</span>";
   }
+  function calendarIcon() {
+    return '<svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="3.5" y="5" width="17" height="15.5" rx="2"/><path d="M8 3.5v3M16 3.5v3M3.5 9.5h17"/></svg>';
+  }
+  function railDateLabel() {
+    const edition = state.edition !== "all" ? editionById(state.edition) : (data.editions[0] || null);
+    return edition ? tx(edition.label) : t("pastEditions");
+  }
+  function persistRailOpen() {
+    try {
+      if (state.railOpen) localStorage.setItem("yanhua-editions-open", "1");
+      else localStorage.removeItem("yanhua-editions-open");
+    } catch (err) {}
+  }
+  function syncRailChrome() {
+    document.documentElement.classList.toggle("rail-open", !!state.railOpen);
+    if (document.body) {
+      document.body.style.overflow = state.railOpen ? "hidden" : "";
+    }
+    const backdrop = document.getElementById("rail-backdrop");
+    if (backdrop) backdrop.hidden = !state.railOpen;
+    if (rail) {
+      rail.classList.toggle("is-open", !!state.railOpen);
+      rail.setAttribute("aria-hidden", state.railOpen ? "false" : "true");
+      rail.setAttribute("aria-modal", state.railOpen ? "true" : "false");
+      if ("inert" in rail) rail.inert = !state.railOpen;
+    }
+    paintRailToggle();
+  }
+  function setRailOpen(open, opts) {
+    const next = !!open;
+    const focus = !opts || opts.focus !== false;
+    const changed = state.railOpen !== next;
+    state.railOpen = next;
+    persistRailOpen();
+    syncRailChrome();
+    if (!focus) return;
+    if (next) {
+      const q = document.getElementById("q");
+      if (q) q.focus();
+    } else if (changed) {
+      const btn = document.getElementById("rail-toggle");
+      if (btn) btn.focus();
+    }
+  }
+  function paintRailToggle() {
+    const btn = document.getElementById("rail-toggle");
+    if (!btn) return;
+    const open = !!state.railOpen;
+    const action = open ? t("closeEditions") : t("openEditions");
+    btn.setAttribute("aria-expanded", open ? "true" : "false");
+    btn.setAttribute("aria-controls", "rail");
+    btn.setAttribute("aria-label", action + " · " + railDateLabel());
+    btn.innerHTML = calendarIcon() +
+      '<span class="rail-toggle-kicker">' + esc(t("pastEditions")) + "</span>" +
+      '<span class="rail-toggle-date">' + esc(railDateLabel()) + "</span>";
+  }
   function renderRail() {
     if (!rail) return;
     const editions = data.editions.map(function (edition) {
@@ -481,12 +548,17 @@
     const tags = data.tags.map(function (tag) {
       return '<button type="button" class="chip" data-tag="' + esc(tag.id) + '" aria-pressed="' + (state.tag === tag.id) + '">' + esc(tx(tag.label)) + '</button>';
     }).join("");
+    rail.setAttribute("role", "dialog");
+    rail.setAttribute("aria-labelledby", "rail-title");
     rail.innerHTML =
+      '<div class="rail-head"><h2 id="rail-title">' + esc(t("editions")) + '</h2>' +
+      '<button type="button" id="rail-close" aria-label="' + esc(t("closeEditions")) + '">×</button></div>' +
       '<input class="search" id="q" type="search" placeholder="' + esc(t("searchPh")) + '" aria-label="' + esc(t("searchPh")) + '" value="' + esc(state.q) + '">' +
-      '<h2>' + esc(t("editions")) + '</h2>' +
+      '<h2>' + esc(t("pastEditions")) + '</h2>' +
       '<div class="rail-list"><a href="#content" data-edition="all"' + (state.edition === "all" ? ' aria-current="page"' : "") + '><span>' + esc(t("allEditions")) + "</span>" + railCount(data.items.length) + "</a>" + editions + '</div>' +
       '<h2>' + esc(t("topics")) + '</h2>' +
       '<div class="rail-list"><button type="button" class="chip" data-tag="all" aria-pressed="' + (state.tag === "all") + '">' + esc(t("allTopics")) + '</button>' + tags + '</div>';
+    syncRailChrome();
   }
 
   function isPaperItem(item) {
@@ -974,7 +1046,7 @@
     node.scrollIntoView({ block: "start", behavior: reduced ? "auto" : "smooth" });
   }
   function dialogOpen() {
-    return (statsDialog && statsDialog.open) || (subDialog && subDialog.open);
+    return state.railOpen || (statsDialog && statsDialog.open) || (subDialog && subDialog.open);
   }
   function copyText(text) {
     const fallback = function () {
@@ -1020,6 +1092,14 @@
     }
     if (event.target.closest("#theme-btn")) {
       setScheme(scheme() === "dark" ? "light" : "dark");
+      return;
+    }
+    if (event.target.closest("#rail-toggle")) {
+      setRailOpen(!state.railOpen);
+      return;
+    }
+    if (event.target.closest("#rail-close") || event.target.closest("#rail-backdrop")) {
+      setRailOpen(false);
       return;
     }
     if (event.target.closest("#close-sub")) {
@@ -1082,6 +1162,7 @@
       state.edition = editionLink.dataset.edition;
       state.index = 0;
       state.flipped = false;
+      setRailOpen(false, { focus: false });
       render();
       if (past) scrollAfterFilter();
       return;
@@ -1092,6 +1173,7 @@
       state.tag = tagBtn.dataset.tag;
       state.index = 0;
       state.flipped = false;
+      setRailOpen(false, { focus: false });
       render();
       if (past) scrollAfterFilter();
       return;
@@ -1166,6 +1248,11 @@
     if (event.isComposing || event.key === "Process") return;
     const key = event.key;
     const typing = event.target && event.target.closest && event.target.closest("input, textarea, select");
+    if (key === "Escape" && state.railOpen) {
+      event.preventDefault();
+      setRailOpen(false);
+      return;
+    }
     if (key === "Escape" && event.target && event.target.id === "q") {
       if (!dialogOpen()) event.preventDefault();
       event.target.blur();
@@ -1177,16 +1264,18 @@
       }
       return;
     }
-    if (typing || dialogOpen()) return;
     if (event.metaKey || event.ctrlKey || event.altKey) return;
     if (key === "/") {
+      if (typing || (statsDialog && statsDialog.open) || (subDialog && subDialog.open)) return;
       event.preventDefault();
+      if (!state.railOpen) setRailOpen(true);
       const q = document.getElementById("q");
       if (!q) return;
       q.focus();
       q.select();
       return;
     }
+    if (typing || dialogOpen()) return;
     if (state.mode === "reader") {
       if (key === "j" || key === "J") { event.preventDefault(); stepReader(1); }
       else if (key === "k" || key === "K") { event.preventDefault(); stepReader(-1); }
