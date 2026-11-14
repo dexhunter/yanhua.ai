@@ -455,12 +455,20 @@
         seg("lang", "en", "EN", state.lang === "en");
     }
     paintThemeButton();
+    paintSubNav();
     const url = new URL(location.href);
     url.searchParams.set("lang", state.lang);
     history.replaceState(null, "", url.pathname + url.search + url.hash);
   }
   function seg(name, value, label, pressed) {
     return '<button type="button" data-set="' + name + '" data-value="' + value + '" aria-pressed="' + pressed + '">' + esc(label) + '</button>';
+  }
+  function paintSubNav() {
+    const btn = document.getElementById("sub-nav");
+    if (!btn) return;
+    btn.textContent = t("subscribe");
+    btn.setAttribute("aria-haspopup", "dialog");
+    btn.setAttribute("aria-controls", "sub-dialog");
   }
   function paintThemeButton() {
     const dark = scheme() === "dark";
@@ -1102,6 +1110,10 @@
       setRailOpen(false);
       return;
     }
+    if (event.target.closest("#sub-nav")) {
+      openSubWindow();
+      return;
+    }
     if (event.target.closest("#close-sub")) {
       closeSubWindow();
       return;
@@ -1534,6 +1546,7 @@
   mountExternalAnalytics();
   if (hashCardId()) revealCard(hashCardId());
   render();
+  maybeOpenSub();
   loadStats();
   document.addEventListener("visibilitychange", function () {
     if (document.visibilityState === "hidden") {

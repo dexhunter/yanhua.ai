@@ -271,6 +271,13 @@ html[data-flipped="true"] .brand-mark { transform: rotate(80deg); }
   padding: 0.32rem 0.55rem;
   font-size: 0.8rem;
 }
+.sub-nav {
+  padding: 0.32rem 0.55rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--lacquer-ink);
+  border-color: color-mix(in srgb, var(--lacquer) 35%, var(--line));
+}
 .rail-toggle[aria-expanded="true"] {
   color: var(--ink);
   background: var(--wash);
