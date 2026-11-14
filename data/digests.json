@@ -19,6 +19,15 @@
   },
   "editions": [
     {
+      "id": "2026-11-14",
+      "date": "2026-11-14",
+      "slot": "",
+      "label": {
+        "zh": "2026-11-14",
+        "en": "14 Nov 2026"
+      }
+    },
+    {
       "id": "2026-11-13",
       "date": "2026-11-13",
       "slot": "",
@@ -271,6 +280,367 @@
     }
   ],
   "items": [
+    {
+      "id": "multiloop-multi-agent-harness-evolution",
+      "edition": "2026-11-14",
+      "tags": [
+        "harness-search",
+        "multi-agent",
+        "deep-research"
+      ],
+      "title": {
+        "zh": "MultiLoop：编码 agent 自动改多智能体 harness，DeepSearchQA 提到 71.88%，但编排类失败基本没修好",
+        "en": "MultiLoop: A Coding Agent Evolves a Multi-Agent Harness to 71.88% on DeepSearchQA, but Orchestration Failures Mostly Survive"
+      },
+      "why": {
+        "zh": "让编码 agent 读执行轨迹来改多智能体 harness 确实能涨分，但它几乎只改提示词、加了一个下载工具，从不去动「谁把什么任务派给谁、信息怎么在 agent 间传」这类结构，所以多智能体特有的编排失败基本还在。",
+        "en": "Letting a coding agent read execution traces and edit a multi-agent harness does raise accuracy, but it almost only rewrites prompts and adds one download tool, never touching how work is delegated or how information flows between agents, so the orchestration failures specific to multi-agent systems largely remain."
+      },
+      "what": {
+        "zh": "自动 harness 优化此前主要针对单 agent，而多智能体 harness 的问题往往出在 agent 之间如何协作，不清楚同样的「读轨迹—改代码」循环能否修好这类问题。",
+        "en": "Automated harness optimization had mostly targeted single agents, while multi-agent harnesses often fail in how agents interact, so it was unclear whether the same read-traces-and-edit-code loop could repair those failures."
+      },
+      "how": {
+        "zh": "Google Research 用 Gemini-3.1-Pro（Antigravity SDK）作为优化器，在仅 10 道难题上迭代 10 轮改写 Gemini-3-Flash 的「orchestrator + SPOT 子 agent」harness，在 890 道测试题上从 67.27% 升到 71.88%（比最佳单 agent 68.69% 高 3.2 点），但同样的优化让单 agent 降到 65.54%（引入不泛化的 30K 字符截断）、只改提示词的版本降到 64.62%；优化后系统多做了约 64% 子 agent 步数（250 对 152），失败分类显示 Bad Orchestration 与 Ineffective Tool Usage 没有减少。",
+        "en": "Google Research uses Gemini-3.1-Pro (Antigravity SDK) as the optimizer for 10 iterations on just 10 hard training questions, editing a Gemini-3-Flash orchestrator-plus-SPOT-subagents harness from 67.27% to 71.88% on 890 test questions (+3.2 over the best single agent at 68.69%), whereas the same loop dropped a single-agent harness to 65.54% (a non-generalizing 30K-character truncation) and prompt-only optimization fell to 64.62%; the optimized system also runs about 64% more subagent steps (250 vs 152), and a failure taxonomy shows Bad Orchestration and Ineffective Tool Usage did not decrease."
+      },
+      "metric": {
+        "zh": "DeepSearchQA FC 71.88%（+4.61）",
+        "en": "DeepSearchQA FC 71.88% (+4.61)"
+      },
+      "pills": [
+        {
+          "zh": "优化后多智能体",
+          "en": "Optimized multi-agent",
+          "value": "71.88%",
+          "tone": "up"
+        },
+        {
+          "zh": "基线多智能体",
+          "en": "Base multi-agent",
+          "value": "67.27%",
+          "tone": "flat"
+        },
+        {
+          "zh": "优化后单 agent",
+          "en": "Optimized single agent",
+          "value": "65.54%",
+          "tone": "down"
+        },
+        {
+          "zh": "只改提示词",
+          "en": "Prompt-only",
+          "value": "64.62%",
+          "tone": "down"
+        }
+      ],
+      "arxiv": "2611.15754",
+      "authors": "Daniela Gottesman, Gal Yona, Ori Ram, Zorik Gekhman, Jonathan Herzig, Mor Geva, Roee Aharoni (Google Research)",
+      "handle": "@eforus_overseer",
+      "links": [
+        {
+          "zh": "论文",
+          "en": "Paper",
+          "url": "https://arxiv.org/abs/2611.15754"
+        },
+        {
+          "zh": "分享者",
+          "en": "Sharer",
+          "url": "https://x.com/eforus_overseer"
+        },
+        {
+          "zh": "X 原帖",
+          "en": "X Post",
+          "url": "https://x.com/eforus_overseer/status/2121335746586116127"
+        }
+      ]
+    },
+    {
+      "id": "skill-adapter-personalized-skill-routing",
+      "edition": "2026-11-14",
+      "tags": [
+        "harness-search",
+        "skills",
+        "agentic-rl"
+      ],
+      "title": {
+        "zh": "Skill Adapter：给通用技能挂「个性化适配器」并在线路由，比 SkillRL 平均高 11.43 点",
+        "en": "Skill Adapter: Personalized Adapters on General Skills plus Online Routing Beat SkillRL by 11.43 Points on Average"
+      },
+      "why": {
+        "zh": "把所有技能一股脑塞给模型反而会把成功率砍半，真正有效的是按当前子任务只挑出相关的通用技能、再叠上记录用户偏好的小「适配器」，并用 RL 分别训练「怎么改技能」和「何时选哪个」。",
+        "en": "Dumping every skill into the prompt roughly halves success, and what actually works is picking only the general skills relevant to the current subtask, layering small user-specific adapters on top, and training separate RL policies for how to modify skills and when to route to them."
+      },
+      "what": {
+        "zh": "通用技能描述的是共享流程，但不同用户对工具、操作和输出有不同要求，而长程任务中子目标和环境不断变化，agent 需要从不断膨胀的技能池里实时选对技能。",
+        "en": "General-purpose skills encode shared procedures, but users differ in tools, practices and output requirements, and in long-horizon tasks the subgoals and environment keep changing, so an agent must keep picking the right skills from an ever-growing pool."
+      },
+      "how": {
+        "zh": "系统把从用户要求和执行反馈中提炼的局部修改存为挂在通用技能上的 Adapter，路由 agent 按子任务和进度增量维护任务级在线技能库并预加载后续节点候选，再用 GRPO 分别训练修改与路由策略；以 Qwen3-8B 为执行器，ALFWorld/WebShop/SkillsBench 成功率从 SkillRL 的 87.14%/72.73%/21.43% 提到 95.48%/81.53%/38.57%，而把全部技能塞给 ReAct 会把 ALFWorld 从 52.86% 拉到 27.62%，技能池扩到 1,000 个时仍领先。",
+        "en": "It stores local modifications distilled from user requirements and execution feedback as Adapters attached to general skills, has a routing agent incrementally maintain a task-level online skill library with preloaded candidates for upcoming nodes, and trains the modification and routing policies separately with GRPO; with a Qwen3-8B executor, success on ALFWorld/WebShop/SkillsBench rises from SkillRL's 87.14%/72.73%/21.43% to 95.48%/81.53%/38.57%, while giving ReAct all skills drops ALFWorld from 52.86% to 27.62%, and the lead holds with a 1,000-skill pool."
+      },
+      "metric": {
+        "zh": "三基准平均 +11.43 点（对比 SkillRL）",
+        "en": "+11.43 pts average over SkillRL"
+      },
+      "pills": [
+        {
+          "zh": "ALFWorld",
+          "en": "ALFWorld",
+          "value": "95.48%",
+          "tone": "up"
+        },
+        {
+          "zh": "SkillsBench",
+          "en": "SkillsBench",
+          "value": "38.57%",
+          "tone": "up"
+        },
+        {
+          "zh": "全部技能塞入",
+          "en": "All skills dumped",
+          "value": "27.62%",
+          "tone": "down"
+        }
+      ],
+      "arxiv": "2611.17007",
+      "authors": "Qijia Zhuang, Yanyi Gou, Wenbin Ma, Yuxiang Ren",
+      "handle": "@asteris_ai",
+      "links": [
+        {
+          "zh": "论文",
+          "en": "Paper",
+          "url": "https://arxiv.org/abs/2611.17007"
+        },
+        {
+          "zh": "分享者",
+          "en": "Sharer",
+          "url": "https://x.com/asteris_ai"
+        },
+        {
+          "zh": "X 原帖",
+          "en": "X Post",
+          "url": "https://x.com/asteris_ai/status/2121372534927237234"
+        }
+      ]
+    },
+    {
+      "id": "dr-rtl-self-improving-rtl-synthesis-agents",
+      "edition": "2026-11-14",
+      "tags": [
+        "self-improving",
+        "skills",
+        "algorithm-discovery"
+      ],
+      "title": {
+        "zh": "Dr. RTL：自改进芯片 RTL 优化 agent 在商用综合之上再把 WNS 改善 21.3%",
+        "en": "Dr. RTL: Self-Improving RTL Agents Improve WNS by 21.3% Beyond Commercial Synthesis"
+      },
+      "why": {
+        "zh": "单次让大模型改 RTL 基本没收益，真正有效的是让 agent 接上真实 EDA 工具做时序分析和等价性验证、并把成功与失败的改法沉淀成带置信度的可复用技能，这样不改模型权重也能持续越改越好。",
+        "en": "One-shot LLM rewriting of RTL barely helps, and what works is grounding agents in real EDA timing analysis and equivalence checking and distilling successful and failed rewrites into confidence-rated reusable skills, so they keep improving without touching model weights."
+      },
+      "what": {
+        "zh": "人写的 RTL 经过商用综合后是否还有可挖的 PPA 空间、以及 agent 能否自己积累优化经验甚至改进综合流程本身，此前缺乏真实流程下的评测。",
+        "en": "It was unclear, under realistic toolflows, whether human-written RTL still has PPA headroom after commercial synthesis and whether agents can accumulate optimization know-how or even improve the synthesis procedure itself."
+      },
+      "how": {
+        "zh": "HKUST 团队的 Dr RTL 让多智能体做关键路径分析、并行重写 RTL 并用 JasperGold 顺序等价性检查验证，再用 group-relative skill learning 把轨迹提炼成 47 条「模式—策略」技能（含 13 条应避免策略）；在 20 个平均 812 行的真实设计上（Design Compiler、Nangate 45nm），WNS/TNS 平均改善 21.3%/16.9%、面积降 5.8%，而同一 Claude Opus 单次改写为 -2.4%/-2.8%，RTLRewriter 和 SymRTLo 只有约 5–7%；综合脚本调优再带来 7.4%/11.1%，开源综合算法发现把 ADP 降 18.7%。",
+        "en": "HKUST's Dr RTL has multiple agents analyze critical paths, rewrite RTL in parallel and verify with JasperGold sequential equivalence checking, then uses group-relative skill learning to distill trajectories into 47 pattern-strategy skills (including 13 avoid rules); on 20 real designs averaging 812 lines (Design Compiler, Nangate 45nm) it improves WNS/TNS by 21.3%/16.9% with 5.8% less area, versus -2.4%/-2.8% for single-shot Claude Opus and roughly 5-7% for RTLRewriter and SymRTLo, while synthesis-script tuning adds 7.4%/11.1% and open-source synthesis algorithm discovery cuts area-delay product by 18.7%."
+      },
+      "metric": {
+        "zh": "WNS 改善 21.3%，TNS 16.9%，面积 -5.8%",
+        "en": "WNS -21.3%, TNS -16.9%, area -5.8%"
+      },
+      "pills": [
+        {
+          "zh": "WNS 改善",
+          "en": "WNS improvement",
+          "value": "21.3%",
+          "tone": "up"
+        },
+        {
+          "zh": "单次 LLM 改写",
+          "en": "Single-shot LLM",
+          "value": "2.4%",
+          "tone": "down"
+        },
+        {
+          "zh": "算法发现 ADP",
+          "en": "Algorithm discovery ADP",
+          "value": "-18.7%",
+          "tone": "up"
+        }
+      ],
+      "arxiv": "2611.13713",
+      "authors": "Wenji Fang, Yao Lu, Jinghua Wang, Zhiyao Xie (HKUST)",
+      "handle": "@SciFi",
+      "links": [
+        {
+          "zh": "论文",
+          "en": "Paper",
+          "url": "https://arxiv.org/abs/2611.13713"
+        },
+        {
+          "zh": "分享者",
+          "en": "Sharer",
+          "url": "https://x.com/SciFi"
+        },
+        {
+          "zh": "X 原帖",
+          "en": "X Post",
+          "url": "https://x.com/SciFi/status/2121449349976621089"
+        }
+      ]
+    },
+    {
+      "id": "agentssl-mle-agents-unlabeled-data",
+      "edition": "2026-11-14",
+      "tags": [
+        "autoresearch",
+        "mle-agents",
+        "program-search"
+      ],
+      "title": {
+        "zh": "AgentSSL：MLE agent 写出的半监督程序 12 个设置里赢 8 个，但挑错程序最多掉 47%",
+        "en": "AgentSSL: MLE Agents' Semi-Supervised Programs Win 8 of 12 Settings, but Picking the Wrong One Costs Up to 47%"
+      },
+      "why": {
+        "zh": "在标签稀缺时 agent 确实能写出比人类调好的半监督方法更强的程序，但它靠的反馈指标与真实准确率相关性很弱，所以「生成好方案」和「认出哪个是好方案」是两回事，把少量标签花在挑选上比花在训练上更划算。",
+        "en": "With scarce labels, agents can write semi-supervised programs that beat tuned human methods, but the feedback metric they rely on is weakly correlated with real accuracy, so generating a good solution and recognizing it are different skills, and spending a few labels on selection pays off more than spending them on training."
+      },
+      "what": {
+        "zh": "MLE agent 几乎只在全监督场景下测试过，而现实中常见的是标签很少、未标注数据很多，agent 能否利用未标注数据此前没有答案。",
+        "en": "MLE agents had been studied almost only in fully supervised settings, while real deployments usually have few labels and lots of unlabeled data, leaving open whether agents can exploit that unlabeled data."
+      },
+      "how": {
+        "zh": "Cornell 等团队把半监督学习表述为基于 AIRA-Dojo 的程序搜索，在 6 个数据集、12 个少样本设置下，按 oracle 选择时 agent 程序在 8 个设置超过最强人类基线、最多 +21.8%，但按 agent 自己的反馈指标挑选时性能最多下降 47%；他们发布了含 16,977 个程序、超过 10,000 GPU 小时的 ProgramSelectBench，并在生态学动物检测任务上发现 AgentSL 与 AgentSSL 表现相当。",
+        "en": "A Cornell-led team frames semi-supervised learning as program search on AIRA-Dojo; across 6 datasets and 12 few-shot settings, agent programs beat the strongest human baselines in 8 settings by up to +21.8% under oracle selection, yet selecting by the agent's own feedback metric loses up to 47%; they release ProgramSelectBench with 16,977 programs from over 10,000 GPU hours, and on real ecology animal-detection tasks AgentSL matched AgentSSL."
+      },
+      "metric": {
+        "zh": "12 个设置赢 8 个；选择损失最多 47%",
+        "en": "Wins 8 of 12; selection loss up to 47%"
+      },
+      "pills": [
+        {
+          "zh": "胜出设置",
+          "en": "Settings won",
+          "value": "8/12",
+          "tone": "up"
+        },
+        {
+          "zh": "最大增益",
+          "en": "Max gain",
+          "value": "+21.8%",
+          "tone": "up"
+        },
+        {
+          "zh": "选择损失",
+          "en": "Selection loss",
+          "value": "-47%",
+          "tone": "down"
+        }
+      ],
+      "arxiv": "2611.17323",
+      "authors": "Ethan Lin, Akanksha Sarkar, Ziang Liu, Kristin Branson, Jennifer J. Sun (Cornell University and collaborators)",
+      "handle": "@asteris_ai",
+      "links": [
+        {
+          "zh": "论文",
+          "en": "Paper",
+          "url": "https://arxiv.org/abs/2611.17323"
+        },
+        {
+          "zh": "数据集",
+          "en": "Dataset",
+          "url": "https://huggingface.co/datasets/ethan-y-lin/ProgramSelectBench"
+        },
+        {
+          "zh": "分享者",
+          "en": "Sharer",
+          "url": "https://x.com/asteris_ai"
+        },
+        {
+          "zh": "X 原帖",
+          "en": "X Post",
+          "url": "https://x.com/asteris_ai/status/2121294521564901811"
+        }
+      ]
+    },
+    {
+      "id": "agent-guided-xc-functional-discovery",
+      "edition": "2026-11-14",
+      "tags": [
+        "autoresearch",
+        "scientific-discovery",
+        "chemistry"
+      ],
+      "title": {
+        "zh": "LLM agent 发现的 13 参数交换关联泛函 O159，在自洽验证后仍比 ωB97M-V 测试误差低 11.7%",
+        "en": "LLM Agents Discover O159, a 13-Parameter XC Functional That Still Beats ωB97M-V by 11.7% After Self-Consistent Validation"
+      },
+      "why": {
+        "zh": "接上物理筛查、自洽计算和外部基准后，前沿 LLM agent 能找到经得起检验的新 DFT 泛函，它赢过同等拟合次数的进化搜索，是因为 agent 敢引入原表示里没有的显式密度尺度，而不只是在旧形式里调系数。",
+        "en": "Once wired to physics screening, self-consistent calculations and external benchmarks, frontier LLM agents can find DFT functionals that hold up, and they beat evolutionary search at the same number of fits because they introduce an explicit density scale the old representation lacks rather than just retuning coefficients."
+      },
+      "what": {
+        "zh": "符号搜索和 LLM agent 都能提出新的交换关联泛函形式，但这些增益能否经得住自洽计算和外部评测、新项是否有物理意义、agent 是否真比进化搜索强，此前都不清楚。",
+        "en": "Symbolic search and LLM agents can both propose new exchange-correlation forms, but it was unclear whether the gains survive self-consistency and external evaluation, whether the new terms are physical, and whether agents really beat evolutionary search."
+      },
+      "how": {
+        "zh": "CMU 团队通过 MCP 把 agent 连到 GPU 评估器（只在训练集拟合、四项物理筛查、持久记忆），Opus-5.5 agent 以约 1/40 的 token 通过筛查门槛并找到 O159：它在同自旋关联上乘以平滑密度窗口，自洽后 MGCDB84 测试误差比 ωB97M-V 低 11.7%，在 36 个 GSCDB137 数据集上平均归一化误差 1.139，与 ωB97M-V 的 1.144 相当；同样约 400 次拟合下 SyFES 进化未能改进起点，作者也坦承新数据上只有重原子总能的提升明确迁移。",
+        "en": "A CMU team connects agents to a GPU evaluator via MCP (training-only fitting, four physics screens, persistent memory); Opus-5.5 agents clear the screening gate with about 40x fewer tokens than Codex agents and find O159, which multiplies same-spin correlation by a smooth density window and, self-consistently, cuts MGCDB84 test error by 11.7% versus ωB97M-V with a mean normalized error of 1.139 on 36 GSCDB137 sets (ωB97M-V: 1.144); with about 400 fits, SyFES evolution never improved on its seed, though the authors note only the heavy-atom total-energy gain clearly transferred to new data."
+      },
+      "metric": {
+        "zh": "测试误差比 ωB97M-V 低 11.7%",
+        "en": "11.7% lower test error than ωB97M-V"
+      },
+      "pills": [
+        {
+          "zh": "MGCDB84 测试误差",
+          "en": "MGCDB84 test error",
+          "value": "-11.7%",
+          "tone": "up"
+        },
+        {
+          "zh": "Token 用量（对比 Codex）",
+          "en": "Tokens vs Codex",
+          "value": "~1/40",
+          "tone": "up"
+        },
+        {
+          "zh": "重原子总能误差（对比对照）",
+          "en": "Heavy-atom error vs control",
+          "value": "-29%",
+          "tone": "up"
+        }
+      ],
+      "arxiv": "2611.13329",
+      "authors": "Achuth Chandrasekhar, Amir Barati Farimani (Carnegie Mellon University)",
+      "handle": "@predictionmkts1",
+      "links": [
+        {
+          "zh": "论文",
+          "en": "Paper",
+          "url": "https://arxiv.org/abs/2611.13329"
+        },
+        {
+          "zh": "代码",
+          "en": "Repo",
+          "url": "https://github.com/BaratiLab/DFT_functional_agentic_searcher"
+        },
+        {
+          "zh": "分享者",
+          "en": "Sharer",
+          "url": "https://x.com/predictionmkts1"
+        },
+        {
+          "zh": "X 原帖",
+          "en": "X Post",
+          "url": "https://x.com/predictionmkts1/status/2121295527991996910"
+        }
+      ]
+    },
     {
       "id": "sfr-autornd-verified-rd-agents",
       "edition": "2026-11-13",
