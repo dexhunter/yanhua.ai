@@ -52,6 +52,10 @@
       clear: "清除筛选",
       copyLink: "复制链接",
       copied: "已复制链接",
+      pagePrev: "上一页",
+      pageNext: "下一页",
+      pageLabel: "分页",
+      pageStatus: function (page, pages) { return "第 " + page + " 页，共 " + pages + " 页"; },
       count: function (n) { return n + " 篇"; },
       progress: function (i, n) { return i + " / " + n; },
       footer: "演化日报 · 聚焦递归自我改进（RSI）、智能体框架（Harness）搜索与自主科研的每日双语研究简报。",
@@ -124,6 +128,10 @@
       clear: "Clear filters",
       copyLink: "Copy link",
       copied: "Link copied",
+      pagePrev: "Prev",
+      pageNext: "Next",
+      pageLabel: "Pages",
+      pageStatus: function (page, pages) { return "Page " + page + " of " + pages; },
       count: function (n) { return n === 1 ? "1 card" : n + " cards"; },
       progress: function (i, n) { return i + " / " + n; },
       footer: "Yanhua Daily · A daily bilingual digest on recursive self-improvement (RSI), agent harness search, and autonomous research.",
@@ -160,6 +168,11 @@
     if (mode === "deck" || mode === "reader") return mode;
     return localStorage.getItem("yanhua-mode") === "deck" ? "deck" : "reader";
   }
+  function pageFromLocation() {
+    const n = parseInt(new URLSearchParams(location.search).get("page"), 10);
+    return n > 0 ? n : 1;
+  }
+  const PAGE_SIZE = 10;
   const state = {
     lang: document.documentElement.lang === "en" ? "en" : "zh",
     mode: modeFromLocation(),
@@ -167,6 +180,7 @@
     tag: "all",
     q: "",
     index: 0,
+    page: pageFromLocation(),
     flipped: false,
     railOpen: loadRailOpen(),
     sub: loadSub()
@@ -401,6 +415,33 @@
     return hay.indexOf(q) !== -1;
   }
   function visible() { return data.items.filter(matches); }
+  function pageCount(list) {
+    return Math.max(1, Math.ceil((list || []).length / PAGE_SIZE));
+  }
+  function pageForIndex(index) {
+    return Math.floor(Math.max(0, index) / PAGE_SIZE) + 1;
+  }
+  function clampPage(list) {
+    const pages = pageCount(list);
+    if (state.page > pages) state.page = pages;
+    if (state.page < 1) state.page = 1;
+    return state.page;
+  }
+  function pageItems(list) {
+    clampPage(list);
+    const start = (state.page - 1) * PAGE_SIZE;
+    return list.slice(start, start + PAGE_SIZE);
+  }
+  function syncUrl(opts) {
+    const url = new URL(location.href);
+    url.searchParams.set("lang", state.lang);
+    if (state.page > 1) url.searchParams.set("page", String(state.page));
+    else url.searchParams.delete("page");
+    const next = url.pathname + url.search + url.hash;
+    const cur = location.pathname + location.search + location.hash;
+    if (opts && opts.push && next !== cur) history.pushState(null, "", next);
+    else if (next !== cur) history.replaceState(null, "", next);
+  }
 
   function pills(item) {
     if (!item.pills || !item.pills.length) return "";
@@ -456,9 +497,6 @@
     }
     paintThemeButton();
     paintSubNav();
-    const url = new URL(location.href);
-    url.searchParams.set("lang", state.lang);
-    history.replaceState(null, "", url.pathname + url.search + url.hash);
   }
   function seg(name, value, label, pressed) {
     return '<button type="button" data-set="' + name + '" data-value="' + value + '" aria-pressed="' + pressed + '">' + esc(label) + '</button>';
@@ -631,6 +669,60 @@
       '<p><span>' + bits.join(" · ") + '</span> <span class="active-count">' + esc(t("count")(list.length)) + "</span></p>" +
       '<button type="button" class="btn" id="clear-filters">' + esc(t("clear")) + "</button></div>";
   }
+  function pageWindow(current, total) {
+    if (total <= 7) {
+      const all = [];
+      for (let i = 1; i <= total; i++) all.push(i);
+      return all;
+    }
+    const keep = {};
+    [1, 2, total - 1, total, current - 1, current, current + 1].forEach(function (n) {
+      if (n >= 1 && n <= total) keep[n] = true;
+    });
+    const out = [];
+    let prev = 0;
+    for (let i = 1; i <= total; i++) {
+      if (!keep[i]) continue;
+      if (prev && i - prev > 1) out.push("…");
+      out.push(i);
+      prev = i;
+    }
+    return out;
+  }
+  function pagerHref(page) {
+    const url = new URL(location.href);
+    url.hash = "";
+    if (page > 1) url.searchParams.set("page", String(page));
+    else url.searchParams.delete("page");
+    url.searchParams.set("lang", state.lang);
+    return url.pathname + url.search;
+  }
+  function pagerItem(page, current, label) {
+    if (page === current) {
+      return '<a class="pager-link is-current" href="' + esc(pagerHref(page)) + '" data-page="' + page + '" aria-current="page">' + esc(label) + "</a>";
+    }
+    return '<a class="pager-link" href="' + esc(pagerHref(page)) + '" data-page="' + page + '">' + esc(label) + "</a>";
+  }
+  function renderPager(list) {
+    const pages = pageCount(list);
+    if (pages <= 1) return "";
+    clampPage(list);
+    const current = state.page;
+    const prev = current <= 1
+      ? '<span class="pager-link is-disabled" aria-disabled="true">' + esc(t("pagePrev")) + "</span>"
+      : '<a class="pager-link pager-prev" href="' + esc(pagerHref(current - 1)) + '" data-page="' + (current - 1) + '">' + esc(t("pagePrev")) + "</a>";
+    const next = current >= pages
+      ? '<span class="pager-link is-disabled" aria-disabled="true">' + esc(t("pageNext")) + "</span>"
+      : '<a class="pager-link pager-next" href="' + esc(pagerHref(current + 1)) + '" data-page="' + (current + 1) + '">' + esc(t("pageNext")) + "</a>";
+    const nums = pageWindow(current, pages).map(function (bit) {
+      if (bit === "…") return '<span class="pager-ellipsis" aria-hidden="true">…</span>';
+      return pagerItem(bit, current, String(bit));
+    }).join("");
+    return '<nav class="pager" aria-label="' + esc(t("pageLabel")) + '">' +
+      '<p class="vh">' + esc(t("pageStatus")(current, pages)) + "</p>" +
+      prev + '<div class="pager-pages">' + nums + "</div>" + next +
+    "</nav>";
+  }
   function renderReader(list) {
     if (!stage) return;
     const bar = filterBar(list);
@@ -638,9 +730,10 @@
       stage.innerHTML = bar + empty(bar !== "");
       return;
     }
+    const pageList = pageItems(list);
     const groups = [];
     data.editions.forEach(function (edition) {
-      const rows = list.filter(function (item) { return item.edition === edition.id; });
+      const rows = pageList.filter(function (item) { return item.edition === edition.id; });
       if (!rows.length) return;
       groups.push(
         '<section class="edition-block" id="edition-' + esc(edition.id) + '">' +
@@ -650,7 +743,7 @@
         '</section>'
       );
     });
-    stage.innerHTML = bar + groups.join("");
+    stage.innerHTML = bar + groups.join("") + renderPager(list);
   }
   function article(item) {
     return '<article class="entry" id="' + esc(item.id) + '">' +
@@ -978,22 +1071,32 @@
     bindReaderWatch();
   }
 
-  function render() {
+  function render(opts) {
     try {
       paintChrome();
       renderRail();
       renderMast();
       const list = visible();
+      clampPage(list);
       if (state.mode === "deck") renderDeck(list);
       else renderReader(list);
       renderFoot();
       renderSubWindow();
       renderStats();
       syncReading();
+      syncUrl({ push: opts && opts.push });
     } catch (err) {
       const fallback = document.getElementById("boot-fallback");
       if (fallback) fallback.hidden = false;
     }
+  }
+  function setPage(page) {
+    const list = visible();
+    state.page = page;
+    clampPage(list);
+    render({ push: true });
+    const content = document.getElementById("content");
+    if (content) content.scrollIntoView({ block: "start", behavior: reduced ? "auto" : "smooth" });
   }
 
   function step(delta) {
@@ -1091,6 +1194,10 @@
         state.mode = value;
         state.flipped = false;
         localStorage.setItem("yanhua-mode", value);
+        if (value === "reader") {
+          const list = visible();
+          if (list.length) state.page = pageForIndex(state.index);
+        }
         const modeUrl = new URL(location.href);
         modeUrl.searchParams.set("mode", value);
         history.replaceState(null, "", modeUrl.pathname + modeUrl.search + modeUrl.hash);
@@ -1112,6 +1219,14 @@
     }
     if (event.target.closest("#sub-nav")) {
       openSubWindow();
+      return;
+    }
+    const pageLink = event.target.closest("[data-page]");
+    if (pageLink) {
+      if (event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
+      event.preventDefault();
+      const n = parseInt(pageLink.getAttribute("data-page"), 10);
+      if (n > 0) setPage(n);
       return;
     }
     if (event.target.closest("#close-sub")) {
@@ -1173,6 +1288,7 @@
       const past = scrolledPastContent();
       state.edition = editionLink.dataset.edition;
       state.index = 0;
+      state.page = 1;
       state.flipped = false;
       setRailOpen(false, { focus: false });
       render();
@@ -1184,6 +1300,7 @@
       const past = scrolledPastContent();
       state.tag = tagBtn.dataset.tag;
       state.index = 0;
+      state.page = 1;
       state.flipped = false;
       setRailOpen(false, { focus: false });
       render();
@@ -1196,6 +1313,7 @@
       state.tag = "all";
       state.edition = "all";
       state.index = 0;
+      state.page = 1;
       render();
       if (past) scrollAfterFilter();
       return;
@@ -1225,6 +1343,7 @@
     const y = window.scrollY;
     state.q = event.target.value;
     state.index = 0;
+    state.page = 1;
     state.flipped = false;
     render();
     window.scrollTo(0, y);
@@ -1271,6 +1390,7 @@
       if (!dialogOpen() && filtersActive() && state.q) {
         state.q = "";
         state.index = 0;
+        state.page = 1;
         state.flipped = false;
         render();
       }
@@ -1340,6 +1460,19 @@
     }
   });
   window.addEventListener("hashchange", focusHash);
+  window.addEventListener("popstate", function () {
+    const q = new URLSearchParams(location.search);
+    const lang = q.get("lang");
+    if (lang === "en" || lang === "zh") {
+      state.lang = lang;
+      try { localStorage.setItem("yanhua-lang", lang); } catch (err) {}
+    }
+    const mode = q.get("mode");
+    if (mode === "deck" || mode === "reader") state.mode = mode;
+    state.page = pageFromLocation();
+    render();
+    if (hashCardId()) focusHash();
+  });
 
   function hashCardId() {
     const id = decodeURIComponent(String(location.hash || "").replace(/^#/, ""));
@@ -1356,7 +1489,10 @@
       state.q = "";
     }
     const at = visible().findIndex(function (row) { return row.id === id; });
-    if (at >= 0) state.index = at;
+    if (at >= 0) {
+      state.index = at;
+      state.page = pageForIndex(at);
+    }
     state.flipped = false;
     return at >= 0;
   }
@@ -1546,7 +1682,6 @@
   mountExternalAnalytics();
   if (hashCardId()) revealCard(hashCardId());
   render();
-  maybeOpenSub();
   loadStats();
   document.addEventListener("visibilitychange", function () {
     if (document.visibilityState === "hidden") {

@@ -857,6 +857,59 @@ button.source-link { appearance: none; cursor: pointer; }
 }
 .colophon .feed-row { flex: none; align-items: center; color: var(--muted); }
 
+.pager {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem 0.55rem;
+  margin: 2.2rem 0 0.35rem;
+}
+.pager-pages {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 0.3rem;
+}
+.pager-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 2.1rem;
+  min-height: 2.1rem;
+  padding: 0.28rem 0.55rem;
+  border: 1px solid var(--line);
+  background: var(--raised);
+  color: var(--ink);
+  text-decoration: none;
+  font-size: 0.86rem;
+  font-variant-numeric: tabular-nums;
+}
+.pager-link:hover {
+  background: var(--lacquer);
+  border-color: var(--lacquer);
+  color: var(--on-lacquer);
+}
+.pager-link.is-current {
+  background: var(--ink);
+  border-color: var(--ink);
+  color: var(--paper);
+}
+.pager-link.is-disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+  color: var(--muted);
+}
+.pager-ellipsis {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 1.4rem;
+  color: var(--muted);
+  font-variant-numeric: tabular-nums;
+}
+
 dialog {
   color: var(--ink);
   width: min(36rem, calc(100% - 2rem));
