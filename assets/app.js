@@ -743,7 +743,8 @@
         '</section>'
       );
     });
-    stage.innerHTML = bar + groups.join("") + renderPager(list);
+    stage.innerHTML = bar + groups.join("") + renderPager(list) +
+      '<div id="sub-sentinel" class="sub-sentinel" aria-hidden="true"></div>';
   }
   function article(item) {
     return '<article class="entry" id="' + esc(item.id) + '">' +
@@ -835,12 +836,18 @@
       if (input) input.focus();
     }
   }
+  /* New key so a dismissal from the old auto-open-on-load prompt
+     (yanhua-sub-dismissed) does not keep hiding the bottom prompt. */
+  const SUB_DISMISS_KEY = "yanhua-sub-prompt-closed";
   function subDismissed() {
-    try { return sessionStorage.getItem("yanhua-sub-dismissed") === "1"; }
+    try { return sessionStorage.getItem(SUB_DISMISS_KEY) === "1"; }
     catch (err) { return false; }
   }
+  function markSubDismissed() {
+    try { sessionStorage.setItem(SUB_DISMISS_KEY, "1"); } catch (err) {}
+  }
   function closeSubWindow() {
-    try { sessionStorage.setItem("yanhua-sub-dismissed", "1"); } catch (err) {}
+    markSubDismissed();
     if (subDialog && subDialog.open) subDialog.close();
   }
   function openSubWindow() {
@@ -850,6 +857,51 @@
   function maybeOpenSub() {
     if (state.sub || subDismissed()) return;
     openSubWindow();
+  }
+  function nearPageEnd() {
+    const vh = window.innerHeight || 0;
+    const y = window.scrollY || 0;
+    const sh = Math.max(document.documentElement.scrollHeight, document.body ? document.body.scrollHeight : 0);
+    if (vh && y + vh >= sh - 360) return true;
+    const marks = [
+      document.getElementById("sub-sentinel"),
+      document.querySelector(".pager"),
+      document.getElementById("foot")
+    ];
+    return marks.some(function (el) {
+      if (!el) return false;
+      const r = el.getBoundingClientRect();
+      return r.top < vh + 120 && r.bottom > -40;
+    });
+  }
+  function checkSubPrompt() {
+    if (nearPageEnd()) maybeOpenSub();
+  }
+  let subObserver = null;
+  function watchSubPromptTargets() {
+    if (!("IntersectionObserver" in window)) return;
+    if (!subObserver) {
+      subObserver = new IntersectionObserver(function (entries) {
+        if (entries.some(function (entry) { return entry.isIntersecting; })) maybeOpenSub();
+      }, { rootMargin: "0px 0px 280px 0px" });
+    }
+    subObserver.disconnect();
+    const targets = [
+      document.getElementById("sub-sentinel"),
+      document.querySelector(".pager"),
+      document.getElementById("foot")
+    ];
+    targets.forEach(function (el) { if (el) subObserver.observe(el); });
+  }
+  function bindSubPrompt() {
+    window.addEventListener("scroll", checkSubPrompt, { passive: true });
+    window.addEventListener("resize", checkSubPrompt);
+    watchSubPromptTargets();
+    if ("ResizeObserver" in window) {
+      const ro = new ResizeObserver(function () { checkSubPrompt(); });
+      ro.observe(document.documentElement);
+      if (document.body) ro.observe(document.body);
+    }
   }
   function renderStats() {
     if (!statsDialog) return;
@@ -1085,6 +1137,7 @@
       renderStats();
       syncReading();
       syncUrl({ push: opts && opts.push });
+      watchSubPromptTargets();
     } catch (err) {
       const fallback = document.getElementById("boot-fallback");
       if (fallback) fallback.hidden = false;
@@ -1094,9 +1147,8 @@
     const list = visible();
     state.page = page;
     clampPage(list);
+    window.scrollTo(0, 0);
     render({ push: true });
-    const content = document.getElementById("content");
-    if (content) content.scrollIntoView({ block: "start", behavior: reduced ? "auto" : "smooth" });
   }
 
   function step(delta) {
@@ -1676,7 +1728,7 @@
   }
   if (subDialog) {
     subDialog.addEventListener("close", function () {
-      try { sessionStorage.setItem("yanhua-sub-dismissed", "1"); } catch (err) {}
+      markSubDismissed();
     });
   }
   mountExternalAnalytics();
@@ -1695,19 +1747,7 @@
     leaveAll(state.mode === "deck" ? 1500 : 1800);
     flushEvents();
   });
-  if (subDialog && "IntersectionObserver" in window) {
-    const footer = document.getElementById("foot");
-    if (footer) {
-      const subObserver = new IntersectionObserver(function (entries) {
-        if (entries.some(function (entry) { return entry.isIntersecting; })) maybeOpenSub();
-      }, { rootMargin: "0px 0px 260px 0px" });
-      subObserver.observe(footer);
-    }
-  } else {
-    window.addEventListener("scroll", function () {
-      if (window.scrollY + window.innerHeight >= document.documentElement.scrollHeight - 260) maybeOpenSub();
-    }, { passive: true });
-  }
+  if (subDialog) bindSubPrompt();
   if (new URLSearchParams(location.search).get("stats") === "1") openStats();
   focusHash();
 })();

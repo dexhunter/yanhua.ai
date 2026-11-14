@@ -909,6 +909,12 @@ button.source-link { appearance: none; cursor: pointer; }
   color: var(--muted);
   font-variant-numeric: tabular-nums;
 }
+.sub-sentinel {
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  pointer-events: none;
+}
 
 dialog {
   color: var(--ink);
