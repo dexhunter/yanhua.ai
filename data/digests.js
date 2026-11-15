@@ -19,6 +19,15 @@ window.YANHUA_DIGESTS = {
   },
   "editions": [
     {
+      "id": "2026-11-15",
+      "date": "2026-11-15",
+      "slot": "",
+      "label": {
+        "zh": "2026-11-15",
+        "en": "15 Nov 2026"
+      }
+    },
+    {
       "id": "2026-11-14",
       "date": "2026-11-14",
       "slot": "",
@@ -280,6 +289,306 @@ window.YANHUA_DIGESTS = {
     }
   ],
   "items": [
+    {
+      "id": "sat-student-aware-skill-teaching",
+      "edition": "2026-11-15",
+      "tags": [
+        "harness-search",
+        "memory-skills"
+      ],
+      "title": {
+        "zh": "SAT：先诊断学生 agent 为何失败再写技能，DeepSeek-V4-Flash 成功率 75.00% → 86.46%，且技能库换给别的模型就变差",
+        "en": "SAT: Diagnose the Student Agent Before Writing Skills — DeepSeek-V4-Flash Goes 75.00% → 86.46%, and Swapped Libraries Help Less"
+      },
+      "why": {
+        "zh": "强模型给弱 agent 写技能时，先弄清这个学生在这套 harness 里具体卡在哪（比如动作预算被逐项查询耗光）再下笔，写出的技能才真正有用，因为同一条“正确”的流程对一个模型有效、对另一个模型可能正好把预算用完。",
+        "en": "A strong model writes better skills for a weaker agent when it first works out where this particular student breaks inside its harness (for example, burning its action budget on one-by-one queries), because the same correct procedure can help one model and exhaust another's budget."
+      },
+      "what": {
+        "zh": "自动生成技能的方法大多从 agent 自身失败或任务指标出发，很少问老师模型是否该先了解它要教的那个具体模型和 harness。",
+        "en": "Most skill-learning methods learn from the agent's own failures or optimize against a task metric, and rarely ask whether the teacher should first model the specific student and harness it is teaching."
+      },
+      "how": {
+        "zh": "老师（Claude-Sonnet-5）维护“经验画像 + 失败假设”的学习者模型，用受控探针（如逐步增大库存规模）验证假设，只把在匹配开发任务上提升成功率的技能收入库；4 次主实验平均 86.46%，高于同框架但不建模学生的老师（81.04%）和无技能（75.00%），终端与库存任务提升最大；给出误导性画像时 48 个候选技能无一通过准入，两个学生交换技能库后都不如用自己的（分类路由下 DeepSeek 93.3% 对 83.3%），老师离开后冻结的库仍保留最多 11.1 点增益。",
+        "en": "The teacher (Claude-Sonnet-5) keeps a learner model pairing an empirical profile with failure hypotheses, tests them with controlled probes such as growing inventory sizes, and admits a skill only if it lifts success on matched dev tasks; across four primary runs it averages 86.46% versus 81.04% for a same-framework teacher without learner modeling and 75.00% with no skills, with the biggest gains on terminal and inventory tasks, none of 48 candidates passes admission under misleading profiles, each of two students does better with its own library (DeepSeek 93.3% vs 83.3% under category routing), and frozen libraries keep up to 11.1 points after the teacher leaves."
+      },
+      "metric": {
+        "zh": "成功率 86.46%（+11.46）",
+        "en": "Task success 86.46% (+11.46)"
+      },
+      "pills": [
+        {
+          "zh": "学生感知老师",
+          "en": "Student-aware",
+          "value": "86.46%",
+          "tone": "up"
+        },
+        {
+          "zh": "不建模学生",
+          "en": "Agnostic teacher",
+          "value": "81.04%",
+          "tone": "flat"
+        },
+        {
+          "zh": "无技能",
+          "en": "No skill",
+          "value": "75.00%",
+          "tone": "flat"
+        },
+        {
+          "zh": "误导画像准入",
+          "en": "Admitted (false profile)",
+          "value": "0/48",
+          "tone": "down"
+        }
+      ],
+      "arxiv": "2611.13144",
+      "authors": "Chang Liu, Bo Wu (Colorado School of Mines)",
+      "handle": "@DerekHJH9",
+      "links": [
+        {
+          "zh": "论文",
+          "en": "Paper",
+          "url": "https://arxiv.org/abs/2611.13144"
+        },
+        {
+          "zh": "分享者",
+          "en": "Sharer",
+          "url": "https://x.com/DerekHJH9"
+        },
+        {
+          "zh": "X 原帖",
+          "en": "X Post",
+          "url": "https://x.com/DerekHJH9/status/2121880844759654855"
+        }
+      ]
+    },
+    {
+      "id": "komodor-qwen-harness-plus-post-training",
+      "edition": "2026-11-15",
+      "tags": [
+        "harness-search",
+        "co-evolution"
+      ],
+      "title": {
+        "zh": "Komodor：同一自改进环先改 harness 再训权重，Qwen3.5-27B 在 ITBench-AA 上与 Claude Sonnet 4.6 打平（0.400 对 0.398），成本仅 17%",
+        "en": "Komodor: One Self-Improvement Loop on Harness Then Weights Brings Qwen3.5-27B Level With Claude Sonnet 4.6 on ITBench-AA (0.400 vs 0.398) at 17% of the Cost"
+      },
+      "why": {
+        "zh": "让小模型用自己被轻微纠正过的调查记录做 LoRA 训练，确实能把它在公开榜单上拉到与 Sonnet 4.6 持平，但这部分提升只出现在训练过的事故上，而 0.871 这样的大数字来自逐事故优化后的会话，不是一个能直接部署到新事故上的 harness。",
+        "en": "LoRA-training a small model on its own lightly corrected investigations does bring it level with Sonnet 4.6 on the public leaderboard, but that gain shows up only on incidents it trained on, and the headline 0.871 grades per-incident optimized sessions rather than a harness you could deploy on new incidents."
+      },
+      "what": {
+        "zh": "Komodor 想知道，原本只改 harness 的自改进环能否把同样的数据用来训练模型权重，让便宜的开源模型在 Kubernetes 根因分析上追上闭源模型。",
+        "en": "Komodor asks whether the self-improvement loop it already runs on agent harnesses can reuse the same recorded data to train the weights, so a cheap open-weight model can catch closed models on Kubernetes root-cause analysis."
+      },
+      "how": {
+        "zh": "在 ITBench-AA 的 40 个公开事故上，评分器给每次会话打分并写理由，Coach 选问题、改一处、重跑、只在分数上升时保留；训练阶段由老师（Claude Sonnet 5.5）只改第一处错误推理的几个词，Qwen 自己续写，留下 28 个事故的正确会话并加改名副本得到 109 行，在 Together AI 上 LoRA 训练（4 个任务 $27.34，全流程约 $97）；自家评分从 0.287（基线）到 0.688（改 harness）、0.369（只训练）、0.871（两者叠加），公开评分器上训练后模型 0.400、$0.14/次，对比 Sonnet 4.6 的 0.398、$0.84；但提升集中在有训练行的 26 个事故（0.519→0.596），其余 14 个停在 0.036，同一检查点两次运行相差 0.075。",
+        "en": "On ITBench-AA's 40 public incidents an evaluator grades each session with reasons and a coach changes one thing, reruns and keeps it only if the score rises; for training, a teacher (Claude Sonnet 5.5) edits a few words at the first wrong turn and Qwen continues alone, yielding 109 rows from 28 corrected incidents plus renamed copies, LoRA-trained on Together AI (four jobs $27.34, about $97 for the whole cycle). Their evaluator goes 0.287 baseline → 0.688 harness → 0.369 training only → 0.871 both, and on the public scorer the trained model hits 0.400 at $0.14 per run against Sonnet 4.6's 0.398 at $0.84; but the gain sits on the 26 incidents with training rows (0.519 → 0.596) while the other 14 stay at 0.036, and two runs of one checkpoint differ by 0.075."
+      },
+      "metric": {
+        "zh": "ITBench-AA 0.400 · $0.14/次",
+        "en": "ITBench-AA 0.400 · $0.14/run"
+      },
+      "pills": [
+        {
+          "zh": "训练后（公开评分）",
+          "en": "Post-trained (public scorer)",
+          "value": "0.400",
+          "tone": "up"
+        },
+        {
+          "zh": "Sonnet 4.6",
+          "en": "Sonnet 4.6",
+          "value": "0.398",
+          "tone": "flat"
+        },
+        {
+          "zh": "harness+模型（自评）",
+          "en": "Harness+model (own eval)",
+          "value": "0.871",
+          "tone": "up"
+        },
+        {
+          "zh": "未训练事故",
+          "en": "Untrained incidents",
+          "value": "0.036",
+          "tone": "down"
+        }
+      ],
+      "authors": "Itiel Shwartz, Nir Adler et al. (Komodor)",
+      "handle": "@itielshwartz",
+      "links": [
+        {
+          "zh": "博客",
+          "en": "Blog",
+          "url": "https://benchmarks.komodor.com/benchmarks/qwen-post-training-itbench-aa/"
+        },
+        {
+          "zh": "分享者",
+          "en": "Sharer",
+          "url": "https://x.com/itielshwartz"
+        },
+        {
+          "zh": "X 原帖",
+          "en": "X Post",
+          "url": "https://x.com/itielshwartz/status/2121864612505125305"
+        }
+      ]
+    },
+    {
+      "id": "autoscaffold-ai-guided-rl-scaffolding",
+      "edition": "2026-11-15",
+      "tags": [
+        "agentic-rl",
+        "harness-search"
+      ],
+      "title": {
+        "zh": "AutoScaffold：冻结的老师模型读训练轨迹、写临时提示并验证后再上线，1.5B 学生 ALFWorld 达 93.9%（比 GiGPO 高 7.2）",
+        "en": "AutoScaffold: A Frozen Teacher Reads RL Rollouts, Writes and Validates Temporary Hints — a 1.5B Student Reaches 93.9% on ALFWorld (+7.2 over GiGPO)"
+      },
+      "why": {
+        "zh": "在 RL 训练里让老师模型根据学生自己的失败轨迹动态写提示、先验证有用再给、考试前撤掉，能让学生在没有提示时也更强，因为太难的任务全失败时组相对 RL 拿不到任何信号，而固定或未经验证的提示反而会把学生拉到基线以下。",
+        "en": "Letting a teacher model write hints from the student's own failed rollouts, validate them before use and remove them at test time makes the student stronger without hints, because group-relative RL gets zero signal when every attempt on a hard task fails, while fixed or unvalidated hints actually push the student below the baseline."
+      },
+      "what": {
+        "zh": "RLVR 把每次尝试压成一个 0/1 奖励，大量过程信息被浪费，而训练期提示（scaffold）一直靠人工按领域设计。",
+        "en": "RLVR reduces each attempt to a pass/fail number and wastes the rest of the trajectory, while training-time scaffolds (hints added to prompts) have been hand-designed per domain."
+      },
+      "how": {
+        "zh": "冻结的老师（GPT-5.5）每 10 步用查询工具和记忆检查成功与失败轨迹，诊断瓶颈，写出类别级策略和单题提示，验证后部署，并随学生进步从分步流程转向针对性修补；同一框架在四个领域都超过对应 RL 基线：ALFWorld 93.9%（GiGPO 86.7%），搜索 QA 平均 EM 46.1%（+4.0，域外 +4.1），Nemotron-1.5B 数学 62.4% 只用 QuestA 约三分之一步数，KernelBench 二级“正确且更快”20%→25%；消融中去掉验证降到 79.8%，换成 Skill0 的固定技能库降到 78.6%，都低于 GiGPO。",
+        "en": "Every 10 steps a frozen teacher (GPT-5.5) uses query tools and memory to compare successful and failed rollouts, diagnoses bottlenecks, writes class-level strategies and per-task hints, validates them, then deploys, shifting from step-by-step workflows to targeted fixes as the student improves; the same framework beats its RL baseline in all four domains—ALFWorld 93.9% vs GiGPO 86.7%, search QA average EM 46.1% (+4.0, +4.1 out of domain), Nemotron-1.5B math 62.4% using about one-third of QuestA's steps, KernelBench Level 2 correct-and-faster 20% → 25%—while ablations show no validation drops to 79.8% and Skill0's fixed skill bank to 78.6%, both below GiGPO."
+      },
+      "metric": {
+        "zh": "ALFWorld 93.9%（+7.2）",
+        "en": "ALFWorld 93.9% (+7.2)"
+      },
+      "pills": [
+        {
+          "zh": "AutoScaffold",
+          "en": "AutoScaffold",
+          "value": "93.9%",
+          "tone": "up"
+        },
+        {
+          "zh": "GiGPO",
+          "en": "GiGPO",
+          "value": "86.7%",
+          "tone": "flat"
+        },
+        {
+          "zh": "去掉验证",
+          "en": "No validation",
+          "value": "79.8%",
+          "tone": "down"
+        },
+        {
+          "zh": "固定技能库",
+          "en": "Static skill bank",
+          "value": "78.6%",
+          "tone": "down"
+        }
+      ],
+      "arxiv": "2611.14515",
+      "authors": "Zijian Zhang, Rizhen Hu, Jiangweizhi Peng, Shiyang Li, Sujay Bhatt, Sihan Zeng, Mingyi Hong (University of Minnesota, JPMorgan AI Research)",
+      "handle": "@indrajeetswain",
+      "links": [
+        {
+          "zh": "论文",
+          "en": "Paper",
+          "url": "https://arxiv.org/abs/2611.14515"
+        },
+        {
+          "zh": "分享者",
+          "en": "Sharer",
+          "url": "https://x.com/indrajeetswain"
+        },
+        {
+          "zh": "X 原帖",
+          "en": "X Post",
+          "url": "https://x.com/indrajeetswain/status/2121823007689617433"
+        }
+      ]
+    },
+    {
+      "id": "jevagentharness-decision-models",
+      "edition": "2026-11-15",
+      "tags": [
+        "harness-search",
+        "verification"
+      ],
+      "title": {
+        "zh": "JevAgentHarness：把 agent 里的多选决策交给小决策模型，按轨迹拟合置信阈值后便宜 81–89%、快至 2.5 倍，成功率损失不到 3 点",
+        "en": "JevAgentHarness: Handing an Agent's Multiple-Choice Steps to a Small Decision Model, With Fitted Confidence Thresholds, Cuts Cost 81–89% and Runs Up to 2.5× Faster Within 3 Points of Success"
+      },
+      "why": {
+        "zh": "小决策模型可以替大模型做 agent 里大部分例行选择（下一个调哪个工具、何时停），但前提是在 agent 自己的轨迹上测试和训练它，并只在它有把握时放手，因为孤立题目上最准的模型从没见过 agent 犯错后进入的状态，直接接管会让成功率掉 19 点。",
+        "en": "A small decision model can take over most routine agent choices (which tool next, when to stop), but only if it is tested and trained on the agent's own trajectories and allowed to act only when confident, because the model most accurate on isolated questions has never seen the states an agent reaches after its own mistakes, and naive delegation cuts success by 19 points."
+      },
+      "what": {
+        "zh": "harness 每一步都调用大模型，长任务又慢又贵，而多数调用其实是多选决策，问题是怎样把它们交给便宜的决策模型而不损失成功率。",
+        "en": "Harnesses call a large LLM at every step, making long tasks slow and costly, though most calls end in a multiple-choice decision, so the question is how to delegate them to a cheap decision model without losing success."
+      },
+      "how": {
+        "zh": "AgentDecisionBench 从孤立题目（BFCL v4、When2Call）到录制轨迹逐步打分（200 个 DecisionGym 任务的 5,314 个状态）再到让决策模型接管运行中的 agent；孤立题最准的模型只完成 69.5% 的 agent 任务，没有拟合阈值时接管工具选择使成功率降 19.0 点；JevAgentHarness 在 agent 自己的轨迹上为每个决策点拟合阈值、低于阈值交回大模型，并用 agent 访问过的状态以 Jev 的答案为标签训练开源 AgentDecision-4B，在分布外任务上完成 91.5%（Jev 82.0%）；局限是编码 agent 的自由文本动作只省 7.0–10.5%，以 Flash-Lite 作 agent 模型时停止守卫接受了 40.7% 的错误收尾。",
+        "en": "AgentDecisionBench tests decision models on isolated questions (BFCL v4, When2Call), per-step scoring of recorded runs (5,314 states from 200 DecisionGym tasks) and full control of a running agent; the best isolated-question model completes only 69.5% of agent tasks, and delegating tool choice without a fitted threshold drops success by 19.0 points. JevAgentHarness fits a per-decision threshold on the agent's own trajectories and hands low-confidence choices back to the LLM, and the open AgentDecision-4B, trained on agent-visited states with Jev's answers as labels, completes 91.5% of out-of-distribution tasks versus 82.0% for Jev; limits include only 7.0–10.5% savings for free-text coding actions and a stop guard that, with Flash-Lite as the agent LLM, accepted 40.7% of its wrong attempts to finish."
+      },
+      "metric": {
+        "zh": "成本 −81.1~89.0%",
+        "en": "Cost −81.1–89.0%"
+      },
+      "pills": [
+        {
+          "zh": "AgentDecision-4B 分布外",
+          "en": "AgentDecision-4B OOD",
+          "value": "91.5%",
+          "tone": "up"
+        },
+        {
+          "zh": "Jev 分布外",
+          "en": "Jev OOD",
+          "value": "82.0%",
+          "tone": "flat"
+        },
+        {
+          "zh": "无阈值接管",
+          "en": "No threshold",
+          "value": "−19.0",
+          "tone": "down"
+        },
+        {
+          "zh": "提速",
+          "en": "Speed-up",
+          "value": "2.5×",
+          "tone": "up"
+        }
+      ],
+      "arxiv": "2610.21412",
+      "authors": "Kunlun Zhu, Tao Feng, Xu Han, Heng Wang, Ling Yang, Xiangru Tang, Jiaxuan You, Heng Ji (UIUC, Princeton, Google)",
+      "handle": "@deeponailabs",
+      "links": [
+        {
+          "zh": "论文",
+          "en": "Paper",
+          "url": "https://arxiv.org/abs/2610.21412"
+        },
+        {
+          "zh": "代码",
+          "en": "Repo",
+          "url": "https://github.com/JevAgentHarness/JevAgentHarness"
+        },
+        {
+          "zh": "分享者",
+          "en": "Sharer",
+          "url": "https://x.com/deeponailabs"
+        },
+        {
+          "zh": "X 原帖",
+          "en": "X Post",
+          "url": "https://x.com/deeponailabs/status/2121698078939918360"
+        }
+      ]
+    },
     {
       "id": "harness-weights-teacher-free-co-evolution",
       "edition": "2026-11-14",
