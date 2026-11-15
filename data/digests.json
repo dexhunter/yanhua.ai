@@ -290,6 +290,303 @@
   ],
   "items": [
     {
+      "id": "agency-harness-cost-optimization",
+      "edition": "2026-11-15",
+      "tags": [
+        "harness-search"
+      ],
+      "title": {
+        "zh": "Agency：不换模型、只在 harness 层动手，Claude Code / Codex 平均成本降到 0.77 倍，准确率保持 0.97 倍",
+        "en": "Agency: Harness-Side Tricks Cut Claude Code / Codex Cost to 0.77x With 0.97x Accuracy, No Model Change"
+      },
+      "why": {
+        "zh": "对前沿模型来说，改 harness 几乎不提升准确率，但能实打实省钱，因为大部分账单来自每一轮反复重读已有上下文和用不上的工具输出，而这些可以在进模型之前就确定性地压缩掉。",
+        "en": "For frontier models, harness changes barely move accuracy but reliably cut cost, because most of the bill comes from re-reading the same context every turn and from tool output the agent never uses, which can be trimmed deterministically before it reaches the model."
+      },
+      "what": {
+        "zh": "现有 harness 优化大多追求准确率，很少有人系统地分析 agent 的钱到底花在哪、又能在不改模型的前提下省下多少。",
+        "en": "Most harness optimization chases accuracy, and few have systematically traced where agent cost accumulates or how much can be saved without touching the model."
+      },
+      "how": {
+        "zh": "作者（UC Berkeley 等）分析真实与基准轨迹：即便有缓存，读已有上下文仍占成本最多 73%，工具输出平均只用到 27%，检索型任务最多 89% 的轮次耗在找文件；据此做了 Agency——一个插在 Claude Code、Codex 等现成 harness 与模型之间的拦截层，实现工具输出压缩、跨输出行指针、元数据辅助搜索、批量工具调用等五种技术；在 GPT-6-Luna、GPT-6.1-Sol、Sonnet-5.5、Opus-5.5 与 100 个编码 + 100 个 OfficeQA 任务上，成本比在 0.65–0.85 之间、平均 0.77，准确率比 0.97，UUID 文件名的目录树任务降到 0.51–0.66，但仍有 17–29% 的任务反而更贵。",
+        "en": "The authors (UC Berkeley and others) trace real and benchmark runs: even with caching, reading existing context is up to 73% of cost, agents use only 27% of tool output, and up to 89% of turns in retrieval tasks go to searching files; they build Agency, a layer between off-the-shelf harnesses like Claude Code and Codex and the model, and implement five techniques such as tool-output compaction, cross-output line pointers, metadata-assisted search and batched tool calls; across GPT-6-Luna, GPT-6.1-Sol, Sonnet-5.5 and Opus-5.5 on 100 coding and 100 OfficeQA tasks, cost ratios land at 0.65–0.85 (0.77 average) with a 0.97 accuracy ratio, UUID-named directory trees drop to 0.51–0.66, yet 17–29% of tasks get more expensive."
+      },
+      "metric": {
+        "zh": "平均成本 0.77×，准确率 0.97×",
+        "en": "Cost 0.77x, accuracy 0.97x"
+      },
+      "pills": [
+        {
+          "zh": "平均成本比",
+          "en": "Avg cost ratio",
+          "value": "0.77×",
+          "tone": "up"
+        },
+        {
+          "zh": "准确率比",
+          "en": "Accuracy ratio",
+          "value": "0.97×",
+          "tone": "flat"
+        },
+        {
+          "zh": "上下文重读占比",
+          "en": "Context re-read share",
+          "value": "≤73%",
+          "tone": "down"
+        },
+        {
+          "zh": "反而变贵的任务",
+          "en": "Tasks costlier",
+          "value": "17–29%",
+          "tone": "down"
+        }
+      ],
+      "arxiv": "2611.12122",
+      "authors": "Jongseok Park, Ion Stoica, Alvin Cheung et al. (UC Berkeley, Northwestern, UIUC)",
+      "handle": "@dair_ai",
+      "links": [
+        {
+          "zh": "论文",
+          "en": "Paper",
+          "url": "https://arxiv.org/abs/2611.12122"
+        },
+        {
+          "zh": "分享者",
+          "en": "Sharer",
+          "url": "https://x.com/dair_ai"
+        },
+        {
+          "zh": "X 原帖",
+          "en": "X Post",
+          "url": "https://x.com/dair_ai/status/2122026162100883686"
+        }
+      ]
+    },
+    {
+      "id": "deepmind-verified-quantum-programs-agent-teams",
+      "edition": "2026-11-15",
+      "tags": [
+        "autoresearch",
+        "verification"
+      ],
+      "title": {
+        "zh": "Google DeepMind：Gemini 4 agent 团队在 Lean 里写并证明量子程序，并行 Grover 搜索最多省 2.55 倍、量子算术最多 290 倍",
+        "en": "Google DeepMind: Gemini 4 Agent Teams Write and Prove Quantum Programs in Lean — Up to 2.55x on Parallel Grover, 290x on Quantum Arithmetic"
+      },
+      "why": {
+        "zh": "用形式化证明代替模拟来打分，agent 就能去优化经典计算机根本测不了的大规模量子算法，因为 Lean 内核检查的是正确性和代价定理本身，而不是在小规模实例上跑出来的结果。",
+        "en": "Scoring with formal proofs instead of simulation lets agents optimize quantum algorithms far too large for any classical computer to test, because the Lean kernel checks the correctness and cost theorems themselves rather than results on small instances."
+      },
+      "what": {
+        "zh": "AI 搜索通常靠数值模拟验证候选电路，所以只能找到经典可模拟规模的解，而真正有用的量子应用需要成千上万个逻辑比特。",
+        "en": "AI search usually checks candidate circuits by numerical simulation, so it only reaches classically simulable sizes, while useful quantum applications need thousands of logical qubits."
+      },
+      "how": {
+        "zh": "研究者用 Lean 量子 Hoare 逻辑写下正确性与代价规格，七个互相独立的 Gemini 4 Carbon agent 团队自行组织搜索并证明，外部 Lean Comparator 复核每个提交，防止 agent 偷改定理或加公理；团队通过共享 wiki（最佳已验证解、可复用引理、死路记录）和定期“会议”互相借鉴；结果包括并行 Grover 期望 oracle 轮数最多降 2.55 倍、量子算术最多 290 倍，聚变阻止本领、光化学、药物代谢（P450）相关模拟分别降 11 倍、8 倍、2.5 倍，问题规模达 4,374–6,057 个逻辑比特；共享开启后约 39% 的增益来自跨团队 wiki 和会议；论文称 Lean 库将开源，但端到端资源仍远超早期容错机器。",
+        "en": "Researchers write correctness and cost specs in a Lean quantum Hoare logic, seven independent teams of Gemini 4 Carbon agents organize their own search and proofs, and an external Lean Comparator re-checks every submission so agents cannot weaken theorems or add axioms; teams share a wiki of best verified solutions, reusable lemmas and dead ends, plus scheduled conferences; results include up to 2.55x fewer expected oracle rounds for parallel Grover search and up to 290x for quantum arithmetic, plus 11x, 8x and 2.5x cuts on fusion stopping-power, photochemistry and P450 drug-metabolism simulations at 4,374–6,057 logical qubits, with about 39% of the gains after sharing began coming from the cross-team wiki and conferences; the Lean library is promised as open source, and end-to-end resources still far exceed early fault-tolerant machines."
+      },
+      "metric": {
+        "zh": "量子算术最多 290×",
+        "en": "Up to 290x on quantum arithmetic"
+      },
+      "pills": [
+        {
+          "zh": "并行 Grover",
+          "en": "Parallel Grover",
+          "value": "2.55×",
+          "tone": "up"
+        },
+        {
+          "zh": "量子算术",
+          "en": "Quantum arithmetic",
+          "value": "290×",
+          "tone": "up"
+        },
+        {
+          "zh": "聚变模拟",
+          "en": "Fusion sim",
+          "value": "11×",
+          "tone": "up"
+        },
+        {
+          "zh": "跨团队增益占比",
+          "en": "Cross-team share",
+          "value": "≈39%",
+          "tone": "flat"
+        }
+      ],
+      "arxiv": "2611.09822",
+      "authors": "Sergey Shirobokov, Ben Jaderberg, Ryan Babbush, Pushmeet Kohli et al. (Google DeepMind, Google Quantum AI)",
+      "handle": "@dair_ai",
+      "links": [
+        {
+          "zh": "论文",
+          "en": "Paper",
+          "url": "https://arxiv.org/abs/2611.09822"
+        },
+        {
+          "zh": "分享者",
+          "en": "Sharer",
+          "url": "https://x.com/dair_ai"
+        },
+        {
+          "zh": "X 原帖",
+          "en": "X Post",
+          "url": "https://x.com/dair_ai/status/2122026162100883686"
+        }
+      ]
+    },
+    {
+      "id": "nvidia-skillevaluator-skill-lift",
+      "edition": "2026-11-15",
+      "tags": [
+        "harness-search",
+        "memory-skills"
+      ],
+      "title": {
+        "zh": "NVIDIA SkillEvaluator：带 / 不带技能各跑一遍，300+ 技能平均正确性提升 41 分，但不同产品从 +2 到 +46 不等",
+        "en": "NVIDIA SkillEvaluator: Run Each Task With and Without the Skill — 300+ Skills Lift Correctness by 41 Points on Average, From +2 to +46"
+      },
+      "why": {
+        "zh": "一个技能写得漂亮不代表它让 agent 变好，只有在隔离环境里同一任务带技能和不带技能各跑一遍再对比，才知道它是在帮忙、无用还是在多烧 token。",
+        "en": "A well-written skill is not proof it helps an agent; only running the same task with and without it in an isolated environment shows whether it helps, does nothing, or just burns tokens."
+      },
+      "what": {
+        "zh": "Agent Skills 生态在爆发，但大多数技能从没跑过“不装它”的对照，质量、重复和安全问题也缺少统一检查。",
+        "en": "The Agent Skills ecosystem is exploding, but most skills have never been run against a no-skill control, and quality, overlap and security go largely unchecked."
+      },
+      "how": {
+        "zh": "开源框架（Apache-2.0）分三层：Tier 1 校验结构、质量（满分 100，默认 70 及格，示例技能 86.2）与安全扫描；Tier 2 用语义相似度找重复或冲突的指令；Tier 3 自动生成任务，在 Claude Code、Codex 等 harness 上对比带 / 不带技能的结果；NVIDIA 博客称 30 多个产品的 300 多个已验证技能平均正确性提升 41 分、有效性提升 39 分，但各产品差异从 +2 到 +46，token 也可能一减一增（jetson-optimize-memory 省 76.9%，cuopt-install 多 120.3%）；框架 8 月首发，本周在 GitHub 趋势榜重新走红。",
+        "en": "The Apache-2.0 framework has three tiers: Tier 1 checks structure, quality (scored out of 100, pass at 70, the bundled example scores 86.2) and security scans; Tier 2 uses semantic similarity to flag duplicate or conflicting guidance; Tier 3 generates tasks and compares runs with and without the skill on harnesses such as Claude Code and Codex; NVIDIA's blog reports that 300+ verified skills across 30+ products lift correctness by 41 points and effectiveness by 39 on average, with per-product lift from +2 to +46 and token use moving either way (jetson-optimize-memory −76.9%, cuopt-install +120.3%); first released in August, it is trending on GitHub again this week."
+      },
+      "metric": {
+        "zh": "正确性平均 +41 分",
+        "en": "Correctness +41 points avg"
+      },
+      "pills": [
+        {
+          "zh": "正确性提升",
+          "en": "Correctness lift",
+          "value": "+41",
+          "tone": "up"
+        },
+        {
+          "zh": "有效性提升",
+          "en": "Effectiveness lift",
+          "value": "+39",
+          "tone": "up"
+        },
+        {
+          "zh": "产品间差异",
+          "en": "Per-product range",
+          "value": "+2 – +46",
+          "tone": "flat"
+        },
+        {
+          "zh": "cuopt-install token",
+          "en": "cuopt-install tokens",
+          "value": "+120.3%",
+          "tone": "down"
+        }
+      ],
+      "authors": "NVIDIA (Moshe Abramovitch, Jean-Francois Puget et al.)",
+      "handle": "@0xpipimd",
+      "links": [
+        {
+          "zh": "代码",
+          "en": "Repo",
+          "url": "https://github.com/NVIDIA/SkillEvaluator"
+        },
+        {
+          "zh": "博客",
+          "en": "Blog",
+          "url": "https://developer.nvidia.com/blog/evaluating-ai-agent-skill-performance-with-nvidia-skillevaluator/"
+        },
+        {
+          "zh": "分享者",
+          "en": "Sharer",
+          "url": "https://x.com/0xpipimd"
+        },
+        {
+          "zh": "X 原帖",
+          "en": "X Post",
+          "url": "https://x.com/0xpipimd/status/2121928700203573682"
+        }
+      ]
+    },
+    {
+      "id": "wikitrace-evidence-linked-memory",
+      "edition": "2026-11-15",
+      "tags": [
+        "memory-skills"
+      ],
+      "title": {
+        "zh": "WikiTrace：每条经验都链回原始轨迹，比无记忆平均高 10.7 分，原本会做的题做错率从 6.5% 降到 4.5%",
+        "en": "WikiTrace: Link Every Lesson Back to Its Run — +10.7 Points Over No Memory, Regressions Down From 6.5% to 4.5%"
+      },
+      "why": {
+        "zh": "agent 的经验记忆会让它做错原本会做的题，因为经验只从“成功 / 失败”标签里推出来、又没保存原始运行，一旦经验错了或被误读，agent 无从核对；把证据链接留在每条经验旁边就能让它回头查。",
+        "en": "Agent memory can make an agent fail tasks it would otherwise solve, because lessons are inferred from bare success/failure labels and stored without the run, so a wrong or misread lesson cannot be checked; keeping a link to the evidence next to each lesson lets the agent go back and verify."
+      },
+      "what": {
+        "zh": "自我改进的 agent 靠积累经验变强，但这些经验本身没被验证，会造成“记忆引起的退化”。",
+        "en": "Self-improving agents get better by accumulating lessons, but those lessons are unverified and can cause memory-induced degradation."
+      },
+      "how": {
+        "zh": "KAIST 团队把每次运行编译成“为何成败”的诊断和若干短经验，每条经验链接到诊断和原始轨迹；新任务时 agent 先读全部经验，遇到细节缺失、互相冲突或来自失败运行的经验，就用终端工具顺链接回查再行动；在 ALFWorld、ScienceWorld、PlanCraft、AppWorld、τ³-bench Retail 上每个套件都最好，平均比无记忆高 10.7 分、比只给同样经验高 3.2 分，退化率 6.5% → 4.5%；代价是每任务开销更高、提示随记忆增长，诊断本身也可能是错的。",
+        "en": "The KAIST team compiles each run into a diagnosis of why it succeeded or failed plus short insights, each linked to the diagnosis and raw trajectory; on a new task the agent reads all insights and, when one lacks detail, conflicts, or comes from a failed run, follows the links with terminal tools before acting; it is best on every suite across ALFWorld, ScienceWorld, PlanCraft, AppWorld and τ³-bench Retail, 10.7 points above no memory and 3.2 above the same insights alone on average, with regressions down from 6.5% to 4.5%; the trade-offs are higher per-task cost, a prompt that grows with memory, and diagnoses that can themselves be wrong."
+      },
+      "metric": {
+        "zh": "平均 +10.7 分",
+        "en": "+10.7 points avg"
+      },
+      "pills": [
+        {
+          "zh": "对比无记忆",
+          "en": "vs no memory",
+          "value": "+10.7",
+          "tone": "up"
+        },
+        {
+          "zh": "对比仅经验",
+          "en": "vs insights only",
+          "value": "+3.2",
+          "tone": "up"
+        },
+        {
+          "zh": "退化率",
+          "en": "Regression",
+          "value": "6.5% → 4.5%",
+          "tone": "up"
+        }
+      ],
+      "arxiv": "2611.14320",
+      "authors": "KAIST",
+      "handle": "@dair_ai",
+      "links": [
+        {
+          "zh": "论文",
+          "en": "Paper",
+          "url": "https://arxiv.org/abs/2611.14320"
+        },
+        {
+          "zh": "代码",
+          "en": "Repo",
+          "url": "https://github.com/yukyeongleee/wikitrace"
+        },
+        {
+          "zh": "分享者",
+          "en": "Sharer",
+          "url": "https://x.com/dair_ai"
+        },
+        {
+          "zh": "X 原帖",
+          "en": "X Post",
+          "url": "https://x.com/dair_ai/status/2122026162100883686"
+        }
+      ]
+    },
+    {
       "id": "sat-student-aware-skill-teaching",
       "edition": "2026-11-15",
       "tags": [
