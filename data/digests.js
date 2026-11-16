@@ -19,6 +19,15 @@ window.YANHUA_DIGESTS = {
   },
   "editions": [
     {
+      "id": "2026-11-16",
+      "date": "2026-11-16",
+      "slot": "",
+      "label": {
+        "zh": "2026-11-16",
+        "en": "16 Nov 2026"
+      }
+    },
+    {
       "id": "2026-11-15",
       "date": "2026-11-15",
       "slot": "",
@@ -289,6 +298,327 @@ window.YANHUA_DIGESTS = {
     }
   ],
   "items": [
+    {
+      "id": "singularity-bench-agents-build-agents",
+      "edition": "2026-11-16",
+      "tags": [
+        "harness-search",
+        "verification"
+      ],
+      "title": {
+        "zh": "Singularity-Bench：Opus 5.5 + Claude Code 从零搭建预训练、RL、推理引擎、harness 与集群调度，六项全部追平或超过人类系统",
+        "en": "Singularity-Bench: Opus 5.5 + Claude Code Builds Pre-training, RL, Serving, a Harness and a Scheduler From Scratch, Matching or Beating Human Systems on All Six"
+      },
+      "why": {
+        "zh": "最强的 agent 已经能在小规模下从零造出整条 AI 开发链并追平成熟的人类系统，但赢面来自先测量再设计、把算力真正跑满这类工程纪律，而不是新发明，而且同一个模型换个 harness 分数能差近 3 倍。",
+        "en": "The strongest agent can already rebuild the whole AI-development stack at small scale and match mature human systems, but it wins through engineering discipline such as measuring before designing and actually saturating the GPUs, not new inventions, and the same model can score nearly 3x differently in a different harness."
+      },
+      "what": {
+        "zh": "现有基准要么把 agent 限制在调超参的小动作空间里，要么环境简化、验证不可靠，测不出 agent 能否端到端负责 AI 开发、也就是递归自我改进所需的技能。",
+        "en": "Existing benchmarks either confine agents to narrow action spaces like hyperparameter tuning or use simplified environments and unreliable verification, so they cannot tell whether agents can take end-to-end responsibility for AI development, the skill set recursive self-improvement needs."
+      },
+      "how": {
+        "zh": "CMU（陈贝迪组）联合 NVIDIA 等机构设计六项任务：预训练、中训练、RL 后训练、GLM-5.3-Flash FP8 推理引擎、编码 harness、28 个模型的 serverless 集群调度，每项从极简代码出发、断网、限时（多为 4×GB300、12 小时），与 Megatron-LM、Miles、SGLang、Claude Code、Dynamo 等人类基线在同一硬件上比；并红队发现 Harbor 可被刷分，另做 Breakwater 堵住所有测试过的攻击。11 个 agent 中 Opus 5.5 + Claude Code 的 Singularity-Index 为 1.252（五项胜出、后训练 0.533 对 0.539 打平，API 花费 $425.41），推理收入 11.52 对 SGLang 8.18 美元/GPU 小时、P90 首字延迟 0.48 秒对 12.0 秒；其余 10 个平均 0.58，11 个推理引擎中 6 个得零分，GLM 5.3 配 Claude Code 为 0.657、配 Codex 仅 0.228；作者承认任务规模远小于真正的 RSI。",
+        "en": "CMU (Beidi Chen's lab) with NVIDIA and others set six tasks: pre-training, mid-training, RL post-training, an FP8 serving engine for GLM-5.3-Flash, a coding harness, and serverless scheduling of 28 models; each starts from minimal code, offline, under fixed budgets (mostly 4x GB300 for 12 h), and is compared with human baselines such as Megatron-LM, Miles, SGLang, Claude Code and Dynamo on the same hardware, and red-teaming showed Harbor could be reward-hacked, so they built Breakwater to block every attack tested. Among 11 agents, Opus 5.5 + Claude Code reaches a Singularity-Index of 1.252 (wins five tasks, ties post-training at 0.533 vs 0.539, $425.41 API spend), earning $11.52 vs SGLang's $8.18 per GPU-hour with P90 time-to-first-token of 0.48 s vs 12.0 s; the other 10 average 0.58, 6 of 11 serving engines score zero, GLM 5.3 scores 0.657 in Claude Code but 0.228 in Codex, and the authors concede the tasks are far smaller than true RSI."
+      },
+      "metric": {
+        "zh": "Singularity-Index 1.252（其余平均 0.58）",
+        "en": "Singularity-Index 1.252 (others avg 0.58)"
+      },
+      "pills": [
+        {
+          "zh": "Opus 5.5 + CC 指数",
+          "en": "Opus 5.5 + CC index",
+          "value": "1.252",
+          "tone": "up"
+        },
+        {
+          "zh": "其余 agent 平均",
+          "en": "Other agents avg",
+          "value": "0.58",
+          "tone": "down"
+        },
+        {
+          "zh": "推理收入 vs SGLang",
+          "en": "Serving income vs SGLang",
+          "value": "$11.52 vs $8.18",
+          "tone": "up"
+        },
+        {
+          "zh": "GLM 5.3 换 harness",
+          "en": "GLM 5.3 by harness",
+          "value": "0.657 vs 0.228",
+          "tone": "flat"
+        }
+      ],
+      "arxiv": "2611.16591",
+      "authors": "Yang Zhou, Krish Agarwal, Zhuoming Chen, … Beidi Chen (CMU, NVIDIA, UT Austin, HKUST, Together AI, Meta et al.)",
+      "handle": "@the123456ai",
+      "links": [
+        {
+          "zh": "论文",
+          "en": "Paper",
+          "url": "https://arxiv.org/abs/2611.16591"
+        },
+        {
+          "zh": "代码",
+          "en": "GitHub",
+          "url": "https://github.com/Infini-AI-Lab/singularity-bench"
+        },
+        {
+          "zh": "项目页",
+          "en": "Project page",
+          "url": "https://infini-ai-lab.github.io/singularity-bench/"
+        },
+        {
+          "zh": "分享者",
+          "en": "Sharer",
+          "url": "https://x.com/the123456ai"
+        },
+        {
+          "zh": "X 原帖",
+          "en": "X Post",
+          "url": "https://x.com/the123456ai/status/2122246044612173900"
+        },
+        {
+          "zh": "X 原帖（@ela_euk）",
+          "en": "X Post (@ela_euk)",
+          "url": "https://x.com/ela_euk/status/2122240297530958237"
+        },
+        {
+          "zh": "X 原帖（@mirror_gap）",
+          "en": "X Post (@mirror_gap)",
+          "url": "https://x.com/mirror_gap/status/2122225331377721680"
+        }
+      ]
+    },
+    {
+      "id": "verifiable-pxrd-agent-adaptation",
+      "edition": "2026-11-16",
+      "tags": [
+        "autoresearch",
+        "harness-search",
+        "memory-skills"
+      ],
+      "title": {
+        "zh": "Verifiable pXRD：不改模型，只给 harness 加工具和一段 139 词的进化技能，晶体结构解析准确率从 27% 提到 69%",
+        "en": "Verifiable pXRD: Harness Tools Plus a 139-Word Evolved Skill Lift Crystal-Structure Recovery From 27% to 69%, No Weight Updates"
+      },
+      "why": {
+        "zh": "粉末衍射解结构之所以适合让 agent 自我进化，是因为每个候选结构都能被物理模拟和结构匹配自动验证；不过最大的增益来自把任务和验证方式讲清楚，一旦这类低垂果实摘完，继续进化提示词就很难找到能泛化的改进。",
+        "en": "Powder-diffraction structure solving suits self-evolving agents because every candidate can be checked automatically by physics simulation and structure matching, yet most of the gain comes from clarifying the task and how it is verified, and once that low-hanging fruit is gone, further prompt evolution struggles to find improvements that generalize."
+      },
+      "what": {
+        "zh": "从粉末 X 射线衍射（pXRD）自动解出晶体结构仍是自驱动材料实验室的关键瓶颈，现有生成模型在分布外结构上表现很差。",
+        "en": "Automatically solving crystal structures from powder X-ray diffraction (pXRD) remains a key bottleneck for self-driving materials labs, and existing generative models do poorly on out-of-distribution structures."
+      },
+      "how": {
+        "zh": "斯坦福、多伦多大学（Aspuru-Guzik 组）与 NVIDIA 把它表述为可验证的 agent 搜索，发布 200 题 pXRD-Bench，并在同一个 GPT-5.6 Sol 上逐级加装：无工具 27.0%，加材料科学 Python 编码 harness 52.0%，再加 GSAS-II/DICVOL 57.0%（OOD 从 44% 到 56%），最后由 trainer agent 在另外 50 题上用标准答案和验证器反复试跑、提炼出只含一段 139 词技能和一个 DICVOL 适配器的能力包，达到 69.0%；20 题子集上重复采样有 18 题出现正确候选、按谱图拟合挑选全部选中；在 15 个真实多相样品上，用合成问题进化出的 v6 包改善了平均拟合，并迁移出一个类似物替换流程，找回了参考库中不存在的物相。",
+        "en": "Stanford, the University of Toronto (Aspuru-Guzik's group) and NVIDIA frame it as verifiable agentic search, release the 200-problem pXRD-Bench, and climb a ladder on the same GPT-5.6 Sol: 27.0% without tools, 52.0% with a materials-science coding harness, 57.0% with GSAS-II/DICVOL (OOD 44% to 56%), and 69.0% after a trainer agent replays a separate 50-problem curriculum with ground truth and the verifier and distills a capability pack of just a 139-word skill plus a DICVOL adapter; repeated sampling yields a correct candidate on 18 of 20 subset problems and profile-based selection picks all 18, while on 15 measured multiphase samples a package evolved on self-generated synthetic problems improves mean fit and transfers an analogue-substitution procedure that recovers a phase absent from the reference library."
+      },
+      "metric": {
+        "zh": "结构恢复 27% → 69%",
+        "en": "Structure recovery 27% → 69%"
+      },
+      "pills": [
+        {
+          "zh": "无工具",
+          "en": "No tools",
+          "value": "27.0%",
+          "tone": "flat"
+        },
+        {
+          "zh": "编码 harness",
+          "en": "Coding harness",
+          "value": "52.0%",
+          "tone": "up"
+        },
+        {
+          "zh": "+ 晶体学软件",
+          "en": "+ Crystallography tools",
+          "value": "57.0%",
+          "tone": "up"
+        },
+        {
+          "zh": "+ 进化能力包",
+          "en": "+ Evolved capability pack",
+          "value": "69.0%",
+          "tone": "up"
+        }
+      ],
+      "arxiv": "2611.17539",
+      "authors": "Samuel Chen, Jiaru Bai, Austin Henry Cheng, Varinia Bernales, Alán Aspuru-Guzik (Stanford, University of Toronto, Vector Institute, NVIDIA)",
+      "handle": "@SciFi",
+      "links": [
+        {
+          "zh": "论文",
+          "en": "Paper",
+          "url": "https://arxiv.org/abs/2611.17539"
+        },
+        {
+          "zh": "分享者",
+          "en": "Sharer",
+          "url": "https://x.com/SciFi"
+        },
+        {
+          "zh": "X 原帖",
+          "en": "X Post",
+          "url": "https://x.com/SciFi/status/2122240434579611748"
+        }
+      ]
+    },
+    {
+      "id": "beyond-agent-harness-software-factory-boundary",
+      "edition": "2026-11-16",
+      "tags": [
+        "harness-search"
+      ],
+      "title": {
+        "zh": "Beyond the Agent Harness：给“harness 之上的软件工厂层”划边界——跨 run 的机制归工厂，单个 run 内的归 harness",
+        "en": "Beyond the Agent Harness: A Boundary Rule for the Software-Factory Layer — Cross-Run Mechanisms Belong to the Factory, In-Run Ones to the Harness"
+      },
+      "why": {
+        "zh": "用“一次 run”作操作定义，就能把 agent 失败分清是 harness、工厂层还是领域层的问题，并避免把“缺一道关卡”误算成 bug 的起因；但目前只有两个同家族模型标注员的一致性证据，而一致并不等于正确或有用。",
+        "en": "Defining one run operationally lets you tell whether an agent failure belongs to the harness, the factory layer or the domain layer, and stops a missing gate from being counted as the cause of a bug, but the only evidence so far is agreement between two same-family model coders, and agreement is not accuracy or usefulness."
+      },
+      "what": {
+        "zh": "越来越多系统在编码 agent harness 之上再加一层，把大量 agent run 组织成持续交付，但缺少一条规则来判断某个机制或某次失败到底属于哪一层。",
+        "en": "More systems now add a layer above the coding-agent harness to organize many agent runs into continuous delivery, but there is no rule for deciding which layer a mechanism or a failure belongs to."
+      },
+      "how": {
+        "zh": "独立研究者 Lei Hua 把一次 run 定义为从派发到终止的一个 harness 会话：只在一个 run 内的机制属于 agent harness，协调多个 run、跨 run 传递状态或根据 run 结果更新的属于工厂 harness，随应用领域而变的属于领域层；失败分三字段记录（缺陷起源、哪道控制没拦住、在哪修复），归咎环境必须有正面证据。规则在作者自己服务 6 个项目的流水线和 3 个已发表系统的 26 个组件上制定后冻结，两个同家族模型标注员对 46 个留出单元：26 个机制层级全部一致，事件字段 20 个中 18–19 个一致（κ 0.86–0.93），但每个字段有 8–13 例被双方标为无法判定，各自把一半单元标为模糊；修订版消除了规则冲突，一致性却降到 κ 0.78–0.93，人类标注员尚未测试。",
+        "en": "Independent researcher Lei Hua defines a run as one harness session from dispatch to terminal status: mechanisms confined to a run belong to the agent harness, those that coordinate runs, hand state across runs or update from run outcomes belong to a factory harness, and those that change with the application domain belong to the domain layer; failures are coded in three fields (defect origin, the control that failed to stop it, where it was fixed), with environment blame requiring positive evidence. Developed on the author's own pipeline serving six projects and on 26 components of three published systems, then frozen, the criteria were applied by two same-family model coders to 46 held-out units: they agreed on all 26 mechanism layers and on 18–19 of 20 incident fields (κ 0.86–0.93), but marked 8–13 of 20 cases per field undetermined and each flagged half the units ambiguous; a revision removes rule conflicts but lowers agreement to κ 0.78–0.93, and human coders are untested."
+      },
+      "metric": {
+        "zh": "机制层级 26/26 一致，κ 0.86–0.93",
+        "en": "26/26 mechanism layers agreed, κ 0.86–0.93"
+      },
+      "pills": [
+        {
+          "zh": "机制层级一致",
+          "en": "Mechanism layers agreed",
+          "value": "26/26",
+          "tone": "up"
+        },
+        {
+          "zh": "事件字段 κ",
+          "en": "Incident-field κ",
+          "value": "0.86–0.93",
+          "tone": "up"
+        },
+        {
+          "zh": "每字段无法判定",
+          "en": "Undetermined per field",
+          "value": "8–13/20",
+          "tone": "down"
+        },
+        {
+          "zh": "人类标注员",
+          "en": "Human coders",
+          "value": "untested",
+          "tone": "flat"
+        }
+      ],
+      "arxiv": "2611.06946",
+      "authors": "Lei Hua (independent researcher)",
+      "handle": "@LabubuNoBB",
+      "links": [
+        {
+          "zh": "论文",
+          "en": "Paper",
+          "url": "https://arxiv.org/abs/2611.06946"
+        },
+        {
+          "zh": "分享者",
+          "en": "Sharer",
+          "url": "https://x.com/LabubuNoBB"
+        },
+        {
+          "zh": "X 原帖",
+          "en": "X Post",
+          "url": "https://x.com/LabubuNoBB/status/2122232812715823499"
+        }
+      ]
+    },
+    {
+      "id": "openai-astra-standard-model-lattice",
+      "edition": "2026-11-16",
+      "tags": [
+        "autoresearch",
+        "verification"
+      ],
+      "title": {
+        "zh": "OpenAI 科学博客首篇：物理学家 Nathaniel Craig 与 GPT-6 Astra 给出标准模型的候选格点定义，证明由 Astra 主导",
+        "en": "OpenAI's First Science-Blog Post: Physicist Nathaniel Craig and GPT-6 Astra Propose a Candidate Lattice Definition of the Standard Model, With an Astra-Led Proof"
+      },
+      "why": {
+        "zh": "这次 AI 的作用不是自己选题，而是把一位专家已有、但证不出来的思路变成可工作的构造和完整证明；结果仍只是“候选定义”，要等专家共同体检验，离实际格点模拟还很远。",
+        "en": "Here the AI did not pick the problem; it turned an expert's existing but unproven idea into a working construction and a full proof, and the result is still only a candidate definition that needs community scrutiny and is far from practical lattice simulation."
+      },
+      "what": {
+        "zh": "标准模型五十多年来缺少不依赖微扰展开的完整定义，难点在于弱力是手征的，把左手费米子放上格点会冒出不想要的“倍增子”，而整个标准模型的相位规定 25 年来一直悬而未决。",
+        "en": "The Standard Model has lacked a nonperturbative definition for over fifty years because the weak force is chiral: putting left-handed fermions on a lattice produces unwanted doublers, and the phase prescription for the full Standard Model had stayed open for more than 25 years."
+      },
+      "how": {
+        "zh": "Craig 的思路是把原格点上的规范场搬到一串更细的格点上，比较相邻格点允许的费米子态，累加得到相位修正；据博客和预印本 2610.09093，Astra 提出了把场搬到更细格点的正确方式、证明这些比较会收敛，并主导了详细证明，还执行了包括 Lean 验证在内的检验；格点专家 Golterman、Kronfeld、Shamir 审阅了证明。结论只在有限格距、场强有界（admissible）条件下成立，反射正性和连续极限仍未解决。",
+        "en": "Craig's idea is to carry the gauge fields onto a succession of finer lattices and compare the allowed fermion states on neighboring grids, summing those pieces into the phase correction; per the blog and preprint 2610.09093, Astra found the right way to carry fields to finer grids, showed the comparisons converge, led the detailed proof, and ran checks including Lean verification, while lattice experts Golterman, Kronfeld and Shamir reviewed it. The result holds at finite lattice spacing under a field-strength (admissibility) bound, and reflection positivity and the continuum limit remain open."
+      },
+      "metric": {
+        "zh": "悬而未决 25+ 年的相位规定",
+        "en": "Phase prescription open for 25+ years"
+      },
+      "pills": [
+        {
+          "zh": "问题悬置",
+          "en": "Open since",
+          "value": "50+ yrs",
+          "tone": "flat"
+        },
+        {
+          "zh": "证明",
+          "en": "Proof",
+          "value": "Astra-led",
+          "tone": "up"
+        },
+        {
+          "zh": "专家审阅",
+          "en": "Expert reviewers",
+          "value": "3",
+          "tone": "flat"
+        },
+        {
+          "zh": "状态",
+          "en": "Status",
+          "value": "candidate",
+          "tone": "flat"
+        }
+      ],
+      "arxiv": "2610.09093",
+      "authors": "Nathaniel Craig (UC Santa Barbara / KITP, OpenAI) with GPT-6 Astra",
+      "handle": "@OpenAI",
+      "links": [
+        {
+          "zh": "博客",
+          "en": "Blog",
+          "url": "https://openai.com/index/step-toward-defining-the-standard-model"
+        },
+        {
+          "zh": "论文",
+          "en": "Paper",
+          "url": "https://arxiv.org/abs/2610.09093"
+        },
+        {
+          "zh": "分享者",
+          "en": "Sharer",
+          "url": "https://x.com/OpenAI"
+        },
+        {
+          "zh": "X 原帖",
+          "en": "X Post",
+          "url": "https://x.com/OpenAI/status/2122123437141553630"
+        }
+      ]
+    },
     {
       "id": "agency-harness-cost-optimization",
       "edition": "2026-11-15",
