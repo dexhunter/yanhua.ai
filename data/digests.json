@@ -299,6 +299,399 @@
   ],
   "items": [
     {
+      "id": "anthropic-fold-subagents-single-loop",
+      "tags": [
+        "harness-search",
+        "memory-skills"
+      ],
+      "title": {
+        "zh": "Anthropic：把子 agent 折叠进单一主循环，用 skills + tools 渐进披露，质量更高、成本和延迟更低",
+        "en": "Anthropic: Fold Subagents Into One Main Agent Loop With Progressively Disclosed Skills and Tools for Better Quality at Lower Cost and Latency"
+      },
+      "why": {
+        "zh": "对今天的强模型来说，一个带渐进披露 skills 和 tools 的单 agent 循环往往比按组织架构拆出的多 agent 编排更好，因为每次子 agent 交接都会丢上下文，而新模型已能自己规划、自查，很多 harness 结构反而在拖后腿。",
+        "en": "For today's strong models, one agent loop with progressively disclosed skills and tools often beats an org-chart-shaped multi-agent orchestrator, because every subagent handoff loses context while the model can now plan and check its own work, so much of the harness structure only gets in the way."
+      },
+      "what": {
+        "zh": "企业常让每个团队各建一个子 agent、再由中央编排器串起来，结果出现上下文丢失、子 agent 泛滥、互相冲突的“缝合 prompt”、各自为政的评测和额外延迟。",
+        "en": "Enterprises often let each team build its own subagent under a central orchestrator, which brings lost context, subagent sprawl, a conflicting 'Frankenprompt', siloed evals and extra latency."
+      },
+      "how": {
+        "zh": "Anthropic Applied AI 团队建议：一个模型、一个上下文窗口跑开放式工具循环，计划写在上下文里边做边改，领域流程放进 skills、硬约束和审批放进 tools，按需加载（Claude Code 新模型 system prompt 因此缩减 80% 以上）；迁移时先建约 10 个样例的端到端评测，一次折叠一个子 agent，只有分数下降才保留，并可用 /claude-api hillclimb 针对评测自动迭代 skill、工具描述和 system prompt。在多个企业部署中单循环 + skills 常胜过单 prompt 和子 agent 两种设计，一家客户运行时间快约 2 倍；文章也提醒：在示例客服 agent 上折叠一个子 agent 降低了延迟却打破了一个原本通过的流程，且两次运行里只出现一次，所以每个任务要多跑几遍。",
+        "en": "The Applied AI team recommends one model and one context window running an open-ended tool loop, with the plan written in context and revised as results arrive, domain procedure in skills, hard limits and approvals in tools, all loaded on demand (which cut Claude Code's system prompt by over 80% for newer models); to migrate, build a roughly 10-example end-to-end eval, fold in one subagent at a time and keep it only if the score drops, optionally letting /claude-api hillclimb iterate skill and tool descriptions and the system prompt against that eval. Across several enterprise deployments the single loop with skills often beat both the one-prompt and subagent designs, one customer saw roughly 2x faster runtime, and the article warns that folding a subagent in a sample support agent cut latency but broke a passing process that showed up in only one of two runs, so each task should be run more than once."
+      },
+      "metric": {
+        "zh": "单循环运行时间约快 2 倍",
+        "en": "Single loop ~2x faster runtime"
+      },
+      "pills": [
+        {
+          "zh": "运行时间",
+          "en": "Runtime",
+          "value": "~2x faster",
+          "tone": "up"
+        },
+        {
+          "zh": "Claude Code system prompt",
+          "en": "Claude Code system prompt",
+          "value": "-80%+",
+          "tone": "up"
+        },
+        {
+          "zh": "起步评测",
+          "en": "Starter eval",
+          "value": "10 examples",
+          "tone": "flat"
+        },
+        {
+          "zh": "工具定义上限",
+          "en": "Tool-definition ceiling",
+          "value": "30–50",
+          "tone": "flat"
+        }
+      ],
+      "authors": "Diane Sarkis (Anthropic, Claude Platform; article dated 22 Oct 2026)",
+      "handle": "@suraj_sharma14",
+      "links": [
+        {
+          "zh": "博客",
+          "en": "Blog",
+          "url": "https://claude.com/resources/articles/building-agents-when-to-fold-subagents-into-your-main-agent-loop"
+        },
+        {
+          "zh": "分享者",
+          "en": "Sharer",
+          "url": "https://x.com/suraj_sharma14"
+        },
+        {
+          "zh": "X 原帖",
+          "en": "X Post",
+          "url": "https://x.com/suraj_sharma14/status/2122374135913628065"
+        }
+      ],
+      "edition": "2026-11-16"
+    },
+    {
+      "id": "nvidia-deep-personalization-coco",
+      "tags": [
+        "harness-search",
+        "memory-skills"
+      ],
+      "title": {
+        "zh": "NVIDIA Deep Personalization：Coco 的 Observer Agent 靠隐式反馈做进化式 prompt 优化和 LoRA，学会“何时该帮你”，主动介入 F1 提升 2.4–3.0 倍",
+        "en": "NVIDIA Deep Personalization: Coco's Observer Agent Learns When to Step In From Implicit Feedback via Evolutionary Prompt Optimization and LoRA, Lifting Proactive-Timing F1 2.4–3.0x"
+      },
+      "why": {
+        "zh": "主动型 agent 难的不是会做什么，而是判断用户此刻想不想被打扰；让一个独立的观察 agent 持续积累用户上下文，并把接受、拒绝、主动请求当作训练信号来自我调整，就能把介入时机学准，而且全在本地设备上完成。",
+        "en": "The hard part for a proactive agent is not what it can do but knowing whether the user wants help right now, and a separate observer that keeps accumulating user context and adapts itself from acceptances, dismissals and explicit requests learns that timing well, entirely on a local device."
+      },
+      "what": {
+        "zh": "用户往往意识不到 AI 能在什么时候帮忙，而固定的用户画像和设置菜单无法捕捉随情境变化的介入偏好。",
+        "en": "Users often don't realize when AI could help, and static profiles or settings cannot capture intervention preferences that change with the situation."
+      },
+      "how": {
+        "zh": "Coco 把“何时帮”和“怎么帮”拆开：Observer Agent 持续看桌面活动、维护压缩的长期用户上下文，并通过进化式 prompt 优化（Coco-PE）或 LoRA 微调（Coco-LoRA）从隐式反馈中自我适配，执行交给 Claude Code、Codex、Pi 等现有 harness；本地端用变化感知的截帧去重把 KV cache 命中率从 26.7% 提到 45.2%，并在空闲时才跑个性化更新。在由 OSWorld 轨迹合成的 OSWorld-Persona 上，三个骨干模型的 macro F1 从直接提示的 0.12–0.19 升到 0.35–0.48，去掉积累的上下文会明显下降（Qwen-3.5-9B 的 LoRA 版本从 0.455 降到 0.285），一周真实用户研究中 F1 从 0.199 升到 0.515。",
+        "en": "Coco splits when to help from how to help: an Observer Agent watches desktop activity, keeps compact long-term user context and adapts from implicit feedback through evolutionary prompt optimization (Coco-PE) or LoRA fine-tuning (Coco-LoRA), while execution is left to existing harnesses such as Claude Code, Codex or Pi; on device, change-aware frame deduplication raises KV-cache hit rate from 26.7% to 45.2% and personalization runs only when the machine is idle. On OSWorld-Persona, synthesized from OSWorld trajectories, macro F1 across three backbones rises from 0.12–0.19 with direct prompting to 0.35–0.48, removing the accumulated context hurts (Qwen-3.5-9B LoRA drops from 0.455 to 0.285), and in a week-long user study F1 rose from 0.199 to 0.515."
+      },
+      "metric": {
+        "zh": "介入时机 F1 提升 2.4–3.0 倍",
+        "en": "Proactive-timing F1 up 2.4–3.0x"
+      },
+      "pills": [
+        {
+          "zh": "直接提示 F1",
+          "en": "Direct-prompt F1",
+          "value": "0.12–0.19",
+          "tone": "flat"
+        },
+        {
+          "zh": "自适应后 F1",
+          "en": "Adapted F1",
+          "value": "0.35–0.48",
+          "tone": "up"
+        },
+        {
+          "zh": "一周用户研究",
+          "en": "Week-long user study",
+          "value": "0.199 → 0.515",
+          "tone": "up"
+        },
+        {
+          "zh": "KV cache 命中率",
+          "en": "KV-cache hit rate",
+          "value": "26.7% → 45.2%",
+          "tone": "up"
+        }
+      ],
+      "arxiv": "2611.13457",
+      "authors": "Yijia Shao, Song Bian, Junxian Guo, Jindong Jiang, Zhen Dong, Huizi Mao, Diyi Yang, Song Han (NVIDIA, Stanford, MIT)",
+      "handle": "@EchoShao8899",
+      "links": [
+        {
+          "zh": "论文",
+          "en": "Paper",
+          "url": "https://arxiv.org/abs/2611.13457"
+        },
+        {
+          "zh": "项目页",
+          "en": "Project page",
+          "url": "https://nvlabs.github.io/deep-personalization/"
+        },
+        {
+          "zh": "代码",
+          "en": "GitHub",
+          "url": "https://github.com/NVlabs/deep-personalization"
+        },
+        {
+          "zh": "分享者",
+          "en": "Sharer",
+          "url": "https://x.com/EchoShao8899"
+        },
+        {
+          "zh": "X 原帖",
+          "en": "X Post",
+          "url": "https://x.com/EchoShao8899/status/2122355012928155705"
+        },
+        {
+          "zh": "X 原帖（代码发布）",
+          "en": "X Post (code release)",
+          "url": "https://x.com/EchoShao8899/status/2122365501993341094"
+        }
+      ],
+      "edition": "2026-11-16"
+    },
+    {
+      "id": "evocore-evolved-linux-kernel",
+      "tags": [
+        "harness-search",
+        "verification"
+      ],
+      "title": {
+        "zh": "EvoCore：用 EvoForest 进化搜索同时改 Linux 7.3.4 的 C 源码、Kconfig 和 sysctl，futex 快 22.5%、内存少 18.5 MiB，安全缓解全保留",
+        "en": "EvoCore: EvoForest Evolutionary Search Jointly Tunes Linux 7.3.4 C Source, Kconfig and sysctl for 22.5% Faster futex and 18.5 MiB Less RAM With All Mitigations Kept"
+      },
+      "why": {
+        "zh": "LLM 驱动的进化搜索能在内核这种三层强耦合的空间里找到真实收益，但真正决定结果可信的是事后的受控复核：作者靠配对重测才发现，进化过程中的“最佳”其实是构建缓存 bug 和笔记本发热造成的假象。",
+        "en": "LLM-driven evolutionary search can find real gains in a tightly coupled three-layer space like the kernel, but what makes the result trustworthy is controlled re-checking afterwards: paired re-runs showed the evolution's nominal best was an artifact of a build-cache bug and laptop thermal drift."
+      },
+      "what": {
+        "zh": "Linux 内核的编译默认值、Kconfig 开关和运行时 sysctl 彼此耦合，单独调某一层或不严格控制基线，很容易得到在尾部负载上退化、甚至悄悄关掉安全缓解的脆弱配置。",
+        "en": "Linux's compiled defaults, Kconfig toggles and runtime sysctl settings interact, so tuning one layer alone or benchmarking without strict baselines easily yields brittle configurations that regress tail workloads or silently strip security mitigations."
+      },
+      "how": {
+        "zh": "一名高中生基于 EvoForest（arXiv 2604.19761）把每个候选拆成 8 个语义节点（Kconfig、C 补丁、sysctl、启动参数），在 3 个 island 上演化 12 步，用 microVM 内的静态 C 基准测 22 项指标，任一指标低于 0.90 倍即重罚，并强制保留 26 个核心子系统和 22 个 CONFIG_MITIGATION 开关；共筛 95 个配置、173 次 KVM 启动、仅编译 19 个二进制。最终版本在 5 轮拉丁方对照中赢下 22 项里的 14 项（futex 乒乓 +22.5%、hackbench +9.1%、getppid +9.0%、内存 -18.5 MiB，零硬退化），Colab Xeon QEMU 上独立复现，但这是单人博客和代码、未经同行评审。",
+        "en": "A high-school researcher built on EvoForest (arXiv 2604.19761), splitting each candidate into 8 semantic nodes (Kconfig, C patches, sysctl, boot cmdline) evolved over 3 islands for 12 steps, scored by a static C benchmark inside a microVM on 22 metrics with a heavy penalty for any metric below 0.90x and hard constraints keeping 26 core subsystems and all 22 CONFIG_MITIGATION flags; it screened 95 specs over 173 KVM boots while compiling only 19 binaries. The released profile won 14 of 22 metrics in 5-round Latin-square comparisons against rebuilt stock Linux (futex ping-pong +22.5%, hackbench +9.1%, getppid +9.0%, 18.5 MiB less RAM, zero hard regressions) and reproduced on Colab Xeon QEMU, though it is a single-author blog and repo without peer review."
+      },
+      "metric": {
+        "zh": "22 项指标赢 14 项，零硬退化",
+        "en": "Wins 14/22 metrics, 0 hard regressions"
+      },
+      "pills": [
+        {
+          "zh": "futex 乒乓",
+          "en": "futex ping-pong",
+          "value": "+22.5%",
+          "tone": "up"
+        },
+        {
+          "zh": "hackbench",
+          "en": "hackbench",
+          "value": "+9.1%",
+          "tone": "up"
+        },
+        {
+          "zh": "运行后内存",
+          "en": "Post-workload RAM",
+          "value": "-18.5 MiB",
+          "tone": "up"
+        },
+        {
+          "zh": "安全缓解保留",
+          "en": "Mitigations kept",
+          "value": "22/22",
+          "tone": "flat"
+        }
+      ],
+      "authors": "Şuayp Talha Kocabay (TÜBİTAK Science High School)",
+      "handle": "@suayptalha",
+      "links": [
+        {
+          "zh": "博客",
+          "en": "Blog",
+          "url": "https://suayptalha.github.io/evocore-blog/"
+        },
+        {
+          "zh": "代码",
+          "en": "GitHub",
+          "url": "https://github.com/suayptalha/evocore"
+        },
+        {
+          "zh": "分享者",
+          "en": "Sharer",
+          "url": "https://x.com/suayptalha"
+        },
+        {
+          "zh": "X 原帖",
+          "en": "X Post",
+          "url": "https://x.com/suayptalha/status/2122364945517949295"
+        }
+      ],
+      "edition": "2026-11-16"
+    },
+    {
+      "id": "thomson-problem-llm-agent-search",
+      "tags": [
+        "autoresearch",
+        "verification"
+      ],
+      "title": {
+        "zh": "Claude 搭建并运行的搜索流水线刷新 Thomson 问题 N=912、1382、2502 三个最优已知构型，并用整数算术给出证书",
+        "en": "A Search Pipeline Built and Run by Claude Beats Best-Known Thomson-Problem Configurations at N=912, 1382 and 2502, Certified by Exact Integer Arithmetic"
+      },
+      "why": {
+        "zh": "LLM agent 让搭建和扩展科学搜索变得又快又便宜，但让结果可信的是与搜索分离的校验代码、与打磨后基线的对比，以及事先定好通过标准的对照实验；作者坦承一次“正确”的加速改动曾让搜索整整空跑约 72 个核时。",
+        "en": "LLM agents made the scientific search fast and cheap to build and extend, but what made the result trustworthy was verification code separate from the search, comparison against a polished baseline and controlled tests with pass criteria fixed in advance; the authors admit a 'correct' speed-up silently disabled the search for about 72 core-hours."
+      },
+      "what": {
+        "zh": "大 N 的 Thomson 问题（球面上 N 个电荷的最低库仑能）最优构型收录在剑桥团簇数据库中，最大几个条目 2026 年 10 月才刚刷新，问题是 AI 辅助的搜索能否给出可验证的新纪录。",
+        "en": "Best-known large-N Thomson configurations (N charges on a sphere with minimum Coulomb energy) are curated in the Cambridge Cluster Database, whose largest entries were set only in October 2026, and the question is whether an AI-assisted search can produce verifiable new records."
+      },
+      "how": {
+        "zh": "Claude（网页聊天和 Claude Code）在作者指导下编写并运行了从数据库构型出发的副本交换盆地跳跃，加共享极小值池、按几何重标记后的局部重组和仅梯度打磨，最后用精确整数算术出证书；N=912、1382、2502 的能量分别比数据库低 0.0036186、0.0109730、0.0614033，且都是严格局部极小。仅副本交换一步就找到 912（5 次中 1 次）和 1382，11 个尺寸中只有 3 个改进、相对降幅约 1e-8，作者也承认没有等预算对比和消融，论文完整报告了所有失败的搜索。",
+        "en": "Claude (via chat and Claude Code) wrote and ran, under the authors' direction, replica-exchange basin hopping from the database configurations with a shared pool of minima, recombination of improved regions after geometric relabelling and gradient-only polishing, then certified results with exact integer arithmetic; energies at N=912, 1382 and 2502 come in 0.0036186, 0.0109730 and 0.0614033 below the database values, all strict local minima. Replica exchange alone found N=912 (in one of five runs) and N=1382, only 3 of 11 sizes improved with relative decreases around 1e-8, the authors note no equal-budget comparison or ablations, and every failed search is reported."
+      },
+      "metric": {
+        "zh": "3 个尺寸刷新纪录（共试 11 个）",
+        "en": "3 records improved out of 11 sizes"
+      },
+      "pills": [
+        {
+          "zh": "N=912 降幅",
+          "en": "N=912 ΔE",
+          "value": "-0.0036186",
+          "tone": "up"
+        },
+        {
+          "zh": "N=1382 降幅",
+          "en": "N=1382 ΔE",
+          "value": "-0.0109730",
+          "tone": "up"
+        },
+        {
+          "zh": "N=2502 降幅",
+          "en": "N=2502 ΔE",
+          "value": "-0.0614033",
+          "tone": "up"
+        },
+        {
+          "zh": "无效加速空跑",
+          "en": "Core-hours lost to a bad speed-up",
+          "value": "~72",
+          "tone": "down"
+        }
+      ],
+      "arxiv": "2611.17776",
+      "authors": "Hui Shao, Tao Wang, Xiaotian Liu, Yijie Peng (Zhejiang University, independent, Georgia Tech, Nanjing University)",
+      "handle": "@SciFi",
+      "links": [
+        {
+          "zh": "论文",
+          "en": "Paper",
+          "url": "https://arxiv.org/abs/2611.17776"
+        },
+        {
+          "zh": "分享者",
+          "en": "Sharer",
+          "url": "https://x.com/SciFi"
+        },
+        {
+          "zh": "X 原帖",
+          "en": "X Post",
+          "url": "https://x.com/SciFi/status/2122386474578395350"
+        }
+      ],
+      "edition": "2026-11-16"
+    },
+    {
+      "id": "alexandria-general-agent-materials",
+      "tags": [
+        "autoresearch",
+        "memory-skills"
+      ],
+      "title": {
+        "zh": "通用 agent 做材料研究：把 1500 万 DFT 计算、生成模型和 174 亿条反应图接给 Claude Code，几分钟从问题到可做的合成实验",
+        "en": "Materials Research With a General-Purpose Agent: Claude Code Plus 15M DFT Calculations, Generative Models and a 17.4-Billion-Reaction Graph Goes From a Plain Question to a Runnable Synthesis Plan in Minutes"
+      },
+      "why": {
+        "zh": "让 agent 做出新发现的关键不是更特别的 agent，而是它能接触到的课题组数据和模型：同一个 Claude Code 只有网页搜索时只会复述文献，接上数据库、模型和反应图后才会找出未报道的化合物并给出可验证的合成方案。",
+        "en": "What lets the agent make new findings is not a special agent but the group's data and models it can reach: the same Claude Code with web search alone only repeats the literature, while with the database, models and reaction graph it finds unreported compounds and writes testable synthesis plans."
+      },
+      "what": {
+        "zh": "高通量计算和机器学习已能秒级列出候选材料，慢的一步变成判断哪些候选是真的、哪些计算不可信、以及该如何合成。",
+        "en": "High-throughput computation and ML can now list candidate materials in seconds, so the slow step has become deciding which candidates are real, which calculations to distrust and how a compound could be made."
+      },
+      "how": {
+        "zh": "作者把 Alexandria 数据库（约 1500 万次 DFT 计算、4 亿个机器学习势弛豫结构）、晶体生成模型、通用原子间势、十余种性质模型以及覆盖 193,416 个稳定化合物的 174 亿条反应图通过 MCP 接给 Claude Code（Opus 5.5，非交互模式，不写新 agent）。无人值守下它筛出太阳能吸收材料并因合成放能不足剔除一个候选、在 Ba–Zr–S 体系找到未报道的硫化物并设计验证实验；消融显示仅网页搜索时只复述文献，去掉反应图后合成建议仍来自文献，但这是三个示例的展示性工作，尚无实验验证。",
+        "en": "The authors connected the Alexandria database (about 15 million DFT calculations, 400 million ML-relaxed structures), a crystal generative model, a universal interatomic potential, property models and a 17.4-billion-reaction graph over 193,416 stable compounds to Claude Code (Opus 5.5, non-interactive, no new agent written) through MCP. Working unattended it screened for a solar absorber and dropped a candidate whose synthesis releases too little energy, and found an unreported Ba–Zr–S sulfide with an experiment to test it; ablations show web search alone only repeats the literature and removing the reaction graph leaves synthesis advice literature-based, though this is a three-example perspective with no lab confirmation yet."
+      },
+      "metric": {
+        "zh": "174 亿条反应 + 1500 万 DFT 计算接入 agent",
+        "en": "17.4B reactions + 15M DFT calcs behind one agent"
+      },
+      "pills": [
+        {
+          "zh": "DFT 计算",
+          "en": "DFT calculations",
+          "value": "~15M",
+          "tone": "flat"
+        },
+        {
+          "zh": "反应图",
+          "en": "Reaction graph",
+          "value": "17.4B",
+          "tone": "flat"
+        },
+        {
+          "zh": "仅网页搜索",
+          "en": "Web search only",
+          "value": "repeats literature",
+          "tone": "down"
+        },
+        {
+          "zh": "全部工具",
+          "en": "All tools",
+          "value": "unreported sulfide",
+          "tone": "up"
+        }
+      ],
+      "arxiv": "2611.15451",
+      "authors": "Paulo R. Pires, Théo Cavignac, Tiago F. T. Cerqueira, Hai-Chen Wang, Silvana Botti, Miguel A. L. Marques",
+      "handle": "@ResearcherFlow",
+      "links": [
+        {
+          "zh": "论文",
+          "en": "Paper",
+          "url": "https://arxiv.org/abs/2611.15451"
+        },
+        {
+          "zh": "分享者",
+          "en": "Sharer",
+          "url": "https://x.com/ResearcherFlow"
+        },
+        {
+          "zh": "X 原帖",
+          "en": "X Post",
+          "url": "https://x.com/ResearcherFlow/status/2122389465008312570"
+        },
+        {
+          "zh": "X 原帖（论文链接）",
+          "en": "X Post (paper link)",
+          "url": "https://x.com/ResearcherFlow/status/2122389667903599021"
+        }
+      ],
+      "edition": "2026-11-16"
+    },
+    {
       "id": "singularity-bench-agents-build-agents",
       "edition": "2026-11-16",
       "tags": [
