@@ -19,6 +19,15 @@ window.YANHUA_DIGESTS = {
   },
   "editions": [
     {
+      "id": "2026-11-17",
+      "date": "2026-11-17",
+      "slot": "",
+      "label": {
+        "zh": "2026-11-17",
+        "en": "17 Nov 2026"
+      }
+    },
+    {
       "id": "2026-11-16",
       "date": "2026-11-16",
       "slot": "",
@@ -298,6 +307,312 @@ window.YANHUA_DIGESTS = {
     }
   ],
   "items": [
+    {
+      "id": "autorl-multi-agent-autonomous-rl",
+      "edition": "2026-11-17",
+      "tags": [
+        "agentic-rl",
+        "verification"
+      ],
+      "title": {
+        "zh": "AutoRL：多智能体在线盯住 RL 训练，Qwen3-4B 的 AIME 2024 从 46.67% 升到 66.67%",
+        "en": "AutoRL: Agents Supervise a Live RL Run and Lift Qwen3-4B on AIME 2024 From 46.67% to 66.67%"
+      },
+      "why": {
+        "zh": "让 agent 像值班的 RL 研究员一样边训边查边改，确实比固定配方训得更好，但收益主要来自修好坏掉的 grader 和参考答案，而不是发明新算法：131 个候选改动里 110 个是修评分和数据，3 个改学习规则的一个都没上线。",
+        "en": "Letting agents act like an on-call RL researcher who watches, diagnoses and patches a live run beats a fixed recipe, but the gains come mostly from repairing broken graders and reference answers rather than inventing new algorithms: 110 of 131 proposed changes fixed grading or data, and none of the 3 learning-rule redesigns shipped."
+      },
+      "what": {
+        "zh": "RL 训练动态不稳、需要人长期盯着，这是让 AI 自己跑完整训练流水线（RSI 的关键一环）最难自动化的部分。",
+        "en": "RL training is unstable and needs sustained human supervision, which makes it the hardest part of the training pipeline to hand to AI if systems are to improve themselves."
+      },
+      "how": {
+        "zh": "Perceptor agents 监控训练曲线、rollout、评测和效率，发现异常、退化或停滞就触发讨论；三个 Proposer（调参、创新、专找实现 bug 的审查者）基于共享证据诊断并提方案，Orchestrator 审批后热更新或从 checkpoint 恢复。在 Qwen3-4B 上九个基准全部超过静态 GRPO（AIME 2025 和 HMMT 2025 各 +11.67 点）；一个故意做坏的 LongCat-Flash-Lite 配方被修到 73.16%，对照组跌到 56.05%；14.7 天无人值守的 coding-agent 训练跨过 11 次故障，SWE 类任务 pass@1 从 52.29% 升到峰值 65.13%（作者也承认验证每个改动都很耗算力）。",
+        "en": "Perceptor agents watch training curves, rollouts, evals and efficiency and trigger deliberation on anomalies, degradation or stagnation; three Proposers (a tuner, an innovator and a reviewer hunting implementation bugs) diagnose from shared evidence, and an Orchestrator approves changes as hot updates or checkpoint resumptions. On Qwen3-4B it beats static GRPO on all nine benchmarks (AIME 2025 and HMMT 2025 +11.67 points each); a deliberately flawed LongCat-Flash-Lite recipe was repaired to 73.16% while the static run fell to 56.05%; and a 14.7-day unattended coding-agent run survived 11 failures with SWE-style pass@1 rising from 52.29% to a 65.13% peak, though the authors note validating each change is compute-hungry."
+      },
+      "metric": {
+        "zh": "AIME 2024 46.67% → 66.67%",
+        "en": "AIME 2024 46.67% → 66.67%"
+      },
+      "pills": [
+        {
+          "zh": "AIME 2024",
+          "en": "AIME 2024",
+          "value": "+20.0",
+          "tone": "up"
+        },
+        {
+          "zh": "坏配方修复",
+          "en": "Flawed recipe",
+          "value": "73.2% vs 56.1%",
+          "tone": "up"
+        },
+        {
+          "zh": "编码 pass@1",
+          "en": "Coding pass@1",
+          "value": "52.3→65.1%",
+          "tone": "up"
+        },
+        {
+          "zh": "评分/数据类改动",
+          "en": "Grader/data fixes",
+          "value": "110/131",
+          "tone": "flat"
+        }
+      ],
+      "arxiv": "2611.17790",
+      "authors": "Simon Tang, Wenjie Shi, Yongjing Yin et al. (Meituan, CUHK, ShanghaiTech, Fudan)",
+      "handle": "@omarsar0",
+      "links": [
+        {
+          "zh": "论文",
+          "en": "Paper",
+          "url": "https://arxiv.org/abs/2611.17790"
+        },
+        {
+          "zh": "分享者",
+          "en": "Sharer",
+          "url": "https://x.com/omarsar0"
+        },
+        {
+          "zh": "X 原帖",
+          "en": "X Post",
+          "url": "https://x.com/omarsar0/status/2122429507756069008"
+        },
+        {
+          "zh": "X 原帖（@jatingargiitk 解读）",
+          "en": "X Post (@jatingargiitk analysis)",
+          "url": "https://x.com/jatingargiitk/status/2122549508903206985"
+        }
+      ]
+    },
+    {
+      "id": "evox-harness-as-second-policy",
+      "edition": "2026-11-17",
+      "tags": [
+        "harness-search"
+      ],
+      "title": {
+        "zh": "EvoX：把 harness 看作 agent 的“第二套策略”，六种 harness 总榜几乎打平，但按模型拆开冠军各不相同",
+        "en": "EvoX: Treat the Harness as the Agent's Second Policy, and Harness Rankings Flip Depending on the Model"
+      },
+      "why": {
+        "zh": "harness 的价值取决于它和底层模型合不合拍：总成功率上六种 harness 只差几个点，但 Claude Code 在 Opus 5 上最好、Codex 在 GPT-6 Astra 上最好，而一个专门兜住工具调用错误、执行中断和虚报完成的跨厂商 harness，在 GLM-5.3 和 Kimi K3 这类模型上收益最大。",
+        "en": "A harness is only as good as its fit with the model underneath: six harnesses land within a few points overall, yet Claude Code wins on Opus 5 and Codex on GPT-6 Astra, while a provider-neutral harness that catches malformed tool calls, interrupted runs and unsupported completion claims helps most on models like GLM-5.3 and Kimi K3."
+      },
+      "what": {
+        "zh": "模型做出的合理决策，常因工具调用不匹配、流程中断或“我已完成”的虚报而没有真正落地，而且不同 harness 之间很难公平比较。",
+        "en": "Plausible model decisions often fail to become real execution because of tool-call mismatches, interrupted workflows or unsupported 'done' claims, and harnesses are hard to compare fairly."
+      },
+      "how": {
+        "zh": "EvoX 是 Rust 写的多模型 runtime，把模型视为 Semantic Policy、harness 视为 Operational Policy，靠 Action Realization（修正泄漏或畸形的工具调用）、Execution Continuity（错误恢复、重复错误检测、熔断）和 Outcome Grounding（让汇报和实际执行对齐）三套机制；配套的 Contrast 评测框架在 5 个基准、6 个模型、6 个 harness 上统一测试。691 个共同任务-模型对上 EvoX 56.2%、Pi 55.9%、Claude Code 55.3%，平均领先其余五个约 3.0 点；在 GLM-5.3 上 +10.7、Kimi K3 上 +7.9，但在 Sonnet 5（−1.3）和 DeepSeek V4 Flash（−0.6）上略低，且以上结果未开启记忆和进化。",
+        "en": "EvoX is a Rust multi-model runtime that treats the model as the Semantic Policy and the harness as an Operational Policy, built on Action Realization (repairing leaked or malformed tool calls), Execution Continuity (recovery guidance, repeated-error detection, circuit breakers) and Outcome Grounding (aligning reports with observed actions), and the companion Contrast framework tests 6 harnesses across 5 benchmarks and 6 models. Over 691 common task-model pairs EvoX scores 56.2% vs Pi 55.9% and Claude Code 55.3%, about 3.0 points above the other five on average, with +10.7 on GLM-5.3 and +7.9 on Kimi K3 but slightly negative on Sonnet 5 (−1.3) and DeepSeek V4 Flash (−0.6), all without memory or evolution enabled."
+      },
+      "metric": {
+        "zh": "总成功率 56.2%（第二名 55.9%）",
+        "en": "Overall success 56.2% (runner-up 55.9%)"
+      },
+      "pills": [
+        {
+          "zh": "总成功率",
+          "en": "Overall success",
+          "value": "56.2%",
+          "tone": "up"
+        },
+        {
+          "zh": "GLM-5.3 优势",
+          "en": "GLM-5.3 edge",
+          "value": "+10.7",
+          "tone": "up"
+        },
+        {
+          "zh": "Kimi K3 优势",
+          "en": "Kimi K3 edge",
+          "value": "+7.9",
+          "tone": "up"
+        },
+        {
+          "zh": "Sonnet 5 优势",
+          "en": "Sonnet 5 edge",
+          "value": "-1.3",
+          "tone": "down"
+        }
+      ],
+      "arxiv": "2611.15006",
+      "authors": "Haoyang Zhang, Qumeng Sun, Xiao Zhang et al. (Infinite Evolution Lab, EvoMap)",
+      "handle": "@Xudong07452910",
+      "links": [
+        {
+          "zh": "论文",
+          "en": "Paper",
+          "url": "https://arxiv.org/abs/2611.15006"
+        },
+        {
+          "zh": "项目页",
+          "en": "Project page",
+          "url": "https://evomap.ai/evox"
+        },
+        {
+          "zh": "分享者",
+          "en": "Sharer",
+          "url": "https://x.com/Xudong07452910"
+        },
+        {
+          "zh": "X 原帖",
+          "en": "X Post",
+          "url": "https://x.com/Xudong07452910/status/2122533686541439161"
+        }
+      ]
+    },
+    {
+      "id": "iwsp-agents-hand-write-interpretable-weights",
+      "edition": "2026-11-17",
+      "tags": [
+        "verification"
+      ],
+      "title": {
+        "zh": "iWSP：Claude Code 不用反向传播，直接手写 Transformer 和脑编码模型的权重，得到可读的科学模型",
+        "en": "iWSP: Claude Code Hand-Writes Transformer and Brain-Encoding Weights Without Backprop, Yielding Readable Scientific Models"
+      },
+      "why": {
+        "zh": "禁止梯度训练、只让 agent 在固定评测器前反复手写权重，能逼出既准又看得懂的模型，因为 agent 只能把已知算法和皮层运算写成显式计算；但它目前只会重组教科书式的已知模块，还发明不了新原理，也写不出深层表示。",
+        "en": "Banning gradient training and making an agent repeatedly hand-write weights against a fixed evaluator yields models that are both accurate and readable, because the agent can only encode known algorithms and cortical operations as explicit computations; but it still just recombines textbook motifs and cannot invent new principles or build deep representations."
+      },
+      "what": {
+        "zh": "神经网络预测准但不透明，而神经科学等领域要的是解释，不只是预测。",
+        "en": "Neural networks predict well but stay opaque, while fields like neuroscience need explanations, not just predictions."
+      },
+      "how": {
+        "zh": "agent 在受限的 Claude Code 会话里读任务说明、在代码中直接设定权重，固定评测器返回分数后再修改，每次 30 到 50 轮；13 道算法题 Opus 5.5 写出的模型在隐藏测试上全对，满分模型的参数中位数 Opus 远小于 Sonnet 5.5 和 Haiku 5.5，并先达 99% 再从约 3,400 个参数压缩到约 200；用不超过 200 字的描述在新会话里重建，参数只有原版的 1.74 倍（对照组 2,043 倍）。在视觉皮层上它超过可解释基线、略逊黑盒 AlexNet，在语言 fMRI 中暴露出每次扫描首尾的数据混杂，在听觉 ECoG 中找到能预测神经活动的可解释声学特征。",
+        "en": "Inside a restricted Claude Code session the agent reads a task prompt, sets weights directly in code, gets a score from a fixed evaluator and revises over 30 to 50 iterations; on 13 algorithmic tasks Opus 5.5's models hit 100% hidden accuracy, with far smaller perfect models than Sonnet 5.5 or Haiku 5.5, reaching 99% early and then compressing from about 3,400 to about 200 parameters, and a 200-word description rebuilt in a fresh session needs only 1.74x the original's parameters versus 2,043x for a no-description control. On visual cortex it beats interpretable baselines and slightly trails black-box AlexNet, in language fMRI it exposed a data confound at the edges of each scan, and in auditory ECoG it found interpretable acoustic features that predict neural activity."
+      },
+      "metric": {
+        "zh": "13 道算法题隐藏测试全对",
+        "en": "13/13 algorithmic tasks 100% hidden accuracy"
+      },
+      "pills": [
+        {
+          "zh": "算法题",
+          "en": "Algorithmic tasks",
+          "value": "13/13 exact",
+          "tone": "up"
+        },
+        {
+          "zh": "压缩",
+          "en": "Compression",
+          "value": "~3,400→~200 params",
+          "tone": "up"
+        },
+        {
+          "zh": "200 字重建",
+          "en": "200-word rebuild",
+          "value": "1.74x vs 2,043x",
+          "tone": "up"
+        },
+        {
+          "zh": "新原理",
+          "en": "New principles",
+          "value": "none yet",
+          "tone": "down"
+        }
+      ],
+      "arxiv": "2611.18114",
+      "authors": "Yash Mehta, Chandan Singh, Weijia Xu, ... Nebojsa Jojic, Jianfeng Gao (Microsoft Research and universities)",
+      "handle": "@viest_w",
+      "links": [
+        {
+          "zh": "论文",
+          "en": "Paper",
+          "url": "https://arxiv.org/abs/2611.18114"
+        },
+        {
+          "zh": "代码",
+          "en": "GitHub",
+          "url": "https://github.com/csinva/weight-space-programming-autoresearch"
+        },
+        {
+          "zh": "分享者",
+          "en": "Sharer",
+          "url": "https://x.com/viest_w"
+        },
+        {
+          "zh": "X 原帖",
+          "en": "X Post",
+          "url": "https://x.com/viest_w/status/2122534124766523511"
+        }
+      ]
+    },
+    {
+      "id": "openscientist-open-ai-co-scientist-nature-medicine",
+      "edition": "2026-11-17",
+      "tags": [
+        "verification"
+      ],
+      "title": {
+        "zh": "OpenScientist：开源 AI co-scientist 登上 Nature Medicine，五个生物医学案例中能真正跑完分析，但结论仍需专家把关",
+        "en": "OpenScientist: An Open-Source AI Co-Scientist in Nature Medicine Runs Real Biomedical Analyses, but Conclusions Still Need Experts"
+      },
+      "why": {
+        "zh": "一个能自己查文献、写代码、跑分析、出报告的开源 co-scientist，已经能在几分钟内完成原本要几个月的数据分析，并在隐藏队列和盲法对比中站得住；但能生成分析不等于结论可靠，评测里仍出现重复样本、队列定义和统计报告方面的错误。",
+        "en": "An open-source co-scientist that searches the literature, writes and runs code and reports its findings can already do in minutes what took months of analysis and hold up on hidden cohorts and blinded comparisons, but generating an analysis is not the same as a trustworthy conclusion, and the evaluation still surfaced errors in duplicate observations, cohort definitions and statistical reporting."
+      },
+      "what": {
+        "zh": "生物医学研究受限于分析大型复杂数据集所需的时间和专业知识。",
+        "en": "Biomedical research is bottlenecked by the time and expertise needed to analyze large, complex datasets."
+      },
+      "how": {
+        "zh": "OpenScientist 接收科学家定义的问题和数据，循环检索文献、生成假设、执行分析并产出可审计的报告，可用开源模型完全离线运行（Apache 2.0）。论文在五个案例中验证：量化阿尔茨海默血液标志物、构建在隐藏队列中可预测生存的血浆蛋白组模型（据分享帖，六蛋白评分在 176 人的隐藏队列中 c-index 0.826）、提出 tau 病理与溶酶体酸化的可复现机制（分享帖称重复 60 次）、生成在外部队列中验证的多发性骨髓瘤假设，以及与独立人工分析的盲法对比一致。",
+        "en": "OpenScientist takes a scientist-defined question plus data, loops through literature search, hypothesis generation, analysis execution and auditable reporting, and can run fully air-gapped with open models (Apache 2.0). The paper validates it on five cases: quantifying Alzheimer's blood biomarkers, a plasma proteomic survival model that predicted survival in a hidden cohort (per the sharer, a six-protein score reached c-index 0.826 in 176 hidden participants), a reproducible tau-lysosomal acidification mechanism (repeated across 60 runs per the sharer), multiple myeloma hypotheses validated externally, and concordance with an independent human analysis in a blinded, prespecified comparison."
+      },
+      "metric": {
+        "zh": "隐藏队列 c-index 0.826（据分享帖）",
+        "en": "Hidden-cohort c-index 0.826 (per sharer)"
+      },
+      "pills": [
+        {
+          "zh": "案例研究",
+          "en": "Case studies",
+          "value": "5",
+          "tone": "flat"
+        },
+        {
+          "zh": "生存模型 c-index",
+          "en": "Survival c-index",
+          "value": "0.826",
+          "tone": "up"
+        },
+        {
+          "zh": "离线运行",
+          "en": "Air-gapped",
+          "value": "yes",
+          "tone": "up"
+        }
+      ],
+      "authors": "Kaleigh F. Roberts, Zachary B. Abrams et al., Randall J. Bateman, Justin T. Reese (WashU, Lawrence Berkeley National Lab and others; Nature Medicine, 16 Nov 2026)",
+      "handle": "@BioAIFrontier",
+      "links": [
+        {
+          "zh": "论文",
+          "en": "Paper",
+          "url": "https://www.nature.com/articles/s41591-026-04808-6"
+        },
+        {
+          "zh": "代码",
+          "en": "GitHub",
+          "url": "https://github.com/openscientist-io/openscientist"
+        },
+        {
+          "zh": "分享者",
+          "en": "Sharer",
+          "url": "https://x.com/BioAIFrontier"
+        },
+        {
+          "zh": "X 原帖",
+          "en": "X Post",
+          "url": "https://x.com/BioAIFrontier/status/2122600746935898326"
+        }
+      ]
+    },
     {
       "id": "anthropic-fold-subagents-single-loop",
       "tags": [
