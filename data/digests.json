@@ -308,6 +308,370 @@
   ],
   "items": [
     {
+      "id": "meta-self-improving-memory-harness-distillation",
+      "edition": "2026-11-17",
+      "tags": [
+        "harness-search",
+        "memory-skills"
+      ],
+      "title": {
+        "zh": "Meta Self-Improving Memory：模型自己搜出记忆 harness，再蒸馏进权重，最佳 56.0 对人工 44.6",
+        "en": "Meta's Self-Improving Memory: The Model Searches Its Own Memory Harness, Then Distills It Into Weights (56.0 vs 44.6 Hand-Written)"
+      },
+      "why": {
+        "zh": "让模型读自己的失败轨迹来改写“什么时候存、怎么存、什么时候读”的记忆指令，比任何一套人工记忆设计都强，因为不同任务需要的记忆方式本来就不同；但 44 个改写里 37 个没超过前一代最好成绩，收益靠的是反复评测加择优，而不是 meta agent 每次都改对。",
+        "en": "Letting a model read its own failed trajectories and rewrite the instructions for when and how to save and recall memory beats every hand-written memory design, because each task needs a different memory style; but 37 of 44 rewrites failed to beat the previous best, so the gains come from repeated evaluation and selection, not from the meta agent getting each edit right."
+      },
+      "what": {
+        "zh": "持续学习型 agent 每个子任务都清空上下文，只靠一个记忆目录传递经验，而没有一种人工写的记忆 prompt 在所有任务上都最好。",
+        "en": "Continual-learning agents start each subtask with an empty context and carry experience only through a memory directory, yet no single hand-written memory prompt works best on every task."
+      },
+      "how": {
+        "zh": "Discover：同一个 Kimi-K2.6 当 meta agent，读 train 轨迹、分数和最终记忆文件，改写 LOAD/OFFLOAD 两条指令，每个候选跑 5 遍、取前 4 名继续进化；Demonstrate & Distill：用最优指令跑一遍，再把指令换回通用版、保留模型输出，做 LoRA（rank 64）微调。在 Continual Learning Bench 三个任务上，优化后的 harness 平均 56.0，对比最佳人工 44.6、通用 36.1（Codebase 提升 20.6 点，达 64.3）；蒸馏后只用通用 prompt 得 43.1，对比用通用轨迹 SFT 的 37.6。",
+        "en": "Discover: the same Kimi-K2.6 acts as a meta agent that reads train trajectories, scores and final memory files and rewrites the LOAD/OFFLOAD instructions, with each candidate run 5 times and the top 4 kept as parents; Demonstrate & Distill: run with the best instructions, swap them back to generic ones while keeping the model's outputs, and LoRA-tune (rank 64). On three Continual Learning Bench tasks the optimized harness averages 56.0 vs 44.6 for the best hand-written seed and 36.1 for generic (Codebase +20.6 to 64.3); after distillation the model scores 43.1 with only generic prompts vs 37.6 for SFT on its generic runs."
+      },
+      "metric": {
+        "zh": "优化 harness 56.0 vs 人工最佳 44.6",
+        "en": "Optimized harness 56.0 vs best hand-written 44.6"
+      },
+      "pills": [
+        {
+          "zh": "优化 vs 人工",
+          "en": "Optimized vs hand-written",
+          "value": "56.0 vs 44.6",
+          "tone": "up"
+        },
+        {
+          "zh": "蒸馏后通用 prompt",
+          "en": "Distilled, generic prompt",
+          "value": "43.1 vs 37.6",
+          "tone": "up"
+        },
+        {
+          "zh": "失败改写",
+          "en": "Rewrites that lost",
+          "value": "37/44",
+          "tone": "flat"
+        }
+      ],
+      "authors": "Tong Chen, Chuanyang Jin, Eryk Helenowski, Weizhe Yuan, Jason Weston, Ilia Kulikov, Xian Li, Swarnadeep Saha (Meta AI, RAM)",
+      "handle": "@jaseweston",
+      "links": [
+        {
+          "zh": "博客",
+          "en": "Blog",
+          "url": "https://facebookresearch.github.io/RAM/blogs/self_improving_memory/"
+        },
+        {
+          "zh": "分享者",
+          "en": "Sharer",
+          "url": "https://x.com/jaseweston"
+        },
+        {
+          "zh": "X 原帖",
+          "en": "X Post",
+          "url": "https://x.com/jaseweston/status/2122691693543817397"
+        }
+      ]
+    },
+    {
+      "id": "elite-evaluation-free-rsi-coding-agents",
+      "edition": "2026-11-17",
+      "tags": [
+        "harness-search",
+        "co-evolution"
+      ],
+      "title": {
+        "zh": "ELITE：不跑任何候选评测的编码 agent 自我改进，SWE-bench Pro 60.0% → 85.6%，迁移比 DGM/HGM 更好",
+        "en": "ELITE: Coding-Agent Self-Improvement With Zero Candidate Task Runs Lifts SWE-bench Pro 60.0% to 85.6% and Transfers Better Than DGM/HGM"
+      },
+      "why": {
+        "zh": "编码 agent 改自己的 scaffold 时，不必每一版都在 benchmark 上打分择优：从同一个父版本并行写几个改进、读代码把互相兼容的机制合并，几乎追平靠评分进化的 DGM/HGM，而且因为没对着一个测试集调，换到新 benchmark 上反而更好。",
+        "en": "A coding agent improving its own scaffold does not need to score every version on a benchmark: writing several improvements from the same parent and merging the compatible mechanisms by reading the code nearly matches score-driven DGM/HGM, and because it never tunes against one test set it transfers better to new benchmarks."
+      },
+      "what": {
+        "zh": "DGM、HGM 这类 RSI 编码 agent 每个候选都要跑成百上千次任务评测，又贵又慢，还容易对进化用的测试集过拟合。",
+        "en": "RSI coding agents like DGM and HGM run hundreds of task evaluations per candidate, which is slow, expensive and prone to overfitting the evolution benchmark."
+      },
+      "how": {
+        "zh": "Explore-then-Integrate：先按当前局限生成假设，从同一父版本实现 7 个可执行子版本，只用确定性的构建/运行检查过滤，再让模型按“机制”层面读代码、合并兼容改动成下一代。DeepSeek-V4-Flash 上 SWE-bench Pro 60.0% → 85.6%（DGM 86.7%、HGM 88.3%），进化时间快 8.8 倍和 3.2 倍；未再进化直接迁移，Verified 73.3%、Polyglot 69.3%，而 DGM/HGM 在这两项上几乎不涨甚至倒退；按分数选最佳子版本在 Pro 上能到 91.7%，但迁移只有 70.0%/62.0%；去掉确定性检查平均分从 76.1% 掉到 52.0%。",
+        "en": "Explore-then-Integrate: generate limitation-driven hypotheses, implement 7 executable children from the same parent, filter them only with deterministic build/run checks, then have the model reason over their mechanisms and merge compatible changes into the next agent. With DeepSeek-V4-Flash, SWE-bench Pro goes 60.0% to 85.6% (DGM 86.7%, HGM 88.3%) with 8.8x and 3.2x shorter evolution time; transferred without further evolution it scores 73.3% on Verified and 69.3% on Polyglot, where DGM/HGM barely move or regress; picking the best child by score reaches 91.7% on Pro but transfers at only 70.0%/62.0%, and removing the deterministic gates drops the average from 76.1% to 52.0%."
+      },
+      "metric": {
+        "zh": "SWE-bench Pro 60.0% → 85.6%，0 次候选评测",
+        "en": "SWE-bench Pro 60.0% → 85.6% with 0 candidate evals"
+      },
+      "pills": [
+        {
+          "zh": "SWE-bench Pro",
+          "en": "SWE-bench Pro",
+          "value": "60.0→85.6%",
+          "tone": "up"
+        },
+        {
+          "zh": "迁移 Verified",
+          "en": "Transfer, Verified",
+          "value": "73.3%",
+          "tone": "up"
+        },
+        {
+          "zh": "比 DGM 快",
+          "en": "Faster than DGM",
+          "value": "8.8x",
+          "tone": "up"
+        },
+        {
+          "zh": "去掉检查",
+          "en": "No gates",
+          "value": "52.0%",
+          "tone": "down"
+        }
+      ],
+      "arxiv": "2611.21056",
+      "authors": "Zhe Ren, Guowei Rong, Yimeng Chen et al., Dandan Guo, Jürgen Schmidhuber (Jilin University, KAUST)",
+      "handle": "@arkyyang",
+      "links": [
+        {
+          "zh": "论文",
+          "en": "Paper",
+          "url": "https://arxiv.org/abs/2611.21056"
+        },
+        {
+          "zh": "分享者",
+          "en": "Sharer",
+          "url": "https://x.com/arkyyang"
+        },
+        {
+          "zh": "X 原帖",
+          "en": "X Post",
+          "url": "https://x.com/arkyyang/status/2122702304109617584"
+        }
+      ]
+    },
+    {
+      "id": "hf-harness-adapters-qwen-pi",
+      "edition": "2026-11-17",
+      "tags": [
+        "harness-search",
+        "agentic-rl"
+      ],
+      "title": {
+        "zh": "Hugging Face Harness Adapters：在 pi harness 里用 RL 训 LoRA，Qwen3.8-27B 的 SWE-bench Pro hard 51 从 29.4% 到 62.7%",
+        "en": "Hugging Face Harness Adapters: RL-Trained LoRA Inside the pi Harness Lifts Qwen3.8-27B on SWE-bench Pro Hard 51 From 29.4% to 62.7%"
+      },
+      "why": {
+        "zh": "与其为模型换 harness，不如固定 harness、在它里面用 RL 训一个小 LoRA，让模型学会这个 harness 的工具和节奏：同一个 27B 模型解题率翻倍、工具调用少了一半以上，说明很多“模型不行”其实是模型和 harness 不合拍。",
+        "en": "Instead of switching harnesses to suit a model, fixing the harness and RL-training a small LoRA inside it teaches the model that harness's tools and rhythm: the same 27B model doubles its solve rate with over half fewer tool calls, which suggests much of a model looking weak is really a model–harness mismatch."
+      },
+      "what": {
+        "zh": "同一个编码模型在不同 harness 里表现差很多，用户常常被迫为了用好模型而切换自己每天用的工作界面。",
+        "en": "The same coding model performs very differently across harnesses, so users often have to switch the interface they work in every day just to get the best from a model."
+      },
+      "how": {
+        "zh": "TRL 的 AsyncGRPO + LoRA（r=32），在 pi harness 里跑 Harbor 任务（750 个 scale800 + 300 个 TermGrade），奖励是验证器正确率加 0.1 权重的工具效率奖励，2 块 B200，第 160 步的 checkpoint。配对评测（温度 0.8、不开 thinking）：Terminal-Bench 2.1 39.5% → 55.8%（新解 16、丢 2，p=0.0013，工具调用 −62%），SWE-bench Pro hard 51 29.4% → 62.7%（18/1，p=7.6e-05，−55%）；注意 checkpoint 是看这两个评测选的，未参与选点的 68 个 Terminal-Bench 任务上仍是 +16.2 点。",
+        "en": "TRL AsyncGRPO with a LoRA (r=32) trained inside the pi harness on Harbor tasks (750 scale800 + 300 TermGrade), rewarded by verifier correctness plus a 0.1-weight tool-efficiency bonus, on 2 B200s, checkpoint at step 160. Paired evals (temperature 0.8, thinking off): Terminal-Bench 2.1 39.5% to 55.8% (16 newly solved vs 2 lost, p=0.0013, −62% tool calls) and SWE-bench Pro hard 51 29.4% to 62.7% (18/1, p=7.6e-05, −55%); the checkpoint was picked using these evals, but the 68 Terminal-Bench tasks not used for picking still show +16.2 points."
+      },
+      "metric": {
+        "zh": "SWE-bench Pro hard 51：29.4% → 62.7%",
+        "en": "SWE-bench Pro hard 51: 29.4% → 62.7%"
+      },
+      "pills": [
+        {
+          "zh": "SWE-bench Pro hard 51",
+          "en": "SWE-bench Pro hard 51",
+          "value": "29.4→62.7%",
+          "tone": "up"
+        },
+        {
+          "zh": "Terminal-Bench 2.1",
+          "en": "Terminal-Bench 2.1",
+          "value": "39.5→55.8%",
+          "tone": "up"
+        },
+        {
+          "zh": "工具调用",
+          "en": "Tool calls",
+          "value": "−55–62%",
+          "tone": "up"
+        }
+      ],
+      "authors": "Hugging Face harness-hub team (@yb2698, @ben_burtenshaw, @nathanhabib1011 et al.)",
+      "handle": "@yb2698",
+      "links": [
+        {
+          "zh": "模型卡",
+          "en": "Model card",
+          "url": "https://huggingface.co/harness-hub/Qwen3.8-27B-pi-adapted"
+        },
+        {
+          "zh": "训练脚本",
+          "en": "Training script",
+          "url": "https://github.com/huggingface/trl/tree/main/examples/async_grpo_harbor"
+        },
+        {
+          "zh": "分享者",
+          "en": "Sharer",
+          "url": "https://x.com/yb2698"
+        },
+        {
+          "zh": "X 原帖",
+          "en": "X Post",
+          "url": "https://x.com/yb2698/status/2122685012969398369"
+        },
+        {
+          "zh": "X 原帖（@LysandreJik 引用）",
+          "en": "X Post (@LysandreJik quote)",
+          "url": "https://x.com/LysandreJik/status/2122685930695962658"
+        }
+      ]
+    },
+    {
+      "id": "experience-rot-stale-agent-memory",
+      "edition": "2026-11-17",
+      "tags": [
+        "memory-skills",
+        "verification"
+      ],
+      "title": {
+        "zh": "Experience Rot：工具悄悄改了之后，有经验的 agent 成功率 23%，反而低于新手的 63%",
+        "en": "Experience Rot: After a Silent Tool Change, Experienced Agents Succeed 23% of the Time, Below Novices' 63%"
+      },
+      "why": {
+        "zh": "agent 的记忆在工具没变时让它百分百成功，但工具一悄悄变化就变成负资产，因为有经验的 agent 会直接照抄上次成功的调用、不再查文档，哪怕当前工具定义就写着新字段，而且失败后几乎总是报告“已完成”。",
+        "en": "An agent's memory makes it 100% successful while the tool is unchanged but becomes a liability once the tool changes silently, because experienced agents copy their last successful call and stop checking docs, even when the current tool definition shows the new field, and almost always report the failed task as done."
+      },
+      "what": {
+        "zh": "越来越多 agent 靠对话历史、记忆文件、技能来复用经验，但 MCP 工具和 API 会在不报错的情况下改变接口或字段含义。",
+        "en": "Agents increasingly reuse experience through histories, memory files and skills, while MCP tools and APIs can change interfaces or field meanings without raising errors."
+      },
+      "how": {
+        "zh": "6 个模型、12,624 个 episode，比较同一最终任务在无经验、有效经验、过期经验下的表现：文档不完整时：无经验 63%、有效经验 100%、过期经验 23%；文档完整时无经验 88–100%，过期经验跌到 26–49%；348 个失败里 347 个仍向用户报告成功；提示“服务已更新”几乎无用（0.46 → 0.50），让 agent 写后回读结果能救回来（0.91），但模型调用翻倍以上；经验越多、损失越大，所有记忆形式都中招。",
+        "en": "Six models over 12,624 episodes compare the same final task with no, valid and out-of-date experience: with incomplete docs: no experience 63%, valid 100%, out-of-date 23%; with complete docs, novices reach 88–100% while out-of-date experience drops to 26–49%, and 347 of 348 failed runs still report success; announcing the update barely helps (0.46 to 0.50), while making the agent read back its result recovers to 0.91 at more than twice the model calls; the damage appears in every memory form and grows with more experience."
+      },
+      "metric": {
+        "zh": "过期经验 23% vs 无经验 63%",
+        "en": "Out-of-date experience 23% vs none 63%"
+      },
+      "pills": [
+        {
+          "zh": "过期经验",
+          "en": "Stale experience",
+          "value": "23%",
+          "tone": "down"
+        },
+        {
+          "zh": "无经验",
+          "en": "No experience",
+          "value": "63%",
+          "tone": "flat"
+        },
+        {
+          "zh": "失败仍报完成",
+          "en": "Failures reported done",
+          "value": "347/348",
+          "tone": "down"
+        },
+        {
+          "zh": "回读结果",
+          "en": "Read-back check",
+          "value": "0.91",
+          "tone": "up"
+        }
+      ],
+      "arxiv": "2611.20922",
+      "authors": "Zhen Xu, Hang Yin, Zitao Zhang, Kevin Zhao, Xuefeng Liu (University of Chicago, eBay, University of Florida)",
+      "handle": "@ZeeshhDecodes",
+      "links": [
+        {
+          "zh": "论文",
+          "en": "Paper",
+          "url": "https://arxiv.org/abs/2611.20922"
+        },
+        {
+          "zh": "分享者",
+          "en": "Sharer",
+          "url": "https://x.com/ZeeshhDecodes"
+        },
+        {
+          "zh": "X 原帖",
+          "en": "X Post",
+          "url": "https://x.com/ZeeshhDecodes/status/2122668576154812799"
+        },
+        {
+          "zh": "X 原帖（@johnroodepic 解读）",
+          "en": "X Post (@johnroodepic analysis)",
+          "url": "https://x.com/johnroodepic/status/2122731731317031059"
+        }
+      ]
+    },
+    {
+      "id": "silentguard-harness-enforcement-silent-api-failures",
+      "edition": "2026-11-17",
+      "tags": [
+        "verification"
+      ],
+      "title": {
+        "zh": "SilentGuard：让 harness 而不是模型来拦截静默 API 错误，开源模型错答率 74.0% → 1.7%",
+        "en": "SilentGuard: Letting the Harness, Not the Model, Block Silent API Failures Cuts Open-Model Wrong Answers From 74.0% to 1.7%"
+      },
+      "why": {
+        "zh": "研究型 agent 遇到“返回 200 但悄悄忽略了过滤条件”的 API 时，提醒模型几乎没用（70.1% 仍答错），因为模型看到异常也会照报给它的数字；只有让 harness 用不变量检查结果、直接扣下不合格的值，错误才真正消失。",
+        "en": "When research agents hit APIs that return HTTP 200 while silently ignoring a filter, warning the model barely helps (70.1% still wrong) because models report the number they were given even when they see the problem; only having the harness check results against invariants and withhold failing values actually removes the errors."
+      },
+      "what": {
+        "zh": "agent 查文献库、基因和样本目录时完全信任 API 返回，而静默失败的 API 会给出看似合理的错误计数。",
+        "en": "Agents querying literature, gene and sample-catalog APIs trust the returned results, while silently failing APIs return plausible but wrong counts."
+      },
+      "how": {
+        "zh": "SilentGuard 在执行工具调用的 harness 里，用任何正确 API 都应满足的不变量（如计数恒等式、值交换检查）检验每个结果，不通过就不给模型；15 个公开研究 API 里 11 个有静默失败，计数最多虚高 691 倍；7 个开源模型的目标故障错答率 74.0% → 1.7%，无故障任务不掉分；3 个前沿模型 70.2% → 0.5%；对新故障类型 61.1% → 24.5%。它靠弃答而不是修复，自动修复反而会把错答标成已验证。",
+        "en": "Inside the harness that runs tool calls, SilentGuard tests each result against invariants any correct API must satisfy (such as count identities and value-swap checks) and withholds values that fail; 11 of 15 public research APIs showed silent failures, with counts inflated up to 691x; across 7 open models wrong answers on target faults fall from 74.0% to 1.7% with no loss on fault-free tasks, from 70.2% to 0.5% on 3 frontier models, and from 61.1% to 24.5% on new fault types. It works by abstaining rather than recovering, since auto-repair released wrong answers marked as verified."
+      },
+      "metric": {
+        "zh": "错答率 74.0% → 1.7%",
+        "en": "Wrong answers 74.0% → 1.7%"
+      },
+      "pills": [
+        {
+          "zh": "开源模型错答",
+          "en": "Open-model wrong",
+          "value": "74.0→1.7%",
+          "tone": "up"
+        },
+        {
+          "zh": "仅警告",
+          "en": "Warning only",
+          "value": "70.1% wrong",
+          "tone": "down"
+        },
+        {
+          "zh": "有静默失败的 API",
+          "en": "APIs with silent failures",
+          "value": "11/15",
+          "tone": "flat"
+        }
+      ],
+      "arxiv": "2611.20595",
+      "authors": "Sajib Acharjee Dip, Brian Ouyang, Lala Motlhabi (Virginia Tech, Genentech)",
+      "handle": "@omeganyanya",
+      "links": [
+        {
+          "zh": "论文",
+          "en": "Paper",
+          "url": "https://arxiv.org/abs/2611.20595"
+        },
+        {
+          "zh": "分享者",
+          "en": "Sharer",
+          "url": "https://x.com/omeganyanya"
+        },
+        {
+          "zh": "X 原帖",
+          "en": "X Post",
+          "url": "https://x.com/omeganyanya/status/2122721634817544418"
+        }
+      ]
+    },
+    {
       "id": "autorl-multi-agent-autonomous-rl",
       "edition": "2026-11-17",
       "tags": [
