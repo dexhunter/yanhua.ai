@@ -19,6 +19,15 @@ window.YANHUA_DIGESTS = {
   },
   "editions": [
     {
+      "id": "2026-11-18",
+      "date": "2026-11-18",
+      "slot": "",
+      "label": {
+        "zh": "2026-11-18",
+        "en": "18 Nov 2026"
+      }
+    },
+    {
       "id": "2026-11-17",
       "date": "2026-11-17",
       "slot": "",
@@ -307,6 +316,369 @@ window.YANHUA_DIGESTS = {
     }
   ],
   "items": [
+    {
+      "id": "google-sim-continual-rsi-harness-memory",
+      "edition": "2026-11-18",
+      "tags": [
+        "harness-search",
+        "memory-skills"
+      ],
+      "title": {
+        "zh": "Google SIM：给 harness 优化器一本“为什么这样改”的日志，换模型后 84.75 对 73.42",
+        "en": "Google's Self-Improvement Memory: Give the Harness Optimizer a Log of Why Each Edit Was Made (84.75 vs 73.42 After a Model Swap)"
+      },
+      "why": {
+        "zh": "把进化好的 harness 搬到新模型上时，只带代码是不够的，甚至会比原始 seed 更差；同时带上每次修改的理由、预测会修好的任务和实际结果，优化器才知道哪些修改该保留、哪些该重写，所以能继续往上爬而不是重复失败的实验。",
+        "en": "Moving an evolved harness to a new model with only its code is not enough and can even start below the plain seed; carrying along each edit's rationale, the tasks it was predicted to fix and what actually happened lets the optimizer tell which fixes to keep and which to revise, so it keeps climbing instead of re-running failed experiments."
+      },
+      "what": {
+        "zh": "harness 优化（RSI）通常在固定模型、固定 benchmark 上做，模型或任务一换，优化器面对的是一堆没有理由的历史修改。",
+        "en": "Harness optimization (RSI) is usually done with a fixed model and benchmark, so when either changes the optimizer inherits a pile of edits with no reasons attached."
+      },
+      "how": {
+        "zh": "SIM 按反复出现的 harness 问题分组，每条记录修改与理由、事先预测会修好的任务、实际修好或弄坏的任务和测试环境，整本日志每轮放进 proposer/selector 的 prompt 并持续追加。Opus 5.5 进化的 harness 搬到 Gemini 3.8 Flash 后在四个领域都低于 seed（workspace 68.41 对 73.89），但继续优化时 Full SIM 在四个领域都最高，比只继承代码高 3.60–11.33 点（workspace 84.75 对 73.42），六组跨数据集迁移全部领先 2.43–4.35 点，十组独立 coding 运行 9 组领先、平均 +2.36 点（非 coding 领域每个条件只跑了一次）。",
+        "en": "SIM groups edits by recurring harness problem and stores each edit with its rationale, the tasks it was predicted to fix, the tasks it actually fixed or broke and the evaluation context, feeding the whole growing log to the proposer and selector every round. An Opus 5.5-evolved harness started below Gemini 3.8 Flash's seed in all four domains (workspace 68.41 vs 73.89), yet in continued optimization Full SIM finished highest everywhere, 3.60–11.33 points above harness-only continuation (workspace 84.75 vs 73.42), led all six cross-dataset transitions by 2.43–4.35 points and won 9 of 10 paired coding runs by a mean 2.36 points, though non-coding domains used one run per condition."
+      },
+      "metric": {
+        "zh": "换模型后 workspace 84.75 vs 73.42",
+        "en": "Workspace after model swap 84.75 vs 73.42"
+      },
+      "pills": [
+        {
+          "zh": "Full SIM vs 只继承代码",
+          "en": "Full SIM vs harness-only",
+          "value": "84.75 vs 73.42",
+          "tone": "up"
+        },
+        {
+          "zh": "coding 配对运行",
+          "en": "Paired coding runs",
+          "value": "9/10, +2.36",
+          "tone": "up"
+        },
+        {
+          "zh": "迁移后起点 vs seed",
+          "en": "Transferred start vs seed",
+          "value": "68.41 vs 73.89",
+          "tone": "down"
+        }
+      ],
+      "arxiv": "2611.18856",
+      "authors": "Xin Yu, Fei Xia, Jiaqi Pan, Youbao Tang, Chengzhi Liu, Adams Yu, Sicong Jiang, Yanfei Chen, Lingzhou Xue, Ting Yu et al. (Google Cloud AI, Google DeepMind, Penn State)",
+      "handle": "@akshay_pachaar",
+      "links": [
+        {
+          "zh": "论文",
+          "en": "Paper",
+          "url": "https://arxiv.org/abs/2611.18856"
+        },
+        {
+          "zh": "分享者",
+          "en": "Sharer",
+          "url": "https://x.com/akshay_pachaar"
+        },
+        {
+          "zh": "X 原帖",
+          "en": "X Post",
+          "url": "https://x.com/akshay_pachaar/status/2123030996899774607"
+        },
+        {
+          "zh": "X 原帖（@kimmonismus）",
+          "en": "X Post (@kimmonismus)",
+          "url": "https://x.com/kimmonismus/status/2123035118474609101"
+        },
+        {
+          "zh": "X 原帖（@Xudong07452910）",
+          "en": "X Post (@Xudong07452910)",
+          "url": "https://x.com/Xudong07452910/status/2122898087668793390"
+        }
+      ]
+    },
+    {
+      "id": "google-harnesses-that-improve-themselves-gated-modular",
+      "edition": "2026-11-18",
+      "tags": [
+        "harness-search"
+      ],
+      "title": {
+        "zh": "Harnesses That Improve Themselves：一次只改一个模块并设验证门，40.0% 只用 46.7k token，整体重写 42.5% 却要 451.6k",
+        "en": "Harnesses That Improve Themselves: Gated One-Module-at-a-Time Edits Hit 40.0% at 46.7k Tokens vs 42.5% at 451.6k for Full Rewrites"
+      },
+      "why": {
+        "zh": "让 agent 自己改 harness 时，写进规则文件的文字拦不住模型提前交卷，真正起作用的是代码里的硬检查；而一次只改一个模块、每次都在验证集和 token 上限下把关，能得到和整体重写差不多的准确率，成本却低约十倍，换到更强模型上也更稳。",
+        "en": "When an agent edits its own harness, text rules in a rules file do not stop the model from quitting early but hard checks in code do, and patching one module at a time behind a validation and token-cap gate gets roughly the accuracy of a full rewrite at about a tenth of the cost and transfers better to a stronger model."
+      },
+      "what": {
+        "zh": "为某个模型调好的静态 harness 换模型或换任务就会卡住、烧 token 或退步，自我改进 harness 需要一个统一框架和可复现的对比。",
+        "en": "A static harness tuned for one model or task stalls, wastes tokens or regresses on another, and self-improving harnesses lack a common framework and a controlled comparison."
+      },
+      "how": {
+        "zh": "框架把 harness 分成四个可编辑部分（上下文与状态、控制、动作接口、验证与恢复），外环是“诊断失败→提出代码补丁→验证过滤→部署”。在 SWE-bench Lite（40 个 held-out 任务，冻结 Gemini 3.8 Flash，Gemini 4 Carbon 当优化器）上，纯 prompt 反思把准确率从 5.0% 降到 2.5%，无约束整体重写把轮数上限从 12 提到 28、得 42.5%、每任务 451.6k token，模块化门控进化保持 12 轮、得 40.0%、只用 46.7k token 且零未验证退出（把轮数提到 18 的改动被验证门拒绝），零样本迁到 Gemini 4 Argon 时门控版 37.5% 对整体重写 30.0%（样本小，属方向性结果）。",
+        "en": "The framework splits a harness into four editable parts (context and state, control, action interface, verification and recovery) and runs an outer loop that diagnoses failures, proposes code patches, validates them and deploys. On SWE-bench Lite (40 held-out tasks, frozen Gemini 3.8 Flash, Gemini 4 Carbon as optimizer) prompt-only reflection cut accuracy from 5.0% to 2.5%, an unconstrained full rewrite raised the turn cap from 12 to 28 and reached 42.5% at 451.6k tokens per task, and gated modular evolution kept 12 turns and reached 40.0% at 46.7k tokens with zero unverified exits, then scored 37.5% vs 30.0% for the rewrite zero-shot on Gemini 4 Argon (small sample, so directional)."
+      },
+      "metric": {
+        "zh": "门控 40.0% @46.7k vs 重写 42.5% @451.6k",
+        "en": "Gated 40.0% @46.7k vs rewrite 42.5% @451.6k"
+      },
+      "pills": [
+        {
+          "zh": "每任务 token",
+          "en": "Tokens per task",
+          "value": "46.7k vs 451.6k",
+          "tone": "up"
+        },
+        {
+          "zh": "迁到 Gemini 4 Argon",
+          "en": "Transfer to Gemini 4 Argon",
+          "value": "37.5% vs 30.0%",
+          "tone": "up"
+        },
+        {
+          "zh": "纯 prompt 反思",
+          "en": "Prompt-only reflection",
+          "value": "5.0%→2.5%",
+          "tone": "down"
+        }
+      ],
+      "arxiv": "2611.22299",
+      "authors": "Deep Shah, Nehal Kathrotia (Google)",
+      "handle": "@omarsar0",
+      "links": [
+        {
+          "zh": "论文",
+          "en": "Paper",
+          "url": "https://arxiv.org/abs/2611.22299"
+        },
+        {
+          "zh": "分享者",
+          "en": "Sharer",
+          "url": "https://x.com/omarsar0"
+        },
+        {
+          "zh": "X 原帖",
+          "en": "X Post",
+          "url": "https://x.com/omarsar0/status/2123077276350976396"
+        }
+      ]
+    },
+    {
+      "id": "efficientskill-token-efficient-skill-learning",
+      "edition": "2026-11-18",
+      "tags": [
+        "harness-search",
+        "memory-skills"
+      ],
+      "title": {
+        "zh": "EfficientSkill：先学会、再剪枝，技能优化把输出 token 砍掉最多约 80%，准确率反而上升",
+        "en": "EfficientSkill: Learn the Skill First, Then Prune It, Cutting Output Tokens by Up to ~80% While Accuracy Rises"
+      },
+      "why": {
+        "zh": "只追准确率的技能优化器会不停往技能文件里加边角规则，把 agent 拖进犹豫和重试的长循环；先不计 token 学出一个能用的技能，再在准确率护栏下删冗余指令、把可复用逻辑搬进代码工具，agent 既更省也更准。",
+        "en": "Skill optimizers that chase accuracy alone keep adding edge-case rules to the skill file and drag agents into long, hesitant retry loops, whereas learning a working skill first without token limits and then pruning redundant instructions under an accuracy guard, moving reusable logic into code utilities, makes agents both cheaper and more accurate."
+      },
+      "what": {
+        "zh": "反思式技能优化（如 EvoSkill）几乎只优化准确率，导致 prompt 膨胀、多轮历史按平方增长、成本飙升。",
+        "en": "Reflective skill optimizers such as EvoSkill optimize almost only for accuracy, which bloats prompts, makes multi-turn history grow quadratically and drives up cost."
+      },
+      "how": {
+        "zh": "第一阶段不加 token 惩罚，从执行轨迹学出可靠技能；第二阶段从该技能热启动，在准确率护栏下剪枝、限定轮数，并把可复用代码放进 workspace 工具文件（不占 prompt），元优化器是 Claude Opus 5.5、占离线成本的大头。在 4 个模型、MATH-500/ALFWorld/SpreadsheetBench 上，12 个配置中 11 个输出 token 少于 EvoSkill（最多约 80%，ALFWorld 一例从 5,704 降到 1,155），每个 benchmark 平均准确率都上升，SpreadsheetBench 上 Gemini 3.8 Flash 从 58.2% 升到 72.5%。",
+        "en": "Phase 1 learns a reliable skill from execution traces with no token penalty, and Phase 2 warm-starts from it, prunes under an accuracy guard, bounds turns and offloads reusable code into a workspace tools file at no prompt cost (Claude Opus 5.5 serves as meta-optimizer and dominates offline cost). Across 4 models on MATH-500, ALFWorld and SpreadsheetBench it used fewer output tokens than EvoSkill in 11 of 12 configurations (up to about 80%; one ALFWorld case fell from 5,704 to 1,155) and raised mean accuracy on every benchmark, with Gemini 3.8 Flash on SpreadsheetBench going from 58.2% to 72.5%."
+      },
+      "metric": {
+        "zh": "11/12 配置更省 token，最多约 -80%",
+        "en": "Fewer tokens in 11/12 configs, up to ~-80%"
+      },
+      "pills": [
+        {
+          "zh": "SpreadsheetBench（Gemini 3.8 Flash）",
+          "en": "SpreadsheetBench (Gemini 3.8 Flash)",
+          "value": "58.2%→72.5%",
+          "tone": "up"
+        },
+        {
+          "zh": "ALFWorld 输出 token",
+          "en": "ALFWorld output tokens",
+          "value": "5,704→1,155",
+          "tone": "up"
+        },
+        {
+          "zh": "优于 EvoSkill 的配置",
+          "en": "Configs beating EvoSkill on tokens",
+          "value": "11/12",
+          "tone": "up"
+        }
+      ],
+      "arxiv": "2611.19823",
+      "authors": "Deep Shah, Sanket Badhe, Nehal Kathrotia (Google LLC), Priyanka Tiwari (Purdue University)",
+      "handle": "@ojas_dev",
+      "links": [
+        {
+          "zh": "论文",
+          "en": "Paper",
+          "url": "https://arxiv.org/abs/2611.19823"
+        },
+        {
+          "zh": "分享者",
+          "en": "Sharer",
+          "url": "https://x.com/ojas_dev"
+        },
+        {
+          "zh": "X 原帖",
+          "en": "X Post",
+          "url": "https://x.com/ojas_dev/status/2122965507129364717"
+        },
+        {
+          "zh": "X 原帖（@HEI）",
+          "en": "X Post (@HEI)",
+          "url": "https://x.com/HEI/status/2123019403931386025"
+        }
+      ]
+    },
+    {
+      "id": "mathrsi-self-improving-math-discovery-harness",
+      "edition": "2026-11-18",
+      "tags": [
+        "autoresearch",
+        "harness-search"
+      ],
+      "title": {
+        "zh": "MathRSI：把验证过的结果和诊断过的失败写回 harness，v0→v6 在 6 个经典数学问题上推进界与精确值",
+        "en": "MathRSI: Feeding Verified Results and Diagnosed Dead Ends Back Into the Harness, v0→v6 Pushes Bounds and Exact Values on 6 Classical Math Problems"
+      },
+      "why": {
+        "zh": "在深数学问题上，静态 agent 工作流很快撞墙；把每次得到的归约、反例和死路沉淀进共享工作流和领域插件，下一轮 agent 就从更好的方法起步，所以 harness 会随着研究本身一起变强。",
+        "en": "Static agent workflows hit a wall on deep math; distilling each run's reductions, counterexamples and dead ends back into a shared workflow and domain plugins means the next round starts from better methods, so the harness gets stronger alongside the research itself."
+      },
+      "what": {
+        "zh": "如何让 Claude Code / Codex 这类 agent 持续做数学发现和证明，而不是每个问题都从零开始。",
+        "en": "How to make agents like Claude Code and Codex do sustained mathematical discovery and proof instead of starting from scratch on each problem."
+      },
+      "how": {
+        "zh": "MathRSI 由共享基础工作流（文献调研→路线选择→证明→审稿→验证→交接）、带验证器的领域插件和每个问题的研究 wiki 组成，以可读的 Markdown skills 供 Claude Code / Codex 使用，v0 到 v6 不断把结果和失败写回工作流。项目页列出的结果包括：闭合二元线性码三处 1985 年以来的距离空缺（如 d₂(43,10)=16）、Property B 对每个 k≥12 的加性改进（Lean 证明）、Erdős 86 问题 Q₈ 为 682–683 且 Q∞ 密度上界从 0.60318 降到 ≤0.5912405943、Happy Ending N(8,6,6)≤61，团队也标注部分结果仍待独立审稿或 Lean 形式化。",
+        "en": "MathRSI combines a shared base workflow (literature survey, route selection, proof, review, verification, handoff), domain plugins with verifiers and a per-problem research wiki, shipped as readable Markdown skills for Claude Code and Codex, and versions v0 to v6 kept feeding results and failures back into it. Results listed on the project page include closing three binary-linear-code distance gaps open since 1985 (such as d₂(43,10)=16), a Lean-proved additive improvement for Property B at every k≥12, Erdős Problem 86 at 682–683 edges for Q₈ with the Q∞ density bound cut from 0.60318 to at most 0.5912405943, and Happy Ending N(8,6,6)≤61, with the team flagging that some results still await independent refereeing or Lean formalization."
+      },
+      "metric": {
+        "zh": "6 个领域；3 处 1985 年码距空缺闭合",
+        "en": "6 domains; 3 code-distance gaps from 1985 closed"
+      },
+      "pills": [
+        {
+          "zh": "Erdős 86 Q∞ 密度上界",
+          "en": "Erdős 86 Q∞ density bound",
+          "value": "0.60318→0.59124",
+          "tone": "up"
+        },
+        {
+          "zh": "Q₈ 无 C₄ 边数",
+          "en": "C₄-free Q₈ edges",
+          "value": "682–683",
+          "tone": "up"
+        },
+        {
+          "zh": "harness 版本",
+          "en": "Harness versions",
+          "value": "v0→v6",
+          "tone": "flat"
+        }
+      ],
+      "authors": "SII MathRSI Team",
+      "handle": "@WShuiyin",
+      "links": [
+        {
+          "zh": "GitHub",
+          "en": "GitHub",
+          "url": "https://github.com/lisresearchgroup/math-rsi"
+        },
+        {
+          "zh": "项目主页",
+          "en": "Homepage",
+          "url": "https://lisresearchgroup.github.io/math-rsi/"
+        },
+        {
+          "zh": "分享者",
+          "en": "Sharer",
+          "url": "https://x.com/WShuiyin"
+        },
+        {
+          "zh": "X 原帖",
+          "en": "X Post",
+          "url": "https://x.com/WShuiyin/status/2122945791430176789"
+        }
+      ]
+    },
+    {
+      "id": "amazon-compoundingkernel-self-improving-gpu-kernels",
+      "edition": "2026-11-18",
+      "tags": [
+        "autoresearch",
+        "verification"
+      ],
+      "title": {
+        "zh": "Amazon CompoundingKernel：上千 agent 从零写 GPU kernel，SOL-ExecBench 三榜第一，比基线快 4.40 倍",
+        "en": "Amazon's CompoundingKernel: 1,000+ Agents Write GPU Kernels From Scratch, #1 on Three SOL-ExecBench Boards, 4.40x Over Baseline"
+      },
+      "why": {
+        "zh": "大规模 agent 搜索能从零做到榜首，靠的是每次尝试都被可靠测量、并在外部档案上层层累积，而不是 agent 数量；限制规模的是每小时能跑多少次可信评测。",
+        "en": "Large agent search can go from nothing to first place because every try is reliably measured and builds on an external archive, not because of agent count; what limits scale is how many trustworthy evaluations run per hour."
+      },
+      "what": {
+        "zh": "Blackwell 上大多数融合或低精度算子没有用上新张量核指令的库 kernel，手写又是一个反复试错的搜索过程。",
+        "en": "Most fused or low-precision ops on NVIDIA Blackwell have no library kernel that uses the new tensor-core paths, and writing one by hand is a long try-measure-fix search."
+      },
+      "how": {
+        "zh": "agent 只拿到每题的 PyTorch 定义，看不到参考 kernel 和官方分数，模型之外的档案保存每个正确 kernel 及其谱系，LLM 控制器读档案、给每个并行子 agent 一个方向，正确性由模型外的检查判定。235 题全部得到站点验证正确的 kernel，209 道公开题比参考基线快 4.40 倍，在 B200 上 L1、L2、Quantization 公开榜第一（截至 2026-11-11），等墙钟时间下控制器在 38 题中 35 题胜过 UCB 式树搜索（正确尝试多 2.4 倍），一次热重启修复把评测速率提高 3.6 倍，但证据来自单一 benchmark、单一模型（Claude Opus 5.5）和一次冷启动终跑。",
+        "en": "Agents get only each problem's PyTorch definition with no reference kernels or official scores, an archive outside the model keeps every correct kernel and its lineage, an LLM controller reads it and gives each parallel child agent one direction, and checks outside the model decide correctness. All 235 problems got a site-verified correct kernel, the 209 public problems run 4.40x faster than the reference baseline with #1 on the public L1, L2 and Quantization boards on B200 (as of 2026-11-11), the controller beat a UCB-style tree on 35 of 38 problems at equal wall time by making 2.4x as many correct attempts, and one warm-restart fix raised evaluation rate 3.6x, though it rests on one benchmark, one model (Claude Opus 5.5) and one cold-started final run."
+      },
+      "metric": {
+        "zh": "4.40× 基线；三榜第一",
+        "en": "4.40x baseline; #1 on three boards"
+      },
+      "pills": [
+        {
+          "zh": "公开题加速",
+          "en": "Public-problem speedup",
+          "value": "4.40x",
+          "tone": "up"
+        },
+        {
+          "zh": "控制器 vs UCB 树",
+          "en": "Controller vs UCB tree",
+          "value": "35/38",
+          "tone": "up"
+        },
+        {
+          "zh": "热重启后评测速率",
+          "en": "Eval rate after warm restart",
+          "value": "3.6x",
+          "tone": "up"
+        }
+      ],
+      "arxiv": "2611.19230",
+      "authors": "Qian Qu, Hongyang Wang, Wenbo Chen, Yichuan Li, Jingguo Liu, Xian Li, Xuan Wang, Ruochen Wen, Leo Fan, Yiming Yan, Zheshen Wang, Benoit Dumoulin (Amazon)",
+      "handle": "@dair_ai",
+      "links": [
+        {
+          "zh": "论文",
+          "en": "Paper",
+          "url": "https://arxiv.org/abs/2611.19230"
+        },
+        {
+          "zh": "代码与 kernel",
+          "en": "Code & kernels",
+          "url": "https://huggingface.co/spaces/QianQu/CompoundingKernel-Explorer"
+        },
+        {
+          "zh": "分享者",
+          "en": "Sharer",
+          "url": "https://x.com/dair_ai"
+        },
+        {
+          "zh": "X 原帖",
+          "en": "X Post",
+          "url": "https://x.com/dair_ai/status/2122806742048448924"
+        }
+      ]
+    },
     {
       "id": "meta-self-improving-memory-harness-distillation",
       "edition": "2026-11-17",
