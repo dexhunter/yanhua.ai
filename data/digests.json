@@ -19,6 +19,15 @@
   },
   "editions": [
     {
+      "id": "2026-11-19",
+      "date": "2026-11-19",
+      "slot": "",
+      "label": {
+        "zh": "2026-11-19",
+        "en": "19 Nov 2026"
+      }
+    },
+    {
       "id": "2026-11-18",
       "date": "2026-11-18",
       "slot": "",
@@ -316,6 +325,361 @@
     }
   ],
   "items": [
+    {
+      "id": "google-guard-regret-guided-harness-rsi",
+      "edition": "2026-11-19",
+      "tags": [
+        "harness-search",
+        "memory-skills"
+      ],
+      "title": {
+        "zh": "Google GUARD：只有收益大于新弄坏的行为才接受 harness 修改，80.80% 对 Meta-Harness 74.52%，token 少约四成",
+        "en": "Google GUARD: Accept a Harness Edit Only When Its Gains Outweigh What It Newly Breaks (80.80% vs Meta-Harness 74.52%, Far Fewer Tokens)"
+      },
+      "why": {
+        "zh": "自我修改 harness 之所以常常越改越差，是因为一个分数把“这次修改新弄坏的东西”和“本来就没解决的问题”混在一起；GUARD 把每个任务事先拆成可检查的小条目，优先修复新出现的回退、钉住已掌握的规则，并且只在收益大于回退时才接受修改，所以能持续变好而不遗忘、不污染记忆。",
+        "en": "Self-editing harnesses often get worse because a single score mixes up what the latest edit newly broke with what was never solved; GUARD splits each task into small pre-execution checks, fixes fresh regressions first, pins rules the agent already handles, and promotes an edit only when its gains outweigh the regressions it causes, so the harness keeps improving without forgetting or memory pollution."
+      },
+      "what": {
+        "zh": "在没有参考答案或外部评分器的情况下，冻结模型外面的 prompt、技能、工具规则和记忆如何持续自我改进，而不出现局部过拟合、灾难性遗忘和记忆污染？",
+        "en": "How can an agent keep improving the prompts, skills, tool rules and memory around a frozen model without reference answers or external graders, while avoiding local overfitting, catastrophic forgetting and memory pollution?"
+      },
+      "how": {
+        "zh": "执行前把任务和工具 schema 编译成二元检查清单，用沙盒执行加语义轨迹两层自评打分；Analyze 用方向性 regret 把新回退排在未解决问题前面，Propose 并行生成多个候选修改并按组内相对分数（类似 GRPO、无 critic）挑选，Soft-HURT 门只在收益大于回退时晋升，用 [iff] 前置条件收窄过宽规则；测试时只跑一个冻结 harness 单次通过。统一 Gemini 4 下 EvoHarnessBench 托管 SDK 43 个任务准确率 80.80%（起点 71.91%，Meta-Harness 74.52%，GEPA 70.69%），每任务 token 59.7k 对 Meta-Harness 78.7k；Drift Gauntlet 四条漂移流 0/12 次块级下降、零遗忘（其他方法 3–8/12）；PAST-Bench 上更新正确率领先且记忆污染最低，而激进重写的方法污染约为三倍。",
+        "en": "Before execution it compiles the task and tool schema into binary checks and grades runs with a two-layer (sandbox execution plus semantic trace) self-reviewer; Analyze ranks newly broken checks above old gaps via directional regret, Propose samples parallel candidate edits and picks by critic-free group-relative fitness (GRPO-style), and the Soft-HURT gate promotes only net-positive edits, narrowing over-broad rules with [iff] preconditions; at test time one frozen harness runs in a single pass. Under unified Gemini 4 on 43 hosted EvoHarnessBench tasks it reached 80.80% accuracy (start 71.91%, Meta-Harness 74.52%, GEPA 70.69%) at 59.7k tokens per task versus 78.7k for Meta-Harness, had 0 of 12 block drops and zero forgetting across four Drift Gauntlet streams (baselines 3–8 of 12), and led update correctness on PAST-Bench at the pollution floor while aggressive rewriters roughly tripled pollution."
+      },
+      "metric": {
+        "zh": "EvoHarnessBench 80.80% vs Meta-Harness 74.52%",
+        "en": "EvoHarnessBench 80.80% vs Meta-Harness 74.52%"
+      },
+      "pills": [
+        {
+          "zh": "托管 SDK 准确率",
+          "en": "Hosted SDK accuracy",
+          "value": "80.80% vs 71.91%",
+          "tone": "up"
+        },
+        {
+          "zh": "每任务 token",
+          "en": "Tokens per task",
+          "value": "59.7k vs 78.7k",
+          "tone": "up"
+        },
+        {
+          "zh": "漂移块级下降",
+          "en": "Drift block drops",
+          "value": "0/12",
+          "tone": "up"
+        }
+      ],
+      "arxiv": "2611.23476",
+      "authors": "Minghe Zhang, Xuetao Kang, Yifei Ming, Yanfei Chen, Han Yu, Yufan Zhuang, Chen-Yu Lee (Google Cloud)",
+      "handle": "@omarsar0",
+      "links": [
+        {
+          "zh": "论文",
+          "en": "Paper",
+          "url": "https://arxiv.org/abs/2611.23476"
+        },
+        {
+          "zh": "分享者",
+          "en": "Sharer",
+          "url": "https://x.com/omarsar0"
+        },
+        {
+          "zh": "X 原帖",
+          "en": "X Post",
+          "url": "https://x.com/omarsar0/status/2123420538030957015"
+        }
+      ]
+    },
+    {
+      "id": "ahe-beta-requirement-centered-harness-evolution",
+      "edition": "2026-11-19",
+      "tags": [
+        "harness-search"
+      ],
+      "title": {
+        "zh": "AHE-Beta：按模拟用户提出的需求而不是 benchmark 分数进化 harness，pass@1 21.9%→33.3%，token 少 40.8%，超过 Claude Code",
+        "en": "AHE-Beta: Evolve the Harness on Simulated User Requirements, Not Benchmark Scores (pass@1 21.9% to 33.3%, 40.8% Fewer Tokens, Above Claude Code)"
+      },
+      "why": {
+        "zh": "用 benchmark 分数挑选 harness 修改容易得到只对评测有效的窄补丁；让模拟用户在多轮使用中提需求、由一组 agent 按根因合并成通用改动、只合并真正解决了已验证需求的变更，反而在没见过的任务和模型上都更强、更省 token。",
+        "en": "Picking harness edits by benchmark score breeds narrow patches that only fit the benchmark; letting simulated users file requirements during multi-turn use, having a team of agents merge them by root cause into general changes, and merging only changes that resolve a verified requirement gives a harness that is stronger and cheaper on unseen tasks and models."
+      },
+      "what": {
+        "zh": "现有 harness 进化方法用单个进化 agent 修改、用 benchmark 分数选择，忽视了用户的隐性需求和交互需求，常陷入局部最优。",
+        "en": "Existing harness-evolution methods use one evolution agent and select changes by benchmark score, ignoring implicit user requirements and interaction needs and drifting into benchmark-specific local optima."
+      },
+      "how": {
+        "zh": "每轮由带真实开发者 persona 的模拟用户与 harness 多轮协作并提 issue；Triage 过滤任务特定噪声、Architect 按根因合并、PM 补写用户没说出的需求、Developer 带验收标准提 PR，基于 Gitea 审查合并，benchmark 分数只用于事后评估。GLM-5.3-Flash 上 38 个留出 Harbor-index 任务 pass@1 从 21.9% 升到 33.3%（Claude Code 27.2%、AHE 23.7%、Meta-Harness 21.1%），每任务 token 2.40M→1.42M；盲测 A/B 中真人在 48 组有效对比里 31 组更偏好它；不再进化直接迁移到 GLM-5.3 和 DeepSeek-V4.1-Flash 分别 +15.8 和 +5.3 点；作者也承认 137 个通过验证器的会话中有 34 个从未交付完整回复，单一实验室、仅 38 个任务。",
+        "en": "Each round a simulated user with a real developer persona works with the harness over multiple turns and files issues; Triage drops task-specific noise, an Architect merges issues by root cause, a PM writes unstated requirements and Developers open PRs with acceptance criteria, merged through Gitea review, with benchmark scores used only for evaluation afterwards. On 38 held-out Harbor-index tasks with GLM-5.3-Flash, pass@1 rose from 21.9% to 33.3% (Claude Code 27.2%, AHE 23.7%, Meta-Harness 21.1%) while tokens per task fell from 2.40M to 1.42M; blind human A/B preferred it in 31 of 48 valid pairs, and transferring without re-evolution added 15.8 points on GLM-5.3 and 5.3 on DeepSeek-V4.1-Flash, though 34 of 137 verifier-passing sessions never delivered a complete reply and the study is one lab on 38 tasks."
+      },
+      "metric": {
+        "zh": "pass@1 21.9% → 33.3%",
+        "en": "pass@1 21.9% to 33.3%"
+      },
+      "pills": [
+        {
+          "zh": "留出任务 pass@1",
+          "en": "Held-out pass@1",
+          "value": "33.3% vs 21.9%",
+          "tone": "up"
+        },
+        {
+          "zh": "vs Claude Code",
+          "en": "vs Claude Code",
+          "value": "33.3% vs 27.2%",
+          "tone": "up"
+        },
+        {
+          "zh": "每任务 token",
+          "en": "Tokens per task",
+          "value": "1.42M vs 2.40M",
+          "tone": "up"
+        }
+      ],
+      "arxiv": "2611.24924",
+      "authors": "Jiahang Lin, Jiahao Chen, Yiding Wang et al. (Fudan University, Peking University, Renmin University, Shanghai Qiji Zhifeng)",
+      "handle": "@laky_fx",
+      "links": [
+        {
+          "zh": "论文",
+          "en": "Paper",
+          "url": "https://arxiv.org/abs/2611.24924"
+        },
+        {
+          "zh": "GitHub",
+          "en": "GitHub",
+          "url": "https://github.com/Curry09/AHE-Beta"
+        },
+        {
+          "zh": "分享者",
+          "en": "Sharer",
+          "url": "https://x.com/laky_fx"
+        },
+        {
+          "zh": "X 原帖",
+          "en": "X Post",
+          "url": "https://x.com/laky_fx/status/2123409540620112369"
+        }
+      ]
+    },
+    {
+      "id": "abundant-frontierrsi-benchmark",
+      "edition": "2026-11-19",
+      "tags": [
+        "autoresearch",
+        "harness-search"
+      ],
+      "title": {
+        "zh": "Abundant FrontierRSI：让 agent 做真正的前沿实验室工作（预训练、后训练、推理、harness、kernel），最好的模型平均也只拿到约 0.34",
+        "en": "Abundant FrontierRSI: Agents Doing Real Frontier-Lab Work (Pre-training, Post-training, Inference, Harnesses, Kernels), and the Best Model Averages Only About 0.34"
+      },
+      "why": {
+        "zh": "今天的前沿 agent 已能在 kernel 和推理服务这类目标清晰的工程任务上接近最佳解，但在需要设计 RL 数据或改进 harness 的后训练任务上几乎都拿不到分，说明“AI 改进 AI”最难的还是开放式的研究判断，而不是写代码。",
+        "en": "Frontier agents can already get close to the best known result on well-specified engineering work like kernels and serving, but score near zero on post-training tasks that require designing RL data or improving a harness, so the hard part of AI improving AI is still open-ended research judgment rather than writing code."
+      },
+      "what": {
+        "zh": "如何衡量 AI agent 是否真的能完成推动 AI 自身进步的研究与工程工作，而不只是单步任务？",
+        "en": "How do you measure whether AI agents can actually do the research and engineering work that improves AI itself, rather than single-step tasks?"
+      },
+      "how": {
+        "zh": "27 个开放式任务分四类（预训练 5、智能体后训练与 harness 8、推理与服务 5、GPU kernel 9），每个任务在真实 H100 上运行 2–8 小时、目标是最小化 loss/延迟或最大化吞吐/留出成功率，得分相对所有模型的最佳试验归一化（最佳为 1，差 10% 及以上为 0），取两次试验平均；共 9 个模型、486 次试验、1,321 agent 小时。按网站数据计算的 27 任务平均分：Claude Opus 5.5 0.343、Claude Fable 5.2 0.330、Gemini 4 Carbon 0.298，GPT-6.1 Sol 0.235，Grok 4.7 0.089；后训练类最高仅 0.19，推理类最高 0.66；仓库公开 27 个中的 8 个任务（含隐藏评测数据，因此这 8 个不再是留出测试）。",
+        "en": "27 open-ended tasks span pre-training (5), agentic post-training and harness (8), inference and serving (5) and GPU kernels (9), each running 2–8 hours on real H100s with an optimization goal (minimize loss or latency, maximize throughput or held-out success), scored relative to the best trial from any model (best = 1, 10% or more worse = 0) and averaged over two trials, totalling 9 models, 486 trials and 1,321 agent-hours. Averaging the site's per-task scores over all 27 tasks gives Claude Opus 5.5 0.343, Claude Fable 5.2 0.330, Gemini 4 Carbon 0.298, GPT-6.1 Sol 0.235 and Grok 4.7 0.089, with the best post-training category average only 0.19 versus 0.66 for inference; the repo releases 8 of the 27 tasks, whose hidden test data is now public."
+      },
+      "metric": {
+        "zh": "最佳模型 27 任务均分约 0.34",
+        "en": "Best model ~0.34 across 27 tasks"
+      },
+      "pills": [
+        {
+          "zh": "Claude Opus 5.5 均分",
+          "en": "Claude Opus 5.5 mean",
+          "value": "0.343",
+          "tone": "up"
+        },
+        {
+          "zh": "后训练类最高",
+          "en": "Best post-training avg",
+          "value": "0.19",
+          "tone": "down"
+        },
+        {
+          "zh": "试验 / agent 小时",
+          "en": "Trials / agent-hours",
+          "value": "486 / 1,321",
+          "tone": "neutral"
+        }
+      ],
+      "authors": "Abundant AI (@abundant_labs)",
+      "handle": "@quasicoh",
+      "links": [
+        {
+          "zh": "排行榜",
+          "en": "Leaderboard",
+          "url": "https://frontier-rsi.org"
+        },
+        {
+          "zh": "GitHub",
+          "en": "GitHub",
+          "url": "https://github.com/abundant-ai/frontier-rsi"
+        },
+        {
+          "zh": "分享者",
+          "en": "Sharer",
+          "url": "https://x.com/quasicoh"
+        },
+        {
+          "zh": "X 原帖",
+          "en": "X Post",
+          "url": "https://x.com/quasicoh/status/2123114502065627580"
+        },
+        {
+          "zh": "X 原帖（@nathanbenaich）",
+          "en": "X Post (@nathanbenaich)",
+          "url": "https://x.com/nathanbenaich/status/2123126698120040741"
+        }
+      ]
+    },
+    {
+      "id": "stanford-discoveryagent-scientist-steered",
+      "edition": "2026-11-19",
+      "tags": [
+        "autoresearch"
+      ],
+      "title": {
+        "zh": "DiscoveryAgent：科学家在每轮之间挑选假设，ProteinGym 113 个方法中排第 2，明显好于全自动运行",
+        "en": "DiscoveryAgent: Scientists Pick the Hypothesis Between Rounds, Ranking 2nd of 113 Methods on ProteinGym and Clearly Beating the Fully Autonomous Run"
+      },
+      "why": {
+        "zh": "把执行交给 agent、把方向判断留给科学家效果最好：同一个系统在科学家引导下建出的蛋白变异效应预测器显著好于它自己全自动跑的版本，因为人能纠正领域假设、重定目标，而 agent 负责大范围试验和可审计的记录。",
+        "en": "Splitting the work so the agent executes and the scientist steers works best: the same system built a significantly better protein variant-effect predictor when a scientist steered it than when it ran fully autonomously, because the human corrects domain assumptions and reframes goals while the agent runs broad experiments and keeps an auditable record."
+      },
+      "what": {
+        "zh": "AI 科学家系统如何在自主探索和让科学家随时检查、改向之间取得平衡？",
+        "en": "How should an AI scientist system balance autonomous investigation with letting scientists inspect and redirect the work?"
+      },
+      "how": {
+        "zh": "内循环里 director agent 调度代码执行、数据分析、文献和检索子 agent 去检验一个假设，review agent 定期批评；外循环由假设生成 agent 提候选、科学家在轮次之间选择或改写，audit agent 可追溯每个查询、报告和代码快照。ProteinGym 217 个 assay 上科学家引导版中位 Spearman ρ 0.551、在 113 个方法中排第 2（仅次于监督的 Kermut），全自动版 0.531 排第 3，Opus 编码 agent 循环 0.530，AI-Scientist-v2 为负；引导版在 61.8% 的 assay 上胜过自动版（p=6.2×10⁻⁴），并在三个专家案例中给出新发现，如佛罗里达房屋保险负担对低收入家庭越来越重（2023 年 6.6% 对 1.2%）。",
+        "en": "In the inner loop a director agent dispatches code-execution, data-analysis, literature and search sub-agents to test one hypothesis while a review agent critiques; in the outer loop a hypothesis agent proposes candidates that the scientist selects or rewrites between rounds, and audit agents trace every query, report and code snapshot. On 217 ProteinGym assays the steered version reached median Spearman ρ 0.551 and ranked 2nd of 113 methods (behind only supervised Kermut), the autonomous version 0.531 (3rd), an Opus coding-agent loop 0.530 and AI-Scientist-v2 went negative; steering won on 61.8% of assays (p = 6.2×10⁻⁴) and three expert case studies produced findings such as Florida home-insurance burden becoming more regressive (6.6% vs 1.2% of income in 2023)."
+      },
+      "metric": {
+        "zh": "ProteinGym 113 个方法中第 2",
+        "en": "2nd of 113 on ProteinGym"
+      },
+      "pills": [
+        {
+          "zh": "引导 vs 自动 ρ",
+          "en": "Steered vs autonomous ρ",
+          "value": "0.551 vs 0.531",
+          "tone": "up"
+        },
+        {
+          "zh": "ProteinGym 排名",
+          "en": "ProteinGym rank",
+          "value": "2 / 113",
+          "tone": "up"
+        },
+        {
+          "zh": "引导胜出 assay",
+          "en": "Assays won by steering",
+          "value": "61.8%",
+          "tone": "up"
+        }
+      ],
+      "arxiv": "2611.21950",
+      "authors": "Owen Queen, Ioana Ciucă, Emma Dann, Jean Somalwar, Carine You, … Evan Gorrell, … Risa H. Wechsler, James Zou (Stanford)",
+      "handle": "@evangorrell__",
+      "links": [
+        {
+          "zh": "论文",
+          "en": "Paper",
+          "url": "https://arxiv.org/abs/2611.21950"
+        },
+        {
+          "zh": "代码",
+          "en": "Code",
+          "url": "https://github.com/owencqueen/DiscoveryAgent-code"
+        },
+        {
+          "zh": "应用",
+          "en": "App",
+          "url": "https://github.com/evangorrell/DiscoveryAgent-app"
+        },
+        {
+          "zh": "分享者",
+          "en": "Sharer",
+          "url": "https://x.com/evangorrell__"
+        },
+        {
+          "zh": "X 原帖",
+          "en": "X Post",
+          "url": "https://x.com/evangorrell__/status/2123132578014322857"
+        }
+      ]
+    },
+    {
+      "id": "qora-ai-scientist-robust-quantum-control",
+      "edition": "2026-11-19",
+      "tags": [
+        "autoresearch"
+      ],
+      "title": {
+        "zh": "QORA：理论 agent 与实验 agent 闭环，在 NV 色心上发现的脉冲序列让相干时间接近人类最佳设计的两倍",
+        "en": "QORA: A Theory Agent and a Lab Agent in Closed Loop Discover Pulse Sequences That Nearly Double NV-Center Coherence Over the Best Human Design"
+      },
+      "why": {
+        "zh": "AI 科学家在真实实验上真正做出了新发现，关键是把理论约束下的搜索和自动校准的实验反馈接成闭环：agent 找到了比人类最佳方案更稳健的控制序列，而人类随后才解释清楚它为什么有效。",
+        "en": "An AI scientist made a real experimental discovery because it closed the loop between theory-constrained search and auto-calibrated lab feedback: the agents found control sequences more robust than the best human design, and humans only afterwards worked out why they work."
+      },
+      "what": {
+        "zh": "在相互作用的多能级量子系统（自旋-1 NV 色心系综）中，多个独立误差通道同时存在，人工设计鲁棒的动力学解耦脉冲序列非常困难。",
+        "en": "Designing robust dynamical-decoupling pulse sequences is hard in interacting multi-level systems such as spin-1 NV-center ensembles, where several independent error channels must be suppressed at once."
+      },
+      "how": {
+        "zh": "由 GPT-6-Astra 等驱动的理论 agent Theo 带五个子 agent（提出、评审、模拟、分类、组合）搜索 18 脉冲块并组合成 126 脉冲周期，实验 agent 在 NV 装置上自动执行、校准光路和微波并监测漂移，把数据返回给 Theo。发现的 AID-ROD-1 测得相干时间接近当前最佳人类设计 DROID-C3PO 的两倍，在不同脉冲间隔和驱动幅度误差下仍保持优势；人类分析发现 18 脉冲块压制一、二阶 onsite 无序和共模驱动误差，长周期排列再压制偶极相互作用。",
+        "en": "A theory agent with five sub-agents (propose, review, simulate, classify, compose) powered by GPT-6-Astra and others searches 18-pulse blocks and composes 126-pulse cycles, while a lab agent runs them on the NV apparatus, auto-calibrates optics and microwaves and tracks drift, feeding data back. The discovered AID-ROD-1 nearly doubled measured coherence time versus the state-of-the-art human design DROID-C3PO and kept its edge across pulse spacings and drive-amplitude errors; human analysis showed the 18-pulse blocks cancel linear and quadratic on-site disorder and common-mode drive errors while the longer arrangement suppresses dipolar interactions."
+      },
+      "metric": {
+        "zh": "相干时间约为 DROID-C3PO 的 2 倍",
+        "en": "~2x coherence vs DROID-C3PO"
+      },
+      "pills": [
+        {
+          "zh": "相干时间",
+          "en": "Coherence time",
+          "value": "~2x human SOTA",
+          "tone": "up"
+        },
+        {
+          "zh": "周期脉冲数",
+          "en": "Pulses per cycle",
+          "value": "126",
+          "tone": "neutral"
+        }
+      ],
+      "arxiv": "2611.21765",
+      "authors": "Jiahao Yan, Xuanying Lai, Xiaoshui Lin, Yizhou Wang, … Chong Zu, Chuanwei Zhang (Washington University in St. Louis)",
+      "handle": "@YizhouWang99",
+      "links": [
+        {
+          "zh": "论文",
+          "en": "Paper",
+          "url": "https://arxiv.org/abs/2611.21765"
+        },
+        {
+          "zh": "分享者",
+          "en": "Sharer",
+          "url": "https://x.com/YizhouWang99"
+        },
+        {
+          "zh": "X 原帖",
+          "en": "X Post",
+          "url": "https://x.com/YizhouWang99/status/2123193599378719079"
+        }
+      ]
+    },
     {
       "id": "google-sim-continual-rsi-harness-memory",
       "edition": "2026-11-18",
