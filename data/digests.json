@@ -19,6 +19,15 @@
   },
   "editions": [
     {
+      "id": "2026-11-21",
+      "date": "2026-11-21",
+      "slot": "",
+      "label": {
+        "zh": "2026-11-21",
+        "en": "21 Nov 2026"
+      }
+    },
+    {
       "id": "2026-11-19",
       "date": "2026-11-19",
       "slot": "",
@@ -325,6 +334,382 @@
     }
   ],
   "items": [
+    {
+      "id": "mit-harnesses-compositional-generalizers",
+      "edition": "2026-11-21",
+      "tags": [
+        "harness-search",
+        "agentic-rl"
+      ],
+      "title": {
+        "zh": "MIT：harness 能让模型组合已有能力去泛化，只在短任务上训练就能推广到长 2–64 倍的任务，RLM-27B 平均提升 26.9%",
+        "en": "MIT: Harnesses Let Models Generalize by Composing What They Already Know (Train Short, Generalize to 2–64x Longer Tasks; RLM-27B +26.9%)"
+      },
+      "why": {
+        "zh": "把整段轨迹塞进上下文的 ReAct 式 harness，会让模型面对越来越陌生的长 prompt；Recursive Language Model 这类把上下文放到外部、用代码拆分任务并递归调用子模型的 harness，让每一次模型调用看到的都是熟悉的小问题，所以在短任务上学到的拆法能直接推广到长得多、甚至不同领域的任务。",
+        "en": "ReAct-style harnesses that keep the whole trajectory in context push the model into ever more unfamiliar long prompts; harnesses like the Recursive Language Model, which offload context, split work in code and recurse into sub-calls, keep every single model call on a familiar small problem, so a decomposition learned on short tasks carries over to much longer tasks and even to new domains."
+      },
+      "what": {
+        "zh": "长时程任务的后训练又贵又慢，因为每个新领域都要新的长 rollout 数据；问题是 harness 能否代替模型本身承担泛化。",
+        "en": "Post-training for long-horizon tasks is expensive and slow because every new domain needs new long rollouts; the question is whether the harness, rather than the network, can carry the generalization."
+      },
+      "how": {
+        "zh": "对 Qwen3-30B-A3B 做 RL 时，RLM harness 只在短任务上训练就能推广到长 2–64 倍的任务，而直接训练底座 Transformer 的评测提升远小于训练提升；对复杂任务提出 surrogate harness training，用带假工具调用和假子调用的合成环境只训练单次调用。用这种合成数据 SFT 出的 RLM-27B（Qwen3.8-27B）在 CTC-Bench、ExpertLongBench 等 8 个长上下文任务上平均提升 26.9%（12.4 分），轮数少约 3 倍、token 少约 2 倍；作者也指出 CodeAct、Pi 等 harness 在需要密集推理的子任务上泛化较差；论文、日志、代码和数据都已公开。",
+        "en": "RL on Qwen3-30B-A3B in the RLM harness trained only on short tasks generalized to tasks 2–64x longer, while training the bare Transformer raised eval reward far less than train reward; for messy tasks they propose surrogate harness training, which trains a single call on synthetic environments with fake tool calls and fake sub-calls. RLM-27B (Qwen3.8-27B fine-tuned on that synthetic data) improved 8 long-context benchmarks such as CTC-Bench and ExpertLongBench by 26.9% on average (12.4 points) with about 3x fewer turns and 2x fewer tokens; the authors note CodeAct and Pi harnesses generalize less well when sub-tasks need dense reasoning; Paper, logs, code and data are public."
+      },
+      "metric": {
+        "zh": "长上下文任务平均 +26.9%",
+        "en": "+26.9% on long-context suite"
+      },
+      "pills": [
+        {
+          "zh": "长度泛化",
+          "en": "Length generalization",
+          "value": "2–64x",
+          "tone": "up"
+        },
+        {
+          "zh": "RLM-27B 平均提升",
+          "en": "RLM-27B average gain",
+          "value": "+26.9%",
+          "tone": "up"
+        },
+        {
+          "zh": "推理 token",
+          "en": "Inference tokens",
+          "value": "~2x fewer",
+          "tone": "up"
+        }
+      ],
+      "authors": "Alex L. Zhang, Souradip Chakraborty, Omar Khattab (MIT CSAIL)",
+      "handle": "@a1zhang",
+      "links": [
+        {
+          "zh": "论文（alphaXiv）",
+          "en": "Paper (alphaXiv)",
+          "url": "https://www.alphaxiv.org/abs/2611.harness-cg"
+        },
+        {
+          "zh": "GitHub",
+          "en": "GitHub",
+          "url": "https://github.com/alexzhang13/harness-cg"
+        },
+        {
+          "zh": "博客",
+          "en": "Blog",
+          "url": "https://alexzhang13.github.io/blog/2026/harness/"
+        },
+        {
+          "zh": "分享者",
+          "en": "Sharer",
+          "url": "https://x.com/a1zhang"
+        },
+        {
+          "zh": "X 原帖",
+          "en": "X Post",
+          "url": "https://x.com/a1zhang/status/2123774098241147225"
+        },
+        {
+          "zh": "X 引用评论（@omarsar0）",
+          "en": "X Quote (@omarsar0)",
+          "url": "https://x.com/omarsar0/status/2123863490800828830"
+        }
+      ]
+    },
+    {
+      "id": "google-pro2-agent-problem-state",
+      "edition": "2026-11-21",
+      "tags": [
+        "autoresearch"
+      ],
+      "title": {
+        "zh": "Google Pro² Agent：让 AI 研究 agent 记录“问题出在哪”而不只是改代码，完整 MLE-Bench 奖牌率 76.0%，目前最高",
+        "en": "Google Pro² Agent: Make the Research Agent Track What Is Blocking It, Not Just the Code (76.0% Medal Rate on Full MLE-Bench, Highest Reported)"
+      },
+      "why": {
+        "zh": "只围绕代码库和分数迭代的研究 agent，在难题上常卡在错误的方向，因为它从不写下自己认为哪里出了问题；Pro² 把“有哪些问题挡路、哪些方案可能解决”记成一个显式的 Problem State，用对照实验更新它，所以第一版方案就更强，后续计算也一直投向没解决的瓶颈。",
+        "en": "Research agents that iterate only on the codebase and its score often get stuck in the wrong region on hard tasks because they never write down what they think is wrong; Pro² keeps an explicit Problem State of what blocks success and which fixes might help, updates it with controlled experiments, and so starts from stronger solutions and keeps spending compute on unresolved bottlenecks."
+      },
+      "what": {
+        "zh": "自主 AI 研发（写代码、跑实验做 ML 模型和后训练）在难任务上如何避免盲目改代码、陷入局部最优。",
+        "en": "How autonomous AI R&D agents (writing code and running experiments to build ML models and post-train LLMs) can avoid blind code edits and local optima on hard tasks."
+      },
+      "how": {
+        "zh": "PI、实现、审稿三个 agent 循环：先分析资源和约束建立 Problem State，再做针对性调研把问题和候选方案对上，用对照实验更新每个问题的重要性和每个方案的收益（PI 用 Gemini 3.1 Pro，实现和审稿用 Gemini 3.5 Flash）。完整 75 题 MLE-Bench：24 小时 70.7%，追平此前最好；48 小时 76.0%，57 枚奖牌、84.0% 超过中位数（每种预算只跑一次）；MLE-Bench Lite 上第一版方案奖牌率 57.6%，MARS 是 28.8%；去掉 Problem State 或不做证据支撑都会明显变差；PostTrainBench 上与 Opus 4.7 驱动的 Claude Code 相当，但低于 Fable 5；论文未给出代码。",
+        "en": "A PI, implementation and reviewer agent loop builds the Problem State from resources and constraints, researches candidate fixes for each problem, and runs controlled tests that update each problem's importance and each fix's benefit (PI on Gemini 3.1 Pro, the others on Gemini 3.5 Flash). On all 75 MLE-Bench tasks it reached 70.7% in 24 hours, matching the best reported, and 76.0% in 48 hours with 57 medals and 84.0% above median (one run per budget); On MLE-Bench Lite its first solutions already medal on 57.6% vs 28.8% for MARS, and removing the Problem State or its evidence grounding clearly hurts; on PostTrainBench it is on par with Claude Code on Opus 4.7 but below Fable 5; The paper links no code."
+      },
+      "metric": {
+        "zh": "MLE-Bench 奖牌率 76.0%",
+        "en": "76.0% MLE-Bench medal rate"
+      },
+      "pills": [
+        {
+          "zh": "完整 MLE-Bench（48h）",
+          "en": "Full MLE-Bench (48h)",
+          "value": "76.0%",
+          "tone": "up"
+        },
+        {
+          "zh": "24h 预算",
+          "en": "24h budget",
+          "value": "70.7%",
+          "tone": "up"
+        },
+        {
+          "zh": "首版方案奖牌率 vs MARS",
+          "en": "First-solution medals vs MARS",
+          "value": "57.6% vs 28.8%",
+          "tone": "up"
+        }
+      ],
+      "arxiv": "2611.25357",
+      "authors": "Yixiong Chen, Liqian Peng, Tian Tan, Ziqian Lin, Blake Jianhang Chen, Chao Zhao, Yaojie Liu, Alec Go, Alan Yuille (Google, Johns Hopkins University)",
+      "handle": "@dair_ai",
+      "links": [
+        {
+          "zh": "论文",
+          "en": "Paper",
+          "url": "https://arxiv.org/abs/2611.25357"
+        },
+        {
+          "zh": "分享者",
+          "en": "Sharer",
+          "url": "https://x.com/dair_ai"
+        },
+        {
+          "zh": "X 原帖",
+          "en": "X Post",
+          "url": "https://x.com/dair_ai/status/2123918068393144639"
+        }
+      ]
+    },
+    {
+      "id": "cuhk-meta-rtl-evolving-harnesses",
+      "edition": "2026-11-21",
+      "tags": [
+        "harness-search"
+      ],
+      "title": {
+        "zh": "CUHK Meta-RTL：用 EDA 反馈进化芯片 RTL 优化 agent 的 harness，比 Dr. RTL 更好且便宜约 3 倍，直接迁移到新设计",
+        "en": "CUHK Meta-RTL: Evolve the Chip-Optimization Agent's Harness From EDA Feedback (Beats Dr. RTL at ~3x Lower Cost, Transfers to Unseen Designs)"
+      },
+      "why": {
+        "zh": "RTL 优化 agent 的效果很大程度取决于手写的搜索流程；让一个提议模型根据综合和等价性检查的失败，追溯到 harness 的具体决策并修改，同时保持优化模型、EDA 流程和预算不变，进化出的 harness 学会了可执行的改写工作区、保留“垫脚石”电路的 Pareto 前沿，以及按关键路径报告做结构改写。",
+        "en": "How well an RTL-optimization agent works depends heavily on its hand-written search procedure; letting a proposer model trace synthesis and equivalence-check failures back to specific harness decisions and patch them, with the optimizing model, EDA flow and budget held fixed, produced a harness that keeps an executable rewrite workspace, a Pareto frontier of stepping-stone circuits, and maps critical-path reports to structural rewrites."
+      },
+      "what": {
+        "zh": "用 LLM agent 优化电路的时序和面积时，搜索流程（harness）本身能否自动进化，而不是人工设计。",
+        "en": "Whether the search procedure (harness) of an LLM agent that optimizes circuit timing and area can be evolved automatically instead of hand-engineered."
+      },
+      "how": {
+        "zh": "外层由 GPT-5.6 Sol 提出 harness 修改，先在少量电路上低成本试探，再在沙盒评测器中给冻结的 harness 打分；内层优化模型固定为 DeepSeek-V4.1-Flash。与 Dr RTL 相比，20 个开发设计上 WNS/TNS 违例总量降 7.8%/11.0%，70% 的设计面积更小，成本约 22.5 美元对 75 美元；不再进化直接用到 10 个没见过的设计上，WNS/TNS 降 20.5%/14.0%，总面积降 12.6%，平均效用接近翻倍（0.2660 对 0.1388）；消融显示去掉可执行工作区退化最大；进化本身约花 510 美元；作者承认受预算所限，没有重复实验检验随机性；未给出代码。",
+        "en": "An outer GPT-5.6 Sol proposer suggests harness edits, probes them cheaply on a few circuits, then scores frozen harnesses in a sandboxed evaluator, while the inner optimizer stays DeepSeek-V4.1-Flash. Against Dr RTL on 20 development designs it cut aggregate WNS/TNS violations by 7.8%/11.0% with smaller area on 70% of designs, at about $22.5 vs $75; applied unchanged to 10 unseen designs it cut WNS/TNS by 20.5%/14.0% and total area by 12.6%, nearly doubling mean utility (0.2660 vs 0.1388); Removing the executable workspace hurt most in ablations; Evolution itself cost about $510, and the authors note budget limits meant no repeated trials for LLM randomness; No code is linked."
+      },
+      "metric": {
+        "zh": "新设计 WNS 违例 -20.5%",
+        "en": "-20.5% WNS on unseen designs"
+      },
+      "pills": [
+        {
+          "zh": "开发集 WNS/TNS",
+          "en": "Dev WNS/TNS",
+          "value": "-7.8% / -11.0%",
+          "tone": "up"
+        },
+        {
+          "zh": "未见设计 WNS/TNS",
+          "en": "Unseen WNS/TNS",
+          "value": "-20.5% / -14.0%",
+          "tone": "up"
+        },
+        {
+          "zh": "API 成本 vs Dr. RTL",
+          "en": "API cost vs Dr. RTL",
+          "value": "$22.5 vs $75",
+          "tone": "up"
+        }
+      ],
+      "arxiv": "2611.25891",
+      "authors": "Xinzhuang Xiong, Yonghao Wang, Shengyao Sun, Chengxi Li, Evangeline Young (The Chinese University of Hong Kong)",
+      "handle": "@crazyMLguy",
+      "links": [
+        {
+          "zh": "论文",
+          "en": "Paper",
+          "url": "https://arxiv.org/abs/2611.25891"
+        },
+        {
+          "zh": "分享者",
+          "en": "Sharer",
+          "url": "https://x.com/crazyMLguy"
+        },
+        {
+          "zh": "X 原帖",
+          "en": "X Post",
+          "url": "https://x.com/crazyMLguy/status/2123882549244231844"
+        }
+      ]
+    },
+    {
+      "id": "shanghai-ai-lab-turing-agent-lean",
+      "edition": "2026-11-21",
+      "tags": [
+        "verification",
+        "autoresearch"
+      ],
+      "title": {
+        "zh": "上海 AI Lab Turing Agent：把研究级数学证明变成忠实的 Lean 形式化，忠实率 57–62%，最多比 Claude Code 高 32 个点",
+        "en": "Shanghai AI Lab Turing Agent: A Harness That Turns Research Math Into Faithful Lean Proofs (57–62% Faithful, Up to +32 Points Over Claude Code)"
+      },
+      "why": {
+        "zh": "AI 产出证明的速度已经超过人检查的速度，而 Lean 能编译不等于命题没被悄悄改掉；Turing Agent 把“命题是否忠实”单独交给一个 agent 检查，再让多个证明 agent 把证明拆成可验证的 DAG 并行完成、只对含义存疑的中间命题做语义复查，所以在忠实率上明显超过通用编码 harness。",
+        "en": "AI now produces proofs faster than people can check them, and a Lean file that compiles may still have quietly changed the claim; Turing Agent gives statement faithfulness to its own agent, has parallel proof agents build a verified DAG of sub-claims, and sends only claims with uncertain meaning to semantic review, so it beats general coding harnesses on faithful formalization."
+      },
+      "what": {
+        "zh": "如何把大量 AI 生成的研究级数学证明（尤其是理论计算机科学）可靠地变成机器验证的知识。",
+        "en": "How to turn the growing volume of AI-generated research proofs, especially in theoretical computer science, into trustworthy machine-checked knowledge."
+      },
+      "how": {
+        "zh": "两层结构：定理形式化 agent 用 Lean 检查并对照原文核对定义域、假设和量词；证明形式化 agent 把证明拆成 DAG 并行构造，复用积累的证明经验。Formal TCS Bench 上用 GLM-5.3 和 DeepSeek-V4-Pro 分别达到 57.34% 和 61.54% 的忠实形式化，比最强基线 Claude Code 高 16.78 和 32.17 个点；RLMEval 的 TCS 子集上 pass@1 超过 82%，GLM-5.3 时最高，DeepSeek-V4-Pro 时比 Claude Code 的 86.69% 低 4.03 个点；它还补完了 OpenAI 10 月数学稿件集里 3 个形式化未完成的 TCS 问题，其中随机 3-SAT 方差上界用到约一百个验证过的辅助命题。",
+        "en": "Two scales: a theorem-formalization agent checks the statement in Lean and against the original text's domains, assumptions and quantifiers, while proof-formalization agents build the proof as a DAG in parallel and reuse an experience pool. On Formal TCS Bench it reached 57.34% (GLM-5.3) and 61.54% (DeepSeek-V4-Pro) faithful formalization, 16.78 and 32.17 points above Claude Code, the strongest baseline; on a TCS subset of RLMEval it passed above 82%, best with GLM-5.3 but 4.03 points below Claude Code's 86.69% with DeepSeek-V4-Pro; It also completed formal verification of 3 TCS problems from OpenAI's October collection whose formalizations were unfinished, one (a random 3-SAT variance bound) needing about a hundred verified auxiliary claims."
+      },
+      "metric": {
+        "zh": "忠实形式化 61.54%",
+        "en": "61.54% faithful formalization"
+      },
+      "pills": [
+        {
+          "zh": "Formal TCS Bench",
+          "en": "Formal TCS Bench",
+          "value": "57.34% / 61.54%",
+          "tone": "up"
+        },
+        {
+          "zh": "vs Claude Code",
+          "en": "vs Claude Code",
+          "value": "+16.78 / +32.17 pts",
+          "tone": "up"
+        },
+        {
+          "zh": "补完的未解形式化",
+          "en": "Unfinished formalizations completed",
+          "value": "3",
+          "tone": "up"
+        }
+      ],
+      "arxiv": "2611.21299",
+      "authors": "Shuyue Hu et al. (Shanghai AI Laboratory, UESTC, The University of Hong Kong, Shanghai University of Finance and Economics)",
+      "handle": "@crazyMLguy",
+      "links": [
+        {
+          "zh": "论文",
+          "en": "Paper",
+          "url": "https://arxiv.org/abs/2611.21299"
+        },
+        {
+          "zh": "项目主页",
+          "en": "Project page",
+          "url": "https://wangqy031216-cloud.github.io/turing-agent/"
+        },
+        {
+          "zh": "分享者",
+          "en": "Sharer",
+          "url": "https://x.com/crazyMLguy"
+        },
+        {
+          "zh": "X 原帖",
+          "en": "X Post",
+          "url": "https://x.com/crazyMLguy/status/2123499128634462266"
+        }
+      ]
+    },
+    {
+      "id": "alpoge-claude-riemann-hypothesis-lean",
+      "edition": "2026-11-21",
+      "tags": [
+        "autoresearch",
+        "verification"
+      ],
+      "title": {
+        "zh": "Anthropic 的 Levent Alpöge 宣布与 Claude 合作证明了黎曼猜想和 GRH，只公开了 Lean 形式化，独立检查器已接受，但还没有人读懂论证",
+        "en": "Anthropic's Levent Alpöge Says He and Claude Proved the Riemann Hypothesis and GRH, Released Only as Lean; Independent Checkers Accept It, but No One Yet Understands the Argument"
+      },
+      "why": {
+        "zh": "据 Alpöge 自述，他把方向引到一个与玩具问题类似的设定后，Claude 在技术上远远跑在他前面；结果只以 Lean 形式化发布，所以可信度来自机器检查而不是人读，这也意味着证明可能先于任何人对它的理解成立。",
+        "en": "By Alpöge's own account, once he steered the work to a setting analogous to a toy problem, Claude far outpaced him technically; the result is released only as Lean, so its credibility rests on machine checking rather than human reading, which means a theorem may be established before anyone understands why it holds."
+      },
+      "what": {
+        "zh": "黎曼猜想（1859 年提出，千禧年大奖难题）是否已被人与 AI 合作解决，以及只有形式化、没有可读论文的证明该如何对待。",
+        "en": "Whether the Riemann Hypothesis (posed 1859, a Millennium Prize problem) has been settled by a human working with AI, and how to treat a proof that exists only as a formalization with no readable paper."
+      },
+      "how": {
+        "zh": "Alpöge 的说明称这是 Stepanov 方法的后代：在整数上用长度约 √X 的 theta lift 链来模拟“重数”，从 10 月 6 日到 11 月 16 日得到 GRH；论证极长，他说写成可读文档会超过 25 万页，因此只发布了分 14 卷的 Lean 压缩包。@QuantumTumbler 的帖子称：形式化陈述的是 Mathlib 自己的黎曼猜想，只依赖三条标准公理，Lean 内核、nanoda、con-leche 和 lean4lean 都已接受；但还没有人能解释论证为什么成立，官方比对和更严格的内核重放仍在进行，Clay 仍列为未解决；另有一份 Stanford 的人写 GRH 草稿，两者不要混淆；我读了 Alpöge 的说明 PDF 和个人主页，没有下载或检查 Lean 文件本身，独立验证情况来自 X 上的帖子。",
+        "en": "Alpöge's note describes a descendant of Stepanov's method that simulates multiplicity over the integers with a chain of theta lifts of length about √X, reaching GRH between 6 Oct and 16 Nov; the argument is so long that he says a readable write-up would exceed 250,000 pages, so he released only a 14-part Lean archive. @QuantumTumbler reports that it states Mathlib's own Riemann Hypothesis, uses only the three standard axioms, and has been accepted by the Lean kernel, nanoda, con-leche and lean4lean, but no one can yet explain why the argument works, the official comparator run and a stricter kernel replay are still running, and Clay still lists the problem as open; A separate human-written GRH draft from Stanford is also circulating and should not be confused with it; I read Alpöge's note PDF and homepage but did not download or check the Lean files; the verification status comes from X posts."
+      },
+      "metric": {
+        "zh": "4 个独立内核接受（据报）",
+        "en": "Accepted by 4 kernels (reported)"
+      },
+      "pills": [
+        {
+          "zh": "所用时间",
+          "en": "Time taken",
+          "value": "~6 weeks",
+          "tone": "up"
+        },
+        {
+          "zh": "可读写作估计",
+          "en": "Readable write-up estimate",
+          "value": "250,000+ pages",
+          "tone": "down"
+        },
+        {
+          "zh": "公理",
+          "en": "Axioms",
+          "value": "3 standard (reported)",
+          "tone": "up"
+        }
+      ],
+      "authors": "Levent Alpöge (Anthropic) with Claude",
+      "handle": "@yifanzhang_",
+      "links": [
+        {
+          "zh": "Alpöge 的说明（PDF）",
+          "en": "Alpöge's note (PDF)",
+          "url": "https://alpo.ge/remark.pdf"
+        },
+        {
+          "zh": "Alpöge 主页",
+          "en": "Alpöge's homepage",
+          "url": "https://alpo.ge/"
+        },
+        {
+          "zh": "Alpöge 的 X",
+          "en": "Alpöge on X",
+          "url": "https://x.com/__alpoge__"
+        },
+        {
+          "zh": "分享者",
+          "en": "Sharer",
+          "url": "https://x.com/yifanzhang_"
+        },
+        {
+          "zh": "X 原帖",
+          "en": "X Post",
+          "url": "https://x.com/yifanzhang_/status/2123789252756414577"
+        },
+        {
+          "zh": "验证情况（@QuantumTumbler）",
+          "en": "Verification status (@QuantumTumbler)",
+          "url": "https://x.com/QuantumTumbler/status/2123929260088017293"
+        },
+        {
+          "zh": "X 引用评论（@omarsar0）",
+          "en": "X Quote (@omarsar0)",
+          "url": "https://x.com/omarsar0/status/2123807029416620336"
+        }
+      ]
+    },
     {
       "id": "google-guard-regret-guided-harness-rsi",
       "edition": "2026-11-19",
