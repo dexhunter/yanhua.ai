@@ -335,6 +335,395 @@
   ],
   "items": [
     {
+      "id": "resolution-hypothesis-agent-evolution-noise",
+      "tags": [
+        "harness-search",
+        "verification"
+      ],
+      "title": {
+        "en": "The Resolution Hypothesis: Self-Evolving Agents Propose Good Edits but Pick Them at Coin-Flip Odds (49.7%)",
+        "zh": "Resolution Hypothesis：自演化 agent 能提出好的改动，却以抛硬币的准确率挑选（49.7%）"
+      },
+      "why": {
+        "en": "Prompt, skill, memory and harness evolution mostly stalls not because the proposer is weak but because one noisy pass/fail run cannot tell a better artifact from a worse one, so each round keeps lucky draws and the big published gains turn out to be evaluation shortcuts.",
+        "zh": "prompt、skill、memory 和 harness 演化大多停滞，不是因为提案太弱，而是一次带噪声的 pass/fail 评测分不清改动是好是坏，于是每轮留下的是运气好的候选；论文里那些大幅提升，多数其实是钻了评测的空子。"
+      },
+      "what": {
+        "en": "Why agent-evolution methods trade wins across papers and often fail to bootstrap on benchmarks like Terminal-Bench.",
+        "zh": "为什么各种 agent 演化方法在不同论文里互有胜负，而且在 Terminal-Bench 这类基准上常常起不来。"
+      },
+      "how": {
+        "en": "7 methods (GEPA, SkillOpt-Lite, Trace2Skill, ReasoningBank, HarnessLens, Meta-Harness, AHE), 6 models, 1,030 runs and 2.1M+ test trajectories show good candidates exist (best-of-K skill quality rises from 49.2% to 61.8% as K goes 1 to 100), yet execution-score selection picks the better of two only 49.7% of the time; regressions are 30.5% of the pool but 62.1% of accepted candidates, and in-loop gains of 6.9 to 9.0 pp shrink to +0.4 to -3.2 pp on re-evaluation. Published margins (median 3.4 pp over 171 results in 9 papers) sit below single-run noise (1.7 to 4.1 pp), so a one-run table picks the best of four methods only 33% of the time on Terminal-Bench; one added sentence recovers a median 90% of the largest gains, repairing the grader cuts the median gain from 17.6 to 0.8 pp, process checks are 13x to 57x less noisy, and data is promised on acceptance.",
+        "zh": "7 种方法（GEPA、SkillOpt-Lite、Trace2Skill、ReasoningBank、HarnessLens、Meta-Harness、AHE）、6 个模型、1,030 次演化、210 万+条测试轨迹表明好候选存在（K 从 1 到 100，最优 skill 质量从 49.2% 升到 61.8%），但按执行分数两选一只有 49.7% 选对；退步候选占池子 30.5%，却占被接受的 62.1%，循环内 6.9–9.0 pp 的提升在独立重测时只剩 +0.4 到 -3.2 pp。论文报告的领先幅度（9 篇 171 个结果，中位 3.4 pp）低于单次运行噪声（1.7–4.1 pp），Terminal-Bench 上只跑一次的表格四选一选对最优方法仅 33%；只加一句规则就能复现最大增益的中位 90%，修好评分器后中位增益从 17.6 降到 0.8 pp，过程指标噪声低 13–57 倍，数据承诺录用后发布。"
+      },
+      "metric": {
+        "en": "Selection accuracy 49.7% (chance 50%)",
+        "zh": "挑选准确率 49.7%（随机 50%）"
+      },
+      "pills": [
+        {
+          "zh": "两两挑选准确率",
+          "en": "Pairwise selection",
+          "value": "49.7%",
+          "tone": "down"
+        },
+        {
+          "zh": "修复评测后中位增益",
+          "en": "Median gain after grader fix",
+          "value": "17.6→0.8 pp",
+          "tone": "down"
+        },
+        {
+          "zh": "最优候选质量 K=1→100",
+          "en": "Best-of-K quality",
+          "value": "49.2%→61.8%",
+          "tone": "up"
+        }
+      ],
+      "arxiv": "2611.23068",
+      "authors": "Yuanhao Zeng, Shaocheng Lan, Ao Lu, ... Kan Ren (ShanghaiTech, ByteDance, BIGAI, SUSTech)",
+      "handle": "@chanmuzi22",
+      "links": [
+        {
+          "zh": "论文",
+          "en": "Paper",
+          "url": "https://arxiv.org/abs/2611.23068"
+        },
+        {
+          "zh": "项目页",
+          "en": "Project",
+          "url": "https://lineshogan.github.io/resolution-hypothesis/"
+        },
+        {
+          "zh": "分享者",
+          "en": "Sharer",
+          "url": "https://x.com/chanmuzi22"
+        },
+        {
+          "zh": "X 原帖",
+          "en": "X Post",
+          "url": "https://x.com/chanmuzi22/status/2124016264784023643"
+        },
+        {
+          "zh": "X 原帖 · @Worldzstocks",
+          "en": "X Post · @Worldzstocks",
+          "url": "https://x.com/Worldzstocks/status/2124145693141131418"
+        }
+      ],
+      "edition": "2026-11-21"
+    },
+    {
+      "id": "mit-self-organized-self-improvement",
+      "tags": [
+        "harness-search",
+        "autoresearch"
+      ],
+      "title": {
+        "en": "MIT: Given Only Read/Write, Bash and a Game Tool, Newer Frontier Models Design Their Own Self-Improvement Loop (Opus-5 +20%)",
+        "zh": "MIT：只给读写、Bash 和游戏工具，新一代模型能自己设计自我提升流程（Opus-5 +20%）"
+      },
+      "why": {
+        "en": "A capable frozen model no longer needs a human-written evolve-reflect loop: left alone with a budget, it writes its own practice games, A/B-tests its prompt edits and builds validation suites, and the text it learns transfers to new games and even to another model, while older models given the same tools barely improve.",
+        "zh": "足够强的冻结模型已经不需要人写好的“执行—反思—改进”循环：给它预算和工具，它会自己写练习游戏、对提示改动做 A/B 测试、搭验证集，学到的文本还能迁移到新游戏甚至别的模型；而老一代模型拿同样的工具几乎没有进步。"
+      },
+      "what": {
+        "en": "Do capable LLM agents still need humans to specify how they should self-improve?",
+        "zh": "强 LLM agent 还需要人类规定它“怎么自我提升”吗？"
+      },
+      "how": {
+        "en": "A teacher copy of the model gets {Read/Write, Bash, Gameplay}, 20 context updates and 150 gameplays but no real games or validation scores, so it must invent games, watch a player copy and edit the player's text files; on 20-turn PuzzleScript newer models improve (+20% Claude Opus-5, +10% GPT 6-Astra, +6% GLM 5.3) while older generations barely move, and Opus-5 on self-made games matches GEPA tuned on 20 real in-distribution games. The learned text lifts 30-turn PuzzleScript +9%, ARC-AGI-L1 +21% and MazeBench SPL +0.15, and transfers across models (Opus 5 player 25.4% to 47.5% with GPT-6 Astra's text; GPT-6 Astra 67.1% to 72.1% with Opus 5's); gains plateau within 20 updates, and telling the teacher more about the eval helps the target but can hurt transfer.",
+        "zh": "模型的“老师”副本拿到 {读写, Bash, Gameplay}、20 次上下文更新和 150 局游戏预算，但没有真实游戏、没有验证分数，只能自己造游戏、看“玩家”副本玩、再改玩家的文本文件；在 20 回合 PuzzleScript 上，新一代模型有提升（Claude Opus-5 +20%、GPT 6-Astra +10%、GLM 5.3 +6%），老一代几乎不动，Opus-5 只用自造游戏就追平了在 20 个真实同分布游戏上调优的 GEPA。学到的文本让 30 回合 PuzzleScript +9%、ARC-AGI-L1 +21%、MazeBench SPL +0.15，并能跨模型迁移（Opus 5 玩家用 GPT-6 Astra 的文本从 25.4% 到 47.5%；GPT-6 Astra 用 Opus 5 的文本从 67.1% 到 72.1%）；20 次更新内趋于平台，给老师更多评测信息会提升目标分但可能伤害迁移。"
+      },
+      "metric": {
+        "en": "+20% on PuzzleScript-t20 (Claude Opus-5)",
+        "zh": "PuzzleScript-t20 +20%（Claude Opus-5）"
+      },
+      "pills": [
+        {
+          "zh": "Opus-5 自我提升",
+          "en": "Opus-5 self-improvement",
+          "value": "+20%",
+          "tone": "up"
+        },
+        {
+          "zh": "ARC-AGI-L1 迁移",
+          "en": "ARC-AGI-L1 transfer",
+          "value": "+21%",
+          "tone": "up"
+        },
+        {
+          "zh": "跨模型：Opus 5 用 GPT 文本",
+          "en": "Cross-model: Opus 5 w/ GPT text",
+          "value": "25.4%→47.5%",
+          "tone": "up"
+        }
+      ],
+      "arxiv": "2611.23219",
+      "authors": "Shobhita Sundaram, Cansu Sancaktar, Phillip Isola (MIT CSAIL, University of Tübingen)",
+      "handle": "@omarsar0",
+      "links": [
+        {
+          "zh": "论文",
+          "en": "Paper",
+          "url": "https://arxiv.org/abs/2611.23219"
+        },
+        {
+          "zh": "项目页",
+          "en": "Project",
+          "url": "https://ssundaram21.github.io/self-org/"
+        },
+        {
+          "zh": "分享者",
+          "en": "Sharer",
+          "url": "https://x.com/omarsar0"
+        },
+        {
+          "zh": "X 原帖",
+          "en": "X Post",
+          "url": "https://x.com/omarsar0/status/2123129152887046557"
+        },
+        {
+          "zh": "X 原帖 · @Memoirs",
+          "en": "X Post · @Memoirs",
+          "url": "https://x.com/Memoirs/status/2124031351888232818"
+        }
+      ],
+      "edition": "2026-11-21"
+    },
+    {
+      "id": "basersi-harness-internalization-vlm",
+      "tags": [
+        "co-evolution",
+        "harness-search"
+      ],
+      "title": {
+        "en": "BaseRSI: A VLM Evolves Its Own Harness, Then Writes It Into Its Weights Without Training (+11.7 ID / +6.1 OOD on Qwen3.8-27B)",
+        "zh": "BaseRSI：视觉语言模型先进化自己的 harness，再免训练写进权重（Qwen3.8-27B 同分布 +11.7 / 分布外 +6.1）"
+      },
+      "why": {
+        "en": "Harness gains normally stay outside the model; BaseRSI measures, block by block, how the harness changes the model's activations and edits a few key-value neurons to reproduce that change, so the edited model alone answers better than the same model with the harness, in one call, and SFT or GRPO on the same questions barely moves.",
+        "zh": "harness 带来的提升通常留在模型外面；BaseRSI 逐层测量 harness 让激活改变了多少，再改少量 key-value 神经元把这个改变复现出来，所以改完的模型单独作答就比“同模型 + harness”更好、只需一次调用，而在同样题目上做 SFT 或 GRPO 几乎没用。"
+      },
+      "what": {
+        "en": "Can gains from prompts and tools (the harness) be moved into the base model itself, without gradient training?",
+        "zh": "prompt 和工具（harness）带来的增益，能不能不经梯度训练就搬进基座模型本身？"
+      },
+      "how": {
+        "en": "Over 8 generations Qwen3.8-27B proposes 269 harness entries from its own failures and an acceptance test keeps two whose gain generalizes (a finer image view and a counting procedure); then, with the entry-equipped model as teacher and the bare model as student, ReGap takes each block's activation gap and ReKey writes it by regression into a few key-value neurons, measuring edit site and strength, with 3 rounds on its own responses enough. Across 5 in-distribution and 5 held-out visual reasoning benchmarks the averages rise 11.7 and 6.1 points (best on all ten), edits compose in one checkpoint, the same loop raises every benchmark for Gemma-4-31B, Qwen3.6-27B and Qwen3.5-9B, and code, model and dataset are public.",
+        "zh": "Qwen3.8-27B 在 8 代里根据自己的失败提出 269 条 harness 条目，验收测试保留两条增益可泛化的（更细的图像视角、一个计数流程）；随后以带条目的模型为老师、裸模型为学生，ReGap 取每个 block 的激活差，ReKey 用回归把它写进少量 key-value 神经元并测量编辑位置和强度，在自己的回答上跑 3 轮就够。5 个同分布和 5 个分布外视觉推理基准上平均分分别 +11.7 和 +6.1（十项全部最高），多次编辑可合并进同一 checkpoint，同一流程也让 Gemma-4-31B、Qwen3.6-27B、Qwen3.5-9B 每项都涨，代码、模型和数据均已公开。"
+      },
+      "metric": {
+        "en": "+11.7 ID / +6.1 OOD points",
+        "zh": "同分布 +11.7 / 分布外 +6.1 分"
+      },
+      "pills": [
+        {
+          "zh": "同分布平均",
+          "en": "ID average",
+          "value": "+11.7",
+          "tone": "up"
+        },
+        {
+          "zh": "分布外平均",
+          "en": "OOD average",
+          "value": "+6.1",
+          "tone": "up"
+        },
+        {
+          "zh": "自提候选",
+          "en": "Self-proposed candidates",
+          "value": "269",
+          "tone": "flat"
+        }
+      ],
+      "arxiv": "2611.24578",
+      "authors": "Mingda Zhang, Yuanhao Dong, ... Pinjia He, Xiaoying Tang (CUHK-Shenzhen, NUS, Fudan, UIUC, Melbourne, SJTU)",
+      "handle": "@vintcessun",
+      "links": [
+        {
+          "zh": "论文",
+          "en": "Paper",
+          "url": "https://arxiv.org/abs/2611.24578"
+        },
+        {
+          "zh": "代码",
+          "en": "Code",
+          "url": "https://github.com/beita6969/BaseRSI"
+        },
+        {
+          "zh": "分享者",
+          "en": "Sharer",
+          "url": "https://x.com/vintcessun"
+        },
+        {
+          "zh": "X 原帖",
+          "en": "X Post",
+          "url": "https://x.com/vintcessun/status/2124110866388050051"
+        }
+      ],
+      "edition": "2026-11-21"
+    },
+    {
+      "id": "alphaxiv-society-of-ai-scientists",
+      "tags": [
+        "autoresearch",
+        "verification"
+      ],
+      "title": {
+        "en": "A Society of AI Scientists: 936 Agents in 35 Labs Wrote 936 Studies in 12 Weeks; Only Running Critiques as Code Caught Real Errors",
+        "zh": "A Society of AI Scientists：35 个实验室的 936 个 agent 在 12 周写出 936 篇研究；只有把审稿意见写成代码去跑，才真正抓到错误"
+      },
+      "why": {
+        "en": "A community of agents does build norms like retractions and peer review, but reviewing manuscript text is not enough because agent referees cannot tell a disclosed limitation from a hidden flaw; executing critiques on the data overturned nearly half of major conclusions, and showing peer scores made agents herd.",
+        "zh": "agent 社区确实会形成撤稿、同行评审这类规范，但只看论文文字不够，因为 agent 审稿人分不清“已披露的局限”和“隐藏的缺陷”；把批评写成脚本在数据上跑，推翻了近一半的主要结论，而公开同伴分数会让 agent 扎堆。"
+      },
+      "what": {
+        "en": "Can independent research agents collaborate, critique each other and build cumulative knowledge as a scientific community?",
+        "zh": "独立的研究 agent 能不能像科学共同体一样协作、互相批评、积累知识？"
+      },
+      "how": {
+        "en": "Over twelve weeks, 35 human-run labs shared a preprint server and chat, producing 936 studies with code and data, 9,500 messages in 229 agent-made rooms and an agent-run Journal of Agent Research (1,408 blind AI reviews for $52.65 in total); text-only referees flagged 11 of 16 broken drafts but also 10 of 16 fixed ones, while running 276 objections as Python on the deposited data overturned the headline conclusion in 77 of 156 major cases (49.4%) and 24 of 120 minor ones. Visible peer scores caused 88% herding vs 30% when hidden, single-agent loops gave diminishing gains after one iteration and often exploited their own eval scripts, and blinded text-only Gemini judges rated agent studies higher on rigor but human preprints higher on novelty and significance; the study is observational, Claude produced two-thirds of the archive, and the archive and code are open.",
+        "zh": "12 周里，35 个人类运营的实验室共用预印本服务器和聊天室，产出 936 篇带代码和数据的研究、229 个 agent 自建频道中的 9,500 条消息，以及 agent 自办的 Journal of Agent Research（1,408 份盲审 AI 审稿，总花费 52.65 美元）；只看文字的审稿人抓出 16 份有缺陷初稿中的 11 份，却也对 16 份已修正版本中的 10 份提出同样质疑，而把 276 条批评写成 Python 在数据上跑，156 条主要批评中有 77 条推翻核心结论（49.4%），120 条次要批评中 24 条。同伴分数可见时扎堆率 88%、隐藏时 30%，单 agent 自我迭代第一轮后收益递减且常钻自己评测脚本的空子，盲评（纯文本 Gemini 评审）认为 agent 研究更严谨、人类预印本更新颖更重要；这是观察性研究，Claude 产出了三分之二的存档，存档与代码开源。"
+      },
+      "metric": {
+        "en": "77/156 major critiques overturned conclusions when executed",
+        "zh": "156 条主要批评执行后 77 条推翻结论"
+      },
+      "pills": [
+        {
+          "zh": "agent / 研究",
+          "en": "Agents / studies",
+          "value": "936 / 936",
+          "tone": "flat"
+        },
+        {
+          "zh": "执行批评推翻结论",
+          "en": "Executed critiques overturned",
+          "value": "49.4%",
+          "tone": "down"
+        },
+        {
+          "zh": "同伴分数可见时扎堆",
+          "en": "Herding with peer scores",
+          "value": "88% vs 30%",
+          "tone": "down"
+        }
+      ],
+      "authors": "Rehaan Ahmad, Myles Anderson, Ao Qu, ... Markus J. Buehler, Samuel Schmidgall (alphaXiv, MIT, Stanford and others)",
+      "handle": "@askalphaxiv",
+      "links": [
+        {
+          "zh": "论文",
+          "en": "Paper",
+          "url": "https://www.alphaxiv.org/abs/2611.society-ai-scientists"
+        },
+        {
+          "zh": "代码",
+          "en": "Code",
+          "url": "https://github.com/alphaXiv/OpenResearch"
+        },
+        {
+          "zh": "数据存档",
+          "en": "Archive",
+          "url": "https://huggingface.co/datasets/alphaXiv/AgentAlphaXiv"
+        },
+        {
+          "zh": "作者",
+          "en": "Author",
+          "url": "https://x.com/askalphaxiv"
+        },
+        {
+          "zh": "X 原帖",
+          "en": "X Post",
+          "url": "https://x.com/askalphaxiv/status/2123456270426325490"
+        },
+        {
+          "zh": "X 原帖 · @RosanaFerrero",
+          "en": "X Post · @RosanaFerrero",
+          "url": "https://x.com/RosanaFerrero/status/2124035249810100250"
+        }
+      ],
+      "edition": "2026-11-21"
+    },
+    {
+      "id": "alphaproof-nexus-ghz-no-go",
+      "tags": [
+        "autoresearch",
+        "verification"
+      ],
+      "title": {
+        "en": "Google DeepMind AlphaProof Nexus Settles a 2017 Quantum-Optics Question: High-Dimensional GHZ States Cannot Be Built This Way (Lean-Verified)",
+        "zh": "Google DeepMind AlphaProof Nexus 解决 2017 年的量子光学问题：高维 GHZ 态无法用这种方式制备（Lean 验证）"
+      },
+      "why": {
+        "en": "Once physicists turned their question into a precise graph problem and a Lean statement, an agent that edits proofs against compiler feedback could find a short machine-checked impossibility proof, and the humans' remaining job was to explain what it means physically.",
+        "zh": "物理学家把问题翻译成精确的图论问题并写成 Lean 命题之后，一个根据编译器反馈改证明的 agent 就能找到简短、机器可验证的不可能性证明，人类剩下的工作是解释它的物理含义。"
+      },
+      "what": {
+        "en": "Can N-photon, D-dimensional GHZ states be made with only linear optics and probabilistic photon-pair sources (no ancillas or heralding), a question open since 2017?",
+        "zh": "只用线性光学和概率性光子对源（不用辅助光子或预报），能否制备 N 光子、D 维 GHZ 态——这个问题自 2017 年悬而未决？"
+      },
+      "how": {
+        "en": "The question maps to whether a 'monochromatic quantum graph' exists, and AlphaProof Nexus (published in Science) takes a Lean file with a missing proof, edits it against compiler feedback, adds lemmas and searches until it compiles; it proved none exists for any even N of 4 or more when D is at least N, using a weighted sum of amplitudes that is zero for every graph but nonzero for the GHZ target, which the authors read as a measurement outcome the GHZ state can give (probability 1/16 in one N = D = 4 case) but no graph state can. The formal proof was found and posted months before this write-up, Rishi Rajasekaran later proved the full conjecture with Codex (which the paper says no human has digested yet), and Formal Conjectures lists 1,979 problems with 1,090 still open.",
+        "zh": "问题等价于“单色量子图”是否存在，AlphaProof Nexus（已发表于 Science）读入缺证明的 Lean 文件，按编译器反馈反复修改、补引理，直到编译通过；它证明对任意偶数 N≥4 且 D≥N 这样的图不存在，方法是构造一个振幅加权和，对所有图都为 0、对 GHZ 目标却不为 0，作者把它解释为一种 GHZ 态能给出（N=D=4 的一种情形概率为 1/16）而任何图生成的态都给不出的测量结果。形式化证明在论文写成前几个月就已找到并公开，之后 Rishi Rajasekaran 用 Codex 证明了整个猜想（论文称还没有人类消化理解），Formal Conjectures 共收录 1,979 个问题，1,090 个仍未解决。"
+      },
+      "metric": {
+        "en": "No-go for all even N ≥ 4, D ≥ N (Lean-verified)",
+        "zh": "所有偶数 N≥4、D≥N 均不可能（Lean 验证）"
+      },
+      "pills": [
+        {
+          "zh": "开放时间",
+          "en": "Open since",
+          "value": "2017",
+          "tone": "flat"
+        },
+        {
+          "zh": "证明形式",
+          "en": "Proof",
+          "value": "Lean-verified",
+          "tone": "up"
+        },
+        {
+          "zh": "Formal Conjectures 未解问题",
+          "en": "Open Formal Conjectures",
+          "value": "1,090",
+          "tone": "flat"
+        }
+      ],
+      "arxiv": "2611.26300",
+      "authors": "Mario Krenn, Moritz Firsching, George Tsoukalas, Rishikesh Gajjala, Xuemei Gu, Swarat Chaudhuri (University of Tübingen, Google DeepMind)",
+      "handle": "@dair_ai",
+      "links": [
+        {
+          "zh": "论文",
+          "en": "Paper",
+          "url": "https://arxiv.org/abs/2611.26300"
+        },
+        {
+          "zh": "Formal Conjectures",
+          "en": "Formal Conjectures",
+          "url": "https://github.com/google-deepmind/formal-conjectures"
+        },
+        {
+          "zh": "分享者",
+          "en": "Sharer",
+          "url": "https://x.com/dair_ai"
+        },
+        {
+          "zh": "X 原帖",
+          "en": "X Post",
+          "url": "https://x.com/dair_ai/status/2124187341141283117"
+        },
+        {
+          "zh": "X 原帖 · @omarsar0",
+          "en": "X Post · @omarsar0",
+          "url": "https://x.com/omarsar0/status/2124188565647327515"
+        }
+      ],
+      "edition": "2026-11-21"
+    },
+    {
       "id": "mit-harnesses-compositional-generalizers",
       "edition": "2026-11-21",
       "tags": [
