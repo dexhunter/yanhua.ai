@@ -19,6 +19,15 @@ window.YANHUA_DIGESTS = {
   },
   "editions": [
     {
+      "id": "2026-11-22",
+      "date": "2026-11-22",
+      "slot": "",
+      "label": {
+        "zh": "2026-11-22",
+        "en": "22 Nov 2026"
+      }
+    },
+    {
       "id": "2026-11-21",
       "date": "2026-11-21",
       "slot": "",
@@ -334,6 +343,288 @@ window.YANHUA_DIGESTS = {
     }
   ],
   "items": [
+    {
+      "id": "harvo-harness-evolution-vs-weight-updates",
+      "tags": [
+        "harness-search",
+        "agentic-rl"
+      ],
+      "title": {
+        "en": "Beyond Weight Updates: Evolving the Harness Recovers Most of an RL Fine-Tune's Gain With No GPU Training",
+        "zh": "Beyond Weight Updates：只进化 harness、不动权重，就能拿回 RL 微调大部分的提升"
+      },
+      "why": {
+        "en": "Much of what looks like domain expertise in a coding agent is really its harness (which tools, examples and planning template it sees), so GEPA-evolving that harness gets most of an 800-GPU-hour RL fine-tune's gain in about 4 CPU hours, beats it on office tasks, and does not shorten the model's reasoning the way fine-tuning does.",
+        "zh": "coding agent 身上很多看似“领域专长”的东西其实是 harness（能看到哪些工具、示例和规划模板），所以用 GEPA 进化 harness，大约 4 小时 CPU 就能拿到 800 GPU 小时 RL 微调的大部分收益，在办公任务上还更好，也不会像微调那样把模型的推理链变短。"
+      },
+      "what": {
+        "en": "Domain specialization of agents is usually done by RL or SFT on the weights; can a frozen policy be specialized by optimizing only its system prompt, tool schemas, skills and planning scaffold?",
+        "zh": "agent 的领域专精通常靠 RL 或 SFT 改权重；能不能冻结模型，只优化 system prompt、工具描述、skill 库和规划脚手架来做专精？"
+      },
+      "how": {
+        "en": "GEPA runs as an RL-style outer loop that reads failed trajectories, edits named harness fields (prompt, tool schemas, skills, planning template) and keeps a Pareto archive, producing a per-domain 'harness adapter' that loads and unloads like a LoRA while the policy stays frozen. On the Claude Code-style agent Codev, base / SAO weight RL / GEPA harness / combined score 0.31 / 0.52 / 0.48 / 0.61 on SWE-bench Verified, 0.28 / 0.49 / 0.51 / 0.63 on OfficeBench and 0.35 / 0.55 / 0.46 / 0.64 on Terminal-Bench (harness path = 55–110% of RL's gain; SAO about 800 H100-hours vs about 4 CPU hours for GEPA; each adapter leaves other domains within about 1 point; fine-tuning a Qwen3.5-4B policy raised reasoning truncation from 8.8% to 13.2% and cut median think length from 4,600 to 1,951 characters), with caveats: single author, one run per configuration, one agent and model family, and the linked harvo repo on GitHub returned 404 when checked.",
+        "zh": "GEPA 作为 RL 式外循环，读失败轨迹、修改 harness 的具名字段（prompt、工具描述、skill、规划模板）并维护 Pareto 档案，产出可按领域加载/卸载的“harness adapter”（类似 LoRA），模型本身保持冻结。在 Claude Code 风格的 agent Codev 上，基线 / SAO 权重 RL / GEPA harness / 两者结合分别为：SWE-bench Verified 0.31 / 0.52 / 0.48 / 0.61，OfficeBench 0.28 / 0.49 / 0.51 / 0.63，Terminal-Bench 0.35 / 0.55 / 0.46 / 0.64（harness 路径拿到 RL 收益的 55–110%；SAO 约 800 H100 小时，GEPA 约 4 小时 CPU；每个 adapter 对其他领域影响在 1 分以内；微调 Qwen3.5-4B 让推理截断率从 8.8% 升到 13.2%，推理链中位长度从 4,600 字符缩到 1,951），但要注意：单作者、每种配置只跑一次、只测了一个 agent 和模型家族，论文给出的 harvo GitHub 仓库检查时返回 404。"
+      },
+      "metric": {
+        "en": "Harness-only GEPA reaches 55–110% of RL's gain at ~0 GPU hours",
+        "zh": "只进化 harness 拿到 RL 收益的 55–110%，几乎不用 GPU"
+      },
+      "pills": [
+        {
+          "zh": "OfficeBench：GEPA vs RL",
+          "en": "OfficeBench: GEPA vs RL",
+          "value": "0.51 vs 0.49",
+          "tone": "up"
+        },
+        {
+          "zh": "结合后 SWE-bench Verified",
+          "en": "Combined SWE-bench Verified",
+          "value": "0.31→0.61",
+          "tone": "up"
+        },
+        {
+          "zh": "GPU 训练",
+          "en": "GPU training",
+          "value": "800 H100h → 0",
+          "tone": "up"
+        }
+      ],
+      "arxiv": "2611.25380",
+      "authors": "BoHao Chen (independent researcher)",
+      "handle": "@SciFi",
+      "links": [
+        {
+          "zh": "论文",
+          "en": "Paper",
+          "url": "https://arxiv.org/abs/2611.25380"
+        },
+        {
+          "zh": "分享者",
+          "en": "Sharer",
+          "url": "https://x.com/SciFi"
+        },
+        {
+          "zh": "X 原帖",
+          "en": "X Post",
+          "url": "https://x.com/SciFi/status/2124518254089474186"
+        }
+      ],
+      "edition": "2026-11-22"
+    },
+    {
+      "id": "evolution-under-fire-safety-harness",
+      "tags": [
+        "harness-search",
+        "co-evolution"
+      ],
+      "title": {
+        "en": "Evolution Under Fire: Co-Evolving Safety Harnesses and Prompt-Injection Attacks Cuts Attack Success From 50.4% to 3.0% Without Losing Utility",
+        "zh": "Evolution Under Fire：让安全 harness 和提示注入攻击一起进化，攻击成功率从 50.4% 降到 3.0%，可用性不降"
+      },
+      "why": {
+        "en": "Hand-written prompt-injection defenses are a fixed point that attackers learn around, but if the whole safety harness is searched as code while attacks that still let the task succeed are evolved against it, the search is pushed toward harnesses that are both safer and more useful, and they carry over to a different model unchanged.",
+        "zh": "手写的提示注入防御是固定不变的，攻击者总能绕过；而把整个安全 harness 当成代码去搜索，同时针对它进化“不破坏任务也能得手”的攻击，搜索就会被推向既更安全又更好用的 harness，而且换个模型直接就能用。"
+      },
+      "what": {
+        "en": "Tool-using agents read untrusted emails and webpages through the same channel as their instructions; can safety defenses be discovered automatically instead of redesigned by hand?",
+        "zh": "使用工具的 agent 通过同一渠道读取不可信的邮件、网页和指令；安全防御能不能自动发现，而不是每次靠人重新设计？"
+      },
+      "how": {
+        "en": "Stage 1 runs a utility-constrained, Pareto-scheduled tree search over complete executable harnesses (context construction, tool exposure, validation, recovery) with task model, benchmark, tools and evaluator frozen; stage 2 evolves lineages of prompt-injection 'stressors' that only count if the benign task still succeeds, and verified stressors become extra objectives for another round of harness search. On AgentDyn with GPT-4o-mini the chosen harness cuts attack success from 50.4% to 3.0% while clean utility goes 45.0% to 46.7% and attacked utility 36.1% to 39.1%; on Agent-SafetyBench with Qwen2.5-7B it goes 82.6% to 62.0% (8.5 points past the best reproduced baseline); at equal budget the best utility-matching harness is breached 17/560 times with stressor feedback vs 146/560 without, tree search reaches 9.3% vs 19.1% (uniform) and 28.0% (linear), and the harness moved unchanged to Qwen3.5-35B-A3B cuts attacks from 32.1% to 0.9% (no code link in the paper).",
+        "zh": "第一阶段在冻结任务模型、基准、工具和评测器的前提下，用带可用性约束、按 Pareto 调度的树搜索进化完整的可执行 harness（上下文构造、工具暴露、校验、恢复）；第二阶段进化提示注入“stressor”谱系，只有正常任务仍能完成时才算得手，验证过的 stressor 再作为新目标喂回 harness 搜索。AgentDyn + GPT-4o-mini 上，选出的 harness 把攻击成功率从 50.4% 降到 3.0%，干净可用性 45.0%→46.7%，受攻击可用性 36.1%→39.1%；Agent-SafetyBench + Qwen2.5-7B 上从 82.6% 降到 62.0%（比最强复现基线好 8.5 个点）；同等预算下，可用性达标的最佳 harness 有 stressor 反馈时被攻破 17/560 次、没有时 146/560 次，树搜索 9.3%、均匀采样 19.1%、单线进化 28.0%；这个 harness 不再调整直接用到 Qwen3.5-35B-A3B，攻击成功率 32.1%→0.9%（论文未给代码链接）。"
+      },
+      "metric": {
+        "en": "Attack success 50.4% → 3.0% on AgentDyn, utility up",
+        "zh": "AgentDyn 攻击成功率 50.4%→3.0%，可用性上升"
+      },
+      "pills": [
+        {
+          "zh": "AgentDyn 攻击成功率",
+          "en": "AgentDyn ASR",
+          "value": "50.4%→3.0%",
+          "tone": "up"
+        },
+        {
+          "zh": "迁移到 Qwen3.5-35B-A3B",
+          "en": "Transfer to Qwen3.5-35B-A3B",
+          "value": "32.1%→0.9%",
+          "tone": "up"
+        },
+        {
+          "zh": "受攻击可用性",
+          "en": "Attacked utility",
+          "value": "36.1%→39.1%",
+          "tone": "up"
+        }
+      ],
+      "arxiv": "2611.22583",
+      "authors": "Yujun Wang, Yilun Liu, Jinhe Bi, Krishna Kanth Nakka, Xuebing Zhou, Hinrich Schütze, Yunpu Ma (LMU Munich, MCML)",
+      "handle": "@Miqayelyan968",
+      "links": [
+        {
+          "zh": "论文",
+          "en": "Paper",
+          "url": "https://arxiv.org/abs/2611.22583"
+        },
+        {
+          "zh": "分享者",
+          "en": "Sharer",
+          "url": "https://x.com/Miqayelyan968"
+        },
+        {
+          "zh": "X 原帖",
+          "en": "X Post",
+          "url": "https://x.com/Miqayelyan968/status/2124265959900708895"
+        }
+      ],
+      "edition": "2026-11-22"
+    },
+    {
+      "id": "values-shape-self-improving-coding-agents",
+      "tags": [
+        "harness-search",
+        "memory-skills"
+      ],
+      "title": {
+        "en": "Cognizant: One Value Statement in a Self-Improving Coding Agent's Instruction File Changes What It Builds (Openness Beats First-Place Human on AHC039)",
+        "zh": "Cognizant：在自我改进 coding agent 的指令文件里加一句“价值观”，就会改变它造出的东西（openness 在 AHC039 上超过人类第一名）"
+      },
+      "why": {
+        "en": "Because each session inherits the last one's code, a short value line such as 'prefer the bold transformation over the safe incremental tweak' compounds into different algorithm families and bigger solvers, so openness beats no values while caution-first values do worse than none, and letting the agent rewrite its own values erases most of the difference.",
+        "zh": "每一轮都继承上一轮的代码，所以像“宁可大胆重构，也不要稳妥的小修小补”这样一句价值观会不断累积，带来不同的算法路线和更大的求解器；结果 openness 好于不写价值观，强调谨慎的价值观反而不如不写，而让 agent 自己改写价值观会抹掉大部分差异。"
+      },
+      "what": {
+        "en": "Self-improving agents are optimized for results; does a short persistent value statement change how well they do and what they build on open-ended coding tasks?",
+        "zh": "自我改进 agent 通常只按结果优化；一段简短、持久的价值观声明会不会改变它在开放式编程任务上的表现和造出的东西？"
+      },
+      "how": {
+        "en": "Claude Code with Claude Opus 5 runs 15 fresh 30-minute sessions per run, each reading an instruction file carrying one of four Schwartz value types (openness, conservation, self-enhancement, self-transcendence) or a no-value or length-matched placebo control, making one change, testing it on a dev scorer and committing, with 10 runs per condition on 6 tasks (ALE-Bench AHC039, Circle Packing, Entity Matching, Game 2048, Symbolic Regression, SZ-Tetris) and held-out scoring afterwards. On AHC039 openness vs no values has Cliff's delta +0.60 (p = 0.006) and conservation -0.64, placebo shows nothing, openness beats the same model's leaderboard entry and the first-place human solution, every openness solver switched to free-cell or graph-cut search while every conservation solver kept column search, letting the agent edit its own values shrinks the spread about 3x, and values distilled from AI literature give no detectable gain.",
+        "zh": "Claude Code + Claude Opus 5，每次运行 15 个全新的 30 分钟会话，每次读取带有一种 Schwartz 价值类型（openness、conservation、self-enhancement、self-transcendence）或无价值观、等长安慰剂对照的指令文件，做一处修改、在开发集评分器上测试后提交；6 个任务（ALE-Bench AHC039、Circle Packing、Entity Matching、Game 2048、Symbolic Regression、SZ-Tetris）每种条件跑 10 次，最后统一算留出集分数。AHC039 上与无价值观相比，openness 的 Cliff's delta 为 +0.60（p=0.006），conservation 为 -0.64（p=0.005），安慰剂无效果；openness 超过同模型的排行榜成绩和人类第一名解法，所有 openness 求解器都换成了 free-cell 或 graph-cut 搜索，所有 conservation 求解器保留按列搜索；允许 agent 改写价值观后差异缩小约 3 倍，从 AI 文献中提炼的价值观没有可测提升。"
+      },
+      "metric": {
+        "en": "Openness vs none on AHC039: Cliff's delta +0.60 (p = 0.006)",
+        "zh": "AHC039 上 openness 对比无价值观：Cliff's delta +0.60（p=0.006）"
+      },
+      "pills": [
+        {
+          "zh": "Openness（AHC039）",
+          "en": "Openness (AHC039)",
+          "value": "+0.60",
+          "tone": "up"
+        },
+        {
+          "zh": "Conservation（AHC039）",
+          "en": "Conservation (AHC039)",
+          "value": "-0.64",
+          "tone": "down"
+        },
+        {
+          "zh": "自改价值观后差异",
+          "en": "Spread with self-edited values",
+          "value": "÷3",
+          "tone": "flat"
+        }
+      ],
+      "arxiv": "2611.23067",
+      "authors": "Jason Liang, Dylan Waldner, Risto Miikkulainen (Cognizant AI Lab)",
+      "handle": "@noname_nonce",
+      "links": [
+        {
+          "zh": "论文",
+          "en": "Paper",
+          "url": "https://arxiv.org/abs/2611.23067"
+        },
+        {
+          "zh": "博客",
+          "en": "Blog",
+          "url": "https://jasonzliang.github.io/blog/values-shape-agents/"
+        },
+        {
+          "zh": "分享者",
+          "en": "Sharer",
+          "url": "https://x.com/noname_nonce"
+        },
+        {
+          "zh": "X 原帖",
+          "en": "X Post",
+          "url": "https://x.com/noname_nonce/status/2124438989788856567"
+        }
+      ],
+      "edition": "2026-11-22"
+    },
+    {
+      "id": "appsci-bench-llms-building-agents",
+      "tags": [
+        "harness-search",
+        "verification"
+      ],
+      "title": {
+        "en": "AppSci-Bench: Asked to Build Business Agents and Improve Them, LLMs Grade Their Own Work Too Kindly, So Self-Optimization Does Not Help Yet",
+        "zh": "AppSci-Bench：让 LLM 为业务搭建 agent 并自我优化，它们给自己打分太宽松，所以自我优化暂时没用"
+      },
+      "why": {
+        "en": "Models building agents write tiny internal tests that they max out within a round or two, so hill-climbing on their own grades reports 16.9 points of gain where the held-out score moves 3.2, and switching the optimization loop on makes no measurable difference, while the choice of harness around the model matters as much as the model.",
+        "zh": "搭 agent 的模型会写很小的内部测试集，一两轮就能拿满分，于是按自评分爬坡时自评显示涨了 16.9 分，留出集只涨 3.2 分；开不开优化循环没有可测差异，而模型外面套什么 harness 和模型本身一样重要。"
+      },
+      "what": {
+        "en": "Many benchmarks score agents, but few measure how well LLMs build agents end to end the way applied scientists do: elicit requirements, implement, benchmark and optimize.",
+        "zh": "很多基准评测 agent，但很少衡量 LLM 像应用科学家那样端到端搭建 agent 的能力：问清需求、实现、建评测、再优化。"
+      },
+      "how": {
+        "en": "Seven business tasks (τ-Airline, τ-Banking, call insights, slides, CRM, compliance, order-to-cash) come with a simulated business user, and the AppSci-Agent harness can optionally build an internal benchmark and hill-climb on it before artifacts are scored on held-out data (MMS@3). Claude Opus 5 leads at 55.7% in AppSci-Agent (44.7% with optimization on) and 59.1% in Claude Code, GPT-5.5 gets 11.9% there vs 33.3% in Codex, Haiku 4.5 and GPT-OSS-120B score 0, 86 of 132 builds reach a near-perfect self-score by round 2.5 on average (median internal set 7.5 samples), a stratified permutation test over 252 builds finds no significant effect of turning optimization on, humans elicit 83% of requirements vs at most 65% for models, and native-harness runs used 2–3x more tokens so those comparisons are not budget-matched (code: sanjari-orb/appsci-bench on GitHub).",
+        "zh": "7 个业务任务（τ-Airline、τ-Banking、通话洞察、幻灯片、CRM、合规审查、订单到收款）配一个模拟业务用户，AppSci-Agent harness 可选择先建内部基准再爬坡，产物在留出数据上评分（MMS@3）。Claude Opus 5 在 AppSci-Agent 中最高 55.7%（开优化时 44.7%），在 Claude Code 中 59.1%；GPT-5.5 在该 harness 中 11.9%，在 Codex 中 33.3%；Haiku 4.5 和 GPT-OSS-120B 为 0；132 次构建中 86 次平均在第 2.5 轮就把自评刷到接近满分（内部集中位数仅 7.5 个样本）；252 次构建的分层置换检验显示开启优化没有显著效果；人类能问出 83% 的需求，模型最多 65%；原生 harness 多用 2–3 倍 token，对比并非等预算（代码：GitHub 上的 sanjari-orb/appsci-bench）。"
+      },
+      "metric": {
+        "en": "Self-grade +16.9 vs held-out +3.2 per build",
+        "zh": "每次构建自评 +16.9，留出集仅 +3.2"
+      },
+      "pills": [
+        {
+          "zh": "Opus 5：Claude Code vs AppSci",
+          "en": "Opus 5: Claude Code vs AppSci",
+          "value": "59.1% vs 55.7%",
+          "tone": "flat"
+        },
+        {
+          "zh": "自评刷满的构建",
+          "en": "Builds saturating self-eval",
+          "value": "86/132",
+          "tone": "down"
+        },
+        {
+          "zh": "需求问出率 人类 vs 模型",
+          "en": "Requirements elicited human vs model",
+          "value": "83% vs ≤65%",
+          "tone": "down"
+        }
+      ],
+      "arxiv": "2611.25360",
+      "authors": "Sanjari Srivastava, Manpreet Kaur, Cheng Chang, ... Peng Qi (Uniphore)",
+      "handle": "@SciFi",
+      "links": [
+        {
+          "zh": "论文",
+          "en": "Paper",
+          "url": "https://arxiv.org/abs/2611.25360"
+        },
+        {
+          "zh": "代码",
+          "en": "Code",
+          "url": "https://github.com/sanjari-orb/appsci-bench"
+        },
+        {
+          "zh": "分享者",
+          "en": "Sharer",
+          "url": "https://x.com/SciFi"
+        },
+        {
+          "zh": "X 原帖",
+          "en": "X Post",
+          "url": "https://x.com/SciFi/status/2124506660425125956"
+        }
+      ],
+      "edition": "2026-11-22"
+    },
     {
       "id": "resolution-hypothesis-agent-evolution-noise",
       "tags": [
