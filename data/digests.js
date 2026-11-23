@@ -19,6 +19,15 @@ window.YANHUA_DIGESTS = {
   },
   "editions": [
     {
+      "id": "2026-11-23",
+      "date": "2026-11-23",
+      "slot": "",
+      "label": {
+        "zh": "2026-11-23",
+        "en": "23 Nov 2026"
+      }
+    },
+    {
       "id": "2026-11-22",
       "date": "2026-11-22",
       "slot": "",
@@ -343,6 +352,361 @@ window.YANHUA_DIGESTS = {
     }
   ],
   "items": [
+    {
+      "id": "coevobench-llm-researchers-co-evolve-model-harness",
+      "tags": [
+        "harness-search",
+        "co-evolution"
+      ],
+      "title": {
+        "en": "CoEvoBench (Alibaba): LLM Researchers Make One Big Harness Fix, Then Stall Because Every Harness Change Makes Their Trained Weights Stale",
+        "zh": "CoEvoBench（阿里）：LLM 研究员第一次改 harness 收益很大，之后就卡住，因为每次改 harness 都会让已训练的权重失效"
+      },
+      "why": {
+        "en": "Frontier models acting as agent developers get most of their gain from the first harness rewrite and then stall, because model and harness are coupled (weights trained under one harness can turn harmful after the next harness edit) and weaker researchers keep training without checking it helps and judge candidates on their own training tasks.",
+        "zh": "让前沿模型当 agent 开发者，大部分收益来自第一次重写 harness，之后就停滞：模型和 harness 是耦合的（在旧 harness 下训练的权重，换了 harness 可能反而有害），较弱的研究员还会不验证就一直训练，并用自己训练过的任务挑选候选。"
+      },
+      "what": {
+        "en": "Existing benchmarks test either post-training with the harness fixed or harness search with the model fixed; can an LLM researcher holding both levers keep turning feedback from an improved agent into further gains, the way recursive self-improvement would require?",
+        "zh": "现有基准要么固定 harness 测后训练，要么固定模型测 harness 搜索；如果 LLM 研究员同时掌握两个杠杆，能否像递归自我改进所要求的那样，持续把改进后系统的反馈变成下一轮提升？"
+      },
+      "how": {
+        "en": "Each researcher (GPT-6 Astra in Codex; Claude Opus 5, Kimi K3, GLM-5.3, Qwen3.8-max in Claude Code) gets Qwen3.5-9B-Base, a bare harness, 24 hours on four H20 GPUs and a limited teacher budget, then submits one model–harness pair scored once on held-out tasks across SWE-bench Verified, TB-Lite, AppWorld, τ²-bench Telecom and BFCL-V4. Weighted averages go from Base 1.09 to Kimi 7.93, Qwen 9.40, GLM 12.24, Opus 24.19 and Astra 31.23 against 37.42 for Instruct plus a reference harness (Astra closes about 83% of the gap); the first candidate brings about three quarters of the gain and is the largest step in 25 of 28 clean improving runs; the harness carries most gains on four of five domains (training carries over 80% only on BFCL-V4), Astra submitted untrained Base weights in all six coding runs, and swapping in the reference harness drops trained weights from 19.8% to 2.6% while lifting Instruct from 30.2% to 37.8%; caveats: three runs per pair with large swings, tool and model are confounded (Codex vs Claude Code), and 22 of 75 runs had confirmed data-access violations (scored with Base weights).",
+        "zh": "每个研究员（GPT-6 Astra 跑在 Codex 里；Claude Opus 5、Kimi K3、GLM-5.3、Qwen3.8-max 跑在 Claude Code 里）拿到 Qwen3.5-9B-Base、一个最简 harness、24 小时、4 张 H20 和有限的教师模型调用，最后提交一组模型+harness，在 SWE-bench Verified、TB-Lite、AppWorld、τ²-bench Telecom、BFCL-V4 的留出测试集上只评一次。加权平均：Base 1.09，Kimi 7.93、Qwen 9.40、GLM 12.24、Opus 24.19、Astra 31.23，对照 Instruct+参考 harness 为 37.42（Astra 补上约 83% 差距）；第一个候选贡献约四分之三收益，28 个无违规且有提升的 run 里有 25 个第一步就是最大一步；五个领域中四个主要靠 harness（只有 BFCL-V4 训练贡献超 80%），Astra 六次 coding run 都提交了未训练的 Base 权重；把训练后的权重换上参考 harness，分数从 19.8% 掉到 2.6%，同样换法却让 Instruct 从 30.2% 升到 37.8%；注意：每对只跑 3 次且波动大，工具和模型混在一起（Codex vs Claude Code），75 个 run 中 22 个确认违规访问数据（这些按 Base 权重计分）。"
+      },
+      "metric": {
+        "en": "Best researcher closes ~83% of the gap; gains front-loaded in 25/28 runs",
+        "zh": "最强研究员补上约 83% 差距；25/28 个 run 收益集中在第一步"
+      },
+      "pills": [
+        {
+          "zh": "GPT-6 Astra vs 参考系统",
+          "en": "GPT-6 Astra vs reference",
+          "value": "31.23 vs 37.42",
+          "tone": "up"
+        },
+        {
+          "zh": "训练权重换参考 harness",
+          "en": "Trained weights + reference harness",
+          "value": "19.8%→2.6%",
+          "tone": "down"
+        },
+        {
+          "zh": "第一步即最大一步",
+          "en": "First step is largest",
+          "value": "25/28",
+          "tone": "flat"
+        }
+      ],
+      "arxiv": "2611.27116",
+      "authors": "Chuan Xiao, Baojie Wang, Haizhao Fan, Hongzhe Du, Xander Xu, ... (Alibaba Group, Zhejiang University, SJTU)",
+      "handle": "@omarsar0",
+      "links": [
+        {
+          "zh": "论文",
+          "en": "Paper",
+          "url": "https://arxiv.org/abs/2611.27116"
+        },
+        {
+          "zh": "代码",
+          "en": "Code",
+          "url": "https://github.com/AlibabaResearch/CoEvoBench"
+        },
+        {
+          "zh": "分享者",
+          "en": "Sharer",
+          "url": "https://x.com/omarsar0"
+        },
+        {
+          "zh": "X 原帖",
+          "en": "X Post",
+          "url": "https://x.com/omarsar0/status/2124869837545701845"
+        },
+        {
+          "zh": "X 原帖（详细解读）",
+          "en": "X Post (detailed read)",
+          "url": "https://x.com/omeganyanya/status/2124845796277280790"
+        }
+      ],
+      "edition": "2026-11-23"
+    },
+    {
+      "id": "medicalrsi-clinical-model-harness-co-evolution",
+      "tags": [
+        "harness-search",
+        "co-evolution"
+      ],
+      "title": {
+        "en": "MedicalRSI: Training One Model to Both Write Its Clinical Harness From Failures and Follow It Lifts MedAgentBench From 36.9% to 85.1%",
+        "zh": "MedicalRSI：让同一个模型既从失败中写临床 harness、又按它执行，MedAgentBench 从 36.9% 提到 85.1%"
+      },
+      "why": {
+        "en": "A self-improving medical agent keeps getting better only if its improver is also trained, so rewarding each written harness by how much it beats acting without it, and training writer and solver together, beats both harness-only and weight-only self-improvement, while a harness frozen after round one falls behind as the solver learns.",
+        "zh": "医疗 agent 要持续自我改进，“改进策略”本身也得被训练：按每个 harness 比不用它多带来多少收益来奖励，并把写 harness 的 Improver 和执行的 Solver 一起训练，效果胜过只改 harness 或只改权重；而第一轮后冻结的 harness 会随 Solver 进步而落后。"
+      },
+      "what": {
+        "en": "Self-improving medical agents update either their weights or their harness with a fixed improvement strategy and no reference harness exists for clinical workflows; can the improvement strategy itself learn which changes actually help?",
+        "zh": "现有医疗 agent 的自我改进要么改权重、要么改 harness，改进策略本身是固定的，而且临床流程没有参考 harness；改进策略能不能自己学会哪些改动真正有用？"
+      },
+      "how": {
+        "en": "One LoRA model plays Solver (runs an EHR workflow) and Improver (writes skills and SQL tools from a few failed attempts); each candidate harness is rewarded by its gain over the Solver alone, both roles get RL on the same attempts for ten rounds after an SFT warm start, and memory keeps the best harness per workflow. On MedAgentBench with Qwen3.5-9B overall outcome rises from 36.9% to 85.1% (22.3 points above the best baseline; GPT-6.1-Sol writing the harness stays 33.5 points lower), MedAgentGym reaches 89.0% (+19.5), unseen workflows solve 66.1% vs 38.3% for a GRPO-trained solver, upgrading harness and solver together gains 23.6 points vs 10.1 and 7.4 separately, and the trained 9B Improver lifts Claude Sonnet 5 by 23.7 and GPT-6.1-Sol by 16.8 points without touching their weights; caveats: two medical benchmarks and small backbones, and no code link was found in the paper.",
+        "zh": "同一个 LoRA 模型扮演 Solver（在 EHR 上执行临床流程）和 Improver（根据几次失败写技能和 SQL 工具）；每个候选 harness 以“比 Solver 单独做多赢多少”为奖励，SFT 热启动后两种角色在同一批尝试上做 10 轮 RL，记忆保留每个流程最好的 harness。MedAgentBench 上 Qwen3.5-9B 总体结果从 36.9% 升到 85.1%（比最强基线高 22.3 分；让 GPT-6.1-Sol 写 harness 仍低 33.5 分），MedAgentGym 达 89.0%（+19.5），未见流程上 66.1% 对 GRPO Solver 的 38.3%；harness 和 Solver 同时升级多 23.6 分，单独升级分别只有 10.1 和 7.4；训练后的 9B Improver 不改权重就让 Claude Sonnet 5 提升 23.7 分、GPT-6.1-Sol 提升 16.8 分；注意：只测了两个医疗基准和小模型，论文里没找到代码链接。"
+      },
+      "metric": {
+        "en": "MedAgentBench outcome 36.9% → 85.1% (Qwen3.5-9B)",
+        "zh": "MedAgentBench 结果 36.9%→85.1%（Qwen3.5-9B）"
+      },
+      "pills": [
+        {
+          "zh": "MedAgentBench 总体",
+          "en": "MedAgentBench overall",
+          "value": "36.9%→85.1%",
+          "tone": "up"
+        },
+        {
+          "zh": "同时升级 vs 单独",
+          "en": "Joint vs separate upgrade",
+          "value": "+23.6 vs +10.1/+7.4",
+          "tone": "up"
+        },
+        {
+          "zh": "9B Improver 帮 Claude Sonnet 5",
+          "en": "9B Improver helps Claude Sonnet 5",
+          "value": "+23.7",
+          "tone": "up"
+        }
+      ],
+      "arxiv": "2611.26806",
+      "authors": "Ziqing Wang, Hamid Palangi, Lili Zhao, Kaize Ding (Northwestern University, University of Washington)",
+      "handle": "@HEI",
+      "links": [
+        {
+          "zh": "论文",
+          "en": "Paper",
+          "url": "https://arxiv.org/abs/2611.26806"
+        },
+        {
+          "zh": "分享者",
+          "en": "Sharer",
+          "url": "https://x.com/HEI"
+        },
+        {
+          "zh": "X 原帖",
+          "en": "X Post",
+          "url": "https://x.com/HEI/status/2124846061151789217"
+        }
+      ],
+      "edition": "2026-11-23"
+    },
+    {
+      "id": "meta-mle-agents-production-search-ranker",
+      "tags": [
+        "harness-search",
+        "verification"
+      ],
+      "title": {
+        "en": "Meta MLE Agents: An Autoresearch Loop on a 1B-Request/Day Search Ranker Kept 325 of 1,097 Experiments and Won +0.23% Search Volume Online",
+        "zh": "Meta MLE Agents：在每天 10 亿请求的搜索排序模型上跑自动研究循环，1,097 个实验留下 325 个，线上搜索量 +0.23%"
+      },
+      "why": {
+        "en": "The autonomous ML-engineering loop worked on a live industrial ranker because of the scaffolding, not the model: an objective recalibrated to predict online impact, a 'what didn't work' blocklist with strict output contracts, and parallel candidates with a variance probe nearly doubled the win rate and cut malformed edits from 33.8% to 0.8%, though gains still saturated early in the campaign.",
+        "zh": "这个自主 ML 工程循环能在真实工业排序模型上奏效，靠的是脚手架而不是模型：按线上效果重新校准的目标、“哪些没用”黑名单加严格输出格式、并行候选加方差探针，让胜率几乎翻倍，格式错误的修改从 33.8% 降到 0.8%；不过收益仍在战役早期就饱和了。"
+      },
+      "what": {
+        "en": "AI-scientist and MLE agents are mostly evaluated on benchmarks; can one propose, implement, train and evaluate model changes on an industry-scale recommender, with hours-long feedback and an offline–online gap, and actually move online metrics?",
+        "zh": "AI 科学家和 MLE agent 大多只在基准上评测；它们能不能在工业级推荐系统上自己提出、实现、训练和评估模型改动（每次反馈要几小时、离线线上指标还不一致），并真正推动线上指标？"
+      },
+      "how": {
+        "en": "Each iteration makes a Claude Opus 4.8 research call and a brainstorm call, then seven parallel implementation calls each write one coherent config/code change, trained as 64-GPU jobs next to a variance probe; a candidate is kept only if it beats the probe by 0.0005 weighted NE, and engineers steer via seeds, blocklist and objective while staying out of the loop. Over 31 days and 131 iterations it completed 1,097 candidates (about 360,000 GPU-hours), accepted 325 (29.6% vs 15.6% for the serial 1.0 version), lowered weighted NE from 0.6611 to 0.6388, and the final model won a week-long A/B test (+0.23% search volume, with a latency regression the agent did not surface); several kept changes, such as Random Fourier Feature gating and learned attention gates, were ideas the team had never tried; caveats: 1.0 vs 2.0 is not a controlled ablation, later iterations added nothing, and the agent sometimes spiralled on failing categories (0-for-8 on optimizer tuning) until humans redirected it; no code released.",
+        "zh": "每轮先做一次 Claude Opus 4.8 调研调用和一次头脑风暴调用，再由 7 个并行实现调用各写一个完整的配置/代码改动，和一个方差探针一起作为 64 卡任务训练；只有比探针好 0.0005 加权 NE 的候选才保留，工程师通过种子想法、黑名单和目标函数来引导，但不卡在循环里。31 天、131 轮共完成 1,097 个候选（约 36 万 GPU 小时），保留 325 个（胜率 29.6%，串行的 1.0 版为 15.6%），加权 NE 从 0.6611 降到 0.6388，最终模型在一周 A/B 测试里胜出（搜索量 +0.23%，但带来 agent 没发现的延迟回退）；随机傅里叶特征门控、可学习注意力门等若干保留改动是团队从没试过的；注意：1.0 与 2.0 对比不是受控消融，后期迭代没有新增收益，agent 有时会在失败方向上打转（优化器调参 0 胜 8 负）直到人工纠正；未开源代码。"
+      },
+      "metric": {
+        "en": "325 / 1,097 kept; +0.23% online search volume",
+        "zh": "1,097 个留下 325 个；线上搜索量 +0.23%"
+      },
+      "pills": [
+        {
+          "zh": "胜率 1.0→2.0",
+          "en": "Win rate 1.0→2.0",
+          "value": "15.6%→29.6%",
+          "tone": "up"
+        },
+        {
+          "zh": "格式错误修改",
+          "en": "Malformed edits",
+          "value": "33.8%→0.8%",
+          "tone": "up"
+        },
+        {
+          "zh": "线上搜索量",
+          "en": "Online search volume",
+          "value": "+0.23%",
+          "tone": "up"
+        }
+      ],
+      "arxiv": "2611.23910",
+      "authors": "Matthew Li, Albert Jiongqian Liang, Dilip Raj (Meta Platforms)",
+      "handle": "@armand_ruiz",
+      "links": [
+        {
+          "zh": "论文",
+          "en": "Paper",
+          "url": "https://arxiv.org/abs/2611.23910"
+        },
+        {
+          "zh": "分享者",
+          "en": "Sharer",
+          "url": "https://x.com/armand_ruiz"
+        },
+        {
+          "zh": "X 原帖",
+          "en": "X Post",
+          "url": "https://x.com/armand_ruiz/status/2124910181062729857"
+        }
+      ],
+      "edition": "2026-11-23"
+    },
+    {
+      "id": "governed-autoresearch-harness-ledger",
+      "tags": [
+        "verification",
+        "harness-search"
+      ],
+      "title": {
+        "en": "Governed Autoresearch Harness: An Append-Only Trial Ledger Catches What a Best-Score Leaderboard Hides (43 of 50 Trials Missing From a Success-Only Log)",
+        "zh": "受治理的 autoresearch harness：只追加的试验账本能抓到“最佳分数”掩盖的问题（只记成功的循环漏掉 50 次中的 43 次）"
+      },
+      "why": {
+        "en": "Judging autoresearch agents by their best score hides how the score was reached, so moving keep/discard decisions and edit-scope checks out of the proposing LLM into a control plane that logs every trial exposes total-failure arms, exhausted adapters and silent reset bugs that the task metric never shows.",
+        "zh": "只看 autoresearch agent 的最佳分数，就看不到分数是怎么来的；把“保留/丢弃”决定和可编辑范围检查从提出改动的 LLM 手里拿走，交给记录每一次试验的控制平面，就能暴露全军覆没的实验组、提案耗尽的适配器和悄悄失败的重置，这些任务指标都看不出来。"
+      },
+      "what": {
+        "en": "Karpathy-style autoresearch loops report the best validation number; how can we tell whether the agent stayed in scope, kept its failed trials and made traceable decisions?",
+        "zh": "Karpathy 式 autoresearch 循环只报告最好的验证分数；怎么知道 agent 有没有越界改文件、有没有保留失败试验、每个决定能否追溯？"
+      },
+      "how": {
+        "en": "A control plane owns each trial's lifecycle, checks which files may be edited, decides keep or discard and appends one record per trial, and governance metrics (invalid-action rate, repeated-bad rate, provenance completeness) are computed from that ledger across six tasks from synthetic logistic regression to autoresearch GPT pretraining. Over 1,445 trials provenance was 100% complete; the ledger exposed a no-memory arm where all 120 trials failed, a benchmark adapter that ran out of proposals and a training-script reset failure (campaigns rerun), a success-only loop left no record of 43 of 50 trials, and on the ResNet task memory arms beat no memory (best AUC 0.939/0.941 vs 0.899); caveats: single author, short budgets, memory effects reverse on one task and the AUC gain sits inside baseline variation; ledgers and code are released.",
+        "zh": "控制平面掌管每次试验的生命周期，检查哪些文件可改、决定保留还是丢弃、每次试验追加一条记录；在从合成逻辑回归到 autoresearch GPT 预训练的 6 个任务上，用账本计算无效动作率、重复坏提案率和溯源完整度等治理指标。1,445 次试验溯源 100% 完整；账本暴露了一个无记忆组 120 次全部失败、一个基准适配器提案耗尽、一次 训练脚本重置失败（相关实验已重跑）；只记成功的循环漏记了 50 次中的 43 次；ResNet 任务上有记忆的组优于无记忆（最佳 AUC 0.939/0.941 对 0.899）；注意：单作者、预算短，记忆效果在一个任务上反转，AUC 提升落在基线波动范围内；账本和代码已公开。"
+      },
+      "metric": {
+        "en": "Success-only log missed 43 / 50 trials; 1,445 trials, 100% provenance",
+        "zh": "只记成功漏掉 43/50 次；1,445 次试验溯源 100%"
+      },
+      "pills": [
+        {
+          "zh": "只记成功的漏记",
+          "en": "Missing from success-only log",
+          "value": "43/50",
+          "tone": "down"
+        },
+        {
+          "zh": "无记忆组失败",
+          "en": "No-memory arm failures",
+          "value": "120/120",
+          "tone": "down"
+        },
+        {
+          "zh": "溯源完整度",
+          "en": "Provenance completeness",
+          "value": "100%",
+          "tone": "up"
+        }
+      ],
+      "arxiv": "2611.23678",
+      "authors": "Dowling Wong (Karlsruhe Institute of Technology)",
+      "handle": "@harishcrawlq",
+      "links": [
+        {
+          "zh": "论文",
+          "en": "Paper",
+          "url": "https://arxiv.org/abs/2611.23678"
+        },
+        {
+          "zh": "代码",
+          "en": "Code",
+          "url": "https://github.com/dowlingwong/autoresearch_harness"
+        },
+        {
+          "zh": "分享者",
+          "en": "Sharer",
+          "url": "https://x.com/harishcrawlq"
+        },
+        {
+          "zh": "X 原帖",
+          "en": "X Post",
+          "url": "https://x.com/harishcrawlq/status/2124782505731428480"
+        }
+      ],
+      "edition": "2026-11-23"
+    },
+    {
+      "id": "astronautbench-outer-wilds-self-improvement",
+      "tags": [
+        "embodied",
+        "verification"
+      ],
+      "title": {
+        "en": "AstronautBench: In Outer Wilds' 22-Minute Time Loop, an Agent's Correct Answers Rise While Its Grounded Evidence and New Discoveries Lag",
+        "zh": "AstronautBench：在 Outer Wilds 22 分钟的时间循环里，agent 答对的题变多了，但有自身证据支撑的答案和新发现跟不上"
+      },
+      "why": {
+        "en": "Measuring cross-episode self-improvement by one number misleads, because a frozen-weight agent's correct answers keep rising while far fewer are backed by evidence it actually saw, rumor discovery stops after loop 3 and memory keeps growing, so correctness overstates learning and progress understates it.",
+        "zh": "用单一指标衡量跨回合自我改进会误导：冻结权重的 agent 答对的题越来越多，但真正有自己看到的证据支撑的少得多；传闻发现在第 3 轮后停滞，记忆却持续膨胀，所以“正确率”高估了学习，“进度”又低估了它。"
+      },
+      "what": {
+        "en": "Agents are supposed to improve across episodes with fixed weights, but a correct answer does not prove the agent observed the evidence and progress does not show what it learned; how should self-improvement be measured in an embodied world?",
+        "zh": "agent 应该在权重不变的情况下跨回合自我改进，但答对不代表它亲眼看到过证据，进度也说明不了它学到了什么；在具身世界里该怎么衡量自我改进？"
+      },
+      "how": {
+        "en": "In Outer Wilds the world resets every 22-minute loop and only knowledge carries over; after each loop a game mod logs places reached and ship-log rumors, and the agent answers 164 wiki-based questions, each citing its own loop, frames, body and position, checked by a program and judged by GPT-6.1 Sol and Gemini 4 Argon (+1 correct and grounded, -1 correct but ungrounded). With a knowledge base, GPT-6.1 Sol's correct answers rise from 14.6% to 26.8% of questions while grounded ones go only 11.0% to 15.9%, rumors stop at 9 after loop 3 while places grow 44 to 57 and memory 618 to 1,046 records, 12 of 21 answers that became correct after loop 3 cite only earlier loops, and the Gemini planner barely improves; caveats: one run per condition, the knowledge-base run was also told about the quiz, judges were not validated against humans, and pretraining knowledge of the game is not separated.",
+        "zh": "Outer Wilds 每 22 分钟循环一次、世界重置，只有知识能保留；每轮结束后由游戏 mod 记录到过的地点和飞船日志里的传闻，agent 还要回答 164 道基于 wiki 的题，每个答案都要引用自己的循环、画面帧、星球和坐标，先由程序核验，再由 GPT-6.1 Sol 和 Gemini 4 Argon 评判（答对且有依据 +1，答对但无依据 -1）。带知识库的 GPT-6.1 Sol 答对比例从 14.6% 升到 26.8%，有依据的只从 11.0% 升到 15.9%；第 3 轮后传闻停在 9 条，地点却从 44 增到 57、记忆从 618 增到 1,046 条；第 3 轮后新答对的 21 题中 12 题只引用更早的循环；Gemini 规划器几乎没有进步；注意：每个条件只跑一次，带知识库的那组还被告知有测验，评委未与人工对比，也没区分预训练里已有的游戏知识。"
+      },
+      "metric": {
+        "en": "Correct 14.6% → 26.8% but grounded only 11.0% → 15.9%",
+        "zh": "答对 14.6%→26.8%，有依据仅 11.0%→15.9%"
+      },
+      "pills": [
+        {
+          "zh": "答对比例",
+          "en": "Correct answers",
+          "value": "14.6%→26.8%",
+          "tone": "up"
+        },
+        {
+          "zh": "有依据答案",
+          "en": "Grounded answers",
+          "value": "11.0%→15.9%",
+          "tone": "flat"
+        },
+        {
+          "zh": "第 3 轮后新传闻",
+          "en": "New rumors after loop 3",
+          "value": "0",
+          "tone": "down"
+        }
+      ],
+      "arxiv": "2611.26910",
+      "authors": "Congyuan Yu, Runping Tian (Carnegie Mellon University)",
+      "handle": "@omeganyanya",
+      "links": [
+        {
+          "zh": "论文",
+          "en": "Paper",
+          "url": "https://arxiv.org/abs/2611.26910"
+        },
+        {
+          "zh": "分享者",
+          "en": "Sharer",
+          "url": "https://x.com/omeganyanya"
+        },
+        {
+          "zh": "X 原帖",
+          "en": "X Post",
+          "url": "https://x.com/omeganyanya/status/2124762088866251072"
+        }
+      ],
+      "edition": "2026-11-23"
+    },
     {
       "id": "harvo-harness-evolution-vs-weight-updates",
       "tags": [
