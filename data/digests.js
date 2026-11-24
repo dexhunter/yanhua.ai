@@ -19,6 +19,15 @@ window.YANHUA_DIGESTS = {
   },
   "editions": [
     {
+      "id": "2026-11-24",
+      "date": "2026-11-24",
+      "slot": "",
+      "label": {
+        "zh": "2026-11-24",
+        "en": "24 Nov 2026"
+      }
+    },
+    {
       "id": "2026-11-23",
       "date": "2026-11-23",
       "slot": "",
@@ -352,6 +361,363 @@ window.YANHUA_DIGESTS = {
     }
   ],
   "items": [
+    {
+      "id": "demystifying-autoresearch-harness-folding-skill-deletion",
+      "tags": [
+        "harness-search",
+        "autoresearch"
+      ],
+      "title": {
+        "en": "Demystifying the Autoresearch Harness: Keep a Short Note per Past Attempt and Delete Unused Lessons; Rolling Summaries Barely Help",
+        "zh": "拆解 autoresearch harness：给每次历史尝试留一条短记录、删掉没人用的经验；滚动摘要几乎没用"
+      },
+      "why": {
+        "en": "A self-evolving research agent improves most when it can still see each past attempt as a separate, re-openable note, because that lets it fit about 7× more history into the same context and target its next try, while squashing history into one rolling summary loses the detail and gains almost nothing.",
+        "zh": "自我演化的研究 agent 能否进步，关键在于还能把每次过去的尝试当作一条可以重新打开的独立记录来看：这样同样的上下文能装下约 7 倍的历史、下一次尝试更有针对性；而把历史压成一份滚动摘要会丢掉细节，几乎没有收益。"
+      },
+      "what": {
+        "en": "Autoresearch harnesses bundle many memory mechanisms at once, so which piece of context management and skill management actually makes a long-horizon self-evolving agent better?",
+        "zh": "现有 autoresearch harness 把多种记忆机制捆在一起，长程自我演化 agent 的提升到底来自上下文管理和技能管理里的哪一部分？"
+      },
+      "how": {
+        "en": "Inside one propose/refine/debug loop with a 32k-token budget, the authors swap one mechanism at a time against recency truncation on 10 MLE-Bench competitions and 50 KernelBench tasks with gpt-oss-120b, gpt-6-luna and gpt-6-sol. Folding (one digest per attempt, full record re-openable) wins all six settings (+8.6% average, up to +19.2%; about 42 attempts in 12.1k tokens vs 6.2 in 18.4k), compaction adds only +0.3%, and deleting skills unused for 5 rounds (+4.1%) beats promotion (+3.0%) and merging (+2.2%); skill management helps gpt-oss-120b (+5.1%, 6.4–7.1 skills picked per prompt) more than the gpt-6 models (about 2%, 0.5–1.9 picks); Combining folding and deletion as MLEvolver gives a 72.7% medal rate on MLE-Bench Lite (16/22, 10 golds) and 94% fast_1 on KernelBench Level 3, ahead of AIDE and OpenEvolve at equal budget; caveats: small task subsets, a single agent framework, and no code link found in the paper.",
+        "zh": "在同一个 propose/refine/debug 循环（32k token 预算）里，作者每次只换一种机制，与“按新旧截断”基线对比，测试 10 个 MLE-Bench 比赛和 50 个 KernelBench 任务，模型为 gpt-oss-120b、gpt-6-luna、gpt-6-sol。Folding（每次尝试一条摘要、完整记录可按需打开）在全部 6 个设置中最好（平均 +8.6%，最高 +19.2%；用 12.1k token 保留约 42 次尝试，基线用 18.4k 只留 6.2 次），compaction 仅 +0.3%；删除 5 轮未被调用的技能（+4.1%）优于升级为固定规则（+3.0%）和合并相似技能（+2.2%）；技能管理对 gpt-oss-120b 帮助更大（+5.1%，每个 prompt 选 6.4–7.1 条技能），对 gpt-6 系列约 2%（只选 0.5–1.9 条）；把 folding 和 deletion 组合成 MLEvolver，在 MLE-Bench Lite 上获奖率 72.7%（16/22，10 金），KernelBench Level 3 fast_1 达 94%，同预算下超过 AIDE 和 OpenEvolve；注意：任务子集较小、只用了一个 agent 框架，论文里没找到代码链接。"
+      },
+      "metric": {
+        "en": "Folding +8.6% avg across 6 settings; MLEvolver 72.7% medal rate",
+        "zh": "Folding 6 个设置平均 +8.6%；MLEvolver 获奖率 72.7%"
+      },
+      "pills": [
+        {
+          "zh": "Folding vs 截断基线",
+          "en": "Folding vs truncation",
+          "value": "+8.6% avg",
+          "tone": "up"
+        },
+        {
+          "zh": "滚动摘要 compaction",
+          "en": "Rolling-summary compaction",
+          "value": "+0.3%",
+          "tone": "flat"
+        },
+        {
+          "zh": "MLEvolver MLE-Bench Lite 获奖率",
+          "en": "MLEvolver MLE-Bench Lite medals",
+          "value": "72.7%",
+          "tone": "up"
+        }
+      ],
+      "arxiv": "2611.28244",
+      "authors": "Kelvin Kiu-Wai Tam, Newt Hue-Nam K. Nguyen, Tianshi Zheng, ..., Yangqiu Song, Ginny Y. Wong, Simon See (HKUST, University of Tokyo, National Taiwan University, NVIDIA AI Technology Center)",
+      "handle": "@arkyyang",
+      "links": [
+        {
+          "zh": "论文",
+          "en": "Paper",
+          "url": "https://arxiv.org/abs/2611.28244"
+        },
+        {
+          "zh": "分享者",
+          "en": "Sharer",
+          "url": "https://x.com/arkyyang"
+        },
+        {
+          "zh": "X 原帖",
+          "en": "X Post",
+          "url": "https://x.com/arkyyang/status/2125244515305107599"
+        }
+      ],
+      "edition": "2026-11-24"
+    },
+    {
+      "id": "inventa-decentralized-self-improving-research-units",
+      "tags": [
+        "autoresearch",
+        "harness-search"
+      ],
+      "title": {
+        "en": "Inventa (Amazon): Research Units That Rewrite Their Own Mutator Harness and Share Only Verified Findings Keep Gaining With Budget While Other Searchers Plateau",
+        "zh": "Inventa（亚马逊）：会自己改写 mutator harness、只共享经验证结论的研究单元，预算越多收益越大，而其他搜索方法早早停滞"
+      },
+      "why": {
+        "en": "Adding more agents or rounds to automated discovery usually stalls because agents converge on similar ideas and spread unsupported claims, and Inventa avoids this by letting each unit's orchestrator retune or swap its own mutator when progress stops and by letting only verifiers write to the shared memory.",
+        "zh": "自动化科研里加更多 agent 或更多轮次通常会停滞，因为 agent 会收敛到相似想法、还会互相传播没有依据的结论；Inventa 让每个单元的编排者在进展停滞时自己调整或更换 mutator，并且只允许验证器写共享记忆，从而避开了这个问题。"
+      },
+      "what": {
+        "en": "Why does scaling the number of agents or iterations in LLM-driven scientific discovery fail to yield more diverse, feasible ideas, and can a self-adapting, verified-memory design fix it across the research cycle?",
+        "zh": "为什么在 LLM 驱动的科学发现中增加 agent 数量或迭代次数，并不能带来更多样、更可行的想法；一个会自我调整、只用经验证记忆的设计，能否在整个科研流程上解决这个问题？"
+      },
+      "how": {
+        "en": "Each autonomous unit grows an idea tree with a mutator agent, picks parents by Thompson sampling on verified fitness, and a local orchestrator periodically revises the mutator's harness or replaces its model or restarts when progress stalls; verifiers (including component ablations) publish verified gains, useful parts and constraint violations to a shared knowledge store that is the only channel between units. It ranks first on five benchmarks: EurekaBench 73.6% vs 56.2% for CORAL (and the only method passing every scientific-constraint test), ScholarCatalyst retrieval 44.5% vs 36.5% for OpenCode, IdeaBench 26.0 distinct novel ideas per paper vs 18.6 for ResearchAgent with 82% fewer calls (61.6 at a larger budget), IdeaScientist 82.7%, and SciLaws-Bench 62.8%, beating the published law on 31 of 38 tasks; caveats: novelty is scored by LLM judges (re-scoring with two unused judges still keeps it ahead), discoveries are benchmark laws rather than lab-confirmed findings, and a project page is linked but no code was found in the paper.",
+        "zh": "每个自主研究单元用 mutator agent 生长一棵想法树，按经验证的适应度做 Thompson 采样选父节点；本地编排者定期修改 mutator 的 harness，进展停滞时更换模型或重启；验证器（含组件消融）把经验证的提升、有用组件和违反约束的情况写入共享知识库，这是单元之间唯一的通信渠道。在 5 个基准上都排第一：EurekaBench 73.6%（CORAL 56.2%，且只有它通过全部科学约束测试），ScholarCatalyst 检索 44.5%（OpenCode 36.5%），IdeaBench 每篇论文 26.0 个不同的新颖想法（ResearchAgent 18.6，调用少 82%；更大预算下 61.6），IdeaScientist 82.7%，SciLaws-Bench 62.8%，38 个任务中 31 个超过已发表的定律；注意：新颖性由 LLM 评委打分（换两个未参与搜索的评委重评仍领先），“发现”是基准中的定律而非实验证实，论文给了项目页但没找到代码。"
+      },
+      "metric": {
+        "en": "EurekaBench 73.6% vs 56.2% (CORAL); 82% fewer calls on IdeaBench",
+        "zh": "EurekaBench 73.6% 对 56.2%（CORAL）；IdeaBench 调用少 82%"
+      },
+      "pills": [
+        {
+          "zh": "EurekaBench CS",
+          "en": "EurekaBench CS",
+          "value": "73.6% vs 56.2%",
+          "tone": "up"
+        },
+        {
+          "zh": "IdeaBench 新颖想法/篇",
+          "en": "IdeaBench novel ideas/paper",
+          "value": "26.0 vs 18.6",
+          "tone": "up"
+        },
+        {
+          "zh": "模型调用",
+          "en": "Model calls",
+          "value": "-82%",
+          "tone": "up"
+        }
+      ],
+      "arxiv": "2611.21847",
+      "authors": "Prithwish Jana, Nikos Kanakaris, Purak Jain, Anoop Deoras, Sahika Genc (Amazon; Georgia Tech)",
+      "handle": "@ApollonVisual",
+      "links": [
+        {
+          "zh": "论文",
+          "en": "Paper",
+          "url": "https://arxiv.org/abs/2611.21847"
+        },
+        {
+          "zh": "项目页",
+          "en": "Project page",
+          "url": "https://jprithwish.github.io/inventa/"
+        },
+        {
+          "zh": "分享者",
+          "en": "Sharer",
+          "url": "https://x.com/ApollonVisual"
+        },
+        {
+          "zh": "X 原帖",
+          "en": "X Post",
+          "url": "https://x.com/ApollonVisual/status/2125144770922037321"
+        }
+      ],
+      "edition": "2026-11-24"
+    },
+    {
+      "id": "neon-vs-opus-karpathy-autoresearch-overnight",
+      "tags": [
+        "autoresearch"
+      ],
+      "title": {
+        "en": "Gemini 4 Neon vs Claude Opus 5.5 on Karpathy's Autoresearch: Fewer, Bolder Architecture Bets Beat More Careful Sweeps (3.7% vs 2.1% on Held-Out Data)",
+        "zh": "Gemini 4 Neon 对 Claude Opus 5.5 跑 Karpathy autoresearch：更少但更大胆的架构押注，胜过更多更稳的参数扫描（留出集 3.7% 对 2.1%）"
+      },
+      "why": {
+        "en": "In an overnight no-human autoresearch run, the model that ran fewer but bolder architecture experiments improved the GPT more than the one that ran more careful sweeps, because one cheap n-gram memory idea, which it then generalised from bigrams to 4-grams, produced most of the gain.",
+        "zh": "在一整夜无人值守的 autoresearch 中，实验更少但架构押注更大胆的模型，把 GPT 改进得比实验更多、扫描更稳的模型更好，因为一个廉价的 n-gram 记忆想法（它还主动从 bigram 推广到 4-gram）带来了大部分收益。"
+      },
+      "what": {
+        "en": "Given the same small real GPT training setup, one H100 and 10 hours with no human in the loop, which frontier model does better autonomous ML research, and how do their research styles differ?",
+        "zh": "给同样的小型真实 GPT 训练环境、一张 H100、10 小时、无人干预，哪个前沿模型的自主 ML 研究做得更好；它们的研究风格有何不同？"
+      },
+      "how": {
+        "en": "Each model edited the training script one experiment at a time and kept a change only if it beat its best by more than run-to-run noise; each model's best script was then retrained from scratch on 3 seeds and scored on a never-seen shard. Neon reached 0.9573 test bits per byte (3.7% better than Karpathy's 0.9940) vs 0.9732 for Opus (2.1%), about 1.76× the improvement and roughly 2.3× vs 1.6× training speedup; Neon ran 35 experiments and kept 4 ($35.07, ~8 min per idea at high thinking), Opus ran 60 and kept 6 ($27.46, ~1.5 min at medium effort), and Opus got 3 of its 6 keeps by combining near-misses; caveats: one task and one night per model, default reasoning settings differ, and it is a personal project; the repo has code, every prompt, response, the training script and log.",
+        "zh": "两个模型每次改一处 the training script，只有比此前最好结果高出运行噪声以上才保留；最后各自最好的 the training script 从零重训 3 个种子，在从未见过的数据分片上评分。Neon 测试 bits per byte 为 0.9573（比 Karpathy 原版 0.9940 好 3.7%），Opus 为 0.9732（好 2.1%），改进约为 1.76 倍，训练加速约 2.3 倍对 1.6 倍；Neon 做了 35 个实验、保留 4 个（$35.07，high thinking 下每个想法约 8 分钟），Opus 做了 60 个、保留 6 个（$27.46，medium effort 约 1.5 分钟），Opus 6 个保留中有 3 个来自合并“差一点”的改动；注意：每个模型只有一个任务、一个晚上，默认推理设置不同，属个人项目；仓库公开了代码、全部 prompt 与回复、the training script 和训练日志。"
+      },
+      "metric": {
+        "en": "Held-out improvement 3.7% (Neon) vs 2.1% (Opus)",
+        "zh": "留出集改进 3.7%（Neon）对 2.1%（Opus）"
+      },
+      "pills": [
+        {
+          "zh": "留出集提升",
+          "en": "Held-out gain",
+          "value": "3.7% vs 2.1%",
+          "tone": "up"
+        },
+        {
+          "zh": "实验/保留",
+          "en": "Experiments/kept",
+          "value": "35/4 vs 60/6",
+          "tone": "flat"
+        },
+        {
+          "zh": "API 成本",
+          "en": "API cost",
+          "value": "$35.07 vs $27.46",
+          "tone": "flat"
+        }
+      ],
+      "authors": "Harris (independent project)",
+      "handle": "@harris_p10",
+      "links": [
+        {
+          "zh": "代码与报告",
+          "en": "Repo & write-up",
+          "url": "https://github.com/harris-nyc/neon-autoresearch"
+        },
+        {
+          "zh": "Karpathy autoresearch",
+          "en": "Karpathy autoresearch",
+          "url": "https://github.com/karpathy/autoresearch"
+        },
+        {
+          "zh": "分享者",
+          "en": "Sharer",
+          "url": "https://x.com/harris_p10"
+        },
+        {
+          "zh": "X 原帖",
+          "en": "X Post",
+          "url": "https://x.com/harris_p10/status/2124953374349013449"
+        },
+        {
+          "zh": "X 原帖（仓库链接）",
+          "en": "X Post (repo link)",
+          "url": "https://x.com/harris_p10/status/2124953937795260794"
+        }
+      ],
+      "edition": "2026-11-24"
+    },
+    {
+      "id": "language-models-rewrite-their-own-weights",
+      "tags": [
+        "rsi",
+        "self-modification"
+      ],
+      "title": {
+        "en": "Language Models Can Rewrite Their Own Weights: A 27B Model Edits Itself Without Gradients and Gets 6.6 Points Better, but Smaller Models Break Themselves",
+        "zh": "语言模型能改写自己的权重：27B 模型不用梯度改了自己、准确率 +6.6 分，但更小的模型会把自己改坏"
+      },
+      "why": {
+        "en": "A 27B open model can improve its own weights by reasoning alone because it measures before it edits (comparing hidden states of answers that finish vs ones that run out of tokens and keeping only edits its paired tests support), while 2B–9B models guess with random noise and break themselves, so the ability appears only at scale.",
+        "zh": "27B 开源模型能仅靠推理改进自己的权重，是因为它先测量再动手（比较能写完的答案和超出 token 的答案的隐藏状态，只保留配对测试支持的改动）；2B–9B 模型则靠随机加噪去猜，结果把自己改坏，所以这种能力只在大模型上出现。"
+      },
+      "what": {
+        "en": "Models are frozen after training and prompt or harness improvements vanish after the task; can a model instead diagnose its own failure and permanently rewrite the weights behind it with forward passes only?",
+        "zh": "模型训练后就被冻结，prompt 或 harness 的改进在任务结束后就没了；模型能否只用前向推理诊断自己的失败，并永久改写背后的权重？"
+      },
+      "how": {
+        "en": "In a session the model (Qwen3.5 family) gets a Python tool that can read and replace its own weight tensors, a helper for rank-one edits W − αuuᵀW, its hidden states, and up to 20 forward passes to test edits on practice problems, and must submit an edit only if it reduces the diagnosed failure without lowering accuracy. The 27B model removed 5% of the finished-vs-unfinished direction from two layer-8 output matrices (a 0.6%/0.1% norm change), and a second-protocol edit lifted accuracy 6.6 points on 490 unseen DeepScaleR problems in a pre-registered paired test (the first-protocol edit was smaller: 57.2% → 58.3%); on a deliberately corrupted copy it found the damaged layer-30 matrix and, without reading the original weights, restored held-out accuracy from 0% to 33.0% (base 58.5%) and image tasks to 83% of base, while the 2B made no edit and the 4B and 9B broke themselves; caveats: the main natural failure fixed is answers running out of tokens, one model family, and no code link in the paper.",
+        "zh": "每次会话里，模型（Qwen3.5 系列）拿到一个能读取并替换自身权重张量的 Python 工具、做秩一改动 W − αuuᵀW 的辅助函数、自己的隐藏状态，以及最多 20 次前向推理来在练习题上测试改动；只有当改动减少了诊断出的失败且不降低准确率时才提交。27B 模型从第 8 层两个输出矩阵中去掉了 5% 的“写完 vs 未写完”方向（范数变化 0.6%/0.1%），第二套协议下的改动在 490 道未见过的 DeepScaleR 题上、预先固定的配对测试中提升 6.6 分（第一套协议的改动较小：57.2%→58.3%）；面对故意损坏的副本，它找出被破坏的第 30 层矩阵，在不读取原始权重的情况下把留出准确率从 0% 恢复到 33.0%（原模型 58.5%），图像任务恢复到原模型的 83%；而 2B 不做改动，4B 和 9B 把自己改坏；注意：修复的主要是答案超出 token 上限这一类失败，只测了一个模型家族，论文里没有代码链接。"
+      },
+      "metric": {
+        "en": "+6.6 points on 490 unseen problems from a self-written weight edit",
+        "zh": "自写权重改动在 490 道未见题上 +6.6 分"
+      },
+      "pills": [
+        {
+          "zh": "27B 自改提升",
+          "en": "27B self-edit gain",
+          "value": "+6.6 pts",
+          "tone": "up"
+        },
+        {
+          "zh": "损坏副本修复",
+          "en": "Damaged-copy repair",
+          "value": "0%→33.0%",
+          "tone": "up"
+        },
+        {
+          "zh": "4B/9B",
+          "en": "4B/9B",
+          "value": "break themselves",
+          "tone": "down"
+        }
+      ],
+      "arxiv": "2611.21885",
+      "authors": "Jiajun Fan, Neil He, Changyi Yang, ..., Ruihan Guo, Ge Liu (UIUC, CMU, Rutgers, Princeton, Stanford, Yale)",
+      "handle": "@MosiTaku",
+      "links": [
+        {
+          "zh": "论文",
+          "en": "Paper",
+          "url": "https://arxiv.org/abs/2611.21885"
+        },
+        {
+          "zh": "分享者",
+          "en": "Sharer",
+          "url": "https://x.com/MosiTaku"
+        },
+        {
+          "zh": "X 原帖",
+          "en": "X Post",
+          "url": "https://x.com/MosiTaku/status/2125179389931614674"
+        },
+        {
+          "zh": "X 原帖（解读）",
+          "en": "X Post (commentary)",
+          "url": "https://x.com/predictionmkts1/status/2125145190352752936"
+        }
+      ],
+      "edition": "2026-11-24"
+    },
+    {
+      "id": "anthropic-claude-vp-vnp-lean-proof",
+      "tags": [
+        "autonomous-discovery",
+        "formal-math"
+      ],
+      "title": {
+        "en": "Anthropic Posts a Claude-Discovered, Lean-Checked Proof Claiming VP ≠ VNP Over Every Field, With No Human Mathematician Check Yet",
+        "zh": "Anthropic 发布由 Claude 发现、经 Lean 检查的证明，声称在任意域上 VP ≠ VNP，目前尚无人类数学家审核"
+      },
+      "why": {
+        "en": "An internal Claude model's claimed superpolynomial lower bound is credible only as far as the Lean kernel and the statement file go, because Lean checks the proofs but no machine checks that the Lean statement says what the paper claims, and no human has reviewed it yet.",
+        "zh": "内部 Claude 模型声称的超多项式下界，可信程度只到 Lean 内核和命题文件为止：Lean 检查了证明，但没有机器能检查 Lean 命题是否就是论文所声称的内容，而且目前还没有人审核过。"
+      },
+      "what": {
+        "en": "Can an AI model autonomously produce and formally verify a result on a long-open complexity question (Valiant's 1979 algebraic analogue of P vs NP)?",
+        "zh": "AI 模型能否自主得出并形式化验证一个长期悬而未决的复杂性问题（Valiant 1979 年提出的 P vs NP 代数版本）的结果？"
+      },
+      "how": {
+        "en": "The anthropics/formal-math vp-vnp folder holds a paper by \"Claude (Anthropic)\" and a Lean 4 formalization claiming circuits for the Hamiltonian cycle polynomial, and for the permanent outside characteristic 2, need more than m^(c(log m)^(1/3)) gates, so VP is a proper subset of VNP and VNP is not in the closure of VP (it does not settle P vs NP). The statement file imports only Mathlib, the build should name no axioms beyond the three standard Lean axioms, and CI re-checks the proofs with a second independent kernel (nanoda) via Comparator; the README says both paper and Lean were written by AI and no human mathematician has checked the proof; caveats: only the repo README was read for this card, not the 70-page paper or the Lean code, and the correspondence between the Lean statement and the claim is not machine-checked.",
+        "zh": "anthropics/formal-math 仓库的 vp-vnp 目录包含一篇署名“Claude (Anthropic)”的论文和 Lean 4 形式化，声称 Hamiltonian cycle 多项式以及特征不为 2 时的 permanent 所需电路门数超过 m^(c(log m)^(1/3))，因此 VP 真包含于 VNP、且 VNP 不在 VP 的闭包内（并不解决 P vs NP）。the statement file 只引入 Mathlib，构建后应只出现 三个标准 Lean 公理，CI 还通过 Comparator 用第二个独立内核 nanoda 复查证明；README 写明论文和 Lean 都由 AI 撰写，尚无人类数学家检查；注意：本卡片只读了仓库 README，没读 70 页论文和 Lean 代码；Lean 命题与原问题是否对应没有机器检查。"
+      },
+      "metric": {
+        "en": "Lean-checked by two kernels; zero human review so far",
+        "zh": "两个内核检查通过；尚无人类审核"
+      },
+      "pills": [
+        {
+          "zh": "下界",
+          "en": "Lower bound",
+          "value": "m^(c(log m)^(1/3))",
+          "tone": "up"
+        },
+        {
+          "zh": "独立内核复查",
+          "en": "Second-kernel recheck",
+          "value": "nanoda",
+          "tone": "up"
+        },
+        {
+          "zh": "人类审核",
+          "en": "Human review",
+          "value": "none yet",
+          "tone": "flat"
+        }
+      ],
+      "authors": "Claude (Anthropic)",
+      "handle": "@Octoberry",
+      "links": [
+        {
+          "zh": "仓库",
+          "en": "Repo",
+          "url": "https://github.com/anthropics/formal-math/tree/main/vp-vnp"
+        },
+        {
+          "zh": "分享者",
+          "en": "Sharer",
+          "url": "https://x.com/Octoberry"
+        },
+        {
+          "zh": "X 原帖",
+          "en": "X Post",
+          "url": "https://x.com/Octoberry/status/2125009880398385269"
+        }
+      ],
+      "edition": "2026-11-24"
+    },
     {
       "id": "coevobench-llm-researchers-co-evolve-model-harness",
       "tags": [
