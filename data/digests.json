@@ -19,6 +19,15 @@
   },
   "editions": [
     {
+      "id": "2026-11-25",
+      "date": "2026-11-25",
+      "slot": "",
+      "label": {
+        "zh": "2026-11-25",
+        "en": "25 Nov 2026"
+      }
+    },
+    {
       "id": "2026-11-24",
       "date": "2026-11-24",
       "slot": "",
@@ -361,6 +370,369 @@
     }
   ],
   "items": [
+    {
+      "id": "cogentic-google-multi-agent-proof-discovery-harness",
+      "tags": [
+        "harness-search",
+        "verification"
+      ],
+      "title": {
+        "en": "Cogentic (Google Research): A Research-Group-Style Prove–Verify Harness Turns Gemini Into an Open-Problem Solver, With 6 New Math Papers Posted Today",
+        "zh": "Cogentic（Google Research）：像研究小组一样分工的“证明—验证”harness 让 Gemini 解决开放问题，今天又发布 6 篇数学论文"
+      },
+      "why": {
+        "en": "Google's Cogentic shows a frontier model can settle open math and theory problems from a bare problem statement once it is wrapped in a research-group loop of parallel provers, adversarial verifiers and a ledger of already-verified lemmas, because single-shot generation cannot keep competing conjectures and partial progress alive over a long horizon.",
+        "zh": "Google 的 Cogentic 表明：只给问题描述，前沿模型也能解决开放的数学和理论计算机问题，前提是把它放进一个像研究小组一样的循环里——多个并行 prover、默认每一步都错的对抗式 verifier、以及一本记录已验证引理的账本，因为单次生成撑不住长程探索中相互竞争的猜想和阶段性进展。"
+      },
+      "what": {
+        "en": "Can an agent harness, rather than a better single model call, produce research-level natural-language proofs on open problems without expert hints?",
+        "zh": "在没有专家提示的情况下，能否靠 agent harness（而不是更强的单次模型调用）在开放问题上产出研究级的自然语言证明？"
+      },
+      "how": {
+        "en": "Each round an orchestrator assigns parallel provers (Antigravity agents) to distinct claims or counterexample searches, a summarizer writes each prover its own briefing from past attempts and verifier objections, and a draft is accepted only if both a per-draft verifier and a side-by-side verifier (both assuming every step and citation is wrong until checked) pass it, while lemmas confirmed inside rejected drafts are kept in a verified ledger for later rounds. Run on Gemini 3.1 Pro or an early Gemini 4 Argon, the paper reports 5 expert-verified results in online learning, auction theory and mechanism design, and the google-research repo now lists 10 companion papers including 6 posted on 25 Nov (such as unconditional integer factorization in time L_N[1/3, O(1)] and a log-rank conjecture bound past the square-root barrier); caveats: the harness code is not released, the paper has no ablations or baselines, and the new papers are PDFs posted to GitHub.",
+        "zh": "每一轮由 orchestrator 把多个并行 prover（Antigravity agent）分配到不同的命题或反例搜索方向，summarizer 根据历史尝试和 verifier 的反对意见为每个 prover 单独写简报；草稿必须同时通过逐篇 verifier 和并排比较的 verifier（两者都默认每一步、每条引用都是错的，直到核实）才被接受，而在被否决草稿里确认成立的引理会存入 verified ledger 供后续轮次使用。以 Gemini 3.1 Pro 或早期 Gemini 4 Argon 为底座，论文报告了在线学习、拍卖理论和机制设计中 5 个经专家验证的结果，google-research 仓库现已列出 10 篇配套论文，其中 6 篇于 11 月 25 日发布（如 L_N[1/3, O(1)] 时间内的无条件整数分解、突破平方根壁垒的 log-rank 猜想界）；注意：harness 代码未开源，论文没有消融或基线对比，新论文只是放在 GitHub 上的 PDF。"
+      },
+      "metric": {
+        "en": "10 companion papers (6 posted 25 Nov); harness code not released",
+        "zh": "10 篇配套论文（11 月 25 日新增 6 篇）；harness 代码未开源"
+      },
+      "pills": [
+        {
+          "zh": "论文中经专家验证的结果",
+          "en": "Expert-verified results in paper",
+          "value": "5",
+          "tone": "up"
+        },
+        {
+          "zh": "仓库中配套论文",
+          "en": "Companion papers in repo",
+          "value": "10",
+          "tone": "up"
+        },
+        {
+          "zh": "harness 代码",
+          "en": "Harness code",
+          "value": "not public",
+          "tone": "flat"
+        }
+      ],
+      "arxiv": "2609.40324",
+      "authors": "Yang Cai, Vineet Gupta, Yanchen Jiang, Christopher Liaw, Aranyak Mehta, Grigoris Velegkas, Di Wang (Google Research)",
+      "handle": "@Hesamation",
+      "links": [
+        {
+          "zh": "论文",
+          "en": "Paper",
+          "url": "https://arxiv.org/abs/2609.40324"
+        },
+        {
+          "zh": "论文合集",
+          "en": "Papers repo",
+          "url": "https://github.com/google-research/google-research/tree/master/cogentic_research_papers"
+        },
+        {
+          "zh": "项目页",
+          "en": "Project site",
+          "url": "https://sites.google.com/view/cogentic"
+        },
+        {
+          "zh": "分享者",
+          "en": "Sharer",
+          "url": "https://x.com/Hesamation"
+        },
+        {
+          "zh": "X 原帖",
+          "en": "X Post",
+          "url": "https://x.com/Hesamation/status/2125578517433749763"
+        }
+      ],
+      "edition": "2026-11-25"
+    },
+    {
+      "id": "lm-harnesses-compositional-generalizers-rlm",
+      "tags": [
+        "harness-search",
+        "agentic-rl"
+      ],
+      "title": {
+        "en": "Language Model Harnesses Can Be Compositional Generalizers: Train the Recursive Harness on Short Tasks and It Solves Much Longer Ones",
+        "zh": "语言模型 harness 可以做组合泛化：在短任务上训练递归 harness，就能解决长得多的任务"
+      },
+      "why": {
+        "en": "Training a model inside a recursive harness that hands each sub-call only a small, familiar slice of the task generalizes to much longer and new-domain tasks, because every individual LM call stays in-distribution even when the whole task is novel, whereas training the bare model on the same short tasks barely moves its long-task scores.",
+        "zh": "在递归 harness 里训练模型——每个子调用只看到任务中一小块熟悉的内容——可以泛化到长得多、甚至新领域的任务，因为即使整体任务是新的，每一次 LM 调用仍处于训练分布之内；而用同样的短任务直接训练裸模型，长任务成绩几乎不动。"
+      },
+      "what": {
+        "en": "Agents are post-trained inside harnesses that keep piling context onto the model, so can a harness that manages context programmatically make long-horizon training cheaper by letting the model compose skills it already has?",
+        "zh": "agent 通常在不断累积上下文的 harness 中做后训练，那么一个以程序方式管理上下文的 harness，能否让模型组合已有能力、从而让长程训练更便宜？"
+      },
+      "how": {
+        "en": "The authors RL-train Recursive Language Model (RLM) harnesses, which keep context in a REPL and delegate sub-tasks to recursive sub-calls, on short task splits only: the RLM jumps from 0.02 to 0.88 on MRCRv2 and 0.30 to 0.98 on GraphWalks at longer lengths, while the base Transformer with YaRN trained on the same short tasks stays near 0.01 and 0.08, and training on one domain transfers to others with the same decomposition structure. For messy tasks they propose surrogate harness training on synthetic environments with fake tools and sub-calls, which yields RLM-27B, lifting an eight-benchmark long-context suite from 46.1 to 58.5 (+26.9%) over Qwen3.8-27B in the same harness while using fewer turns and tokens; caveats: RL gains depend on the starting policy (+7 points for Qwen3-30B-A3B but only +2.4 for Qwen3.8-27B on short-task RL), and no code link was found in the paper.",
+        "zh": "作者只用短任务对 Recursive Language Model（RLM）harness 做 RL——它把上下文放在 REPL 中、通过递归子调用委派子任务：在更长的测试长度上，RLM 在 MRCRv2 上从 0.02 升到 0.88、GraphWalks 从 0.30 升到 0.98，而同样短任务训练的基础 Transformer（加 YaRN）仍停留在约 0.01 和 0.08；在一个领域上训练还能迁移到分解结构相同的其他领域。针对复杂任务，他们提出 surrogate harness training：用带假工具和假子调用的合成环境训练，得到 RLM-27B，在同一 harness 内把八个长上下文基准的平均分从 46.1 提到 58.5（+26.9%，相对 Qwen3.8-27B），且用更少的轮次和 token；注意：RL 收益依赖初始策略（短任务 RL 对 Qwen3-30B-A3B +7 分，对 Qwen3.8-27B 仅 +2.4），论文中未找到代码链接。"
+      },
+      "metric": {
+        "en": "MRCRv2 0.02 → 0.88 from short-task training; RLM-27B +26.9% on 8 benchmarks",
+        "zh": "短任务训练后 MRCRv2 0.02 → 0.88；RLM-27B 在 8 个基准上 +26.9%"
+      },
+      "pills": [
+        {
+          "zh": "MRCRv2（长度泛化）",
+          "en": "MRCRv2 (length generalization)",
+          "value": "0.02 → 0.88",
+          "tone": "up"
+        },
+        {
+          "zh": "裸 Transformer 同样训练",
+          "en": "Bare Transformer, same training",
+          "value": "0.00 → 0.01",
+          "tone": "flat"
+        },
+        {
+          "zh": "RLM-27B 八基准均分",
+          "en": "RLM-27B 8-benchmark avg",
+          "value": "46.1 → 58.5",
+          "tone": "up"
+        }
+      ],
+      "arxiv": "2611.28298",
+      "authors": "Alex L. Zhang, Souradip Chakraborty, Omar Khattab",
+      "handle": "@devoto_alessio",
+      "links": [
+        {
+          "zh": "论文",
+          "en": "Paper",
+          "url": "https://arxiv.org/abs/2611.28298"
+        },
+        {
+          "zh": "分享者",
+          "en": "Sharer",
+          "url": "https://x.com/devoto_alessio"
+        },
+        {
+          "zh": "X 原帖",
+          "en": "X Post",
+          "url": "https://x.com/devoto_alessio/status/2125604279482478818"
+        }
+      ],
+      "edition": "2026-11-25"
+    },
+    {
+      "id": "delegent-frontier-leads-slm-does-legwork",
+      "tags": [
+        "harness-search"
+      ],
+      "title": {
+        "en": "Delegent: Keep the Frontier Model in Charge and Hand the Legwork to a Local Small Model, Cutting Frontier Cost by 59–67% With No Loss",
+        "zh": "Delegent：让前沿模型继续主导、把跑腿活交给本地小模型，前沿成本降低 59–67%，效果不降"
+      },
+      "why": {
+        "en": "Most of a frontier coding or search agent's bill is legwork like reading code, running tests and searching documents, so letting the frontier model stay in charge while a small local model does those subtasks and returns only short reports cuts frontier cost by about two-thirds without losing tasks, and a one-paragraph delegation instruction does most of the saving.",
+        "zh": "前沿编程/搜索 agent 的大部分开销花在读代码、跑测试、搜文档这类跑腿活上，所以让前沿模型继续主导、把这些子任务交给本地小模型并只回传简短报告，可以在不丢任务的情况下把前沿成本砍掉约三分之二，而其中大部分节省来自一段委派指令。"
+      },
+      "what": {
+        "en": "Frontier agents re-read their whole context at every step and do every subtask themselves, so how much of that cost can be removed without hurting results?",
+        "zh": "前沿 agent 每一步都要重读整个上下文、亲自完成每个子任务，这部分成本能去掉多少而不影响结果？"
+      },
+      "how": {
+        "en": "Built on Claude Code, Delegent routes subagent calls to a small language model (Qwen3.8-27B-FP8 or a 2B MiniCPM5) plus an instruction telling the frontier model to delegate finding and checking, and with GPT-6.1-Sol it cuts frontier cost by 67% on long-horizon coding (DeepSWE $2.11 to $0.70 per task) and 59% on agentic search (663 of 694 questions solved either way), with the 2B model still saving 66% on coding. The instruction alone gives about three-fifths of the saving (frontier cost to 60%) and the SLM the rest, about 80% of the saving comes from moving Claude Code's default frontier-model subagents onto the SLM, and without the instruction the 2B SLM loses 7 of 50 tasks; caveats: tied to Claude Code, Claude Opus 5.5 tested on DeepSWE only, and the authors claim no performance gain.",
+        "zh": "Delegent 基于 Claude Code，把子 agent 调用路由到小模型（Qwen3.8-27B-FP8 或 2B 的 MiniCPM5），并加一段指令让前沿模型把“找”和“查”委派出去；以 GPT-6.1-Sol 为前沿模型，长程编程前沿成本降 67%（DeepSWE 每任务 $2.11 → $0.70），agentic search 降 59%（两种设置都解出 694 题中的 663 题），2B 小模型在编程上也能省 66%。仅靠指令就贡献约五分之三的节省（前沿成本降到 60%），其余来自小模型；约 80% 的节省来自把 Claude Code 默认由前沿模型跑的子 agent 换成小模型，而去掉指令时 2B 小模型会让 50 题少解 7 题；注意：方法绑定 Claude Code，Claude Opus 5.5 只在 DeepSWE 上测过，作者也不声称性能提升。"
+      },
+      "metric": {
+        "en": "Frontier cost −67% coding, −59% search, no task loss",
+        "zh": "前沿成本编程 −67%、搜索 −59%，任务不减"
+      },
+      "pills": [
+        {
+          "zh": "编程前沿成本",
+          "en": "Coding frontier cost",
+          "value": "−67%",
+          "tone": "up"
+        },
+        {
+          "zh": "搜索前沿成本",
+          "en": "Search frontier cost",
+          "value": "−59%",
+          "tone": "up"
+        },
+        {
+          "zh": "2B 小模型编程节省",
+          "en": "2B SLM coding saving",
+          "value": "−66%",
+          "tone": "up"
+        }
+      ],
+      "arxiv": "2611.33098",
+      "authors": "Lingwei Gu, Jimmy Lin (University of Waterloo)",
+      "handle": "@arkyyang",
+      "links": [
+        {
+          "zh": "论文",
+          "en": "Paper",
+          "url": "https://arxiv.org/abs/2611.33098"
+        },
+        {
+          "zh": "代码",
+          "en": "Code",
+          "url": "https://github.com/castorini/delegent"
+        },
+        {
+          "zh": "分享者",
+          "en": "Sharer",
+          "url": "https://x.com/arkyyang"
+        },
+        {
+          "zh": "X 原帖",
+          "en": "X Post",
+          "url": "https://x.com/arkyyang/status/2125603059191718339"
+        },
+        {
+          "zh": "X 原帖 2",
+          "en": "X Post 2",
+          "url": "https://x.com/arnaudmercier/status/2125468247440953569"
+        }
+      ],
+      "edition": "2026-11-25"
+    },
+    {
+      "id": "recurscibench-rsi-scientific-research-transfer",
+      "tags": [
+        "verification",
+        "memory-skills"
+      ],
+      "title": {
+        "en": "RecurSciBench: Half of Self-Improved Science Agents Got Worse on New Tasks, and Gains Often Hide Regressions",
+        "zh": "RecurSciBench：一半自我改进后的科研 agent 在新任务上反而变差，整体增益常常掩盖了单任务退步"
+      },
+      "why": {
+        "en": "Letting science agents self-improve on some tasks does not reliably make them better on new ones, because the same stored experience or harness edit helps one task and hurts another, so half of the evolved agent states scored lower overall and even the positive ones regressed on at least 8 of 20 held-out tasks.",
+        "zh": "让科研 agent 在部分任务上自我改进，并不能可靠地让它在新任务上变好，因为同一份经验或 harness 修改会帮助一个任务、损害另一个任务：一半的演化后状态整体得分下降，即使整体为正的也在 20 个留出任务中至少 8 个上退步。"
+      },
+      "what": {
+        "en": "How do you measure whether a recursively self-improving research agent actually gets better on independent, scientifically verifiable tasks rather than on the tasks it evolved on?",
+        "zh": "如何衡量递归自我改进的科研 agent 是否真的在独立、可科学验证的新任务上变好，而不只是在演化用的任务上变好？"
+      },
+      "how": {
+        "en": "RecurSciPipe auto-builds executable modeling and data-analysis tasks from raw datasets in physics, life, earth and chemistry with execution and scientific-validity checks, then four RSI systems (EvoScientist, SIA-H, HyperAgents, InternAgent-1.5, all on GLM-5.3-Flash) evolve on source tasks and are frozen and scored on 20 independent test tasks. EvoScientist gains only +1.1% to +1.4% while harness-only SIA-H drops 2.7% to 3.3%, cross-domain transfer is positive for EvoScientist from all four source domains but negative for SIA-H in all four, and experience from one domain sometimes helps another without helping its own; caveats: one backbone, four systems and 20 test tasks.",
+        "zh": "RecurSciPipe 从物理、生命、地球和化学领域的原始数据集自动构建可执行的建模和数据分析任务，并做执行检查和科学有效性检查；四个 RSI 系统（EvoScientist、SIA-H、HyperAgents、InternAgent-1.5，都用 GLM-5.3-Flash）先在源任务上演化，再冻结并在 20 个独立测试任务上评分。EvoScientist 只提升 +1.1% 到 +1.4%，只改 harness 的 SIA-H 下降 2.7% 到 3.3%；跨领域迁移中 EvoScientist 在四个源领域上都为正，SIA-H 在四个上都为负，而且一个领域的经验有时能帮到其他领域、却帮不了本领域；注意：只用一个底座模型、四个系统和 20 个测试任务。"
+      },
+      "metric": {
+        "en": "Half of evolved states have negative overall gain",
+        "zh": "一半演化后状态整体增益为负"
+      },
+      "pills": [
+        {
+          "zh": "EvoScientist 演化增益",
+          "en": "EvoScientist evolution gain",
+          "value": "+1.1–1.4%",
+          "tone": "up"
+        },
+        {
+          "zh": "SIA-H 演化增益",
+          "en": "SIA-H evolution gain",
+          "value": "−2.7–3.3%",
+          "tone": "down"
+        },
+        {
+          "zh": "至少退步的任务数",
+          "en": "Tasks regressed (min)",
+          "value": "8 / 20",
+          "tone": "down"
+        }
+      ],
+      "arxiv": "2611.32508",
+      "authors": "Wenxi Xu, Chuan Qin, Zihan Wang, Zixing Chen, Le Zhang, Jingbo Zhou, Hao Wang, Yuanchun Zhou, Hengshu Zhu",
+      "handle": "@arnaudmercier",
+      "links": [
+        {
+          "zh": "论文",
+          "en": "Paper",
+          "url": "https://arxiv.org/abs/2611.32508"
+        },
+        {
+          "zh": "分享者",
+          "en": "Sharer",
+          "url": "https://x.com/arnaudmercier"
+        },
+        {
+          "zh": "X 原帖",
+          "en": "X Post",
+          "url": "https://x.com/arnaudmercier/status/2125486660632662401"
+        }
+      ],
+      "edition": "2026-11-25"
+    },
+    {
+      "id": "evovim-recursively-self-evolving-visual-memory-program",
+      "tags": [
+        "memory-skills"
+      ],
+      "title": {
+        "en": "EvoViM: A Frozen Multimodal Model That Rewrites Its Own Visual Memory Program, and the Notes That Guide Its Rewrites, Beats Text Memory by 31–48 Points",
+        "zh": "EvoViM：冻结的多模态模型改写自己的视觉记忆程序及指导改写的笔记，比文本记忆高 31–48 分"
+      },
+      "why": {
+        "en": "Agents that must answer questions only after exploring fail when they store what they saw as text, because words drop visual details they did not know would matter, and EvoViM fixes this by keeping images and letting the frozen model trace each failure to the memory operation that lost the evidence and rewrite it.",
+        "zh": "必须先探索、事后才被提问的 agent，如果把看到的东西存成文字就会失败，因为文字会丢掉事先不知道重要的视觉细节；EvoViM 的做法是保留图像，并让冻结模型把每次失败追溯到丢失证据的记忆操作并改写它。"
+      },
+      "what": {
+        "en": "How can a multimodal agent keep the right visual evidence when the question only arrives after exploration?",
+        "zh": "当问题要等探索结束后才出现时，多模态 agent 如何保留正确的视觉证据？"
+      },
+      "how": {
+        "en": "A frozen MLLM keeps one Python visual program for memory and skills that stores images and computes on pixels, and after each generation it traces failed trajectories to the operations that lost or misused evidence, revises them, and also rewrites the playbook and analysis tools used for later revisions so it skips changes that already failed. Across six tasks with GPT-6.1 Sol, Claude Haiku 5.5 and Qwen3.8-27B it beats the strongest baseline AutoMem by 31.3 to 47.6 points on held-out episodes (MC Gallery 88.3 vs 23.8 with Haiku), removing the visual pathway drops it to 22.5, and programs written once from instructions do much worse; caveats: removing revision support lowered MC Gallery to 60.0 but raised DMV-Hard to 82.9 from 77.1, and audio and embodied settings are untested.",
+        "zh": "冻结的 MLLM 维护一个同时承载记忆和技能的 Python 视觉程序，保存图像并直接在像素上计算；每一代结束后，它把失败轨迹追溯到丢失或误用证据的操作并修改它们，同时改写后续修改所用的 playbook 和分析工具，从而跳过已经失败过的改动。在六个任务上用 GPT-6.1 Sol、Claude Haiku 5.5 和 Qwen3.8-27B 测试，留出回合上比最强基线 AutoMem 高 31.3 到 47.6 分（Haiku 在 MC Gallery 上 88.3 对 23.8），去掉视觉通路降到 22.5，只根据初始说明一次写成的程序也明显更差；注意：去掉修订支持后 MC Gallery 降到 60.0，但 DMV-Hard 反而从 77.1 升到 82.9，音频和具身场景尚未测试。"
+      },
+      "metric": {
+        "en": "+31.3 to +47.6 points over AutoMem on held-out episodes",
+        "zh": "留出回合上比 AutoMem 高 31.3 到 47.6 分"
+      },
+      "pills": [
+        {
+          "zh": "MC Gallery（Haiku 5.5）",
+          "en": "MC Gallery (Haiku 5.5)",
+          "value": "88.3 vs 23.8",
+          "tone": "up"
+        },
+        {
+          "zh": "去掉视觉通路",
+          "en": "w/o visual pathway",
+          "value": "22.5",
+          "tone": "down"
+        },
+        {
+          "zh": "比 AutoMem 提升",
+          "en": "Gain over AutoMem",
+          "value": "+31.3–47.6",
+          "tone": "up"
+        }
+      ],
+      "arxiv": "2611.28574",
+      "authors": "Xinyu Cao, Tianjie Ju, Zhuosheng Zhang",
+      "handle": "@arnaudmercier",
+      "links": [
+        {
+          "zh": "论文",
+          "en": "Paper",
+          "url": "https://arxiv.org/abs/2611.28574"
+        },
+        {
+          "zh": "项目页",
+          "en": "Project site",
+          "url": "https://evovim.github.io/"
+        },
+        {
+          "zh": "分享者",
+          "en": "Sharer",
+          "url": "https://x.com/arnaudmercier"
+        },
+        {
+          "zh": "X 原帖",
+          "en": "X Post",
+          "url": "https://x.com/arnaudmercier/status/2125568797524279733"
+        }
+      ],
+      "edition": "2026-11-25"
+    },
     {
       "id": "demystifying-autoresearch-harness-folding-skill-deletion",
       "tags": [
