@@ -19,6 +19,15 @@ window.YANHUA_DIGESTS = {
   },
   "editions": [
     {
+      "id": "2026-11-27",
+      "date": "2026-11-27",
+      "slot": "",
+      "label": {
+        "zh": "2026-11-27",
+        "en": "27 Nov 2026"
+      }
+    },
+    {
       "id": "2026-11-26",
       "date": "2026-11-26",
       "slot": "",
@@ -379,6 +388,408 @@ window.YANHUA_DIGESTS = {
     }
   ],
   "items": [
+    {
+      "id": "hookevo-coordinated-plugin-harness-evolution",
+      "edition": "2026-11-27",
+      "tags": [
+        "harness-search",
+        "memory-skills"
+      ],
+      "title": {
+        "en": "HookEvo: Evolving the Hook That Records a Tool Result and the Check That Reads It Together Lifts a Frozen Qwen3-4B to 95.41% on ALFWorld (+25.91 Mean Over Skill-Text Edits)",
+        "zh": "HookEvo：把“记录工具回执的 hook”和“读取它的检查”放在同一个候选里一起演化，冻结的 Qwen3-4B 在 ALFWorld 上达 95.41%（比只改 skill 文本平均高 25.91 分）"
+      },
+      "why": {
+        "en": "Harness search works much better when one candidate can change both the handler that records a tool result and the check that later uses it, because many agent failures need a recorded fact to gate a later action, and either edit alone changes nothing, so it gets thrown away.",
+        "zh": "当一个候选可以同时修改“记录工具结果的 handler”和“之后使用该记录的检查”时，harness 搜索效果好得多，因为很多 agent 失败需要先记下某个事实、再用它卡住后面的动作，两处只改一处不会带来任何变化，所以会被丢弃。"
+      },
+      "what": {
+        "en": "Skill-text optimizers and one-component-at-a-time harness search cannot represent repairs that need two interdependent changes, so can an improver that edits handlers and their shared episode state in one candidate do better?",
+        "zh": "只优化 skill 文本、或一次只改一个组件的 harness 搜索，表达不了需要两处相互依赖改动的修复，那么让 improver 在一个候选里同时改 handler 和它们共享的任务内状态，能否做得更好？"
+      },
+      "how": {
+        "en": "Built on DeepSeek Harness lifecycle hooks, each round an external improver (GPT-6 Luna, GPT-6.1 Terra or GPT-6.1 Sol) reads execution traces and proposes one candidate, which is kept only if it beats its parent on matched tasks and seeds and actually changes hook outputs; with a frozen Qwen3-4B executor, Sol under the coordinated scope reaches 95.41% ALFWorld, 70.56% DBBench, 48.17% WebShop and 41.67% OSBench versus 87.77/64.11/41.33/36.81 for a local Life-Harness rerun, and widening the scope from skill text to coordinated edits adds a mean 25.91 points for Sol but only 7.24 for Luna and 5.75 for Terra (on ALFWorld the step from one component to coordinated edits is worth 62.08 points versus 6.12 for the step before). Caveats: training-task allocation differed across runs, each configuration is one search, and the write/read handlers have not yet been ablated; harnesses, evolution histories and code are public.",
+        "zh": "基于 DeepSeek Harness 的生命周期 hook，每一轮由外部 improver（GPT-6 Luna、GPT-6.1 Terra 或 GPT-6.1 Sol）读执行轨迹并提出一个候选，只有在相同任务和随机种子上胜过父版本、且确实改变了 hook 输出时才保留；执行器冻结为 Qwen3-4B 时，Sol 在协同编辑范围下达到 ALFWorld 95.41%、DBBench 70.56%、WebShop 48.17%、OSBench 41.67%，本地重跑的 Life-Harness 为 87.77/64.11/41.33/36.81；把编辑范围从 skill 文本扩大到协同编辑，Sol 平均提升 25.91 分，Luna 只有 7.24、Terra 只有 5.75（ALFWorld 上从“单组件”到“协同编辑”这一步值 62.08 分，前一步只值 6.12 分）。注意：各次运行的训练任务分配不一致，每种配置只搜索一次，写入/读取 handler 尚未做消融；harness、演化记录和代码已公开。"
+      },
+      "metric": {
+        "en": "95.41% ALFWorld with frozen Qwen3-4B; +25.91 mean from skill-text to coordinated edits (Sol)",
+        "zh": "冻结 Qwen3-4B 在 ALFWorld 达 95.41%；Sol 从 skill 文本到协同编辑平均 +25.91 分"
+      },
+      "pills": [
+        {
+          "zh": "ALFWorld（Qwen3-4B）",
+          "en": "ALFWorld (Qwen3-4B)",
+          "value": "95.41% vs 87.77%",
+          "tone": "up"
+        },
+        {
+          "zh": "A→C 平均提升（Sol）",
+          "en": "A→C mean gain (Sol)",
+          "value": "+25.91",
+          "tone": "up"
+        },
+        {
+          "zh": "A→C 平均提升（Terra）",
+          "en": "A→C mean gain (Terra)",
+          "value": "+5.75",
+          "tone": "flat"
+        }
+      ],
+      "arxiv": "2611.27294",
+      "authors": "Shengze Huang, Yanyu Mao, Xiaofei Yu, Baoshen Guo, Xiaorui Wang, Zhiwen Wu, Sheng Wu, Fukang Wen, Chengxu Wu, Linhao Li, Kailai Sun, Baotong Mi",
+      "handle": "@vintcessun",
+      "links": [
+        {
+          "zh": "论文",
+          "en": "Paper",
+          "url": "https://arxiv.org/abs/2611.27294"
+        },
+        {
+          "zh": "项目页",
+          "en": "Project site",
+          "url": "https://huangshengzebluesky.github.io/HookEvo/"
+        },
+        {
+          "zh": "代码",
+          "en": "Code",
+          "url": "https://github.com/HuangShengZeBlueSky/HookEvo"
+        },
+        {
+          "zh": "分享者",
+          "en": "Sharer",
+          "url": "https://x.com/vintcessun"
+        },
+        {
+          "zh": "X 原帖",
+          "en": "X Post",
+          "url": "https://x.com/vintcessun/status/2126170160243544444"
+        },
+        {
+          "zh": "引用评论 X 原帖",
+          "en": "Quote X Post",
+          "url": "https://x.com/_TK_YM_/status/2126173711485350234"
+        }
+      ]
+    },
+    {
+      "id": "hyperharness-personalized-harness-generator",
+      "edition": "2026-11-27",
+      "tags": [
+        "harness-search",
+        "memory-skills"
+      ],
+      "title": {
+        "en": "HyperHarness (Notre Dame, UCSB, Microsoft): One Trained Generator Writes Each User's Memory Harness in a Single Pass, Best in 7 of 9 Settings With 90.32% Fewer Answer Tokens Than Long Context",
+        "zh": "HyperHarness（Notre Dame、UCSB、Microsoft）：一个训练好的生成器一次性为每位用户写出记忆 harness，9 个设置中 7 个最佳，回答 token 比长上下文少 90.32%"
+      },
+      "why": {
+        "en": "Optimizing one shared generator that writes each user's retrieval and answer-guidance code beats both a single memory workflow for everyone and per-user harness search, because training across many users teaches it general rules for which records to fetch and when to hold personal context back, so a new user gets a tailored harness without any scored search.",
+        "zh": "优化一个共享生成器、让它为每位用户写出检索和回答引导代码，效果胜过“所有人共用一套记忆流程”和“为每位用户单独搜索 harness”，因为跨用户训练让它学到通用规则：该取哪些记录、何时克制使用个人信息，于是新用户无需任何打分搜索就能拿到量身定制的 harness。"
+      },
+      "what": {
+        "en": "Personalized agents either share one memory workflow that cannot adapt or run a costly, noisily supervised harness search for every user, so can harness optimization be amortized across users?",
+        "zh": "个性化 agent 要么共用一套无法自适应的记忆流程，要么为每位用户做一次昂贵且监督信号嘈杂的 harness 搜索，harness 优化能否在用户之间摊销？"
+      },
+      "how": {
+        "en": "A frozen gpt-6-sol construction model writes per-user retrieval and guidance functions from the user's history, and task scores across training users refine the shared generator's code and prompts while the answering model stays frozen; across PersonaMemv3, Mem-PAL and MemoryCD with Qwen3.5-9B, Qwen3.8-27B and GPT-5.6-Luna it is best in 7 of 9 settings and second in the other 2 (Qwen3.5-9B: 54.51 vs 48.56 on PersonaMemv3, 32.77 vs 29.38 on Mem-PAL), matches long-context accuracy on MemoryCD with 3.15k instead of 32.51k answer-time tokens (90.32% fewer), and becomes cheaper than per-user GEPA or Meta-Harness after about 9 to 35 users. Caveats: transfer to unseen user clusters is weak on MemoryCD (trails Long Context), the robustness study uses 12 users and one seed, and some comparisons use slightly different evaluation subsets; code is public.",
+        "zh": "冻结的 gpt-6-sol 构建模型根据用户历史写出该用户的检索函数和回答引导函数，训练用户上的任务分数用来迭代改进共享生成器的代码和 prompt，回答模型始终冻结；在 PersonaMemv3、Mem-PAL、MemoryCD 三个基准、Qwen3.5-9B、Qwen3.8-27B、GPT-5.6-Luna 三个回答模型上，9 个设置中 7 个最佳、另外 2 个第二（Qwen3.5-9B：PersonaMemv3 54.51 对 48.56，Mem-PAL 32.77 对 29.38）；在 MemoryCD 上与长上下文准确率持平，但回答时 token 从 32.51k 降到 3.15k（少 90.32%），用户数超过约 9 到 35 人后总成本低于逐用户的 GEPA 或 Meta-Harness。注意：在 MemoryCD 上迁移到未见用户群效果弱（不如长上下文），鲁棒性实验只有 12 个用户、一个种子，部分对比的评测子集略有不同；代码已公开。"
+      },
+      "metric": {
+        "en": "Best in 7/9 settings; up to +5.95 points; 90.32% fewer answer-time tokens vs long context",
+        "zh": "9 个设置中 7 个最佳；最多 +5.95 分；回答 token 比长上下文少 90.32%"
+      },
+      "pills": [
+        {
+          "zh": "PersonaMemv3（Qwen3.5-9B）",
+          "en": "PersonaMemv3 (Qwen3.5-9B)",
+          "value": "54.51 vs 48.56",
+          "tone": "up"
+        },
+        {
+          "zh": "回答 token（MemoryCD）",
+          "en": "Answer tokens (MemoryCD)",
+          "value": "−90.32%",
+          "tone": "up"
+        },
+        {
+          "zh": "MemoryCD 未见用户群",
+          "en": "MemoryCD unseen clusters",
+          "value": "trails Long Context",
+          "tone": "down"
+        }
+      ],
+      "arxiv": "2611.29062",
+      "authors": "Zhaoxuan Tan, Jiachen Zhao, Jingbo Yang, Zheyuan Liu, Chuhan Wang, Pei Zhou, Mengting Wan, Meng Jiang",
+      "handle": "@dair_ai",
+      "links": [
+        {
+          "zh": "论文",
+          "en": "Paper",
+          "url": "https://arxiv.org/abs/2611.29062"
+        },
+        {
+          "zh": "代码",
+          "en": "Code",
+          "url": "https://github.com/TamSiuhin/hyperharness-code"
+        },
+        {
+          "zh": "项目页",
+          "en": "Project site",
+          "url": "https://zhaoxuan.info/hyperharness/"
+        },
+        {
+          "zh": "分享者",
+          "en": "Sharer",
+          "url": "https://x.com/dair_ai"
+        },
+        {
+          "zh": "X 原帖",
+          "en": "X Post",
+          "url": "https://x.com/dair_ai/status/2126339269442818297"
+        }
+      ]
+    },
+    {
+      "id": "which-failure-intervention-repairs-self-evolving-skills-stall",
+      "edition": "2026-11-27",
+      "tags": [
+        "memory-skills",
+        "verification",
+        "harness-search"
+      ],
+      "title": {
+        "en": "Which Failure Does an Intervention Repair? 0.9M Trajectories Show Self-Evolved Skills Rarely Beat a Short Human Skill, and One Collapses a Stronger Model From 62.0% to 13.6%",
+        "zh": "干预修的是哪种失败？90 万条轨迹显示：自进化 skill 很少胜过一段简短的人写 skill，其中一个把更强模型从 62.0% 拉到 13.6%"
+      },
+      "why": {
+        "en": "Skills an agent evolves from its own experience rarely beat a short human-written skill and can break when moved to another model, because they can only reshuffle what the agent already has: missing facts must come from outside, and execution errors are fixed by a richer harness rather than a skill.",
+        "zh": "agent 从自身经验中演化出的 skill 很少胜过一段简短的人写 skill，换到别的模型上还可能失效，因为它只能重新组织 agent 已有的东西：缺失的事实必须从外部获取，执行错误要靠更强的 harness 修，而不是靠 skill。"
+      },
+      "what": {
+        "en": "Skills, harnesses and extra inference budget are each credited with one average gain under one setup, so when does each one actually help and which failure does it repair?",
+        "zh": "skill、harness 和额外推理预算通常各自只在一种设置下报告一个平均增益，那么它们各自到底什么时候有用、修的是哪种失败？"
+      },
+      "how": {
+        "en": "A matched factorial study changes one axis at a time on the same 1,872 test instances from nine benchmarks, four models (Qwen3.5-9B, Sonnet 4.6, Sonnet 5, GPT-5.6-sol), four skill conditions (none, one-shot Direct, SkillOpt, Trace2Skill), four harness levels and three budgets, for about 0.9 million trajectories: a SkillOpt skill built on Qwen3.5-9B drops GPT-5.6-sol on Hotpot Context from 62.0% to 13.6% (12.2% even with error feedback, because it fills the answer field with an extraction worksheet), an 18-word SQuAD skill is worth +66.2 points under a minimal harness but +2.2 with execution feedback, the one-shot Direct skill beats iteratively optimized SkillOpt on 4 of 8 benchmarks, and on SimpleQA a skill from the agent's own facts moves accuracy from 5.0% to 6.3% while retrieved passages reach 60.0%. Per-task routers do not beat a fixed configuration (39.42% and 40.10% vs 45.29%), but a 20-task labeled pilot per benchmark scores 57.4 vs 53.5 for always using GPT-5.6-sol at 36% lower cost; caveats: main-matrix skills are built by Qwen3.5-9B only, the stronger constructor is tested on two benchmarks, and runs use temperature 0; code, skills and the outcome ledger are public.",
+        "zh": "这项配对析因研究在 9 个基准的同一批 1,872 个测试实例上一次只改一个轴：4 个模型（Qwen3.5-9B、Sonnet 4.6、Sonnet 5、GPT-5.6-sol）、4 种 skill 条件（无、一次性 Direct、SkillOpt、Trace2Skill）、4 档 harness、3 档预算，共约 90 万条轨迹：在 Qwen3.5-9B 上构建的 SkillOpt skill 让 GPT-5.6-sol 在 Hotpot Context 上从 62.0% 跌到 13.6%（加错误反馈也只有 12.2%，因为 skill 让模型把答案栏写成了信息抽取表）；一段 18 个词的 SQuAD skill 在最简 harness 下值 +66.2 分，有执行反馈时只值 +2.2 分；一次性写成的 Direct skill 在 8 个基准中有 4 个胜过反复优化的 SkillOpt；SimpleQA 上用 agent 自身事实构建的 skill 只把准确率从 5.0% 提到 6.3%，而检索到的段落能到 60.0%。逐任务路由不如固定配置（39.42%、40.10% 对 45.29%），但每个基准用 20 个带标签任务做小试点，得分 57.4，高于始终用 GPT-5.6-sol 的 53.5，且成本低 36%；注意：主矩阵的 skill 只由 Qwen3.5-9B 构建，更强的构建模型只在两个基准上测试，且均为 temperature 0；代码、skill 和逐实例结果账本已公开。"
+      },
+      "metric": {
+        "en": "Transferred self-evolved skill: 62.0% → 13.6%; own-data skill 6.3% vs retrieval 60.0% on SimpleQA",
+        "zh": "迁移的自进化 skill：62.0% → 13.6%；SimpleQA 上自身数据 skill 6.3% 对检索 60.0%"
+      },
+      "pills": [
+        {
+          "zh": "迁移 skill（Hotpot Context）",
+          "en": "Transferred skill (Hotpot Context)",
+          "value": "62.0% → 13.6%",
+          "tone": "down"
+        },
+        {
+          "zh": "SimpleQA：自身事实 vs 检索",
+          "en": "SimpleQA: own facts vs retrieval",
+          "value": "6.3% vs 60.0%",
+          "tone": "neutral"
+        },
+        {
+          "zh": "20 任务试点 vs 始终更强模型",
+          "en": "20-task pilot vs always stronger model",
+          "value": "57.4 vs 53.5, −36% cost",
+          "tone": "up"
+        }
+      ],
+      "arxiv": "2611.29290",
+      "authors": "Zihan Jin, Gaoyuan Du, Jiate Li, Dongze Ye, Shawn Li, Yue Zhao, Defu Cao",
+      "handle": "@vintcessun",
+      "links": [
+        {
+          "zh": "论文",
+          "en": "Paper",
+          "url": "https://arxiv.org/abs/2611.29290"
+        },
+        {
+          "zh": "代码",
+          "en": "Code",
+          "url": "https://github.com/Zihan-Zoe/same-skill-different-harness"
+        },
+        {
+          "zh": "数据",
+          "en": "Dataset",
+          "url": "https://huggingface.co/datasets/Zihan-Zoe/same-skill-different-harness"
+        },
+        {
+          "zh": "分享者",
+          "en": "Sharer",
+          "url": "https://x.com/vintcessun"
+        },
+        {
+          "zh": "X 原帖",
+          "en": "X Post",
+          "url": "https://x.com/vintcessun/status/2126183748609950043"
+        }
+      ]
+    },
+    {
+      "id": "rci-recursive-collective-intelligence-equal-budget-ladder",
+      "edition": "2026-11-27",
+      "tags": [
+        "co-evolution",
+        "agentic-rl",
+        "verification"
+      ],
+      "title": {
+        "en": "Recursive Collective Intelligence: Agent Teams Beat Compute-Matched pass@k Only When They Forward Facts Others Lack, Then Improve Label-Free for 4–6 Generations (PlanBench 0.613 → 0.950)",
+        "zh": "递归集体智能（RCI）：agent 团队只有在转发别人没有的事实时才能超过同等算力的 pass@k，之后无标签地连续 4–6 代自我提升（PlanBench 0.613 → 0.950）"
+      },
+      "why": {
+        "en": "A team of agents becomes smarter than its members working apart only when they pass each other facts that the others lack, because when everyone already sees the same information, debate just repeats it and a compute-matched majority vote does as well; such a team can then improve its next generation by training on its own verified outputs.",
+        "zh": "一组 agent 只有在互相传递对方没有的事实时，才会比各自单干更聪明，因为当大家看到的信息相同时，辩论只是重复已知内容，同等算力的多数投票就能做到一样好；这样的团队之后还能用自己经过验证的输出训练下一代，实现自我提升。"
+      },
+      "what": {
+        "en": "Multi-agent teams are usually credited for beating one agent while spending many times its tokens, so when does interaction itself make a group smarter, and can a group improve its next generation from its own work without labels?",
+        "zh": "多 agent 团队常因胜过单个 agent 而被认可，但它消耗的 token 是单个 agent 的许多倍，那么交互本身什么时候让群体更聪明，群体能否不靠标签、用自己的工作让下一代更强？"
+      },
+      "how": {
+        "en": "An equal-budget ladder grades a group against independent agents at the same compute: beat one agent, then a majority vote, then pass@k; debate, a shared blackboard and AOrchestra stay at or below the vote on six shared-information benchmarks, while forwarding split facts reaches the top level at 9B, 27B and 35B-A3B, with four Qwen3.8-27B agents scoring 0.959 on HiddenBench versus 0.942 for an equal-budget agent holding every fact, and identical 27B agents spontaneously form hubs that raise accuracy by about 18 points. Training each generation of four Qwen3.5-9B agents only on its predecessor's outputs accepted by a plan simulator, consensus check or game score lifts PlanBench from 0.613 to 0.950 over four generations, HiddenBench from 0.509 to 0.886 over five, and Hanabi from 0 to about 4.5 of 25 (a non-recursive control stalls near 2.9); caveats: part of the rise comes from cheaper behavior such as shorter thinking or playing fewer cards, gains narrow near the ceiling, and the HiddenBench ladder uses the selection set; code is public.",
+        "zh": "“同等预算阶梯”在相同算力下把群体与独立 agent 比较：先胜过单个 agent，再胜过多数投票，最后胜过 pass@k；在 6 个信息共享型基准上，辩论、共享黑板和 AOrchestra 都停在投票水平或以下；而转发分散事实在 9B、27B、35B-A3B 三种规模上都达到最高一级，4 个 Qwen3.8-27B agent 在 HiddenBench 上得 0.959，高于掌握全部事实的同预算单 agent（0.942），相同的 27B agent 还会自发形成信息枢纽，准确率提升约 18 个百分点。每一代 4 个 Qwen3.5-9B agent 只用上一代经计划模拟器、共识检查或游戏得分接受的输出来训练：PlanBench 四代从 0.613 升到 0.950，HiddenBench 五代从 0.509 升到 0.886，Hanabi 从 0 升到约 4.5/25（非递归对照停在约 2.9）；注意：部分提升来自更省的行为（如更短的思考、少出牌），接近上限时增益变小，HiddenBench 阶梯评测用的是选择集；代码已公开。"
+      },
+      "metric": {
+        "en": "Fact forwarding 0.959 vs 0.942 full-information agent; PlanBench 0.613 → 0.950 over 4 label-free generations",
+        "zh": "事实转发 0.959 对全信息单 agent 0.942；PlanBench 无标签 4 代从 0.613 到 0.950"
+      },
+      "pills": [
+        {
+          "zh": "HiddenBench（4×27B 事实转发）",
+          "en": "HiddenBench (4×27B fact forwarding)",
+          "value": "0.959 vs 0.942",
+          "tone": "up"
+        },
+        {
+          "zh": "PlanBench 递归 4 代",
+          "en": "PlanBench, 4 generations",
+          "value": "0.613 → 0.950",
+          "tone": "up"
+        },
+        {
+          "zh": "共享信息下的辩论",
+          "en": "Debate under shared info",
+          "value": "≤ majority vote",
+          "tone": "flat"
+        }
+      ],
+      "arxiv": "2611.32606",
+      "authors": "Lixuan He, Shengqu Cai, Fang Wu, Shikang Zheng, Liwei Jiang, Manling Li, Yi Ma, Li Fei-Fei, Leonidas Guibas, Gordon Wetzstein, Yejin Choi, Yining Hong",
+      "handle": "@omarsar0",
+      "links": [
+        {
+          "zh": "论文",
+          "en": "Paper",
+          "url": "https://arxiv.org/abs/2611.32606"
+        },
+        {
+          "zh": "项目页",
+          "en": "Project site",
+          "url": "https://lixuan27.github.io/RCI/"
+        },
+        {
+          "zh": "代码",
+          "en": "Code",
+          "url": "https://github.com/lixuan27/RCI-official"
+        },
+        {
+          "zh": "分享者",
+          "en": "Sharer",
+          "url": "https://x.com/omarsar0"
+        },
+        {
+          "zh": "X 原帖",
+          "en": "X Post",
+          "url": "https://x.com/omarsar0/status/2126334991768711575"
+        },
+        {
+          "zh": "作者 X 原帖",
+          "en": "Author X Post",
+          "url": "https://x.com/yining_hong/status/2125449953791414293"
+        }
+      ]
+    },
+    {
+      "id": "sealedloop-out-of-loop-judges-embodied-self-improvement",
+      "edition": "2026-11-27",
+      "tags": [
+        "verification",
+        "embodied"
+      ],
+      "title": {
+        "en": "SealedLoop: Self-Improving Robot and Driving Policies Should Be Kept Only by a Judge They Cannot See; the Sealed Test Kept 11 of 12 Real Gains and None of 59 Losses",
+        "zh": "SealedLoop：自改进的机器人和驾驶策略应由它看不到的裁判决定去留；密封检验保留了 12 个真实提升中的 11 个，59 个退步一个也没留"
+      },
+      "why": {
+        "en": "A self-improving robot or driving policy should be kept only when a judge it cannot see or optimize against confirms the gain, because a judge inside the loop both mislabels the new policy's failures as successes and rewards gains on the loop's own data that do not carry over to unseen conditions.",
+        "zh": "自改进的机器人或驾驶策略，只有在它看不到、也无法针对其优化的裁判确认提升后才应保留，因为环内裁判既会把新策略的失败误判为成功，也会奖励那些只在环内数据上成立、到了未见场景就消失的提升。"
+      },
+      "what": {
+        "en": "Embodied self-improvement loops keep a new policy when a judge trained or chosen inside the same loop rates it higher, so how often does that judge keep worse policies, and why?",
+        "zh": "具身自改进循环在环内训练或选定的裁判给出更高分时就保留新策略，那么这个裁判有多常留下更差的策略，原因是什么？"
+      },
+      "how": {
+        "en": "SealedLoop adds an out-of-loop judge whose data, parameters and schedule are hidden from the improver and decides each update with an anytime-valid sequential test that bounds the chance of keeping a worse policy, run on LIBERO manipulation, NAVSIM driving and a full-size car: in manipulation the loop's success classifier accepted 65 of 196 failures in one generation, in driving even an error-free in-loop judge would keep 8 of 15 candidates that lose in an unseen city, while the sealed test accepted 11 of 12 real gains and none of 59 losses using 47% of the evaluation frames, and a loop built to improve ends at 0.674 PDMS under the sealed judge versus 0.649 under its own critic (from 0.638). On the road, the RL-tuned ReCogDrive drove 10.4 m further into a curve than its base version in all 6 blind pairs, though neither completed it; caveats: loops run in simulation on short-horizon tasks with one published improver each, and the field test covers one step on one vehicle.",
+        "zh": "SealedLoop 增加一个环外裁判，其数据、参数和评测时间表对 improver 完全隐藏，并用 anytime-valid 序贯检验决定每次更新，保证留下更差策略的概率有上限；在 LIBERO 操作、NAVSIM 驾驶和一辆真实汽车上测试：操作任务中，环内成功分类器在某一代把 196 次失败里的 65 次判为成功；驾驶任务中，即使环内裁判完全没有误差，也会留下 15 个候选中的 8 个，而它们在未见城市里都变差了；密封检验只用 47% 的评测帧，就接受了 12 个真实提升中的 11 个、59 个退步一个都没接受；一个本来就能改进的循环，在密封裁判下最终 PDMS 为 0.674，用自己的 critic 只有 0.649（起点 0.638）。实车测试中，经 RL 调优的 ReCogDrive 在全部 6 组盲测里都比基础版在弯道中多开 10.4 米，但两者都没能开完弯道；注意：循环都在仿真中运行、任务较短、每个测试平台只有一个已发表的 improver，实车测试只覆盖一辆车上的一步改进。"
+      },
+      "metric": {
+        "en": "Sealed test: 11/12 real gains kept, 0/59 losses kept; in-loop classifier accepted 65/196 failures",
+        "zh": "密封检验：保留 11/12 个真实提升、0/59 个退步；环内分类器把 65/196 次失败判为成功"
+      },
+      "pills": [
+        {
+          "zh": "真实提升被保留",
+          "en": "Real gains kept",
+          "value": "11/12",
+          "tone": "up"
+        },
+        {
+          "zh": "退步被保留",
+          "en": "Losses kept",
+          "value": "0/59",
+          "tone": "up"
+        },
+        {
+          "zh": "环内分类器误收失败",
+          "en": "In-loop classifier false accepts",
+          "value": "65/196",
+          "tone": "down"
+        }
+      ],
+      "arxiv": "2611.33794",
+      "authors": "Zilin Huang, Zhengyang Wan, Kangan Qian, Zihao Sheng, Sikai Chen",
+      "handle": "@AIbreakingnew",
+      "links": [
+        {
+          "zh": "论文",
+          "en": "Paper",
+          "url": "https://arxiv.org/abs/2611.33794"
+        },
+        {
+          "zh": "项目页",
+          "en": "Project site",
+          "url": "https://zilin-huang.github.io/SealedLoop/"
+        },
+        {
+          "zh": "分享者",
+          "en": "Sharer",
+          "url": "https://x.com/AIbreakingnew"
+        },
+        {
+          "zh": "X 原帖",
+          "en": "X Post",
+          "url": "https://x.com/AIbreakingnew/status/2126192450754781259"
+        },
+        {
+          "zh": "X 原帖（标题分享）",
+          "en": "X Post (title share)",
+          "url": "https://x.com/arnaudmercier/status/2126044599244210593"
+        }
+      ]
+    },
     {
       "id": "morse-open-world-auto-research-streaming-memory",
       "tags": [
